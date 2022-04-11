@@ -55,7 +55,7 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --r
 
 點擊 ID 右側的菜單按鈕如下，選擇“ ID/中繼服務器”。
 
-![](/docs/en/self-host/install/images/server-set-menu-zh.png)
+![](/docs/en/self-host/install/images/server-set-menu.png)
 
 在 ID 服務器輸入框中（被控端+主控端）輸入 hbbs 主機或 ip 地址，另外兩個地址可以不填，RustDesk會自動推導（如果沒有特別設定），中繼服務器指的是hbbr（21116）端口，API服務器指的是上面的網頁控制台+API（21114）。
 
@@ -74,7 +74,7 @@ hbbs.yourhost.com
 ```
 hbbs.yourhost.com:21116
 ```
-![](/docs/en/self-host/install/images/server-set-window-zh.png)
+![](/docs/en/self-host/install/images/server-set-window.png)
 
 ## Key
 -----------
@@ -91,5 +91,5 @@ cat ./id_ed25519.pub
 ```
 
 {{% notice note %}}
-在控制台首頁（點擊Windows EXE）也可以看到Key。
+在[控制台](/docs/zh-tw/self-host/console/)首頁（點擊Windows EXE）也可以看到Key。
 {{% /notice %}}

@@ -91,7 +91,7 @@ cat ./id_ed25519.pub
 ```
 
 {{% notice note %}}
-在控制台首页（点击Windows EXE）也可以看到Key。
+在[控制台](/docs/zh-cn/self-host/console/)首页（点击Windows EXE）也可以看到Key。
 {{% /notice %}}
 
 
