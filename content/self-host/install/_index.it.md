@@ -1,5 +1,5 @@
 ---
-title: Installer
+title: Installazione
 weight: 10
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Installer
+title: Установка
 weight: 10
 ---
 

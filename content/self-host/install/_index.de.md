@@ -1,5 +1,5 @@
 ---
-title: Installer
+title: Installation
 weight: 10
 ---
 
