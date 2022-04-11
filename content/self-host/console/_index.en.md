@@ -18,7 +18,7 @@ If you need https support, please install a web server implementation such as `N
 The default administrator username/password is admin/test1234, please be sure to change the password after logging in, select "Settings" in the account menu in the upper right corner to enter the password modification page, as shown in the following figure:
 ![](/docs/en/self-host/console/images/console-home.png)
 
-## Windows EXEs
+## Windows EXE
 For Windows clients, you can leave out the custom server configuration and put the configuration information in the `RustDesk.exe` filename instead. As shown above, please go to the console welcome page and click on `Windows EXE`.
 
 ## Device access permissions

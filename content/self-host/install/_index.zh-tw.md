@@ -54,7 +54,7 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --r
 ### 步驟3: 在客戶端設置 hbbs/hbbr 地址
 
 {{% notice note %}}
-對於Windows客戶端，可以選用[免填自定義服務器配置](/docs/zh-tw/self-host/console/#windows-exe)方案
+對於Windows客戶端，可以選用[Windows EXE](/docs/zh-tw/self-host/console/#windows-exe)方案，免填自定義服務器配置。
 {{% /notice %}}
 
 點擊 ID 右側的菜單按鈕如下，選擇“ ID/中繼服務器”。
@@ -95,5 +95,5 @@ cat ./id_ed25519.pub
 ```
 
 {{% notice note %}}
-在[控制台](/docs/zh-tw/self-host/console/)首頁（點擊Windows EXE）也可以看到Key。
+在[控制台](/docs/zh-tw/self-host/console/)歡迎頁面（點擊Windows EXE）也可以看到Key。
 {{% /notice %}}
