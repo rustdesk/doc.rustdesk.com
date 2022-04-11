@@ -55,6 +55,10 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --r
 
 ### STEP-3 : Set hbbs/hbbr address on client-side
 
+{{% notice note %}}
+For Windows clients, you can choose the [convenient custom server configuration](/docs/en/self-host/console/#windows-exe) solution.
+{{% /notice %}}
+
 Click on menu button on the right side of ID as below, choose "ID/Relay Server".
 
 ![](/docs/en/self-host/install/images/server-set-menu.png)
