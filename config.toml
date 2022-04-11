@@ -2,15 +2,15 @@ baseURL = "/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 
-title = "Hugo Learn Documentation"
+title = "RustDesk Documentation"
 theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
 
 [params]
-  editURL = "https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/"
-  description = "Documentation for Hugo Learn Theme"
-  author = "Mathieu Cornic"
+  editURL = "https://github.com/rustdesk/doc.rustdesk.com/edit/master/content/"
+  description = "Documentation for RustDesk"
+  author = "RustDesk"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
@@ -18,13 +18,15 @@ defaultContentLanguageInSubdir= true
   disableMermaid = false
   customMermaidURL = "https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"
   titleSeparator = "::"
+  themeVariant = "blue"
+  custom_css = ["css/theme-mine.css"]
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
 [Languages]
 [Languages.en]
-title = "Documentation for Hugo Learn Theme"
+title = "Documentation for RustDesk"
 weight = 1
 languageName = "English"
 landingPageURL = "/en"
@@ -33,27 +35,11 @@ landingPageName = "<i class='fas fa-home'></i> Home"
 [[Languages.en.menu.shortcuts]]
 name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
 identifier = "ds"
-url = "https://github.com/matcornic/hugo-theme-learn"
+url = "https://github.com/rustdesk/rustdesk"
 weight = 10
 
-[[Languages.en.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-camera'></i> Showcases"
-url = "showcase"
-weight = 11
-
-[[Languages.en.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-bookmark'></i> Hugo Documentation"
-identifier = "hugodoc"
-url = "https://gohugo.io/"
-weight = 20
-
-[[Languages.en.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-bullhorn'></i> Credits"
-url = "/credits"
-weight = 30
-
 [Languages.fr]
-title = "Documentation du thème Hugo Learn"
+title = "Documentation du RustDesk"
 weight = 2
 languageName = "Français"
 landingPageURL = "/fr"
@@ -62,27 +48,11 @@ landingPageName = "<i class='fas fa-home'></i> Accueil"
 [[Languages.fr.menu.shortcuts]]
 name = "<i class='fab fa-fw fa-github'></i> Repo GitHub"
 identifier = "ds"
-url = "https://github.com/matcornic/hugo-theme-learn"
+url = "https://github.com/rustdesk/rustdesk"
 weight = 10
 
-[[Languages.fr.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-camera'></i> Vitrine"
-url = "/showcase"
-weight = 11
-
-[[Languages.fr.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-bookmark'></i> Documentation Hugo"
-identifier = "hugodoc"
-url = "https://gohugo.io/"
-weight = 20
-
-[[Languages.fr.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-bullhorn'></i> Crédits"
-url = "/credits"
-weight = 30
-
 [Languages.zh]
-title = "Hugo 主题的 Learn 文档"
+title = "RustDesk文档"
 weight = 3
 languageName = "简体中文"
 landingPageURL = "/zh"
@@ -91,21 +61,5 @@ landingPageName = "<i class='fas fa-home'></i> 家"
 [[Languages.zh.menu.shortcuts]]
 name = "<i class='fab fa-fw fa-github'></i> GitHub 仓库"
 identifier = "ds"
-url = "https://github.com/matcornic/hugo-theme-learn"
+url = "https://github.com/rustdesk/rustdesk"
 weight = 10
-
-[[Languages.zh.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-camera'></i> 展示区"
-url = "/showcase"
-weight = 11
-
-[[Languages.zh.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-bookmark'></i> Hugo 文档"
-identifier = "hugodoc"
-url = "https://gohugo.io/"
-weight = 20
-
-[[Languages.zh.menu.shortcuts]]
-name = "<i class='fas fa-fw fa-bullhorn'></i> 鸣谢"
-url = "/credits"
-weight = 30
