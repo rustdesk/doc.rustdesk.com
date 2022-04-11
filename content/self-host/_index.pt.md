@@ -1,12 +1,12 @@
 ---
-title: Self-host 
+title: Auto-hospedagem
 weight: 5
 pre: "<b>1. </b>"
 chapter: true
 ---
 
-### Chapter 1
+### Capítulo 1
 
-# Self-host 
+# Auto-hospedagem
 
 Estamos continuamente desenvolvendo o servidor, se você tiver algum comentário, participe da nossa discussão [Discord](https://discord.com/invite/nDceKgxnkV).

@@ -43,32 +43,35 @@ title = "Documentation du RustDesk"
 weight = 2
 languageName = "Français"
 landingPageURL = "/fr"
-landingPageName = "<i class='fas fa-home'></i> Accueil"
-
+landingPageName = "<i class='fas fa-home'></i> Page d'accueil"
 
 [Languages.ru]
 title = "Документация для RustDesk"
 weight = 2
 languageName = "Русский"
 landingPageURL = "/ru"
-landingPageName = "<i class='fas fa-home'></i> Дом"
+landingPageName = "<i class='fas fa-home'></i> Домашняя страница"
 
+[Languages.pt]
+title = "Documentação para RustDesk"
+weight = 2
+languageName = "Português"
+landingPageURL = "/pt"
+landingPageName = "<i class='fas fa-home'></i> Pagina inicial"
 
 [Languages.it]
 title = "Documentazione per RustDesk"
 weight = 2
 languageName = "Italiano"
 landingPageURL = "/it"
-landingPageName = "<i class='fas fa-home'></i> Casa"
-
+landingPageName = "<i class='fas fa-home'></i> Pagina iniziale"
 
 [Languages.de]
 title = "Dokumentation für RustDesk"
 weight = 2
 languageName = "Deutsch"
 landingPageURL = "/de"
-landingPageName = "<i class='fas fa-home'></i> Heim"
-
+landingPageName = "<i class='fas fa-home'></i> Startseite"
 
 [Languages.jp]
 title = "RustDeskのドキュメント"
