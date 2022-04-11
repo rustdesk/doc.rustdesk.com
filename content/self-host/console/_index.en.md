@@ -3,4 +3,5 @@ title: Web Console
 weight: 30
 ---
 
-[English](/docs/en/self-host/console)
+![](/docs/en/self-host/console/images/console-login.png)
+![](/docs/en/self-host/console/images/console-home.png)
