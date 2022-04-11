@@ -94,5 +94,5 @@ does not affect the connection, but the connection cannot be encrypted. If you p
 ````
 
 {{% notice note %}}
-Key can also be seen on the console homepage
+Key can also be seen on the console home page (Click on Windows EXE).
 {{% /notice %}}

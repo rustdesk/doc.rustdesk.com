@@ -91,5 +91,5 @@ cat ./id_ed25519.pub
 ```
 
 {{% notice note %}}
-在控制台首頁也可以看到Key
+在控制台首頁（點擊Windows EXE）也可以看到Key。
 {{% /notice %}}
