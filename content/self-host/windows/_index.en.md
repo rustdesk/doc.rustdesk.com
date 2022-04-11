@@ -20,8 +20,8 @@ pm2-startup install
 Download the windows version of [server program](https://github.com/rustdesk/rustdesk-server/releases), assuming you unzip it to the C drive. Run the following four lines of commands respectively.
 ```
 cd c:\rustdesk-server-windows-x64
-pm2 start hbbr.exe -- -m <Registered email address>
 pm2 start hbbs.exe -- -r <The address of the host where hbbr is running> -m <Registered email address>
+pm2 start hbbr.exe -- -m <Registered email address>
 pm2 save
 ```
 
@@ -36,7 +36,7 @@ For example, the new registered email address is test@test.com, and the public a
 ```
 pm2 delete hbbr hbbs
 cd c:\rustdesk-server-windows-x64
-pm2 start hbbr.exe -- -m test@test.com
 pm2 start hbbs.exe -- -r test.hbbr.com -m test@test.com
+pm2 start hbbr.exe -- -m test@test.com
 pm2 save
 ```

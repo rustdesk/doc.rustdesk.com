@@ -19,8 +19,8 @@ pm2-startup install
 下载Windows版本[服务器程序](https://gitee.com/rustdesk/rustdesk-server/releases)，假设你解压缩到了C盘下。分别运行下面四行命令。
 ```
 cd c:\rustdesk-server-windows-x64
-pm2 start hbbr.exe -- -m 注册邮箱地址
 pm2 start hbbs.exe -- -r hbbr运行所在主机的地址 -m 注册邮箱地址
+pm2 start hbbr.exe -- -m 注册邮箱地址
 pm2 save
 ```
 
@@ -35,7 +35,7 @@ pm2 log hbbs
 ```
 pm2 delete hbbr hbbs
 cd c:\rustdesk-server-windows-x64
-pm2 start hbbr.exe -- -m test@test.com
 pm2 start hbbs.exe -- -r test.hbbr.com -m test@test.com
+pm2 start hbbr.exe -- -m test@test.com
 pm2 save
 ```

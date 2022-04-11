@@ -34,12 +34,13 @@ Linux版本在Centos7構建，在 Centos7/8，Ubuntu 18/20上測試過，Debian�
 
 在服務器上運行 hbbs/hbbr (Centos 或 Ubuntu)。建議使用[pm2](https://pm2.keymetrics.io/) 管理服務。
 
-需要先運行 hbbr, 可以不帶任何參數;
-然後運行 hbbs:
 ```
 ./hbbs -r <hbbr運行所在主機的地址>
+./hbbr
 ```
+{{% notice note %}}
 hhbs的-r參數不是必須的，他只是方便你不用在客戶端指定中繼服務器。客戶端指定的中繼服務器優先級高於這個。
+{{% /notice %}}
 
 默認情況下，hbbs 監聽21114(tcp), 21115(tcp), 21116(tcp/udp), 21118(tcp)，hbbr 監聽21117(tcp), 21119(tcp)。務必在防火牆開啟這幾個端口， **請注意21116同時要開啟TCP和UDP**。其中21114是網頁控制台+API，21115是hbbs用作NAT類型測試，21116/UDP是hbbs用作ID註冊與心跳服務，21116/TCP是hbbs用作TCP打洞與連接服務，21117是hbbr用作中繼服務, 21118和21119是為了支持網頁客戶端。如果您不需要網頁控制端+API（21114）或者網頁客戶端（21118，21119）支持，對應端口可以不開。
 
@@ -51,8 +52,8 @@ hhbs的-r參數不是必須的，他只是方便你不用在客戶端指定中�
 #### Docker示範
 ```
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --rm rustdesk/rustdesk-server hbbr -m <registered_email>
 sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip> -m <registered_email>
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --rm rustdesk/rustdesk-server hbbr -m <registered_email>
 ```
 
 ### 步驟3: 在客戶端設置 hbbs/hbbr 地址
@@ -63,7 +64,9 @@ sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 2111
 
 在 ID 服務器輸入框中（被控端+主控端）輸入 hbbs 主機或 ip 地址，另外兩個地址可以不填，RustDesk會自動推導（如果沒有特別設定），中繼服務器指的是hbbr（21116）端口，API服務器指的是上面的網頁控制台+API（21114）。
 
-**請注意**圖中的Key不是指的註冊郵箱，[下節](#key)將會具體解釋。
+{{% notice note %}}
+圖中的Key不是指的註冊郵箱，[下節](#key)將會具體解釋。
+{{% /notice %}}
 
 例如:
 
@@ -91,4 +94,6 @@ cat ./id_ed25519.pub
 ./hbbr -k _
 ```
 
-***在控制台首頁也可以看到Key***
+{{% notice note %}}
+在控制台首頁也可以看到Key
+{{% /notice %}}

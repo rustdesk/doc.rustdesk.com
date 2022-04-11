@@ -28,18 +28,19 @@ chmod a+x hbbs hbbr
 Linux版本在Centos7构建，在 Centos7/8，Ubuntu 18/20上测试过，Debian系列的发行版本应该都没有问题。如果有其他发行版本需求，请联系我。
 
 #### 服务器要求
-硬件要求很低，最低配置的云服务器就可以了，CPU和内存要求都是最小的。关于网络大小，如果TCP打洞直连失败，就要耗费中继流量，一个中继连接的流量在30k-3M每秒之间（1920x1080屏幕），取决于清晰度设置和画面变化，如果只是办公需求，平均在100K。
+硬件要求很低，最低配置的云服务器就可以了，CPU和内存要求都是最小的。关于网络大小，如果TCP打洞直连失败，就要耗费中继流量，一个中继连接的流量在30k-3M每秒之间（1920x1080屏幕），取决于清晰度设置和画面变化。如果只是办公需求，平均在100K/s。
 
 ### 步骤2: 在服务器上运行 hbbs 和 hbbr
 
 在服务器上运行 hbbs/hbbr (Centos 或 Ubuntu)。建议使用[pm2](https://pm2.keymetrics.io/) 管理服务。
 
-需要先运行 hbbr, 可以不带任何参数;
-然后运行 hbbs:
 ```
 ./hbbs -r <hbbr运行所在主机的地址>
+./hbbr
 ```
+{{% notice note %}}
 hhbs的-r参数不是必须的，他只是方便你不用在客户端指定中继服务器。客户端指定的中继服务器优先级高于这个。
+{{% /notice %}}
 
 默认情况下，hbbs 监听21114(tcp), 21115(tcp), 21116(tcp/udp), 21118(tcp)，hbbr 监听21117(tcp), 21119(tcp)。务必在防火墙开启这几个端口， **请注意21116同时要开启TCP和UDP**。其中21114是网页控制台+API，21115是hbbs用作NAT类型测试，21116/UDP是hbbs用作ID注册与心跳服务，21116/TCP是hbbs用作TCP打洞与连接服务，21117是hbbr用作中继服务, 21118和21119是为了支持网页客户端。如果您不需要网页控制端+API（21114）或者网页客户端（21118，21119）支持，对应端口可以不开。
 
@@ -51,8 +52,8 @@ hhbs的-r参数不是必须的，他只是方便你不用在客户端指定中�
 #### Docker示范
 ```
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --rm rustdesk/rustdesk-server hbbr -m <registered_email>
 sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip> -m <registered_email>
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --rm rustdesk/rustdesk-server hbbr -m <registered_email>
 ```
 
 ### 步骤3: 在客户端设置 hbbs/hbbr 地址
@@ -63,7 +64,9 @@ sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 2111
 
 在 ID 服务器输入框中（被控端+主控端）输入 hbbs 主机或 ip 地址，另外两个地址可以不填，RustDesk会自动推导（如果没有特别设定），中继服务器指的是hbbr（21116）端口，API服务器指的是上面的网页控制台+API（21114）。
 
-**请注意**图中的Key不是指的注册邮箱，[下节](#key)将会具体解释。
+{{% notice note %}}
+图中的Key不是指的注册邮箱，[下节](#key)将会具体解释。
+{{% /notice %}}
 
 例如:
 
@@ -91,6 +94,8 @@ cat ./id_ed25519.pub
 ./hbbr -k _
 ```
 
-***在控制台首页也可以看到Key***
+{{% notice note %}}
+在控制台首页也可以看到Key
+{{% /notice %}}
 
 
