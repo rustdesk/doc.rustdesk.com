@@ -10,7 +10,7 @@ weight: 10
 
 [Download](https://github.com/rustdesk/rustdesk-server/) or use docker rustdesk/rustdesk-server, **Note:** You need [buy license](https://rustdesk.com/server/) When using this software
 
-Three platform versions provided:
+Platform versions provided:
   - Linux
   - Windows
 
@@ -19,11 +19,6 @@ Below tutorial is based on Linux build.
 There are two executables:
   - hbbs - RustDesk ID/Rendezvous server
   - hbbr - RustDesk relay server
-
-Do below after download
-```
-chmod a+x hbbs hbbr
-```
 
 They are built on Centos7, tested on Centos7/8, Ubuntu 18/20.
 
@@ -84,7 +79,8 @@ hbbs.yourhost.com:21116
 
 ![](/docs/en/self-host/install/images/server-set-window.png)
 
-### Key
+## Key
+-----------
 Different from the old version, the Key in this version is mandatory. When hbbs runs for the first time, it will automatically generate a pair of encrypted private key and public key (respectively located in the `id_ed25519` and `id_ed25519.pub` files in the running directory), its main purpose is for communication encryption, if you did not fill in the Key in the previous step (the content in the public key file `id_ed25519.pub`),
 
 ````

@@ -10,7 +10,7 @@ weight: 10
 
 [下载](https://gitee.com/rustdesk/rustdesk-server/)或者使用docker rustdesk/rustdesk-server，**注意**： 你需要[购买许可](https://rustdesk.com/server/)才能正常运行本程序
 
-提供三个版本：
+提供版本：
   - Linux
   - Windows
 
@@ -19,11 +19,6 @@ weight: 10
 有两个可执行文件:
   - hbbs - RustDesk ID注册服务器
   - hbbr - RustDesk 中继服务器
-
-下载后务必
-```
-chmod a+x hbbs hbbr
-```
 
 Linux版本在Centos7构建，在 Centos7/8，Ubuntu 18/20上测试过，Debian系列的发行版本应该都没有问题。如果有其他发行版本需求，请联系我。
 
@@ -81,7 +76,8 @@ hbbs.yourhost.com:21116
 ```
 ![](/docs/en/self-host/install/images/server-set-window-zh.png)
 
-### Key
+## Key
+-----------
 同上个版本不同，本版本中的Key是强制的，hbbs在第一次运行时，会自动产生一对加密私钥和公钥（分别位于运行目录下的`id_ed25519`和`id_ed25519.pub`文件中），其主要用途是为了通讯加密，如果您在上一步骤中没有填写Key(公钥文件`id_ed25519.pub`中的内容)，
 
 ```
