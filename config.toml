@@ -12,6 +12,7 @@ defaultContentLanguageInSubdir= true
   description = "Documentation for RustDesk"
   author = "RustDesk"
   showVisitedLinks = true
+  disableSearch = true
   disableBreadcrumb = false
   disableNextPrev = false
   disableLandingPageButton = true
@@ -30,12 +31,6 @@ title = "Documentation for RustDesk"
 weight = 1
 languageName = "English"
 landingPageName = "<i class='fas fa-home'></i> Home"
-
-[[Languages.en.menu.shortcuts]]
-name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
-identifier = "ds"
-url = "https://github.com/rustdesk/rustdesk"
-weight = 10
 
 [Languages.fr]
 title = "Documentation du RustDesk"
@@ -73,11 +68,6 @@ weight = 2
 languageName = "日本語"
 landingPageName = "<i class='fas fa-home'></i> ホームページ"
 
-[[Languages.fr.menu.shortcuts]]
-name = "<i class='fab fa-fw fa-github'></i> Repo GitHub"
-url = "https://github.com/rustdesk/rustdesk"
-weight = 10
-
 [Languages.zh-cn]
 title = "RustDesk文档"
 weight = 3
@@ -90,8 +80,8 @@ weight = 3
 languageName = "繁體中文"
 landingPageName = "<i class='fas fa-home'></i> 首頁"
 
-[[Languages.zh.menu.shortcuts]]
-name = "<i class='fab fa-fw fa-github'></i> GitHub 仓库"
+[[menu.shortcuts]]
+name = "<i class='fab fa-fw fa-github'></i> GitHub"
 identifier = "ds"
 url = "https://github.com/rustdesk/rustdesk"
 weight = 10
