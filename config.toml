@@ -74,6 +74,9 @@ weight = 3
 languageName = "简体中文"
 landingPageName = "<i class='fas fa-home'></i> 首页"
 
+[Languages.zh-cn.params]
+disable_cookie = true
+
 [Languages.zh-tw]
 title = "RustDesk文檔"
 weight = 3

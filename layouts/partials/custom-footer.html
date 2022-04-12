@@ -7,3 +7,51 @@
 
   gtag('config', 'G-WCJMDEZ618');
 </script>
+
+{{ if not .Site.Params.disable_cookie }}
+<div class="cookie-consent">
+  This website uses cookies to ensure you get the best experience on our website. <a target="_blank" rel="noopener"
+    href="https://www.cookiesandyou.com">Learn More</a>
+  <button class="toggle btn-got-it">Got it!</button>
+</div>
+<style>
+  .cookie-consent {
+    z-index: 9999;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding-left: 1rem;
+    width: 100%;
+    background: rgba(240, 240, 240, 1);
+    display: none;
+    line-height: 36px;
+    min-height: 36px;
+    box-shadow: 0 -3px 6px rgba(0,0,0,.16), 0 0 6px rgba(0,0,0,.23);
+    padding: 8px 1em;
+  }
+  .btn-got-it {
+    float: right;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 2em;
+    background: #024eff;
+    color: white;
+  }
+  .cookie-active {
+    display: block;
+  }
+</style>
+<script>
+  const cookieContainer = document.querySelector(".cookie-consent");
+  const cookieButton = document.querySelector(".btn-got-it");
+  cookieButton.addEventListener("click", () => {
+    cookieContainer.classList.remove("cookie-active");
+    localStorage.setItem("cookieBannerDisplayed", "true");
+  });
+  setTimeout(() => {
+    if (!localStorage.getItem("cookieBannerDisplayed")) {
+      cookieContainer.classList.add("cookie-active");
+    }
+  }, 2000);
+</script>
+{{ end }}
