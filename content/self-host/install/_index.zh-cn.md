@@ -45,10 +45,18 @@ hhbs的-r参数不是必须的，他只是方便你不用在客户端指定中�
 如果你想选择**自己的端口**，使用 “-h” 选项查看帮助。
 
 #### Docker示范
+##### Linux/amd64
 ```
 sudo docker image pull rustdesk/rustdesk-server
 sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip> -m <registered_email>
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --rm rustdesk/rustdesk-server hbbr -m <registered_email>
+```
+
+##### Linux/arm64v8
+```
+sudo docker image pull rustdesk/rustdesk-server:latest-arm64v8
+sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip> -m <registered_email>
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --rm rustdesk/rustdesk-server:latest-arm64v8 hbbr -m <registered_email>
 ```
 
 ### 步骤3: 在客户端设置 hbbs/hbbr 地址
