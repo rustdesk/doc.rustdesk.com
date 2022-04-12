@@ -10,10 +10,10 @@ Features:
 - Browse device connection logs
 
 ## Log in
-As mentioned earlier, the default port of the web console is 21114. Enter `http://<hbbs host>:21114` in the browser to enter the console page, as shown in the following figure (hbbs runs on the ip 192.168.1.143 server) as shown:
+As mentioned earlier, the default port of the web console is 21114. Enter `http://<hbbs host>:21114` in the browser to enter the console page, as shown in the following figure (hbbs runs on the ip 192.168.1.143 server):
 ![](/docs/en/self-host/console/images/console-login.png)
 
-If you need https support, please implemented by installing a web server such as `Nginx` by yourself.
+If you need https support, please install a web server such as `Nginx`.
 
 The default administrator username/password is admin/test1234, please be sure to change the password after logging in, select "Settings" in the account menu in the upper right corner to enter the password modification page, as shown in the following figure:
 ![](/docs/en/self-host/console/images/console-home.png)
