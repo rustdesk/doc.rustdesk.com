@@ -16,9 +16,10 @@ weight: 10
 
 以下针对Linux版本做使用说明。
 
-有两个可执行文件:
+有两个可执行文件和一个文件夹:
   - hbbs - RustDesk ID注册服务器
   - hbbr - RustDesk 中继服务器
+  - static - 该文件夹中包含网页控制台所有文件
 
 Linux版本在Centos7构建，在 Centos7/8，Ubuntu 18/20上测试过，Debian系列的发行版本应该都没有问题。如果有其他发行版本需求，请联系我。
 

@@ -16,9 +16,10 @@ Platform versions provided:
 
 Below tutorial is based on Linux build.
 
-There are two executables:
-  - hbbs - RustDesk ID/Rendezvous server
-  - hbbr - RustDesk relay server
+There are two executables and a folder:
+   - hbbs - RustDesk ID/Rendezvous server
+   - hbbr - RustDesk relay server
+   - static - this folder contains all web console files
 
 They are built on Centos7, tested on Centos7/8, Ubuntu 18/20.
 
