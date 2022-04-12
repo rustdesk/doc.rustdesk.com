@@ -85,3 +85,21 @@ name = "<i class='fab fa-fw fa-github'></i> GitHub"
 identifier = "ds"
 url = "https://github.com/rustdesk/doc.rustdesk.com"
 weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-fw fa-discord'></i> Discord"
+identifier = "dd"
+url = "https://discord.com/invite/nDceKgxnkV"
+weight = 20
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-fw fa-twitter'></i> Twitter"
+identifier = "tt"
+url = "https://twitter.com/rustdesk"
+weight = 30
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-fw fa-reddit'></i> Reddit"
+identifier = "rd"
+url = "https://www.reddit.com/r/rustdesk/"
+weight = 40
