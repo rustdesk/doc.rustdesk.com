@@ -10,3 +10,5 @@ chapter: true
 # Самостоятельный хост
 
 Wir entwickeln den Server kontinuierlich weiter. Wenn Sie Kommentare haben, nehmen Sie bitte an unserer [Discord](https://discord.com/invite/nDceKgxnkV)-Diskussion teil.
+
+{{% children depth="3" showhidden="true" %}}
