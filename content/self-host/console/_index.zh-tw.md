@@ -16,7 +16,7 @@ weight: 30
 如果您需要https支持，請自行安裝`Nginx`等網頁服務器實現。
 
 默認管理員用戶名/密碼是admin/test1234，請務必在登錄後修改密碼，選擇右上角賬號菜單裡的”設置“進入密碼修改頁面，如下圖所示：
-![](/docs/en/self-host/console/images/console-home.png)
+![](/docs/en/self-host/console/images/console-home.png?v2)
 
 ## Windows EXE
 對於Windows客戶端，您可以免填自定義服務器配置，而是將配置信息放在`RustDesk.exe`文件名中。如上圖所示，請進入控制台歡迎頁面，然後點擊`Windows EXE`。

@@ -16,7 +16,7 @@ weight: 30
 如果您需要https支持，请自行安装`Nginx`等网页服务器实现。
 
 默认管理员用户名/密码是admin/test1234，请务必在登录后修改密码，选择右上角账号菜单里的”设置“进入密码修改页面，如下图所示：
-![](/docs/en/self-host/console/images/console-home-zh.png)
+![](/docs/en/self-host/console/images/console-home-zh.png?v2)
 
 ## Windows EXE
 对于Windows客户端，您可以免填自定义服务器配置，而是将配置信息放在`RustDesk.exe`文件名中。如上图所示，请进入控制台欢迎页面，然后点击`Windows EXE`。
