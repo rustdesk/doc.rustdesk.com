@@ -8,7 +8,7 @@ weight: 10
 
 ### STEP-1 : Download server-side software programs
 
-[Download](https://github.com/rustdesk/rustdesk-server/) or use docker rustdesk/rustdesk-server.
+[Download](https://github.com/rustdesk/rustdesk-server/) or use docker [rustdesk/rustdesk-server](https://hub.docker.com/r/rustdesk/rustdesk-server/tags).
 
 <!-- **Note:** You need [buy license](https://rustdesk.com/server/) When using this software -->
 

@@ -8,7 +8,7 @@ weight: 10
 
 ### 步骤1: 下载服务器端软件程序
 
-[下载](https://gitee.com/rustdesk/rustdesk-server/)或者使用docker rustdesk/rustdesk-server。
+[下载](https://gitee.com/rustdesk/rustdesk-server/)或者使用docker [rustdesk/rustdesk-server](https://hub.docker.com/r/rustdesk/rustdesk-server/tags)。
 
 <!-- **注意**： 你需要[购买许可](https://rustdesk.com/server/)才能正常运行本程序 -->
 
