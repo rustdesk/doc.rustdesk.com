@@ -8,7 +8,9 @@ weight: 10
 
 ### STEP-1 : Download server-side software programs
 
-[Download](https://github.com/rustdesk/rustdesk-server/) or use docker rustdesk/rustdesk-server, **Note:** You need [buy license](https://rustdesk.com/server/) When using this software
+[Download](https://github.com/rustdesk/rustdesk-server/) or use docker rustdesk/rustdesk-server.
+
+<!-- **Note:** You need [buy license](https://rustdesk.com/server/) When using this software -->
 
 Platform versions provided:
   - Linux
@@ -32,9 +34,14 @@ The hardware requirements are very low, the minimum configuration of the cloud s
 Run hbbs/hbbr on your server (Centos or Ubuntu). We suggust you use [pm2](https://pm2.keymetrics.io/) managing your service.
 
 ```
-./hbbs -r <relay-server-ip>
-./hbbr
+./hbbs -r <relay-server-ip> -m <registered_email>
+./hbbr -m <registered_email>
 ```
+
+{{% notice note %}}
+**Please input `demo` for <registered_email> for trial.**
+{{% /notice %}}
+
 {{% notice note %}}
 The -r parameter of hhbs is not necessary, it is just convenient for you not to specify a relay server on the client side. The relay server specified by the client has a higher priority than this.
 {{% /notice %}}

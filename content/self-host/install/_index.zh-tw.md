@@ -31,9 +31,14 @@ Linux版本在Centos7構建，在 Centos7/8，Ubuntu 18/20上測試過，Debian�
 在服務器上運行 hbbs/hbbr (Centos 或 Ubuntu)。建議使用[pm2](https://pm2.keymetrics.io/) 管理服務。
 
 ```
-./hbbs -r <hbbr運行所在主機的地址>
-./hbbr
+./hbbs -r <hbbr運行所在主機的地址> -m <registered_email>
+./hbbr -m <registered_email>
 ```
+
+{{% notice note %}}
+**請為 <registered_email> 輸入 `demo` 進行試用。**
+{{% /notice %}}
+
 {{% notice note %}}
 hhbs的-r參數不是必須的，他只是方便你不用在客戶端指定中繼服務器。客戶端指定的中繼服務器優先級高於這個。
 {{% /notice %}}

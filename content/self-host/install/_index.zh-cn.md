@@ -8,7 +8,9 @@ weight: 10
 
 ### 步骤1: 下载服务器端软件程序
 
-[下载](https://gitee.com/rustdesk/rustdesk-server/)或者使用docker rustdesk/rustdesk-server，**注意**： 你需要[购买许可](https://rustdesk.com/server/)才能正常运行本程序
+[下载](https://gitee.com/rustdesk/rustdesk-server/)或者使用docker rustdesk/rustdesk-server。
+
+<!-- **注意**： 你需要[购买许可](https://rustdesk.com/server/)才能正常运行本程序 -->
 
 提供版本：
   - Linux
@@ -31,9 +33,14 @@ Linux版本在Centos7构建，在 Centos7/8，Ubuntu 18/20上测试过，Debian�
 在服务器上运行 hbbs/hbbr (Centos 或 Ubuntu)。建议使用[pm2](https://pm2.keymetrics.io/) 管理服务。
 
 ```
-./hbbs -r <hbbr运行所在主机的地址>
-./hbbr
+./hbbs -r <hbbr运行所在主机的地址> -m <registered_email>
+./hbbr -m <registered_email>
 ```
+
+{{% notice note %}}
+**请为 <registered_email> 输入 `demo` 进行试用。**
+{{% /notice %}}
+
 {{% notice note %}}
 hhbs的-r参数不是必须的，他只是方便你不用在客户端指定中继服务器。客户端指定的中继服务器优先级高于这个。
 {{% /notice %}}
