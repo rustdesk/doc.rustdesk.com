@@ -7,6 +7,12 @@ theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
 
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+# use icon https://github.com/matcornic/hugo-theme-learn/issues/363
+
 [params]
   editURL = "https://github.com/rustdesk/doc.rustdesk.com/edit/master/content/"
   description = "Documentation for RustDesk"
