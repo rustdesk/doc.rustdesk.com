@@ -32,7 +32,7 @@ weight: 22
 - 开启 auto-restart
 ![](/docs/en/self-host/synogy/images/auto-restart.png?height=500px) 
 
-- 选择 host net, 关于 host net的更多解释，请[查看](/docs/zh-cn/self-host/install/#net-host)
+- 开启 "Use the same network as Docker host", 关于 host net的更多解释，请[查看](/docs/zh-cn/self-host/install/#net-host)
 ![](/docs/en/self-host/synogy/images/host-net.png?height=500px) 
 
 - 将容器里的 home 目录 `/root` 挂在到宿主目录(比如 `Shared/test/`), hbbr将把产生的文件放在该目录。

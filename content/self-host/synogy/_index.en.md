@@ -31,7 +31,7 @@ Click on above "Advanced Settings".
 - Enable auto-restart
 ![](/docs/en/self-host/synogy/images/auto-restart.png?height=500px) 
 
-- Choose host net, for more about host net, please [check](/docs/en/self-host/install/#net-host)
+- Enable "Use the same network as Docker host", for more about host net, please [check](/docs/en/self-host/install/#net-host)
 ![](/docs/en/self-host/synogy/images/host-net.png?height=500px) 
 
 - Mount a host directory (e.g. `Shared/test/`) to `/root`, hbbs's will generate some files in this directory
