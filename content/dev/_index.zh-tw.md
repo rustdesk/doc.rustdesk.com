@@ -1,11 +1,11 @@
 ---
 title: 開發
 weight: 8
-pre: "<b>2. </b>"
+pre: "<b>3. </b>"
 chapter: true
 ---
 
-### Chapter 2
+### Chapter 3
 
 # 開發
 

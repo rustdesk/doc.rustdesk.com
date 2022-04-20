@@ -1,11 +1,11 @@
 ---
 title: Self-host
 weight: 5
-pre: "<b>1. </b>"
+pre: "<b>2. </b>"
 chapter: true
 ---
 
-### Capitolo 1
+### Capitolo 2
 
 # Self-host
 

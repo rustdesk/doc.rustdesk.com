@@ -1,11 +1,11 @@
 ---
 title: 自建服務器
 weight: 5
-pre: "<b>1. </b>"
+pre: "<b>2. </b>"
 chapter: true
 ---
 
-### 章節 1
+### 章節 2
 
 # 自建服務器
 

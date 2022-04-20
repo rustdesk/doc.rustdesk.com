@@ -1,11 +1,11 @@
 ---
 title: Auto-hébergeur
 weight: 5
-pre: "<b>1. </b>"
+pre: "<b>2. </b>"
 chapter: true
 ---
 
-### Chapitre 1
+### Chapitre 2
 
 # Auto-hébergeur
 

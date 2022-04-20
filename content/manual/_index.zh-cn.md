@@ -1,12 +1,12 @@
 ---
 title: 使用手册
-weight: 8
-pre: "<b>3. </b>"
+weight: 2
+pre: "<b>1. </b>"
 chapter: true
 ---
 
-### Chapter 3
+### Chapter 1
 
 # 使用手册
 
-{{% children depth="3" showhidden="true" %}}
+{{% children depth="1" showhidden="true" %}}

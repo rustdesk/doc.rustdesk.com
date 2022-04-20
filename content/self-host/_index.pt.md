@@ -1,11 +1,11 @@
 ---
 title: Auto-hospedagem
 weight: 5
-pre: "<b>1. </b>"
+pre: "<b>2. </b>"
 chapter: true
 ---
 
-### Capítulo 1
+### Capítulo 2
 
 # Auto-hospedagem
 
