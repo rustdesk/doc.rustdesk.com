@@ -18,7 +18,7 @@ weight: 2
 
 根據需要，配置各項權限，每次啟動RustDesk後，"屏幕錄製"以及“輸入控制"權限都再次重新申請。
 
-![](/docs/en/manual/mobile/images/server_page_zh.jpg?width=300px)
+![](/docs/en/manual/mobile/images/server_off_zh.jpg?width=300px)
 
 | 權限             | 說明                                                     |
 | --------------- | -------------------------------------------------------- |

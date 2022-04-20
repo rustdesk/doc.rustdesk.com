@@ -19,7 +19,7 @@ Click on `Share Screen` from the bottom navigation bar
 
 Configure various permissions as needed. Every time you start RustDesk, you need to request "Screen Capture" and "Input Control" permissions again.
 
-![](/docs/en/manual/mobile/images/server_page_zh.jpg?width=300px)
+![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px)
 
 | Permissions     | Description                                               |
 | --------------- | --------------------------------------------------------- |
@@ -36,12 +36,12 @@ Above * represents special permissions. To obtain such permissions, you need to 
 
 | Requesting Android file permissions will automatically jump to the system settings page |
 | :---------------: |
-| ![](/docs/en/manual/mobile/images/get_file_zh.jpg?width=300px) |
+| ![](/docs/en/manual/mobile/images/get_file_en.jpg?width=300px) |
 
 #### **Special Permission Request - mouse input**
 | Step 1 Find "Installed Services" | Step 2 Start RustDesk Input |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/get_input1_zh.png?width=300px) | ![](/docs/en/manual/mobile/images/get_input2_zh.jpg?width=300px) |
+| ![](/docs/en/manual/mobile/images/get_input1_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/get_input2_en.jpg?width=300px) |
 
 {{% notice note %}}
 The system setting page of different vendors may be different, please adjust it according to your system page
@@ -64,7 +64,7 @@ After the service is started, a unique ID and random password will be automatica
 
 | Before starting the service | After starting the service |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/server_off_zh.jpg?width=300px) | ![](/docs/en/manual/mobile/images/server_on_zh.jpg?width=300px) |
+| ![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) |
 
 {{% notice note %}}
 1. Clicking `Start Service` will enable the `Screen capture` permission by default.
@@ -74,9 +74,9 @@ After the service is started, a unique ID and random password will be automatica
 
 **PC:**
 
-![](/docs/en/manual/mobile/images/android_server_pc_side_zh.png?width=700px)
+![](/docs/en/manual/mobile/images/android_server_pc_side_en.png?width=700px)
 
 **Mobile terminal:**
 | You can stop the service or close the specified connection at any time | You can receive or initiate chats |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/android_server1_zh.jpg?width=300px) | ![](/docs/en/manual/mobile/images/android_server2_zh.jpg?width=300px) |
+| ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/android_server2_en.jpg?width=300px) |
