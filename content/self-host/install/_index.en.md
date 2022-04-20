@@ -8,7 +8,9 @@ weight: 10
 
 ### STEP-1 : Download server-side software programs
 
-[Download](https://github.com/rustdesk/rustdesk-server/) or use docker rustdesk/rustdesk-server, **Note:** You need [buy license](https://rustdesk.com/server/) When using this software
+[Download](https://github.com/rustdesk/rustdesk-server/) or use docker [rustdesk/rustdesk-server](https://hub.docker.com/r/rustdesk/rustdesk-server/tags).
+
+<!-- **Note:** You need [buy license](https://rustdesk.com/server/) When using this software -->
 
 Platform versions provided:
   - Linux
@@ -32,9 +34,14 @@ The hardware requirements are very low, the minimum configuration of the cloud s
 Run hbbs/hbbr on your server (Centos or Ubuntu). We suggust you use [pm2](https://pm2.keymetrics.io/) managing your service.
 
 ```
-./hbbs -r <relay-server-ip>
-./hbbr
+./hbbs -r <relay-server-ip> -m <registered_email>
+./hbbr -m <registered_email>
 ```
+
+{{% notice note %}}
+**Please input `demo` for <registered_email> for trial.**
+{{% /notice %}}
+
 {{% notice note %}}
 The -r parameter of hhbs is not necessary, it is just convenient for you not to specify a relay server on the client side. The relay server specified by the client has a higher priority than this.
 {{% /notice %}}
@@ -51,16 +58,22 @@ Please run with "-h" option to see help if you wanna choose your own port.
 ##### Linux/amd64
 ```
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip> -m <registered_email>
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --rm rustdesk/rustdesk-server hbbr -m <registered_email>
+sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip> -m <registered_email>
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbr -m <registered_email>
 ```
 
 ##### Linux/arm64v8
 ```
 sudo docker image pull rustdesk/rustdesk-server:latest-arm64v8
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip> -m <registered_email>
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --rm rustdesk/rustdesk-server:latest-arm64v8 hbbr -m <registered_email>
+sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip> -m <registered_email>
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbr -m <registered_email>
 ```
+
+{{% notice note %}}
+--net=host only works on Linux so far as I know, which make hbbs/hbbr can see the real incomming ip rather than contain ip (172.17.0.1)
+
+**Please remove --net=host if see connection problem no your platform**
+{{% /notice %}}
 
 
 ### STEP-3 : Set hbbs/hbbr address on client-side

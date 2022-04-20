@@ -8,7 +8,9 @@ weight: 10
 
 ### 步骤1: 下载服务器端软件程序
 
-[下载](https://gitee.com/rustdesk/rustdesk-server/)或者使用docker rustdesk/rustdesk-server，**注意**： 你需要[购买许可](https://rustdesk.com/server/)才能正常运行本程序
+[下载](https://gitee.com/rustdesk/rustdesk-server/)或者使用docker [rustdesk/rustdesk-server](https://hub.docker.com/r/rustdesk/rustdesk-server/tags)。
+
+<!-- **注意**： 你需要[购买许可](https://rustdesk.com/server/)才能正常运行本程序 -->
 
 提供版本：
   - Linux
@@ -31,9 +33,14 @@ Linux版本在Centos7构建，在 Centos7/8，Ubuntu 18/20上测试过，Debian�
 在服务器上运行 hbbs/hbbr (Centos 或 Ubuntu)。建议使用[pm2](https://pm2.keymetrics.io/) 管理服务。
 
 ```
-./hbbs -r <hbbr运行所在主机的地址>
-./hbbr
+./hbbs -r <hbbr运行所在主机的地址> -m <registered_email>
+./hbbr -m <registered_email>
 ```
+
+{{% notice note %}}
+**请为 <registered_email> 输入 `demo` 进行试用。**
+{{% /notice %}}
+
 {{% notice note %}}
 hhbs的-r参数不是必须的，他只是方便你不用在客户端指定中继服务器。客户端指定的中继服务器优先级高于这个。
 {{% /notice %}}
@@ -49,16 +56,22 @@ hhbs的-r参数不是必须的，他只是方便你不用在客户端指定中�
 ##### Linux/amd64
 ```
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip> -m <registered_email>
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --rm rustdesk/rustdesk-server hbbr -m <registered_email>
+sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip> -m <registered_email>
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbr -m <registered_email>
 ```
 
 ##### Linux/arm64v8
 ```
 sudo docker image pull rustdesk/rustdesk-server:latest-arm64v8
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip> -m <registered_email>
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --rm rustdesk/rustdesk-server:latest-arm64v8 hbbr -m <registered_email>
+sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip> -m <registered_email>
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbr -m <registered_email>
 ```
+
+{{% notice note %}}
+据我所知，--net=host 仅适用于 Linux，它让 hbbs/hbbr 可以看到对方真实的ip, 而不是固定的容器ip (172.17.0.1)
+
+**请去掉 --net=host，如果您在非Linux系统上遇到无法连接的问题**
+{{% /notice %}}
 
 ### 步骤3: 在客户端设置 hbbs/hbbr 地址
 
