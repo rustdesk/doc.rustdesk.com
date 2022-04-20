@@ -67,8 +67,11 @@ sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 2111
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbr -m <registered_email>
 ```
 
+<a name="net-host"></a>
+
 {{% notice note %}}
-据我所知，--net=host 仅适用于 Linux，它让 hbbs/hbbr 可以看到对方真实的ip, 而不是固定的容器ip (172.17.0.1)
+据我所知，--net=host 仅适用于 Linux，它让 hbbs/hbbr 可以看到对方真实的ip, 而不是固定的容器ip (172.17.0.1)。
+如果--net=host运行正常，-p选项就不起作用了, 可以去掉。
 
 **请去掉 --net=host，如果您在非Linux系统上遇到无法连接的问题**
 {{% /notice %}}
