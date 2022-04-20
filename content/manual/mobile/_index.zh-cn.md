@@ -56,7 +56,7 @@ weight: 1
 ------
 通过底部导航栏点击`设置`，进入设置页面点击`ID/中继服务器`。
 输入并提交后会自动切换至指定服务器。
-也可以通过右上角扫描二维码。
+也可以通过右上角扫描[二维码](http://localhost:1313/docs/en/self-host/console/images/console-home-zh.png?v2)。
 下图是安卓截图，如果是iOS，对应选项在主界面右上角菜单中。
 
 ![](/docs/en/manual/mobile/images/id_setting_zh.png?width=300px)

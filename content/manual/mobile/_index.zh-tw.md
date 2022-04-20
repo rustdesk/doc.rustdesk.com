@@ -56,7 +56,7 @@ weight: 1
 ------
 通過底部導航欄點擊`設置`，進入設置頁麵點擊`ID/中繼服務器`。
 輸入並提交後會自動切換至指定服務器。
-也可以通過右上角掃描二維碼。
+也可以通過右上角掃描[二維碼](http://localhost:1313/docs/en/self-host/console/images/console-home.png?v2)。
 下圖是安卓截圖，如果是iOS，對應選項在主界面右上角菜單中。
 
 ![](/docs/en/manual/mobile/images/id_setting_zh.png?width=300px)

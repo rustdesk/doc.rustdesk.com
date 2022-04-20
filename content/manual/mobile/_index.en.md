@@ -56,8 +56,8 @@ Long press or tap more options on the right to select `File Transfer`
 ------
 Click `Settings` on the bottom navigation bar, enter the settings page and click `ID/Relay Server`.
 After entering and submitting, it will automatically switch to the specified server.
-You can also scan the QR code through the upper right corner.
-The picture below is a screenshot of Android. If it is iOS, the corresponding options are in the menu in the upper right corner of the main interface.
+You can also configure by scanning [QR code](https://rustdesk.com/docs/en/self-host/console/images/console-home.png?v2).
+The picture below is a screenshot of Android. If it is iOS, please check top-right menu on the home page.
 
 ![](/docs/en/manual/mobile/images/id_setting_en.jpg?width=300px)
 
