@@ -16,6 +16,7 @@ weight: 30
 如果您需要https支持，請自行安裝`Nginx`等網頁服務器實現。
 
 默認管理員用戶名/密碼是admin/test1234，請務必在登錄後修改密碼，選擇右上角賬號菜單裡的”設置“進入密碼修改頁面，如下圖所示：
+<a name=console-home></a>
 ![](/docs/en/self-host/console/images/console-home.png?v2)
 
 ## Windows EXE

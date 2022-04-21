@@ -111,20 +111,22 @@ hbbs.yourhost.com:21116
 
 ## Key
 -----------
-Different from the old version, the key in this version is mandatory, but you don't need to set it yourself. When hbbs runs for the first time, it will automatically generate a pair of encrypted private key and public key (respectively located in the `id_ed25519` and `id_ed25519.pub` files in the running directory), its main purpose is for communication encryption, if you did not fill in the Key in the previous step (the content in the public key file `id_ed25519.pub`), does not affect the connection, but the connection cannot be encrypted. 
+Different from the old version, the key in this version is mandatory, but you don't need to set it yourself. When hbbs runs for the first time, it will automatically generate a pair of encrypted private key and public key (respectively located in the `id_ed25519` and `id_ed25519.pub` files in the running directory), the main purpose is for communication encryption.
+
+If you did not fill in the `Key:` (the content in the public key file `id_ed25519.pub`) in the previous step, it does not affect the connection, but the connection cannot be encrypted. 
 
 ````
 cat ./id_ed25519.pub
 ````
 
-If you prohibit users without key from establishing non-encrypted connections, please add the `-k _` parameter when running hbbs and hbbr, for example:
+If you wanna prohibit users without key from establishing non-encrypted connections, please add the `-k _` parameter when running hbbs and hbbr, for example:
 ````
 ./hbbs -r <address of the host where hbbr is running> -k _
 ./hbbr -k _
 ````
 
-If you wanna change key, please remove `id_ed25519` and `id_ed25519.pub` files and restart hbbs/hbbr.
+If you wanna change key, please remove `id_ed25519` and `id_ed25519.pub` files and restart hbbs/hbbr，hbbs will generate new key pair.
 
 {{% notice note %}}
-Key can also be seen on the [console](/docs/en/self-host/console/) welcome page (Click on Windows EXE).
+Key can also be seen on the [console](/docs/en/self-host/console/#console-home) welcome page (Click on Windows EXE).
 {{% /notice %}}

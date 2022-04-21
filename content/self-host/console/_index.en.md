@@ -16,6 +16,7 @@ As mentioned earlier, the default port of the web console is 21114. Enter `http:
 If you need https support, please install a web server such as `Nginx`.
 
 The default administrator username/password is admin/test1234, please be sure to change the password after logging in, select "Settings" in the account menu in the upper right corner to enter the password modification page, as shown in the following figure:
+<a name=console-home></a>
 ![](/docs/en/self-host/console/images/console-home.png?v2)
 
 ## Windows EXE

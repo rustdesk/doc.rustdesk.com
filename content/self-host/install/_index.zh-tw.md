@@ -107,20 +107,22 @@ hbbs.yourhost.com:21116
 
 ## Key
 -----------
-同上個版本不同，本版本中的Key是強制的，但是不用你自己設置。hbbs在第一次運行時，會自動產生一對加密私鑰和公鑰（分別位於運行目錄下的`id_ed25519`和`id_ed25519.pub`文件中），其主要用途是為了通訊加密，如果您在上一步驟中沒有填寫Key(公鑰文件`id_ed25519.pub`中的內容)，不影響連接，但是連接無法加密。
+同上個版本不同，本版本中的key是強制的，但是不用你自己設置。hbbs在第一次運行時，會自動產生一對加密私鑰和公鑰（分別位於運行目錄下的`id_ed25519`和`id_ed25519.pub`文件中），其主要用途是為了通訊加密。
+
+如果您在上一步驟中沒有填寫`Key:`(公鑰文件`id_ed25519.pub`中的內容)，不影響連接，但是連接無法加密。
 
 ```
 cat ./id_ed25519.pub
 ```
-如果您禁止沒有Key的用戶建立非加密連接，請在運行hbbs和hbbr的時候添加`-k _ `參數，例如:
+如果您禁止沒有key的用戶建立非加密連接，請在運行hbbs和hbbr的時候添加`-k _ `參數，例如:
 
 ```
 ./hbbs -r <hbbr運行所在主機的地址> -k _
 ./hbbr -k _
 ```
 
-如果要更改key，請刪除 `id_ed25519` 和 `id_ed25519.pub` 文件並重新啟動 hbbs/hbbr。
+如果要更改key，請刪除 `id_ed25519` 和 `id_ed25519.pub` 文件並重新啟動 hbbs/hbbr，hbbs將會產生新的密鑰對。
 
 {{% notice note %}}
-在[控制台](/docs/zh-tw/self-host/console/)歡迎頁面（點擊Windows EXE）也可以看到Key。
+在[控制台](/docs/zh-tw/self-host/console/#console-home)歡迎頁面（點擊Windows EXE）也可以看到Key。
 {{% /notice %}}
