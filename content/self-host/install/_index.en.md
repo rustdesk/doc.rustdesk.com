@@ -111,13 +111,13 @@ hbbs.yourhost.com:21116
 
 ## Key
 -----------
-Different from the old version, the Key in this version is mandatory. When hbbs runs for the first time, it will automatically generate a pair of encrypted private key and public key (respectively located in the `id_ed25519` and `id_ed25519.pub` files in the running directory), its main purpose is for communication encryption, if you did not fill in the Key in the previous step (the content in the public key file `id_ed25519.pub`),
+Different from the old version, the key in this version is mandatory, but you don't need to set it yourself. When hbbs runs for the first time, it will automatically generate a pair of encrypted private key and public key (respectively located in the `id_ed25519` and `id_ed25519.pub` files in the running directory), its main purpose is for communication encryption, if you did not fill in the Key in the previous step (the content in the public key file `id_ed25519.pub`), does not affect the connection, but the connection cannot be encrypted. 
 
 ````
 cat ./id_ed25519.pub
 ````
 
-does not affect the connection, but the connection cannot be encrypted. If you prohibit users without keys from establishing non-encrypted connections, please add the `-k _` parameter when running hbbs and hbbr, for example:
+If you prohibit users without key from establishing non-encrypted connections, please add the `-k _` parameter when running hbbs and hbbr, for example:
 ````
 ./hbbs -r <address of the host where hbbr is running> -k _
 ./hbbr -k _
