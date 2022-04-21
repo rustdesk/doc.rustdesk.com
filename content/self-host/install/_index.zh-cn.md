@@ -119,6 +119,8 @@ cat ./id_ed25519.pub
 ./hbbr -k _
 ```
 
+如果要更改key，请删除 `id_ed25519` 和 `id_ed25519.pub` 文件并重新启动 hbbs/hbbr。
+
 {{% notice note %}}
 在[控制台](/docs/zh-cn/self-host/console/)欢迎页面（点击Windows EXE）也可以看到Key。
 {{% /notice %}}

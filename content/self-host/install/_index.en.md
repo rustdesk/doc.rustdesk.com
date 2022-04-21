@@ -123,6 +123,8 @@ If you prohibit users without key from establishing non-encrypted connections, p
 ./hbbr -k _
 ````
 
+If you wanna change key, please remove `id_ed25519` and `id_ed25519.pub` files and restart hbbs/hbbr.
+
 {{% notice note %}}
 Key can also be seen on the [console](/docs/en/self-host/console/) welcome page (Click on Windows EXE).
 {{% /notice %}}
