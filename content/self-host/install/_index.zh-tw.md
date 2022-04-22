@@ -37,18 +37,29 @@ Linux版本在Centos7構建，在 Centos7/8，Ubuntu 18/20上測試過，Debian�
 ./hbbr -m <registered_email>
 ```
 
-{{% notice note %}}
-**請為 <registered_email> 輸入 `demo` 進行試用。**
-{{% /notice %}}
+或者使用 pm2 運行 hbbs/hbbr
 
+```
+pm2 start hbbs -- -r <relay-server-ip> -m <registered_email>
+pm2 start hbbr -- -m <registered_email>
+```
+
+<a name="demo"></a>
 {{% notice note %}}
-hhbs的-r參數不是必須的，他只是方便你不用在客戶端指定中繼服務器。客戶端指定的中繼服務器優先級高於這個。
+**請為 <registered_email> 輸入 `demo` 運行試用**
+
+
+`pm2` 需要 nodejs v16+，如果你運行 pm2 失敗（例如在 `pm2 list` 中看不到 hbbs/hbbr），請從 https://nodejs.org 下載並安裝 LTS 版本的 nodejs。如果你想讓 hbbs/hbbr 在重啟後自動運行，請查看 `pm2 save` 和 `pm2 startup`。更多關於 [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/)。另一個不錯的日誌工具是 [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate)。
+
+
+hhbs的`-r`參數不是必須的，他只是方便你不用在客戶端指定中繼服務器。客戶端指定的中繼服務器優先級高於這個。
+
 {{% /notice %}}
 
 默認情況下，hbbs 監聽21114(tcp), 21115(tcp), 21116(tcp/udp), 21118(tcp)，hbbr 監聽21117(tcp), 21119(tcp)。務必在防火牆開啟這幾個端口， **請注意21116同時要開啟TCP和UDP**。其中21114是網頁控制台+API，21115是hbbs用作NAT類型測試，21116/UDP是hbbs用作ID註冊與心跳服務，21116/TCP是hbbs用作TCP打洞與連接服務，21117是hbbr用作中繼服務, 21118和21119是為了支持網頁客戶端。如果您不需要網頁控制台+API（21114）或者網頁客戶端（21118，21119）支持，對應端口可以不開。
 
-- TCP(21114, 21115, 21116, 21117, 21118, 21119)
-- UDP(21116)
+- TCP(**21114, 21115, 21116, 21117, 21118, 21119**)
+- UDP(**21116**)
 
 如果你想選擇**自己的端口**，使用 “-h” 選項查看幫助。
 

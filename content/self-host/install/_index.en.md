@@ -38,18 +38,26 @@ Run hbbs/hbbr on your server (Centos or Ubuntu). We suggust you use [pm2](https:
 ./hbbr -m <registered_email>
 ```
 
-{{% notice note %}}
-**Please input `demo` for <registered_email> for trial.**
-{{% /notice %}}
+or run hbbs/hbbr with pm2
 
+```
+pm2 start hbbs -- -r <relay-server-ip> -m <registered_email>
+pm2 start hbbr -- -m <registered_email>
+```
+
+<a name="demo"></a>
 {{% notice note %}}
-The -r parameter of hhbs is not necessary, it is just convenient for you not to specify a relay server on the client side. The relay server specified by the client has a higher priority than this.
+**Please input `demo` for <registered_email> for trial**
+
+pm2 requires nodejs v16+, if you fail to run pm2 (e.g. you can not see hbbs/hbbr in `pm2 list`), please download and install LTS version nodejs from https://nodejs.org. If you wanna make hbbs/hbbr auto-run after reboot, please check out `pm2 save` and `pm2 startup`. More about [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Another good tool for you log is [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
+
+The `-r` parameter of hhbs is not necessary, it is just convenient for you not to specify a relay server on the client side. The relay server specified by the client has a higher priority than this.
 {{% /notice %}}
 
 By default, hbbs listens on 21114(tcp), 21115(tcp) and 21116(tcp/udp), 21118(tcp), hbbr listens on 21117(tcp), 21119(tcp). Be sure to open these ports in the firewall. **Please note that 21116 should be enabled both for TCP and UDP**. 21114 is for web console + API, 21115 is used for NAT type test, 21116/UDP is used for ID registration and heartbeat service, 21116/TCP is used for TCP hole punching and connection service, 21117 is used for Relay services, 21118 and 21119 are used to support web clients. If you do not need web console + API (21114) or web client (21118, 21119) support, the corresponding ports can be disabled.
 
-- TCP(21114, 21115, 21116, 21117, 21118, 21119)
-- UDP(21116)
+- TCP(**21114, 21115, 21116, 21117, 21118, 21119**)
+- UDP(**21116**)
 
 Please run with "-h" option to see help if you wanna choose your own port.
 
