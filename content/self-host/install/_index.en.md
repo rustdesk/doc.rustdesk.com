@@ -3,6 +3,10 @@ title: Installation
 weight: 10
 ---
 
+{{% notice note %}}
+Self-hosted server software is not free, you can use demo license for trial.
+{{% /notice %}}
+
 ## Set up your own cloud by following simple steps
 -----------
 
