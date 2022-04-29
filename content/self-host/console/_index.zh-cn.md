@@ -20,7 +20,8 @@ weight: 30
 ![](/docs/en/self-host/console/images/console-home-zh.png?v2)
 
 ## Windows EXE
-对于Windows客户端，您可以免填自定义服务器配置，而是将配置信息放在`RustDesk.exe`文件名中。如上图所示，请进入控制台欢迎页面，然后点击`Windows EXE`。
+对于Windows客户端，您可以免填自定义服务器配置，而是将配置信息放在`RustDesk.exe`文件名中。如上图所示，请进入控制台欢迎页面，然后点击`Windows EXE`。 **`客户端需要1.1.9以上版本`**。
+
 
 ## 设备访问权限
 有两种方式可以将设备关联到用户：
