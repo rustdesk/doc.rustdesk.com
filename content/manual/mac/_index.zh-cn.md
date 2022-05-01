@@ -14,6 +14,12 @@ weight: 3
 
 ![](/docs/en/manual/mac/images/tray.png)
 
+### 允许 RustDesk 运行
+
+| 解锁改变 | 点击"App Store and identified developers"  |
+| ---- | ---- |
+|![](/docs/en/manual/mac/images/allow2.png)|![](/docs/en/manual/mac/images/allow.png)|
+
 ### 启用权限
 
 为了获得捕获屏幕的能力，您需要授予 `RustDesk` **辅助功能** 权限和 **屏幕录制** 权限。 RustDesk 将引导您进入设置窗口。

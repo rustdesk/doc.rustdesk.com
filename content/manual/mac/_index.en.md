@@ -14,6 +14,12 @@ Make sure you have quit all running RustDesk. Also make sure you quit the RustDe
 
 ![](/docs/en/manual/mac/images/tray.png)
 
+### Allow RustDesk run
+
+| Unlock to change | Click on "App Store and identified developers" |
+| ---- | ---- |
+|![](/docs/en/manual/mac/images/allow2.png)|![](/docs/en/manual/mac/images/allow.png)|
+
 ### Enable Permissions
 
 To capture screen, you need to grant `RustDesk` **accessibility** permission and **screen recording** permission. RustDesk will guide you to the settings window.
