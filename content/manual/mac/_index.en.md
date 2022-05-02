@@ -26,14 +26,14 @@ To capture screen, you need to grant `RustDesk` **accessibility** permission and
 
 | RustDesk Windows | Settings Window |
 | ---- | ---- |
-|![](/docs/en/manual/mac/images/acc.png)|![](/docs/en/manual/mac/images/acc3.png)|
+|![](/docs/en/manual/mac/images/acc.png)|![](/docs/en/manual/mac/images/acc3.png?v2)|
 
 If you have enabled it in the settings window, but RustDesk still warns. Please Remove RustDesk from the settings windows by the `-` button, and click on `+` button, select RustDesk in `/Applications`.
 
 | `-` and `+` button | Select RustDesk |
 | ---- | ---- |
-|![](/docs/en/manual/mac/images/acc2.png)|![](/docs/en/manual/mac/images/add.png)|
+|![](/docs/en/manual/mac/images/acc2.png)|![](/docs/en/manual/mac/images/add.png?v2)|
 
 Please copy above steps for **screen recording** permission.
 
-![](/docs/en/manual/mac/images/screen.png)
+![](/docs/en/manual/mac/images/screen.png?v2)
