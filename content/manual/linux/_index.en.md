@@ -12,14 +12,19 @@ weight: 4
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
-- CentOS/Fedora
+- CentOS/Fedora (>=18)
 ```
-sudo yum localinstall ./rustdesk-<version>.yum
+sudo yum localinstall ./rustdesk-<version>.rpm
 ```
 
 - Arch/Manjaro
 ```
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
+```
+
+- Opensuse (>= Leap 15.0)
+```
+sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
 ### X11 Required 
