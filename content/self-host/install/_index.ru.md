@@ -94,7 +94,7 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --n
 ### ШАГ-3 : Настроить адрес hbbs/hbbr на стороне клиента
 
 {{% notice note %}}
-Для калиентов Windows, вы можете использвать генерацию [Windows EXE](/docs/en/self-host/console/#windows-exe) для автоматического заполнения настроек.
+Для калиентов Windows, вы можете использвать генерацию [Windows EXE](/docs/ru/self-host/console/#windows-exe) для автоматического заполнения настроек.
 {{% /notice %}}
 
 Нажмите на кнопку меню справа от ID, как указано ниже, и выберите "ID/Relay Server".
@@ -140,5 +140,5 @@ cat ./id_ed25519.pub
 Если вы хотите сменить ключ, удалите файлы `id_ed25519` и `id_ed25519.pub` и перезапустите hbbs/hbbr，hbbs автоматически сгенерирует новую пару ключей.
 
 {{% notice note %}}
-Так-же, ключ можно увидеть в [консоли](/docs/en/self-host/console/#console-home) на странице Windows EXE.
+Так-же, ключ можно увидеть в [консоли](/docs/ru/self-host/console/#console-home) на странице Windows EXE.
 {{% /notice %}}
