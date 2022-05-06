@@ -7,6 +7,6 @@ chapter: true
 
 ### Chapter 1
 
-# Manual
+# Руководство
 
 {{% children depth="1" showhidden="true" %}}
