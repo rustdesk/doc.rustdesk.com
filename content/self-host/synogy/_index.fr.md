@@ -1,5 +1,5 @@
 ---
-title: Synogy
+title: Synology
 weight: 22
 ---
 
