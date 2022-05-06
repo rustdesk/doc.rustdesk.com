@@ -1,5 +1,5 @@
 ---
-title: "Документация для RustDesk"
+title: "Документация RustDesk"
 ---
 
 # RustDesk

@@ -1,5 +1,5 @@
 ---
-title: Synogy
+title: Synology
 weight: 22
 ---
 
@@ -17,7 +17,7 @@ pm2-startup install
 ```
 
 ### Exécutez hbbr et hbbs
-Téléchargez la version Synogy du [programme serveur](https://github.com/rustdesk/rustdesk-server/releases), en supposant que vous la décompressez sur le lecteur C. Exécutez respectivement les quatre lignes de commandes suivantes.
+Téléchargez la version Synology du [programme serveur](https://github.com/rustdesk/rustdesk-server/releases), en supposant que vous la décompressez sur le lecteur C. Exécutez respectivement les quatre lignes de commandes suivantes.
 ```
 cd c:\rustdesk-server-synogy-x64
 pm2 start hbbr.exe -- -m <Adresse e-mail enregistrée>

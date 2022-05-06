@@ -1,12 +1,12 @@
 ---
-title: Development
+title: Для разработчиков
 weight: 8
 pre: "<b>3. </b>"
 chapter: true
 ---
 
-### Chapter 3
+### Раздел 3
 
-# Development
+# Для разработчиков
 
 {{% children depth="3" showhidden="true" %}}

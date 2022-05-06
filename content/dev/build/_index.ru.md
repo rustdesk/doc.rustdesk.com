@@ -1,5 +1,5 @@
 ---
-title: Build 
+title: Сборка 
 weight: 1
 ---
 
