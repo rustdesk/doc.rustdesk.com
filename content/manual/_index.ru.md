@@ -1,11 +1,11 @@
 ---
-title: Manual
+title: Руководство
 weight: 2
 pre: "<b>1. </b>"
 chapter: true
 ---
 
-### Chapter 1
+### Раздел 1
 
 # Руководство
 
