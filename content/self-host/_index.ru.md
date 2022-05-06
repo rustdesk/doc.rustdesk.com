@@ -1,5 +1,5 @@
 ---
-title: Самостоятельный хост
+title: Самостоятельное развёртывание
 weight: 5
 pre: "<b>2. </b>"
 chapter: true
@@ -7,8 +7,8 @@ chapter: true
 
 ### Глава 2
 
-# Самостоятельный хост
+# Самостоятельное развёртывание
 
-Wir entwickeln den Server kontinuierlich weiter. Wenn Sie Kommentare haben, nehmen Sie bitte an unserer [Discord](https://discord.com/invite/nDceKgxnkV)-Diskussion teil.
+Присоединяйтесь к нашему серверу [Discord](https://discord.com/invite/nDceKgxnkV) если хотите обсудить сервер для самостоятельного развёртывания.
 
 {{% children depth="3" showhidden="true" %}}
