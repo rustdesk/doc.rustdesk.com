@@ -1,6 +1,6 @@
 ---
-title: 常见问题
-weight: 20
+title: Windows 常见问题
+weight: 40
 ---
 
 ## vcpkg下载包失败
@@ -45,7 +45,7 @@ $ cargo run
 thread 'main' panicked at 'Failed to find package: VcpkgNotFound("No vcpkg installation found. Set the VCPKG_ROOT environment variable or run 'vcpkg integrate install'")', libs\scrap\build.rs:7:45
 ```
 ### 解决办法
-添加VCPKG_ROOT环境变量, 或者使用`VCPKG_ROOT=vcpkg_dir cargo run`
+添加VCPKG_ROOT环境变量, 或者使用`VCPKG_ROOT=<vcpkg_dir> cargo run`
 
 
 

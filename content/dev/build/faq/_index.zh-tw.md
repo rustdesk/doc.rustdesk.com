@@ -1,6 +1,6 @@
 ---
-title: 常見問題
-weight: 20
+title: Windows 常見問題
+weight: 40
 ---
 
 ## vcpkg下載包失敗
@@ -58,7 +58,7 @@ thread 'main' panicked at 'Failed to find package: VcpkgNotFound("No vcpkg insta
 
 ### 解決辦法
 
-添加VCPKG_ROOT環境變量, 或者使用`VCPKG_ROOT=vcpkg_dir cargo run`
+添加VCPKG_ROOT環境變量, 或者使用`VCPKG_ROOT=<vcpkg_dir> cargo run`
 
 
 

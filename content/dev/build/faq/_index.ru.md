@@ -1,6 +1,6 @@
 ---
 title: FAQ
-weight: 20
+weight: 40
 ---
 
 [English](/docs/en/dev/build/faq)

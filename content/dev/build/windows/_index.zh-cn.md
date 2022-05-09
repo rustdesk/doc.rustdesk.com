@@ -5,7 +5,7 @@ weight: 20
 
 ## 依赖
 
-### c++编译环境
+### C++编译环境
 
 推荐下载[msvc](https://visualstudio.microsoft.com/)并安装
 
@@ -30,7 +30,7 @@ weight: 20
 
 ![](/docs/en/dev/build/windows/images/env.png)
 
-### sciter
+### Sciter
 
 桌面版本使用[sciter](https://sciter.com/) , 下载动态库[sciter.dll](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll)
 

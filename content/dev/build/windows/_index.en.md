@@ -5,7 +5,7 @@ weight: 20
 
 ## Dependencies
 
-### c++ build environment
+### C++ build environment
 
 Download [msvc](https://visualstudio.microsoft.com/) and install.
 
