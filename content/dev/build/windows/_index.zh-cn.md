@@ -14,7 +14,7 @@ weight: 20
 
 ### vcpkg
 
-使用`git-bash`运行下列命令, 下载`vcpkg`, 安装`libvpx`, `libyuv`, `opus`
+使用[git-bash](https://git-scm.com/download/win)运行下列命令, 下载`vcpkg`, 安装`libvpx`, `libyuv`, `opus`
 
 ```shell
   git clone https://github.com/microsoft/vcpkg
@@ -26,7 +26,9 @@ weight: 20
   vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static
 ```
 
-添加环境变量`VCPKG_ROOT`=`vcpkg_dir`
+添加环境变量`VCPKG_ROOT`=`<path>\vcpkg`。
+
+![](/docs/en/dev/build/windows/images/env.png)
 
 ### sciter
 
@@ -34,7 +36,7 @@ weight: 20
 
 ### llvm
 
-rust-bindgen依赖于clang, 下载[llvm](https://github.com/llvm/llvm-project/releases)并安装， 添加环境变量`LIBCLANG_PATH`，值为`llvm_install_dir/bin`
+rust-bindgen依赖于clang, 下载[llvm](https://github.com/llvm/llvm-project/releases)并安装， 添加环境变量`LIBCLANG_PATH`，值为`<llvm_install_dir>/bin`
 
 
 

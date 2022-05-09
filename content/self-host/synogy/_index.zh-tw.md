@@ -25,15 +25,15 @@ weight: 22
 ### 創建 hbbs 容器
 
 如上所述哦，雙擊 rustdesk-server 鏡像創建新容器，設置名稱 `hbbs`。
-![](/docs/en/self-host/synogy/images/hbbs.png?height=500px) 
+![](/docs/en/self-host/synogy/images/hbbs.png) 
 
 點擊上面的 "Advanced Settings"。
 
 - 開啟 auto-restart
-![](/docs/en/self-host/synogy/images/auto-restart.png?height=500px) 
+![](/docs/en/self-host/synogy/images/auto-restart.png) 
 
 - 開啟 "Use the same network as Docker host", 關於 host net的更多解釋，請[查看](/docs/zh-tw/self-host/install/#net-host)
-![](/docs/en/self-host/synogy/images/host-net.png?height=500px) 
+![](/docs/en/self-host/synogy/images/host-net.png) 
 
 - 將容器裡的 home 目錄 `/root` 掛在到宿主目錄(比如 `Shared/test/`), hbbr將把產生的文件放在該目錄。
 | 掛在 | 產生的文件 |
@@ -49,17 +49,17 @@ Synogy 的操作系統是基於 debain 的，因此host net (--net=host) 可以�
 `demo`在這裡僅供試用，部署時請設置為註冊郵箱。 `demo` 可以在許可證開售之前一直使用。
 {{% /notice %}}
 
-![](/docs/en/self-host/synogy/images/hbbs-cmd.png?height=500px) 
+![](/docs/en/self-host/synogy/images/hbbs-cmd.png) 
 
 - 搞定
   
-![](/docs/en/self-host/synogy/images/hbbs-config.png?height=500px) 
+![](/docs/en/self-host/synogy/images/hbbs-config.png) 
 
 ### 創建 hbbr 容器 
 
 請重複上述 `hbbs` 步驟，請將容器名更改為 `hbbr` 並將命令更改為 `hbbr -m demo`。
 
-![](/docs/en/self-host/synogy/images/hbbr-config.png?height=500px) 
+![](/docs/en/self-host/synogy/images/hbbr-config.png) 
 
 ### hbbr/hbbs 容器創建完成 
 

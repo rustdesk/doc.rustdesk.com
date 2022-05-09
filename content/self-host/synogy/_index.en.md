@@ -24,15 +24,15 @@ Open package manager and install docker
 ### Create hbbs container
 
 As mentioned above, double click on rustdesk-server image to create new container, set it name to `hbbs`.
-![](/docs/en/self-host/synogy/images/hbbs.png?height=500px) 
+![](/docs/en/self-host/synogy/images/hbbs.png) 
 
 Click on above "Advanced Settings".
 
 - Enable auto-restart
-![](/docs/en/self-host/synogy/images/auto-restart.png?height=500px) 
+![](/docs/en/self-host/synogy/images/auto-restart.png) 
 
 - Enable "Use the same network as Docker host", for more about host net, please [check](/docs/en/self-host/install/#net-host)
-![](/docs/en/self-host/synogy/images/host-net.png?height=500px) 
+![](/docs/en/self-host/synogy/images/host-net.png) 
 
 - Mount a host directory (e.g. `Shared/test/`) to `/root`, hbbs's will generate some files in this directory
 | Mount | Files generated in the host directory |
@@ -48,17 +48,17 @@ Synogy's OS is debain based, so host net (--net=host) works fine, we do not need
 `demo` is used here for trial only, please set it to a registered email when you deploy. `demo` can be used until we start to sell license.
 {{% /notice %}}
 
-![](/docs/en/self-host/synogy/images/hbbs-cmd.png?height=500px) 
+![](/docs/en/self-host/synogy/images/hbbs-cmd.png) 
 
 - Done
   
-![](/docs/en/self-host/synogy/images/hbbs-config.png?height=500px) 
+![](/docs/en/self-host/synogy/images/hbbs-config.png) 
 
 ### Create hbbr container
 
 Please repeat above `hbbs` steps, but change container name to `hbbr` and command to `hbbr -m demo`.
 
-![](/docs/en/self-host/synogy/images/hbbr-config.png?height=500px) 
+![](/docs/en/self-host/synogy/images/hbbr-config.png) 
 
 ### hbbr/hbbs containers
 

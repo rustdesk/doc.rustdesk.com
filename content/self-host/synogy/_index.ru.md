@@ -24,15 +24,15 @@ weight: 22
 ### Создание контейнера hbbs
 
 Дважды нажмите на образ rustdesk-server чтобы создать контейнер, установите контейнеру имя `hbbs`.
-![](/docs/en/self-host/synogy/images/hbbs.png?height=500px) 
+![](/docs/en/self-host/synogy/images/hbbs.png) 
 
 Нажмите "Advanced Settings".
 
 - Включите автоперезапуск
-![](/docs/en/self-host/synogy/images/auto-restart.png?height=500px) 
+![](/docs/en/self-host/synogy/images/auto-restart.png) 
 
 - Включите опцию "Use the same network as Docker host", [подробности](/docs/en/self-host/install/#net-host)
-![](/docs/en/self-host/synogy/images/host-net.png?height=500px) 
+![](/docs/en/self-host/synogy/images/host-net.png) 
 
 - Смонтируйте папку хоста (например `Shared/test/`) в `/root`, hbbs создаст файлы в папке
 | Монтирование | Созданные файлы |
@@ -48,17 +48,17 @@ weight: 22
 Параметр `demo` используется для пробного периода. Используйте зарегистрированный email вместо него. `demo` может быть использован до старта продаж дицензий.
 {{% /notice %}}
 
-![](/docs/en/self-host/synogy/images/hbbs-cmd.png?height=500px) 
+![](/docs/en/self-host/synogy/images/hbbs-cmd.png) 
 
 - Готово
   
-![](/docs/en/self-host/synogy/images/hbbs-config.png?height=500px) 
+![](/docs/en/self-host/synogy/images/hbbs-config.png) 
 
 ### Создание контейнера hbbr
 
 Произведите те-же действия, что и в случае hbbs, но измените имя контейнера на `hbbr` и запускаемую команду на `hbbr -m demo`.
 
-![](/docs/en/self-host/synogy/images/hbbr-config.png?height=500px) 
+![](/docs/en/self-host/synogy/images/hbbr-config.png) 
 
 ### Контейнеры hbbr/hbbs
 

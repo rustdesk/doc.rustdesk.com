@@ -14,7 +14,7 @@ Download [rustup-init.exe](https://static.rust-lang.org/rustup/dist/x86_64-pc-wi
 
 ### vcpkg
 
-Use `git-bash` to run the following commands， download `vcpkg`, install `libvpx`, `libyuv`, `opus`.
+Use [git-bash](https://git-scm.com/download/win) to run the following commands， download `vcpkg`, install `libvpx`, `libyuv`, `opus`.
 
 ```shell
   git clone https://github.com/microsoft/vcpkg
@@ -26,7 +26,9 @@ Use `git-bash` to run the following commands， download `vcpkg`, install `libvp
   vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static
 ```
 
-Add environment variable `VCPKG_ROOT`=`vcpkg_dir`.
+Add environment variable `VCPKG_ROOT`=`<path>\vcpkg`.
+
+![](/docs/en/dev/build/windows/images/env.png)
 
 ### sciter
 
@@ -34,7 +36,7 @@ Desktop versions use [sciter](https://sciter.com/) for GUI, please download [sci
 
 ### llvm
 
-rust-bindgen depends on clang,  download [llvm](https://github.com/llvm/llvm-project/releases) and install，add environment variable `LIBCLANG_PATH`=`llvm_install_dir/bin`.
+rust-bindgen depends on clang,  download [llvm](https://github.com/llvm/llvm-project/releases) and install，add environment variable `LIBCLANG_PATH`=`<llvm_install_dir>/bin`.
 
 
 
