@@ -37,14 +37,14 @@ Linux版本在Centos7構建，在 Centos7/8，Ubuntu 18/20上測試過，Debian�
 在服務器上運行 hbbs/hbbr (Centos 或 Ubuntu)。建議使用[pm2](https://pm2.keymetrics.io/) 管理服務。
 
 ```
-./hbbs -r <hbbr運行所在主機的地址> -m <registered_email>
+./hbbs -r <hbbr運行所在主機的地址[:port]> -m <registered_email>
 ./hbbr -m <registered_email>
 ```
 
 或者使用 pm2 運行 hbbs/hbbr
 
 ```
-pm2 start hbbs -- -r <relay-server-ip> -m <registered_email>
+pm2 start hbbs -- -r <relay-server-ip[:port]> -m <registered_email>
 pm2 start hbbr -- -m <registered_email>
 ```
 
@@ -71,14 +71,14 @@ hhbs的`-r`參數不是必須的，他只是方便你不用在客戶端指定中
 ##### Linux/amd64
 ```
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip> -m <registered_email>
+sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> -m <registered_email>
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbr -m <registered_email>
 ```
 
 ##### Linux/arm64v8
 ```
 sudo docker image pull rustdesk/rustdesk-server:latest-arm64v8
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip> -m <registered_email>
+sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip[:port]> -m <registered_email>
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbr -m <registered_email>
 ```
 
@@ -132,7 +132,7 @@ cat ./id_ed25519.pub
 如果您禁止沒有key的用戶建立非加密連接，請在運行hbbs和hbbr的時候添加`-k _ `參數，例如:
 
 ```
-./hbbs -r <hbbr運行所在主機的地址> -k _
+./hbbs -r <relay-server-ip[:port]> -k _
 ./hbbr -k _
 ```
 

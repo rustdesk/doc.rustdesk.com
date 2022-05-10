@@ -38,14 +38,14 @@ weight: 10
 Запустите hbbs/hbbr на вашем сервере (Centos или Ubuntu). Мы рекомендуем использовать [pm2](https://pm2.keymetrics.io/) для управления службами.
 
 ```
-./hbbs -r <IP-адрес ретранслятора> -m <зарегистрированный email>
+./hbbs -r <IP-адрес ретранслятора[:port]> -m <зарегистрированный email>
 ./hbbr -m <зарегистрированный email>
 ```
 
 или запустите hbbs/hbbr при помощи pm2
 
 ```
-pm2 start hbbs -- -r <IP-адрес ретранслятора> -m <зарегистрированный email>
+pm2 start hbbs -- -r <IP-адрес ретранслятора[:port]> -m <зарегистрированный email>
 pm2 start hbbr -- -m <зарегистрированный email>
 ```
 
@@ -70,14 +70,14 @@ pm2 требует для себя nodejs v16+. Если не получится
 ##### Linux/amd64
 ```
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbs -r <IP-адрес ретранслятора> -m <зарегистрированный email>
+sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbs -r <IP-адрес ретранслятора[:port]> -m <зарегистрированный email>
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbr -m <зарегистрированный email>
 ```
 
 ##### Linux/arm64v8
 ```
 sudo docker image pull rustdesk/rustdesk-server:latest-arm64v8
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <IP-адрес ретранслятора> -m <зарегистрированный email>
+sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <IP-адрес ретранслятора[:port]> -m <зарегистрированный email>
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbr -m <зарегистрированный email>
 ```
 
@@ -133,7 +133,7 @@ cat ./id_ed25519.pub
 
 Если вы хотите запретить незашифрованные соединения, используйте параметр `-k _` для запуска hbbs и hbbr, например:
 ````
-./hbbs -r <адрес ретранслятора> -k _
+./hbbs -r <адрес ретранслятора[:port]> -k _
 ./hbbr -k _
 ````
 

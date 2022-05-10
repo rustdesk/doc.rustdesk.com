@@ -37,14 +37,14 @@ Linux版本在Centos7构建，在 Centos7/8，Ubuntu 18/20上测试过，Debian�
 在服务器上运行 hbbs/hbbr (Centos 或 Ubuntu)。建议使用[pm2](https://pm2.keymetrics.io/) 管理服务。
 
 ```
-./hbbs -r <hbbr运行所在主机的地址> -m <registered_email>
+./hbbs -r <hbbr运行所在主机的地址[:port]> -m <registered_email>
 ./hbbr -m <registered_email>
 ```
 
 或者使用 pm2 运行 hbbs/hbbr
 
 ```
-pm2 start hbbs -- -r <relay-server-ip> -m <registered_email>
+pm2 start hbbs -- -r <relay-server-ip[:port]> -m <registered_email>
 pm2 start hbbr -- -m <registered_email>
 ```
 
@@ -54,7 +54,7 @@ pm2 start hbbr -- -m <registered_email>
 
 `pm2` 需要 nodejs v16+，如果你运行 pm2 失败（例如在 `pm2 list` 中看不到 hbbs/hbbr），请从 https://nodejs.org 下载并安装 LTS 版本的 nodejs。 如果你想让 hbbs/hbbr 在重启后自动运行，请查看 `pm2 save` 和 `pm2 startup`。 更多关于 [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/)。另一个不错的日志工具是 [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate)。
 
-hhbs的`-r`参数不是必须的，他只是方便你不用在客户端指定中继服务器。客户端指定的中继服务器优先级高于这个。
+hhbs的`-r`参数不是必须的，他只是方便你不用在客户端指定中继服务器，如果是默认21117端口，可以不填port。客户端指定的中继服务器优先级高于这个。
 {{% /notice %}}
 
 默认情况下，hbbs 监听21114(tcp), 21115(tcp), 21116(tcp/udp), 21118(tcp)，hbbr 监听21117(tcp), 21119(tcp)。务必在防火墙开启这几个端口， **请注意21116同时要开启TCP和UDP**。其中21114是网页控制台+API，21115是hbbs用作NAT类型测试，21116/UDP是hbbs用作ID注册与心跳服务，21116/TCP是hbbs用作TCP打洞与连接服务，21117是hbbr用作中继服务, 21118和21119是为了支持网页客户端。如果您不需要网页控制台+API（21114）或者网页客户端（21118，21119）支持，对应端口可以不开。
@@ -68,14 +68,14 @@ hhbs的`-r`参数不是必须的，他只是方便你不用在客户端指定中
 ##### Linux/amd64
 ```
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip> -m <registered_email>
+sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> -m <registered_email>
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbr -m <registered_email>
 ```
 
 ##### Linux/arm64v8
 ```
 sudo docker image pull rustdesk/rustdesk-server:latest-arm64v8
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip> -m <registered_email>
+sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip[:port]> -m <registered_email>
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbr -m <registered_email>
 ```
 
@@ -129,7 +129,7 @@ cat ./id_ed25519.pub
 
 如果您禁止没有key的用户建立非加密连接，请在运行hbbs和hbbr的时候添加`-k _ `参数，例如:
 ```
-./hbbs -r <hbbr运行所在主机的地址> -k _
+./hbbs -r <relay-server-ip[:port]> -k _
 ./hbbr -k _
 ```
 
