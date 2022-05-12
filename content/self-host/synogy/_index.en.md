@@ -45,10 +45,9 @@ Synogy's OS is debain based, so host net (--net=host) works fine, we do not need
 
 `192.168.16.98` is an intranet ip used here for demonstration only, please set it to a public ip when you deploy.
 
-`demo` is used here for trial only, please set it to a registered email when you deploy. `demo` can be used until we start to sell license.
 {{% /notice %}}
 
-![](/docs/en/self-host/synogy/images/hbbs-cmd.png) 
+![](/docs/en/self-host/synogy/images/hbbs-cmd.png?v2) 
 
 - Done
   
@@ -68,16 +67,4 @@ Please repeat above `hbbs` steps, but change container name to `hbbr` and comman
 | Double click on container and check log | Double confirm hbbs/hbbr using host network |
 |-- | -- |
 ![](/docs/en/self-host/synogy/images/log.png?width=500px) | ![](/docs/en/self-host/synogy/images/network-types.png?width=500px)
-
-### Test
-
-You can test if hbbs runs well by going to web console built in `hbbs`. Please change `192.168.16.98` to your Synogy's ip. Default login name/password is `admin`/`test1234`.
-
-![](/docs/en/self-host/synogy/images/console.png?width=500px)
-
-Please change the admin password as belows.
-
-| | |
-|- | -|
-![](/docs/en/self-host/synogy/images/go-to-settings.png?width=500px) | ![](/docs/en/self-host/synogy/images/change-password.png?width=500px)
 

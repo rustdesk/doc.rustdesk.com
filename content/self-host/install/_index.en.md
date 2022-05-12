@@ -3,18 +3,12 @@ title: Installation
 weight: 10
 ---
 
-{{% notice note %}}
-Self-hosted server software is not free, you can use demo license for trial.
-{{% /notice %}}
-
 ## Set up your own cloud by following simple steps
 -----------
 
 ### STEP-1 : Download server-side software programs
 
 [Download](https://github.com/rustdesk/rustdesk-server/) or use docker [rustdesk/rustdesk-server](https://hub.docker.com/r/rustdesk/rustdesk-server/tags).
-
-<!-- **Note:** You need [buy license](https://rustdesk.com/server/) When using this software -->
 
 Platform versions provided:
   - Linux
@@ -25,7 +19,6 @@ Below tutorial is based on Linux build.
 There are two executables and a folder:
    - hbbs - RustDesk ID/Rendezvous server
    - hbbr - RustDesk relay server
-   - static - this folder contains all web console files
 
 They are built on Centos7, tested on Centos7/8, Ubuntu 18/20.
 
@@ -38,29 +31,28 @@ The hardware requirements are very low, the minimum configuration of the cloud s
 Run hbbs/hbbr on your server (Centos or Ubuntu). We suggust you use [pm2](https://pm2.keymetrics.io/) managing your service.
 
 ```
-./hbbs -r <relay-server-ip[:port]> -m <registered_email>
-./hbbr -m <registered_email>
+./hbbs -r <relay-server-ip[:port]> 
+./hbbr 
 ```
 
 or run hbbs/hbbr with pm2
 
 ```
-pm2 start hbbs -- -r <relay-server-ip[:port]> -m <registered_email>
-pm2 start hbbr -- -m <registered_email>
+pm2 start hbbs -- -r <relay-server-ip[:port]> 
+pm2 start hbbr 
 ```
 
 <a name="demo"></a>
 {{% notice note %}}
-**Please input `demo` for <registered_email> for trial**
 
 pm2 requires nodejs v16+, if you fail to run pm2 (e.g. you can not see hbbs/hbbr in `pm2 list`), please download and install LTS version nodejs from https://nodejs.org. If you wanna make hbbs/hbbr auto-run after reboot, please check out `pm2 save` and `pm2 startup`. More about [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Another good tool for you log is [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
 
 The `-r` parameter of hhbs is not necessary, it is just convenient for you not to specify a relay server on the client side, you do not need to specify port if you are using default 21117 port. The relay server specified by the client has a higher priority than this.
 {{% /notice %}}
 
-By default, hbbs listens on 21114(tcp), 21115(tcp) and 21116(tcp/udp), 21118(tcp), hbbr listens on 21117(tcp), 21119(tcp). Be sure to open these ports in the firewall. **Please note that 21116 should be enabled both for TCP and UDP**. 21114 is for web console + API, 21115 is used for NAT type test, 21116/UDP is used for ID registration and heartbeat service, 21116/TCP is used for TCP hole punching and connection service, 21117 is used for Relay services, 21118 and 21119 are used to support web clients. If you do not need web console + API (21114) or web client (21118, 21119) support, the corresponding ports can be disabled.
+By default, hbbs listens on 21115(tcp) and 21116(tcp/udp), 21118(tcp), hbbr listens on 21117(tcp), 21119(tcp). Be sure to open these ports in the firewall. **Please note that 21116 should be enabled both for TCP and UDP**. 21115 is used for NAT type test, 21116/UDP is used for ID registration and heartbeat service, 21116/TCP is used for TCP hole punching and connection service, 21117 is used for Relay services, 21118 and 21119 are used to support web clients. If you do not need web client (21118, 21119) support, the corresponding ports can be disabled.
 
-- TCP(**21114, 21115, 21116, 21117, 21118, 21119**)
+- TCP(**21115, 21116, 21117, 21118, 21119**)
 - UDP(**21116**)
 
 Please run with "-h" option to see help if you wanna choose your own port.
@@ -70,15 +62,15 @@ Please run with "-h" option to see help if you wanna choose your own port.
 ##### Linux/amd64
 ```
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> -m <registered_email>
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbr -m <registered_email>
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> 
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbr 
 ```
 
 ##### Linux/arm64v8
 ```
 sudo docker image pull rustdesk/rustdesk-server:latest-arm64v8
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip[:port]> -m <registered_email>
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbr -m <registered_email>
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip[:port]> 
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbr 
 ```
 
 <a name="net-host"></a>
@@ -93,19 +85,11 @@ If --net=host works fine, -p options are useless.
 
 ### STEP-3 : Set hbbs/hbbr address on client-side
 
-{{% notice note %}}
-For Windows clients, you can choose the [Windows EXE](/docs/en/self-host/console/#windows-exe) solution to avoid filling in custom server configuration.
-{{% /notice %}}
-
 Click on menu button on the right side of ID as below, choose "ID/Relay Server".
 
 ![](/docs/en/self-host/install/images/server-set-menu.png)
 
-Enter the hbbs host or ip address in the ID server input box (local side + remote side), the other two addresses can be left blank, RustDesk will automatically deduce (if not specially set), and the relay server refers to hbbr ( 21116 port), the API server refers to above web console + API (21114) port.
-
-{{% notice note %}}
-The Key in the picture does not refer to the registered email address, the [next section](#key) will explain in detail.
-{{% /notice %}}
+Enter the hbbs host or ip address in the ID server input box (local side + remote side), the other two addresses can be left blank, RustDesk will automatically deduce (if not specially set), and the relay server refers to hbbr ( 21116 port).
 
 e.g.
 
@@ -138,7 +122,3 @@ If you wanna prohibit users without key from establishing non-encrypted connecti
 ````
 
 If you wanna change key, please remove `id_ed25519` and `id_ed25519.pub` files and restart hbbs/hbbr，hbbs will generate new key pair.
-
-{{% notice note %}}
-Key can also be seen on the [console](/docs/en/self-host/console/#console-home) welcome page (Click on Windows EXE).
-{{% /notice %}}

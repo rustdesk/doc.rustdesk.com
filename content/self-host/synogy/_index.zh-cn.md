@@ -46,10 +46,9 @@ Synogy 的操作系统是基于 debain 的，因此host net (--net=host) 可以�
 
 `192.168.16.98`为内网ip，此处仅作演示，部署时请设置为公网ip。
 
-`demo`在这里仅供试用，部署时请设置为注册邮箱。 `demo` 可以在许可证开售之前一直使用。
 {{% /notice %}}
 
-![](/docs/en/self-host/synogy/images/hbbs-cmd.png) 
+![](/docs/en/self-host/synogy/images/hbbs-cmd.png?v2) 
 
 - 搞定
   
@@ -69,15 +68,3 @@ Synogy 的操作系统是基于 debain 的，因此host net (--net=host) 可以�
 | 双击容器并查看日志 | 确认 hbbs/hbbr 在使用 host net |
 |-- | -- |
 ![](/docs/en/self-host/synogy/images/log.png?width=500px) | ![](/docs/en/self-host/synogy/images/network-types.png?width=500px)
-
-### 测试
-
-您可以通过 `hbbs` 内置的 web 控制台测试 hbbs 是否运行良好。 请将 `192.168.16.98` 更改为您的春辉的IP。 默认登录名/密码是 `admin`/`test1234`。
-
-![](/docs/en/self-host/synogy/images/console.png?width=500px)
-
-请按以下方式更改管理员密码。
-
-| | |
-|- | -|
-![](/docs/en/self-host/synogy/images/go-to-settings.png?width=500px) | ![](/docs/en/self-host/synogy/images/change-password.png?width=500px)

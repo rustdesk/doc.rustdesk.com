@@ -45,10 +45,9 @@ weight: 22
 
 Адрес `192.168.16.98` использован для демонстрации. Установите публичный адрес вместо него.
 
-Параметр `demo` используется для пробного периода. Используйте зарегистрированный email вместо него. `demo` может быть использован до старта продаж дицензий.
 {{% /notice %}}
 
-![](/docs/en/self-host/synogy/images/hbbs-cmd.png) 
+![](/docs/en/self-host/synogy/images/hbbs-cmd.png?v2) 
 
 - Готово
   
@@ -68,15 +67,3 @@ weight: 22
 | Двойной клик на контейнер чтобы перейти в журнал | Проверьте, чтобы hbbs/hbbr использовали сеть хоста |
 |-- | -- |
 ![](/docs/en/self-host/synogy/images/log.png?width=500px) | ![](/docs/en/self-host/synogy/images/network-types.png?width=500px)
-
-### Тестирование
-
-Чтобы проверить правильность установки, зайдите на Web-консоль. Измените `192.168.16.98` на фактический адрес хранилища Synology. Имя пользователя и пароль по умолчанию: `admin`/`test1234`.
-
-![](/docs/en/self-host/synogy/images/console.png?width=500px)
-
-Обязательно измените пароль администратора после первого входа.
-
-| | |
-|- | -|
-![](/docs/en/self-host/synogy/images/go-to-settings.png?width=500px) | ![](/docs/en/self-host/synogy/images/change-password.png?width=500px)

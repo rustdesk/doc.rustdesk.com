@@ -3,18 +3,12 @@ title: 安装
 weight: 10
 ---
 
-{{% notice note %}}
-自建服务器软件不是免费的，您可以使用演示许可证进行试用。
-{{% /notice %}}
-
 ## 如何自建中继
 -----------
 
 ### 步骤1: 下载服务器端软件程序
 
 [下载](https://gitee.com/rustdesk/rustdesk-server/)或者使用docker [rustdesk/rustdesk-server](https://hub.docker.com/r/rustdesk/rustdesk-server/tags)。
-
-<!-- **注意**： 你需要[购买许可](https://rustdesk.com/server/)才能正常运行本程序 -->
 
 提供版本：
   - Linux
@@ -25,7 +19,6 @@ weight: 10
 有两个可执行文件和一个文件夹:
   - hbbs - RustDesk ID注册服务器
   - hbbr - RustDesk 中继服务器
-  - static - 该文件夹中包含网页控制台所有文件
 
 Linux版本在Centos7构建，在 Centos7/8，Ubuntu 18/20上测试过，Debian系列的发行版本应该都没有问题。如果有其他发行版本需求，请联系我。
 
@@ -37,29 +30,28 @@ Linux版本在Centos7构建，在 Centos7/8，Ubuntu 18/20上测试过，Debian�
 在服务器上运行 hbbs/hbbr (Centos 或 Ubuntu)。建议使用[pm2](https://pm2.keymetrics.io/) 管理服务。
 
 ```
-./hbbs -r <hbbr运行所在主机的地址[:port]> -m <registered_email>
-./hbbr -m <registered_email>
+./hbbs -r <hbbr运行所在主机的地址[:port]> 
+./hbbr
 ```
 
 或者使用 pm2 运行 hbbs/hbbr
 
 ```
-pm2 start hbbs -- -r <relay-server-ip[:port]> -m <registered_email>
-pm2 start hbbr -- -m <registered_email>
+pm2 start hbbs -- -r <relay-server-ip[:port]> 
+pm2 start hbbr 
 ```
 
 <a name="demo"></a>
 {{% notice note %}}
-**请为 <registered_email> 输入 `demo` 运行试用**
 
 `pm2` 需要 nodejs v16+，如果你运行 pm2 失败（例如在 `pm2 list` 中看不到 hbbs/hbbr），请从 https://nodejs.org 下载并安装 LTS 版本的 nodejs。 如果你想让 hbbs/hbbr 在重启后自动运行，请查看 `pm2 save` 和 `pm2 startup`。 更多关于 [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/)。另一个不错的日志工具是 [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate)。
 
 hhbs的`-r`参数不是必须的，他只是方便你不用在客户端指定中继服务器，如果是默认21117端口，可以不填port。客户端指定的中继服务器优先级高于这个。
 {{% /notice %}}
 
-默认情况下，hbbs 监听21114(tcp), 21115(tcp), 21116(tcp/udp), 21118(tcp)，hbbr 监听21117(tcp), 21119(tcp)。务必在防火墙开启这几个端口， **请注意21116同时要开启TCP和UDP**。其中21114是网页控制台+API，21115是hbbs用作NAT类型测试，21116/UDP是hbbs用作ID注册与心跳服务，21116/TCP是hbbs用作TCP打洞与连接服务，21117是hbbr用作中继服务, 21118和21119是为了支持网页客户端。如果您不需要网页控制台+API（21114）或者网页客户端（21118，21119）支持，对应端口可以不开。
+默认情况下，hbbs 监听21115(tcp), 21116(tcp/udp), 21118(tcp)，hbbr 监听21117(tcp), 21119(tcp)。务必在防火墙开启这几个端口， **请注意21116同时要开启TCP和UDP**。其中21115是hbbs用作NAT类型测试，21116/UDP是hbbs用作ID注册与心跳服务，21116/TCP是hbbs用作TCP打洞与连接服务，21117是hbbr用作中继服务, 21118和21119是为了支持网页客户端。如果您不需要网页客户端（21118，21119）支持，对应端口可以不开。
 
-- TCP(**21114, 21115, 21116, 21117, 21118, 21119**)
+- TCP(**21115, 21116, 21117, 21118, 21119**)
 - UDP(**21116**)
 
 如果你想选择**自己的端口**，使用 “-h” 选项查看帮助。
@@ -68,15 +60,15 @@ hhbs的`-r`参数不是必须的，他只是方便你不用在客户端指定中
 ##### Linux/amd64
 ```
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> -m <registered_email>
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbr -m <registered_email>
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbr
 ```
 
 ##### Linux/arm64v8
 ```
 sudo docker image pull rustdesk/rustdesk-server:latest-arm64v8
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip[:port]> -m <registered_email>
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbr -m <registered_email>
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip[:port]> 
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbr
 ```
 
 <a name="net-host"></a>
@@ -90,19 +82,11 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --n
 
 ### 步骤3: 在客户端设置 hbbs/hbbr 地址
 
-{{% notice note %}}
-对于Windows客户端，可以选用[Windows Exe](/docs/zh-cn/self-host/console/#windows-exe)方案，免填自定义服务器配置。
-{{% /notice %}}
-
 点击 ID 右侧的菜单按钮如下，选择“ ID/中继服务器”。
 
 ![](/docs/en/self-host/install/images/server-set-menu-zh.png)
 
-在 ID 服务器输入框中（被控端+主控端）输入 hbbs 主机或 ip 地址，另外两个地址可以不填，RustDesk会自动推导（如果没有特别设定），中继服务器指的是hbbr（21116）端口，API服务器指的是上面的网页控制台+API（21114）。
-
-{{% notice note %}}
-图中的Key不是指的注册邮箱，[下节](#key)将会具体解释。
-{{% /notice %}}
+在 ID 服务器输入框中（被控端+主控端）输入 hbbs 主机或 ip 地址，另外两个地址可以不填，RustDesk会自动推导（如果没有特别设定），中继服务器指的是hbbr（21116）端口。
 
 例如:
 
@@ -134,9 +118,5 @@ cat ./id_ed25519.pub
 ```
 
 如果要更改key，请删除 `id_ed25519` 和 `id_ed25519.pub` 文件并重新启动 hbbs/hbbr，hbbs将会产生新的密钥对。
-
-{{% notice note %}}
-在[控制台](/docs/zh-cn/self-host/console/#console-home)欢迎页面（点击Windows EXE）也可以看到Key。
-{{% /notice %}}
 
 

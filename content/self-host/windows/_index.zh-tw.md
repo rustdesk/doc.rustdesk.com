@@ -19,8 +19,8 @@ pm2-startup install
 下載Windows版本[服務器程序](https://gitee.com/rustdesk/rustdesk-server/releases)，假設你解壓縮到了C盤下。分別運行下面四行命令。
 ```
 cd c:\rustdesk-server-windows-x64
-pm2 start hbbs.exe -- -r hbbr運行所在主機的地址 -m 註冊郵箱地址
-pm2 start hbbr.exe -- -m 註冊郵箱地址
+pm2 start hbbs.exe -- -r hbbr運行所在主機的地址
+pm2 start hbbr.exe 
 pm2 save
 ```
 
@@ -28,14 +28,4 @@ pm2 save
 ```
 pm2 log hbbr
 pm2 log hbbs
-```
-
-### 更換註冊郵箱
-比如新的註冊郵箱是test@test.com，hbbr的公網地址是test.hbbr.com
-```
-pm2 delete hbbr hbbs
-cd c:\rustdesk-server-windows-x64
-pm2 start hbbs.exe -- -r test.hbbr.com -m test@test.com
-pm2 start hbbr.exe -- -m test@test.com
-pm2 save
 ```
