@@ -20,6 +20,9 @@ Input control provides `mouse mode`/`touch mode` two modes, which can be switche
 | --------------- | -------------------------------------------------------- |
 | ![](/docs/en/manual/mobile/images/touch_mode_icon_en.png?width=300px) | ![](/docs/en/manual/mobile/images/touch_mode_en.jpg?width=300px) |
 
+{{% notice note %}}
+In `mouse mode`,you can also trigger the remote device's `Right Mouse` with a `Two-Finger Tap`
+{{% /notice %}}
 
 ### File Transfer (Android)
 ------

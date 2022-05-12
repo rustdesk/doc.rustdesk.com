@@ -20,6 +20,9 @@ weight: 1
 | --------------- | -------------------------------------------------------- |
 | ![](/docs/en/manual/mobile/images/touch_mode_icon.png?width=300px) | ![](/docs/en/manual/mobile/images/touch_mode_zh.jpg?width=300px) |
 
+{{% notice note %}}
+在`鼠標模式`中，你也可以通過`雙指輕觸`觸發遠程設備的`鼠標右鍵`
+{{% /notice %}}
 
 ### 管理其他設備的文件，相互傳輸文件 (安卓)
 ------
