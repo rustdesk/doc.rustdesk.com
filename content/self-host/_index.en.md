@@ -9,6 +9,6 @@ chapter: true
 
 # Self-host 
 
-Please join our [Discord](https://discord.com/invite/nDceKgxnkV) if you wanna talk with us about self-host server.
+Please join our [Discord](https://discord.com/invite/nDceKgxnkV) if you would like to talk with us about self-hosting your own RustDesk server.
 
 {{% children depth="3" showhidden="true" %}}
