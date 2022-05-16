@@ -20,7 +20,7 @@ unzip android-ndk-r22b-linux-x86_64.zip
 git clone https://github.com/rustdesk/rustdesk
 cd rustdesk
 cargo install cargo-ndk
-OPENSSL_DIR=$HOME/openssl VCPKG_ROOT=$HOME/vcpkg ANDROID_NDK_HOME=$HOME/android-ndk-r22b flutter/ndk_arm64.sh
+OPENSSL_DIR=$HOME/openssl AARCH64_LINUX_ANDROID_OPENSSL_LIB_DIR=$HOME/openssl VCPKG_ROOT=$HOME/vcpkg ANDROID_NDK_HOME=$HOME/android-ndk-r22b flutter/ndk_arm64.sh
 ```
 
 ## 構建 Flutter
