@@ -34,7 +34,7 @@ Click on above "Advanced Settings".
 - Enable "Use the same network as Docker host", for more about host net, please [check](/docs/en/self-host/install/#net-host)
 ![](/docs/en/self-host/synogy/images/host-net.png) 
 
-- Mount a host directory (e.g. `Shared/test/`) to `/root`, hbbs's will generate some files in this directory
+- Mount a host directory (e.g. `Shared/test/`) to `/root`, hbbs will generate some files (including the `key` file) in this directory
 | Mount | Files generated in the host directory |
 |-- | -- |
 ![](/docs/en/self-host/synogy/images/mount.png?width=500px) | ![](/docs/en/self-host/synogy/images/mounted-dir.png?width=300px) 

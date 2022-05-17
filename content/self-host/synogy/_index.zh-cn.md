@@ -35,7 +35,7 @@ weight: 22
 - 开启 "Use the same network as Docker host", 关于 host net的更多解释，请[查看](/docs/zh-cn/self-host/install/#net-host)
 ![](/docs/en/self-host/synogy/images/host-net.png) 
 
-- 将容器里的 home 目录 `/root` 挂在到宿主目录(比如 `Shared/test/`), hbbr将把产生的文件放在该目录。
+- 将容器里的 home 目录 `/root` 挂在到宿主目录(比如 `Shared/test/`), hbbs将把产生的文件（包括`key`文件）放在该目录。
 | 挂在 | 产生的文件 |
 |-- | -- |
 ![](/docs/en/self-host/synogy/images/mount.png?width=500px) | ![](/docs/en/self-host/synogy/images/mounted-dir.png?width=300px) 
