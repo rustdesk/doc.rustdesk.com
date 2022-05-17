@@ -15,12 +15,13 @@ cd rustdesk/flutter/web/js
 npm install ts-proto
 yarn build
 
-# about details of yuv converter, check this https://github.com/rustdesk/rustdesk/issues/364#issuecomment-1023562050
+cd ..
 
-# download libs to flutter/web/libs
-cd ../libs
+# about details of yuv converter, check this https://github.com/rustdesk/rustdesk/issues/364#issuecomment-1023562050
 wget https://github.com/rustdesk/doc.rustdesk.com/releases/download/console/web_deps.tar.gz
 tar xzf web_deps.tar.gz
+
+cd ..
 
 # Good Luck!
 flutter run -d chrome
