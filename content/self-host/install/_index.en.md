@@ -104,6 +104,8 @@ hbbs.yourhost.com:21116
 
 ![](/docs/en/self-host/install/images/server-set-window.png)
 
+![](/docs/en/self-host/install/images/lic.png)
+
 ## Key
 -----------
 Different from the old version, the key in this version is mandatory, but you don't need to set it yourself. When hbbs runs for the first time, it will automatically generate a pair of encrypted private key and public key (respectively located in the `id_ed25519` and `id_ed25519.pub` files in the running directory), the main purpose is for communication encryption.
