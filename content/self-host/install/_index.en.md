@@ -104,7 +104,13 @@ hbbs.yourhost.com:21116
 
 ![](/docs/en/self-host/install/images/server-set-window.png)
 
-![](/docs/en/self-host/install/images/lic.png)
+#### Put config in rustdesk.exe file name (Windows only)
+
+Change `rustdesk.exe` to rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe, e.g. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe, you can see the config result in the about window as below.
+
+| Menu | About Page |
+| -- | -- |
+![](/docs/en/self-host/install/images/aboutmenu.png) | ![](/docs/en/self-host/install/images/lic.png) |
 
 ## Key
 -----------

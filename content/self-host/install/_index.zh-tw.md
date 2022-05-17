@@ -103,6 +103,14 @@ hbbs.yourhost.com:21116
 ```
 ![](/docs/en/self-host/install/images/server-set-window.png)
 
+#### 把配置放在可執行文件名里 (Windows only)
+
+把`rustdesk.exe` 修改為 rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe, 例如： rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe，你可以在About窗口看到配置結果，如下圖所示。
+
+| Menu | About Page |
+| -- | -- |
+![](/docs/en/self-host/install/images/aboutmenu.png) | ![](/docs/en/self-host/install/images/lic.png) |
+
 ## Key
 -----------
 同上個版本不同，本版本中的key是強制的，但是不用你自己設置。hbbs在第一次運行時，會自動產生一對加密私鑰和公鑰（分別位於運行目錄下的`id_ed25519`和`id_ed25519.pub`文件中），其主要用途是為了通訊加密。
