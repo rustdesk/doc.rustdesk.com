@@ -54,6 +54,12 @@ g++ has stl wstring
 g++ has <ext/stdio_filebuf.h>
 ---------------------------------------------
 ```
+```sh
+root@pynq:~/cmake-3.14.5# cmake --version
+cmake version 3.14.5
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+```
 ### 安装依赖项
 
 ```sh
@@ -68,4 +74,106 @@ mv vcpkg-2020.11 vcpkg
 vcpkg/bootstrap-vcpkg.sh
 export VCPKG_ROOT=$HOME/vcpkg
 vcpkg/vcpkg install libyuv
+```
+
+```sh
+root@pynq:~# export VCPKG_ROOT=$HOME/vcpkg
+root@pynq:~# export VCPKG_FORCE_SYSTEM_BINARIES=1
+root@pynq:~# vcpkg/vcpkg install libyuv
+Computing installation plan...
+The following packages will be built and installed:
+  * libjpeg-turbo[core]:arm-linux
+    libyuv[core]:arm-linux
+Additional packages (*) will be modified to complete this operation.
+Detecting compiler hash for triplet arm-linux...
+Starting package 1/2: libjpeg-turbo:arm-linux
+Building package libjpeg-turbo[core]:arm-linux...
+Could not locate cached archive: /root/.cache/vcpkg/archives/62/629c73ee8920588cb446128f15cbfa66dfec1528.zip
+-- Using community triplet arm-linux. This triplet configuration is not guaranteed to succeed.
+-- [COMMUNITY] Loading triplet configuration from: /root/vcpkg/triplets/community/arm-linux.cmake
+-- Downloading https://github.com/libjpeg-turbo/libjpeg-turbo/archive/ae87a958613b69628b92088b313ded0d4f59a716.tar.gz...
+-- Extracting source /root/vcpkg/downloads/libjpeg-turbo-libjpeg-turbo-ae87a958613b69628b92088b313ded0d4f59a716.tar.gz
+-- Applying patch add-options-for-exes-docs-headers.patch
+-- Applying patch workaround_cmake_system_processor.patch
+-- Using source at /root/vcpkg/buildtrees/libjpeg-turbo/src/0d4f59a716-5f2e7bc00b.clean
+-- Configuring arm-linux-dbg
+-- Configuring arm-linux-rel
+-- Building arm-linux-dbg
+-- Building arm-linux-rel
+-- Performing post-build validation
+-- Performing post-build validation done
+Stored binary cache: /root/.cache/vcpkg/archives/62/629c73ee8920588cb446128f15cbfa66dfec1528.zip
+Building package libjpeg-turbo[core]:arm-linux... done
+Installing package libjpeg-turbo[core]:arm-linux...
+Installing package libjpeg-turbo[core]:arm-linux... done
+Elapsed time for package libjpeg-turbo:arm-linux: 5.475 min
+Starting package 2/2: libyuv:arm-linux
+Building package libyuv[core]:arm-linux...
+Could not locate cached archive: /root/.cache/vcpkg/archives/36/3683c357e53932d95a037b4eb8cb74fe71c15f80.zip
+-- Using community triplet arm-linux. This triplet configuration is not guaranteed to succeed.
+-- [COMMUNITY] Loading triplet configuration from: /root/vcpkg/triplets/community/arm-linux.cmake
+-- Fetching https://chromium.googlesource.com/libyuv/libyuv...
+#这里有时候会卡很久，甚至失败，可以ctrl+c后重新执行vcpkg/vcpkg install libyuv
+CMake Error at scripts/cmake/vcpkg_execute_required_process.cmake:106 (message):
+    Command failed: /usr/bin/git fetch https://chromium.googlesource.com/libyuv/libyuv fec9121b676eccd9acea2460aec7d6ae219701b9 --depth 1 -n
+    Working Directory: /root/vcpkg/downloads/git-tmp
+    Error code: 128
+    See logs for more information:
+      /root/vcpkg/buildtrees/libyuv/git-fetch-arm-linux-err.log
+
+Call Stack (most recent call first):
+  scripts/cmake/vcpkg_from_git.cmake:78 (vcpkg_execute_required_process)
+  ports/libyuv/portfile.cmake:3 (vcpkg_from_git)
+  scripts/ports.cmake:135 (include)
+
+
+Error: Building package libyuv:arm-linux failed with: BUILD_FAILED
+Please ensure you are using the latest portfiles with `./vcpkg update`, then
+submit an issue at https://github.com/Microsoft/vcpkg/issues including:
+  Package: libyuv:arm-linux
+  Vcpkg version: 2020.06.15-unknownhash
+
+Additionally, attach any relevant sections from the log files above.
+```
+- 或者直接下载离线包[libyuv](链接：https://pan.baidu.com/s/1NmlvsXFh2Ivc36XEyb-BIw) 提取码：xlnx 复制到vcpkg/downloads/文件夹下 继续执行
+```sh
+mv ./libyuv-fec9121b676eccd9acea2460aec7d6ae219701b9.tar.gz vcpkg/downloads/
+vcpkg/vcpkg install libyuv
+```
+```sh
+root@pynq:~# mv libyuv-fec9121b676eccd9acea2460aec7d6ae219701b9.tar.gz vcpkg/downloads/
+root@pynq:~# vcpkg/vcpkg install libyuv
+Computing installation plan...
+The following packages will be built and installed:
+    libyuv[core]:arm-linux
+Detecting compiler hash for triplet arm-linux...
+Starting package 1/1: libyuv:arm-linux
+Building package libyuv[core]:arm-linux...
+Could not locate cached archive: /root/.cache/vcpkg/archives/36/3683c357e53932d95a037b4eb8cb74fe71c15f80.zip
+-- Using community triplet arm-linux. This triplet configuration is not guaranteed to succeed.
+-- [COMMUNITY] Loading triplet configuration from: /root/vcpkg/triplets/community/arm-linux.cmake
+-- Using cached /root/vcpkg/downloads/libyuv-fec9121b676eccd9acea2460aec7d6ae219701b9.tar.gz
+-- Extracting source /root/vcpkg/downloads/libyuv-fec9121b676eccd9acea2460aec7d6ae219701b9.tar.gz
+-- Applying patch fix_cmakelists.patch
+-- Applying patch fix-build-type.patch
+-- Using source at /root/vcpkg/buildtrees/libyuv/src/ae219701b9-6b491b90af.clean
+-- Configuring arm-linux-dbg
+-- Configuring arm-linux-rel
+-- Building arm-linux-dbg
+-- Building arm-linux-rel
+-- Installing: /root/vcpkg/packages/libyuv_arm-linux/share/libyuv/copyright
+-- Performing post-build validation
+-- Performing post-build validation done
+Stored binary cache: /root/.cache/vcpkg/archives/36/3683c357e53932d95a037b4eb8cb74fe71c15f80.zip
+Building package libyuv[core]:arm-linux... done
+Installing package libyuv[core]:arm-linux...
+Installing package libyuv[core]:arm-linux... done
+Elapsed time for package libyuv:arm-linux: 2.266 min
+
+Total elapsed time: 2.59 min
+
+The package libyuv:arm-linux provides CMake targets:
+
+    find_package(libyuv CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE yuv)
 ```
