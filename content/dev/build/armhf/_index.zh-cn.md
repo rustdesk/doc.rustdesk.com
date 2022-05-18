@@ -135,7 +135,7 @@ submit an issue at https://github.com/Microsoft/vcpkg/issues including:
 
 Additionally, attach any relevant sections from the log files above.
 ```
-- 或者直接下载离线包[libyuv](链接：https://pan.baidu.com/s/1NmlvsXFh2Ivc36XEyb-BIw) 提取码：xlnx 复制到vcpkg/downloads/文件夹下 继续执行
+- 或者直接下载离线包[libyuv](https://pan.baidu.com/s/1NmlvsXFh2Ivc36XEyb-BIw) 提取码：xlnx 复制到vcpkg/downloads/文件夹下 继续执行
 ```sh
 mv ./libyuv-fec9121b676eccd9acea2460aec7d6ae219701b9.tar.gz vcpkg/downloads/
 vcpkg/vcpkg install libyuv
@@ -176,4 +176,164 @@ The package libyuv:arm-linux provides CMake targets:
 
     find_package(libyuv CONFIG REQUIRED)
     target_link_libraries(main PRIVATE yuv)
+```
+
+### 安装 libvpx 
+
+```sh
+mv webmproject-libvpx-v1.9.0.tar.gz vcpkg/downloads/
+cd vcpkg/downloads/
+tar zxmf webmproject-libvpx-v1.9.0.tar.gz
+cd libvpx-1.9.0
+#prefix根据自己的vcpkg路径情况来定
+./configure --prefix="/root/vcpkg/installed/arm-linux/" --disable-examples
+#又是漫长等待
+make -j4
+make install
+cd
+```
+
+```sh
+root@pynq:~/vcpkg/downloads/libvpx-1.9.0# ./configure --prefix="/root/vcpkg/installed/arm-linux/" --disable-examples
+  disabling examples
+  enabling vp8_encoder
+  enabling vp8_decoder
+  enabling vp9_encoder
+  enabling vp9_decoder
+Configuring for target 'armv7-linux-gcc'
+  enabling armv7
+  enabling neon
+  enabling neon_asm
+  enabling unit_tests
+  enabling webm_io
+  enabling libyuv
+Creating makefiles for armv7-linux-gcc libs
+Creating makefiles for armv7-linux-gcc tools
+Creating makefiles for armv7-linux-gcc docs
+```
+```sh
+root@pynq:~/vcpkg/downloads/libvpx-1.9.0# make install
+    [INSTALL] /root/vcpkg/installed/arm-linux/include/vpx/vp8.h
+    [INSTALL] /root/vcpkg/installed/arm-linux/include/vpx/vp8cx.h
+    [INSTALL] /root/vcpkg/installed/arm-linux/include/vpx/vp8dx.h
+    [INSTALL] /root/vcpkg/installed/arm-linux/include/vpx/vpx_codec.h
+    [INSTALL] /root/vcpkg/installed/arm-linux/include/vpx/vpx_frame_buffer.h
+    [INSTALL] /root/vcpkg/installed/arm-linux/include/vpx/vpx_image.h
+    [INSTALL] /root/vcpkg/installed/arm-linux/include/vpx/vpx_integer.h
+    [INSTALL] /root/vcpkg/installed/arm-linux/include/vpx/vpx_decoder.h
+    [INSTALL] /root/vcpkg/installed/arm-linux/include/vpx/vpx_encoder.h
+    [INSTALL] /root/vcpkg/installed/arm-linux/lib/libvpx.a
+    [INSTALL] /root/vcpkg/installed/arm-linux/lib/pkgconfig/vpx.pc
+make[1]: Nothing to be done for 'install'.
+make[1]: Nothing to be done for 'install'.
+```
+
+### 安装 opus 
+
+```sh
+mv xiph-opus-5c94ec3205c30171ffd01056f5b4622b7c0ab54c.tar.gz vcpkg/downloads/
+cd vcpkg/downloads/
+tar zxmf xiph-opus-5c94ec3205c30171ffd01056f5b4622b7c0ab54c.tar.gz
+cd opus-5c94ec3205c30171ffd01056f5b4622b7c0ab54c
+./autogen.sh
+#prefix根据自己的vcpkg路径情况来定
+./configure --prefix="/root/vcpkg/installed/arm-linux/" CFLAGS="-Os" --enable-fixed-point --enable-intrinsics --host=arm-linux
+make -j4
+make install
+cd
+```
+
+```sh
+root@pynq:~/vcpkg/downloads/opus-5c94ec3205c30171ffd01056f5b4622b7c0ab54c# ./autogen.sh
+Updating build configuration files, please wait....
+libtoolize: putting auxiliary files in '.'.
+libtoolize: linking file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: linking file 'm4/libtool.m4'
+libtoolize: linking file 'm4/ltoptions.m4'
+libtoolize: linking file 'm4/ltsugar.m4'
+libtoolize: linking file 'm4/ltversion.m4'
+libtoolize: linking file 'm4/lt~obsolete.m4'
+configure.ac:38: installing './compile'
+configure.ac:36: installing './config.guess'
+configure.ac:36: installing './config.sub'
+configure.ac:33: installing './install-sh'
+configure.ac:33: installing './missing'
+Makefile.am:319: warning: '%'-style pattern rules are a GNU make extension
+Makefile.am:322: warning: '%'-style pattern rules are a GNU make extension
+Makefile.am: installing './INSTALL'
+Makefile.am: installing './depcomp'
+parallel-tests: installing './test-driver'
+```
+
+```sh
+configure:
+------------------------------------------------------------------------
+  opus unknown:  Automatic configuration OK.
+
+    Compiler support:
+
+      C99 var arrays: ................ yes
+      C99 lrintf: .................... yes
+      Use alloca: .................... no (using var arrays)
+
+    General configuration:
+
+      Floating point support: ........ no
+      Fast float approximations: ..... no
+      Fixed point debugging: ......... no
+      Inline Assembly Optimizations: . ARM (EDSP) (Media)
+      External Assembly Optimizations: ARM (EDSP) (Media)
+      Intrinsics Optimizations: ...... ARM (NEON)
+      Run-time CPU detection: ........ ARM (NEON) (NEON Intrinsics)
+      Custom modes: .................. no
+      Assertion checking: ............ no
+      Hardening: ..................... yes
+      Fuzzing: ....................... no
+      Check ASM: ..................... no
+
+      API documentation: ............. yes
+      Extra programs: ................ yes
+------------------------------------------------------------------------
+
+ Type "make; make install" to compile and install
+ Type "make check" to run the test suite
+```
+
+### 构建
+
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+#git clone https://github.com/rustdesk/rustdesk
+#目前只测试过rustdesk-1.1.8版本
+#https://github.com/rustdesk/rustdesk/archive/refs/tags/1.1.8.zip
+tar zxmf rustdesk-1.1.8.tar.gz
+mv rustdesk-1.1.8 rustdesk
+cd rustdesk
+#需要修改rustdesk/Cargo.toml两个地方：
+#第3行：version = "1.1.6"-> version = "1.1.8"
+#第20行：whoami = "1.1" -> whoami = "1.2"
+cargo build --release
+#接下来漫长等待
+#如果是下载阶段感觉不顺畅的，可以ctrl+c结束后重试，直到成功为止
+```
+
+```sh
+root@pynq:~/rustdesk# cargo build --release
+    Updating crates.io index
+error: failed to get `block` as a dependency of package `scrap v0.5.0 (/root/rustdesk/libs/scrap)`
+
+Caused by:
+  failed to fetch `https://github.com/rust-lang/crates.io-index`
+
+Caused by:
+  network failure seems to have happened
+  if a proxy or similar is necessary `net.git-fetch-with-cli` may help here
+  https://doc.rust-lang.org/cargo/reference/config.html#netgit-fetch-with-cli
+
+Caused by:
+  SSL error: received early EOF; class=Ssl (16); code=Eof (-20)
+
+#遇到这种情况不要惊慌，重试即可，整个过程可能会出现数次。如果有什么好的方法也可以告诉我^_^
 ```
