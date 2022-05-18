@@ -1,5 +1,5 @@
 ---
-title: armhf
+title: ARMhf
 weight: 24
 ---
 
