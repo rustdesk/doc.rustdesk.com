@@ -57,16 +57,14 @@ g++ has <ext/stdio_filebuf.h>
 ### 安装依赖项
 
 ```sh
-sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang libxcb-randr0-dev libxdo-dev libxfixes-dev libxcb-shape0-dev libxcb-xfixes0-dev libasound2-dev libpulse-dev
+sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang libxcb-randr0-dev libxdo-dev libxfixes-dev libxcb-shape0-dev libxcb-xfixes0-dev libasound2-dev libpulse-dev ninja-build
 ```
 
 ### 安装 vcpkg
 
 ```sh
-git clone https://github.com/microsoft/vcpkg
-cd vcpkg
-git checkout 2024.12.01
-cd ..
+tar zxmf vcpkg-2020.11.tar.gz
+mv vcpkg-2020.11 vcpkg
 vcpkg/bootstrap-vcpkg.sh
 export VCPKG_ROOT=$HOME/vcpkg
 vcpkg/vcpkg install libyuv
