@@ -107,6 +107,10 @@ hbbs.yourhost.com:21116
 
 把`rustdesk.exe` 修改為 rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe, 例如： rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe，你可以在About窗口看到配置結果，如下圖所示。
 
+{{% notice note %}}
+`host` 和 `key` 都需要添加，缺少一個就不好使。
+{{% /notice %}}
+
 | Menu | About Page |
 | -- | -- |
 ![](/docs/en/self-host/install/images/aboutmenu.png) | ![](/docs/en/self-host/install/images/lic.png) |

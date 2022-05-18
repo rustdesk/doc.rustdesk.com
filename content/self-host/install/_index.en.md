@@ -108,6 +108,10 @@ hbbs.yourhost.com:21116
 
 Change `rustdesk.exe` to rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe, e.g. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe, you can see the config result in the about window as below.
 
+{{% notice note %}}
+You need to set `host` and `key` both, missing any one won't work.
+{{% /notice %}}
+
 | Menu | About Page |
 | -- | -- |
 ![](/docs/en/self-host/install/images/aboutmenu.png) | ![](/docs/en/self-host/install/images/lic.png) |
