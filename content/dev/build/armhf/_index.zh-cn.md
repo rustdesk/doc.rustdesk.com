@@ -8,15 +8,15 @@ weight: 24
 https://github.com/rustdesk/rustdesk/issues/175#issuecomment-1129516367
 
 ## 基本构建步骤
-- 下载[ubuntu18.04_rootfs.tar.gz](https://pan.baidu.com/s/1pmjw7OBn5NbiCvM6GGaEgQ) 提取码：xlnx (我试了好几个版本的ubuntu系统，只有在这个上面成功了，编译好的可执行文件是可以在其他armhf系统下面用的。)
+- 下载[ubuntu18.04_rootfs.tar.gz](https://pan.baidu.com/s/1pmjw7OBn5NbiCvM6GGaEgQ) 提取码：xlnx (我试了好几个版本的ubuntu系统，只有在这个上面成功了，编译好的可执行文件是可以在其他armhf系统下面用的。PS：如果你不放心系统来源，你也可以基于本教程在你的系统中编译，如果成功了记得提交方案来取代本教程。)
 - 下载编译[cmake-3.14.5](https://cmake.org/files/v3.14/cmake-3.14.5.tar.gz)  编译[参考教程](https://blog.csdn.net/weixin_43793181/article/details/118157012) 系统自带的cmake版本为3.10.2，编译[vcpkg-2020.11](https://github.com/microsoft/vcpkg/archive/refs/tags/2020.11.tar.gz)时会报版本过低
   - 在板编译（qemu虚拟机我没搭建成功）
   
 - 安装[vcpkg](https://github.com/microsoft/vcpkg), 正确设置`VCPKG_ROOT`环境变量。建议下载[vcpkg-2020.11](https://github.com/microsoft/vcpkg/archive/refs/tags/2020.11.tar.gz)，我暂时用的是这个版本
 
   - Linux: vcpkg install libyuv 
-  - [libvpx](https://pan.baidu.com/s/1fgi0PzOrT4VpL6p3MY-IVA) 提取码：xlnx (手动安装)
-  - [opus](https://pan.baidu.com/s/1fxQayZ7FGq-Z0bn_pjBVfQ) 提取码：xlnx (手动安装)
+  - [libvpx](https://pan.baidu.com/s/1fgi0PzOrT4VpL6p3MY-IVA) 提取码：xlnx (手动安装，至于为什么指定该文件，我想表达的是我基于该文件成功编译了，你也可以下载其他文件来代替本文件。)
+  - [opus](https://pan.baidu.com/s/1fxQayZ7FGq-Z0bn_pjBVfQ) 提取码：xlnx (手动安装，原因同上。)
 
 - 运行 `cargo run`
 
@@ -135,7 +135,7 @@ submit an issue at https://github.com/Microsoft/vcpkg/issues including:
 
 Additionally, attach any relevant sections from the log files above.
 ```
-- 或者直接下载离线包[libyuv](https://pan.baidu.com/s/1NmlvsXFh2Ivc36XEyb-BIw) 提取码：xlnx 复制到vcpkg/downloads/文件夹下 继续执行
+- 或者直接下载离线包[libyuv](https://pan.baidu.com/s/1NmlvsXFh2Ivc36XEyb-BIw) 提取码：xlnx 复制到vcpkg/downloads/文件夹下 （该选项是可选项，对于网络不好的情况可能会用到）继续执行
 ```sh
 mv ./libyuv-fec9121b676eccd9acea2460aec7d6ae219701b9.tar.gz vcpkg/downloads/
 vcpkg/vcpkg install libyuv
@@ -314,6 +314,8 @@ cd rustdesk
 #需要修改rustdesk/Cargo.toml两个地方：
 #第3行：version = "1.1.6"-> version = "1.1.8"
 #第20行：whoami = "1.1" -> whoami = "1.2"
+#需要修改rustdesk/libs/hbb_common/Cargo.toml一个地方：
+#第27行：confy = { git = "https://github.com/open-trade/confy" } -> confy = "0.4" 
 cargo build --release
 #接下来漫长等待
 #如果是下载阶段感觉不顺畅的，可以ctrl+c结束后重试，直到成功为止
@@ -336,4 +338,32 @@ Caused by:
   SSL error: received early EOF; class=Ssl (16); code=Eof (-20)
 
 #遇到这种情况不要惊慌，重试即可，整个过程可能会出现数次。如果有什么好的方法也可以告诉我^_^
+```
+
+```sh
+root@pynq:~/rustdesk# cargo build --release
+    Updating crates.io index
+    Updating git repository `https://github.com/open-trade/confy`
+warning: spurious network error (2 tries remaining): SSL error: syscall failure: Broken pipe; class=Os (2)
+error: failed to get `confy` as a dependency of package `hbb_common v0.1.0 (/root/rustdesk/libs/hbb_common)`
+
+Caused by:
+  failed to load source for dependency `confy`
+
+Caused by:
+  Unable to update https://github.com/open-trade/confy#27fa1294
+
+Caused by:
+  failed to clone into: /root/.cargo/git/db/confy-90047e480c044d79
+
+Caused by:
+  network failure seems to have happened
+  if a proxy or similar is necessary `net.git-fetch-with-cli` may help here
+  https://doc.rust-lang.org/cargo/reference/config.html#netgit-fetch-with-cli
+
+Caused by:
+  SSL error: received early EOF; class=Ssl (16); code=Eof (-20)
+
+#需要修改rustdesk/libs/hbb_common/Cargo.toml一个地方：
+#第27行：confy = { git = "https://github.com/open-trade/confy" } -> confy = "0.4" 
 ```
