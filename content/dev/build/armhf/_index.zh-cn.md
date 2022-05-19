@@ -9,6 +9,7 @@ https://github.com/rustdesk/rustdesk/issues/175#issuecomment-1129516367
 
 ## 基本构建步骤
 - 下载[ubuntu18.04_rootfs.tar.gz](https://pan.baidu.com/s/1pmjw7OBn5NbiCvM6GGaEgQ) 提取码：xlnx (我试了好几个版本的ubuntu系统，只有在这个上面成功了，编译好的可执行文件是可以在其他armhf系统下面用的。PS：如果你不放心系统来源，你也可以基于本教程在你的系统中编译，如果成功了记得提交方案来取代本教程。)
+- [PYNQ官方资源](http://www.pynq.io)|[PYNQ-github](https://github.com/Xilinx/PYNQ)|[ubuntu](https://ubuntu.com/blog/microk8s-memory-optimisation)
 - 下载编译[cmake-3.14.5](https://cmake.org/files/v3.14/cmake-3.14.5.tar.gz)  编译[参考教程](https://blog.csdn.net/weixin_43793181/article/details/118157012) 系统自带的cmake版本为3.10.2，编译[vcpkg-2020.11](https://github.com/microsoft/vcpkg/archive/refs/tags/2020.11.tar.gz)时会报版本过低
   - 在板编译（qemu虚拟机我没搭建成功）
   
@@ -18,7 +19,7 @@ https://github.com/rustdesk/rustdesk/issues/175#issuecomment-1129516367
   - [libvpx](https://pan.baidu.com/s/1fgi0PzOrT4VpL6p3MY-IVA) 提取码：xlnx (手动安装，至于为什么指定该文件，我想表达的是我基于该文件成功编译了，你也可以下载其他文件来代替本文件。)
   - [opus](https://pan.baidu.com/s/1fxQayZ7FGq-Z0bn_pjBVfQ) 提取码：xlnx (手动安装，原因同上。)
 
-- 运行 `cargo run`
+- 编译 `cargo build --release`
 
 ## 在 armhf 上编译
 
@@ -73,6 +74,7 @@ tar zxmf vcpkg-2020.11.tar.gz
 mv vcpkg-2020.11 vcpkg
 vcpkg/bootstrap-vcpkg.sh
 export VCPKG_ROOT=$HOME/vcpkg
+export VCPKG_FORCE_SYSTEM_BINARIES=1
 vcpkg/vcpkg install libyuv
 ```
 
@@ -367,3 +369,84 @@ Caused by:
 #需要修改rustdesk/libs/hbb_common/Cargo.toml一个地方：
 #第27行：confy = { git = "https://github.com/open-trade/confy" } -> confy = "0.4" 
 ```
+如果你到了这一步，恭喜你，你已经离成功不远了！
+```sh
+   Compiling rustdesk v1.1.8 (/root/rustdesk)
+warning: `hbb_common` (lib) generated 1 warning
+    Finished release [optimized] target(s) in 141m 20s
+```
+### 测试
+- 查看版本号
+```sh
+root@pynq:~/rustdesk# ./target/release/rustdesk --version
+1.1.8
+```
+- 运行服务
+```sh
+root@pynq:~/rustdesk# ./target/release/rustdesk --service
+[2022-05-19T06:48:44Z INFO  rustdesk] start --service
+[2022-05-19T06:48:46Z INFO  rustdesk] start --server
+[2022-05-19T06:48:46Z INFO  rustdesk::server] DISPLAY=Err(NotPresent)
+[2022-05-19T06:48:46Z INFO  rustdesk::server] XAUTHORITY=Err(NotPresent)
+[2022-05-19T06:48:46Z INFO  rustdesk::ipc] Started ipc server at path: /tmp/RustDesk/ipc
+[2022-05-19T06:48:46Z ERROR rustdesk::server::clipboard_service] Failed to start clipboard: Unknown error while interacting with the clipboard: Display parsing error
+[2022-05-19T06:48:46Z INFO  rustdesk::common] Testing nat ...
+[2022-05-19T06:48:46Z INFO  rustdesk::rendezvous_mediator] start rendezvous mediator of rs-ny.rustdesk.com
+[2022-05-19T06:48:46Z INFO  rustdesk::rendezvous_mediator] start rendezvous mediator of rs-sg.rustdesk.com
+[2022-05-19T06:48:51Z INFO  rustdesk::rendezvous_mediator] start rendezvous mediator of rs-cn.rustdesk.com
+[2022-05-19T06:48:51Z INFO  rustdesk::rendezvous_mediator] register_pk of rs-sg due to key not confirmed
+[2022-05-19T06:48:51Z INFO  rustdesk::rendezvous_mediator] register_pk of rs-ny due to key not confirmed
+[2022-05-19T06:48:51Z INFO  rustdesk::rendezvous_mediator] machine uid: 1bb53cb1093f458aa5d68063d06aa39f
+[2022-05-19T06:48:51Z INFO  rustdesk::rendezvous_mediator] machine uid: 1bb53cb1093f458aa5d68063d06aa39f
+[2022-05-19T06:48:51Z INFO  rustdesk::rendezvous_mediator] register_pk of rs-cn due to key not confirmed
+[2022-05-19T06:48:51Z INFO  rustdesk::rendezvous_mediator] machine uid: 1bb53cb1093f458aa5d68063d06aa39f
+[2022-05-19T06:48:51Z INFO  rustdesk::rendezvous_mediator] UUID_MISMATCH received from rs-cn.rustdesk.com
+[2022-05-19T06:48:51Z INFO  hbb_common::config] id updated from xxxxxx to xxxxxxx (hide id)
+[2022-05-19T06:48:51Z INFO  rustdesk::rendezvous_mediator] machine uid: 1bb53cb1093f458aa5d68063d06aa39f
+[2022-05-19T06:48:52Z INFO  rustdesk::common] Tested nat type: ASYMMETRIC in 6.084360199s
+[2022-05-19T06:49:04Z INFO  rustdesk::rendezvous_mediator] register_pk of rs-sg due to key not confirmed
+[2022-05-19T06:49:04Z INFO  rustdesk::rendezvous_mediator] machine uid: 1bb53cb1093f458aa5d68063d06aa39f
+[2022-05-19T06:49:04Z INFO  rustdesk::rendezvous_mediator] register_pk of rs-ny due to key not confirmed
+[2022-05-19T06:49:04Z INFO  rustdesk::rendezvous_mediator] machine uid: 1bb53cb1093f458aa5d68063d06aa39f
+[2022-05-19T06:49:05Z INFO  rustdesk::rendezvous_mediator] register_pk of rs-sg due to key not confirmed
+[2022-05-19T06:49:05Z INFO  rustdesk::rendezvous_mediator] machine uid: 1bb53cb1093f458aa5d68063d06aa39f
+```
+别高兴太早，启动服务只是获取了ID，你需要设置密码才能被其他终端访问。
+- 设置密码
+```sh
+root@pynq:~/rustdesk# ./target/release/rustdesk --password qwertyuiop123123 #密码请随意，这只是个例子
+thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: Connection refused (os error 111)', src/main.rs:106:55
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+#虽然有错误提示，但不影响设置密码
+```
+- 重启服务，等待连接
+```sh
+root@pynq:~/rustdesk# ./target/release/rustdesk --service &
+[1] 20186
+```
+你可能会立刻打开PC版的rustdesk直接连接，不过连接之后你会发现
+```sh
+Unsupported display server type tty,x11 expected
+```
+如果你想要看到桌面，可能需要得到[sciter](https://sciter.com/)的支持，接下来我给出一种命令行连接的方式,这基于你在Windows PC或者Linux PC上安装了rustdesk。下面以Windows 7为例,测试目标机的SSH功能：
+```sh
+#找到你安装RustDesk的位置
+C:\Users\Administrator\Desktop>cd C:\Program Files\RustDesk 
+C:\Program Files\RustDesk>RustDesk.exe --port-forward ur_dev_id 11000 127.0.0.1 22
+```
+然后用SSH客户端去连接本地IP和端口
+```sh
+Connecting to 127.0.0.1:11000...
+Connection established.
+To escape to local shell, press 'Ctrl+Alt+]'.
+
+Welcome to PYNQ Linux, based on Ubuntu 18.04 (GNU/Linux 4.14.0-xilinx armv7l)
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+Last login: Thu May 19 07:33:22 2022 from 127.0.0.1
+root@pynq:~# 
+```
+连接的过程会弹出输入远程机密码，建议选上记住密码，这样下次你就可以直接在rustdesk APP上看到连接记录，并直接用APP上的TCP隧道功能连接而非命令行方式。当然，最好建议[@rustdesk](https://github.com/rustdesk)在APP界面上的[传输文件]()按钮左边再加一个[TCP隧道]()按钮，这样就不用命令行就可以连接目标设备了。
