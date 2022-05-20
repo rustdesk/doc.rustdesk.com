@@ -13,6 +13,7 @@ cd rustdesk
 # For simulator: VCPKG_ROOT=$HOME/vcpkg ./flutter/ios_x64.sh
 VCPKG_ROOT=$HOME/vcpkg ./flutter/ios_arm64.sh
 cd flutter
+dart pub global activate ffigen
 # Good Luck!
 # For simulator: sed 's/aarch64/x86_64/g' ios/Runner.xcodeproj/project.pbxproj
 # Forget if need: cd ios; pod install; cd -;

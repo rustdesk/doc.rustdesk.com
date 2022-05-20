@@ -17,11 +17,18 @@ tar xzf dep.tar.gz
 # https://stackoverflow.com/questions/68873570/how-do-i-fix-ld-error-unable-to-find-library-lgcc-when-cross-compiling-rust
 wget https://dl.google.com/android/repository/android-ndk-r22b-linux-x86_64.zip
 unzip android-ndk-r22b-linux-x86_64.zip
+
+# install ffigen and llvm 
+dart pub global activate ffigen
+sudo apt-get install libclang-dev
+
 git clone https://github.com/rustdesk/rustdesk
 cd rustdesk
 rustup target add aarch64-linux-android 
+
 cargo install cargo-ndk
-OPENSSL_DIR=$HOME/openssl AARCH64_LINUX_ANDROID_OPENSSL_LIB_DIR=$HOME/openssl VCPKG_ROOT=$HOME/vcpkg ANDROID_NDK_HOME=$HOME/android-ndk-r22b flutter/ndk_arm64.sh
+
+VCPKG_ROOT=$HOME/vcpkg ANDROID_NDK_HOME=$HOME/android-ndk-r22b flutter/ndk_arm64.sh
 ```
 
 ## 構建 Flutter
