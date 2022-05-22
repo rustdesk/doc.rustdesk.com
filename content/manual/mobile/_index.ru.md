@@ -57,7 +57,7 @@ weight: 1
 Нажмите `Settings` на нижней панели, выберите `ID/Relay Server`.
 После ввода и сохранения настроек, приложение автоматически переключится на нужный сервер.
 Также вы можете отсканировать [QR-код](https://rustdesk.com/docs/en/self-host/console/images/console-home.png?v2).
-На картинке ниже скриншот Android. Если у вас iOS, проверьте меню слева вверху на главной странице.
+На картинке ниже скриншот Android. Если у вас iOS, проверьте меню справа вверху на главной странице.
 
 ![](/docs/en/manual/mobile/images/id_setting_en.jpg?width=300px)
 
