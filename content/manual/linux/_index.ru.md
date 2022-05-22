@@ -35,12 +35,12 @@ RustDesk пока не поддерживает Wayland. Необходимо п
 |![](/docs/en/manual/linux/images/fix1.png)|![](/docs/en/manual/linux/images/fix2.png)|
 
 {{% notice note %}}
-**Перезагрузите** ваш компьютер чтобы применить изменения
+**Перезагрузите** ваш компьютер, чтобы применить изменения
 {{% /notice %}}
 
-#### То-же самое можно настроить вручную
+#### То же самое можно настроить вручную
 
-#### Сервер дисплея
+#### Сервер отображения
 Ubuntu: https://askubuntu.com/questions/1260142/ubuntu-set-default-login-desktop
 
 Fedora: https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/
