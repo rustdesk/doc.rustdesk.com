@@ -56,7 +56,7 @@ Synogy 的操作系统是基于 debain 的，因此host net (--net=host) 可以�
 
 ### 创建 hbbr 容器 
 
-请重复上述 `hbbs` 步骤，请将容器名更改为 `hbbr` 并将命令更改为 `hbbr -m demo`。
+请重复上述 `hbbs` 步骤，请将容器名更改为 `hbbr` 并将命令更改为 `hbbr`。
 
 ![](/docs/en/self-host/synogy/images/hbbr-config.png) 
 
