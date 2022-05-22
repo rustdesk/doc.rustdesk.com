@@ -55,7 +55,7 @@ Synogy's OS is debain based, so host net (--net=host) works fine, we do not need
 
 ### Create hbbr container
 
-Please repeat above `hbbs` steps, but change container name to `hbbr` and command to `hbbr `.
+Please repeat above `hbbs` steps, but change container name to `hbbr` and command to `hbbr`.
 
 ![](/docs/en/self-host/synogy/images/hbbr-config.png) 
 
