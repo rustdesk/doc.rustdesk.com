@@ -10,7 +10,7 @@ weight: 3
 
 ![](/docs/en/manual/mac/images/dmg.png)
 
-Убедитесь, что RustDesk не запущен. Так-же убедитесь, что служба RustDesk не запущена.
+Убедитесь, что вы закрыли все запущенные приложения RustDesk. Также убедитесь, что вы закрыли службу RustDesk.
 
 ![](/docs/en/manual/mac/images/tray.png)
 
@@ -28,12 +28,12 @@ weight: 3
 | ---- | ---- |
 |![](/docs/en/manual/mac/images/acc.png)|![](/docs/en/manual/mac/images/acc3.png?v2)|
 
-Если разрешения включены, но RustDesk их не видит, Уберите RustDesk из списка при помощи кнопки `-`, нажмите кнопку `+` и выберите RustDesk в `/Applications`.
+Если разрешения включены, но RustDesk их не видит, то уберите RustDesk из списка при помощи кнопки `-`, затем нажмите кнопку `+` и выберите RustDesk в `/Applications`.
 
 | Кнопки `-` и `+` | Выбор RustDesk |
 | ---- | ---- |
 |![](/docs/en/manual/mac/images/acc2.png)|![](/docs/en/manual/mac/images/add.png?v2)|
 
-Пройдите те-же шаги для настройки разрешения **screen recording**.
+Пройдите те же шаги для настройки разрешения **screen recording**.
 
 ![](/docs/en/manual/mac/images/screen.png?v2)
