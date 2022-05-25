@@ -12,7 +12,7 @@ weight: 10
 [Linux](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so) |
 [MacOS](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.osx/libsciter.dylib)
 
-## Необработанные шаги для сборки
+## Первичные шаги для сборки
 
 - Подготовьте среду разработки Rust и среду сборки C++.
 
@@ -55,7 +55,7 @@ export VCPKG_ROOT=$HOME/vcpkg
 vcpkg/vcpkg install libvpx libyuv opus
 ```
 
-### Исправления libvpx (Для Fedora)
+### Исправления libvpx (для Fedora)
 
 ```sh
 cd vcpkg/buildtrees/libvpx/src
@@ -83,4 +83,4 @@ VCPKG_ROOT=$HOME/vcpkg cargo run
 
 ### Смените Wayland на X11 (Xorg)
 
-RustDesk не поддерживает Wayland. Смотри [этот документ](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/) для настройки Xorg в качестве сеанса GNOME по умолчанию.
+RustDesk не поддерживает Wayland. Смотрите [этот документ](https://docs.fedoraproject.org/ru/quick-docs/configuring-xorg-as-default-gnome-session/) для настройки Xorg в качестве сеанса GNOME по умолчанию.
