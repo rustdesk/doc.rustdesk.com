@@ -47,7 +47,7 @@ pm2 start hbbr
 `pm2` 需要 nodejs v16+，如果你運行 pm2 失敗（例如在 `pm2 list` 中看不到 hbbs/hbbr），請從 https://nodejs.org 下載並安裝 LTS 版本的 nodejs。如果你想讓 hbbs/hbbr 在重啟後自動運行，請查看 `pm2 save` 和 `pm2 startup`。更多關於 [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/)。另一個不錯的日誌工具是 [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate)。
 
 
-hhbs的`-r`參數不是必須的，他只是方便你不用在客戶端指定中繼服務器。客戶端指定的中繼服務器優先級高於這個。**如果RustDesk被控客戶端版本>=1.1.9, 客戶端也不需要製定終極服務器地址，如果中繼服務器沒有跑在不同的服務器或者端口上。**
+hhbs的`-r`參數不是必須的，他只是方便你不用在客戶端指定中繼服務器。客戶端指定的中繼服務器優先級高於這個。
 
 {{% /notice %}}
 
