@@ -93,13 +93,13 @@ Enter the hbbs host or ip address in the ID server input box (local side + remot
 e.g.
 
 ```
-hbbs.yourhost.com
+hbbs.example.com
 ```
 
 or
 
 ```
-hbbs.yourhost.com:21116
+hbbs.example.com:21116
 ```
 
 ![](/docs/en/self-host/install/images/server-set-window.png)

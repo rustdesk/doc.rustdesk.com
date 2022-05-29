@@ -95,13 +95,13 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --n
 Например:
 
 ```
-hbbs.yourhost.com
+hbbs.example.com
 ```
 
 или
 
 ```
-hbbs.yourhost.com:21116
+hbbs.example.com:21116
 ```
 
 ![](/docs/en/self-host/install/images/server-set-window.png)
