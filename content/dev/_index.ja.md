@@ -1,12 +1,12 @@
 ---
-title: Development
+title: 開発
 weight: 8
 pre: "<b>3. </b>"
 chapter: true
 ---
 
-### Chapter 3
+### 第3章
 
-# Development
+# 開発
 
 {{% children depth="3" showhidden="true" %}}

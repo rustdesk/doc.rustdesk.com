@@ -1,12 +1,12 @@
 ---
-title: Manual
+title: マニュアル
 weight: 2
 pre: "<b>1. </b>"
 chapter: true
 ---
 
-### Chapter 1
+### 第1章
 
-# Manual
+# マニュアル
 
 {{% children depth="1" showhidden="true" %}}

@@ -75,7 +75,7 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --n
 <a name="net-host"></a>
 
 {{% notice note %}}
---net=host only works on Linux so far as I know, which make hbbs/hbbr can see the real incomming ip rather than container ip (172.17.0.1).
+--net=host only works on Linux so far as I know, which make hbbs/hbbr can see the real incoming ip rather than container ip (172.17.0.1).
 If --net=host works fine, -p options are useless.
 
 **Please remove --net=host if see connection problem on your platform**
@@ -93,13 +93,13 @@ Enter the hbbs host or ip address in the ID server input box (local side + remot
 e.g.
 
 ```
-hbbs.yourhost.com
+hbbs.example.com
 ```
 
 or
 
 ```
-hbbs.yourhost.com:21116
+hbbs.example.com:21116
 ```
 
 ![](/docs/en/self-host/install/images/server-set-window.png)

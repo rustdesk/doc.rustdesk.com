@@ -5,10 +5,10 @@ pre: "<b>2. </b>"
 chapter: true
 ---
 
-### 章 2
+### 第2章
 
 # セルフホスト
 
-サーバーの開発は継続的に行っています。コメントがあれば、[Discord]（https://discord.com/invite/nDceKgxnkV）のディスカッションに参加してください。
+サーバーの開発は継続的に行っています。困ったことがあれば[Discord](https://discord.com/invite/nDceKgxnkV)に参加してください。
 
 {{% children depth="3" showhidden="true" %}}
