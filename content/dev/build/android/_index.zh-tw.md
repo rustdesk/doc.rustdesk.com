@@ -41,5 +41,6 @@ tar xzf so.tar.gz
 cp ../target/aarch64-linux-android/release/liblibrustdesk.so android/app/src/main/jniLibs/arm64-v8a/librustdesk.so
 # Run on your android device, not support simulator yet (Please do not ask why).
 # Good Luck!
+# openjdk 11 required, do not use higher or lower, both has problem
 flutter run
 ```
