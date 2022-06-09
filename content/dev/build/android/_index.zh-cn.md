@@ -19,7 +19,7 @@ wget https://dl.google.com/android/repository/android-ndk-r22b-linux-x86_64.zip
 unzip android-ndk-r22b-linux-x86_64.zip
 
 # install ffigen and llvm 
-dart pub global activate ffigen
+dart pub global activate ffigen 5.0.1
 # on Ubuntu 18, it is: sudo apt install libclang-9-dev
 sudo apt-get install libclang-dev
 
