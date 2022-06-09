@@ -20,6 +20,7 @@ unzip android-ndk-r22b-linux-x86_64.zip
 
 # install ffigen and llvm 
 dart pub global activate ffigen
+# on Ubuntu 18, it is: sudo apt install libclang-9-dev
 sudo apt-get install libclang-dev
 
 git clone https://github.com/rustdesk/rustdesk
