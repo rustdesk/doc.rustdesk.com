@@ -39,6 +39,7 @@ wget https://github.com/rustdesk/doc.rustdesk.com/releases/download/console/so.t
 tar xzf so.tar.gz
 cp ../target/aarch64-linux-android/release/liblibrustdesk.so android/app/src/main/jniLibs/arm64-v8a/librustdesk.so
 # Запустите на своем устройстве Android, симулятор пока не поддерживается (Пожалуйста, не спрашивайте, почему).
+# Требуется openjdk 11, не используйте более высокие или более низкие версии, у них есть проблемы.
 # Удачи!
 flutter run
 ```
