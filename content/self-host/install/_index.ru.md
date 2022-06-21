@@ -112,6 +112,8 @@ hbbs.example.com:21116
 
 {{% notice note %}}
 Необходимо добавить и `host`, и `key`, а использовать их без них непросто.
+
+If there are invalid characters in the key which can not be used in file name, please remove id_ed25519 file and restart your hbbs/hbbr, the id_ed25519.pub file will be regenerated, please repeat until you get valid characters.
 {{% /notice %}}
 
 |Меню |О странице |

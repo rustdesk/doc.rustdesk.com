@@ -108,8 +108,13 @@ hbbs.example.com:21116
 
 Change `rustdesk.exe` to rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe, e.g. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe, you can see the config result in the about window as below.
 
+<a name="invalidchar"></a>
 {{% notice note %}}
 You need to set `host` and `key` both, missing any one won't work.
+
+If there are invalid characters in the key which can not be used in file name, please remove
+id_ed25519 file and restart your hbbs/hbbr, the id_ed25519.pub file will be regenerated, please
+repeat until you get valid characters.
 {{% /notice %}}
 
 | Menu | About Page |
