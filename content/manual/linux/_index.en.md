@@ -28,17 +28,7 @@ sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
 ### X11 Required 
-RustDesk does not support wayland yet, you need switch to X11. RustDesk will guide you to switch to X11. 
-
-| Pleaes click on "Fix it" | fix for login screen | Input your password |
-| ---- | ---- | --- |
-|![](/docs/en/manual/linux/images/fix1.png)|![](/docs/en/manual/linux/images/fix3.png)|![](/docs/en/manual/linux/images/fix2.png)|
-
-{{% notice note %}}
-Please **reboot** to make above changes taking effect
-{{% /notice %}}
-
-#### You can also do above changes manually
+RustDesk does not support wayland yet, you need switch to X11 manually.
 
 #### Display Server
 Ubuntu: https://askubuntu.com/questions/1260142/ubuntu-set-default-login-desktop
@@ -54,3 +44,6 @@ Modify below line to `WaylandEnable=false` in `/etc/gdm/custom.conf` or `/etc/gd
 #WaylandEnable=false
 ```
 
+{{% notice note %}}
+Please **reboot** to make above changes taking effect
+{{% /notice %}}

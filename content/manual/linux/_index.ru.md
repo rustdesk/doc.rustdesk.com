@@ -28,17 +28,7 @@ sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
 ### X11 обязателен 
-RustDesk пока не поддерживает Wayland. Необходимо перейти на X11. RustDesk поможет это сделать. 
-
-| Нажмите "Fix it" | Введите пароль |
-| ---- | --- |
-|![](/docs/en/manual/linux/images/fix1.png)|![](/docs/en/manual/linux/images/fix2.png)|
-
-{{% notice note %}}
-**Перезагрузите** ваш компьютер, чтобы применить изменения
-{{% /notice %}}
-
-#### То же самое можно настроить вручную
+RustDesk пока не поддерживает Wayland. Необходимо перейти на X11 вручную.
 
 #### Сервер отображения
 Ubuntu: https://askubuntu.com/questions/1260142/ubuntu-set-default-login-desktop
@@ -53,3 +43,8 @@ Arch: https://bbs.archlinux.org/viewtopic.php?id=218319
 ```
 #WaylandEnable=false
 ```
+
+{{% notice note %}}
+**Перезагрузите** ваш компьютер, чтобы применить изменения
+{{% /notice %}}
+
