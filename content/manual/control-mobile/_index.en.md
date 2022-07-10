@@ -72,11 +72,12 @@ After the service is started, a unique ID and random password will be automatica
 3. Except for the `screen capture` permission, the switching of other permissions will only affect the new connection, and will not affect the established connection. If you need to switch permissions for an established connection, please close the current connection first, modify the permissions, and then receive a control request.
 {{% /notice %}}
 
-**PC:**
+##### PC
 
 ![](/docs/en/manual/mobile/images/android_server_pc_side_en.png?width=700px)
 
-**Mobile terminal:**
+##### Mobile terminal
+
 | You can stop the service or close the specified connection at any time | You can receive or initiate chats |
 | --------------- | -------------------------------------------------------- |
 | ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/android_server2_en.jpg?width=300px) |
