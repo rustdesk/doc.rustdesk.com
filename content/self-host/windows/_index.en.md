@@ -6,7 +6,7 @@ weight: 20
 
 ### Install NodeJs
 
-Please [download](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi) and install.
+Please [download](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi) and install NodeJS.
 NodeJs is the runtime environment of pm2, so you need to install NodeJs first。
 
 ### Install pm2
