@@ -1,12 +1,12 @@
 ---
-title: Manual
+title: Handbuch
 weight: 2
 pre: "<b>1. </b>"
 chapter: true
 ---
 
-### Chapter 1
+### Kapitel 1
 
-# Manual
+# Handbuch
 
 {{% children depth="1" showhidden="true" %}}
