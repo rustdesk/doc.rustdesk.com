@@ -3,7 +3,6 @@ title: Docker
 weight: 30
 ---
 
-
 ## How to build with Docker
 
 Begin by cloning the repository and building the docker container:
