@@ -6,78 +6,78 @@ weight: 2
 ### Képernyő és fájlmegosztás az Android eszközöről
 ------
 
-Starting from version 1.1.9, the Android client has added the functions of sharing the phone screen and sharing the file system of the phone.
+Az 1.1.9es verziótól kezdve, a RustDesk android kliens támogatja a telefon képernyőjének, és fájlrendszerének megosztását távolról.
 
-- Android 6 and above is required for screen sharing
-- Android 10 or above is required to share the internal audio of the mobile phone system
-- iOS does not yet support screen sharing
+- Minimum Android 6 szükséges a kijelző megosztásához
+- Minimum Android 10 szükséges ahhoz hogy meglehessen osztani az eszköz audióját
+- Az IOS cliens még nem támogatja a kijelzőmegosztást
 
 
-#### **Request permissions and start services**
+#### **Jogok, szolgáltatás**
 
-Click on `Share Screen` from the bottom navigation bar
+Nyomj a `Képernyőmegosztás` opcióra lent a navigációs sornál
 
-Configure various permissions as needed. Every time you start RustDesk, you need to request "Screen Capture" and "Input Control" permissions again.
+Állítsd be azokat a jogokat, amelyeket engedélyezni szeretnél. Minden alkalommal amikor elindítod a RustDesk-et, újra engedélyezned kell a képernyőmegosztás, és input kontrol jogokat.
 
 ![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px)
 
-| Permissions     | Description                                               |
+| Jog     | Leírás                                             |
 | --------------- | --------------------------------------------------------- |
-| Screen Capture | Whether to enable screen capture sharing permission, the monitoring service will be enabled at the same time as startup |
-| Input Control* | Whether to allow the controller to control the input of the mobile phone, such as virtual touch screen operation with the mouse |
-| File transfer* | Whether to enable file transfer permission, after startup, you can remotely control the file system of this phone |
-| Audio capture  | Whether to share the system music inside the phone (not microphone input) |
+| Képernyőmegosztás | Engedélyezi a RustDesk applikáció számára hogy megossza a kijelződet, a monitoring szolgáltatás indításkor fog elindulni |
+| Input Kontrol* | Engedélyezi a telefonod kezelését a távoli félnek például egy egér használatával, amit a telefon egy virtuális touchscreen operációnak fog érzékelni |
+| Fájl Transzfer* | Engedélyezi a fájl transzfert a távoli eszköznek, vagyis a távoli fél tölthet le, és telepíthet fel fájlokat a telefonra |
+| Audio capture  | Engedélyezi a telefon audiójának megosztását (Nem mikrofon.) |
 
 {{% notice note %}}
-Above * represents special permissions. To obtain such permissions, you need to jump to the Android system settings page to obtain them manually. The details are as follows
+Minden ami fent * al van jelölve, speciális jogokat igényel. Ezeket a jogokat az Android rendszer beállításaiban tudod megadni. 
 {{% /notice %}}
 
-#### **Special Permission Request- File**
+#### **Specális jogok beállítása - Fájltranszfer**
 
-| Requesting Android file permissions will automatically jump to the system settings page |
+| Az ENGEDÉLYEZÉS gombra kattintva az Android rendszer automatikusan a rendszerbeállításokhoz kell hogy navigáljon |
 | :---------------: |
 | ![](/docs/en/manual/mobile/images/get_file_en.jpg?width=300px) |
 
-#### **Special Permission Request - mouse input**
-| Step 1 Find "Installed Services" | Step 2 Start RustDesk Input |
+#### **Specális jogok beállítása - Input Kontrol**
+| Első lépés: Keresd meg a "Telepített Szolgáltatások" menüpontot | Második lépés: Engedélyezd, vagy indítsd el a RustDesk inputot |
 | --------------- | -------------------------------------------------------- |
 | ![](/docs/en/manual/mobile/images/get_input1_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/get_input2_en.jpg?width=300px) |
 
 {{% notice note %}}
-The system setting page of different vendors may be different, please adjust it according to your system page
+A rendszerbeállítások oldal szolgáltatótól és modeltől változó, kérlek próbáld a saját eszközödön megkeresni, ha a példaképek nem egyeznek a te eszközöddel
 {{% /notice %}}
 
-**Remote mouse control shortcuts:**
+**Távoli engér kezelési gesztusok:**
 
-- Click the right mouse button: go back
-- Click the mouse wheel: Home
-- Long press mouse wheel: recently opened apps
-- Mouse wheel scrolling: simulate vertical sliding
+- Jobblick: Vissza
+- Görgö click: Asztal/Home
+- Görgö hosszanti nyomása: Mostanában megnyitott alkalmazások
+- Görgő görgetése: Vertikális csúszás szimulálása
 
-#### **Start service**
+#### **Szolgáltatás elindítása**
 
-After obtaining the `screen capture` permission, the service will be automatically started. You can also click the `Start service` button to start the service. After the service is started, it can accept desktop control requests from other devices.
+Miután engedélyezted a `képernyőrögzítés` jogot, a szolgáltatás automatikusan elindul majd. Alternatívaként, a `szolgáltatás indítása` gombot is megnyomhatod hogy elindítsd a szolgáltatást. Miután a szolgáltatás elindult, az eszközöd készen áll képernyőkezelési kéréseket fogadni.
 
-If the `file transfer` permission is enabled, it can also accept file control requests from other devices.
+Ha a `fájl transzfer` jog is adva van, akkor az eszköz fájlokat és képes fogadni más eszközöktől.
 
-After the service is started, a unique ID and random password will be automatically obtained for this device. Other devices can control the phone through the ID and password, or manually confirm when a new request is received.
+Miután a szolgáltatás elindult, egy egyedi IDt és egy random jelszót kap majd az eszköz. Más eszközök irányíthatják az eszközözed a fent említett ID és jelszó kombinációval, vagy akár manuálisan is elfogadhatsz egy kérést, jelszó nélkül a másik eszközön.
 
-| Before starting the service | After starting the service |
+| Mielőtt a szolgáltatás elindult | Miután a szolgáltatás elindult |
 | --------------- | -------------------------------------------------------- |
 | ![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) |
 
-{{% notice note %}}
-1. Clicking `Start Service` will enable the `Screen capture` permission by default.
-2. When the `screen capture` permission is not obtained, other devices cannot issue control requests.
-3. Except for the `screen capture` permission, the switching of other permissions will only affect the new connection, and will not affect the established connection. If you need to switch permissions for an established connection, please close the current connection first, modify the permissions, and then receive a control request.
+{{% notice note %}}.
+1. Ha elindítod a szolgáltatást, az alapból kérni fogja a képernyőfelvételi jogot.s.
+2. Amikor a képernypőfelvételi jog nincs megadva, más eszközök nem küldhetnek kérést az eszköz felé.
+3. A képernyőfelvételi jogon kívül, a többi jog engedélyezése és visszavonása csak az új kapcsolatokat fogja majd befolyásolni, viszont a már kapcsolódott eszközöket nem. Ha egy már kapcsolódott eszözzel kell jogokat módosítanod, akkor elsőnek zárd be a jelenlegi kapcsolatot, módosítsd a jogokat, majd kérvényezz újat.
 {{% /notice %}}
 
 ##### PC
 
 ![](/docs/en/manual/mobile/images/android_server_pc_side_en.png?width=700px)
 
-##### Mobile terminal
+##### Mobil terminál
 
-| You can stop the service or close the specified connection at any time | You can receive or initiate chats |
+| Akármikor megállíthatod a szolgáltatást, vagy bezárhatsz egy specifikus kapcsolatot | Küldhetsz, vagy kaphatsz üzenetetek a chaten keresztül |
 | --------------- | -------------------------------------------------------- |
 | ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/android_server2_en.jpg?width=300px) |
