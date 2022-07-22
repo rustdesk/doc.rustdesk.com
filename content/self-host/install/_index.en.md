@@ -3,11 +3,120 @@ title: Installation
 weight: 10
 ---
 
-## Set up your own server instance by following these steps
+## Install your own server with docker(-compose)
+
+### Requirements
+You need to have Docker/Podman installed to run a rustdesk-server as a docker-container
+
+### Docker examples
+#### Linux/amd64
+```bash
+sudo docker image pull rustdesk/rustdesk-server
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> 
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbr 
+```
+#### Linux/arm64v8
+```bash
+sudo docker image pull rustdesk/rustdesk-server:latest-arm64v8
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip[:port]> 
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbr 
+```
+<a name="net-host"></a>
+
+{{% notice note %}}
+`--net=host` only works on Linux, which makes `hbbs`/`hbbr` see the real incoming IP Address rather than the Container IP (172.17.0.1).
+If `--net=host` works fine, the `-p` options are not used.
+
+**Please remove `--net=host` if see connection problem on your platform**
+{{% /notice %}}
+
+### Docker-Compose examples
+For running the docker files with an docker-compose.yml as here describer you need to have docker-compose installed.
+#### Linux/amd64
+```yaml
+version: '3'
+
+networks:
+  rustdesk-net:
+    external: false
+
+services:
+  hbbs:
+    container_name: hbbs
+    ports:
+      - 21115:21115
+      - 21116:21116
+      - 21116:21116/udp
+      - 21118:21118
+    image: rustdesk/rustdesk-server:latest
+    command: hbbs -r example.com:21117
+    volumes:
+      - ./hbbs:/root
+    networks:
+      - rustdesk-net
+    depends_on:
+      - hbbr
+    restart: unless-stopped
+
+  hbbr:
+    container_name: hbbr
+    ports:
+      - 21117:21117
+      - 21119:21119
+    image: rustdesk/rustdesk-server:latest
+    command: hbbr
+    volumes:
+      - ./hbbr:/root
+    networks:
+      - rustdesk-net
+    restart: unless-stopped
+```
+#### Linux/arm64v8
+```yaml
+version: '3'
+
+networks:
+  rustdesk-net:
+    external: false
+
+services:
+  hbbs:
+    container_name: hbbs
+    ports:
+      - 21115:21115
+      - 21116:21116
+      - 21116:21116/udp
+      - 21118:21118
+    image: rustdesk/rustdesk-server:latest-arm64v8
+    command: hbbs -r example.com:21117
+    volumes:
+      - ./hbbs:/root
+    networks:
+      - rustdesk-net
+    depends_on:
+      - hbbr
+    restart: unless-stopped
+
+  hbbr:
+    container_name: hbbr
+    ports:
+      - 21117:21117
+      - 21119:21119
+    image: rustdesk/rustdesk-server:latest-arm64v8
+    command: hbbr
+    volumes:
+      - ./hbbr:/root
+    networks:
+      - rustdesk-net
+    restart: unless-stopped
+```
+
+
+## Set up your own server instance without using Docker
 
 ### STEP-1 : Download server-side software programs
 
-[Download](https://github.com/rustdesk/rustdesk-server/) or use docker [rustdesk/rustdesk-server](https://hub.docker.com/r/rustdesk/rustdesk-server/tags).
+[Download](https://github.com/rustdesk/rustdesk-server/).
 
 Platform versions provided:
 
@@ -21,11 +130,11 @@ There are two executables and a folder:
 - `hbbs` - RustDesk ID/Rendezvous server
 - `hbbr` - RustDesk relay server
 
-They are built on Centos7, tested on Centos7/8 and Ubuntu 18/20.
+They are built on CentOS Linux 7, tested on CentOS Linux 7/8 and Ubuntu 18/20.
 
 #### Server Requirements
 
-The hardware requirements are very low; the minimum configuration of a basic cloud server is enough, and the CPU and memory requirements are minimal. Regarding the network size, if the TCP hole punching direct connection fails, the relay traffic will be consumed. The traffic of a relay connection is between 30k-3M/s (1920x1080 screen), depending on the resolution settings and screen update。 If it is only for office work demand, the traffic is around 100K/s.
+The hardware requirements are very low; the minimum configuration of a basic cloud server is enough, and the CPU and memory requirements are minimal. You can also use an Raspberry Pi or something somilar. Regarding the network size, if the TCP hole punching direct connection fails, the relay traffic will be consumed. The traffic of a relay connection is between 30k-3M/s (1920x1080 screen), depending on the resolution settings and screen update。 If it is only for office work demand, the traffic is around 100K/s.
 
 ### STEP-2 : Run hbbs and hbbr on server
 
@@ -56,24 +165,6 @@ By default, `hbbs` listens on 21115(tcp) and 21116(tcp/udp), 21118(tcp),and `hbb
 - UDP(**21116**)
 
 Please run with the `-h` option to see help if you want to choose your own port.
-
-#### Docker example
-
-##### Linux/amd64
-
-```bash
-sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> 
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server hbbr 
-```
-
-##### Linux/arm64v8
-
-```bash
-sudo docker image pull rustdesk/rustdesk-server:latest-arm64v8
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip[:port]> 
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --net=host --rm rustdesk/rustdesk-server:latest-arm64v8 hbbr 
-```
 
 <a name="net-host"></a>
 
