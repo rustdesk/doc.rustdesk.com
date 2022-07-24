@@ -134,7 +134,7 @@ They are built on CentOS Linux 7, tested on CentOS Linux 7/8 and Ubuntu 18/20.
 
 #### Server Requirements
 
-The hardware requirements are very low; the minimum configuration of a basic cloud server is enough, and the CPU and memory requirements are minimal. You can also use an Raspberry Pi or something somilar. Regarding the network size, if the TCP hole punching direct connection fails, the relay traffic will be consumed. The traffic of a relay connection is between 30k-3M/s (1920x1080 screen), depending on the resolution settings and screen update。 If it is only for office work demand, the traffic is around 100K/s.
+The hardware requirements are very low; the minimum configuration of a basic cloud server is enough, and the CPU and memory requirements are minimal. You can also use an Raspberry Pi or something similar. Regarding the network size, if the TCP hole punching direct connection fails, the relay traffic will be consumed. The traffic of a relay connection is between 30k-3M/s (1920x1080 screen), depending on the resolution settings and screen update。 If it is only for office work demand, the traffic is around 100K/s.
 
 ### STEP-2 : Run hbbs and hbbr on server
 
