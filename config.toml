@@ -44,6 +44,12 @@ weight = 1
 languageName = "Español"
 landingPageName = "<i class='fas fa-home'></i> Principal"
 
+[Languages.hu]
+title = "RustDesk Dokumentáció"
+weight = 1
+languageName = "Magyar"
+landingPageName = "<i class='fas fa-home'></i> Home"
+
 [Languages.fr]
 title = "Documentation du RustDesk"
 weight = 2
