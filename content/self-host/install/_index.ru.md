@@ -3,12 +3,12 @@ title: Установка
 weight: 10
 ---
 
-## Настройте свой собственный сервер пр помощи следующих простых шагов
+## Настройте свой собственный сервер при помощи следующих простых шагов
 -----------
 
 ### Шаг-1 : Скачайте серверную часть
 
-[Скачать](https://github.com/rustdesk/rustdesk-server/) или используйте Docker [rustdesk/rustdesk-server](https://hub.docker.com/r/rustdesk/rustdesk-server/tags).
+Можно [скачать файлы перейдя по ссылке](https://github.com/rustdesk/rustdesk-server/) или использовать образ Docker [rustdesk/rustdesk-server](https://hub.docker.com/r/rustdesk/rustdesk-server/tags).
 
 Доступны версии для следующих платформ:
   - Linux
@@ -84,7 +84,7 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -it --n
 {{% /notice %}}
 
 
-### ШАГ-3 : Настроить адрес hbbs/hbbr на стороне клиента
+### ШАГ-3 : Настройка адресов hbbs/hbbr на стороне клиента
 
 Нажмите на кнопку меню справа от ID, как указано ниже, и выберите "ID/Relay Server".
 
@@ -106,14 +106,14 @@ hbbs.example.com:21116
 
 ![](/docs/en/self-host/install/images/server-set-window.png)
 
-#### поместить конфигурацию в имя исполняемого файла (только для Windows)
+#### Можно поместить конфигурацию в имя исполняемого файла (только для Windows)
 
 Замените `rustdesk.exe` на rustdesk-`host=<host-ip-or-name>,key=<строка-открытого-ключа>`.exe, например: rustdesk-`host=192.168.1.137,key=xfdsfsd32 =32`.exe, вы можете увидеть результат настройки в окне «О программе», как показано ниже.
 
 {{% notice note %}}
 Необходимо добавить и `host`, и `key`, а использовать их без них непросто.
 
-If there are invalid characters in the key which can not be used in file name, please remove id_ed25519 file and restart your hbbs/hbbr, the id_ed25519.pub file will be regenerated, please repeat until you get valid characters.
+Если в ключе есть недопустимые символы, которые нельзя использовать в имени файла, удалите файл id_ed25519 и перезапустите hbbs/hbbr, файл id_ed25519.pub будет создан заново, повторяйте, пока не получите допустимые символы.
 {{% /notice %}}
 
 |Меню |О странице |
