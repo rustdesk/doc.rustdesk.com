@@ -6,7 +6,7 @@ weight: 10
 ## Настройте свой собственный сервер при помощи следующих простых шагов
 -----------
 
-### Шаг-1 : Скачайте серверную часть
+### ШАГ-1 : Скачайте серверную часть
 
 Можно [скачать файлы перейдя по ссылке](https://github.com/rustdesk/rustdesk-server/) или использовать образ Docker [rustdesk/rustdesk-server](https://hub.docker.com/r/rustdesk/rustdesk-server/tags).
 
