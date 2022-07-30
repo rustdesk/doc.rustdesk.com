@@ -22,6 +22,15 @@ Stellen Sie sicher, dass Sie alle laufenden RustDesk beendet haben. Stellen Sie 
 
 ### Berechtigungen aktivieren
 
+{{% notice note %}}
+Due to MacOS security policy change, our api which captures input on local side does not work any
+more. You have to enable "Input Monitoring" permission on local Mac side.
+Please follow this
+[https://github.com/rustdesk/rustdesk/issues/974#issuecomment-1185644923](https://github.com/rustdesk/rustdesk/issues/974#issuecomment-1185644923)
+
+It seems no quick fix, we need to fix together with our Flutter version.
+{{% /notice %}}
+
 Um den Bildschirm zu erfassen, müssen Sie gewähren `RustDesk` **Zugänglichkeitsberechtigung** und **Bildschirmaufzeichnungsberechtigung**. RustDesk führt Sie zum Einstellungsfenster.
 
 | RustDesk Fenster | Mac Einstellungsfenster |

@@ -22,6 +22,15 @@ weight: 3
 
 ### 启用权限
 
+{{% notice note %}}
+Due to MacOS security policy change, our api which captures input on local side does not work any
+more. You have to enable "Input Monitoring" permission on local Mac side.
+Please follow this
+[https://github.com/rustdesk/rustdesk/issues/974#issuecomment-1185644923](https://github.com/rustdesk/rustdesk/issues/974#issuecomment-1185644923)
+
+It seems no quick fix, we need to fix together with our Flutter version.
+{{% /notice %}}
+
 为了获得捕获屏幕的能力，您需要授予 `RustDesk` **辅助功能** 权限和 **屏幕录制** 权限。 RustDesk 将引导您进入设置窗口。
 
 | RustDesk 窗口 |设置窗口 |
