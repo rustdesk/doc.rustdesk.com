@@ -14,5 +14,6 @@ brew install nasm yasm
 git clone https://github.com/rustdesk/rustdesk
 cd rustdesk
 export VCPKG_ROOT=$HOME/vcpkg
+wget https://github.com/c-smile/sciter-sdk/raw/master/bin.osx/libsciter.dylib
 cargo run
 ```

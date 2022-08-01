@@ -1,6 +1,6 @@
 ---
-title: Client-Side Settings
+title: Clientseitige Einstellungen
 weight: 40
 ---
 
-[English](/docs/en/self-host/client)
+[Deutsch](/docs/de/self-host/client)
