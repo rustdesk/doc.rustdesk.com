@@ -1,9 +1,9 @@
 ---
-title: Installation 
+title: Telepítés
 weight: 10
 ---
 
-## Install your own server with docker(-compose)
+## Telepítsd a saját szerveredet a Docker(-compose) használatával
 
 ### Requirements
 You need to have Docker/Podman installed to run a rustdesk-server as a docker-container
