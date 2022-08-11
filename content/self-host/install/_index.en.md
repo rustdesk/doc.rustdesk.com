@@ -3,6 +3,38 @@ title: Installation
 weight: 10
 ---
 
+## Install your own server using a simple to run install script
+Script is hosted on https://github.com/dinger1986/rustdeskinstall and supported on our Discord.
+
+Currently the script will download and setup the Relay and Signal Servers (hbbr and hbbs), generate configs and host them on a password protected web page for simple deploymnet to clients.
+
+### Requirements
+You need to have linux installed, script is tested working with centos, ubuntu and debian. A server with 1 cpu, 1GB and 10Gb disk is plenty to run RustDesk.
+
+#### How to Install the server
+Please setup your firewall on your server prior to running the script.
+
+Make sure you have got access via ssh or otherwise setup prior setting up the firewall, the example commands for UFW(debian based) are.
+```
+ufw allow proto tcp from YOURIP to any port 22
+```
+
+#### If you have UFW installed use the following commands:
+```
+ufw allow 21115:21119/tcp
+ufw allow 8000/tcp
+ufw allow 21116/udp
+sudo ufw enable
+```
+
+#### Run the following commands:
+```
+wget https://raw.githubusercontent.com/dinger1986/rustdeskinstall/master/install.sh
+chmod +x install.sh
+./install.sh
+```
+
+
 ## Install your own server with docker(-compose)
 
 ### Requirements
