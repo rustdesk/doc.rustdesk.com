@@ -268,6 +268,8 @@ If you want to change the key, remove the `id_ed25519` and `id_ed25519.pub` file
 
 {{% notice note %}}
 If you are using docker-compose and keys don't exist, the start of containers will create differents keys in hbbs and hbbr folders.
+
 You could create keys manually in hbbs and copy them to hbbr, before starting the containers.
+
 Or you could stop hbbr container and copy the keys from hbbs to hbbr folder, and restart the container.
 {{% /notice %}}
