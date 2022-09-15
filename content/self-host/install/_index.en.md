@@ -38,7 +38,7 @@ chmod +x install.sh
 ## Install your own server with docker(-compose)
 
 ### Requirements
-You need to have Docker/Podman installed to run a rustdesk-server as a docker-container
+You need to have Docker/Podman installed to run a rustdesk-server as a docker container
 
 ### Docker examples
 #### Linux/amd64
@@ -63,7 +63,7 @@ If `--net=host` works fine, the `-p` options are not used.
 {{% /notice %}}
 
 ### Docker-Compose examples
-For running the docker files with an docker-compose.yml as here describer you need to have docker-compose installed.
+For running the docker files with an docker-compose.yml as described here you need to have docker-compose installed.
 #### Linux/amd64
 ```yaml
 version: '3'
@@ -166,11 +166,11 @@ They are built on CentOS Linux 7, tested on CentOS Linux 7/8 and Ubuntu 18/20.
 
 #### Server Requirements
 
-The hardware requirements are very low; the minimum configuration of a basic cloud server is enough, and the CPU and memory requirements are minimal. You can also use an Raspberry Pi or something similar. Regarding the network size, if the TCP hole punching direct connection fails, the relay traffic will be consumed. The traffic of a relay connection is between 30k-3M/s (1920x1080 screen), depending on the resolution settings and screen update。 If it is only for office work demand, the traffic is around 100K/s.
+The hardware requirements are very low; the minimum configuration of a basic cloud server is enough, and the CPU and memory requirements are minimal. You can also use a Raspberry Pi or something similar. Regarding the network size, if the TCP hole punching direct connection fails, the relay traffic will be consumed. The traffic of a relay connection is between 30k-3M/s (1920x1080 screen) depending on the resolution settings and screen update。 If it is only for office work demand, the traffic is around 100K/s.
 
 ### STEP-2 : Run hbbs and hbbr on server
 
-Run hbbs/hbbr on your server (Centos or Ubuntu). We suggust you use [pm2](https://pm2.keymetrics.io/) managing your service.
+Run hbbs/hbbr on your server (Centos or Ubuntu). We suggest you use [pm2](https://pm2.keymetrics.io/) for managing your service.
 
 ```bash
 ./hbbs -r <relay-server-ip[:port]> 
@@ -186,7 +186,7 @@ pm2 start hbbr
 
 <a name="demo"></a>
 {{% notice note %}}
-pm2 requires nodejs v16+, if you fail to run pm2 (e.g. you can not see `hbbs`/`hbbr` in `pm2 list`), please download and install LTS version nodejs from https://nodejs.org. If you want to make `hbbs`/`hbbr` auto-run after reboot, please check out `pm2 save` and `pm2 startup`. More about [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Another good tool for your logs is [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
+pm2 requires nodejs v16+, if you fail to run pm2 (e.g. you can not see `hbbs`/`hbbr` in `pm2 list`), please download and install the LTS version nodejs from https://nodejs.org. If you want to make `hbbs`/`hbbr` auto-run after reboot, please check out `pm2 save` and `pm2 startup`. More about [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Another good tool for your logs is [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
 
 The `-r` parameter of `hhbs` is not mandatory, it is just convenient for you not to specify a relay server on the controlled client side. You do not need to specify port if you are using default 21117 port. The relay server specified by the client has a higher priority than this.
 {{% /notice %}}
@@ -204,7 +204,7 @@ Please run with the `-h` option to see help if you want to choose your own port.
 `--net=host` only works on Linux, which makes `hbbs`/`hbbr` see the real incoming IP Address rather than the Container IP (172.17.0.1).
 If `--net=host` works fine, the `-p` options are not used.
 
-**Please remove `--net=host` if see connection problem on your platform**
+**Please remove `--net=host` if see connection problems on your platform**
 {{% /notice %}}
 
 
@@ -269,7 +269,7 @@ If you want to change the key, remove the `id_ed25519` and `id_ed25519.pub` file
 {{% notice note %}}
 If you are using docker-compose and keys don't exist, the start of containers will create differents keys in hbbs and hbbr folders.
 
-You could create keys manually in hbbs and copy them to hbbr, before starting the containers.
+You could create keys manually in hbbs and copy them to hbbr before starting the containers.
 
-Or you could stop hbbr container and copy the keys from hbbs to hbbr folder, and restart the container.
+Or you could stop the hbbr container and copy the keys from hbbs to the hbbr folder, and then restart the container.
 {{% /notice %}}
