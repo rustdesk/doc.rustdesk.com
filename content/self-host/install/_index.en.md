@@ -188,7 +188,7 @@ pm2 start hbbr
 {{% notice note %}}
 pm2 requires nodejs v16+, if you fail to run pm2 (e.g. you can not see `hbbs`/`hbbr` in `pm2 list`), please download and install the LTS version nodejs from https://nodejs.org. If you want to make `hbbs`/`hbbr` auto-run after reboot, please check out `pm2 save` and `pm2 startup`. More about [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Another good tool for your logs is [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
 
-The `-r` parameter of `hhbs` is not mandatory, it is just convenient for you not to specify a relay server on the controlled client side. You do not need to specify port if you are using default 21117 port. The relay server specified by the client has a higher priority than this.
+The `-r` parameter of `hbbs` is not mandatory, it is just convenient for you not to specify a relay server on the controlled client side. You do not need to specify port if you are using default 21117 port. The relay server specified by the client has a higher priority than this.
 {{% /notice %}}
 
 By default, `hbbs` listens on 21115(tcp) and 21116(tcp/udp), 21118(tcp),and `hbbr` listens on 21117(tcp), 21119(tcp). Be sure to open these ports in the firewall. **Please note that 21116 should be enabled both for TCP and UDP**. 21115 is used for NAT type test, 21116/UDP is used for ID registration and heartbeat service, 21116/TCP is used for TCP hole punching and connection service, 21117 is used for Relay services, and 21118 and 21119 are used to support web clients. If you do not need web client (21118, 21119) support, the corresponding ports can be disabled.
