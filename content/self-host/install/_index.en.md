@@ -4,22 +4,22 @@ weight: 10
 ---
 
 ## Install your own server using a simple to run install script
-Script is hosted on https://github.com/dinger1986/rustdeskinstall and supported on our Discord.
+Script is hosted on https://github.com/dinger1986/rustdeskinstall and supported on our [Discord](https://discord.com/invite/nDceKgxnkV).
 
-Currently the script will download and setup the Relay and Signal Servers (hbbr and hbbs), generate configs and host them on a password protected web page for simple deploymnet to clients.
+Currently the script will download and setup the Relay and Signal Servers (hbbr and hbbs), generate configs and host them on a password protected web page for simple deployment to clients.
 
 ### Requirements
-You need to have linux installed, script is tested working with centos, ubuntu and debian. A server with 1 cpu, 1GB and 10Gb disk is plenty to run RustDesk.
+You need to have linux installed, script is tested working with CentOS Linux 7/8, Ubuntu 18/20 and Debian. A server with 1 CPU, 1 GB and 10 GB disk is plenty to run RustDesk.
 
 #### How to Install the server
 Please setup your firewall on your server prior to running the script.
 
-Make sure you have got access via ssh or otherwise setup prior setting up the firewall, the example commands for UFW(debian based) are.
+Make sure you have got access via ssh or otherwise setup prior setting up the firewall. The example commands for UFW (Debian based) are:
 ```
 ufw allow proto tcp from YOURIP to any port 22
 ```
 
-#### If you have UFW installed use the following commands:
+#### If you have UFW installed use the following commands to configure the firewall:
 ```
 ufw allow 21115:21119/tcp
 ufw allow 8000/tcp
@@ -56,14 +56,14 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --n
 <a name="net-host"></a>
 
 {{% notice note %}}
-`--net=host` only works on Linux, which makes `hbbs`/`hbbr` see the real incoming IP Address rather than the Container IP (172.17.0.1).
-If `--net=host` works fine, the `-p` options are not used.
+`--net=host` only works on **Linux**, which makes `hbbs`/`hbbr` see the real incoming IP Address rather than the Container IP (172.17.0.1).
+If `--net=host` works fine, the `-p` options are not used. If on Windows, leave out `sudo` and `--net=host`.
 
-**Please remove `--net=host` if see connection problem on your platform**
+**Please remove `--net=host` if you are having connection problems on your platform.**
 {{% /notice %}}
 
 ### Docker-Compose examples
-For running the docker files with an docker-compose.yml as described here you need to have docker-compose installed.
+For running the docker files with the docker-compose.yml as described here you need to have [**docker-compose**](https://docs.docker.com/compose/) installed.
 #### Linux/amd64
 ```yaml
 version: '3'
@@ -146,7 +146,7 @@ services:
 
 ## Set up your own server instance without using Docker
 
-### STEP-1 : Download server-side software programs
+### STEP 1 : Download server-side software programs
 
 [Download](https://github.com/rustdesk/rustdesk-server/).
 
@@ -166,18 +166,20 @@ They are built on CentOS Linux 7, tested on CentOS Linux 7/8 and Ubuntu 18/20.
 
 #### Server Requirements
 
-The hardware requirements are very low; the minimum configuration of a basic cloud server is enough, and the CPU and memory requirements are minimal. You can also use a Raspberry Pi or something similar. Regarding the network size, if the TCP hole punching direct connection fails, the relay traffic will be consumed. The traffic of a relay connection is between 30k-3M/s (1920x1080 screen) depending on the resolution settings and screen update。 If it is only for office work demand, the traffic is around 100K/s.
+The hardware requirements are very low; the minimum configuration of a basic cloud server is enough, and the CPU and memory requirements are minimal. You can also use a Raspberry Pi or something similar. Regarding the network size, if the TCP hole punching direct connection fails, the relay traffic will be consumed. The traffic of a relay connection is between 30k-3M/s (1920x1080 screen) depending on the resolution settings and screen update. If it is only for office work demand, the traffic is around 100K/s.
 
-### STEP-2 : Run hbbs and hbbr on server
+### STEP 2 : Run hbbs and hbbr on your server
 
-Run hbbs/hbbr on your server (Centos or Ubuntu). We suggest you use [pm2](https://pm2.keymetrics.io/) for managing your service.
+#### Option 1
+Run hbbs/hbbr on your server (CentOS or Ubuntu). We suggest you use [pm2](https://pm2.keymetrics.io/) for managing your service.
 
 ```bash
 ./hbbs -r <relay-server-ip[:port]> 
 ./hbbr 
 ```
 
-or run hbbs/hbbr with pm2
+#### Option 2 - pm2
+Run hbbs/hbbr with pm2
 
 ```bash
 pm2 start hbbs -- -r <relay-server-ip[:port]> 
@@ -186,35 +188,35 @@ pm2 start hbbr
 
 <a name="demo"></a>
 {{% notice note %}}
-pm2 requires nodejs v16+, if you fail to run pm2 (e.g. you can not see `hbbs`/`hbbr` in `pm2 list`), please download and install the LTS version nodejs from https://nodejs.org. If you want to make `hbbs`/`hbbr` auto-run after reboot, please check out `pm2 save` and `pm2 startup`. More about [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Another good tool for your logs is [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
+pm2 requires NodeJS v16+, if you fail to run pm2 (e.g. you can not see `hbbs`/`hbbr` in `pm2 list`), please download and install the NodeJS LTS version from https://nodejs.org. If you want to make `hbbs`/`hbbr` auto-run after reboot, please check out `pm2 save` and `pm2 startup`. More about [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Another good tool for your logs is [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
 
 The `-r` parameter of `hbbs` is not mandatory, it is just convenient for you not to specify a relay server on the controlled client side. You do not need to specify port if you are using default 21117 port. The relay server specified by the client has a higher priority than this.
 {{% /notice %}}
 
-By default, `hbbs` listens on 21115(tcp) and 21116(tcp/udp), 21118(tcp),and `hbbr` listens on 21117(tcp), 21119(tcp). Be sure to open these ports in the firewall. **Please note that 21116 should be enabled both for TCP and UDP**. 21115 is used for NAT type test, 21116/UDP is used for ID registration and heartbeat service, 21116/TCP is used for TCP hole punching and connection service, 21117 is used for Relay services, and 21118 and 21119 are used to support web clients. If you do not need web client (21118, 21119) support, the corresponding ports can be disabled.
+By default, `hbbs` listens on 21115 (TCP) and 21116 (TCP/UDP), 21118 (TCP), and `hbbr` listens on 21117 (TCP), 21119 (TCP). Be sure to open these ports in the firewall. **Please note that 21116 should be enabled both for TCP and UDP**. 21115 is used for the NAT type test, 21116/UDP is used for the ID registration and heartbeat service, 21116/TCP is used for TCP hole punching and connection service, 21117 is used for the Relay services, and 21118 and 21119 are used to support web clients. *If you do not need web client (21118, 21119) support, the corresponding ports can be disabled.*
 
-- TCP(**21115, 21116, 21117, 21118, 21119**)
-- UDP(**21116**)
+- TCP (**21115, 21116, 21117, 21118, 21119**)
+- UDP (**21116**)
 
 Please run with the `-h` option to see help if you want to choose your own port.
 
 <a name="net-host"></a>
 
 {{% notice note %}}
-`--net=host` only works on Linux, which makes `hbbs`/`hbbr` see the real incoming IP Address rather than the Container IP (172.17.0.1).
-If `--net=host` works fine, the `-p` options are not used.
+`--net=host` only works on **Linux**, which makes `hbbs`/`hbbr` see the real incoming IP Address rather than the Container IP (172.17.0.1).
+If `--net=host` works fine, the `-p` options are not used. If on Windows, leave out `sudo` and `--net=host`.
 
-**Please remove `--net=host` if see connection problems on your platform**
+**Please remove `--net=host` if you are having connection problems on your platform.**
 {{% /notice %}}
 
 
-### STEP-3 : Set hbbs/hbbr address on client-side
+### STEP 3 : Set hbbs/hbbr address on client-side
 
-Click on the Menu button on the right side of ID as shown below, and choose "ID/Relay Server".
+Click on the Menu button [ &#8942; ] on the right side of ID as shown below, and choose "ID/Relay Server".
 
 ![](/docs/en/self-host/install/images/server-set-menu.png)
 
-Enter the `hbbs` host or IP Address in the `ID server` input box (local side + remote side). The other two addresses can be left blank, RustDesk will automatically deduce (if not specially set), and the relay server refers to `hbbr` (21116 port).
+Enter the `hbbs` host or IP Address in the **ID Server** input box (local side + remote side). The other two addresses can be left blank, RustDesk will automatically deduce (if not specially set), and the Relay Server refers to `hbbr` (port 21116).
 
 e.g.
 
