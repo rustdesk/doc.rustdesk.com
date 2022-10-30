@@ -1,5 +1,5 @@
 ---
-title: Client-Side Settings
+title: Ajustes-Cliente
 weight: 40
 ---
 
