@@ -1,5 +1,5 @@
 ---
-title: Mobile 
+title: Móvil 
 weight: 1
 ---
 
