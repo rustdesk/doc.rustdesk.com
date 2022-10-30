@@ -1,5 +1,5 @@
 ---
-title: FAQ for Windows
+title: FAQ para Windows
 weight: 40
 ---
 
