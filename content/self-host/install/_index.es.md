@@ -88,7 +88,7 @@ Haga clic en el botón de menú en el lado derecho de ID como se muestra a conti
 
 ![](/docs/en/self-host/install/images/server-set-menu.png)
 
-Ingrese el host hbbs o la dirección IP en el cuadro de entrada del servidor ID (lado local + lado remoto), las otras dos direcciones se pueden dejar en blanco, RustDesk deducirá automáticamente (si no se configura especialmente), y el servidor de retransmisión se refiere a hbbr (21116 Puerto).
+Ingrese el host hbbs o la dirección IP en el cuadro de entrada del servidor ID (lado local + lado remoto), las otras dos direcciones se pueden dejar en blanco, RustDesk deducirá automáticamente (si no se configura especialmente), y el servidor de retransmisión se refiere a hbbr (21117 Puerto).
 
 ejemplo
 

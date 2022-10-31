@@ -216,7 +216,7 @@ Click on the Menu button [ &#8942; ] on the right side of ID as shown below, and
 
 ![](/docs/en/self-host/install/images/server-set-menu.png)
 
-Enter the `hbbs` host or IP Address in the **ID Server** input box (local side + remote side). The other two addresses can be left blank, RustDesk will automatically deduce (if not specially set), and the Relay Server refers to `hbbr` (port 21116).
+Enter the `hbbs` host or IP Address in the **ID Server** input box (local side + remote side). The other two addresses can be left blank, RustDesk will automatically deduce (if not specially set), and the Relay Server refers to `hbbr` (port 21117).
 
 e.g.
 
