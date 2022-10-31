@@ -18,9 +18,6 @@ Use [git-bash](https://git-scm.com/download/win) to run the following commandsï¼
 
 ```shell
   git clone https://github.com/microsoft/vcpkg
-  cd vcpkg
-  git checkout 2021.12.01
-  cd ..
   vcpkg/bootstrap-vcpkg.bat
   export VCPKG_ROOT=$PWD/vcpkg
   vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static
