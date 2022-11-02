@@ -41,7 +41,7 @@ Click on above "Advanced Settings".
 
 - Set command
 {{% notice note %}}
-Synogy's OS is debain based, so host net (--net=host) works fine, we do not need to map ports with `-p` option.
+Synogy's OS is Debian based, so host net (--net=host) works fine, we do not need to map ports with `-p` option.
 
 `192.168.16.98` is an intranet ip used here for demonstration only, please set it to a public ip when you deploy.
 
