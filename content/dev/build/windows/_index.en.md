@@ -28,7 +28,7 @@ If you don't have `git` installed, get `git` [here](https://git-scm.com/download
   vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static
 ```
 
-Add System environment variable `VCPKG_ROOT`=`<path>\vcpkg`. The `<path>` should be the folder you choosed above.
+Add System environment variable `VCPKG_ROOT`=`<path>\vcpkg`. The `<path>` should be the location you chose above to clone `vcpkg`.
 
 ![](/docs/en/dev/build/windows/images/env.png)
 
