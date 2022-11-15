@@ -63,6 +63,14 @@ nssm install <Desired hbbs servicename> <RustDesk hbbs binary path> <RustDesk hb
 nssm install <Desired hbbr servicename> <RustDesk hbbr binary path> <RustDesk hbbr arguments>
 ```
 
+**Start services**
+After successful instalationof services they need to be started.
+```cmd
+nssm start <Desired hbbs servicename>
+nssm start <Desired hbbr servicename>
+```
+
+
 **Done !**
 
 (The method above has been tested on Windows Server Core 2022 Standard).
