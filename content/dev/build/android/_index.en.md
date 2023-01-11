@@ -22,6 +22,7 @@ unzip android-ndk-r22b-linux-x86_64.zip
 dart pub global activate ffigen 5.0.1
 # on Ubuntu 18, it is: sudo apt install libclang-9-dev
 sudo apt-get install libclang-dev
+sudo apt install gcc-multilib
 
 git clone https://github.com/rustdesk/rustdesk
 cd rustdesk
