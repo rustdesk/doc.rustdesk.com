@@ -19,7 +19,7 @@ Die Eingabesteuerung bietet zwei Modi: `Mausmodus` und `Touch-Modus`, die über 
 | ![](/docs/en/manual/mobile/images/touch_mode_icon_en.png?width=300px) | ![](/docs/en/manual/mobile/images/touch_mode_en.jpg?width=300px) |
 
 {{% notice note %}}
-Im `Mausmodus`, können Sie die `Rechte Maus` des entfernten Geräts mit einem `Zwei-Finger-Tipp` auslösen.
+Im `Mausmodus` können Sie die `Rechte Maus` des entfernten Geräts mit einem `Zwei-Finger-Tipp` auslösen.
 {{% /notice %}}
 
 ### Dateiübertragung (Android)
@@ -54,7 +54,7 @@ Drücken Sie lange oder tippen Sie zur Auswahl rechts auf das Menü `Datei über
 
 1. Klicken Sie `Einstellungen` in der unteren Navigationsleiste.
 2. Klicken Sie `ID/Verbindungsserver`.
-3. Geben Sie den Hostnamen oder die IP-Adresse Ihres ID-Servers in das Feld `ID-Server` ein. Lassen Sie `Verbindungsserver` sowie `API-Server` leer und geben Sie Ihren öffentlichen Schlüssel (optional, für die Verschlüsselung erforderlich) in das Feld `Key` ein. Drücken Sie  **OK**, um Ihre Einstellungen zu speichern. Es wird automatisch auf den angegebenen Server umgeschaltet.
+3. Geben Sie den Hostnamen oder die IP-Adresse Ihres ID-Servers in das Feld `ID-Server` ein. Lassen Sie `Verbindungsserver` sowie `API-Server` leer und geben Sie Ihren öffentlichen Schlüssel (optional, für die Verschlüsselung erforderlich) in das Feld `Key` ein. Drücken Sie **OK**, um Ihre Einstellungen zu speichern. Es wird automatisch auf den angegebenen Server umgeschaltet.
 
 Sie können ihn auch durch Scannen eines QR-Codes konfigurieren. Um den QR-Code zu erzeugen, verwenden Sie das folgende Format (ändern Sie die Werte `host` und `key` in Ihre eigenen Werte):
 
