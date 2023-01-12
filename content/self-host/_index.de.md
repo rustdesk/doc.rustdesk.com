@@ -5,7 +5,7 @@ pre: "<b>2. </b>"
 chapter: true
 ---
 
-### Chapter 2
+### Kapitel 2
 
 # Selbst-Host
 
