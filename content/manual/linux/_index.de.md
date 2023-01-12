@@ -8,7 +8,7 @@ weight: 4
 #### Ubuntu (>= 16)
 
 ```bash
-# please ignore the wrong disk usage report
+# Bitte ignorieren Sie den falschen Bericht zur Festplattennutzung
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
