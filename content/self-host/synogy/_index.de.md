@@ -3,47 +3,47 @@ title: Synology
 weight: 22
 ---
 
-Diese Anleitung basiert auf der letzten Version des DSM v6.
+Diese Anleitung basiert auf dem aktuellen DSM v6.
 
-### Installation mittels Docker
+### Docker installieren
 
-Öffne den Paketmanager und installiere docker
+Paketmanager öffnen und Docker installieren
 
 |             |                                                   |
 | --------------- | -------------------------------------------------------- |
 ![](/docs/en/self-host/synogy/images/package-manager.png) | ![](/docs/en/self-host/synogy/images/docker.png)
 
 
-### Installation des RustDesk Servers
+### RustDesk-Server installieren
 
-| Suche nach rustdesk-server in Dockers Registery und installiere es durch Doppelklick  |   Ist das rustdesk-server Image installiert, doppelklicke es um einen rustdesk-server Container zu erstellen                                   |
+| RustDesk-Server im Docker-Register suchen und per Doppelklick installieren  |  RustDesk-Server-Image ist installiert, Doppelklick zum Erstellen des RustDesk-Server-Containers                                   |
 | --------------- | -------------------------------------------------------- |
 ![](/docs/en/self-host/synogy/images/pull-rustdesk-server.png) | ![](/docs/en/self-host/synogy/images/rustdesk-server-installed.png)
 
 
-### Erzeuge den hbbs Container
+### hbbs-Container erstellen
 
-Wie oben erwähnt, doppelklicke auf das rustdesk-server Image um einen neuen Container zu erzeugen. Setze als Namen `hbbs`.
+Wie oben erwähnt, doppelklicken Sie auf das RustDesk-Server-Image, um einen neuen Container zu erstellen, und geben Sie ihm den Namen `hbbs`.
 ![](/docs/en/self-host/synogy/images/hbbs.png) 
 
-Klicke auf "Advanced Settings".
+Klicken Sie auf "Erweiterte Einstellungen".
 
-- Aktiviere auto-restart
+- Automatischen Neustart aktivieren
 ![](/docs/en/self-host/synogy/images/auto-restart.png) 
 
-- Aktiviere "Use the same network as Docker host". Für mehr Infos über host net, schaue bitte [hier](/docs/en/self-host/install/#net-host)
+- Aktivieren Sie "Use the same network as Docker host". Mehr Infos über das Hostnetz siehe [hier](/docs/de/self-host/install/#net-host)
 ![](/docs/en/self-host/synogy/images/host-net.png) 
 
-- Binde ein Verzeichnis des Hosts (z.B. `Shared/test/`) auf `/root` ein. hbbs wird dort einige Dateien generieren (insbesondere die `key` Datei) 
-| Mount | Dort generierte Dateien |
+- Binden Sie ein Host-Verzeichnis (z. B. `Shared/test/`) als `/root` ein, hbbs wird einige Dateien (einschließlich der `key`-Datei) in diesem Verzeichnis erzeugen
+| Einbinden | Im Host-Verzeichnis erzeugte Dateien |
 |-- | -- |
 ![](/docs/en/self-host/synogy/images/mount.png?width=500px) | ![](/docs/en/self-host/synogy/images/mounted-dir.png?width=300px) 
 
-- Setze den Befehl
+- Befehl einstellen
 {{% notice note %}}
-Synogys Betriebssystem basiert auf Debian, deshalb funktioniert host net (--net=host) gut und es müssen keine Ports mittels `-p` zugewiesen werden.
+Das Betriebssystem von Synology basiert auf Debian, daher funktioniert das Hostnetz (--net=host) einwandfrei, wir müssen keine Ports mit der Option `-p` zuordnen.
 
-`192.168.16.98` ist eine Intranet-IP, welche nur zu Demonstrationszwecken genutzt wurde. Bitte setze es auf eine öffentliche IP bei der Einrichtung.
+`192.168.16.98` ist eine Intranet-IP, die hier nur zu Demonstrationszwecken verwendet wird. Bitte setzen Sie sie bei der Bereitstellung auf eine öffentliche IP.
 
 {{% /notice %}}
 
@@ -53,21 +53,18 @@ Synogys Betriebssystem basiert auf Debian, deshalb funktioniert host net (--net=
   
 ![](/docs/en/self-host/synogy/images/hbbs-config.png) 
 
-### Erzeuge den hbbr Container
+### hbbr-Container erstellen
 
-Bitte wiederhole die Schritte von unter `hbbs`, ändere dabei den Containernamen zu `hbbr` und den Befehl zu `hbbr`.
+Bitte wiederholen Sie die obigen Schritte für `hbbs`, aber ändern den Containernamen in `hbbr` und den Befehl in `hbbr`.
 
 ![](/docs/en/self-host/synogy/images/hbbr-config.png) 
 
-### hbbr/hbbs Container
+### hbbr/hbbs-Container
 
 ![](/docs/en/self-host/synogy/images/containers.png?width=500px)
 
 
-| Doppelklicke auf die Container und beachte das Log | Verifizere, dass hbbs/hbbr das host Netzwerk nutzen |
+| Doppelklicken Sie auf den Container und prüfen Sie das Protokoll | Bestätigen Sie hbbs/hbbr über das Host-Netzwerk doppelt |
 |-- | -- |
 ![](/docs/en/self-host/synogy/images/log.png?width=500px) | ![](/docs/en/self-host/synogy/images/network-types.png?width=500px)
 
-
-
-[English](/docs/en/self-host/synogy)
