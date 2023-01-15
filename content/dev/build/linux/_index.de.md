@@ -5,24 +5,24 @@ weight: 10
 
 ## Abhängigkeiten
 
-Die Desktop-Versionen nutzen [Sciter](https://sciter.com/) für die Oberfläche, bitte lade die dynamische Sciter Bibliothek selbst herunter.
+Desktop-Versionen nutzen [Sciter](https://sciter.com/) für die Benutzeroberfläche, bitte laden Sie die dynamische Bibliothek sciter selbst herunter.
 
 [Windows](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll) |
 [Linux](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so) |
-[MacOS](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.osx/libsciter.dylib)
+[macOS](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.osx/libsciter.dylib)
 
-## Die groben Schritte zum Kompilieren
+## Grobe Schritte zum Erstellen
 
-- Bereite deine Rust Entwicklungsumgebung und C++ Entwicklungsumgebung vor
+- Bereiten Sie Ihre Rust-Entwicklungsumgebung und Ihre C++-Build-Umgebung vor
 
-- Installiere [vcpkg](https://github.com/microsoft/vcpkg) und füge die `VCPKG_ROOT` Systemumgebungsvariable hinzu
+- Installieren Sie [vcpkg](https://github.com/microsoft/vcpkg) und setzen Sie die Umgebungsvariable `VCPKG_ROOT` korrekt
 
   - Windows: `vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static`
-  - Linux/MacOS: `vcpkg install libvpx libyuv opus`
+  - Linux/macOS: `vcpkg install libvpx libyuv opus`
 
-- Nutze `cargo run`
+- Nutzen Sie `cargo run`
 
-## Kompilieren auf Linux
+## Erstellen auf Linux
 
 ### Ubuntu 18 (Debian 10)
 
@@ -54,7 +54,7 @@ export VCPKG_ROOT=$HOME/vcpkg
 vcpkg/vcpkg install libvpx libyuv opus
 ```
 
-### libvpx reparieren (Für Fedora)
+### libvpx reparieren (für Fedora)
 
 ```sh
 cd vcpkg/buildtrees/libvpx/src
@@ -67,7 +67,7 @@ cp libvpx.a $HOME/vcpkg/installed/x64-linux/lib/
 cd
 ```
 
-### Kompilieren
+### Erstellen
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -77,9 +77,9 @@ cd rustdesk
 mkdir -p target/debug
 wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so
 mv libsciter-gtk.so target/debug
-cargo run
+VCPKG_ROOT=$HOME/vcpkg cargo run
 ```
 
-### Ändere Wayland zu X11 (Xorg)
+### Wayland zu X11 ändern (Xorg)
 
-RustDesk unterstützt "Wayland" nicht. Siehe [hier](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/) um Xorg als Standard GNOME Session zu nutzen.
+RustDesk unterstützt Wayland nicht. Prüfen Sie [dies](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/), um Xorg als Standard-GNOME-Sitzung zu konfigurieren.
