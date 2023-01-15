@@ -1,5 +1,5 @@
 ---
-title: Auto-hébergeur
+title: Auto-héberger son serveur
 weight: 5
 pre: "<b>2. </b>"
 chapter: true
@@ -7,7 +7,7 @@ chapter: true
 
 ### Chapitre 2
 
-# Auto-hébergeur
+# Auto-héberger son serveur
 
 Nous développons continuellement le serveur, si vous avez des commentaires, veuillez rejoindre notre discussion [Discord](https://discord.com/invite/nDceKgxnkV).
 

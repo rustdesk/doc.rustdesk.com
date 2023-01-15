@@ -15,7 +15,7 @@ Download [rustup-init.exe](https://static.rust-lang.org/rustup/dist/x86_64-pc-wi
 
 ### vcpkg
 
-Go to the folder you want to clong vcpkg and use [git-bash](https://git-scm.com/download/win) to run the following commands， download `vcpkg`, install 64bit version of `libvpx`, `libyuv` and `opus`.
+Go to the folder you want to clone vcpkg and use [git-bash](https://git-scm.com/download/win) to run the following commands， download `vcpkg`, install 64bit version of `libvpx`, `libyuv` and `opus`.
 If you don't have `git` installed, get `git` [here](https://git-scm.com/download/win).
 
 ```shell
