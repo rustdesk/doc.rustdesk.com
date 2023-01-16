@@ -1,5 +1,5 @@
 ---
-title: "Docs de RustDesk"
+title: "Documentation de RustDesk"
 ---
 
 # RustDesk
