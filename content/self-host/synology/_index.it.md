@@ -3,4 +3,4 @@ title: Synology
 weight: 22
 ---
 
-[English](/docs/en/self-host/synogy)
+[English](/docs/en/self-host/synology)
