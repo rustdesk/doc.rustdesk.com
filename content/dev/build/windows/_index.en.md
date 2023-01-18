@@ -55,7 +55,7 @@ You can download 15.02 of the LLVM binaries here: [64-bit](https://github.com/ll
 git clone https://github.com/rustdesk/rustdesk
 cd rustdesk
 mkdir -p target/debug
-wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll
+Invoke-WebRequest -URI https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll -OutFile ./sciter.dll
 mv sciter.dll target/debug
 cargo run
 ```
