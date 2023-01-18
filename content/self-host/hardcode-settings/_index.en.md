@@ -23,7 +23,7 @@ This should be a string such as
 rustdesk.my-domain.com
 ```
 
-#### RS_PUB_KEY_VAL
+#### RS_PUB_KEY
 This variable will be your public key, more information on the key is aviable [Here](/docs/en/self-host/install/#key)
 
 This should be a string such as
