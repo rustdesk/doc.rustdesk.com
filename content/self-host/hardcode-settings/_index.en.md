@@ -1,6 +1,6 @@
 ---
 title: Hardcoding Custom Settings 
-weight: 10
+weight: 49
 ---
 
 ## Custom Server
