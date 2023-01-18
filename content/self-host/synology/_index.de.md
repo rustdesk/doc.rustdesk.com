@@ -11,33 +11,33 @@ Paketmanager öffnen und Docker installieren
 
 |             |                                                   |
 | --------------- | -------------------------------------------------------- |
-![](/docs/en/self-host/synogy/images/package-manager.png) | ![](/docs/en/self-host/synogy/images/docker.png)
+![](/docs/en/self-host/synology/images/package-manager.png) | ![](/docs/en/self-host/synology/images/docker.png)
 
 
 ### RustDesk-Server installieren
 
 | RustDesk-Server im Docker-Register suchen und per Doppelklick installieren  |  RustDesk-Server-Image ist installiert, Doppelklick zum Erstellen des RustDesk-Server-Containers                                   |
 | --------------- | -------------------------------------------------------- |
-![](/docs/en/self-host/synogy/images/pull-rustdesk-server.png) | ![](/docs/en/self-host/synogy/images/rustdesk-server-installed.png)
+![](/docs/en/self-host/synology/images/pull-rustdesk-server.png) | ![](/docs/en/self-host/synology/images/rustdesk-server-installed.png)
 
 
 ### hbbs-Container erstellen
 
 Wie oben erwähnt, doppelklicken Sie auf das RustDesk-Server-Image, um einen neuen Container zu erstellen, und geben Sie ihm den Namen `hbbs`.
-![](/docs/en/self-host/synogy/images/hbbs.png) 
+![](/docs/en/self-host/synology/images/hbbs.png) 
 
 Klicken Sie auf "Erweiterte Einstellungen".
 
 - Automatischen Neustart aktivieren
-![](/docs/en/self-host/synogy/images/auto-restart.png) 
+![](/docs/en/self-host/synology/images/auto-restart.png) 
 
 - Aktivieren Sie "Use the same network as Docker host". Mehr Infos über das Hostnetz siehe [hier](/docs/de/self-host/install/#net-host)
-![](/docs/en/self-host/synogy/images/host-net.png) 
+![](/docs/en/self-host/synology/images/host-net.png) 
 
 - Binden Sie ein Host-Verzeichnis (z. B. `Shared/test/`) als `/root` ein, hbbs wird einige Dateien (einschließlich der `key`-Datei) in diesem Verzeichnis erzeugen
 | Einbinden | Im Host-Verzeichnis erzeugte Dateien |
 |-- | -- |
-![](/docs/en/self-host/synogy/images/mount.png?width=500px) | ![](/docs/en/self-host/synogy/images/mounted-dir.png?width=300px) 
+![](/docs/en/self-host/synology/images/mount.png?width=500px) | ![](/docs/en/self-host/synology/images/mounted-dir.png?width=300px) 
 
 - Befehl einstellen
 {{% notice note %}}
@@ -47,24 +47,24 @@ Das Betriebssystem von Synology basiert auf Debian, daher funktioniert das Hostn
 
 {{% /notice %}}
 
-![](/docs/en/self-host/synogy/images/hbbs-cmd.png?v2) 
+![](/docs/en/self-host/synology/images/hbbs-cmd.png?v2) 
 
 - Fertig
   
-![](/docs/en/self-host/synogy/images/hbbs-config.png) 
+![](/docs/en/self-host/synology/images/hbbs-config.png) 
 
 ### hbbr-Container erstellen
 
-Bitte wiederholen Sie die obigen Schritte für `hbbs`, aber ändern den Containernamen in `hbbr` und den Befehl in `hbbr`.
+Bitte wiederholen Sie die obigen Schritte für `hbbs`, ändern aber den Containernamen in `hbbr` und den Befehl in `hbbr`.
 
-![](/docs/en/self-host/synogy/images/hbbr-config.png) 
+![](/docs/en/self-host/synology/images/hbbr-config.png) 
 
 ### hbbr/hbbs-Container
 
-![](/docs/en/self-host/synogy/images/containers.png?width=500px)
+![](/docs/en/self-host/synology/images/containers.png?width=500px)
 
 
 | Doppelklicken Sie auf den Container und prüfen Sie das Protokoll | Bestätigen Sie hbbs/hbbr über das Host-Netzwerk doppelt |
 |-- | -- |
-![](/docs/en/self-host/synogy/images/log.png?width=500px) | ![](/docs/en/self-host/synogy/images/network-types.png?width=500px)
+![](/docs/en/self-host/synology/images/log.png?width=500px) | ![](/docs/en/self-host/synology/images/network-types.png?width=500px)
 

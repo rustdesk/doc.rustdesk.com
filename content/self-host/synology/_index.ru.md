@@ -11,33 +11,33 @@ weight: 22
 
 |             |                                                   |
 | --------------- | -------------------------------------------------------- |
-![](/docs/en/self-host/synogy/images/package-manager.png) | ![](/docs/en/self-host/synogy/images/docker.png)
+![](/docs/en/self-host/synology/images/package-manager.png) | ![](/docs/en/self-host/synology/images/docker.png)
 
 
 ### Установка RustDesk Server
 
 | Найдите rustdesk-server в реестре Docker и установите двойным кликом мыши |   Установленный образ rustdesk-server rustdesk-server                                     |
 | --------------- | -------------------------------------------------------- |
-![](/docs/en/self-host/synogy/images/pull-rustdesk-server.png) | ![](/docs/en/self-host/synogy/images/rustdesk-server-installed.png)
+![](/docs/en/self-host/synology/images/pull-rustdesk-server.png) | ![](/docs/en/self-host/synology/images/rustdesk-server-installed.png)
 
 
 ### Создание контейнера hbbs
 
 Дважды нажмите на образ rustdesk-server чтобы создать контейнер, установите контейнеру имя `hbbs`.
-![](/docs/en/self-host/synogy/images/hbbs.png) 
+![](/docs/en/self-host/synology/images/hbbs.png) 
 
 Нажмите "Advanced Settings".
 
 - Включите автоперезапуск
-![](/docs/en/self-host/synogy/images/auto-restart.png) 
+![](/docs/en/self-host/synology/images/auto-restart.png) 
 
 - Включите опцию "Use the same network as Docker host", [подробности](/docs/en/self-host/install/#net-host)
-![](/docs/en/self-host/synogy/images/host-net.png) 
+![](/docs/en/self-host/synology/images/host-net.png) 
 
 - Смонтируйте папку хоста (например `Shared/test/`) в `/root`, hbbs создаст файлы в папке
 | Монтирование | Созданные файлы |
 |-- | -- |
-![](/docs/en/self-host/synogy/images/mount.png?width=500px) | ![](/docs/en/self-host/synogy/images/mounted-dir.png?width=300px) 
+![](/docs/en/self-host/synology/images/mount.png?width=500px) | ![](/docs/en/self-host/synology/images/mounted-dir.png?width=300px) 
 
 - Установите запускаемую команду
 {{% notice note %}}
@@ -47,23 +47,23 @@ weight: 22
 
 {{% /notice %}}
 
-![](/docs/en/self-host/synogy/images/hbbs-cmd.png?v2) 
+![](/docs/en/self-host/synology/images/hbbs-cmd.png?v2) 
 
 - Готово
   
-![](/docs/en/self-host/synogy/images/hbbs-config.png) 
+![](/docs/en/self-host/synology/images/hbbs-config.png) 
 
 ### Создание контейнера hbbr
 
 Произведите те-же действия, что и в случае hbbs, но измените имя контейнера на `hbbr` и запускаемую команду на `hbbr`.
 
-![](/docs/en/self-host/synogy/images/hbbr-config.png) 
+![](/docs/en/self-host/synology/images/hbbr-config.png) 
 
 ### Контейнеры hbbr/hbbs
 
-![](/docs/en/self-host/synogy/images/containers.png?width=500px)
+![](/docs/en/self-host/synology/images/containers.png?width=500px)
 
 
 | Двойной клик на контейнер чтобы перейти в журнал | Проверьте, чтобы hbbs/hbbr использовали сеть хоста |
 |-- | -- |
-![](/docs/en/self-host/synogy/images/log.png?width=500px) | ![](/docs/en/self-host/synogy/images/network-types.png?width=500px)
+![](/docs/en/self-host/synology/images/log.png?width=500px) | ![](/docs/en/self-host/synology/images/network-types.png?width=500px)
