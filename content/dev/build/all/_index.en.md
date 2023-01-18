@@ -1,6 +1,6 @@
 ---
-title: Build all using Github Actions
-weight: 22
+title: All with Github Actions
+weight: 35
 ---
 
 {{% notice note %}}
