@@ -3,6 +3,10 @@ title: Windows
 weight: 20
 ---
 
+{{% notice note %}}
+The command line commands here must be run in powershell not command prompt or you will get syntax errors.
+{{% /notice %}}
+
 ## Dependencies
 
 ### C++ build environment
