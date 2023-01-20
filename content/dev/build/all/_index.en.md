@@ -29,7 +29,7 @@ Click Add Secret
 
 ## Enable workflows
 
-On your fork you just created goto actions and enable workflows.
+On your fork you just created goto the mainpage and click actions then enable workflows.
 
 Once workflows are enabled you can click "Flutter Nightly Build" on the left then click "Run workflow" on the right to build the rustdesk clients for all of the supported platforms.
 
