@@ -6,11 +6,11 @@ weight: 3
 ### Installation
 ------
 
-Öffnen Sie die .dmg-Datei und ziehen Sie sie `RustDesk` zu `Applications` wie nachstehend.
+Öffnen Sie die .dmg-Datei und ziehen Sie `RustDesk` zu `Applications`, wie unten dargestellt.
 
 ![](/docs/en/manual/mac/images/dmg.png)
 
-Stellen Sie sicher, dass Sie alle laufenden RustDesk beendet haben. Stellen Sie außerdem sicher, dass Sie den auf der Taskleiste angezeigten RustDesk-Dienst beenden.
+Stellen Sie sicher, dass Sie alle laufenden RustDesk beendet haben. Stellen Sie außerdem sicher, dass Sie den RustDesk-Dienst in der Taskleiste beendet haben.
 
 ![](/docs/en/manual/mac/images/tray.png)
 
@@ -23,26 +23,26 @@ Stellen Sie sicher, dass Sie alle laufenden RustDesk beendet haben. Stellen Sie 
 ### Berechtigungen aktivieren
 
 {{% notice note %}}
-Due to MacOS security policy change, our api which captures input on local side does not work any
-more. You have to enable "Input Monitoring" permission on local Mac side.
-Please follow this
+Aufgrund einer Änderung der macOS-Sicherheitspolitik funktioniert unsere API, die Eingaben auf der lokalen Seite erfasst, nicht mehr.
+Sie müssen die Berechtigung "Eingabeüberwachung" auf der lokalen Mac-Seite aktivieren.
+Bitte befolgen Sie dies
 [https://github.com/rustdesk/rustdesk/issues/974#issuecomment-1185644923](https://github.com/rustdesk/rustdesk/issues/974#issuecomment-1185644923)
 
-It seems no quick fix, we need to fix together with our Flutter version.
+Es scheint keine schnelle Lösung zu sein, wir müssen das zusammen mit unserer Flutter-Version beheben.
 {{% /notice %}}
 
-Um den Bildschirm zu erfassen, müssen Sie gewähren `RustDesk` **Zugänglichkeitsberechtigung** und **Bildschirmaufzeichnungsberechtigung**. RustDesk führt Sie zum Einstellungsfenster.
+Um den Bildschirm aufzunehmen, müssen Sie `RustDesk` die Berechtigungen **Zugriff** und **Bildschirmaufnahme** erteilen. RustDesk führt Sie zum Einstellungsfenster.
 
-| RustDesk Fenster | Mac Einstellungsfenster |
+| RustDesk-Fenster | Einstellungsfenster |
 | ---- | ---- |
 |![](/docs/en/manual/mac/images/acc.png)|![](/docs/en/manual/mac/images/acc3.png?v2)|
 
-Wenn Sie es im Einstellungsfenster aktiviert haben, warnt RustDesk dennoch. Bitte entfernen Sie RustDesk aus den Einstellungsfenstern über die `-` Schaltfläche und klicken Sie auf die `+` Schaltfläche, wählen Sie RustDesk aus `/Applications`.
+Wenn Sie es in den Einstellungen aktiviert haben, warnt RustDesk dennoch. Bitte entfernen Sie RustDesk aus dem Einstellungsfenster über die Schaltfläche `-` und klicken Sie auf die Schaltfläche `+`, um RustDesk unter `/Applications` auszuwählen.
 
-| `-` und `+` Schaltfläche | Wählen Sie RustDesk aus |
+| Schaltfläche `+` und `-` | RustDesk auswählen |
 | ---- | ---- |
 |![](/docs/en/manual/mac/images/acc2.png)|![](/docs/en/manual/mac/images/add.png?v2)|
 
-Bitte kopieren Sie die obigen Schritte für die Erlaubnis zur **Bildschirmaufnahme**.
+Bitte kopieren Sie die obigen Schritte für die Berechtigung zur **Bildschirmaufnahme**.
 
 ![](/docs/en/manual/mac/images/screen.png?v2)
