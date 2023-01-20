@@ -15,6 +15,8 @@ Goto https://github.com/rustdesk/rustdesk/fork and click "create fork"
 
 {{% notice note %}}
 You only need to do this if you want to change the default server and public key.
+
+The server url and key you are using is hidden from other users on Github.
 {{% /notice %}}
 
 On your fork you just created goto settings -> Secrets and Variables -> Actions
