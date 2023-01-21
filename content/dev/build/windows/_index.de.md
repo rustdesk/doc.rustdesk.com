@@ -3,6 +3,10 @@ title: Windows
 weight: 20
 ---
 
+{{% notice note %}}
+Die Kommandos in der Befehlszeile müssen in Git Bash und nicht in der Eingabeaufforderung ausgeführt werden, da sonst Syntaxfehler auftreten.
+{{% /notice %}}
+
 ## Abhängigkeiten
 
 ### C++-Build-Umgebung
@@ -15,7 +19,7 @@ Laden Sie [rustup-init.exe](https://static.rust-lang.org/rustup/dist/x86_64-pc-w
 
 ### vcpkg
 
-Gehen Sie in den Ordner, in den Sie vcpkg klonen wollen, und verwenden Sie [git-bash](https://git-scm.com/download/win), um die folgenden Befehle auszuführen: Laden Sie `vcpkg` herunter, installieren Sie die 64-Bit-Version von `libvpx`, `libyuv` und `opus`.
+Gehen Sie in den Ordner, in den Sie `vcpkg` klonen wollen, und verwenden Sie [Git Bash](https://git-scm.com/download/win), um die folgenden Befehle auszuführen: Laden Sie `vcpkg` herunter, installieren Sie die 64-Bit-Version von `libvpx`, `libyuv` und `opus`.
 Wenn Sie `git` nicht installiert haben, holen Sie sich `git` [hier](https://git-scm.com/download/win).
 
 ```sh
@@ -36,9 +40,9 @@ Fügen Sie die Systemumgebungsvariable `VCPKG_ROOT`=`<pfad>\vcpkg` hinzu. Der `<
 
 Desktop-Versionen verwenden [sciter](https://sciter.com/) für die Benutzeroberfläche, bitte laden Sie [sciter.dll](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll) herunter.
 
-### llvm
+### LLVM
 
-rust-bindgen hängt von clang ab, laden Sie [llvm](https://github.com/llvm/llvm-project/releases) herunter und installieren Sie es. Fügen Sie die Systemumgebungsvariable `LIBCLANG_PATH`=`<llvm_install_dir>/bin` hinzu.
+rust-bindgen hängt von clang ab, laden Sie [LLVM](https://github.com/llvm/llvm-project/releases) herunter und installieren Sie es. Fügen Sie die Systemumgebungsvariable `LIBCLANG_PATH`=`<llvm_install_dir>/bin` hinzu.
 
 Sie können die Version 15.0.2 der LLVM-Binärdateien hier herunterladen: [64 Bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win64.exe) / [32 Bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win32.exe).
 
@@ -51,6 +55,7 @@ Sie können die Version 15.0.2 der LLVM-Binärdateien hier herunterladen: [64 Bi
 git clone https://github.com/rustdesk/rustdesk
 cd rustdesk
 mkdir -p target/debug
+wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll
 mv sciter.dll target/debug
 cargo run
 ```

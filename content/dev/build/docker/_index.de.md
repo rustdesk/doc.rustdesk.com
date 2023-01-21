@@ -26,7 +26,7 @@ Beachten Sie, dass die erste Erstellung länger dauern kann, bis die Abhängigke
 target/debug/rustdesk
 ```
 
-Oder, wenn Sie eine ausführbare Release-Datei ausführen:
+Oder, wenn Sie eine Release-Version ausführen:
 
 ```sh
 target/release/rustdesk
