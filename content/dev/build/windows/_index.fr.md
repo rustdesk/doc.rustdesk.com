@@ -3,6 +3,11 @@ title: Windows
 weight: 20
 ---
 
+
+{{% notice note %}}
+Les lignes de commande ce dessous doivent être exécutées dans `git-bash` et non dans "l'invite de commande", sinon vous obtiendrez des erreurs de syntaxe.
+{{% /notice %}}
+
 ## Dépendances
 
 ### Environnement de compilation C++
@@ -48,6 +53,7 @@ Vous pouvez télécharger LLVM 15.02 ici : [64-bit](https://github.com/llvm/llvm
 git clone https://github.com/rustdesk/rustdesk
 cd rustdesk
 mkdir -p target/debug
+wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll
 mv sciter.dll target/debug
 cargo run
 ```
