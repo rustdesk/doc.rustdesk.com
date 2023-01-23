@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>{{ .Permalink }}</title>
+    <link rel="canonical" href="{{ .Permalink }}"/>
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8"/>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url={{ .Permalink }}"/>
+    </noscript>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const default_language = 'en'
+        var root_path =  (new URL('{{ site.BaseURL }}')).pathname;
+        // Only do i18n at root, 
+        // otherwise, redirect immediately
+        
+        if ( window.location.pathname !== root_path) {
+          window.location.replace('{{ .Permalink }}')
+          return
+        }
+        
+
+        var getFirstBrowserLanguage = function () {
+          var nav = window.navigator,
+          browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage'],
+          i,
+          language
+
+          if (Array.isArray(nav.languages)) {
+            for (i = 0; i < nav.languages.length; i++) {
+              language = nav.languages[i]
+              if (language && language.length) {
+                return language
+              }
+            }
+          }
+          // support for other well known properties in browsers
+          for (i = 0; i < browserLanguagePropertyKeys.length; i++) {
+            language = nav[browserLanguagePropertyKeys[i]]
+            if (language && language.length) {
+              return language
+            }
+          }
+          return default_language
+        }
+
+        const list_languages = ({{site.Languages}}).map(function(value,index) { return value['Lang']; })
+        const nav_lang = getFirstBrowserLanguage()
+        
+        if ( root_path.substr(-1) == '/' ) root_path = root_path.slice(0, -1)
+
+        if ( list_languages.indexOf( nav_lang ) !== -1 ){
+          window.location.replace(`${root_path}/${nav_lang}/`)
+        } else {
+          // fallback to English
+          window.location.replace(`${root_path}/${default_language}/`)
+        }
+      }
+      );
+
+    </script>
+</head>
+<body>
+<h1>Rerouting</h1>
+<p>You should be rerouted, if not, <a href="{{ .Permalink }}">click here</a>.</p>
+</body>
+</html>
