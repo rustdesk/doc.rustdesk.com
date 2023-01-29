@@ -72,4 +72,4 @@ thread 'main' panicked at 'Unable to find libclang: "couldn't find any valid sha
 
 ### Lösung
 
-Installieren Sie [llvm](https://releases.llvm.org/download.html), fügen Sie die Umgebungsvariable `LIBCLANG_PATH` als `llvm_install_dir/bin` hinzu.
+Installieren Sie [LLVM](https://releases.llvm.org/download.html) und fügen Sie die Umgebungsvariable `LIBCLANG_PATH` als `llvm_install_dir/bin` hinzu.
