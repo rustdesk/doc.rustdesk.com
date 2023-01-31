@@ -10,7 +10,7 @@ Die Verwendung von NSSM hat einige Vorteile:
 - Ideal für Windows-Server
 - Automatischer Start beim Booten ohne Anmeldung (Der Benutzer, der den Starteintrag erstellt hat, muss sich nicht anmelden, damit es startet).
 - Beide Binärdateien werden als Dienste ausgeführt.
-- Eigenständig (keine Abhängigkeit von NodeJS)
+- Eigenständig (keine Abhängigkeit von Node.js)
 
 Die Vorteile von pm2 sind unter anderem:
 - Eine gute Idee, wenn Sie den Server auf demselben Computer wie Ihren Hauptarbeitsrechner betreiben
@@ -79,10 +79,10 @@ nssm start <Gewünschter hbbr-Dienstname>
 
 ## Installation mit pm2
 
-### NodeJs installieren
+### Node.js installieren
 
-Bitte NodeJS [herunterladen](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi) und installieren.
-NodeJs ist die Laufzeitumgebung von pm2, Sie müssen also zuerst NodeJs installieren.
+Bitte Node.js [herunterladen](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi) und installieren.
+Node.js ist die Laufzeitumgebung von pm2, Sie müssen also zuerst Node.js installieren.
 
 ### pm2 installieren
 

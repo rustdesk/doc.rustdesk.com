@@ -4,7 +4,7 @@ weight: 10
 ---
 
 ## Installieren Sie Ihren eigenen Server mit einem einfach auszuführenden Installationsskript
-Das Skript wird auf https://github.com/dinger1986/rustdeskinstall gehostet und auf unserem [Discord](https://discord.com/invite/nDceKgxnkV) unterstützt.
+Das Skript wird auf https://github.com/techahold/rustdeskinstall gehostet und auf unserem [Discord](https://discord.com/invite/nDceKgxnkV) unterstützt.
 
 Derzeit lädt das Skript die Relay- und Signal-Server (hbbr und hbbs) herunter und richtet sie ein, generiert Konfigurationen und hostet sie auf einer passwortgeschützten Webseite für die einfache Bereitstellung an Clients.
 
@@ -56,7 +56,7 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --n
 <a name="net-host"></a>
 
 {{% notice note %}}
-`--net=host` funktioniert nur unter **Linux**, was dazu führt, dass `hbbs`/`hbbr` die tatsächliche eingehende IP-Adresse sehen und nicht die Container-IP (172.17.0.1).
+`--net=host` funktioniert nur unter **Linux**, was dazu führt, dass `hbbs`/`hbbr` die tatsächliche, eingehende IP-Adresse sehen und nicht die Container-IP (172.17.0.1).
 Wenn `--net=host` gut funktioniert, werden die Optionen `-p` nicht verwendet. Wenn Sie unter Windows arbeiten, lassen Sie `sudo` und `--net=host` weg.
 
 **Bitte entfernen Sie `--net=host`, wenn Sie Verbindungsprobleme auf Ihrer Plattform haben.**
@@ -188,7 +188,7 @@ pm2 start hbbr
 
 <a name="demo"></a>
 {{% notice note %}}
-pm2 benötigt NodeJS v16+. Wenn Sie pm2 nicht starten können (z. B. können Sie `hbbs`/`hbbr` nicht in `pm2 list` sehen), laden Sie bitte die NodeJS-LTS-Version von https://nodejs.org herunter und installieren Sie sie. Wenn Sie `hbbs`/`hbbr` nach einem Neustart automatisch ausführen lassen wollen, schauen Sie sich bitte `pm2 save` und `pm2 startup` an. Mehr über [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Ein weiteres gutes Werkzeug für Ihre Logs ist [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
+pm2 benötigt Node.js v16+. Wenn Sie pm2 nicht starten können (z. B. können Sie `hbbs`/`hbbr` nicht in `pm2 list` sehen), laden Sie bitte die Node.js-LTS-Version von https://nodejs.org herunter und installieren Sie sie. Wenn Sie `hbbs`/`hbbr` nach einem Neustart automatisch ausführen lassen wollen, schauen Sie sich bitte `pm2 save` und `pm2 startup` an. Mehr über [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Ein weiteres gutes Werkzeug für Ihre Logs ist [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
 
 Der Parameter `-r` von `hbbs` ist nicht zwingend erforderlich, es ist nur praktisch, wenn Sie auf der kontrollierten Client-Seite keinen Relay-Server angeben müssen. Sie brauchen den Port nicht anzugeben, wenn Sie den Standardport 21117 verwenden. Der vom Client angegebene Relay-Server hat eine höhere Priorität als dieser.
 {{% /notice %}}
@@ -218,7 +218,7 @@ Klicken Sie auf die Menü-Schaltfläche [ &#8942; ] rechts neben ID, wie unten g
 
 Geben Sie in das Eingabefeld **ID-Server** den `hbbs`-Host oder die IP-Adresse ein (lokale Seite und entfernte Seite). Die anderen beiden Adressen und Key können leer bleiben, RustDesk wird sie automatisch ableiten (falls nicht speziell eingestellt). Der Relay-Server verweist auf `hbbr` (Port 21117).
 
-z. B.
+Z. B.
 
 ```nolang
 hbbs.example.com

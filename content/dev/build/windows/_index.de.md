@@ -11,7 +11,7 @@ Die Kommandos in der Befehlszeile müssen in Git Bash und nicht in der Eingabeau
 
 ### C++-Build-Umgebung
 
-Laden Sie [msvc](https://visualstudio.microsoft.com/) herunter und installieren Sie es.
+Laden Sie [Visual Studio](https://visualstudio.microsoft.com/) herunter und installieren Sie es.
 Wählen Sie `Windows` als Betriebssystem für die Entwicklungsmaschine und markieren Sie `C++`, laden Sie dann die Visual Studio Community-Version herunter und installieren Sie sie. Die Installation kann eine Weile dauern.
 
 ### Rust-Entwicklungsumgebung
@@ -32,7 +32,7 @@ Wenn Sie `git` nicht installiert haben, holen Sie sich `git` [hier](https://git-
   vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static
 ```
 
-Fügen Sie die Systemumgebungsvariable `VCPKG_ROOT`=`<pfad>\vcpkg` hinzu. Der `<pfad>` sollte der Ort sein, den Sie oben zum Klonen von `vcpkg` gewählt haben.
+Fügen Sie die Systemumgebungsvariable `VCPKG_ROOT`=`<pfad>\vcpkg` hinzu. `<pfad>` sollte der Ort sein, den Sie oben zum Klonen von `vcpkg` gewählt haben.
 
 ![](/docs/en/dev/build/windows/images/env.png)
 
