@@ -200,16 +200,6 @@ By default, `hbbs` listens on 21115 (TCP) and 21116 (TCP/UDP), 21118 (TCP), and 
 
 Please run with the `-h` option to see help if you want to choose your own port.
 
-<a name="net-host"></a>
-
-{{% notice note %}}
-`--net=host` only works on **Linux**, which makes `hbbs`/`hbbr` see the real incoming IP Address rather than the Container IP (172.17.0.1).
-If `--net=host` works fine, the `-p` options are not used. If on Windows, leave out `sudo` and `--net=host`.
-
-**Please remove `--net=host` if you are having connection problems on your platform.**
-{{% /notice %}}
-
-
 ### STEP 3 : Set hbbs/hbbr address on client-side
 
 Click on the Menu button [ &#8942; ] on the right side of ID as shown below, and choose "ID/Relay Server".
