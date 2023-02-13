@@ -57,5 +57,5 @@ cd rustdesk
 mkdir -p target/debug
 wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll
 mv sciter.dll target/debug
-python3 ./build.py
+cargo run
 ```
