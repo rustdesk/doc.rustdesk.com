@@ -5,7 +5,7 @@ weight: 49
 
 ## Custom Server
 {{% notice note %}}
-To hardcode custom server settings into your executables you must [build](/docs/en/dev/build/) the client yourself.
+To hardcode custom server settings into your executables you must [build](/docs/en/dev/build/) the client yourself on your machine or [with GitHub Actions](/docs/en/dev/build/all/).
 {{% /notice %}}
 {{% notice note %}}
 **If you set either of these values without setting the other your executable will not work!**
