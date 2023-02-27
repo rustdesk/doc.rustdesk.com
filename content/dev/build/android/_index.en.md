@@ -94,6 +94,11 @@ At this step you might require some additional dependencies, you could install t
 sudo apt update -y
 sudo apt-get -qq install -y  git curl wget nasm yasm libgtk-3-dev clang libxcb-randr0-dev libxdo-dev libxfixes-dev libxcb-shape0-dev libxcb-xfixes0-dev libasound2-dev libpulse-dev cmake libclang-dev ninja-build libappindicator3-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libvdpau-dev libva-dev libclang-dev llvm-dev libclang-10-dev llvm-10-dev pkg-config tree g++ libc6-dev gcc-multilib g++-multilib openjdk-11-jdk-headless
 ```
+You might also need to activate ffigen
+```
+dart pub global activate ffigen 5.0.1
+```
+
 ### Downloading additional dependencies
 For this tutorial we prepared some dependencies for you, feel free to use them. It requires `vcpkg` to be installed, in this case at `/opt`
 
@@ -199,7 +204,9 @@ pushd flutter
 flutter build apk --release --target-platform android-arm64 --split-per-abi
 ```
 {{% notice note %}}
-At this step you might see some errors in terminal, this is normal as long as they about kotlin or 
+At this step you might see some errors in terminal, this is normal as long as they about incompatible version of Kotlin or Runtime JAR files in the classpath should have the same version.
+
+If your result is `✓  Built build/app` then ignore it
 {{% /notice %}}
 
 ### Optional
