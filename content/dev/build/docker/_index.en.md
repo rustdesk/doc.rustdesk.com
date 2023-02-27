@@ -5,6 +5,7 @@ weight: 30
 
 
 ## How to build with Docker
+### This won't work on Windows
 
 Begin by cloning the repository and building the docker container:
 
