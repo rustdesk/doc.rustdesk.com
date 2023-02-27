@@ -4,8 +4,31 @@ weight: 22
 ---
 
 {{% notice note %}}
-This tutorial is based on **Linux**, and supposing you are **familiar** with [Android NDK](https://developer.android.com/ndk/downloads), [Rust](https://rustup.rs/) and [Flutter](https://flutter.dev/). If you are not, please skip.
+This tutorial suppose that you are **familiar** with [Android NDK](https://developer.android.com/ndk/downloads), [Rust](https://rustup.rs/) and [Flutter](https://flutter.dev/). If you are not, please skip. Or you can go further but at your own risk
 {{% /notice %}}
+
+{{% notice note %}}
+It is possible to build, run end edit Android version on Windows, but it requires patched `flutter` directory
+
+By "patched" I mean directory in state like before running `flutter build` on Linux machine. 
+
+Developing RustDesk on **Windows** and **MacOS** instruction is still under active development
+{{% /notice %}}
+
+# Introduction
+
+Here you will learn how to prepare your environment to such an extent that you will be able to successfully build the application and enable yourself to work on the code through, for example, Android Studio.
+
+This tutorial is based on latest working workflow file, to ensuree that everything will just works, if you encounter any problems feel free to contact us on our [Discord](https://discord.com/invite/nDceKgxnkV) or by other communication channel.
+
+# Linux
+
+## Assumptions
+- You are using **Ubuntu 20.04** or later ( due to fact that this tutorial is based on this version)
+- You have working internet connection
+- You already installed [**Flutter**](https://docs.flutter.dev/get-started/install/linux), [**vcpkg**]() and [**Rust**](https://www.rust-lang.org/tools/install)
+- You cloned [RustDesk repository](https://github.com/rustdesk/rustdesk)
+- You know what are you doing
 
 ## Build Rust
 ```
