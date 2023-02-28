@@ -24,7 +24,7 @@ rustdesk-serveur.mon-domaine.fr
 ```
 
 #### RS_PUB_KEY
-Cette variable sera votre clé publique, plus d'informations sur cette clé sont disponibles [ici](/docs/fr/self-host/install/#key)
+Cette variable sera votre clé publique, plus d'informations sur cette clé sont disponibles [ici](/docs/fr/self-host/install/#clé)
 
 
 Exemple:
