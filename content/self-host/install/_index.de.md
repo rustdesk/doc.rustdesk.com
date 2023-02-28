@@ -83,7 +83,7 @@ services:
     image: rustdesk/rustdesk-server:latest
     command: hbbs -r example.com:21117
     volumes:
-      - ./hbbs:/root
+      - ./data:/root
     networks:
       - rustdesk-net
     depends_on:
@@ -98,7 +98,7 @@ services:
     image: rustdesk/rustdesk-server:latest
     command: hbbr
     volumes:
-      - ./hbbr:/root
+      - ./data:/root
     networks:
       - rustdesk-net
     restart: unless-stopped
@@ -122,7 +122,7 @@ services:
     image: rustdesk/rustdesk-server:latest-arm64v8
     command: hbbs -r example.com:21117
     volumes:
-      - ./hbbs:/root
+      - ./data:/root
     networks:
       - rustdesk-net
     depends_on:
@@ -137,7 +137,7 @@ services:
     image: rustdesk/rustdesk-server:latest-arm64v8
     command: hbbr
     volumes:
-      - ./hbbr:/root
+      - ./data:/root
     networks:
       - rustdesk-net
     restart: unless-stopped
