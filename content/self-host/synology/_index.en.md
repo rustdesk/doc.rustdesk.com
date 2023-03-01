@@ -16,7 +16,7 @@ Open package manager and install docker
 
 ### Install RustDesk Server
 
-| Search rustdesk-server in Docker's registery and install by double click  |   Installed rustdesk-server image, double click to create rustdesk-server container                                    |
+| Search rustdesk-server in Docker's registry and install by double click  |   Installed rustdesk-server image, double click to create rustdesk-server container                                    |
 | --------------- | -------------------------------------------------------- |
 ![](/docs/en/self-host/synology/images/pull-rustdesk-server.png) | ![](/docs/en/self-host/synology/images/rustdesk-server-installed.png)
 
