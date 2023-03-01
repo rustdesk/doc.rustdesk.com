@@ -8,7 +8,7 @@ weight: 49
 To hardcode custom server settings into your executables you must [build](/docs/en/dev/build/) the client yourself on your machine or [with GitHub Actions](/docs/en/dev/build/all/).
 {{% /notice %}}
 {{% notice note %}}
-**If you set either of these values without setting the other your executable will not work!**
+**If you set either of these values without setting the other, your executable will not work!**
 {{% /notice %}}
 
 You can set the following environment variables on your OS and rustdesk will use those variables when compiling your client rather than the default rustdesk.com servers. 
