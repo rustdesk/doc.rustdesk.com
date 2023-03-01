@@ -4,12 +4,12 @@ weight: 22
 ---
 
 {{% notice note %}}
-This tutorial suppose that you are **familiar** with [Android NDK](https://developer.android.com/ndk/downloads), [Rust](https://rustup.rs/) and [Flutter](https://flutter.dev/). If you are not, please skip. Or you can go further but at your own risk
+This tutorial suppose that you are **familiar** with [Android NDK](https://developer.android.com/ndk/downloads), [Rust](https://rustup.rs/) and [Flutter](https://flutter.dev/). If you are not, please skip.
+Or you can go further but at your own risk
 {{% /notice %}}
 
 {{% notice note %}}
-It is possible to build RustDesk Android on **Windows** 
-Developing RustDesk on **Windows** and **MacOS** instruction is still under active development
+It is possible to build RustDesk Android on **Windows** and **MacOS** but this instruction is still under active development
 {{% /notice %}}
 
 # Introduction
@@ -20,10 +20,10 @@ This tutorial is based on latest working workflow file, to ensuree that everythi
 
 It is possible to build, run end edit Android version on Windows, but it requires patched `flutter` directory
 
-By "patched" I mean directory in state like before running `flutter build` on Linux machine. 
+By "patched" I mean directory in state like before running `flutter build` on Linux machine.
 
 # Assumptions
-- You are using **Ubuntu 20.04** or later ( due to fact that this tutorial is based on this version)
+- You are using **Ubuntu 20.04** or later ( due to fact that this tutorial is based on this version )
 - You have working internet connection
 - You already installed [**Flutter**](https://docs.flutter.dev/get-started/install/linux), [**vcpkg**]() and [**Rust**](https://www.rust-lang.org/tools/install)
 - You cloned [RustDesk repository](https://github.com/rustdesk/rustdesk)
@@ -32,7 +32,7 @@ By "patched" I mean directory in state like before running `flutter build` on Li
 # System
 This part of tutorial is based on clean **Ubuntu 20.04** instance with prerequisites like **Flutter**, **Rust** and **vcpkg** already installed and configured.
 
-If you missing any of these prerequisites, obtain and configure them, then go back here.
+If you missing any of these prerequisites, obtain and configure them, then return back here.
 
 # Instruction
 This is step-to-step instruction.
@@ -124,7 +124,7 @@ Caused by:
   rerun-if-changed=/home/user/.cargo/git/checkouts/magnum-opus-4bb999f3bcbf6ab0/79be072/opus_ffi.h
   rerun-if-changed=/home/user/vcpkg/installed/arm64-android/include
 ```
-consider running installing `vcpkg` in your home directory, then running
+Consider installing `vcpkg` in your home directory, then run:
 ```
 pushd $HOME
 sudo wget https://github.com/rustdesk/doc.rustdesk.com/releases/download/console/dep.tar.gz
@@ -154,7 +154,7 @@ cargo install cargo-ndk
 
 Now it's time to run `ndk_arm64.sh`, this script contains code that build's Rust for Flutter, it requires `NDK` in version `r22b`. 
 
-You could download it [here](https://dl.google.com/android/repository/android-ndk-r22b-linux-x86_64.zip), you'll be required to install it manually or follow [this](https://developer.android.com/studio/projects/install-ndk) instruction. This file is quite heavy so this proceeds might take a while, it mostly depends on your internet connection.
+You could download it [here](https://dl.google.com/android/repository/android-ndk-r22b-linux-x86_64.zip), you'll be required to install it manually or follow [this](https://developer.android.com/studio/projects/install-ndk) instruction. This file is quite heavy so this process might take a while, it mostly depends on your internet connection.
 
 Just remember to set **ANDROID_NDK_HOME** variable and check if it's valid
 
@@ -174,11 +174,11 @@ cp ./target/aarch64-linux-android/release/liblibrustdesk.so ./flutter/android/ap
 ```
 
 ### Building RustDesk
-It's the last step, now we'll build our apk. 
+It's the last step, now you will build your version of RustDesk apk.
 
 If you done everything correctly you'll be able to build it with ease.
 
-First you need to download so
+First you need to download `so.tar.gz`
 ```
 pushd flutter
 sudo wget -O so.tar.gz https://github.com/rustdesk/doc.rustdesk.com/releases/download/console/so.tar.gz
@@ -204,9 +204,10 @@ pushd flutter
 flutter build apk --release --target-platform android-arm64 --split-per-abi
 ```
 {{% notice note %}}
-At this step you might see some errors in terminal, this is normal as long as they about incompatible version of Kotlin or Runtime JAR files in the classpath should have the same version.
+At this step you might see some errors in terminal, this is normal as long as they about `incompatible version of Kotlin` or `Runtime JAR files in the classpath should have the same version`.
 
-If your result is `✓  Built build/app` then ignore it
+If your result is like `✓  Built build/app` then ignore it, it just means that you builded your apk successfully
+
 {{% /notice %}}
 
 ### Optional
