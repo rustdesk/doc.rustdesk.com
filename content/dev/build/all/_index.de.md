@@ -1,5 +1,5 @@
 ---
-title: Alles über Github-Aktionen
+title: Github-Aktionen
 weight: 35
 ---
 
