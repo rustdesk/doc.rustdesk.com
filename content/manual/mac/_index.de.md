@@ -26,7 +26,7 @@ Stellen Sie sicher, dass Sie alle laufenden RustDesk beendet haben. Stellen Sie 
 Aufgrund einer Änderung der macOS-Sicherheitspolitik funktioniert unsere API, die Eingaben auf der lokalen Seite erfasst, nicht mehr.
 Sie müssen die Berechtigung "Eingabeüberwachung" auf der lokalen Mac-Seite aktivieren.
 Bitte befolgen Sie dies
-[https://github.com/rustdesk/rustdesk/issues/974#issuecomment-1185644923](https://github.com/rustdesk/rustdesk/issues/974#issuecomment-1185644923)
+[https://github.com/rustdesk/rustdesk/issues/974#issuecomment-1185644923](https://github.com/rustdesk/rustdesk/issues/974#issuecomment-1185644923).
 
 Es scheint keine schnelle Lösung zu sein, wir müssen das zusammen mit unserer Flutter-Version beheben.
 {{% /notice %}}
