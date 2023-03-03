@@ -36,9 +36,9 @@ Fügen Sie die Systemumgebungsvariable `VCPKG_ROOT`=`<pfad>\vcpkg` hinzu. `<pfad
 
 ![](/docs/en/dev/build/windows/images/env.png)
 
-### sciter
+### Sciter
 
-Desktop-Versionen verwenden [sciter](https://sciter.com/) für die Benutzeroberfläche, bitte laden Sie [sciter.dll](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll) herunter.
+Desktop-Versionen verwenden [Sciter](https://sciter.com/) für die Benutzeroberfläche, bitte laden Sie [sciter.dll](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll) herunter.
 
 ### LLVM
 
