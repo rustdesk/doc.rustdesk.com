@@ -5,6 +5,7 @@ weight: 30
 
 
 ## Mit Docker erstellen
+### Funktioniert nicht unter Windows
 
 Beginnen Sie mit dem Klonen des Repositorys und der Erstellung des Docker-Containers:
 

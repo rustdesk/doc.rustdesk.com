@@ -57,13 +57,13 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --n
 
 {{% notice note %}}
 `--net=host` funktioniert nur unter **Linux**, was dazu führt, dass `hbbs`/`hbbr` die tatsächliche, eingehende IP-Adresse sehen und nicht die Container-IP (172.17.0.1).
-Wenn `--net=host` gut funktioniert, werden die Optionen `-p` nicht verwendet. Wenn Sie unter Windows arbeiten, lassen Sie `sudo` und `--net=host` weg.
+Wenn `--net=host` gut funktioniert, wird die Option `-p` nicht verwendet. Wenn Sie unter Windows arbeiten, lassen Sie `sudo` und `--net=host` weg.
 
 **Bitte entfernen Sie `--net=host`, wenn Sie Verbindungsprobleme auf Ihrer Plattform haben.**
 {{% /notice %}}
 
 ### Docker Compose-Beispiele
-Um die Dockerdateien mit der docker-compose.yml wie hier beschrieben ausführen zu können, müssen Sie [**Docker Compose**](https://docs.docker.com/compose/) installiert haben.
+Um die Dockerdateien mit der docker-compose.yml wie hier beschrieben ausführen zu können, müssen Sie [Docker Compose](https://docs.docker.com/compose/) installiert haben.
 #### Linux/amd64
 ```yaml
 version: '3'
@@ -171,15 +171,15 @@ Die Hardwareanforderungen sind sehr gering. Die Mindestkonfiguration eines einfa
 ### Schritt 2: hbbs und hbbr auf dem Server ausführen
 
 #### Option 1
-Starten Sie hbbs/hbbr auf Ihrem Server (CentOS oder Ubuntu). Wir empfehlen Ihnen die Verwendung von [pm2](https://pm2.keymetrics.io/) für die Verwaltung Ihres Dienstes.
+Starten Sie hbbs/hbbr auf Ihrem Server (CentOS oder Ubuntu). Wir empfehlen Ihnen die Verwendung von [PM2](https://pm2.keymetrics.io/) für die Verwaltung Ihres Dienstes.
 
 ```bash
 ./hbbs -r <relay-server-ip[:port]>
 ./hbbr
 ```
 
-#### Option 2 - pm2
-Starten Sie hbbs/hbbr mit pm2.
+#### Option 2 - PM2
+Starten Sie hbbs/hbbr mit PM2.
 
 ```bash
 pm2 start hbbs -- -r <relay-server-ip[:port]>
@@ -188,9 +188,9 @@ pm2 start hbbr
 
 <a name="demo"></a>
 {{% notice note %}}
-pm2 benötigt Node.js v16+. Wenn Sie pm2 nicht starten können (z. B. können Sie `hbbs`/`hbbr` nicht in `pm2 list` sehen), laden Sie bitte die Node.js-LTS-Version von https://nodejs.org herunter und installieren Sie sie. Wenn Sie `hbbs`/`hbbr` nach einem Neustart automatisch ausführen lassen wollen, schauen Sie sich bitte `pm2 save` und `pm2 startup` an. Mehr über [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Ein weiteres gutes Werkzeug für Ihre Logs ist [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
+PM2 benötigt Node.js v16+. Wenn Sie PM2 nicht starten können (z. B. können Sie `hbbs`/`hbbr` nicht in `pm2 list` sehen), laden Sie bitte die Node.js-LTS-Version von https://nodejs.org herunter und installieren Sie sie. Wenn Sie `hbbs`/`hbbr` nach einem Neustart automatisch ausführen lassen wollen, schauen Sie sich bitte `pm2 save` und `pm2 startup` an. Mehr über [PM2](https://pm2.keymetrics.io/docs/usage/quick-start/). Ein weiteres gutes Werkzeug für Ihre Logs ist [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
 
-Der Parameter `-r` von `hbbs` ist nicht zwingend erforderlich, es ist nur praktisch, wenn Sie auf der kontrollierten Client-Seite keinen Relay-Server angeben müssen. Sie brauchen den Port nicht anzugeben, wenn Sie den Standardport 21117 verwenden. Der vom Client angegebene Relay-Server hat eine höhere Priorität als dieser.
+Der Parameter `-r` von `hbbs` ist nicht zwingend erforderlich. Es ist nur praktisch, wenn Sie auf der kontrollierten Client-Seite keinen Relay-Server angeben müssen. Sie müssen den Port nicht angeben, wenn Sie den Standardport 21117 verwenden. Der vom Client angegebene Relay-Server hat eine höhere Priorität als dieser.
 {{% /notice %}}
 
 Standardmäßig lauscht `hbbs` auf 21115 (TCP), 21116 (TCP/UDP) und 21118 (TCP), `hbbr` lauscht auf 21117 (TCP) und 21119 (TCP). Diese Ports müssen in der Firewall geöffnet sein. **Bitte beachten Sie, dass 21116 sowohl für TCP als auch für UDP aktiviert sein muss.** 21115 wird für den NAT-Typ-Test verwendet, 21116/UDP wird für die ID-Registrierung und den Heartbeat-Dienst verwendet, 21116/TCP wird für das TCP-Hole-Punching und den Verbindungsdienst verwendet, 21117 wird für die Relay-Dienste verwendet und 21118 sowie 21119 werden zur Unterstützung von Webclients verwendet. *Wenn Sie die Webclient-Unterstützung (21118, 21119) nicht benötigen, können die entsprechenden Ports deaktiviert werden.*
@@ -199,16 +199,6 @@ Standardmäßig lauscht `hbbs` auf 21115 (TCP), 21116 (TCP/UDP) und 21118 (TCP),
 - UDP (**21116**)
 
 Wenn Sie einen eigenen Port auswählen möchten, geben Sie bitte die Option `-h` ein, um die Hilfe anzuzeigen.
-
-<a name="net-host"></a>
-
-{{% notice note %}}
-`--net=host` funktioniert nur unter **Linux**, was dazu führt, dass `hbbs`/`hbbr` die tatsächliche eingehende IP-Adresse sehen und nicht die Container-IP (172.17.0.1).
-Wenn `--net=host` gut funktioniert, werden die Optionen `-p` nicht verwendet. Wenn Sie unter Windows arbeiten, lassen Sie `sudo` und `--net=host` weg.
-
-**Bitte entfernen Sie `--net=host`, wenn Sie Verbindungsprobleme auf Ihrer Plattform haben.**
-{{% /notice %}}
-
 
 ### Schritt 3: hbbs/hbbr-Adresse auf der Client-Seite einstellen
 

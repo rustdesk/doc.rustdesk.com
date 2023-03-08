@@ -5,7 +5,7 @@ weight: 10
 
 ## Abhängigkeiten
 
-Desktop-Versionen nutzen [Sciter](https://sciter.com/) für die Benutzeroberfläche, bitte laden Sie die dynamische Bibliothek sciter selbst herunter.
+Desktop-Versionen nutzen [Sciter](https://sciter.com/) für die Benutzeroberfläche, bitte laden Sie die dynamische Bibliothek Sciter selbst herunter.
 
 [Windows](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll) |
 [Linux](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so) |

@@ -15,7 +15,7 @@ weight: 40
 
 ### Lösung
 
-Verwenden Sie einen Browser, um `https://chromium.googlesource.com/libyuv/libyuv/+archive/287158925b0e03ea4499a18b4e08478c5781541b.tar.gz` herunterzuladen, verschieben Sie es dann in `vcpkg/downloads` und installieren Sie es neu.
+Verwenden Sie einen Browser, um [libyuv-287158925b0e03ea4499a18b4e08478c5781541b.tar.gz](https://chromium.googlesource.com/libyuv/libyuv/+archive/287158925b0e03ea4499a18b4e08478c5781541b.tar.gz) herunterzuladen, verschieben Sie es dann in `vcpkg/downloads` und installieren Sie es neu.
 
 
 
