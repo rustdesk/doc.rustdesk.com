@@ -170,7 +170,7 @@ mkdir -p ./flutter/android/app/src/main/jniLibs/arm64-v8a
 ```
 Und kopieren Sie diese einfach dorthin:
 ```
-cp ./target/aarch64-linux-android/release/librustdesk.so ./flutter/android/app/src/main/jniLibs/arm64-v8a/librustdesk.so
+cp ./target/aarch64-linux-android/release/liblibrustdesk.so ./flutter/android/app/src/main/jniLibs/arm64-v8a/librustdesk.so
 ```
 
 ### RustDesk erstellen
