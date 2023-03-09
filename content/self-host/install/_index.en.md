@@ -170,15 +170,17 @@ The hardware requirements are very low; the minimum configuration of a basic clo
 
 ### STEP 2 : Run hbbs and hbbr on your server
 
+We suggest you use [pm2](https://pm2.keymetrics.io/) for managing your service.
+
 #### Option 1
-Run hbbs/hbbr on your server (CentOS or Ubuntu). We suggest you use [pm2](https://pm2.keymetrics.io/) for managing your service.
+Run hbbs/hbbr without pm2
 
 ```bash
 ./hbbs -r <relay-server-ip[:port]> 
 ./hbbr 
 ```
 
-#### Option 2 - pm2
+#### Option 2
 Run hbbs/hbbr with pm2
 
 ```bash
