@@ -5,7 +5,7 @@ weight: 49
 
 ## Benutzerdefinierter Server
 {{% notice note %}}
-Um benutzerdefinierte Servereinstellungen in Ihren ausführbaren Dateien fest einzubinden, müssen Sie den Client selbst [erstellen](/docs/de/dev/build/).
+Um benutzerdefinierte Servereinstellungen in Ihren ausführbaren Dateien fest einzubinden, müssen Sie den Client auf Ihrem Rechner selbst [erstellen](/docs/de/dev/build/) oder mit [GitHub-Aktionen](/docs/de/dev/build/all/) bauen.
 {{% /notice %}}
 {{% notice note %}}
 **Wenn Sie einen dieser Werte ohne den anderen setzen, wird Ihre ausführbare Datei nicht funktionieren!**
@@ -24,7 +24,7 @@ rustdesk.my-domain.com
 ```
 
 #### RS_PUB_KEY
-Diese Variable wird Ihr öffentlicher Schlüssel sein, weitere Informationen über den Schlüssel finden Sie [hier](/docs/de/self-host/install/#key).
+Diese Variable wird Ihr öffentlicher Schlüssel sein, weitere Informationen über den Schlüssel finden Sie [hier](/docs/de/self-host/install/#schlüssel).
 
 Es sollte eine Zeichenkette sein wie
 ```

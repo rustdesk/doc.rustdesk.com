@@ -71,6 +71,55 @@ sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server:latest-arm64v8 hbbr
 ```
 
+##### Docker Compose
+
+以 arm64 架构机器为例:
+
+```yaml
+version: '3'
+
+networks:
+  rustdesk-net:
+    external: false
+
+services:
+  hbbs:
+    container_name: hbbs
+    ports:
+      - 21115:21115
+      - <hbbs_port>:21116 # 自定义 hbbs 映射端口
+      - <hbbs_port>:21116/udp # 自定义 hbbs 映射端口
+    image: rustdesk/rustdesk-server:latest-arm64v8
+    command: hbbs -r <your_domain>:<hbbr_port> # 填入个人域名或 IP + hddr 暴露端口
+    volumes:
+      - <mount_path>:/root # 自定义挂载目录
+    networks:
+      - rustdesk-net
+    depends_on:
+      - hbbr
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 64M
+
+  hbbr:
+    container_name: hbbr
+    ports:
+      - <hbbr_port>:21117 # 自定义 hbbr 映射端口
+    image: rustdesk/rustdesk-server:latest-arm64v8 # 镜像选用 arm64 版
+    command: hbbr
+    volumes:
+      - <mount_path>:/root # 自定义挂载目录
+    networks:
+      - rustdesk-net
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 64M
+```
+
 <a name="net-host"></a>
 
 {{% notice note %}}
