@@ -17,8 +17,8 @@ Versiones de la plataforma proporcionadas:
 El siguiente tutorial se basa en la compilación de Linux.
 
 Hay dos ejecutables y una carpeta:
-    - hbbs - ID de RustDesk/servidor Rendezvous
-    - hbbr - servidor de retransmisión de RustDesk
+   - hbbs - ID de RustDesk/servidor Rendezvous
+   - hbbr - servidor de retransmisión de RustDesk
 
 Están construidos en Centos7, probados en Centos7/8, Ubuntu 18/20.
 
@@ -28,14 +28,18 @@ Los requisitos de hardware son muy bajos, la configuración mínima del servidor
 
 ### PASO-2: Ejecute hbbs y hbbr en el servidor
 
-Ejecute hbbs/hbbr en su servidor (Centos o Ubuntu). Le sugerimos que utilice [pm2](https://pm2.keymetrics.io/) administrar su servicio.
+Le sugerimos que use [pm2](https://pm2.keymetrics.io/) para administrar su servicio.
+
+#### Opción 1
+Ejecute hbbs/hbbr sin usar pm2
 
 ```
 ./hbbs -r <relay-server-ip[:port]> 
 ./hbbr 
 ```
 
-o ejecute hbbs/hbbr con pm2
+#### Opción 2
+Ejecute hbbs/hbbr usando pm2
 
 ```
 pm2 start hbbs -- -r <relay-server-ip[:port]> 
