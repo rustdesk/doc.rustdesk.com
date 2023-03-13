@@ -152,9 +152,9 @@ Dann installieren Sie `cargo-ndk`. Es wird benötigt, um die Datei `librustdesk.
 cargo install cargo-ndk
 ```
 
-Jetzt ist es an der Zeit, `ndk_arm64.sh` auszuführen. Dieses Skript enthält Code, der Rust für Flutter baut. Es benötigt `NDK` in der Version `r22b`.
+Jetzt ist es an der Zeit, `ndk_arm64.sh` auszuführen. Dieses Skript enthält Code, der Rust für Flutter baut. Es benötigt `NDK` in der Version `r23c`.
 
-Sie können es [hier](https://dl.google.com/android/repository/android-ndk-r22b-linux-x86_64.zip) herunterladen und manuell installieren oder dieser [Anleitung](https://developer.android.com/studio/projects/install-ndk) folgen. Diese Datei ist recht umfangreich, sodass dieser Vorgang eine Weile dauern kann, was hauptsächlich von Ihrer Internetverbindung abhängt.
+Sie können es [hier](https://dl.google.com/android/repository/android-ndk-r23c-linux.zip) herunterladen und manuell installieren oder dieser [Anleitung](https://developer.android.com/studio/projects/install-ndk) folgen. Diese Datei ist recht umfangreich, sodass dieser Vorgang eine Weile dauern kann, was hauptsächlich von Ihrer Internetverbindung abhängt.
 
 Denken Sie daran, die Variable **ANDROID_NDK_HOME** zu setzen und zu überprüfen, ob sie gültig ist.
 
