@@ -35,7 +35,11 @@ Gehen Sie in Ihrem gerade erstellten Fork zu "Settings -> Actions -> General".
 
 Wählen Sie rechts "Allow all actions and reusable workflows".
 
-Sobald die Workflows aktiviert sind, gehen Sie bei "Actions" links auf "Flutter Nightly Build" und klicken dann rechts auf "Run workflow", um die Rustdesk-Clients für alle unterstützten Plattformen zu erstellen.
+Sobald die Workflows aktiviert sind, können Sie zu "Actions" gehen.
+
+Auf der linken Seite wählen Sie "Flutter Nightly Build". Dann klicken Sie auf der rechten Seite auf "Enable workflow".
+
+Schließlich können Sie auf "Run workflow" klicken, um die Rustdesk-Clients für alle unterstützten Plattformen zu erstellen.
 
 ## Upload-Berechtigungen für Workflows aktivieren
 
