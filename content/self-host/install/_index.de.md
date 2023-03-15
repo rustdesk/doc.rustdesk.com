@@ -19,7 +19,7 @@ Stellen Sie sicher, dass Sie über ssh oder auf andere Weise Zugang haben, bevor
 ufw allow proto tcp from YOURIP to any port 22
 ```
 
-#### Wenn Sie UFW installiert haben, verwenden Sie die folgenden Befehle, um die Firewall zu konfigurieren:
+Wenn Sie UFW installiert haben, verwenden Sie die folgenden Befehle, um die Firewall zu konfigurieren:
 ```
 ufw allow 21115:21119/tcp
 ufw allow 8000/tcp
@@ -27,7 +27,7 @@ ufw allow 21116/udp
 sudo ufw enable
 ```
 
-#### Führen Sie die folgenden Befehle aus:
+Führen Sie die folgenden Befehle aus:
 ```
 wget https://raw.githubusercontent.com/dinger1986/rustdeskinstall/master/install.sh
 chmod +x install.sh
@@ -38,7 +38,7 @@ chmod +x install.sh
 ## Installieren Sie Ihren eigenen Server mit Docker (Compose)
 
 ### Anforderungen
-Sie müssen Docker/Podman installiert haben, um einen RustDesk-Server als Docker-Container zu betreiben
+Sie müssen Docker/Podman installiert haben, um einen RustDesk-Server als Docker-Container zu betreiben.
 
 ### Docker-Beispiele
 #### Linux/amd64
@@ -170,15 +170,17 @@ Die Hardwareanforderungen sind sehr gering. Die Mindestkonfiguration eines einfa
 
 ### Schritt 2: hbbs und hbbr auf dem Server ausführen
 
+Wir empfehlen Ihnen die Verwendung von [PM2](https://pm2.keymetrics.io/) für die Verwaltung Ihres Dienstes.
+
 #### Option 1
-Starten Sie hbbs/hbbr auf Ihrem Server (CentOS oder Ubuntu). Wir empfehlen Ihnen die Verwendung von [PM2](https://pm2.keymetrics.io/) für die Verwaltung Ihres Dienstes.
+Starten Sie hbbs/hbbr ohne PM2.
 
 ```bash
 ./hbbs -r <relay-server-ip[:port]>
 ./hbbr
 ```
 
-#### Option 2 - PM2
+#### Option 2
 Starten Sie hbbs/hbbr mit PM2.
 
 ```bash
