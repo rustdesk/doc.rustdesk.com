@@ -13,10 +13,10 @@ cd
 # For saving your time and our time, we prepared dependent files for you.
 wget https://github.com/rustdesk/doc.rustdesk.com/releases/download/console/dep.tar.gz
 tar xzf dep.tar.gz
-# please use r22b, new NDK has below problem
+# please use r23c, new NDK has below problem
 # https://stackoverflow.com/questions/68873570/how-do-i-fix-ld-error-unable-to-find-library-lgcc-when-cross-compiling-rust
-wget https://dl.google.com/android/repository/android-ndk-r22b-linux-x86_64.zip
-unzip android-ndk-r22b-linux-x86_64.zip
+wget https://dl.google.com/android/repository/android-ndk-r23c-linux.zip
+unzip android-ndk-r23c-linux.zip
 
 # install ffigen and llvm 
 dart pub global activate ffigen 5.0.1
@@ -29,7 +29,7 @@ rustup target add aarch64-linux-android
 
 cargo install cargo-ndk
 
-VCPKG_ROOT=$HOME/vcpkg ANDROID_NDK_HOME=$HOME/android-ndk-r22b flutter/ndk_arm64.sh
+VCPKG_ROOT=$HOME/vcpkg ANDROID_NDK_HOME=$HOME/android-ndk-r23c flutter/ndk_arm64.sh
 ```
 
 ## 構建 Flutter

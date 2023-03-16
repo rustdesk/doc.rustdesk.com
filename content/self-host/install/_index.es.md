@@ -6,7 +6,7 @@ weight: 10
 ## Configura tu propia nube siguiendo simples pasos
 -----------
 
-### PASO-1: Descargar programas de software del lado del servidor
+### PASO 1: Descargar programas de software del lado del servidor
 
 [Download](https://github.com/rustdesk/rustdesk-server/) o usa la ventana acoplable [rustdesk/rustdesk-server](https://hub.docker.com/r/rustdesk/rustdesk-server/tags).
 
@@ -17,8 +17,8 @@ Versiones de la plataforma proporcionadas:
 El siguiente tutorial se basa en la compilación de Linux.
 
 Hay dos ejecutables y una carpeta:
-    - hbbs - ID de RustDesk/servidor Rendezvous
-    - hbbr - servidor de retransmisión de RustDesk
+   - hbbs - ID de RustDesk/servidor Rendezvous
+   - hbbr - servidor de retransmisión de RustDesk
 
 Están construidos en Centos7, probados en Centos7/8, Ubuntu 18/20.
 
@@ -26,16 +26,20 @@ Están construidos en Centos7, probados en Centos7/8, Ubuntu 18/20.
 Los requisitos de hardware son muy bajos, la configuración mínima del servidor en la nube es suficiente y los requisitos de CPU y memoria son mínimos. Con respecto al tamaño de la red, si falla la conexión directa TCP, se consumirá el tráfico de retransmisión. El tráfico de una conexión de retransmisión está entre 30k-3M/s (pantalla de 1920x1080), según la configuración de resolución y la actualización de la pantalla. Si es solo para demanda de trabajo de oficina, el tráfico es de alrededor de 100K/s.
 
 
-### PASO-2: Ejecute hbbs y hbbr en el servidor
+### PASO 2: Ejecute hbbs y hbbr en el servidor
 
-Ejecute hbbs/hbbr en su servidor (Centos o Ubuntu). Le sugerimos que utilice [pm2](https://pm2.keymetrics.io/) administrar su servicio.
+Le sugerimos que use [pm2](https://pm2.keymetrics.io/) para administrar su servicio.
+
+#### Opción 1
+Ejecute hbbs/hbbr sin usar pm2
 
 ```
 ./hbbs -r <relay-server-ip[:port]> 
 ./hbbr 
 ```
 
-o ejecute hbbs/hbbr con pm2
+#### Opción 2
+Ejecute hbbs/hbbr usando pm2
 
 ```
 pm2 start hbbs -- -r <relay-server-ip[:port]> 

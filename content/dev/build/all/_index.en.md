@@ -33,9 +33,13 @@ Click "Add secret".
 
 On your fork you just created goto "Settings -> Actions -> General".
 
-On the right select "Allow all actions and reusable workflows".
+On the right, select "Allow all actions and reusable workflows".
 
-Once workflows are enabled you can click "Flutter Nightly Build" on the left then click "Run workflow" on the right to build the rustdesk clients for all of the supported platforms.
+Once workflows are enabled you can goto “Actions”.
+
+On the left, select "Flutter Nightly Build". Then on the right, click "Enable workflow".
+
+Finally you can click "Run workflow" to build the rustdesk clients for all of the supported platforms.
 
 ## Enable upload permissions for workflows
 
