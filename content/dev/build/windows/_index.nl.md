@@ -34,7 +34,7 @@ Als je `git` niet hebt ingesteld, haal dan `git` [hier](https://git-scm.com/down
 
 Voeg Systeem omgevingsvariabele toe `VCPKG_ROOT`=`<path>\vcpkg`. Het `<path>` moet de locatie zijn die u hierboven hebt gekozen om `vcpkg` te klonen.
 
-![](/docs/en/dev/build/windows/images/env.png)
+![](/docs/en/dev/build/windows/images/env-nl.png)
 
 ### sciter
 
