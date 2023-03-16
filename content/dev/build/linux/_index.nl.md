@@ -42,7 +42,7 @@ sudo yum -y install gcc-c++ git curl wget nasm yasm gcc gtk3-devel clang libxcb-
 sudo pacman -Syu --needed unzip git cmake gcc curl wget yasm nasm zip make pkg-config clang gtk3 xdotool libxcb libxfixes alsa-lib pulseaudio
 ```
 
-### Install vcpkg
+### Installeer vcpkg
 
 ```sh
 git clone https://github.com/microsoft/vcpkg
@@ -54,7 +54,7 @@ export VCPKG_ROOT=$HOME/vcpkg
 vcpkg/vcpkg install libvpx libyuv opus
 ```
 
-### Fix libvpx (For Fedora)
+### Herstel libvpx (Voor Fedora)
 
 ```sh
 cd vcpkg/buildtrees/libvpx/src
@@ -80,6 +80,6 @@ mv libsciter-gtk.so target/debug
 VCPKG_ROOT=$HOME/vcpkg cargo run
 ```
 
-### Change Wayland to X11 (Xorg)
+### Verander Wayland in X11 (Xorg)
 
-RustDesk ondersteunt Wayland niet. Controleer [dit](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/) to configuring Xorg as the default GNOME session.
+RustDesk ondersteunt Wayland niet. Controleer [dit](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/) om Xorg te configureren als de standaard GNOME sessie.
