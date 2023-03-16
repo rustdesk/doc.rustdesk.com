@@ -5,7 +5,7 @@ weight: 10
 
 ## Afhankelijkheden
 
-Desktop versies gebruiken [sciter](https://sciter.com/) fof GUI, download dan zelf de sciter dynamische bibliotheek.
+Desktop versies gebruiken [sciter](https://sciter.com/) voor GUI, download dan zelf de sciter dynamische bibliotheek.
 
 [Windows](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll) |
 [Linux](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so) |
