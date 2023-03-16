@@ -3,7 +3,7 @@ title: Windows
 weight: 20
 ---
 
-{{% notice note %}}
+{{% notice Let op %}}
 De commando-regel commando's moeten worden uitgevoerd in git-bash en niet in command prompt, anders krijg je syntaxfouten.
 {{% /notice %}}
 
