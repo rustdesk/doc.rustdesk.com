@@ -50,12 +50,6 @@ weight = 2
 languageName = "Français"
 landingPageName = "<i class='fas fa-home'></i> Page d'accueil"
 
-[Languages.nl]
-title = "Documentatie voor RustDesk"
-weight = 2
-languageName = "Nederlands"
-landingPageName = "<i class='fas fa-home'></i> Home Pagina"
-
 [Languages.ru]
 title = "Документация для RustDesk"
 weight = 2
