@@ -3,7 +3,7 @@ title: Windows
 weight: 20
 ---
 
-{{% notice note %}}
+{{% notice Let op %}}
 De commando-regel commando's moeten worden uitgevoerd in git-bash en niet in command prompt, anders krijg je syntaxfouten.
 {{% /notice %}}
 
@@ -44,7 +44,7 @@ Desktop versies gebruiken [sciter](https://sciter.com/) voor GUI, download [scit
 
 rust-bindgen zijn afhankelijk van clang, download [llvm](https://github.com/llvm/llvm-project/releases) en installeer, voeg systeem omgevingsvariabele `LIBCLANG_PATH`=`<llvm_install_dir>/bin` toe.
 
-You can download 15.02 of the LLVM binaries here: [64-bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win64.exe) / [32-bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win32.exe)
+U kunt 15.02 van de LLVM-binaire bestanden hier downloaden: [64-bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win64.exe) / [32-bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win32.exe)
 
 
 ## Build
