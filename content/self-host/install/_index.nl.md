@@ -146,7 +146,7 @@ services:
 
 ## Uw eigen serverinstantie opzetten zonder Docker te gebruiken
 
-### STEP 1 : Server-side software programma's downloaden
+### STAP 1 : Server-side software programma's downloaden
 
 [Download](https://github.com/rustdesk/rustdesk-server/).
 
@@ -168,7 +168,7 @@ Ze zijn gemaakt op CentOS Linux 7, getest op CentOS Linux 7/8 en Ubuntu 18/20.
 
 De hardwarevereisten zijn zeer laag; de minimale configuratie van een basiscloudserver is voldoende, en de CPU- en geheugenvereisten zijn minimaal. U kunt ook een Raspberry Pi of iets dergelijks gebruiken. Wat de netwerkgrootte betreft, als de directe TCP hole punching mislukt, wordt het relaisverkeer verbruikt. Het verkeer van een relaisverbinding ligt tussen 30k-3M/s (1920x1080 scherm), afhankelijk van de resolutie-instellingen en de schermupdate. Als het alleen voor kantoorwerk is, is het verkeer ongeveer 100K/s.
 
-### STEP 2 : Voer hbbs en hbbr uit op uw server
+### STAP 2 : Voer hbbs en hbbr uit op uw server
 
 #### Optie 1
 Voer hbbs/hbbr uit op uw server (CentOS of Ubuntu). We stellen voor dat u [pm2](https://pm2.keymetrics.io/) gebruikt voor het beheer van uw service.
@@ -178,7 +178,7 @@ Voer hbbs/hbbr uit op uw server (CentOS of Ubuntu). We stellen voor dat u [pm2](
 ./hbbr 
 ```
 
-#### Option 2 - pm2
+#### Optie 2 - pm2
 Voer hbbs/hbbr uit met pm2
 
 ```bash
@@ -200,7 +200,7 @@ Standaard luistert `hbbs` op 21115 (TCP) en 21116 (TCP/UDP), 21118 (TCP), en `hb
 
 Draai met de `-h` optie om de help te zien als u uw eigen poort wilt kiezen.
 
-### STEP 3 : Stel hbbs/hbbr adres in aan client-zijde
+### STAP 3 : Stel hbbs/hbbr adres in aan client-zijde
 
 Klik op de knop Menu [ &#8942; ] aan de rechterkant van ID zoals hieronder getoond, en kies "ID/Relay Server".
 
