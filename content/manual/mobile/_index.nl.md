@@ -68,4 +68,4 @@ De afbeelding hieronder is een screenshot van Android. Als het iOS is, controlee
 
 ![](/docs/en/manual/mobile/images/id_setting_en.jpg?width=300px)
 
-Voor details over de zelf-host server, zie [zelf-host](/docs/nl/zelf-host/).
+Voor details over de zelf-host server, zie [zelf-host](/docs/nl/self-host/).
