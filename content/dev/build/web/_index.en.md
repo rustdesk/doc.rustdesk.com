@@ -15,7 +15,6 @@ cd flutter/web/js
 npm install ts-proto
 # only works with vite<=2.8, see: https://github.com/vitejs/vite/blob/main/docs/guide/build.md#chunking-strategy
 
-# yarn build currently not working - results in empty src/gen_js_from_hbb.ts (gen_js_from_hbb.ts is not a module)
 yarn build
 
 cd ..
