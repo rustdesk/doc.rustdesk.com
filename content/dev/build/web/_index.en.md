@@ -7,8 +7,9 @@ Run below on Linux or Mac (works on Windows too, however you may need to slightl
 
 ```sh
 git clone https://github.com/rustdesk/rustdesk
+cd rustdesk
 git checkout 3e8f7ed36df60045fc98f1cc989151548442a141
-cd rustdesk/flutter/web/js
+cd flutter/web/js
 
 # install protoc first http://google.github.io/proto-lens/installing-protoc.html
 npm install ts-proto
