@@ -15,7 +15,12 @@ cd flutter/web/js
 npm install ts-proto
 # only works with vite<=2.8, see: https://github.com/vitejs/vite/blob/main/docs/guide/build.md#chunking-strategy
 npm install vite@2.8
-npm install --global yarn
+
+# required for yarn build
+npm install yarn -g
+npm install typescript -g
+npm install protoc -g
+
 yarn build
 
 cd ..
