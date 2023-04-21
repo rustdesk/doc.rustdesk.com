@@ -90,7 +90,7 @@ services:
       - <hbbs_port>:21116 # 自定义 hbbs 映射端口
       - <hbbs_port>:21116/udp # 自定义 hbbs 映射端口
     image: rustdesk/rustdesk-server:latest-arm64v8
-    command: hbbs -r <your_domain>:<hbbr_port> # 填入个人域名或 IP + hddr 暴露端口
+    command: hbbs -r <your_domain>:<hbbr_port> # 填入个人域名或 IP + hbbr 暴露端口
     volumes:
       - <mount_path>:/root # 自定义挂载目录
     networks:
