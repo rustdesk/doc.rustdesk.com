@@ -9,7 +9,7 @@ There are some benefits to using NSSM:
 - Backwards compatibility with older windows (Windows Server 2008R2/Windows 7 and earlier although untested).
 - Ideal for Windows Server
 - Auto start on boot without login (The user who created the startup entry does not need to log on for it to start).
-- Running both binaies as Services.
+- Running both binaries as Services.
 - Standalone (no dependency on nodejs)
 
 While the benefits of pm2 include:
