@@ -61,6 +61,7 @@ cd rustdesk
 
 Möglicherweise müssen Sie auch einige Komponenten installieren, wenn Sie dies zum ersten Mal tun:
 ```
+sudo apt install ca-certificates -y
 sudo apt update -y
 sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang cmake libclang-dev ninja-build llvm-dev libclang-10-dev llvm-10-dev pkg-config
 ```
@@ -196,7 +197,7 @@ sed -i "s/signingConfigs.release/signingConfigs.debug/g" ./flutter/android/app/b
 Dann müssen Sie die Datei `librustdesk.so` in das richtige Verzeichnis kopieren:
 ```
 mkdir -p ./flutter/android/app/src/main/jniLibs/arm64-v8a
-cp ./target/aarch64-linux-android/release/librustdesk.so ./flutter/android/app/src/main/jniLibs/arm64-v8a/librustdesk.so
+cp ./target/aarch64-linux-android/release/liblibrustdesk.so ./flutter/android/app/src/main/jniLibs/arm64-v8a/librustdesk.so
 ```
 Jetzt bauen wir endlich Flutter:
 ```
