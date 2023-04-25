@@ -45,7 +45,7 @@ Schließlich können Sie auf "Run workflow" klicken, um die Rustdesk-Clients fü
 
 Gehen Sie in Ihrem gerade erstellten Fork zu "Settings -> Actions -> General".
 
-Scrollen Sie nach unten und aktivieren Sie unter Workflow-Berechtigungen "Read and write permissions".
+Scrollen Sie nach unten zum Abschnitt "Workflow permissions" und aktivieren Sie "Read and write permissions".
 
 ## Ihre erstellten Pakete herunterladen
 
