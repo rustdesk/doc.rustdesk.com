@@ -5,7 +5,7 @@ weight: 22
 
 {{% notice note %}}
 This tutorial suppose that you are **familiar** with [Android NDK](https://developer.android.com/ndk/downloads), [Rust](https://rustup.rs/) and [Flutter](https://flutter.dev/). If you are not, please skip.
-Or you can go further but at your own risk
+Or you can go further but at your own risk.
 {{% /notice %}}
 
 {{% notice note %}}
@@ -39,7 +39,7 @@ This is step-to-step instruction.
 
 ## Generating Bridge 🌉
 
-Due to fact that this project is based on [Flutter Rust Bridge](https://cjycode.com/flutter_rust_bridge/index.html) you should first generate it, you can achieve it by running following commands:
+Due to fact that this project is based on [Flutter Rust Bridge](https://cjycode.com/flutter_rust_bridge/index.html) you should first generate it, you can achieve it by running following commands.
 
 Change your current directory into `rustdesk` directory:
 
@@ -61,6 +61,7 @@ cd rustdesk
 
 You also might be required to install some prerequisites if you are doing this first time:
 ```
+sudo apt install ca-certificates -y
 sudo apt update -y
 sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang cmake libclang-dev ninja-build llvm-dev libclang-10-dev llvm-10-dev pkg-config
 ```
