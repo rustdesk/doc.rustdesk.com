@@ -61,6 +61,7 @@ cd rustdesk
 
 Als u dit voor de eerste keer doet, moet u misschien ook een aantal vereisten installeren
 ```
+sudo apt install ca-certificates -y
 sudo apt update -y
 sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang cmake libclang-dev ninja-build llvm-dev libclang-10-dev llvm-10-dev pkg-config
 ```
