@@ -20,7 +20,7 @@ Luego, cada vez que necesite compilar la aplicación, ejecute el siguiente coman
 docker run --rm -it -v $PWD:/home/user/rustdesk -v rustdesk-git-cache:/home/user/.cargo/git -v rustdesk-registry-cache:/home/user/.cargo/registry -e PUID="$(id -u)" -e PGID="$(id -g)" rustdesk-builder
 ```
 
-Tenga en cuenta que la primera compilación puede demorar más antes de que las dependencias se almacenen en caché, las compilaciones posteriores serán más rápidas. Además, si necesita especificar diferentes argumentos para el comando de compilación, puede hacerlo al final del comando en el `<OPTIONAL-ARGS>` posición. Por ejemplo, si quisiera crear una versión de lanzamiento optimizada, ejecutaría el comando anterior seguido de `---release`. El ejecutable resultante estará disponible en la carpeta de destino de su sistema y se puede ejecutar con:
+Tenga en cuenta que la primera compilación puede demorar más antes de que las dependencias se almacenen en caché, las compilaciones posteriores serán más rápidas. Además, si necesita especificar diferentes argumentos para el comando de compilación, puede hacerlo al final del comando en el `<OPTIONAL-ARGS>` posición. Por ejemplo, si quisiera crear una versión de lanzamiento optimizada, ejecutaría el comando anterior seguido de `--release`. El ejecutable resultante estará disponible en la carpeta de destino de su sistema y se puede ejecutar con:
 
 ```sh
 target/debug/rustdesk

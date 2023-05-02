@@ -21,7 +21,7 @@ Führen Sie dann jedes Mal, wenn Sie die Anwendung erstellen müssen, den folgen
 docker run --rm -it -v $PWD:/home/user/rustdesk -v rustdesk-git-cache:/home/user/.cargo/git -v rustdesk-registry-cache:/home/user/.cargo/registry -e PUID="$(id -u)" -e PGID="$(id -g)" rustdesk-builder
 ```
 
-Beachten Sie, dass die erste Erstellung länger dauern kann, bis die Abhängigkeiten zwischengespeichert sind. Nachfolgende Erstellungen werden schneller sein. Wenn Sie zusätzlich andere Argumente für den Build-Befehl angeben müssen, können Sie dies am Ende des Befehls an der Position `<OPTIONAL-ARGS>` tun. Wenn Sie zum Beispiel eine optimierte Release-Version bauen wollen, würden Sie den obigen Befehl gefolgt von `---release` ausführen. Die resultierende ausführbare Datei wird im Zielordner auf Ihrem System verfügbar sein und kann ausgeführt werden mit:
+Beachten Sie, dass die erste Erstellung länger dauern kann, bis die Abhängigkeiten zwischengespeichert sind. Nachfolgende Erstellungen werden schneller sein. Wenn Sie zusätzlich andere Argumente für den Build-Befehl angeben müssen, können Sie dies am Ende des Befehls an der Position `<OPTIONAL-ARGS>` tun. Wenn Sie zum Beispiel eine optimierte Release-Version bauen wollen, würden Sie den obigen Befehl gefolgt von `--release` ausführen. Die resultierende ausführbare Datei wird im Zielordner auf Ihrem System verfügbar sein und kann ausgeführt werden mit:
 
 ```sh
 target/debug/rustdesk

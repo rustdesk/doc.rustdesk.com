@@ -21,7 +21,7 @@ Vervolgens voert u, telkens wanneer u de toepassing build, het volgende commando
 docker run --rm -it -v $PWD:/home/user/rustdesk -v rustdesk-git-cache:/home/user/.cargo/git -v rustdesk-registry-cache:/home/user/.cargo/registry -e PUID="$(id -u)" -e PGID="$(id -g)" rustdesk-builder
 ```
 
-Merk op dat de eerste build langer kan duren voordat de afhankelijkheden in de cache staan, volgende builds zullen sneller zijn. Bovendien, als u verschillende argumenten moet opgeven voor het build commando, kunt u dit doen aan het einde van het commando in de `<OPTIONAL-ARGS>` positie. Als u bijvoorbeeld een geoptimaliseerde release versie wilt bouwen, voert u het bovenstaande commando uit gevolgd door `---release`. De resulterende uitvoerbare versie zal beschikbaar zijn in de doelmap op uw systeem, en kan worden uitgevoerd met:
+Merk op dat de eerste build langer kan duren voordat de afhankelijkheden in de cache staan, volgende builds zullen sneller zijn. Bovendien, als u verschillende argumenten moet opgeven voor het build commando, kunt u dit doen aan het einde van het commando in de `<OPTIONAL-ARGS>` positie. Als u bijvoorbeeld een geoptimaliseerde release versie wilt bouwen, voert u het bovenstaande commando uit gevolgd door `--release`. De resulterende uitvoerbare versie zal beschikbaar zijn in de doelmap op uw systeem, en kan worden uitgevoerd met:
 
 ```sh
 target/debug/rustdesk
