@@ -16,3 +16,9 @@ a#logo span {
 a.padding i.fa-language{
     margin-right: 6px; 
 }
+
+#sidebar #header-wrapper {
+    background: inherit;
+    color: var(--MENU-SEARCH-BOX-color);
+    border-bottom: 1px solid #2a232f;
+}
