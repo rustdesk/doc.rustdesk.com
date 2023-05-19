@@ -20,5 +20,5 @@ a.padding i.fa-language{
 #sidebar #header-wrapper {
     background: inherit;
     color: var(--MENU-SEARCH-BOX-color);
-    border-bottom: 1px solid #2a232f;
+    border-bottom: 1px solid var(--MENU-SECTION-HR-color);
 }
