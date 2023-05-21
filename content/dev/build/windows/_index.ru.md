@@ -19,11 +19,11 @@ Download [rustup-init.exe](https://static.rust-lang.org/rustup/dist/x86_64-pc-wi
 ```shell
   git clone https://github.com/microsoft/vcpkg
   cd vcpkg
-  git checkout 2021.12.01
+  git checkout 2023.04.15
   cd ..
   vcpkg/bootstrap-vcpkg.bat
   export VCPKG_ROOT=$PWD/vcpkg
-  vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static
+  vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
 ```
 
 Добавьте переменную среду `VCPKG_ROOT`=`<path>\vcpkg`.

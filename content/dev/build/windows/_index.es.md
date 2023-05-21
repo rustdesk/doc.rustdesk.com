@@ -20,11 +20,11 @@ Usar [git-bash](https://git-scm.com/download/win) para ejecutar los siguientes c
 ```shell
   git clone https://github.com/microsoft/vcpkg
   cd vcpkg
-  git checkout 2021.12.01
+  git checkout 2023.04.15
   cd ..
   vcpkg/bootstrap-vcpkg.bat
   export VCPKG_ROOT=$PWD/vcpkg
-  vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static
+  vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
 ```
 
 Agregar variable de entorno `VCPKG_ROOT`=`<path>\vcpkg`.

@@ -26,11 +26,11 @@ Si vous n'avez pas installé "git", téléchargez le [ici](https://git-scm.com/d
 ```shell
   git clone https://github.com/microsoft/vcpkg
   cd vcpkg
-  git checkout 2021.12.01
+  git checkout 2023.04.15
   cd ..
   vcpkg/bootstrap-vcpkg.bat
   export VCPKG_ROOT=$PWD/vcpkg
-  vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static
+  vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
 ```
 Ajoutez la variable d'environnement système `VCPKG_ROOT=<chemin>\vcpkg`. Le "\<chemin\>" devra être l'emplacement que vous avez choisi ci-dessus pour cloner "vcpkg".
 

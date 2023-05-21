@@ -19,11 +19,11 @@ weight: 20
 ```shell
   git clone https://github.com/microsoft/vcpkg
   cd vcpkg
-  git checkout 2021.12.01
+  git checkout 2023.04.15
   cd ..
   vcpkg/bootstrap-vcpkg.bat
   export VCPKG_ROOT=$PWD/vcpkg
-  vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static
+  vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
 ```
 
 添加環境變量`VCPKG_ROOT`=`<path>\vcpkg`。
