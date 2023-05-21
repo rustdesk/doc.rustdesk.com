@@ -14,6 +14,7 @@ defaultContentLanguageInSubdir= true
 # use icon https://github.com/matcornic/hugo-theme-learn/issues/363
 
 [params]
+  disable_cookie = true
   editURL = "https://github.com/rustdesk/doc.rustdesk.com/edit/master/content/"
   description = "Documentation for RustDesk"
   author = "RustDesk"
