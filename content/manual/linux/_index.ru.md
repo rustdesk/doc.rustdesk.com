@@ -27,8 +27,10 @@ sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
-### X11 обязателен 
-RustDesk пока не поддерживает Wayland. Необходимо перейти на X11 вручную.
+### ~~X11 обязателен~~
+~~RustDesk пока не поддерживает Wayland. Необходимо перейти на X11 вручную.~~
+
+В RustDesk теперь есть экспериментальная поддержка Wayland. Возможно, вам потребуется скачать ночную версию, чтобы включить эту функцию.
 
 #### Сервер отображения
 Ubuntu: https://askubuntu.com/questions/1260142/ubuntu-set-default-login-desktop

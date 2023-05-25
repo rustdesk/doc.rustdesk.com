@@ -30,9 +30,10 @@ sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
-### X11 erforderlich
+### ~~X11 erforderlich~~
+~~RustDesk unterstützt Wayland noch nicht; Sie müssen manuell zu X11 wechseln.~~
 
-RustDesk unterstützt Wayland noch nicht; Sie müssen manuell zu X11 wechseln.
+RustDesk unterstützt jetzt experimentell Wayland. Um dieses Feature zu aktivieren, musst du möglicherweise die Nightly-Version herunterladen.
 
 #### Server anzeigen
 
