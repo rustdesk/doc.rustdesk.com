@@ -6,9 +6,9 @@ weight: 23
 Run below on Linux or Mac (works on Windows too, however you may need to slightly modify some commands, *e.g.* change `wget` to `curl.exe -O`):
 
 ```sh
-git clone https://github.com/rustdesk/rustdesk
-cd rustdesk
-git checkout 3e8f7ed36df60045fc98f1cc989151548442a141
+git clone https://github.com/JelleBuning/rustdesk.git
+cd rustdesk 
+git switch fix_build 
 cd flutter/web/js
 
 # install protoc first http://google.github.io/proto-lens/installing-protoc.html
