@@ -30,9 +30,9 @@ sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
-### X11 Vereist
-
-RustDesk ondersteunt wayland nog niet; u moet handmatig overschakelen naar X11.
+### ~~X11 Vereist~~
+~~RustDesk ondersteunt wayland nog niet; u moet handmatig overschakelen naar X11.~~
+RustDesk heeft nu experimentele Wayland-ondersteuning. Je moet mogelijk de nightly-versie downloaden om deze functie in te schakelen.
 
 #### Toon Server
 
