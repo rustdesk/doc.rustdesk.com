@@ -11,7 +11,7 @@ Um benutzerdefinierte Servereinstellungen in Ihren ausführbaren Dateien fest ei
 **Wenn Sie einen dieser Werte ohne den anderen setzen, wird Ihre ausführbare Datei nicht funktionieren!**
 {{% /notice %}}
 
-Sie können die folgenden Umgebungsvariablen auf Ihrem Betriebssystem setzen und Rustdesk wird diese Variablen beim Erstellen Ihres Clients anstelle der Standardserver von rustdesk.com verwenden. 
+Sie können die folgenden Umgebungsvariablen auf Ihrem Betriebssystem setzen und RustDesk wird diese Variablen beim Erstellen Ihres Clients anstelle der Standardserver von rustdesk.com verwenden. 
 
 Wenn Sie nicht wissen, wie Sie eine Umgebungsvariable auf Ihrem System setzen können, sollten Sie in der Lage sein, online eine Dokumentation für Ihr Betriebssystem zu finden, die dies erklärt.
 
