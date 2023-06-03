@@ -22,7 +22,7 @@ Desktop-Versionen nutzen [Sciter](https://sciter.com/) für die Benutzeroberflä
 
 - Nutzen Sie `cargo run`
 
-## Erstellen auf Linux
+## Auf Linux erstellen
 
 ### Ubuntu 18 (Debian 10)
 
