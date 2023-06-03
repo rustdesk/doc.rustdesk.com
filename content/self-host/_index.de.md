@@ -9,6 +9,6 @@ chapter: true
 
 # Selbst-Host
 
-Wir entwickeln den Server kontinuierlich weiter. Wenn Sie Kommentare haben, nehmen Sie bitte an unserer [Discord](https://discord.com/invite/nDceKgxnkV)-Diskussion teil.
+Bitte besuchen Sie unseren [Discord](https://discord.com/invite/nDceKgxnkV), wenn Sie mit uns über das Selbst-Hosten Ihres eigenen [Open-Source-RustDesk-Servers](https://github.com/rustdesk/rustdesk-server) diskutieren möchten.
 
 {{% children depth="3" showhidden="true" %}}
