@@ -210,7 +210,7 @@ Klicken Sie auf die Menü-Schaltfläche [ &#8942; ] rechts neben ID, wie unten g
 
 Geben Sie in das Eingabefeld **ID-Server** den `hbbs`-Host oder die IP-Adresse ein (lokale Seite und entfernte Seite). Die anderen beiden Adressen und Key können leer bleiben, RustDesk wird sie automatisch ableiten (falls nicht speziell eingestellt). Der Relay-Server verweist auf `hbbr` (Port 21117).
 
-Z. B.
+Zum Beispiel
 
 ```nolang
 hbbs.example.com
@@ -232,7 +232,7 @@ hbbs.example.com:21116
 {{% notice note %}}
 Sie müssen sowohl `host` als auch `key` setzen, das Fehlen eines der beiden wird nicht funktionieren.
 
-Fügen Sie nach dem Schlüssel optional ein `#` als Trennzeichen vor `.exe` hinzu, um zu verhindern, dass der Schlüssel verstümmelt wird, wenn Windows oder der Browser die Datei beim Herunterladen von doppelten Namen umbenennt.
+Fügen Sie nach dem Schlüssel optional ein `,` (Komma) als Trennzeichen vor `.exe` hinzu, um zu verhindern, dass der Schlüssel verstümmelt wird, wenn Windows oder der Browser die Datei beim Herunterladen von doppelten Namen umbenennt.
 
 Wenn der Schlüssel ungültige Zeichen enthält, die nicht in einem Windows-Dateinamen verwendet werden können, entfernen Sie
 bitte die Datei `id_ed25519` von Ihrem Server und starten Sie `hbbs`/`hbbr` neu. Dadurch wird die Datei `id_ed25519.pub` neu generiert.
