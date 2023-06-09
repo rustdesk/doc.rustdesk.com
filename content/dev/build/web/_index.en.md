@@ -38,6 +38,16 @@ cd ..
 flutter run -d chrome
 ```
 
+## How to build release on linux
+If you want to host the webclient you should build a release before running it on a webserver. 
+To do so follow the steps shown above except the 'flutter run -d chrome' command. Continue with the following commands:
+```sh
+flutter build web --release
+cd build/web
+# You could use any server, just an example
+python -m http.server 8000
+```
+
 > Currently, yuv converter and vp9 are the bottleneck
 
 ## How to build with Docker
