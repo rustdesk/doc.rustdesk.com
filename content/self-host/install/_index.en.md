@@ -4,7 +4,7 @@ weight: 10
 ---
 
 ## Install your own server using a simple to run install script
-Script is hosted on https://github.com/dinger1986/rustdeskinstall and supported on our [Discord](https://discord.com/invite/nDceKgxnkV).
+Script is hosted on https://github.com/techahold/rustdeskinstall and supported on our [Discord](https://discord.com/invite/nDceKgxnkV).
 
 Currently the script will download and setup the Relay and Signal Servers (hbbr and hbbs), generate configs and host them on a password protected web page for simple deployment to clients.
 
