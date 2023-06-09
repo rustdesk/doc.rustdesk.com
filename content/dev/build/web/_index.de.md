@@ -38,6 +38,18 @@ cd ..
 flutter run -d chrome
 ```
 
+## Version auf Linux erstellen
+
+Wenn Sie den Webclient hosten wollen, sollten Sie eine Version erstellen, bevor Sie ihn auf einem Webserver ausführen. 
+Führen Sie dazu die oben beschriebenen Schritte aus, mit Ausnahme des Befehls `flutter run -d chrome`. Fahren Sie mit den folgenden Befehlen fort:
+
+```sh
+flutter build web --release
+cd build/web
+# Sie können jeden beliebigen Server verwenden, hier nur ein Beispiel
+python -m http.server 8000
+```
+
 > Derzeit sind YUV-Konverter und vp9 der Engpass.
 
 ## Mit Docker erstellen
