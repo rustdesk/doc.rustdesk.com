@@ -19,7 +19,7 @@ Make sure you have got access via ssh or otherwise setup prior setting up the fi
 ufw allow proto tcp from YOURIP to any port 22
 ```
 
-#### If you have UFW installed use the following commands to configure the firewall (port 8000 only neeeded if you want to use the auto generated install files) :
+#### If you have UFW installed use the following commands to configure the firewall (port 8000 only needed if you want to use the auto generated install files) :
 ```
 ufw allow 21115:21119/tcp
 ufw allow 8000/tcp
