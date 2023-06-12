@@ -4,7 +4,7 @@ weight: 10
 ---
 
 ## Install your own server using a simple to run install script
-Script is hosted on https://github.com/dinger1986/rustdeskinstall and supported on our [Discord](https://discord.com/invite/nDceKgxnkV).
+Script is hosted on https://github.com/techahold/rustdeskinstall and supported on our [Discord](https://discord.com/invite/nDceKgxnkV).
 
 Currently the script will download and setup the Relay and Signal Servers (hbbr and hbbs), generate configs and host them on a password protected web page for simple deployment to clients.
 
@@ -19,7 +19,7 @@ Make sure you have got access via ssh or otherwise setup prior setting up the fi
 ufw allow proto tcp from YOURIP to any port 22
 ```
 
-#### If you have UFW installed use the following commands to configure the firewall:
+#### If you have UFW installed use the following commands to configure the firewall (port 8000 only needed if you want to use the auto generated install files) :
 ```
 ufw allow 21115:21119/tcp
 ufw allow 8000/tcp
@@ -29,11 +29,11 @@ sudo ufw enable
 
 #### Run the following commands:
 ```
-wget https://raw.githubusercontent.com/dinger1986/rustdeskinstall/master/install.sh
+wget https://raw.githubusercontent.com/techahold/rustdeskinstall/master/install.sh
 chmod +x install.sh
 ./install.sh
 ```
-
+There is also an update script on Techahold's Repo.
 
 ## Install your own server with docker(-compose)
 
