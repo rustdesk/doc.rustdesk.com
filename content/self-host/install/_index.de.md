@@ -19,7 +19,7 @@ Stellen Sie sicher, dass Sie über ssh oder auf andere Weise Zugang haben, bevor
 ufw allow proto tcp from YOURIP to any port 22
 ```
 
-Wenn Sie UFW installiert haben, verwenden Sie die folgenden Befehle, um die Firewall zu konfigurieren:
+Wenn Sie UFW installiert haben, verwenden Sie die folgenden Befehle, um die Firewall zu konfigurieren (Port 8000 wird nur benötigt, wenn Sie die automatisch generierten Installationsdateien verwenden möchten):
 ```
 ufw allow 21115:21119/tcp
 ufw allow 8000/tcp
@@ -29,11 +29,11 @@ sudo ufw enable
 
 Führen Sie die folgenden Befehle aus:
 ```
-wget https://raw.githubusercontent.com/dinger1986/rustdeskinstall/master/install.sh
+wget https://raw.githubusercontent.com/techahold/rustdeskinstall/master/install.sh
 chmod +x install.sh
 ./install.sh
 ```
-
+Es gibt auch ein Update-Skript auf Techaholds Repository.
 
 ## Installieren Sie Ihren eigenen Server mit Docker (Compose)
 
