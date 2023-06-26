@@ -1,6 +1,6 @@
 ---
-title: 高级选项 
-weight: 10
+title: 专业版
+weight: 100
 ---
 
 ## 策略
