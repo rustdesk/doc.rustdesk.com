@@ -1,40 +1,30 @@
 ---
-title: Pro 
+title: Pro
 weight: 100
 ---
 
-## Strategy
+Self-host Pro is built on the open source version, but with more features.
 
-Strategy is a tool for RustDesk administrators to update the security options of client settings pages in bulk. Administrators can create different strategies and apply them to different devices. RustDesk provides a default strategy, and administrators can create custom strategies.
+- OIDC and ldap login
+- Address book
+- Rename 
+- Log management
+- Device managment
+- Settings sync
+- Permission control
+- Multiple relay servers (serve you with the neareast one)
 
-### Create and Duplicate Strategies
+{{% notice note %}}
+RustDesk client >=1.2.0 required
+{{% /notice %}}
 
-RustDesk provides a default strategy that administrators can modify, or they can create a new strategy or `Duplicate` an existing one. When creating a new strategy, administrators can `Rename`, `Delete`, or `Edit Devices`. When duplicating a strategy, administrators can modify it based on the existing strategy.
+## Installation
 
-|    Default Strategy  | Other Strategies     |
-| :--------------: | :------------: |
-|  ![](/docs/en/self-host/pro/images/default_strategy.png)    |  ![](/docs/en/self-host/pro/images/other_strategy.png)    |
+Almost as the same as the open source version, but you do not need to run hbbs/hbbr with any arguments, all can be set later in web console.
 
-### Enable and Disable Strategies
+- `-k _` is set by default
+- `-r <server:host>` is not needed any more if the relay server runs on the same machine with hbbs, and you can set multiple relay servers in the web console
 
-Administrators can `Enable` or `Disable` different strategies as needed. By default, all devices use the default strategy. If administrators want to use another strategy, they can enable it in the strategy options.
+### One more port
 
-### Managing Devices
-
-Each device can only be managed by one strategy. Administrators can change the management strategy of a device by the `Edit Devices` option. By default, all devices use the default strategy. Administrators can add or delete devices and change their management strategies. If a device is deleted, it will be managed by the default strategy again.
-
-In the device management interface, the left-hand area is used to filter devices, and the devices selected in the right-hand column will be managed by the current strategy. Devices that are not logged in will be displayed in the `null` group.
-
-![](/docs/en/self-host/pro/images/edit_devices.png)
-
-### Strategy Synchronization
-
-Each device can only be managed by one strategy, and if that strategy is disabled, the device will not be managed by any strategy. When synchronizing strategies, RustDesk records the local and server strategy timestamps to determine whether synchronization is necessary. That is, after strategy synchronization is complete:
-
-* If the user changes some options, the client will use the user's options.
-* If the administrator changes the strategy content, the client's options will be synchronized.
-* If the administrator changes the strategy to which the device belongs, the client's options will be synchronized.
-
-### Edit Strategies
-
-At the bottom of the strategy, click `Edit`, make modifications and click `Submit`. The strategy will be synchronized to devices within 30 seconds.
+One more tcp port `21114` is added for web console, please take care of this port when you set firewall rules and docker port mapping.

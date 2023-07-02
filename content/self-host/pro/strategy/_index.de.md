@@ -1,6 +1,6 @@
 ---
-title: Erweitert
-weight: 100
+title: Strategy
+weight: 200
 ---
 
 ## Strategy
@@ -13,7 +13,7 @@ RustDesk bietet eine Standardstrategie, die Administratoren ändern können. Ode
 
 | Standardstrategie | Andere Strategien |
 | :--------------: | :------------: |
-|  ![](/docs/en/self-host/pro/images/default_strategy.png)    |  ![](/docs/en/self-host/pro/images/other_strategy.png)    |
+|  ![](/docs/en/self-host/pro/strategy/images/default_strategy.png)    |  ![](/docs/en/self-host/pro/strategy/images/other_strategy.png)    |
 
 ### Strategien aktivieren und deaktivieren
 
@@ -25,7 +25,7 @@ Jedes Gerät kann nur mit einer Strategie verwaltet werden. Administratoren kön
 
 In der Schnittstelle zur Geräteverwaltung wird der linke Bereich zum Filtern von Geräten verwendet. Die in der rechten Spalte ausgewählten Geräte werden von der aktuellen Strategie verwaltet. Geräte, die nicht angemeldet sind, werden in der Gruppe `Null` angezeigt.
 
-![](/docs/en/self-host/pro/images/edit_devices.png)
+![](/docs/en/self-host/pro/strategy/images/edit_devices.png)
 
 ### Strategie-Synchronisation
 
