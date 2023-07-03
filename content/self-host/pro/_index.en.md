@@ -28,7 +28,7 @@ Almost as the same as the open source version, but you do not need to run hbbs/h
 
 # Simple Install
 
-Copy and paste the above command into your linux terminal `curl -s https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh | bash`, takes care of everything.
+Copy and paste the above command into your linux terminal which take care of everything.<br>  `curl -s https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh | bash`
 
 {{% notice note %}}
 Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), you will be required to enter license in the web console.
