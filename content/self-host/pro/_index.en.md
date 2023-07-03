@@ -18,9 +18,17 @@ Self-host Pro is built on the open source version, but with more features.
 RustDesk client >=1.2.0 required
 {{% /notice %}}
 
+## Download
+
+[https://github.com/rustdesk/rustdesk-server-pro/releases/tag/1.1.8](https://github.com/rustdesk/rustdesk-server-pro/releases/tag/1.1.8)
+
 ## Installation
 
 Almost as the same as the open source version, but you do not need to run hbbs/hbbr with any arguments, all can be set later in web console.
+
+{{% notice note %}}
+Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), you will be required to enter license in the web console.
+{{% /notice %}}
 
 - `-k _` is set by default
 - `-r <server:host>` is not needed any more if the relay server runs on the same machine with hbbs, and you can set multiple relay servers in the web console
