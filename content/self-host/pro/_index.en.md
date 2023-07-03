@@ -26,7 +26,9 @@ RustDesk client >=1.2.0 required
 
 # Simple Install
 
-Copy and paste the above command into your linux terminal which take care of everything.<br>  `curl -s https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh | bash`
+Copy and paste the above command into your linux terminal which take care of everything.  
+
+`curl -s https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh | bash`
 
 {{% notice note %}}
 Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), you will be required to enter license in the web console.
