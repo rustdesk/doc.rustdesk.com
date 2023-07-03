@@ -12,7 +12,7 @@ Self-host Pro is built on the open source version, but with more features.
 - Device managment
 - Settings sync
 - Permission control
-- Multiple relay servers (serve you with the neareast one)
+- Multiple relay servers (automatically selects your closest relay)
 
 {{% notice note %}}
 RustDesk client >=1.2.0 required
@@ -43,4 +43,4 @@ Almost the same as the open source version, but you do not need to run hbbs/hbbr
 
 ### One more port (or use a proxy)
 
-One more tcp port `21114` is added for web console, please take care of this port when you set firewall rules and docker port mapping.
+One more tcp port `21114` is added for web console, please also add this port when you set firewall rules and docker port mapping.
