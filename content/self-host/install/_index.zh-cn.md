@@ -57,23 +57,13 @@ hhbs的`-r`参数不是必须的，他只是方便你不用在客户端指定中
 如果你想选择**自己的端口**，使用 “-h” 选项查看帮助。
 
 #### Docker示范
-##### Linux/amd64
 ```
 sudo docker image pull rustdesk/rustdesk-server
 sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr
 ```
 
-##### Linux/arm64v8
-```
-sudo docker image pull rustdesk/rustdesk-server:latest-arm64v8
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip[:port]> 
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server:latest-arm64v8 hbbr
-```
-
 ##### Docker Compose
-
-以 arm64 架构机器为例:
 
 ```yaml
 version: '3'
@@ -89,7 +79,7 @@ services:
       - 21115:21115
       - <hbbs_port>:21116 # 自定义 hbbs 映射端口
       - <hbbs_port>:21116/udp # 自定义 hbbs 映射端口
-    image: rustdesk/rustdesk-server:latest-arm64v8
+    image: rustdesk/rustdesk-server
     command: hbbs -r <your_domain>:<hbbr_port> # 填入个人域名或 IP + hbbr 暴露端口
     volumes:
       - <mount_path>:/root # 自定义挂载目录
@@ -107,7 +97,7 @@ services:
     container_name: hbbr
     ports:
       - <hbbr_port>:21117 # 自定义 hbbr 映射端口
-    image: rustdesk/rustdesk-server:latest-arm64v8 # 镜像选用 arm64 版
+    image: rustdesk/rustdesk-server
     command: hbbr
     volumes:
       - <mount_path>:/root # 自定义挂载目录

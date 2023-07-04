@@ -43,17 +43,10 @@ chmod +x install.sh
 Vous devez avoir installé Docker/Podman afin d'exécuter un serveur Rustdesk en tant que conteneur Docker.
 
 ### Exemples avec Docker
-#### Linux/amd64
 ```bash
 sudo docker image pull rustdesk/rustdesk-server
 sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> 
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr 
-```
-#### Linux/arm64v8
-```bash
-sudo docker image pull rustdesk/rustdesk-server:latest-arm64v8
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip[:port]> 
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server:latest-arm64v8 hbbr 
 ```
 <a name="net-host"></a>
 
@@ -67,7 +60,6 @@ Si `--net=host` fonctionne , l'option `-p` ne sera pas utile. Pour windows, omet
 ### Exemples avec Docker-Compose
 Pour exécuter les fichiers docker avec docker-compose.yml comme ci-dessous, vous devez avoir [**docker-compose**] (https://docs.docker.com/compose/) d'installé.
 
-#### Linux/amd64
 ```yaml
 version: '3'
 
@@ -99,45 +91,6 @@ services:
       - 21117:21117
       - 21119:21119
     image: rustdesk/rustdesk-server:latest
-    command: hbbr
-    volumes:
-      - ./data:/root
-    networks:
-      - rustdesk-net
-    restart: unless-stopped
-```
-#### Linux/arm64v8
-```yaml
-version: '3'
-
-networks:
-  rustdesk-net:
-    external: false
-
-services:
-  hbbs:
-    container_name: hbbs
-    ports:
-      - 21115:21115
-      - 21116:21116
-      - 21116:21116/udp
-      - 21118:21118
-    image: rustdesk/rustdesk-server:latest-arm64v8
-    command: hbbs -r example.com:21117
-    volumes:
-      - ./data:/root
-    networks:
-      - rustdesk-net
-    depends_on:
-      - hbbr
-    restart: unless-stopped
-
-  hbbr:
-    container_name: hbbr
-    ports:
-      - 21117:21117
-      - 21119:21119
-    image: rustdesk/rustdesk-server:latest-arm64v8
     command: hbbr
     volumes:
       - ./data:/root
