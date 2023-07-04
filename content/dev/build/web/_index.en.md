@@ -50,6 +50,8 @@ cd build/web
 python -m http.server 8000
 ```
 
+To configure the build on HTTPS we would recommend following the instructions from the following source: https://medium.com/flutter-community/how-to-host-flutter-using-nginx-a71bcb11d96
+
 > Currently, yuv converter and vp9 are the bottleneck
 
 ## How to build with Docker
