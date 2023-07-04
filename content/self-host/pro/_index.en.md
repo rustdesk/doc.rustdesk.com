@@ -26,7 +26,7 @@ RustDesk client >=1.2.0 required
 
 # Simple Install
 
-Copy and paste the above command into your linux terminal which take care of everything.  
+Copy and paste the above command into your linux terminal which take care of everything. [What the script does.](https://rustdesk.com/docs/en/self-host/pro/installscript/)
 
 `curl -s https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh | bash`
 
@@ -44,3 +44,9 @@ Almost the same as the open source version, but you do not need to run hbbs/hbbr
 ### One more port (or use a proxy)
 
 One more tcp port `21114` is added for web console, please also add this port when you set firewall rules and docker port mapping.
+
+# Updating
+
+Copy and paste the above command into your linux terminal which take care of everything.  
+
+`curl -s https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/update.sh | bash`
