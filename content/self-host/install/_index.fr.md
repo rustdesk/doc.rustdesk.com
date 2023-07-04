@@ -14,14 +14,14 @@ Vous devez avoir installé Linux, le script est testé avec Centos Linux 7/8, Ub
 ####  Comment installer le serveur
 Veuillez configurer le pare-feu sur votre serveur avant d'exécuter le script.
 
-Assurez-vous d'avoir un accès SSH, et assurez vous que votre part feu autorise cet accès.
+Assurez-vous d'avoir un accès SSH, et assurez vous que votre pare-feu autorise cet accès.
 
 Exemple: UFW (basé sur Debian) afin d'autoriser une connexion ssh
 ```
 ufw allow 22:22/tcp
 ```
 
-#### Si vous avez installé UFW, utilisez les commandes suivantes pour configurer le pare-feu:
+#### Si vous avez installé UFW, utilisez les commandes suivantes pour configurer le pare-feu :
 ```
 ufw allow 21115:21119/tcp
 ufw allow 8000/tcp
@@ -29,7 +29,7 @@ ufw allow 21116/udp
 sudo ufw enable
 ```
 
-#### Exécutez les commandes suivantes:
+#### Exécutez les commandes suivantes :
 ```
 wget https://raw.githubusercontent.com/dinger1986/rustdeskinstall/master/install.sh
 chmod +x install.sh
@@ -40,34 +40,26 @@ chmod +x install.sh
 ## Installez votre propre serveur avec Docker(-compose)
 
 ### Exigences
-Vous devez avoir installer Docker/Podman afin d'exécuter un serveur Rustdesk en tant que conteneur Docker
+Vous devez avoir installé Docker/Podman afin d'exécuter un serveur Rustdesk en tant que conteneur Docker.
 
 ### Exemples avec Docker
-#### Linux/amd64
 ```bash
 sudo docker image pull rustdesk/rustdesk-server
 sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> 
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr 
 ```
-#### Linux/arm64v8
-```bash
-sudo docker image pull rustdesk/rustdesk-server:latest-arm64v8
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip[:port]> 
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server:latest-arm64v8 hbbr 
-```
 <a name="net-host"></a>
 
 {{% notice note %}}
-`--net=host` ne fonctionne que pour **Linux**, ce qui permet à `HBBS` /` HBBR` de voir l'adresse IP public entrante plutôt que l'IP privé du conteneur (ex. 172.17.0.1).
+`--net=host` ne fonctionne que pour **Linux**, ce qui permet à `HBBS` /` HBBR` de voir l'adresse IP publique entrante plutôt que l'adresse IP privée du conteneur (ex. 172.17.0.1).
 Si `--net=host` fonctionne , l'option `-p` ne sera pas utile. Pour windows, omettez `sudo` et `--net=host`.
 
 **Veuillez supprimer `--net = host` si vous rencontrez des problèmes de connexion sur votre configuration.**
 {{% /notice %}}
 
 ### Exemples avec Docker-Compose
-Pour exécuter les fichiers docker avec docker-compose.yml comme ci dessous, vous devez avoir [**docker-compose**] (https://docs.docker.com/compose/) d'installé.
+Pour exécuter les fichiers docker avec docker-compose.yml comme ci-dessous, vous devez avoir [**docker-compose**] (https://docs.docker.com/compose/) d'installé.
 
-#### Linux/amd64
 ```yaml
 version: '3'
 
@@ -99,45 +91,6 @@ services:
       - 21117:21117
       - 21119:21119
     image: rustdesk/rustdesk-server:latest
-    command: hbbr
-    volumes:
-      - ./data:/root
-    networks:
-      - rustdesk-net
-    restart: unless-stopped
-```
-#### Linux/arm64v8
-```yaml
-version: '3'
-
-networks:
-  rustdesk-net:
-    external: false
-
-services:
-  hbbs:
-    container_name: hbbs
-    ports:
-      - 21115:21115
-      - 21116:21116
-      - 21116:21116/udp
-      - 21118:21118
-    image: rustdesk/rustdesk-server:latest-arm64v8
-    command: hbbs -r example.com:21117
-    volumes:
-      - ./data:/root
-    networks:
-      - rustdesk-net
-    depends_on:
-      - hbbr
-    restart: unless-stopped
-
-  hbbr:
-    container_name: hbbr
-    ports:
-      - 21117:21117
-      - 21119:21119
-    image: rustdesk/rustdesk-server:latest-arm64v8
     command: hbbr
     volumes:
       - ./data:/root
@@ -149,11 +102,11 @@ services:
 
 ## Configurez votre propre instance de serveur sans utiliser Docker
 
-### ÉTAPE 1: Télécharger les logiciels côté serveur
+### ÉTAPE 1 : Téléchargez les logiciels côté serveur
 
 [Télécharger rustdesk-server](https://github.com/rustdesk/rustdesk-server/).
 
-OS Supportés:
+OS Supportés :
 
 - Linux
 - Windows
@@ -169,7 +122,7 @@ Ils sont testés sous Centos Linux 7/8 et Ubuntu 18/20.
 
 #### Exigences pour le serveur
 
-Les exigences matérielles sont très faibles; La configuration minimale d'un serveur cloud de base est suffisante et les exigences du CPU et de la mémoire sont minimes. Vous pouvez également utiliser un Raspberry Pi ou quelque chose de similaire. En ce qui concerne le dimensionnement du réseau, si la connexion TCP [hole punching](https://en.wikipedia.org/wiki/TCP_hole_punching) directe échoue, du trafic de relais sera consommé. Le trafic d'une connexion de relais se situe entre 30k et 3m/s (écran 1920x1080) en fonction des paramètres de résolution et de la mise à jour de l'écran. Si ce n'est que pour un usage bureautique, le trafic est d'environ 100k/s.
+Les exigences matérielles sont très faibles. La configuration minimale d'un serveur cloud de base est suffisante et les exigences du CPU et de la mémoire sont minimes. Vous pouvez également utiliser un Raspberry Pi ou quelque chose de similaire. En ce qui concerne le dimensionnement du réseau, si la connexion TCP [hole punching](https://en.wikipedia.org/wiki/TCP_hole_punching) directe échoue, du trafic de relais sera consommé. Le trafic d'une connexion de relais se situe entre 30k et 3m/s (écran 1920x1080) en fonction des paramètres de résolution et de la mise à jour de l'écran. Si ce n'est que pour un usage bureautique, le trafic est d'environ 100k/s.
 
 ### ÉTAPE 2 : Exécutez hbbs/hbbr sur votre serveur
 
@@ -193,7 +146,7 @@ pm2 start hbbr
 {{% notice note %}}
 pm2 nécessite NodeJS v16+, si vous ne parvenez pas à exécuter pm2 (par exemple, vous ne pouvez pas voir `hbbs`/`hbbr` dans `pm2 list`), veuillez télécharger et installer la version NodeJS LTS à partir de https://nodejs.org. Si vous souhaitez que `hbbs`/`hbbr` s'exécute automatiquement après le redémarrage, veuillez vous référer à `pm2 save` et `pm2 startup`. En savoir plus sur [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Un autre bon outil pour vos journaux est [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
 
-Le paramètre `-r` de `hbbs` n'est pas obligatoire, il est juste plus pratique pour vous de ne pas spécifier de serveur relais côté client contrôlé. Vous n'avez pas besoin de spécifier le port si vous utilisez le port 21117 par défaut. Le serveur relais spécifié par le client a une priorité plus élevée que celle-ci.
+Le paramètre `-r` de `hbbs` n'est pas obligatoire, il est juste pratique pour ne pas avoir à spécifier de serveur relais côté client contrôlé. Vous n'avez pas besoin de spécifier le port si vous utilisez le port 21117 par défaut. Le serveur relais spécifié par le client est prioritaire sur ce paramètre.
 {{% /notice %}}
 
 Par défaut, `hbbs` écoute sur 21115 (TCP) et 21116 (TCP/UDP), 21118 (TCP), et `hbbr` écoute sur 21117 (TCP), 21119 (TCP). Assurez-vous d'ouvrir ces ports dans le pare-feu. **Veuillez noter que 21116 doit être activé à la fois pour TCP et UDP**. 21115 est utilisé pour le test de type NAT, 21116/UDP est utilisé pour l'enregistrement d'ID et le service `heartbeat`, 21116/TCP est utilisé pour le service `TCP hole punching`, 21117 est utilisé pour le service de relais, et 21118 et 21119 sont utilisés pour prendre en charge les clients Web. *Si vous n'avez pas besoin de la prise en charge du client Web (21118, 21119), les ports correspondants peuvent être désactivés.*
@@ -204,7 +157,7 @@ Par défaut, `hbbs` écoute sur 21115 (TCP) et 21116 (TCP/UDP), 21118 (TCP), et 
 Si vous voulez choisir un port personnalisé, vous pouvez utiliser l'option `-h` pour accéder à l'aide.
 
 
-### ÉTAPE 3 : Définir l'adresse IP hbbs/hbbr côté client
+### ÉTAPE 3 : Définissez l'adresse IP hbbs/hbbr côté client
 
 Cliquez sur le bouton Menu [ &#8942; ] à droite de ID comme indiqué ci-dessous, et choisissez "ID/Relay Server".
 ![](/docs/en/self-host/install/images/server-set-menu.png)
@@ -223,7 +176,7 @@ hbbs.exemple.fr:21116
 ```
 ![](/docs/en/self-host/install/images/server-set-window.png)
 
-#### Spécifier la configuration par le nom du fichier rustdesk.exe (Windows uniquement)
+#### Configuration par suffixe du fichier rustdesk.exe (Windows uniquement)
 
 Remplacez `rustdesk.exe` par rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe, par ex. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe. Vous pouvez voir le résultat de la configuration dans la fenêtre À propos ci-dessous.
 
@@ -233,14 +186,14 @@ Remplacez `rustdesk.exe` par rustdesk-`host=<host-ip-or-name>,key=<public-key-st
 
 <a name="invalidchar"></a>
 {{% notice note %}}
-S'il y a des caractères dans la clé qui ne peuvent pas être utilisés dans un nom de fichier Windows, veuillez supprimer le fichier `id_ed25519` côté serveur et redémarrez `hbbs`/`hbbr`. Cela entraînera la régénération d'un fichier `id_ed25519.pub`. Vous devrez peut-être répétez ce processus jusqu'à ce que vous obteniez des caractères valides.
+S'il y a des caractères dans la clé qui ne peuvent pas être utilisés dans un nom de fichier Windows, veuillez supprimer le fichier `id_ed25519` côté serveur et redémarrer `hbbs`/`hbbr`. Cela entraînera la régénération d'un fichier `id_ed25519.pub`. Vous devrez peut-être répéter ce processus jusqu'à ce que vous obteniez des caractères valides.
 {{% /notice %}}
 
 ## Clé
 
-Contrairement à l'ancienne version, la clé pour cette version est obligatoire, mais vous n'avez pas besoin de la définir vous-même. Lorsque `hbbs` s'exécute pour la première fois, il génère automatiquement une paire de clés privées et publiques cryptées (respectivement situées dans les fichiers `id_ed25519` et `id_ed25519.pub` du répertoire d'exécution), dont le but principal est le cryptage des communications.
+Contrairement à l'ancienne version, la clé pour cette version est obligatoire, mais vous n'avez pas besoin de la définir vous-même. Lorsque `hbbs` s'exécute pour la première fois, il génère automatiquement une paire de clés privée et publique chiffrées (respectivement situées dans les fichiers `id_ed25519` et `id_ed25519.pub` du répertoire d'exécution), dont le but principal est le chiffrement des communications.
 
-Si vous n'avez pas rempli la clé `Key:` (avec le contenu du fichier clé publique `id_ed25519.pub`) à l'étape précédente, cela n'affecte pas la connexion, mais la connexion ne peut pas être chiffrée.
+Si vous n'avez pas rempli la clé `Key:` (avec le contenu du fichier de clé publique `id_ed25519.pub`) à l'étape précédente, cela n'affectera pas la connexion, mais la connexion ne pourra pas être chiffrée.
 
 ```bash
 cat ./id_ed25519.pub

@@ -24,7 +24,7 @@ RustDesk client >=1.2.0 required
 
 ## Installation
 
-# Simple Install
+### Simple Install
 
 Copy and paste the above command into your linux terminal which take care of everything. [What the script does.](https://rustdesk.com/docs/en/self-host/pro/installscript/)
 
@@ -34,9 +34,8 @@ Copy and paste the above command into your linux terminal which take care of eve
 Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), you will be required to enter license in the web console.
 {{% /notice %}}
 
-# Manual Installation
-
-Almost the same as the open source version, but you do not need to run hbbs/hbbr with any arguments, these can be set later in web console.
+### Manual Installation
+Almost as the same as [the open source version](/docs/en/self-host/install/), but you do not need to run hbbs/hbbr with any arguments, all can be set later in web console.
 
 - `-k _` is set by default
 - `-r <server:host>` is not needed any more if the relay server runs on the same machine with hbbs, and you can set multiple relay servers in the web console

@@ -59,18 +59,10 @@ hhbs的`-r`參數不是必須的，他只是方便你不用在客戶端指定中
 如果你想選擇**自己的端口**，使用 “-h” 選項查看幫助。
 
 #### Docker示範
-##### Linux/amd64
 ```
 sudo docker image pull rustdesk/rustdesk-server
 sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> 
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr 
-```
-
-##### Linux/arm64v8
-```
-sudo docker image pull rustdesk/rustdesk-server:latest-arm64v8
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server:latest-arm64v8 hbbs -r <relay-server-ip[:port]> 
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server:latest-arm64v8 hbbr 
 ```
 
 <a name="net-host"></a>
