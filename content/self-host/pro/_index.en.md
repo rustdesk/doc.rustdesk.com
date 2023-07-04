@@ -49,3 +49,9 @@ One more tcp port `21114` is added for web console, please also add this port wh
 Copy and paste the above command into your linux terminal which take care of everything.  
 
 `curl -s https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/update.sh | bash`
+
+# Convert from Opensource version
+
+Copy and paste the above command into your linux terminal which take care of everything. [What the script does.](https://rustdesk.com/docs/en/self-host/pro/installscript/)
+
+`curl -s https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/convertfromos.sh | bash`
