@@ -12,7 +12,7 @@ Self-host Pro is built on the open source version, but with more features.
 - Device managment
 - Settings sync
 - Permission control
-- Multiple relay servers (serve you with the neareast one)
+- Multiple relay servers (automatically selects your closest relay)
 
 {{% notice note %}}
 RustDesk client >=1.2.0 required
@@ -24,15 +24,23 @@ RustDesk client >=1.2.0 required
 
 ## Installation
 
-Almost as the same as the open source version, but you do not need to run hbbs/hbbr with any arguments, all can be set later in web console.
+# Simple Install
+
+Copy and paste the above command into your linux terminal which take care of everything.  
+
+`curl -s https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh | bash`
 
 {{% notice note %}}
 Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), you will be required to enter license in the web console.
 {{% /notice %}}
 
+# Manual Installation
+
+Almost the same as the open source version, but you do not need to run hbbs/hbbr with any arguments, these can be set later in web console.
+
 - `-k _` is set by default
 - `-r <server:host>` is not needed any more if the relay server runs on the same machine with hbbs, and you can set multiple relay servers in the web console
 
-### One more port
+### One more port (or use a proxy)
 
-One more tcp port `21114` is added for web console, please take care of this port when you set firewall rules and docker port mapping.
+One more tcp port `21114` is added for web console, please also add this port when you set firewall rules and docker port mapping.
