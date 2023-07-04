@@ -23,9 +23,11 @@ Administrators can `Enable` or `Disable` different strategies as needed. By defa
 
 Each device can only be managed by one strategy. Administrators can change the management strategy of a device by the `Edit Devices` option. By default, all devices use the default strategy. Administrators can add or delete devices and change their management strategies. If a device is deleted, it will be managed by the default strategy again.
 
-In the device management interface, the left-hand area is used to filter devices, and the devices selected in the right-hand column will be managed by the current strategy. Devices that are not logged in will be displayed in the `null` group.
+In the device management interface, the left-hand area is used to filter devices, and the devices selected in the right-hand column will be managed by the current strategy. Devices that are not logged in will be displayed in the `-` group.
 
-![](/docs/en/self-host/pro/strategy/images/edit_devices.png)
+|  User Group  | Unbinded Devices |
+| :--------------: | :------------: |
+|  ![](/docs/en/self-host/pro/strategy/images/edit_devices_group.png)    |  ![](/docs/en/self-host/pro/strategy/images/edit_devices_unbinded.png)    |
 
 ### Strategy Synchronization
 

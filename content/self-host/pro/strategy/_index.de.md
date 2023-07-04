@@ -23,9 +23,11 @@ Administratoren können je nach Bedarf verschiedene Strategien `Aktivieren` oder
 
 Jedes Gerät kann nur mit einer Strategie verwaltet werden. Administratoren können die Verwaltungsstrategie eines Geräts über die Option `Geräte bearbeiten` ändern. Standardmäßig verwenden alle Geräte die Standardstrategie. Administratoren können Geräte hinzufügen oder löschen und deren Verwaltungsstrategien ändern. Wenn ein Gerät gelöscht wird, wird es wieder mit der Standardstrategie verwaltet.
 
-In der Schnittstelle zur Geräteverwaltung wird der linke Bereich zum Filtern von Geräten verwendet. Die in der rechten Spalte ausgewählten Geräte werden von der aktuellen Strategie verwaltet. Geräte, die nicht angemeldet sind, werden in der Gruppe `Null` angezeigt.
+In der Schnittstelle zur Geräteverwaltung wird der linke Bereich zum Filtern von Geräten verwendet. Die in der rechten Spalte ausgewählten Geräte werden von der aktuellen Strategie verwaltet. Geräte, die nicht angemeldet sind, werden in der Gruppe `-` angezeigt.
 
-![](/docs/en/self-host/pro/strategy/images/edit_devices.png)
+|  Benutzergruppe  |  Ungebundene Geräte  |
+| :--------------: | :------------: |
+|  ![](/docs/en/self-host/pro/strategy/images/edit_devices_group.png)    |  ![](/docs/en/self-host/pro/strategy/images/edit_devices_unbinded.png)    |
 
 ### Strategie-Synchronisation
 
