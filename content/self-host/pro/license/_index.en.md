@@ -17,3 +17,5 @@ you will be required to enter license in the web console, or change license late
 
 ## Invocie and Migration
 The license can be only used on one machine (for hbbs only, hbbr does not require license), if you wanna migrate to the other machine, or if you wanna download invoice, please go to [https://rustdesk.com/self-host/account/](https://rustdesk.com/self-host/account/). Log in with the email address used in Stripe checkout page.
+
+![](/docs/en/self-host/pro/license/images/unbind.jpg)
