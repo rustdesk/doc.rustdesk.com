@@ -55,6 +55,10 @@ If `--net=host` works fine, the `-p` options are not used. If on Windows, leave 
 **Please remove `--net=host` if you are having connection problems on your platform.**
 {{% /notice %}}
 
+{{% notice note %}}
+If you can not see logs with `-td`, you can see logs via `docker logs hbbs`. Or you can run with `-it`, `hbbs/hbbr` will not run as daemon mode.
+{{% /notice %}}
+
 ### Docker-Compose examples
 For running the docker files with the docker-compose.yml as described here you need to have [**docker-compose**](https://docs.docker.com/compose/) installed.
 ```yaml

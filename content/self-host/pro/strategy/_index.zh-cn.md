@@ -22,9 +22,11 @@ RustDesk 提供了一个默认策略，管理员可以在此基础上进行修�
 ### 管理设备
 
 每个设备只能被一种策略管理。管理员可以通过`编辑设备`来更改设备的管理策略。默认情况下，所有设备都使用默认策略。管理员可以通过添加或删除设备，更改设备的管理策略。如果设备被删除，它将重新被默认策略管理。
-在设备管理界面中，左侧区域用于筛选设备，右侧列中被选中的设备将会受到当前策略的管理。未登录的设备将会显示在`null`组中。
+在设备管理界面中，左侧区域用于筛选设备，右侧列中被选中的设备将会受到当前策略的管理。未登录的设备将会显示在`-`组中。
 
-![](/docs/en/self-host/pro/strategy/images/edit_devices.png)
+|  用户组  |  未绑定设备  |
+| :--------------: | :------------: |
+|  ![](/docs/en/self-host/pro/strategy/images/edit_devices_group.png)    |  ![](/docs/en/self-host/pro/strategy/images/edit_devices_unbinded.png)    |
 
 ### 策略同步
 
