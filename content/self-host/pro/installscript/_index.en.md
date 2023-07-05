@@ -9,7 +9,7 @@ What it does:
 
 - Install some dependencys
 - Setup ufw firewall if available
-- Create a Folders /var/lib/rustdesk-server and /var/log/rustdesk
+- Create a Folders /var/lib/rustdesk-server and /var/log/rustdesk-server
 - Installs executables into /usr/bin
 - Download and extract RustDesk Pro Services to the above folder
 - Create systemd services for hbbs and hbbr
