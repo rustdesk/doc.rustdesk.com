@@ -5,7 +5,7 @@ weight: 100
 
 Self-host Pro is built on the open source version, but with more features.
 
-- OIDC and ldap login
+- OIDC, ldap, 2FA (email verification)
 - Address book
 - Rename 
 - Log management
@@ -31,7 +31,7 @@ Copy and paste the above command into your linux terminal which take care of eve
 `curl -s https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh | bash`
 
 {{% notice note %}}
-Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), you will be required to enter license in the web console.
+Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/pro/license) page for more details.
 {{% /notice %}}
 
 ### Manual Installation
