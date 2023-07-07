@@ -44,13 +44,13 @@ Almost as the same as [the open source version](/docs/en/self-host/install/), bu
 
 One more tcp port `21114` is added for web console, please also add this port when you set firewall rules and docker port mapping.
 
-# Updating
+## Updating
 
 Copy and paste the above command into your linux terminal which take care of everything.  
 
 `bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/update.sh)`
 
-# Convert from Opensource version
+## Convert from Opensource version
 
 Copy and paste the above command into your linux terminal which take care of everything. [What the script does.](https://rustdesk.com/docs/en/self-host/pro/installscript/)
 
