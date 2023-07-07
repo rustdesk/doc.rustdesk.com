@@ -3,7 +3,7 @@ title: Installer Scripts
 weight: 10
 ---
 
-# Install
+## Install
 
 What it does:
 
@@ -15,14 +15,14 @@ What it does:
 - Create systemd services for hbbs and hbbr
 - If you chose Domain, it will install Nginx and certbot, allowing the API to be available on port 443 (https) and get an SSL certificate over port 80, this will autorenew
 
-# Upgrade
+## Upgrade
 
 What it does:
 
 - Checks for new versions of RustDesk-Server-Pro
 - If it finds a new version it, removes the API files and downloads new executables and API files
 
-# Convert from Opensource
+## Convert from Opensource
 
 What it does: 
 
