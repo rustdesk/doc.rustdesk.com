@@ -18,8 +18,8 @@ jobs:
 
       - name: Build
         run: |
-          apt update -y
-          apt install -y git
+          sudo apt update -y
+          sudo apt install -y git
           git clone https://github.com/matcornic/hugo-theme-learn themes/hugo-theme-learn --depth=1
           hugo --minify
           cd public; tar czf x *
