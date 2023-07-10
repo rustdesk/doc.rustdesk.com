@@ -1,0 +1,24 @@
+name: Deploy
+
+on: [workflow_dispatch]
+
+jobs:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+      - name: Build
+        run: |
+          hugo --minify
+          cd public; tar czf x *
+          echo -e "${{ secrets.SK }}" > sk.txt
+          scp x ${{ secrets.HOST }}:/tmp/ -i sk.txt
+          ssh ${{ secrets.HOST }} -i sk.txt "sudo rm -rf /var/www/html/rustdesk.com/docs/* && sudo tar xzf /tmp/x -C /var/www/html/rustdesk.com/docs/ && /bin/rm /tmp/x && sudo chown www-data:www-data /var/www/html/rustdesk.com/docs/ -R"
