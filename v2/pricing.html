@@ -522,12 +522,18 @@ label {
                       document.getElementById("cprice").innerText = price.toFixed(2);
                     }
                 
-                    document.getElementById("users").oninput = function() {
+                    document.getElementById("users").onchange = function() {
+                      if (this.value < 20) {
+                        this.value = 20;  
+                      }
                       document.getElementById("usersSlider").value = this.value;
                       calculatePrice();
                     }
                 
-                    document.getElementById("devices").oninput = function() {
+                    document.getElementById("devices").onchange = function() {
+                      if (this.value < 500) {
+                        this.value = 500;  
+                      }
                       document.getElementById("devicesSlider").value = this.value;
                       calculatePrice();
                     }
