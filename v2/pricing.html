@@ -47,6 +47,61 @@ a[class^="uui-button-1"]:hover, a[class^="uui-button-1"]:focus, .uui-button-6:ho
 #scammer-banner {
   display: none;
 }
+input[type="number"] {
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 100px;
+			font-size: 16px;
+			margin-right: 10px;
+		}
+
+.slider {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 15px;
+	border-radius: 5px;
+	background: #ddd;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+
+.slider:hover {
+	opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #024eff;
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #024eff;
+	cursor: pointer;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-bottom: 20px;
+}
+
+label {
+	margin-right: 10px;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
 </style>
 </head>
 <body>
@@ -355,7 +410,7 @@ a[class^="uui-button-1"]:hover, a[class^="uui-button-1"]:focus, .uui-button-6:ho
                         </div>
                       </div>
                     </div>
-                    <a href="https://rustdesk.com/api/lic/stripe/checkout?type=Not_Ready_Yet_Please_Wait_for_One_more_day" target="_blank" class="uui-button-15 w-inline-block">
+                    <a href="https://rustdesk.com/api/lic/stripe/checkout?type=Personal" target="_blank" class="uui-button-15 w-inline-block">
                       <div>Buy now</div>
                     </a>
                   </div>
@@ -428,7 +483,67 @@ a[class^="uui-button-1"]:hover, a[class^="uui-button-1"]:focus, .uui-button-6:ho
                         </div>
                       </div>
                     </div>
-                    <a href="https://rustdesk.com/api/lic/stripe/checkout?type=Not_Ready_Yet_Please_Wait_for_One_more_day" target="_blank" class="uui-button-15 w-inline-block">
+                    <a href="https://rustdesk.com/api/lic/stripe/checkout?type=Business" target="_blank" class="uui-button-15 w-inline-block">
+                      <div>Buy now</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div data-w-tab="Tab 2" class="uui-pricing08_tab-pane w-tab-pane">
+              <div class="w-layout-grid uui-pricing08_components">
+                <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c877ee-47ad0af8"></div>
+                <div class="uui-pricing08_plan">
+                  <div class="uui-text-align-center-5">
+                    <h2 class="uui-heading-xxsmall-2">Customized plan</h2>
+                    <div class="uui-pricing08_price">$<span id="cprice">19.90</span><span class="uui-pricing08_price-text">/month</span></div>
+                    <div class="uui-text-size-medium-10">billed annually</div>
+                  </div>
+                  <br>
+                  <br>
+                  <form>
+                    <label for="users">Number of Licensed Users:</label>
+                    <input type="number" id="users" name="users" value="20" min="20" max="1000"><br>
+                    <input type="range" id="usersSlider" class="slider" name="usersRange" value="20" min="20" max="1000"><br>
+                
+                    <label for="devices">Number of Managed Devices:</label>
+                    <input type="number" id="devices" name="devices" value="500" min="500" max="25000"><br>
+                    <input type="range" id="devicesSlider" class="slider" name="devicesRange" value="500" min="500" max="25000">
+                  </form>
+                  <br>
+                  <script>
+                    function submit() {
+                      location.href = "https://rustdesk.com/api/lic/stripe/checkout?type=Customized&users=" + document.getElementById("users").value + "&devices=" + document.getElementById("devices").value;
+                    }
+                    function calculatePrice() {
+                      var users = parseInt(document.getElementById("users").value);
+                      var devices = parseInt(document.getElementById("devices").value);
+                      var price =  19.9 * (users / 20 + devices / 500) / 2;
+                      document.getElementById("cprice").innerText = price.toFixed(2);
+                    }
+                
+                    document.getElementById("users").oninput = function() {
+                      document.getElementById("usersSlider").value = this.value;
+                      calculatePrice();
+                    }
+                
+                    document.getElementById("devices").oninput = function() {
+                      document.getElementById("devicesSlider").value = this.value;
+                      calculatePrice();
+                    }
+                
+                    document.getElementById("usersSlider").oninput = function() {
+                      document.getElementById("users").value = this.value;
+                      calculatePrice();
+                    }
+                
+                    document.getElementById("devicesSlider").oninput = function() {
+                      document.getElementById("devices").value = this.value;
+                      calculatePrice();
+                    }
+                  </script>
+                  <div class="uui-pricing08_content">
+                    <a href="#" class="uui-button-15 w-inline-block" onClick="submit()">
                       <div>Buy now</div>
                     </a>
                   </div>
