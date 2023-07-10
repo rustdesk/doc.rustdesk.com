@@ -26,9 +26,7 @@ RustDesk client >=1.2.0 required
 
 ### Simple Install
 
-Copy and paste the above command into your linux terminal which take care of everything. [What the script does.](https://rustdesk.com/docs/en/self-host/pro/installscript/)
-
-`bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh)`
+To make life easy, we have developed scripts which take care of everything (install/upgrade/convert from opensource) [Simple Install Script](https://rustdesk.com/docs/en/self-host/pro/installscript/)
 
 {{% notice note %}}
 Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/pro/license) page for more details.
@@ -43,15 +41,3 @@ Almost as the same as [the open source version](/docs/en/self-host/install/), bu
 ### One more port (or use a proxy)
 
 One more tcp port `21114` is added for web console, please also add this port when you set firewall rules and docker port mapping.
-
-## Updating
-
-Copy and paste the above command into your linux terminal which take care of everything.  
-
-`bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/update.sh)`
-
-## Convert from Opensource version
-
-Copy and paste the above command into your linux terminal which take care of everything. [What the script does.](https://rustdesk.com/docs/en/self-host/pro/installscript/)
-
-`bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/convertfromos.sh)`
