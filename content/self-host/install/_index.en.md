@@ -33,7 +33,7 @@ wget https://raw.githubusercontent.com/techahold/rustdeskinstall/master/install.
 chmod +x install.sh
 ./install.sh
 ```
-There is also an update script on Techahold's Repo.
+There is also an update script on [Techahold's](https://github.com/techahold/rustdeskinstall) Repo.
 
 ## Install your own server with docker(-compose)
 
