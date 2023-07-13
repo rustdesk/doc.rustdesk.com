@@ -5,7 +5,7 @@ pre: "<b>1. </b>"
 chapter: true
 ---
 
-### Chapter 1
+### 章節 1
 
 # 使用手冊
 

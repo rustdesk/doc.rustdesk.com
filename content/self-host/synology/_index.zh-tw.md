@@ -3,12 +3,11 @@ title: 群暉
 weight: 22
 ---
 
+本教學基於 DSM v6 最新版。
 
-本手冊基於DSM v6。
+### 安裝 Docker
 
-### 安裝Docker
-
-打開 package manager 並安裝 docker
+打開套件管理員並安裝 docker
 
 |             |                                                   |
 | --------------- | -------------------------------------------------------- |
@@ -17,54 +16,54 @@ weight: 22
 
 ### 安裝 RustDesk Server
 
-| 在 Docker's registery 裡搜索 rustdesk-server 並雙擊安裝  |   安裝 rustdesk-server 鏡像後, 雙擊鏡像創建容器                                    |
+| 在 Docker 的 registery 裡搜尋 rustdesk-server 並連點兩下來安裝  |   安裝 rustdesk-server 映像後, 連點兩下映像來建立容器                                    |
 | --------------- | -------------------------------------------------------- |
 ![](/docs/en/self-host/synology/images/pull-rustdesk-server.png) | ![](/docs/en/self-host/synology/images/rustdesk-server-installed.png)
 
 
-### 創建 hbbs 容器
+### 建立 hbbs 容器
 
-如上所述哦，雙擊 rustdesk-server 鏡像創建新容器，設置名稱 `hbbs`。
-![](/docs/en/self-host/synology/images/hbbs.png) 
+如上所述，連點兩下 rustdesk-server 映像來建立新容器，並將其名稱設置為 `hbbs`。
+![](/docs/en/self-host/synology/images/hbbs.png)
 
-點擊上面的 "Advanced Settings"。
+點擊上面的 "進階設定"。
 
-- 開啟 auto-restart
-![](/docs/en/self-host/synology/images/auto-restart.png) 
+- 啟用自動重新啟動
+![](/docs/en/self-host/synology/images/auto-restart.png)
 
-- 開啟 "Use the same network as Docker host", 關於 host net的更多解釋，請[查看](/docs/zh-tw/self-host/install/#net-host)
-![](/docs/en/self-host/synology/images/host-net.png) 
+- 啟用 "Use the same network as Docker host", 關於 host net 的更多解釋，請[查閱](/docs/zh-tw/self-host/install/#net-host)
+![](/docs/en/self-host/synology/images/host-net.png)
 
-- 將容器裡的 home 目錄 `/root` 掛在到宿主目錄(比如 `Shared/test/`), hbbs將把產生的文件（包括`key`文件）放在該目錄。
-| 掛在 | 產生的文件 |
+- 將主機目錄 (比如 `Shared/test/`) 掛接到 `/root`，hbbs 將把產生的文件（包括 `key` 檔案）放在該目錄。
+| 掛接 | 產生的檔案 |
 |-- | -- |
-![](/docs/en/self-host/synology/images/mount.png?width=500px) | ![](/docs/en/self-host/synology/images/mounted-dir.png?width=300px) 
+![](/docs/en/self-host/synology/images/mount.png?width=500px) | ![](/docs/en/self-host/synology/images/mounted-dir.png?width=300px)
 
-- 設置命令
+- 設置指令
 {{% notice note %}}
-Synology 的操作系統是基於 Debian 的，因此host net (--net=host) 可以正常工作，我們不需要使用 `-p` 選項映射端口。
+群暉的操作系統是基於 Debian 的，因此 host net (--net=host) 可以正常工作，我們不需要使用 `-p` 選項映射連接埠。
 
-`192.168.16.98`為內網ip，此處僅作演示，部署時請設置為公網ip。
+`192.168.16.98` 為內網 IP，此處僅作演示，部署時請設置為公網 IP。
 
 {{% /notice %}}
 
-![](/docs/en/self-host/synology/images/hbbs-cmd.png?v2) 
+![](/docs/en/self-host/synology/images/hbbs-cmd.png?v2)
 
 - 搞定
-  
-![](/docs/en/self-host/synology/images/hbbs-config.png) 
 
-### 創建 hbbr 容器 
+![](/docs/en/self-host/synology/images/hbbs-config.png)
 
-請重複上述 `hbbs` 步驟，請將容器名更改為 `hbbr` 並將命令更改為 `hbbr`。
+### 建立 hbbr 容器
 
-![](/docs/en/self-host/synology/images/hbbr-config.png) 
+請重複上述 `hbbs` 步驟，但將容器名稱更改為 `hbbr` 並將指令更改為 `hbbr`。
 
-### hbbr/hbbs 容器創建完成 
+![](/docs/en/self-host/synology/images/hbbr-config.png)
+
+### hbbr/hbbs 容器建立完成
 
 ![](/docs/en/self-host/synology/images/containers.png?width=500px)
 
 
-| 雙擊容器並查看日誌 | 確認 hbbs/hbbr 在使用 host net |
+| 連點兩下容器並查看日誌 | 確認 hbbs/hbbr 在使用 host net |
 |-- | -- |
 ![](/docs/en/self-host/synology/images/log.png?width=500px) | ![](/docs/en/self-host/synology/images/network-types.png?width=500px)
