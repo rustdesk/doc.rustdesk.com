@@ -1,5 +1,5 @@
 ---
-title: Installatie 
+title: Installatie
 weight: 10
 ---
 
@@ -43,8 +43,8 @@ U moet Docker/Podman installeren om een rustdesk-server als docker container te 
 ### Docker voorbeelden
 ```bash
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> 
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr 
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr
 ```
 <a name="net-host"></a>
 
@@ -127,21 +127,21 @@ De hardwarevereisten zijn zeer laag; de minimale configuratie van een basiscloud
 Voer hbbs/hbbr uit op uw server (CentOS of Ubuntu). We stellen voor dat u [pm2](https://pm2.keymetrics.io/) gebruikt voor het beheer van uw service.
 
 ```bash
-./hbbs -r <relay-server-ip[:port]> 
-./hbbr 
+./hbbs -r <relay-server-ip[:port]>
+./hbbr
 ```
 
 #### Optie 2 - pm2
 Voer hbbs/hbbr uit met pm2
 
 ```bash
-pm2 start hbbs -- -r <relay-server-ip[:port]> 
-pm2 start hbbr 
+pm2 start hbbs -- -r <relay-server-ip[:port]>
+pm2 start hbbr
 ```
 
 <a name="demo"></a>
 {{% notice note %}}
-pm2 vereist NodeJS v16+, Als het niet lukt om pm2 te starten (bijv. u kunt `hbbs`/`hbbr` niet zien in `pm2 list`), download en installeer dan de NodeJS LTS versie van https://nodejs.org. Als je `hbbs`/`hbbr` automatisch wilt laten draaien na een herstart, kijk dan naar `pm2 save` en `pm2 startup`. Meer over [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Een ander goed hulpmiddel voor uw logs is [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
+pm2 vereist Node.js v16+, Als het niet lukt om pm2 te starten (bijv. u kunt `hbbs`/`hbbr` niet zien in `pm2 list`), download en installeer dan de Node.js LTS versie van https://nodejs.org. Als je `hbbs`/`hbbr` automatisch wilt laten draaien na een herstart, kijk dan naar `pm2 save` en `pm2 startup`. Meer over [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Een ander goed hulpmiddel voor uw logs is [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
 
 De `-r` parameter van `hbbs` is niet verplicht, het is gewoon handig om geen relay server te specificeren aan de gecontroleerde client kant. U hoeft geen poort op te geven als u de standaardpoort 21117 gebruikt. De door de klant opgegeven relaisserver heeft dan een hogere prioriteit.
 {{% /notice %}}

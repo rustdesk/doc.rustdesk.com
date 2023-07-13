@@ -1,5 +1,5 @@
 ---
-title: Mac 
+title: Mac
 weight: 3
 ---
 
@@ -33,7 +33,7 @@ It seems no quick fix, we need to fix together with our Flutter version.
 
 To capture screen, you need to grant `RustDesk` **accessibility** permission and **screen recording** permission. RustDesk will guide you to the settings window.
 
-| RustDesk Windows | Settings Window |
+| RustDesk window | Settings Window |
 | ---- | ---- |
 |![](/docs/en/manual/mac/images/acc.png)|![](/docs/en/manual/mac/images/acc3.png?v2)|
 

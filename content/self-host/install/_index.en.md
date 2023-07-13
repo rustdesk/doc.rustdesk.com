@@ -1,5 +1,5 @@
 ---
-title: Installation 
+title: Installation
 weight: 10
 ---
 
@@ -43,8 +43,8 @@ You need to have Docker/Podman installed to run a rustdesk-server as a docker co
 ### Docker examples
 ```bash
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> 
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr 
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr
 ```
 <a name="net-host"></a>
 
@@ -133,21 +133,21 @@ We suggest you use [pm2](https://pm2.keymetrics.io/) for managing your service.
 Run hbbs/hbbr without pm2
 
 ```bash
-./hbbs -r <relay-server-ip[:port]> 
-./hbbr 
+./hbbs -r <relay-server-ip[:port]>
+./hbbr
 ```
 
 #### Option 2
 Run hbbs/hbbr with pm2
 
 ```bash
-pm2 start hbbs -- -r <relay-server-ip[:port]> 
-pm2 start hbbr 
+pm2 start hbbs -- -r <relay-server-ip[:port]>
+pm2 start hbbr
 ```
 
 <a name="demo"></a>
 {{% notice note %}}
-pm2 requires NodeJS v16+, if you fail to run pm2 (e.g. you can not see `hbbs`/`hbbr` in `pm2 list`), please download and install the NodeJS LTS version from https://nodejs.org. If you want to make `hbbs`/`hbbr` auto-run after reboot, please check out `pm2 save` and `pm2 startup`. More about [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Another good tool for your logs is [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
+pm2 requires Node.js v16+, if you fail to run pm2 (e.g. you can not see `hbbs`/`hbbr` in `pm2 list`), please download and install the Node.js LTS version from https://nodejs.org. If you want to make `hbbs`/`hbbr` auto-run after reboot, please check out `pm2 save` and `pm2 startup`. More about [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Another good tool for your logs is [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
 
 The `-r` parameter of `hbbs` is not mandatory, it is just convenient for you not to specify a relay server on the controlled client side. You do not need to specify port if you are using default 21117 port. The relay server specified by the client has a higher priority than this.
 {{% /notice %}}
@@ -208,7 +208,7 @@ If you did not fill in the `Key:` (the content in the public key file `id_ed2551
 
 ```bash
 cat ./id_ed25519.pub
-````
+```
 
 If you want to prohibit users without the key from establishing non-encrypted connections, please add the `-k _` parameter when running `hbbs` and `hbbr`, for example:
 

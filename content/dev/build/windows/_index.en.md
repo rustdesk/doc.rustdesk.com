@@ -42,7 +42,7 @@ Desktop versions use [sciter](https://sciter.com/) for GUI, please download [sci
 
 ### llvm
 
-rust-bindgen depends on clang,  download [llvm](https://github.com/llvm/llvm-project/releases) and install，add System environment variable `LIBCLANG_PATH`=`<llvm_install_dir>/bin`.
+rust-bindgen depends on clang, download [llvm](https://github.com/llvm/llvm-project/releases) and install, add System environment variable `LIBCLANG_PATH`=`<llvm_install_dir>/bin`.
 
 You can download 15.02 of the LLVM binaries here: [64-bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win64.exe) / [32-bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win32.exe)
 
