@@ -6,7 +6,7 @@ weight: 10
 ## 如何自建中繼
 -----------
 
-### 步驟1: 下載服務器端軟件程序
+### 步驟1: 下載伺服器端軟件程序
 
 [下載](https://gitee.com/rustdesk/rustdesk-server/)或者使用docker[rustdesk/rustdesk-server](https://hub.docker.com/r/rustdesk/rustdesk-server/tags)。
 
@@ -17,27 +17,27 @@ weight: 10
 以下針對Linux版本做使用說明。
 
 有兩個可執行文件和一個文件夾:
-  - hbbs - RustDesk ID註冊服務器
-  - hbbr - RustDesk 中繼服務器
+  - hbbs - RustDesk ID註冊伺服器
+  - hbbr - RustDesk 中繼伺服器
 
 Linux版本在Centos7構建，在 Centos7/8，Ubuntu 18/20上測試過，Debian系列的發行版本應該都沒有問題。如果有其他發行版本需求，請聯繫我。
 
-#### 服務器要求
-硬件要求很低，最低配置的雲服務器就可以了，CPU和內存要求都是最小的。關於網絡大小，如果TCP打洞直連失敗，就要耗費中繼流量，一個中繼連接的流量在30k-3M每秒之間（1920x1080屏幕），取決於清晰度設置和畫面變化，如果只是辦公需求，平均在100K。
+#### 伺服器要求
+硬件要求很低，最低配置的雲伺服器就可以了，CPU和內存要求都是最小的。關於網絡大小，如果TCP打洞直連失敗，就要耗費中繼流量，一個中繼連接的流量在30k-3M每秒之間（1920x1080屏幕），取決於清晰度設置和畫面變化，如果只是辦公需求，平均在100K。
 
-### 步驟2: 在服務器上運行 hbbs 和 hbbr
+### 步驟2: 在伺服器上運行 hbbs 和 hbbr
 
-在服務器上運行 hbbs/hbbr (Centos 或 Ubuntu)。建議使用[pm2](https://pm2.keymetrics.io/) 管理服務。
+在伺服器上運行 hbbs/hbbr (Centos 或 Ubuntu)。建議使用[pm2](https://pm2.keymetrics.io/) 管理服務。
 
 ```
-./hbbs -r <hbbr運行所在主機的地址[:port]> 
-./hbbr 
+./hbbs -r <hbbr運行所在主機的地址[:port]>
+./hbbr
 ```
 
 或者使用 pm2 運行 hbbs/hbbr
 
 ```
-pm2 start hbbs -- -r <relay-server-ip[:port]> 
+pm2 start hbbs -- -r <relay-server-ip[:port]>
 pm2 start hbbr
 ```
 
@@ -47,7 +47,7 @@ pm2 start hbbr
 `pm2` 需要 nodejs v16+，如果你運行 pm2 失敗（例如在 `pm2 list` 中看不到 hbbs/hbbr），請從 https://nodejs.org 下載並安裝 LTS 版本的 nodejs。如果你想讓 hbbs/hbbr 在重啟後自動運行，請查看 `pm2 save` 和 `pm2 startup`。更多關於 [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/)。另一個不錯的日誌工具是 [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate)。
 
 
-hhbs的`-r`參數不是必須的，他只是方便你不用在客戶端指定中繼服務器。客戶端指定的中繼服務器優先級高於這個。
+hhbs的`-r`參數不是必須的，他只是方便你不用在客戶端指定中繼伺服器。客戶端指定的中繼伺服器優先級高於這個。
 
 {{% /notice %}}
 
@@ -61,8 +61,8 @@ hhbs的`-r`參數不是必須的，他只是方便你不用在客戶端指定中
 #### Docker示範
 ```
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> 
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr 
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr
 ```
 
 <a name="net-host"></a>
@@ -76,11 +76,11 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --n
 
 ### 步驟3: 在客戶端設置 hbbs/hbbr 地址
 
-點擊 ID 右側的菜單按鈕如下，選擇“ ID/中繼服務器”。
+點擊 ID 右側的選單按鈕如下，選擇“ ID/中繼伺服器”。
 
 ![](/docs/en/self-host/install/images/server-set-menu.png)
 
-在 ID 服務器輸入框中（被控端+主控端）輸入 hbbs 主機或 ip 地址，另外兩個地址可以不填，RustDesk會自動推導（如果沒有特別設定），中繼服務器指的是hbbr（21117）端口。
+在 ID 伺服器輸入框中（被控端+主控端）輸入 hbbs 主機或 ip 地址，另外兩個地址可以不填，RustDesk會自動推導（如果沒有特別設定），中繼伺服器指的是hbbr（21117）端口。
 
 例如:
 
