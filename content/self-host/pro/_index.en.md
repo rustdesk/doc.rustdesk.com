@@ -20,7 +20,7 @@ RustDesk client >=1.2.0 required
 
 ## Download
 
-[https://github.com/rustdesk/rustdesk-server-pro/releases/tag/1.1.8](https://github.com/rustdesk/rustdesk-server-pro/releases/tag/1.1.8)
+[https://github.com/rustdesk/rustdesk-server-pro/releases/latest](https://github.com/rustdesk/rustdesk-server-pro/releases/latest)
 
 ## Installation
 
