@@ -16,7 +16,7 @@ It is possible to build RustDesk Android on **Windows** and **macOS** but this i
 
 Here you will learn how to prepare your environment to such an extent that you will be able to successfully build the application and enable yourself to work on the code through, for example, Android Studio.
 
-This tutorial is based on latest working workflow file, to ensuree that everything will just works. If you encounter any problems feel free to contact us on our [Discord](https://discord.com/invite/nDceKgxnkV) or by other communication channel.
+This tutorial is based on latest working workflow file, to ensure that everything will just works. If you encounter any problems feel free to contact us on our [Discord](https://discord.com/invite/nDceKgxnkV) or by other communication channel.
 
 It is possible to build, run end edit Android version on Windows, but it requires patched `flutter` directory.
 
@@ -131,7 +131,7 @@ pushd $HOME
 sudo wget https://github.com/rustdesk/doc.rustdesk.com/releases/download/console/dep.tar.gz
 sudo tar xzf dep.tar.gz
 popd
-``` 
+```
 
 ### Disabling Flutter Rust Bridge build
 You'll might need to disable building Flutter Rust Bridge from `build.rs` file, you can do it by running:

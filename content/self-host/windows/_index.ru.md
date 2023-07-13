@@ -5,9 +5,9 @@ weight: 20
 
 
 
-### Установка NodeJS
-Скачайте [NodeJS](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi) и установите.
-NodeJS - это среда исполнения для pm2。
+### Установка Node.js
+Скачайте [Node.js](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi) и установите.
+Node.js - это среда исполнения для pm2。
 
 ### Установка pm2
 В консоли (cmd, PowerShell, и т.п.) используйте команды:

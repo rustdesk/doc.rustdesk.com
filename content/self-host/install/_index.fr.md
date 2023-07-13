@@ -45,8 +45,8 @@ Vous devez avoir installé Docker/Podman afin d'exécuter un serveur Rustdesk en
 ### Exemples avec Docker
 ```bash
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> 
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr 
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr
 ```
 <a name="net-host"></a>
 
@@ -130,21 +130,21 @@ Les exigences matérielles sont très faibles. La configuration minimale d'un se
 Exécutez hbbs/hbbr sur votre serveur (CentOS ou Ubuntu). Nous vous suggérons d'utiliser [pm2](https://pm2.keymetrics.io/) pour gérer votre service.
 
 ```bash
-./hbbs -r <relay-server-ip[:port]> 
-./hbbr 
+./hbbs -r <relay-server-ip[:port]>
+./hbbr
 ```
 
 #### Option 2 - pm2
 Exécutez hbbs/hbbr avec pm2
 
 ```bash
-pm2 start hbbs -- -r <relay-server-ip[:port]> 
-pm2 start hbbr 
+pm2 start hbbs -- -r <relay-server-ip[:port]>
+pm2 start hbbr
 ```
 
 <a name="demo"></a>
 {{% notice note %}}
-pm2 nécessite NodeJS v16+, si vous ne parvenez pas à exécuter pm2 (par exemple, vous ne pouvez pas voir `hbbs`/`hbbr` dans `pm2 list`), veuillez télécharger et installer la version NodeJS LTS à partir de https://nodejs.org. Si vous souhaitez que `hbbs`/`hbbr` s'exécute automatiquement après le redémarrage, veuillez vous référer à `pm2 save` et `pm2 startup`. En savoir plus sur [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Un autre bon outil pour vos journaux est [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
+pm2 nécessite Node.js v16+, si vous ne parvenez pas à exécuter pm2 (par exemple, vous ne pouvez pas voir `hbbs`/`hbbr` dans `pm2 list`), veuillez télécharger et installer la version Node.js LTS à partir de https://nodejs.org. Si vous souhaitez que `hbbs`/`hbbr` s'exécute automatiquement après le redémarrage, veuillez vous référer à `pm2 save` et `pm2 startup`. En savoir plus sur [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Un autre bon outil pour vos journaux est [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
 
 Le paramètre `-r` de `hbbs` n'est pas obligatoire, il est juste pratique pour ne pas avoir à spécifier de serveur relais côté client contrôlé. Vous n'avez pas besoin de spécifier le port si vous utilisez le port 21117 par défaut. Le serveur relais spécifié par le client est prioritaire sur ce paramètre.
 {{% /notice %}}
@@ -199,7 +199,7 @@ Si vous n'avez pas rempli la clé `Key:` (avec le contenu du fichier de clé pub
 cat ./id_ed25519.pub
 ````
 
-Si vous souhaitez interdire aux utilisateurs sans clé d\'établir des connexions non chiffrées, veuillez ajouter le paramètre `-k _` lors de l\'exécution de 
+Si vous souhaitez interdire aux utilisateurs sans clé d\'établir des connexions non chiffrées, veuillez ajouter le paramètre `-k _` lors de l\'exécution de
 `hbbs` et `hbbr`, par exemple :
 ```bash
 ./hbbs -r <relay-server-ip[:port]> -k _

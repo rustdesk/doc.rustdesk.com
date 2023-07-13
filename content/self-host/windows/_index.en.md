@@ -4,13 +4,13 @@ weight: 20
 ---
 
 ## A cross roads
-You now either have two choices, you can either use pm2 (easier) or NSSM (a bit harder) to start the rustdesk server
+You now either have two choices, you can either use pm2 (easier) or NSSM (a bit harder) to start the RustDesk server
 There are some benefits to using NSSM:
-- Backwards compatibility with older windows (Windows Server 2008R2/Windows 7 and earlier although untested).
+- Backwards compatibility with older Windows (Windows Server 2008R2/Windows 7 and earlier although untested).
 - Ideal for Windows Server
 - Auto start on boot without login (The user who created the startup entry does not need to log on for it to start).
 - Running both binaries as Services.
-- Standalone (no dependency on nodejs)
+- Standalone (no dependency on Node.js)
 
 While the benefits of pm2 include:
 - Good idea if you run the server on the same computer as your main work computer
@@ -20,25 +20,25 @@ While the benefits of pm2 include:
 ## Installing using NSSM
 
 ### Installing NSSM
-Please [download](https://nssm.cc/release/nssm-2.24.zip) and extract NSSM select the appropriate 
-architecture to your windows system (if x86 use the contents of the win32 folder, if x64 use the 
-contents of win64 folder). It is also best practice to move the binary of NSSM into the 
+Please [download](https://nssm.cc/release/nssm-2.24.zip) and extract NSSM select the appropriate
+architecture to your Windows system (if x86 use the contents of the win32 folder, if x64 use the
+contents of win64 folder). It is also best practice to move the binary of NSSM into the
 `Program Files\NSSM` (NSSM once started as a service, it cannot be moved from the directory it was placed in.
-thus it is best to tuck it away in Program files) directory of your Installation drive (Usually the C drive). 
-It is also advisable to add the path (such as `C:\Program Files\NSSM`) to the path variable. 
+thus it is best to tuck it away in Program files) directory of your Installation drive (Usually the C drive).
+It is also advisable to add the path (such as `C:\Program Files\NSSM`) to the path variable.
 
 
 ### Checking if NSSM is installed properly
-If you've done everything correctly the folder `C:\Program Files\NSSM` (in this example I use the C: 
-drive but you can use whatever drive you installed windows to or whatever path you desire) should 
-only contain the file `nssm.exe`. 
+If you've done everything correctly the folder `C:\Program Files\NSSM` (in this example I use the C:
+drive but you can use whatever drive you installed Windows to or whatever path you desire) should
+only contain the file `nssm.exe`.
 
 We will be using `C:\Program Files\NSSM` in this example
 
 Open Command prompt and run `nssm` if you see a help page you are ready to move onto the next step
 
 ### Run hbbr and hbbs
-Download the Windows version of [server program](https://github.com/rustdesk/rustdesk-server/releases). 
+Download the Windows version of [server program](https://github.com/rustdesk/rustdesk-server/releases).
 Unzip the program to the `C:\Program Files\RustDesk Server` (or anywhere you desire just make sure it
 doesn't change after the service is installed). now get back to Command prompt
 
@@ -50,8 +50,8 @@ nssm install "RustDesk hbbr Service" "C:\Program Files\RustDesk Server\hbbr.exe"
 **Note:**
 - You can change `RustDesk hbbs service` to whatever you desire to name hbbs the service
 - You can change `RustDesk hbbr service` to whatever you desire to name hbbr the service
-- You can change `C:\Program Files\RustDesk Server\hbbs.exe` to wherever you placed the rustdesk binaries
-- You can change `C:\Program Files\RustDesk Server\hbbr.exe` to wherever you placed the rustdesk binaries
+- You can change `C:\Program Files\RustDesk Server\hbbs.exe` to wherever you placed the RustDesk binaries
+- You can change `C:\Program Files\RustDesk Server\hbbr.exe` to wherever you placed the RustDesk binaries
 - You do not need the `-k _` option which is optional, it's just for better security
 
 **Command templates:**
@@ -64,14 +64,14 @@ nssm install <Desired hbbr servicename> <RustDesk hbbr binary path> <RustDesk hb
 ```
 
 **Start services**
-After successful instalationof services they need to be started.
+After successful installation of services, they need to be started.
 ```cmd
 nssm start <Desired hbbs servicename>
 nssm start <Desired hbbr servicename>
 ```
 
 
-**Done !**
+**Done!**
 
 (The method above has been tested on Windows Server Core 2022 Standard).
 
@@ -79,10 +79,10 @@ nssm start <Desired hbbr servicename>
 
 ## Installing using pm2
 
-### Install NodeJs
+### Install Node.js
 
-Please [download](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi) and install NodeJS.
-NodeJs is the runtime environment of pm2, so you need to install NodeJs first。
+Please [download](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi) and install Node.js.
+Node.js is the runtime environment of pm2, so you need to install Node.js first。
 
 ### Install pm2
 
@@ -101,7 +101,7 @@ Download the Windows version of [server program](https://github.com/rustdesk/rus
 ```cmd
 cd c:\rustdesk-server-windows-x64
 pm2 start hbbs.exe -- -r <The host where hbbr is running>
-pm2 start hbbr.exe 
+pm2 start hbbr.exe
 pm2 save
 ```
 

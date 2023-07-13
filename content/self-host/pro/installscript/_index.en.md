@@ -4,7 +4,7 @@ weight: 10
 ---
 
 {{% notice note %}}
-Don't forget to get your license from https://rustdesk.com/pricing.html, check license page for more details.
+Don't forget to get your license from https://rustdesk.com/pricing.html, check [license](/docs/en/self-host/pro/license) page for more details.
 {{% /notice %}}
 
 ## Install
@@ -14,7 +14,7 @@ Copy and paste the above command into your linux terminal to install RustDesk Se
 
 What it does:
 
-- Install some dependencys
+- Install some dependencies
 - Setup ufw firewall if available
 - Create a Folders /var/lib/rustdesk-server and /var/log/rustdesk-server
 - Installs executables into /usr/bin
@@ -30,7 +30,7 @@ Copy and paste the above command into your linux terminal to upgrade your existi
 What it does:
 
 - Checks for new versions of RustDesk-Server-Pro
-- If it finds a new version it, removes the API files and downloads new executables and API files
+- If it finds a new version, it removes the API files and downloads new executables and API files
 
 ## Convert from Opensource
 
@@ -38,10 +38,10 @@ Copy and paste the above command into your linux terminal to convert from RustDe
 
 `bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/convertfromos.sh)`
 
-What it does: 
+What it does:
 
 - Disable and removes the old services
-- Install some dependencys
+- Install some dependencies
 - Setup ufw firewall if available
 - Create a Folder /var/lib/rustdesk-server and copy the certs here
 - Delete /var/log/rustdesk and create /var/log/rustdesk-server

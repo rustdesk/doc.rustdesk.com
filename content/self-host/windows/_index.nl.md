@@ -20,25 +20,25 @@ Terwijl de voordelen van pm2 zijn:
 ## Installeren met NSSM
 
 ### NSSM Installeren
-Ga naar [download](http://nssm.cc/release/nssm-2.24.zip) en pak NSSM uit, selecteer de juiste 
-architectuur van uw Windows systeem ( indien x86, gebruik de inhoud van de win32 map, indien x64, gebruik de 
-inhoud van de win64-map). Het is ook het beste om de bestanden van NSSM in de map 
+Ga naar [download](http://nssm.cc/release/nssm-2.24.zip) en pak NSSM uit, selecteer de juiste
+architectuur van uw Windows systeem ( indien x86, gebruik de inhoud van de win32 map, indien x64, gebruik de
+inhoud van de win64-map). Het is ook het beste om de bestanden van NSSM in de map
 `Program Files\NSSM` (als NSSM als service is gestart, kan het niet meer verplaatst worden uit de map waarin het is geplaatst.
-U kunt het dus het beste onderbrengen in de map Program files) van uw installatiestation (meestal station C). 
+U kunt het dus het beste onderbrengen in de map Program files) van uw installatiestation (meestal station C).
 Het is ook raadzaam om het path (zoals `C:\Program Files\NSSM`) toe te voegen aan de path variabele.
 
 ### Controleren of NSSM goed is aangemaakt
-Als je alles goed hebt gedaan moet de map `C:\Program Files\NSSM` (in dit voorbeeld gebruik ik de C: 
-schijf, maar je kunt de schijf gebruiken waarop je Windows hebt staan of welk ander path je wilt). 
-alleen het bestand `nssm.exe` bevatten. 
+Als je alles goed hebt gedaan moet de map `C:\Program Files\NSSM` (in dit voorbeeld gebruik ik de C:
+schijf, maar je kunt de schijf gebruiken waarop je Windows hebt staan of welk ander path je wilt).
+alleen het bestand `nssm.exe` bevatten.
 
 In dit voorbeeld gebruiken we `C:\Program Files\NSSM`.
 
 Open het Commando prompt (CMD) en voer `nssm` uit, als je een help pagina ziet bent je klaar om naar de volgende stap te gaan
 
 ### Voer hbbr en hbbs uit
-Download de Windows versie van het [serverprogramma] (https://github.com/rustdesk/rustdesk-server/releases). 
-Unzip het programma naar `C:\Program Files\RustDesk Server` (of waar je maar wilt, zorg ervoor dat 
+Download de Windows versie van het [serverprogramma] (https://github.com/rustdesk/rustdesk-server/releases).
+Unzip het programma naar `C:\Program Files\RustDesk Server` (of waar je maar wilt, zorg ervoor dat
 het niet verandert nadat de service is ingesteld). Ga nu terug naar de Command prompt
 
 In dit voorbeeld gebruiken we `C:\Program Files\RustDesk Server`.
@@ -80,7 +80,7 @@ nssm start <Desired hbbr servicename>
 
 ### Installeer NodeJs
 
-Ga naar [download](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi) en installeer NodeJS.
+Ga naar [download](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi) en installeer Node.js.
 NodeJs is de runtime-omgeving van pm2, dus u moet NodeJs eerst installeren。
 
 ### Installeer pm2
@@ -100,7 +100,7 @@ Download de Windows-versie van het [serverprogramma] (https://github.com/rustdes
 ```cmd
 cd c:\rustdesk-server-windows-x64
 pm2 start hbbs.exe -- -r <De host waar hbbr draait>
-pm2 start hbbr.exe 
+pm2 start hbbr.exe
 pm2 save
 ```
 

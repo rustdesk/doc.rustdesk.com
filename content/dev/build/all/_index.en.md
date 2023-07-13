@@ -4,7 +4,7 @@ weight: 35
 ---
 
 {{% notice note %}}
-This build uses github actions, you will need a github account, also building can be slow, however this requires no development environment.
+This build uses GitHub Actions, you will need a GitHub account, also building can be slow, however this requires no development environment.
 {{% /notice %}}
 
 ## Make a fork
@@ -49,6 +49,6 @@ Scroll down and under Workflow permissions enable "Read and write permissions".
 
 ## Download your built packages
 
-After the workflow is done running you can download the packages it built. 
+After the workflow is done running you can download the packages it built.
 
 Goto the main page of your fork, on the right click "Releases". The packages you just built will show up under "Nightly".
