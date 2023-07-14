@@ -1,5 +1,5 @@
 ---
-title: Web 
+title: Web
 weight: 23
 ---
 
@@ -9,8 +9,8 @@ Run below on Linux or Mac (works on Windows too, however you may need to slightl
 
 ```sh
 git clone https://github.com/JelleBuning/rustdesk.git
-cd rustdesk 
-git switch fix_build 
+cd rustdesk
+git switch fix_build
 cd flutter/web/js
 
 # Install protoc first, see: https://google.github.io/proto-lens/installing-protoc.html
@@ -40,7 +40,7 @@ flutter run -d chrome
 
 ## How to build release on Linux
 
-If you want to host the webclient you should build a release before running it on a webserver. 
+If you want to host the web client you should build a release before running it on a web server.
 To do so follow the steps shown above except the `flutter run -d chrome` command. Continue with the following commands:
 
 ```sh
@@ -50,9 +50,9 @@ cd build/web
 python -m http.server 8000
 ```
 
-To configure the build on HTTPS we would recommend following the instructions from the following source: https://medium.com/flutter-community/how-to-host-flutter-using-nginx-a71bcb11d96
+To configure the build on HTTPS we would recommend following the instructions from the following [source](https://medium.com/flutter-community/how-to-host-flutter-using-nginx-a71bcb11d96).
 
-> Currently, yuv converter and vp9 are the bottleneck
+> Currently, yuv converter and vp9 are the bottleneck.
 
 ## How to build with Docker
 
@@ -62,7 +62,7 @@ Run below on Linux or Mac:
 
 ```sh
 git clone https://github.com/JelleBuning/rustdesk.git
-cd rustdesk 
+cd rustdesk
 git switch fix_build
 cd flutter/web/js
 
@@ -85,13 +85,13 @@ yarn build
 # Install operating system and dependencies
 FROM ubuntu:20.04
 
-ENV DEBIAN_FRONTEND=noninteractive 
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update 
+RUN apt-get update
 RUN apt-get install -y curl git wget unzip libgconf-2-4 gdb libstdc++6 libglu1-mesa fonts-droid-fallback lib32stdc++6 python3 clang cmake ninja-build pkg-config libgtk-3-dev
 RUN apt-get clean
 
-# Download Flutter SDK from Flutter Github repo
+# Download Flutter SDK from Flutter GitHub repo
 RUN git clone https://github.com/flutter/flutter.git /usr/local/flutter
 
 # Set flutter environment path
@@ -107,7 +107,7 @@ RUN flutter config --enable-web
 
 # Copy files to container and build
 RUN mkdir /app/
-# I was unable to build web app from dockerfile 
+# I was unable to build web app from dockerfile
 # So instead I built it locally and commented the "flutter build web" in this file
 COPY . /app/
 WORKDIR /app/
@@ -159,7 +159,7 @@ docker run -p 5000:5000 rustdesk-web-client
 
 ### RustDesk Web Client using existing Docker image
 
-If you do not want to build the docker image yourself, you can use the image I built and uploaded to [Docker Hub](https://hub.docker.com/r/keyurbhole/flutter_web_desk)
+If you do not want to build the docker image yourself, you can use the image I built and uploaded to [Docker Hub](https://hub.docker.com/r/keyurbhole/flutter_web_desk).
 
 - Pull the image:
 
