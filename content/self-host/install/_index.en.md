@@ -4,12 +4,12 @@ weight: 10
 ---
 
 ## Install your own server using a simple to run install script
-Script is hosted on https://github.com/techahold/rustdeskinstall and supported on our [Discord](https://discord.com/invite/nDceKgxnkV).
+Script is hosted on [Techahold](https://github.com/techahold/rustdeskinstall) and supported on our [Discord](https://discord.com/invite/nDceKgxnkV).
 
 Currently the script will download and setup the Relay and Signal Servers (hbbr and hbbs), generate configs and host them on a password protected web page for simple deployment to clients.
 
 ### Requirements
-You need to have linux installed, script is tested working with CentOS Linux 7/8, Ubuntu 18/20 and Debian. A server with 1 CPU, 1 GB and 10 GB disk is plenty to run RustDesk.
+You need to have Linux installed, script is tested working with CentOS Linux 7/8, Ubuntu 18/20 and Debian. A server with 1 CPU, 1 GB and 10 GB disk is plenty to run RustDesk.
 
 #### How to Install the server
 Please setup your firewall on your server prior to running the script.
@@ -19,7 +19,7 @@ Make sure you have got access via ssh or otherwise setup prior setting up the fi
 ufw allow proto tcp from YOURIP to any port 22
 ```
 
-#### If you have UFW installed use the following commands to configure the firewall (port 8000 only needed if you want to use the auto generated install files) :
+#### If you have UFW installed use the following commands to configure the firewall (port 8000 only needed if you want to use the auto generated install files):
 ```
 ufw allow 21115:21119/tcp
 ufw allow 8000/tcp
@@ -33,7 +33,7 @@ wget https://raw.githubusercontent.com/techahold/rustdeskinstall/master/install.
 chmod +x install.sh
 ./install.sh
 ```
-There is also an update script on [Techahold's](https://github.com/techahold/rustdeskinstall) Repo.
+There is also an update script on [Techahold's](https://github.com/techahold/rustdeskinstall) repository.
 
 ## Install your own server with docker(-compose)
 
@@ -59,8 +59,8 @@ If `--net=host` works fine, the `-p` options are not used. If on Windows, leave 
 If you can not see logs with `-td`, you can see logs via `docker logs hbbs`. Or you can run with `-it`, `hbbs/hbbr` will not run as daemon mode.
 {{% /notice %}}
 
-### Docker-Compose examples
-For running the docker files with the docker-compose.yml as described here you need to have [**docker-compose**](https://docs.docker.com/compose/) installed.
+### Docker Compose examples
+For running the docker files with the `docker-compose.yml` as described here you need to have [**Docker Compose**](https://docs.docker.com/compose/) installed.
 ```yaml
 version: '3'
 
@@ -100,10 +100,9 @@ services:
     restart: unless-stopped
 ```
 
-
 ## Set up your own server instance without using Docker
 
-### STEP 1 : Download server-side software programs
+### STEP 1: Download server-side software programs
 
 [Download](https://github.com/rustdesk/rustdesk-server/).
 
@@ -125,7 +124,7 @@ They are built on CentOS Linux 7, tested on CentOS Linux 7/8 and Ubuntu 18/20.
 
 The hardware requirements are very low; the minimum configuration of a basic cloud server is enough, and the CPU and memory requirements are minimal. You can also use a Raspberry Pi or something similar. Regarding the network size, if the TCP hole punching direct connection fails, the relay traffic will be consumed. The traffic of a relay connection is between 30k-3M/s (1920x1080 screen) depending on the resolution settings and screen update. If it is only for office work demand, the traffic is around 100K/s.
 
-### STEP 2 : Run hbbs and hbbr on your server
+### STEP 2: Run hbbs and hbbr on your server
 
 We suggest you use [pm2](https://pm2.keymetrics.io/) for managing your service.
 
@@ -159,7 +158,7 @@ By default, `hbbs` listens on 21115 (TCP) and 21116 (TCP/UDP), 21118 (TCP), and 
 
 Please run with the `-h` option to see help if you want to choose your own port.
 
-### STEP 3 : Set hbbs/hbbr address on client-side
+### STEP 3: Set hbbs/hbbr address on client-side
 
 Click on the Menu button [ &#8942; ] on the right side of ID as shown below, and choose "ID/Relay Server".
 
@@ -198,7 +197,7 @@ repeat this process until you get valid characters.
 
 | Menu | About Page |
 | -- | -- |
-![](/docs/en/self-host/install/images/aboutmenu.png) | ![](/docs/en/self-host/install/images/lic.png) |
+| ![](/docs/en/self-host/install/images/aboutmenu.png) | ![](/docs/en/self-host/install/images/lic.png) |
 
 ## Key
 
@@ -220,7 +219,7 @@ If you want to prohibit users without the key from establishing non-encrypted co
 If you want to change the key, remove the `id_ed25519` and `id_ed25519.pub` files and restart `hbbs`/`hbbr`，`hbbs` will generate a new key pair.
 
 {{% notice note %}}
-If you are using docker-compose and keys don't exist, the start of containers will create differents keys in hbbs and hbbr folders.
+If you are using docker-compose and keys don't exist, the start of containers will create different keys in hbbs and hbbr folders.
 
 You could create keys manually in hbbs and copy them to hbbr before starting the containers.
 
