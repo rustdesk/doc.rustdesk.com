@@ -5,7 +5,7 @@ weight: 15
 
 ## Buy license
 
-Please get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), enter a valid email address in the Stripe checkout page. The license will be sent to your email once payment is done successfully.
+Please get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), enter a valid email address in the Stripe checkout page. The license (and with the invoice) will be sent to your email once payment is done successfully.
 
 ![](/docs/en/self-host/pro/license/images/stripe.jpg)
 
