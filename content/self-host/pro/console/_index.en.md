@@ -26,16 +26,4 @@ Non-administrator users can also login to browser their device and logs, change 
 
 ## Windows EXE
 
-For Windows clients, you can leave out the custom server configuration and put the configuration information in the `RustDesk.exe` filename instead. As shown above, please go to the console welcome page and click on `Windows EXE`. **`Client >= 1.1.9 required`**。
-
-## Device access permissions
-
-There are two ways to associate a device with a user:
-- Via console device page
-- Log in to the specified user account on the client side
-
-The following two situations will prevent the device from being accessed:
-- Make device `disabled` in console devices page
-- Make user `disable` in console user page
-
-The associated device can only be accessed by user devices of the same user or user group, or in correct cross-group settings.
+For Windows clients, you can leave out the custom server configuration and put the configuration information in the `RustDesk.exe` filename instead. As shown above, please go to the console welcome page and click on `Windows EXE`. **`Client >=1.1.9 Required`**。

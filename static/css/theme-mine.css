@@ -22,3 +22,34 @@ a.padding i.fa-language{
     color: var(--MENU-SEARCH-BOX-color);
     border-bottom: 1px solid var(--MENU-SECTION-HR-color);
 }
+
+a {
+  color: #024eff;
+}
+
+body {
+  color: rgb(28, 30, 33) !important;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 400;
+}
+
+li > a {
+  color: #606770;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+  color: black !important;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+div.notices p {
+  color: black !important;
+}
+
+#sidebar h3 {
+  color: white !important;
+}

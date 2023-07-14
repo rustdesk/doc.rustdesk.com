@@ -28,16 +28,3 @@ weight: 10
 ## Windows EXE
 
 For Windows clients, you can leave out the custom server configuration and put the configuration information in the `RustDesk.exe` filename instead. As shown above, please go to the console welcome page and click on `Windows EXE`. **`Client >=1.1.9 Required`**。
-
-## 裝置存取權限
-
-若要將裝置與使用者關聯，有兩種方法：
-
-- 透過控制台裝置頁面
-- 在客戶端登入指定的使用者帳號
-
-以下兩種情況將使裝置無法存取：
-- 在控制台的裝置頁面停用裝置
-- 在控制台的使用者頁面停用使用者
-
-關聯裝置僅能被同使用者或使用者群組的裝置存取，或擁有正確的跨群組設定。
