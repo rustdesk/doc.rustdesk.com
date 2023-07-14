@@ -5,17 +5,17 @@ weight: 100
 
 Self-host Pro is built on the open source version, but with more features.
 
-- OIDC, ldap, 2FA (email verification)
+- OIDC, LDAP, 2FA (email verification)
 - Address book
-- Rename 
+- Rename
 - Log management
-- Device managment
+- Device management
 - Settings sync
 - Permission control
 - Multiple relay servers (automatically selects your closest relay)
 
 {{% notice note %}}
-RustDesk client >=1.2.0 required
+RustDesk client >= 1.2.0 required
 {{% /notice %}}
 
 ## Download
@@ -26,13 +26,14 @@ RustDesk client >=1.2.0 required
 
 ### Simple Install
 
-To make life easy, we have developed scripts which take care of everything (install/upgrade/convert from opensource) [Simple Install Script](https://rustdesk.com/docs/en/self-host/pro/installscript/)
+To make life easy, we have developed scripts which take care of everything (install/upgrade/convert from open source) [Simple Install Script](https://rustdesk.com/docs/en/self-host/pro/installscript/).
 
 {{% notice note %}}
 Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/pro/license) page for more details.
 {{% /notice %}}
 
 ### Manual Installation
+
 Almost as the same as [the open source version](/docs/en/self-host/install/), but you do not need to run hbbs/hbbr with any arguments, all can be set later in web console.
 
 - `-k _` is set by default
@@ -40,4 +41,4 @@ Almost as the same as [the open source version](/docs/en/self-host/install/), bu
 
 ### One more port (or use a proxy)
 
-One more tcp port `21114` is added for web console, please also add this port when you set firewall rules and docker port mapping.
+One more TCP port `21114` is added for web console, please also add this port when you set firewall rules and docker port mapping.
