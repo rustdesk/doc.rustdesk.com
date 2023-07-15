@@ -35,6 +35,10 @@ chmod +x install.sh
 ```
 There is also an update script on [Techahold's](https://github.com/techahold/rustdeskinstall) repository.
 
+## Install your own server as systemd service using deb file for debian distros
+
+Please [Download](https://github.com/rustdesk/rustdesk-server/releases/latest) deb files yourself and install.
+
 ## Install your own server with docker(-compose)
 
 ### Requirements
