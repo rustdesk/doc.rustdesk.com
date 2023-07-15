@@ -1,10 +1,10 @@
 ---
-title: Installation 
+title: Installation
 weight: 10
 ---
 
-## Installieren Sie Ihren eigenen Server mit einem einfach auszuführenden Installationsskript
-Das Skript wird auf https://github.com/techahold/rustdeskinstall gehostet und auf unserem [Discord](https://discord.com/invite/nDceKgxnkV) unterstützt.
+## Installieren Sie Ihren eigenen Server als Dienst systemd mit einem einfach auszuführenden Installationsskript
+Das Skript wird auf [Techahold](https://github.com/techahold/rustdeskinstall) gehostet und auf unserem [Discord](https://discord.com/invite/nDceKgxnkV) unterstützt.
 
 Derzeit lädt das Skript die Relay- und Signal-Server (hbbr und hbbs) herunter und richtet sie ein, generiert Konfigurationen und hostet sie auf einer passwortgeschützten Webseite für die einfache Bereitstellung an Clients.
 
@@ -14,7 +14,7 @@ Sie müssen Linux installiert haben, das Skript wurde mit CentOS Linux 7/8, Ubun
 #### So installieren Sie den Server
 Bitte richten Sie Ihre Firewall auf Ihrem Server ein, bevor Sie das Skript ausführen.
 
-Stellen Sie sicher, dass Sie über ssh oder auf andere Weise Zugang haben, bevor Sie die Firewall einrichten. Die Beispielbefehle für UFW (Debian-basiert) lauten:
+Stellen Sie sicher, dass Sie über SSH oder auf andere Weise Zugang haben, bevor Sie die Firewall einrichten. Die Beispielbefehle für UFW (Debian-basiert) lauten:
 ```
 ufw allow proto tcp from YOURIP to any port 22
 ```
@@ -33,7 +33,11 @@ wget https://raw.githubusercontent.com/techahold/rustdeskinstall/master/install.
 chmod +x install.sh
 ./install.sh
 ```
-Es gibt auch ein Update-Skript auf Techaholds Repository.
+Es gibt auch ein Update-Skript auf [Techaholds](https://github.com/techahold/rustdeskinstall) Repository.
+
+## Installieren Sie Ihren eigenen Server als Dienst systemd mit einer .deb-Datei für Debian-Distributionen
+
+Bitte laden Sie die [.deb-Dateien](https://github.com/rustdesk/rustdesk-server/releases/latest) selbst herunter und installieren Sie sie mit `apt-get -f install <Dateiname>.deb` oder `dpkg -i <Dateiname>.deb`.
 
 ## Installieren Sie Ihren eigenen Server mit Docker (Compose)
 
@@ -43,8 +47,8 @@ Sie müssen Docker/Podman installiert haben, um einen RustDesk-Server als Docker
 ### Docker-Beispiele
 ```bash
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> 
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr 
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr
 ```
 <a name="net-host"></a>
 
@@ -55,8 +59,12 @@ Wenn `--net=host` gut funktioniert, wird die Option `-p` nicht verwendet. Wenn S
 **Bitte entfernen Sie `--net=host`, wenn Sie Verbindungsprobleme auf Ihrer Plattform haben.**
 {{% /notice %}}
 
+{{% notice note %}}
+Sie können die Protokolle mit `docker logs hbbs` ansehen, wenn sie mit `-td` nicht zu sehen sind. Oder Sie können mit `-it` arbeiten, `hbbs/hbbr` wird nicht im Daemon-Modus laufen.
+{{% /notice %}}
+
 ### Docker Compose-Beispiele
-Um die Dockerdateien mit der docker-compose.yml wie hier beschrieben ausführen zu können, müssen Sie [Docker Compose](https://docs.docker.com/compose/) installiert haben.
+Um die Dockerdateien mit `docker-compose.yml` wie hier beschrieben ausführen zu können, müssen Sie [Docker Compose](https://docs.docker.com/compose/) installiert haben.
 ```yaml
 version: '3'
 
@@ -96,12 +104,11 @@ services:
     restart: unless-stopped
 ```
 
-
 ## Richten Sie Ihre eigene Serverinstanz ein, ohne Docker zu verwenden
 
 ### Schritt 1: Server-Software herunterladen
 
-[Herunterladen](https://github.com/rustdesk/rustdesk-server/)
+[Herunterladen](https://github.com/rustdesk/rustdesk-server/releases/latest)
 
 Verfügbare Plattformversionen:
 
@@ -194,17 +201,17 @@ Möglicherweise müssen Sie diesen Vorgang wiederholen, bis Sie gültige Zeichen
 
 | Menü | Über-Seite |
 | -- | -- |
-![](/docs/en/self-host/install/images/aboutmenu.png) | ![](/docs/en/self-host/install/images/lic.png) |
+| ![](/docs/en/self-host/install/images/aboutmenu.png) | ![](/docs/en/self-host/install/images/lic.png) |
 
 ### Schlüssel
 
-Anders als in der alten Version ist der Schlüssel in dieser Version obligatorisch, aber Sie brauchen ihn nicht selbst zu setzen. Wenn `hbbs` zum ersten Mal ausgeführt wird, erzeugt es automatisch ein Paar verschlüsselter privater und öffentlicher Schlüssel (die sich jeweils in den Dateien `id_ed25519` und `id_ed25519.pub` im aktuellen Verzeichnis befinden), deren Hauptzweck in der Verschlüsselung der Kommunikation besteht.
+Anders als in der alten Version ist der Schlüssel in dieser Version obligatorisch, aber Sie brauchen ihn nicht selbst zu setzen. Wenn `hbbs` zum ersten Mal ausgeführt wird, erzeugt es automatisch ein Paar verschlüsselter privater und öffentlicher Schlüssel (die sich jeweils in den Dateien `id_ed25519` und `id_ed25519.pub` im aktuellen Ordner befinden), deren Hauptzweck in der Verschlüsselung der Kommunikation besteht.
 
 Wenn Sie `Key:` (mit dem Inhalt der öffentlichen Schlüsseldatei `id_ed25519.pub`) im vorherigen Schritt nicht ausgefüllt haben, hat dies keine Auswirkungen auf die Verbindung, aber diese kann nicht verschlüsselt werden.
 
 ```bash
 cat ./id_ed25519.pub
-````
+```
 
 Wenn Sie Benutzern ohne den Schlüssel den Aufbau unverschlüsselter Verbindungen verbieten wollen, fügen Sie bitte den Parameter `-k _` hinzu, wenn Sie z. B. `hbbs` und `hbbr` ausführen:
 
@@ -213,7 +220,7 @@ Wenn Sie Benutzern ohne den Schlüssel den Aufbau unverschlüsselter Verbindunge
 ./hbbr -k _
 ```
 
-Wenn Sie den Schlüssel ändern wollen, entfernen Sie die Dateien `id_ed25519` und `id_ed25519.pub` und starten Sie `hbbs`/`hbbr`，`hbbs` wird ein neues Schlüsselpaar erzeugen.
+Wenn Sie den Schlüssel ändern wollen, entfernen Sie die Dateien `id_ed25519` und `id_ed25519.pub` und starten Sie `hbbs`/`hbbr`, `hbbs` wird ein neues Schlüsselpaar erzeugen.
 
 {{% notice note %}}
 Wenn Sie Docker Compose verwenden und die Schlüssel nicht vorhanden sind, werden beim Start der Container unterschiedliche Schlüssel in den Ordnern hbbs und hbbr erstellt.

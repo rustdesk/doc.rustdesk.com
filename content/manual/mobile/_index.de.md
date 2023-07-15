@@ -1,11 +1,11 @@
 ---
-title: Handy 
+title: Handy
 weight: 1
 ---
 
 ### Fernsteuerung
 
-Geben Sie die ID des entfernten Geräts auf der Startseite ein oder wählen Sie ein historisches Gerät zur Überprüfung aus. 
+Geben Sie die ID des entfernten Geräts auf der Startseite ein oder wählen Sie ein historisches Gerät zur Überprüfung aus.
 Nach erfolgreicher Überprüfung können Sie das entfernte Gerät steuern.
 
 | Startfenster | Erfolgreich verbunden |

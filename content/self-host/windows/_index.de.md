@@ -20,13 +20,13 @@ Die Vorteile von PM2 sind unter anderem:
 ## Installation mit NSSM
 
 ### Installation von NSSM
-Bitte laden Sie NSSM [herunter](https://nssm.cc/release/nssm-2.24.zip), extrahieren Sie es und wählen 
-Sie die entsprechende Architektur für Ihr Windows-System (für x86 verwenden Sie den Inhalt des 
-win32-Ordners, für x64 den Inhalt des win64-Ordners). Es ist auch sinnvoll, die Binärdatei von NSSM 
-nach `Program Files\NSSM` zu verschieben (Wenn NSSM einmal als Dienst gestartet wurde, kann es nicht 
-mehr aus dem Verzeichnis verschoben werden, in dem es abgelegt wurde). Daher ist es am besten, sie 
-im Verzeichnis "Program Files" Ihres Installationslaufwerks (in der Regel das Laufwerk C) zu verstauen.
-Es ist auch ratsam, den Pfad (z. B. `C:\Program Files\NSSM`) in die Pfadvariable aufzunehmen. 
+Bitte laden Sie [NSSM](https://nssm.cc/release/nssm-2.24.zip) herunter, extrahieren Sie es und wählen
+Sie die entsprechende Architektur für Ihr Windows-System (für x86 verwenden Sie den Inhalt des
+win32-Ordners, für x64 den Inhalt des win64-Ordners). Es ist auch sinnvoll, die Binärdatei von NSSM
+nach `Program Files\NSSM` zu verschieben (Wenn NSSM einmal als Dienst gestartet wurde, kann es nicht
+mehr aus dem Ordner verschoben werden, in dem es abgelegt wurde). Daher ist es am besten, sie
+im Ordner "Program Files" Ihres Installationslaufwerks (in der Regel das Laufwerk C) zu verstauen.
+Es ist auch ratsam, den Pfad (z. B. `C:\Program Files\NSSM`) in die Pfadvariable aufzunehmen.
 
 
 ### Prüfen, ob NSSM korrekt installiert ist
@@ -101,7 +101,7 @@ Laden Sie die Windows-Version von [RustDesk Server](https://github.com/rustdesk/
 ```cmd
 cd c:\rustdesk-server-windows-x64
 pm2 start hbbs.exe -- -r <Der Host, auf dem hbbr läuft>
-pm2 start hbbr.exe 
+pm2 start hbbr.exe
 pm2 save
 ```
 

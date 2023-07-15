@@ -1,10 +1,9 @@
 ---
-title: Mac 
+title: Mac
 weight: 3
 ---
 
 ### Installation
-------
 
 Öffnen Sie die .dmg-Datei und ziehen Sie `RustDesk` zu `Applications`, wie unten dargestellt.
 
@@ -18,7 +17,7 @@ Stellen Sie sicher, dass Sie alle laufenden RustDesk beendet haben. Stellen Sie 
 
 | Zum Ändern entsperren | Klicken Sie auf „App Store und identifizierte Entwickler“ |
 | ---- | ---- |
-|![](/docs/en/manual/mac/images/allow2.png)|![](/docs/en/manual/mac/images/allow.png)|
+| ![](/docs/en/manual/mac/images/allow2.png) | ![](/docs/en/manual/mac/images/allow.png) |
 
 ### Berechtigungen aktivieren
 
@@ -35,13 +34,13 @@ Um den Bildschirm aufzunehmen, müssen Sie `RustDesk` die Berechtigungen **Zugri
 
 | RustDesk-Fenster | Einstellungsfenster |
 | ---- | ---- |
-|![](/docs/en/manual/mac/images/acc.png)|![](/docs/en/manual/mac/images/acc3.png?v2)|
+| ![](/docs/en/manual/mac/images/acc.png) | ![](/docs/en/manual/mac/images/acc3.png?v2) |
 
 Wenn Sie es in den Einstellungen aktiviert haben, warnt RustDesk dennoch. Bitte entfernen Sie RustDesk aus dem Einstellungsfenster über die Schaltfläche `-` und klicken Sie auf die Schaltfläche `+`, um RustDesk unter `/Applications` auszuwählen.
 
 | Schaltfläche `+` und `-` | RustDesk auswählen |
 | ---- | ---- |
-|![](/docs/en/manual/mac/images/acc2.png)|![](/docs/en/manual/mac/images/add.png?v2)|
+| ![](/docs/en/manual/mac/images/acc2.png) | ![](/docs/en/manual/mac/images/add.png?v2) |
 
 Bitte kopieren Sie die obigen Schritte für die Berechtigung zur **Bildschirmaufnahme**.
 

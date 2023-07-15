@@ -1,10 +1,10 @@
 ---
-title: Github-Aktionen
+title: GitHub-Aktionen
 weight: 35
 ---
 
 {{% notice note %}}
-Diese Erstellung verwendet Github-Aktionen. Sie benötigen einen Github-Account. Außerdem kann die Erstellung langsam sein, dafür ist aber keine Entwicklungsumgebung erforderlich.
+Diese Erstellung verwendet GitHub-Aktionen. Sie benötigen einen GitHub-Account. Außerdem kann die Erstellung langsam sein, dafür ist aber keine Entwicklungsumgebung erforderlich.
 {{% /notice %}}
 
 ## Einen Fork erstellen
@@ -16,7 +16,7 @@ Gehen Sie zu https://github.com/rustdesk/rustdesk/fork und klicken Sie auf "Crea
 {{% notice note %}}
 Sie müssen dies nur tun, wenn Sie den Standardserver und den öffentlichen Schlüssel ändern möchten.
 
-Die Server-URL und der Schlüssel, die Sie verwenden, sind für andere Benutzer auf Github verborgen, aber sie können Ihren Client herunterladen und sich mit Ihrem Server verbinden. Wenn Sie ein vollständig privates Repository benötigen, können Sie das RustDesk-Client-Repository mit https://github.com/new/import importieren. **Wenn Sie ein privates Repository verwenden, können Sie nur eine begrenzte Anzahl von Paketen pro Monat erstellen. Wenn Sie mehr Pakete benötigen, müssen Sie ein kostenpflichtiges Github-Konto einrichten.**
+Die Server-URL und der Schlüssel, die Sie verwenden, sind für andere Benutzer auf GitHub verborgen, aber sie können Ihren Client herunterladen und sich mit Ihrem Server verbinden. Wenn Sie ein vollständig privates Repository benötigen, können Sie das RustDesk-Client-Repository mit https://github.com/new/import importieren. **Wenn Sie ein privates Repository verwenden, können Sie nur eine begrenzte Anzahl von Paketen pro Monat erstellen. Wenn Sie mehr Pakete benötigen, müssen Sie ein kostenpflichtiges GitHub-Konto einrichten.**
 {{% /notice %}}
 
 Gehen Sie auf Ihrem gerade erstellten Fork zu "Settings -> Secrets and Variables -> Actions".
@@ -49,6 +49,6 @@ Scrollen Sie nach unten zum Abschnitt "Workflow permissions" und aktivieren Sie 
 
 ## Ihre erstellten Pakete herunterladen
 
-Nachdem der Workflow abgeschlossen ist, können Sie die erstellten Pakete herunterladen. 
+Nachdem der Workflow abgeschlossen ist, können Sie die erstellten Pakete herunterladen.
 
 Gehen Sie auf die Hauptseite Ihres Forks und klicken Sie rechts auf "Releases". Die Pakete, die Sie gerade gebaut haben, werden unter "Nightly" angezeigt.
