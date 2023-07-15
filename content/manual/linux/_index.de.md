@@ -1,5 +1,5 @@
 ---
-title: Linux 
+title: Linux
 weight: 4
 ---
 
