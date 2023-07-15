@@ -104,7 +104,7 @@ services:
 
 ### STEP 1: Download server-side software programs
 
-[Download](https://github.com/rustdesk/rustdesk-server/).
+[Download](https://github.com/rustdesk/rustdesk-server/releases/latest).
 
 Platform versions provided:
 
