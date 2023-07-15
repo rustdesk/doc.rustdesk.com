@@ -1,5 +1,5 @@
 ---
-title: Linux 
+title: Linux
 weight: 4
 ---
 
@@ -12,7 +12,7 @@ weight: 4
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
-#### CentOS/Fedora (>=18)
+#### CentOS/Fedora (>= 18)
 
 ```sh
 sudo yum localinstall ./rustdesk-<version>.rpm
@@ -31,9 +31,9 @@ sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
 ### ~~X11 Required~~
-~~RustDesk does not support wayland yet; you need switch to X11 manually.~~
+~~RustDesk does not support Wayland yet; you need switch to X11 manually.~~
 
-RustDesk now has experimental Wayland support. You may need to download the nightly version to enable this feature.
+RustDesk now has experimental Wayland support. You may need to download the [nightly version](https://github.com/rustdesk/rustdesk/releases/tag/nightly) to enable this feature.
 
 #### Display Server
 
