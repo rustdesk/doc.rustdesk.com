@@ -17,7 +17,7 @@ What it does:
 
 - Install some dependencies
 - Setup UFW firewall if available
-- Create a Folders /var/lib/rustdesk-server and /var/log/rustdesk-server
+- Create a working directory /var/lib/rustdesk-server and log directory /var/log/rustdesk-server
 - Installs executables into /usr/bin
 - Download and extract RustDesk Pro Services to the above folder
 - Create systemd services for hbbs and hbbr
