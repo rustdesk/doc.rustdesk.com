@@ -37,7 +37,7 @@ There is also an update script on [Techahold's](https://github.com/techahold/rus
 
 ## Install your own server as systemd service using deb file for debian distros
 
-Please [Download](https://github.com/rustdesk/rustdesk-server/releases/latest) deb files yourself and install.
+Please [Download](https://github.com/rustdesk/rustdesk-server/releases/latest) deb files yourself and install with `apt-get -f install <filename>.deb` or `dpkg -i <filename>.deb`.
 
 ## Install your own server with docker(-compose)
 
