@@ -1,5 +1,5 @@
 ---
-title: Control your Android 
+title: Control your Android
 weight: 2
 ---
 
