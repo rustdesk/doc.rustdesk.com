@@ -131,7 +131,7 @@ pushd $HOME
 sudo wget https://github.com/rustdesk/doc.rustdesk.com/releases/download/console/dep.tar.gz
 sudo tar xzf dep.tar.gz
 popd
-``` 
+```
 
 ### Bau der Flutter-Rust-Bridge deaktivieren
 Möglicherweise müssen Sie den Bau der Flutter-Rust-Bridge in der Datei `build.rs` deaktivieren, indem Sie dies ausführen:
