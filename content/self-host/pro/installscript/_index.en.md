@@ -19,8 +19,8 @@ What it does:
 - Setup UFW firewall if available
 - Create a working directory /var/lib/rustdesk-server and a log directory /var/log/rustdesk-server
 - Installs executables into /usr/bin
-- Download and extract RustDesk Pro Services to the above folder (service names are rustdesk-hbbs.service and rustdesk-hbbr.service)
-- Create systemd services for hbbs and hbbr
+- Download and extract RustDesk Pro Services to the above folder
+- Create systemd services for hbbs and hbbr (service names are rustdesk-hbbs.service and rustdesk-hbbr.service)
 - If you choose Domain, it will install Nginx and Certbot, allowing the API to be available on port 443 (https) and get an SSL certificate over port 80, it is automatically renewed
 
 ## Upgrade
@@ -48,5 +48,5 @@ What it does:
 - Create a folder /var/lib/rustdesk-server and copy the certs here
 - Delete /var/log/rustdesk and create /var/log/rustdesk-server
 - Download and extract RustDesk Pro Services to the above folder
-- Create systemd services for hbbs and hbbr  (service names are rustdesk-hbbs.service and rustdesk-hbbr.service)
-- If you chose Domain, it will install Nginx and certbot, allowing the API to be available on port 443 (https) and get an SSL certificate over port 80, this will autorenew.
+- Create systemd services for hbbs and hbbr (service names are rustdesk-hbbs.service and rustdesk-hbbr.service)
+- If you choose Domain, it will install Nginx and Certbot, allowing the API to be available on port 443 (https) and get an SSL certificate over port 80, it is automatically renewed
