@@ -1,6 +1,6 @@
 ---
 title: FAQ
-weight: 100
+weight: 600
 ---
 
 ## How Do I install with the Simple Install Script?
@@ -88,4 +88,4 @@ To check the status `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` eg `sudo
 [Please see here](https://rustdesk.com/docs/en/self-host/pro/license/#invoices-and-migration)
 
 ## How do I view the logs?
-On the left hand side click on logs.
+On the left hand side click on `Logs`.
