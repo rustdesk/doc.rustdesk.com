@@ -11,9 +11,9 @@ Strategy is a tool for RustDesk administrators to update the security options of
 
 RustDesk provides a default strategy that administrators can modify, or they can create a new strategy or `Duplicate` an existing one. When creating a new strategy, administrators can `Rename`, `Delete`, or `Edit Devices`. When duplicating a strategy, administrators can modify it based on the existing strategy.
 
-|    Default Strategy  | Other Strategies     |
+| Default Strategy | Other Strategies |
 | :--------------: | :------------: |
-|  ![](/docs/en/self-host/pro/strategy/images/default_strategy.png)    |  ![](/docs/en/self-host/pro/strategy/images/other_strategy.png)    |
+| ![](/docs/en/self-host/pro/strategy/images/default_strategy.png) | ![](/docs/en/self-host/pro/strategy/images/other_strategy.png) |
 
 ### Enable and Disable Strategies
 
@@ -25,9 +25,9 @@ Each device can only be managed by one strategy. Administrators can change the m
 
 In the device management interface, the left-hand area is used to filter devices, and the devices selected in the right-hand column will be managed by the current strategy. Devices that are not logged in will be displayed in the `-` group.
 
-|  User Group  | Unbinded Devices |
+| User Group | Unbinded Devices |
 | :--------------: | :------------: |
-|  ![](/docs/en/self-host/pro/strategy/images/edit_devices_group.png)    |  ![](/docs/en/self-host/pro/strategy/images/edit_devices_unbinded.png)    |
+| ![](/docs/en/self-host/pro/strategy/images/edit_devices_group.png) | ![](/docs/en/self-host/pro/strategy/images/edit_devices_unbinded.png) |
 
 ### Strategy Synchronization
 

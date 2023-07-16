@@ -5,7 +5,7 @@ weight: 10
 
 ## Dependencies
 
-Desktop versions use [sciter](https://sciter.com/) for GUI, please download sciter dynamic library yourself.
+Desktop versions use [Sciter](https://sciter.com/) for GUI, please download Sciter dynamic library yourself.
 
 [Windows](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll) |
 [Linux](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so) |
@@ -54,7 +54,7 @@ export VCPKG_ROOT=$HOME/vcpkg
 vcpkg/vcpkg install libvpx libyuv opus aom
 ```
 
-### Fix libvpx (For Fedora)
+### Fix libvpx (for Fedora)
 
 ```sh
 cd vcpkg/buildtrees/libvpx/src
