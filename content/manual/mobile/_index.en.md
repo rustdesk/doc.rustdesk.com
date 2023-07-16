@@ -1,5 +1,5 @@
 ---
-title: Mobile 
+title: Mobile
 weight: 1
 ---
 
@@ -56,7 +56,7 @@ Long press or tap the menu on the right to select `File Transfer`
 2. Click `ID/Relay Server`.
 3. Enter your ID Server hostname/IP Address in the `ID Server` field. Leave `Relay Server` and `API Server` blank, and enter your public key (optional, required for encryption) in the `Key` field. Press **OK** to save your settings. It will automatically switch to the specified server.
 
-You can also configure it by scanning a QR code. To generate the QR Code, use the following format (change the `host` and `key` values to your own):
+You can also configure it by scanning a QR Code. To generate the QR Code, use the following format (change the `host` and `key` values to your own):
 
 ```nolang
 config={"host": "xxx", "key": "xxx"}

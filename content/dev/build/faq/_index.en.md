@@ -15,7 +15,7 @@ weight: 40
 
 ### Solution
 
-Use a browser to download `https://chromium.googlesource.com/libyuv/libyuv/+archive/287158925b0e03ea4499a18b4e08478c5781541b.tar.gz`,  then move it into `vcpkg/downloads` and reinstall.
+Use a browser to download `https://chromium.googlesource.com/libyuv/libyuv/+archive/287158925b0e03ea4499a18b4e08478c5781541b.tar.gz`, then move it into `vcpkg/downloads` and reinstall.
 
 
 
@@ -44,7 +44,7 @@ Maybe the author used `git force push` and the previous commit was overwritten.
 
 ### Solution
 
-`cargo update`, force the package to be updated
+`cargo update`, force the package to be updated.
 
 
 
@@ -58,11 +58,11 @@ thread 'main' panicked at 'Failed to find package: VcpkgNotFound("No vcpkg insta
 
 ### Solution
 
-Add `VCPKG_ROOT` environment variable, or run with `VCPKG_ROOT=<vcpkg_dir> cargo run`
+Add `VCPKG_ROOT` environment variable, or run with `VCPKG_ROOT=<vcpkg_dir> cargo run`.
 
 
 
-## clang not installed, or  LIBCLANG_PATH  not set
+## clang not installed, or LIBCLANG_PATH not set
 
 ### Error
 
@@ -72,4 +72,4 @@ thread 'main' panicked at 'Unable to find libclang: "couldn't find any valid sha
 
 ### Solution
 
-Install [llvm](https://releases.llvm.org/download.html), Add the `LIBCLANG_PATH` environment variable as `llvm_install_dir/bin`
+Install [LLVM](https://releases.llvm.org/download.html), add the `LIBCLANG_PATH` environment variable as `llvm_install_dir/bin`.

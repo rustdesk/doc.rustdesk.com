@@ -14,7 +14,7 @@ You need to have Linux installed, script is tested working with CentOS Linux 7/8
 #### How to Install the server
 Please setup your firewall on your server prior to running the script.
 
-Make sure you have got access via ssh or otherwise setup prior setting up the firewall. The example commands for UFW (Debian based) are:
+Make sure you have got access via SSH or otherwise setup prior setting up the firewall. The example commands for UFW (Debian based) are:
 ```
 ufw allow proto tcp from YOURIP to any port 22
 ```
@@ -39,7 +39,7 @@ There is also an update script on [Techahold's](https://github.com/techahold/rus
 
 Please [Download](https://github.com/rustdesk/rustdesk-server/releases/latest) deb files yourself and install with `apt-get -f install <filename>.deb` or `dpkg -i <filename>.deb`.
 
-## Install your own server with docker(-compose)
+## Install your own server with Docker (Compose)
 
 ### Requirements
 You need to have Docker/Podman installed to run a rustdesk-server as a docker container
@@ -120,20 +120,20 @@ The tutorial below is based on Linux build.
 There are two executables and a folder:
 
 - `hbbs` - RustDesk ID/Rendezvous server
-- `hbbr` - RustDesk relay server
+- `hbbr` - RustDesk Relay server
 
 They are built on CentOS Linux 7, tested on CentOS Linux 7/8 and Ubuntu 18/20.
 
 #### Server Requirements
 
-The hardware requirements are very low; the minimum configuration of a basic cloud server is enough, and the CPU and memory requirements are minimal. You can also use a Raspberry Pi or something similar. Regarding the network size, if the TCP hole punching direct connection fails, the relay traffic will be consumed. The traffic of a relay connection is between 30k-3M/s (1920x1080 screen) depending on the resolution settings and screen update. If it is only for office work demand, the traffic is around 100K/s.
+The hardware requirements are very low; the minimum configuration of a basic cloud server is enough, and the CPU and memory requirements are minimal. You can also use a Raspberry Pi or something similar. Regarding the network size, if the TCP hole punching direct connection fails, the relay traffic will be consumed. The traffic of a relay connection is between 30 K/s and 3 M/s (1920x1080 screen) depending on the resolution settings and screen update. If it is only for office work demand, the traffic is around 100 K/s.
 
 ### STEP 2: Run hbbs and hbbr on your server
 
-We suggest you use [pm2](https://pm2.keymetrics.io/) for managing your service.
+We suggest you use [PM2](https://pm2.keymetrics.io/) for managing your service.
 
 #### Option 1
-Run hbbs/hbbr without pm2
+Run hbbs/hbbr without PM2
 
 ```bash
 ./hbbs -r <relay-server-ip[:port]>
@@ -141,7 +141,7 @@ Run hbbs/hbbr without pm2
 ```
 
 #### Option 2
-Run hbbs/hbbr with pm2
+Run hbbs/hbbr with PM2.
 
 ```bash
 pm2 start hbbs -- -r <relay-server-ip[:port]>
@@ -150,7 +150,7 @@ pm2 start hbbr
 
 <a name="demo"></a>
 {{% notice note %}}
-pm2 requires Node.js v16+, if you fail to run pm2 (e.g. you can not see `hbbs`/`hbbr` in `pm2 list`), please download and install the Node.js LTS version from https://nodejs.org. If you want to make `hbbs`/`hbbr` auto-run after reboot, please check out `pm2 save` and `pm2 startup`. More about [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Another good tool for your logs is [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
+PM2 requires Node.js v16+, if you fail to run PM2 (e.g. you can not see `hbbs`/`hbbr` in `pm2 list`), please download and install the Node.js LTS version from https://nodejs.org. If you want to make `hbbs`/`hbbr` auto-run after reboot, please check out `pm2 save` and `pm2 startup`. More about [PM2](https://pm2.keymetrics.io/docs/usage/quick-start/). Another good tool for your logs is [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
 
 The `-r` parameter of `hbbs` is not mandatory, it is just convenient for you not to specify a relay server on the controlled client side. You do not need to specify port if you are using default 21117 port. The relay server specified by the client has a higher priority than this.
 {{% /notice %}}
@@ -220,7 +220,7 @@ If you want to prohibit users without the key from establishing non-encrypted co
 ./hbbr -k _
 ```
 
-If you want to change the key, remove the `id_ed25519` and `id_ed25519.pub` files and restart `hbbs`/`hbbr`，`hbbs` will generate a new key pair.
+If you want to change the key, remove the `id_ed25519` and `id_ed25519.pub` files and restart `hbbs`/`hbbr`, `hbbs` will generate a new key pair.
 
 {{% notice note %}}
 If you are using docker-compose and keys don't exist, the start of containers will create different keys in hbbs and hbbr folders.

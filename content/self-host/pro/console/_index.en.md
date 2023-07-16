@@ -13,7 +13,7 @@ Features:
 
 ## Log in
 
-As mentioned earlier, the default port of the web console is 21114. Enter `http://<hbbs host>:21114` in the browser to enter the console page, as shown in the following figure (hbbs runs on the ip 192.168.1.143 server):
+As mentioned earlier, the default port of the web console is 21114. Enter `http://<hbbs host>:21114` in the browser to enter the console page, as shown in the following figure (hbbs runs on the IP 192.168.1.143 server):
 ![](/docs/en/self-host/pro/console/images/console-login.png)
 
 If you need https support, please install a web server such as `Nginx`.
@@ -26,4 +26,4 @@ Non-administrator users can also login to browser their device and logs, change 
 
 ## Windows EXE
 
-For Windows clients, you can leave out the custom server configuration and put the configuration information in the `RustDesk.exe` filename instead. As shown above, please go to the console welcome page and click on `Windows EXE`. **`Client >=1.1.9 Required`**。
+For Windows clients, you can leave out the custom server configuration and put the configuration information in the `rustdesk.exe` filename instead. As shown above, please go to the console welcome page and click on `Windows EXE`. **`Client >=1.1.9 Required`**。

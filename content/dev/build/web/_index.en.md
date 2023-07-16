@@ -27,7 +27,7 @@ yarn build
 
 cd ..
 
-# About details of yuv converter, check this https://github.com/rustdesk/rustdesk/issues/364#issuecomment-1023562050
+# About details of YUV converter, check this https://github.com/rustdesk/rustdesk/issues/364#issuecomment-1023562050
 wget https://github.com/rustdesk/doc.rustdesk.com/releases/download/console/web_deps.tar.gz
 # Decompress to the current directory
 tar xzf web_deps.tar.gz
@@ -52,7 +52,7 @@ python -m http.server 8000
 
 To configure the build on HTTPS we would recommend following the instructions from the following [source](https://medium.com/flutter-community/how-to-host-flutter-using-nginx-a71bcb11d96).
 
-> Currently, yuv converter and vp9 are the bottleneck.
+> Currently, YUV converter and VP9 are the bottleneck.
 
 ## How to build with Docker
 
@@ -143,13 +143,13 @@ echo 'Server starting on port' $PORT '...'
 python3 -m http.server $PORT
 ```
 
-- Build the docker image:
+- Build the Docker image:
 
 ```sh
 docker build -t rustdesk-web-client .
 ```
 
-- Run the docker image:
+- Run the Docker image:
 
 ```sh
 docker run -p 5000:5000 rustdesk-web-client
@@ -159,7 +159,7 @@ docker run -p 5000:5000 rustdesk-web-client
 
 ### RustDesk Web Client using existing Docker image
 
-If you do not want to build the docker image yourself, you can use the image I built and uploaded to [Docker Hub](https://hub.docker.com/r/keyurbhole/flutter_web_desk).
+If you do not want to build the Docker image yourself, you can use the image I built and uploaded to [Docker Hub](https://hub.docker.com/r/keyurbhole/flutter_web_desk).
 
 - Pull the image:
 

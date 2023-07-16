@@ -1,10 +1,10 @@
 ---
-title: Windows & pm2 or NSSM
+title: Windows & PM2 or NSSM
 weight: 20
 ---
 
 ## A cross roads
-You now either have two choices, you can either use pm2 (easier) or NSSM (a bit harder) to start the RustDesk server
+You now either have two choices, you can either use PM2 (easier) or NSSM (a bit harder) to start the RustDesk server
 There are some benefits to using NSSM:
 - Backwards compatibility with older Windows (Windows Server 2008R2/Windows 7 and earlier although untested).
 - Ideal for Windows Server
@@ -12,7 +12,7 @@ There are some benefits to using NSSM:
 - Running both binaries as Services.
 - Standalone (no dependency on Node.js)
 
-While the benefits of pm2 include:
+While the benefits of PM2 include:
 - Good idea if you run the server on the same computer as your main work computer
 - You logon regularly to the user that created the rustdesk startup entry
 - More user friendly
@@ -64,12 +64,12 @@ nssm install <Desired hbbr servicename> <RustDesk hbbr binary path> <RustDesk hb
 ```
 
 **Start services**
+
 After successful installation of services, they need to be started.
 ```cmd
 nssm start <Desired hbbs servicename>
 nssm start <Desired hbbr servicename>
 ```
-
 
 **Done!**
 
@@ -77,14 +77,14 @@ nssm start <Desired hbbr servicename>
 
 ## or
 
-## Installing using pm2
+## Installing using PM2
 
 ### Install Node.js
 
 Please [download](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi) and install Node.js.
-Node.js is the runtime environment of pm2, so you need to install Node.js first。
+Node.js is the runtime environment of PM2, so you need to install Node.js first。
 
-### Install pm2
+### Install PM2
 
 Enter belows in `cmd.exe`, press the <kbd>Enter</kbd> key for each line, and run them line by line.
 
