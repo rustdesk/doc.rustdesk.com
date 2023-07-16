@@ -137,7 +137,7 @@ Please get in touch with our [sales](mailto://sales@rustdesk.com) team.
 
 ## Why if I am self hosting is this not free and opensource?
 1. RustDesk has become a full time job for a number of people, they have lives, wives, jobs and kids which all demands attention and costs money!
-2. We want to be hear and still making great progress in years to come.
+2. We want to be here and still making great progress in years to come.
 3. The opensource version will continue to be opensource and we encourage others to make developments in line with the AGPL license.
 
 ## Do you offer hosting for RustDesk Server Pro?
