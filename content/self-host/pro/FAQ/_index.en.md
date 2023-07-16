@@ -60,6 +60,11 @@ To check the status `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` eg `sudo
 4. Click on `Settings`.
 5. Enter your new password in the boxes provided.
 
+## How do I delete the default  `admin` user?
+1. Create another account with `administrator` enabled
+2. Log in with the new administrative account
+3. Delete the `admin` on `Users` page
+
 ## How do I setup my relay servers?
 1. Go to `Settings` on the left hand menu.
 2. Click on `Relay` on the sub-menu.
