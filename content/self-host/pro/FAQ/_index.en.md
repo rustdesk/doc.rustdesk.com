@@ -82,3 +82,52 @@ To check the status `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` eg `sudo
 
 ## How do I view the logs?
 On the left hand side click on `Logs`.
+
+## How do I setup Emails?
+Gmail in this example
+
+1. Go to `Settings` on the left hand menu.
+2. Click on `SMTP` on the sub-menu.
+3. Enter the SMTP address `smtp.gmail.com`.
+4. Enter the Port 587 in ¬SMTP Port`.
+5. Enter the gmail account ie `myrustdeskserver@gmail.com` in `Mail Account`
+6. Enter your password (you might need an app password).
+7. Enter your gmail account ie `myrustdeskserver@gmail.com` in `From `.
+8. Click `Check` to save.
+
+## Email's arent working from my VPS
+Alot of VPS providers block ports 465 and 25.
+
+A simple way to check is is using telnet to test in the linux terminal type `telnet your.mailserver.com 25` on windows use `Test-NetConnection -ComputerName your.mailserver.com -Port 25`
+
+Your mail server might not us port 25 please make sure you use the correct ports.
+
+## How can I get RustDesk IDs from agents on my network or using an RMM type systen?
+Run the following command elevated to SYSTEM   `"c:\Program Files\RustDesk\RustDesk.exe" --get-id`
+
+## How can I set a persistent password on an agent on my network or using an RMM type system?
+On Windows you can use the following powershell script:
+```
+$ErrorActionPreference= 'silentlycontinue'
+
+net stop rustdesk > null
+$ProcessActive = Get-Process rustdesk -ErrorAction SilentlyContinue
+if($ProcessActive -ne $null)
+{
+stop-process -ProcessName rustdesk -Force
+}
+
+$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
+Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" "--password $rustdesk_pw" -wait
+Write-Output $rustdesk_pw
+
+net start rustdesk > null
+```
+
+## I have installed RustDesk Server Pro manually but the API web console isn't behind SSL, how can I secure this?
+Use a proxy like nginx, the simple install script has one, its really simple [[https://github.com/dinger1986/rustdesk-server-pro](https://github.com/rustdesk/rustdesk-server-pro)/blob/493ad90daf8815c3052ff4d0d4aa9cc07e411efa/install.sh#L252](this is how we did it).
+
+Similar configs should work with Traefikv2, HAProxy, Apache Proxy and Cloudflare Tunnel.
+
+## How do I file a bug report?
+Please file via [https://github.com/rustdesk/rustdesk-server-pro/issues](GitHub)
