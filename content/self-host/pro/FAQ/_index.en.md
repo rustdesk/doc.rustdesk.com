@@ -125,9 +125,9 @@ net start rustdesk > null
 ```
 
 ## I have installed RustDesk Server Pro manually but the API web console isn't behind SSL, how can I secure this?
-Use a proxy like nginx, the simple install script has one, its really simple [[https://github.com/dinger1986/rustdesk-server-pro](https://github.com/rustdesk/rustdesk-server-pro)/blob/493ad90daf8815c3052ff4d0d4aa9cc07e411efa/install.sh#L252](this is how we did it).
+Use a proxy like nginx, the simple install script has one, its really simple [this is how we do it](https://github.com/rustdesk/rustdesk-server-pro/blob/493ad90daf8815c3052ff4d0d4aa9cc07e411efa/install.sh#L252).
 
 Similar configs should work with Traefikv2, HAProxy, Apache Proxy and Cloudflare Tunnel.
 
 ## How do I file a bug report?
-Please file via [https://github.com/rustdesk/rustdesk-server-pro/issues](GitHub)
+Please file via (https://github.com/rustdesk/rustdesk-server-pro/issues)[GitHub]
