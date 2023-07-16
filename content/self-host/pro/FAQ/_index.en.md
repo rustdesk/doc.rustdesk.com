@@ -26,17 +26,16 @@ weight: 600
 9. Log in with the username `admin` and password `test1234`.
 10. Enter your license code purchased in step 1.
 
-Theres a new version of RustDesk Server Pro out, how do I upgrade?
-1. Log into your RustDesk Pro Server.
-2. Go to [this page](https://rustdesk.com/docs/en/self-host/pro/installscript/#upgrade).
-3. Copy and paste the command into your linux terminal.
-4. Follow the prompts as they guide you through the upgrade.
+## Theres a new version of RustDesk Server Pro out, how do I upgrade?
+1. Go to [this page](https://rustdesk.com/docs/en/self-host/pro/installscript/#upgrade).
+2. Copy and paste the command into your linux terminal.
+3. Follow the prompts as they guide you through the upgrade.
 
 ## I installed with the scripts how do I start and stop services?
 The services use systemd so can be started and stopped using `sudo systemctl stop|start|restart rustdesk-hbbs|rustdesk-hbbr` eg `sudo systemctl restart rustdesk-hbbs`
 
 ##  I installed with the scripts how do I view the linux logs
-The logs are stored in /var/log/rustdesk-server/, you can view them using `cat /var/log/rustdesk-server/hbbs.log` or `cat /var/log/rustdesk-server/hbbs.error`.
+The logs are stored in /var/log/rustdesk-server/, you can view them using `tail /var/log/rustdesk-server/hbbs.log` or `tail /var/log/rustdesk-server/hbbs.error`.
 
 ## I installed with the scripts how do I check the status of the RustDesk services
 To check the status `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` eg `sudo systemctl status rustdesk-hbbs`
@@ -60,7 +59,7 @@ To check the status `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` eg `sudo
 4. Click on `Settings`.
 5. Enter your new password in the boxes provided.
 
-## How do I delete the default  `admin` user?
+## How do I delete the default `admin` user?
 1. Create another account with `administrator` enabled
 2. Log in with the new administrative account
 3. Delete the `admin` on `Users` page
@@ -72,13 +71,7 @@ To check the status `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` eg `sudo
 4. Enter the Relay server DNS address or IP address in the box which now shows and press Enter.
 5. If you have more than one Relay server you can keep clicking `+` and adapt the Geo settings is required (remember and copy your key to the other servers).
 
-## I clicked cancel when the server asked for a license code, how do I enter it now?
-1. Go to `Settings` on the left hand menu.
-2. Click on `License` on the sub-menu.
-3. Click `Edit` and paste in your license code.
-4. Click `Ok`.
-
-## I have used a trial license and now need to change my license code.
+## How do I set or change the license?
 1. Go to `Settings` on the left hand menu.
 2. Click on `License` on the sub-menu.
 3. Click `Edit` and paste in your license code.
