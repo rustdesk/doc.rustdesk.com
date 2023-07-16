@@ -130,4 +130,4 @@ Use a proxy like nginx, the simple install script has one, its really simple [th
 Similar configs should work with Traefikv2, HAProxy, Apache Proxy and Cloudflare Tunnel.
 
 ## How do I file a bug report?
-Please file via (https://github.com/rustdesk/rustdesk-server-pro/issues)[GitHub]
+Please file via [GitHub](https://github.com/rustdesk/rustdesk-server-pro/issues).
