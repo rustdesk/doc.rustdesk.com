@@ -26,7 +26,7 @@ weight: 600
 9. Log in with the username `admin` and password `test1234`.
 10. Enter your license code purchased in step 1.
 
-## Theres a new version of RustDesk Server Pro out, how do I upgrade?
+## There is a new version of RustDesk Server Pro out, how do I upgrade?
 1. Go to [this page](https://rustdesk.com/docs/en/self-host/pro/installscript/#upgrade).
 2. Copy and paste the command into your linux terminal.
 3. Follow the prompts as they guide you through the upgrade.
