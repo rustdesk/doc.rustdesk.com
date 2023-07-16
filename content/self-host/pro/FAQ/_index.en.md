@@ -142,3 +142,6 @@ Please get in touch with our [sales](mailto://sales@rustdesk.com) team.
 
 ## Do you offer hosting for RustDesk Server Pro?
 Please get in touch with our [sales](mailto://sales@rustdesk.com) team.
+
+## Is there somewhere I can see video setup guides?
+Yes! We have a [Youtube Channel](https://youtube.com/@RustDesk)
