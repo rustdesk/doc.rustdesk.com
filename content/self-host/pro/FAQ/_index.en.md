@@ -133,4 +133,4 @@ Similar configs should work with Traefikv2, HAProxy, Apache Proxy and Cloudflare
 Please file via [GitHub](https://github.com/rustdesk/rustdesk-server-pro/issues).
 
 ## How can I get a trial?
-Please get in touch with our [sales](mailto://sales@rustdesk.com?subject=RustDesk Server Pro Trial) team.
+Please get in touch with our [sales](mailto://sales@rustdesk.com) team.
