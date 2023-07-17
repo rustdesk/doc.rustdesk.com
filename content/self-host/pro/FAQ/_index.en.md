@@ -45,7 +45,7 @@ To check the status `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` e.g. `su
 2. Download the the windows installer from [GitHub](https://github.com/rustdesk/rustdesk-server-pro/releases/latest).
 3. Unzip the windows installer.
 4. Run the Installer and follow the steps on screen.
-5. Once its completed open RustDeskServer.
+5. Once its completed open RustDesk Server.
 6. Follow the prompts as they guide you through the install.
 7. Click `Services` and then `Start`.
 8. Once the install is complete go to `http://youripaddress:21114`.
