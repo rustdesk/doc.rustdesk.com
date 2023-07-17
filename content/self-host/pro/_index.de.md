@@ -26,15 +26,15 @@ RustDesk-Client >= 1.2.0 erforderlich
 
 ### Einfache Installation
 
-Um das Leben einfach zu machen, haben wir ein [einfaches Installationsskript](https://rustdesk.com/docs/de/self-host/pro/installscript/) entwickelt, die sich um alles kümmern (Installation/Upgrade/Konvertierung von Open Source).
+Um das Leben einfach zu machen, haben wir [einfache Installationsskripte](https://rustdesk.com/docs/de/self-host/pro/installscript/) entwickelt, die sich um alles kümmern (Installation/Upgrade/Konvertierung von Open Source).
 
 {{% notice note %}}
-Vergessen Sie nicht, Ihre Lizenz von [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) zu beziehen, auf der Seite [Lizenz](https://rustdesk.com/docs/de/self-host/pro/license/) finden Sie weitere Informationen.
+Vergessen Sie nicht, Ihre Lizenz unter [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) zu erwerben, auf der Seite [Lizenz](https://rustdesk.com/docs/de/self-host/pro/license/) finden Sie weitere Informationen.
 {{% /notice %}}
 
 ### Manuelle Installation
 
-Fast dasselbe wie [die Open-Source-Version](/docs/en/self-host/install/), aber Sie müssen hbbs/hbbr nicht mit irgendwelchen Argumenten ausführen, alles kann später in der Webkonsole eingestellt werden.
+Fast dasselbe wie die [Open-Source-Version](https://rustdesk.com/docs/de/self-host/install/), aber Sie müssen hbbs/hbbr nicht mit irgendwelchen Argumenten ausführen, alles kann später in der Webkonsole eingestellt werden.
 
 - `-k _` ist standardmäßig eingestellt
 - `-r <server:host>` wird nicht mehr benötigt, wenn der Relay-Server auf demselben Rechner wie hbbs läuft. Sie können in der Webkonsole mehrere Relay-Server einstellen.
