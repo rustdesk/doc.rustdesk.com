@@ -23,4 +23,8 @@ Your modifications to `Access with other groups` take effect immediately without
 
 Both `Can access to` and `Can be accessed from` serve almost the same function, we provide both options for your convenience. However, this may cause some confusion.
 
+{{% notice note %}}
+The user and group assigned to the controlling side are determined by the user who logs in, rather than the user who is assigned from the web console. We designed it this way because certain controlling sides do not have a device ID, such as the iOS client and web client.
+{{% /notice %}}
+
 ![](/docs/en/self-host/pro/permissions/images/crossgrp.png)
