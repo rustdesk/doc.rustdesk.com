@@ -31,13 +31,13 @@ weight: 600
 2. Kopieren Sie den Befehl und fügen Sie ihn in Ihr Linux-Terminal ein.
 3. Folgen Sie den Aufforderungen, die Sie durch das Upgrade führen.
 
-## Ich habe mit den Skripten installiert, wie kann ich Dienste starten und stoppen?
+## Ich habe mit dem Skript installiert, wie kann ich Dienste starten und stoppen?
 Die Dienste verwenden systemd und können mit `sudo systemctl stop|start|restart rustdesk-hbbs|rustdesk-hbbr` gestartet und gestoppt werden, z. B. `sudo systemctl restart rustdesk-hbbs`.
 
-## Ich habe mit den Skripten installiert, wie kann ich die Linux-Protokolle einsehen?
+## Ich habe mit dem Skript installiert, wie kann ich die Linux-Protokolle einsehen?
 Die Protokolle werden in `/var/log/rustdesk-server` gespeichert, Sie können sie mit `cat /var/log/rustdesk-server/hbbs.log` oder `cat /var/log/rustdesk-server/hbbs.error` einsehen.
 
-## Ich habe mit den Skripten installiert, wie kann ich den Status der RustDesk-Dienste überprüfen?
+## Ich habe mit dem Skript installiert, wie kann ich den Status der RustDesk-Dienste überprüfen?
 Der Status kann mit `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` überprüft werden, z. B. `sudo systemctl status rustdesk-hbbs`.
 
 ## Wie installiere ich RustDesk Server Pro unter Windows?
@@ -103,12 +103,19 @@ Eine einfache Möglichkeit zur Überprüfung ist die Verwendung von Telnet. Gebe
 Ihr Mailserver verwendet möglicherweise nicht den Port 25. Bitte stellen Sie sicher, dass Sie die richtigen Ports verwenden.
 
 ## Wie kann ich die RustDesk-IDs von Agenten in meinem Netzwerk oder in einem RMM-System abrufen?
-Führen Sie den folgenden Befehl mit dem Status SYSTEM aus: `"C:\Program Files\RustDesk\RustDesk.exe" --get-id`
+Unter Windows können Sie das folgende PowerShell-Skript verwenden:
+```
+$ErrorActionPreference= 'silentlycontinue'
+
+$rustdesk_id = ("'C:\Program Files\RustDesk\rustdesk.exe' --get-id" | get-clipboard)
+Write-Output $rustdesk_id
+```
 
 ## Wie kann ich ein dauerhaftes Kennwort für einen Agenten in meinem Netzwerk oder in einem RMM-System festlegen?
 Unter Windows können Sie das folgende PowerShell-Skript verwenden:
 ```
 $ErrorActionPreference = 'silentlycontinue'
+
 net stop rustdesk > null
 $ProcessActive = Get-Process rustdesk -ErrorAction SilentlyContinue
 if($ProcessActive -ne $null)
@@ -138,6 +145,20 @@ Bitte setzen Sie sich mit unserem [Verkaufsteam](mailto://sales@rustdesk.com) in
 1. RustDesk ist für eine Reihe von Menschen zu einem Vollzeitjob geworden, sie haben ein Leben, Ehefrauen, Jobs und Kinder, was alles Aufmerksamkeit erfordert und Geld kostet!
 2. Wir wollen auch in den kommenden Jahren hier sein und große Fortschritte machen.
 3. Die Open-Source-Version wird weiterhin quelloffen bleiben und wir ermutigen andere, Entwicklungen im Einklang mit der AGPL-Lizenz vorzunehmen.
+
+## Ich kann mich nicht mit Geräten in verschiedenen Gruppen verbinden, woran liegt das?
+Das lässt sich leicht beheben, Sie müssen nur den gruppenübergreifenden Zugriff erlauben.
+1. Fügen Sie neue Gruppen hinzu.
+2. Klicken Sie auf `Bearbeiten`.
+3. Wählen Sie die entsprechenden Gruppen aus, auf die Sie zugreifen möchten. Sie werden automatisch der entsprechenden Gruppe hinzugefügt.
+
+## Wie kann ich Konfigurationen automatisch erstellen lassen?
+Die Konfigurationen werden automatisch erstellt.
+1. Laden Sie die neuesten Clients von [GitHub](https://github.com/rustdesk/rustdesk/releases/latest) herunter.
+2. Klicken Sie auf der Hauptseite der Webkonsole auf `Windows EXE`.
+3. Geben Sie den Host und die API ein, falls sie sich von Ihrer Konfiguration unterscheiden.
+4. Klicken Sie auf `Senden`.
+5. Scannen Sie den QR-Code auf Ihrem Android-Gerät und benennen Sie die .exe-Datei in den Namen um, der erzeugt wurde.
 
 ## Bieten Sie Hosting für RustDesk Server Pro an?
 Bitte setzen Sie sich mit unserem [Verkaufsteam](mailto://sales@rustdesk.com) in Verbindung.
