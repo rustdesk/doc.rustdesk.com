@@ -148,7 +148,7 @@ This is easily sorted, you need to allow cross-group access.
 
 ## How do I get configs automatically?
 Configs are generated automatically.
-1. Download the newest clients from [GitHub](https://github.com/rustdesk/rustdesk/releases/tag/1.2.1).
+1. Download the newest clients from [GitHub](https://github.com/rustdesk/rustdesk/releases/latest).
 2. On the main page in the web console click on Windows EXE.
 3. Fill in the host and API (if different from your config).
 4. Click Submit.
