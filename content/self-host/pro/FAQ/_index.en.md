@@ -150,7 +150,7 @@ Please get in touch with our [sales](mailto://sales@rustdesk.com) team.
 
 ## I cant connect to devices in different groups, why is this?
 This is easily sorted, you need to allow cross-group access.
-1. Add new Groups/
+1. Add new Groups.
 2. Click Edit.
 3. Select the relevant groups you want access (it automatically adds them in the corresponding group).
 
