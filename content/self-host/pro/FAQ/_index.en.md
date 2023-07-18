@@ -103,7 +103,12 @@ A simple way to check is using telnet. To test in the Linux terminal type `telne
 Your mail server may not be using port 25. Please make sure you are using the correct ports.
 
 ## How can I get RustDesk IDs from agents on my network or using an RMM type system?
-Run the following command elevated to SYSTEM: `"C:\Program Files\RustDesk\RustDesk.exe" --get-id`
+On Windows you can use the following PowerShell script:
+```
+$ErrorActionPreference= 'silentlycontinue'
+
+"'C:\Program Files\RustDesk\rustdesk.exe' --get-id" | get-clipboard
+```
 
 ## How can I set a persistent password on an agent on my network or using an RMM type system?
 On Windows you can use the following PowerShell script:
