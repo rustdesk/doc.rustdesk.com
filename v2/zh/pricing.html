@@ -1,0 +1,685 @@
+<!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
+<!--  Last Published: Tue Jun 13 2023 03:30:47 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="647082205fcdb6b4d0e79bc9" data-wf-site="64468462c3c33867c168df09">
+<head>
+  <meta charset="utf-8">
+  <title>RustDesk – 定价</title>
+  <meta content="RustDesk 开源远程桌面访问解决方案：可以连接到远程计算机，提供远程支持和在线协作" name="description">
+  <meta content="RustDesk – 开源远程桌面访问软件" property="og:title">
+  <meta content="RustDesk 开源远程桌面访问解决方案：可以连接到远程计算机，提供远程支持和在线协作" property="og:description">
+  <meta content="https://repository-images.githubusercontent.com/299354207/a577aeea-619e-4f64-8dec-19f2550e7500" property="og:image">
+  <meta content="RustDesk – 开源远程桌面访问软件" property="twitter:title">
+  <meta content="RustDesk 开源远程桌面访问解决方案：可以连接到远程计算机，提供远程支持和在线协作" property="twitter:description">
+  <meta content="https://repository-images.githubusercontent.com/299354207/a577aeea-619e-4f64-8dec-19f2550e7500" property="twitter:image">
+  <meta property="og:type" content="website">
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="../css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="../css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="../css/rustdesk.webflow.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="../images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="../images/webclip.png" rel="apple-touch-icon">
+  <style>
+:root {
+	--accent: #024eff;
+	--accent-light: #0071ff;
+	--accent-background-light: #E3F3FF;
+}
+.uui-button-6, .uui-button-3, .uui-pricing08_popular-label, a[class^="uui-button-1"] {
+	background-color: var(--accent);
+	border-color: var(--accent);
+}
+a[class^="uui-button-1"]:hover, a[class^="uui-button-1"]:focus, .uui-button-6:hover, .uui-button-6:focus, .uui-button-3:hover, .uui-button-3:focus {
+	background-color: var(--accent-light);
+	border-color: var(--accent-light);
+}
+[class^="uui-heading-subheading-"], [class^="icon-featured-large-"], .uui-layout12_number, .uui-footer03_link, .uui-button-link-4, .uui-text-size-medium-7.text-color-primary700 {
+	color: var(--accent);
+}
+.uui-footer03_link:hover, .uui-footer03_link:focus, .uui-button-link-4:hover, .uui-button-link-4:focus {
+	color: var(--accent-light);
+}
+[class^="icon-featured-large-"] {
+	background: var(--accent-background-light);
+}
+#scammer-banner {
+  display: none;
+}
+input[type="number"] {
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 100px;
+			font-size: 16px;
+			margin-right: 10px;
+		}
+
+.slider {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 15px;
+	border-radius: 5px;
+	background: #ddd;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+
+.slider:hover {
+	opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #024eff;
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #024eff;
+	cursor: pointer;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-bottom: 20px;
+}
+
+label {
+	margin-right: 10px;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+    font-weight: bold;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+    font-weight: normal;
+  width: 450px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+    text-align: left;
+    padding: 6px 12px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+  <section class="wf-section">
+    <section id="scammer-banner" class="scammer-banner">
+      <div class="uui-page-padding-5">
+        <div class="uui-banner22_content-wrapper">
+          <div class="uui-banner22_content">
+            <div class="uui-banner22_text-wrapper">
+              <div class="uui-banner22_text">诈骗警告！<br>如果有陌生人在电话里让您安装 RustDesk，请勿安装并立即挂断电话。<br>他们很可能是骗子，试图窃取您的钱财或其他私人信息。</div>
+            </div>
+          </div>
+          <a id="close-scammer-banner" data-w-id="119d97a6-e3e0-b6ec-8e90-76da8a5969bc" href="#" class="uui-banner22_close-button w-inline-block">
+            <div class="uui-icon-1x1-xxsmall-2 w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div data-w-id="59764c64-bac3-b7db-011b-72609771ebc0" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="uui-navbar05_component-3 w-nav">
+      <div class="uui-navbar03_container-2">
+        <a href="../index.html" class="uui-navbar03_logo-link-2 w-nav-brand">
+          <div class="uui-logo_component-2"><img src="../images/rustdesk-banner.svg" loading="lazy" alt="RustDesk Logo" class="uui-logo_logotype-2"></div>
+        </a>
+        <nav role="navigation" class="uui-navbar03_menu-2 w-nav-menu">
+          <div class="uui-navbar03_menu-left-2">
+            <a href="../index.html" class="uui-navbar03_link-2 w-nav-link">首页</a>
+            <div data-hover="true" data-delay="300" class="uui-navbar03_menu-dropdown-2 w-dropdown">
+              <div class="uui-navbar03_dropdown-toggle-2 w-dropdown-toggle">
+                <div class="uui-dropdown-icon-2 w-embed"><svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div>资源</div>
+              </div>
+              <nav class="uui-navbar03_dropdown-list-2 w-dropdown-list">
+                <div class="uui-navbar05_container-2">
+                  <div class="uui-navbar05_dropdown-content-2">
+                    <div class="uui-navbar05_dropdown-content-left-2">
+                      <div class="uui-navbar05_dropdown-link-list-2">
+                        <a href="../team.html" class="uui-navbar05_dropdown-link-2 w-inline-block">
+                          <div class="uui-navbar05_icon-holder-2">
+                            <div class="icon-featured-large-3">
+                              <div class="uui-icon-1x1-xsmall-7 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M14 7H19.6404C20.0877 7 20.3113 7 20.4421 7.09404C20.5562 7.17609 20.6306 7.30239 20.6469 7.442C20.6656 7.602 20.5569 7.79751 20.3397 8.18851L18.9936 10.6115C18.9148 10.7533 18.8755 10.8242 18.86 10.8993C18.8463 10.9657 18.8463 11.0343 18.86 11.1007C18.8755 11.1758 18.9148 11.2467 18.9936 11.3885L20.3397 13.8115C20.5569 14.2025 20.6656 14.398 20.6469 14.558C20.6306 14.6976 20.5562 14.8239 20.4421 14.906C20.3113 15 20.0877 15 19.6404 15H12.6C12.0399 15 11.7599 15 11.546 14.891C11.3578 14.7951 11.2049 14.6422 11.109 14.454C11 14.2401 11 13.9601 11 13.4V11M4 21L4 4M4 11H12.4C12.9601 11 13.2401 11 13.454 10.891C13.6422 10.7951 13.7951 10.6422 13.891 10.454C14 10.2401 14 9.96005 14 9.4V4.6C14 4.03995 14 3.75992 13.891 3.54601C13.7951 3.35785 13.6422 3.20487 13.454 3.10899C13.2401 3 12.9601 3 12.4 3H5.6C5.03995 3 4.75992 3 4.54601 3.10899C4.35785 3.20487 4.20487 3.35785 4.10899 3.54601C4 3.75992 4 4.03995 4 4.6V11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></div>
+                            </div>
+                          </div>
+                          <div class="uui-navbar05_item-right-2">
+                            <div class="uui-navbar05_item-heading-2">关于我们</div>
+                            <div class="uui-text-size-small-4">了解我们的故事和使命。</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="uui-navbar05_dropdown-link-list-2">
+                        <a href="../careers.html" class="uui-navbar05_dropdown-link-2 w-inline-block">
+                          <div class="uui-navbar05_icon-holder-2">
+                            <div class="icon-featured-large-3">
+                              <div class="uui-icon-1x1-xsmall-7 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M22 21V19C22 17.1362 20.7252 15.5701 19 15.126M15.5 3.29076C16.9659 3.88415 18 5.32131 18 7C18 8.67869 16.9659 10.1159 15.5 10.7092M17 21C17 19.1362 17 18.2044 16.6955 17.4693C16.2895 16.4892 15.5108 15.7105 14.5307 15.3045C13.7956 15 12.8638 15 11 15H8C6.13623 15 5.20435 15 4.46927 15.3045C3.48915 15.7105 2.71046 16.4892 2.30448 17.4693C2 18.2044 2 19.1362 2 21M13.5 7C13.5 9.20914 11.7091 11 9.5 11C7.29086 11 5.5 9.20914 5.5 7C5.5 4.79086 7.29086 3 9.5 3C11.7091 3 13.5 4.79086 13.5 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></div>
+                            </div>
+                          </div>
+                          <div class="uui-navbar05_item-right-2">
+                            <div class="uui-navbar05_text-wrapper-2">
+                              <div class="uui-navbar05_item-heading-2 margin-bottom-0">招聘信息</div>
+                              <div class="uui-badge-small-success-4">
+                                <div>招聘进行中!</div>
+                              </div>
+                            </div>
+                            <div class="uui-text-size-small-4">我们一直在寻找有才华的您。加入我们吧！</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="uui-navbar05_dropdown-link-list-2">
+                        <a href="https://github.com/rustdesk/rustdesk/releases" target="_blank" class="uui-navbar05_dropdown-link-2 w-inline-block">
+                          <div class="uui-navbar05_icon-holder-2">
+                            <div class="icon-featured-large-3">
+                              <div class="uui-icon-1x1-xsmall-2 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M14 2.26953V6.40007C14 6.96012 14 7.24015 14.109 7.45406C14.2049 7.64222 14.3578 7.7952 14.546 7.89108C14.7599 8.00007 15.0399 8.00007 15.6 8.00007H19.7305M14 17.5L16.5 15L14 12.5M10 12.5L7.5 15L10 17.5M20 9.98822V17.2C20 18.8802 20 19.7202 19.673 20.362C19.3854 20.9265 18.9265 21.3854 18.362 21.673C17.7202 22 16.8802 22 15.2 22H8.8C7.11984 22 6.27976 22 5.63803 21.673C5.07354 21.3854 4.6146 20.9265 4.32698 20.362C4 19.7202 4 18.8802 4 17.2V6.8C4 5.11984 4 4.27976 4.32698 3.63803C4.6146 3.07354 5.07354 2.6146 5.63803 2.32698C6.27976 2 7.11984 2 8.8 2H12.0118C12.7455 2 13.1124 2 13.4577 2.08289C13.7638 2.15638 14.0564 2.27759 14.3249 2.44208C14.6276 2.6276 14.887 2.88703 15.4059 3.40589L18.5941 6.59411C19.113 7.11297 19.3724 7.3724 19.5579 7.67515C19.7224 7.94356 19.8436 8.2362 19.9171 8.5423C20 8.88757 20 9.25445 20 9.98822Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg></div>
+                            </div>
+                          </div>
+                          <div class="uui-navbar05_item-right-2">
+                            <div class="uui-navbar05_item-heading-2">更新日志</div>
+                            <div class="uui-text-size-small-4">了解有哪些新的改进。</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="uui-navbar05_dropdown-link-list-2">
+                        <a href="../open-source.html" class="uui-navbar05_dropdown-link-2 w-inline-block">
+                          <div class="uui-navbar05_icon-holder-2">
+                            <div class="icon-featured-large-3">
+                              <div class="uui-icon-1x1-xsmall-2 w-embed"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+                                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                                </svg></div>
+                            </div>
+                          </div>
+                          <div class="uui-navbar05_item-right-2">
+                            <div class="uui-navbar05_item-heading-2">开源</div>
+                            <div class="uui-text-size-small-4">加入我们的开源社区！</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="https://github.com/rustdesk/rustdesk" target="_blank" class="uui-navbar05_bottom-bar-2 w-inline-block">
+                  <div class="uui-navbar05_bottom-bar-background-2">
+                    <div class="social-icon-4 w-embed"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                      </svg></div>
+                  </div>
+                  <div class="uui-navbar05_bottom-bar-content-2">
+                    <div class="uui-button-link-4">
+                      <div class="uui-button-icon-2 w-embed"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+                          <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                        </svg></div>
+                      <div>在 GitHub 上关注我们</div>
+                    </div>
+                  </div>
+                </a>
+              </nav>
+            </div>
+            <a href="pricing.html" class="uui-navbar03_link-2 w-nav-link">定价</a>
+            <a href="/docs/" class="uui-navbar03_link-2 w-nav-link">文档</a>
+          </div>
+          <div class="uui-navbar03_menu-right-2">
+            <div class="uui-navbar03_button-wrapper-2">
+              <a href="https://github.com/rustdesk/rustdesk" target="_blank" class="uui-button-tertiary-gray-2 w-inline-block"><img src="../images/github.svg" loading="lazy" id="github-star" alt="" class="image">
+                <div class="a-caption">来点个赞吧！</div>
+              </a>
+              <a href="/download" target="_blank" class="uui-button-3 w-inline-block">
+                <div>下载</div>
+              </a>
+            </div>
+          </div>
+        </nav>
+        <div class="uui-navbar3_menu-button-2 w-nav-button">
+          <div class="menu-icon_component-2">
+            <div class="menu-icon_line-top-2"></div>
+            <div class="menu-icon_line-middle-2">
+              <div class="menu-icon_line-middle-inner-2"></div>
+            </div>
+            <div class="menu-icon_line-bottom-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="pricing">
+    <div class="uui-container-large-12">
+      <div class="uui-padding-vertical-xhuge-11">
+        <div class="uui-text-align-center-5">
+          <div class="uui-max-width-large-6 align-center">
+            <div class="uui-heading-subheading-9">自建方案定价</div>
+            <h2 class="uui-heading-medium-9">简单而且透明的定价</h2>
+            <div class="uui-space-xsmall-9"></div>
+            <div class="uui-text-size-large-9">安全、便宜、开放的远程桌面自建解决方案</div>
+          </div>
+        </div>
+        <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="uui-pricing08_component w-tabs">
+          <div class="uui-pricing08_tabs-menu w-tab-menu">
+            <a data-w-tab="Tab 1" class="uui-pricing08_tab-link w-inline-block w-tab-link w--current">
+              <div>我们的定价方案</div>
+            </a>
+            <a data-w-tab="Tab 2" class="uui-pricing08_tab-link w-inline-block w-tab-link">
+              <div>其它定价方案</div>
+            </a>
+          </div>
+          <div class="uui-pricing08_tab-content w-tab-content">
+            <div data-w-tab="Tab 1" class="uui-pricing08_tab-pane w-tab-pane w--tab-active">
+              <div class="w-layout-grid uui-pricing08_components">
+                <div class="uui-pricing08_plan">
+                  <div class="uui-pricing08_content">
+                    <div class="uui-pricing08_content-top">
+                      <div class="uui-text-align-center-5">
+                        <h2 class="uui-heading-xxsmall-2">免费版本</h2>
+                        <div class="uui-pricing08_price">$0<span class="uui-pricing08_price-text">/月 </span></div>
+                        <div class="uui-text-size-medium-10">可以免费</div>
+                      </div>
+                      <div class="uui-pricing08_feature-list">
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c8776a-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10"><a href="/docs/en/self-host/install/" style="color: #475467">文档</a></div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c8776a-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">在线状态</div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c8776f-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">设备数目不限 (不受管理)</div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c87774-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">社区支持</div>
+                        </div>
+                      </div>
+                    </div>
+                    <a href="/docs/en/self-host/" target="_blank" class="uui-button-15 w-inline-block">
+                      <div>开始使用</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="uui-pricing08_plan">
+                  <div class="uui-pricing08_content">
+                    <div class="uui-pricing08_content-top">
+                      <div class="uui-text-align-center-5">
+                        <h2 class="uui-heading-xxsmall-2">个人版本</h2>
+                        <div class="uui-pricing08_price">$9.90<span class="uui-pricing08_price-text">/月</span></div>
+                        <div class="uui-text-size-medium-10">按年付费</div>
+                      </div>
+                      <div class="uui-pricing08_feature-list">
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c8776a-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10"><a href="/docs/en/self-host/pro/" style="color: #475467">文档</a></div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c87789-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">2个授权用户
+                            <div class="tooltip">?<span class="tooltiptext">可以创建并允许登录的最大用户数量。</span></div>
+                          </div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c8778e-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">100个受管理设备
+                            <div class="tooltip">?<span class="tooltiptext">可以关联到授权用户的最大设备数量。</span></div>
+                          </div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c87793-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">网页版后台管理端</div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c87798-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">地址簿</div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c8779d-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">审计日志</div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c877a2-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">修改ID</div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c877a7-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">访问控制</div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c877ac-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">中心化配置</div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c877b1-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">分布式中继服务器部署</div>
+                        </div>
+                      </div>
+                    </div>
+                    <a href="https://rustdesk.com/api/lic/stripe/checkout?type=Personal&currency=cny" target="_blank" class="uui-button-15 w-inline-block">
+                      <div>购买</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="uui-pricing08_popular-plan">
+                  <div class="uui-pricing08_popular-label">
+                    <div>最受欢迎的版本</div>
+                  </div>
+                  <div class="uui-pricing08_content">
+                    <div class="uui-pricing08_content-top">
+                      <div class="uui-text-align-center-5">
+                        <h2 class="uui-heading-xxsmall-2">商业版本</h2>
+                        <div class="uui-pricing08_price">$19.90<span class="uui-pricing08_price-text">/月</span></div>
+                        <div class="uui-text-size-medium-10">按年付费</div>
+                      </div>
+                      <div class="uui-pricing08_feature-list">
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c877c9-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">20个授权用户</div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c877ce-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">500个受管理设备</div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c877d3-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">单点登录(SSO)</div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c877d8-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">LDAP集成</div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c877dd-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">跨组访问</div>
+                        </div>
+                        <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c877e2-47ad0af8" class="uui-pricing08_feature">
+                          <div class="uui-pricing08_icon-wrapper">
+                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                          </div>
+                          <div class="uui-text-size-medium-10">自定义客户端<br>(敬请期待)</div>
+                        </div>
+                      </div>
+                    </div>
+                    <a href="https://rustdesk.com/api/lic/stripe/checkout?type=Business&currency=cny" target="_blank" class="uui-button-15 w-inline-block">
+                      <div>购买</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div data-w-tab="Tab 2" class="uui-pricing08_tab-pane w-tab-pane">
+              <div class="w-layout-grid uui-pricing08_components">
+                <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c877ee-47ad0af8"></div>
+                <div class="uui-pricing08_plan">
+                  <div class="uui-pricing08_content">
+                    <a href="mailto:sales@rustdesk.com" class="uui-button-15 w-inline-block">
+                      <div>联系销售</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="uui-page-padding-2">
+    <div class="uui-container-large-2">
+      <div class="uui-padding-vertical-xlarge">
+        <div class="w-layout-grid uui-footer03_top-wrapper">
+          <div class="uui-footer03_left-wrapper">
+            <a href="../index.html" class="uui-footer03_logo-link w-nav-brand">
+              <div class="uui-logo_component-2"><img src="../images/rustdesk-banner.svg" loading="lazy" alt="Untitled UI logotext" class="uui-logo_logotype-2"></div>
+            </a>
+            <div class="uui-footer03_details-wrapper">
+              <div class="uui-text-size-medium-2">安全的远程桌面访问</div>
+            </div>
+            <div class="w-layout-grid uui-footer03_social-list">
+              <a href="https://github.com/rustdesk/rustdesk" target="_blank" class="uui-footer03_social-link w-inline-block">
+                <div class="social-icon-4 w-embed"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                  </svg></div>
+              </a>
+              <a href="https://discord.com/invite/nDceKgxnkV" target="_blank" class="uui-footer03_social-link w-inline-block">
+                <div class="social-icon-4 w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30" fill="currentColor">
+                    <path d="M25.12 6.946c-2.424-1.948-6.257-2.278-6.419-2.292a.608.608 0 0 0-.604.357c-.004.008-.218.629-.425 1.228 2.817.493 4.731 1.587 4.833 1.647A.999.999 0 0 1 22 9.75a.99.99 0 0 1-.501-.135C21.471 9.598 18.663 8 15.002 8 11.34 8 8.531 9.599 8.503 9.615a1 1 0 0 1-1.006-1.729c.102-.06 2.023-1.158 4.848-1.65-.218-.606-.438-1.217-.442-1.225a.6.6 0 0 0-.604-.357c-.162.013-3.995.343-6.451 2.318C3.564 8.158 1 15.092 1 21.087a.6.6 0 0 0 .08.301c1.771 3.11 6.599 3.924 7.699 3.959a.61.61 0 0 0 .511-.249l1.19-1.612c-2.61-.629-3.99-1.618-4.073-1.679a1 1 0 0 1 1.181-1.614C7.625 20.217 10.172 22 15 22c4.847 0 7.387-1.79 7.412-1.808a1.001 1.001 0 0 1 1.183 1.613c-.083.061-1.456 1.048-4.06 1.677l1.175 1.615c.115.158.298.25.492.25l.019-.001c1.101-.035 5.929-.849 7.699-3.959a.6.6 0 0 0 .08-.301c0-5.994-2.564-12.928-3.88-14.14zM11 19c-1.105 0-2-1.119-2-2.5s.895-2.5 2-2.5 2 1.119 2 2.5-.895 2.5-2 2.5zm8 0c-1.105 0-2-1.119-2-2.5s.895-2.5 2-2.5 2 1.119 2 2.5-.895 2.5-2 2.5z"></path>
+                  </svg></div>
+              </a>
+              <a href="https://www.zhihu.com/people/rustdesk" target="_blank" class="uui-footer03_social-link w-inline-block">
+                <div class="social-icon-4 w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="css-1hlrcxk" viewbox="0 0 30.981 30.981">
+                    <path d="M30.981 3.954H17.845v23.579h3.219l.43 2.84 4.352-2.84h5.135zm-5.553 20.633-2.555 1.666-.251-1.664h-1.839V6.88h7.231v17.708h-2.586ZM15.42 14.562h-4.775c0-.52.035-1.053.041-1.61V6.882h5.446V5.448a1.442 1.493 0 0 0-.431-1.057 1.47 1.521 0 0 0-1.033-.437H6.167c.03-.097.06-.195.09-.281C6.549 2.767 7.487 0 7.487 0a4.545 4.705 0 0 0-2.574.77c-.608.442-.972.753-1.462 2.149-.567 1.604-1.063 3.153-1.397 4.077-.514 1.475-1.755 4.07-1.755 4.07a6.239 6.458 0 0 0 2.687-.673c1.194-.655 1.79-1.659 2.19-3.183l.097-.331h2.489v6.071c0 .552-.048 1.085-.078 1.612H3.29c-.757 0-1.482.307-2.019.856a2.813 2.912 0 0 0-.835 2.069h6.961a18.895 19.56 0 0 1-.83 4.028 17.912 18.542 0 0 1-3.212 5.821A35.305 36.546 0 0 1 0 30.624s3.338 1.297 5.786-1.053c1.48-1.427 2.806-4.21 3.444-6.323a29.957 31.01 0 0 0 1.195-5.772h6.363v-1.513a1.337 1.384 0 0 0-.397-.992 1.364 1.412 0 0 0-.97-.409z" style="stroke-width:1"></path>
+                    <path d="m11.27 18.675-2.312 1.49 5.038 7.459a6.905 6.905 0 0 0 .672-2.218 3.15 3.15 0 0 0-.28-2.168z"></path>
+                  </svg></div>
+              </a>
+            </div>
+          </div>
+          <div id="w-node-c3ba0e1a-bf5e-2d5d-7acc-ca3f39b7b4ca-39b7b4b6" class="w-layout-grid uui-footer03_menu-wrapper">
+            <div class="uui-footer03_link-list">
+              <a href="/docs" class="uui-footer03_link w-inline-block">
+                <div>文档</div>
+              </a>
+              <a href="https://discord.com/invite/nDceKgxnkV" target="_blank" class="uui-footer03_link w-inline-block">
+                <div>技术支持</div>
+              </a>
+              <a href="https://github.com/rustdesk/rustdesk/releases" target="_blank" class="uui-footer03_link w-inline-block">
+                <div>版本发布</div>
+              </a>
+              <a href="https://github.com/rustdesk/rustdesk/wiki/FAQ" target="_blank" class="uui-footer03_link w-inline-block">
+                <div>常见问题解答</div>
+              </a>
+              <a href="pricing.html" class="uui-footer03_link w-inline-block">
+                <div>定价</div>
+              </a>
+            </div>
+            <div class="uui-footer03_link-list">
+              <a href="../team.html" class="uui-footer03_link w-inline-block">
+                <div>关于我们</div>
+              </a>
+              <a href="../careers.html" class="uui-footer03_link w-inline-block">
+                <div>招聘信息</div>
+              </a>
+              <a href="../open-source.html" class="uui-footer03_link w-inline-block">
+                <div>开源</div>
+              </a>
+              <a href="https://github.com/rustdesk/rustdesk/discussions/918" target="_blank" class="uui-footer03_link w-inline-block">
+                <div>路线图</div>
+              </a>
+              <a href="http://45.76.181.120:8080/" target="_blank" class="uui-footer03_link w-inline-block">
+                <div>网页端</div>
+                <div class="uui-badge-small-success-2">
+                  <div>Beta</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="uui-footer03_bottom-wrapper">
+          <div class="uui-text-size-small-2 text-color-gray500">© 2023 Purslane Ltd. 版权所有</div>
+          <div class="w-layout-grid uui-footer03_legal-list">
+            <a href="../terms.html" class="uui-footer03_legal-link">条款</a>
+            <a href="../privacy.html" class="uui-footer03_legal-link">隐私</a>
+            <a href="https://github.com/rustdesk/rustdesk/blob/master/docs/CODE_OF_CONDUCT.md" target="_blank" class="uui-footer03_legal-link">行为准则</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=64468462c3c33867c168df09" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="../js/webflow.js" type="text/javascript"></script>
+  <script>
+window.addEventListener("load", function() {
+  var star = document.getElementById("github-star");
+  if (star) {
+    star.src = "https://img.shields.io/github/stars/rustdesk/rustdesk.svg?style=flat&logo=github&colorB=grey&label=";
+  }
+  var banner = document.getElementById("scammer-banner");
+  if (banner) {
+    banner.style.display = localStorage.getItem("hide-scammer") ? "none" : "block";
+  }
+  var link = document.getElementById("close-scammer-banner");
+  if (link) {
+    link.addEventListener("click", function(event) {
+      event.preventDefault();
+      localStorage.setItem("hide-scammer", "Y");
+    });
+  }
+});
+</script>
+  <script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="0FXGvCUPohUXHaeh8raxKOBZcDS9CGRq";;analytics.SNIPPET_VERSION="4.15.3";
+  analytics.load("0FXGvCUPohUXHaeh8raxKOBZcDS9CGRq");
+  analytics.page();
+  }}();
+</script>
+</body>
+</html>
