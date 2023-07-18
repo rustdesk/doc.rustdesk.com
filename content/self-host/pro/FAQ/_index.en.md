@@ -102,6 +102,56 @@ A simple way to check is using telnet. To test in the Linux terminal type `telne
 
 Your mail server may not be using port 25. Please make sure you are using the correct ports.
 
+## Can I deploy RustDesk using powershell?
+Sure, this script can help, replace `youraddress` and `yourkey` with your address and key for your RustDesk Server Pro Address and Key
+```
+$ErrorActionPreference= 'silentlycontinue'
+
+$rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
+
+if($rdver -eq "1.2.1") 
+{
+write-output "RustDesk $rdver is the newest version"
+
+exit
+}
+
+If (!(Test-Path c:\Temp)) {
+  New-Item -ItemType Directory -Force -Path c:\Temp > null
+}
+
+cd c:\Temp
+
+powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.1/rustdesk-1.2.1-x86_64.exe" -Outfile "rustdesk.exe"
+Start-Process .\rustdesk.exe --silent-install -wait
+
+$ServiceName = 'Rustdesk'
+$arrService = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
+
+if ($arrService -eq $null)
+{
+    Start-Sleep -seconds 20
+}
+
+while ($arrService.Status -ne 'Running')
+{
+    Start-Service $ServiceName
+    Start-Sleep -seconds 5
+    $arrService.Refresh()
+}
+net stop rustdesk
+
+$username = ((Get-WMIObject -ClassName Win32_ComputerSystem).Username).Split('\')[1]
+Remove-Item C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml
+New-Item C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml
+Set-Content C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml "rendezvous_server = 'youraddress' `nnat_type = 1`nserial = 0`n`n[options]`ncustom-rendezvous-server = 'youraddress'`nkey = 'yourkey'`nrelay-server = 'youraddress'`napi-server = 'https://youraddress'"
+Remove-Item C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml
+New-Item C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml
+Set-Content C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml "rendezvous_server = 'youraddress' `nnat_type = 1`nserial = 0`n`n[options]`ncustom-rendezvous-server = 'youraddress'`nkey = 'yourkey'`nrelay-server = 'youraddress'`napi-server = 'https://youraddress'"
+
+net start rustdesk
+```
+
 ## How can I get RustDesk IDs from agents on my network or using an RMM type system?
 On Windows you can use the following PowerShell script:
 ```
