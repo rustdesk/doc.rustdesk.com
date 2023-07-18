@@ -107,7 +107,8 @@ On Windows you can use the following PowerShell script:
 ```
 $ErrorActionPreference= 'silentlycontinue'
 
-"'C:\Program Files\RustDesk\rustdesk.exe' --get-id" | get-clipboard
+$rustdesk_id = ("'C:\Program Files\RustDesk\rustdesk.exe' --get-id" | get-clipboard)
+Write-Output $rustdesk_id
 ```
 
 ## How can I set a persistent password on an agent on my network or using an RMM type system?
