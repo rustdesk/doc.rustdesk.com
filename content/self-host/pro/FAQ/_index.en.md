@@ -107,7 +107,9 @@ On Windows you can use the following PowerShell script:
 ```
 $ErrorActionPreference= 'silentlycontinue'
 
-$rustdesk_id = ("'C:\Program Files\RustDesk\rustdesk.exe' --get-id" | get-clipboard)
+Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" --get-id 
+sleep 2
+$rustdesk_id = (get-clipboard)
 Write-Output $rustdesk_id
 ```
 
