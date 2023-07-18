@@ -140,6 +140,20 @@ Please get in touch with our [sales](mailto://sales@rustdesk.com) team.
 2. We want to be here and still making great progress in years to come.
 3. The open source version will continue to be open source and we encourage others to make developments in line with the AGPL license.
 
+## I cant connect to devices in different groups, why is this?
+This is easily sorted, you need to allow cross-group access.
+1. Add new Groups/
+2. Click Edit.
+3. Select the relevant groups you want access (it automatically adds them in the corresponding group).
+
+## How do I get configs automatically?
+Configs are generated automatically.
+1. Download the newest clients from [GitHub](https://github.com/rustdesk/rustdesk/releases/latest).
+2. On the main page in the web console click on Windows EXE.
+3. Fill in the host and API (if different from your config).
+4. Click Submit.
+5. Scan QR code on Android and rename exe to what has been generated. 
+
 ## Do you offer hosting for RustDesk Server Pro?
 Please get in touch with our [sales](mailto://sales@rustdesk.com) team.
 
