@@ -33,6 +33,9 @@ wget https://raw.githubusercontent.com/techahold/rustdeskinstall/master/install.
 chmod +x install.sh
 ./install.sh
 ```
+
+> Note: if you aren't running as root, you need to run `sudo ./install.sh` instead.
+
 There is also an update script on [Techahold's](https://github.com/techahold/rustdeskinstall) repository.
 
 ## Install your own server as systemd service using deb file for debian distros
