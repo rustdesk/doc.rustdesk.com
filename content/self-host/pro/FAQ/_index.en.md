@@ -190,9 +190,6 @@ Similar configs should work with Traefik v2, HAProxy, Apache Proxy and Cloudflar
 ## How can I file a bug report?
 Please file via [GitHub](https://github.com/rustdesk/rustdesk-server-pro/issues).
 
-## How can I get a trial?
-Please get in touch with our [sales](mailto://sales@rustdesk.com) team.
-
 ## Why if I am self hosting is this not free and open source?
 1. RustDesk has become a full time job for a number of people, they have lives, wives, jobs and kids which all demands attention and costs money!
 2. We want to be here and still making great progress in years to come.
