@@ -3,7 +3,7 @@ title: Synology
 weight: 22
 ---
 
-This tutorial is based on latest DSM v6.
+This tutorial is based on latest DSM v6 and v7.
 
 ### Install Docker
 
@@ -34,7 +34,7 @@ Click on above "Advanced Settings".
 - Enable "Use the same network as Docker host", for more about host net, please [check](/docs/en/self-host/install/#net-host)
 ![](/docs/en/self-host/synology/images/host-net.png)
 
-- Mount a host directory (e.g. `Shared/test/`) to `/root`, hbbs will generate some files (including the `key` file) in this directory
+- Mount a host directory (e.g. `/home/rustdesk/`) to `/root`, hbbs will generate some files (database and `key` files) in this directory which need to be persistent over reboots.
 | Mount | Files generated in the host directory |
 | -- | -- |
 | ![](/docs/en/self-host/synology/images/mount.png?width=500px) | ![](/docs/en/self-host/synology/images/mounted-dir.png?width=300px) |
@@ -43,7 +43,7 @@ Click on above "Advanced Settings".
 {{% notice note %}}
 Synology's OS is Debian based, so host net (--net=host) works fine, we do not need to map ports with `-p` option.
 
-`192.168.16.98` is an intranet IP used here for demonstration only, please set it to a public IP when you deploy.
+`192.168.16.98` is an internal IP used here for demonstration only, please set it to a public IP when you deploy and don't forget to open ports on your router!
 
 {{% /notice %}}
 
@@ -55,7 +55,7 @@ Synology's OS is Debian based, so host net (--net=host) works fine, we do not ne
 
 ### Create hbbr container
 
-Please repeat above `hbbs` steps, but change container name to `hbbr` and command to `hbbr`.
+Please repeat above `hbbs` steps, but name the container `hbbr` and command (for Set Command Step) should be `hbbr -k _`.
 
 ![](/docs/en/self-host/synology/images/hbbr-config.png)
 
@@ -67,3 +67,7 @@ Please repeat above `hbbs` steps, but change container name to `hbbr` and comman
 | Double click on container and check log | Double confirm hbbs/hbbr using host network |
 | -- | -- |
 | ![](/docs/en/self-host/synology/images/log.png?width=500px) | ![](/docs/en/self-host/synology/images/network-types.png?width=500px) |
+
+### Retrieve your Key
+
+Browse to the folder setup before using File Station, download id_ed25519.pub and open with a text editor to via your key.
