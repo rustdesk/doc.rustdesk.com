@@ -57,6 +57,11 @@ hhbs的`-r`参数不是必须的，他只是方便你不用在客户端指定中
 如果你想选择**自己的端口**，使用 “-h” 选项查看帮助。
 
 #### Docker示范
+
+{{% notice note %}}
+如果你运行 docker 版本时候，要求注册码，说明你下载的是老版本，国内的 docker 镜像缓存没有更新
+{{% /notice %}}
+
 ```
 sudo docker image pull rustdesk/rustdesk-server
 sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
