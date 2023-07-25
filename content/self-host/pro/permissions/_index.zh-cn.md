@@ -1,6 +1,6 @@
 ---
-title：权限控制
-weight：15
+title: 权限控制
+weight: 15
 ---
 
 ## 设备访问权限
