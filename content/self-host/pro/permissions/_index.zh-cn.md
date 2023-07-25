@@ -1,30 +1,30 @@
 ---
-title: Permission Control
-weight: 15
+title：权限控制
+weight：15
 ---
 
-## Device access permissions
+## 设备访问权限
 
-There are two ways to associate a device with a user:
-- Via console device page
-- Log in to the specified user account on the client side
+有两种方法将设备与用户关联：
+- 通过控制台设备页面
+- 客户端登录用户账号
 
-The following two situations will prevent the device from being accessed:
-- Make device `disable` in console devices page
-- Make user `disable` in console user page
+以下两种情况会导致设备无法被访问：
+- 在控制台设备页面中使设备`禁用`
+- 在控制台用户页面中使用户`禁用`
 
-The associated device can only be accessed by the devices of the same user or user group, or in correct cross-group settings.
+关联的设备只能被同一用户或用户组的设备或者正确的跨组设置的设备访问。
 
-## Cross group settings
+## 跨组设置
 
-Please go to group page in the web console, click on `Edit` to edit cross group settings as below.
+请进入Web控制台的群组页面，点击`编辑`来编辑跨群组设置，如下所示。
 
-Your modifications to `Access with other groups` take effect immediately without requiring you to click the `OK` button.
+您对`Access with other groups`的修改会立即生效，无需单击`确定`按钮。
 
-Both `Can access to` and `Can be accessed from` serve almost the same function, we provide both options for your convenience. However, this may cause some confusion.
+`Can access to`和`Can be accessed from`提供几乎相同的功能，我们提供这两个选项是为了您的方便。 然而，这可能会引起一些混乱。
 
-{{% notice note %}}
-The user and group assigned to the controlling side are determined by the user who logs in, rather than the user who is assigned from the web console. We designed it this way because certain controlling sides do not have a device ID, such as the iOS client and web client.
-{{% /notice %}}
+{{% notice 注意事项 %}}
+分配给控制端的用户和组由登录的用户决定，而不是从 Web 控制台分配的用户。 我们这样设计是因为某些控制端没有设备ID，例如iOS客户端和Web客户端。
+{{％ /notice ％}}
 
 ![](/docs/en/self-host/pro/permissions/images/crossgrp.png)
