@@ -3,107 +3,107 @@ title: FAQ
 weight: 600
 ---
 
-## How can I install with the Simple Install Script?
-1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/pro/license) page for more details.
-2. Spin up a VPS, bare metal or Linux VM.
-3. If you want to use DNS and SSL create a DNS name i.e. `rustdesk.yourdomain.com`.
-4. Go to [this page](https://rustdesk.com/docs/en/self-host/pro/installscript/#install).
-5. Copy and paste the command into your Linux terminal.
-6. Follow the prompts as they guide you through the install.
-7. Once the install is complete go to `https://rustdesk.yourdomain.com` or `http://youripaddress:21114`.
-8. Log in with the username `admin` and password `test1234`.
-9. Enter your license code purchased in step 1.
+## 如何使用简单安装脚本进行安装？
+1. 从 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 获取许可证，查看 [license](/docs/en/self-host/pro/license) 页面了解更多详细信息。
+2. 启动 VPS、裸机或 Linux VM。
+3. 如果您想使用 DNS 和 SSL，请创建一个 DNS 名称，即`rustdesk.yourdomain.com`。
+4. 转到[此页面](https://rustdesk.com/docs/en/self-host/pro/installscript/#install)。
+5. 将命令复制并粘贴到 Linux 终端中。
+6. 按照提示完成安装。
+7. 安装完成后，转到`https://rustdesk.yourdomain.com`或`http://youripaddress:21114`。
+8. 使用用户名`admin`和密码`test1234`登录。
+9. 输入您在步骤 1 中购买的许可证代码。
 
-## How can I convert from RustDesk Server Open Source to RustDesk Server Pro?
-1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/pro/license) page for more details.
-2. Open TCP port 21114.
-3. Log into your RustDesk Server.
-4. If you didn't already use DNS and want to use SSL create a DNS name i.e. `rustdesk.yourdomain.com`.
-5. Go to [this page](https://rustdesk.com/docs/en/self-host/pro/installscript/#convert-from-open-source).
-6. Copy and paste the command into your Linux terminal.
-7. Follow the prompts as they guide you through the install.
-8. Once the install is complete go to `https://rustdesk.yourdomain.com` or `http://youripaddress:21114`.
-9. Log in with the username `admin` and password `test1234`.
-10. Enter your license code purchased in step 1.
+## 如何从 RustDesk Server开源版本 转换为 RustDesk Server Pro？
+1. 从 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 获取许可证，查看 [license](/docs/en/self-host/pro/license) 页面了解更多详细信息。
+2. 打开 TCP 端口 21114。
+3. 登录您的 RustDesk 服务器。
+4. 如果您尚未使用 DNS 并且想要使用 SSL，请创建一个 DNS 名称，即`rustdesk.yourdomain.com`。
+5. 转到[此页面](https://rustdesk.com/docs/en/self-host/pro/installscript/#convert-from-open-source)。
+6. 将命令复制并粘贴到 Linux 终端中。
+7. 按照提示完成安装。
+8. 安装完成后，转到`https://rustdesk.yourdomain.com`或`http://youripaddress:21114`。
+9. 使用用户名`admin`和密码`test1234`登录。
+10. 输入您在步骤 1 中购买的许可证代码。
 
-## There is a new version of RustDesk Server Pro out, how can I upgrade?
-1. Go to [this page](https://rustdesk.com/docs/en/self-host/pro/installscript/#upgrade).
-2. Copy and paste the command into your Linux terminal.
-3. Follow the prompts as they guide you through the upgrade.
+## RustDesk Server Pro 有新版本，如何升级？
+1. 转到[此页面](https://rustdesk.com/docs/en/self-host/pro/installscript/#upgrade)。
+2. 将命令复制并粘贴到 Linux 终端中。
+3. 按照提示进行升级。
 
-## I installed with the scripts, how can I start and stop services?
-The services use systemd so can be started and stopped using `sudo systemctl stop|start|restart rustdesk-hbbs|rustdesk-hbbr` e.g. `sudo systemctl restart rustdesk-hbbs`.
+## 我使用脚本安装了，如何启动和停止服务？
+这些服务使用 systemd，因此可以使用`sudo systemctl stop|start|restart rustdesk-hbbs|rustdesk-hbbr`来启动和停止，例如 `sudo systemctl restart rustdesk-hbbs`。
 
-## I installed with the scripts, how can I view the Linux logs?
-The logs are stored in /var/log/rustdesk-server, you can view them using `tail /var/log/rustdesk-server/hbbs.log` or `tail /var/log/rustdesk-server/hbbs.error`.
+## 我用脚本安装了，如何查看Linux日志？
+日志存储在 /var/log/rustdesk-server 中，您可以使用 `tail /var/log/rustdesk-server/hbbs.log` 或 `tail /var/log/rustdesk-server/hbbs.error` 查看它们。
 
-## I installed with the scripts, how can I check the status of the RustDesk services?
-To check the status `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` e.g. `sudo systemctl status rustdesk-hbbs`.
+## 我使用脚本安装了，如何检查 RustDesk 服务的状态？
+要检查状态 `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` 例如 `sudo systemctl status rustdesk-hbbs`。
 
-## How can I install RustDesk Server Pro on Windows?
-1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/pro/license) page for more details.
-2. Download the the windows installer from [GitHub](https://github.com/rustdesk/rustdesk-server-pro/releases/latest).
-3. Unzip the windows installer.
-4. Run the Installer and follow the steps on screen.
-5. Once its completed open RustDesk Server.
-6. Follow the prompts as they guide you through the install.
-7. Click `Services` and then `Start`.
-8. Once the install is complete go to `http://youripaddress:21114`.
-9. Log in with the username `admin` and password `test1234`.
-10. Enter your license code purchased in step 1.
+## 如何在 Windows 上安装 RustDesk Server Pro？
+1. 从 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 获取许可证，查看 [license](/docs/en/self-host/pro/license) 页面了解更多详细信息。
+2. 从 [GitHub](https://github.com/rustdesk/rustdesk-server-pro/releases/latest) 下载 Windows 安装程序。
+3. 解压 Windows 安装程序。
+4. 运行安装程序并按照屏幕上的步骤进行操作。
+5. 完成后打开 RustDesk Server。
+6. 按照提示完成安装。
+7. 单击`服务`，然后单击`启动`。
+8. 安装完成后，转到`http://youripaddress:21114`。
+9. 使用用户名`admin`和密码`test1234`登录。
+10. 输入您在步骤 1 中购买的许可证代码。
 
-## How can I change the admin password?
-1. Go to `https://rustdesk.yourdomain.com` or `http://youripaddress:21114`.
-2. Log in with the username `admin` and password `test1234`.
-3. Click on `admin` in the top right hand corner.
-4. Click on `Settings`.
-5. Enter your new password in the boxes provided.
+## 如何更改管理员密码？
+1. 转到`https://rustdesk.yourdomain.com`或`http://youripaddress:21114`。
+2. 使用用户名`admin`和密码`test1234`登录。
+3. 单击右上角的`管理`。
+4. 单击`设置`。
+5. 在提供的框中输入您的新密码。
 
-## How can I delete the default `admin` user?
-1. Create another account with `administrator` enabled.
-2. Log in with the new administrative account.
-3. Delete the `admin` on `Users` page.
+## 如何删除默认的`admin`用户？
+1. 创建另一个启用`管理员`的帐户。
+2. 使用新的管理帐户登录。
+3.删除`Users`页面上的`admin`。
 
-## How can I setup my relay servers?
-1. Go to `Settings` on the left hand menu.
-2. Click on `Relay` on the sub-menu.
-3. Click `+` next to `Relay Servers`.
-4. Enter the Relay server DNS address or IP address in the box which now shows and press Enter.
-5. If you have more than one Relay server you can keep clicking `+` and adapt the Geo settings is required (remember and copy your key to the other servers).
+## 如何设置我的中继服务器？
+1. 转到左侧菜单上的`设置`。
+2. 单击子菜单上的`中继`。
+3. 单击`中继服务器`旁边的`+`。
+4. 在现在显示的框中输入中继服务器 DNS 地址或 IP 地址，然后按 Enter。
+5. 如果您有多个中继服务器，您可以继续单击`+`并根据需要调整地理设置（记住并将您的密钥复制到其他服务器）。
 
-## How can I set or change the license?
-1. Go to `Settings` on the left hand menu.
-2. Click on `License` on the sub-menu.
-3. Click `Edit` and paste in your license code.
-4. Click `OK`.
+## 如何设置或更改许可证？
+1. 转到左侧菜单上的`设置`。
+2. 单击子菜单上的`许可证`。
+3. 单击`编辑`并粘贴您的许可证代码。
+4. 单击`确定`。
 
-## How can I move my license to a new server?
-Please see [here](https://rustdesk.com/docs/en/self-host/pro/license/#invoices-and-migration).
+## 如何将我的许可证移至新服务器？
+请参阅[此处](https://rustdesk.com/docs/en/self-host/pro/license/#invoices-and-migration)。
 
-## How can I view the logs?
-On the left hand side click on `Logs`.
+## 如何查看日志？
+在左侧单击`日志`。
 
-## How can I setup Emails?
-Gmail in this example
+## 如何设置电子邮件？
+本例中的 Gmail
 
-1. Go to `Settings` on the left hand menu.
-2. Click on `SMTP` on the sub-menu.
-3. Enter the SMTP address `smtp.gmail.com`.
-4. Enter the Port 587 in `SMTP Port`.
-5. Enter the Gmail account i.e. `myrustdeskserver@gmail.com` in `Mail Account`.
-6. Enter your password (you might need an app password).
-7. Enter your Gmail account i.e. `myrustdeskserver@gmail.com` in `From `.
-8. Click `Check` to save.
+1. 转到左侧菜单上的`设置`。
+2. 单击子菜单上的`SMTP`。
+3. 输入 SMTP 地址 `smtp.gmail.com`。
+4. 在`SMTP 端口`中输入端口 587。
+5. 在`邮件帐户`中输入 Gmail 帐户，即`myrustdeskserver@gmail.com`。
+6. 输入您的密码（您可能需要应用程序密码）。
+7. 在`发件人`中输入您的 Gmail 帐户，即`myrustdeskserver@gmail.com`。
+8. 单击`检查`保存。
 
-## Emails aren't working from my VPS
-A lot of VPS providers block ports 465 and 25.
+## 我的 VPS 无法发送电子邮件
+许多 VPS 提供商会阻止端口 465 和 25。
 
-A simple way to check is using telnet. To test in the Linux terminal type `telnet your.mailserver.com 25`. On Windows use PowerShell with `Test-NetConnection -ComputerName your.mailserver.com -Port 25`.
+一个简单的检查方法是使用 telnet。 要在 Linux 终端中测试，请输入`telnet your.mailserver.com 25`。 在 Windows 上，使用 PowerShell 和`Test-NetConnection -ComputerName your.mailserver.com -Port 25`。
 
-Your mail server may not be using port 25. Please make sure you are using the correct ports.
+您的邮件服务器可能未使用端口 25。请确保您使用的是正确的端口。
 
-## Can I deploy RustDesk using powershell?
-Sure, this script can help, replace `youraddress` and `yourkey` with your address and key for your RustDesk Server Pro Address and Key
+## 我可以使用 powershell 部署 RustDesk 吗？
+当然，此脚本可以提供帮助，将`youraddress`和`yourkey`替换为 RustDesk Server Pro 地址和密钥的地址和密钥
 ```
 $ErrorActionPreference= 'silentlycontinue'
 
@@ -152,8 +152,8 @@ Set-Content C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\con
 net start rustdesk
 ```
 
-## How can I get RustDesk IDs from agents on my network or using an RMM type system?
-On Windows you can use the following PowerShell script:
+## 如何从网络上的代理或使用 RMM 类型系统获取 RustDesk ID？
+在 Windows 上，您可以使用以下 PowerShell 脚本：
 ```
 $ErrorActionPreference= 'silentlycontinue'
 
@@ -163,8 +163,8 @@ $rustdesk_id = (get-clipboard)
 Write-Output $rustdesk_id
 ```
 
-## How can I set a persistent password on an agent on my network or using an RMM type system?
-On Windows you can use the following PowerShell script:
+## 如何在我的网络上或使用 RMM 类型系统的代理上设置永久密码？
+在 Windows 上，您可以使用以下 PowerShell 脚本：
 ```
 $ErrorActionPreference = 'silentlycontinue'
 
@@ -182,35 +182,35 @@ Write-Output $rustdesk_pw
 net start rustdesk > null
 ```
 
-## I have installed RustDesk Server Pro manually but the API web console isn't behind SSL, how can I secure this?
-Use a proxy like Nginx, the simple install script has one, it's really simple. [This is how we do it](https://github.com/rustdesk/rustdesk-server-pro/blob/493ad90daf8815c3052ff4d0d4aa9cc07e411efa/install.sh#L252).
+## 我已手动安装 RustDesk Server Pro，但 API Web 控制台不在 SSL 后面，我该如何保护它？
+使用Nginx之类的代理，简单的安装脚本就有一个，非常简单。 [这就是我们的做法](https://github.com/rustdesk/rustdesk-server-pro/blob/493ad90daf8815c3052ff4d0d4aa9cc07e411efa/install.sh#L252)。
 
-Similar configs should work with Traefik v2, HAProxy, Apache Proxy and Cloudflare Tunnel.
+类似的配置应该适用于 Traefik v2、HAProxy、Apache Proxy 和 Cloudflare Tunnel。
 
-## How can I file a bug report?
-Please file via [GitHub](https://github.com/rustdesk/rustdesk-server-pro/issues).
+## 我如何提交错误报告？
+请通过 [GitHub](https://github.com/rustdesk/rustdesk-server-pro/issues) 提交。
 
-## Why if I am self hosting is this not free and open source?
-1. RustDesk has become a full time job for a number of people, they have lives, wives, jobs and kids which all demands attention and costs money!
-2. We want to be here and still making great progress in years to come.
-3. The open source version will continue to be open source and we encourage others to make developments in line with the AGPL license.
+## 为什么如果我是自托管，这不是免费和开源的吗？
+1. RustDesk 已经成为很多人的全职工作，他们有生活，有妻子，有工作，有孩子，这些都需要关注，而且要花钱！
+2. 我们希望在未来的几年里继续取得巨大进步。
+3.开源版本将继续开源，我们鼓励其他人在符合AGPL许可的情况下进行开发。
 
-## I cant connect to devices in different groups, why is this?
-This is easily sorted, you need to allow cross-group access.
-1. Add new Groups.
-2. Click Edit.
-3. Select the relevant groups you want access (it automatically adds them in the corresponding group).
+## 我无法连接到不同组中的设备，这是为什么？
+这很容易排序，您需要允许跨组访问。
+1. 添加新群组。
+2. 单击编辑。
+3. 选择您想要访问的相关组（它会自动将它们添加到相应的组中）。
 
-## How do I get configs automatically?
-Configs are generated automatically.
-1. Download the newest clients from [GitHub](https://github.com/rustdesk/rustdesk/releases/latest).
-2. On the main page in the web console click on Windows EXE.
-3. Fill in the host and API (if different from your config).
-4. Click Submit.
-5. Scan QR code on Android and rename exe to what has been generated. 
+## 如何自动获取配置？
+配置是自动生成的。
+1. 从[GitHub](https://github.com/rustdesk/rustdesk/releases/latest)下载最新的客户端。
+2. 在 Web 控制台的主页上单击 Windows EXE。
+3. 填写主机和 API（如果与您的配置不同）。
+4. 单击`提交`。
+5. 扫描Android上的二维码并将exe重命名为生成的文件。
 
-## Do you offer hosting for RustDesk Server Pro?
-Please get in touch with our [sales](mailto://sales@rustdesk.com) team.
+## 你们是否提供 RustDesk Server Pro 托管？
+请联系我们的[销售](mailto://sales@rustdesk.com) 团队。
 
-## Is there somewhere I can see video setup guides?
-Yes! We have a [YouTube Channel](https://youtube.com/@RustDesk).
+## 有什么地方可以看到视频设置指南吗？
+是的！ 我们有一个 [YouTube 频道](https://youtube.com/@RustDesk)。
