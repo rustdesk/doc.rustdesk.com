@@ -1,24 +1,24 @@
 ---
-title: 授權
+title: 授权
 weight: 15
 ---
 
-## 購買授權
+## 购买授权
 
-請從 https://rustdesk.com/pricing.html 取得授權，在 Stripe 結帳頁面輸入有效的電子郵件地址。授權將在付款完成後寄送到您的電子郵件地址。
+请从 https://rustdesk.com/pricing.html 取得授权码，在 Stripe 结帐页面输入有效的电子邮件地址。授权码将在付款完成后寄送到您的电子邮件地址。
 
 ![](/docs/en/self-host/pro/license/images/stripe.jpg)
 
-## 設定授權
+## 设定授权
 
-您將須在網頁控制台輸入授權，或變更授權。
+您将须在网页控制台输入授权码，或变更授权。
 
- | 設定授權 | 變更授權 |
+ | 设定授权 | 变更授权 |
  | -- | -- |
  ![](/docs/en/self-host/pro/license/images/set.png) | ![](/docs/en/self-host/pro/license/images/change.png) |
 
-## 發票和轉移
+## 发票和迁移
 
-授權只能在一台機器上使用 (僅 hbbs，hbbr 不需授權)，如果您想要轉移至其他機器，或下載發票，請前往 [https://rustdesk.com/self-host/account/](https://rustdesk.com/self-host/account/)。透過在 Stripe 結帳頁面輸入的電子郵件地址登入，解除綁定舊機器，如下圖所示。新機器將在您於網頁控制台設定授權時自動註冊。
+授权码只能在一台机器上使用 (仅 hbbs，hbbr 不需授权码)，如果您想要迁移至其他机器，或下载发票，请前往 [https://rustdesk.com/self-host/account/](https://rustdesk.com/self-host/account/)。透过在 Stripe 支付页面输入的电子邮件地址登入，解除旧机器绑定，如下图所示。新机器将在您于网页控制台设定授权码时自动注册。
 
 ![](/docs/en/self-host/pro/license/images/unbind.jpg)
