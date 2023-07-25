@@ -44,8 +44,8 @@ win64 文件夹的内容）。 将 NSSM 的二进制文件移至
 在此示例中，我们将使用`C:\Program Files\RustDesk Server`
 
 ```cmd
-nssm 安装`RustDesk hbbs 服务``C:\Program Files\RustDesk Server\hbbs.exe`-r 0.0.0.0 -k _
-nssm 安装`RustDesk hbbr 服务``C:\Program Files\RustDesk Server\hbbr.exe`-k _
+nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe" -r 0.0.0.0 -k _
+nssm install "RustDesk hbbr Service" "C:\Program Files\RustDesk Server\hbbr.exe" -k _
 ```
 
 **笔记：**
@@ -60,16 +60,16 @@ nssm 安装`RustDesk hbbr 服务``C:\Program Files\RustDesk Server\hbbr.exe`-k _
 如果您只想复制、粘贴和编辑，则使用命令模板。
 
 ```cmd
-nssm install <所需的 hbbs 服务名称> <RustDesk hbbs 二进制路径> <RustDesk hbbs 参数>
-nssm install <所需的 hbbr 服务名称> <RustDesk hbbr 二进制路径> <RustDesk hbbr 参数>
+nssm install <hbbs 服务名称> <RustDesk hbbs.exe 路径> <RustDesk hbbs 参数>
+nssm install <hbbr 服务名称> <RustDesk hbbr.exe 路径> <RustDesk hbbr 参数>
 ```
 
 **启动服务**
 
 成功安装服务后，需要启动它们。
 ```cmd
-nssm start <所需的 hbbs 服务名称>
-nssm start <所需的 hbbr 服务名称>
+nssm start <hbbs 服务名称>
+nssm start <hbbr 服务名称>
 ```
 
 **完毕！**
