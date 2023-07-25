@@ -1,30 +1,30 @@
 ---
-title: 網頁控制台
+title: 网页控制台
 weight: 10
 ---
 
 功能：
 
-- 新增/變更使用者和使用者群組
-- 變更裝置存取權限
-- 瀏覽裝置連線和其他紀錄檔
-- 更新設定
-- 管理客戶端設定同步策略
+- 新增/变更使用者和使用者群组
+- 变更设备存取权限
+- 浏览设备访问和其他日志
+- 更新设置
+- 管理客户端设定同步策略
 
-## 登入
+## 登录
 
-如同之前所述，網頁控制台的預設連接埠為 21114。在瀏覽器輸入 `http://<hbbs host>:21114` 以進入控制台頁面。如下圖所示 (hbbs 執行在 IP 為 192.168.1.143 的伺服器上)：
+如同之前所述，网页控制台的预设端口为 21114。在浏览器输入 `http://<hbbs host>:21114` 以进入控制台页面。如下图所示 (hbbs 执行在 IP 为 192.168.1.143 的服务器上)：
 ![](/docs/en/self-host/pro/console/images/console-login.png)
 
-如果您需要 https，請安裝如 `Nginx` 的網頁伺服器。
+如果您需要 https，请安装如 `Nginx` 的网页服务器。
 
-預設管理員帳號/密碼為 admin/test1234，請記得在登入後變更密碼，在右上角的帳號選單選擇 "設定" 以進入密碼變更頁面，如下圖所示。您也可以建立另一個管理員帳號，並刪除預設帳號，建議啟用電子郵件登入驗證。
+预设管理员帐号/密码为 admin/test1234，请记得在登入后变更密码，在右上角的帐号选单选择 "设定" 以进入密码变更页面，如下图所示。您也可以建立另一个管理员帐号，并删除预设帐号，建议启用电子邮件登入验证。
 
 <a name=console-home></a>
 ![](/docs/en/self-host/pro/console/images/console-home.png?v2)
 
-非管理員使用者也可以登入來瀏覽他們的裝置和記錄，以及變更他們的使用者設定。
+非管理员使用者也可以登入来浏览他们的设备和日志，以及变更他们的使用者设定。
 
 ## Windows EXE
 
-For Windows clients, you can leave out the custom server configuration and put the configuration information in the `RustDesk.exe` filename instead. As shown above, please go to the console welcome page and click on `Windows EXE`. **`Client >=1.1.9 Required`**。
+对于 Windows 客户端，您可以省略自定义服务器配置，并将配置信息放在`RustDesk.exe`文件名中。 如上图，请进入控制台欢迎页面，点击`Windows EXE`。 **`客户端 >=1.1.9`**。
