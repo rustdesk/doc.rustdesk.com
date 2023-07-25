@@ -1,52 +1,52 @@
 ---
-title: 簡易安裝
+title: 简易安装
 weight: 10
 ---
 
 {{% notice note %}}
-別忘了從 https://rustdesk.com/pricing.html 取得授權，查閱[授權](/docs/en/self-host/pro/license)頁面以了解詳情。
+别忘了从 https://rustdesk.com/pricing.html 取得授权，查阅[授权](/docs/en/self-host/pro/license)页面以了解详情。
 {{% /notice %}}
 
-## 安裝
+## 安装
 
-複製並在您的 Linux 終端機中貼上下列指令以安裝 RustDesk 伺服器專業版。
+复制并在您的 Linux 控制台中贴上下列指令以安装 RustDesk 服务器专业版。
 
 `bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh)`
 
 流程：
 
-- 安裝依賴套件
-- 在可用情況下設定 ufw 防火牆
-- 建立資料夾 /var/lib/rustdesk-server 和 /var/log/rustdesk-server
-- 在 /usr/bin 安裝執行檔
-- 下載 RustDesk 專業版服務並解壓縮到上述資料夾
-- 為 hbbs 和 hbbr 建立 systemd 服務
-- 如果您選擇了 Domain，將安裝 Nginx 和 certbot，讓 API 能夠在連接埠 443 (https) 存取，並透過連接埠 80 取得 SSL 證書，這將自動更新
+- 安装依赖包
+- 在可用情况下设定 ufw 防火墙
+- 建立文件夹 /var/lib/rustdesk-server 和 /var/log/rustdesk-server
+- 在 /usr/bin 安装可执行文件
+- 下载 RustDesk 专业版服务并解压缩到上述文件料夹
+- 为 hbbs 和 hbbr 建立 systemd 服务
+- 如果您选择了 Domain，将安装 Nginx 和 certbot，让 API 能够在端口 443 (https) 存取，并透过端口 80 取得 SSL 证书，这将自动更新
 
-## 升級
+## 升级
 
-複製並在您的 Linux 終端機中貼上下列指令以升級現有的 RustDesk 伺服器專業版安裝。您可以使用 cron 定期執行此指令。
+复制并在您的 Linux 终端机中贴上下列指令以升级现有的 RustDesk 服务器专业版安装。您可以使用 cron 定期执行此命令。
 
 `bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/update.sh)`
 
 流程：
 
-- 檢查 RustDesk-Server-Pro 的新版本
-- 如果找到新版本，移除 API 檔案並下載新執行檔和 API 檔案
+- 检查 RustDesk-Server-Pro 的新版本
+- 如果找到新版本，移除 API 文件并下载新可执行文件和 API 文件
 
-## 從開源版本轉換
+## 从开源版本转换
 
-複製並在您的 Linux 終端機中貼上下列指令以從 RustDesk 伺服器轉換至 RustDesk 伺服器專業版。
+复制并在您的 Linux 终端机中贴上下列指令以从 RustDesk 伺服器转换至 RustDesk 伺服器专业版。
 
 `bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/convertfromos.sh)`
 
 流程：
 
-- 停用並移除舊服務
-- 安裝依賴套件
-- 在可用情況下設定 ufw 防火牆
-- 建立資料夾 /var/lib/rustdesk-server 並將證書複製到該資料夾
-- 刪除 /var/log/rustdesk 並建立 /var/log/rustdesk-server
-- 下載 RustDesk 專業版服務並解壓縮到上述資料夾
-- 為 hbbs 和 hbbr 建立 systemd 服務
-- 如果您選擇了 Domain，將安裝 Nginx 和 certbot，讓 API 能夠在連接埠 443 (https) 存取，並透過連接埠 80 取得 SSL 證書，這將自動更新
+- 停用并移除旧服务
+- 安装依赖包
+- 在可用情况下设定 ufw 防火墙
+- 建立文件夹 /var/lib/rustdesk-server 并将证书复制到该文件夹
+- 删除 /var/log/rustdesk 并建立 /var/log/rustdesk-server
+- 下载 RustDesk 专业版服务并解压缩到上述文件夹
+- 为 hbbs 和 hbbr 建立 systemd 服务
+- 如果您选择了 Domain，将安装 Nginx 和 certbot，让 API 能够在端口 443 (https) 存取，并透过端口 80 取得 SSL 证书，这将自动更新
