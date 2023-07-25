@@ -183,7 +183,7 @@ net start rustdesk > null
 ```
 
 ## 我已手动安装 RustDesk Server Pro，但 API Web 控制台不在 SSL 后面，我该如何保护它？
-使用Nginx之类的代理，简单的安装脚本就有一个，非常简单。 [这就是我们的做法](https://github.com/rustdesk/rustdesk-server-pro/blob/493ad90daf8815c3052ff4d0d4aa9cc07e411efa/install.sh#L252)。
+使用Nginx之类的代理，简单的安装脚本就有一个，非常简单。 [就在这里](https://github.com/rustdesk/rustdesk-server-pro/blob/493ad90daf8815c3052ff4d0d4aa9cc07e411efa/install.sh#L252)。
 
 类似的配置应该适用于 Traefik v2、HAProxy、Apache Proxy 和 Cloudflare Tunnel。
 
@@ -213,4 +213,4 @@ net start rustdesk > null
 请联系我们的[销售](mailto://sales@rustdesk.com) 团队。
 
 ## 有什么地方可以看到视频设置指南吗？
-是的！ 我们有一个 [YouTube 频道](https://youtube.com/@RustDesk)。
+是的！ 我们有一个 [YouTube 频道](https://youtube.com/@RustDesk)，稍后会创建B站频道。
