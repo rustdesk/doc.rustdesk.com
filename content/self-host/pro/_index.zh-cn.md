@@ -26,15 +26,15 @@ weight: 100
 
 ### 简易安装
 
-为了使过程轻松点，我们开发的脚本能帮您搞定一切 (安装/升级/从开源版本转换) [简易安装脚本](https://rustdesk.com/docs/en/self-host/pro/installscript/)
+为了使过程轻松点，我们开发的脚本能帮您搞定一切 (安装/升级/从开源版本转换) [简易安装脚本](https://rustdesk.com/docs/zh-cn/self-host/pro/installscript/)
 
 {{% notice note %}}
-别忘记从 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 取得授权，查阅[授权](/docs/en/self-host/pro/license)页面以了解详情。
+别忘记从 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 取得授权，查阅[授权](/docs/zh-cn/self-host/pro/license)页面以了解详情。
 {{% /notice %}}
 
 ### 手动安装
 
-几乎与[开源版本](/docs/en/self-host/install/)相同，但您在执行 hbbs/hbbr 时不需加上任何参数，全部都能在网页控制台中设定。
+几乎与[开源版本](/docs/zh-cn/self-host/install/)相同，但您在执行 hbbs/hbbr 时不需加上任何参数，全部都能在网页控制台中设定。
 
 - `-k _` 预设设定
 - `-r <server:host>` 如果中继服务器跟 hbbs 在同一台服务器执行，便不需要加上此参数。且您可以在网页控制台设置多台中继服务器。
