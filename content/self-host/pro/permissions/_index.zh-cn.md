@@ -23,8 +23,9 @@ weight: 15
 
 `Can access to`和`Can be accessed from`提供几乎相同的功能，我们提供这两个选项是为了您的方便。 然而，这可能会引起一些混乱。
 
-{{% notice 注意事项 %}}
-分配给控制端的用户和组由登录的用户决定，而不是从 Web 控制台分配的用户。 我们这样设计是因为某些控制端没有设备ID，例如iOS客户端和Web客户端。
-{{％ /notice ％}}
+{{% notice note %}}
+主控端所在的用户和组是由登录的用户决定，而不是从 Web 控制台分配的用户决定。 我们这样设计是因为某些主控端没有设备ID，例如iOS客户端和Web客户端。
+
+{{% /notice %}}
 
 ![](/docs/en/self-host/pro/permissions/images/crossgrp.png)
