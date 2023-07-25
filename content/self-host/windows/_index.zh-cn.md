@@ -1,5 +1,5 @@
 ---
-title: WINDOWS & PM2 OR NSSM
+title: WINDOWS & PM2 或者 NSSM
 weight: 20
 ---
 
