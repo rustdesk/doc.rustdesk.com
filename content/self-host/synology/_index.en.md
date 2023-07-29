@@ -3,6 +3,8 @@ title: Synology
 weight: 22
 ---
 
+> An alterative up-to-date tutorial from third-party is [here](https://mariushosting.com/how-to-install-rustdesk-on-your-synology-nas/)
+
 This tutorial is based on latest DSM v6 and v7.
 
 ### Install Docker
