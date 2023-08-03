@@ -39,7 +39,7 @@ There is also an update script on [Techahold's](https://github.com/techahold/rus
 
 Please [Download](https://github.com/rustdesk/rustdesk-server/releases/latest) deb files yourself and install with `apt-get -f install <filename>.deb` or `dpkg -i <filename>.deb`.
 
-## Install your own server with Docker (Compose)
+## Install your own server with Docker
 
 ### Requirements
 You need to have Docker/Podman installed to run a rustdesk-server as a docker container
