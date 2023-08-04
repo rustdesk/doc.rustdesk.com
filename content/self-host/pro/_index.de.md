@@ -3,7 +3,7 @@ title: Pro
 weight: 100
 ---
 
-Selbst-Host Pro basiert auf der Open-Source-Version, verfügt aber über mehr Funktionen.
+Self-host Pro hat im Vergleich zur Open-Source-Version mehr Funktionen.
 
 - OIDC, LDAP, 2FA (E-Mail-Verifizierung)
 - Adressbuch
