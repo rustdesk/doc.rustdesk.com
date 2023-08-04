@@ -3,7 +3,7 @@ title: Pro
 weight: 100
 ---
 
-Self-host Pro is built on the open source version, but with more features.
+Self-host Pro has more features compared to the open source version.
 
 - OIDC, LDAP, 2FA (email verification)
 - Address book
