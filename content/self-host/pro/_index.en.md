@@ -50,8 +50,8 @@ Install Docker with (this)[https://docs.docker.com/engine/install/] guide.
 Run the following commands:
 ```bash
 sudo docker image pull rustdesk/rustdesk-server-pro
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbs
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbr
+sudo docker run --name hbbs -v `pwd`:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbs
+sudo docker run --name hbbr -v `pwd`:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbr
 ```
 {{% notice note %}}
 The above example uses `sudo` and `--net=host`, this will not work on windows please remove these commands, if you remove `--net=host` please check below.
