@@ -68,39 +68,27 @@ For running the docker files with the `docker-compose.yml` as described here you
 ```yaml
 version: '3'
 
-networks:
-  rustdesk-net:
-    external: false
-
 services:
   hbbs:
     container_name: hbbs
-    ports:
-      - 21115:21115
-      - 21116:21116
-      - 21116:21116/udp
-      - 21118:21118
     image: rustdesk/rustdesk-server:latest
-    command: hbbs -r example.com:21117
+    command: hbbs
     volumes:
       - ./data:/root
-    networks:
-      - rustdesk-net
+    network_mode: "host"
+
     depends_on:
       - hbbr
     restart: unless-stopped
 
+
   hbbr:
     container_name: hbbr
-    ports:
-      - 21117:21117
-      - 21119:21119
     image: rustdesk/rustdesk-server:latest
     command: hbbr
     volumes:
       - ./data:/root
-    networks:
-      - rustdesk-net
+    network_mode: "host"
     restart: unless-stopped
 ```
 
