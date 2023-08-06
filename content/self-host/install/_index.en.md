@@ -47,8 +47,8 @@ You need to have Docker/Podman installed to run a rustdesk-server as a docker co
 ### Docker examples
 ```bash
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr
+sudo docker run --name hbbs -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
+sudo docker run --name hbbr -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr
 ```
 <a name="net-host"></a>
 
@@ -68,39 +68,27 @@ For running the docker files with the `docker-compose.yml` as described here you
 ```yaml
 version: '3'
 
-networks:
-  rustdesk-net:
-    external: false
-
 services:
   hbbs:
     container_name: hbbs
-    ports:
-      - 21115:21115
-      - 21116:21116
-      - 21116:21116/udp
-      - 21118:21118
     image: rustdesk/rustdesk-server:latest
-    command: hbbs -r example.com:21117
+    command: hbbs
     volumes:
       - ./data:/root
-    networks:
-      - rustdesk-net
+    network_mode: "host"
+
     depends_on:
       - hbbr
     restart: unless-stopped
 
+
   hbbr:
     container_name: hbbr
-    ports:
-      - 21117:21117
-      - 21119:21119
     image: rustdesk/rustdesk-server:latest
     command: hbbr
     volumes:
       - ./data:/root
-    networks:
-      - rustdesk-net
+    network_mode: "host"
     restart: unless-stopped
 ```
 
