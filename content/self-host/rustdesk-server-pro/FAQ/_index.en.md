@@ -207,3 +207,23 @@ Yes! We have a [YouTube Channel](https://youtube.com/@RustDesk).
 ## Why are my logs are empty?
 Ensure API is set on both the device being controlled and the machine controlling.
 On the left hand side click on `Logs`.
+
+## How can I uninstall RustDesk Server Pro?
+Run the following commands
+```
+sudo systemctl stop rustdesk-hbbs.service
+sudo systemctl disable rustdesk-hbbs.service
+sudo systemctl stop rustdesk-hbbr.service
+sudo systemctl disable rustdesk-hbbr.service
+sudo systemctl daemon-reload
+sudo rm /etc/systemd/system/rustdesk-hbbs.service
+sudo rm etc/systemd/system/rustdesk-hbbr.service
+sudo rm /usr/bin/hbbs
+sudo rm /usr/bin/hbbr
+sudo rm -rf /var/lib/rustdesk-server/
+sudo rm -rf /var/log/rustdesk-server/
+```
+If the script installed nginx then remove using
+```
+sudo apt remove nginx
+```
