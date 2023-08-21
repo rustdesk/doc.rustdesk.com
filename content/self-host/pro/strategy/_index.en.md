@@ -13,7 +13,7 @@ You can create a new strategy by clicking the `+` button and perform various act
 
 In the pop-up menu, you can choose to `Enable` or `Disable` the strategy, `Rename`, `Duplicate`, or `Delete` it. Additionally, you can click `Edit Devices` to modify the devices applied to that strategy or click `Edit Users` to modify the users applied to that strategy.
 
-On the right side of the strategy menu, you can see the number of devices the strategy is currently applied to (If a device is applying both device strategy and user strategy, the sum of the numbers displayed in the menu may be greater than the total number of devices).
+On the right side of the strategy menu, you can see the number of devices the strategy is currently applied to.
 
 ![](/docs/en/self-host/pro/strategy/images/strategy_menu.png)
 
