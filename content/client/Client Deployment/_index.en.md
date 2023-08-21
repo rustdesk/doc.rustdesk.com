@@ -14,7 +14,7 @@ $ErrorActionPreference= 'silentlycontinue'
 
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
-if($rdver -eq "1.2.1") 
+if($rdver -eq "1.2.2") 
 {
 write-output "RustDesk $rdver is the newest version"
 
@@ -89,7 +89,7 @@ mount_point="/Volumes/RustDesk"
 
 # Download the rustdesk.dmg file
 echo "Downloading RustDesk Now"
-curl -L https://github.com/rustdesk/rustdesk/releases/download/nightly/rustdesk-1.2.2-x86_64.dmg --output "$dmg_file"
+curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.dmg --output "$dmg_file"
 
 # Mount the DMG file to the specified mount point
 hdiutil attach "$dmg_file" -mountpoint "$mount_point" &> /dev/null
@@ -201,10 +201,10 @@ fi
 
 echo "Installing Rustdesk"
 if [ "${ID}" = "debian" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Debian" ]  || [ "${UPSTREAM_ID}" = "ubuntu" ] || [ "${UPSTREAM_ID}" = "debian" ]; then
-    wget https://github.com/rustdesk/rustdesk/releases/download/nightly/rustdesk-1.2.2-x86_64.deb > null
+    wget https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.deb
     apt-get install -fy ./rustdesk-1.2.2-x86_64.deb > null
 elif [ "$OS" = "CentOS" ] || [ "$OS" = "RedHat" ] || [ "$OS" = "Fedora Linux" ]  || [ "${UPSTREAM_ID}" = "rhel" ] ; then
-    wget https://github.com/rustdesk/rustdesk/releases/download/nightly/rustdesk-1.2.2-0.x86_64.rpm > null
+    wget https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-0.x86_64.rpm
     yum localinstall ./rustdesk-1.2.2-0.x86_64.rpm -y > null
 else
     echo "Unsupported OS"
