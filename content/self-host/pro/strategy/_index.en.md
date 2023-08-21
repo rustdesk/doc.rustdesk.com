@@ -5,29 +5,37 @@ weight: 200
 
 ## Strategy
 
-Strategy is a tool for RustDesk administrators to update the security options of client settings pages in bulk. Administrators can create different strategies and apply them to different devices. RustDesk provides a default strategy, and administrators can create custom strategies.
+Strategy is a tool for RustDesk administrators to update the security options of client settings pages in bulk. Administrators can create different strategies and apply them to different devices.
 
-### Create and Duplicate Strategies
+### Create Strategies
 
-RustDesk provides a default strategy that administrators can modify, or they can create a new strategy or `Duplicate` an existing one. When creating a new strategy, administrators can `Rename`, `Delete`, or `Edit Devices`. When duplicating a strategy, administrators can modify it based on the existing strategy.
+You can create a new strategy by clicking the `+` button and perform various actions on the strategy by hovering over it and clicking the menu.
 
-| Default Strategy | Other Strategies |
-| :--------------: | :------------: |
-| ![](/docs/en/self-host/pro/strategy/images/default_strategy.png) | ![](/docs/en/self-host/pro/strategy/images/other_strategy.png) |
+In the pop-up menu, you can choose to `Enable` or `Disable` the strategy, `Rename`, `Duplicate`, or `Delete` it. Additionally, you can click `Edit Devices` to modify the devices applied to that strategy or click `Edit Users` to modify the users applied to that strategy.
 
-### Enable and Disable Strategies
+On the right side of the strategy menu, you can see the number of devices the strategy is currently applied to (If a device is applying both device strategy and user strategy, the sum of the numbers displayed in the menu may be greater than the total number of devices).
 
-Administrators can `Enable` or `Disable` different strategies as needed. By default, all devices use the default strategy. If administrators want to use another strategy, they can enable it in the strategy options.
+![](/docs/en/self-host/pro/strategy/images/strategy_menu.png)
 
-### Managing Devices
+### Device Strategy and User Strategy
+Each device can only be managed by one strategy, and device strategies take priority over user strategies. User strategies are responsible for managing all devices under the user that are not assigned a specific strategy.
 
-Each device can only be managed by one strategy. Administrators can change the management strategy of a device by the `Edit Devices` option. By default, all devices use the default strategy. Administrators can add or delete devices and change their management strategies. If a device is deleted, it will be managed by the default strategy again.
 
-In the device management interface, the left-hand area is used to filter devices, and the devices selected in the right-hand column will be managed by the current strategy. Devices that are not logged in will be displayed in the `-` group.
+### Edit Devices
 
-| User Group | Unbinded Devices |
-| :--------------: | :------------: |
-| ![](/docs/en/self-host/pro/strategy/images/edit_devices_group.png) | ![](/docs/en/self-host/pro/strategy/images/edit_devices_unbinded.png) |
+When you click the `Edit Devices` menu, an editing dialog box displaying all the devices will open. You can change the selection status of the checkboxes and then click the `Save` button to apply the device changes made on the current page. If you need to modify devices on other pages, please navigate to those pages. You can also use the dropdown menu in the upper right corner to filter devices.
+
+Here is an example of the dialog box that appears when you click `Edit Devices` on the "demo2" menu. In this example, the device "362587269" is applied to the "demo2" strategy. The device "157333666" was originally applied to the default strategy but will be applied to the "demo2" strategy after clicking `Save`. The device "232026634" has a device strategy for "demo1" and a user strategy for "demo2", since the device strategy takes priority, this device will be applied to the "demo1" strategy.
+
+![](/docs/en/self-host/pro/strategy/images/edit_devices.png)
+
+### Edit Users
+
+When you click the `Edit Users` menu, an editing dialog box  displaying all the users will open. You can change the selection status of the checkboxes and then click the `Save` button to apply the user changes made on the current page. If you need to modify users on other pages, please navigate to those pages. You can also use the dropdown menu in the upper right corner to filter users.
+
+Here is an example of the dialog box that appears when you click `Edit Users` on the "demo2" menu. In this example, the user "user2" was originally applied to the default strategy and will be applied to the "demo2" strategy after clicking `Save`. The user "user1" is applied to the default strategy, and the user "admin" is applied to the "demo2" strategy.
+
+![](/docs/en/self-host/pro/strategy/images/edit_users.png)
 
 ### Strategy Synchronization
 

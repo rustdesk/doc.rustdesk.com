@@ -5,29 +5,38 @@ weight: 200
 
 ## Strategy
 
-Strategy ist ein Werkzeug für RustDesk-Administratoren, um die Sicherheitsoptionen der Client-Einstellungsseiten in großen Mengen zu aktualisieren. Administratoren können verschiedene Strategien erstellen und sie auf verschiedene Geräte anwenden. RustDesk bietet eine Standardstrategie und Administratoren können benutzerdefinierte Strategien erstellen.
+Strategy ist ein Werkzeug für RustDesk-Administratoren, um die Sicherheitsoptionen der Client-Einstellungsseiten in großen Mengen zu aktualisieren. Administratoren können verschiedene Strategien erstellen und sie auf verschiedene Geräte anwenden.
 
-### Strategien erstellen und duplizieren
+### Strategien erstellen
 
-RustDesk bietet eine Standardstrategie, die Administratoren ändern können. Oder sie können eine neue Strategie erstellen bzw. eine vorhandene Strategie duplizieren. Bei der Erstellung einer neuen Strategie können Administratoren Geräte `Umbenennen`, `Löschen` oder `Bearbeiten`. Beim Duplizieren einer Strategie können die Administratoren diese auf der Grundlage der vorhandenen Strategie ändern.
+Sie können eine neue Strategie erstellen, indem Sie auf die Schaltfläche `+` klicken und verschiedene Aktionen auf der Strategie ausführen, indem Sie darüber schweben und auf das Menü klicken. 
 
-| Standardstrategie | Andere Strategien |
-| :--------------: | :------------: |
-| ![](/docs/en/self-host/pro/strategy/images/default_strategy.png) | ![](/docs/en/self-host/pro/strategy/images/other_strategy.png) |
+Im Popup-Menü können Sie wählen, die Strategie zu `aktivieren` oder `deaktivieren`, sie `umbenennen`, `duplizieren` oder `löschen`.Zusätzlich können Sie auf `Geräte bearbeiten` klicken, um die auf diese Strategie angewendeten Geräte zu ändern, oder auf `Benutzer bearbeiten`, um die auf diese Strategie angewendeten Benutzer zu ändern.
 
-### Strategien aktivieren und deaktivieren
+Auf der rechten Seite des Strategiemenus können Sie die Anzahl der Geräte sehen, auf die die Strategie derzeit angewendet wird (Wenn ein Gerät sowohl eine Gerätestrategie als auch eine Benutzerstrategie anwendet, kann die Summe der angezeigten Zahlen im Menü größer sein als die Gesamtzahl der Geräte).
 
-Administratoren können je nach Bedarf verschiedene Strategien `Aktivieren` oder `Deaktivieren`. Standardmäßig verwenden alle Geräte die Standardstrategie. Wenn Administratoren eine andere Strategie verwenden möchten, können sie diese in den Strategieoptionen aktivieren.
+![](/docs/en/self-host/pro/strategy/images/strategy_menu.png)
 
-### Geräte verwalten
+### Gerätestrategie und Benutzerstrategie
 
-Jedes Gerät kann nur mit einer Strategie verwaltet werden. Administratoren können die Verwaltungsstrategie eines Geräts über die Option `Geräte bearbeiten` ändern. Standardmäßig verwenden alle Geräte die Standardstrategie. Administratoren können Geräte hinzufügen oder löschen und deren Verwaltungsstrategien ändern. Wenn ein Gerät gelöscht wird, wird es wieder mit der Standardstrategie verwaltet.
+Jedes Gerät kann nur von einer Strategie verwaltet werden, wobei Gerätestrategien Vorrang vor Benutzerstrategien haben. Benutzerstrategien sind dafür verantwortlich, alle Geräte unter dem Benutzer zu verwalten, denen keine spezifische Strategie zugewiesen ist.
 
-In der Schnittstelle zur Geräteverwaltung wird der linke Bereich zum Filtern von Geräten verwendet. Die in der rechten Spalte ausgewählten Geräte werden von der aktuellen Strategie verwaltet. Geräte, die nicht angemeldet sind, werden in der Gruppe `-` angezeigt.
+### Geräte bearbeiten
 
-| Benutzergruppe | Ungebundene Geräte |
-| :--------------: | :------------: |
-| ![](/docs/en/self-host/pro/strategy/images/edit_devices_group.png) | ![](/docs/en/self-host/pro/strategy/images/edit_devices_unbinded.png) |
+Wenn Sie auf das Menü `Geräte bearbeiten` klicken, öffnet sich ein Bearbeitungsdialogfeld, das alle Geräte anzeigt. Sie können den Auswahlstatus der Kontrollkästchen ändern und dann auf die Schaltfläche `Save` klicken, um die auf der aktuellen Seite vorgenommenen Geräteänderungen anzuwenden. Wenn Sie Geräte auf anderen Seiten ändern möchten, navigieren Sie bitte zu diesen Seiten. Sie können auch das Dropdown-Menü in der oberen rechten Ecke verwenden, um Geräte zu filtern.
+
+Hier ist ein Beispiel für das Dialogfeld, das angezeigt wird, wenn Sie auf dem Demo2-Menü auf `Geräte bearbeiten` klicken. In diesem Beispiel ist das Gerät "362587269" der "Demo2" -Strategie zugeordnet. Das Gerät "157333666" war ursprünglich der Standardstrategie zugeordnet, wird aber nach dem Klicken auf `Save` der "Demo2" -Strategie zugewiesen. Das Gerät "232026634" verfügt über eine Gerätestrategie für "Demo1" und eine Benutzerstrategie für "Demo2". Da die Gerätestrategie Vorrang hat, wird dieses Gerät der "Demo1" -Strategie zugewiesen.
+
+![](/docs/en/self-host/pro/strategy/images/edit_devices.png)
+
+
+### Benutzer bearbeiten
+
+Wenn Sie auf das Menü `Benutzer bearbeiten` klicken, öffnet sich ein Bearbeitungsdialogfeld, das alle Benutzer anzeigt. Sie können den Auswahlstatus der Kontrollkästchen ändern und dann auf die Schaltfläche `Save` klicken, um die auf der aktuellen Seite vorgenommenen Benutzeränderungen anzuwenden. Wenn Sie Benutzer auf anderen Seiten ändern möchten, navigieren Sie bitte zu diesen Seiten. Sie können auch das Dropdown-Menü in der oberen rechten Ecke verwenden, um Benutzer zu filtern.
+
+Hier ist ein Beispiel für das Dialogfeld, das angezeigt wird, wenn Sie auf dem "Demo2"-Menü auf `Benutzer bearbeiten` klicken. In diesem Beispiel war der Benutzer "user2" ursprünglich der Standardstrategie zugeordnet und wird nach dem Klicken auf `Save` der "Demo2"-Strategie zugewiesen. Der Benutzer "user1" ist der Standardstrategie zugeordnet und der Benutzer "admin" ist der "Demo2"-Strategie zugeordnet.
+
+![](/docs/en/self-host/pro/strategy/images/edit_users.png)
 
 ### Strategie-Synchronisation
 
