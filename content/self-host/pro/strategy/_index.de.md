@@ -13,7 +13,7 @@ Sie können eine neue Strategie erstellen, indem Sie auf die Schaltfläche `+` k
 
 Im Popup-Menü können Sie wählen, die Strategie zu `aktivieren` oder `deaktivieren`, sie `umbenennen`, `duplizieren` oder `löschen`.Zusätzlich können Sie auf `Geräte bearbeiten` klicken, um die auf diese Strategie angewendeten Geräte zu ändern, oder auf `Benutzer bearbeiten`, um die auf diese Strategie angewendeten Benutzer zu ändern.
 
-Auf der rechten Seite des Strategiemenus können Sie die Anzahl der Geräte sehen, auf die die Strategie derzeit angewendet wird.
+Auf der rechten Seite des Strategiemenus können Sie die Anzahl der tatsächlich auf die Strategie angewendeten Geräte sehen, unter Berücksichtigung der Priorität der Strategie.
 
 ![](/docs/en/self-host/pro/strategy/images/strategy_menu.png)
 
