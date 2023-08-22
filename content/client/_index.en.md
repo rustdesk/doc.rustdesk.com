@@ -10,16 +10,16 @@ chapter: true
 ### Introduction
 The RustDesk client is used on devices to connect via our RustDesk Server either opensource or Pro, it is available to download from [GitHub](https://github.com/rustdesk/rustdesk/releases)
 
-The current stable version is 1.2.1 and Unstable (Nightly build) version is 1.2.2.
-
 ### Supported Platforms
 - Microsoft Windows (all current versions with our standard client and some older versions with out sciter client).
-- Mac OS (M1/M2 requires rosetta)
+- Mac OS
 - Debian Derivatives (Ubuntu, Mint etc)
 - Redhat Derivatives (Centos, Rocky etc)
 - Arch/Manjaro
 - Opensuse
 - Android
+- iOS (Not support being controlled)
+- Web
 
 ### Installation
 
@@ -35,7 +35,7 @@ Download the dmg file from GitHub more info can be found on the Mac OS page.
 
 Open the .dmg file and drag `RustDesk` to `Applications`.
 
-Allow RustDesk to run (and install Rosetta if required)
+Allow RustDesk to run
 
 Enable permissions requested and follow prompts on the left hand side of RustDesk to finish setup.
 
