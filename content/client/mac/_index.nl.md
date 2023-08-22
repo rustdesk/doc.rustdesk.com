@@ -8,17 +8,17 @@ weight: 3
 
 Open het .dmg bestand en sleep `RustDesk` naar `Toepassingen` zoals hieronder.
 
-![](/docs/en/manual/mac/images/dmg.png)
+![](images/dmg.png)
 
 Zorg ervoor dat u alle RustDesk services heeft afgesloten. Zorg er ook voor dat u de RustDesk service in de taakbalk afsluit.
 
-![](/docs/en/manual/mac/images/tray.png)
+![](images/tray.png)
 
 ### Sta RustDesk toe
 
 | Ontgrendel om te wijzigen | Klik op "App Store en erkende ontwikkelaars" |
 | ---- | ---- |
-|![](/docs/en/manual/mac/images/allow2.png)|![](/docs/en/manual/mac/images/allow.png)|
+|![](images/allow2.png)|![](images/allow.png)|
 
 ### Machtigingen Inschakelen
 
@@ -34,14 +34,14 @@ Om het scherm vast te leggen moet u `RustDesk` **toegang** en **schermopname** t
 
 | RustDesk Vensters | Instellingen Venster |
 | ---- | ---- |
-|![](/docs/en/manual/mac/images/acc.png)|![](/docs/en/manual/mac/images/acc3.png?v2)|
+|![](images/acc.png)|![](images/acc3.png?v2)|
 
 Als u het heeft ingeschakeld in het instellingen venster, maar RustDesk waarschuwt nog steeds. Verwijder RustDesk uit het instellingen venster door de `-` knop, en klik op de `+` knop, en selecteer RustDesk in `Toepassingen`.
 
 | `-` en `+` knop | Selecteer RustDesk |
 | ---- | ---- |
-|![](/docs/en/manual/mac/images/acc2.png)|![](/docs/en/manual/mac/images/add.png?v2)|
+|![](images/acc2.png)|![](images/add.png?v2)|
 
 Kopieer bovenstaande stappen voor **schermopname** toestemming.
 
-![](/docs/en/manual/mac/images/screen.png?v2)
+![](images/screen.png?v2)

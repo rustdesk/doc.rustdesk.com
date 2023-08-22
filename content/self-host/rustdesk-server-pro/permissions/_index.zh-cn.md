@@ -28,4 +28,4 @@ weight: 15
 
 {{% /notice %}}
 
-![](/docs/en/self-host/pro/permissions/images/crossgrp.png)
+![](images/crossgrp.png)
