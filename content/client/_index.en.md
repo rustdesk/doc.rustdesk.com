@@ -11,12 +11,13 @@ chapter: true
 The RustDesk client is used on devices to connect via our RustDesk Server either opensource or Pro, it is available to download from [GitHub](https://github.com/rustdesk/rustdesk/releases)
 
 ### Supported Platforms
-- Microsoft Windows (all current versions with our standard client and some older versions with out sciter client).
+- Microsoft Windows
 - Mac OS
 - Debian Derivatives (Ubuntu, Mint etc)
 - Redhat Derivatives (Centos, Rocky etc)
 - Arch/Manjaro
 - Opensuse
+- AppImage / Flatpak
 - Android
 - iOS (Not support being controlled)
 - Web
