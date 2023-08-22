@@ -1,13 +1,10 @@
 ---
-title: Auto-héberger son serveur
+title: Auto-héberger son serveur OSS
 weight: 5
-pre: "<b>2. </b>"
 chapter: true
 ---
 
-### Chapitre 2
-
-# Auto-héberger son serveur
+# Auto-héberger son serveur OSS
 
 Nous développons continuellement le serveur, si vous avez des commentaires, veuillez rejoindre notre discussion [Discord](https://discord.com/invite/nDceKgxnkV).
 

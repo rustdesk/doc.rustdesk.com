@@ -1,13 +1,10 @@
 ---
-title: Self-host
+title: Self-host OSS
 weight: 5
-pre: "<b>2. </b>"
 chapter: true
 ---
 
-### Capitolo 2
-
-# Self-host
+# Self-host OSS
 
 Stiamo sviluppando continuamente il server, se hai commenti, partecipa alla nostra discussione su [Discord](https://discord.com/invite/nDceKgxnkV).
 

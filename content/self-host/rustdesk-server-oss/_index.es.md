@@ -1,13 +1,10 @@
 ---
-title: Self-host 
+title: Self-host OSS
 weight: 5
-pre: "<b>2. </b>"
 chapter: true
 ---
 
-### Capitulo 2
-
-# Self-host 
+# Self-host OSS
 
 Por favor únete a nuestro [Discord](https://discord.com/invite/nDceKgxnkV) si desea hablar con nosotros sobre el alojamiento propio de su propio servidor RustDesk.
 

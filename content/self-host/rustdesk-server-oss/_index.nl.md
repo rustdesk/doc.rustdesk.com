@@ -1,13 +1,10 @@
 ---
-title: Zelf-hosten 
+title: Zelf-hosten  OSS
 weight: 5
-pre: "<b>2. </b>"
 chapter: true
 ---
 
-### Hoofdstuk 2
-
-# Zelf-hosten
+# Zelf-hosten OSS
 
 Sluit u aan bij onze [Discord](https://discord.com/invite/nDceKgxnkV) als u met ons wilt praten over het zelf-hosten van uw eigen RustDesk server.
 
