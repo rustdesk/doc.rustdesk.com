@@ -8,7 +8,7 @@ chapter: true
 ### Chapter 1
 
 ### Introduction
-The RustDesk client is used on devices to connect via our RustDesk Server either opensource or Pro, it is available to download from [GitHub](https://github.com/rustdesk/rustdesk/releases)
+The RustDesk client is used on devices to connect via our RustDesk Server either opensource or Pro, it is available to download from [GitHub](https://github.com/rustdesk/rustdesk/releases/latest)
 
 ### Supported Platforms
 - Microsoft Windows
