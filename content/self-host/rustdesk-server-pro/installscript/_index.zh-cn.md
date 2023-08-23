@@ -4,7 +4,7 @@ weight: 10
 ---
 
 {{% notice note %}}
-别忘了从 https://rustdesk.com/pricing.html 取得授权，查阅[授权](/docs/en/self-host/pro/license)页面以了解详情。
+别忘了从 https://rustdesk.com/pricing.html 取得授权，查阅[授权](/docs/en/self-host/rustdesk-server-pro/license)页面以了解详情。
 {{% /notice %}}
 
 ## 安装

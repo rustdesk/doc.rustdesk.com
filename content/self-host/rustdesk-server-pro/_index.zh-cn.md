@@ -20,16 +20,16 @@ weight: 100
 
 ## 下载
 
-[https://github.com/rustdesk/rustdesk-server-pro/releases/tag/1.1.8](https://github.com/rustdesk/rustdesk-server-pro/releases/tag/1.1.8)
+[https://github.com/rustdesk/rustdesk-server-pro/releases/tag/latest](https://github.com/rustdesk/rustdesk-server-pro/releases/tag/latest)
 
 ## 安装
 
 ### 简易安装
 
-为了使过程轻松点，我们开发的脚本能帮您搞定一切 (安装/升级/从开源版本转换) [简易安装脚本](https://rustdesk.com/docs/zh-cn/self-host/pro/installscript/)
+为了使过程轻松点，我们开发的脚本能帮您搞定一切 (安装/升级/从开源版本转换) [简易安装脚本](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-pro/installscript/)
 
 {{% notice note %}}
-别忘记从 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 取得授权，查阅[授权](/docs/zh-cn/self-host/pro/license)页面以了解详情。
+别忘记从 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 取得授权，查阅[授权](/docs/zh-cn/self-host/rustdesk-server-pro/license)页面以了解详情。
 {{% /notice %}}
 
 ### 手动安装

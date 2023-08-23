@@ -4,10 +4,10 @@ weight: 600
 ---
 
 ## Wie installiere ich mit dem einfachen Installationsskript?
-1. Holen Sie sich Ihre Lizenz von [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html). Auf der Seite [Lizenz](https://rustdesk.com/docs/de/self-host/pro/license/) finden Sie weitere Informationen.
+1. Holen Sie sich Ihre Lizenz von [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html). Auf der Seite [Lizenz](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/license/) finden Sie weitere Informationen.
 2. Richten Sie einen VPS, einen physischen Server oder eine Linux-VM ein.
 3. Wenn Sie DNS und SSL verwenden möchten, legen Sie einen DNS-Namen an, z. B. `trustdesk.ihredomain.de`.
-4. Gehen Sie zu [dieser Seite](https://rustdesk.com/docs/de/self-host/pro/installscript/#installation).
+4. Gehen Sie zu [dieser Seite](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/installscript/#installation).
 5. Kopieren Sie den Befehl und fügen Sie ihn in Ihr Linux-Terminal ein.
 6. Folgen Sie den Aufforderungen, die Sie durch die Installation führen.
 7. Sobald die Installation abgeschlossen ist, gehen Sie zu `https://rustdesk.yourdomain.com` oder `http://ihreipadresse:21114`.
@@ -15,11 +15,11 @@ weight: 600
 9. Geben Sie Ihren in Schritt 1 erworbenen Lizenzcode ein.
 
 ## Wie kann ich von RustDesk Server zu RustDesk Server Pro konvertieren?
-1. Holen Sie sich Ihre Lizenz von [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html). Auf der Seite [Lizenz](https://rustdesk.com/docs/de/self-host/pro/license/) finden Sie weitere Informationen.
+1. Holen Sie sich Ihre Lizenz von [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html). Auf der Seite [Lizenz](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/license/) finden Sie weitere Informationen.
 2. Öffnen Sie den TCP-Port 21114.
 3. Melden Sie sich bei Ihrem RustDesk Server an.
 4. Wenn Sie noch kein DNS verwenden und SSL nutzen wollen, erstellen Sie einen DNS-Namen, z. B. `rustdesk.ihredomain.com`.
-5. Gehen Sie zu [dieser Seite](https://rustdesk.com/docs/de/self-host/pro/installscript/#konvertierung-von-open-source).
+5. Gehen Sie zu [dieser Seite](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/installscript/#konvertierung-von-open-source).
 6. Kopieren Sie den Befehl und fügen Sie ihn in Ihr Linux-Terminal ein.
 7. Folgen Sie den Aufforderungen, die Sie durch die Installation führen.
 8. Sobald die Installation abgeschlossen ist, gehen Sie zu `https://rustdesk.ihredomain.com` oder `http://ihreipadresse:21114`.
@@ -27,7 +27,7 @@ weight: 600
 10. Geben Sie Ihren in Schritt 1 erworbenen Lizenzcode ein.
 
 ## Es gibt eine neue Version von RustDesk Server Pro, wie kann ich ein Upgrade durchführen?
-1. Gehen Sie zu [dieser Seite](https://rustdesk.com/docs/de/self-host/pro/installscript/#upgrade).
+1. Gehen Sie zu [dieser Seite](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/installscript/#upgrade).
 2. Kopieren Sie den Befehl und fügen Sie ihn in Ihr Linux-Terminal ein.
 3. Folgen Sie den Aufforderungen, die Sie durch das Upgrade führen.
 
@@ -41,7 +41,7 @@ Die Protokolle werden in `/var/log/rustdesk-server` gespeichert, Sie können sie
 Der Status kann mit `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` überprüft werden, z. B. `sudo systemctl status rustdesk-hbbs`.
 
 ## Wie installiere ich RustDesk Server Pro unter Windows?
-1. Holen Sie sich Ihre Lizenz von [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html). Auf der Seite [Lizenz](https://rustdesk.com/docs/de/self-host/pro/license/) finden Sie weitere Informationen.
+1. Holen Sie sich Ihre Lizenz von [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html). Auf der Seite [Lizenz](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/license/) finden Sie weitere Informationen.
 2. Laden Sie das Windows-Installationsprogramm von [GitHub](https://github.com/rustdesk/rustdesk-server-pro/releases/latest) herunter.
 3. Entpacken Sie das Windows-Installationsprogramm.
 4. Führen Sie das Installationsprogramm aus und folgen Sie den Anweisungen auf dem Bildschirm.
@@ -78,7 +78,7 @@ Der Status kann mit `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` überpr�
 4. Klicken Sie auf `OK`.
 
 ## Wie kann ich meine Lizenz auf einen neuen Server übertragen?
-Bitte sehen Sie [hier](https://rustdesk.com/docs/de/self-host/pro/license/#rechnungen-und-migration).
+Bitte sehen Sie [hier](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/license/#rechnungen-und-migration).
 
 ## Wie kann ich die Protokolle einsehen?
 Klicken Sie auf der linken Seite auf `Logs`.

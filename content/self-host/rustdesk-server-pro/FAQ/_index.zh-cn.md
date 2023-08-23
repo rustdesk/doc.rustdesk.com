@@ -4,10 +4,10 @@ weight: 600
 ---
 
 ## 如何使用简单安装脚本进行安装？
-1. 从 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 获取许可证，查看 [license](/docs/en/self-host/pro/license) 页面了解更多详细信息。
+1. 从 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 获取许可证，查看 [license](/docs/zh-cn/self-host/rustdesk-server-pro/license) 页面了解更多详细信息。
 2. 启动 VPS、裸机或 Linux VM。
 3. 如果您想使用 DNS 和 SSL，请创建一个 DNS 名称，即`rustdesk.yourdomain.com`。
-4. 转到[此页面](https://rustdesk.com/docs/en/self-host/pro/installscript/#install)。
+4. 转到[此页面](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-pro/installscript/#install)。
 5. 将命令复制并粘贴到 Linux 终端中。
 6. 按照提示完成安装。
 7. 安装完成后，转到`https://rustdesk.yourdomain.com`或`http://youripaddress:21114`。
@@ -15,11 +15,11 @@ weight: 600
 9. 输入您在步骤 1 中购买的许可证代码。
 
 ## 如何从 RustDesk Server开源版本 转换为 RustDesk Server Pro？
-1. 从 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 获取许可证，查看 [license](/docs/en/self-host/pro/license) 页面了解更多详细信息。
+1. 从 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 获取许可证，查看 [license](/docs/zh-cn/self-host/rustdesk-server-pro/license) 页面了解更多详细信息。
 2. 打开 TCP 端口 21114。
 3. 登录您的 RustDesk 服务器。
 4. 如果您尚未使用 DNS 并且想要使用 SSL，请创建一个 DNS 名称，即`rustdesk.yourdomain.com`。
-5. 转到[此页面](https://rustdesk.com/docs/en/self-host/pro/installscript/#convert-from-open-source)。
+5. 转到[此页面](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-pro/installscript/#convert-from-open-source)。
 6. 将命令复制并粘贴到 Linux 终端中。
 7. 按照提示完成安装。
 8. 安装完成后，转到`https://rustdesk.yourdomain.com`或`http://youripaddress:21114`。
@@ -27,7 +27,7 @@ weight: 600
 10. 输入您在步骤 1 中购买的许可证代码。
 
 ## RustDesk Server Pro 有新版本，如何升级？
-1. 转到[此页面](https://rustdesk.com/docs/en/self-host/pro/installscript/#upgrade)。
+1. 转到[此页面](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-pro/installscript/#upgrade)。
 2. 将命令复制并粘贴到 Linux 终端中。
 3. 按照提示进行升级。
 
@@ -41,7 +41,7 @@ weight: 600
 要检查状态 `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` 例如 `sudo systemctl status rustdesk-hbbs`。
 
 ## 如何在 Windows 上安装 RustDesk Server Pro？
-1. 从 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 获取许可证，查看 [license](/docs/en/self-host/pro/license) 页面了解更多详细信息。
+1. 从 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 获取许可证，查看 [license](/docs/zh-cn/self-host/rustdesk-server-pro/license) 页面了解更多详细信息。
 2. 从 [GitHub](https://github.com/rustdesk/rustdesk-server-pro/releases/latest) 下载 Windows 安装程序。
 3. 解压 Windows 安装程序。
 4. 运行安装程序并按照屏幕上的步骤进行操作。
@@ -78,7 +78,7 @@ weight: 600
 4. 单击`确定`。
 
 ## 如何将我的许可证移至新服务器？
-请参阅[此处](https://rustdesk.com/docs/en/self-host/pro/license/#invoices-and-migration)。
+请参阅[此处](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-pro/license/#invoices-and-migration)。
 
 ## 如何查看日志？
 在左侧单击`日志`。

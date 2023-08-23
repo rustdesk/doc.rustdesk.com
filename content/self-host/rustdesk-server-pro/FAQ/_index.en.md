@@ -4,10 +4,10 @@ weight: 600
 ---
 
 ## How can I install with the Simple Install Script?
-1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/pro/license) page for more details.
+1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/rustdesk-server-pro/license) page for more details.
 2. Spin up a VPS, bare metal or Linux VM.
 3. If you want to use DNS and SSL create a DNS name i.e. `rustdesk.yourdomain.com`.
-4. Go to [this page](https://rustdesk.com/docs/en/self-host/pro/installscript/#install).
+4. Go to [this page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#install).
 5. Copy and paste the command into your Linux terminal.
 6. Follow the prompts as they guide you through the install.
 7. Once the install is complete go to `https://rustdesk.yourdomain.com` or `http://youripaddress:21114`.
@@ -15,11 +15,11 @@ weight: 600
 9. Enter your license code purchased in step 1.
 
 ## How can I convert from RustDesk Server Open Source to RustDesk Server Pro?
-1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/pro/license) page for more details.
+1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/rustdesk-server-pro/license) page for more details.
 2. Open TCP port 21114.
 3. Log into your RustDesk Server.
 4. If you didn't already use DNS and want to use SSL create a DNS name i.e. `rustdesk.yourdomain.com`.
-5. Go to [this page](https://rustdesk.com/docs/en/self-host/pro/installscript/#convert-from-open-source).
+5. Go to [this page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#convert-from-open-source).
 6. Copy and paste the command into your Linux terminal.
 7. Follow the prompts as they guide you through the install.
 8. Once the install is complete go to `https://rustdesk.yourdomain.com` or `http://youripaddress:21114`.
@@ -27,7 +27,7 @@ weight: 600
 10. Enter your license code purchased in step 1.
 
 ## There is a new version of RustDesk Server Pro out, how can I upgrade?
-1. Go to [this page](https://rustdesk.com/docs/en/self-host/pro/installscript/#upgrade).
+1. Go to [this page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#upgrade).
 2. Copy and paste the command into your Linux terminal.
 3. Follow the prompts as they guide you through the upgrade.
 
@@ -41,7 +41,7 @@ The logs are stored in /var/log/rustdesk-server, you can view them using `tail /
 To check the status `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` e.g. `sudo systemctl status rustdesk-hbbs`.
 
 ## How can I install RustDesk Server Pro on Windows?
-1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/pro/license) page for more details.
+1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/rustdesk-server-pro/license) page for more details.
 2. Download the the windows installer from [GitHub](https://github.com/rustdesk/rustdesk-server-pro/releases/latest).
 3. Unzip the windows installer.
 4. Run the Installer and follow the steps on screen.
@@ -82,7 +82,7 @@ Note – no http / https before the addresses – they are automatically handled
 5. Enter your new password in the boxes provided.
 
 ## How can I move my license to a new server?
-Please see [here](https://rustdesk.com/docs/en/self-host/pro/license/#invoices-and-migration).
+Please see [here](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#invoices-and-migration).
 
 ## Emails aren't working from my VPS
 A lot of VPS providers block ports 465 and 25.
