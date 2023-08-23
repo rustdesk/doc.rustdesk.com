@@ -20,21 +20,21 @@ weight: 100
 
 ## 下載
 
-[https://github.com/rustdesk/rustdesk-server-pro/releases/latest](https://github.com/rustdesk/rustdesk-server-pro/releases/latest)
+[https://github.com/rustdesk/rustdesk-server-pro/releases/tag/1.1.8](https://github.com/rustdesk/rustdesk-server-pro/releases/tag/1.1.8)
 
 ## 安裝
 
 ### 簡易安裝
 
-為了使過程輕鬆點，我們開發的腳本能幫您搞定一切 (安裝/升級/從開源版本轉換) [簡易安裝腳本](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/)
+為了使過程輕鬆點，我們開發的腳本能幫您搞定一切 (安裝/升級/從開源版本轉換) [簡易安裝腳本](https://rustdesk.com/docs/en/self-host/pro/installscript/)
 
 {{% notice note %}}
-別忘記從 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 取得授權，查閱[授權](/docs/zh-tw/self-host/rustdesk-server-pro/license)頁面以了解詳情。
+別忘記從 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 取得授權，查閱[授權](/docs/zh-tw/self-host/pro/license)頁面以了解詳情。
 {{% /notice %}}
 
 ### 手動安裝
 
-幾乎與[開源版本](/docs/zh-tw/self-host/rustdesk-server-oss/install/相同，但您在執行 hbbs/hbbr 時不需加上任何參數，全部都能在網頁控制台中設定。
+幾乎與[開源版本](/docs/zh-tw/self-host/install/)相同，但您在執行 hbbs/hbbr 時不需加上任何參數，全部都能在網頁控制台中設定。
 
 - `-k _` 預設設定
 - `-r <server:host>` 如果中繼伺服器跟 hbbs 在同一台伺服器執行，便不需要加上此參數。且您可以在網頁控制台設置多台中繼伺服器。

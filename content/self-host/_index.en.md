@@ -8,7 +8,6 @@ chapter: true
 ### Chapter 2
 
 # Self-host
-<style>body {text-align: right}</style>
 
 If you are using RustDesk you should have your own RustDesk Server, these docs will help you on your RustDesk journey.
 
