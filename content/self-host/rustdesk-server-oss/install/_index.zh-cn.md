@@ -128,7 +128,7 @@ services:
 
 点击 ID 右侧的菜单按钮如下，选择“ ID/中继服务器”。
 
-![](/docs/en/self-host/install/images/server-set-menu-zh.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-menu-zh.png)
 
 在 ID 服务器输入框中（被控端+主控端）输入 hbbs 主机或 ip 地址，另外两个地址可以不填，RustDesk会自动推导（如果没有特别设定），中继服务器指的是hbbr（21117）端口。
 
@@ -143,7 +143,7 @@ hbbs.example.com
 ```
 hbbs.example.com:21116
 ```
-![](/docs/en/self-host/install/images/server-set-window-zh.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-window-zh.png)
 
 #### 把配置放在可执行文件名里 (Windows only)
 
@@ -157,7 +157,7 @@ If there are invalid characters in the key which can not be used in file name, p
 
 | Menu | About Page |
 | -- | -- |
-![](/docs/en/self-host/install/images/aboutmenu.png) | ![](/docs/en/self-host/install/images/lic.png) |
+![](/docs/en/self-host/rustdesk-server-oss/install/images/aboutmenu.png) | ![](/docs/en/self-host/rustdesk-server-oss/install/images/lic.png) |
 
 ## Key
 -----------

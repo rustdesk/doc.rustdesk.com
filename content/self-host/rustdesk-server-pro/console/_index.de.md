@@ -14,13 +14,13 @@ Funktionen:
 ## Anmelden
 
 Wie bereits erwähnt, ist der Standardport der Webkonsole 21114. Geben Sie `http://<hbbs host>:21114` in den Browser ein, um die Konsolenseite aufzurufen, wie in der folgenden Abbildung zu sehen (hbbs läuft auf dem Server mit der IP 192.168.1.143):
-![](images/console-login.png)
+![](/docs/en/self-host/rustdesk-server-pro/console/images/console-login.png)
 
 Wenn Sie https-Unterstützung benötigen, installieren Sie bitte einen Webserver wie z. B. `Nginx`.
 
 Der Standard-Benutzername und das Standard-Passwort des Administrators lautet admin/test1234. Bitte ändern Sie das Passwort nach dem Anmelden, indem Sie im Kontomenü oben rechts "Einstellungen" wählen, um die Seite zur Änderung des Passworts aufzurufen, wie in der folgenden Abbildung dargestellt. Sie können auch ein anderes Administratorkonto erstellen und dieses löschen. Aktivieren Sie besser die E-Mail-Anmeldebestätigung.
 <a name=console-home></a>
-![](images/console-home.png?v2)
+![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
 Nicht-Administrator-Benutzer können sich auch anmelden, um ihr Gerät und ihre Protokolle zu durchsuchen und ihre Benutzereinstellungen zu ändern.
 

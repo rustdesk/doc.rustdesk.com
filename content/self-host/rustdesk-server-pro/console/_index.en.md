@@ -14,13 +14,13 @@ Features:
 ## Log in
 
 The default port of the web console is 21114. Enter `http://<hbbs host>:21114` in the browser to enter the console page, as shown in the following figure. The default administrator username/password is admin/test1234:
-![](images/console-login.png)
+![](/docs/en/self-host/rustdesk-server-pro/console/images/console-login.png)
 
 If you need https support, please install a web server such as `Nginx` or use `IIS` for windows.
 
 After logging in please be sure to change the password, select "Settings" in the account menu in the upper right corner to enter the password modification page, as shown in the following figure. You can also create another administrator account and delete this one. You'd better enable email login verification.
 <a name=console-home></a>
-![](images/console-home.png?v2)
+![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
 Non-administrator users can also login to browse their device and logs, change their user settings.
 

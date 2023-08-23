@@ -82,7 +82,7 @@ If --net=host works fine, -p options are useless.
 
 Haga clic en el botón de menú en el lado derecho de ID como se muestra a continuación, elija "ID/Servidor de retransmisión".
 
-![](/docs/en/self-host/install/images/server-set-menu.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-menu.png)
 
 Ingrese el host hbbs o la dirección IP en el cuadro de entrada del servidor ID (lado local + lado remoto), las otras dos direcciones se pueden dejar en blanco, RustDesk deducirá automáticamente (si no se configura especialmente), y el servidor de retransmisión se refiere a hbbr (21117 Puerto).
 
@@ -98,7 +98,7 @@ o
 hbbs.example.com:21116
 ```
 
-![](/docs/en/self-host/install/images/server-set-window.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-window.png)
 
 #### Coloque la configuración en el nombre del archivo rustdesk.exe (solo Windows)
 
@@ -115,7 +115,7 @@ repita hasta que obtenga caracteres válidos.
 
 | Menú | Acerca de la página |
 | -- | -- |
-![](/docs/en/self-host/install/images/aboutmenu.png) | ![](/docs/en/self-host/install/images/lic.png) |
+![](/docs/en/self-host/rustdesk-server-oss/install/images/aboutmenu.png) | ![](/docs/en/self-host/rustdesk-server-oss/install/images/lic.png) |
 
 ## Key
 -----------

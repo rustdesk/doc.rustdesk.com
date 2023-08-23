@@ -19,7 +19,7 @@ Haga clic en `Compartir pantalla` desde la barra de navegación inferior
 
 Configure varios permisos según sea necesario. Cada vez que inicia RustDesk, debe solicitar los permisos de "Captura de pantalla" y "Control de entrada" nuevamente.
 
-![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px)
+![](/docs/en/client/android/images/server_off_en.jpg?width=300px)
 
 | Permisos                   | Descripción                                               |
 | -------------------------- | --------------------------------------------------------- |
@@ -36,12 +36,12 @@ Arriba * representa permisos especiales. Para obtener dichos permisos, debe ir a
 
 | Al solicitar permisos de archivo de Android, se saltará automáticamente a la página de configuración del sistema |
 | :---------------: |
-| ![](/docs/en/manual/mobile/images/get_file_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
 #### **Solicitud de permiso especial: entrada del mouse**
 | Paso 1 Busque "Servicios instalados" | Paso 2 Inicie la entrada de RustDesk |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/get_input1_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/get_input2_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/get_input1_en.jpg?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
 
 {{% notice note %}}
 La página de configuración del sistema de diferentes proveedores puede ser diferente, ajústela de acuerdo con la página de su sistema
@@ -64,7 +64,7 @@ Una vez iniciado el servicio, se obtendrá automáticamente una identificación 
 
 | Antes de iniciar el servicio | Después de iniciar el servicio |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/server_off_en.jpg?width=300px) | ![](/docs/en/client/android/images/server_on_en.jpg?width=300px) |
 
 {{% notice note %}}
 1. Haciendo clic `Start Service` habilitará el `Screen capture` permiso por defecto.
@@ -74,9 +74,9 @@ Una vez iniciado el servicio, se obtendrá automáticamente una identificación 
 
 **PC:**
 
-![](/docs/en/manual/mobile/images/android_server_pc_side_en.png?width=700px)
+![](/docs/en/client/android/images/android_server_pc_side_en.png?width=700px)
 
 **Terminal móvil:**
 | Puede detener el servicio o cerrar la conexión especificada en cualquier momento | Puedes recibir o iniciar chats |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/android_server2_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/server_on_en.jpg?width=300px) | ![](/docs/en/client/android/images/android_server2_en.jpg?width=300px) |

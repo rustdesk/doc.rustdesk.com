@@ -15,7 +15,7 @@ weight: 200
 
 在策略菜单的右侧，您可以看到考虑了策略优先级之后, 实际应用当前策略的设备数量。
 
-![](images/strategy_menu.png)
+![](/docs/en/self-host/rustdesk-server-pro/strategy/images/strategy_menu.png)
 
 
 ## 设备策略和用户策略
@@ -27,7 +27,7 @@ weight: 200
 
 下图是在 demo2 菜单上点击`编辑设备`后弹出的对话框示例。其中，"362587269"设备应用于 "demo2" 策略。"157333666"原本应用于默认策略, 点击`Save`后将应用于 "demo2" 策略。"232026634"设备设置了 "demo1" 的设备策略和 "demo2" 的用户策略，由于设备策略的优先级更高，该设备将应用于 "demo1" 策略。
 
-![](images/edit_devices.png)
+![](/docs/en/self-host/rustdesk-server-pro/strategy/images/edit_devices.png)
 
 ### 编辑用户
 
@@ -35,7 +35,7 @@ weight: 200
 
 下图是在 "demo2" 菜单上点击`编辑用户`后弹出的对话框示例。其中，"user2"用户原本应用于默认策略，点击`Save`后将应用于 "demo2" 策略。 "user1"应用于默认策略。"admin"应用于 "demo2" 策略。
 
-![](images/edit_users.png)
+![](/docs/en/self-host/rustdesk-server-pro/strategy/images/edit_users.png)
 
 ### 策略同步
 

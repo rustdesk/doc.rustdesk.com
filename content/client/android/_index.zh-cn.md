@@ -19,7 +19,7 @@ weight: 4
 
 根据需要，配置各项权限， 每次启动RustDesk后，"屏幕录制"以及“输入控制"权限都再次重新申请。
 
-![](/docs/en/manual/mobile/images/server_off_zh.jpg?width=300px)
+![](/docs/en/client/android/images/server_off_zh.jpg?width=300px)
 
 | 权限             | 说明                                                     |
 | --------------- | -------------------------------------------------------- |
@@ -36,12 +36,12 @@ weight: 4
 
 | 获取安卓文件权限将会自动跳转到系统设置页面  | 
 | :---------------: |
-| ![](/docs/en/manual/mobile/images/get_file_zh.jpg?width=300px) |
+| ![](/docs/en/client/android/images/get_file_zh.jpg?width=300px) |
 
 #### **特殊权限获取 - 鼠标输入**
 | 步骤 一 找到“已安装的服务”      | 步骤 二  启动RustDesk Input   |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/get_input1_zh.png?width=300px) | ![](/docs/en/manual/mobile/images/get_input2_zh.jpg?width=300px) |
+| ![](/docs/en/client/android/images/get_input1_zh.png?width=300px) | ![](/docs/en/client/android/images/get_input2_zh.jpg?width=300px) |
 
 {{% notice note %}}
 以上演示操作系统为 Samsung Galaxy S10 mobile11 OneUI，
@@ -65,7 +65,7 @@ weight: 4
 
 | 启动服务前      | 启动服务后   |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/server_off_zh.jpg?width=300px) | ![](/docs/en/manual/mobile/images/server_on_zh.jpg?width=300px) |
+| ![](/docs/en/client/android/images/server_off_zh.jpg?width=300px) | ![](/docs/en/client/android/images/server_on_zh.jpg?width=300px) |
 
 {{% notice note %}}
 1.点击`启动服务`会默认开启`屏幕录制`权限。
@@ -75,10 +75,10 @@ weight: 4
 
 **PC端:**
 
-![](/docs/en/manual/mobile/images/android_server_pc_side_zh.png?width=700px)
+![](/docs/en/client/android/images/android_server_pc_side_zh.png?width=700px)
 
 **mobile端:**
 | 可以随时停止服务或关闭指定连接      | 可以接收或发起聊天   |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/android_server1_zh.jpg?width=300px) | ![](/docs/en/manual/mobile/images/android_server2_zh.jpg?width=300px) |
+| ![](/docs/en/client/android/images/android_server1_zh.jpg?width=300px) | ![](/docs/en/client/android/images/android_server2_zh.jpg?width=300px) |
 

@@ -30,17 +30,6 @@ sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ### ~~X11 Required~~
 ~~RustDesk aún no admite wayland, debe cambiar a X11. RustDesk lo guiará para cambiar a X11.~~
 
-RustDesk ahora cuenta con soporte experimental para Wayland. Es posible que debas descargar la versión nocturna para habilitar esta función.
-
-| Haga clic en "Fix it" | corrección para la pantalla de inicio de sesión | Ingrese su contraseña |
-| ---- | ---- | --- |
-|![](/docs/en/manual/linux/images/fix1.png)|![](/docs/en/manual/linux/images/fix3.png)|![](/docs/en/manual/linux/images/fix2.png)|
-
-{{% notice note %}}
-Por favor **reiniciar** para hacer que los cambios anteriores surtan efecto
-{{% /notice %}}
-
-#### También puede hacer los cambios anteriores manualmente
 
 #### Servidor de visualización
 

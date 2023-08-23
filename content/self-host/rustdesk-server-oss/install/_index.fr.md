@@ -160,7 +160,7 @@ Si vous voulez choisir un port personnalisé, vous pouvez utiliser l'option `-h`
 ### ÉTAPE 3 : Définissez l'adresse IP hbbs/hbbr côté client
 
 Cliquez sur le bouton Menu [ &#8942; ] à droite de ID comme indiqué ci-dessous, et choisissez "ID/Relay Server".
-![](/docs/en/self-host/install/images/server-set-menu.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-menu.png)
 
 Entrez le nom ou l'adresse IP du serveur `hbbs` dans la zone de saisie **ID Server**. Les deux autres adresses peuvent être laissées vides, RustDesk les déduira automatiquement, le serveur relais fera alors référence à `hbbr` (port 21117).
 e.g.
@@ -174,7 +174,7 @@ ou
 ```nolang
 hbbs.exemple.fr:21116
 ```
-![](/docs/en/self-host/install/images/server-set-window.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-window.png)
 
 #### Configuration par suffixe du fichier rustdesk.exe (Windows uniquement)
 
@@ -182,7 +182,7 @@ Remplacez `rustdesk.exe` par rustdesk-`host=<host-ip-or-name>,key=<public-key-st
 
 | Menu | Page A propos |
 | -- | -- |
-![](/docs/en/self-host/install/images/aboutmenu.png) | ![](/docs/en/self-host/install/images/lic.png) |
+![](/docs/en/self-host/rustdesk-server-oss/install/images/aboutmenu.png) | ![](/docs/en/self-host/rustdesk-server-oss/install/images/lic.png) |
 
 <a name="invalidchar"></a>
 {{% notice note %}}

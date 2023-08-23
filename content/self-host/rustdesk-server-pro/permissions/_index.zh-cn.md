@@ -28,4 +28,4 @@ weight: 15
 
 {{% /notice %}}
 
-![](/docs/en/self-host/pro/permissions/images/crossgrp.png)
+![](/docs/en/self-host/rustdesk-server-pro/permissions/images/crossgrp.png)

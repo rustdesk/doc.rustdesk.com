@@ -157,7 +157,7 @@ Draai met de `-h` optie om de help te zien als u uw eigen poort wilt kiezen.
 
 Klik op de knop Menu [ &#8942; ] aan de rechterkant van ID zoals hieronder getoond, en kies "ID/Relay Server".
 
-![](/docs/en/self-host/install/images/server-set-menu.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-menu.png)
 
 Voer de `hbbs` host of het IP-adres in het invoerveld **ID Server** in (lokale kant + externe kant). De andere twee adressen kunt u leeg laten, RustDesk leidt ze automatisch af (als ze niet speciaal zijn ingesteld) en de Relay Server verwijst naar `hbbr` (poort 21117).
 
@@ -173,7 +173,7 @@ of
 hbbs.example.com:21116
 ```
 
-![](/docs/en/self-host/install/images/server-set-window.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-window.png)
 
 #### Zet config in rustdesk.exe bestandsnaam (alleen Windows)
 
@@ -190,7 +190,7 @@ dit proces herhalen tot je geldige karakters krijgt.
 
 | Menu | Over Pagina |
 | -- | -- |
-![](/docs/en/self-host/install/images/aboutmenu.png) | ![](/docs/en/self-host/install/images/lic.png) |
+![](/docs/en/self-host/rustdesk-server-oss/install/images/aboutmenu.png) | ![](/docs/en/self-host/rustdesk-server-oss/install/images/lic.png) |
 
 ## Sleutel
 

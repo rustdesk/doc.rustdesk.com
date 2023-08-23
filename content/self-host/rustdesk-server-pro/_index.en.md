@@ -1,6 +1,7 @@
 ---
 title: RustDesk Server Pro
 weight: 200
+pre: "<b>2.2. </b>"
 ---
 
 RustDesk Server Pro has more features compared to the open source version.

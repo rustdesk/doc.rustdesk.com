@@ -3,4 +3,4 @@ title: Linux
 weight: 4
 ---
 
-[English](/docs/en/manual/linux/)
+[English](/docs/en/client/linux/)

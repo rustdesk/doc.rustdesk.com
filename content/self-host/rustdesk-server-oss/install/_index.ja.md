@@ -78,7 +78,7 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --n
 
 IDの右側にあるメニューボタンをクリックし "ID/Relay Server" を選択します。
 
-![](/docs/en/self-host/install/images/server-set-menu.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-menu.png)
 
 IDサーバ入力欄にhbbsのホストまたはipアドレスを入力します（ローカル側＋リモート側）他の2つのアドレスは空白でも構いません。特に設定しない場合はRustDeskが自動的に入力します。中継サーバーはhbbr (21117ポート) を参照します。
 
@@ -94,7 +94,7 @@ hbbs.example.com
 hbbs.example.com:21116
 ```
 
-![](/docs/en/self-host/install/images/server-set-window.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-window.png)
 
 #### rustdesk.exe のファイル名を変更して設定する (Windowsのみ)
 
@@ -106,7 +106,7 @@ hbbs.example.com:21116
 
 | メニュー | About ページ |
 | -- | -- |
-![](/docs/en/self-host/install/images/aboutmenu.png) | ![](/docs/en/self-host/install/images/lic.png) |
+![](/docs/en/self-host/rustdesk-server-oss/install/images/aboutmenu.png) | ![](/docs/en/self-host/rustdesk-server-oss/install/images/lic.png) |
 
 ## 鍵
 -----------

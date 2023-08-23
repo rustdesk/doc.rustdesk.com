@@ -80,7 +80,7 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --n
 
 Нажмите на кнопку меню справа от ID, как указано ниже, и выберите "ID/Relay Server".
 
-![](/docs/en/self-host/install/images/server-set-menu.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-menu.png)
 
 Введите URL или IP-адрес hbbs в поле "ID server". Поле "Relay server" можно оставить пустыми, RustDesk автоматически определит адрес ретранслятора.
 
@@ -96,7 +96,7 @@ hbbs.example.com
 hbbs.example.com:21116
 ```
 
-![](/docs/en/self-host/install/images/server-set-window.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-window.png)
 
 #### Можно поместить конфигурацию в имя исполняемого файла (только для Windows)
 
@@ -110,7 +110,7 @@ hbbs.example.com:21116
 
 |Меню |О странице |
 | -- | -- |
-![](/docs/en/self-host/install/images/aboutmenu.png) | ![](/docs/ru/self-host/install/images/lic.png) |
+![](/docs/en/self-host/rustdesk-server-oss/install/images/aboutmenu.png) | ![](/docs/ru/self-host/rustdesk-server-oss/install/images/lic.png) |
 
 ## Ключ шифрования
 -----------

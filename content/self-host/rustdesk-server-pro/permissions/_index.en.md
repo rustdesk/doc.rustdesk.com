@@ -27,4 +27,4 @@ Both `Can access to` and `Can be accessed from` serve almost the same function, 
 The user and group assigned to the controlling side are determined by the user who logs in, rather than the user who is assigned from the web console. We designed it this way because certain controlling sides do not have a device ID, such as the iOS client and web client.
 {{% /notice %}}
 
-![](/docs/en/self-host/pro/permissions/images/crossgrp.png)
+![](/docs/en/self-host/rustdesk-server-pro/permissions/images/crossgrp.png)

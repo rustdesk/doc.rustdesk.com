@@ -2,10 +2,7 @@
 title: RustDesk Client
 weight: 2
 pre: "<b>1. </b>"
-chapter: true
 ---
-
-### Chapter 1
 
 ### Introduction
 The RustDesk client is used on devices to connect via our RustDesk Server either opensource or Pro, it is available to download from [GitHub](https://github.com/rustdesk/rustdesk/releases/latest)
@@ -104,12 +101,12 @@ You can manually setup a client, to do this
 
 If you manually setup a client, you can retrieve the RustDesk2.toml (in the users folder) file and use `--import-config` in a similar way to the above example.
 
-### Parameters
+### Command Line Parameters
 
-`--password` can be used to set a permanent password.
-`--get-id` can be used to retrieve the ID.
-`--set-id` can be used to set an ID, please note IDs should start with a letter.
-`--silent-install` can be used to install RustDesk silently on windows.
+- `--password` can be used to set a permanent password.
+- `--get-id` can be used to retrieve the ID.
+- `--set-id` can be used to set an ID, please note IDs should start with a letter.
+- `--silent-install` can be used to install RustDesk silently on windows.
 
 Additional Advanced parameters can be found [here](https://github.com/rustdesk/rustdesk/blob/bdc5cded221af9697eb29aa30babce75e987fcc9/src/core_main.rs#L242)
 

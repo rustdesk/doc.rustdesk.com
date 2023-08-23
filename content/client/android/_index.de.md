@@ -19,7 +19,7 @@ Klicken Sie in der unteren Navigationsleiste auf `Bildschirm freigeben`.
 
 Konfigurieren Sie nach Bedarf verschiedene Berechtigungen. Jedes Mal, wenn Sie RustDesk starten, müssen Sie die Berechtigungen „Bildschirmaufnahme“ und „Eingabesteuerung“ erneut anfordern.
 
-![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px)
+![](/docs/en/client/android/images/server_off_en.jpg?width=300px)
 
 | Berechtigung     | Beschreibung                                               |
 | --------------- | --------------------------------------------------------- |
@@ -36,12 +36,12 @@ Das obige * steht für spezielle Berechtigungen. Um solche Berechtigungen zu erh
 
 | Das Anfordern von Android-Dateiberechtigungen führt automatisch zur Seite mit den Systemeinstellungen |
 | :---------------: |
-| ![](/docs/en/manual/mobile/images/get_file_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
 #### **Sondergenehmigung beantragen - Mauseingabe**
 | Schritt 1 Suchen Sie „Installierte Dienste“ | Schritt 2 Starten Sie RustDesk Input |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/get_input1_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/get_input2_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/get_input1_en.jpg?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
 
 {{% notice note %}}
 Die Systemeinstellungsseite der verschiedenen Anbieter kann unterschiedlich sein, bitte passen Sie sie entsprechend Ihrer Systemseite an
@@ -64,7 +64,7 @@ Nachdem der Dienst gestartet wurde, werden automatisch eine eindeutige ID und ei
 
 | Vor dem Start des Dienstes | Nach dem Start des Dienstes |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/server_off_en.jpg?width=300px) | ![](/docs/en/client/android/images/server_on_en.jpg?width=300px) |
 
 {{% notice note %}}
 1. Wenn Sie auf "Dienst starten" klicken, wird die Berechtigung "Bildschirmaufnahme" standardmäßig aktiviert.
@@ -74,10 +74,10 @@ Nachdem der Dienst gestartet wurde, werden automatisch eine eindeutige ID und ei
 
 ##### PC
 
-![](/docs/en/manual/mobile/images/android_server_pc_side_en.png?width=700px)
+![](/docs/en/client/android/images/android_server_pc_side_en.png?width=700px)
 
 ##### Mobiles Endgerät
 
 | Sie können den Dienst jederzeit beenden oder die angegebene Verbindung schließen | Sie können Chats empfangen oder initiieren |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/android_server2_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/server_on_en.jpg?width=300px) | ![](/docs/en/client/android/images/android_server2_en.jpg?width=300px) |

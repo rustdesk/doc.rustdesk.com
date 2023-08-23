@@ -19,7 +19,7 @@ weight: 4
 
 Настройте необходимые разрешения. При каждом запуске RustDesk, необходим повторный запрос разрешений.
 
-![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px)
+![](/docs/en/client/android/images/server_off_en.jpg?width=300px)
 
 | Разрешение     | Описание                                               |
 | --------------- | --------------------------------------------------------- |
@@ -36,12 +36,12 @@ weight: 4
 
 | Запрос разрешения на передачу файлов автоматически перенаправит на страницу системных настроек |
 | :---------------: |
-| ![](/docs/en/manual/mobile/images/get_file_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
 #### **Особые разрешения - Ввод**
 | Шаг 1 Найдите "Установленные службы" | Шаг 2 Включите RustDesk Input |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/get_input1_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/get_input2_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/get_input1_en.jpg?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
 
 {{% notice note %}}
 Страницы системных настроек могут отличаться в зависимости от производителя оборудования
@@ -64,7 +64,7 @@ weight: 4
 
 | До запуска службы | После запуска службы |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/server_off_en.jpg?width=300px) | ![](/docs/en/client/android/images/server_on_en.jpg?width=300px) |
 
 {{% notice note %}}
 1. Нажатие `Start Service` включит разрешение `Screen Capture` по умолчанию.
@@ -74,9 +74,9 @@ weight: 4
 
 **PC:**
 
-![](/docs/en/manual/mobile/images/android_server_pc_side_en.png?width=700px)
+![](/docs/en/client/android/images/android_server_pc_side_en.png?width=700px)
 
 **Мобильный терминал:**
 | Можно в любое время остановить службу и закрыть соединение | Чат |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/android_server2_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/server_on_en.jpg?width=300px) | ![](/docs/en/client/android/images/android_server2_en.jpg?width=300px) |

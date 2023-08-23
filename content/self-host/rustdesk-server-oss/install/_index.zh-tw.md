@@ -78,7 +78,7 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --n
 
 點擊 ID 右側的選單按鈕如下，選擇“ ID/中繼伺服器”。
 
-![](/docs/en/self-host/install/images/server-set-menu.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-menu.png)
 
 在 ID 伺服器輸入框中（被控端+主控端）輸入 hbbs 主機或 ip 地址，另外兩個地址可以不填，RustDesk會自動推導（如果沒有特別設定），中繼伺服器指的是hbbr（21117）端口。
 
@@ -93,7 +93,7 @@ hbbs.example.com
 ```
 hbbs.example.com:21116
 ```
-![](/docs/en/self-host/install/images/server-set-window.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-window.png)
 
 #### 把配置放在可執行文件名里 (Windows only)
 
@@ -107,7 +107,7 @@ If there are invalid characters in the key which can not be used in file name, p
 
 | Menu | About Page |
 | -- | -- |
-![](/docs/en/self-host/install/images/aboutmenu.png) | ![](/docs/en/self-host/install/images/lic.png) |
+![](/docs/en/self-host/rustdesk-server-oss/install/images/aboutmenu.png) | ![](/docs/en/self-host/rustdesk-server-oss/install/images/lic.png) |
 
 ## Key
 -----------

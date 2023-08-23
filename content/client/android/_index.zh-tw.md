@@ -18,7 +18,7 @@ weight: 4
 
 根據需要，配置各項權限，每次啟動 RustDesk，您都需要重新請求 "畫面擷取" 和 "輸入控制" 權限。
 
-![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px)
+![](/docs/en/client/android/images/server_off_en.jpg?width=300px)
 
 | 權限             | 說明                                                     |
 | --------------- | -------------------------------------------------------- |
@@ -35,12 +35,12 @@ weight: 4
 
 | 獲取 Android 檔案權限將會自動跳轉到系統設定頁面  |
 | :---------------: |
-| ![](/docs/en/manual/mobile/images/get_file_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
 #### **特殊權限獲取 - 滑鼠輸入**
 | 步驟一 找到“已安裝的服務”      | 步驟二  啟動 RustDesk Input   |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/get_input1_en.png?width=300px) | ![](/docs/en/manual/mobile/images/get_input2_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/get_input1_en.png?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
 
 {{% notice note %}}
 不同 Android 手機系統的系統設定頁面可能會不同，請根據您的系統頁面調整
@@ -63,7 +63,7 @@ weight: 4
 
 | 啟動服務前      | 啟動服務後   |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/server_off_en.jpg?width=300px) | ![](/docs/en/client/android/images/server_on_en.jpg?width=300px) |
 
 {{% notice note %}}
 1. 點擊`啟動服務`會默認開啟`畫面錄製`權限。
@@ -73,10 +73,10 @@ weight: 4
 
 ##### PC
 
-![](/docs/en/manual/mobile/images/android_server_pc_side_en.png?width=700px)
+![](/docs/en/client/android/images/android_server_pc_side_en.png?width=700px)
 
 ##### 手機端
 
 | 可以隨時停止服務或關閉指定連接      | 可以接收或發起聊天   |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/android_on_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/android_server2_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/android_on_en.jpg?width=300px) | ![](/docs/en/client/android/images/android_server2_en.jpg?width=300px) |
