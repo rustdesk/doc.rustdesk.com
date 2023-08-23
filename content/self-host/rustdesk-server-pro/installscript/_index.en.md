@@ -4,7 +4,7 @@ weight: 10
 ---
 
 {{% notice note %}}
-Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/rustdesk-server-pro/license) page for more details.
+Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/pro/license) page for more details.
 {{% /notice %}}
 
 ## Install

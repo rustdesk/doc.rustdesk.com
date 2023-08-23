@@ -19,7 +19,7 @@ Klik op `Scherm delen` in de onderste navigatiebalk
 
 Configureer verschillende toestemmingen als dat nodig is. Elke keer dat u RustDesk opstart, moet u de toestemmingen " Schermopname" en "Invoercontrole" opnieuw aanvragen.
 
-![](images/server_off_en.jpg?width=300px)
+![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px)
 
 | Toestemmingen     | Beschrijving                                               |
 | --------------- | --------------------------------------------------------- |
@@ -36,12 +36,12 @@ Boven * staat voor speciale toestemmingen. Om dergelijke toestemmingen te verkri
 
 | Het aanvragen van Android bestandstoestemmingen zal automatisch naar de systeeminstellingen pagina springen |
 | :---------------: |
-| ![](images/get_file_en.jpg?width=300px) |
+| ![](/docs/en/manual/mobile/images/get_file_en.jpg?width=300px) |
 
 #### **Special Permission Request - mouse input**
 | Stap 1 Zoek " Installeerde Services " | Stap 2 Start RustDesk Invoer |
 | --------------- | -------------------------------------------------------- |
-| ![](images/get_input1_en.jpg?width=300px) | ![](images/get_input2_en.jpg?width=300px) |
+| ![](/docs/en/manual/mobile/images/get_input1_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/get_input2_en.jpg?width=300px) |
 
 {{% notice note %}}
 De systeeminstellingspagina van verschillende leveranciers kan verschillen, pas deze aan volgens uw systeempagina.
@@ -64,7 +64,7 @@ Nadat de service is gestart, wordt automatisch een uniek ID en een willekeurig w
 
 | Voordat de service start | Na de start van de service |
 | --------------- | -------------------------------------------------------- |
-| ![](images/server_off_en.jpg?width=300px) | ![](images/server_on_en.jpg?width=300px) |
+| ![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) |
 
 {{% notice note %}}
 1. Door op `Start Service` te klikken wordt de `Schermopname` standaard ingeschakeld.
@@ -74,10 +74,10 @@ Nadat de service is gestart, wordt automatisch een uniek ID en een willekeurig w
 
 ##### PC
 
-![](images/android_server_pc_side_en.png?width=700px)
+![](/docs/en/manual/mobile/images/android_server_pc_side_en.png?width=700px)
 
 ##### Mobiele terminal
 
 | U kunt de service op elk moment stoppen of de opgegeven verbinding sluiten. | U kunt chats ontvangen of starten |
 | --------------- | -------------------------------------------------------- |
-| ![](images/server_on_en.jpg?width=300px) | ![](images/android_server2_en.jpg?width=300px) |
+| ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/android_server2_en.jpg?width=300px) |

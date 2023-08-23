@@ -8,17 +8,17 @@ weight: 3
 
 打開 .dmg 檔案並將 `RustDesk` 拖到 `應用程式`，如下所示。
 
-![](images/dmg.png)
+![](/docs/en/manual/mac/images/dmg.png)
 
 確保您已退出所有正在執行的 RustDesk。還要確保退出托盤上顯示的 RustDesk 服務。
 
-![](images/tray.png)
+![](/docs/en/manual/mac/images/tray.png)
 
 ### 允許 RustDesk 執行
 
 | 解鎖以變更 | 點擊 "App Store 和已確認的開發者"  |
 | ---- | ---- |
-|![](images/allow2.png)|![](images/allow.png)|
+|![](/docs/en/manual/mac/images/allow2.png)|![](/docs/en/manual/mac/images/allow.png)|
 
 ### 啟用權限
 
@@ -35,14 +35,14 @@ It seems no quick fix, we need to fix together with our Flutter version.
 
 | RustDesk 視窗 | 設定視窗 |
 | ---- | ---- |
-|![](images/acc.png)|![](images/acc3.png)|
+|![](/docs/en/manual/mac/images/acc.png)|![](/docs/en/manual/mac/images/acc3.png)|
 
 如果您在設置視窗中啟用了它，但 RustDesk 仍然發出警告。請通過 `-` 按鈕從設置視窗中刪除 RustDesk，然後單擊 `+` 按鈕，在 `/Applications` 中選擇 RustDesk。
 
 | `-` 和 `+` 按鈕 | 選擇 RustDesk |
 | ---- | ---- |
-|![](images/acc2.png)|![](images/add.png)|
+|![](/docs/en/manual/mac/images/acc2.png)|![](/docs/en/manual/mac/images/add.png)|
 
 請按照上面相似步驟設置**畫面錄製**權限。
 
-![](images/screen.png)
+![](/docs/en/manual/mac/images/screen.png)

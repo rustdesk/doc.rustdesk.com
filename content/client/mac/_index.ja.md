@@ -3,4 +3,4 @@ title: Mac
 weight: 3
 ---
 
-[English]()
+[English](/docs/en/manual/mac/)
