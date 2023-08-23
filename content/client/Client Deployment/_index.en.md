@@ -3,7 +3,7 @@ title: Client Deployment
 weight: 6
 ---
 
-You can deploy using a number of methods, some are covered in [Client](https://github.com/dinger1986/doc.rustdesk.com/blob/docs-reworking/content/client/_index.en.md#configuring-rustdesk)
+You can deploy using a number of methods, some are covered in [Client](/docs/en/client/#configuring-rustdesk)
 
 Alternatively you can use mass deployment scripts.
 
