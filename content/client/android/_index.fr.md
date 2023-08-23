@@ -19,7 +19,7 @@ Cliquez sur "Partager l'écran" dans la barre de navigation inférieure
 
 Donnez des autorisations selon vos besoins. Chaque fois que vous démarrez RustDesk, vous devrez demander à nouveau les autorisations "Capture d'écran" et "Contrôle de saisie".
 
-![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px)
+![](images/server_off_en.jpg?width=300px)
 
 | Autorisations | Descriptif |
 | --------------- | --------------------------------------------------------- |
@@ -37,12 +37,12 @@ Pour obtenir ces autorisations, vous devez accéder à la page des paramètres s
 
 | La demande d'autorisations d'accès aux fichiers Android vous amènera automatiquement à la page des paramètres système |
 | :---------------: |
-| ![](/docs/en/manual/mobile/images/get_file_en.jpg?width=300px) |
+| ![](images/get_file_en.jpg?width=300px) |
 
 #### **Demande d'autorisation spéciale - contrôler le pointeur**
 | Étape 1 - Recherchez Rustdesk dans la liste "Applications téléchargées" | Étape 2 - Activer "Utiliser RustDesk Input" |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/get_input1_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/get_input2_en.jpg?width=300px) |
+| ![](images/get_input1_en.jpg?width=300px) | ![](images/get_input2_en.jpg?width=300px) |
 
 {{% notice note %}}
 La page configuration système diffère selon les constructeurs. Adaptez s'il vous plait les précédentes étapes à votre situation.
@@ -65,7 +65,7 @@ Une fois le service démarré, un identifiant unique et un mot de passe aléatoi
 
 | Avant le lancement du service "Capture d'écran" | Après le démarrage du service "Capture d'écran" |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/server_off_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) |
+| ![](images/server_off_en.jpg?width=300px) | ![](images/server_on_en.jpg?width=300px) |
 
 {{% notice note %}}
 1. Cliquer sur "Démarrer le service" activera l'autorisation "Capture d'écran".
@@ -75,11 +75,11 @@ Une fois le service démarré, un identifiant unique et un mot de passe aléatoi
 
 ##### Vue PC
 
-![](/docs/en/manual/mobile/images/android_server_pc_side_en.png?width=700px)
+![](images/android_server_pc_side_en.png?width=700px)
 
 ##### Vue Appareil Mobile
 
 
 | Vous pouvez arrêter le service ou fermer la connexion spécifiée à tout moment | Vous pouvez recevoir ou initier des chats |
 | --------------- | -------------------------------------------------------- |
-| ![](/docs/en/manual/mobile/images/server_on_en.jpg?width=300px) | ![](/docs/en/manual/mobile/images/android_server2_en.jpg?width=300px) |
+| ![](images/server_on_en.jpg?width=300px) | ![](images/android_server2_en.jpg?width=300px) |

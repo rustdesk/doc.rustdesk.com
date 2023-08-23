@@ -27,4 +27,4 @@ Sowohl `Kann zugreifen auf` als auch `Kann zugegriffen werden von` dienen nahezu
 Der Benutzer und die Gruppe, die der kontrollierenden Seite zugewiesen werden, werden durch den Benutzer bestimmt, der sich anmeldet, und nicht durch den Benutzer, der über die Webkonsole zugewiesen wird. Wir haben dies so konzipiert, weil bestimmte Kontrollseiten keine Geräte-ID haben, wie z. B. der iOS-Client und der Webclient.
 {{% /notice %}}
 
-![](/docs/en/self-host/pro/permissions/images/crossgrp.png)
+![](images/crossgrp.png)

@@ -7,17 +7,17 @@ weight: 3
 ------
 
 Ouvrez le fichier .dmg et faites glisser "RustDesk" vers "Applications" comme ci-dessous.
-![](/docs/en/manual/mac/images/dmg.png)
+![](images/dmg.png)
 
 Assurez-vous que vous avez quitté les instance des "RustDesk" en cours d'exécution. Assurez-vous également d'avoir quitter le service "RustDesk" si affiché dans la barre d'état.
 
-![](/docs/en/manual/mac/images/tray.png)
+![](images/tray.png)
 
 ### Autoriser l'exécution de "RustDesk"
 
 | Déverrouillez pour modifier | Cliquez sur "App Store et développeurs identifiés" |
 | ---- | ---- |
-|![](/docs/en/manual/mac/images/allow2.png)|![](/docs/en/manual/mac/images/allow.png)|
+|![](images/allow2.png)|![](images/allow.png)|
 
 ### Activer les autorisations
 
@@ -32,14 +32,14 @@ Pour capturer l'écran, vous devez accorder à "RustDesk" l'autorisation d'**acc
 
 | Lien vers la configuration accessibilité | Fenêtre configuration accessibilité |
 | ---- | ---- |
-|![](/docs/en/manual/mac/images/acc.png)|![](/docs/en/manual/mac/images/acc3.png?v2)|
+|![](images/acc.png)|![](images/acc3.png?v2)|
 
 Si vous avez bien activé les permissions dans la fenêtre des paramètres, mais que "RustDesk" vous avertit toujours. Veuillez supprimer "RustDesk" de la liste de la fenêtre paramètres d'accessibilité par le bouton **"-"**, cliquez sur le bouton **"+"** et sélectionnez "RustDesk" dans **"/Applications"**.
 
 | boutons "-" et  "+" | Sélectionnez "RustDesk"  |
 | ---- | ---- |
-|![](/docs/en/manual/mac/images/acc2.png)|![](/docs/en/manual/mac/images/add.png?v2)|
+|![](images/acc2.png)|![](images/add.png?v2)|
 
 Veuillez suivre les mêmes étapes que ci-dessus pour l'autorisation **enregistrement d'écran**.
 
-![](/docs/en/manual/mac/images/screen.png?v2)
+![](images/screen.png?v2)
