@@ -7,15 +7,22 @@ You can deploy using a number of methods, some are covered in [Client](/docs/en/
 
 Alternatively you can use mass deployment scripts with your RMM, intune etc, the ID and password is output by the script, you should collect this, or split this off into different scripts to collect the ID and password.
 
+The permanent password can be changed from random to one you prefer using by changing the content inside () after $rustdesk_pw to your preferred password.
+
 ### Powershell
 
 ```ps
 $ErrorActionPreference= 'silentlycontinue'
 
-$rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
-$rdaddr =
-$rdapi =  
+$rdaddr = 
+$rdapi = 
 $rdkey = 
+$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
+
+
+####################################Please Do Not Edit Below This Line##########################################
+
+$rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
 if($rdver -eq "1.2.2") 
 {
@@ -69,14 +76,12 @@ if($ProcessActive -ne $null)
 stop-process -ProcessName rustdesk -Force
 }
 
-$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
 Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" "--password $rustdesk_pw" -wait
 
 Write-Output $rustdesk_id
 Write-Output $rustdesk_pw
 
 net start rustdesk > null
-
 ```
 
 ### Mac OS Bash
