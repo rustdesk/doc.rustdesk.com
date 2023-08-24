@@ -5,7 +5,7 @@ weight: 6
 
 You can deploy using a number of methods, some are covered in [Client](/docs/en/client/#configuring-rustdesk)
 
-Alternatively you can use mass deployment scripts.
+Alternatively you can use mass deployment scripts with your RMM, intune etc, the ID and password is output by the script, you should collect this, or split this off into different scripts to collect the ID and password.
 
 ### Powershell
 
@@ -58,6 +58,24 @@ New-Item C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config
 Set-Content C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml "rendezvous_server = '$rdaddr' `nnat_type = 1`nserial = 0`n`n[options]`ncustom-rendezvous-server = '$rdaddr'`nkey = '$rdkey'`nrelay-server = '$rdaddr'`napi-server = '$rdapi'"
 
 net start rustdesk
+
+cd $env:ProgramFiles\RustDesk\
+$rustdesk_id = (.\RustDesk.exe --get-id | out-host)
+
+net stop rustdesk > null
+$ProcessActive = Get-Process rustdesk -ErrorAction SilentlyContinue
+if($ProcessActive -ne $null)
+{
+stop-process -ProcessName rustdesk -Force
+}
+
+$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
+Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" "--password $rustdesk_pw" -wait
+
+Write-Output $rustdesk_id
+Write-Output $rustdesk_pw
+
+net start rustdesk > null
 
 ```
 
