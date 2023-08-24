@@ -145,8 +145,9 @@ open -n /Applications/RustDesk.app
 ```sh
 #!/bin/bash
 
-# Assign the value "XYZ" to the password variable
-rustdesk_password="XYZ"
+# Assign a random value to the password variable
+rustdesk_password=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
+
 
 # Get your config string from your Web portal and Fill Below.
 rustdesk_config="encryptedconfigstring" 
