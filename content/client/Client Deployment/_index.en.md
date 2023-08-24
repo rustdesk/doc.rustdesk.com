@@ -13,6 +13,9 @@ Alternatively you can use mass deployment scripts.
 $ErrorActionPreference= 'silentlycontinue'
 
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
+$rdaddr =
+$rdapi =  
+$rdkey = 
 
 if($rdver -eq "1.2.2") 
 {
@@ -27,7 +30,7 @@ If (!(Test-Path c:\Temp)) {
 
 cd c:\Temp
 
-powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.1/rustdesk-1.2.1-x86_64.exe" -Outfile "rustdesk.exe"
+powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
 
 $ServiceName = 'Rustdesk'
@@ -49,12 +52,13 @@ net stop rustdesk
 $username = ((Get-WMIObject -ClassName Win32_ComputerSystem).Username).Split('\')[1]
 Remove-Item C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml
 New-Item C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml
-Set-Content C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml "rendezvous_server = 'youraddress' `nnat_type = 1`nserial = 0`n`n[options]`ncustom-rendezvous-server = 'youraddress'`nkey = 'yourkey'`nrelay-server = 'youraddress'`napi-server = 'https://youraddress'"
+Set-Content C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml "rendezvous_server = '$rdaddr' `nnat_type = 1`nserial = 0`n`n[options]`ncustom-rendezvous-server = '$rdaddr'`nkey = '$rdkey'`nrelay-server = '$rdaddr'`napi-server = '$rdapi'"
 Remove-Item C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml
 New-Item C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml
-Set-Content C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml "rendezvous_server = 'youraddress' `nnat_type = 1`nserial = 0`n`n[options]`ncustom-rendezvous-server = 'youraddress'`nkey = 'yourkey'`nrelay-server = 'youraddress'`napi-server = 'https://youraddress'"
+Set-Content C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml "rendezvous_server = '$rdaddr' `nnat_type = 1`nserial = 0`n`n[options]`ncustom-rendezvous-server = '$rdaddr'`nkey = '$rdkey'`nrelay-server = '$rdaddr'`napi-server = '$rdapi'"
 
 net start rustdesk
+
 ```
 
 ### Mac OS Bash
@@ -62,8 +66,8 @@ net start rustdesk
 ```sh
 #!/bin/bash
 
-# Assign the value "XYZ" to the password variable
-rustdesk_password="XYZ"
+# Assign the value random password to the password variable
+rustdesk_password=$(openssl rand -hex 4)
 
 # Get your config string from your Web portal and Fill Below.
 rustdesk_config="configstring" 
@@ -76,11 +80,6 @@ if [[ $EUID -ne 0 ]]; then
 	exit 1
 fi
 
-if [[ $(arch) == 'arm64' ]]; then
-  echo "Installing Rosetta"
-/usr/sbin/softwareupdate --install-rosetta --agree-to-license
-fi
-
 # Specify the path to the rustdesk.dmg file
 dmg_file="/tmp/rustdesk-1.2.2-x86_64.dmg"
 
@@ -89,7 +88,12 @@ mount_point="/Volumes/RustDesk"
 
 # Download the rustdesk.dmg file
 echo "Downloading RustDesk Now"
+
+if [[ $(arch) == 'arm64' ]]; then
+curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-aarch64.dmg --output "$dmg_file"
+else
 curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.dmg --output "$dmg_file"
+fi
 
 # Mount the DMG file to the specified mount point
 hdiutil attach "$dmg_file" -mountpoint "$mount_point" &> /dev/null
