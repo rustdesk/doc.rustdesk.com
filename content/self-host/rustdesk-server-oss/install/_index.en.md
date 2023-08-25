@@ -102,7 +102,7 @@ Please run with the `-h` option to see help if you want to choose your own port.
 
 Click on the Menu button [ &#8942; ] on the right side of ID as shown below, and choose "ID/Relay Server".
 
-![](images/server-set-menu.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-menu.png)
 
 Enter the `hbbs` host or IP Address in the **ID Server** input box (local side + remote side). The other two addresses can be left blank, RustDesk will automatically deduce (if not specially set), and the Relay Server refers to `hbbr` (port 21117).
 
@@ -118,7 +118,7 @@ or
 hbbs.example.com:21116
 ```
 
-![](images/server-set-window.png)
+![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-window.png)
 
 #### Put config in rustdesk.exe file name (Windows only)
 

@@ -10,13 +10,13 @@ After the verification is successful, you can control remote device.
 
 | Home | Successfully connected |
 | --------------- | -------------------------------------------------------- |
-| ![](images/connection_home_en.jpg?width=300px) | ![](images/connection_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/connection_home_en.jpg?width=300px) | ![](/docs/en/client/android/images/connection_en.jpg?width=300px) |
 
 Input control provides two modes: `mouse mode` and `touch mode`, which can be switched through the lower toolbar.
 
 | Mouse settings | Mode selection |
 | --------------- | -------------------------------------------------------- |
-| ![](images/touch_mode_icon_en.png?width=300px) | ![](images/touch_mode_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/touch_mode_icon_en.png?width=300px) | ![](/docs/en/client/android/images/touch_mode_en.jpg?width=300px) |
 
 {{% notice note %}}
 In `mouse mode`,you can also trigger the remote device's `Right Mouse` with a `Two-Finger Tap`
@@ -32,7 +32,7 @@ Long press or tap the menu on the right to select `File Transfer`
 
 | Home | Successfully connected |
 | --------------- | -------------------------------------------------------- |
-| ![](images/connection_home_file_en.jpg?width=300px) | ![](images/file_connection_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/connection_home_file_en.jpg?width=300px) | ![](/docs/en/client/android/images/file_connection_en.jpg?width=300px) |
 
 - The initial directory is the Home directory of the device, you can click <i class="fas fa-home"></i> to quickly return to Home.
 - Below the title bar is the directory level, you can click the corresponding folder to jump quickly.
@@ -48,7 +48,7 @@ Long press or tap the menu on the right to select `File Transfer`
 
 | Multi-Select Mode | File Paste |
 | --------------- | -------------------------------------------------------- |
-| ![](images/file_multi_select_en.jpg?width=300px) | ![](images/file_copy_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/file_multi_select_en.jpg?width=300px) | ![](/docs/en/client/android/images/file_copy_en.jpg?width=300px) |
 
 ### Set ID/Relay Server
 
@@ -66,7 +66,7 @@ Then go to an [Online QR Code Generator](https://www.qr-code-generator.com/) and
 
 The picture below is a screenshot of Android. If it is iOS, please check top-right menu on the home page.
 
-![](images/id_setting_en.jpg?width=300px)
+![](/docs/en/client/android/images/id_setting_en.jpg?width=300px)
 
 ### Share screen/files of your Android phone
 
@@ -82,7 +82,7 @@ Click on `Share Screen` from the bottom navigation bar
 
 Configure various permissions as needed. Every time you start RustDesk, you need to request "Screen Capture" and "Input Control" permissions again.
 
-![](images/server_off_en.jpg?width=300px)
+![](/docs/en/client/android/images/server_off_en.jpg?width=300px)
 
 | Permissions | Description |
 | -- | -- |
@@ -99,12 +99,12 @@ Above * represents special permissions. To obtain such permissions, you need to 
 
 | Requesting Android file permissions will automatically jump to the system settings page |
 | :---------------: |
-| ![](images/get_file_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
 #### **Special Permission Request - mouse input**
 | Step 1 Find "Installed Services" | Step 2 Start RustDesk Input |
 | -- | -- |
-| ![](images/get_input1_en.jpg?width=300px) | ![](images/get_input2_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/get_input1_en.jpg?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
 
 {{% notice note %}}
 The system setting page of different vendors may be different, please adjust it according to your system page
@@ -127,7 +127,7 @@ After the service is started, a unique ID and random password will be automatica
 
 | Before starting the service | After starting the service |
 | -- | -- |
-| ![](images/server_off_en.jpg?width=300px) | ![](images/server_on_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/server_off_en.jpg?width=300px) | ![](/docs/en/client/android/images/server_on_en.jpg?width=300px) |
 
 {{% notice note %}}
 1. Clicking `Start Service` will enable the `Screen capture` permission by default.
@@ -137,10 +137,10 @@ After the service is started, a unique ID and random password will be automatica
 
 ##### PC
 
-![](images/android_server_pc_side_en.png?width=700px)
+![](/docs/en/client/android/images/android_server_pc_side_en.png?width=700px)
 
 ##### Mobile terminal
 
 | You can stop the service or close the specified connection at any time | You can receive or initiate chats |
 | -- | -- |
-| ![](images/server_on_en.jpg?width=300px) | ![](images/android_server2_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/server_on_en.jpg?width=300px) | ![](/docs/en/client/android/images/android_server2_en.jpg?width=300px) |

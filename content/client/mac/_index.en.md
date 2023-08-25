@@ -7,17 +7,17 @@ weight: 3
 
 Open the .dmg file and drag `RustDesk` to `Applications` as below.
 
-![](images/dmg.png)
+![](/docs/en/client/mac/images/dmg.png)
 
 Make sure you have quit all running RustDesk. Also make sure you quit the RustDesk service shown on the tray.
 
-![](images/tray.png)
+![](/docs/en/client/mac/images/tray.png)
 
 ### Allow RustDesk run
 
 | Unlock to change | Click on "App Store and identified developers" |
 | ---- | ---- |
-| ![](images/allow2.png) | ![](images/allow.png) |
+| ![](/docs/en/client/mac/images/allow2.png) | ![](/docs/en/client/mac/images/allow.png) |
 
 ### Enable permissions
 
@@ -34,14 +34,14 @@ To capture screen, you need to grant `RustDesk` **Accessibility** permission and
 
 | RustDesk window | Settings window |
 | ---- | ---- |
-| ![](images/acc.png) | ![](images/acc3.png?v2) |
+| ![](/docs/en/client/mac/images/acc.png) | ![](/docs/en/client/mac/images/acc3.png?v2) |
 
 If you have enabled it in the settings window, but RustDesk still warns. Please remove RustDesk from the settings windows by the `-` button, and click on `+` button, select RustDesk in `/Applications`.
 
 | `-` and `+` button | Select RustDesk |
 | ---- | ---- |
-| ![](images/acc2.png) | ![](images/add.png?v2) |
+| ![](/docs/en/client/mac/images/acc2.png) | ![](/docs/en/client/mac/images/add.png?v2) |
 
 Please copy above steps for **Screen Recording** permission.
 
-![](images/screen.png?v2)
+![](/docs/en/client/mac/images/screen.png?v2)

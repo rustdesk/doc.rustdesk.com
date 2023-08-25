@@ -1,4 +1,7 @@
-### Android
+---
+title: Android
+weight: 4
+---
 
 ### Uzaktan Kontrol
 
@@ -7,13 +10,13 @@ Doğrulama başarılı olduktan sonra uzak cihazı kontrol edebilirsiniz.
 
 | Ev | Başarıyla bağlandı |
 | --------------- | -------------------------------------------------------- |
-| ![](images/connection_home_en.jpg?width=300px) | ![](images/connection_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/connection_home_en.jpg?width=300px) | ![](/docs/en/client/android/images/connection_en.jpg?width=300px) |
 
 Giriş kontrolü iki mod sağlar: `fare modu` ve `dokunmatik mod`, alt araç çubuğu aracılığıyla geçiş yapılabilir.
 
 | Fare ayarları | Mod seçimi |
 | --------------- | -------------------------------------------------------- |
-| ![](images/touch_mode_icon_en.png?width=300px) | ![](images/touch_mode_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/touch_mode_icon_en.png?width=300px) | ![](/docs/en/client/android/images/touch_mode_en.jpg?width=300px) |
 
 {{% notice note %}}
 `Fare modunda`, uzaktaki cihazın `Sağ Fare` düğmesini aynı zamanda `İki Parmak Dokunuşu` ile tetikleyebilirsiniz.
@@ -29,7 +32,7 @@ Listede bir dosya veya klasöre uzun basın veya sağdaki menüye dokunun ve `Do
 
 | Ev | Başarıyla bağlandı |
 | --------------- | -------------------------------------------------------- |
-| ![](images/connection_home_file_en.jpg?width=300px) | ![](images/file_connection_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/connection_home_file_en.jpg?width=300px) | ![](/docs/en/client/android/images/file_connection_en.jpg?width=300px) |
 
 - İlk dizin, cihazın Ana dizinidir, `Ev`e hızlı dönmek için <i class="fas fa-home"></i> simgesine tıklayabilirsiniz.
 - Başlık çubuğunun altında dizin seviyesi bulunur, ilgili klasöre hızlıca gitmek için ilgili klasörü tıklayabilirsiniz.
@@ -45,7 +48,7 @@ Listede bir dosya veya klasöre uzun basın veya sağdaki menüye dokunun ve `Do
 
 | Çoklu Seçim Modu | Dosya Yapıştır |
 | --------------- | -------------------------------------------------------- |
-| ![](images/file_multi_select_en.jpg?width=300px) | ![](images/file_copy_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/file_multi_select_en.jpg?width=300px) | ![](/docs/en/client/android/images/file_copy_en.jpg?width=300px) |
 
 ### Kimlik/Röle Sunucusu Ayarı
 
@@ -63,7 +66,7 @@ Daha sonra bir [Çevrimiçi QR Kodu Oluşturucu](https://www.qr-code-generator.c
 
 Aşağıdaki resim, Android'den alınan bir ekran görüntüsüdür. Eğer iOS ise, lütfen ana sayfadaki sağ üst menüyü kontrol edin.
 
-![](images/id_setting_en.jpg?width=300px)
+![](/docs/en/client/android/images/id_setting_en.jpg?width=300px)
 
 ### Android Telefonunuzun Ekran/Dosyalarını Paylaşın
 
@@ -79,7 +82,7 @@ Alt gezinme çubuğundan `Ekran Paylaşımı`na tıklayın.
 
 Gerektiğinde çeşitli izinleri yapılandırın. Her seferinde RustDesk'i başlattığınızda "Ekran Yakalama" ve "Giriş Kontrolü" izinlerini tekrar istemeniz gerekmektedir.
 
-![](images/server_off_en.jpg?width=300px)
+![](/docs/en/client/android/images/server_off_en.jpg?width=300px)
 
 | İzinler | Açıklama |
 | -- | -- |
@@ -98,12 +101,12 @@ Yukarıdaki * özel izinleri temsil eder. Bu tür izinlere sahip olmak için man
 
 | Android dosya izinlerini isteme, otomatik olarak sistem ayarları sayfasına geçecektir |
 | :---------------: |
-| ![](images/get_file_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
 #### **Özel İzin İsteği - fare girişi**
 | Adım 1 "Yüklü Hizmetler"i Bulun | Adım 2 RustDesk Girişini Başlatın |
 | -- | -- |
-| ![](images/get_input1_en.jpg?width=300px) | ![](images/get_input2_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/get_input1_en.jpg?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
 
 {{% notice note %}}
 Farklı üreticilerin sistem ayar sayfaları farklı olabilir, lütfen kendi sistem sayfanıza göre ayarlayın.
@@ -126,7 +129,7 @@ Hizmet başlatıldıktan sonra, bu cihaz için benzersiz bir kimlik ve rastgele 
 
 | Hizmeti başlatmadan önce | Hizmet başlatıldıktan sonra |
 | -- | -- |
-| ![](images/server_off_en.jpg?width=300px) | ![](images/server_on_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/server_off_en.jpg?width=300px) | ![](/docs/en/client/android/images/server_on_en.jpg?width=300px) |
 
 {{% notice note %}}
 1. `Hizmeti Başlat`a tıklamak, `Ekran yakalama` iznini varsayılan olarak etkinleştirir.
@@ -136,10 +139,10 @@ Hizmet başlatıldıktan sonra, bu cihaz için benzersiz bir kimlik ve rastgele 
 
 ##### Bilgisayar (PC)
 
-![](images/android_server_pc_side_en.png?width=700px)
+![](/docs/en/client/android/images/android_server_pc_side_en.png?width=700px)
 
 ##### Mobil terminal
 
 | Hizmeti istediğiniz zaman durdurabilir veya belirli bir bağlantıyı kapatabilirsiniz | Sohbet alabilir veya başlatabilirsiniz |
 | -- | -- |
-| ![](images/server_on_en.jpg?width=300px) | ![](images/android_server2_en.jpg?width=300px) |
+| ![](/docs/en/client/android/images/server_on_en.jpg?width=300px) | ![](/docs/en/client/android/images/android_server2_en.jpg?width=300px) |

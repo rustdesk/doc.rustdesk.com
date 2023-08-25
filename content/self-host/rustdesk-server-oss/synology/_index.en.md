@@ -13,33 +13,33 @@ Open package manager and install docker
 
 |    |    |
 | -- | -- |
-| ![](images/package-manager.png) | ![](images/docker.png) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/images/package-manager.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/images/docker.png) |
 
 
 ### Install RustDesk Server
 
 | Search rustdesk-server in Docker's registry and install by double click | Installed rustdesk-server image, double click to create rustdesk-server container |
 | -- | -- |
-| ![](images/pull-rustdesk-server.png) | ![](images/rustdesk-server-installed.png) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/images/pull-rustdesk-server.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/images/rustdesk-server-installed.png) |
 
 
 ### Create hbbs container
 
 As mentioned above, double click on rustdesk-server image to create new container, set it name to `hbbs`.
-![](images/hbbs.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/images/hbbs.png)
 
 Click on above "Advanced Settings".
 
 - Enable auto-restart
-![](images/auto-restart.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/images/auto-restart.png)
 
 - Enable "Use the same network as Docker host", for more about host net, please [check](install/#net-host)
-![](images/host-net.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/images/host-net.png)
 
 - Mount a host directory (e.g. `/home/rustdesk/`) to `/root`, hbbs will generate some files (database and `key` files) in this directory which need to be persistent over reboots.
 | Mount | Files generated in the host directory |
 | -- | -- |
-| ![](images/mount.png?width=500px) | ![](images/mounted-dir.png?width=300px) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/images/mount.png?width=500px) | ![](/docs/en/self-host/rustdesk-server-oss/synology/images/mounted-dir.png?width=300px) |
 
 - Set command
 {{% notice note %}}
@@ -49,26 +49,26 @@ Synology's OS is Debian based, so host net (--net=host) works fine, we do not ne
 
 {{% /notice %}}
 
-![](images/hbbs-cmd.png?v2)
+![](/docs/en/self-host/rustdesk-server-oss/synology/images/hbbs-cmd.png?v2)
 
 - Done
 
-![](images/hbbs-config.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/images/hbbs-config.png)
 
 ### Create hbbr container
 
 Please repeat above `hbbs` steps, but name the container `hbbr` and command (for Set Command Step) should be `hbbr -k _`.
 
-![](images/hbbr-config.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/images/hbbr-config.png)
 
 ### hbbr/hbbs containers
 
-![](images/containers.png?width=500px)
+![](/docs/en/self-host/rustdesk-server-oss/synology/images/containers.png?width=500px)
 
 
 | Double click on container and check log | Double confirm hbbs/hbbr using host network |
 | -- | -- |
-| ![](images/log.png?width=500px) | ![](images/network-types.png?width=500px) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/images/log.png?width=500px) | ![](/docs/en/self-host/rustdesk-server-oss/synology/images/network-types.png?width=500px) |
 
 ### Retrieve your Key
 

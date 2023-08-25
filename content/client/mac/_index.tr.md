@@ -7,17 +7,17 @@ weight: 3
 
 `.dmg` dosyasını açın ve `RustDesk` uygulamasını aşağıdaki gibi `Applications` klasörüne sürükleyin.
 
-![](images/dmg.png)
+![](/docs/en/client/mac/images/dmg.png)
 
 Tüm çalışan RustDesk uygulamalarını kapattığınızdan emin olun. Ayrıca, tepside görünen RustDesk hizmetini de kapatmış olduğunuzdan emin olun.
 
-![](images/tray.png)
+![](/docs/en/client/mac/images/tray.png)
 
 ### RustDesk'i Çalıştırmaya İzin Verme
 
 | Değiştirmek için kilidi açın | "App Store ve tanımlanmış geliştiriciler" üzerine tıklayın |
 | ---- | ---- |
-| ![](images/allow2.png) | ![](images/allow.png) |
+| ![](/docs/en/client/mac/images/allow2.png) | ![](/docs/en/client/mac/images/allow.png) |
 
 ### İzinleri Etkinleştirme
 
@@ -34,14 +34,14 @@ Ekran yakalamak için, `RustDesk` uygulamasına **Erişilebilirlik** izni ve **E
 
 | RustDesk penceresi | Ayarlar penceresi |
 | ---- | ---- |
-| ![](images/acc.png) | ![](images/acc3.png?v2) |
+| ![](/docs/en/client/mac/images/acc.png) | ![](/docs/en/client/mac/images/acc3.png?v2) |
 
 Ayarlar penceresinde etkinleştirdiyseniz ve RustDesk hala uyarı veriyorsa. Lütfen RustDesk'i ayarlar penceresinden `-` düğmesine tıklayarak kaldırın ve `+` düğmesine tıklayarak `/Applications` içinde RustDesk'i seçin.
 
 | `-` ve `+` düğmesi | RustDesk'i Seç |
 | ---- | ---- |
-| ![](images/acc2.png) | ![](images/add.png?v2) |
+| ![](/docs/en/client/mac/images/acc2.png) | ![](/docs/en/client/mac/images/add.png?v2) |
 
 Lütfen yukarıdaki adımları **Ekran Kaydı** izni için de uygulayın.
 
-![](images/screen.png?v2)
+![](/docs/en/client/mac/images/screen.png?v2)

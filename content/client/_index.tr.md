@@ -72,7 +72,7 @@ Apk'yı GitHub'dan indirin, daha fazla bilgiyi Android sayfasında bulabilirsini
 ### Kullanım
 Kurulduktan sonra (veya geçici olarak yürütüldüğünde), RustDesk Halka açık sunuculara bağlanır (altta (1) "Hazır, daha hızlı bir bağlantı için lütfen kendi sunucunuzu kurun) mesajını göreceksiniz). Sol üst köşede (2) Kimliğiniz ve (3) Tek Kullanımlık Şifreniz görünecek ve sağda (4) Kimliklerini bildiğiniz bir başka bilgisayara bağlanmanız için bir kutu göreceksiniz.
 
-![image](images/client.png)
+![image](/docs/en/client/images/client.png)
 
 Ayarlar'a erişmek için Kimlik (5) sağdaki 3 noktaya tıklayın.
 
@@ -97,7 +97,7 @@ Elle bir istemciyi ayarlayabilirsiniz, bunun için
 3. Ağ Ayarlarını Kilitle'ye tıklayın
 4. Kimliğinizi, Röle, API (pro kullanıyorsanız) sunucularınızı ve anahtarınızı girin.
 
-![image](images/network-settings.png)
+![image](/docs/en/client/images/network-settings.png)
 
 Eğer elle bir istemci kurarsanız, RustDesk2.toml (kullanıcı klasöründe) dosyasını alabilir ve yukarıdaki örneğe benzer bir şekilde `--import-config` kullanabilirsiniz.
 

@@ -71,7 +71,7 @@ Install apk from our GitHub more info can be found on the Android page.
 ### Usage
 Once installed (or run as a temporary executable) RustDesk will connect to the Public servers (you will see a message at the bottom saying (1) "Ready, For faster connection, please setup your own server). In the Top left you will see your (2) ID and (3) One Time Password and on the (4) Right a box for you to connect to another computer if you know their ID.
 
-![image](images/client.png)
+![image](/docs/en/client/images/client.png)
 
 
 To access the settings, click on the (5) 3 dots to the right of ID.
@@ -97,7 +97,7 @@ You can manually setup a client, to do this
 3. Click Unlock Network Settings
 4. Enter your ID, Relay, API (if using pro) servers and your key.
 
-![image](images/network-settings.png)
+![image](/docs/en/client/images/network-settings.png)
 
 If you manually setup a client, you can retrieve the RustDesk2.toml (in the users folder) file and use `--import-config` in a similar way to the above example.
 
