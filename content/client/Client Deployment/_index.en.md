@@ -5,12 +5,30 @@ weight: 6
 
 You can deploy using a number of methods, some are covered in [Client](/docs/en/client/#configuring-rustdesk)
 
-Alternatively you can use mass deployment scripts.
+Alternatively you can use mass deployment scripts with your RMM, intune etc, the ID and password is output by the script, you should collect this, or split this off into different scripts to collect the ID and password.
+
+The permanent password can be changed from random to one you prefer using by changing the content inside () after rustdesk_pw to your preferred password.
 
 ### Powershell
 
 ```ps
 $ErrorActionPreference= 'silentlycontinue'
+
+# Assign the value random password to the password variable
+$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
+
+# Get your config string from your Web portal and Fill Below.
+rustdesk_cfg="configstring" 
+
+####################################Please Do Not Edit Below This Line##########################################
+
+#Run as administrator and stays in the current directory
+if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000) {
+        Start-Process PowerShell -Verb RunAs -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command `"cd '$pwd'; & '$PSCommandPath';`"";
+        Exit;
+    }
+}
 
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
@@ -27,7 +45,7 @@ If (!(Test-Path c:\Temp)) {
 
 cd c:\Temp
 
-powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.1/rustdesk-1.2.1-x86_64.exe" -Outfile "rustdesk.exe"
+powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
 
 $ServiceName = 'Rustdesk'
@@ -44,29 +62,44 @@ while ($arrService.Status -ne 'Running')
     Start-Sleep -seconds 5
     $arrService.Refresh()
 }
-net stop rustdesk
 
-$username = ((Get-WMIObject -ClassName Win32_ComputerSystem).Username).Split('\')[1]
-Remove-Item C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml
-New-Item C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml
-Set-Content C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml "rendezvous_server = 'youraddress' `nnat_type = 1`nserial = 0`n`n[options]`ncustom-rendezvous-server = 'youraddress'`nkey = 'yourkey'`nrelay-server = 'youraddress'`napi-server = 'https://youraddress'"
-Remove-Item C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml
-New-Item C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml
-Set-Content C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml "rendezvous_server = 'youraddress' `nnat_type = 1`nserial = 0`n`n[options]`ncustom-rendezvous-server = 'youraddress'`nkey = 'yourkey'`nrelay-server = 'youraddress'`napi-server = 'https://youraddress'"
+cd $env:ProgramFiles\RustDesk\
+$rustdesk_id = (.\RustDesk.exe --get-id | out-host)
 
-net start rustdesk
+net stop rustdesk > null
+.\RustDesk.exe --config $rustdesk_cfg
+
+$ProcessActive = Get-Process rustdesk -ErrorAction SilentlyContinue
+if($ProcessActive -ne $null)
+{
+stop-process -ProcessName rustdesk -Force
+}
+
+Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" "--password $rustdesk_pw" -wait
+
+Write-Output "..............................................."
+# Show the value of the ID Variable
+Write-Output "RustDesk ID: $rustdesk_id"
+
+# Show the value of the Password Variable
+Write-Output "Password: $rustdesk_pw"
+Write-Output "..............................................."
+
+echo "Please complete install on GUI, launching RustDesk now."
+open -n /Applications/RustDesk.app
 ```
+
 
 ### Mac OS Bash
 
 ```sh
 #!/bin/bash
 
-# Assign the value "XYZ" to the password variable
-rustdesk_password="XYZ"
+# Assign the value random password to the password variable
+rustdesk_pw=$(openssl rand -hex 4)
 
 # Get your config string from your Web portal and Fill Below.
-rustdesk_config="configstring" 
+rustdesk_cfg="configstring" 
 
 ####################################Please Do Not Edit Below This Line##########################################
 
@@ -74,11 +107,6 @@ rustdesk_config="configstring"
 if [[ $EUID -ne 0 ]]; then
 	echo "This script must be run as root."
 	exit 1
-fi
-
-if [[ $(arch) == 'arm64' ]]; then
-  echo "Installing Rosetta"
-/usr/sbin/softwareupdate --install-rosetta --agree-to-license
 fi
 
 # Specify the path to the rustdesk.dmg file
@@ -89,7 +117,12 @@ mount_point="/Volumes/RustDesk"
 
 # Download the rustdesk.dmg file
 echo "Downloading RustDesk Now"
+
+if [[ $(arch) == 'arm64' ]]; then
+curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-aarch64.dmg --output "$dmg_file"
+else
 curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.dmg --output "$dmg_file"
+fi
 
 # Mount the DMG file to the specified mount point
 hdiutil attach "$dmg_file" -mountpoint "$mount_point" &> /dev/null
@@ -112,9 +145,9 @@ rustdesk_id=$(./RustDesk --get-id)
 
 # Apply new password to RustDesk
 ./RustDesk --server &
-/Applications/RustDesk.app/Contents/MacOS/RustDesk --password $rustdesk_password &> /dev/null
+/Applications/RustDesk.app/Contents/MacOS/RustDesk --password $rustdesk_pw &> /dev/null
 
-/Applications/RustDesk.app/Contents/MacOS/RustDesk --config $rustdesk_config
+/Applications/RustDesk.app/Contents/MacOS/RustDesk --config $rustdesk_cfg
 
 # Kill all processes named RustDesk
 rdpid=$(pgrep RustDesk)
@@ -129,7 +162,7 @@ else
 fi
 
 # Echo the value of the password variable
-echo "Password: $rustdesk_password"
+echo "Password: $rustdesk_pw"
 echo "..............................................."
 
 echo "Please complete install on GUI, launching RustDesk now."
@@ -141,11 +174,12 @@ open -n /Applications/RustDesk.app
 ```sh
 #!/bin/bash
 
-# Assign the value "XYZ" to the password variable
-rustdesk_password="XYZ"
+# Assign a random value to the password variable
+rustdesk_pw=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
+
 
 # Get your config string from your Web portal and Fill Below.
-rustdesk_config="encryptedconfigstring" 
+rustdesk_cfg="encryptedconfigstring" 
 
 ####################################Please Do Not Edit Below This Line##########################################
 
@@ -221,9 +255,9 @@ rustdesk_id=$(rustdesk --get-id)
 
 # Apply new password to RustDesk
 systemctl start rustdesk
-rustdesk --password $rustdesk_password &> /dev/null
+rustdesk --password $rustdesk_pw &> /dev/null
 
-rustdesk --config $rustdesk_config
+rustdesk --config $rustdesk_cfg
 
 systemctl restart rustdesk
 
