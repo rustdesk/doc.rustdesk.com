@@ -84,7 +84,7 @@ landingPageName = "<i class='fas fa-home'></i> Startpagina"
 [Languages.tr]
 title = "RustDesk için Belgeler"
 weight = 2
-languageName = "Turkish"
+languageName = "Türkçe"
 landingPageName = "<i class='fas fa-home'></i> Ana sayfa"
 
 [Languages.ja]
