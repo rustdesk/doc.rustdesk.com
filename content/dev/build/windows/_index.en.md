@@ -23,14 +23,14 @@ Download [rustup-init.exe](https://static.rust-lang.org/rustup/dist/x86_64-pc-wi
 Go to the folder you want to clone vcpkg and use [git-bash](https://git-scm.com/download/win) to run the following commands, download `vcpkg`, install 64-bit version of `libvpx`, `libyuv` and `opus`.
 If you don't have `git` installed, get `git` [here](https://git-scm.com/download/win).
 
-```shell
-  git clone https://github.com/microsoft/vcpkg
-  cd vcpkg
-  git checkout 2023.04.15
-  cd ..
-  vcpkg/bootstrap-vcpkg.bat
-  export VCPKG_ROOT=$PWD/vcpkg
-  vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
+```sh
+git clone https://github.com/microsoft/vcpkg
+cd vcpkg
+git checkout 2023.04.15
+cd ..
+vcpkg/bootstrap-vcpkg.bat
+export VCPKG_ROOT=$PWD/vcpkg
+vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
 ```
 
 Add System environment variable `VCPKG_ROOT`=`<path>\vcpkg`. The `<path>` should be the location you choose above to clone `vcpkg`.
@@ -43,9 +43,9 @@ Desktop versions use [Sciter](https://sciter.com/) for GUI, please download [sci
 
 ### LLVM
 
-rust-bindgen depends on clang, download [LLVM](https://github.com/llvm/llvm-project/releases) and install, add System environment variable `LIBCLANG_PATH`=`<llvm_install_dir>/bin`.
+`rust-bindgen` depends on `clang`, download [LLVM](https://github.com/llvm/llvm-project/releases) and install, add System environment variable `LIBCLANG_PATH`=`<llvm_install_dir>/bin`.
 
-You can download 15.02 of the LLVM binaries here: [64-bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win64.exe) / [32-bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win32.exe)
+You can download version 15.02 of the LLVM binaries here: [64-bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win64.exe) / [32-bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win32.exe)
 
 ## Build
 
