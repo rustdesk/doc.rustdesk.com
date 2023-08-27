@@ -35,15 +35,15 @@ Don't forget to get your license from [https://rustdesk.com/pricing.html](https:
 
 ### Manual Installation
 
-Almost the same as [the open source version](/docs/en/self-host/install/), but you do not need to run hbbs/hbbr with any arguments, these can be set later in web console.
+Almost the same as [the open source version](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/), but you do not need to run hbbs/hbbr with any arguments, these can be set later in web console.
 
 - `-k _` is set by default
 - `-r <server:host>` is not needed any more if the relay server runs on the same machine with hbbs, and you can set multiple relay servers in the web console
 
 ### Ports Required
 
-You need port 21114-21119 TCP and 21116 UDP open, please ensure these ports are setup when you set firewall rules and docker port mapping. 
+You need port 21114-21119 TCP and 21116 UDP open, please ensure these ports are setup when you set firewall rules and Docker port mapping.
 
 {{% notice note %}}
-You should use a proxy like nginx to deliver this over HTTPS requiring port 443 to be opened.
+You should use a proxy like Nginx to deliver this over HTTPS requiring port 443 to be opened.
 {{% /notice %}}
