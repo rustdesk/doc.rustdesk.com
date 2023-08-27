@@ -5,7 +5,7 @@ weight: 6
 
 ### Docker
 
-Install Docker with [this](https://docs.docker.com/engine/install) guide to ensure its the most up to date!
+Install Docker with this [guide](https://docs.docker.com/engine/install) to ensure its the most up to date!
 
 Run the following commands:
 ```bash
@@ -14,7 +14,7 @@ sudo docker run --name hbbs -v `pwd`:/root -td --net=host --restart unless-stopp
 sudo docker run --name hbbr -v `pwd`:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbr
 ```
 {{% notice note %}}
-The above example uses `sudo` and `--net=host`, this will not work on windows please remove these commands, if you remove `--net=host` please check below.
+The above example uses `sudo` and `--net=host`, this will not work on Windows please remove these commands, if you remove `--net=host` please check below.
 {{% /notice %}}
 
 ```bash
@@ -26,9 +26,9 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --r
 
 ### Docker Compose
 
-With Docker Compose you HAVE to use `network_mode: "host"`. Install Docker using [this](https://docs.docker.com/engine/install) guide to ensure its the most up to date!
+With Docker Compose you HAVE to use `network_mode: "host"`. Install Docker using this [guide](https://docs.docker.com/engine/install) to ensure its the most up to date!
 
-Copy the below into docker-compose.yml
+Copy the below into `docker-compose.yml`.
 
 ```yaml
 version: '3'
