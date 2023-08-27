@@ -6,7 +6,7 @@ weight: 20
 ## A cross roads
 You now either have two choices, you can either use PM2 (easier) or NSSM (a bit harder) to start the RustDesk server
 There are some benefits to using NSSM:
-- Backwards compatibility with older Windows (Windows Server 2008R2/Windows 7 and earlier although untested).
+- Backwards compatibility with older Windows (Windows Server 2008 R2/Windows 7 and earlier although untested).
 - Ideal for Windows Server
 - Auto start on boot without login (The user who created the startup entry does not need to log on for it to start).
 - Running both binaries as Services.
@@ -33,19 +33,19 @@ If you've done everything correctly the folder `C:\Program Files\NSSM` (in this 
 drive but you can use whatever drive you installed Windows to or whatever path you desire) should
 only contain the file `nssm.exe`.
 
-We will be using `C:\Program Files\NSSM` in this example
+We will be using `C:\Program Files\NSSM` in this example.
 
-Open Command prompt and run `nssm` if you see a help page you are ready to move onto the next step
+Open Command prompt and run `nssm` if you see a help page you are ready to move onto the next step.
 
 ### Run hbbr and hbbs
 Download the Windows version of [server program](https://github.com/rustdesk/rustdesk-server/releases).
 Unzip the program to the `C:\Program Files\RustDesk Server` (or anywhere you desire just make sure it
-doesn't change after the service is installed). now get back to Command prompt
+doesn't change after the service is installed). Now get back to Command prompt.
 
-We will be using `C:\Program Files\RustDesk Server` in this example
+We will be using `C:\Program Files\RustDesk Server` in this example.
 ```cmd
 nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe" -r 0.0.0.0 -k _
-nssm install "RustDesk hbbr Service" "C:\Program Files\RustDesk Server\hbbr.exe" -k _
+nssm install "RustDesk hbbr service" "C:\Program Files\RustDesk Server\hbbr.exe" -k _
 ```
 **Note:**
 - You can change `RustDesk hbbs service` to whatever you desire to name hbbs the service
@@ -82,7 +82,7 @@ nssm start <Desired hbbr servicename>
 ### Install Node.js
 
 Please [download](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi) and install Node.js.
-Node.js is the runtime environment of PM2, so you need to install Node.js first。
+Node.js is the runtime environment of PM2, so you need to install Node.js first.
 
 ### Install PM2
 
@@ -99,7 +99,7 @@ pm2-startup install
 Download the Windows version of [server program](https://github.com/rustdesk/rustdesk-server/releases). Unzip the program to the C: drive. Run the following four commands (take care to edit the `-r` parameter):
 
 ```cmd
-cd c:\rustdesk-server-windows-x64
+cd C:\rustdesk-server-windows-x64
 pm2 start hbbs.exe -- -r <The host where hbbr is running>
 pm2 start hbbr.exe
 pm2 save
