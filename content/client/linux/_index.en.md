@@ -24,7 +24,7 @@ sudo yum localinstall ./rustdesk-<version>.rpm
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 ```
 
-#### Opensuse (>= Leap 15.0)
+#### openSUSE (>= Leap 15.0)
 
 ```sh
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
