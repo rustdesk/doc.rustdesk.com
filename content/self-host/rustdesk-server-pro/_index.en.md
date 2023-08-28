@@ -12,7 +12,7 @@ RustDesk Server Pro has more features compared to the open source version.
 - Log management
 - Device management
 - Settings sync
-- Permission control
+- Access control
 - Multiple relay servers (automatically selects your closest relay)
 
 {{% notice note %}}
