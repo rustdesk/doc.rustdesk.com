@@ -50,3 +50,27 @@ What it does:
 - Download and extract RustDesk Pro Services to the above folder
 - Create systemd services for hbbs and hbbr (service names are rustdesk-hbbs.service and rustdesk-hbbr.service)
 - If you choose Domain, it will install Nginx and Certbot, allowing the API to be available on port 443 (https) and get an SSL certificate over port 80, it is automatically renewed
+
+## Backup/Restore
+
+To make life easy we have created a backup and restore script, this will take the keys, all configuration and database and create a tar file which can be saved to somewhere else.
+
+To setup the backup script on your RustDesk Server do the following:
+```
+wget https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/backup.sh
+chmod +x backup.sh
+```
+You now have options.
+
+Run the backup script to create a one time backup `./backup.sh`
+Or /
+Run the backup script `--auto` (full command would be `./backup.sh --auto` this will schedule the backup script to run nightly and autorotate.
+
+To Restore do the following:
+```
+wget https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/restore.sh
+chmod +x
+```
+Copy the backup file into the same folder as the restore.sh file and then run
+`./restore.sh`
+This will restore your server to how it was prior, you will need to revoke your [license](/docs/en/self-host/rustdesk-server-pro/license) to move it to the restored server.
