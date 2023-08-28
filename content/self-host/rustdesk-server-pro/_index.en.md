@@ -9,7 +9,7 @@ RustDesk Server Pro has more features compared to the open source version.
 - OIDC, LDAP, 2FA (email verification)
 - Address book
 - Rename
-- Log management
+- Log management (Connection, file transfer, alarm etc)
 - Device management
 - Settings sync
 - Access control
