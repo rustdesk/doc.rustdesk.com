@@ -1,6 +1,8 @@
 ---
-title: Client Configuration
-weight: 6
+title: Self-host
+weight: 200
+pre: "<b>2. </b>"
+chapter: true
 ---
 
 ### Overview
