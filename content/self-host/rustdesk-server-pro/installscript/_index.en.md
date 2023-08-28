@@ -64,7 +64,7 @@ You now have options.
 
 Run the backup script to create a one time backup `./backup.sh`
 Or /
-Run the backup script `--auto` (full command would be `./backup.sh --auto` this will schedule the backup script to run nightly and autorotate.
+Run the backup script `--schedule` (full command would be `./backup.sh --schedule` this will schedule the backup script to run nightly and autorotate.
 
 To Restore do the following:
 ```
