@@ -53,7 +53,7 @@ What it does:
 
 ## Backup/Restore
 
-To make life easy we have created a backup and restore script, this will take the keys, all configuration and database and create a tar file which can be saved to somewhere else.
+To make life easy we have created a backup and restore script, this will take the keys, all configuration and database and create a tar file which can be saved to else where.
 
 To setup the backup script on your RustDesk Server do the following:
 ```
