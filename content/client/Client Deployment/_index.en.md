@@ -84,9 +84,6 @@ Write-Output "RustDesk ID: $rustdesk_id"
 # Show the value of the Password Variable
 Write-Output "Password: $rustdesk_pw"
 Write-Output "..............................................."
-
-echo "Please complete install on GUI, launching RustDesk now."
-open -n /Applications/RustDesk.app
 ```
 
 
