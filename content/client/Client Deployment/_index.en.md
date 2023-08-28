@@ -86,6 +86,46 @@ Write-Output "Password: $rustdesk_pw"
 Write-Output "..............................................."
 ```
 
+### Windows batch/cmd
+
+```bat
+REM Assign the value random password to the password variable
+set rustdesk_pw=
+
+REM Get your config string from your Web portal and Fill Below
+set rustdesk_cfg="configstring" 
+
+REM ############################### Please Do Not Edit Below This Line #########################################
+
+if not exist C:\TEMP\ md C:\TEMP\
+cd c:\temp\
+
+curl -L "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -o rustdesk.exe
+
+rustdesk.exe --silent-install
+
+$ServiceName = 'Rustdesk'
+$arrService = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
+
+cd "c:\Program Files\RustDesk\"
+for /f "delims=" %i IN ('rustdesk.exe --get-id ^| more') DO set rustdesk_id=%i
+
+net stop rustdesk > null
+RustDesk.exe --config %rustdesk_cfg%
+
+
+net start rustdesk > null
+
+RustDesk.exe --password %rustdesk_pw%
+
+echo "..............................................."
+REM Show the value of the ID Variable
+echo "RustDesk ID: %rustdesk_id%"
+
+REM Show the value of the Password Variable
+echo "Password: %rustdesk_pw%"
+echo "..............................................."
+```
 
 ### macOS Bash
 
