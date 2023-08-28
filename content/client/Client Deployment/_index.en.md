@@ -7,7 +7,7 @@ You can deploy using a number of methods, some are covered in [Client](/docs/en/
 
 Alternatively you can use mass deployment scripts with your RMM, Intune etc., the ID and password is output by the script, you should collect this, or split this off into different scripts to collect the ID and password.
 
-The permanent password can be changed from random to one you prefer using by changing the content inside `()` after `rustdesk_pw` to your preferred password.
+The permanent password can be changed from random to one you prefer using by changing the content inside `()` after `rustdesk_pw` to your preferred password for powershell and the corresponding line for any other platform.
 
 ### PowerShell
 
@@ -15,7 +15,7 @@ The permanent password can be changed from random to one you prefer using by cha
 $ErrorActionPreference= 'silentlycontinue'
 
 # Assign the value random password to the password variable
-$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
+$rustdesk_pw=(-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
 
 # Get your config string from your Web portal and Fill Below
 rustdesk_cfg="configstring" 
@@ -215,7 +215,7 @@ open -n /Applications/RustDesk.app
 rustdesk_pw=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 
 # Get your config string from your Web portal and Fill Below
-rustdesk_cfg="encryptedconfigstring" 
+rustdesk_cfg="configstring" 
 
 ################################### Please Do Not Edit Below This Line #########################################
 
