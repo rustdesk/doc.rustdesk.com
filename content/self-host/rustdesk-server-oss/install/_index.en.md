@@ -19,7 +19,7 @@ Make sure you have got access via SSH or otherwise setup prior setting up the fi
 ufw allow proto tcp from YOURIP to any port 22
 ```
 
-#### If you have UFW installed use the following commands to configure the firewall (port 8000 only needed if you want to use the auto generated install files):
+If you have UFW installed use the following commands to configure the firewall (port 8000 only needed if you want to use the auto generated install files):
 ```
 ufw allow 21115:21119/tcp
 ufw allow 8000/tcp
@@ -27,7 +27,7 @@ ufw allow 21116/udp
 sudo ufw enable
 ```
 
-#### Run the following commands:
+Run the following commands:
 ```
 wget https://raw.githubusercontent.com/techahold/rustdeskinstall/master/install.sh
 chmod +x install.sh
@@ -38,7 +38,6 @@ There is also an update script on [Techahold's](https://github.com/techahold/rus
 ## Install your own server as systemd service using deb file for debian distros
 
 Please [Download](https://github.com/rustdesk/rustdesk-server/releases/latest) deb files yourself and install with `apt-get -f install <filename>.deb` or `dpkg -i <filename>.deb`.
-
 
 ## Set up your own server instance manually.
 
@@ -69,7 +68,7 @@ The hardware requirements are very low; the minimum configuration of a basic clo
 We suggest you use [PM2](https://pm2.keymetrics.io/) for managing your service.
 
 #### Option 1
-Run hbbs/hbbr without PM2
+Run hbbs/hbbr without PM2.
 
 ```bash
 ./hbbs -r <relay-server-ip[:port]>
@@ -134,7 +133,6 @@ If there are invalid characters in the key which can not be used in a Windows fi
 `id_ed25519` file from your server and restart `hbbs`/`hbbr`. This will cause the `id_ed25519.pub` file to regenerate. You may need to
 repeat this process until you get valid characters.
 {{% /notice %}}
-
 
 ## Key
 

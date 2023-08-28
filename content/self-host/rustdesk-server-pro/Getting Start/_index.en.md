@@ -9,7 +9,7 @@ Install the server after choosing your preferred option between Docker or Direct
 
 * [ ] Change your admin password.
 * [ ] Read FAQs
-* [ ] Setup Email.
+* [ ] Setup Email
 
 ### Setup Users and Groups
 
@@ -24,6 +24,5 @@ Install the server after choosing your preferred option between Docker or Direct
 
 ## At least every 60 days
 
-* [ ] Server [OS updates]
+* [ ] Server (OS updates)
 * [ ] RustDesk Updates
-

@@ -5,11 +5,11 @@ weight: 6
 
 You can deploy using a number of methods, some are covered in [Client](/docs/en/client/#configuring-rustdesk)
 
-Alternatively you can use mass deployment scripts with your RMM, intune etc, the ID and password is output by the script, you should collect this, or split this off into different scripts to collect the ID and password.
+Alternatively you can use mass deployment scripts with your RMM, Intune etc., the ID and password is output by the script, you should collect this, or split this off into different scripts to collect the ID and password.
 
-The permanent password can be changed from random to one you prefer using by changing the content inside () after rustdesk_pw to your preferred password.
+The permanent password can be changed from random to one you prefer using by changing the content inside `()` after `rustdesk_pw` to your preferred password.
 
-### Powershell
+### PowerShell
 
 ```ps
 $ErrorActionPreference= 'silentlycontinue'
@@ -17,12 +17,12 @@ $ErrorActionPreference= 'silentlycontinue'
 # Assign the value random password to the password variable
 $rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
 
-# Get your config string from your Web portal and Fill Below.
+# Get your config string from your Web portal and Fill Below
 rustdesk_cfg="configstring" 
 
-####################################Please Do Not Edit Below This Line##########################################
+################################### Please Do Not Edit Below This Line #########################################
 
-#Run as administrator and stays in the current directory
+# Run as administrator and stays in the current directory
 if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
     if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000) {
         Start-Process PowerShell -Verb RunAs -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command `"cd '$pwd'; & '$PSCommandPath';`"";
@@ -90,7 +90,7 @@ open -n /Applications/RustDesk.app
 ```
 
 
-### Mac OS Bash
+### macOS Bash
 
 ```sh
 #!/bin/bash
@@ -98,10 +98,10 @@ open -n /Applications/RustDesk.app
 # Assign the value random password to the password variable
 rustdesk_pw=$(openssl rand -hex 4)
 
-# Get your config string from your Web portal and Fill Below.
+# Get your config string from your Web portal and Fill Below
 rustdesk_cfg="configstring" 
 
-####################################Please Do Not Edit Below This Line##########################################
+################################### Please Do Not Edit Below This Line #########################################
 
 # Check if the script is being run as root
 if [[ $EUID -ne 0 ]]; then
@@ -177,11 +177,10 @@ open -n /Applications/RustDesk.app
 # Assign a random value to the password variable
 rustdesk_pw=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 
-
-# Get your config string from your Web portal and Fill Below.
+# Get your config string from your Web portal and Fill Below
 rustdesk_cfg="encryptedconfigstring" 
 
-####################################Please Do Not Edit Below This Line##########################################
+################################### Please Do Not Edit Below This Line #########################################
 
 # Check if the script is being run as root
 if [[ $EUID -ne 0 ]]; then
@@ -189,7 +188,7 @@ if [[ $EUID -ne 0 ]]; then
 	exit 1
 fi
 
-# identify OS
+# Identify OS
 if [ -f /etc/os-release ]; then
     # freedesktop.org and systemd
     . /etc/os-release
@@ -214,13 +213,13 @@ elif [ -f /etc/lsb-release ]; then
     OS=$DISTRIB_ID
     VER=$DISTRIB_RELEASE
 elif [ -f /etc/debian_version ]; then
-    # Older Debian/Ubuntu/etc.
+    # Older Debian, Ubuntu, etc.
     OS=Debian
     VER=$(cat /etc/debian_version)
-elif [ -f /etc/SuSe-release ]; then
-    # Older SuSE/etc.
+elif [ -f /etc/SuSE-release ]; then
+    # Older SuSE etc.
     OS=SuSE
-    VER=$(cat /etc/SuSe-release)
+    VER=$(cat /etc/SuSE-release)
 elif [ -f /etc/redhat-release ]; then
     # Older Red Hat, CentOS, etc.
     OS=RedHat
@@ -231,9 +230,9 @@ else
     VER=$(uname -r)
 fi
 
-# Install Rustdesk
+# Install RustDesk
 
-echo "Installing Rustdesk"
+echo "Installing RustDesk"
 if [ "${ID}" = "debian" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Debian" ]  || [ "${UPSTREAM_ID}" = "ubuntu" ] || [ "${UPSTREAM_ID}" = "debian" ]; then
     wget https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.deb
     apt-get install -fy ./rustdesk-1.2.2-x86_64.deb > null
