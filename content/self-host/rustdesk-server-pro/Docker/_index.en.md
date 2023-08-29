@@ -26,7 +26,7 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --r
 
 ### Docker Compose
 
-With Docker Compose you HAVE to use `network_mode: "host"`. Install Docker using this [guide](https://docs.docker.com/engine/install) to ensure its the most up to date!
+With Docker Compose you HAVE to use `network_mode: "host"` to ensure licensing works. Install Docker using this [guide](https://docs.docker.com/engine/install) to ensure its the most up to date!
 
 Copy the below into `docker-compose.yml`.
 

@@ -7,7 +7,7 @@ You can deploy using a number of methods, some are covered in [Client](/docs/en/
 
 Alternatively you can use mass deployment scripts with your RMM, Intune etc., the ID and password is output by the script, you should collect this, or split this off into different scripts to collect the ID and password.
 
-The permanent password can be changed from random to one you prefer using by changing the content inside `()` after `rustdesk_pw` to your preferred password.
+The permanent password can be changed from random to one you prefer using by changing the content inside `()` after `rustdesk_pw` to your preferred password for powershell and the corresponding line for any other platform.
 
 ### PowerShell
 
@@ -15,7 +15,7 @@ The permanent password can be changed from random to one you prefer using by cha
 $ErrorActionPreference= 'silentlycontinue'
 
 # Assign the value random password to the password variable
-$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
+$rustdesk_pw=(-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
 
 # Get your config string from your Web portal and Fill Below
 rustdesk_cfg="configstring" 
@@ -84,11 +84,48 @@ Write-Output "RustDesk ID: $rustdesk_id"
 # Show the value of the Password Variable
 Write-Output "Password: $rustdesk_pw"
 Write-Output "..............................................."
-
-echo "Please complete install on GUI, launching RustDesk now."
-open -n /Applications/RustDesk.app
 ```
 
+### Windows batch/cmd
+
+```bat
+REM Assign the value random password to the password variable
+set rustdesk_pw=
+
+REM Get your config string from your Web portal and Fill Below
+set rustdesk_cfg="configstring" 
+
+REM ############################### Please Do Not Edit Below This Line #########################################
+
+if not exist C:\TEMP\ md C:\TEMP\
+cd c:\temp\
+
+curl -L "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -o rustdesk.exe
+
+rustdesk.exe --silent-install
+
+$ServiceName = 'Rustdesk'
+$arrService = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
+
+cd "c:\Program Files\RustDesk\"
+for /f "delims=" %i IN ('rustdesk.exe --get-id ^| more') DO set rustdesk_id=%i
+
+net stop rustdesk > null
+RustDesk.exe --config %rustdesk_cfg%
+
+
+net start rustdesk > null
+
+RustDesk.exe --password %rustdesk_pw%
+
+echo "..............................................."
+REM Show the value of the ID Variable
+echo "RustDesk ID: %rustdesk_id%"
+
+REM Show the value of the Password Variable
+echo "Password: %rustdesk_pw%"
+echo "..............................................."
+```
 
 ### macOS Bash
 
@@ -178,7 +215,7 @@ open -n /Applications/RustDesk.app
 rustdesk_pw=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 
 # Get your config string from your Web portal and Fill Below
-rustdesk_cfg="encryptedconfigstring" 
+rustdesk_cfg="configstring" 
 
 ################################### Please Do Not Edit Below This Line #########################################
 

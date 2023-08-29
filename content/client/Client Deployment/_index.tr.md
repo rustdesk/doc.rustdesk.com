@@ -84,9 +84,6 @@ Write-Output "RustDesk Kimlik: $rustdesk_id"
 # Şifre Değişkeninin değerini gösterin
 Write-Output "Şifre: $rustdesk_pw"
 Write-Output "..............................................."
-
-echo "Lütfen kurulumu GUI üzerinde tamamlayın, RustDesk'i şimdi başlatıyorum."
-open -n /Applications/RustDesk.app
 ```
 
 
