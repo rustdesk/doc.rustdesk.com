@@ -1,6 +1,6 @@
 ---
 title: Self-host
-weight: 100
+weight: 5
 pre: "<b>2. </b>"
 chapter: true
 ---
