@@ -1,5 +1,5 @@
 ---
-title: Permission Control
+title: Access Control
 weight: 15
 ---
 
