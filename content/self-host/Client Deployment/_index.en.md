@@ -1,28 +1,29 @@
 ---
 title: Client Deployment
-weight: 6
+weight: 400
+pre: "<b>2.4. </b>"
 ---
 
-Aşağıdaki yöntemlerden birini kullanarak dağıtım yapabilirsiniz. Bazıları [Client](/docs/en/client/#configuring-rustdesk) bölümünde ele alınmıştır.
+You can deploy using a number of methods, some are covered in [Client](/docs/en/client/#configuring-rustdesk)
 
-Alternatif olarak, RMM, intune vb. ile kütle dağıtım komut dosyaları da kullanabilirsiniz. Kimlik ve şifre komut dosyası tarafından üretilir, bunu toplamalısınız veya kimlik ve şifreyi toplamak için farklı komut dosyalarına bölmelisiniz.
+Alternatively you can use mass deployment scripts with your RMM, Intune etc., the ID and password is output by the script, you should collect this, or split this off into different scripts to collect the ID and password.
 
-Kalıcı şifreyi rastgele değerden tercih ettiğiniz bir şifreye değiştirmek için, rustdesk_pw'in içindeki () içeriğini tercih ettiğiniz şifreyle değiştirerek yapabilirsiniz.
+The permanent password can be changed from random to one you prefer using by changing the content inside `()` after `rustdesk_pw` to your preferred password for powershell and the corresponding line for any other platform.
 
-### Powershell
+### PowerShell
 
 ```ps
 $ErrorActionPreference= 'silentlycontinue'
 
-# Şifre değişkenine rastgele bir şifre atayın
-$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
+# Assign the value random password to the password variable
+$rustdesk_pw=(-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
 
-# Web portalından yapılandırma dizgesini alın ve aşağıdaki alanı doldurun.
+# Get your config string from your Web portal and Fill Below
 rustdesk_cfg="configstring" 
 
-####################################Lütfen Aşağıdaki Satırı Düzenlemeyin##########################################
+################################### Please Do Not Edit Below This Line #########################################
 
-# Yönetici olarak çalıştırın ve geçerli dizinde kalır
+# Run as administrator and stays in the current directory
 if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
     if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000) {
         Start-Process PowerShell -Verb RunAs -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command `"cd '$pwd'; & '$PSCommandPath';`"";
@@ -34,7 +35,7 @@ $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Un
 
 if($rdver -eq "1.2.2") 
 {
-write-output "RustDesk $rdver en yeni sürüm"
+write-output "RustDesk $rdver is the newest version"
 
 exit
 }
@@ -78,44 +79,82 @@ stop-process -ProcessName rustdesk -Force
 Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" "--password $rustdesk_pw" -wait
 
 Write-Output "..............................................."
-# Kimlik Değişkeninin değerini gösterin
-Write-Output "RustDesk Kimlik: $rustdesk_id"
+# Show the value of the ID Variable
+Write-Output "RustDesk ID: $rustdesk_id"
 
-# Şifre Değişkeninin değerini gösterin
-Write-Output "Şifre: $rustdesk_pw"
+# Show the value of the Password Variable
+Write-Output "Password: $rustdesk_pw"
 Write-Output "..............................................."
 ```
 
+### Windows batch/cmd
 
-### Mac OS Bash
+```bat
+REM Assign the value random password to the password variable
+set rustdesk_pw=
+
+REM Get your config string from your Web portal and Fill Below
+set rustdesk_cfg="configstring" 
+
+REM ############################### Please Do Not Edit Below This Line #########################################
+
+if not exist C:\TEMP\ md C:\TEMP\
+cd c:\temp\
+
+curl -L "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -o rustdesk.exe
+
+rustdesk.exe --silent-install
+
+$ServiceName = 'Rustdesk'
+$arrService = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
+
+cd "c:\Program Files\RustDesk\"
+for /f "delims=" %i IN ('rustdesk.exe --get-id ^| more') DO set rustdesk_id=%i
+
+net stop rustdesk > null
+RustDesk.exe --config %rustdesk_cfg%
+
+
+net start rustdesk > null
+
+RustDesk.exe --password %rustdesk_pw%
+
+echo "..............................................."
+REM Show the value of the ID Variable
+echo "RustDesk ID: %rustdesk_id%"
+
+REM Show the value of the Password Variable
+echo "Password: %rustdesk_pw%"
+echo "..............................................."
+```
+
+### macOS Bash
 
 ```sh
 #!/bin/bash
 
-# Şifre değişkenine rastgele bir şifre atayın
+# Assign the value random password to the password variable
 rustdesk_pw=$(openssl rand -hex 4)
 
-# Web portalından yapılandırma dizgesini alın ve aşağıdaki alanı doldurun.
+# Get your config string from your Web portal and Fill Below
 rustdesk_cfg="configstring" 
 
-####################################Lütfen Aşağıdaki Satırı Düzenlemeyin##########################################
+################################### Please Do Not Edit Below This Line #########################################
 
-# Skriptin kök olarak çalıştırılıp çalıştırılmadığını kontrol edin
+# Check if the script is being run as root
 if [[ $EUID -ne 0 ]]; then
-	echo "
-
-Bu komut dosyası kök olarak çalıştırılmalıdır."
+	echo "This script must be run as root."
 	exit 1
 fi
 
-# rustdesk.dmg dosyasının yolunu belirtin
+# Specify the path to the rustdesk.dmg file
 dmg_file="/tmp/rustdesk-1.2.2-x86_64.dmg"
 
-# DMG için bağlama noktasını belirtin (geçici dizin)
+# Specify the mount point for the DMG (temporary directory)
 mount_point="/Volumes/RustDesk"
 
-# rustdesk.dmg dosyasını indirin
-echo "RustDesk İndiriliyor"
+# Download the rustdesk.dmg file
+echo "Downloading RustDesk Now"
 
 if [[ $(arch) == 'arm64' ]]; then
 curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-aarch64.dmg --output "$dmg_file"
@@ -123,48 +162,48 @@ else
 curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.dmg --output "$dmg_file"
 fi
 
-# DMG dosyasını belirtilen bağlama noktasına bağla
+# Mount the DMG file to the specified mount point
 hdiutil attach "$dmg_file" -mountpoint "$mount_point" &> /dev/null
 
-# Bağlama işleminin başarılı olup olmadığını kontrol edin
+# Check if the mounting was successful
 if [ $? -eq 0 ]; then
-	# Bağlanan DMG'nin içeriğini /Applications klasörüne kopyalayın
+	# Move the contents of the mounted DMG to the /Applications folder
 	cp -R "$mount_point/RustDesk.app" "/Applications/" &> /dev/null
 	
-	# DMG dosyasını bağlamayı kaldırın
+	# Unmount the DMG file
 	hdiutil detach "$mount_point" &> /dev/null
 else
-	echo "RustDesk DMG'si bağlanamadı. Kurulum iptal edildi."
+	echo "Failed to mount the RustDesk DMG. Installation aborted."
 	exit 1
 fi
 
-# rustdesk komutunu --get-id ile çalıştırın ve çıktıyı rustdesk_id değişkenine kaydedin
+# Run the rustdesk command with --get-id and store the output in the rustdesk_id variable
 cd /Applications/RustDesk.app/Contents/MacOS/
 rustdesk_id=$(./RustDesk --get-id)
 
-# Yeni şifreyi RustDesk'e uygulayın
+# Apply new password to RustDesk
 ./RustDesk --server &
 /Applications/RustDesk.app/Contents/MacOS/RustDesk --password $rustdesk_pw &> /dev/null
 
 /Applications/RustDesk.app/Contents/MacOS/RustDesk --config $rustdesk_cfg
 
-# Tüm RustDesk adlı işlemleri sonlandırın
+# Kill all processes named RustDesk
 rdpid=$(pgrep RustDesk)
 kill $rdpid &> /dev/null
 
 echo "..............................................."
-# rustdesk_id boş değilse kontrol edin
+# Check if the rustdesk_id is not empty
 if [ -n "$rustdesk_id" ]; then
-	echo "RustDesk Kimlik: $rustdesk_id"
+	echo "RustDesk ID: $rustdesk_id"
 else
-	echo "RustDesk Kimlik alınamadı."
+	echo "Failed to get RustDesk ID."
 fi
 
-# Şifre değişkeninin değerini yazdırın
-echo "Şifre: $rustdesk_pw"
+# Echo the value of the password variable
+echo "Password: $rustdesk_pw"
 echo "..............................................."
 
-echo "Lütfen kurulumu GUI üzerinde tamamlayın, RustDesk'i şimdi başlatıyorum."
+echo "Please complete install on GUI, launching RustDesk now."
 open -n /Applications/RustDesk.app
 ```
 
@@ -173,24 +212,23 @@ open -n /Applications/RustDesk.app
 ```sh
 #!/bin/bash
 
-# Rastgele bir değer atayarak şifre değişkenine atayın
+# Assign a random value to the password variable
 rustdesk_pw=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 
+# Get your config string from your Web portal and Fill Below
+rustdesk_cfg="configstring" 
 
-# Web portalından yapılandırma dizgesini alın ve aşağıdaki alanı doldurun.
-rustdesk_cfg="encryptedconfigstring" 
+################################### Please Do Not Edit Below This Line #########################################
 
-####################################Lütfen Aşağıdaki Satırı Düzenlemeyin##########################################
-
-# Skriptin kök olarak çalıştırılıp çalıştırılmadığını kontrol edin
+# Check if the script is being run as root
 if [[ $EUID -ne 0 ]]; then
-	echo "Bu komut dosyası kök olarak çalıştırılmalıdır."
+	echo "This script must be run as root."
 	exit 1
 fi
 
-# İşletim sistemini belirleyin
+# Identify OS
 if [ -f /etc/os-release ]; then
-    # freedesktop.org ve systemd
+    # freedesktop.org and systemd
     . /etc/os-release
     OS=$NAME
     VER=$VERSION_ID
@@ -213,13 +251,13 @@ elif [ -f /etc/lsb-release ]; then
     OS=$DISTRIB_ID
     VER=$DISTRIB_RELEASE
 elif [ -f /etc/debian_version ]; then
-    # Older Debian/Ubuntu/etc.
+    # Older Debian, Ubuntu, etc.
     OS=Debian
     VER=$(cat /etc/debian_version)
-elif [ -f /etc/SuSe-release ]; then
-    # Older SuSE/etc.
+elif [ -f /etc/SuSE-release ]; then
+    # Older SuSE etc.
     OS=SuSE
-    VER=$(cat /etc/SuSe-release)
+    VER=$(cat /etc/SuSE-release)
 elif [ -f /etc/redhat-release ]; then
     # Older Red Hat, CentOS, etc.
     OS=RedHat
@@ -230,9 +268,9 @@ else
     VER=$(uname -r)
 fi
 
-# Rustdesk'i Yükle
+# Install RustDesk
 
-echo "Rustdesk Yükleniyor"
+echo "Installing RustDesk"
 if [ "${ID}" = "debian" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Debian" ]  || [ "${UPSTREAM_ID}" = "ubuntu" ] || [ "${UPSTREAM_ID}" = "debian" ]; then
     wget https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.deb
     apt-get install -fy ./rustdesk-1.2.2-x86_64.deb > null
@@ -240,21 +278,19 @@ elif [ "$OS" = "CentOS" ] || [ "$OS" = "RedHat" ] || [ "$OS" = "Fedora Linux" ] 
     wget https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-0.x86_64.rpm
     yum localinstall ./rustdesk-1.2.2-0.x86_64.rpm -y > null
 else
-    echo "Desteklenmeyen İşletim Sistemi"
-    # burada kullanıcı
-
-dan yine de kurulumu denemek için izin isteyebilirsiniz
-    # eğer evet derlerse, kurulumu yapın
-    # eğer hayır derlerse, komut dosyasını sonlandırın
+    echo "Unsupported OS"
+    # here you could ask the user for permission to try and install anyway
+    # if they say yes, then do the install
+    # if they say no, exit the script
     exit 1
 fi
 
 systemctl stop rustdesk
 
-# rustdesk komutunu --get-id ile çalıştırın ve çıktıyı rustdesk_id değişkenine kaydedin
+# Run the rustdesk command with --get-id and store the output in the rustdesk_id variable
 rustdesk_id=$(rustdesk --get-id)
 
-# Yeni şifreyi RustDesk'e uygulayın
+# Apply new password to RustDesk
 systemctl start rustdesk
 rustdesk --password $rustdesk_pw &> /dev/null
 
@@ -264,16 +300,14 @@ systemctl restart rustdesk
 
 
 echo "..............................................."
-# rustdesk_id boş değilse kontrol edin
+# Check if the rustdesk_id is not empty
 if [ -n "$rustdesk_id" ]; then
-	echo "RustDesk Kimlik: $rustdesk_id"
+	echo "RustDesk ID: $rustdesk_id"
 else
-	echo "RustDesk Kimlik alınamadı."
+	echo "Failed to get RustDesk ID."
 fi
 
-# Şifre değişkeninin değerini yazdırın
-echo "Şifre: $rustdesk_password"
+# Echo the value of the password variable
+echo "Password: $rustdesk_password"
 echo "..............................................."
 ```
-
-Bu komut dosyaları, RustDesk'in farklı işletim sistemlerine dağıtımını gerçekleştirmek için tasarlanmıştır. Her bir komut dosyası belirli bir işletim sistemi için uygundur ve RustDesk'in yüklenmesini, yapılandırılmasını ve çalıştırılmasını otomatikleştirmektedir.
