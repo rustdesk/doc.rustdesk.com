@@ -1,7 +1,7 @@
 ---
 title: Client Configuration
 weight: 300
-pre: "<b>2.3 </b>"
+pre: "<b>2.3. </b>"
 ---
 
 ### Overview
