@@ -1,6 +1,6 @@
 ---
 title: RustDesk Server OSS
-weight: 7
+weight: 100
 pre: "<b>2.1. </b>"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: RustDesk Server Pro
-weight: 2
+weight: 200
 pre: "<b>2.2. </b>"
 ---
 
