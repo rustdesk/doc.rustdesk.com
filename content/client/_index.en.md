@@ -17,7 +17,7 @@ The RustDesk client is used on devices to connect via our RustDesk Server either
 - AppImage / Flatpak
 - Android
 - iOS (Not support being controlled)
-- Web
+- Web (1.1.9 Beta)
 
 ### Installation
 
