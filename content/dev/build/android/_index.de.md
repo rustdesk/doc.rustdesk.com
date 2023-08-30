@@ -12,7 +12,7 @@ Wenn nicht, überspringen Sie bitte diese Seite oder lesen auf eigene Gefahr wei
 Es ist möglich, RustDesk Android auf **Windows** und **macOS** zu bauen, aber diese Anleitung ist noch in der aktiven Entwicklung.
 {{% /notice %}}
 
-# Einführung
+## Einführung
 
 Hier erfahren Sie, wie Sie Ihre Umgebung so weit vorbereiten, dass Sie die App erfolgreich erstellen können und in der Lage sind, den Code z. B. mit Android Studio zu bearbeiten.
 
@@ -22,19 +22,19 @@ Man kann die Android-Version unter Windows erstellen, ausführen und bearbeiten,
 
 Mit "gepatcht" ist der Zustand des Verzeichnisses vor dem Ausführen von `flutter build` auf dem Linux-Rechner gemeint.
 
-# Voraussetzungen
+## Voraussetzungen
 - Sie verwenden **Ubuntu 20.04** oder höher (diese Anleitung basiert auf dieser Version)
 - Sie haben eine funktionierende Internetverbindung
 - Sie haben bereits [**Flutter**](https://docs.flutter.dev/get-started/install/linux), [**vcpkg**](https://github.com/microsoft/vcpkg) und [**Rust**](https://www.rust-lang.org/tools/install) installiert
 - Sie haben das [RustDesk-Repository](https://github.com/rustdesk/rustdesk) geklont
 - Sie wissen, was Sie tun
 
-# System
+## System
 Dieser Teil der Anleitung basiert auf einer sauberen Instanz von **Ubuntu 20.04** mit bereits installierten und konfigurierten Komponenten wie **Flutter**, **Rust** und **vcpkg**.
 
 Wenn Ihnen eine dieser Komponenten fehlt, beschaffen und konfigurieren Sie sie und kehren Sie dann hierher zurück.
 
-# Anleitung
+## Anleitung
 Dies ist eine Schritt-für-Schritt-Anleitung.
 
 ## Bridge generieren 🌉
