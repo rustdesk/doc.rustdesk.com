@@ -3,7 +3,7 @@ title: Tactical RMM
 weight: 100
 ---
 
-## To install Rustdesk and use it with Tactical RMM you need to the the following.
+## To Use Tactical RMM with RustDesk you need to the the following.
 
 1. Install your own Tactical RMM Server, following their [official docs](https://docs.tacticalrmm.com/) and open ports.
 2. Create the following scripts (all are powershell).
