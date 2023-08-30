@@ -28,13 +28,25 @@ or
 hbbs.example.com:21116
 ```
 
+### Setup Using Import or Export
+
+1. Use the steps [above](/docs/en/self-host/client-configuration/#manual-config) to configure RustDesk Client on a Device
+2. Using the above machine go to Settings then Network and unlock
+3. Click on "Export Server Config" icon
+4. Paste the copied string into notepad or similar
+5. Go to new client, copy the above to clipboard
+6. Go to Settings then Network in RustDesk Client, unlock and click "Import Server Config"
+7. It will automatically paste the settings in
+8. click Apply
 
 
 ### Automatic Config
 
 The easiest way to setup automatically is using deployment scripts found [here](/docs/en/client/client-deployment/)
 
-You can fix the Password is required and use a reverse base64 string in the format `{"host":"HOSTADDRESS","key":"HOSTKEY","api":"http://HOSTADDRESS:21114"` to automatically configure the clients, this is available automatically with RustDesk Server Pro via the console.
+You can fix the Password is required and use a reverse base64 string in the format `{"host":"HOSTADDRESS","key":"HOSTKEY","api":"http://HOSTADDRESS:21114"` to automatically configure the clients, this is available automatically with RustDesk Server Pro via the console. 
+
+You can also use the steps from [above](/docs/en/self-host/client-configuration/#setup-using-import-or-export) to export the string then reverse it using [this site](https://string-functions.com/reverse.aspx).
 
 #### Put config in rustdesk.exe file name (Windows only)
 
