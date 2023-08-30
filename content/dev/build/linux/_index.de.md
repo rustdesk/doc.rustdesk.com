@@ -82,4 +82,4 @@ VCPKG_ROOT=$HOME/vcpkg cargo run
 
 ### Wayland zu X11 ändern (Xorg)
 
-RustDesk unterstützt Wayland nicht. Prüfen Sie [dies](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/), um Xorg als Standard-GNOME-Sitzung zu konfigurieren.
+RustDesk unterstützt Wayland nicht. Lesen Sie diese [Anleitung](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/), um Xorg als Standard-GNOME-Sitzung zu konfigurieren.
