@@ -42,7 +42,7 @@ hbbs.example.com:21116
 
 ### Automatic Config
 
-The easiest way to setup automatically is using deployment scripts found [here](docs/en/self-host/client-deployment/)
+The easiest way to setup automatically is using deployment scripts found [here](https://rustdesk.com/docs/en/self-host/client-deployment/)
 
 You can fix the Password is required and use a reverse base64 string in the format `{"host":"HOSTADDRESS","key":"HOSTKEY","api":"http://HOSTADDRESS:21114"` to automatically configure the clients, this is available automatically with RustDesk Server Pro via the console. 
 
