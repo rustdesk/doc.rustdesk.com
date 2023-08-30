@@ -20,20 +20,19 @@ Die Vorteile von PM2 sind unter anderem:
 ## Installation mit NSSM
 
 ### Installation von NSSM
-Bitte laden Sie [NSSM](https://nssm.cc/release/nssm-2.24.zip) herunter, extrahieren Sie es und wählen
-Sie die entsprechende Architektur für Ihr Windows-System (für x86 verwenden Sie den Inhalt des
-win32-Ordners, für x64 den Inhalt des win64-Ordners). Es ist auch sinnvoll, die Binärdatei von NSSM
-nach `Program Files\NSSM` zu verschieben (Wenn NSSM einmal als Dienst gestartet wurde, kann es nicht
-mehr aus dem Ordner verschoben werden, in dem es abgelegt wurde). Daher ist es am besten, sie
-im Ordner "Program Files" Ihres Installationslaufwerks (in der Regel das Laufwerk C) zu verstauen.
+Bitte laden Sie [NSSM](https://nssm.cc/release/nssm-2.24.zip) herunter, extrahieren Sie es und wählen Sie die entsprechende
+Architektur für Ihr Windows-System (für x86 verwenden Sie den Inhalt des win32-Ordners, für x64 den
+Inhalt des win64-Ordners). Es ist auch sinnvoll, die Binärdatei von NSSM nach `Program Files\NSSM` zu verschieben.
+Wenn NSSM einmal als Dienst gestartet wurde, kann es nicht mehr aus dem Ordner verschoben werden, in dem es abgelegt wurde.
+Daher ist es am besten, sie im Ordner "Program Files" Ihres Installationslaufwerks (in der Regel das Laufwerk C) zu verstauen.
 Es ist auch ratsam, den Pfad (z. B. `C:\Program Files\NSSM`) in die Pfadvariable aufzunehmen.
 
-
 ### Prüfen, ob NSSM korrekt installiert ist
-Wenn Sie alles richtig gemacht haben, sollte der Ordner `C:\Program Files\NSSM` (der Pfad ist frei wählbar)
+Wenn Sie alles richtig gemacht haben, sollte der Ordner `C:\Program Files\NSSM`
+(in diesem Beispiel Laufwerk C:, der Pfad ist aber frei wählbar)
 nur die Datei `nssm.exe` enthalten.
 
-In dieser Anleitung wird `C:\Program Files\NSSM` verwendet.
+In diesem Beispiel wird `C:\Program Files\NSSM` verwendet.
 
 Öffnen Sie die Eingabeaufforderung und führen Sie `nssm` aus. Wenn Sie eine Hilfeseite sehen, können Sie mit dem nächsten Schritt fortfahren.
 
@@ -42,7 +41,7 @@ Laden Sie die Windows-Version von [Serverprogramm](https://github.com/rustdesk/r
 Entpacken Sie das Programm nach `C:\Program Files\RustDesk Server` oder wo immer Sie wollen. Stellen Sie nur sicher,
 dass sich der Ort nach der Installation des Dienstes nicht ändert. Gehen Sie nun zurück zur Eingabeaufforderung.
 
-In diesem Beispiel verwenden wir `C:\Program Files\RustDesk Server`.
+In diesem Beispiel wird `C:\Program Files\RustDesk Server` verwendet.
 ```cmd
 nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe" -r 0.0.0.0 -k _
 nssm install "RustDesk hbbr service" "C:\Program Files\RustDesk Server\hbbr.exe" -k _
@@ -99,7 +98,7 @@ pm2-startup install
 Laden Sie die Windows-Version von [RustDesk Server](https://github.com/rustdesk/rustdesk-server/releases) herunter. Entpacken Sie das Programm auf Laufwerk C:. Führen Sie die folgenden vier Befehle aus und achten Sie darauf, den Parameter `-r` zu bearbeiten:
 
 ```cmd
-cd c:\rustdesk-server-windows-x64
+cd C:\rustdesk-server-windows-x64
 pm2 start hbbs.exe -- -r <Der Host, auf dem hbbr läuft>
 pm2 start hbbr.exe
 pm2 save
