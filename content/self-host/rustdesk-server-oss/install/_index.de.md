@@ -1,6 +1,6 @@
 ---
 title: Installation
-weight: 10
+weight: 1
 ---
 
 ## Installieren Sie Ihren eigenen Server als Dienst systemd mit einem einfach auszuführenden Installationsskript
@@ -39,72 +39,7 @@ Es gibt auch ein Update-Skript auf [Techaholds](https://github.com/techahold/rus
 
 Bitte laden Sie die [.deb-Dateien](https://github.com/rustdesk/rustdesk-server/releases/latest) selbst herunter und installieren Sie sie mit `apt-get -f install <Dateiname>.deb` oder `dpkg -i <Dateiname>.deb`.
 
-## Installieren Sie Ihren eigenen Server mit Docker (Compose)
-
-### Anforderungen
-Sie müssen Docker/Podman installiert haben, um einen RustDesk-Server als Docker-Container zu betreiben.
-
-### Docker-Beispiele
-```bash
-sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr
-```
-<a name="net-host"></a>
-
-{{% notice note %}}
-`--net=host` funktioniert nur unter **Linux**, was dazu führt, dass `hbbs`/`hbbr` die tatsächliche, eingehende IP-Adresse sehen und nicht die Container-IP (172.17.0.1).
-Wenn `--net=host` gut funktioniert, wird die Option `-p` nicht verwendet. Wenn Sie unter Windows arbeiten, lassen Sie `sudo` und `--net=host` weg.
-
-**Bitte entfernen Sie `--net=host`, wenn Sie Verbindungsprobleme auf Ihrer Plattform haben.**
-{{% /notice %}}
-
-{{% notice note %}}
-Sie können die Protokolle mit `docker logs hbbs` ansehen, wenn sie mit `-td` nicht zu sehen sind. Oder Sie können mit `-it` arbeiten, `hbbs/hbbr` wird nicht im Daemon-Modus laufen.
-{{% /notice %}}
-
-### Docker Compose-Beispiele
-Um die Dockerdateien mit `docker-compose.yml` wie hier beschrieben ausführen zu können, müssen Sie [Docker Compose](https://docs.docker.com/compose/) installiert haben.
-```yaml
-version: '3'
-
-networks:
-  rustdesk-net:
-    external: false
-
-services:
-  hbbs:
-    container_name: hbbs
-    ports:
-      - 21115:21115
-      - 21116:21116
-      - 21116:21116/udp
-      - 21118:21118
-    image: rustdesk/rustdesk-server:latest
-    command: hbbs -r example.com:21117
-    volumes:
-      - ./data:/root
-    networks:
-      - rustdesk-net
-    depends_on:
-      - hbbr
-    restart: unless-stopped
-
-  hbbr:
-    container_name: hbbr
-    ports:
-      - 21117:21117
-      - 21119:21119
-    image: rustdesk/rustdesk-server:latest
-    command: hbbr
-    volumes:
-      - ./data:/root
-    networks:
-      - rustdesk-net
-    restart: unless-stopped
-```
-
-## Richten Sie Ihre eigene Serverinstanz ein, ohne Docker zu verwenden
+## Richten Sie Ihre eigene Serverinstanz manuell ein.
 
 ### Schritt 1: Server-Software herunterladen
 
@@ -184,7 +119,7 @@ hbbs.example.com:21116
 
 ![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-window.png)
 
-### Konfiguration in den Dateinamen von rustdesk.exe einfügen (nur Windows)
+#### Konfiguration in den Dateinamen von rustdesk.exe einfügen (nur Windows)
 
 Ändern Sie `rustdesk.exe` in rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe, z. B. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe. Das Ergebnis der Konfiguration können Sie im untenstehenden Über-Fenster sehen.
 
@@ -199,11 +134,7 @@ bitte die Datei `id_ed25519` von Ihrem Server und starten Sie `hbbs`/`hbbr` neu.
 Möglicherweise müssen Sie diesen Vorgang wiederholen, bis Sie gültige Zeichen erhalten.
 {{% /notice %}}
 
-| Menü | Über-Seite |
-| -- | -- |
-| ![](/docs/en/self-host/rustdesk-server-oss/install/images/aboutmenu.png) | ![](/docs/en/self-host/rustdesk-server-oss/install/images/lic.png) |
-
-### Schlüssel
+## Schlüssel
 
 Anders als in der alten Version ist der Schlüssel in dieser Version obligatorisch, aber Sie brauchen ihn nicht selbst zu setzen. Wenn `hbbs` zum ersten Mal ausgeführt wird, erzeugt es automatisch ein Paar verschlüsselter privater und öffentlicher Schlüssel (die sich jeweils in den Dateien `id_ed25519` und `id_ed25519.pub` im aktuellen Ordner befinden), deren Hauptzweck in der Verschlüsselung der Kommunikation besteht.
 
