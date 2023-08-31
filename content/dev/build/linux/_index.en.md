@@ -17,10 +17,10 @@ Desktop versions use [Sciter](https://sciter.com/) for GUI, please download Scit
 
 - Install [vcpkg](https://github.com/microsoft/vcpkg), and set `VCPKG_ROOT` env variable correctly
 
-  - Windows: vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
-  - Linux/macOS: vcpkg install libvpx libyuv opus aom
+  - Windows: `vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static`
+  - Linux/macOS: `vcpkg install libvpx libyuv opus aom`
 
-- run `cargo run`
+- Run `cargo run`
 
 ## How to build on Linux
 
@@ -82,4 +82,4 @@ VCPKG_ROOT=$HOME/vcpkg cargo run
 
 ### Change Wayland to X11 (Xorg)
 
-RustDesk does not support Wayland. Check [this](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/) to configuring Xorg as the default GNOME session.
+RustDesk does not support Wayland. Check this [guide](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/) to configuring Xorg as the default GNOME session.
