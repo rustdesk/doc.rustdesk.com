@@ -20,7 +20,7 @@ We can help with lots of problems, installations and configurations. Fully manag
 You get Priority #1 fast responses and service.
 
 ## SSH Access
-To provide SSH access to your server for troubleshooting, please add the following key to ~/username/.ssh/authorized_keys and ensure the file has 600 permissions.
+To provide SSH access to your server for troubleshooting, please add the following key to ~/username/.ssh/authorized_keys and ensure the file has permissions `600`.
 
 You may refer to this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server) for reference.
 
