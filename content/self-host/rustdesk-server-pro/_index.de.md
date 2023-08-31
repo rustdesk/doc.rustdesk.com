@@ -1,17 +1,18 @@
 ---
-title: Pro
-weight: 100
+title: RustDesk Server Pro
+weight: 200
+pre: "<b>2.2. </b>"
 ---
 
-Self-host Pro hat im Vergleich zur Open-Source-Version mehr Funktionen.
+RustDesk Server Pro hat im Vergleich zur Open-Source-Version mehr Funktionen.
 
 - OIDC, LDAP, 2FA (E-Mail-Verifizierung)
 - Adressbuch
 - Umbenennen
-- Protokollverwaltung
+- Protokollverwaltung (Verbindung, Dateiübertragung, Alarm usw.)
 - Geräteverwaltung
 - Einstellungen synchronisieren
-- Berechtigungskontrolle
+- Zugriffskontrolle
 - Mehrere Relay-Server (wählt automatisch das nächstgelegene Relay aus)
 
 {{% notice note %}}
@@ -34,11 +35,15 @@ Vergessen Sie nicht, Ihre Lizenz unter [https://rustdesk.com/pricing.html](https
 
 ### Manuelle Installation
 
-Fast dasselbe wie die [Open-Source-Version](https://rustdesk.com/docs/de/self-host/install/), aber Sie müssen hbbs/hbbr nicht mit irgendwelchen Argumenten ausführen, alles kann später in der Webkonsole eingestellt werden.
+Fast dasselbe wie die [Open-Source-Version](https://rustdesk.com/docs/de/self-host/rustdesk-server-oss/install/), aber Sie müssen hbbs/hbbr nicht mit irgendwelchen Argumenten ausführen, diese können später in der Webkonsole eingestellt werden.
 
 - `-k _` ist standardmäßig eingestellt
 - `-r <server:host>` wird nicht mehr benötigt, wenn der Relay-Server auf demselben Rechner wie hbbs läuft. Sie können in der Webkonsole mehrere Relay-Server einstellen.
 
-### Ein weiterer Port (oder Sie verwenden einen Proxy)
+### Erforderliche Ports
 
-Der TCP-Port `21114` wurde für die Webkonsole hinzugefügt. Bitte fügen Sie diesen Port ebenfalls hinzu, wenn Sie Firewallregeln und Docker-Port-Mapping festlegen.
+Sie müssen die TCP-Ports 21114-21119 und UDP-Port 21116 öffnen. Stellen Sie sicher, dass diese Ports eingerichtet sind, wenn Sie Firewallregeln und Docker-Port-Mapping festlegen.
+
+{{% notice note %}}
+Sie sollten einen Proxy wie Nginx verwenden, um diese über HTTPS zu übermitteln, wobei Port 443 geöffnet sein muss.
+{{% /notice %}}

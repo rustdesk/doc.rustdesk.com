@@ -1,5 +1,5 @@
 ---
-title: Berechtigungskontrolle
+title: Zugriffskontrolle
 weight: 15
 ---
 

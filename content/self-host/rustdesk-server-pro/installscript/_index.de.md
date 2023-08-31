@@ -50,3 +50,27 @@ Was es bewirkt:
 - Lädt RustDesk Pro Services herunter und entpackt sie in den oben genannten Ordner
 - Erstellt systemd-Dienste für hbbs und hbbr (Die Dienstnamen lauten rustdesk-hbbs.service und rustdesk-hbbr.service)
 - Wenn Sie Domain gewählt haben, werden Nginx und Certbot installiert, sodass die API auf Port 443 (https) verfügbar ist und ein SSL-Zertifikat über Port 80 abgerufen werden kann, das automatisch erneuert wird
+
+## Sicherung/Wiederherstellung
+
+Um das Leben einfach zu machen, haben wir ein Sicherungs- und Wiederherstellungsskript erstellt, das die Schlüssel, die gesamte Konfiguration und die Datenbank übernimmt und eine TAR-Datei erstellt, die an einem anderen Ort gespeichert werden kann.
+
+Um das Sicherungsskript auf Ihrem RustDesk Server einzurichten, gehen Sie wie folgt vor:
+```
+wget https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/backup.sh
+chmod +x backup.sh
+```
+Sie haben nun die Wahl.
+
+Führen Sie das Sicherungsskript `./backup.sh` aus, um eine einmalige Sicherung zu erstellen.
+
+Oder führen Sie das Sicherungsskript `./backup.sh --schedule` aus. Dadurch wird das Backup-Skript so geplant, dass es jede Nacht ausgeführt wird und sich automatisch aktualisiert.
+
+Zur Wiederherstellung gehen Sie wie folgt vor:
+```
+wget https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/restore.sh
+chmod +x
+```
+Kopieren Sie die Sicherungsdatei in denselben Ordner wie die Datei restore.sh und führen Sie dann `./restore.sh` aus.
+
+Sie müssen Ihre [Lizenz](/docs/de/self-host/rustdesk-server-pro/license) widerrufen, um sie auf den wiederhergestellten Server zu übertragen.

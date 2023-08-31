@@ -1,14 +1,16 @@
 ---
-title: Video
+title: Video-Anleitungen
 weight: 50
 ---
 
-[https://www.youtube.com/watch?v=9nzHm3xGz2I](https://www.youtube.com/watch?v=9nzHm3xGz2I) (englisch)
+[Awesome Open Source](https://www.youtube.com/@AwesomeOpenSource) hat einige großartige Youtube-Videos über RustDesk gemacht, die Sie unten finden können.
 
-[https://www.youtube.com/watch?v=EeFqj23jxMk](https://www.youtube.com/watch?v=EeFqj23jxMk) (englisch)
+[Installations- und Bedienungsanleitung](https://www.youtube.com/watch?v=9nzHm3xGz2I) (englisch)
 
-[https://www.youtube.com/watch?v=e5U9orq5dRY](https://www.youtube.com/watch?v=e5U9orq5dRY) (deutsch)
+[RustDesk-Sicherheit](https://www.youtube.com/watch?v=EeFqj23jxMk) (englisch)
 
-[https://www.youtube.com/watch?v=YzZtXR6o3GE](https://www.youtube.com/watch?v=YzZtXR6o3GE) (deutsch)
+[Installation eines RustDesk Servers](https://www.youtube.com/watch?v=e5U9orq5dRY) (deutsch)
 
-[https://www.youtube.com/watch?v=r8sf22_PkYk](https://www.youtube.com/watch?v=r8sf22_PkYk) (deutsch)
+[Installation eines Verbindungsservers auf Linux](https://www.youtube.com/watch?v=YzZtXR6o3GE) (deutsch)
+
+[Rustdesk auf Synology unter Docker](https://www.youtube.com/watch?v=r8sf22_PkYk) (deutsch)
