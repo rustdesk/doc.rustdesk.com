@@ -9,6 +9,8 @@ chapter: true
 
 # Selbst-Host
 
-Bitte besuchen Sie unseren [Discord](https://discord.com/invite/nDceKgxnkV), wenn Sie mit uns über das Selbst-Hosten Ihres eigenen [Open-Source-RustDesk-Servers](https://github.com/rustdesk/rustdesk-server) diskutieren möchten.
+Wenn Sie RustDesk verwenden, sollten Sie Ihren eigenen RustDesk-Server haben. Diese Dokumente werden Ihnen auf Ihrer RustDesk-Reise helfen.
+
+Support ist über unser [Discord](https://discord.com/invite/nDceKgxnkV) für OSS und per [E-Mail](mailto:support@rustdesk.com) für Pro verfügbar.
 
 {{% children depth="3" showhidden="true" %}}
