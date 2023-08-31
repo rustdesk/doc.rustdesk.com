@@ -5,18 +5,18 @@ pre: "<b>1. </b>"
 ---
 
 ### Introduction
-The RustDesk client is used on devices to connect via our RustDesk Server either open source or Pro, it is available to download from [GitHub](https://github.com/rustdesk/rustdesk/releases/latest)
+The RustDesk client is used on devices to connect via our RustDesk Server either open source or Pro, it is available to download from [GitHub](https://github.com/rustdesk/rustdesk/releases/latest).
 
 ### Supported Platforms
 - Microsoft Windows
 - macOS
-- Debian Derivatives (Ubuntu, Mint etc)
-- Redhat Derivatives (Centos, Rocky etc)
+- Debian Derivatives (Ubuntu, Mint, etc.)
+- Redhat Derivatives (Centos, Rocky, etc.)
 - Arch/Manjaro
 - openSUSE
 - AppImage / Flatpak
 - Android
-- iOS (Not support being controlled)
+- iOS (not support being controlled)
 - Web (1.1.9 Beta)
 
 ### Installation
@@ -43,7 +43,7 @@ Please see below instructions to install for the various "flavours" of Linux, al
 
 #### Debian Derivatives (>= 16)
 
-```bash
+```sh
 # please ignore the wrong disk usage report
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
@@ -69,7 +69,7 @@ sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 Install apk from our GitHub more info can be found on the Android page.
 
 ### Usage
-Once installed (or run as a temporary executable) RustDesk will connect to the Public servers. You will see a message at the bottom saying (1) "Ready, For faster connection, please setup your own server.". In the Top left you will see your (2) ID, (3) One Time Password and on the (4) Right a box for you to connect to another computer if you know their ID.
+Once installed (or run as a temporary executable) RustDesk will connect to the Public servers. You will see a message at the bottom saying (1) "Ready, For faster connection, please set up your own server". In the Top left you will see your (2) ID, (3) One Time Password and on the Right a (4) box for you to connect to another computer if you know their ID.
 
 ![image](/docs/en/client/images/client.png)
 
@@ -79,7 +79,7 @@ Under Settings you will find:
 - General - Service Control, Theme, Hardware Codec, Audio, Recording and Language
 - Security - Permissions for someone taking control, Password options, ability to change your ID and Advanced Security Settings
 - Network - Set your own server settings here and proxy
-- Display - Control the display settings for remote sessions and other default options, sync clipboard etc
+- Display - Control the display settings for remote sessions and other default options, sync clipboard, etc.
 - Account - This can be used in conjunction with the Pro Server to sign into the API
 - About - Shows information about the software.
 
@@ -106,6 +106,6 @@ If you manually setup a client, you can retrieve the `RustDesk2.toml` (in the us
 - `--set-id` can be used to set an ID, please note IDs should start with a letter.
 - `--silent-install` can be used to install RustDesk silently on Windows.
 
-Additional Advanced parameters can be found [here](https://github.com/rustdesk/rustdesk/blob/bdc5cded221af9697eb29aa30babce75e987fcc9/src/core_main.rs#L242)
+Additional Advanced parameters can be found [here](https://github.com/rustdesk/rustdesk/blob/bdc5cded221af9697eb29aa30babce75e987fcc9/src/core_main.rs#L242).
 
 {{% children depth="1" showhidden="true" %}}
