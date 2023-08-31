@@ -4,7 +4,7 @@ weight: 400
 pre: "<b>2.4. </b>"
 ---
 
-Aşağıdaki yöntemlerden birini kullanarak dağıtım yapabilirsiniz. Bazıları [Client](/docs/en/client/#configuring-rustdesk) bölümünde ele alınmıştır.
+Aşağıdaki yöntemlerden birini kullanarak dağıtım yapabilirsiniz. Bazıları [Client](/docs/en/self-host/client-configuration/) bölümünde ele alınmıştır.
 
 Alternatif olarak, RMM, intune vb. ile kütle dağıtım komut dosyaları da kullanabilirsiniz. Kimlik ve şifre komut dosyası tarafından üretilir, bunu toplamalısınız veya kimlik ve şifreyi toplamak için farklı komut dosyalarına bölmelisiniz.
 
