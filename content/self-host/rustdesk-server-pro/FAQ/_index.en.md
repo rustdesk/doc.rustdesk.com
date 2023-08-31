@@ -104,11 +104,11 @@ write-output "RustDesk $rdver is the newest version"
 exit
 }
 
-If (!(Test-Path c:\Temp)) {
-  New-Item -ItemType Directory -Force -Path c:\Temp > null
+If (!(Test-Path C:\Temp)) {
+  New-Item -ItemType Directory -Force -Path C:\Temp > null
 }
 
-cd c:\Temp
+cd C:\Temp
 
 powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.1/rustdesk-1.2.1-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
@@ -227,30 +227,28 @@ If the script installed Nginx then remove using:
 sudo apt remove nginx
 ```
 
-##  How can I remove devices from the device list in the web console?
+## How can I remove devices from the device list in the web console?
 Disable and then delete will now be available.
 
-## How Can I update RustDesk Wth Powershell?
-
+## How can I update RustDesk with PowerShell?
 ```ps
 $ErrorActionPreference= 'silentlycontinue'
 
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
-if($rdver -eq "1.2.2") 
+if($rdver -eq "1.2.2")
 {
-write-output "RustDesk $rdver is the newest version"
+write-output "RustDesk $rdver is the newest version."
 
 exit
 }
 
-If (!(Test-Path c:\Temp)) {
-  New-Item -ItemType Directory -Force -Path c:\Temp > null
+If (!(Test-Path C:\Temp)) {
+  New-Item -ItemType Directory -Force -Path C:\Temp > null
 }
 
-cd c:\Temp
+cd C:\Temp
 
 powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
 ```
-
