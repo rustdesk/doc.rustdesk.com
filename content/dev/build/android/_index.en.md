@@ -12,7 +12,7 @@ Or you can go further but at your own risk.
 It is possible to build RustDesk Android on **Windows** and **macOS** but this instruction is still under active development.
 {{% /notice %}}
 
-# Introduction
+## Introduction
 
 Here you will learn how to prepare your environment to such an extent that you will be able to successfully build the application and enable yourself to work on the code through, for example, Android Studio.
 
@@ -22,19 +22,19 @@ It is possible to build, run end edit Android version on Windows, but it require
 
 By "patched" I mean directory in state like before running `flutter build` on Linux machine.
 
-# Assumptions
+## Assumptions
 - You are using **Ubuntu 20.04** or later (due to fact that this tutorial is based on this version)
 - You have working internet connection
 - You already installed [**Flutter**](https://docs.flutter.dev/get-started/install/linux), [**vcpkg**](https://github.com/microsoft/vcpkg) and [**Rust**](https://www.rust-lang.org/tools/install)
 - You cloned [RustDesk repository](https://github.com/rustdesk/rustdesk)
 - You know what are you doing
 
-# System
+## System
 This part of tutorial is based on clean **Ubuntu 20.04** instance with prerequisites like **Flutter**, **Rust** and **vcpkg** already installed and configured.
 
 If you missing any of these prerequisites, obtain and configure them, then return back here.
 
-# Instruction
+## Instruction
 This is step-to-step instruction.
 
 ## Generating Bridge 🌉
@@ -155,7 +155,7 @@ cargo install cargo-ndk
 
 Now it's time to run `ndk_arm64.sh`, this script contains code that build's Rust for Flutter, it requires `NDK` in version `r23c`.
 
-You could download it [here](https://dl.google.com/android/repository/android-ndk-r23c-linux.zip), you'll be required to install it manually or follow [this](https://developer.android.com/studio/projects/install-ndk) instruction. This file is quite heavy so this process might take a while, it mostly depends on your internet connection.
+You could download it [here](https://dl.google.com/android/repository/android-ndk-r23c-linux.zip), you'll be required to install it manually or follow this [instruction](https://developer.android.com/studio/projects/install-ndk). This file is quite heavy so this process might take a while, it mostly depends on your internet connection.
 
 Just remember to set **ANDROID_NDK_HOME** variable and check if it's valid.
 
