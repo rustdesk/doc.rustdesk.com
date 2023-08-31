@@ -64,6 +64,16 @@ cd $env:ProgramFiles\RustDesk\
 ```
 $ErrorActionPreference= 'silentlycontinue'
 
+$confirmation_file = "C:\program files\RustDesk\runonce.txt"
+
+if ([System.IO.File]::Exists($confirmation_file)) {
+    echo "Confirmation file exists"
+	exit 0
+}
+else
+{
+$ErrorActionPreference= 'silentlycontinue'
+
 net stop rustdesk > null
 $ProcessActive = Get-Process rustdesk -ErrorAction SilentlyContinue
 if($ProcessActive -ne $null)
@@ -76,6 +86,10 @@ Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" "--password $rustdesk_pw
 Write-Output $rustdesk_pw
 
 net start rustdesk > null
+        
+New-Item $confirmation_file > null
+
+}
 
 ```
 ## RustDesk URL Action
