@@ -11,15 +11,15 @@ Strategy is a tool for RustDesk administrators to update the security options of
 
 You can create a new strategy by clicking the `+` button and perform various actions on the strategy by hovering over it and clicking the menu.
 
-In the pop-up menu, you can choose to `Enable` or `Disable` the strategy, `Rename`, `Duplicate`, or `Delete` it. Additionally, you can click `Edit Devices` to modify the devices applied to that strategy or click `Edit Users` to modify the users applied to that strategy.
+In the pop-up menu, you can choose to `Enable` or `Disable` the strategy, `Rename`, `Duplicate` or `Delete` it. Additionally, you can click `Edit Devices` to modify the devices applied to that strategy or click `Edit Users` to modify the users applied to that strategy.
 
 On the right side of the strategy menu, you can see the number of devices actually applied to the strategy, taking into account the priority of the strategy.
 
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/strategy_menu.png)
 
 ### Device Strategy and User Strategy
-Each device can only be managed by one strategy, and device strategies take priority over user strategies. User strategies are responsible for managing all devices under the user that are not assigned a specific strategy.
 
+Each device can only be managed by one strategy, and device strategies take priority over user strategies. User strategies are responsible for managing all devices under the user that are not assigned a specific strategy.
 
 ### Edit Devices
 
