@@ -3,23 +3,23 @@ title: Tactical RMM
 weight: 100
 ---
 
-## To Use Tactical RMM with RustDesk you need to the the following.
+## To Use Tactical RMM with RustDesk, you must do the following
 
 1. Install your own Tactical RMM Server, following their [official docs](https://docs.tacticalrmm.com/) and open ports.
-2. Create the following scripts (all are powershell).
+2. Create the following scripts (all are PowerShell).
 3. Create a [URL Action](https://docs.tacticalrmm.com/functions/url_actions/).
 4. Create [custom fields](https://docs.tacticalrmm.com/functions/custom_fields/) for the RustDesk ID and password.
 5. Create [collector tasks](https://docs.tacticalrmm.com/functions/automated_tasks/#collector-tasks).
 
 ## Install Script Replace IPADDRESS and KEY
-```
+```ps
 $ErrorActionPreference= 'silentlycontinue'
 
-If (!(Test-Path c:\Temp)) {
-  New-Item -ItemType Directory -Force -Path c:\Temp > null
+If (!(Test-Path C:\Temp)) {
+  New-Item -ItemType Directory -Force -Path C:\Temp > null
 }
 
-cd c:\Temp
+cd C:\Temp
 
 powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
@@ -53,7 +53,7 @@ net start rustdesk
 
 ## RustDesk Get ID (Collector Script needs Custom Agent Field)
 
-```
+```ps
 $ErrorActionPreference= 'silentlycontinue'
 
 cd $env:ProgramFiles\RustDesk\
@@ -61,10 +61,10 @@ cd $env:ProgramFiles\RustDesk\
 ```
 
 ## RustDesk Set and Get Password (Collector Script needs Custom Agent Field)
-```
+```ps
 $ErrorActionPreference= 'silentlycontinue'
 
-$confirmation_file = "C:\program files\RustDesk\runonce.txt"
+$confirmation_file = "C:\Program Files\RustDesk\runonce.txt"
 
 if ([System.IO.File]::Exists($confirmation_file)) {
     echo "Confirmation file exists"
@@ -81,21 +81,21 @@ if($ProcessActive -ne $null)
 stop-process -ProcessName rustdesk -Force
 }
 
-$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
+$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_}))
 Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" "--password $rustdesk_pw" -wait
 Write-Output $rustdesk_pw
 
 net start rustdesk > null
         
 New-Item $confirmation_file > null
-
 }
-
 ```
+
 ## RustDesk URL Action
 ```
 rustdesk://connection/new/{{agent.rustdeskid}}?password={{agent.rustdeskpwd}}
- ```
+```
+
 ## Add Custom Agent Fields
 `rustdeskid Type = Text` </br>
 `rustdeskpwd Type = Text`

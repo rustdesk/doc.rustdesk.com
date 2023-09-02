@@ -6,9 +6,9 @@ pre: "<b>2.4. </b>"
 
 You can deploy using a number of methods, some are covered in [Client Configuration](/docs/en/self-host/client-configuration/).
 
-Alternatively you can use mass deployment scripts with your RMM, Intune etc., the ID and password is output by the script, you should collect this, or split this off into different scripts to collect the ID and password.
+Alternatively you can use mass deployment scripts with your RMM, Intune, etc. The ID and password are output by the script. You should collect this or split it into different scripts to collect the ID and password.
 
-The permanent password can be changed from random to one you prefer using by changing the content inside `()` after `rustdesk_pw` to your preferred password for powershell and the corresponding line for any other platform.
+The permanent password can be changed from random to one you prefer using by changing the content inside `()` after `rustdesk_pw` to your preferred password for PowerShell and the corresponding line for any other platform.
 
 ### PowerShell
 
@@ -16,10 +16,10 @@ The permanent password can be changed from random to one you prefer using by cha
 $ErrorActionPreference= 'silentlycontinue'
 
 # Assign the value random password to the password variable
-$rustdesk_pw=(-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
+$rustdesk_pw=(-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_}))
 
 # Get your config string from your Web portal and Fill Below
-rustdesk_cfg="configstring" 
+rustdesk_cfg="configstring"
 
 ################################### Please Do Not Edit Below This Line #########################################
 
@@ -33,18 +33,18 @@ if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
-if($rdver -eq "1.2.2") 
+if($rdver -eq "1.2.2")
 {
 write-output "RustDesk $rdver is the newest version"
 
 exit
 }
 
-If (!(Test-Path c:\Temp)) {
-  New-Item -ItemType Directory -Force -Path c:\Temp > null
+If (!(Test-Path C:\Temp)) {
+  New-Item -ItemType Directory -Force -Path C:\Temp > null
 }
 
-cd c:\Temp
+cd C:\Temp
 
 powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
@@ -94,26 +94,25 @@ REM Assign the value random password to the password variable
 set rustdesk_pw=
 
 REM Get your config string from your Web portal and Fill Below
-set rustdesk_cfg="configstring" 
+set rustdesk_cfg="configstring"
 
 REM ############################### Please Do Not Edit Below This Line #########################################
 
-if not exist C:\TEMP\ md C:\TEMP\
-cd c:\temp\
+if not exist C:\Temp\ md C:\Temp\
+cd C:\Temp\
 
 curl -L "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -o rustdesk.exe
 
 rustdesk.exe --silent-install
 
-$ServiceName = 'Rustdesk'
+$ServiceName = 'RustDesk'
 $arrService = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
 
-cd "c:\Program Files\RustDesk\"
+cd "C:\Program Files\RustDesk\"
 for /f "delims=" %i IN ('rustdesk.exe --get-id ^| more') DO set rustdesk_id=%i
 
 net stop rustdesk > null
 RustDesk.exe --config %rustdesk_cfg%
-
 
 net start rustdesk > null
 
@@ -137,7 +136,7 @@ echo "..............................................."
 rustdesk_pw=$(openssl rand -hex 4)
 
 # Get your config string from your Web portal and Fill Below
-rustdesk_cfg="configstring" 
+rustdesk_cfg="configstring"
 
 ################################### Please Do Not Edit Below This Line #########################################
 
@@ -216,7 +215,7 @@ open -n /Applications/RustDesk.app
 rustdesk_pw=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 
 # Get your config string from your Web portal and Fill Below
-rustdesk_cfg="configstring" 
+rustdesk_cfg="configstring"
 
 ################################### Please Do Not Edit Below This Line #########################################
 

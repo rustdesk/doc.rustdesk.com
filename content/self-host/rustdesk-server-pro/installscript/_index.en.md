@@ -62,15 +62,15 @@ chmod +x backup.sh
 ```
 You now have options.
 
-Run the backup script to create a one time backup `./backup.sh`
-Or /
-Run the backup script `--schedule` (full command would be `./backup.sh --schedule` this will schedule the backup script to run nightly and autorotate.
+Run the backup script `./backup.sh` to create a one time backup.
+
+Or run the backup script `./backup.sh --schedule`. This will schedule the backup script to run nightly and autorotate.
 
 To Restore do the following:
 ```
 wget https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/restore.sh
 chmod +x
 ```
-Copy the backup file into the same folder as the restore.sh file and then run
-`./restore.sh`
+Copy the backup file into the same folder as the restore.sh file and then run `./restore.sh`.
+
 This will restore your server to how it was prior, you will need to revoke your [license](/docs/en/self-host/rustdesk-server-pro/license) to move it to the restored server.

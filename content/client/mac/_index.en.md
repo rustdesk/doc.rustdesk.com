@@ -16,7 +16,7 @@ Make sure you have quit all running RustDesk. Also make sure you quit the RustDe
 ### Allow RustDesk run
 
 | Unlock to change | Click on "App Store and identified developers" |
-| ---- | ---- |
+| --- | --- |
 | ![](/docs/en/client/mac/images/allow2.png) | ![](/docs/en/client/mac/images/allow.png) |
 
 ### Enable permissions
@@ -30,16 +30,16 @@ Please follow this
 It seems no quick fix, we need to fix together with our Flutter version.
 {{% /notice %}}
 
-To capture screen, you need to grant `RustDesk` **Accessibility** permission and **Screen Recording** permission. RustDesk will guide you to the settings window.
+To capture screen, you need to grant RustDesk **Accessibility** permission and **Screen Recording** permission. RustDesk will guide you to the settings window.
 
 | RustDesk window | Settings window |
-| ---- | ---- |
+| --- | --- |
 | ![](/docs/en/client/mac/images/acc.png) | ![](/docs/en/client/mac/images/acc3.png?v2) |
 
 If you have enabled it in the settings window, but RustDesk still warns. Please remove RustDesk from the settings windows by the `-` button, and click on `+` button, select RustDesk in `/Applications`.
 
 | `-` and `+` button | Select RustDesk |
-| ---- | ---- |
+| --- | --- |
 | ![](/docs/en/client/mac/images/acc2.png) | ![](/docs/en/client/mac/images/add.png?v2) |
 
 Please copy above steps for **Screen Recording** permission.

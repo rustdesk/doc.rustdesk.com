@@ -3,7 +3,7 @@ title: Windows & PM2 or NSSM
 weight: 20
 ---
 
-## A cross roads
+## A crossroads
 You now either have two choices, you can either use PM2 (easier) or NSSM (a bit harder) to start the RustDesk server
 There are some benefits to using NSSM:
 - Backwards compatibility with older Windows (Windows Server 2008 R2/Windows 7 and earlier although untested).
@@ -14,7 +14,7 @@ There are some benefits to using NSSM:
 
 While the benefits of PM2 include:
 - Good idea if you run the server on the same computer as your main work computer
-- You logon regularly to the user that created the rustdesk startup entry
+- You logon regularly to the user that created the RustDesk startup entry
 - More user friendly
 
 ## Installing using NSSM
@@ -26,7 +26,6 @@ contents of win64 folder). It is also best practice to move the binary of NSSM i
 `Program Files\NSSM` (NSSM once started as a service, it cannot be moved from the directory it was placed in.
 thus it is best to tuck it away in Program files) directory of your Installation drive (Usually the C drive).
 It is also advisable to add the path (such as `C:\Program Files\NSSM`) to the path variable.
-
 
 ### Checking if NSSM is installed properly
 If you've done everything correctly the folder `C:\Program Files\NSSM` (in this example I use the C:

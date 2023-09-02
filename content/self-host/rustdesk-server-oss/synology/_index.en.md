@@ -9,7 +9,7 @@ This tutorial is based on latest DSM v6 and v7.
 
 ### Install Docker
 
-| Open package manager | Install Docker |
+| Open Package Center | Install Docker |
 | --- | --- |
 | ![](/docs/en/self-host/rustdesk-server-oss/synology/images/package-manager.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/images/docker.png) |
 
@@ -29,7 +29,7 @@ Click on above "Advanced Settings".
 - Enable auto-restart
 ![](/docs/en/self-host/rustdesk-server-oss/synology/images/auto-restart.png)
 
-- Enable "Use the same network as Docker host", for more about host net, please [check](/docs/en/self-host/rustdesk-server-oss/docker/#net-host)
+- Enable "Use the same network as Docker Host", for more about host net, please [check](/docs/en/self-host/rustdesk-server-oss/docker/#net-host)
 ![](/docs/en/self-host/rustdesk-server-oss/synology/images/host-net.png)
 
 - Mount a host directory (e.g. `/home/rustdesk/`) to `/root`, hbbs will generate some files (database and `key` files) in this directory which need to be persistent over reboots.
