@@ -24,12 +24,12 @@ This tutorial is based on latest DSM v6 and v7.
 As mentioned above, double click on rustdesk-server image to create new container, set it name to `hbbs`.
 ![](/docs/en/self-host/rustdesk-server-oss/synology/images/hbbs.png)
 
-Click on above "Advanced Settings".
+Click on above `Advanced Settings`.
 
 - Enable auto-restart
 ![](/docs/en/self-host/rustdesk-server-oss/synology/images/auto-restart.png)
 
-- Enable "Use the same network as Docker Host", for more about host net, please [check](/docs/en/self-host/rustdesk-server-oss/docker/#net-host)
+- Enable `Use the same network as Docker Host`, for more about host net, please [check](/docs/en/self-host/rustdesk-server-oss/docker/#net-host).
 ![](/docs/en/self-host/rustdesk-server-oss/synology/images/host-net.png)
 
 - Mount a host directory (e.g. `/home/rustdesk/`) to `/root`, hbbs will generate some files (database and `key` files) in this directory which need to be persistent over reboots.
