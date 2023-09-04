@@ -102,12 +102,12 @@ Above * represents special permissions. To obtain such permissions, you need to 
 | ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
 #### **Special Permission Request - mouse input**
-| Step 1 Find "Installed Services" | Step 2 Start RustDesk Input |
+| Step 1: Find "Installed Services" | Step 2: Start RustDesk Input |
 | --- | --- |
 | ![](/docs/en/client/android/images/get_input1_en.jpg?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
 
 {{% notice note %}}
-The system setting page of different vendors may be different, please adjust it according to your system page
+The system setting page of different vendors may be different, please adjust it according to your system page.
 {{% /notice %}}
 
 **Remote mouse control shortcuts:**
