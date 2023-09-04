@@ -16,9 +16,9 @@ Features:
 The default port of the web console is 21114. Enter `http://<hbbs host>:21114` in the browser to enter the console page, as shown in the following figure. The default administrator username/password is admin/test1234:
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-login.png)
 
-If you need https support, please install a web server such as `Nginx` or use `IIS` for Windows.
+If you need HTTPS support, please install a web server such as `Nginx` or use `IIS` for Windows.
 
-After logging in please be sure to change the password, select "Settings" in the account menu in the upper right corner to enter the password modification page, as shown in the following figure. You can also create another administrator account and delete this one. You'd better enable email login verification.
+After logging in please be sure to change the password, select `Settings` in the account menu in the upper right corner to enter the password modification page, as shown in the following figure. You can also create another administrator account and delete this one. You'd better enable email login verification.
 <a name=console-home></a>
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
@@ -26,7 +26,7 @@ Non-administrator users can also login to browse their device and logs, change t
 
 ## Windows EXE is where the configs are shown
 
-For Windows clients, you can leave out the custom server configuration and put the configuration information in the `rustdesk.exe` filename instead. As shown above, please go to the console welcome page and click on `Windows EXE`. **`Client >=1.1.9 Required`**.
+For Windows clients, you can leave out the custom server configuration and put the configuration information in the `rustdesk.exe` filename instead. As shown above, please go to the console welcome page and click on `Windows EXE`. **Client >=1.1.9 Required**.
 
 ## Creating a new user other than the default `admin` user
 1. Create another account with `administrator` enabled.
@@ -37,7 +37,7 @@ For Windows clients, you can leave out the custom server configuration and put t
 1. Go to `Settings` on the left hand menu.
 2. Click on `Relay` on the sub-menu.
 3. Click `+` next to `Relay Servers`.
-4. Enter the Relay server DNS address or IP address in the box which now shows and press Enter.
+4. Enter the Relay server DNS address or IP address in the box which now shows and press <kbd>Enter</kbd>.
 5. If you have more than one Relay server you can keep clicking `+` and adapt the Geo settings is required (remember and copy your key to the other servers).
 
 ## Set or change the license
@@ -63,5 +63,5 @@ Gmail in this example
 
 ## Searching for a device
 1. Go to Devices.
-2. In the Device Name Search Field type in the name and click `Query` or hit enter.
+2. In the Device Name Search Field type in the name and click `Query` or hit <kbd>Enter</kbd>.
 3. To use a wildcard add `%` at the start, end or both of the search term.
