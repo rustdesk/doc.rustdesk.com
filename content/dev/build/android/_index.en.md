@@ -66,7 +66,7 @@ sudo apt update -y
 sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang cmake libclang-dev ninja-build llvm-dev libclang-10-dev llvm-10-dev pkg-config
 ```
 ### Installing Flutter Rust Bridge dependencies
-At this step you'll install additional dependencies required by [Flutter Rust Bridge](https://cjycode.com/flutter_rust_bridge/index.html) also you'll download flutter dependencies from `pubspec.yaml` file.
+At this step you'll install additional dependencies required by [Flutter Rust Bridge](https://cjycode.com/flutter_rust_bridge/index.html) also you'll download Flutter dependencies from `pubspec.yaml` file.
 
 This might take some time depending on your internet connection speed and overall desktop performance:
 ```
@@ -80,7 +80,7 @@ In order for everything to work you'll need to generate Flutter Rust Bridge, in 
 ~/.cargo/bin/flutter_rust_bridge_codegen --rust-input ./src/flutter_ffi.rs --dart-output ./flutter/lib/generated_bridge.dart
 ```
 
-If everything worked fine, you should see something like this in your's terminal window:
+If everything worked fine, you should see something like this in your terminal window:
 ```yaml
 2023/02/27 20:44:39 [INFO] Success!
 2023/02/27 20:44:39 [INFO] Now go and use it :)
@@ -153,9 +153,9 @@ Then install `cargo-ndk` it is required to generate `librustdesk.so` file:
 cargo install cargo-ndk
 ```
 
-Now it's time to run `ndk_arm64.sh`, this script contains code that build's Rust for Flutter, it requires `NDK` in version `r23c`.
+Now it's time to run `ndk_arm64.sh`. This script contains code that builds Rust for Flutter, it requires `NDK` in version `r23c`.
 
-You could download it [here](https://dl.google.com/android/repository/android-ndk-r23c-linux.zip), you'll be required to install it manually or follow this [instruction](https://developer.android.com/studio/projects/install-ndk). This file is quite heavy so this process might take a while, it mostly depends on your internet connection.
+You could download it [here](https://dl.google.com/android/repository/android-ndk-r23c-linux.zip). You'll be required to install it manually or follow this [instruction](https://developer.android.com/studio/projects/install-ndk). This file is quite heavy so this process might take a while, it mostly depends on your internet connection.
 
 Just remember to set **ANDROID_NDK_HOME** variable and check if it's valid.
 
