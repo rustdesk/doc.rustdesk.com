@@ -8,16 +8,18 @@ weight: 6
 Install Docker with this [guide](https://docs.docker.com/engine/install) to ensure its the most up to date!
 
 Run the following commands:
-```bash
+
+```sh
 sudo docker image pull rustdesk/rustdesk-server-pro
 sudo docker run --name hbbs -v `pwd`:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbs
 sudo docker run --name hbbr -v `pwd`:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbr
 ```
+
 {{% notice note %}}
 The above example uses `sudo` and `--net=host`, this will not work on Windows please remove these commands, if you remove `--net=host` please check below.
 {{% /notice %}}
 
-```bash
+```sh
 macaddrhbbs=$(echo -n A0-62-2F; dd bs=1 count=3 if=/dev/random 2>/dev/null |hexdump -v -e '/1 "-%02X"')
 sudo docker image pull rustdesk/rustdesk-server-pro
 sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --mac-address="$macaddrhbbs" --restart unless-stopped rustdesk/rustdesk-server-pro hbbs
@@ -57,4 +59,4 @@ services:
     restart: unless-stopped
 ```
 
-The run `docker compose up -d`
+The run `docker compose up -d`.
