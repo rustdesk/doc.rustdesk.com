@@ -61,10 +61,10 @@ To check the status `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` e.g. `su
 1. Under the IIS Server Host open Application Request Routing.
 2. Go to Server Proxy Settings.
 3. Enable proxy and all settings will appear, you can leave them as the defaults.
-4. Save the settings and we can go to the next step: URL rewrite.
+4. Save the settings and we can go to the next step: URL Rewrite.
 
-### URL rewrite
-1. Open the site on IIS on the left pane and double-click on URL rewrite.
+### URL Rewrite
+1. Open the site on IIS on the left pane and double-click on URL Rewrite.
 2. Click `Add rules`.
 3. Disable dynamic compression under compression.
 4. Set up a new reverse proxy rule.
