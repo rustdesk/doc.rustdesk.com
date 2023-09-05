@@ -12,8 +12,8 @@ Kindly written up by [@I-Am-Skoot](https://github.com/I-Am-Skoot/RustDeskNPMDock
 - Firewall Tool
 
 #### Assumptions
-This example is an All in One for hosting just RustDesk services only.  This can be expanded to a more flexible solution by splitting the NPM into it's own Docker Compose.
-- DMZ network  192.168.1.0/24
+This example is an All in One for hosting just RustDesk services only. This can be expanded to a more flexible solution by splitting the NPM into it's own Docker Compose.
+- DMZ Network: 192.168.1.0/24
   - NPM (External): 192.168.1.250
 - LAN Network: 10.0.0.0/24
 - RSBackend Network: 192.168.254.0/29
@@ -21,7 +21,7 @@ This example is an All in One for hosting just RustDesk services only.  This can
   - HBBS: 192.168.254.2
   - HBBR: 192.168.254.3
 - Docker Host: Linux
-  - Each application has a dedicated folder in /opt/
+  - Each application has a dedicated folder in `/opt/`.
 - Hostname: uniquehostname  (Change This)
 - DNS Name: rustdesk.example.com
 
@@ -30,7 +30,7 @@ Make modifications to the examples as needed.
 ### Prepare Docker
 You must have Docker already installed this guide does not go into the specifics of that.
 
-You will need to create a network for the RustServer Backend and the DMZ.
+You will need to create a network for the RustDesk Server Backend and the DMZ.
 For each application you use with the NPM (Nginx Proxy Manager) you should have a dedicated backend network to isolate it.
 
 ```
@@ -47,18 +47,19 @@ For each application you use with the NPM (Nginx Proxy Manager) you should have 
 
 ### Setup Firewall
 Configure the following Port forwarding/NAT ports from your public IP to the NPM Server.
- - 21114 => 8080 TCP
- - 21115 => 21115 TCP
- - 21116 => 21116 TCP/UDP
- - 21117 => 21117 TCP
- - 21118 => 21118 TCP
- - 21119 => 21119 TCP
- - 443 => 443 TCP  # If you want to use SSL
+- 21114 => 8080 TCP
+- 21115 => 21115 TCP
+- 21116 => 21116 TCP/UDP
+- 21117 => 21117 TCP
+- 21118 => 21118 TCP
+- 21119 => 21119 TCP
+- 443 => 443 TCP  # If you want to use SSL
 
 ### Setup Docker Compose
 This will start a container with NPM and the correct networks.
 
-Docker-Compose.yaml
+Copy the below into docker-compose.yaml.
+
 ```
 version: '3.5'
 services:
@@ -78,7 +79,7 @@ services:
     container_name: rustdesk_hbbs
     image: rustdesk/rustdesk-server-pro:latest
     command: hbbs -k _
-    hostname: uniquehostname   #Change This
+    hostname: uniquehostname   # Change This
     volumes:
       - /opt/rustdeskserver:/root
     networks:
@@ -87,7 +88,6 @@ services:
     depends_on:
       - hbbr
     restart: unless-stopped
-
 
   hbbr:
     container_name: rustdesk_hbbr
@@ -117,12 +117,12 @@ Configure Stream Hosts for the following Ports:
 - 80 => 127.0.0.1:8080 TCP # catches local traffic
 
 Configure Proxy Host:
-  - Domain Name: rustdesk.example.com
-  - Scheme: http
-  - Forward Hostname / IP: 192.168.254.2
-  - Forward Port: 21114
-  - Block Common Exploits: Checked
-  - Optional: Configure SSL **DO NOT REQUIRE - Client needs to be able to communicate without SSL.**
+- Domain Name: rustdesk.example.com
+- Scheme: http
+- Forward Hostname / IP: 192.168.254.2
+- Forward Port: 21114
+- Block Common Exploits: Checked
+- Optional: Configure SSL **(DO NOT REQUIRE - Client needs to be able to communicate without SSL.)**
 
 ### Setup RustDesk Server
 Connect to Server interface http://rustdesk.example.com or https://rustdesk.example.com if you have configured SSL for web interface.

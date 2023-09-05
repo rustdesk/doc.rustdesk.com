@@ -21,7 +21,7 @@ What it does:
 - Installs executables into /usr/bin
 - Download and extract RustDesk Pro Services to the above folder
 - Create systemd services for hbbs and hbbr (service names are rustdesk-hbbs.service and rustdesk-hbbr.service)
-- If you choose Domain, it will install Nginx and Certbot, allowing the API to be available on port 443 (https) and get an SSL certificate over port 80, it is automatically renewed
+- If you choose Domain, it will install Nginx and Certbot, allowing the API to be available on port 443 (HTTPS) and get an SSL certificate over port 80, it is automatically renewed
 
 ## Upgrade
 
@@ -49,7 +49,7 @@ What it does:
 - Delete /var/log/rustdesk and create /var/log/rustdesk-server
 - Download and extract RustDesk Pro Services to the above folder
 - Create systemd services for hbbs and hbbr (service names are rustdesk-hbbs.service and rustdesk-hbbr.service)
-- If you choose Domain, it will install Nginx and Certbot, allowing the API to be available on port 443 (https) and get an SSL certificate over port 80, it is automatically renewed
+- If you choose Domain, it will install Nginx and Certbot, allowing the API to be available on port 443 (HTTPS) and get an SSL certificate over port 80, it is automatically renewed
 
 ## Backup/Restore
 
@@ -69,7 +69,7 @@ Or run the backup script `./backup.sh --schedule`. This will schedule the backup
 To Restore do the following:
 ```
 wget https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/restore.sh
-chmod +x
+chmod +x restore.sh
 ```
 Copy the backup file into the same folder as the restore.sh file and then run `./restore.sh`.
 

@@ -29,7 +29,7 @@ To install silently call the install exe with `--silent-install`.
 
 #### macOS
 
-Download the dmg file from GitHub more info can be found on the macOS page.
+Download the dmg file from GitHub more info can be found on the [macOS page](/docs/en/client/mac/).
 
 Open the dmg file and drag `RustDesk` to `Applications`.
 
@@ -66,14 +66,14 @@ sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 #### Android
-Install apk from our GitHub more info can be found on the Android page.
+Install apk from our GitHub more info can be found on the [Android page](/docs/en/client/android/).
 
 ### Usage
 Once installed (or run as a temporary executable) RustDesk will connect to the Public servers. You will see a message at the bottom saying (1) "Ready, For faster connection, please set up your own server". In the Top left you will see your (2) ID, (3) One Time Password and on the Right a (4) box for you to connect to another computer if you know their ID.
 
 ![image](/docs/en/client/images/client.png)
 
-To access the settings, click on the (5) 3 dots to the right of ID.
+To access the settings, click on the (5) Menu button [ &#8942; ] to the right of ID.
 
 Under Settings you will find:
 - General - Service Control, Theme, Hardware Codec, Audio, Recording and Language
@@ -87,8 +87,8 @@ Under Settings you will find:
 There is number of ways to configure RustDesk.
 
 The easiest way is using RustDesk Server Pro you can obtain an encrypted config string, this can be used in conjunction with `--config` to import settings. To do this:
-1. Open command line on whichever OS you use, to the folder where RustDesk is installed i.e. C:\Program Files\RustDesk on Windows, /usr/bin on Linux.
-2. Use the command `rustdesk.exe --config your-encrypted-string` e.g. `rustdesk.exe --config 9JSPSvJzNrBDasJjNSdXOVVBlERDlleoNWZzIHcOJiOikXZr8mcw5yazVGZ0NXdy5CdyciojI0N3boJye`
+1. Open command line on whichever OS you use, to the folder where RustDesk is installed i.e. `C:\Program Files\RustDesk` on Windows, `/usr/bin` on Linux.
+2. Use the command `rustdesk.exe --config your-encrypted-string` e.g. `rustdesk.exe --config 9JSPSvJzNrBDasJjNSdXOVVBlERDlleoNWZzIHcOJiOikXZr8mcw5yazVGZ0NXdy5CdyciojI0N3boJye`.
 
 You can manually setup a client. To do this:
 1. Click on Settings.

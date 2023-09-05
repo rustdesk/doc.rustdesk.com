@@ -24,7 +24,7 @@ Please [download](https://nssm.cc/release/nssm-2.24.zip) and extract NSSM select
 architecture to your Windows system (if x86 use the contents of the win32 folder, if x64 use the
 contents of win64 folder). It is also best practice to move the binary of NSSM into the
 `Program Files\NSSM` (NSSM once started as a service, it cannot be moved from the directory it was placed in.
-thus it is best to tuck it away in Program files) directory of your Installation drive (Usually the C drive).
+thus it is best to tuck it away in `Program Files`) directory of your Installation drive (Usually the C: drive).
 It is also advisable to add the path (such as `C:\Program Files\NSSM`) to the path variable.
 
 ### Checking if NSSM is installed properly
@@ -37,7 +37,7 @@ We will be using `C:\Program Files\NSSM` in this example.
 Open Command prompt and run `nssm` if you see a help page you are ready to move onto the next step.
 
 ### Run hbbr and hbbs
-Download the Windows version of [server program](https://github.com/rustdesk/rustdesk-server/releases).
+Download the Windows version of [RustDesk Server](https://github.com/rustdesk/rustdesk-server/releases).
 Unzip the program to the `C:\Program Files\RustDesk Server` (or anywhere you desire just make sure it
 doesn't change after the service is installed). Now get back to Command prompt.
 
@@ -95,7 +95,7 @@ pm2-startup install
 
 ### Run hbbr and hbbs
 
-Download the Windows version of [server program](https://github.com/rustdesk/rustdesk-server/releases). Unzip the program to the C: drive. Run the following four commands (take care to edit the `-r` parameter):
+Download the Windows version of [RustDesk Server](https://github.com/rustdesk/rustdesk-server/releases). Unzip the program to the C: drive. Run the following four commands (take care to edit the `-r` parameter):
 
 ```cmd
 cd C:\rustdesk-server-windows-x64
