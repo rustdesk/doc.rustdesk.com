@@ -300,7 +300,7 @@ label {
       <div class="uui-padding-vertical-xhuge-11">
         <div class="uui-text-align-center-5">
           <div class="uui-max-width-large-6 align-center">
-            <div class="uui-heading-medium-9">Pricing of self-hosting solution</div>
+            <div class="uui-heading-subheading-9">Pricing of our self-hosting solutions</div>
             <h2 class="uui-heading-medium-9">Simple, transparent pricing</h2>
             <div class="uui-space-xsmall-9"></div>
             <div class="uui-text-size-large-9">We believe RustDesk should be accessible to all companies, no matter the size.</div>
@@ -309,10 +309,10 @@ label {
         <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="uui-pricing08_component w-tabs">
           <div class="uui-pricing08_tabs-menu w-tab-menu">
             <a data-w-tab="Tab 1" class="uui-pricing08_tab-link w-inline-block w-tab-link w--current">
-              <div>Our Self-Hosting Plans</div>
+              <div>Our Self-hosting Plans</div>
             </a>
             <a data-w-tab="Tab 2" class="uui-pricing08_tab-link w-inline-block w-tab-link">
-              <div>Other Self-Hosting Plans &amp; Hosting</div>
+              <div>Other Plans &amp; Hosting</div>
             </a>
           </div>
           <div class="uui-pricing08_tab-content w-tab-content">
@@ -322,7 +322,7 @@ label {
                   <div class="uui-pricing08_content">
                     <div class="uui-pricing08_content-top">
                       <div class="uui-text-align-center-5">
-                        <h2 class="uui-heading-xxsmall-2">Self-Hosted Free plan</h2>
+                        <h2 class="uui-heading-xxsmall-2">Free self-hosting plan</h2>
                         <div class="uui-pricing08_price">$0<span class="uui-pricing08_price-text">/month </span></div>
                         <div class="uui-text-size-medium-10">Open source and free</div>
                       </div>
@@ -372,15 +372,6 @@ label {
                           </div>
                           <div class="uui-text-size-medium-10">Community support</div>
                         </div>
-			<div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c87774-47ad0af8" class="uui-pricing08_feature">
-                          <div class="uui-pricing08_icon-wrapper">
-                            <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
-                              </svg></div>
-                          </div>
-                          <div class="uui-text-size-medium-10">Self Hosted</div>
-                        </div>
                       </div>
                     </div>
                     <a href="/docs/en/self-host/" target="_blank" class="uui-button-15 w-inline-block">
@@ -392,7 +383,7 @@ label {
                   <div class="uui-pricing08_content">
                     <div class="uui-pricing08_content-top">
                       <div class="uui-text-align-center-5">
-                        <h2 class="uui-heading-xxsmall-2">Personal plan</h2>
+                        <h2 class="uui-heading-xxsmall-2">Personal self-hosting plan</h2>
                         <div class="uui-pricing08_price">$9.90<span class="uui-pricing08_price-text">/month</span></div>
                         <div class="uui-text-size-medium-10">billed annually</div>
                       </div>
@@ -424,7 +415,7 @@ label {
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
                               </svg></div>
                           </div>
-                          <div class="uui-text-size-medium-10">100 managed devices
+                          <div class="uui-text-size-medium-10">100 managed and unattended devices
                             <div class="tooltip">?<span class="tooltiptext">The maximum number of
                                 devices which can be assigned to licensed users, strategies, address book. Pro features are
                                 applied to managed devices only</span></div>
@@ -495,9 +486,17 @@ label {
                         </div>
                       </div>
                     </div>
-                    <a href="https://rustdesk.com/api/lic/stripe/checkout?type=Personal" target="_blank" class="uui-button-15 w-inline-block">
-                      <div>Buy now</div>
-                    </a>
+					<a href="javascript:void(0);" onclick="showConfirmation('https://rustdesk.com/api/lic/stripe/checkout?type=Personal')" class="uui-button-15 w-inline-block">
+					<div>Buy now</div>
+					</a>
+					<script>
+						function showConfirmation(redirectUrl) {
+						const userConfirmed = confirm("Do you want to proceed to the purchase page?");
+						if (userConfirmed) {
+						window.location.href = redirectUrl;
+							}
+						}
+					</script>
                   </div>
                 </div>
                 <div class="uui-pricing08_popular-plan">
@@ -507,7 +506,7 @@ label {
                   <div class="uui-pricing08_content">
                     <div class="uui-pricing08_content-top">
                       <div class="uui-text-align-center-5">
-                        <h2 class="uui-heading-xxsmall-2">Business plan</h2>
+                        <h2 class="uui-heading-xxsmall-2">Business self-hosting plan</h2>
                         <div class="uui-pricing08_price">$19.90<span class="uui-pricing08_price-text">/month</span></div>
                         <div class="uui-text-size-medium-10">billed annually</div>
                       </div>
@@ -528,7 +527,7 @@ label {
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
                               </svg></div>
                           </div>
-                          <div class="uui-text-size-medium-10">500 managed devices</div>
+                          <div class="uui-text-size-medium-10">500 managed and unattended devices</div>
                         </div>
                         <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c877d3-47ad0af8" class="uui-pricing08_feature">
                           <div class="uui-pricing08_icon-wrapper">
@@ -568,9 +567,17 @@ label {
                         </div>
                       </div>
                     </div>
-                    <a href="https://rustdesk.com/api/lic/stripe/checkout?type=Business" target="_blank" class="uui-button-15 w-inline-block">
-                      <div>Buy now</div>
-                    </a>
+					<a href="javascript:void(0);" onclick="showConfirmation('https://rustdesk.com/api/lic/stripe/checkout?type=Business')" class="uui-button-15 w-inline-block">
+					<div>Buy now</div>
+					</a>
+					<script>
+						function showConfirmation(redirectUrl) {
+						const userConfirmed = confirm("Do you want to proceed to the purchase page?");
+						if (userConfirmed) {
+						window.location.href = redirectUrl;
+							}
+						}
+					</script>
                   </div>
                 </div>
               </div>
