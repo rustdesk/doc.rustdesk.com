@@ -8,13 +8,13 @@ weight: 7
 ### Anforderungen
 Sie müssen Docker/Podman installiert haben, um einen RustDesk-Server als Docker-Container zu betreiben. Im Zweifelsfall installieren Sie Docker mit dieser [Anleitung](https://docs.docker.com/engine/install), um sicherzustellen, dass es auf dem neuesten Stand ist!
 
-By default, `hbbs` listens on 21115 (TCP) and 21116 (TCP/UDP), 21118 (TCP), and `hbbr` listens on 21117 (TCP), 21119 (TCP). Be sure to open these ports in the firewall. **Please note that 21116 should be enabled both for TCP and UDP**. 21115 is used for the NAT type test, 21116/UDP is used for the ID registration and heartbeat service, 21116/TCP is used for TCP hole punching and connection service, 21117 is used for the Relay services, and 21118 and 21119 are used to support web clients. *If you do not need web client (21118, 21119) support, the corresponding ports can be disabled.*
+Standardmäßig lauscht `hbbs` auf 21115 (TCP), 21116 (TCP/UDP) und 21118 (TCP), `hbbr` lauscht auf 21117 (TCP) und 21119 (TCP). Diese Ports müssen in der Firewall geöffnet sein. **Bitte beachten Sie, dass 21116 sowohl für TCP als auch für UDP aktiviert sein muss.** 21115 wird für den NAT-Typ-Test verwendet, 21116/UDP wird für die ID-Registrierung und den Heartbeat-Dienst verwendet, 21116/TCP wird für das TCP-Hole-Punching und den Verbindungsdienst verwendet, 21117 wird für die Relay-Dienste verwendet und 21118 sowie 21119 werden zur Unterstützung von Webclients verwendet. *Wenn Sie die Webclient-Unterstützung (21118, 21119) nicht benötigen, können die entsprechenden Ports deaktiviert werden.*
 
 - TCP (**21115, 21116, 21117, 21118, 21119**)
 - UDP (**21116**)
 
 ### Docker-Beispiele
-```bash
+```sh
 sudo docker image pull rustdesk/rustdesk-server
 sudo docker run --name hbbs -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
 sudo docker run --name hbbr -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr
