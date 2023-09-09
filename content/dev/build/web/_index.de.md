@@ -15,7 +15,7 @@ cd flutter/web/js
 
 # Zuerst protoc installieren, siehe https://google.github.io/proto-lens/installing-protoc.html
 npm install ts-proto
-# Funktioniert nur mit vite <= 2.8, siehe https://github.com/vitejs/vite/blob/main/docs/guide/build.md#chunking-strategy
+# Funktioniert nur mit vite ≤ 2.8, siehe https://github.com/vitejs/vite/blob/main/docs/guide/build.md#chunking-strategy
 npm install vite@2.8
 
 # Für die Erstellung von yarn erforderlich
@@ -57,7 +57,7 @@ Um die Erstellung auf HTTPS zu konfigurieren, empfehlen wir, dieser [Anleitung](
 ## Mit Docker erstellen
 
 Führen Sie die folgenden Schritte unter Linux oder Mac aus:
-- Beginnen Sie mit der Installation von flutter für [Linux](https://docs.flutter.dev/get-started/install/linux#install-flutter-manually) oder [macOS](https://docs.flutter.dev/get-started/install/macos)
+- Beginnen Sie mit der Installation von flutter für [Linux](https://docs.flutter.dev/get-started/install/linux#install-flutter-manually) oder [macOS](https://docs.flutter.dev/get-started/install/macos).
 - Flutter-App lokal einrichten:
 
 ```sh
@@ -68,7 +68,7 @@ cd flutter/web/js
 
 # Zuerst protoc installieren, siehe https://google.github.io/proto-lens/installing-protoc.html
 npm install ts-proto
-# Funktioniert nur mit vite <= 2.8, siehe https://github.com/vitejs/vite/blob/main/docs/guide/build.md#chunking-strategy
+# Funktioniert nur mit vite ≤ 2.8, siehe https://github.com/vitejs/vite/blob/main/docs/guide/build.md#chunking-strategy
 npm install vite@2.8
 
 # Für die Erstellung von yarn erforderlich
@@ -122,7 +122,7 @@ RUN ["chmod", "+x", "/app/server/server.sh"]
 ENTRYPOINT [ "/app/server/server.sh"]
 ```
 
-- Legen Sie den Ordner `server` unter `flutter` an
+- Legen Sie den Ordner `server` unter `flutter` an.
 - Erstellen Sie eine Datei `server.sh` im Ordner `flutter/server` mit folgendem Inhalt:
 
 ```sh
@@ -155,7 +155,7 @@ docker build -t rustdesk-web-client .
 docker run -p 5000:5000 rustdesk-web-client
 ```
 
-- Öffnen Sie Ihren Browser und gehen Sie zu `localhost:5000`, um die Webanwendung zu sehen
+- Öffnen Sie Ihren Browser und gehen Sie zu `localhost:5000`, um die Webanwendung zu sehen.
 
 ### RustDesk-Webclient mit vorhandenem Docker-Image
 
@@ -173,4 +173,4 @@ docker pull keyurbhole/flutter_web_desk
 docker run -p 5000:5000 keyurbhole/flutter_web_desk
 ```
 
-- Öffnen Sie Ihren Browser und gehen Sie zu `localhost:5000`, um die Webanwendung zu sehen
+- Öffnen Sie Ihren Browser und gehen Sie zu `localhost:5000`, um die Webanwendung zu sehen.
