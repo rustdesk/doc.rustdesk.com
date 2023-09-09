@@ -24,7 +24,7 @@ Bitte laden Sie [NSSM](https://nssm.cc/release/nssm-2.24.zip) herunter, extrahie
 Architektur für Ihr Windows-System (für x86 verwenden Sie den Inhalt des win32-Ordners, für x64 den
 Inhalt des win64-Ordners). Es ist auch sinnvoll, die Binärdatei von NSSM nach `Program Files\NSSM` zu verschieben.
 Wenn NSSM einmal als Dienst gestartet wurde, kann es nicht mehr aus dem Ordner verschoben werden, in dem es abgelegt wurde.
-Daher ist es am besten, sie im Ordner "Program Files" Ihres Installationslaufwerks (in der Regel das Laufwerk C) zu verstauen.
+Daher ist es am besten, sie im Ordner `Program Files` Ihres Installationslaufwerks (in der Regel das Laufwerk C:) zu verstauen.
 Es ist auch ratsam, den Pfad (z. B. `C:\Program Files\NSSM`) in die Pfadvariable aufzunehmen.
 
 ### Prüfen, ob NSSM korrekt installiert ist
@@ -37,7 +37,7 @@ In diesem Beispiel wird `C:\Program Files\NSSM` verwendet.
 Öffnen Sie die Eingabeaufforderung und führen Sie `nssm` aus. Wenn Sie eine Hilfeseite sehen, können Sie mit dem nächsten Schritt fortfahren.
 
 ### hbbr und hbbs ausführen
-Laden Sie die Windows-Version von [Serverprogramm](https://github.com/rustdesk/rustdesk-server/releases) herunter.
+Laden Sie die Windows-Version von [RustDesk Server](https://github.com/rustdesk/rustdesk-server/releases) herunter.
 Entpacken Sie das Programm nach `C:\Program Files\RustDesk Server` oder wo immer Sie wollen. Stellen Sie nur sicher,
 dass sich der Ort nach der Installation des Dienstes nicht ändert. Gehen Sie nun zurück zur Eingabeaufforderung.
 
