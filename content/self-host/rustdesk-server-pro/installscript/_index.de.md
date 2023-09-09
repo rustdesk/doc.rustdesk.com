@@ -21,7 +21,7 @@ Was es bewirkt:
 - Installiert die ausführbaren Dateien in /usr/bin
 - Lädt RustDesk Pro Services herunter und entpackt sie in den oben genannten Ordner
 - Erstellt systemd-Dienste für hbbs und hbbr (Die Dienstnamen lauten rustdesk-hbbs.service und rustdesk-hbbr.service)
-- Wenn Sie Domain gewählt haben, werden Nginx und Certbot installiert, sodass die API auf Port 443 (https) verfügbar ist und ein SSL-Zertifikat über Port 80 abgerufen werden kann, das automatisch erneuert wird
+- Wenn Sie Domain gewählt haben, werden Nginx und Certbot installiert, sodass die API auf Port 443 (HTTPS) verfügbar ist und ein SSL-Zertifikat über Port 80 abgerufen werden kann, das automatisch erneuert wird
 
 ## Upgrade
 
@@ -49,7 +49,7 @@ Was es bewirkt:
 - Löscht /var/log/rustdesk und erstellt /var/log/rustdesk-server
 - Lädt RustDesk Pro Services herunter und entpackt sie in den oben genannten Ordner
 - Erstellt systemd-Dienste für hbbs und hbbr (Die Dienstnamen lauten rustdesk-hbbs.service und rustdesk-hbbr.service)
-- Wenn Sie Domain gewählt haben, werden Nginx und Certbot installiert, sodass die API auf Port 443 (https) verfügbar ist und ein SSL-Zertifikat über Port 80 abgerufen werden kann, das automatisch erneuert wird
+- Wenn Sie Domain gewählt haben, werden Nginx und Certbot installiert, sodass die API auf Port 443 (HTTPS) verfügbar ist und ein SSL-Zertifikat über Port 80 abgerufen werden kann, das automatisch erneuert wird
 
 ## Sicherung/Wiederherstellung
 
@@ -69,7 +69,7 @@ Oder führen Sie das Sicherungsskript `./backup.sh --schedule` aus. Dadurch wird
 Zur Wiederherstellung gehen Sie wie folgt vor:
 ```
 wget https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/restore.sh
-chmod +x
+chmod +x restore.sh
 ```
 Kopieren Sie die Sicherungsdatei in denselben Ordner wie die Datei restore.sh und führen Sie dann `./restore.sh` aus.
 
