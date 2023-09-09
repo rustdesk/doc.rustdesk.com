@@ -24,7 +24,7 @@ Im `Mausmodus` können Sie die `Rechte Maus` des entfernten Geräts mit einem `Z
 
 ### Dateiübertragung (Android)
 
-> Benötigt RustDesk 1.1.9+
+> Benötigt RustDesk ≥ 1.1.9
 
 Wählen Sie in der Geräteliste auf der Startseite das Gerät aus.
 
@@ -102,12 +102,12 @@ Das obige * steht für spezielle Berechtigungen. Um solche Berechtigungen zu erh
 | ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
 #### **Sondergenehmigung beantragen - Mauseingabe**
-| Schritt 1 Suchen Sie „Installierte Dienste“ | Schritt 2 Starten Sie RustDesk Input |
+| Schritt 1: Suchen Sie „Installierte Dienste“ | Schritt 2: Starten Sie RustDesk Input |
 | --- | --- |
 | ![](/docs/en/client/android/images/get_input1_en.jpg?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
 
 {{% notice note %}}
-Die Systemeinstellungsseite der verschiedenen Anbieter kann unterschiedlich sein, bitte passen Sie sie entsprechend Ihrer Systemseite an
+Die Systemeinstellungsseite der verschiedenen Anbieter kann unterschiedlich sein, bitte passen Sie sie entsprechend Ihrer Systemseite an.
 {{% /notice %}}
 
 **Tastenkombinationen für die Fernbedienung der Maus:**
