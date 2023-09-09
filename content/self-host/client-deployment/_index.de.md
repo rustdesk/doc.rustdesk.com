@@ -90,7 +90,7 @@ Write-Output "..............................................."
 ### Windows batch/cmd
 
 ```bat
-REM Assign the value random password to the password variable
+REM Der Variablen password den Wert random password zuweisen
 setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 set alfanum=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 
@@ -100,7 +100,7 @@ SET /A rnd_num=!RANDOM! * 62 / 32768 + 1
 for /F %%c in ('echo %%alfanum:~!rnd_num!^,1%%') do set pwd=!pwd!%%c
 )
 
-REM Get your config string from your Web portal and Fill Below
+REM Holen Sie sich Ihren Konfigurationsstring von Ihrem Webportal und füllen Sie ihn wie folgt aus
 set rustdesk_cfg="configstring"
 
 REM ############################## Bitte nicht unterhalb dieser Zeile bearbeiten ###############################
