@@ -12,7 +12,7 @@ Freundlicherweise aufgeschrieben von [@I-Am-Skoot](https://github.com/I-Am-Skoot
 - Firewall Tool
 
 #### Voraussetzungen
-Bei diesem Beispiel handelt es sich um eine All-in-One-Lösung, die nur die RustDesk-Dienste hostet.  Dies kann zu einer flexibleren Lösung erweitert werden, indem der NPM in eine eigene Docker Compose aufgeteilt wird.
+Bei diesem Beispiel handelt es sich um eine All-in-One-Lösung, die nur die RustDesk-Dienste hostet. Dies kann zu einer flexibleren Lösung erweitert werden, indem der NPM in eine eigene Docker Compose aufgeteilt wird.
 - DMZ-Netzwerk: 192.168.1.0/24
   - NPM (extern): 192.168.1.250
 - LAN-Netzwerk: 10.0.0.0/24
@@ -47,18 +47,19 @@ Für jede Anwendung, die Sie mit dem NPM (Nginx Proxy Manager) verwenden, sollte
 
 ### Firewall einrichten
 Konfigurieren Sie die folgenden Portweiterleitungen/NAT-Ports von Ihrer öffentlichen IP-Adresse zum NPM-Server.
- - 21114 => 8080 TCP
- - 21115 => 21115 TCP
- - 21116 => 21116 TCP/UDP
- - 21117 => 21117 TCP
- - 21118 => 21118 TCP
- - 21119 => 21119 TCP
- - 443 => 443 TCP  # Wenn Sie SSL verwenden möchten
+- 21114 → 8080 TCP
+- 21115 → 21115 TCP
+- 21116 → 21116 TCP/UDP
+- 21117 → 21117 TCP
+- 21118 → 21118 TCP
+- 21119 → 21119 TCP
+- 443 → 443 TCP  # Wenn Sie SSL verwenden möchten
 
 ### Docker Compose einrichten
 Dadurch wird ein Container mit NPM und den richtigen Netzwerken gestartet.
 
-Docker-Compose.yaml
+Kopieren Sie den folgenden Text in die Datei docker-compose.yaml.
+
 ```
 version: '3.5'
 services:
@@ -108,20 +109,20 @@ networks:
 
 ### NPM einrichten
 Stream Hosts für die folgenden Ports konfigurieren:
-- 21115 => 192.168.254.2:21115 TCP
-- 21116 => 192.168.254.2:21116 TCP / UDP
-- 21117 => 192.168.254.3:21117 TCP
-- 21118 => 192.168.254.2:21118 TCP
-- 21119 => 192.168.254.3:21119 TCP
-- 80 => 127.0.0.1:8080 TCP # erfasst den lokalen Verkehr
+- 21115 → 192.168.254.2:21115 TCP
+- 21116 → 192.168.254.2:21116 TCP / UDP
+- 21117 → 192.168.254.3:21117 TCP
+- 21118 → 192.168.254.2:21118 TCP
+- 21119 → 192.168.254.3:21119 TCP
+- 80 → 127.0.0.1:8080 TCP # erfasst den lokalen Verkehr
 
 Proxy-Host konfigurieren:
-  - Domainname: rustdesk.example.com
-  - Schema: http
-  - Weiterleitung des Hostnamens / IP: 192.168.254.2
-  - Weiterleitungsport: 21114
-  - Verbreitete Exploits blockieren: überprüft
-  - Optional: SSL konfigurieren **(NICHT ERFORDERLICH - Der Client muss in der Lage sein, ohne SSL zu kommunizieren.)**
+- Domainname: rustdesk.example.com
+- Schema: http
+- Weiterleitung des Hostnamens / IP: 192.168.254.2
+- Weiterleitungsport: 21114
+- Verbreitete Exploits blockieren: überprüft
+- Optional: SSL konfigurieren **(NICHT ERFORDERLICH - Der Client muss in der Lage sein, ohne SSL zu kommunizieren.)**
 
 ### RustDesk Server einrichten
 Verbinden Sie sich mit der Server-Schnittstelle http://rustdesk.example.com oder https://rustdesk.example.com, wenn Sie SSL für die Web-Schnittstelle konfiguriert haben.

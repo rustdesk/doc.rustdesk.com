@@ -5,7 +5,7 @@ weight: 3
 
 ### Installation
 
-Öffnen Sie die .dmg-Datei und ziehen Sie `RustDesk` zu `Applications`, wie unten dargestellt.
+Öffnen Sie die DMG-Datei und ziehen Sie `RustDesk` zu `Applications`, wie unten dargestellt.
 
 ![](/docs/en/client/mac/images/dmg.png)
 

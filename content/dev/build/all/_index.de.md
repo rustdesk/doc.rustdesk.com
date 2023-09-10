@@ -19,7 +19,7 @@ Sie müssen dies nur tun, wenn Sie den Standardserver und den öffentlichen Schl
 Die Server-URL und der Schlüssel, die Sie verwenden, sind für andere Benutzer auf GitHub verborgen, aber sie können Ihren Client herunterladen und sich mit Ihrem Server verbinden. Wenn Sie ein vollständig privates Repository benötigen, können Sie das RustDesk-Client-Repository mit https://github.com/new/import importieren. **Wenn Sie ein privates Repository verwenden, können Sie nur eine begrenzte Anzahl von Paketen pro Monat erstellen. Wenn Sie mehr Pakete benötigen, müssen Sie ein kostenpflichtiges GitHub-Konto einrichten.**
 {{% /notice %}}
 
-Gehen Sie auf Ihrem gerade erstellten Fork zu "Settings -> Secrets and Variables -> Actions".
+Gehen Sie auf Ihrem gerade erstellten Fork zu "Settings → Secrets and Variables → Actions".
 
 Klicken Sie auf "New repository secret", bei "Name" geben Sie RENDEZVOUS_SERVER ein, bei "Secret" geben Sie den Namen bzw. die IP-Adresse Ihres Servers ein.
 
@@ -31,7 +31,7 @@ Klicken Sie auf "Add secret".
 
 ## Workflows aktivieren
 
-Gehen Sie in Ihrem gerade erstellten Fork zu "Settings -> Actions -> General".
+Gehen Sie in Ihrem gerade erstellten Fork zu "Settings → Actions → General".
 
 Wählen Sie rechts "Allow all actions and reusable workflows".
 
@@ -43,7 +43,7 @@ Schließlich können Sie auf "Run workflow" klicken, um die RustDesk-Clients fü
 
 ## Upload-Berechtigungen für Workflows aktivieren
 
-Gehen Sie in Ihrem gerade erstellten Fork zu "Settings -> Actions -> General".
+Gehen Sie in Ihrem gerade erstellten Fork zu "Settings → Actions → General".
 
 Scrollen Sie nach unten zum Abschnitt "Workflow permissions" und aktivieren Sie "Read and write permissions".
 

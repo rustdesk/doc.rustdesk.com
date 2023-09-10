@@ -21,7 +21,7 @@ Laden Sie [rustup-init.exe](https://static.rust-lang.org/rustup/dist/x86_64-pc-w
 ### vcpkg
 
 Gehen Sie in den Ordner, in den Sie `vcpkg` klonen wollen, und verwenden Sie [Git Bash](https://git-scm.com/download/win), um die folgenden Befehle auszuführen: Laden Sie `vcpkg` herunter, installieren Sie die 64-Bit-Version von `libvpx`, `libyuv` und `opus`.
-Wenn Sie `git` nicht installiert haben, holen Sie sich es [hier](https://git-scm.com/download/win).
+Wenn Sie `Git` nicht installiert haben, holen Sie sich es [hier](https://git-scm.com/download/win).
 
 ```sh
 git clone https://github.com/microsoft/vcpkg

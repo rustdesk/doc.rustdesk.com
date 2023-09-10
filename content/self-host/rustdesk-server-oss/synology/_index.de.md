@@ -24,12 +24,12 @@ Diese Anleitung basiert auf dem aktuellen DSM v6 und v7.
 Wie oben erwähnt, doppelklicken Sie auf das RustDesk-Server-Image, um einen neuen Container zu erstellen, und geben Sie ihm den Namen `hbbs`.
 ![](/docs/en/self-host/rustdesk-server-oss/synology/images/hbbs.png)
 
-Klicken Sie auf "Erweiterte Einstellungen".
+Klicken Sie auf `Erweiterte Einstellungen`.
 
 - Automatischen Neustart aktivieren
 ![](/docs/en/self-host/rustdesk-server-oss/synology/images/auto-restart.png)
 
-- Aktivieren Sie "Use the same network as Docker Host". Mehr Infos über das Hostnetz siehe [hier](/docs/de/self-host/rustdesk-server-oss/docker/#net-host)
+- Aktivieren Sie `Use the same network as Docker Host`. Mehr Infos über das Hostnetz siehe [hier](/docs/de/self-host/rustdesk-server-oss/docker/#net-host).
 ![](/docs/en/self-host/rustdesk-server-oss/synology/images/host-net.png)
 
 - Binden Sie ein Host-Verzeichnis (z. B. `/home/rustdesk/`) als `/root` ein, hbbs wird einige Dateien (Datenbank- und `key`-Dateien) in diesem Verzeichnis erzeugen, die über Neustarts hinweg erhalten bleiben müssen.
@@ -41,7 +41,7 @@ Klicken Sie auf "Erweiterte Einstellungen".
 {{% notice note %}}
 Das Betriebssystem von Synology basiert auf Debian, daher funktioniert das Hostnetz (--net=host) einwandfrei, wir müssen keine Ports mit der Option `-p` zuordnen.
 
-`192.168.16.98` ist eine interne IP, die hier nur zu Demonstrationszwecken verwendet wird. Bitte setzen Sie sie bei der Bereitstellung auf eine öffentliche IP. Oder Sie verwenden Ihre DDNS-Adresse, wenn Sie eine in "Systemsteuerung -> Verbindungen -> DDNS" konfiguriert haben. Vergessen Sie nicht, die Ports auf Ihrem Router und Ihrer Synology-Firewall zu öffnen, wenn diese in "Systemsteuerung -> Verbindungen -> Firewall" aktiviert ist!
+`192.168.16.98` ist eine interne IP, die hier nur zu Demonstrationszwecken verwendet wird. Bitte setzen Sie sie bei der Bereitstellung auf eine öffentliche IP. Oder Sie verwenden Ihre DDNS-Adresse, wenn Sie eine in "Systemsteuerung → Verbindungen → DDNS" konfiguriert haben. Vergessen Sie nicht, die Ports auf Ihrem Router und Ihrer Synology-Firewall zu öffnen, wenn diese in "Systemsteuerung → Verbindungen → Firewall" aktiviert ist!
 
 {{% /notice %}}
 

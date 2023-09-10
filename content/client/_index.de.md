@@ -29,7 +29,7 @@ Zur stillen Installation rufen Sie die Installations-EXE mit `--silent-install` 
 
 #### macOS
 
-Laden Sie die DMG-Datei von GitHub herunter. Weitere Informationen finden Sie auf der macOS-Seite.
+Laden Sie die DMG-Datei von GitHub herunter. Weitere Informationen finden Sie auf der [macOS-Seite](/docs/de/client/mac/).
 
 Öffnen Sie die DMG-Datei und ziehen Sie `RustDesk` auf `Applications`.
 
@@ -41,14 +41,14 @@ Aktivieren Sie die angeforderten Berechtigungen und folgen Sie den Aufforderunge
 
 Bitte beachten Sie die unten stehenden Anweisungen zur Installation für die verschiedenen Linux-Varianten, alle Installationsprogramme befinden sich auf GitHub.
 
-#### Debian-Ableger (>= 16)
+#### Debian-Ableger (≥ 16)
 
 ```sh
 # Bitte ignorieren Sie den falschen Bericht zur Festplattennutzung
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
-#### CentOS/Fedora (>= 18)
+#### CentOS/Fedora (≥ 18)
 
 ```sh
 sudo yum localinstall ./rustdesk-<version>.rpm
@@ -60,20 +60,20 @@ sudo yum localinstall ./rustdesk-<version>.rpm
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 ```
 
-#### openSUSE (>= Leap 15.0)
+#### openSUSE (≥ Leap 15.0)
 
 ```sh
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 #### Android
-Installieren Sie die APK von unserem GitHub. Weitere Informationen finden Sie auf der Android-Seite.
+Installieren Sie die APK von unserem GitHub. Weitere Informationen finden Sie auf der [Android-Seite](/docs/de/client/android/).
 
 ### Benutzung
 Nach der Installation (oder der Ausführung als temporäre Datei) stellt RustDesk eine Verbindung zu den öffentlichen Servern her. Am unteren Rand erscheint die Meldung (1) "Bereit, für eine schnellere Verbindung richten Sie bitte Ihren eigenen Server ein.". Oben links sehen Sie Ihre (2) ID, Ihr (3) Einmalpasswort und rechts ein (4) Feld, mit dem Sie sich mit einem anderen Computer verbinden können, wenn Sie dessen ID kennen.
 
 ![image](/docs/en/client/images/client.png)
 
-Um auf die Einstellungen zuzugreifen, klicken Sie auf die (5) 3 Punkte rechts neben ID.
+Um auf die Einstellungen zuzugreifen, klicken Sie auf die (5) Menü-Schaltfläche [ &#8942; ] rechts neben ID.
 
 Unter Einstellungen finden Sie:
 - Allgemein - Vermittlungsdienst, Farbgebung, Hardware-Codec, Audioeingabegerät, Aufnahme und Sprache
@@ -87,8 +87,8 @@ Unter Einstellungen finden Sie:
 Es gibt eine Reihe von Möglichkeiten, RustDesk zu konfigurieren.
 
 Am einfachsten ist es, mit RustDesk Server Pro eine verschlüsselte Konfigurationszeichenkette zu erhalten, die in Verbindung mit `--config` verwendet werden kann, um Einstellungen zu importieren. Um dies zu tun:
-1. Öffnen Sie die Befehlszeile des Betriebssystems, in dem Sie RustDesk installiert haben, d. h. C:\Program Files\RustDesk unter Windows, /usr/bin unter Linux.
-2. Verwenden Sie den Befehl `rustdesk.exe --config ihre-verschlüsselte-zeichenkette`, z. B. `rustdesk.exe --config 9JSPSvJzNrBDasJjNSdXOVVBlERDlleoNWZzIHcOJiOikXZr8mcw5yazVGZ0NXdy5CdyciojI0N3boJye`
+1. Öffnen Sie die Befehlszeile des Betriebssystems, in dem Sie RustDesk installiert haben, d. h. `C:\Program Files\RustDesk` unter Windows, `/usr/bin` unter Linux.
+2. Verwenden Sie den Befehl `rustdesk.exe --config ihre-verschlüsselte-zeichenkette`, z. B. `rustdesk.exe --config 9JSPSvJzNrBDasJjNSdXOVVBlERDlleoNWZzIHcOJiOikXZr8mcw5yazVGZ0NXdy5CdyciojI0N3boJye`.
 
 Sie können einen Client manuell einrichten. Um dies zu tun:
 1. Klicken Sie auf Einstellungen.
