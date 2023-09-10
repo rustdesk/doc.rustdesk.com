@@ -17,6 +17,19 @@ You will be required to enter license in the web console, or change license late
  | -- | -- |
  | ![](/docs/en/self-host/rustdesk-server-pro/license/images/set.png) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/change.png) |
 
+## Renew/upgrade license
+
+You can find renew/upgrade as below (please refresh browser if you can not see)
+
+ | License page with renew/upgrade actions | upgrade window |
+ | -- | -- |
+ | ![](/docs/en/self-host/rustdesk-server-pro/license/images/renew.jpg) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/upgrade.png) |
+
+After payment, you need to go ahead to web console to make the license taking effective manually as below. Just click on `edit`, then `Ok`, no need to edit anything, because your license key remains the same.
+
+![](/docs/en/self-host/rustdesk-server-pro/license/images/updatelic.jpg)
+
+
 ## Invoices and Migration
 
 The license can be only used on one machine (for hbbs only, hbbr does not require license), if you want to migrate to the other machine, or download invoices, please go to [https://rustdesk.com/self-host/account/](https://rustdesk.com/self-host/account/). Log in with the email address used for Stripe checkout, unbind the old machine you want to migrate from as below, when you set the license in the new servers web console it will assign the license and register automatically in the console.
