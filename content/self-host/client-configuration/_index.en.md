@@ -45,7 +45,7 @@ The easiest way to setup automatically is using deployment scripts found [here](
 
 You can fix the Password is required and use a reverse Base64 string in the format `{"host":"HOSTADDRESS","key":"HOSTKEY","api":"http://HOSTADDRESS:21114"}` to automatically configure the clients, this is available automatically with RustDesk Server Pro via the console.
 
-You can also use the steps from [above](/docs/en/self-host/client-configuration/#setup-using-import-or-export) to export the string then reverse it using [this site](https://string-functions.com/reverse.aspx).
+You can also use the steps from [above](/docs/en/self-host/client-configuration/#setup-using-import-or-export) to export the string, remove any `=` at the start or end of the string.
 
 #### Put config in rustdesk.exe file name (Windows only)
 

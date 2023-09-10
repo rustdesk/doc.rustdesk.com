@@ -67,16 +67,9 @@ while ($arrService.Status -ne 'Running')
 cd $env:ProgramFiles\RustDesk\
 $rustdesk_id = (.\RustDesk.exe --get-id | out-host)
 
-net stop rustdesk > null
 .\RustDesk.exe --config $rustdesk_cfg
 
-$ProcessActive = Get-Process rustdesk -ErrorAction SilentlyContinue
-if($ProcessActive -ne $null)
-{
-stop-process -ProcessName rustdesk -Force
-}
-
-Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" "--password $rustdesk_pw" -wait
+.RustDesk.exe--password $rustdesk_pw
 
 Write-Output "..............................................."
 # Show the value of the ID Variable
@@ -90,14 +83,16 @@ Write-Output "..............................................."
 ### Windows batch/cmd
 
 ```bat
+@echo off
+
 REM Assign the value random password to the password variable
 setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 set alfanum=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 
 set rustdesk_pw=
-FOR /L %%b IN (0, 1, 16) DO (
-SET /A rnd_num=!RANDOM! * 62 / 32768 + 1
-for /F %%c in ('echo %%alfanum:~!rnd_num!^,1%%') do set pwd=!pwd!%%c
+FOR /L %%b IN (1, 1, 12) DO (
+    SET /A rnd_num=!RANDOM! %% 62
+    for %%c in (!rnd_num!) do set rustdesk_pw=!rustdesk_pw!!alfanum:~%%c,1!
 )
 
 REM Get your config string from your Web portal and Fill Below
@@ -111,27 +106,22 @@ cd C:\Temp\
 curl -L "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -o rustdesk.exe
 
 rustdesk.exe --silent-install
-
-$ServiceName = 'RustDesk'
-$arrService = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
+timeout /t 20
 
 cd "C:\Program Files\RustDesk\"
-for /f "delims=" %i IN ('rustdesk.exe --get-id ^| more') DO set rustdesk_id=%i
+for /f "delims=" %%i IN ('rustdesk.exe --get-id ^| more') DO set rustdesk_id=%%i
 
-net stop rustdesk > null
 RustDesk.exe --config %rustdesk_cfg%
-
-net start rustdesk > null
 
 RustDesk.exe --password %rustdesk_pw%
 
-echo "..............................................."
+echo ...............................................
 REM Show the value of the ID Variable
-echo "RustDesk ID: %rustdesk_id%"
+echo RustDesk ID: %rustdesk_id%
 
 REM Show the value of the Password Variable
-echo "Password: %rustdesk_pw%"
-echo "..............................................."
+echo Password: %rustdesk_pw%
+echo ...............................................
 ```
 
 ### macOS Bash
@@ -291,13 +281,10 @@ else
     exit 1
 fi
 
-systemctl stop rustdesk
-
 # Run the rustdesk command with --get-id and store the output in the rustdesk_id variable
 rustdesk_id=$(rustdesk --get-id)
 
 # Apply new password to RustDesk
-systemctl start rustdesk
 rustdesk --password $rustdesk_pw &> /dev/null
 
 rustdesk --config $rustdesk_cfg
