@@ -3,7 +3,7 @@ title: Configure Relay Servers
 weight: 17
 ---
 
-# RustDesk Pro - Install Additional Relay Servers with Geo Location using docker
+## RustDesk Pro - Install Additional Relay Servers with Geo Location using docker
 
 You can have several relay servers running across the globe and leverage GeoLocation to use the closest relay server, giving you a faster experience when connecting to remote computers.
 
