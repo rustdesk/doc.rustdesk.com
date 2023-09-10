@@ -146,6 +146,68 @@ label {
   visibility: visible;
   opacity: 1;
 }
+
+input[type="number"] {
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 100px;
+			font-size: 16px;
+			margin-right: 10px;
+		}
+
+.slider {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 15px;
+	border-radius: 5px;
+	background: #ddd;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+
+.slider:hover {
+	opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #024eff;
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #024eff;
+	cursor: pointer;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-bottom: 20px;
+}
+
+label {
+	margin-right: 10px;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+@media screen and (max-width: 991px) {
+.hide-on-mobile {
+    display: none;
+}
+}
 </style>
 </head>
 <body>
@@ -488,7 +550,7 @@ label {
                       </div>
                     </div>
 					<button id="buyNowButton1" class="uui-button-3 w-inline-block">
-						<div>Buy now</div>
+						<div>购买</div>
 					</button>
                   </div>
                 </div>
@@ -561,8 +623,72 @@ label {
                       </div>
                     </div>
 					<button id="buyNowButton2" class="uui-button-3 w-inline-block">
-						<div>Buy now</div>
+						<div>购买</div>
 					</button>
+                    <a href="#custom" class="hide-on-mobile uui-button-15 w-inline-block">
+                      <div>自定义版本</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-layout-grid uui-pricing08_components">
+                <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c877ee-47ad0af8"></div>
+                <div class="uui-pricing08_plan">
+                  <a name="custom"></a>
+                  <div class="uui-text-align-center-5">
+                    <h2 class="uui-heading-xxsmall-2">自定义</h2>
+                    <div class="uui-pricing08_price">$<span id="cprice">19.90</span><span class="uui-pricing08_price-text">/月</span></div>
+                    <div class="uui-text-size-medium-10">按年付费，支付人民币</div>
+                  </div>
+                  <br>
+                  <br>
+                  <form>
+                    <label for="users">授权用户数目:</label>
+                    <input type="number" id="users" name="users" value="20" min="20" max="60" step="10"><br>
+                    <input type="range" id="usersSlider" class="slider" name="usersRange" value="20" min="20" max="60" step="10"><br>
+                
+                    <label for="devices">受管理设备数目:</label>
+                    <input type="number" id="devices" name="devices" value="500" min="500" max="1500" step="100"><br>
+                    <input type="range" id="devicesSlider" class="slider" name="devicesRange" value="500" min="500" max="1500" step="100">
+                  </form>
+                  <br>
+                  <script>
+                    function submit() {
+                      redirectUrl = "https://rustdesk.com/api/lic/stripe/checkout?currency=cny&type=Customized&users=" + document.getElementById("users").value + "&devices=" + document.getElementById("devices").value;
+                      gotoBuy(redirectUrl);
+                    }
+                    function calculatePrice() {
+                      var users = parseInt(document.getElementById("users").value);
+                      var devices = parseInt(document.getElementById("devices").value);
+                      var price =  19.9 * (1 + (users - 20) / 20 + (devices - 500) / 500);
+                      document.getElementById("cprice").innerText = price.toFixed(2);
+                    }
+                
+                    document.getElementById("users").oninput = function() {
+                      document.getElementById("usersSlider").value = this.value;
+                      calculatePrice();
+                    }
+                
+                    document.getElementById("devices").oninput = function() {
+                      document.getElementById("devicesSlider").value = this.value;
+                      calculatePrice();
+                    }
+                
+                    document.getElementById("usersSlider").oninput = function() {
+                      document.getElementById("users").value = this.value;
+                      calculatePrice();
+                    }
+                
+                    document.getElementById("devicesSlider").oninput = function() {
+                      document.getElementById("devices").value = this.value;
+                      calculatePrice();
+                    }
+                  </script>
+                  <div class="uui-pricing08_content">
+                    <a href="#" class="uui-button-15 w-inline-block" onClick="submit()">
+                      <div>购买</div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -696,7 +822,7 @@ window.addEventListener("load", function() {
 </script>
 <script src="../sweetalert2@11.7.27.js"></script>
 <script>
-    document.getElementById("buyNowButton1").addEventListener("click", function() {
+    function gotoBuy(redirectUrl) {
         Swal.fire({
             title: '请确认',
             text: '你是否要继续前往购买页面？请注意，你所购买的不是SaaS（软件即服务）订阅，而是一项自助托管解决方案的许可证。你需要将其部署在自己的服务器上。',
@@ -706,26 +832,16 @@ window.addEventListener("load", function() {
             cancelButtonText: '否',
         }).then((result) => {
             if (result.isConfirmed) {
-                const redirectUrl = 'https://rustdesk.com/api/lic/stripe/checkout?type=Personal&currency=cny';
                 window.open(redirectUrl, '_blank');
             }
         });
+    }
+    document.getElementById("buyNowButton1").addEventListener("click", function() {
+        gotoBuy('https://rustdesk.com/api/lic/stripe/checkout?type=Personal&currency=cny');
     });
 
     document.getElementById("buyNowButton2").addEventListener("click", function() {
-        Swal.fire({
-            title: '请确认',
-            text: '你是否要继续前往购买页面？请注意，你所购买的不是SaaS（软件即服务）订阅，而是一项自助托管解决方案的许可证。你需要将其部署在自己的服务器上。',
-            icon: 'question',
-            showCancelButton: true,
-            confirmButtonText: '是',
-            cancelButtonText: '否',
-        }).then((result) => {
-            if (result.isConfirmed) {
-                const redirectUrl = 'https://rustdesk.com/api/lic/stripe/checkout?type=Business&currency=cny';
-                window.open(redirectUrl, '_blank');
-            }
-        });
+        gotoBuy('https://rustdesk.com/api/lic/stripe/checkout?type=Business&currency=cny');
     });
 </script>
 </body>
