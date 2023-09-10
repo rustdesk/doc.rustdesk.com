@@ -69,12 +69,12 @@ To                         		 	 Action          From
 ```
 
 
-## Configure HBBS Pro for Geo Location
+## Configure hbbs Pro for Geo Location
 
 ### Register and Download the GeoLite2 City database file
 
 
-To use geo location, HBBS needs access to the MaxMind GeoLite2 City database. The database is free and you can register to download the file and get an API key.
+To use geo location, hbbs needs access to the MaxMind GeoLite2 City database. The database is free and you can register to download the file and get an API key.
 
 Start by creating an account (if you don’t have one) by going to the website https://www.maxmind.com/en/account/login
 Go to Download Databases and download the GeoLite2 City, choose the gzip file and you should have the mmdb when decompressing it.
