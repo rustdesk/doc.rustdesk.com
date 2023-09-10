@@ -69,7 +69,7 @@ $rustdesk_id = (.\RustDesk.exe --get-id | out-host)
 
 .\RustDesk.exe --config $rustdesk_cfg
 
-.RustDesk.exe--password $rustdesk_pw
+.\RustDesk.exe--password $rustdesk_pw
 
 Write-Output "..............................................."
 # Show the value of the ID Variable
