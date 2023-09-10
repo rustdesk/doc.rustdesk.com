@@ -301,6 +301,6 @@ else
 fi
 
 # Echo the value of the password variable
-echo "Password: $rustdesk_password"
+echo "Password: $rustdesk_pw"
 echo "..............................................."
 ```
