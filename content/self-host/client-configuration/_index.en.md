@@ -70,7 +70,7 @@ To sign in with RustDesk Server Pro, ensure your lcient is setup correctly, Clic
 ### Taking Control of other machines
 Before Taking Control when using with RustDesk Server Pro ensure you are logged in.
 
-After that you can enter the client ID and password of the machine you want to take control of.
+After that you can enter the client ID and password of the machine you want to take control of and click Connect
 
 ### Addressbook (RustDesk Server Pro)
 To add devices to your addressbook, after you have connected to a device they will be in your recent sessions, next to the device you can now click the 3 dots and add to your Addressbook, if you have saved the password and set permanent passwords on the client this will also be synced across devices you log in to to allow access from anywhere.
