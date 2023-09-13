@@ -57,7 +57,7 @@ To configure the build on HTTPS we would recommend following the instructions fr
 ## How to build with Docker
 
 Run below on Linux or Mac:
-- Begin by installing flutter for [Linux](https://docs.flutter.dev/get-started/install/linux#install-flutter-manually) or [macOS](https://docs.flutter.dev/get-started/install/macos)
+- Begin by installing flutter for [Linux](https://docs.flutter.dev/get-started/install/linux#install-flutter-manually) or [macOS](https://docs.flutter.dev/get-started/install/macos).
 - Setup the flutter app locally:
 
 ```sh
@@ -122,7 +122,7 @@ RUN ["chmod", "+x", "/app/server/server.sh"]
 ENTRYPOINT [ "/app/server/server.sh"]
 ```
 
-- Create `server` directory under `flutter`
+- Create `server` directory under `flutter`.
 - Create a `server.sh` file with the following content under `flutter/server` directory:
 
 ```sh
@@ -155,7 +155,7 @@ docker build -t rustdesk-web-client .
 docker run -p 5000:5000 rustdesk-web-client
 ```
 
-- Open your browser and go to `localhost:5000` to see the web app
+- Open your browser and go to `localhost:5000` to see the web app.
 
 ### RustDesk Web Client using existing Docker image
 
@@ -173,4 +173,4 @@ docker pull keyurbhole/flutter_web_desk
 docker run -p 5000:5000 keyurbhole/flutter_web_desk
 ```
 
-- Open your browser and go to `localhost:5000` to see the web app
+- Open your browser and go to `localhost:5000` to see the web app.
