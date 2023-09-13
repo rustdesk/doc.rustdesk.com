@@ -36,7 +36,7 @@ Click on above `Advanced Settings`.
 
 | Mount | Files generated in the host directory |
 | --- | --- |
-| ![](/docs/en/self-host/rustdesk-server-oss/synology/images/mount.png?width=500px) | ![](/docs/en/self-host/rustdesk-server-oss/synology/images/mounted-dir.png?width=300px) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/images/mount.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/images/mounted-dir.png) |
 
 - Set command
 {{% notice note %}}
@@ -60,12 +60,12 @@ Please repeat above `hbbs` steps, but name the container `hbbr` and command (for
 
 ### hbbr/hbbs containers
 
-![](/docs/en/self-host/rustdesk-server-oss/synology/images/containers.png?width=500px)
+![](/docs/en/self-host/rustdesk-server-oss/synology/images/containers.png)
 
 
 | Double click on container and check log | Double confirm hbbs/hbbr using host network |
 | --- | --- |
-| ![](/docs/en/self-host/rustdesk-server-oss/synology/images/log.png?width=500px) | ![](/docs/en/self-host/rustdesk-server-oss/synology/images/network-types.png?width=500px) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/images/log.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/images/network-types.png) |
 
 ### Retrieve your Key
 
