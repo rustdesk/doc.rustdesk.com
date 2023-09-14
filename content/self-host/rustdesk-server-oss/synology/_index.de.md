@@ -35,7 +35,7 @@ Klicken Sie auf `Erweiterte Einstellungen`.
 - Binden Sie ein Host-Verzeichnis (z. B. `/home/rustdesk/`) als `/root` ein, hbbs wird einige Dateien (Datenbank- und `key`-Dateien) in diesem Verzeichnis erzeugen, die über Neustarts hinweg erhalten bleiben müssen.
 | Einbinden | Im Host-Verzeichnis erzeugte Dateien |
 | --- | --- |
-| ![](/docs/en/self-host/rustdesk-server-oss/synology/images/mount.png?width=500px) | ![](/docs/en/self-host/rustdesk-server-oss/synology/images/mounted-dir.png?width=300px) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/images/mount.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/images/mounted-dir.png) |
 
 - Befehl einstellen
 {{% notice note %}}
@@ -59,12 +59,12 @@ Bitte wiederholen Sie die obigen Schritte für `hbbs`, nennen aber den Container
 
 ### hbbr/hbbs-Container
 
-![](/docs/en/self-host/rustdesk-server-oss/synology/images/containers.png?width=500px)
+![](/docs/en/self-host/rustdesk-server-oss/synology/images/containers.png)
 
 
 | Doppelklicken Sie auf den Container und prüfen Sie das Protokoll | Bestätigen Sie hbbs/hbbr über das Host-Netzwerk doppelt |
 | --- | --- |
-| ![](/docs/en/self-host/rustdesk-server-oss/synology/images/log.png?width=500px) | ![](/docs/en/self-host/rustdesk-server-oss/synology/images/network-types.png?width=500px) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/images/log.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/images/network-types.png) |
 
 ### Ihren Schlüssel abrufen
 
