@@ -51,6 +51,8 @@ You can also use the steps from [above](/docs/en/self-host/client-configuration/
 
 Change `rustdesk.exe` to rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe, e.g. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe. You can see the config result in the About Window below.
 
+As a Pro user you will be able to retrieve the whole encrypted string from the web console https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/ then download and rename the RustDesk Client exe, you can upload this somewhere easy for your customers to use.
+
 <a name="invalidchar"></a>
 {{% notice note %}}
 You need to set both `host` and `key`, missing either one will not work.
