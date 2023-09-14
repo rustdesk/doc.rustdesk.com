@@ -24,7 +24,8 @@ After logging in please be sure to change the password, select `Settings` in the
 
 Non-administrator users can also login to browse their device and logs, change their user settings.
 
-## By Clicking on EXE you will be able to get the configs for your own RustDesk server Pro, this will help configure your clients
+## Automatic Configs
+By Clicking on Windows EXE you will be able to get the configs for your own RustDesk server Pro, this will help configure your clients
 
 For Windows clients, you can leave out the custom server configuration and put the configuration information in the `rustdesk.exe` filename instead. As shown above, please go to the console welcome page and click on `Windows EXE`. **Client >=1.1.9 Required**.
 
