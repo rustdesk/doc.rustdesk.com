@@ -13,9 +13,21 @@ Bitte beziehen Sie Ihre Lizenz von [https://rustdesk.com/pricing.html](https://r
 
 Sie müssen die Lizenz in der Webkonsole eingeben oder später ändern.
 
- | Lizenz eingeben | Lizenz ändern |
- | -- | -- |
- | ![](/docs/en/self-host/rustdesk-server-pro/license/images/set.png) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/change.png) |
+| Lizenz eingeben | Lizenz ändern |
+| --- | --- |
+| ![](/docs/en/self-host/rustdesk-server-pro/license/images/set.png) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/change.png) |
+
+## Lizenz verlängern/aktualisieren
+
+Sie können die Verlängerung/Aktualisierung wie folgt finden (aktualisieren Sie ggf. Ihren Browser).
+
+| Lizenzseite mit Verlängerungs-/Aktualisierungsaktionen | Aktualisierungsfenster |
+| --- | --- |
+| ![](/docs/en/self-host/rustdesk-server-pro/license/images/renew.jpg) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/upgrade.png) |
+
+Nach der Zahlung müssen Sie die Webkonsole aufrufen, um sie manuell zu aktivieren. Klicken Sie einfach auf `Edit` und dann auf `OK`. Sie brauchen nichts zu bearbeiten, denn Ihr Lizenzschlüssel bleibt derselbe.
+
+![](/docs/en/self-host/rustdesk-server-pro/license/images/updatelic.jpg)
 
 ## Rechnungen und Migration
 
