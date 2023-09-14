@@ -97,7 +97,7 @@ $ErrorActionPreference= 'silentlycontinue'
 
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
-if($rdver -eq "1.2.1")
+if($rdver -eq "1.2.2")
 {
 write-output "RustDesk $rdver is the newest version"
 
@@ -110,7 +110,7 @@ If (!(Test-Path C:\Temp)) {
 
 cd C:\Temp
 
-powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.1/rustdesk-1.2.1-x86_64.exe" -Outfile "rustdesk.exe"
+Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
 
 $ServiceName = 'Rustdesk'
@@ -249,6 +249,6 @@ If (!(Test-Path C:\Temp)) {
 
 cd C:\Temp
 
-powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
+Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
 ```
