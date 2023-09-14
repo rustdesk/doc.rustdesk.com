@@ -35,18 +35,18 @@ $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Un
 
 if($rdver -eq "1.2.2")
 {
-write-output "RustDesk $rdver is the newest version"
-
-exit
+    Write-Output "RustDesk $rdver is the newest version"
+    Exit
 }
 
-If (!(Test-Path C:\Temp)) {
-  New-Item -ItemType Directory -Force -Path C:\Temp > null
+If (!(Test-Path C:\Temp))
+{
+    New-Item -ItemType Directory -Force -Path C:\Temp > null
 }
 
 cd C:\Temp
 
-powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
+Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
 
 $ServiceName = 'Rustdesk'
@@ -69,7 +69,7 @@ $rustdesk_id = (.\RustDesk.exe --get-id | out-host)
 
 .\RustDesk.exe --config $rustdesk_cfg
 
-.\RustDesk.exe--password $rustdesk_pw
+.\RustDesk.exe --password $rustdesk_pw
 
 Write-Output "..............................................."
 # Show the value of the ID Variable
@@ -267,7 +267,7 @@ fi
 # Install RustDesk
 
 echo "Installing RustDesk"
-if [ "${ID}" = "debian" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Debian" ]  || [ "${UPSTREAM_ID}" = "ubuntu" ] || [ "${UPSTREAM_ID}" = "debian" ]; then
+if [ "${ID}" = "debian" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Debian" ] || [ "${UPSTREAM_ID}" = "ubuntu" ] || [ "${UPSTREAM_ID}" = "debian" ]; then
     wget https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.deb
     apt-get install -fy ./rustdesk-1.2.2-x86_64.deb > null
 elif [ "$OS" = "CentOS" ] || [ "$OS" = "RedHat" ] || [ "$OS" = "Fedora Linux" ] || [ "${UPSTREAM_ID}" = "rhel" ] || [ "$OS" = "Almalinux" ] || [ "$OS" = "Rocky*" ] ; then

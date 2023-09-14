@@ -14,21 +14,20 @@ Please get your license from [https://rustdesk.com/pricing.html](https://rustdes
 You will be required to enter license in the web console, or change license later.
 
  | Set license | Change license |
- | -- | -- |
+ | --- | --- |
  | ![](/docs/en/self-host/rustdesk-server-pro/license/images/set.png) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/change.png) |
 
 ## Renew/upgrade license
 
-You can find renew/upgrade as below (please refresh browser if you can not see)
+You can find renew/upgrade as below (please refresh browser if you can not see).
 
- | License page with renew/upgrade actions | upgrade window |
- | -- | -- |
+ | License page with renew/upgrade actions | Upgrade window |
+ | --- | --- |
  | ![](/docs/en/self-host/rustdesk-server-pro/license/images/renew.jpg) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/upgrade.png) |
 
-After payment, you need to proceed to the web console to activate it manually as below. Just click on `edit`, then `Ok`, no need to edit anything, because your license key remains the same.
+After payment, you need to proceed to the web console to activate it manually as below. Just click on `Edit`, then `OK`, no need to edit anything, because your license key remains the same.
 
 ![](/docs/en/self-host/rustdesk-server-pro/license/images/updatelic.jpg)
-
 
 ## Invoices and Migration
 

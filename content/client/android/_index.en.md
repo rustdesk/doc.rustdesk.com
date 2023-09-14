@@ -24,11 +24,11 @@ In `Mouse mode`,you can also trigger the remote device's `Right Mouse` with a `T
 
 ### File Transfer (Android)
 
-> Requires RustDesk 1.1.9+
+> Requires RustDesk >= 1.1.9
 
 In the device list on the home page, select the device.
 
-Long press or tap the menu on the right to select `File Transfer`
+Long press or tap the menu on the right to select `File Transfer`.
 
 | Home | Successfully connected |
 | --- | --- |
