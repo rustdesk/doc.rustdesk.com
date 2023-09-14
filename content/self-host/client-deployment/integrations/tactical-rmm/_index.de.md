@@ -21,7 +21,7 @@ If (!(Test-Path C:\Temp)) {
 
 cd C:\Temp
 
-powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
+Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
 
 $ServiceName = 'Rustdesk'
@@ -86,7 +86,7 @@ Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" "--password $rustdesk_pw
 Write-Output $rustdesk_pw
 
 net start rustdesk > null
-        
+
 New-Item $confirmation_file > null
 }
 ```
