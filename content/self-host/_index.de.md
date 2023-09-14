@@ -7,7 +7,7 @@ chapter: true
 
 ### Kapitel 2
 
-## Selbst-Host
+# Selbst-Host
 
 Wenn Sie RustDesk verwenden, sollten Sie Ihren eigenen RustDesk-Server haben. Diese Dokumente werden Ihnen auf Ihrer RustDesk-Reise helfen.
 
@@ -26,5 +26,9 @@ Dies sind die mindestens erforderlichen Ports, damit RustDesk funktionieren kann
 Zusätzlich können die TCP-Ports 21118 und 21119 geöffnet werden, wenn Sie den [RustDesk Web Client](https://rustdesk.com/docs/en/dev/build/web/) verwenden möchten.
 
 Für Pro-Benutzer ohne SSL-Proxy müssen Sie den TCP-Port 21114 öffnen, damit die API funktioniert. Alternativ können Sie mit einem SSL-Proxy den TCP-Port 443 öffnen.
+
+## Geöffnete Ports testen
+
+Um zu überprüfen, ob die Ports geöffnet sind und funktionieren, können Sie `test-netconnection domain.com -p 21115` mit PowerShell oder [CanYouSeeMe.org](https://canyouseeme.org/) verwenden.
 
 {{% children depth="3" showhidden="true" %}}
