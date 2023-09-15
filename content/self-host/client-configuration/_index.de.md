@@ -45,11 +45,13 @@ Der einfachste Weg zur automatischen Einrichtung ist die Verwendung von Deployme
 
 Sie können festlegen, dass das Passwort erforderlich ist und einen umgekehrten Base64-String im Format `{"host":"HOSTADDRESS", "key":"HOSTKEY", "api":"http://HOSTADDRESS:21114"}` verwenden, um die Clients automatisch zu konfigurieren.
 
-Sie können auch die Schritte von [oben](/docs/de/self-host/client-configuration/#mit-import-oder-export-einrichten) verwenden, um die Zeichenfolge zu exportieren und sie dann mit [dieser Website](https://string-functions.com/reverse.aspx) umzukehren.
+Sie können auch die Schritte von [oben](/docs/de/self-host/client-configuration/#mit-import-oder-export-einrichten) verwenden, um die Zeichenkette zu exportieren und dabei alle `=` am Anfang oder Ende der Zeichenkette entfernen.
 
 #### Konfiguration in den Dateinamen von rustdesk.exe einfügen (nur Windows)
 
 Ändern Sie `rustdesk.exe` in rustdesk-`host=<host-ip-oder-name>,key=<public-key-string>`.exe, z. B. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe. Das Ergebnis der Konfiguration sehen Sie im untenstehenden Über-Fenster.
+
+Als Pro-Benutzer können Sie die gesamte verschlüsselte Zeichenkette von der [Webkonsole](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/) abrufen, dann die RustDesk-Client-Exe herunterladen und umbenennen, die Sie dann irgendwo hochladen können, damit Ihre Kunden sie verwenden können.
 
 <a name="invalidchar"></a>
 {{% notice note %}}
@@ -63,3 +65,16 @@ Möglicherweise müssen Sie diesen Vorgang wiederholen, bis Sie gültige Zeichen
 {{% /notice %}}
 
 ### [Benutzerdefinierte Einstellungen fest codieren](/docs/en/self-host/client-configuration/hardcode-settings/)
+
+### Anmeldung eines Benutzers (RustDesk Server Pro)
+Um sich bei RustDesk Server Pro anzumelden, vergewissern Sie sich, dass Ihr Client korrekt eingerichtet ist, klicken Sie auf `Einstellungen`, dann auf `Konto`, dann auf `Anmelden`, geben Sie Ihren Benutzernamen und Ihr Passwort ein und melden Sie sich dann an.
+
+### Steuerung von anderen Maschinen übernehmen
+Bevor Sie die Kontrolle über RustDesk Server Pro übernehmen, stellen Sie sicher, dass Sie angemeldet sind.
+
+Danach können Sie die Client-ID und das Passwort des Rechners eingeben, über den Sie die Steuerung übernehmen möchten, und auf `Verbinden` klicken.
+
+### Adressbuch (RustDesk Server Pro)
+Um ein Gerät zu Ihrem Adressbuch hinzuzufügen, nachdem Sie eine Verbindung zu einem Gerät hergestellt haben, wird es in Ihren letzten Sitzungen angezeigt. Neben dem Gerät können Sie nun auf die Menü-Schaltfläche [ &#8942; ] klicken und es zu Ihrem Adressbuch hinzufügen.
+
+Sie können in Ihrem Adressbuch Tags hinzufügen und zuweisen, um die Organisation von Geräten zu erleichtern und nach ihnen zu suchen.

@@ -35,18 +35,18 @@ $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Un
 
 if($rdver -eq "1.2.2")
 {
-write-output "RustDesk $rdver is the newest version"
-
-exit
+    Write-Output "RustDesk $rdver ist die neueste Version"
+    Exit
 }
 
-If (!(Test-Path C:\Temp)) {
-  New-Item -ItemType Directory -Force -Path C:\Temp > null
+If (!(Test-Path C:\Temp))
+{
+    New-Item -ItemType Directory -Force -Path C:\Temp > null
 }
 
 cd C:\Temp
 
-powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
+Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
 
 $ServiceName = 'Rustdesk'
@@ -67,37 +67,32 @@ while ($arrService.Status -ne 'Running')
 cd $env:ProgramFiles\RustDesk\
 $rustdesk_id = (.\RustDesk.exe --get-id | out-host)
 
-net stop rustdesk > null
 .\RustDesk.exe --config $rustdesk_cfg
 
-$ProcessActive = Get-Process rustdesk -ErrorAction SilentlyContinue
-if($ProcessActive -ne $null)
-{
-stop-process -ProcessName rustdesk -Force
-}
-
-Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" "--password $rustdesk_pw" -wait
+.\RustDesk.exe --password $rustdesk_pw
 
 Write-Output "..............................................."
 # Den Wert der ID-Variable anzeigen
-Write-Output "RustDesk ID: $rustdesk_id"
+Write-Output "RustDesk-ID: $rustdesk_id"
 
 # Den Wert der Passwort-Variable anzeigen
-Write-Output "Password: $rustdesk_pw"
+Write-Output "Passwort: $rustdesk_pw"
 Write-Output "..............................................."
 ```
 
 ### Windows batch/cmd
 
 ```bat
+@echo off
+
 REM Der Variablen password den Wert random password zuweisen
 setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 set alfanum=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 
 set rustdesk_pw=
-FOR /L %%b IN (0, 1, 16) DO (
-SET /A rnd_num=!RANDOM! * 62 / 32768 + 1
-for /F %%c in ('echo %%alfanum:~!rnd_num!^,1%%') do set pwd=!pwd!%%c
+FOR /L %%b IN (1, 1, 12) DO (
+    SET /A rnd_num=!RANDOM! %% 62
+    for %%c in (!rnd_num!) do set rustdesk_pw=!rustdesk_pw!!alfanum:~%%c,1!
 )
 
 REM Holen Sie sich Ihren Konfigurationsstring von Ihrem Webportal und füllen Sie ihn wie folgt aus
@@ -111,27 +106,22 @@ cd C:\Temp\
 curl -L "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -o rustdesk.exe
 
 rustdesk.exe --silent-install
-
-$ServiceName = 'RustDesk'
-$arrService = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
+timeout /t 20
 
 cd "C:\Program Files\RustDesk\"
-for /f "delims=" %i IN ('rustdesk.exe --get-id ^| more') DO set rustdesk_id=%i
+for /f "delims=" %%i IN ('rustdesk.exe --get-id ^| more') DO set rustdesk_id=%%i
 
-net stop rustdesk > null
 RustDesk.exe --config %rustdesk_cfg%
-
-net start rustdesk > null
 
 RustDesk.exe --password %rustdesk_pw%
 
-echo "..............................................."
+echo ...............................................
 REM Den Wert der ID-Variablen ausgeben
-echo "RustDesk ID: %rustdesk_id%"
+echo RustDesk-ID: %rustdesk_id%
 
 REM Den Wert der Passwort-Variablen ausgeben
-echo "Passwort: %rustdesk_pw%"
-echo "..............................................."
+echo Passwort: %rustdesk_pw%
+echo ...............................................
 ```
 
 ### macOS Bash
@@ -277,10 +267,10 @@ fi
 # RustDesk installieren
 
 echo "Installieren von RustDesk"
-if [ "${ID}" = "debian" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Debian" ]  || [ "${UPSTREAM_ID}" = "ubuntu" ] || [ "${UPSTREAM_ID}" = "debian" ]; then
+if [ "${ID}" = "debian" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Debian" ] || [ "${UPSTREAM_ID}" = "ubuntu" ] || [ "${UPSTREAM_ID}" = "debian" ]; then
     wget https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.deb
     apt-get install -fy ./rustdesk-1.2.2-x86_64.deb > null
-elif [ "$OS" = "CentOS" ] || [ "$OS" = "RedHat" ] || [ "$OS" = "Fedora Linux" ]  || [ "${UPSTREAM_ID}" = "rhel" ] ; then
+elif [ "$OS" = "CentOS" ] || [ "$OS" = "RedHat" ] || [ "$OS" = "Fedora Linux" ] || [ "${UPSTREAM_ID}" = "rhel" ] || [ "$OS" = "Almalinux" ] || [ "$OS" = "Rocky*" ] ; then
     wget https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-0.x86_64.rpm
     yum localinstall ./rustdesk-1.2.2-0.x86_64.rpm -y > null
 else
@@ -291,13 +281,10 @@ else
     exit 1
 fi
 
-systemctl stop rustdesk
-
 # Führen Sie den Befehl rustdesk mit --get-id aus und speichern Sie die Ausgabe in der Variable rustdesk_id
 rustdesk_id=$(rustdesk --get-id)
 
 # Neues Passwort auf RustDesk anwenden
-systemctl start rustdesk
 rustdesk --password $rustdesk_pw &> /dev/null
 
 rustdesk --config $rustdesk_cfg
@@ -314,6 +301,6 @@ else
 fi
 
 # Den Wert der Passwortvariablen ausgeben
-echo "Passwort: $rustdesk_password"
+echo "Passwort: $rustdesk_pw"
 echo "..............................................."
 ```

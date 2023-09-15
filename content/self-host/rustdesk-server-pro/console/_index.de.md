@@ -25,9 +25,12 @@ Bitte ändern Sie nach dem Anmelden unbedingt das Passwort, indem Sie im Kontome
 
 Nicht-Administrator-Benutzer können sich auch anmelden, um ihr Gerät und ihre Protokolle zu durchsuchen und ihre Benutzereinstellungen zu ändern.
 
-## In der Windows-EXE werden die Konfigurationen angezeigt
+## Automatische Konfiguration
+Wenn Sie auf `Windows EXE` klicken, erhalten Sie die Konfigurationen für Ihren eigenen RustDesk Server Pro, die Ihnen bei der Konfiguration Ihrer Clients helfen.
 
-Bei Windows-Clients können Sie die benutzerdefinierte Serverkonfiguration weglassen und stattdessen die Konfigurationsinformationen in den Dateinamen `rustdesk.exe` aufnehmen. Wie oben gezeigt, gehen Sie bitte auf die Startseite der Konsole und klicken Sie auf `Windows EXE`. **Client ≥ 1.1.9 erforderlich**.
+Bei Windows-Clients können Sie die benutzerdefinierte Serverkonfiguration weglassen und stattdessen die Konfigurationsinformationen in den Dateinamen `rustdesk.exe` aufnehmen. Wie oben gezeigt, gehen Sie bitte auf die Startseite der Konsole und klicken Sie auf `Windows EXE`. **Client ≥ 1.1.9 erforderlich.**
+
+Sie können dies in Verbindung mit der [Client-Konfiguration](https://rustdesk.com/docs/en/self-host/client-configuration/) und den [Bereitstellungsskripten](https://rustdesk.com/docs/en/self-host/client-deployment/) zur Einrichtung Ihrer Clients verwenden.
 
 ## Erstellen eines neuen Benutzers, der nicht der Standardbenutzer `admin` ist
 1. Erstellen Sie ein weiteres Konto mit der Berechtigung `Administrator`.
