@@ -29,8 +29,8 @@ After payment, you need to proceed to the web console to activate it manually as
 
 ![](/docs/en/self-host/rustdesk-server-pro/license/images/updatelic.jpg)
 
-## Invoices and Migration
+## Invoices, License Retrieval and Migration
 
-The license can be only used on one machine (for hbbs only, hbbr does not require license), if you want to migrate to the other machine, or download invoices, please go to [https://rustdesk.com/self-host/account/](https://rustdesk.com/self-host/account/). Log in with the email address used for Stripe checkout, unbind the old machine you want to migrate from as below, when you set the license in the new servers web console it will assign the license and register automatically in the console.
+The license can be only used on one machine (for hbbs only, hbbr does not require license), if you want to migrate to the other machine, retrieve your license or download invoices, please go to [https://rustdesk.com/self-host/account/](https://rustdesk.com/self-host/account/). Log in with the email address used for Stripe checkout, unbind the old machine you want to migrate from as below, when you set the license in the new servers web console it will assign the license and register automatically in the console.
 
 ![](/docs/en/self-host/rustdesk-server-pro/license/images/unbind.jpg)
