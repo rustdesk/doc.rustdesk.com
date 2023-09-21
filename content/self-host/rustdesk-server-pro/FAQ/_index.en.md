@@ -57,85 +57,9 @@ A simple way to check is using telnet. To test in the Linux terminal type `telne
 
 Your mail server may not be using port 25. Please make sure you are using the correct ports.
 
-## Can I deploy RustDesk using PowerShell?
-Sure, this script can help, replace `youraddress` and `yourkey` with your address and key for your RustDesk Server Pro Address and Key.
-```ps
-$ErrorActionPreference= 'silentlycontinue'
+## Can I deploy RustDesk using PowerShell or similar?
+Sure, you can find scripts to aid deployment here https://rustdesk.com/docs/en/self-host/client-deployment/
 
-$rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
-
-if($rdver -eq "1.2.2")
-{
-write-output "RustDesk $rdver is the newest version"
-
-exit
-}
-
-If (!(Test-Path C:\Temp)) {
-  New-Item -ItemType Directory -Force -Path C:\Temp > null
-}
-
-cd C:\Temp
-
-Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
-Start-Process .\rustdesk.exe --silent-install -wait
-
-$ServiceName = 'Rustdesk'
-$arrService = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
-
-if ($arrService -eq $null)
-{
-    Start-Sleep -seconds 20
-}
-
-while ($arrService.Status -ne 'Running')
-{
-    Start-Service $ServiceName
-    Start-Sleep -seconds 5
-    $arrService.Refresh()
-}
-net stop rustdesk
-
-$username = ((Get-WMIObject -ClassName Win32_ComputerSystem).Username).Split('\')[1]
-Remove-Item C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml
-New-Item C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml
-Set-Content C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml "rendezvous_server = 'youraddress' `nnat_type = 1`nserial = 0`n`n[options]`ncustom-rendezvous-server = 'youraddress'`nkey = 'yourkey'`nrelay-server = 'youraddress'`napi-server = 'https://youraddress'"
-Remove-Item C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml
-New-Item C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml
-Set-Content C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml "rendezvous_server = 'youraddress' `nnat_type = 1`nserial = 0`n`n[options]`ncustom-rendezvous-server = 'youraddress'`nkey = 'yourkey'`nrelay-server = 'youraddress'`napi-server = 'https://youraddress'"
-
-net start rustdesk
-```
-
-## How can I get RustDesk IDs from agents on my network or using an RMM type system?
-On Windows you can use the following PowerShell script:
-```ps
-$ErrorActionPreference= 'silentlycontinue'
-
-Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" --get-id
-sleep 2
-$rustdesk_id = (get-clipboard)
-Write-Output $rustdesk_id
-```
-
-## How can I set a persistent password on an agent on my network or using an RMM type system?
-On Windows you can use the following PowerShell script:
-```ps
-$ErrorActionPreference = 'silentlycontinue'
-
-net stop rustdesk > null
-$ProcessActive = Get-Process rustdesk -ErrorAction SilentlyContinue
-if($ProcessActive -ne $null)
-{
-stop-process -ProcessName rustdesk -Force
-}
-
-$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_}))
-Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" "--password $rustdesk_pw" -wait
-Write-Output $rustdesk_pw
-
-net start rustdesk > null
-```
 
 ## I have installed RustDesk Server Pro manually but the API web console isn't behind SSL, how can I secure this?
 Use a proxy like Nginx, the simple install script has one, it's really simple. [This is how we do it](https://github.com/rustdesk/rustdesk-server-pro/blob/493ad90daf8815c3052ff4d0d4aa9cc07e411efa/install.sh#L252).
