@@ -32,9 +32,21 @@ For Windows clients, you can leave out the custom server configuration and put t
 You can use this in conjuction with [client config](https://rustdesk.com/docs/en/self-host/client-configuration/) and [deployment scripts](https://rustdesk.com/docs/en/self-host/client-deployment/) to setup your clients.
 
 ## Creating a new user other than the default `admin` user
-1. Create another account with `administrator` enabled.
-2. Log in with the new administrative account.
-3. Delete the `admin` on `Users` page.
+1. Click On Users on the left hand menu
+2. Create another account with `administrator` enabled.
+3. Log in with the new administrative account.
+4. Delete the `admin` on `Users` page.
+
+## Creating a new users
+1. Click On Users on the left hand menu
+2. Create a new user.
+3. Select what group they should be in (if you need to add new groups please keep reading).
+
+## Add New Groups
+1. Click On Groups on the left hand menu
+2. Create a new group.
+3. Once created you can allow groups access each other, Click `Edit`.
+4. Select the relevant groups you want access (it automatically adds them in the corresponding group).
 
 ## Setting up multiple relay servers
 1. Go to `Settings` on the left hand menu.
@@ -63,6 +75,11 @@ Gmail in this example
 6. Enter your password (you might need an app password).
 7. Enter your Gmail account i.e. `myrustdeskserver@gmail.com` in `From`.
 8. Click `Check` to save.
+
+## Assign Device Users and Groups to Devices
+The User is the RustDesk User logged in on the device or assigned to the device by clicking edit next to the device click in the User box and drop down to select your user, this will auto assign the group based on the group the user as been assigned to.
+
+This can also be done via the API at command line on deployment or later by calling the rustdesk executable followed by --assign --token "generatedtoken" --user_name "username" (you need to go to Settings - Tokens - Create and create a token with Device permissions first to do this). An example iof this on windows would be `"C:\program files\RustDesk\rustdesk.exe" --assign --token "generatedtoken" --user_name "newuser".
 
 ## Searching for a device
 1. Go to Devices.
