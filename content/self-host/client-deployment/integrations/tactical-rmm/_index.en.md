@@ -60,11 +60,12 @@ cd $env:ProgramFiles\RustDesk\
 .\RustDesk.exe --get-id | out-host
 ```
 
-## RustDesk Set and Get Password (Collector Script needs Custom Agent Field)
-```ps
+## Create Script to be used as a Check
+
+```
 $ErrorActionPreference= 'silentlycontinue'
 
-$confirmation_file = "C:\Program Files\RustDesk\runonce.txt"
+$confirmation_file = "C:\program files\RustDesk\rdrunonce.txt"
 
 if ([System.IO.File]::Exists($confirmation_file)) {
     echo "Confirmation file exists"
@@ -72,7 +73,17 @@ if ([System.IO.File]::Exists($confirmation_file)) {
 }
 else
 {
+    echo "Confirmation file doesn't exists"
+	exit 1
+}
+
+```
+
+## RustDesk Set and Get Password (Collector Script needs Custom Agent Field) to run on Check Failure
+```
 $ErrorActionPreference= 'silentlycontinue'
+
+$confirmation_file = "C:\program files\RustDesk\rdrunonce.txt"
 
 net stop rustdesk > null
 $ProcessActive = Get-Process rustdesk -ErrorAction SilentlyContinue
@@ -81,14 +92,14 @@ if($ProcessActive -ne $null)
 stop-process -ProcessName rustdesk -Force
 }
 
-$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_}))
+$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
 Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" "--password $rustdesk_pw" -wait
 Write-Output $rustdesk_pw
 
 net start rustdesk > null
-
+        
 New-Item $confirmation_file > null
-}
+
 ```
 
 ## RustDesk URL Action
