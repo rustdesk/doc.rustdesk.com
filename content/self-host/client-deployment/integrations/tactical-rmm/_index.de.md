@@ -60,19 +60,30 @@ cd $env:ProgramFiles\RustDesk\
 .\RustDesk.exe --get-id | out-host
 ```
 
-## RustDesk Passwort setzen und abfragen (Sammelskript benötigt benutzerdefiniertes Agent-Feld)
-```ps
+## Erstellen Sie ein Skript, das als Prüfung verwendet werden soll
+
+```
 $ErrorActionPreference= 'silentlycontinue'
 
-$confirmation_file = "C:\Program Files\RustDesk\runonce.txt"
+$confirmation_file = "C:\program files\RustDesk\rdrunonce.txt"
 
 if ([System.IO.File]::Exists($confirmation_file)) {
-    echo "Bestätigungsdatei ist vorhanden"
+    echo "Confirmation file exists"
 	exit 0
 }
 else
 {
+    echo "Confirmation file doesn't exists"
+	exit 1
+}
+
+```
+
+## RustDesk Passwort setzen und abfragen (Sammelskript benötigt benutzerdefiniertes Agent-Feld)
+```
 $ErrorActionPreference= 'silentlycontinue'
+
+$confirmation_file = "C:\program files\RustDesk\rdrunonce.txt"
 
 net stop rustdesk > null
 $ProcessActive = Get-Process rustdesk -ErrorAction SilentlyContinue
@@ -81,14 +92,14 @@ if($ProcessActive -ne $null)
 stop-process -ProcessName rustdesk -Force
 }
 
-$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_}))
+$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})) 
 Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" "--password $rustdesk_pw" -wait
 Write-Output $rustdesk_pw
 
 net start rustdesk > null
-
+        
 New-Item $confirmation_file > null
-}
+
 ```
 
 ## RustDesk URL-Aktion
