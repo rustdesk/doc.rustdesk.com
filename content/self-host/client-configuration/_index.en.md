@@ -79,7 +79,7 @@ To add devices to your address book, after you have connected to a device they w
 
 You can add and assign Tags in your address book to help organise devices as well as search for them.
 
-## Groups
-By default once signed in all devices connected to your RustDesk Server Pro will show up in groups, (you will still need the passwords for unattended access but all devices are now there), it will show any other users in your groups addressbooks and if you assign cross group access in the web console it will show users in those groups addressbooks as well https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#add-new-groups.
+## Group (RustDesk Server Pro)
+By default once signed in all devices connected to your RustDesk Server Pro will show up in group, (you will still need the passwords for unattended access but all devices are now there), it will show any other users in your group and if you assign cross group access in the web console it will show users in those groups as well https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#add-new-groups.
 
 If you would like to add devices to your own addressbook, you can click on the 3 dots next to the device and click Add to Addressbook.
