@@ -16,18 +16,18 @@ weight: 16
 6. In Azure, select the application you want to use, click **Overview**, and copy the **Application (client) ID**.
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/4-Azure-ClientID.png)
 7. In RustDesk Pro, copy the **Client id**.
-![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/5-RustDesk-ClientID.png)
+![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/5-RustDesk-ClientID.png)
 8. In Azure, **Certificates & secrets**, create a new or select a client secret, usually New.
-![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/6-Azure-NewOrSelectClientSecret.png)
+![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/6-Azure-NewOrSelectClientSecret.png)
 9. In Azure, copy out the value of the client secret. **Note**: This value is only visible when you first register. It is no longer visible after you leave the page. Please keep this value properly.
-![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/7-Azure-CopySecretValue.png)
+![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/7-Azure-CopySecretValue.png)
 10. In RustDesk Pro, paste the value for the client secret.
-![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/8-RustDesk-FillClientSecret.png)
+![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/8-RustDesk-FillClientSecret.png)
 11. In RustDesk Pro, fill in the **Issuer** field, `https://login.microsoftonline.com/<Directory (tenant) ID>/v2.0`. Please replace `Directory (tenant) ID` with your **Directory (tenant) ID**. The **Directory (tenant) ID** is in Azure's app **Overview** panel.
-![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/9-RustDesk-Issuer.png)
-![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/10-Azure-TenantID.png)
+![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/9-RustDesk-Issuer.png)
+![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/10-Azure-TenantID.png)
 12. In Azure, select "Authentication" menu. Then set up authorization, by choosing **ID tokens (used for implicit and hybrid flows)**.
-![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/11-Azure-Auth.png)
+![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/11-Azure-Auth.png)
 
 
 ## Troubleshootings

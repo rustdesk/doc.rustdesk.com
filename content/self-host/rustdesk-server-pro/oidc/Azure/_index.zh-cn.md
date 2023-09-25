@@ -16,18 +16,18 @@ weight: 16
 6. 在 Azure 中，选择你想使用的应用，点击 **概要**，拷贝 **应用程序(客户端) ID**。
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/4-Azure-ClientID.png)
 7. 在 RustDesk Pro 中，复制 **Client id** 。
-![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/5-RustDesk-ClientID.png)
+![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/5-RustDesk-ClientID.png)
 8. 在 Azure 中， **证书和密码** ，新建或选择 **客户端密码**，一般是新建。
-![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/6-Azure-NewOrSelectClientSecret.png)
+![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/6-Azure-NewOrSelectClientSecret.png)
 9. 在 Azure 中，复制出客户端密码的值。**注**：只有刚注册时，这个值才是可见的，离开页面后不再可见，请妥善保管这个值。
-![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/7-Azure-CopySecretValue.png)
+![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/7-Azure-CopySecretValue.png)
 10. 在 RustDesk Pro 中，粘贴客户端密码的值。
-![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/8-RustDesk-FillClientSecret.png)
+![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/8-RustDesk-FillClientSecret.png)
 11. 在 RustDesk Pro 中，填入 **Issuer** 字段，`https://login.microsoftonline.com/<Directory (tenant) ID>/v2.0`。请将 `Directory (tenant) ID` 替换为您的 **目录(租户) ID**。**目录(租户) ID** 在 Azure 的应用 **概要** 面板中。
-![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/9-RustDesk-Issuer.png)
-![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/10-Azure-TenantID.png)
+![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/9-RustDesk-Issuer.png)
+![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/10-Azure-TenantID.png)
 12. 在 Azure 中， 选择 **身份验证** 菜单，设置授权，选择 **ID 令牌(用于隐式流和混合流)** 。
-![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/11-Azure-Auth.png)
+![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/11-Azure-Auth.png)
 
 
 ## 故障排除
