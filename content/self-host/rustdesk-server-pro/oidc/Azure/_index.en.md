@@ -30,7 +30,7 @@ weight: 16
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/11-Azure-Auth.png)
 
 
-## Troubleshootings
+## Troubleshooting
 
 ## Refs
 
