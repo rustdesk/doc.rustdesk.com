@@ -29,6 +29,9 @@ weight: 16
 12. In Azure, select "Authentication" menu. Then set up authorization, by choosing **ID tokens (used for implicit and hybrid flows)**.
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/11-Azure-Auth.png)
 
+
+## Troubleshootings
+
 ## Refs
 
 - [openid-settings](https://learn.microsoft.com/en-us/power-pages/security/authentication/openid-settings)

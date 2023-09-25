@@ -30,6 +30,8 @@ weight: 16
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/11-Azure-Auth.png)
 
 
+## 故障排除
+
 
 ## 参考
 
