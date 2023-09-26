@@ -15,7 +15,7 @@ weight: 16
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/3-RustDesk-NewAuthProvider.png)
 6. 在 Azure 中，选择你想使用的应用，点击 **概要**，拷贝 **应用程序(客户端) ID**。
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/4-Azure-ClientID.png)
-7. 在 RustDesk Pro 中，复制 **Client id** 。
+7. 在 RustDesk Pro 中，粘贴 **Client id** 。
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/5-RustDesk-ClientID.png)
 8. 在 Azure 中， **证书和密码** ，新建或选择 **客户端密码**，一般是新建。
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/6-Azure-NewOrSelectClientSecret.png)
