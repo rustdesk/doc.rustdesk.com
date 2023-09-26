@@ -15,11 +15,11 @@ weight: 16
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/3-RustDesk-NewAuthProvider.png)
 6. In Azure, select the application you want to use, click **Overview**, and copy the **Application (client) ID**.
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/4-Azure-ClientID.png)
-7. In RustDesk Pro, copy the **Client id**.
+7. In RustDesk Pro, paste the **Client id**.
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/5-RustDesk-ClientID.png)
 8. In Azure, **Certificates & secrets**, create a new or select a client secret, usually New.
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/6-Azure-NewOrSelectClientSecret.png)
-9. In Azure, copy out the value of the client secret. **Note**: This value is only visible when you first register. It is no longer visible after you leave the page. Please keep this value properly.
+9. In Azure, copy the value of the client secret. **Note**: This value is only visible when you first register. It is no longer visible after you leave the page. Please keep this value properly.
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/7-Azure-CopySecretValue.png)
 10. In RustDesk Pro, paste the value for the client secret.
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/Azure/images/8-RustDesk-FillClientSecret.png)
