@@ -18,6 +18,7 @@ weight: 2
 
 ## Use IIS as Proxy
 
+Please ensure Dynamic Content Compression is installed as IIS component
 1. Open IIS (Or install it).
 2. Create a new website for RustDesk with the bindings (Ideally 443) and relevant certificate. Basic settings should point this to a blank folder. (If you use the default site, make sure there are no other files in the folder).
 3. On IIS, install [Application Request Routing](https://www.iis.net/downloads/microsoft/application-request-routing) and [URL Rewrite](https://learn.microsoft.com/en-us/iis/extensions/url-rewrite-module/using-the-url-rewrite-module).
@@ -33,9 +34,15 @@ weight: 2
 
 1. Open the site on IIS on the left pane and double-click on URL Rewrite.
 2. Click `Add rules`.
-3. Disable dynamic compression under compression.
+3. Disable dynamic compression under compression (you will find this under the web page created).
 4. Set up a new reverse proxy rule.
 5. Setup the local address (the 21114 address) \
 Inbound Rule – the RustDesk internal 21114 address \
 Outbound Rules – `From` is the RustDesk internal 21114 address and `To` is the external address. \
 Note: No http / https before the addresses – they are automatically handled. Also, ensure all the addresses are accessible both internally and externally.
+
+### Troubleshooting
+If you have an error 500.52 add the mentioned variables: [https://techcommunity.microsoft.com/t5/iis-support-blog/iis-acting-as-reverse-proxy-where-the-problems-start/ba-p/846259](https://techcommunity.microsoft.com/t5/iis-support-blog/iis-acting-as-reverse-proxy-where-the-problems-start/ba-p/846259)
+
+You maybe need to change your SSL Settings to Require SSL -> Ignore
+
