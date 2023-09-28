@@ -19,7 +19,7 @@ $ErrorActionPreference= 'silentlycontinue'
 $rustdesk_pw=(-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_}))
 
 # Get your config string from your Web portal and Fill Below
-rustdesk_cfg="configstring"
+$rustdesk_cfg="configstring"
 
 ################################### Please Do Not Edit Below This Line #########################################
 
@@ -54,7 +54,10 @@ $arrService = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
 
 if ($arrService -eq $null)
 {
-    Start-Sleep -seconds 20
+	Write-Output "Installing service"
+	cd $env:ProgramFiles\RustDesk
+	Start-Process .\rustdesk.exe --install-service -wait -Verbose
+	Start-Sleep -seconds 20
 }
 
 while ($arrService.Status -ne 'Running')
@@ -65,7 +68,7 @@ while ($arrService.Status -ne 'Running')
 }
 
 cd $env:ProgramFiles\RustDesk\
-$rustdesk_id = (.\RustDesk.exe --get-id | out-host)
+.\RustDesk.exe --get-id | Write-Output -OutVariable rustdesk_id
 
 .\RustDesk.exe --config $rustdesk_cfg
 
