@@ -19,6 +19,8 @@ You will be required to enter license in the web console, or change license late
 
 ## Renew/upgrade license
 
+[https://rustdesk.com/self-host/account/](https://rustdesk.com/self-host/account/)
+
 You can find renew/upgrade as below (please refresh browser if you can not see).
 
  | License page with renew/upgrade actions | Upgrade window |
