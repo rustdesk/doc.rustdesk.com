@@ -828,7 +828,18 @@ window.addEventListener("load", function() {
             cancelButtonText: '否',
         }).then((result) => {
             if (result.isConfirmed) {
-                window.open(redirectUrl, '_blank');
+                Swal.fire({
+                    title: '请确认',
+                    text: '请注意，我们不提供退款。 我们强烈建议您在考虑购买专业版计划之前先测试我们的免费版本。 您还有兴趣继续吗？',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: '是',
+                    cancelButtonText: '否',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.open(redirectUrl, '_blank');
+                    }
+                });
             }
         });
     }

@@ -835,7 +835,17 @@ window.addEventListener("load", function() {
             cancelButtonText: 'No',
         }).then((result) => {
             if (result.isConfirmed) {
-                window.open(redirectUrl, '_blank');
+                Swal.fire({
+                    title: 'Please Confirm',
+                    text: "Please note that we do not offer refunds. We strongly recommend testing our free self-hosting plan before considering the purchase of our Pro plan. Are you still interested in proceeding?",
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes',
+                    cancelButtonText: 'No',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.open(redirectUrl, '_blank');
+                    }
+                });
             }
         });
     }
