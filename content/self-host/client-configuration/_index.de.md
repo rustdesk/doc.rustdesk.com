@@ -45,7 +45,7 @@ Der einfachste Weg zur automatischen Einrichtung ist die Verwendung von Deployme
 
 Sie können festlegen, dass das Passwort erforderlich ist und einen umgekehrten Base64-String im Format `{"host":"HOSTADDRESS", "key":"HOSTKEY", "api":"http://HOSTADDRESS:21114"}` verwenden, um die Clients automatisch zu konfigurieren.
 
-Sie können auch die Schritte von [oben](/docs/de/self-host/client-configuration/#mit-import-oder-export-einrichten) verwenden, um die Zeichenkette zu exportieren und dabei alle `=` am Anfang oder Ende der Zeichenkette entfernen.
+Sie können auch die Schritte von [oben](/docs/de/self-host/client-configuration/#mit-import-oder-export-einrichten) verwenden, um die Zeichenkette zu exportieren und dabei alle `=` am Anfang oder Ende der Zeichenkette entfernen. Starten Sie den RustDesk-Client neu, wenn die Einstellungen nicht angezeigt werden.
 
 #### Konfiguration in den Dateinamen von rustdesk.exe einfügen (nur Windows)
 
@@ -78,3 +78,8 @@ Danach können Sie die Client-ID und das Passwort des Rechners eingeben, über d
 Um ein Gerät zu Ihrem Adressbuch hinzuzufügen, nachdem Sie eine Verbindung zu einem Gerät hergestellt haben, wird es in Ihren letzten Sitzungen angezeigt. Neben dem Gerät können Sie nun auf die Menü-Schaltfläche [ &#8942; ] klicken und es zu Ihrem Adressbuch hinzufügen.
 
 Sie können in Ihrem Adressbuch Tags hinzufügen und zuweisen, um die Organisation von Geräten zu erleichtern und nach ihnen zu suchen.
+
+### Gruppe (RustDesk Server Pro)
+Standardmäßig werden nach der Anmeldung alle Geräte, die mit Ihrem RustDesk Server Pro verbunden sind, in der Gruppe angezeigt. Sie benötigen immer noch die Passwörter für den unbeaufsichtigten Zugang, aber alle Geräte sind jetzt da. Es werden alle anderen Benutzer in Ihrer Gruppe angezeigt und wenn Sie in der Web-Konsole gruppenübergreifenden Zugang zuweisen, werden auch die Benutzer [in diesen Gruppen](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/console/#neue-gruppen-hinzufügen) angezeigt.
+
+Wenn Sie Geräte zu Ihrem eigenen Adressbuch hinzufügen möchten, klicken Sie auf die Menü-Schaltfläche [ &#8942; ] neben dem Gerät und dann auf `Zum Adressbuch hinzufügen`.
