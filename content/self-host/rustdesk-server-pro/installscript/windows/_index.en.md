@@ -16,9 +16,9 @@ weight: 2
 9. Log in with the username `admin` and password `test1234`.
 10. Enter your license code purchased in step 1.
 
-## Use IIS as Proxy
+### Use IIS as Proxy
 
-Please ensure Dynamic Content Compression is installed (this is an IIS Feature which can be installed with Server Roles)
+Please ensure `Dynamic Content Compression` is installed (this is an IIS Feature which can be installed with Server Roles).
 1. Open IIS (Or install it).
 2. Create a new website for RustDesk with the bindings (Ideally 443) and relevant certificate. Basic settings should point this to a blank folder. (If you use the default site, make sure there are no other files in the folder).
 3. On IIS, install [Application Request Routing](https://www.iis.net/downloads/microsoft/application-request-routing) and [URL Rewrite](https://learn.microsoft.com/en-us/iis/extensions/url-rewrite-module/using-the-url-rewrite-module).
@@ -42,10 +42,10 @@ Note: No http / https before the addresses – they are automatically handled. A
 
 ### Compression
 
-1. Disable dynamic compression
+1. Disable `Dynamic Content Compression`.
 
 ### Troubleshooting
-If you have an error 500.52 add the mentioned variables: [https://techcommunity.microsoft.com/t5/iis-support-blog/iis-acting-as-reverse-proxy-where-the-problems-start/ba-p/846259](https://techcommunity.microsoft.com/t5/iis-support-blog/iis-acting-as-reverse-proxy-where-the-problems-start/ba-p/846259)
 
-You maybe need to change your SSL Settings to Require SSL -> Ignore
+If you have an error 500.52 add the mentioned variables: [IIS acting as reverse proxy: Where the problems start](https://techcommunity.microsoft.com/t5/iis-support-blog/iis-acting-as-reverse-proxy-where-the-problems-start/ba-p/846259).
 
+You maybe need to change your SSL Settings to "Require SSL -> Ignore".
