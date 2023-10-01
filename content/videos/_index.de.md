@@ -3,7 +3,7 @@ title: Video-Anleitungen
 weight: 50
 ---
 
-[Awesome Open Source](https://www.youtube.com/@AwesomeOpenSource) hat einige großartige Youtube-Videos über RustDesk gemacht, die Sie unten finden können.
+[Awesome Open Source](https://www.youtube.com/@AwesomeOpenSource) (englisch) hat einige großartige Youtube-Videos über RustDesk gemacht, die Sie unten finden können.
 
 [Installations- und Bedienungsanleitung](https://www.youtube.com/watch?v=9nzHm3xGz2I) (englisch)
 
