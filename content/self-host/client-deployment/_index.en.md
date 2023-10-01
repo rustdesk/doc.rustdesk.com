@@ -24,8 +24,10 @@ $rustdesk_cfg="configstring"
 ################################### Please Do Not Edit Below This Line #########################################
 
 # Run as administrator and stays in the current directory
-if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000) {
+if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
+{
+    if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000)
+    {
         Start-Process PowerShell -Verb RunAs -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command `"cd '$pwd'; & '$PSCommandPath';`"";
         Exit;
     }
@@ -54,10 +56,10 @@ $arrService = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
 
 if ($arrService -eq $null)
 {
-	Write-Output "Installing service"
-	cd $env:ProgramFiles\RustDesk
-	Start-Process .\rustdesk.exe --install-service -wait -Verbose
-	Start-Sleep -seconds 20
+    Write-Output "Installing service"
+    cd $env:ProgramFiles\RustDesk
+    Start-Process .\rustdesk.exe --install-service -wait -Verbose
+    Start-Sleep -seconds 20
 }
 
 while ($arrService.Status -ne 'Running')
@@ -142,8 +144,8 @@ rustdesk_cfg="configstring"
 
 # Check if the script is being run as root
 if [[ $EUID -ne 0 ]]; then
-	echo "This script must be run as root."
-	exit 1
+    echo "This script must be run as root."
+    exit 1
 fi
 
 # Specify the path to the rustdesk.dmg file
@@ -156,9 +158,9 @@ mount_point="/Volumes/RustDesk"
 echo "Downloading RustDesk Now"
 
 if [[ $(arch) == 'arm64' ]]; then
-curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-aarch64.dmg --output "$dmg_file"
+    curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-aarch64.dmg --output "$dmg_file"
 else
-curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.dmg --output "$dmg_file"
+    curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.dmg --output "$dmg_file"
 fi
 
 # Mount the DMG file to the specified mount point
@@ -166,14 +168,14 @@ hdiutil attach "$dmg_file" -mountpoint "$mount_point" &> /dev/null
 
 # Check if the mounting was successful
 if [ $? -eq 0 ]; then
-	# Move the contents of the mounted DMG to the /Applications folder
-	cp -R "$mount_point/RustDesk.app" "/Applications/" &> /dev/null
-	
-	# Unmount the DMG file
-	hdiutil detach "$mount_point" &> /dev/null
+    # Move the contents of the mounted DMG to the /Applications folder
+    cp -R "$mount_point/RustDesk.app" "/Applications/" &> /dev/null
+
+    # Unmount the DMG file
+    hdiutil detach "$mount_point" &> /dev/null
 else
-	echo "Failed to mount the RustDesk DMG. Installation aborted."
-	exit 1
+    echo "Failed to mount the RustDesk DMG. Installation aborted."
+    exit 1
 fi
 
 # Run the rustdesk command with --get-id and store the output in the rustdesk_id variable
@@ -193,9 +195,9 @@ kill $rdpid &> /dev/null
 echo "..............................................."
 # Check if the rustdesk_id is not empty
 if [ -n "$rustdesk_id" ]; then
-	echo "RustDesk ID: $rustdesk_id"
+    echo "RustDesk ID: $rustdesk_id"
 else
-	echo "Failed to get RustDesk ID."
+    echo "Failed to get RustDesk ID."
 fi
 
 # Echo the value of the password variable
@@ -221,8 +223,8 @@ rustdesk_cfg="configstring"
 
 # Check if the script is being run as root
 if [[ $EUID -ne 0 ]]; then
-	echo "This script must be run as root."
-	exit 1
+    echo "This script must be run as root."
+    exit 1
 fi
 
 # Identify OS
@@ -238,7 +240,6 @@ if [ -f /etc/os-release ]; then
     if [ "${UPSTREAM_ID}" != "debian" ] && [ "${UPSTREAM_ID}" != "ubuntu" ]; then
         UPSTREAM_ID="$(echo ${ID_LIKE,,} | sed s/\"//g | cut -d' ' -f1)"
     fi
-
 
 elif type lsb_release >/dev/null 2>&1; then
     # linuxbase.org
@@ -294,13 +295,12 @@ rustdesk --config $rustdesk_cfg
 
 systemctl restart rustdesk
 
-
 echo "..............................................."
 # Check if the rustdesk_id is not empty
 if [ -n "$rustdesk_id" ]; then
-	echo "RustDesk ID: $rustdesk_id"
+    echo "RustDesk ID: $rustdesk_id"
 else
-	echo "Failed to get RustDesk ID."
+    echo "Failed to get RustDesk ID."
 fi
 
 # Echo the value of the password variable

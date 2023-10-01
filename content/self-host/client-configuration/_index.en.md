@@ -6,7 +6,7 @@ pre: "<b>2.3. </b>"
 
 ### Overview
 
-There are a number of ways to configure RustDesk clients to use your own self-hosted server, we will cover some below.
+There are a number of ways to configure RustDesk Clients to use your own self-hosted server, we will cover some below.
 
 ### Manual Config
 
@@ -45,13 +45,13 @@ The easiest way to setup automatically is using deployment scripts found [here](
 
 You can fix the Password is required and use a reverse Base64 string in the format `{"host":"HOSTADDRESS","key":"HOSTKEY","api":"http://HOSTADDRESS:21114"}` to automatically configure the clients, this is available automatically with RustDesk Server Pro via the console.
 
-You can also use the steps from [above](/docs/en/self-host/client-configuration/#setup-using-import-or-export) to export the string, remove any `=` at the start or end of the string. Restart RustDesk client if settings don't show.
+You can also use the steps from [above](/docs/en/self-host/client-configuration/#setup-using-import-or-export) to export the string, remove any `=` at the start or end of the string. Restart RustDesk Client if settings don't show.
 
 #### Put config in rustdesk.exe file name (Windows only)
 
 Change `rustdesk.exe` to rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe, e.g. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe. You can see the config result in the About Window below.
 
-As a Pro user you will be able to retrieve the whole encrypted string from the web console https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/ then download and rename the RustDesk Client exe, you can upload this somewhere easy for your customers to use.
+As a Pro user you will be able to retrieve the whole encrypted string from the [web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/) then download and rename the RustDesk Client exe, you can upload this somewhere easy for your customers to use.
 
 <a name="invalidchar"></a>
 {{% notice note %}}
@@ -77,9 +77,9 @@ After that you can enter the client ID and password of the machine you want to t
 ### Address book (RustDesk Server Pro)
 To add devices to your address book, after you have connected to a device they will be in your recent sessions, next to the device you can now click the Menu button [ &#8942; ] and add to your address book, if you have saved the password and set permanent passwords on the client this will also be synced across devices you log in to to allow access from anywhere.
 
-You can add and assign Tags in your address book to help organise devices as well as search for them.
+You can add and assign Tags in your address book to help organize devices as well as search for them.
 
-## Group (RustDesk Server Pro)
+### Group (RustDesk Server Pro)
 By default once signed in all devices connected to your RustDesk Server Pro will show up in group, (you will still need the passwords for unattended access but all devices are now there), it will show any other users in your group and if you assign cross group access in the web console it will show users in those groups as well https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#add-new-groups.
 
-If you would like to add devices to your own addressbook, you can click on the 3 dots next to the device and click Add to Addressbook.
+If you would like to add devices to your own address book, you can click on the Menu button [ &#8942; ] next to the device and click `Add to address book`.
