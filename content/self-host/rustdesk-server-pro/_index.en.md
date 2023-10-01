@@ -16,7 +16,7 @@ RustDesk Server Pro has more features compared to the open source version.
 - Multiple relay servers (automatically selects your closest relay)
 
 {{% notice note %}}
-RustDesk client >= 1.2.0 required
+RustDesk Client >= 1.2.0 required
 {{% /notice %}}
 
 ## Download
