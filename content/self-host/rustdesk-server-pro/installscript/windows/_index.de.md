@@ -16,7 +16,9 @@ weight: 2
 9. Melden Sie sich mit dem Benutzernamen `admin` und dem Passwort `test1234` an.
 10. Geben Sie Ihren in Schritt 1 erworbenen Lizenzcode ein.
 
-## IIS als Proxy verwenden
+### IIS als Proxy verwenden
+
+Bitte stellen Sie sicher, dass die `Dynamische Inhaltskomprimierung` installiert ist. Dies ist eine IIS-Funktion, die mit Server-Rollen installiert werden kann.
 
 1. Öffnen Sie IIS (oder installieren Sie es).
 2. Erstellen Sie eine neue Website für RustDesk mit den Verbindungen (idealerweise 443) und dem entsprechenden Zertifikat. In den Grundeinstellungen sollte diese auf einen leeren Ordner verweisen. (Wenn Sie die Standardseite verwenden, stellen Sie sicher, dass sich keine anderen Dateien in dem Ordner befinden).
@@ -33,9 +35,18 @@ weight: 2
 
 1. Öffnen Sie die Website im IIS auf der linken Seite und doppelklicken Sie auf URL-Rewrite.
 2. Klicken Sie auf `Regeln hinzufügen`.
-3. Deaktivieren Sie die dynamische Komprimierung unter Komprimierung.
-4. Erstellen Sie eine neue Reverse-Proxy-Regel.
-5. Einrichten der lokalen Adresse (die Adresse 21114) \
+3. Erstellen Sie eine neue Reverse-Proxy-Regel.
+4. Einrichten der lokalen Adresse (die Adresse 21114) \
 Eingehende Regel - die interne Adresse 21114 von RustDesk \
 Ausgehende Regeln - `Von` ist die interne RustDesk-Adresse 21114 und `An` ist die externe Adresse. \
 Hinweis: Regeln ohne http/https vor den Adressen werden automatisch verarbeitet. Stellen Sie außerdem sicher, dass alle Adressen sowohl intern als auch extern zugänglich sind.
+
+### Komprimierung
+
+1. Deaktivieren Sie "Dynamische Inhaltskomprimierung".
+
+### Fehlersuche
+
+Wenn Sie einen Fehler 500.52 haben, fügen Sie die genannten Variablen hinzu: [IIS acting as reverse proxy: Where the problems start](https://techcommunity.microsoft.com/t5/iis-support-blog/iis-acting-as-reverse-proxy-where-the-problems-start/ba-p/846259).
+
+Möglicherweise müssen Sie Ihre SSL-Einstellungen auf "SSL erforderlich → Ignorieren" ändern.
