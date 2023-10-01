@@ -16,7 +16,7 @@ Go to https://github.com/rustdesk/rustdesk/fork and click "Create fork".
 {{% notice note %}}
 You only need to do this if you want to change the default server and public key.
 
-The server URL and key you are using is hidden from other users on GitHub however they can download your client and connect to your server. If you require a fully private repo you can import the RustDesk client repo using https://github.com/new/import. **If you use a private repo you have limited amounts of builds you can create per month, if you need more you will need to have a paid GitHub account.**
+The server URL and key you are using is hidden from other users on GitHub however they can download your client and connect to your server. If you require a fully private repo you can import the RustDesk Client repo using https://github.com/new/import. **If you use a private repo you have limited amounts of builds you can create per month, if you need more you will need to have a paid GitHub account.**
 {{% /notice %}}
 
 On your fork you just created go to "Settings -> Secrets and variables -> Actions".
@@ -39,7 +39,7 @@ Once workflows are enabled you can go to “Actions”.
 
 On the left, select "Flutter Nightly Build". Then on the right, click "Enable workflow".
 
-Finally you can click "Run workflow" to build the RustDesk clients for all of the supported platforms.
+Finally you can click "Run workflow" to build the RustDesk Clients for all of the supported platforms.
 
 ## Enable upload permissions for workflows
 
