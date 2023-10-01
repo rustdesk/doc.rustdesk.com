@@ -58,8 +58,7 @@ A simple way to check is using telnet. To test in the Linux terminal type `telne
 Your mail server may not be using port 25. Please make sure you are using the correct ports.
 
 ## Can I deploy RustDesk using PowerShell or similar?
-Sure, you can find scripts to aid deployment here https://rustdesk.com/docs/en/self-host/client-deployment/
-
+Sure, you can find scripts to aid deployment [here](https://rustdesk.com/docs/en/self-host/client-deployment/).
 
 ## I have installed RustDesk Server Pro manually but the API web console isn't behind SSL, how can I secure this?
 Use a proxy like Nginx, the simple install script has one, it's really simple. [This is how we do it](https://github.com/rustdesk/rustdesk-server-pro/blob/493ad90daf8815c3052ff4d0d4aa9cc07e411efa/install.sh#L252).
@@ -127,15 +126,15 @@ $ErrorActionPreference= 'silentlycontinue'
 
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
-if($rdver -eq "1.2.2")
+if ($rdver -eq "1.2.2")
 {
-write-output "RustDesk $rdver is the newest version."
-
-exit
+    write-output "RustDesk $rdver is the newest version."
+    exit
 }
 
-If (!(Test-Path C:\Temp)) {
-  New-Item -ItemType Directory -Force -Path C:\Temp > null
+if (!(Test-Path C:\Temp))
+{
+    New-Item -ItemType Directory -Force -Path C:\Temp > null
 }
 
 cd C:\Temp
