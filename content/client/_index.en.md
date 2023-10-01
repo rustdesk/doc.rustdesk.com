@@ -5,7 +5,7 @@ pre: "<b>1. </b>"
 ---
 
 ### Introduction
-The RustDesk client is used on devices to connect via our RustDesk Server either open source or Pro, it is available to download from [GitHub](https://github.com/rustdesk/rustdesk/releases/latest).
+The RustDesk Client is used on devices to connect via our RustDesk Server either open source or Pro, it is available to download from [GitHub](https://github.com/rustdesk/rustdesk/releases/latest).
 
 ### Supported Platforms
 - Microsoft Windows
