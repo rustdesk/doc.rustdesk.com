@@ -40,39 +40,6 @@ Die Protokolle werden in `/var/log/rustdesk-server` gespeichert, Sie können sie
 ## Ich habe mit dem Skript installiert, wie kann ich den Status der RustDesk-Dienste überprüfen?
 Der Status kann mit `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` überprüft werden, z. B. `sudo systemctl status rustdesk-hbbs`.
 
-## Wie installiere ich RustDesk Server Pro unter Windows?
-1. Holen Sie sich Ihre Lizenz von [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html). Auf der Seite [Lizenz](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/license/) finden Sie weitere Informationen.
-2. Laden Sie das Windows-Installationsprogramm von [GitHub](https://github.com/rustdesk/rustdesk-server-pro/releases/latest) herunter.
-3. Entpacken Sie das Windows-Installationsprogramm.
-4. Führen Sie das Installationsprogramm aus und folgen Sie den Anweisungen auf dem Bildschirm.
-5. Öffnen Sie anschließend RustDesk Server.
-6. Folgen Sie den Aufforderungen, die Sie durch die Installation führen.
-7. Klicken Sie auf `Dienste` und dann auf `Start`.
-8. Sobald die Installation abgeschlossen ist, gehen Sie zu `http://ihreipadresse:21114`.
-9. Melden Sie sich mit dem Benutzernamen `admin` und dem Passwort `test1234` an.
-10. Geben Sie Ihren in Schritt 1 erworbenen Lizenzcode ein.
-
-## Kann ich IIS als Reverse-Proxy verwenden?
-1. Öffnen Sie IIS (oder installieren Sie es).
-2. Erstellen Sie eine neue Website für RustDesk mit den Verbindungen (idealerweise 443) und dem entsprechenden Zertifikat. In den Grundeinstellungen sollte diese auf einen leeren Ordner verweisen. (Wenn Sie die Standardseite verwenden, stellen Sie sicher, dass sich keine anderen Dateien in dem Ordner befinden).
-3. Installieren Sie [Anwendungsanforderungsrouting](https://www.iis.net/downloads/microsoft/application-request-routing) auf IIS und [URL-Rewrite](https://learn.microsoft.com/en-us/iis/extensions/url-rewrite-module/using-the-url-rewrite-module).
-
-### Anwendungsanforderungsrouting
-1. Öffnen Sie auf dem IIS-Server-Host Anwendungsanforderungsrouting:
-2. Gehen Sie zu den Server-Proxy-Einstellungen.
-3. Aktivieren Sie den Proxy und alle Einstellungen werden angezeigt. Sie können sie als Standardwerte beibehalten.
-4. Speichern Sie die Einstellungen und wir können zum nächsten Schritt übergehen: URL-Rewrite.
-
-### URL-Rewrite
-1. Öffnen Sie die Website im IIS auf der linken Seite und doppelklicken Sie auf URL-Rewrite.
-2. Klicken Sie auf `Regeln hinzufügen`.
-3. Deaktivieren Sie die dynamische Komprimierung unter Komprimierung.
-4. Erstellen Sie eine neue Reverse-Proxy-Regel.
-5. Einrichten der lokalen Adresse (die Adresse 21114) \
-	Eingehende Regel - die interne Adresse 21114 von RustDesk \
-	Ausgehende Regeln - Von ist die interne RustDesk-Adresse 21114 und An ist die externe Adresse. \
-Hinweis: Regeln ohne http/https vor den Adressen werden automatisch verarbeitet. Stellen Sie außerdem sicher, dass alle Adressen sowohl intern als auch extern zugänglich sind.
-
 ## Wie ändere ich das Administrator-Passwort?
 1. Gehen Sie zu `https://rustdesk.ihredomain.com` oder `http://ihreipadresse:21114`.
 2. Melden Sie sich mit dem Benutzernamen `admin` und dem Passwort `test1234` an.
@@ -90,85 +57,8 @@ Eine einfache Möglichkeit zur Überprüfung ist die Verwendung von Telnet. Gebe
 
 Ihr Mailserver verwendet möglicherweise nicht den Port 25. Bitte stellen Sie sicher, dass Sie die richtigen Ports verwenden.
 
-## Kann ich RustDesk mit PowerShell bereitstellen?
-Sicher, dieses Skript kann helfen, ersetzen Sie `youraddress` und `yourkey` mit Ihrer Adresse und Ihrem Schlüssel für Ihren RustDesk Server Pro.
-```ps
-$ErrorActionPreference= 'silentlycontinue'
-
-$rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
-
-if($rdver -eq "1.2.2")
-{
-write-output "RustDesk $rdver is the newest version"
-
-exit
-}
-
-If (!(Test-Path C:\Temp)) {
-  New-Item -ItemType Directory -Force -Path C:\Temp > null
-}
-
-cd C:\Temp
-
-Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
-Start-Process .\rustdesk.exe --silent-install -wait
-
-$ServiceName = 'Rustdesk'
-$arrService = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
-
-if ($arrService -eq $null)
-{
-    Start-Sleep -seconds 20
-}
-
-while ($arrService.Status -ne 'Running')
-{
-    Start-Service $ServiceName
-    Start-Sleep -seconds 5
-    $arrService.Refresh()
-}
-net stop rustdesk
-
-$username = ((Get-WMIObject -ClassName Win32_ComputerSystem).Username).Split('\')[1]
-Remove-Item C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml
-New-Item C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml
-Set-Content C:\Users\$username\AppData\Roaming\RustDesk\config\RustDesk2.toml "rendezvous_server = 'youraddress' `nnat_type = 1`nserial = 0`n`n[options]`ncustom-rendezvous-server = 'youraddress'`nkey = 'yourkey'`nrelay-server = 'youraddress'`napi-server = 'https://youraddress'"
-Remove-Item C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml
-New-Item C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml
-Set-Content C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\config\RustDesk2.toml "rendezvous_server = 'youraddress' `nnat_type = 1`nserial = 0`n`n[options]`ncustom-rendezvous-server = 'youraddress'`nkey = 'yourkey'`nrelay-server = 'youraddress'`napi-server = 'https://youraddress'"
-
-net start rustdesk
-```
-
-## Wie kann ich die RustDesk-IDs von Agenten in meinem Netzwerk oder in einem RMM-System abrufen?
-Unter Windows können Sie das folgende PowerShell-Skript verwenden:
-```ps
-$ErrorActionPreference= 'silentlycontinue'
-
-Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" --get-id
-sleep 2
-$rustdesk_id = (get-clipboard)
-Write-Output $rustdesk_id
-```
-
-## Wie kann ich ein dauerhaftes Kennwort für einen Agenten in meinem Netzwerk oder in einem RMM-System festlegen?
-Unter Windows können Sie das folgende PowerShell-Skript verwenden:
-```ps
-$ErrorActionPreference = 'silentlycontinue'
-
-net stop rustdesk > null
-$ProcessActive = Get-Process rustdesk -ErrorAction SilentlyContinue
-if($ProcessActive -ne $null)
-{
-stop-process -ProcessName rustdesk -Force
-}
-
-$rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_}))
-Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" "--password $rustdesk_pw" -wait
-Write-Output $rustdesk_pw
-
-net start rustdesk > null
-```
+## Kann ich RustDesk mit PowerShell oder ähnlichem bereitstellen?
+Sicher, Sie finden Skripte zur Unterstützung der Bereitstellung [hier](https://rustdesk.com/docs/de/self-host/client-deployment/).
 
 ## Ich habe RustDesk Server Pro manuell installiert, aber die API-Webkonsole ist nicht SSL-verschlüsselt, wie kann ich diese sichern?
 Verwenden Sie einen Proxy wie Nginx, das einfache Installationsskript enthält einen, es ist wirklich einfach. [So machen wir es](https://github.com/rustdesk/rustdesk-server-pro/blob/493ad90daf8815c3052ff4d0d4aa9cc07e411efa/install.sh#L252).
@@ -236,15 +126,15 @@ $ErrorActionPreference= 'silentlycontinue'
 
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
-if($rdver -eq "1.2.2")
+if ($rdver -eq "1.2.2")
 {
-write-output "RustDesk $rdver ist die neueste Version."
-
-exit
+    write-output "RustDesk $rdver ist die neueste Version."
+    exit
 }
 
-If (!(Test-Path C:\Temp)) {
-  New-Item -ItemType Directory -Force -Path C:\Temp > null
+if (!(Test-Path C:\Temp))
+{
+    New-Item -ItemType Directory -Force -Path C:\Temp > null
 }
 
 cd C:\Temp
