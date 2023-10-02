@@ -19,13 +19,15 @@ $ErrorActionPreference= 'silentlycontinue'
 $rustdesk_pw=(-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_}))
 
 # Die Konfigurationszeichenkette von Ihrem Webportal abrufen und unten ausfüllen
-rustdesk_cfg="configstring"
+$rustdesk_cfg="configstring"
 
 ############################## Bitte nicht unterhalb dieser Zeile bearbeiten ###################################
 
 # Wird als Administrator ausgeführt und bleibt im aktuellen Verzeichnis
-if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000) {
+if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
+{
+    if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000)
+    {
         Start-Process PowerShell -Verb RunAs -ArgumentList "-NoProfile -ExecutionPolicy Bypass -Command `"cd '$pwd'; & '$PSCommandPath';`"";
         Exit;
     }
@@ -54,6 +56,9 @@ $arrService = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
 
 if ($arrService -eq $null)
 {
+    Write-Output "Installieren des Dienstes"
+    cd $env:ProgramFiles\RustDesk
+    Start-Process .\rustdesk.exe --install-service -wait -Verbose
     Start-Sleep -seconds 20
 }
 
@@ -65,7 +70,7 @@ while ($arrService.Status -ne 'Running')
 }
 
 cd $env:ProgramFiles\RustDesk\
-$rustdesk_id = (.\RustDesk.exe --get-id | out-host)
+.\RustDesk.exe --get-id | Write-Output -OutVariable rustdesk_id
 
 .\RustDesk.exe --config $rustdesk_cfg
 
@@ -139,8 +144,8 @@ rustdesk_cfg="configstring"
 
 # Prüfen, ob das Skript als root ausgeführt wird
 if [[ $EUID -ne 0 ]]; then
-	echo "Das Skript muss als root ausgeführt werden."
-	exit 1
+    echo "Das Skript muss als root ausgeführt werden."
+    exit 1
 fi
 
 # Den Pfad zur Datei rustdesk.dmg angeben
@@ -153,9 +158,9 @@ mount_point="/Volumes/RustDesk"
 echo "RustDesk jetzt herunterladen"
 
 if [[ $(arch) == 'arm64' ]]; then
-curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-aarch64.dmg --output "$dmg_file"
+    curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-aarch64.dmg --output "$dmg_file"
 else
-curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.dmg --output "$dmg_file"
+    curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.dmg --output "$dmg_file"
 fi
 
 # Einhängen der DMG-Datei in den angegebenen Einhängepunkt
@@ -163,14 +168,14 @@ hdiutil attach "$dmg_file" -mountpoint "$mount_point" &> /dev/null
 
 # Prüfen, ob das Einhängen erfolgreich war
 if [ $? -eq 0 ]; then
-	# Den Inhalt der gemounteten DMG in den Ordner /Applications verschieben
-	cp -R "$mount_point/RustDesk.app" "/Applications/" &> /dev/null
-	
-	# Aushängen der DMG-Datei
-	hdiutil detach "$mount_point" &> /dev/null
+    # Den Inhalt der gemounteten DMG in den Ordner /Applications verschieben
+    cp -R "$mount_point/RustDesk.app" "/Applications/" &> /dev/null
+
+    # Aushängen der DMG-Datei
+    hdiutil detach "$mount_point" &> /dev/null
 else
-	echo "Die RustDesk-DMG konnte nicht eingehängt werden. Die Installation wurde abgebrochen."
-	exit 1
+    echo "Die RustDesk-DMG konnte nicht eingehängt werden. Die Installation wurde abgebrochen."
+    exit 1
 fi
 
 # Den Befehl rustdesk mit --get-id ausführen und die Ausgabe in der Variable rustdesk_id speichern
@@ -190,9 +195,9 @@ kill $rdpid &> /dev/null
 echo "..............................................."
 # Prüfen, ob die rustdesk_id nicht leer ist
 if [ -n "$rustdesk_id" ]; then
-	echo "RustDesk-ID: $rustdesk_id"
+    echo "RustDesk-ID: $rustdesk_id"
 else
-	echo "RustDesk-ID konnte nicht ermittelt werden."
+    echo "RustDesk-ID konnte nicht ermittelt werden."
 fi
 
 # Den Wert der Passwortvariablen ausgeben
@@ -218,8 +223,8 @@ rustdesk_cfg="configstring"
 
 # Prüfen, ob das Skript als root ausgeführt wird
 if [[ $EUID -ne 0 ]]; then
-	echo "Dieses Skript muss als root ausgeführt werden."
-	exit 1
+    echo "Dieses Skript muss als root ausgeführt werden."
+    exit 1
 fi
 
 # OS identifizieren
@@ -235,7 +240,6 @@ if [ -f /etc/os-release ]; then
     if [ "${UPSTREAM_ID}" != "debian" ] && [ "${UPSTREAM_ID}" != "ubuntu" ]; then
         UPSTREAM_ID="$(echo ${ID_LIKE,,} | sed s/\"//g | cut -d' ' -f1)"
     fi
-
 
 elif type lsb_release >/dev/null 2>&1; then
     # linuxbase.org
@@ -291,13 +295,12 @@ rustdesk --config $rustdesk_cfg
 
 systemctl restart rustdesk
 
-
 echo "..............................................."
 # Prüfen, ob die rustdesk_id nicht leer ist
 if [ -n "$rustdesk_id" ]; then
-	echo "RustDesk-ID: $rustdesk_id"
+    echo "RustDesk-ID: $rustdesk_id"
 else
-	echo "RustDesk-ID konnte nicht ermittelt werden."
+    echo "RustDesk-ID konnte nicht ermittelt werden."
 fi
 
 # Den Wert der Passwortvariablen ausgeben
