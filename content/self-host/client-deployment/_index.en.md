@@ -114,7 +114,7 @@ rustdesk.exe --silent-install
 timeout /t 20
 
 cd "C:\Program Files\RustDesk\"
-rustdesk.exe --install-service -wait -Verbose
+rustdesk.exe --install-service
 timeout /t 20
 
 for /f "delims=" %%i IN ('rustdesk.exe --get-id ^| more') DO set rustdesk_id=%%i
