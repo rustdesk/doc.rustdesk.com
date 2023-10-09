@@ -68,6 +68,10 @@ sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 #### Android
 Install apk from our GitHub more info can be found on the [Android page](/docs/en/client/android/).
 
+#### iOS (iPhone,iPad)
+Donwload from the app store
+https://apps.apple.com/us/app/rustdesk-remote-desktop/id1581225015
+
 ### Usage
 Once installed (or run as a temporary executable) RustDesk will connect to the Public servers. You will see a message at the bottom saying (1) "Ready, For faster connection, please set up your own server". In the Top left you will see your (2) ID, (3) One Time Password and on the Right a (4) box for you to connect to another computer if you know their ID.
 
