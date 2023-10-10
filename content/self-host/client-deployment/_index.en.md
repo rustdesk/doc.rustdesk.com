@@ -35,13 +35,13 @@ if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
-if($rdver -eq "1.2.2")
+if ($rdver -eq "1.2.2")
 {
     Write-Output "RustDesk $rdver is the newest version"
     Exit
 }
 
-If (!(Test-Path C:\Temp))
+if (!(Test-Path C:\Temp))
 {
     New-Item -ItemType Directory -Force -Path C:\Temp > null
 }
@@ -70,11 +70,11 @@ while ($arrService.Status -ne 'Running')
 }
 
 cd $env:ProgramFiles\RustDesk\
-.\RustDesk.exe --get-id | Write-Output -OutVariable rustdesk_id
+.\rustdesk.exe --get-id | Write-Output -OutVariable rustdesk_id
 
-.\RustDesk.exe --config $rustdesk_cfg
+.\rustdesk.exe --config $rustdesk_cfg
 
-.\RustDesk.exe --password $rustdesk_pw
+.\rustdesk.exe --password $rustdesk_pw
 
 Write-Output "..............................................."
 # Show the value of the ID Variable
@@ -95,8 +95,9 @@ setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 set alfanum=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 
 set rustdesk_pw=
-FOR /L %%b IN (1, 1, 12) DO (
-    SET /A rnd_num=!RANDOM! %% 62
+for /L %%b in (1, 1, 12) do
+(
+    set /A rnd_num=!RANDOM! %% 62
     for %%c in (!rnd_num!) do set rustdesk_pw=!rustdesk_pw!!alfanum:~%%c,1!
 )
 
@@ -117,11 +118,11 @@ cd "C:\Program Files\RustDesk\"
 rustdesk.exe --install-service
 timeout /t 20
 
-for /f "delims=" %%i IN ('rustdesk.exe --get-id ^| more') DO set rustdesk_id=%%i
+for /f "delims=" %%i in ('rustdesk.exe --get-id ^| more') do set rustdesk_id=%%i
 
-RustDesk.exe --config %rustdesk_cfg%
+rustdesk.exe --config %rustdesk_cfg%
 
-RustDesk.exe --password %rustdesk_pw%
+rustdesk.exe --password %rustdesk_pw%
 
 echo ...............................................
 REM Show the value of the ID Variable
