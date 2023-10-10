@@ -3,7 +3,7 @@ title: Technical Support
 weight: 16
 ---
 
-## Community Support
+### Community Support
 
 Free Support: Available through [Github Discussions](https://github.com/rustdesk/rustdesk/discussions) and [Discord](https://discord.gg/nDceKgxnkV).
 
@@ -11,7 +11,7 @@ We can help you install RustDesk using supported methods as documented here.
 
 We may give pointers, or provide additional troubleshooting steps if we believe your issue may be related to a recent update or bug.
 
-## Commercial Support
+### Commercial Support
 
 Paid Support: You can [email](mailto:support@rustdesk.com) to get started.
 
@@ -19,7 +19,7 @@ We can help with lots of problems, installations and configurations. Fully manag
 
 You get Priority #1 fast responses and service.
 
-## SSH Access
+### SSH Access
 To provide SSH access to your server for troubleshooting, please add the following key to `~/username/.ssh/authorized_keys` and ensure the file has permissions `600`.
 
 You may refer to this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server) for reference.
