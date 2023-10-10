@@ -3,7 +3,7 @@ title: Web
 weight: 23
 ---
 
-## How to build on Linux
+### How to build on Linux
 
 Run below on Linux or Mac (works on Windows too, however you may need to slightly modify some commands, e.g. change `wget` to `curl.exe -O`):
 
@@ -38,7 +38,7 @@ cd ..
 flutter run -d chrome
 ```
 
-## How to build release on Linux
+### How to build release on Linux
 
 If you want to host the web client you should build a release before running it on a web server.
 To do so follow the steps shown above except the `flutter run -d chrome` command. Continue with the following commands:
@@ -54,7 +54,7 @@ To configure the build on HTTPS we would recommend following the instructions fr
 
 > Currently, YUV converter and VP9 are the bottleneck.
 
-## How to build with Docker
+### How to build with Docker
 
 Run below on Linux or Mac:
 - Begin by installing flutter for [Linux](https://docs.flutter.dev/get-started/install/linux#install-flutter-manually) or [macOS](https://docs.flutter.dev/get-started/install/macos).
@@ -132,7 +132,7 @@ ENTRYPOINT [ "/app/server/server.sh"]
 PORT=5000
 
 # Stop any program currently running on the set port
-echo 'preparing port' $PORT '...'
+echo 'Preparing port' $PORT '...'
 fuser -k 5000/tcp
 
 # Switch directory
