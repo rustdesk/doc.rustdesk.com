@@ -7,11 +7,11 @@ weight: 35
 This build uses GitHub Actions, you will need a GitHub account, also building can be slow, however this requires no development environment.
 {{% /notice %}}
 
-## Make a fork
+### Make a fork
 
 Go to https://github.com/rustdesk/rustdesk/fork and click "Create fork".
 
-## Set your environment variables (optional)
+### Set your environment variables (optional)
 
 {{% notice note %}}
 You only need to do this if you want to change the default server and public key.
@@ -29,7 +29,7 @@ Click "New repository secret", for the name put RS_PUB_KEY, for the secret put y
 
 Click "Add secret".
 
-## Enable workflows
+### Enable workflows
 
 On your fork you just created go to "Settings -> Actions -> General".
 
@@ -41,13 +41,13 @@ On the left, select "Flutter Nightly Build". Then on the right, click "Enable wo
 
 Finally you can click "Run workflow" to build the RustDesk Clients for all of the supported platforms.
 
-## Enable upload permissions for workflows
+### Enable upload permissions for workflows
 
 On your fork you just created go to "Settings -> Actions -> General".
 
 Scroll down and under Workflow permissions enable "Read and write permissions".
 
-## Download your built packages
+### Download your built packages
 
 After the workflow is done running you can download the packages it built.
 

@@ -3,7 +3,7 @@ title: Hardcoding Custom Settings
 weight: 49
 ---
 
-## Custom Server
+### Custom Server
 {{% notice note %}}
 To hardcode custom server settings into your executables you must [build](/docs/en/dev/build/) the client yourself on your machine or [with GitHub Actions](/docs/en/dev/build/all/).
 **Noted**: [self-hosted runners](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners) for Arm are used in our GitHub actions, please set it up yourself.

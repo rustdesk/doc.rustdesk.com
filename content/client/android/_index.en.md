@@ -76,7 +76,7 @@ Starting from version 1.1.9, the Android client has added the functions of shari
 - Android 10 or above is required to share the internal audio of the mobile phone system
 - iOS does not yet support screen sharing
 
-#### **Request permissions and start services**
+#### Request permissions and start services
 
 Click on `Share Screen` from the bottom navigation bar.
 
@@ -95,13 +95,13 @@ Configure various permissions as needed. Every time you start RustDesk, you need
 Above * represents special permissions. To obtain such permissions, you need to jump to the Android system settings page to obtain them manually. The details are as follows
 {{% /notice %}}
 
-#### **Special Permission Request - File**
+#### Special Permission Request - File
 
 | Requesting Android file permissions will automatically jump to the system settings page |
 | :---: |
 | ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
-#### **Special Permission Request - mouse input**
+#### Special Permission Request - mouse input
 | Step 1: Find "Installed Services" | Step 2: Start RustDesk Input |
 | --- | --- |
 | ![](/docs/en/client/android/images/get_input1_en.jpg?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
@@ -110,14 +110,14 @@ Above * represents special permissions. To obtain such permissions, you need to 
 The system setting page of different vendors may be different, please adjust it according to your system page.
 {{% /notice %}}
 
-**Remote mouse control shortcuts:**
+| Remote mouse control shortcuts | Description |
+| --- | --- |
+| Click the right mouse button | Go back |
+| Click the mouse wheel | Home |
+| Long press mouse wheel | Recently opened apps |
+| Mouse wheel scrolling | Simulate vertical sliding |
 
-- Click the right mouse button: go back
-- Click the mouse wheel: Home
-- Long press mouse wheel: recently opened apps
-- Mouse wheel scrolling: simulate vertical sliding
-
-#### **Start Service**
+#### Start Service
 
 After obtaining the `Screen Capture` permission, the service will be automatically started. You can also click the `Start Service` button to start the service. After the service is started, it can accept desktop control requests from other devices.
 

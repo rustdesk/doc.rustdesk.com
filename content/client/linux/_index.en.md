@@ -7,7 +7,7 @@ weight: 4
 
 #### Ubuntu (>= 16)
 
-```bash
+```sh
 # please ignore the wrong disk usage report
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
@@ -50,5 +50,5 @@ Modify below line to `WaylandEnable=false` in `/etc/gdm/custom.conf` or `/etc/gd
 ```
 
 {{% notice note %}}
-Please **reboot** to make above changes taking effect
+Please **reboot** to make above changes taking effect.
 {{% /notice %}}
