@@ -3,7 +3,7 @@ title: Tactical RMM
 weight: 100
 ---
 
-## Um Tactical RMM mit RustDesk zu verwenden, müssen Sie Folgendes tun
+### Um Tactical RMM mit RustDesk zu verwenden, müssen Sie Folgendes tun
 
 1. Installieren Sie Ihren eigenen Tactical RMM-Server, folgen Sie den [offiziellen Dokumenten](https://docs.tacticalrmm.com/) und öffnen Sie Ports.
 2. Erstellen Sie die folgenden PowerShell-Skripte.
@@ -11,7 +11,8 @@ weight: 100
 4. Erstellen Sie [benutzerdefinierte Felder](https://docs.tacticalrmm.com/functions/custom_fields/) für die RustDesk-ID und das Passwort.
 5. Erstellen Sie [Sammelaufgaben](https://docs.tacticalrmm.com/functions/automated_tasks/#collector-tasks).
 
-## Installationsskript zum Ersetzen von IPADDRESS und KEY
+### Installationsskript zum Ersetzen von IPADDRESS und KEY
+
 ```ps
 $ErrorActionPreference= 'silentlycontinue'
 
@@ -52,16 +53,16 @@ Set-Content C:\Windows\ServiceProfiles\LocalService\AppData\Roaming\RustDesk\con
 net start rustdesk
 ```
 
-## RustDesk-ID abfragen (Sammelskript benötigt benutzerdefiniertes Agent-Feld)
+### RustDesk-ID abfragen (Sammelskript benötigt benutzerdefiniertes Agent-Feld)
 
 ```ps
 $ErrorActionPreference= 'silentlycontinue'
 
 cd $env:ProgramFiles\RustDesk\
-.\RustDesk.exe --get-id | out-host
+.\rustdesk.exe --get-id | out-host
 ```
 
-## Ein Skript erstellen, das als Prüfung verwendet werden soll
+### Ein Skript erstellen, das als Prüfung verwendet werden soll
 
 ```ps
 $ErrorActionPreference= 'silentlycontinue'
@@ -80,7 +81,8 @@ else
 }
 ```
 
-## RustDesk-Passwort setzen und abfragen (Sammelskript benötigt benutzerdefiniertes Agent-Feld)
+### RustDesk-Passwort setzen und abfragen (Sammelskript benötigt benutzerdefiniertes Agent-Feld)
+
 ```ps
 $ErrorActionPreference= 'silentlycontinue'
 
@@ -90,11 +92,11 @@ net stop rustdesk > null
 $ProcessActive = Get-Process rustdesk -ErrorAction SilentlyContinue
 if($ProcessActive -ne $null)
 {
-    stop-process -ProcessName rustdesk -Force
+    Stop-Process -ProcessName rustdesk -Force
 }
 
 $rustdesk_pw = (-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_}))
-Start-Process "$env:ProgramFiles\RustDesk\RustDesk.exe" "--password $rustdesk_pw" -wait
+Start-Process "$env:ProgramFiles\RustDesk\rustdesk.exe" "--password $rustdesk_pw" -wait
 Write-Output $rustdesk_pw
 
 net start rustdesk > null
