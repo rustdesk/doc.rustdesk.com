@@ -7,16 +7,16 @@ weight: 35
 Diese Erstellung verwendet GitHub-Aktionen. Sie benötigen einen GitHub-Account. Außerdem kann die Erstellung langsam sein, dafür ist aber keine Entwicklungsumgebung erforderlich.
 {{% /notice %}}
 
-## Einen Fork erstellen
+### Einen Fork erstellen
 
 Gehen Sie zu https://github.com/rustdesk/rustdesk/fork und klicken Sie auf "Create fork".
 
-## Setzen Sie Ihre Umgebungsvariablen (optional)
+### Setzen Sie Ihre Umgebungsvariablen (optional)
 
 {{% notice note %}}
 Sie müssen dies nur tun, wenn Sie den Standardserver und den öffentlichen Schlüssel ändern möchten.
 
-Die Server-URL und der Schlüssel, die Sie verwenden, sind für andere Benutzer auf GitHub verborgen, aber sie können Ihren Client herunterladen und sich mit Ihrem Server verbinden. Wenn Sie ein vollständig privates Repository benötigen, können Sie das RustDesk-Client-Repository mit https://github.com/new/import importieren. **Wenn Sie ein privates Repository verwenden, können Sie nur eine begrenzte Anzahl von Paketen pro Monat erstellen. Wenn Sie mehr Pakete benötigen, müssen Sie ein kostenpflichtiges GitHub-Konto einrichten.**
+Die Server-URL und die Schlüssel, die Sie verwenden, sind für andere Benutzer auf GitHub verborgen, aber sie können Ihren Client herunterladen und sich mit Ihrem Server verbinden. Wenn Sie ein vollständig privates Repository benötigen, können Sie das RustDesk-Client-Repository mit https://github.com/new/import importieren. **Wenn Sie ein privates Repository verwenden, können Sie nur eine begrenzte Anzahl von Paketen pro Monat erstellen. Wenn Sie mehr Pakete benötigen, müssen Sie ein kostenpflichtiges GitHub-Konto einrichten.**
 {{% /notice %}}
 
 Gehen Sie auf Ihrem gerade erstellten Fork zu "Settings → Secrets and Variables → Actions".
@@ -29,7 +29,7 @@ Klicken Sie auf "New repository secret", bei "Name" geben Sie RS_PUB_KEY, bei "S
 
 Klicken Sie auf "Add secret".
 
-## Workflows aktivieren
+### Workflows aktivieren
 
 Gehen Sie in Ihrem gerade erstellten Fork zu "Settings → Actions → General".
 
@@ -41,13 +41,13 @@ Auf der linken Seite wählen Sie "Flutter Nightly Build". Dann klicken Sie auf d
 
 Schließlich können Sie auf "Run workflow" klicken, um die RustDesk-Clients für alle unterstützten Plattformen zu erstellen.
 
-## Upload-Berechtigungen für Workflows aktivieren
+### Upload-Berechtigungen für Workflows aktivieren
 
 Gehen Sie in Ihrem gerade erstellten Fork zu "Settings → Actions → General".
 
 Scrollen Sie nach unten zum Abschnitt "Workflow permissions" und aktivieren Sie "Read and write permissions".
 
-## Ihre erstellten Pakete herunterladen
+### Ihre erstellten Pakete herunterladen
 
 Nachdem der Workflow abgeschlossen ist, können Sie die erstellten Pakete herunterladen.
 
