@@ -28,6 +28,9 @@ oder
 hbbs.example.com:21116
 ```
 
+Wenn Ihr API-Server nicht auf dem Standard-Port `21114` läuft, geben Sie bitte ausdrücklich `API-Server` an.
+Wenn Ihr API-Server z. B. auf dem Standard-HTTPS-Port läuft, geben Sie bitte `API-Server` mit `https://hbbs.example.com` an.
+
 ### Mit Import oder Export einrichten
 
 1. Verwenden Sie die Schritte [oben](/docs/de/self-host/client-configuration/#manuelle-konfiguration), um den RustDesk-Client auf einem Gerät zu konfigurieren.
