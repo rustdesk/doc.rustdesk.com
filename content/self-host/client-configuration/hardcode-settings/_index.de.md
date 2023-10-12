@@ -3,9 +3,10 @@ title: Benutzerdefinierte Einstellungen fest codieren
 weight: 49
 ---
 
-## Benutzerdefinierter Server
+### Benutzerdefinierter Server
 {{% notice note %}}
-Um benutzerdefinierte Servereinstellungen in Ihren ausführbaren Dateien fest einzubinden, müssen Sie den Client auf Ihrem Rechner selbst [erstellen](/docs/de/dev/build/) oder mit [GitHub-Aktionen](/docs/de/dev/build/all/) bauen.
+Um benutzerdefinierte Servereinstellungen in Ihren ausführbaren Dateien fest einzubinden, müssen Sie den Client auf Ihrem Rechner selbst [erstellen](/docs/de/dev/build/) oder mit [GitHub-Aktionen](/docs/de/dev/build/all/) bauen.<br>
+**Hinweis**: [Selbst gehostete Runner](https://docs.github.com/de/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners) für Arm werden in unseren GitHub-Aktionen verwendet, bitte richten Sie sie selbst ein.
 {{% /notice %}}
 {{% notice note %}}
 **Wenn Sie einen dieser Werte ohne den anderen setzen, wird Ihre ausführbare Datei nicht funktionieren!**
