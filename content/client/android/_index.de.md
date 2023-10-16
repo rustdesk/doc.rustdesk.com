@@ -76,7 +76,7 @@ Ab Version 1.1.9 hat der Android-Client die Funktion zur Freigabe des Bildschirm
 - Android 10 oder höher ist erforderlich, um den internen Sound des Mobiltelefonsystems zu teilen
 - iOS unterstützt noch keine Bildschirmfreigabe
 
-#### **Berechtigungen anfordern und Dienste starten**
+#### Berechtigungen anfordern und Dienste starten
 
 Klicken Sie in der unteren Navigationsleiste auf `Bildschirm freigeben`.
 
@@ -84,7 +84,7 @@ Konfigurieren Sie nach Bedarf verschiedene Berechtigungen. Jedes Mal, wenn Sie R
 
 ![](/docs/en/client/android/images/server_off_en.jpg?width=300px)
 
-| Berechtigung     | Beschreibung                                               |
+| Berechtigung | Beschreibung |
 | --- | --- |
 | Bildschirmaufnahme | Wenn Sie die Berechtigung zur Freigabe von Bildschirmaufnahmen aktivieren, wird der Überwachungsdienst gleichzeitig mit dem Start des Dienstes aktiviert. |
 | Eingabesteuerung* | Legt fest, ob das Steuergerät die Eingaben des Mobiltelefons steuern darf, z. B. die Bedienung des virtuellen Touchscreens mit der Maus. |
@@ -95,13 +95,13 @@ Konfigurieren Sie nach Bedarf verschiedene Berechtigungen. Jedes Mal, wenn Sie R
 Das obige * steht für spezielle Berechtigungen. Um solche Berechtigungen zu erhalten, müssen Sie auf die Seite mit den Android-Systemeinstellungen wechseln, um sie manuell zu erhalten. Die Einzelheiten sind wie folgt
 {{% /notice %}}
 
-#### **Sondergenehmigung beantragen – Datei**
+#### Sondergenehmigung beantragen – Datei
 
 | Das Anfordern von Android-Dateiberechtigungen führt automatisch zur Seite mit den Systemeinstellungen |
 | :---: |
 | ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
-#### **Sondergenehmigung beantragen - Mauseingabe**
+#### Sondergenehmigung beantragen - Mauseingabe
 | Schritt 1: Suchen Sie „Installierte Dienste“ | Schritt 2: Starten Sie RustDesk Input |
 | --- | --- |
 | ![](/docs/en/client/android/images/get_input1_en.jpg?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
@@ -110,14 +110,14 @@ Das obige * steht für spezielle Berechtigungen. Um solche Berechtigungen zu erh
 Die Systemeinstellungsseite der verschiedenen Anbieter kann unterschiedlich sein, bitte passen Sie sie entsprechend Ihrer Systemseite an.
 {{% /notice %}}
 
-**Tastenkombinationen für die Fernbedienung der Maus:**
+| Tastenkombinationen für die Fernbedienung der Maus | Beschreibung |
+| --- | --- |
+| Klick mit der rechten Maustaste | Zurück |
+| Klick auf das Mausrad | Startseite |
+| Langes Drücken des Mausrads | Zuletzt geöffnete Apps |
+| Scrollen mit dem Mausrad | Vertikales Gleiten simulieren |
 
-- Klick mit der rechten Maustaste: zurück
-- Klick auf das Mausrad: Startseite
-- Langes Drücken des Mausrads: zuletzt geöffnete Apps
-- Scrollen mit dem Mausrad: vertikales Gleiten simulieren
-
-#### **Dienst starten**
+#### Dienst starten
 
 Nach Erhalt der Berechtigung `Bildschirmaufnahme` wird der Dienst automatisch gestartet. Sie können auch auf die Schaltfläche `Dienst starten` klicken, um den Dienst zu starten. Nachdem der Dienst gestartet wurde, kann er Desktop-Steuerungsanfragen von anderen Geräten annehmen.
 

@@ -3,9 +3,9 @@ title: FAQ für Windows
 weight: 40
 ---
 
-## Herunterladen des Pakets vcpkg fehlgeschlagen
+### Herunterladen des Pakets vcpkg fehlgeschlagen
 
-### Fehler
+#### Fehler
 
 ```
  -- Fetching https://chromium.googlesource.com/libyuv/libyuv 287158925b0e03ea4499a18b4e08478c5781541b...
@@ -13,15 +13,15 @@ weight: 40
        Command failed: D:/program/Git/mingw64/bin/git.exe fetch https://chromium.googlesource.com/libyuv/libyuv 287158925b0e03ea4499a18b4e08478c5781541b --depth 1 -n
 ```
 
-### Lösung
+#### Lösung
 
 Verwenden Sie einen Browser, um [libyuv-287158925b0e03ea4499a18b4e08478c5781541b.tar.gz](https://chromium.googlesource.com/libyuv/libyuv/+archive/287158925b0e03ea4499a18b4e08478c5781541b.tar.gz) herunterzuladen, verschieben Sie es dann in `vcpkg/downloads` und installieren Sie es neu.
 
 
 
-## Paket in Cargo.lock nicht vorhanden
+### Paket in Cargo.lock nicht vorhanden
 
-### Fehler
+#### Fehler
 
 ```
 $ cargo run
@@ -42,34 +42,34 @@ $ cargo run
 
 Vielleicht hat der Autor `git force push` benutzt und der vorherige Beitrag wurde überschrieben.
 
-### Lösung
+#### Lösung
 
 `cargo update`erzwingt die Aktualisierung des Pakets.
 
 
 
-## VCPKG_ROOT nicht gesetzt
+### VCPKG_ROOT nicht gesetzt
 
-### Fehler
+#### Fehler
 
 ```
 thread 'main' panicked at 'Failed to find package: VcpkgNotFound("No vcpkg installation found. Set the VCPKG_ROOT environment variable or run 'vcpkg integrate install'")', libs\scrap\build.rs:7:45
 ```
 
-### Lösung
+#### Lösung
 
 Fügen Sie die Umgebungsvariable `VCPKG_ROOT` hinzu oder starten Sie mit `VCPKG_ROOT=<vcpkg_dir> cargo run`.
 
 
 
-## clang nicht installiert oder LIBCLANG_PATH nicht gesetzt
+### clang nicht installiert oder LIBCLANG_PATH nicht gesetzt
 
-### Fehler
+#### Fehler
 
 ```
 thread 'main' panicked at 'Unable to find libclang: "couldn't find any valid shared libraries matching: ['clang.dll', 'libclang.dll'], set the `LIBCLANG_PATH` environment variable to a path where one of these files can be found (invalid: [])"', C:\Users\selfd\.cargo\registry\src\mirrors.ustc.edu.cn-61ef6e0cd06fb9b8\bindgen-0.59.2\src/lib.rs:2144:31
 ```
 
-### Lösung
+#### Lösung
 
 Installieren Sie [LLVM](https://releases.llvm.org/download.html) und fügen Sie die Umgebungsvariable `LIBCLANG_PATH` als `llvm_install_dir/bin` hinzu.

@@ -3,7 +3,7 @@ title: Web
 weight: 23
 ---
 
-## Auf Linux erstellen
+### Auf Linux erstellen
 
 Führen Sie die folgenden Schritte unter Linux oder Mac aus (funktioniert auch unter Windows, allerdings müssen Sie einige Befehle leicht abändern, z. B. `wget` in `curl.exe -O`):
 
@@ -38,7 +38,7 @@ cd ..
 flutter run -d chrome
 ```
 
-## Version auf Linux erstellen
+### Version auf Linux erstellen
 
 Wenn Sie den Webclient hosten wollen, sollten Sie eine Version erstellen, bevor Sie ihn auf einem Webserver ausführen.
 Führen Sie dazu die oben beschriebenen Schritte aus, mit Ausnahme des Befehls `flutter run -d chrome`. Fahren Sie mit den folgenden Befehlen fort:
@@ -54,7 +54,7 @@ Um die Erstellung auf HTTPS zu konfigurieren, empfehlen wir, dieser [Anleitung](
 
 > Derzeit sind YUV-Konverter und VP9 der Engpass.
 
-## Mit Docker erstellen
+### Mit Docker erstellen
 
 Führen Sie die folgenden Schritte unter Linux oder Mac aus:
 - Beginnen Sie mit der Installation von flutter für [Linux](https://docs.flutter.dev/get-started/install/linux#install-flutter-manually) oder [macOS](https://docs.flutter.dev/get-started/install/macos).
