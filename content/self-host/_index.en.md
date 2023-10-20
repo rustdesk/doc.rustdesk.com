@@ -8,6 +8,10 @@ If you are using RustDesk you should have your own RustDesk Server, these docs w
 
 Support is available via our [Discord](https://discord.com/invite/nDceKgxnkV) for OSS and [email](mailto:support@rustdesk.com) for Pro.
 
+## Basic Setup
+
+https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/#set-up-your-own-server-instance-manually
+
 ## Ports Required
 
 Ports required for RustDesk Server self-hosting depends largely on your environment and what you want to do with RustDesk. The Examples shown throughout the docs will have generally have all ports suggested to be opened.
