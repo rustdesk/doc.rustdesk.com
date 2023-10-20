@@ -31,7 +31,7 @@ hbbs.example.com:21116
 If your API server does not run on default `21114` port, please specify `API Server` explicitly.
 e.g. your API server runs on default https port, please specify `API Server` with `https://hbbs.example.com`.
 
-As a Pro user you will be able to retrieve the key from the [web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/), or you can find it in `id_ed25519.pub` file under your working directory.
+As a `Pro` user you will be able to retrieve the key from the [web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/), or you can find it in `id_ed25519.pub` file under your working directory.
 
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
@@ -58,7 +58,7 @@ You can also use the steps from [above](/docs/en/self-host/client-configuration/
 
 Change `rustdesk.exe` to rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe, e.g. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe. You can see the config result in the About Window below.
 
-As a Pro user you will be able to retrieve the whole encrypted string from the [web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/) then download and rename the RustDesk Client exe, you can upload this somewhere easy for your customers to use.
+As a `Pro` user you will be able to retrieve the whole encrypted string from the [web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/) then download and rename the RustDesk Client exe, you can upload this somewhere easy for your customers to use.
 
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
