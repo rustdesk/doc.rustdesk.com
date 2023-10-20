@@ -28,6 +28,8 @@ or
 hbbs.example.com:21116
 ```
 
+### Set `Key`
+
 As a `Pro` user you will be able to retrieve the key from the [web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/), or you can find it in `id_ed25519.pub` file under your working directory.
 
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
