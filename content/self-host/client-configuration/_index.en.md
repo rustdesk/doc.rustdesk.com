@@ -28,12 +28,17 @@ or
 hbbs.example.com:21116
 ```
 
-If your API server does not run on default `21114` port, please specify `API Server` explicitly.
-e.g. your API server runs on default https port, please specify `API Server` with `https://hbbs.example.com`.
-
 As a `Pro` user you will be able to retrieve the key from the [web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/), or you can find it in `id_ed25519.pub` file under your working directory.
 
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
+
+#### Set `API server`
+This is for `Pro` user only. When you can log in on web console, but fail to log in RustDesk client, it probably you have not set `API serer` correctly.
+
+If your API server does not run on default `21114` port, please specify `API Server` explicitly.
+e.g. your API server runs on default https port, please specify `API Server` with `https://hbbs.example.com`.
+
+If you still can not confirm the value of `API server`, please go to the welcome page of web console, the `API server` is shown as above picture.
 
 ### Setup Using Import or Export
 
