@@ -56,6 +56,8 @@ Change `rustdesk.exe` to rustdesk-`host=<host-ip-or-name>,key=<public-key-string
 
 As a Pro user you will be able to retrieve the whole encrypted string from the [web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/) then download and rename the RustDesk Client exe, you can upload this somewhere easy for your customers to use.
 
+![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
+
 <a name="invalidchar"></a>
 {{% notice note %}}
 You need to set both `host` and `key`, missing either one will not work.
@@ -66,10 +68,6 @@ If there are invalid characters in the key which can not be used in a Windows fi
 `id_ed25519` file from your server and restart `hbbs`/`hbbr`. This will cause the `id_ed25519.pub` file to regenerate. You may need to
 repeat this process until you get valid characters.
 {{% /notice %}}
-
-If you are using `Pro`, you can find the key in welcome page of [web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/).
-
-![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
 
 ### [Hardcoding](/docs/en/self-host/client-configuration/hardcode-settings/)
