@@ -142,3 +142,10 @@ cd C:\Temp
 Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
 ```
+
+### `Key mismatch` error.
+Please configure your client with correct key. https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/
+
+## `Failed to connect to relay server` error.
+Please make sure `hbbr` is running. More inforamtion about `hbbr`, you can find here, https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/.
+If your `hbbr` does not run on the same machine of `hbbs`, or you have multiple relay servers, or you do not run it on default port `21117`, you have to tell it to `hbbs` explictly. please check here, https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/
