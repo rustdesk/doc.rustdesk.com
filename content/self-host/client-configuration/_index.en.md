@@ -67,6 +67,11 @@ If there are invalid characters in the key which can not be used in a Windows fi
 repeat this process until you get valid characters.
 {{% /notice %}}
 
+If you are using `Pro`, you can find the key in welcome page of [web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/).
+
+![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
+
+
 ### [Hardcoding](/docs/en/self-host/client-configuration/hardcode-settings/)
 
 ### Logging your user in (RustDesk Server Pro)
