@@ -17,14 +17,14 @@ https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/#set-up-your-
 Ports required for RustDesk Server self-hosting depends largely on your environment and what you want to do with RustDesk. The Examples shown throughout the docs will have generally have all ports suggested to be opened.
 
 Core Ports: \
-TCP 21115-21117 \
-UDP 21116
+TCP `21115-21117` \
+UDP `21116`
 
 The above are the minimum required ports for RustDesk to work, these handle the signal and relay ports as well as NAT traversal.
 
-Additionally TCP ports 21118 and 21119 can be opened if you want to use the [RustDesk Web Client](https://rustdesk.com/docs/en/dev/build/web/).
+Additionally TCP ports `21118` and `21119` can be opened if you want to use the [RustDesk Web Client](https://rustdesk.com/docs/en/dev/build/web/).
 
-For Pro users without an SSL Proxy you will need to open TCP port 21114 for the API to work alternatively using an SSL Proxy open TCP port 443.
+For Pro users without an SSL Proxy you will need to open TCP port `21114` for the API to work alternatively using an SSL Proxy open TCP port `443`.
 
 ## Test Ports are opened
 
