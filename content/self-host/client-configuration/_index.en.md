@@ -33,7 +33,7 @@ As a `Pro` user you will be able to retrieve the key from the [web console](http
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
 #### Set `API server`
-This is for `Pro` user only. When you can log in on web console, but fail to log in RustDesk client, it probably you have not set `API serer` correctly.
+This is for `Pro` user only. When you can log in on web console, but fail to log in on RustDesk client, it probably you have not set `API serer` correctly.
 
 If your API server does not run on default `21114` port, please specify `API Server` explicitly.
 e.g. your API server runs on default https port, please specify `API Server` with `https://hbbs.example.com`.
