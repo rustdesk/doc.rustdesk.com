@@ -66,4 +66,6 @@ $ sudo grep 'comm="rustdesk"' /var/log/audit/audit.log | tail -1
 type=AVC msg=audit(1697902459.165:707): avc:  denied  { name_connect } for  pid=31346 comm="rustdesk" dest=53330 scontext=system_u:system_r:init_t:s0 tcontext=system_u:object_r:ephemeral_port_t:s0 tclass=tcp_socket permissive=0
 ```
 
+**注意**: audit 后面括号内的数字是时间戳。
+
 如果有 `avc: denied` 的输出，则需要添加 SElinux 策略，请参考[SELinux](./selinux/)。
