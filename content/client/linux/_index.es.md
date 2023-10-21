@@ -3,7 +3,7 @@ title: Linux
 weight: 4
 ---
 
-### Installation
+### Instalación
 ------
 
 - Ubuntu (>= 16)
@@ -41,8 +41,19 @@ Arch: https://bbs.archlinux.org/viewtopic.php?id=218319
 
 ##### Login Screen
 
-Modificar debajo de la línea para `WaylandEnable=false` en `/etc/gdm/custom.conf` o `/etc/gdm3/custom.conf`.
+Modificar la linea mostrada abajo por `WaylandEnable=false` en `/etc/gdm/custom.conf` o `/etc/gdm3/custom.conf`.
 ```
 #WaylandEnable=false
 ```
+
+{{% notice note %}}
+Por favor **reinicia** para que los cambios tomen efecto en el sistema.
+{{% /notice %}}
+
+#### Problemas de permisos
+
+Si el proceso  RustDesk --server no esta corriendo, es decir, no hay salida al ejecutar `ps -ef | grep -E 'rustdesk +--server'`.
+Entonces probablemente hay un problema de permisos.
+
+Ve a [SELinux](./selinux/) para añadir políticas de SELinux.
 
