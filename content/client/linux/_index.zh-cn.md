@@ -53,3 +53,12 @@ RustDesk 现在有实验性的 Wayland 支持，您可能需要下载 [nightly v
 {{% notice note %}}
 请**重新启动**来使上述变更生效
 {{% /notice %}}
+
+
+#### 权限问题
+
+如果您发现 RustDesk 的 --server 进程没有启动，即执行 `ps -ef | grep -E 'rustdesk +--server'` 没有输出。
+那么很可能是权限问题。
+
+
+SELinux 权限添加请参考[SELinux](./selinux/)。

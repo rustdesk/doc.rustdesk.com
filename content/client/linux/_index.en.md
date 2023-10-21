@@ -52,3 +52,10 @@ Modify below line to `WaylandEnable=false` in `/etc/gdm/custom.conf` or `/etc/gd
 {{% notice note %}}
 Please **reboot** to make above changes taking effect.
 {{% /notice %}}
+
+#### Permissions Issue
+
+If you find that RustDesk's --server process is not running, that is, there is no output when executing `ps -ef | grep -E 'rustdesk +--server'`.
+Then it's probably a permissions issue.
+
+Please refer to [SELinux](./selinux/) for adding SELinux policies.
