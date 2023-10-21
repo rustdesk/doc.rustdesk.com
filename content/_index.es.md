@@ -8,7 +8,7 @@ weight: 1
 RustDesk es una alternativa completa de control remoto y código abierto, orientada al self-hosting y la seguridad con minima configuración. Tienes control completo de tu información sin preocupación por la seguridad. El cliente es de código abierto y tienes dos opciones, entre el completo <b>Professional Server</b> disponible para la compra en nuestro [sitio](https://rustdesk.com) o el servidor básico, gratuito y de código abierto basado en nuestro <b>Professional Server</b>
 
 ## Características
-- Funciona en Windows, macOS, Linux, iOS, Android, Web.
+- Funciona en Windows, macOS, Linux, iOS, Android y Exploradores web.
 - Soporta los codecs de software VP8 / VP9 / AV1 y los codecs de hardware H264 / H265
 - Se dueño de tu información. Configura fácilmente una solución self-hosted en tu infraestructura
 - No hay necesidad de permisos de administrador o instalación en windows, eleve los privilegios localmente o a pedido de forma remota.
