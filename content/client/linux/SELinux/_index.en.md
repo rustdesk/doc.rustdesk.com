@@ -115,8 +115,8 @@ sudo semodule -l | grep rustdesk
 
 ### Create A Type "rustdesk_t"
 
-1 Create a new directory. `mkdir rustdesk-selinux-1.0` 。
-2. Create SELinux policy files. `touch Makefile rustdesk.te rustdesk.fc rustdesk.if` 。
+1. Create a new directory. `mkdir rustdesk-selinux-1.0`.
+2. Create SELinux policy files. `touch Makefile rustdesk.te rustdesk.fc rustdesk.if`.
 
 ```text
 .
