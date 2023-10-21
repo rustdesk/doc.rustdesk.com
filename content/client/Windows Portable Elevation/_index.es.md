@@ -23,15 +23,15 @@ Mediante estos métodos, los usuarios remotos no necesitan pedir la elevación d
 
 El lado controlado puede hacer click en `Aceptar y Elevar` cuando se este conectando o hacer click en `Elevate` una vez este conectado.
 
-| Connecting | Connected |
+| Conectando | Conectado |
 | :---: | :---: |
 | ![](/docs/en/client/Windows%20Portable%20Elevation/images/cm_unauth.jpg) | ![](/docs/en/client/Windows%20Portable%20Elevation/images/cm_auth.jpg) |
 
 ### Pide la elevación de permisos del lado controlador
 
-Despues de seleccionar en el menu de acción `Solicitar Elevación`, la siguiente ventana va a aparecer. si elegís `Preguntar al remoto por autenticación`, no necesitaras ingresar un usuario y contraseña, pero el usuario remoto deberá tener permisos de administrador. si seleccionas `Transmitir el nombre de usuario y contraseña del administrador`, el usuario remoto solo debe aceptar la petición del UAC. Después de enviar la petición, espera a que el usuario remoto confirme el dialogo del UAC. Una vez confirmado, un mensaje de éxito aparecerá. Ten en cuenta que **ambos métodos necesitan a alguien en la maquina controlada para confirmar el dialogo UAC**. Por lo tanto si no hay nadie en el lado controlado, la elevación no debe pedirse desde el lado de control.   
+Después de seleccionar en el menu de acción `Solicitar Elevación`, la siguiente ventana va a aparecer. si elegís `Preguntar al remoto por autenticación`, no necesitaras ingresar un usuario y contraseña, pero el usuario remoto deberá tener permisos de administrador. si seleccionas `Transmitir el nombre de usuario y contraseña del administrador`, el usuario remoto solo debe aceptar la petición del UAC. Después de enviar la petición, espera a que el usuario remoto confirme el dialogo del UAC. Una vez confirmado, un mensaje de éxito aparecerá. Ten en cuenta que **ambos métodos necesitan a alguien en la maquina controlada para confirmar el dialogo UAC**. Por lo tanto si no hay nadie en el lado controlado, la elevación no debe pedirse desde el lado de control.   
 
-| Menu | Dialog |
+| Menu | Dialogo |
 | :---: | :---: |
 | ![](/docs/en/client/Windows%20Portable%20Elevation/images/menu.png) | ![](/docs/en/client/Windows%20Portable%20Elevation/images/dialog.png) |
 | **Wait** | **Success** |
