@@ -4,7 +4,7 @@ weight: 600
 ---
 
 ### How can I install with the Simple Install Script?
-1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/rustdesk-server-pro/license) page for more details.
+1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 2. Spin up a VPS, bare metal or Linux VM.
 3. If you want to use DNS and SSL create a DNS name i.e. `rustdesk.yourdomain.com`.
 4. Go to [this page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#install).
@@ -15,7 +15,7 @@ weight: 600
 9. Enter your license code purchased in step 1.
 
 ### How can I convert from RustDesk Server Open Source to RustDesk Server Pro?
-1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/rustdesk-server-pro/license) page for more details.
+1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 2. Open TCP port 21114.
 3. Log into your RustDesk Server.
 4. If you didn't already use DNS and want to use SSL create a DNS name i.e. `rustdesk.yourdomain.com`.
@@ -143,9 +143,10 @@ Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/
 Start-Process .\rustdesk.exe --silent-install -wait
 ```
 
-### `Key mismatch` error.
-Please configure your client with correct key. https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/
+### `Key mismatch` error
+Please configure your client with [correct key](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/).
 
-## `Failed to connect to relay server` error.
-Please make sure `hbbr` is running. More inforamtion about `hbbr`, you can find here, https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/.
-If your `hbbr` does not run on the same machine of `hbbs`, or you have multiple relay servers, or you do not run it on default port `21117`, you have to tell it to `hbbs` explictly. please check here, https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/
+### `Failed to connect to relay server` error
+Please make sure `hbbr` is running. More information about `hbbr`, you can find [here](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/).
+If your `hbbr` does not run on the same machine of `hbbs`, or you have multiple relay servers, or you do not run it on default port `21117`, you have to tell it to `hbbs` explicitly. Please check [here](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/).
+
