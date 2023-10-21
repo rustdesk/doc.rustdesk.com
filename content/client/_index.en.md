@@ -29,7 +29,7 @@ To install silently call the install exe with `--silent-install`.
 
 #### macOS
 
-Download the dmg file from GitHub more info can be found on the [macOS page](/docs/en/client/mac/).
+Download the dmg file from GitHub more info can be found on the [macOS page](https://rustdesk.com/docs/en/client/mac/).
 
 Open the dmg file and drag `RustDesk` to `Applications`.
 
@@ -66,7 +66,7 @@ sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 #### Android
-Install apk from our GitHub more info can be found on the [Android page](/docs/en/client/android/).
+Install apk from our GitHub more info can be found on the [Android page](https://rustdesk.com/docs/en/client/android/).
 
 #### iOS (iPhone, iPad)
 Download the app from the [App Store](https://apps.apple.com/us/app/rustdesk-remote-desktop/id1581225015).
@@ -74,7 +74,7 @@ Download the app from the [App Store](https://apps.apple.com/us/app/rustdesk-rem
 ### Usage
 Once installed (or run as a temporary executable) RustDesk will connect to the Public servers. You will see a message at the bottom saying (1) "Ready, For faster connection, please set up your own server". In the Top left you will see your (2) ID, (3) One Time Password and on the Right a (4) box for you to connect to another computer if you know their ID.
 
-![image](/docs/en/client/images/client.png)
+![](/docs/en/client/images/client.png)
 
 To access the settings, click on the (5) Menu button [ &#8942; ] to the right of ID.
 
@@ -99,7 +99,7 @@ You can manually setup a client. To do this:
 3. Click Unlock Network Settings.
 4. Enter your ID, Relay, API (if using pro) servers and your key.
 
-![image](/docs/en/client/images/network-settings.png)
+![](/docs/en/client/images/network-settings.png)
 
 If you manually setup a client, you can retrieve the `RustDesk2.toml` (in the users folder) file and use `--import-config` in a similar way to the above example.
 
@@ -112,3 +112,4 @@ If you manually setup a client, you can retrieve the `RustDesk2.toml` (in the us
 Additional Advanced parameters can be found [here](https://github.com/rustdesk/rustdesk/blob/bdc5cded221af9697eb29aa30babce75e987fcc9/src/core_main.rs#L242).
 
 {{% children depth="1" showhidden="true" %}}
+
