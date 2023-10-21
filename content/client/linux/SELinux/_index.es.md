@@ -19,7 +19,7 @@ SELinux status: disabled
 ...
 ```
 
-## Añadir SELinux Policies
+## Añadir Políticas de SELinux  
 
 Para una introducción a SELinux, consulte  [SELinux/Tutorials (ingles)](https://wiki.gentoo.org/wiki/SELinux/Tutorials).
 
@@ -29,7 +29,7 @@ Vamos a tomar Fedora 38 como un ejemplo para introducirte a como añadir políti
 sudo dnf install selinux-policy-devel make
 ```
 
-Agregar políticas de SELinux requiere determinar el tipo de servicio, que se encuentra en el contexto de seguridad del proceso.
+Al agregar políticas de SELinux se requiere determinar el tipo de servicio, el tipo de servicio se encuentra en el contexto de seguridad del proceso.
 
 ```bash
 $ ps -eZ | grep rustdesk
@@ -40,11 +40,11 @@ system_u:system_r:init_t:s0 80439 ? 00:00:02 rustdesk
 Hay dos maneras de escribir reglas de tipo SELinux :
 
 1. Añadir las reglas al tipo `init_t` que existe por defecto.
-2. Añadir un nuevo tipo `rustdesk_t` y añadir las reglas.
+2. Añadir un nuevo tipo `rustdesk_t` y añadir las reglas a este.
 
 Con el primer método vas a tener que hacer modificaciones menores, pero como el `int_t` es modificado en este método, estas modificaciones se aplicaran a otros servicios que usen el tipo `int_t`. **Su uso no es recomendado**.
 
-El segundo método se basa en añadir reglas nuevas. Va a ser necesario añadir muchas reglas y según el sistema estas reglas serán diferentes. Quizás sea necesario hacer ajustes durante el uso del programa.
+El segundo método se basa en crear un nuevo tipo de cero con todas las reglas. Va a ser necesario añadir muchas reglas y según el sistema estas reglas serán diferentes. Quizás sea necesario hacer ajustes durante el uso del programa.
 
 
 ### Usa el Tipo Por Defecto
@@ -1873,8 +1873,6 @@ $ rpmbuild -ba rustdesk-selinux.spec
 ```
 
 Después de que el empaquetado es completado, ejecuta la instalación via rpm
-After the packaging is completed, execute the installation rpm.
-
 
 ## Resolución De Problemas
 
