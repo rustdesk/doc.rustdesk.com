@@ -57,8 +57,13 @@ RustDesk 现在有实验性的 Wayland 支持，您可能需要下载 [nightly v
 
 #### 权限问题
 
-如果您发现 RustDesk 的 --server 进程没有启动，即执行 `ps -ef | grep -E 'rustdesk +--server'` 没有输出。
-那么很可能是权限问题。
+如果启用了 SELinux ，那么无论是 X11 环境 还是 Wayland 环境， RustDesk 都无法正常工作。
 
+您可以运行如下命令：
 
-SELinux 权限添加请参考[SELinux](./selinux/)。
+```bash
+$ sudo grep 'comm="rustdesk"' /var/log/audit/audit.log | tail -1
+type=AVC msg=audit(1697902459.165:707): avc:  denied  { name_connect } for  pid=31346 comm="rustdesk" dest=53330 scontext=system_u:system_r:init_t:s0 tcontext=system_u:object_r:ephemeral_port_t:s0 tclass=tcp_socket permissive=0
+```
+
+如果有 `avc: denied` 的输出，则需要添加 SElinux 策略，请参考[SELinux](./selinux/)。

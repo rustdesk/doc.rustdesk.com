@@ -55,7 +55,13 @@ Please **reboot** to make above changes taking effect.
 
 #### Permissions Issue
 
-If you find that RustDesk's --server process is not running, that is, there is no output when executing `ps -ef | grep -E 'rustdesk +--server'`.
-Then it's probably a permissions issue.
+If SELinux is enabled, RustDesk will not work properly in either X11 or Wayland environments.
 
-Please refer to [SELinux](./selinux/) for adding SELinux policies.
+You can run:
+
+```bash
+$ sudo grep 'comm="rustdesk"' /var/log/audit/audit.log | tail -1
+type=AVC msg=audit(1697902459.165:707): avc:  denied  { name_connect } for  pid=31346 comm="rustdesk" dest=53330 scontext=system_u:system_r:init_t:s0 tcontext=system_u:object_r:ephemeral_port_t:s0 tclass=tcp_socket permissive=0
+```
+
+If the output contains `avc: denied`, you need to add SElinux policies, please refer to [SELinux](./selinux/).
