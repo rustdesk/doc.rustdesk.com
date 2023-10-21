@@ -5,7 +5,7 @@ weight: 49
 
 ### Custom Server
 {{% notice note %}}
-To hardcode custom server settings into your executables you must [build](/docs/en/dev/build/) the client yourself on your machine or [with GitHub Actions](/docs/en/dev/build/all/).
+To hardcode custom server settings into your executables you must [build](https://rustdesk.com/docs/en/dev/build/) the client yourself on your machine or [with GitHub Actions](https://rustdesk.com/docs/en/dev/build/all/).<br>
 **Noted**: [self-hosted runners](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners) for Arm are used in our GitHub actions, please set it up yourself.
 {{% /notice %}}
 {{% notice note %}}
@@ -25,9 +25,10 @@ rustdesk.my-domain.com
 ```
 
 #### RS_PUB_KEY
-This variable will be your public key, more information on the key is available [here](/docs/en/self-host/install/#key).
+This variable will be your public key, more information on the key is available [here](https://rustdesk.com/docs/en/self-host/install/#key).
 
 This should be a string such as
 ```
 OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=
 ```
+
