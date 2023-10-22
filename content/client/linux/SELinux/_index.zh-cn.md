@@ -133,6 +133,8 @@ $ sudo semodule -l | grep rustdesk
 2. audit 日志，`grep rustdesk /var/log/audit/audit.log | audit2allow -a -M test`。
 3. 测试系统的 `init_t` 策略，`sesearch -A | grep 'allow init_t ' | sed 's/allow init_t /allow rustdesk_t /g'`。
 
+一些策略是重复的，一些策略是多余的，但这是可以接受的，因为它对 rustdesk_t 起作用。
+
 各个文件内容如下。
 
 rustdes.te：

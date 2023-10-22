@@ -133,6 +133,8 @@ In this example, this file mainly comes from 3 parts:
 2. Audit log, `grep rustdesk /var/log/audit/audit.log | audit2allow -a -M test`.
 3. The test system's `init_t` policy, `sesearch -A | grep 'allow init_t ' | sed 's/allow init_t /allow rustdesk_t /g'`.
 
+Some policies are duplicates and some are redundant, but this is ok since it works on rustdesk_t.
+
 The contents of each file are as follows.
 
 rustdes.te:
