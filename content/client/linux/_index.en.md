@@ -55,7 +55,7 @@ Please **reboot** to make above changes taking effect.
 
 #### Permissions Issue
 
-If SELinux is enabled, RustDesk will not work properly in either X11 or Wayland environments.
+If SELinux is enabled, RustDesk will not work properly in either X11 or Wayland environments, related [issues](https://github.com/search?q=repo%3Arustdesk%2Frustdesk+SElinux&type=issues).
 
 You can run:
 
