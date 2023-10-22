@@ -33,7 +33,7 @@ sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ### ~~X11 Required~~
 ~~RustDesk does not support Wayland yet; you need switch to X11 manually.~~
 
-RustDesk now has experimental Wayland support. You may need to download the [nightly version](https://github.com/rustdesk/rustdesk/releases/tag/nightly) to enable this feature.
+RustDesk now has experimental Wayland support since v1.2.0.
 
 #### Display Server
 
@@ -43,7 +43,7 @@ RustDesk now has experimental Wayland support. You may need to download the [nig
 
 #### Login Screen
 
-Modify below line to `WaylandEnable=false` in `/etc/gdm/custom.conf` or `/etc/gdm3/custom.conf`:
+Login screen using Wayland is not supporte yet. If you wanna access login screen after reboot or logout with RustDesk, you need to change login screen to X11, please modify below line to `WaylandEnable=false` in `/etc/gdm/custom.conf` or `/etc/gdm3/custom.conf`:
 
 ```ini
 #WaylandEnable=false
