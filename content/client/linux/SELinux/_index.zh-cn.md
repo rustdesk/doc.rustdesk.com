@@ -125,6 +125,16 @@ $ sudo semodule -l | grep rustdesk
 └── rustdesk.te
 ```
 
+其中 `rustdesk.te` 是主要的策略文件。
+
+本次示例中，这个文件主要来自3个部分：
+
+1. github 的 selinux-policy 仓库中的 [`init.te`](https://github.com/fedora-selinux/selinux-policy/blob/rawhide/policy/modules/system/init.te)。
+2. audit 日志，`grep rustdesk /var/log/audit/audit.log | audit2allow -a -M test`。
+3. 测试系统的 `init_t` 策略，`sesearch -A | grep 'allow init_t ' | sed 's/allow init_t /allow rustdesk_t /g'`。
+
+一些策略是重复的，一些策略是多余的，但这是可以接受的，因为它对 rustdesk_t 起作用。
+
 各个文件内容如下。
 
 rustdes.te：
@@ -1019,6 +1029,8 @@ allow systemprocess rustdesk_t:unix_stream_socket { append write read getattr io
 #
 
 #============= rustdesk_t ==============
+corenet_tcp_connect_unreserved_ports(rustdesk_t)
+
 allow rustdesk_t self:process execmem;
 allow rustdesk_t data_home_t:dir { add_name create remove_name write };
 allow rustdesk_t config_home_t:dir { write add_name remove_name };
@@ -1781,90 +1793,30 @@ system_u:system_r:rustdesk_t:s0  110565 ?        00:00:00 rustdesk
 
 #### rpm 安装启用
 
-需要新建文件 `rustdesk-selinux.spec` ：
+您可以使用 `sepolicy generate` 命令：
 
-```text
-
-%global modulename rustdesk
-%global selinuxtype targeted
-
-Name:			     rustdesk-selinux
-Version:		     1.0
-Release:		     1%{?dist}
-License:		     AGPL-3.0
-Summary:             RustDesk SELinux policy
-BuildArch:           noarch
-Requires:            selinux-policy-%{selinuxtype}
-Requires(post):      selinux-policy-%{selinuxtype}
-BuildRequires:       selinux-policy-devel
-
-Source0:			%{name}-%{version}.tar.gz
-
-%description
-Custom SELinux policy module
-
-%prep
-%setup -q
-
-%build
-make
-
-
-%install
-install -D -m 0644 %{modulename}.pp.bz2 %{buildroot}%{_datadir}/selinux/packages/%{selinuxtype}/%{modulename}.pp.bz2
-install -D -p -m 0644 %{modulename}.if %{buildroot}%{_datadir}/selinux/devel/include/distributed/%{modulename}.if
-
-
-# SELinux contexts are saved so that only affected files can be
-# relabeled after the policy module installation
-%pre
-%selinux_relabel_pre -s %{selinuxtype}
-
-%post
-semodule -d %{modulename} &> /dev/null || true
-%selinux_modules_install -s %{selinuxtype} %{_datadir}/selinux/packages/%{selinuxtype}/%{modulename}.pp.bz2
-%selinux_relabel_post -s %{selinuxtype}
-chcon -t rustdesk_exec_t /usr/bin/rustdesk
-
-if [ "$1" -le "1" ]; then # First install
-   # the daemon needs to be restarted for the custom label to be applied
-   %systemd_postun_with_restart %{modulename}.service
-fi
-
-%postun
-if [ $1 -eq 0 ]; then
-    %selinux_modules_uninstall -s %{selinuxtype} %{modulename}
-    semodule -e %{modulename} &> /dev/null || true
-    %selinux_relabel_post -s %{selinuxtype}
-fi
-
-%posttrans
-%selinux_relabel_post -s %{selinuxtype}
-
-%files
-%{_datadir}/selinux/packages/%{selinuxtype}/%{modulename}.pp.*
-%{_datadir}/selinux/devel/include/distributed/%{modulename}.if
-%ghost %verify(not md5 size mode mtime) %{_sharedstatedir}/selinux/%{selinuxtype}/active/modules/200/%{modulename}
-
-%changelog
-* Mon Oct 16 2023 test <test@rustdesk.com> - 0.1.0-1
-- First Build
-
-
+```bash
+$ # install deps
+$ sudo dnf install -y rpm rpm-build binutils
+$ # generate 
+$ sepolicy generate --init /usr/lib/rustdesk/rustdesk
+$ tree
+.
+├── rustdesk.fc
+├── rustdesk.if
+├── rustdesk_selinux.spec
+├── rustdesk.sh
+└── rustdesk.te
+$ # Edit the rustdesk.te
+$
+$
+$ # generate rpm package rustdesk_selinux-1.0-1.fc38.src.rpm
+$ sudo ./rustdesk.sh
+$ # install
+$ sudo dnf install -y rustdesk_selinux-1.0-1.fc38.src.rpm
+$ # restart the service
+$ sudo systemctl restart rustdesk
 ```
-
-执行
-
-```sh
-
-$ sudo dnf install rpm-build
-$ tar -zcf rustdesk-selinux-1.0.tar.gz rustdesk-selinux-1.0
-$ mkdir -p ~/rpmbuild/SOURCES && mv rustdesk-selinux-1.0.tar.gz ~/rpmbuild/SOURCES/
-$ rpmbuild -ba rustdesk-selinux.spec
-
-```
-
-打包完成后，执行安装 rpm 即可。
 
 ## Troubleshooting
 
