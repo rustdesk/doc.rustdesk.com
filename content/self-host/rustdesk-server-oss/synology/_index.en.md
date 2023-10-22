@@ -29,7 +29,7 @@ Click on above `Advanced Settings`.
 - Enable auto-restart
 ![](/docs/en/self-host/rustdesk-server-oss/synology/images/auto-restart.png)
 
-- Enable `Use the same network as Docker Host`, for more about host net, please [check](/docs/en/self-host/rustdesk-server-oss/docker/#net-host).
+- Enable `Use the same network as Docker Host`, for more about host net, please [check](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/#net-host).
 ![](/docs/en/self-host/rustdesk-server-oss/synology/images/host-net.png)
 
 - Mount a host directory (e.g. `/home/rustdesk/`) to `/root`, hbbs will generate some files (database and `key` files) in this directory which need to be persistent over reboots.
@@ -70,3 +70,4 @@ Please repeat above `hbbs` steps, but name the container `hbbr` and command (for
 ### Retrieve your Key
 
 Browse to the folder setup before using File Station, download `id_ed25519.pub` and open with a text editor to via your key.
+

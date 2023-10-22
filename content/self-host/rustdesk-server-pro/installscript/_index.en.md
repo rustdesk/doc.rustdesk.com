@@ -4,10 +4,10 @@ weight: 10
 ---
 
 {{% notice note %}}
-Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/rustdesk-server-pro/license) page for more details.
+Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 {{% /notice %}}
 
-## Install
+### Install
 
 Copy and paste the above command into your Linux terminal to install RustDesk Server Pro.
 
@@ -23,7 +23,7 @@ What it does:
 - Create systemd services for hbbs and hbbr (service names are rustdesk-hbbs.service and rustdesk-hbbr.service)
 - If you choose Domain, it will install Nginx and Certbot, allowing the API to be available on port 443 (HTTPS) and get an SSL certificate over port 80, it is automatically renewed
 
-## Upgrade
+### Upgrade
 
 Copy and paste the above command into your Linux terminal to upgrade your existing RustDesk Server Pro Installation, this could also be saved locally and scheduled with cron.
 
@@ -34,7 +34,7 @@ What it does:
 - Checks for new versions of RustDesk Server Pro
 - If it finds a new version, it removes the API files and downloads new executables and API files
 
-## Convert from open source
+### Convert from open source
 
 Copy and paste the above command into your Linux terminal to convert from RustDesk Server to RustDesk Server Pro.
 
@@ -51,7 +51,7 @@ What it does:
 - Create systemd services for hbbs and hbbr (service names are rustdesk-hbbs.service and rustdesk-hbbr.service)
 - If you choose Domain, it will install Nginx and Certbot, allowing the API to be available on port 443 (HTTPS) and get an SSL certificate over port 80, it is automatically renewed
 
-## Backup/Restore
+### Backup/Restore
 
 To make life easy we have created a backup and restore script, this will take the keys, all configuration and database and create a tar file which can be saved to else where.
 
@@ -73,4 +73,5 @@ chmod +x restore.sh
 ```
 Copy the backup file into the same folder as the restore.sh file and then run `./restore.sh`.
 
-This will restore your server to how it was prior, you will need to revoke your [license](/docs/en/self-host/rustdesk-server-pro/license) to move it to the restored server.
+This will restore your server to how it was prior, you will need to revoke your [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) to move it to the restored server.
+

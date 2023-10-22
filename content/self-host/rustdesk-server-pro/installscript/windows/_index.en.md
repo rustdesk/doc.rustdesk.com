@@ -5,7 +5,7 @@ weight: 2
 
 ### Install
 
-1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](/docs/en/self-host/rustdesk-server-pro/license) page for more details.
+1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 2. Download the the Windows installer from [GitHub](https://github.com/rustdesk/rustdesk-server-pro/releases/latest).
 3. Unzip the Windows installer.
 4. Run the Installer and follow the steps on screen.

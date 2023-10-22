@@ -3,15 +3,15 @@ title: Installation
 weight: 1
 ---
 
-## Install your own server as systemd service using a simple to run install script
+### Install your own server as systemd service using a simple to run install script
 Script is hosted on [Techahold](https://github.com/techahold/rustdeskinstall) and supported on our [Discord](https://discord.com/invite/nDceKgxnkV).
 
 Currently the script will download and setup the Relay and Signal Servers (hbbr and hbbs), generate configs and host them on a password protected web page for simple deployment to clients.
 
-### Requirements
-You need to have Linux installed, script is tested working with CentOS Linux 7/8, Ubuntu 18/20 and Debian. A server with 1 CPU, 1 GB and 10 GB disk is plenty to run RustDesk.
+#### Requirements
+You need to have Linux installed, script is tested working with CentOS Linux 7/8, Ubuntu 18/20 and Debian. A server with 1 CPU, 1 GB RAM and 10 GB disk is plenty to run RustDesk.
 
-#### How to Install the server
+##### How to Install the server
 Please setup your firewall on your server prior to running the script.
 
 Make sure you have got access via SSH or otherwise setup prior setting up the firewall. The example commands for UFW (Debian based) are:
@@ -35,13 +35,13 @@ chmod +x install.sh
 ```
 There is also an update script on [Techahold's](https://github.com/techahold/rustdeskinstall) repository.
 
-## Install your own server as systemd service using deb file for debian distros
+### Install your own server as systemd service using deb file for debian distros
 
 Please [Download](https://github.com/rustdesk/rustdesk-server/releases/latest) deb files yourself and install with `apt-get -f install <filename>.deb` or `dpkg -i <filename>.deb`.
 
-## Set up your own server instance manually.
+### Set up your own server instance manually.
 
-### STEP 1: Download server-side software programs
+#### STEP 1: Download server-side software programs
 
 [Download](https://github.com/rustdesk/rustdesk-server/releases/latest).
 
@@ -59,15 +59,15 @@ There are two executables and a folder:
 
 They are built on CentOS Linux 7, tested on CentOS Linux 7/8 and Ubuntu 18/20.
 
-#### Server Requirements
+##### Server Requirements
 
 The hardware requirements are very low; the minimum configuration of a basic cloud server is enough, and the CPU and memory requirements are minimal. You can also use a Raspberry Pi or something similar. Regarding the network size, if the TCP hole punching direct connection fails, the relay traffic will be consumed. The traffic of a relay connection is between 30 K/s and 3 M/s (1920x1080 screen) depending on the resolution settings and screen update. If it is only for office work demand, the traffic is around 100 K/s.
 
-### STEP 2: Run hbbs and hbbr on your server
+#### STEP 2: Run hbbs and hbbr on your server
 
 We suggest you use [PM2](https://pm2.keymetrics.io/) for managing your service.
 
-#### Option 1
+##### Option 1
 Run hbbs/hbbr without PM2.
 
 ```bash
@@ -75,7 +75,7 @@ Run hbbs/hbbr without PM2.
 ./hbbr
 ```
 
-#### Option 2
+##### Option 2
 Run hbbs/hbbr with PM2.
 
 ```bash
@@ -97,7 +97,7 @@ By default, `hbbs` listens on 21115 (TCP), 21116 (TCP/UDP) and 21118 (TCP), `hbb
 
 Please run with the `-h` option to see help if you want to choose your own port.
 
-### STEP 3: Set hbbs/hbbr address on client-side
+#### STEP 3: Set hbbs/hbbr address on client-side
 
 Click on the Menu button [ &#8942; ] on the right side of ID as shown below, and choose "ID/Relay Server".
 
@@ -119,7 +119,7 @@ hbbs.example.com:21116
 
 ![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-window.png)
 
-#### Put config in rustdesk.exe file name (Windows only)
+##### Put config in rustdesk.exe file name (Windows only)
 
 Change `rustdesk.exe` to rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe, e.g. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe. You can see the config result in the About Window below.
 
@@ -134,7 +134,7 @@ If there are invalid characters in the key which can not be used in a Windows fi
 repeat this process until you get valid characters.
 {{% /notice %}}
 
-## Key
+### Key
 
 Different from the old version, the key in this version is mandatory, but you don't need to set it yourself. When `hbbs` runs for the first time, it will automatically generate a pair of encrypted private and public keys (respectively located in the `id_ed25519` and `id_ed25519.pub` files in the running directory), whose main purpose is for communication encryption.
 
@@ -160,3 +160,4 @@ You could create keys manually in hbbs and copy them to hbbr before starting the
 
 Or you could stop the hbbr container and copy the keys from hbbs to the hbbr folder, and then restart the container.
 {{% /notice %}}
+
