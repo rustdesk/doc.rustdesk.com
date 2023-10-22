@@ -109,8 +109,8 @@ allow init_t user_tmp_t:file map;
 Run:
 
 ```bash
-checkmodule -M -m -o rustdesk.mod rustdesk.te && semodule_package -o rustdesk.pp -m rustdesk.mod && sudo semodule -i rustdesk.pp
-sudo semodule -l | grep rustdesk
+$ checkmodule -M -m -o rustdesk.mod rustdesk.te && semodule_package -o rustdesk.pp -m rustdesk.mod && sudo semodule -i rustdesk.pp
+$ sudo semodule -l | grep rustdesk
 ```
 
 ### Create A Type "rustdesk_t"
