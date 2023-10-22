@@ -3,57 +3,57 @@ title: SELinux
 weight: 100
 ---
 
-Some distros (such as Fedora) enable SELinux by default, which will cause the RustDesk service to fail to start and run normally.
+Algunas distribuciones (como Fedora) tienen activo SELinux por defecto, lo que puede causar que el servicio de RustDesk falle en iniciar y correr normalmente.
 
-You can run `sestatus` in the terminal to check whether SELinux is enabled.
+Puedes ejecutar `sestatus` en la terminal para chequear si SELinux esta habilitado o no.
 
-Depending on whether it is enabled or not, you can see two different outputs as follows:
+Dependiendo del estado de SELinux podes recibir dos de estas salidas:
 
 ```bash
-# Enabled
+# Habilitado
 SELinux status: enabled
 ...
 
-# Disabled
+# Deshabilitado
 SELinux status: disabled
 ...
 ```
 
-## Add SELinux Policies
+## Añadir Políticas de SELinux  
 
-For an introduction to SELinux, please refer to [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials).
+Para una introducción a SELinux, consulte  [SELinux/Tutorials (ingles)](https://wiki.gentoo.org/wiki/SELinux/Tutorials).
 
-Here we take Fedora 38 as an example to introduce how to add SELinux policies.
+Vamos a tomar Fedora 38 como un ejemplo para introducirte a como añadir políticas SELinux. 
 
 ```bash
 sudo dnf install selinux-policy-devel make
 ```
 
-Adding SELinux policies requires determining the type of service, which is in the security context of the process.
+Al agregar políticas de SELinux se requiere determinar el tipo de servicio, el tipo de servicio se encuentra en el contexto de seguridad del proceso.
 
 ```bash
 $ ps -eZ | grep rustdesk
 system_u:system_r:init_t:s0 80439 ? 00:00:02 rustdesk
 ```
+`system_u:system_r:init_t:s0`  es el contexto de seguridad del proceso de RustDesk, el tercer campo "init_t" es el tipo de proceso.
 
-`system_u:system_r:init_t:s0` is the security context of the rustdesk process, where the third field `init_t` is the type of the process.
+Hay dos maneras de escribir reglas de tipo SELinux :
 
-There are two ways to write SELinux type rules:
+1. Añadir las reglas al tipo `init_t` que existe por defecto.
+2. Añadir un nuevo tipo `rustdesk_t` y añadir las reglas a este.
 
-1. Add rules to the default `init_t`.
-2. Add a new type `rustdesk_t` and add rules.
+Con el primer método vas a tener que hacer modificaciones menores, pero como el `int_t` es modificado en este método, estas modificaciones se aplicaran a otros servicios que usen el tipo `int_t`. **Su uso no es recomendado**.
 
-The first method has relatively minor modifications, but because the default `init_t` is changed, it is equivalent to adding authorization to other services using the `init_t` type. **Not recommended for use**.
+El segundo método se basa en crear un nuevo tipo de cero con todas las reglas. Va a ser necesario añadir muchas reglas y según el sistema estas reglas serán diferentes. Quizás sea necesario hacer ajustes durante el uso del programa.
 
-The second method is to add rules from scratch. There will be many rules that need to be added, and different systems may have differences. It may be necessary to make some adjustments during actual use.
 
-### Use The Default Type
+### Usa el Tipo Por Defecto
 
-The default type of the RustDesk service is `init_t``, which is determined by [the context inheritance rules of SELinux](https://wiki.gentoo.org/wiki/SELinux/Tutorials/How_does_a_process_get_into_a_certain_context).
+El tipo por defecto del servicio de RustDesk es `init_t`, que es de determinado por [las reglas de herencia de contexto de SELinux (ingles)](https://wiki.gentoo.org/wiki/SELinux/Tutorials/How_does_a_process_get_into_a_certain_context).
 
-**CAUTION**: Modifying the default type means that the policies of other services may also change. Please use this method with caution!
+**PRECAUCIÓN**: Modificar los tipos por defecto significa que las políticas de otros servicios también puedan cambiar. Usa este método con precaución!
 
-Edit the rule file rustdesk.te:
+Modifica el archivo de reglas rustdesk.te:
 
 ```text
 module rustdesk 1.0;
@@ -91,33 +91,35 @@ allow init_t pulseaudio_home_t:file { read write open lock };
 allow init_t session_dbusd_tmp_t:sock_file write;
 allow init_t unconfined_dbusd_t:unix_stream_socket connectto;
 
-#!!!! This avc can be allowed using the boolean 'nis_enabled'
+#!!!! Este avc puede ser permitido usando el booleano 'nis_enabled'
 allow init_t ephemeral_port_t:tcp_socket name_connect;
 
-#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+#!!!! Este avc puede ser permitido usando el booleano 'domain_can_mmap_files'
 allow init_t sudo_exec_t:file map;
 
 
 #============= init_t wayland ==============
 allow init_t event_device_t:chr_file { open read write };
 
-#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+#!!!! Este avc puede ser permitido usando el booleano 'domain_can_mmap_files'
 allow init_t user_tmp_t:file map;
 
 ```
 
-Run:
+Ejecuta:
 
 ```bash
-$ checkmodule -M -m -o rustdesk.mod rustdesk.te && semodule_package -o rustdesk.pp -m rustdesk.mod && sudo semodule -i rustdesk.pp
-$ sudo semodule -l | grep rustdesk
+checkmodule -M -m -o rustdesk.mod rustdesk.te && semodule_package -o rustdesk.pp -m rustdesk.mod && sudo semodule -i rustdesk.pp
+sudo semodule -l | grep rustdesk
 ```
 
-### Create A Type "rustdesk_t"
+### Crea un tipo "rustdesk_t"
 
-1. Create a new directory. `mkdir rustdesk-selinux-1.0`.
-2. Create SELinux policy files. `touch Makefile rustdesk.te rustdesk.fc rustdesk.if`.
+1. Crea un nuevo directorio. `mkdir rustdesk-selinux-1.0`
+2. Crea los archivos de políticas de SELinux. `touch Makefile rustdesk.te rustdesk.fc rustdesk.if`.
 
+
+El contenido de `rustdesk-selinux-1.0` debería verse asi:
 ```text
 .
 ├── Makefile
@@ -126,7 +128,7 @@ $ sudo semodule -l | grep rustdesk
 └── rustdesk.te
 ```
 
-The contents of each file are as follows.
+El contenido de cada archivo debería ser asi:
 
 rustdes.te:
 
@@ -138,26 +140,27 @@ type rustdesk_t;
 type rustdesk_exec_t;
 
 gen_require(`
-        # used for direct running of init scripts
-        # by admin domains
+        # usado para la ejecución directa de los
+        # script init por los administradores de dominio
+
         attribute direct_run_init;
         attribute direct_init;
         attribute direct_init_entry;
 
         attribute init_script_domain_type;
         attribute initrc_transition_domain;
-        # Attribute used for systemd so domains can allow systemd to create sock_files
+        # Atributo utilizado por systemd para que los dominios permitan a systemd crear sock_files 
         attribute init_sock_file_type;
-        # Attribute for directories that systemd will watch based on path units
-        # (see systemd.path(5) for more info) (Deprecated)
+        # Atributo para los directorios que systemd va a monitorear basado en path units
+        # (leer systemd.path(5) para mas información) (Deprecado)
         attribute init_watch_path_type;
 
-        # Mark process types as daemons
+        # Marca tipo de proceso como daemons
         attribute daemon;
         attribute systemprocess;
         attribute systemprocess_entry;
 
-        # Mark file type as a daemon run directory
+        # Marca el tipo de archivo como directorio de ejecución del daemon
         attribute daemonrundir;
 
         class passwd rootok;
@@ -532,10 +535,10 @@ gen_require(`
 
 ###############################################################################
 #
-# Part 1. The following rules are mainly from the opensource `init.te`
+# Parte 1. Las reglas siguientes son mayormente para el `init.te` de codigo abierto.
 #               https://github.com/fedora-selinux/selinux-policy/blob/rawhide/policy/modules/system/init.te
 #
-#         Note: Part 1 will probably be mostly the same as Part 3. But it's acceptable for now.
+#         Nota: Parte 1 probablemente sea mayormente lo mismo que parte 3. pero es aceptable por ahora.
 #
 
 init_daemon_domain(rustdesk_t, rustdesk_exec_t)
@@ -565,9 +568,9 @@ allow rustdesk_t self:fifo_file rw_fifo_file_perms;
 allow rustdesk_t self:service manage_service_perms;
 allow rustdesk_t self:user_namespace create;
 
-# Re-exec itself
+# Re-ejecutandose a si mismo 
 can_exec(rustdesk_t, rustdesk_exec_t)
-# executing content in /run/initramfs
+# Ejecutando contenidos de /run/initramfs
 manage_files_pattern(rustdesk_t, initrc_state_t, initrc_state_t)
 can_exec(rustdesk_t, initrc_state_t)
 
@@ -614,7 +617,7 @@ allow rustdesk_t machineid_t:file mounton;
 allow rustdesk_t initctl_t:fifo_file manage_fifo_file_perms;
 dev_filetrans(rustdesk_t, initctl_t, fifo_file)
 
-# Modify utmp.
+# Modifica utmp.
 allow rustdesk_t initrc_var_run_t:file { rw_file_perms setattr };
 
 kernel_read_system_state(rustdesk_t)
@@ -632,7 +635,7 @@ kernel_read_all_proc(rustdesk_t)
 kernel_list_all_proc(rustdesk_t)
 kernel_mounton_all_proc(rustdesk_t)
 
-# There is bug in kernel in 4.16 where lot of domains requesting module_request, for now dontauditing
+# Hay un error(bug) en el kernel 4.16. muchos dominios piden module_request, por ahora no auditar
 kernel_dontaudit_request_load_module(rustdesk_t)
 
 corecmd_exec_chroot(rustdesk_t)
@@ -751,7 +754,7 @@ term_watch_reads_unallocated_ttys(rustdesk_t)
 term_watch_user_ttys(rustdesk_t)
 term_watch_reads_user_ttys(rustdesk_t)
 
-# Run init scripts.
+# Ejecuta init scripts
 init_domtrans_script(rustdesk_t)
 init_exec_notrans_direct_init_entry(rustdesk_t)
 
@@ -1015,7 +1018,7 @@ allow systemprocess rustdesk_t:unix_stream_socket { append write read getattr io
 
 ###############################################################################
 #
-# Part 2. The following rules are generated by
+# parte 2. Las siguientes reglas son generadas por:
 #               `grep rustdesk /var/log/audit/audit.log | audit2allow -a -M test`
 #
 
@@ -1048,7 +1051,7 @@ allow rustdesk_t ephemeral_port_t:tcp_socket name_connect;
 
 ###############################################################################
 #
-# Part 3. The following rules are from the system installed rules.
+# Parte 3. Las siguientes reglas son para las reglas instaladas por el sistema
 #               `dnf install setools-console`
 #               `sesearch -A | grep 'allow init_t ' | sed 's/allow init_t /allow rustdesk_t /g'`
 #
@@ -1747,9 +1750,9 @@ install: man
 
 ```
 
-#### Enable Directly
+#### Habilitar directamente
 
-View the security context of rustdesk before modification:
+Comprueba el contexto de seguridad de RustDesk antes de modificar:
 
 ```sh
 $ ls -lZ /usr/lib/rustdesk/rustdesk
@@ -1758,7 +1761,7 @@ $ ps -eZ | grep rustdesk
 system_u:system_r:init_t:s0       80439 ?        00:00:02 rustdesk
 ```
 
-Run:
+Ejecuta:
 
 ```sh
 
@@ -1772,7 +1775,7 @@ $ sudo systemctl restart rustdesk
 
 ```
 
-View the security context again:
+Comprueba el contexto de seguridad de nuevo:
 
 ```sh
 $ ls -lZ /usr/lib/rustdesk/rustdesk
@@ -1781,9 +1784,10 @@ $ ps -eZ | grep rustdesk
 system_u:system_r:rustdesk_t:s0  110565 ?        00:00:00 rustdesk
 ```
 
+### Habilita mediante instalación rpm  
 #### Enable through rpm installation
 
-Create new spec file `rustdesk-selinux.spec`:
+Crea un nuevo archivo de spec `rustdesk-selinux.spec`:
 
 ```sh
 
@@ -1817,8 +1821,10 @@ install -D -m 0644 %{modulename}.pp.bz2 %{buildroot}%{_datadir}/selinux/packages
 install -D -p -m 0644 %{modulename}.if %{buildroot}%{_datadir}/selinux/devel/include/distributed/%{modulename}.if
 
 
-# SELinux contexts are saved so that only affected files can be
-# relabeled after the policy module installation
+# Los contextos de SELinux son son guardados, de esta manera
+# los archivos modificados pueden ser renombrados después de 
+# la instalación del modulo de políticas
+
 %pre
 %selinux_relabel_pre -s %{selinuxtype}
 
@@ -1828,8 +1834,8 @@ semodule -d %{modulename} &> /dev/null || true
 %selinux_relabel_post -s %{selinuxtype}
 chcon -t rustdesk_exec_t /usr/bin/rustdesk
 
-if [ "$1" -le "1" ]; then # First install
-   # the daemon needs to be restarted for the custom label to be applied
+if [ "$1" -le "1" ]; then # Primera instalación
+   # daemon necesita ser reiniciada para que las etiquetas personalizadas sean aplicadas
    %systemd_postun_with_restart %{modulename}.service
 fi
 
@@ -1866,22 +1872,22 @@ $ rpmbuild -ba rustdesk-selinux.spec
 
 ```
 
-After the packaging is completed, execute the installation rpm.
+Después de que el empaquetado es completado, ejecuta la instalación via rpm
 
-## Troubleshooting
+## Resolución De Problemas
 
-### Iteratively Add Policies
+### Añadir políticas de forma iterativa
 
 ```sh
 $ cd /tmp
 $ grep rustdesk_t /var/log/audit/audit.log | audit2allow -a -M rustdesk_tmp
 $ cd <rustdesk-selinux-1.0>
-$ # merge rustdesk_tmp.te to rustdesk.te
+$ # merge rustdesk_tmp.te a rustdesk.te
 $ make clean && make && sudo make install-policy
 ```
 
-## References
+## Referencias
 
-1. [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials)
-1. [SELinux_Policy_module_installation](https://fedoraproject.org/wiki/SELinux/IndependentPolicy#SELinux_Policy_module_installation)
-1. [how-to-create-selinux-custom-policy-rpm-package](https://lukas-vrabec.com/index.php/2015/07/07/how-to-create-selinux-custom-policy-rpm-package/)
+1. [SELinux/tutoriales (ingles)](https://wiki.gentoo.org/wiki/SELinux/Tutorials)
+1. [Instalación del modulo de políticas de SELinux (ingles)](https://fedoraproject.org/wiki/SELinux/IndependentPolicy#SELinux_Policy_module_installation)
+1. [Como crear un paquete de políticas personalizadas para rpm (ingles)](https://lukas-vrabec.com/index.php/2015/07/07/how-to-create-selinux-custom-policy-rpm-package/)
