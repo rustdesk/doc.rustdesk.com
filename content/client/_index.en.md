@@ -12,7 +12,7 @@ The RustDesk Client is used on devices to connect via our RustDesk Server either
 - macOS
 - Debian Derivatives (Ubuntu, Mint, etc.)
 - Redhat Derivatives (Centos, Rocky, etc.)
-- Arch/Manjaro
+- Arch Linux/Manjaro
 - openSUSE
 - AppImage / Flatpak
 - Android
@@ -54,7 +54,7 @@ sudo apt install -fy ./rustdesk-<version>.deb
 sudo yum localinstall ./rustdesk-<version>.rpm
 ```
 
-#### Arch/Manjaro
+#### Arch Linux/Manjaro
 
 ```sh
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
