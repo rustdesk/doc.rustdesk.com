@@ -36,7 +36,7 @@ sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang libxcb-ra
 sudo yum -y install gcc-c++ git curl wget nasm yasm gcc gtk3-devel clang libxcb-devel libxdo-devel libXfixes-devel pulseaudio-libs-devel cmake alsa-lib-devel
 ```
 
-#### Arch (Manjaro)
+#### Arch Linux (Manjaro)
 
 ```sh
 sudo pacman -Syu --needed unzip git cmake gcc curl wget yasm nasm zip make pkg-config clang gtk3 xdotool libxcb libxfixes alsa-lib pulseaudio
