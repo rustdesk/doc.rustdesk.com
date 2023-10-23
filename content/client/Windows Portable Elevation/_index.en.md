@@ -14,7 +14,7 @@ By elevating privileges, RustDesk can create a process with administrator privil
 
 This way, remote users don't need to request elevation when connecting. There are two methods:
 
-* Method 1: Change the name of the portable program to include `-qs-` (1.2.0, 1.2.1, 1.2.2 versions end with `qs.exe`). Click the left mouse button to run, click `Accept` in the UAC window.
+* Method 1: Change the name of the portable program to include `-qs-` (1.2.0, 1.2.1, 1.2.2, 1.2.3 versions end with `qs.exe`). Click the left mouse button to run, click `Accept` in the UAC window.
 
 * Method 2: Right-click and run as administrator.
 
@@ -28,7 +28,7 @@ The controlled end can directly click `Accept and Elevate` when connecting, or c
 
 ### Request elevation at the control end
 
-After selecting `Request Elevation` from the action menu, the following dialog box will appear. If you choose `Ask the remote user for authentication`, you won't need to input a username and password, but the user on the remote computer must have administrator privileges. If you select `Transmit the username and password of administrator"`, the user on the remote computer only needs to accept in the UAC window. After sending the request, please wait for the user on the other side to accept the UAC window. Upon confirmation, a success message will appear. Note that **both methods require someone on the controlled end to accept the UAC window**. Therefore, if there is no one available  on the other side, elevation should not be requested at the control end.
+After selecting `Request Elevation` from the action menu, the following dialog box will appear. If you choose `Ask the remote user for authentication`, you won't need to input a username and password, but the user on the remote computer must have administrator privileges. If you select `Transmit the username and password of administrator`, the user on the remote computer only needs to accept in the UAC window. After sending the request, please wait for the user on the other side to accept the UAC window. Upon confirmation, a success message will appear. Note that **both methods require someone on the controlled end to accept the UAC window**. Therefore, if there is no one available on the other side, elevation should not be requested at the control end.
 
 | Menu | Dialog |
 | :---: | :---: |
