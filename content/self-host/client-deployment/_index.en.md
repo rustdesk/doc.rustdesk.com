@@ -93,12 +93,12 @@ Write-Output "..............................................."
 REM Assign the value random password to the password variable
 setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 set alfanum=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-
 set rustdesk_pw=
-for /L %%b in (1, 1, 12) do
-(
+for /L %%b in (1, 1, 12) do (
     set /A rnd_num=!RANDOM! %% 62
-    for %%c in (!rnd_num!) do set rustdesk_pw=!rustdesk_pw!!alfanum:~%%c,1!
+    for %%c in (!rnd_num!) do (
+        set rustdesk_pw=!rustdesk_pw!!alfanum:~%%c,1!
+    )
 )
 
 REM Get your config string from your Web portal and Fill Below
