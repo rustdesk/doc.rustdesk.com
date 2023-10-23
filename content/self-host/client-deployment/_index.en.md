@@ -35,7 +35,7 @@ if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
-if ($rdver -eq "1.2.2")
+if ($rdver -eq "1.2.3")
 {
     Write-Output "RustDesk $rdver is the newest version"
     Exit
@@ -48,7 +48,7 @@ if (!(Test-Path C:\Temp))
 
 cd C:\Temp
 
-Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
+Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
 
 $ServiceName = 'Rustdesk'
@@ -109,7 +109,7 @@ REM ############################### Please Do Not Edit Below This Line #########
 if not exist C:\Temp\ md C:\Temp\
 cd C:\Temp\
 
-curl -L "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -o rustdesk.exe
+curl -L "https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.exe" -o rustdesk.exe
 
 rustdesk.exe --silent-install
 timeout /t 20
@@ -153,7 +153,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Specify the path to the rustdesk.dmg file
-dmg_file="/tmp/rustdesk-1.2.2-x86_64.dmg"
+dmg_file="/tmp/rustdesk-1.2.3-x86_64.dmg"
 
 # Specify the mount point for the DMG (temporary directory)
 mount_point="/Volumes/RustDesk"
@@ -162,9 +162,9 @@ mount_point="/Volumes/RustDesk"
 echo "Downloading RustDesk Now"
 
 if [[ $(arch) == 'arm64' ]]; then
-    curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-aarch64.dmg --output "$dmg_file"
+    curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-aarch64.dmg --output "$dmg_file"
 else
-    curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.dmg --output "$dmg_file"
+    curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.dmg --output "$dmg_file"
 fi
 
 # Mount the DMG file to the specified mount point
@@ -276,11 +276,11 @@ fi
 
 echo "Installing RustDesk"
 if [ "${ID}" = "debian" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Debian" ] || [ "${UPSTREAM_ID}" = "ubuntu" ] || [ "${UPSTREAM_ID}" = "debian" ]; then
-    wget https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.deb
-    apt-get install -fy ./rustdesk-1.2.2-x86_64.deb > null
+    wget https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.deb
+    apt-get install -fy ./rustdesk-1.2.3-x86_64.deb > null
 elif [ "$OS" = "CentOS" ] || [ "$OS" = "RedHat" ] || [ "$OS" = "Fedora Linux" ] || [ "${UPSTREAM_ID}" = "rhel" ] || [ "$OS" = "Almalinux" ] || [ "$OS" = "Rocky*" ] ; then
-    wget https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-0.x86_64.rpm
-    yum localinstall ./rustdesk-1.2.2-0.x86_64.rpm -y > null
+    wget https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-0.x86_64.rpm
+    yum localinstall ./rustdesk-1.2.3-0.x86_64.rpm -y > null
 else
     echo "Unsupported OS"
     # here you could ask the user for permission to try and install anyway
@@ -311,3 +311,4 @@ fi
 echo "Password: $rustdesk_pw"
 echo "..............................................."
 ```
+
