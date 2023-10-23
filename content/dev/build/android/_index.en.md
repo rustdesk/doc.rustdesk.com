@@ -110,8 +110,7 @@ sudo tar xzf dep.tar.gz
 popd
 ```
 
-##### Warning
-It requires vcpkg directory to be at `$HOME`, if `Building rustdesk lib` part of this instruction will throw errors like:
+**Warning:** It requires vcpkg directory to be at `$HOME`, if `Building rustdesk lib` part of this instruction will throw errors like:
 ```yaml
 error: failed to run custom build command for `magnum-opus v0.4.0 (https://github.com/rustdesk/magnum-opus#79be072c)`
 
