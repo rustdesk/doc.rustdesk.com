@@ -3,7 +3,7 @@ title: Access Control
 weight: 16
 ---
 
-## Device access permissions
+### Device access permissions
 
 There are two ways to associate a device with a user:
 - Via console device page
@@ -15,7 +15,7 @@ The following two situations will prevent the device from being accessed:
 
 The associated device can only be accessed by the devices of the same user or user group, or in correct cross-group settings.
 
-## Cross group settings
+### Cross group settings
 
 Please go to group page in the web console, click on `Edit` to edit cross group settings as below.
 
