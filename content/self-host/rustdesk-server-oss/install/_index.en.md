@@ -70,7 +70,7 @@ We suggest you use [PM2](https://pm2.keymetrics.io/) for managing your service.
 ##### Option 1
 Run hbbs/hbbr without PM2.
 
-```bash
+```sh
 ./hbbs -r <relay-server-ip[:port]>
 ./hbbr
 ```
@@ -78,7 +78,7 @@ Run hbbs/hbbr without PM2.
 ##### Option 2
 Run hbbs/hbbr with PM2.
 
-```bash
+```sh
 pm2 start hbbs -- -r <relay-server-ip[:port]>
 pm2 start hbbr
 ```
@@ -140,13 +140,13 @@ Different from the old version, the key in this version is mandatory, but you do
 
 If you did not fill in the `Key:` (the content in the public key file `id_ed25519.pub`) in the previous step, it does not affect the connection, but the connection cannot be encrypted.
 
-```bash
+```sh
 cat ./id_ed25519.pub
 ```
 
 If you want to prohibit users without the key from establishing non-encrypted connections, please add the `-k _` parameter when running `hbbs` and `hbbr`, for example:
 
-```bash
+```sh
 ./hbbs -r <relay-server-ip[:port]> -k _
 ./hbbr -k _
 ```

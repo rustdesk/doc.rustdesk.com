@@ -3,7 +3,7 @@ title: Configure Relay Servers
 weight: 17
 ---
 
-## RustDesk Pro - Install Additional Relay Servers with Geo Location using docker
+### RustDesk Pro - Install Additional Relay Servers with Geo Location using docker
 
 You can have several relay servers running across the globe and leverage GeoLocation to use the closest relay server, giving you a faster experience when connecting to remote computers.
 
@@ -19,7 +19,7 @@ The volume hbbr should be located in `/var/lib/docker/volumes/hbbr/_data`.
 
 2 - Copy the private key pair to the volume location, in this case we will use SCP to copy the files.
 
-The command syntax is: `scp <path/filename> username@server:</destination/path>`.
+The command syntax is `scp <path/filename> username@server:</destination/path>`.
 
 ```
 # scp id_ed25519 root@100.100.100.100:/var/lib/docker/volumes/hbbr/_data
@@ -69,14 +69,14 @@ To                         Action      From
 21117,21119/tcp (v6)       ALLOW       Anywhere (v6)
 ```
 
-## Configure RustDesk Pro for Geo Location using Web Console
+### Configure RustDesk Pro for Geo Location using Web Console
 
-### Register and Download the GeoLite2 City database file
+#### Register and Download the GeoLite2 City database file
 
 To use geo location, hbbs needs access to the MaxMind GeoLite2 City database. The database is free and you can register to download the file and get an API key.
 
 Start by creating an account (if you don’t have one) by going to the [website](https://www.maxmind.com/en/account/login).
-Go to `Download Databases` and download the GeoLite2 City, choose the gzip file and you should have the `mmdb` file when decompressing it.
+Go to `Download Databases` and download GeoLite2 City, choose the gzip file and you should have the `mmdb` file when decompressing it.
 
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/e14318fb-ec52-463c-af77-d08c9479c1b5">
 
@@ -99,7 +99,7 @@ You can automate the [download process](https://dev.maxmind.com/geoip/updating-d
 /usr/bin/curl -L --silent 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={Your Access Key}&suffix=tar.gz' | /bin/tar -C '/var/lib/rustdesk-server/' -xvz --keep-newer-files --strip-components=1 --wildcards '*GeoLite2-City.mmdb'
 ```
 
-### Change settings in RustDesk Pro Web Console
+#### Change settings in RustDesk Pro Web Console
 
 Add your relay server IP addresses to the the Relay Server List, using just the IP address. **Do not add the port.** <br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/c4452ba4-5e1d-437a-ae1d-fc0070bfa26c">
@@ -134,3 +134,4 @@ You can also confirm the relay requests directly on your hbbr instances, simply 
 INFO [src/relay_server.rs:436] Relayrequest 0593e64e-4fe8-4a59-a94f-b3420ab043eb from [::ffff:100.100.123.233]:52038 got paired
 INFO [src/relay_server.rs:442] Both are raw
 ```
+

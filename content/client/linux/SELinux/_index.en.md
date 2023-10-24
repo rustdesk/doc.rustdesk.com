@@ -9,7 +9,7 @@ You can run `sestatus` in the terminal to check whether SELinux is enabled.
 
 Depending on whether it is enabled or not, you can see two different outputs as follows:
 
-```bash
+```sh
 # Enabled
 SELinux status: enabled
 ...
@@ -19,39 +19,39 @@ SELinux status: disabled
 ...
 ```
 
-## Add SELinux Policies
+### Add SELinux Policies
 
 For an introduction to SELinux, please refer to [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials).
 
 Here we take Fedora 38 as an example to introduce how to add SELinux policies.
 
-```bash
+```sh
 sudo dnf install selinux-policy-devel make
 ```
 
 Adding SELinux policies requires determining the type of service, which is in the security context of the process.
 
-```bash
+```sh
 $ ps -eZ | grep rustdesk
 system_u:system_r:init_t:s0 80439 ? 00:00:02 rustdesk
 ```
 
-`system_u:system_r:init_t:s0` is the security context of the rustdesk process, where the third field `init_t` is the type of the process.
+`system_u:system_r:init_t:s0` is the security context of the RustDesk process, where the third field `init_t` is the type of the process.
 
 There are two ways to write SELinux type rules:
 
 1. Add rules to the default `init_t`.
 2. Add a new type `rustdesk_t` and add rules.
 
-The first method has relatively minor modifications, but because the default `init_t` is changed, it is equivalent to adding authorization to other services using the `init_t` type. **Not recommended for use**.
+The first method has relatively minor modifications, but because the default `init_t` is changed, it is equivalent to adding authorization to other services using the `init_t` type. **Not recommended for use.**
 
 The second method is to add rules from scratch. There will be many rules that need to be added, and different systems may have differences. It may be necessary to make some adjustments during actual use.
 
-### Use The Default Type
+#### Use The Default Type
 
-The default type of the RustDesk service is `init_t``, which is determined by [the context inheritance rules of SELinux](https://wiki.gentoo.org/wiki/SELinux/Tutorials/How_does_a_process_get_into_a_certain_context).
+The default type of the RustDesk service is `init_t`, which is determined by [the context inheritance rules of SELinux](https://wiki.gentoo.org/wiki/SELinux/Tutorials/How_does_a_process_get_into_a_certain_context).
 
-**CAUTION**: Modifying the default type means that the policies of other services may also change. Please use this method with caution!
+**Caution**: Modifying the default type means that the policies of other services may also change. Please use this method with caution!
 
 Edit the rule file rustdesk.te:
 
@@ -108,15 +108,15 @@ allow init_t user_tmp_t:file map;
 
 Run:
 
-```bash
+```sh
 $ checkmodule -M -m -o rustdesk.mod rustdesk.te && semodule_package -o rustdesk.pp -m rustdesk.mod && sudo semodule -i rustdesk.pp
 $ sudo semodule -l | grep rustdesk
 ```
 
-### Create A Type "rustdesk_t"
+#### Create a type `rustdesk_t`
 
-1. Create a new directory. `mkdir rustdesk-selinux-1.0`.
-2. Create SELinux policy files. `touch Makefile rustdesk.te rustdesk.fc rustdesk.if`.
+1. Create a new directory: `mkdir rustdesk-selinux-1.0`.
+2. Create SELinux policy files: `touch Makefile rustdesk.te rustdesk.fc rustdesk.if`.
 
 ```text
 .
@@ -129,15 +129,15 @@ $ sudo semodule -l | grep rustdesk
 `rustdesk.te` is the main policy file.
 In this example, this file mainly comes from 3 parts:
 
-1. [`init.te`](https://github.com/fedora-selinux/selinux-policy/blob/rawhide/policy/modules/system/init.te) in github’s selinux-policy repository.
+1. [`init.te`](https://github.com/fedora-selinux/selinux-policy/blob/rawhide/policy/modules/system/init.te) in GitHub’s selinux-policy repository.
 2. Audit log, `grep rustdesk /var/log/audit/audit.log | audit2allow -a -M test`.
 3. The test system's `init_t` policy, `sesearch -A | grep 'allow init_t ' | sed 's/allow init_t /allow rustdesk_t /g'`.
 
-Some policies are duplicates and some are redundant, but this is ok since it works on rustdesk_t.
+Some policies are duplicates and some are redundant, but this is ok since it works on `rustdesk_t`.
 
 The contents of each file are as follows.
 
-rustdes.te:
+`rustdesk.te`:
 
 ```text
 
@@ -541,7 +541,7 @@ gen_require(`
 
 ###############################################################################
 #
-# Part 1. The following rules are mainly from the opensource `init.te`
+# Part 1. The following rules are mainly from the open source `init.te`
 #               https://github.com/fedora-selinux/selinux-policy/blob/rawhide/policy/modules/system/init.te
 #
 #         Note: Part 1 will probably be mostly the same as Part 3. But it's acceptable for now.
@@ -831,7 +831,7 @@ allow rustdesk_t self:unix_dgram_socket { create_socket_perms sendto };
 allow rustdesk_t self:process { setkeycreate setsockcreate setfscreate setrlimit setexec };
 allow rustdesk_t self:process { getcap setcap };
 allow rustdesk_t self:unix_stream_socket { create_stream_socket_perms connectto recvfrom };
-allow rustdesk_t self:netlink_kobject_uevent_socket create_socket_perms; 
+allow rustdesk_t self:netlink_kobject_uevent_socket create_socket_perms;
 allow rustdesk_t self:netlink_selinux_socket create_socket_perms;
 allow rustdesk_t self:unix_dgram_socket lock;
 # Until systemd is fixed
@@ -1074,7 +1074,7 @@ allow rustdesk_t amanda_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t antivirus_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t apcupsd_power_t:file { ioctl lock open read };
 allow rustdesk_t auditd_etc_t:dir { add_name remove_name write };
-allow rustdesk_t auditd_etc_t:file { append create ioctl link lock open read rename setattr unlink watch watch_reads write };   
+allow rustdesk_t auditd_etc_t:file { append create ioctl link lock open read rename setattr unlink watch watch_reads write };
 allow rustdesk_t autofs_device_t:chr_file { append ioctl lock open read write };
 allow rustdesk_t base_ro_file_type:file { execute execute_no_trans map };
 allow rustdesk_t binfmt_misc_fs_t:file { append ioctl lock open read write };
@@ -1082,7 +1082,7 @@ allow rustdesk_t bitlbee_exec_t:file ioctl;
 allow rustdesk_t bitlbee_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t boltd_var_lib_t:dir { add_name create link mounton remove_name rename reparent rmdir setattr unlink watch_reads write };
 allow rustdesk_t boltd_var_lib_t:fifo_file { append create ioctl link lock open read rename setattr unlink write };
-allow rustdesk_t boltd_var_lib_t:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };       
+allow rustdesk_t boltd_var_lib_t:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };
 allow rustdesk_t boltd_var_lib_t:sock_file { append create ioctl link lock open read rename setattr unlink write };
 allow rustdesk_t boltd_var_run_t:dir mounton;
 allow rustdesk_t boolean_type:dir { getattr ioctl lock open read search };
@@ -1120,14 +1120,14 @@ allow rustdesk_t configfile:file { ioctl lock open read };
 allow rustdesk_t configfile:lnk_file read;
 allow rustdesk_t console_device_t:chr_file { read watch watch_reads };
 allow rustdesk_t consolekit_log_t:dir { add_name remove_name write };
-allow rustdesk_t consolekit_log_t:file { append create ioctl link lock open read rename setattr unlink watch_reads write };     
+allow rustdesk_t consolekit_log_t:file { append create ioctl link lock open read rename setattr unlink watch_reads write };
 allow rustdesk_t container_kvm_t:dbus send_msg;
 allow rustdesk_t container_runtime_domain:dbus send_msg;
 allow rustdesk_t container_runtime_tmpfs_t:file { ioctl lock open read };
 allow rustdesk_t container_runtime_tmpfs_t:lnk_file read;
 allow rustdesk_t container_var_lib_t:dir { create link rename reparent rmdir setattr unlink watch_reads };
-allow rustdesk_t container_var_lib_t:file { append create ioctl link lock open read rename setattr unlink watch_reads write };  
-allow rustdesk_t container_var_lib_t:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };   
+allow rustdesk_t container_var_lib_t:file { append create ioctl link lock open read rename setattr unlink watch_reads write };
+allow rustdesk_t container_var_lib_t:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };
 allow rustdesk_t crack_t:dbus send_msg;
 allow rustdesk_t cups_brf_t:dbus send_msg;
 allow rustdesk_t cupsd_exec_t:file ioctl;
@@ -1139,7 +1139,7 @@ allow rustdesk_t cvs_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t daemon:fifo_file { append getattr ioctl lock open write };
 allow rustdesk_t daemon:process siginh;
 allow rustdesk_t daemon:tcp_socket { accept append bind connect create getattr getopt ioctl listen lock read setattr setopt shutdown write };
-allow rustdesk_t daemon:udp_socket { append bind connect create getattr getopt ioctl lock read setattr setopt shutdown write }; 
+allow rustdesk_t daemon:udp_socket { append bind connect create getattr getopt ioctl lock read setattr setopt shutdown write };
 allow rustdesk_t daemon:unix_dgram_socket { append bind connect create getattr getopt ioctl lock read setattr setopt shutdown write };
 allow rustdesk_t daemon:unix_stream_socket { accept append bind connect create getattr getopt ioctl listen lock read setattr setopt shutdown write };
 allow rustdesk_t dbskkd_exec_t:file { execute ioctl map open read };
@@ -1178,14 +1178,14 @@ allow rustdesk_t dri_device_t:chr_file { append ioctl lock map open read write }
 allow rustdesk_t dspam_script_t:dbus send_msg;
 allow rustdesk_t efivarfs_t:file { ioctl lock open read setattr };
 allow rustdesk_t etc_aliases_t:dir { add_name remove_name write };
-allow rustdesk_t etc_aliases_t:file { append create ioctl link lock open read rename setattr unlink watch_reads write };        
+allow rustdesk_t etc_aliases_t:file { append create ioctl link lock open read rename setattr unlink watch_reads write };
 allow rustdesk_t etc_aliases_t:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };
-allow rustdesk_t etc_runtime_t:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write }; 
+allow rustdesk_t etc_runtime_t:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };
 allow rustdesk_t etc_runtime_t:file { append create link rename setattr unlink watch_reads write };
-allow rustdesk_t etc_t:dir { add_name create link mounton remove_name rename reparent rmdir setattr unlink watch_reads write }; 
+allow rustdesk_t etc_t:dir { add_name create link mounton remove_name rename reparent rmdir setattr unlink watch_reads write };
 allow rustdesk_t etc_t:dir { create link mounton rename reparent rmdir setattr unlink watch_reads };
 allow rustdesk_t etc_t:lnk_file { append create ioctl link lock rename setattr unlink watch_reads write };
-allow rustdesk_t faillog_t:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };     
+allow rustdesk_t faillog_t:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };
 allow rustdesk_t faillog_t:file { append create ioctl link lock open read rename setattr unlink watch_reads write };
 allow rustdesk_t faillog_t:file { create link open read rename setattr unlink watch_reads write };
 allow rustdesk_t fetchmail_t:dbus send_msg;
@@ -1223,8 +1223,8 @@ allow rustdesk_t getty_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t gitd_exec_t:file ioctl;
 allow rustdesk_t git_system_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t gnome_home_type:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };
-allow rustdesk_t gnome_home_type:file { append create ioctl link lock map open read rename setattr unlink watch_reads write };  
-allow rustdesk_t gnome_home_type:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };       
+allow rustdesk_t gnome_home_type:file { append create ioctl link lock map open read rename setattr unlink watch_reads write };
+allow rustdesk_t gnome_home_type:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };
 allow rustdesk_t gnome_home_type:sock_file { append create ioctl link lock open read rename setattr unlink write };
 allow rustdesk_t gnomesystemmm_t:dbus send_msg;
 allow rustdesk_t guest_t:dbus send_msg;
@@ -1256,7 +1256,7 @@ allow rustdesk_t init_script_file_type:file { execute ioctl map open read };
 allow rustdesk_t init_script_file_type:service { disable enable reload start status stop };
 allow rustdesk_t init_t:association sendto;
 allow rustdesk_t init_t:bpf { map_create map_read map_write prog_load prog_run };
-allow rustdesk_t init_t:capability2 { audit_read block_suspend bpf checkpoint_restore epolwakeup perfmon syslog wake_alarm };   
+allow rustdesk_t init_t:capability2 { audit_read block_suspend bpf checkpoint_restore epolwakeup perfmon syslog wake_alarm };
 allow rustdesk_t init_t:capability { audit_write audit_control sys_module chown dac_override dac_read_search fowner fsetid ipc_lock ipc_owner kill lease linux_immutable mknod net_admin net_bind_service net_broadcast net_raw setfcap setgid setpcap setuid sys_admin sys_boot sys_chroot sys_nice sys_pacct sys_ptrace sys_rawio sys_resource sys_time sys_tty_config };
 allow rustdesk_t init_t:cap_userns { audit_control audit_write chown dac_override dac_read_search fowner fsetid ipc_lock ipc_owner kill lease linux_immutable mknod net_admin net_bind_service net_broadcast net_raw setfcap setgid setpcap setuid sys_admin sys_boot sys_chroot sys_module sys_nice sys_pacct sys_ptrace sys_rawio sys_resource sys_time sys_tty_config };
 allow rustdesk_t init_t:dir watch;
@@ -1265,7 +1265,7 @@ allow rustdesk_t init_t:file { append mounton write };
 allow rustdesk_t init_t:key { create read setattr view write };
 allow rustdesk_t init_t:lnk_file { ioctl lock };
 allow rustdesk_t init_t:lockdown { confidentiality integrity };
-allow rustdesk_t init_tmp_t:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };    
+allow rustdesk_t init_tmp_t:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };
 allow rustdesk_t init_tmp_t:file { create link map open rename setattr unlink watch_reads write };
 allow rustdesk_t init_tmp_t:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };
 allow rustdesk_t init_tmp_t:sock_file { append create ioctl link lock open read rename setattr unlink write };
@@ -1281,14 +1281,14 @@ allow rustdesk_t init_t:service { disable enable reload start status stop };
 allow rustdesk_t init_t:shm { associate create destroy getattr lock read setattr unix_read unix_write write };
 allow rustdesk_t init_t:system { disable enable halt ipc_info module_load module_request reboot reload start status stop syslog_console syslog_mod syslog_read undefined };
 allow rustdesk_t init_t:tcp_socket { accept append bind connect create getattr getopt ioctl listen lock read setattr setopt shutdown write };
-allow rustdesk_t init_t:udp_socket { append bind connect create getattr getopt ioctl lock read setattr setopt shutdown write }; 
+allow rustdesk_t init_t:udp_socket { append bind connect create getattr getopt ioctl lock read setattr setopt shutdown write };
 allow rustdesk_t init_t:unix_dgram_socket { append bind connect create getattr getopt ioctl lock read sendto setattr setopt shutdown write };
 allow rustdesk_t init_t:unix_stream_socket { accept append bind connect create getattr getopt ioctl listen lock read recvfrom sendto setattr setopt shutdown write };
 allow rustdesk_t init_t:user_namespace create;
 allow rustdesk_t init_var_lib_t:dir { add_name create link mounton remove_name rename reparent rmdir setattr unlink watch_reads write };
 allow rustdesk_t init_var_lib_t:dir { create link mounton rename reparent rmdir setattr unlink watch_reads };
-allow rustdesk_t init_var_lib_t:file { append create ioctl link lock map open read rename setattr unlink watch_reads write };   
-allow rustdesk_t init_var_lib_t:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };        
+allow rustdesk_t init_var_lib_t:file { append create ioctl link lock map open read rename setattr unlink watch_reads write };
+allow rustdesk_t init_var_lib_t:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };
 allow rustdesk_t init_var_lib_t:sock_file { append create ioctl link lock open read rename setattr unlink write };
 allow rustdesk_t init_var_run_t:blk_file { append create ioctl link lock open read rename setattr unlink write };
 allow rustdesk_t init_var_run_t:chr_file { append create ioctl link lock open read rename setattr unlink write };
@@ -1321,7 +1321,7 @@ allow rustdesk_t kernel_t:fd use;
 allow rustdesk_t kernel_t:fifo_file { append getattr ioctl lock read write };
 allow rustdesk_t kernel_t:system ipc_info;
 allow rustdesk_t kernel_t:unix_dgram_socket { getattr ioctl read write };
-allow rustdesk_t kernel_t:unix_stream_socket { append bind connect getopt ioctl lock read setattr setopt shutdown write };      
+allow rustdesk_t kernel_t:unix_stream_socket { append bind connect getopt ioctl lock read setattr setopt shutdown write };
 allow rustdesk_t kmod_exec_t:file ioctl;
 allow rustdesk_t kmod_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t kmscon_t:dbus send_msg;
@@ -1335,10 +1335,10 @@ allow rustdesk_t lastlog_t:file { open read setattr write };
 allow rustdesk_t ld_so_cache_t:file { append write };
 allow rustdesk_t lldpad_t:dbus send_msg;
 allow rustdesk_t loadkeys_t:dbus send_msg;
-allow rustdesk_t locale_t:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };      
+allow rustdesk_t locale_t:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };
 allow rustdesk_t locale_t:file { append create link rename setattr unlink watch_reads write };
 allow rustdesk_t locale_t:lnk_file { append create ioctl link lock rename setattr unlink watch_reads write };
-allow rustdesk_t lockfile:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };      
+allow rustdesk_t lockfile:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };
 allow rustdesk_t lockfile:file { append create ioctl link lock open read rename setattr unlink watch_reads write };
 allow rustdesk_t lockfile:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };
 allow rustdesk_t login_userdomain:process2 nnp_transition;
@@ -1408,7 +1408,7 @@ allow rustdesk_t passwd_file_t:file { append create link rename setattr unlink w
 allow rustdesk_t pcscd_t:unix_stream_socket connectto;
 allow rustdesk_t pdns_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t pegasus_openlmi_domain:dbus send_msg;
-allow rustdesk_t pidfile:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };       
+allow rustdesk_t pidfile:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };
 allow rustdesk_t pidfile:fifo_file { create open unlink };
 allow rustdesk_t pidfile:file { ioctl lock map open read unlink };
 allow rustdesk_t pidfile:lnk_file read;
@@ -1422,9 +1422,9 @@ allow rustdesk_t policykit_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t port_type:tcp_socket name_bind;
 allow rustdesk_t port_type:udp_socket name_bind;
 allow rustdesk_t postfix_exec_t:file { execute execute_no_trans ioctl lock map open read };
-allow rustdesk_t print_spool_t:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write }; 
+allow rustdesk_t print_spool_t:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };
 allow rustdesk_t print_spool_t:fifo_file { append create ioctl link lock open read rename setattr unlink write };
-allow rustdesk_t print_spool_t:file { append create ioctl link lock map open read rename setattr unlink watch_reads write };    
+allow rustdesk_t print_spool_t:file { append create ioctl link lock map open read rename setattr unlink watch_reads write };
 allow rustdesk_t print_spool_t:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };
 allow rustdesk_t proc_net_t:lnk_file { getattr read };
 allow rustdesk_t proc_security_t:file { append write };
@@ -1443,7 +1443,7 @@ allow rustdesk_t quota_t:process transition;
 allow rustdesk_t quota_t:unix_stream_socket { accept append bind connect create getattr getopt ioctl listen lock read setattr setopt shutdown write };
 allow rustdesk_t radiusd_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t random_device_t:chr_file { ioctl lock open read };
-allow rustdesk_t random_seed_t:file { append create ioctl link lock open read rename setattr unlink watch_reads write };        
+allow rustdesk_t random_seed_t:file { append create ioctl link lock open read rename setattr unlink watch_reads write };
 allow rustdesk_t rdisc_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t rhsmcertd_t:dbus send_msg;
 allow rustdesk_t rlogind_exec_t:file ioctl;
@@ -1478,7 +1478,7 @@ allow rustdesk_t rustdesk_t:lnk_file { ioctl lock };
 allow rustdesk_t rustdesk_t:lockdown { confidentiality integrity };
 allow rustdesk_t rustdesk_t:netlink_audit_socket { append bind connect create lock nlmsg_read nlmsg_relay nlmsg_tty_audit setattr shutdown };
 allow rustdesk_t rustdesk_t:netlink_kobject_uevent_socket { append bind connect create lock setattr shutdown };
-allow rustdesk_t rustdesk_t:netlink_route_socket { append bind connect create lock nlmsg_read nlmsg_write setattr shutdown };   
+allow rustdesk_t rustdesk_t:netlink_route_socket { append bind connect create lock nlmsg_read nlmsg_write setattr shutdown };
 allow rustdesk_t rustdesk_t:netlink_selinux_socket { append bind connect create lock setattr shutdown };
 allow rustdesk_t rustdesk_t:packet_socket { append bind connect create lock setattr shutdown };
 allow rustdesk_t rustdesk_t:peer recv;
@@ -1491,7 +1491,7 @@ allow rustdesk_t rustdesk_t:unix_stream_socket { connectto recvfrom };
 allow rustdesk_t rustdesk_t:user_namespace create;
 allow rustdesk_t sblim_domain:dbus send_msg;
 allow rustdesk_t security_t:file map;
-allow rustdesk_t security_t:security { check_context compute_av compute_create compute_relabel compute_user load_policy };      
+allow rustdesk_t security_t:security { check_context compute_av compute_create compute_relabel compute_user load_policy };
 allow rustdesk_t selinux_config_t:file { ioctl lock open read };
 allow rustdesk_t selinux_config_t:lnk_file read;
 allow rustdesk_t selinux_login_config_t:file { ioctl lock open read };
@@ -1521,8 +1521,8 @@ allow rustdesk_t svc_start_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t svirt_file_type:chr_file { append create ioctl link lock open read rename setattr unlink write };
 allow rustdesk_t svirt_file_type:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };
 allow rustdesk_t svirt_file_type:fifo_file { append create ioctl link lock open read rename setattr unlink write };
-allow rustdesk_t svirt_file_type:file { append create ioctl link lock open read rename setattr unlink watch_reads write };      
-allow rustdesk_t svirt_file_type:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };       
+allow rustdesk_t svirt_file_type:file { append create ioctl link lock open read rename setattr unlink watch_reads write };
+allow rustdesk_t svirt_file_type:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };
 allow rustdesk_t svirt_sandbox_domain:process transition;
 allow rustdesk_t svirt_sandbox_domain:unix_dgram_socket sendto;
 allow rustdesk_t svirt_tcg_t:dbus send_msg;
@@ -1546,8 +1546,8 @@ allow rustdesk_t system_dbusd_var_run_t:sock_file { read watch };
 allow rustdesk_t systemd_coredump_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t systemd_gpt_generator_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t systemd_home_t:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };
-allow rustdesk_t systemd_home_t:file { append create ioctl link lock open read rename setattr unlink watch_reads write };       
-allow rustdesk_t systemd_home_t:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };        
+allow rustdesk_t systemd_home_t:file { append create ioctl link lock open read rename setattr unlink watch_reads write };
+allow rustdesk_t systemd_home_t:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };
 allow rustdesk_t systemd_hostnamed_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t systemd_hwdb_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t systemd_importd_t:process2 { nnp_transition nosuid_transition };
@@ -1601,7 +1601,7 @@ allow rustdesk_t systemd_unit_file_type:dir { add_name create link remove_name r
 allow rustdesk_t systemd_unit_file_type:file { append create ioctl link lock open read rename setattr unlink watch_reads write };
 allow rustdesk_t systemd_unit_file_type:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };
 allow rustdesk_t systemd_unit_file_type:service { disable enable reload start status stop };
-allow rustdesk_t systemd_userdbd_runtime_t:lnk_file { append create ioctl link lock rename setattr unlink watch_reads write };  
+allow rustdesk_t systemd_userdbd_runtime_t:lnk_file { append create ioctl link lock rename setattr unlink watch_reads write };
 allow rustdesk_t systemd_userdbd_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t systemprocess:process { dyntransition siginh };
 allow rustdesk_t systemprocess:unix_dgram_socket { append bind connect create getattr getopt ioctl lock read setattr setopt shutdown write };
@@ -1657,7 +1657,7 @@ allow rustdesk_t userdomain:unix_stream_socket connectto;
 allow rustdesk_t user_home_dir_t:lnk_file read;
 allow rustdesk_t user_home_t:file unlink;
 allow rustdesk_t user_t:fd use;
-allow rustdesk_t user_tmp_t:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };    
+allow rustdesk_t user_tmp_t:dir { add_name create link remove_name rename reparent rmdir setattr unlink watch_reads write };
 allow rustdesk_t user_tmp_t:dir { create link rename reparent rmdir setattr unlink watch_reads };
 allow rustdesk_t user_tmp_t:sock_file { append create ioctl link lock open read rename setattr unlink write };
 allow rustdesk_t user_tty_device_t:chr_file { open watch watch_reads };
@@ -1668,14 +1668,14 @@ allow rustdesk_t uuidd_t:process2 { nnp_transition nosuid_transition };
 allow rustdesk_t uuidd_var_run_t:fifo_file { append ioctl link lock read rename setattr write };
 allow rustdesk_t uuidd_var_run_t:lnk_file { append create ioctl link lock rename setattr unlink watch_reads write };
 allow rustdesk_t uuidd_var_run_t:sock_file { ioctl link lock read rename };
-allow rustdesk_t var_lib_nfs_t:file { append create ioctl link lock open read rename setattr unlink watch_reads write };        
+allow rustdesk_t var_lib_nfs_t:file { append create ioctl link lock open read rename setattr unlink watch_reads write };
 allow rustdesk_t var_lib_t:dir { add_name create remove_name setattr write };
 allow rustdesk_t var_lib_t:dir { create setattr };
 allow rustdesk_t var_lib_t:file { append create ioctl link lock open read rename setattr unlink watch_reads write };
 allow rustdesk_t var_lib_t:lnk_file { create read write };
 allow rustdesk_t var_log_t:dir { add_name create remove_name setattr write };
 allow rustdesk_t var_log_t:dir { create setattr };
-allow rustdesk_t var_log_t:file { append create ioctl link lock map open read rename setattr unlink watch_reads write };        
+allow rustdesk_t var_log_t:file { append create ioctl link lock map open read rename setattr unlink watch_reads write };
 allow rustdesk_t var_log_t:file { create link map open read rename setattr unlink watch_reads write };
 allow rustdesk_t var_log_t:lnk_file { append create ioctl link lock read rename setattr unlink watch_reads write };
 allow rustdesk_t var_run_t:file { append execute execute_no_trans write };
@@ -1710,21 +1710,21 @@ allow rustdesk_t xserver_t:unix_stream_socket connectto;
 
 ```
 
-rustdesk.fc:
+`rustdesk.fc`:
 
 ```text
 
 /usr/bin/rustdesk --  gen_context(system_u:object_r:rustdesk_exec_t,s0)
 ```
 
-rustdesk.if:
+`rustdesk.if`:
 
 ```text
 
 ## <summary>RustDesk</summary>
 ```
 
-Makefile:
+`Makefile`:
 
 ```makefile
 
@@ -1758,9 +1758,9 @@ install: man
 
 ```
 
-#### Enable Directly
+##### Enable directly
 
-View the security context of rustdesk before modification:
+View the security context of RustDesk before modification:
 
 ```sh
 $ ls -lZ /usr/lib/rustdesk/rustdesk
@@ -1792,14 +1792,14 @@ $ ps -eZ | grep rustdesk
 system_u:system_r:rustdesk_t:s0  110565 ?        00:00:00 rustdesk
 ```
 
-#### Enable through rpm installation
+##### Enable through rpm installation
 
 You can use the `sepolicy generate` command:
 
-```bash
+```sh
 $ # install deps
 $ sudo dnf install -y rpm rpm-build binutils
-$ # generate 
+$ # generate
 $ sepolicy generate --init /usr/lib/rustdesk/rustdesk
 $ tree
 .
@@ -1819,9 +1819,9 @@ $ # restart the service
 $ sudo systemctl restart rustdesk
 ```
 
-## Troubleshooting
+### Troubleshooting
 
-### Iteratively Add Policies
+#### Iteratively Add Policies
 
 ```sh
 $ cd /tmp
@@ -1831,8 +1831,9 @@ $ # merge rustdesk_tmp.te to rustdesk.te
 $ make clean && make && sudo make install-policy
 ```
 
-## References
+### References
 
-1. [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials)
-1. [SELinux_Policy_module_installation](https://fedoraproject.org/wiki/SELinux/IndependentPolicy#SELinux_Policy_module_installation)
-1. [how-to-create-selinux-custom-policy-rpm-package](https://lukas-vrabec.com/index.php/2015/07/07/how-to-create-selinux-custom-policy-rpm-package/)
+- [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials)
+- [SELinux Policy module installation](https://fedoraproject.org/wiki/SELinux/IndependentPolicy#SELinux_Policy_module_installation)
+- [How to create SELinux custom policy rpm package](https://lukas-vrabec.com/index.php/2015/07/07/how-to-create-selinux-custom-policy-rpm-package/)
+

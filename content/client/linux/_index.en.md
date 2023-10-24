@@ -18,7 +18,7 @@ sudo apt install -fy ./rustdesk-<version>.deb
 sudo yum localinstall ./rustdesk-<version>.rpm
 ```
 
-#### Arch/Manjaro
+#### Arch Linux/Manjaro
 
 ```sh
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
@@ -39,11 +39,11 @@ RustDesk now has experimental Wayland support since v1.2.0.
 
 [Ubuntu](https://askubuntu.com/questions/1260142/ubuntu-set-default-login-desktop) | 
 [Fedora](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/) | 
-[Arch](https://bbs.archlinux.org/viewtopic.php?id=218319)
+[Arch Linux](https://bbs.archlinux.org/viewtopic.php?id=218319)
 
 #### Login Screen
 
-Login screen using Wayland is not supporte yet. If you wanna access login screen after reboot or logout with RustDesk, you need to change login screen to X11, please modify below line to `WaylandEnable=false` in `/etc/gdm/custom.conf` or `/etc/gdm3/custom.conf`:
+Login screen using Wayland is not supported yet. If you wanna access login screen after reboot or logout with RustDesk, you need to change login screen to X11, please modify below line to `WaylandEnable=false` in `/etc/gdm/custom.conf` or `/etc/gdm3/custom.conf`:
 
 ```ini
 #WaylandEnable=false
@@ -59,11 +59,14 @@ If SELinux is enabled, RustDesk will not work properly in either X11 or Wayland 
 
 You can run:
 
-```bash
+```sh
 $ sudo grep 'comm="rustdesk"' /var/log/audit/audit.log | tail -1
 type=AVC msg=audit(1697902459.165:707): avc:  denied  { name_connect } for  pid=31346 comm="rustdesk" dest=53330 scontext=system_u:system_r:init_t:s0 tcontext=system_u:object_r:ephemeral_port_t:s0 tclass=tcp_socket permissive=0
 ```
 
-**NOTE**: The number in parentheses after audit is timestamp.
+{{% notice note %}}
+The number in parentheses after `audit` is timestamp.
+{{% /notice %}}
 
-If the output contains `avc: denied`, you need to add SElinux policies, please refer to [SELinux](./selinux/).
+If the output contains `avc: denied`, you need to add SELinux policies, please refer to [SELinux](https://rustdesk.com/docs/en/client/linux/selinux/).
+
