@@ -3,15 +3,15 @@ title: Installation
 weight: 1
 ---
 
-## Installieren Sie Ihren eigenen Server als Dienst systemd mit einem einfach auszuführenden Installationsskript
+### Installieren Sie Ihren eigenen Server als Dienst systemd mit einem einfach auszuführenden Installationsskript
 Das Skript wird auf [Techahold](https://github.com/techahold/rustdeskinstall) gehostet und auf unserem [Discord](https://discord.com/invite/nDceKgxnkV) unterstützt.
 
 Derzeit lädt das Skript die Relay- und Signal-Server (hbbr und hbbs) herunter und richtet sie ein, generiert Konfigurationen und hostet sie auf einer passwortgeschützten Webseite für die einfache Bereitstellung an Clients.
 
-### Anforderungen
-Sie müssen Linux installiert haben, das Skript wurde mit CentOS Linux 7/8, Ubuntu 18/20 und Debian getestet. Ein Server mit 1 CPU, 1 GB und 10 GB Festplattenspeicher ist ausreichend, um RustDesk zu betreiben.
+#### Anforderungen
+Sie müssen Linux installiert haben, das Skript wurde mit CentOS Linux 7/8, Ubuntu 18/20 und Debian getestet. Ein Server mit 1 CPU, 1 GB RAM und 10 GB Festplattenspeicher ist ausreichend, um RustDesk zu betreiben.
 
-#### So installieren Sie den Server
+##### So installieren Sie den Server
 Bitte richten Sie Ihre Firewall auf Ihrem Server ein, bevor Sie das Skript ausführen.
 
 Stellen Sie sicher, dass Sie über SSH oder auf andere Weise Zugang haben, bevor Sie die Firewall einrichten. Die Beispielbefehle für UFW (Debian-basiert) lauten:
@@ -35,13 +35,13 @@ chmod +x install.sh
 ```
 Es gibt auch ein Update-Skript auf [Techaholds](https://github.com/techahold/rustdeskinstall) Repository.
 
-## Installieren Sie Ihren eigenen Server als Dienst systemd mit einer .deb-Datei für Debian-Distributionen
+### Installieren Sie Ihren eigenen Server als Dienst systemd mit einer .deb-Datei für Debian-Distributionen
 
 Bitte laden Sie die [.deb-Dateien](https://github.com/rustdesk/rustdesk-server/releases/latest) selbst herunter und installieren Sie sie mit `apt-get -f install <Dateiname>.deb` oder `dpkg -i <Dateiname>.deb`.
 
-## Richten Sie Ihre eigene Serverinstanz manuell ein.
+### Richten Sie Ihre eigene Serverinstanz manuell ein.
 
-### Schritt 1: Server-Software herunterladen
+#### Schritt 1: Server-Software herunterladen
 
 [Herunterladen](https://github.com/rustdesk/rustdesk-server/releases/latest)
 
@@ -59,26 +59,26 @@ Es gibt zwei ausführbare Dateien und einen Ordner:
 
 Sie wurden auf CentOS Linux 7 erstellt und auf CentOS Linux 7/8 sowie Ubuntu 18/20 getestet.
 
-#### Server-Anforderungen
+##### Server-Anforderungen
 
 Die Hardwareanforderungen sind sehr gering. Die Mindestkonfiguration eines einfachen Cloud-Servers reicht aus und die CPU- und Speicheranforderungen sind minimal. Sie können auch einen Raspberry Pi oder etwas Ähnliches verwenden. Was die Netzauslastung anbelangt, so wird bei einem Ausfall der "TCP Hole Punching"-Direktverbindung der Relay-Verkehr in Anspruch genommen. Der Datenverkehr einer Relay-Verbindung liegt zwischen 30 K/s und 3 M/s (1920x1080-Bildschirm), abhängig von den Auflösungseinstellungen und der Bildschirmaktualisierung. Wenn es sich nur um eine Büroverbindung handelt, beträgt der Datenverkehr etwa 100 K/s.
 
-### Schritt 2: hbbs und hbbr auf dem Server ausführen
+#### Schritt 2: hbbs und hbbr auf dem Server ausführen
 
 Wir empfehlen Ihnen die Verwendung von [PM2](https://pm2.keymetrics.io/) für die Verwaltung Ihres Dienstes.
 
-#### Option 1
+##### Option 1
 Starten Sie hbbs/hbbr ohne PM2.
 
-```bash
+```sh
 ./hbbs -r <relay-server-ip[:port]>
 ./hbbr
 ```
 
-#### Option 2
+##### Option 2
 Starten Sie hbbs/hbbr mit PM2.
 
-```bash
+```sh
 pm2 start hbbs -- -r <relay-server-ip[:port]>
 pm2 start hbbr
 ```
@@ -97,7 +97,7 @@ Standardmäßig lauscht `hbbs` auf 21115 (TCP), 21116 (TCP/UDP) und 21118 (TCP),
 
 Wenn Sie einen eigenen Port auswählen möchten, geben Sie bitte die Option `-h` ein, um die Hilfe anzuzeigen.
 
-### Schritt 3: hbbs/hbbr-Adresse auf der Client-Seite einstellen
+#### Schritt 3: hbbs/hbbr-Adresse auf der Client-Seite einstellen
 
 Klicken Sie auf die Menü-Schaltfläche [ &#8942; ] rechts neben ID, wie unten gezeigt, und wählen Sie "ID/Relay-Server".
 
@@ -119,7 +119,7 @@ hbbs.example.com:21116
 
 ![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-window.png)
 
-#### Konfiguration in den Dateinamen von rustdesk.exe einfügen (nur Windows)
+##### Konfiguration in den Dateinamen von rustdesk.exe einfügen (nur Windows)
 
 Ändern Sie `rustdesk.exe` in rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe, z. B. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe. Das Ergebnis der Konfiguration können Sie im untenstehenden Über-Fenster sehen.
 
@@ -134,19 +134,19 @@ bitte die Datei `id_ed25519` von Ihrem Server und starten Sie `hbbs`/`hbbr` neu.
 Möglicherweise müssen Sie diesen Vorgang wiederholen, bis Sie gültige Zeichen erhalten.
 {{% /notice %}}
 
-## Schlüssel
+### Schlüssel
 
 Anders als in der alten Version ist der Schlüssel in dieser Version obligatorisch, aber Sie brauchen ihn nicht selbst zu setzen. Wenn `hbbs` zum ersten Mal ausgeführt wird, erzeugt es automatisch ein Paar verschlüsselter privater und öffentlicher Schlüssel (die sich jeweils in den Dateien `id_ed25519` und `id_ed25519.pub` im aktuellen Ordner befinden), deren Hauptzweck in der Verschlüsselung der Kommunikation besteht.
 
 Wenn Sie `Key:` (mit dem Inhalt der öffentlichen Schlüsseldatei `id_ed25519.pub`) im vorherigen Schritt nicht ausgefüllt haben, hat dies keine Auswirkungen auf die Verbindung, aber diese kann nicht verschlüsselt werden.
 
-```bash
+```sh
 cat ./id_ed25519.pub
 ```
 
 Wenn Sie Benutzern ohne den Schlüssel den Aufbau unverschlüsselter Verbindungen verbieten wollen, fügen Sie bitte den Parameter `-k _` hinzu, wenn Sie z. B. `hbbs` und `hbbr` ausführen:
 
-```bash
+```sh
 ./hbbs -r <relay-server-ip[:port]> -k _
 ./hbbr -k _
 ```
