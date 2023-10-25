@@ -4,7 +4,7 @@ weight: 22
 ---
 
 {{% notice note %}}
-Diese Anleitung setzt voraus, dass Sie mit [Android NDK](https://developer.android.com/ndk/downloads), [Rust](https://rustup.rs/) und [Flutter](https://flutter.dev/) **vertraut** sind.
+Diese Anleitung setzt voraus, dass Sie mit [Android NDK](https://developer.android.com/ndk/downloads), [Flutter](https://flutter.dev/) und [Rust](https://rustup.rs/) **vertraut** sind.
 Wenn nicht, überspringen Sie bitte diese Seite oder lesen auf eigene Gefahr weiter.
 {{% /notice %}}
 
@@ -12,7 +12,7 @@ Wenn nicht, überspringen Sie bitte diese Seite oder lesen auf eigene Gefahr wei
 Es ist möglich, RustDesk Android auf **Windows** und **macOS** zu bauen, aber diese Anleitung ist noch in der aktiven Entwicklung.
 {{% /notice %}}
 
-## Einführung
+### Einführung
 
 Hier erfahren Sie, wie Sie Ihre Umgebung so weit vorbereiten, dass Sie die App erfolgreich erstellen können und in der Lage sind, den Code z. B. mit Android Studio zu bearbeiten.
 
@@ -22,22 +22,22 @@ Man kann die Android-Version unter Windows erstellen, ausführen und bearbeiten,
 
 Mit "gepatcht" ist der Zustand des Verzeichnisses vor dem Ausführen von `flutter build` auf dem Linux-Rechner gemeint.
 
-## Voraussetzungen
+### Voraussetzungen
 - Sie verwenden **Ubuntu 20.04** oder höher (diese Anleitung basiert auf dieser Version)
 - Sie haben eine funktionierende Internetverbindung
-- Sie haben bereits [**Flutter**](https://docs.flutter.dev/get-started/install/linux), [**vcpkg**](https://github.com/microsoft/vcpkg) und [**Rust**](https://www.rust-lang.org/tools/install) installiert
+- Sie haben bereits [**Flutter**](https://docs.flutter.dev/get-started/install/linux), [**Rust**](https://www.rust-lang.org/tools/install) und [**vcpkg**](https://github.com/microsoft/vcpkg) installiert
 - Sie haben das [RustDesk-Repository](https://github.com/rustdesk/rustdesk) geklont
 - Sie wissen, was Sie tun
 
-## System
+### System
 Dieser Teil der Anleitung basiert auf einer sauberen Instanz von **Ubuntu 20.04** mit bereits installierten und konfigurierten Komponenten wie **Flutter**, **Rust** und **vcpkg**.
 
 Wenn Ihnen eine dieser Komponenten fehlt, beschaffen und konfigurieren Sie sie und kehren Sie dann hierher zurück.
 
-## Anleitung
+### Anleitung
 Dies ist eine Schritt-für-Schritt-Anleitung.
 
-## Bridge generieren 🌉
+### Bridge generieren 🌉
 
 Da dieses Projekt auf [flutter_rust_bridge](https://cjycode.com/flutter_rust_bridge/index.html) basiert, sollten Sie es zuerst generieren, was Sie mit den folgenden Befehlen erreichen können.
 
@@ -65,7 +65,7 @@ sudo apt install ca-certificates -y
 sudo apt update -y
 sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang cmake libclang-dev ninja-build llvm-dev libclang-10-dev llvm-10-dev pkg-config
 ```
-### Abhängigkeiten der Flutter-Rust-Bridge installieren
+#### Abhängigkeiten der Flutter-Rust-Bridge installieren
 In diesem Schritt werden Sie zusätzliche Abhängigkeiten installieren, die von [flutter-rust-bridge](https://cjycode.com/flutter_rust_bridge/index.html) benötigt werden. Außerdem werden Sie die Flutter-Abhängigkeiten aus der Datei `pubspec.yaml` herunterladen.
 
 Dies kann je nach Geschwindigkeit Ihrer Internetverbindung und der Gesamtleistung Ihres Desktops einige Zeit dauern:
@@ -73,7 +73,7 @@ Dies kann je nach Geschwindigkeit Ihrer Internetverbindung und der Gesamtleistun
 cargo install flutter_rust_bridge_codegen
 pushd flutter && flutter pub get && popd
 ```
-### Bridge-Dateien generieren
+#### Bridge-Dateien generieren
 Damit alles funktioniert, müssen Sie die Flutter-Rust-Bridge generieren und einfach ausführen:
 
 ```
@@ -86,9 +86,9 @@ Wenn alles geklappt hat, sollten Sie in Ihrem Terminal-Fenster etwas wie das hie
 2023/02/27 20:44:39 [INFO] Now go and use it :)
 ```
 
-## RustDesk für Android erstellen 📱
+### RustDesk für Android erstellen 📱
 
-### Abhängigkeiten installieren
+#### Abhängigkeiten installieren
 
 In diesem Schritt benötigen Sie möglicherweise einige zusätzliche Abhängigkeiten, die Sie mit diesem Befehl installieren können:
 ```
@@ -100,7 +100,7 @@ Möglicherweise müssen Sie auch `ffigen` aktivieren:
 dart pub global activate ffigen 5.0.1
 ```
 
-### Zusätzliche Abhängigkeiten herunterladen
+#### Zusätzliche Abhängigkeiten herunterladen
 Für diese Anleitung haben wir einige Abhängigkeiten für Sie vorbereitet, Sie können sie gerne verwenden. Es erfordert, dass `vcpkg` installiert ist, in diesem Fall unter `/opt`:
 
 ```
@@ -110,8 +110,8 @@ sudo tar xzf dep.tar.gz
 popd
 ```
 
-#### Warnung
-Das Verzeichnis `vcpkg` muss sich unter `$HOME` befinden, wenn der Teil `RustDesk-Bibliothek bauen` dieser Anleitung Fehler auslöst wie:
+**Warnung:** Das Verzeichnis `vcpkg` muss sich unter `$HOME` befinden, wenn der Teil `RustDesk-Bibliothek bauen` dieser Anleitung Fehler auslöst wie:
+
 ```yaml
 error: failed to run custom build command for `magnum-opus v0.4.0 (https://github.com/rustdesk/magnum-opus#79be072c)`
 
@@ -133,13 +133,13 @@ sudo tar xzf dep.tar.gz
 popd
 ```
 
-### Bau der Flutter-Rust-Bridge deaktivieren
+#### Bau der Flutter-Rust-Bridge deaktivieren
 Möglicherweise müssen Sie den Bau der Flutter-Rust-Bridge in der Datei `build.rs` deaktivieren, indem Sie dies ausführen:
 ```
 sed -i "s/gen_flutter_rust_bridge();/\/\//g" build.rs
 ```
 
-### RustDesk-Bibliothek bauen
+#### RustDesk-Bibliothek bauen
 In diesem Schritt erstellen Sie die Datei `librustdesk.so`.
 
 Zuerst fügen Sie `triplet` zu Rust hinzu:
@@ -164,7 +164,7 @@ Dann starten Sie einfach:
 ./flutter/ndk_arm64.sh
 ```
 
-### Generierte Bibliothek in das Verzeichnis `jniLibs` verschieben
+#### Generierte Bibliothek in das Verzeichnis `jniLibs` verschieben
 Wenn Sie `librustdesk.so` generiert haben, erstellen Sie das richtige Verzeichnis:
 ```
 mkdir -p ./flutter/android/app/src/main/jniLibs/arm64-v8a
@@ -174,7 +174,7 @@ Und kopieren Sie diese einfach dorthin:
 cp ./target/aarch64-linux-android/release/liblibrustdesk.so ./flutter/android/app/src/main/jniLibs/arm64-v8a/librustdesk.so
 ```
 
-### RustDesk erstellen
+#### RustDesk erstellen
 Im letzten Schritt werden Sie Ihre Version der RustDesk-App erstellen.
 
 Wenn Sie alles richtig gemacht haben, werden Sie es mit Leichtigkeit bauen können.
@@ -211,7 +211,7 @@ Wenn das Ergebnis `✓  Built build/app` lautet, dann ignorieren Sie es. Es bede
 
 {{% /notice %}}
 
-### Optional
+#### Optional
 Wenn Sie möchten, können Sie die erstellte App verschieben:
 ```
 mv build/app/outputs/flutter-apk/app-arm64-v8a-release.apk ../rustdesk-release.apk

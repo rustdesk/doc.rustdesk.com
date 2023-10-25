@@ -3,7 +3,7 @@ title: Linux
 weight: 10
 ---
 
-## Abhängigkeiten
+### Abhängigkeiten
 
 Desktop-Versionen nutzen [Sciter](https://sciter.com/) für die Benutzeroberfläche, bitte laden Sie die dynamische Bibliothek Sciter selbst herunter.
 
@@ -11,7 +11,7 @@ Desktop-Versionen nutzen [Sciter](https://sciter.com/) für die Benutzeroberflä
 [Linux](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so) |
 [macOS](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.osx/libsciter.dylib)
 
-## Grobe Schritte zum Erstellen
+### Grobe Schritte zum Erstellen
 
 - Bereiten Sie Ihre Rust-Entwicklungsumgebung und Ihre C++-Build-Umgebung vor
 
@@ -22,27 +22,27 @@ Desktop-Versionen nutzen [Sciter](https://sciter.com/) für die Benutzeroberflä
 
 - Nutzen Sie `cargo run`
 
-## Auf Linux erstellen
+### Auf Linux erstellen
 
-### Ubuntu 18 (Debian 10)
+#### Ubuntu 18 (Debian 10)
 
 ```sh
 sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang libxcb-randr0-dev libxdo-dev libxfixes-dev libxcb-shape0-dev libxcb-xfixes0-dev libasound2-dev libpulse-dev cmake
 ```
 
-### Fedora 28 (CentOS 8)
+#### Fedora 28 (CentOS 8)
 
 ```sh
 sudo yum -y install gcc-c++ git curl wget nasm yasm gcc gtk3-devel clang libxcb-devel libxdo-devel libXfixes-devel pulseaudio-libs-devel cmake alsa-lib-devel
 ```
 
-### Arch (Manjaro)
+#### Arch Linux (Manjaro)
 
 ```sh
 sudo pacman -Syu --needed unzip git cmake gcc curl wget yasm nasm zip make pkg-config clang gtk3 xdotool libxcb libxfixes alsa-lib pulseaudio
 ```
 
-### vcpkg installieren
+#### vcpkg installieren
 
 ```sh
 git clone https://github.com/microsoft/vcpkg
@@ -54,7 +54,7 @@ export VCPKG_ROOT=$HOME/vcpkg
 vcpkg/vcpkg install libvpx libyuv opus aom
 ```
 
-### libvpx reparieren (für Fedora)
+#### libvpx reparieren (für Fedora)
 
 ```sh
 cd vcpkg/buildtrees/libvpx/src
@@ -67,7 +67,7 @@ cp libvpx.a $HOME/vcpkg/installed/x64-linux/lib/
 cd
 ```
 
-### Erstellen
+#### Erstellen
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -80,7 +80,7 @@ mv libsciter-gtk.so target/debug
 VCPKG_ROOT=$HOME/vcpkg cargo run
 ```
 
-### Wayland zu X11 ändern (Xorg)
+#### Wayland zu X11 ändern (Xorg)
 
 ~~RustDesk unterstützt Wayland nicht.~~ Lesen Sie diese [Anleitung](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/), um Xorg als Standard-GNOME-Sitzung zu konfigurieren.
 

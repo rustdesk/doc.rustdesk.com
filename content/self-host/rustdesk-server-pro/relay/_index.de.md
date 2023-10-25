@@ -3,7 +3,7 @@ title: Relay-Server konfigurieren
 weight: 17
 ---
 
-## RustDesk Pro - Zusätzliche Relais-Server mit Geo-Standort mit Docker installieren
+### RustDesk Pro - Zusätzliche Relais-Server mit Geo-Standort mit Docker installieren
 
 Sie können mehrere Relay-Server auf der ganzen Welt betreiben und GeoLocation nutzen, um den nächstgelegenen Relay-Server zu verwenden, sodass Sie eine schnellere Verbindung zu entfernten Computern herstellen können.
 
@@ -69,14 +69,14 @@ To                         Action      From
 21117,21119/tcp (v6)       ALLOW       Anywhere (v6)
 ```
 
-## RustDesk Pro für Geolocation über die Webkonsole konfigurieren
+### RustDesk Pro für Geolocation über die Webkonsole konfigurieren
 
-### GeoLite2 City-Datenbankdatei registrieren und herunterladen
+#### GeoLite2 City-Datenbankdatei registrieren und herunterladen
 
 Um Geolocation zu nutzen, benötigt hbbs Zugriff auf die MaxMind GeoLite2 City-Datenbank. Die Datenbank ist kostenlos und Sie können sich registrieren, um die Datei herunterzuladen und einen API-Schlüssel zu erhalten.
 
 Erstellen Sie zunächst ein Konto (falls Sie noch keines haben), indem Sie die [Website](https://www.maxmind.com/en/account/login) aufrufen.
-Gehen Sie zu `Download Databases`, wählen Sie die gzip-Datei und laden Sie die GeoLite2 City herunter. Nach dem Dekomprimieren sollten Sie die Datei `mmdb` haben.
+Gehen Sie zu `Download Databases`, wählen Sie die gzip-Datei und laden Sie GeoLite2 City herunter. Nach dem Dekomprimieren sollten Sie die Datei `mmdb` haben.
 
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/e14318fb-ec52-463c-af77-d08c9479c1b5">
 
@@ -98,7 +98,7 @@ Sie können den [Download-Prozess](https://dev.maxmind.com/geoip/updating-databa
 /usr/bin/curl -L --silent 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={Your Access Key}&suffix=tar.gz' | /bin/tar -C '/var/lib/rustdesk-server/' -xvz --keep-newer-files --strip-components=1 --wildcards '*GeoLite2-City.mmdb'
 ```
 
-### Einstellungen in der RustDesk Pro Webkonsole ändern
+#### Einstellungen in der RustDesk Pro Webkonsole ändern
 
 Fügen Sie die IP-Adressen Ihrer Relay-Server in die Relay-Serverliste hinzu, indem Sie nur die IP-Adresse angeben. **Fügen Sie nicht den Port hinzu.** <br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/c4452ba4-5e1d-437a-ae1d-fc0070bfa26c">

@@ -4,7 +4,7 @@ weight: 400
 pre: "<b>2.4. </b>"
 ---
 
-Sie können eine Reihe von Methoden für die Bereitstellung verwenden, von denen einige in [Client-Konfiguration](/docs/de/self-host/client-configuration/) beschrieben sind.
+Sie können eine Reihe von Methoden für die Bereitstellung verwenden, von denen einige in [Client-Konfiguration](https://rustdesk.com/docs/de/self-host/client-configuration/) beschrieben sind.
 
 Alternativ können Sie Skripte für die Massenbereitstellung mit Ihrem RMM, Intune usw. verwenden. Die ID und das Passwort werden vom Skript ausgegeben. Sie sollten sie ermitteln oder sie in verschiedene Skripte aufteilen, um die ID und das Passwort zu ermitteln.
 
@@ -35,7 +35,7 @@ if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
-if ($rdver -eq "1.2.2")
+if ($rdver -eq "1.2.3")
 {
     Write-Output "RustDesk $rdver ist die neueste Version"
     Exit
@@ -48,7 +48,7 @@ if (!(Test-Path C:\Temp))
 
 cd C:\Temp
 
-Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
+Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
 
 $ServiceName = 'Rustdesk'
@@ -95,10 +95,12 @@ setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 set alfanum=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 
 set rustdesk_pw=
-for /L %%b in (1, 1, 12) do
-(
+for /L %%b in (1, 1, 12) do (
+
     set /A rnd_num=!RANDOM! %% 62
-    for %%c in (!rnd_num!) do set rustdesk_pw=!rustdesk_pw!!alfanum:~%%c,1!
+    for %%c in (!rnd_num!) do (
+        set rustdesk_pw=!rustdesk_pw!!alfanum:~%%c,1!
+    )
 )
 
 REM Holen Sie sich Ihren Konfigurationsstring von Ihrem Webportal und füllen Sie ihn wie folgt aus
@@ -109,7 +111,7 @@ REM ############################## Bitte nicht unterhalb dieser Zeile bearbeiten
 if not exist C:\Temp\ md C:\Temp\
 cd C:\Temp\
 
-curl -L "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -o rustdesk.exe
+curl -L "https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.exe" -o rustdesk.exe
 
 rustdesk.exe --silent-install
 timeout /t 20
@@ -153,7 +155,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Den Pfad zur Datei rustdesk.dmg angeben
-dmg_file="/tmp/rustdesk-1.2.2-x86_64.dmg"
+dmg_file="/tmp/rustdesk-1.2.3-x86_64.dmg"
 
 # Den Einhängepunkt für das DMG (temporäres Verzeichnis) angeben
 mount_point="/Volumes/RustDesk"
@@ -162,9 +164,9 @@ mount_point="/Volumes/RustDesk"
 echo "RustDesk jetzt herunterladen"
 
 if [[ $(arch) == 'arm64' ]]; then
-    curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-aarch64.dmg --output "$dmg_file"
+    curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-aarch64.dmg --output "$dmg_file"
 else
-    curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.dmg --output "$dmg_file"
+    curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.dmg --output "$dmg_file"
 fi
 
 # Einhängen der DMG-Datei in den angegebenen Einhängepunkt
@@ -276,11 +278,11 @@ fi
 
 echo "Installieren von RustDesk"
 if [ "${ID}" = "debian" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Debian" ] || [ "${UPSTREAM_ID}" = "ubuntu" ] || [ "${UPSTREAM_ID}" = "debian" ]; then
-    wget https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.deb
-    apt-get install -fy ./rustdesk-1.2.2-x86_64.deb > null
+    wget https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.deb
+    apt-get install -fy ./rustdesk-1.2.3-x86_64.deb > null
 elif [ "$OS" = "CentOS" ] || [ "$OS" = "RedHat" ] || [ "$OS" = "Fedora Linux" ] || [ "${UPSTREAM_ID}" = "rhel" ] || [ "$OS" = "Almalinux" ] || [ "$OS" = "Rocky*" ] ; then
-    wget https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-0.x86_64.rpm
-    yum localinstall ./rustdesk-1.2.2-0.x86_64.rpm -y > null
+    wget https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-0.x86_64.rpm
+    yum localinstall ./rustdesk-1.2.3-0.x86_64.rpm -y > null
 else
     echo "Nicht unterstütztes OS"
     # Hier könnten Sie den Benutzer um Erlaubnis bitten, die Installation trotzdem zu versuchen

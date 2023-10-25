@@ -29,7 +29,7 @@ Klicken Sie auf `Erweiterte Einstellungen`.
 - Automatischen Neustart aktivieren
 ![](/docs/en/self-host/rustdesk-server-oss/synology/images/auto-restart.png)
 
-- Aktivieren Sie `Use the same network as Docker Host`. Mehr Infos über das Hostnetz siehe [hier](/docs/de/self-host/rustdesk-server-oss/docker/#net-host).
+- Aktivieren Sie `Use the same network as Docker Host`. Mehr Infos über das Hostnetz siehe [hier](https://rustdesk.com/docs/de/self-host/rustdesk-server-oss/docker/#net-host).
 ![](/docs/en/self-host/rustdesk-server-oss/synology/images/host-net.png)
 
 - Binden Sie ein Host-Verzeichnis (z. B. `/home/rustdesk/`) als `/root` ein, hbbs wird einige Dateien (Datenbank- und `key`-Dateien) in diesem Verzeichnis erzeugen, die über Neustarts hinweg erhalten bleiben müssen.

@@ -14,7 +14,7 @@ Durch die Erhöhung der Berechtigungen kann RustDesk während des Starts oder in
 
 Auf diese Weise müssen entfernte Benutzer bei der Verbindung keine Berechtigungsanfrage stellen. Es gibt zwei Methoden:
 
-* Methode 1: Ändern Sie den Namen des tragbaren Programms so, dass er `-qs-` enthält (Versionen 1.2.0, 1.2.1, 1.2.2 enden mit `qs.exe`). Klicken Sie mit der linken Maustaste auf `Ausführen` und im UAC-Fenster auf `Akzeptieren`.
+* Methode 1: Ändern Sie den Namen des tragbaren Programms so, dass er `-qs-` enthält (Versionen 1.2.0, 1.2.1, 1.2.2, 1.2.3 enden mit `qs.exe`). Klicken Sie mit der linken Maustaste auf `Ausführen` und im UAC-Fenster auf `Akzeptieren`.
 
 * Methode 2: Klicken Sie mit der rechten Maustaste und führen Sie das Programm als Administrator aus.
 

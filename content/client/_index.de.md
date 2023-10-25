@@ -12,7 +12,7 @@ Der RustDesk-Client wird auf Geräten verwendet, um sich mit unserem RustDesk-Se
 - macOS
 - Debian-Ableger (Ubuntu, Mint usw.)
 - Redhat-Ableger (Centos, Rocky usw.)
-- Arch/Manjaro
+- Arch Linux/Manjaro
 - openSUSE
 - AppImage / Flatpak
 - Android
@@ -29,7 +29,7 @@ Zur stillen Installation rufen Sie die Installations-EXE mit `--silent-install` 
 
 #### macOS
 
-Laden Sie die DMG-Datei von GitHub herunter. Weitere Informationen finden Sie auf der [macOS-Seite](/docs/de/client/mac/).
+Laden Sie die DMG-Datei von GitHub herunter. Weitere Informationen finden Sie auf der [macOS-Seite](https://rustdesk.com/docs/de/client/mac/).
 
 Öffnen Sie die DMG-Datei und ziehen Sie `RustDesk` auf `Applications`.
 
@@ -54,7 +54,7 @@ sudo apt install -fy ./rustdesk-<version>.deb
 sudo yum localinstall ./rustdesk-<version>.rpm
 ```
 
-#### Arch/Manjaro
+#### Arch Linux/Manjaro
 
 ```sh
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
@@ -66,7 +66,7 @@ sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 #### Android
-Installieren Sie die APK von unserem GitHub. Weitere Informationen finden Sie auf der [Android-Seite](/docs/de/client/android/).
+Installieren Sie die APK von unserem GitHub. Weitere Informationen finden Sie auf der [Android-Seite](https://rustdesk.com/docs/de/client/android/).
 
 #### iOS (iPhone, iPad)
 Laden Sie die App aus dem [App Store](https://apps.apple.com/de/app/rustdesk-remote-desktop/id1581225015) herunter.
@@ -74,7 +74,7 @@ Laden Sie die App aus dem [App Store](https://apps.apple.com/de/app/rustdesk-rem
 ### Benutzung
 Nach der Installation (oder der Ausführung als temporäre Datei) stellt RustDesk eine Verbindung zu den öffentlichen Servern her. Am unteren Rand erscheint die Meldung (1) "Bereit, für eine schnellere Verbindung richten Sie bitte Ihren eigenen Server ein.". Oben links sehen Sie Ihre (2) ID, Ihr (3) Einmalpasswort und rechts ein (4) Feld, mit dem Sie sich mit einem anderen Computer verbinden können, wenn Sie dessen ID kennen.
 
-![image](/docs/en/client/images/client.png)
+![](/docs/en/client/images/client.png)
 
 Um auf die Einstellungen zuzugreifen, klicken Sie auf die (5) Menü-Schaltfläche [ &#8942; ] rechts neben ID.
 
@@ -99,7 +99,7 @@ Sie können einen Client manuell einrichten. Um dies zu tun:
 3. Klicken Sie auf Netzwerkeinstellungen entsperren.
 4. Geben Sie Ihre ID, Ihren Relay-Server, API (bei Verwendung von Pro-Servern) und Ihren Schlüssel ein.
 
-![image](/docs/en/client/images/network-settings.png)
+![](/docs/en/client/images/network-settings.png)
 
 Wenn Sie einen Client manuell einrichten, können Sie die Datei `RustDesk2.toml` (im Benutzerordner) abrufen und `--import-config` auf ähnliche Weise wie im obigen Beispiel verwenden.
 
@@ -112,3 +112,4 @@ Wenn Sie einen Client manuell einrichten, können Sie die Datei `RustDesk2.toml`
 Zusätzliche erweiterte Parameter finden Sie [hier](https://github.com/rustdesk/rustdesk/blob/bdc5cded221af9697eb29aa30babce75e987fcc9/src/core_main.rs#L242).
 
 {{% children depth="1" showhidden="true" %}}
+

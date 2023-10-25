@@ -126,7 +126,7 @@ $ErrorActionPreference= 'silentlycontinue'
 
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
-if ($rdver -eq "1.2.2")
+if ($rdver -eq "1.2.3")
 {
     Write-Output "RustDesk $rdver ist die neueste Version."
     Exit
@@ -139,6 +139,13 @@ if (!(Test-Path C:\Temp))
 
 cd C:\Temp
 
-Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
+Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
 ```
+
+### Fehler `Key mismatch`
+Bitte konfigurieren Sie Ihren Client mit dem [richtigen Schlüssel](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/relay/).
+
+### Fehler `Failed to connect to relay server`
+Bitte stellen Sie sicher, dass `hbbr` läuft. Mehr Informationen über `hbbr` finden Sie [hier](https://rustdesk.com/docs/de/self-host/rustdesk-server-oss/install/).
+Wenn Ihr `hbbr` nicht auf dem gleichen Rechner wie `hbbs` läuft, oder Sie mehrere Relay-Server haben, oder Sie es nicht auf dem Standard-Port `21117` laufen lassen, müssen Sie es explizit bei `hbbs` mitteilen. Bitte lesen Sie [hier](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/relay/) nach.
