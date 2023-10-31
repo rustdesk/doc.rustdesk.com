@@ -15,10 +15,12 @@ By default, `hbbs` listens on 21115 (TCP), 21116 (TCP/UDP) and 21118 (TCP), `hbb
 
 #### Docker examples
 
+Note: You may need to add your user to the docker group to make this work
+
 ```sh
-sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -v ./data:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
-sudo docker run --name hbbr -v ./data:/root -td --net=host rustdesk/rustdesk-server hbbr
+docker image pull rustdesk/rustdesk-server
+docker run --name hbbs -v ./data:/root -td -p "21115:21115" -p "21116:21116" -p "21116:21116/udp" -p "21118:21118" rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
+docker run --name hbbr -v ./data:/root -td -p "21117:21117" -p "21119:21119" rustdesk/rustdesk-server hbbr
 ```
 <a name="net-host"></a>
 
@@ -45,8 +47,11 @@ services:
     command: hbbs
     volumes:
       - ./data:/root
-    network_mode: "host"
-
+    ports:
+      - "21115:21115"
+      - "21116:21116"
+      - "21116:21116/udp"
+      - "21118:21118"
     depends_on:
       - hbbr
     restart: unless-stopped
@@ -58,6 +63,9 @@ services:
     command: hbbr
     volumes:
       - ./data:/root
-    network_mode: "host"
+    ports:
+      - "21117:21117"
+      - "21119:21119"
     restart: unless-stopped
+
 ```
