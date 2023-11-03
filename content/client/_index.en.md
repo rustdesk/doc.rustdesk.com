@@ -39,32 +39,56 @@ Enable permissions requested and follow prompts on the left hand side of RustDes
 
 #### Linux
 
-Please see below instructions to install for the various "flavours" of Linux, all installers are on GitHub.
+Please see below instructions to install for the various "flavours" of Linux (installers are on GitHub or available from a distro's repository).
 
-#### Debian Derivatives (>= 16)
+##### Debian Derivatives (>= 16)
 
 ```sh
 # please ignore the wrong disk usage report
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
-#### CentOS/Fedora (>= 18)
+##### CentOS/Fedora (>= 18)
 
 ```sh
 sudo yum localinstall ./rustdesk-<version>.rpm
 ```
 
-#### Arch Linux/Manjaro
+##### Arch Linux/Manjaro
 
 ```sh
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 ```
 
-#### openSUSE (>= Leap 15.0)
+##### openSUSE (>= Leap 15.0)
 
 ```sh
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
+
+##### Nix / NixOS (>= 22.05)
+
+Temporary enter a shell with `rustdesk` ready to run:
+
+```sh
+nix shell nixpkgs#rustdesk
+```
+
+Install in the current user profile:
+
+```sh
+nix profile install nixpkgs#rustdesk
+```
+
+In order to install system-wide in NixOS run `nixos-rebuild switch --flake /etc/nixos` after editing `configuration.nix`:
+
+```
+  environment.systemPackages = with pkgs; [
+    ...
+    rustdesk
+  ];
+```
+
 #### Android
 Install apk from our GitHub more info can be found on the [Android page](https://rustdesk.com/docs/en/client/android/).
 
