@@ -24,7 +24,7 @@ In `Mouse mode`,you can also trigger the remote device's `Right Mouse` with a `T
 
 ### File Transfer (Android)
 
-> Requires RustDesk >= 1.1.9
+> Requires RustDesk ≥ 1.1.9
 
 In the device list on the home page, select the device.
 
