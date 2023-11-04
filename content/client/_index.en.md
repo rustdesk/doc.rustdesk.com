@@ -10,14 +10,15 @@ The RustDesk Client is used on devices to connect via our RustDesk Server either
 ### Supported Platforms
 - Microsoft Windows
 - macOS
-- Debian Derivatives (Ubuntu, Mint, etc.)
-- Redhat Derivatives (Centos, Rocky, etc.)
+- Debian Derivatives (Ubuntu ≥ 16, Linux Mint, etc.)
+- Red Hat Derivatives (CentOS, Fedora ≥ 18, Rocky Linux, etc.)
 - Arch Linux/Manjaro
 - openSUSE
+- NixOS
 - AppImage / Flatpak
 - Android
 - iOS (not support being controlled)
-- Web (1.1.9 Beta)
+- Web
 
 ### Installation
 
@@ -41,14 +42,14 @@ Enable permissions requested and follow prompts on the left hand side of RustDes
 
 Please see below instructions to install for the various "flavours" of Linux (installers are on GitHub or available from a distro's repository).
 
-##### Debian Derivatives (>= 16)
+##### Debian Derivatives
 
 ```sh
 # please ignore the wrong disk usage report
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
-##### CentOS/Fedora (>= 18)
+##### Red Hat Derivatives
 
 ```sh
 sudo yum localinstall ./rustdesk-<version>.rpm
@@ -60,13 +61,13 @@ sudo yum localinstall ./rustdesk-<version>.rpm
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 ```
 
-##### openSUSE (>= Leap 15.0)
+##### openSUSE (≥ Leap 15.0)
 
 ```sh
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
-##### Nix / NixOS (>= 22.05)
+##### Nix / NixOS (≥ 22.05)
 
 Temporary enter a shell with `rustdesk` ready to run:
 
@@ -121,7 +122,7 @@ You can manually setup a client. To do this:
 1. Click on Settings.
 2. Click on Network.
 3. Click Unlock Network Settings.
-4. Enter your ID, Relay, API (if using pro) servers and your key.
+4. Enter your ID, Relay, API (if using pro server) and your key.
 
 ![](/docs/en/client/images/network-settings.png)
 
@@ -136,4 +137,3 @@ If you manually setup a client, you can retrieve the `RustDesk2.toml` (in the us
 Additional Advanced parameters can be found [here](https://github.com/rustdesk/rustdesk/blob/bdc5cded221af9697eb29aa30babce75e987fcc9/src/core_main.rs#L242).
 
 {{% children depth="1" showhidden="true" %}}
-
