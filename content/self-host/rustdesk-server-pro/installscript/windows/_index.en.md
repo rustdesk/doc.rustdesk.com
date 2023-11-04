@@ -48,4 +48,4 @@ Note: No http / https before the addresses – they are automatically handled. A
 
 If you have an error 500.52 add the mentioned variables: [IIS acting as reverse proxy: Where the problems start](https://techcommunity.microsoft.com/t5/iis-support-blog/iis-acting-as-reverse-proxy-where-the-problems-start/ba-p/846259).
 
-You maybe need to change your SSL Settings to "Require SSL -> Ignore".
+You maybe need to change your SSL Settings to "Require SSL → Ignore".
