@@ -19,7 +19,7 @@ You only need to do this if you want to change the default server and public key
 The server URL and key you are using is hidden from other users on GitHub however they can download your client and connect to your server. If you require a fully private repo you can import the RustDesk Client repo using https://github.com/new/import. **If you use a private repo you have limited amounts of builds you can create per month, if you need more you will need to have a paid GitHub account.**
 {{% /notice %}}
 
-On your fork you just created go to "Settings -> Secrets and variables -> Actions".
+On your fork you just created go to "Settings → Secrets and variables → Actions".
 
 Click "New repository secret", for the name put RENDEZVOUS_SERVER, for the secret put your servers name/ip address.
 
@@ -31,7 +31,7 @@ Click "Add secret".
 
 ### Enable workflows
 
-On your fork you just created go to "Settings -> Actions -> General".
+On your fork you just created go to "Settings → Actions → General".
 
 On the right, select "Allow all actions and reusable workflows".
 
@@ -43,7 +43,7 @@ Finally you can click "Run workflow" to build the RustDesk Clients for all of th
 
 ### Enable upload permissions for workflows
 
-On your fork you just created go to "Settings -> Actions -> General".
+On your fork you just created go to "Settings → Actions → General".
 
 Scroll down and under Workflow permissions enable "Read and write permissions".
 
