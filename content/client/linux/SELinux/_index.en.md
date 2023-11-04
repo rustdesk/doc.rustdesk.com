@@ -1834,4 +1834,3 @@ $ make clean && make && sudo make install-policy
 - [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials)
 - [SELinux Policy module installation](https://fedoraproject.org/wiki/SELinux/IndependentPolicy#SELinux_Policy_module_installation)
 - [How to create SELinux custom policy rpm package](https://lukas-vrabec.com/index.php/2015/07/07/how-to-create-selinux-custom-policy-rpm-package/)
-
