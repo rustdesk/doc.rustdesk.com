@@ -10,14 +10,15 @@ Der RustDesk-Client wird auf Geräten verwendet, um sich mit unserem RustDesk-Se
 ### Unterstützte Plattformen
 - Microsoft Windows
 - macOS
-- Debian-Ableger (Ubuntu, Mint usw.)
-- Redhat-Ableger (Centos, Rocky usw.)
+- Debian-Ableger (Ubuntu ≥ 16, Linux Mint usw.)
+- Red Hat-Ableger (CentOS, Fedora ≥ 18, Rocky usw.)
 - Arch Linux/Manjaro
 - openSUSE
+- NixOS
 - AppImage / Flatpak
 - Android
 - iOS (keine Unterstützung bei der Kontrolle)
-- Web (1.1.9 Beta)
+- Web
 
 ### Installation
 
@@ -39,32 +40,56 @@ Aktivieren Sie die angeforderten Berechtigungen und folgen Sie den Aufforderunge
 
 #### Linux
 
-Bitte beachten Sie die unten stehenden Anweisungen zur Installation für die verschiedenen Linux-Varianten, alle Installationsprogramme befinden sich auf GitHub.
+Bitte beachten Sie die unten stehenden Anweisungen zur Installation für die verschiedenen Linux-Varianten. Installationsprogramme sind auf GitHub oder im Repository der jeweiligen Distribution verfügbar.
 
-#### Debian-Ableger (≥ 16)
+##### Debian-Ableger
 
 ```sh
 # Bitte ignorieren Sie den falschen Bericht zur Festplattennutzung
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
-#### CentOS/Fedora (≥ 18)
+##### Red Hat-Ableger
 
 ```sh
 sudo yum localinstall ./rustdesk-<version>.rpm
 ```
 
-#### Arch Linux/Manjaro
+##### Arch Linux/Manjaro
 
 ```sh
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 ```
 
-#### openSUSE (≥ Leap 15.0)
+##### openSUSE (≥ Leap 15.0)
 
 ```sh
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
+
+##### Nix / NixOS (≥ 22.05)
+
+Geben Sie temporär eine Shell ein, in der `rustdesk` bereit zur Ausführung ist:
+
+```sh
+nix shell nixpkgs#rustdesk
+```
+
+Installation im aktuellen Benutzerprofil:
+
+```sh
+nix profile install nixpkgs#rustdesk
+```
+
+Um systemweit in NixOS zu installieren, führen Sie `nixos-rebuild switch --flake /etc/nixos` aus, nachdem Sie `configuration.nix` bearbeitet haben:
+
+```
+  environment.systemPackages = with pkgs; [
+    ...
+    rustdesk
+  ];
+```
+
 #### Android
 Installieren Sie die APK von unserem GitHub. Weitere Informationen finden Sie auf der [Android-Seite](https://rustdesk.com/docs/de/client/android/).
 
@@ -112,4 +137,3 @@ Wenn Sie einen Client manuell einrichten, können Sie die Datei `RustDesk2.toml`
 Zusätzliche erweiterte Parameter finden Sie [hier](https://github.com/rustdesk/rustdesk/blob/bdc5cded221af9697eb29aa30babce75e987fcc9/src/core_main.rs#L242).
 
 {{% children depth="1" showhidden="true" %}}
-
