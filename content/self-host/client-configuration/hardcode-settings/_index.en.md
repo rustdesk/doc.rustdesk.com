@@ -32,3 +32,11 @@ This should be a string such as
 OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=
 ```
 
+### API_SERVER
+By default the API_SERVER runs on `http://rustdesk.my-domain.com:21114`, you'd better run it behind nginx for security with https.
+
+This should be a string such as
+```
+https://rustdesk.my-domain.com
+```
+
