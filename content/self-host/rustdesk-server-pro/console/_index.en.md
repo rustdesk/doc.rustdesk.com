@@ -81,10 +81,9 @@ Gmail in this example
 ### Assign Device Users and Groups to Devices
 The User is the RustDesk User logged in on the device or assigned to the device by clicking `Edit` next to the device, click in the `User` box and drop-down to select your user, this will auto assign the group based on the group the user as been assigned to.
 
-This can also be done via the API at command line on deployment or later by calling the RustDesk executable followed by `--assign --token <generatedtoken> --user_name <username>`. You need to go to "Settings -> Tokens -> Create" and create a token with Device permissions first to do this. An example of this on windows would be `"C:\Program Files\RustDesk\rustdesk.exe" --assign --token <generatedtoken> --user_name <newuser>`.
+This can also be done via the API at command line on deployment or later by calling the RustDesk executable followed by `--assign --token <generatedtoken> --user_name <username>`. You need to go to "Settings → Tokens → Create" and create a token with Device permissions first to do this. An example of this on windows would be `"C:\Program Files\RustDesk\rustdesk.exe" --assign --token <generatedtoken> --user_name <newuser>`.
 
 ### Searching for a device
 1. Go to Devices.
 2. In the Device Name Search Field type in the name and click `Query` or hit <kbd>Enter</kbd>.
 3. To use a wildcard add `%` at the start, end or both of the search term.
-

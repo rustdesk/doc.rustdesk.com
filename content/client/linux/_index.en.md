@@ -5,14 +5,14 @@ weight: 4
 
 ### Installation
 
-#### Ubuntu (>= 16)
+#### Ubuntu (≥ 16)
 
 ```sh
 # please ignore the wrong disk usage report
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
-#### CentOS/Fedora (>= 18)
+#### CentOS/Fedora (≥ 18)
 
 ```sh
 sudo yum localinstall ./rustdesk-<version>.rpm
@@ -24,7 +24,7 @@ sudo yum localinstall ./rustdesk-<version>.rpm
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 ```
 
-#### openSUSE (>= Leap 15.0)
+#### openSUSE (≥ Leap 15.0)
 
 ```sh
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm

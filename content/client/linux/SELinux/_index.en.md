@@ -53,7 +53,7 @@ The default type of the RustDesk service is `init_t`, which is determined by [th
 
 **Caution**: Modifying the default type means that the policies of other services may also change. Please use this method with caution!
 
-Edit the rule file rustdesk.te:
+Edit the rule file `rustdesk.te`:
 
 ```text
 module rustdesk 1.0;
@@ -91,17 +91,17 @@ allow init_t pulseaudio_home_t:file { read write open lock };
 allow init_t session_dbusd_tmp_t:sock_file write;
 allow init_t unconfined_dbusd_t:unix_stream_socket connectto;
 
-#!!!! This avc can be allowed using the boolean 'nis_enabled'
+#!!!! This AVC can be allowed using the boolean 'nis_enabled'
 allow init_t ephemeral_port_t:tcp_socket name_connect;
 
-#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+#!!!! This AVC can be allowed using the boolean 'domain_can_mmap_files'
 allow init_t sudo_exec_t:file map;
 
 
-#============= init_t wayland ==============
+#============= init_t Wayland ==============
 allow init_t event_device_t:chr_file { open read write };
 
-#!!!! This avc can be allowed using the boolean 'domain_can_mmap_files'
+#!!!! This AVC can be allowed using the boolean 'domain_can_mmap_files'
 allow init_t user_tmp_t:file map;
 
 ```
@@ -541,7 +541,7 @@ gen_require(`
 
 ###############################################################################
 #
-# Part 1. The following rules are mainly from the open source `init.te`
+# Part 1. The following rules are mainly from the open source `init.te`.
 #               https://github.com/fedora-selinux/selinux-policy/blob/rawhide/policy/modules/system/init.te
 #
 #         Note: Part 1 will probably be mostly the same as Part 3. But it's acceptable for now.
@@ -559,7 +559,7 @@ typeattribute rustdesk_t init_script_domain_type;
 
 ########################################
 
-# Use capabilities. old rule:
+# Use capabilities, old rule:
 allow rustdesk_t self:capability ~{ audit_control audit_write sys_module };
 allow rustdesk_t self:capability2 ~{ mac_admin mac_override };
 allow rustdesk_t self:cap_userns all_cap_userns_perms;
@@ -623,7 +623,7 @@ allow rustdesk_t machineid_t:file mounton;
 allow rustdesk_t initctl_t:fifo_file manage_fifo_file_perms;
 dev_filetrans(rustdesk_t, initctl_t, fifo_file)
 
-# Modify utmp.
+# Modify utmp
 allow rustdesk_t initrc_var_run_t:file { rw_file_perms setattr };
 
 kernel_read_system_state(rustdesk_t)
@@ -641,7 +641,7 @@ kernel_read_all_proc(rustdesk_t)
 kernel_list_all_proc(rustdesk_t)
 kernel_mounton_all_proc(rustdesk_t)
 
-# There is bug in kernel in 4.16 where lot of domains requesting module_request, for now dontauditing
+# There is bug in kernel 4.16 where lot of domains requesting module_request, for now dontauditing
 kernel_dontaudit_request_load_module(rustdesk_t)
 
 corecmd_exec_chroot(rustdesk_t)
@@ -693,11 +693,11 @@ files_manage_all_locks(rustdesk_t)
 files_manage_etc_runtime_files(rustdesk_t)
 files_manage_etc_symlinks(rustdesk_t)
 files_etc_filetrans_etc_runtime(rustdesk_t, file)
-# Run /etc/X11/prefdm:
+# Run /etc/X11/prefdm
 files_exec_etc_files(rustdesk_t)
 files_read_usr_files(rustdesk_t)
 files_write_root_dirs(rustdesk_t)
-# file descriptors inherited from the rootfs:
+# file descriptors inherited from the rootfs
 files_dontaudit_rw_root_files(rustdesk_t)
 files_dontaudit_rw_root_chr_files(rustdesk_t)
 files_dontaudit_mounton_modules_object(rustdesk_t)
@@ -760,7 +760,7 @@ term_watch_reads_unallocated_ttys(rustdesk_t)
 term_watch_user_ttys(rustdesk_t)
 term_watch_reads_user_ttys(rustdesk_t)
 
-# Run init scripts.
+# Run init scripts
 init_domtrans_script(rustdesk_t)
 init_exec_notrans_direct_init_entry(rustdesk_t)
 
@@ -1050,7 +1050,7 @@ allow rustdesk_t pulseaudio_home_t:file { read open write lock };
 allow rustdesk_t user_fonts_cache_t:dir { add_name remove_name } ;
 allow rustdesk_t user_fonts_cache_t:file { create open read write lock unlink };
 
-#!!!! This avc can be allowed using the boolean 'nis_enabled'
+#!!!! This AVC can be allowed using the boolean 'nis_enabled'
 allow rustdesk_t unreserved_port_t:tcp_socket name_connect;
 allow rustdesk_t xserver_port_t:tcp_socket name_connect;
 allow rustdesk_t xserver_t:unix_stream_socket connectto;
@@ -1797,9 +1797,9 @@ system_u:system_r:rustdesk_t:s0  110565 ?        00:00:00 rustdesk
 You can use the `sepolicy generate` command:
 
 ```sh
-$ # install deps
+$ # install dependencies
 $ sudo dnf install -y rpm rpm-build binutils
-$ # generate
+$ # generate policy
 $ sepolicy generate --init /usr/lib/rustdesk/rustdesk
 $ tree
 .
@@ -1813,13 +1813,11 @@ $
 $
 $ # generate rpm package rustdesk_selinux-1.0-1.fc38.src.rpm
 $ sudo ./rustdesk.sh
-$ # install
+$ # install package
 $ sudo dnf install -y rustdesk_selinux-1.0-1.fc38.src.rpm
 $ # restart the service
 $ sudo systemctl restart rustdesk
 ```
-
-### Troubleshooting
 
 #### Iteratively Add Policies
 
@@ -1836,4 +1834,3 @@ $ make clean && make && sudo make install-policy
 - [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials)
 - [SELinux Policy module installation](https://fedoraproject.org/wiki/SELinux/IndependentPolicy#SELinux_Policy_module_installation)
 - [How to create SELinux custom policy rpm package](https://lukas-vrabec.com/index.php/2015/07/07/how-to-create-selinux-custom-policy-rpm-package/)
-

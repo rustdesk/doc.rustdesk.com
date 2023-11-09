@@ -7,7 +7,7 @@ weight: 6
 
 Install Docker with this [guide](https://docs.docker.com/engine/install) to ensure its the most up to date!
 
-Run the following commands (s6 image may need ./data:/data instead of ./data:/root):
+Run the following commands (s6 image may need `./data:/data` instead of `./data:/root`):
 
 ```sh
 sudo docker image pull rustdesk/rustdesk-server-pro
