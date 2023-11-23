@@ -8,7 +8,7 @@ pre: "<b>2.3. </b>"
 
 There are a number of ways to configure RustDesk Clients to use your own self-hosted server, we will cover some below.
 
-### Manual Config
+### 1, Manual Config
 
 In the main RustDesk Client home click on the Menu button [ &#8942; ] next to your ID then click on Network, you can now unlock the settings using elevated privileges and set your ID, Relay, API and Keys.
 
@@ -28,13 +28,13 @@ or
 hbbs.example.com:21116
 ```
 
-### Set `Key`
+#### Set `Key`
 
 As a `Pro` user you will be able to retrieve the `Key` from the [web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/), or you can find it in `id_ed25519.pub` file under your working directory.
 
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
-### Set `API Server`
+#### Set `API Server`
 
 This is for `Pro` user only. When you can log in on web console, but fail to log in on RustDesk client, it probably you have not set `API Server` correctly.
 
@@ -43,7 +43,7 @@ e.g. your API Server runs on default https port, please specify `API Server` wit
 
 If you still can not confirm the value of `API Server`, please go to the welcome page of web console, the `API Server` is shown in above picture (The input box with `API:` label).
 
-### Setup Using Import or Export
+### 2, Setup Using Import or Export
 
 1. Use the steps [above](https://rustdesk.com/docs/en/self-host/client-configuration/#manual-config) to configure RustDesk Client on a Device.
 2. Using the above machine go to Settings then Network and unlock.
@@ -54,7 +54,7 @@ If you still can not confirm the value of `API Server`, please go to the welcome
 7. It will automatically paste the settings in.
 8. Click `Apply`.
 
-### Automatic Config
+### 3, Automatic Config
 
 The easiest way to setup automatically is using deployment scripts found [here](https://rustdesk.com/docs/en/self-host/client-deployment/).
 
@@ -62,7 +62,7 @@ You can fix the Password is required and use a reverse Base64 string in the form
 
 You can also use the steps from [above](https://rustdesk.com/docs/en/self-host/client-configuration/#setup-using-import-or-export) to export the string, remove any `=` at the start or end of the string. Restart RustDesk Client if settings don't show.
 
-#### Put config in rustdesk.exe file name (Windows only)
+### 4, Put config in rustdesk.exe file name (Windows only)
 
 Change `rustdesk.exe` to rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe, e.g. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe. You can see the config result in the About Window below.
 
@@ -81,7 +81,7 @@ If there are invalid characters in the key which can not be used in a Windows fi
 repeat this process until you get valid characters.
 {{% /notice %}}
 
-### [Hardcoding](https://rustdesk.com/docs/en/self-host/client-configuration/hardcode-settings/)
+### 5, [Hardcoding](https://rustdesk.com/docs/en/self-host/client-configuration/hardcode-settings/)
 
 
 ### Logging your user in (RustDesk Server Pro)
