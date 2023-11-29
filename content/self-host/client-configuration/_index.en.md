@@ -81,6 +81,18 @@ If there are invalid characters in the key which can not be used in a Windows fi
 repeat this process until you get valid characters.
 {{% /notice %}}
 
+#### add `--` to the name
+At the end, add `--`.
+
+Example: `rustdesk-licensed--{encrypted string}--.exe`
+
+We have noticed that in some cases, when double downloaded, something like `copy (1)` is added to the end of the file name, and this ruins the config.
+
+By adding `-- `at the end right after our config string, even if something is added to the file name, it won't corrupt the config string, and RustDesk will correctly retrieve it.
+
+{{% notice note %}}
+{{% /notice %}}
+
 ### 5, [Hardcoding](https://rustdesk.com/docs/en/self-host/client-configuration/hardcode-settings/)
 
 
