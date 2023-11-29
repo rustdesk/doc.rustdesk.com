@@ -7,6 +7,7 @@ pre: "<b>2.2. </b>"
 RustDesk Server Pro has more features compared to the open source version.
 
 - No concurrent connection limit
+- Web console
 - OIDC, LDAP, 2FA (email verification)
 - Address book
 - Rename
