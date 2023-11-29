@@ -22,6 +22,10 @@ RustDesk Server Pro has more features compared to the open source version.
 RustDesk Client >= 1.2.0 required
 {{% /notice %}}
 
+### Hardware requirement
+
+Lowest level VPS is enough for your use case. The server software is not CPU and memory intensive. Our public ID server hosted on a 2 CPU/4 GB Vultr server serves 1.5+ million endpoints.
+
 ### Download
 
 [https://github.com/rustdesk/rustdesk-server-pro/releases/latest](https://github.com/rustdesk/rustdesk-server-pro/releases/latest)
