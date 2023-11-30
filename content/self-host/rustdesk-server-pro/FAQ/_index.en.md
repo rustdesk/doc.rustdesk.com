@@ -150,3 +150,6 @@ Please configure your client with [correct key](https://rustdesk.com/docs/en/sel
 Please make sure `hbbr` is running. More information about `hbbr`, you can find [here](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/).
 If your `hbbr` does not run on the same machine of `hbbs`, or you have multiple relay servers, or you do not run it on default port `21117`, you have to tell it to `hbbs` explicitly. Please check [here](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/).
 
+### Reset MFA for Admin account
+https://github.com/rustdesk/rustdesk/discussions/6576
+
