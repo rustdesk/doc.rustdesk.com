@@ -39,6 +39,8 @@ To capture screen, you need to grant RustDesk **Accessibility** permission and *
 If you have enabled it in the settings window, but RustDesk still warns. Please remove RustDesk from the settings windows by the `-` button, and click on `+` button, select RustDesk in `/Applications`.
 
 {{% notice note %}}
+[https://github.com/rustdesk/rustdesk/issues/3261](https://github.com/rustdesk/rustdesk/issues/3261)
+
 Other helpless attempts:
 
 ```
