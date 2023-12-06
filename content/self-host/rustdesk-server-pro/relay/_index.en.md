@@ -8,8 +8,9 @@ weight: 17
 {{% notice note %}}
 [The simple install](/docs/en/self-host/rustdesk-server-pro/installscript/) creates a relay server (the `hbbr` process) implicitly on the same machine, you do not need to specify relay server explicitly.
 
-If you wanna create additional relay server explicitly on another machine, please run `hbbr` by following [OSS installation](/docs/en/self-host/rustdesk-server-oss/install/). You can find `hbbr` in `rustdesk-server-linux-amd64.tar.gz`, `rustdesk-server-hbbr_<version>-<arch>.deb`, `rustdesk-server-windows-x86_64.tar.gz` or in `docker` (`sudo docker run ... rustdesk/rustdesk-server-pro hbbr
-`).
+If you wanna create additional relay server explicitly on another machine, please run `hbbr` by following [OSS installation](/docs/en/self-host/rustdesk-server-oss/install/). You can find `hbbr` in `rustdesk-server-linux-amd64.tar.gz`, `rustdesk-server-hbbr_<version>-<arch>.deb`, `rustdesk-server-windows-x86_64.tar.gz` or in `docker` (`sudo docker run ... rustdesk/rustdesk-server-pro hbbr`)
+
+`hbbr` does not require a license and is the same as the open source version.
 
 {{% /notice %}}
 
