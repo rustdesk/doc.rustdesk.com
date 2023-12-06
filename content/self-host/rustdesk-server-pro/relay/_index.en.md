@@ -110,7 +110,7 @@ You can automate the [download process](https://dev.maxmind.com/geoip/updating-d
 
 #### Change settings in RustDesk Pro Web Console
 
-Add your relay server IP addresses or DNS names (DNS is supported in version `1.1.11`) to the the Relay Server List. **Port is not required, `21117` port is used explictly.** <br>
+Add your relay server IP addresses or DNS names (DNS is supported in version `1.1.11`) to the the `Relay Servers`. **Port is not required, `21117` port is used explictly.** <br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/c4452ba4-5e1d-437a-ae1d-fc0070bfa26c">
 
 Add a Geo Override but adding the server IP address and the coordinates where the server is located. <br>
