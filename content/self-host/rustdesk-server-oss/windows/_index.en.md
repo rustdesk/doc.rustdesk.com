@@ -51,7 +51,7 @@ nssm install "RustDesk hbbr service" "C:\Program Files\RustDesk Server\hbbr.exe"
 - You can change `RustDesk hbbr service` to whatever you desire to name hbbr the service
 - You can change `C:\Program Files\RustDesk Server\hbbs.exe` to wherever you placed the RustDesk binaries
 - You can change `C:\Program Files\RustDesk Server\hbbr.exe` to wherever you placed the RustDesk binaries
-- You do not need the `-k _` option which is optional, it's just for better security. In `Pro` version, please ignore `-k _` which applied implicitly.
+- You do not need the `-k _` option which is optional, it's just for better security. In `Pro` version, please ignore `-k _` which is applied implicitly.
 
 **Command templates:**
 
