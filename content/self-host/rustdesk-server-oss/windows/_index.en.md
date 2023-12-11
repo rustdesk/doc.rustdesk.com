@@ -3,6 +3,10 @@ title: Windows & PM2 or NSSM
 weight: 20
 ---
 
+{{% notice note %}}
+Windows security policy is tricky, if this tutorial does not work for you, or you encounter unstable connection, please migrate to `Linux` server.
+{{% /notice %}}
+
 ### A crossroads
 You now either have two choices, you can either use PM2 (easier) or NSSM (a bit harder) to start the RustDesk server
 There are some benefits to using NSSM:
