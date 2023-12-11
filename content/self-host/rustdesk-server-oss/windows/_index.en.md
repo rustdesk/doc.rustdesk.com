@@ -43,7 +43,7 @@ doesn't change after the service is installed). Now get back to Command prompt.
 
 We will be using `C:\Program Files\RustDesk Server` in this example.
 ```cmd
-nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe" -r 0.0.0.0 -k _
+nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe" -k _
 nssm install "RustDesk hbbr service" "C:\Program Files\RustDesk Server\hbbr.exe" -k _
 ```
 **Note:**
@@ -51,7 +51,7 @@ nssm install "RustDesk hbbr service" "C:\Program Files\RustDesk Server\hbbr.exe"
 - You can change `RustDesk hbbr service` to whatever you desire to name hbbr the service
 - You can change `C:\Program Files\RustDesk Server\hbbs.exe` to wherever you placed the RustDesk binaries
 - You can change `C:\Program Files\RustDesk Server\hbbr.exe` to wherever you placed the RustDesk binaries
-- You do not need the `-k _` option which is optional, it's just for better security
+- You do not need the `-k _` option which is optional, it's just for better security. In `Pro` version, `-k _` is applied implicitly.
 
 **Command templates:**
 
@@ -95,11 +95,11 @@ pm2-startup install
 
 #### Run hbbr and hbbs
 
-Download the Windows version of [RustDesk Server](https://github.com/rustdesk/rustdesk-server/releases). Unzip the program to the C: drive. Run the following four commands (take care to edit the `-r` parameter):
+Download the Windows version of [RustDesk Server](https://github.com/rustdesk/rustdesk-server/releases). Unzip the program to the C: drive. Run the following four commands:
 
 ```cmd
 cd C:\rustdesk-server-windows-x64
-pm2 start hbbs.exe -- -r <The host where hbbr is running>
+pm2 start hbbs.exe 
 pm2 start hbbr.exe
 pm2 save
 ```
