@@ -37,8 +37,7 @@ Linux版本在Centos7构建，在 Centos7/8，Ubuntu 18/20上测试过，Debian�
 或者使用 pm2 运行 hbbs/hbbr
 
 ```
-pm2 start hbbs -- -r <relay-server-ip[:port]> 
-pm2 start hbbr 
+pm2 start hbbr hbbs -- -r <relay-server-ip[:port]> 
 ```
 
 <a name="demo"></a>
