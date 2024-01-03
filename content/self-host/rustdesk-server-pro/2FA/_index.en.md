@@ -35,7 +35,7 @@ TOTP is a widely used 2FA method, so in the web console of RustDesk Server Pro, 
 #### Prepare authentication app
 
 First, you need to prepare an authentication app.
-You can choose from these types [Authy](https://authy.com/), [Microsoft](https://www.microsoft.com/en-us/security/mobile-authenticator-app/), [Google ](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2/) authentication app.
+You can choose from these types [Authy](https://authy.com/), [Microsoft](https://www.microsoft.com/en-us/security/mobile-authenticator-app/), [Google](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2/) authentication app.
 
 #### Enable 2FA
 
