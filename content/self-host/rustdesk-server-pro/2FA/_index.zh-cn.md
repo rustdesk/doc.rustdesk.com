@@ -60,15 +60,15 @@ TOTP 是广泛使用的 2FA 方式，因此在 RustDesk Server Pro 的 web conso
 
 authenticator app 添加账户后，输入 authenticator app 中的验证码，即可开启 2FA。
 
-2FA 开启成功后，RustDesk Server Pro 同时会绑定 10 个**恢复码**。以便您无法使用 authenticator app 时，也能用这些**恢复码**通过验证。
+2FA 开启成功后，RustDesk Server Pro 同时会绑定 10 个**备用码**。以便您无法使用 authenticator app 时，也能用这些**备用码**通过验证。
 
 ![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-enable-4.png)
 
 
 **注**：
 
-1. 这些恢复码只能使用一次。
-2. 请把恢复码保管在安全的地方。
+1. 这些备用码只能使用一次。
+2. 请把备用码保管在安全的地方。
 
 #### 登录验证
 
