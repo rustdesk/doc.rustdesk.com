@@ -10,8 +10,6 @@ weight: 16
 1. 邮件验证。
 2. TOTP。需要第三方 authentication app 生成验证码，如 [Authy](https://authy.com/), [Microsoft](https://www.microsoft.com/en-us/security/mobile-authenticator-app/), [Google](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2/) authentication app 。
 
-**注**：如使用 OIDC 授权登录，不会再要求 2FA 验证。
-
 
 开启 邮件验证 或者 TOTP 验证，您都需要进入账户设置页面。
 

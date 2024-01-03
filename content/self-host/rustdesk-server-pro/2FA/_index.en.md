@@ -10,8 +10,6 @@ Our web console currently supports two kinds of 2FA:
 1. Email verification.
 2. TOTP. A third-party authentication app is required to generate the verification code, such as [Authy](https://authy.com/), [Microsoft](https://www.microsoft.com/en-us/security/mobile-authenticator-app/ ), [Google](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2/) authentication app.
 
-**Note**: If you log in using OIDC authorization, 2FA verification will no longer be required.
-
 You first need to go to the account settings page.
 
 ![](/docs/en/self-host/rustdesk-server-pro/2FA/images/1-settings-account.png)
