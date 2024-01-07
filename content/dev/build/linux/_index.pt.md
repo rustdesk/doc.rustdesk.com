@@ -18,7 +18,7 @@ Versões de desktop utilizam [sciter](https://sciter.com/) para a GUI, por favor
 - Instale [vcpkg](https://github.com/microsoft/vcpkg), e configure a variável de ambiente `VCPKG_ROOT` corretamente
 
   - Windows: vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
-  - Linux/MacOS: vcpkg install libvpx libyuv opus aom
+  - Linux/MacOS: vcpkg install
 
 - Execute `cargo run`
 
@@ -47,11 +47,11 @@ sudo pacman -Syu --needed unzip git cmake gcc curl wget yasm nasm zip make pkg-c
 ```sh
 git clone https://github.com/microsoft/vcpkg
 cd vcpkg
-git checkout 2023.04.15
+git checkout 2023.10.19
 cd ..
 vcpkg/bootstrap-vcpkg.sh
-export VCPKG_ROOT=$HOME/vcpkg
-vcpkg/vcpkg install libvpx libyuv opus aom
+export VCPKG_ROOT=$PWD/vcpkg
+vcpkg/vcpkg install --x-install-root="$VCPKG_ROOT/installed"
 ```
 
 ### Conserte libvpx (Para o Fedora)
@@ -63,7 +63,7 @@ cd *
 sed -i 's/CFLAGS+=-I/CFLAGS+=-fPIC -I/g' Makefile
 sed -i 's/CXXFLAGS+=-I/CXXFLAGS+=-fPIC -I/g' Makefile
 make
-cp libvpx.a $HOME/vcpkg/installed/x64-linux/lib/
+cp libvpx.a $VCPKG_ROOT/installed/x64-linux/lib/
 cd
 ```
 
@@ -77,7 +77,8 @@ cd rustdesk
 mkdir -p target/debug
 wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so
 mv libsciter-gtk.so target/debug
-VCPKG_ROOT=$HOME/vcpkg cargo run
+# Note: VCPKG_ROOT still set
+cargo run
 ```
 
 ### Mude Wayland para X11 (Xorg)
