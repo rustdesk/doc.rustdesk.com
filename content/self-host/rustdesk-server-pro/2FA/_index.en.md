@@ -57,7 +57,7 @@ If you are inconvenient to scan the QR code, you can also enter the code here di
 
 After adding the account in the authenticator app, enter the verification code in the authenticator app to turn on 2FA.
 
-After 2FA is successfully turned on, RustDesk Server Pro will also be bound to 10 **backup codes**. So that you can use these **bacoup codes** to pass the verification even if you are unable to use the authenticator app.
+After 2FA is successfully turned on, RustDesk Server Pro will also be bound to 6 **backup codes**. So that you can use these **bacoup codes** to pass the verification even if you are unable to use the authenticator app.
 
 ![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-enable-4.png)
 
@@ -69,7 +69,7 @@ After 2FA is successfully turned on, RustDesk Server Pro will also be bound to 1
 
 #### Login verification
 
-Enable the "Enable 2FA login verification" option on the settings page.
+When 2FA is enabled, email login verification is no longer used. We will be using 2FA login verification instead.
 
 ![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-enable-login-5.png)
 
@@ -81,7 +81,7 @@ When logging in, you will be redirected to the verification page.
 
 #### Modify settings
 
-After turning on 2FA, modifying account settings requires additional 2FA verification.
+When 2FA is enabled, modifying account settings requires additional 2FA verification.
 
 ![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-settings-1.png)
 

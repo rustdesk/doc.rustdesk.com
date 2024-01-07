@@ -58,7 +58,7 @@ TOTP 是广泛使用的 2FA 方式，因此在 RustDesk Server Pro 的 web conso
 
 authenticator app 添加账户后，输入 authenticator app 中的验证码，即可开启 2FA。
 
-2FA 开启成功后，RustDesk Server Pro 同时会绑定 10 个**备用码**。以便您无法使用 authenticator app 时，也能用这些**备用码**通过验证。
+2FA 开启成功后，RustDesk Server Pro 同时会绑定 6 个**备用码**。以便您无法使用 authenticator app 时，也能用这些**备用码**通过验证。
 
 ![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-enable-4.png)
 
@@ -70,7 +70,7 @@ authenticator app 添加账户后，输入 authenticator app 中的验证码，�
 
 #### 登录验证
 
-在设置页，开启 "Enable 2FA login verification" 选项。
+开启 2FA 后，邮箱登录验证不再使用。我们会使用 2FA 登录验证。
 
 ![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-enable-login-5.png)
 
