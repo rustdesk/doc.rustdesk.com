@@ -9,7 +9,7 @@ RustDesk Server Pro has more features compared to the open source version.
 - No concurrent connection limit (OSS version has no limit either, but Teamviewer etc have this limit)
 - [Web console](/docs/en/self-host/rustdesk-server-pro/console/)
 - API
-- [OIDC](/docs/en/self-host/rustdesk-server-pro/oidc/), LDAP, 2FA (email verification)
+- [OIDC](/docs/en/self-host/rustdesk-server-pro/oidc/), LDAP, [2FA](/docs/en/self-host/rustdesk-server-pro/2fa/)
 - Address book
 - Rename
 - Log management (Connection, file transfer, alarm, etc.)
