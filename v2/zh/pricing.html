@@ -661,7 +661,7 @@ label {
                       devices = parseInt(document.getElementById("devices").value);
                       if (!users || users < 10) users = 10;
                       if (devices < 100) devices = 100;
-                      var price =  19.9 + (users - 10) + (devices - 100) * 0.01;
+                      var price =  19.9 + (users - 10) + (devices - 100) * 0.1;
                       document.getElementById("cprice").innerText = price.toFixed(2);
                     }
                 
