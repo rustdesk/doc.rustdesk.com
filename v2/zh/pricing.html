@@ -659,8 +659,8 @@ label {
                   </form>
                   <br>
                   <script>
-                    var users;
-                    var devices;
+                    var users = 10;
+                    var devices = 100;
                     function submit() {
                       redirectUrl = "https://rustdesk.com/api/lic/stripe/checkout?currency=cny&type=Customized&users=" + users + "&devices=" + devices;
                       gotoBuy(redirectUrl);
