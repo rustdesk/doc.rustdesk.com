@@ -23,7 +23,7 @@ $rustdesk_cfg="configstring"
 
 ############################## Bitte nicht unterhalb dieser Zeile bearbeiten ###################################
 
-# Wird als Administrator ausgeführt und bleibt im aktuellen Verzeichnis
+# Als Administrator ausführen und im selben Verzeichnis bleiben
 if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
 {
     if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000)
@@ -33,11 +33,57 @@ if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     }
 }
 
+# Diese Funktion gibt die neuste Versionsnummer und den Downloadlink als Objekt zurück
+function getLatest()
+{
+    $Page = Invoke-WebRequest -Uri 'https://github.com/rustdesk/rustdesk/releases/latest' -UseBasicParsing
+    $HTML = New-Object -Com "HTMLFile"
+    try
+    {
+        $HTML.IHTMLDocument2_write($Page.Content)
+    }
+    catch
+    {
+        $src = [System.Text.Encoding]::Unicode.GetBytes($Page.Content)
+        $HTML.write($src)
+    }
+    
+    # Aktueller Beispiellink: https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.exe
+    $Downloadlink = ($HTML.Links | Where {$_.href -match '(.)+\/rustdesk\/rustdesk\/releases\/download\/\d{1}.\d{1,2}.\d{1,2}(.{0,3})\/rustdesk(.)+x86_64.exe'} | select -first 1).href
+    
+    # bugfix - Manchmal muss man das "about:" ersetzen
+    $Downloadlink = $Downloadlink.Replace('about:', 'https://github.com')
+    
+    $Version = "unknown"
+    if ($Downloadlink -match './rustdesk/rustdesk/releases/download/(?<content>.*)/rustdesk-(.)+x86_64.exe')
+    {
+        $Version = $matches['content']
+    }
+
+    if ($Version -eq "unknown" -or $Downloadlink -eq "")
+    {
+        Write-Output "FEHLER: Version oder Downloadlink nicht gefunden."
+        Exit
+    }
+
+    # Zurückgebendes Objekt erstellen
+    $Result = New-Object PSObject -Property 
+    @{
+        Version = $Version
+        Downloadlink = $Downloadlink
+    }
+
+    return($Result)
+}
+
+$RustDeskOnGitHub = getLatest
+
+
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
-if ($rdver -eq "1.2.3")
+if ($rdver -eq $RustDeskOnGitHub.Version)
 {
-    Write-Output "RustDesk $rdver ist die neueste Version"
+    Write-Output "RustDesk $rdver ist die neuste Version"
     Exit
 }
 
@@ -48,8 +94,9 @@ if (!(Test-Path C:\Temp))
 
 cd C:\Temp
 
-Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.exe" -Outfile "rustdesk.exe"
-Start-Process .\rustdesk.exe --silent-install -wait
+Invoke-WebRequest $RustDeskOnGitHub.Downloadlink -Outfile "rustdesk.exe"
+Start-Process .\rustdesk.exe --silent-install
+Start-Sleep -seconds 20
 
 $ServiceName = 'Rustdesk'
 $arrService = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
@@ -58,7 +105,7 @@ if ($arrService -eq $null)
 {
     Write-Output "Installieren des Dienstes"
     cd $env:ProgramFiles\RustDesk
-    Start-Process .\rustdesk.exe --install-service -wait -Verbose
+    Start-Process .\rustdesk.exe --install-service
     Start-Sleep -seconds 20
 }
 

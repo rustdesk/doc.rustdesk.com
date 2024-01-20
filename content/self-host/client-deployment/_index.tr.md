@@ -31,9 +31,54 @@ if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     }
 }
 
+# Bu fonksiyon en son sürüm numarasını ve indirme bağlantısını bir nesne olarak döndürür
+function getLatest()
+{
+    $Page = Invoke-WebRequest -Uri 'https://github.com/rustdesk/rustdesk/releases/latest' -UseBasicParsing
+    $HTML = New-Object -Com "HTMLFile"
+    try
+    {
+        $HTML.IHTMLDocument2_write($Page.Content)
+    }
+    catch
+    {
+        $src = [System.Text.Encoding]::Unicode.GetBytes($Page.Content)
+        $HTML.write($src)
+    }
+    
+    # Güncel örnek linki: https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.exe
+    $Downloadlink = ($HTML.Links | Where {$_.href -match '(.)+\/rustdesk\/rustdesk\/releases\/download\/\d{1}.\d{1,2}.\d{1,2}(.{0,3})\/rustdesk(.)+x86_64.exe'} | select -first 1).href
+    
+    # bugfix - Bazen "about:" kısmını değiştirmeniz gerekir.
+    $Downloadlink = $Downloadlink.Replace('about:', 'https://github.com')
+    
+    $Version = "unknown"
+    if ($Downloadlink -match './rustdesk/rustdesk/releases/download/(?<content>.*)/rustdesk-(.)+x86_64.exe')
+    {
+        $Version = $matches['content']
+    }
+
+    if ($Version -eq "unknown" -or $Downloadlink -eq "")
+    {
+        Write-Output "HATA: Sürüm veya indirme bağlantısı bulunamadı."
+        Exit
+    }
+
+    # Zurückgebendes Objekt erstellen
+    $Result = New-Object PSObject -Property 
+    @{
+        Version = $Version
+        Downloadlink = $Downloadlink
+    }
+
+    return($Result)
+}
+
+$RustDeskOnGitHub = getLatest
+
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
-if($rdver -eq "1.2.2") 
+if($rdver -eq $RustDeskOnGitHub.Version) 
 {
 write-output "RustDesk $rdver en yeni sürüm"
 
@@ -46,14 +91,18 @@ If (!(Test-Path c:\Temp)) {
 
 cd c:\Temp
 
-powershell Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.2/rustdesk-1.2.2-x86_64.exe" -Outfile "rustdesk.exe"
-Start-Process .\rustdesk.exe --silent-install -wait
+powershell Invoke-WebRequest $RustDeskOnGitHub.Downloadlink -Outfile "rustdesk.exe"
+Start-Process .\rustdesk.exe --silent-install
+Start-Sleep -seconds 20
 
 $ServiceName = 'Rustdesk'
 $arrService = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
 
 if ($arrService -eq $null)
 {
+    Write-Output "Hizmetin yüklenmesi"
+    cd $env:ProgramFiles\RustDesk
+    Start-Process .\rustdesk.exe --install-service
     Start-Sleep -seconds 20
 }
 
