@@ -164,13 +164,13 @@ If you do not want to build the Docker image yourself, you can use the image I b
 - Pull the image:
 
 ```sh
-docker pull keyurbhole/flutter_web_desk
+docker pull keyurbhole/flutter_web_desk:v1.0.0
 ```
 
 - Run the image:
 
 ```sh
-docker run -p 5000:5000 keyurbhole/flutter_web_desk
+docker run -p 5000:5000 keyurbhole/flutter_web_desk:v1.0.0
 ```
 
 - Open your browser and go to `localhost:5000` to see the web app.
