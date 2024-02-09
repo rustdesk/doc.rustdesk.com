@@ -45,7 +45,7 @@ Desktop versions use [Sciter](https://sciter.com/) for GUI, please download [sci
 
 `rust-bindgen` depends on `clang`, download [LLVM](https://github.com/llvm/llvm-project/releases) and install, add System environment variable `LIBCLANG_PATH`=`<llvm_install_dir>/bin`.
 
-You can download version 15.02 of the LLVM binaries here: [64 bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win64.exe) / [32 bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win32.exe).
+You can download version 15.0.2 of the LLVM binaries here: [64 bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win64.exe) / [32 bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win32.exe).
 
 ### Build
 
@@ -59,4 +59,3 @@ wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sci
 mv sciter.dll target/debug
 cargo run
 ```
-
