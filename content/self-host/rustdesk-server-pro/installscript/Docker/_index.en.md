@@ -61,4 +61,4 @@ services:
 
 The run `docker compose up -d`.
 
-> If you have problem with seLinux on Fedora, please check this https://github.com/rustdesk/rustdesk-server/issues/230
+> If you have problem with seLinux on Fedora, please check this [issue](https://github.com/rustdesk/rustdesk-server/issues/230).
