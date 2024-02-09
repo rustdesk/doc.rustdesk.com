@@ -33,7 +33,7 @@ sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ### ~~X11 Required~~
 ~~RustDesk does not support Wayland yet; you need switch to X11 manually.~~
 
-RustDesk now has experimental Wayland support since v1.2.0.
+RustDesk now has experimental Wayland support since version 1.2.0.
 
 #### Display Server
 
