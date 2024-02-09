@@ -6,12 +6,11 @@ weight: 17
 ### RustDesk Pro - Install Additional Relay Servers with Geo Location using docker
 
 {{% notice note %}}
-[The simple install](/docs/en/self-host/rustdesk-server-pro/installscript/) creates a relay server (the `hbbr` process) implicitly on the same machine, you do not need to specify relay server explicitly.
+[The simple install](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/) creates a relay server (the `hbbr` process) implicitly on the same machine, you do not need to specify relay server explicitly.
 
-If you wanna create additional relay server explicitly on another machine, please run `hbbr` by following [OSS installation](/docs/en/self-host/rustdesk-server-oss/install/). You can find `hbbr` in `rustdesk-server-linux-amd64.tar.gz`, `rustdesk-server-hbbr_<version>-<arch>.deb`, `rustdesk-server-windows-x86_64.tar.gz` or in `docker` (`sudo docker run ... rustdesk/rustdesk-server-pro hbbr`)
+If you wanna create additional relay server explicitly on another machine, please run `hbbr` by following [OSS installation](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/). You can find `hbbr` in `rustdesk-server-linux-amd64.tar.gz`, `rustdesk-server-hbbr_<version>-<arch>.deb`, `rustdesk-server-windows-x86_64.tar.gz` or in `docker` (`sudo docker run ... rustdesk/rustdesk-server-pro hbbr`).
 
 `hbbr` does not require a license and is the same as the open source version.
-
 {{% /notice %}}
 
 You can have several relay servers running across the globe and leverage GeoLocation to use the closest relay server, giving you a faster experience when connecting to remote computers.
@@ -110,7 +109,7 @@ You can automate the [download process](https://dev.maxmind.com/geoip/updating-d
 
 #### Change settings in RustDesk Pro Web Console
 
-Add your relay server IP addresses or DNS names (DNS is supported in version `1.1.11`) to the the `Relay Servers`. **Port is not required, `21117` port is used explictly.** <br>
+Add your relay server IP addresses or DNS names (DNS is supported as of version 1.1.11) to the `Relay Servers`. **Port is not required, `21117` port is used explicitly.** <br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/c4452ba4-5e1d-437a-ae1d-fc0070bfa26c">
 
 Add a Geo Override but adding the server IP address and the coordinates where the server is located. <br>
@@ -143,4 +142,3 @@ You can also confirm the relay requests directly on your hbbr instances, simply 
 INFO [src/relay_server.rs:436] Relayrequest 0593e64e-4fe8-4a59-a94f-b3420ab043eb from [::ffff:100.100.123.233]:52038 got paired
 INFO [src/relay_server.rs:442] Both are raw
 ```
-
