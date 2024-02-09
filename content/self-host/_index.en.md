@@ -10,7 +10,7 @@ Support is available via our [Discord](https://discord.com/invite/nDceKgxnkV) fo
 
 ### Basic Setup
 
-https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/#set-up-your-own-server-instance-manually
+[Set up your own server instance manually.](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/#set-up-your-own-server-instance-manually)
 
 ### Ports Required
 
