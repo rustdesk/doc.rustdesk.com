@@ -138,7 +138,7 @@ You'll might need to disable building Flutter Rust Bridge from `build.rs` file, 
 sed -i "s/gen_flutter_rust_bridge();/\/\//g" build.rs
 ```
 
-#### Building rustdesk lib
+#### Building RustDesk library
 At this step you'll build `librustdesk.so` file.
 
 First, add triplet to rust:
@@ -215,4 +215,3 @@ If you want you might move builded app somewhere else, feel free to run:
 ```
 mv build/app/outputs/flutter-apk/app-arm64-v8a-release.apk ../rustdesk-release.apk
 ```
-
