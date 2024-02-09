@@ -69,4 +69,3 @@ The number in parentheses after `audit` is timestamp.
 {{% /notice %}}
 
 If the output contains `avc: denied`, you need to add SELinux policies, please refer to [SELinux](https://rustdesk.com/docs/en/client/linux/selinux/).
-
