@@ -27,7 +27,7 @@ more. You have to enable "Input Monitoring" permission on local Mac side.
 Please follow this
 [https://github.com/rustdesk/rustdesk/issues/974#issuecomment-1185644923](https://github.com/rustdesk/rustdesk/issues/974#issuecomment-1185644923).
 
-In 1.2.4, you can try out `Input source 2` which can be seen by clicking on keyboard icon on the toolbar.
+In version 1.2.4, you can try out `Input source 2` which can be seen by clicking on keyboard icon on the toolbar.
 {{% /notice %}}
 
 To capture screen, you need to grant RustDesk **Accessibility** permission and **Screen Recording** permission. RustDesk will guide you to the settings window.
@@ -36,17 +36,13 @@ To capture screen, you need to grant RustDesk **Accessibility** permission and *
 | --- | --- |
 | ![](/docs/en/client/mac/images/acc.png) | ![](/docs/en/client/mac/images/acc3.png?v2) |
 
-If you have enabled it in the settings window, but RustDesk still warns. Please remove RustDesk from the settings windows by the `-` button, and click on `+` button, select RustDesk in `/Applications`.
+If you have enabled it in the settings window, but RustDesk still warns. Please remove `RustDesk` from the settings windows by the `-` button, and click on `+` button, select `RustDesk` in `Applications`.
 
 {{% notice note %}}
-[https://github.com/rustdesk/rustdesk/issues/3261](https://github.com/rustdesk/rustdesk/issues/3261)
-
-Other helpless attempts:
-
-```
-tccutil reset ScreenCapture com.carriez.RustDesk
-tccutil reset Accessibility com.carriez.RustDesk
-```
+[https://github.com/rustdesk/rustdesk/issues/3261](https://github.com/rustdesk/rustdesk/issues/3261) <br>
+Other helpless attempts: <br>
+`tccutil reset ScreenCapture com.carriez.RustDesk` <br>
+`tccutil reset Accessibility com.carriez.RustDesk` <br>
 Reboot is still required.
 {{% /notice %}}
 
