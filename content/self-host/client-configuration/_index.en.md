@@ -81,7 +81,7 @@ If there are invalid characters in the key which can not be used in a Windows fi
 repeat this process until you get valid characters.
 {{% /notice %}}
 
-#### add `--` to the name
+#### Add `--` to the name
 At the end, add `--`.
 
 Example: `rustdesk-licensed--{encrypted string}--.exe`
@@ -92,21 +92,7 @@ By adding `--` at the end right after our config string, even if something is ad
 
 ### 5. [Hardcoding Custom Settings](https://rustdesk.com/docs/en/self-host/client-configuration/hardcode-settings/)
 
+### 6. Use command line `--config`
+`rustdesk.exe --config <config-string>`
 
-### Logging your user in (RustDesk Server Pro)
-To sign in with RustDesk Server Pro, ensure your client is setup correctly, click on `Settings` and click `Account` and then `Login`, enter username and password and then Login.
-
-### Taking Control of other machines
-Before Taking Control when using with RustDesk Server Pro ensure you are logged in.
-
-After that you can enter the client ID and password of the machine you want to take control of and click `Connect`.
-
-### Address book (RustDesk Server Pro)
-To add devices to your address book, after you have connected to a device they will be in your recent sessions, next to the device you can now click the Menu button [ &#8942; ] and add to your address book, if you have saved the password and set permanent passwords on the client this will also be synced across devices you log in to to allow access from anywhere.
-
-You can add and assign Tags in your address book to help organize devices as well as search for them.
-
-### Group (RustDesk Server Pro)
-By default once signed in all devices connected to your RustDesk Server Pro will show up in group, (you will still need the passwords for unattended access but all devices are now there), it will show any other users in your group and if you assign cross group access in the web console it will show users [in those groups](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#add-new-groups) as well.
-
-If you would like to add devices to your own address book, you can click on the Menu button [ &#8942; ] next to the device and click `Add to address book`.
+You can get the config string from web console (you can see it on above picture) or from RustDesk client "Settings → Network" ([here](https://github.com/rustdesk/rustdesk/discussions/7118) is a discussion about this).

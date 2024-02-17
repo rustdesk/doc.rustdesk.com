@@ -1,5 +1,5 @@
 ---
-title: 群暉
+title: Synology 群暉
 weight: 22
 ---
 
