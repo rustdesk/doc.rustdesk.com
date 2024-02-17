@@ -18,7 +18,7 @@ Les versions de bureau utilisent [sciter](https://sciter.com/) pour l'interface 
 - Installez [vcpkg](https://github.com/microsoft/vcpkg), et définissez correctement la variable d'environnement `VCPKG_ROOT`.
 
   - Windows : vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
-  - Linux/Osx : vcpkg install libvpx libyuv opus aom
+  - Linux/Osx : vcpkg install
 
 - Exécuter `cargo run`
 
@@ -47,11 +47,11 @@ sudo pacman -Syu --needed unzip git cmake gcc curl wget yasm nasm zip make pkg-c
 ```sh
 git clone https://github.com/microsoft/vcpkg
 cd vcpkg
-git checkout 2023.04.15
+git checkout 2023.10.19
 cd ..
 vcpkg/bootstrap-vcpkg.sh
-export VCPKG_ROOT=$HOME/vcpkg
-vcpkg/vcpkg install libvpx libyuv opus aom
+export VCPKG_ROOT=$PWD/vcpkg
+vcpkg/vcpkg install --x-install-root="$VCPKG_ROOT/installed"
 ```
 
 ### Corriger libvpx (Pour Fedora)
@@ -63,7 +63,7 @@ cd *
 sed -i 's/CFLAGS+=-I/CFLAGS+=-fPIC -I/g' Makefile
 sed -i 's/CXXFLAGS+=-I/CXXFLAGS+=-fPIC -I/g' Makefile
 make
-cp libvpx.a $HOME/vcpkg/installed/x64-linux/lib/
+cp libvpx.a $VCPKG_ROOT/installed/x64-linux/lib/
 cd
 ```
 
@@ -74,10 +74,11 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
 git clone https://github.com/rustdesk/rustdesk
 cd rustdesk
-mkdir -p cible/debug
+mkdir -p target/debug
 wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so
 mv libsciter-gtk.so target/debug
-Exécution du cargo
+# Note: VCPKG_ROOT still set
+cargo run
 ```
 
 ### Changer Wayland en X11 (Xorg)
