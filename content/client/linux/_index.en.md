@@ -33,7 +33,7 @@ sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ### ~~X11 Required~~
 ~~RustDesk does not support Wayland yet; you need switch to X11 manually.~~
 
-RustDesk now has experimental Wayland support since v1.2.0.
+RustDesk now has experimental Wayland support since version 1.2.0.
 
 #### Display Server
 
@@ -69,4 +69,3 @@ The number in parentheses after `audit` is timestamp.
 {{% /notice %}}
 
 If the output contains `avc: denied`, you need to add SELinux policies, please refer to [SELinux](https://rustdesk.com/docs/en/client/linux/selinux/).
-

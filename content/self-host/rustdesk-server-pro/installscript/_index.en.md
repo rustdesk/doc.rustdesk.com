@@ -6,7 +6,7 @@ weight: 10
 {{% notice note %}}
 Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 
-Please read [OSS installation](/docs/en/self-host/rustdesk-server-oss/install/) first before doing this simple install. You can know more underlying details there. 
+Please read [OSS installation](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/) first before doing this simple install. You can know more underlying details there. 
 {{% /notice %}}
 
 ### Install
@@ -76,5 +76,3 @@ chmod +x restore.sh
 Copy the backup file into the same folder as the restore.sh file and then run `./restore.sh`.
 
 This will restore your server to how it was prior, you will need to revoke your [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) to move it to the restored server.
-
-

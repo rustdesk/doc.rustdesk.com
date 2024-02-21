@@ -29,23 +29,23 @@ Non-administrator users can also login to browse their device and logs, change t
 ### Automatic Configs
 By Clicking on `Windows EXE` you will be able to get the configs for your own RustDesk Server Pro, this will help configure your clients.
 
-For Windows clients, you can leave out the custom server configuration and put the configuration information in the `rustdesk.exe` filename instead. As shown above, please go to the console welcome page and click on `Windows EXE`. **Client >=1.1.9 Required.**
+For Windows clients, you can leave out the custom server configuration and put the configuration information in the `rustdesk.exe` filename instead. As shown above, please go to the console welcome page and click on `Windows EXE`. **Client ≥ 1.1.9 required.**
 
 You can use this in conjunction with [client config](https://rustdesk.com/docs/en/self-host/client-configuration/) and [deployment scripts](https://rustdesk.com/docs/en/self-host/client-deployment/) to setup your clients.
 
 ### Creating a new user other than the default `admin` user
-1. Click On `Users` on the left hand menu.
+1. Click on `Users` on the left hand menu.
 2. Create another account with `administrator` enabled.
 3. Log in with the new administrative account.
 4. Delete the `admin` on `Users` page.
 
 ### Creating a new user
-1. Click On `Users` on the left hand menu.
+1. Click on `Users` on the left hand menu.
 2. Create a new user.
 3. Select what group they should be in (if you need to add new groups please keep reading).
 
 ### Add a new Group
-1. Click On `Groups` on the left hand menu.
+1. Click on `Groups` on the left hand menu.
 2. Create a new group.
 3. Once created you can allow groups access each other, Click `Edit`.
 4. Select the relevant groups you want access (it automatically adds them in the corresponding group).

@@ -47,13 +47,13 @@ function getLatest()
         $src = [System.Text.Encoding]::Unicode.GetBytes($Page.Content)
         $HTML.write($src)
     }
-    
+
     # Current example link: https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.exe
     $Downloadlink = ($HTML.Links | Where {$_.href -match '(.)+\/rustdesk\/rustdesk\/releases\/download\/\d{1}.\d{1,2}.\d{1,2}(.{0,3})\/rustdesk(.)+x86_64.exe'} | select -first 1).href
-    
+
     # bugfix - sometimes you need to replace "about:"
     $Downloadlink = $Downloadlink.Replace('about:', 'https://github.com')
-    
+
     $Version = "unknown"
     if ($Downloadlink -match './rustdesk/rustdesk/releases/download/(?<content>.*)/rustdesk-(.)+x86_64.exe')
     {
@@ -67,7 +67,7 @@ function getLatest()
     }
 
     # Create object to return
-    $Result = New-Object PSObject -Property 
+    $Result = New-Object PSObject -Property
     @{
         Version = $Version
         Downloadlink = $Downloadlink
@@ -83,7 +83,7 @@ $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Un
 
 if ($rdver -eq $RustDeskOnGitHub.Version)
 {
-    Write-Output "RustDesk $rdver is the newest version"
+    Write-Output "RustDesk $rdver is the newest version."
     Exit
 }
 
@@ -358,4 +358,3 @@ fi
 echo "Password: $rustdesk_pw"
 echo "..............................................."
 ```
-

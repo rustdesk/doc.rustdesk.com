@@ -6,20 +6,20 @@ pre: "<b>2.2. </b>"
 
 RustDesk Server Pro has more features compared to the open source version.
 
-- No concurrent connection limit, aka no limit of simultaneous connections (OSS version has no limit either, but Teamviewer etc have this limit)
-- [Web console](/docs/en/self-host/rustdesk-server-pro/console/)
+- No concurrent connection limit, aka no limit of simultaneous connections (OSS version has no limit either, but TeamViewer etc. have this limit)
+- [Web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
 - API
-- [OIDC](/docs/en/self-host/rustdesk-server-pro/oidc/), LDAP, [2FA](/docs/en/self-host/rustdesk-server-pro/2fa/)
+- [OIDC](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/), LDAP, [2FA](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/)
 - Address book
 - Rename
 - Log management (Connection, file transfer, alarm, etc.)
 - Device management
-- [Security Settings sync](/docs/en/self-host/rustdesk-server-pro/strategy/)
-- [Access control](/docs/en/self-host/rustdesk-server-pro/permissions/)
-- [Multiple relay servers](/docs/en/self-host/rustdesk-server-pro/relay/) (automatically selects your closest relay)
+- [Security Settings sync](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/)
+- [Access control](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/)
+- [Multiple relay servers](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/) (automatically selects your closest relay)
 
 {{% notice note %}}
-RustDesk Client >= 1.2.0 required
+RustDesk Client ≥ 1.2.0 required
 {{% /notice %}}
 
 ### Hardware requirement
@@ -54,4 +54,3 @@ You need port 21114-21119 TCP and 21116 UDP open, please ensure these ports are 
 {{% notice note %}}
 You should use a proxy like Nginx to deliver this over HTTPS requiring port 443 to be opened.
 {{% /notice %}}
-

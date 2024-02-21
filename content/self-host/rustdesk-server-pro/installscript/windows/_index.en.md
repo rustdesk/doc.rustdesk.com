@@ -4,7 +4,7 @@ weight: 2
 ---
 
 {{% notice note %}}
-Windows security policy is tricky, if this tutorial does not work for you, or you encounter unstable connection, please migrate to `Linux` server.
+Windows security policy is tricky, if this tutorial does not work for you, or you encounter unstable connection, please migrate to a Linux server.
 {{% /notice %}}
 
 ### Install
@@ -12,7 +12,7 @@ Windows security policy is tricky, if this tutorial does not work for you, or yo
 1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 2. Download the the Windows installer from [GitHub](https://github.com/rustdesk/rustdesk-server-pro/releases/latest).
 3. Unzip the Windows installer.
-4. Run the Installer and follow the steps on screen. (or manually install with [PM2 OR NSSM](/docs/en/self-host/rustdesk-server-oss/windows/))
+4. Run the Installer and follow the steps on screen. Or manually install with [PM2 or NSSM](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/windows/).
 5. Once its completed open RustDesk Server.
 6. Follow the prompts as they guide you through the install.
 7. Click `Services` and then `Start`.

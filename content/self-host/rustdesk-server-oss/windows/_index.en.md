@@ -4,7 +4,7 @@ weight: 20
 ---
 
 {{% notice note %}}
-Windows security policy is tricky, if this tutorial does not work for you, or you encounter unstable connection, please migrate to `Linux` server.
+Windows security policy is tricky, if this tutorial does not work for you, or you encounter unstable connection, please migrate to a Linux server.
 {{% /notice %}}
 
 ### A crossroads
@@ -55,7 +55,7 @@ nssm install "RustDesk hbbr service" "C:\Program Files\RustDesk Server\hbbr.exe"
 - You can change `RustDesk hbbr service` to whatever you desire to name hbbr the service
 - You can change `C:\Program Files\RustDesk Server\hbbs.exe` to wherever you placed the RustDesk binaries
 - You can change `C:\Program Files\RustDesk Server\hbbr.exe` to wherever you placed the RustDesk binaries
-- You do not need the `-k _` option which is optional, it's just for better security. In `Pro` version, please ignore `-k _` which is applied implicitly.
+- You do not need the `-k _` option which is optional, it's just for better security. In the `Pro` version, please ignore `-k _` which is applied implicitly.
 
 **Command templates:**
 
@@ -103,7 +103,7 @@ Download the Windows version of [RustDesk Server](https://github.com/rustdesk/ru
 
 ```cmd
 cd C:\rustdesk-server-windows-x64
-pm2 start hbbs.exe 
+pm2 start hbbs.exe
 pm2 start hbbr.exe
 pm2 save
 ```
@@ -114,4 +114,3 @@ pm2 save
 pm2 log hbbr
 pm2 log hbbs
 ```
-
