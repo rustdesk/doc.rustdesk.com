@@ -84,7 +84,11 @@ repeat this process until you get valid characters.
 #### Add `--` to the name
 At the end, add `--`.
 
-Example: `rustdesk-licensed--{encrypted string}--.exe`
+Example: `rustdesk--{encrypted string}--.exe`
+
+{{% notice note %}}
+Please do not use `-licensed-` together with `--`. e.g. `rustdesk-licensed-{encrypted string}--.exe` does not work.
+{{% /notice %}}
 
 We have noticed that in some cases, when double downloaded, something like `copy (1)` is added to the end of the file name, and this ruins the config.
 
