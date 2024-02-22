@@ -74,7 +74,7 @@ As a `Pro` user you will be able to retrieve the whole encrypted string from the
 {{% notice note %}}
 You need to set both `host` and `key`, missing either one will not work.
 
-Optionally add a `,` (comma) character after the key, before the `.exe` part as a delimiter, to avoid the key being mangled if Windows or the browser renames the file when downloading duplicated names.
+Optionally add a `,` (comma) character after the key, before the `.exe` part as a delimiter, to avoid the key being mangled if Windows or the browser renames the file when downloading duplicated names. e.g. `host=<host-ip-or-name>,key=<public-key-string>,.exe`
 
 If there are invalid characters in the key which can not be used in a Windows file name, please remove the
 `id_ed25519` file from your server and restart `hbbs`/`hbbr`. This will cause the `id_ed25519.pub` file to regenerate. You may need to
