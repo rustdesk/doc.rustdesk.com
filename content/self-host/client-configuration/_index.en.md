@@ -81,13 +81,12 @@ If there are invalid characters in the key which can not be used in a Windows fi
 repeat this process until you get valid characters.
 {{% /notice %}}
 
-#### Add `--` to the name
-At the end, add `--`.
+#### Embrase config string with `--` in the name
 
-Example: `rustdesk--{encrypted string}--.exe`
+Example: `rustdesk--{config string}--.exe`
 
 {{% notice note %}}
-Please do not use `-licensed-` together with `--`. e.g. `rustdesk-licensed-{encrypted string}--.exe` does not work in 1.2.3. We will fix it in 1.2.4.
+Please do not use `-licensed-` together with `--`. e.g. `rustdesk-licensed-{config string}--.exe` does not work in 1.2.3. We will fix it in 1.2.4.
 {{% /notice %}}
 
 We have noticed that in some cases, when double downloaded, something like `copy (1)` is added to the end of the file name, and this ruins the config.
