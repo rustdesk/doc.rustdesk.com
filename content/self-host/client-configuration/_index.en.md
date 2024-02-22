@@ -87,7 +87,7 @@ At the end, add `--`.
 Example: `rustdesk--{encrypted string}--.exe`
 
 {{% notice note %}}
-Please do not use `-licensed-` together with `--`. e.g. `rustdesk-licensed-{encrypted string}--.exe` does not work.
+Please do not use `-licensed-` together with `--`. e.g. `rustdesk-licensed-{encrypted string}--.exe` does not work in 1.2.3. We will fix it in 1.2.4.
 {{% /notice %}}
 
 We have noticed that in some cases, when double downloaded, something like `copy (1)` is added to the end of the file name, and this ruins the config.
