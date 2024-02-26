@@ -1,6 +1,7 @@
 ---
 title: NAT Loopback issues
-weight: 23
+weight: 500
+pre: "<b>2.5. </b>"
 ---
 {{% notice note %}}
 This explanation involves complex networking knowledge, we need your assistance to improve its readability.
