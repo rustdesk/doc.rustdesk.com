@@ -24,7 +24,7 @@ While the benefits of PM2 include:
 ### Installing using NSSM
 
 #### Installing NSSM
-Please [download](https://nssm.cc/release/nssm-2.24.zip) and extract NSSM select the appropriate
+Please [download](https://github.com/dkxce/NSSM/releases/download/v2.25/NSSM_v2.25.zip) and extract NSSM select the appropriate
 architecture to your Windows system (if x86 use the contents of the win32 folder, if x64 use the
 contents of win64 folder). It is also best practice to move the binary of NSSM into the
 `Program Files\NSSM` (NSSM once started as a service, it cannot be moved from the directory it was placed in.
