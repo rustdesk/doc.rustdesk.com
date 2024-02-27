@@ -24,7 +24,7 @@ The controlled end can directly click `Accept and Elevate` when connecting, or c
 
 | Connecting | Connected |
 | :---: | :---: |
-| ![](/docs/en/client/Windows%20Portable%20Elevation/images/cm_unauth.jpg) | ![](/docs/en/client/Windows%20Portable%20Elevation/images/cm_auth.jpg) |
+| ![](images/cm_unauth.jpg) | ![](images/cm_auth.jpg) |
 
 ### Request elevation at the control end
 
@@ -32,9 +32,9 @@ After selecting `Request Elevation` from the action menu, the following dialog b
 
 | Menu | Dialog |
 | :---: | :---: |
-| ![](/docs/en/client/Windows%20Portable%20Elevation/images/menu.png) | ![](/docs/en/client/Windows%20Portable%20Elevation/images/dialog.png) |
+| ![](images/menu.png) | ![](images/dialog.png) |
 | **Wait** | **Success** |
-| ![](/docs/en/client/Windows%20Portable%20Elevation/images/wait.png) | ![](/docs/en/client/Windows%20Portable%20Elevation/images/success.png) |
+| ![](images/wait.png) | ![](images/success.png) |
 
 ### How to Choose
 

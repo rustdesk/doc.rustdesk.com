@@ -24,7 +24,7 @@ weight: 4
 
 |                   正在连接                   |                   已连接                    |
 | :--------------------------------------: | :--------------------------------------: |
-| ![](/docs/en/client/Windows%20Portable%20Elevation/images/cm_unauth.jpg) | ![](/docs/en/client/Windows%20Portable%20Elevation/images/cm_auth.jpg) |
+| ![](images/cm_unauth.jpg) | ![](images/cm_auth.jpg) |
 
 ### 控制端主动提权
 
@@ -32,9 +32,9 @@ weight: 4
 
 |                    菜单                    |                   对话框                    |
 | :--------------------------------------: | :--------------------------------------: |
-| ![](/docs/en/client/Windows%20Portable%20Elevation/images/menu.png) | ![](/docs/en/client/Windows%20Portable%20Elevation/images/dialog.png) |
+| ![](images/menu.png) | ![](images/dialog.png) |
 |                  **等待**                  |                  **成功**                  |
-| ![](/docs/en/client/Windows%20Portable%20Elevation/images/wait.png) | ![](/docs/en/client/Windows%20Portable%20Elevation/images/success.png) |
+| ![](images/wait.png) | ![](images/success.png) |
 
 ### 如何选择
 
