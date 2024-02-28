@@ -7,35 +7,35 @@ pre: "<b>2.5. </b>"
 This explanation involves complex networking knowledge, we need your assistance to improve its readability.
 {{% /notice %}}
 
-When you're deploying RustDesk server on your home or any environments that you will put your RustDesk server and your clients on **same LAN or behind same router**, you may notice you're unable to connect to your server though your **``Public IP``** or **``Domain``** (Which in theory point to your public IP).
+When you're deploying RustDesk server on your home network or any other network environment that you will put your RustDesk server and your clients on the **same LAN or behind the same router**, you may notice you are unable to connect to your server though your **``Public IP``** or **``Domain``** (Which in theory points to your public IP).
 
 More details about NAT Loopback, please check [Wikipedia](https://en.m.wikipedia.org/wiki/Network_address_translation#NAT_hairpinning) page.
 
 Explain this in simple way:
 
-For example: Your router's public IP is ``8.8.8.8``, the LAN IP of your server is ``192.168.11.20`` and the domain you desired is ``rustdesk.example.com``, and you did set up your router port forwarding to your server behind your LAN(NAT/router).
+For example: Your router's public IP is ``8.8.8.8``, the LAN IP of your server is ``192.168.11.20`` and the domain you desire is ``rustdesk.example.com``, and router port forwarding is set up to your server behind your LAN(NAT/router).
 
-Your client and server are behind same router, so when your LAN devices connecting to ``rustdesk.example.com`` , first, it will query its IP, which will be ``8.8.8.8``, and connect to this IP, then your router may just **don't know** where this connection need to go, it will think this connection want to router itself, and your connection will failed.
+Your client and server are behind the same router, so when your LAN devices connect to ``rustdesk.example.com`` , first, it will query the domain IP, which will be ``8.8.8.8``, and connect to this IP, then your router may just **not know** where this connection needs to go, and it will think this connection should go to the router itself, and your connection will fail.
 
 ## Solutions
-There has three way to overcome this issue.
+There are three ways to solve this issue.
 
 ### 1. Set up NAT Loopback on your router 
-You could set up NAT Loopback on your router if you know how to, but setting this need difficult knowledge of networking or some router may just don't have the ability to adjust this setting, so won't talking more about this.
+You could set up NAT Loopback on your router if you know how to, but setting thisrequires knowledge of networking, and some routers don't have the ability to adjust this setting, so this is not the best option.
 {{% notice note %}}
-An article from [MikroTik](https://help.mikrotik.com/docs/display/ROS/NAT#NAT-HairpinNAT) is explaining this very well, you could start learning from here.
+An article from [MikroTik](https://help.mikrotik.com/docs/display/ROS/NAT#NAT-HairpinNAT) explains this very well, you could start learning from here.
 {{% /notice %}}
 
 ### 2. Deploy a DNS server on your LAN
-First, choose which you're prefer, [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome/wiki/Docker) or [PiHole](https://github.com/pi-hole/docker-pi-hole), you could deploy it though docker and you could deploy on same server of your RustDesk Server, the example blow will doing this for example.
+First, choose which you prefer, [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome/wiki/Docker) or [PiHole](https://github.com/pi-hole/docker-pi-hole), You could deploy it though docker, or you could deploy on the same server as your RustDesk Server. The example below will show you some steps for this example.
 
-Both of them are DNS based adblocker, you could disable this functionality if you don't want to block ads.
+Both of them are DNS based adblockers, but you could disable this functionality if you don't want to block ads.
 
-Than go to it's setting, point your ``domain`` to your RustDesk server's LAN IP (For example: ``192.168.11.20``), and go to your router's ``DHCP`` setting (CAUTION: NOT WAN), set your ``First`` DNS IP to the server that you deployed AdGuard Home or PiHole, and ``Secondary`` DNS could be your ISP's DNS or other public DNS, eg. ``1.1.1.1`` for Cloudflare, ``8.8.8.8`` for Google, and you're done!
+First, point your ``domain`` to your RustDesk server's LAN IP (For example: ``192.168.11.20``), then go to your router's ``DHCP`` setting (CAUTION: NOT WAN), set your ``First`` DNS IP to the server that you deployed AdGuard Home or PiHole, and ``Secondary`` DNS could be your ISP's DNS or other public DNS, eg. ``1.1.1.1`` for Cloudflare, ``8.8.8.8`` for Google, and you're done!
 
 Here is example:
 #### AdGuard Home
-Block ads may cause problems, if you don't want to figure out the solution and want to disable this functionality, click "Disable protection" button.
+Blocking ads may cause problems, if you don't want to figure out the solution and want to disable this functionality, click "Disable protection" button.
 
 ![](images/adguard_home_disable_protection.png)
 <br>
