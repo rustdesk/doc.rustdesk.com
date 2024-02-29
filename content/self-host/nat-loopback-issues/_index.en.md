@@ -21,7 +21,7 @@ Your client and server are behind the same router, so when your LAN devices conn
 There are three ways to solve this issue.
 
 ### 1. Set up NAT Loopback on your router 
-You could set up NAT Loopback on your router if you know how to, but setting thisrequires knowledge of networking, and some routers don't have the ability to adjust this setting, so this is not the best option.
+You could set up NAT Loopback on your router if you know how to, but setting this requires knowledge of networking, and some routers don't have the ability to adjust this setting, so this is not the best option.
 {{% notice note %}}
 An article from [MikroTik](https://help.mikrotik.com/docs/display/ROS/NAT#NAT-HairpinNAT) explains this very well, you could start learning from here.
 {{% /notice %}}
@@ -55,7 +55,7 @@ Here is the final result looks like.
 <hr>
 
 ### PiHole
-Block ads may cause problems, if you don't want to figure out the solution and want to disable this functionality, click "Indefinitely" button within the "Disable Blocking" submenu.
+Blocking ads may cause problems, if you don't want to figure out the solution and want to disable this functionality, click "Indefinitely" button within the "Disable Blocking" submenu.
 
 ![](images/pi_hole_disable_blocking.png)
 
