@@ -1,5 +1,5 @@
 ---
-title: Synology
+title: Synology DSM 6
 weight: 22
 ---
 

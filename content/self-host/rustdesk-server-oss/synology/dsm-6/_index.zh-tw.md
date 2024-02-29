@@ -1,5 +1,5 @@
 ---
-title: Synology 群暉
+title: Synology DSM 6
 weight: 22
 ---
 

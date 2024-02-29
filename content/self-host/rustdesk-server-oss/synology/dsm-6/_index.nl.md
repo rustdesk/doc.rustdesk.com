@@ -1,5 +1,5 @@
 ---
-title: Synologie
+title: Synologie DSM 6
 weight: 22
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 群晖
+title: 群晖 DSM 6
 weight: 22
 ---
 
