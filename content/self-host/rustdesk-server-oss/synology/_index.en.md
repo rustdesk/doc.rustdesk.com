@@ -6,5 +6,3 @@ Synology has two type of Docker, "Docker" and "Container Manager", if you're usi
 {{% children depth="3" showhidden="true" %}}
 
 If you are using Synology with Portainer, please check [this tutorial](https://mariushosting.com/how-to-install-rustdesk-on-your-synology-nas/)
-
-For DSM 7.2, please check [English](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/).
