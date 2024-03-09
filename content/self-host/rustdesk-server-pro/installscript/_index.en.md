@@ -6,7 +6,7 @@ weight: 10
 {{% notice note %}}
 Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 
-Please read [OSS installation](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/) first before doing this simple install. You can know more underlying details there. 
+Please read [OSS installation](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/) first before doing this simple install. You can know more underlying details there.
 {{% /notice %}}
 
 ### Install
@@ -27,7 +27,7 @@ What it does:
 
 ### Upgrade
 
-Copy and paste the above command into your Linux terminal to upgrade your existing RustDesk Server Pro Installation, this could also be saved locally and scheduled with cron.
+Copy and paste the above command into your Linux terminal to upgrade your existing RustDesk Server Pro installation, this could also be saved locally and scheduled with cron.
 
 `bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/update.sh)`
 
@@ -68,7 +68,7 @@ Run the backup script `./backup.sh` to create a one time backup.
 
 Or run the backup script `./backup.sh --schedule`. This will schedule the backup script to run nightly and autorotate.
 
-To Restore do the following:
+To restore do the following:
 ```
 wget https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/restore.sh
 chmod +x restore.sh
