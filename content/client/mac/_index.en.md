@@ -15,7 +15,7 @@ Make sure you have quit all running RustDesk. Also make sure you quit the RustDe
 
 ### Allow RustDesk run
 
-| Unlock to change | Click on "App Store and identified developers" |
+| Unlock to change | Click on `App Store and identified developers` |
 | --- | --- |
 | ![](/docs/en/client/mac/images/allow2.png) | ![](/docs/en/client/mac/images/allow.png) |
 
@@ -46,7 +46,7 @@ Other helpless attempts: <br>
 Reboot is still required.
 {{% /notice %}}
 
-| `-` and `+` button | Select RustDesk |
+| `-` and `+` button | Select `RustDesk` |
 | --- | --- |
 | ![](/docs/en/client/mac/images/acc2.png) | ![](/docs/en/client/mac/images/add.png?v2) |
 
