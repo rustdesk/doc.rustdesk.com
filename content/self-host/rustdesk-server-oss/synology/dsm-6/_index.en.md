@@ -3,11 +3,12 @@ title: Synology DSM 6
 weight: 22
 ---
 
-> An alterative up-to-date tutorial from third-party is [here](https://mariushosting.com/how-to-install-rustdesk-on-your-synology-nas/).
+> An alternative up-to-date tutorial from third-party is [here](https://mariushosting.com/how-to-install-rustdesk-on-your-synology-nas/).
 
 This tutorial is based on latest DSM v6 and v7.
+
 {{% notice note %}}
-After DSM 7.2, the Docker is upgraded to new "Container Manager", please check [this article](/docs/self-host/rustdesk-server-oss/synology/dsm-7) instead.
+After DSM 7.2 update, the Docker is upgraded to new "Container Manager", please check [this article](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7) instead.
 {{% /notice %}}
 
 ### Install Docker
@@ -29,10 +30,10 @@ As mentioned above, double click on rustdesk-server image to create new containe
 
 Click on above `Advanced Settings`.
 
-- Enable auto-restart
+- Enable `Enable auto-restart`.
 ![](images/auto-restart.png)
 
-- Enable `Use the same network as Docker Host`, for more about host net, please [check](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/#net-host).
+- Enable `Use the same network as Docker Host`. For more about host net, please [check](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/#net-host).
 ![](images/host-net.png)
 
 - Mount a host directory (e.g. `/home/rustdesk/`) to `/root`, hbbs will generate some files (database and `key` files) in this directory which need to be persistent over reboots.
@@ -64,7 +65,6 @@ Please repeat above `hbbs` steps, but name the container `hbbr` and command (for
 ### hbbr/hbbs containers
 
 ![](images/containers.png)
-
 
 | Double click on container and check log | Double confirm hbbs/hbbr using host network |
 | --- | --- |
