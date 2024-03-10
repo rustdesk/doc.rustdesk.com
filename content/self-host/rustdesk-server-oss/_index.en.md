@@ -9,5 +9,5 @@ Please join our [Discord](https://discord.com/invite/nDceKgxnkV) if you would li
 {{% children depth="3" showhidden="true" %}}
 
 {{% notice note %}}
-If you build you own server on your home/office, and can't connect it though public IP/domain, please check [this article](https://rustdesk.com/docs/en/self-host/nat-loopback-issues/).
+If you build you own server on your home/office, and can't connect it through public IP/domain, please check [this article](https://rustdesk.com/docs/en/self-host/nat-loopback-issues/).
 {{% /notice %}}
