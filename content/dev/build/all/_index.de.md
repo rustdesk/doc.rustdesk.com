@@ -16,7 +16,8 @@ Gehen Sie zu https://github.com/rustdesk/rustdesk/fork und klicken Sie auf "Crea
 {{% notice note %}}
 Sie müssen dies nur tun, wenn Sie den Standardserver und den öffentlichen Schlüssel ändern möchten.
 
-Die Server-URL und die Schlüssel, die Sie verwenden, sind für andere Benutzer auf GitHub verborgen, aber sie können Ihren Client herunterladen und sich mit Ihrem Server verbinden. Wenn Sie ein vollständig privates Repository benötigen, können Sie das RustDesk-Client-Repository mit https://github.com/new/import importieren. **Wenn Sie ein privates Repository verwenden, können Sie nur eine begrenzte Anzahl von Paketen pro Monat erstellen. Wenn Sie mehr Pakete benötigen, müssen Sie ein kostenpflichtiges GitHub-Konto einrichten.**
+Die Server-URL und die Schlüssel, die Sie verwenden, sind für andere Benutzer auf GitHub verborgen, aber sie können Ihren Client herunterladen und sich mit Ihrem Server verbinden. Wenn Sie ein vollständig privates Repository benötigen, können Sie das RustDesk-Client-Repository mit https://github.com/new/import importieren. <br>
+**Wenn Sie ein privates Repository verwenden, können Sie nur eine begrenzte Anzahl von Paketen pro Monat erstellen. Wenn Sie mehr Pakete benötigen, müssen Sie ein kostenpflichtiges GitHub-Konto einrichten.**
 {{% /notice %}}
 
 Gehen Sie auf Ihrem gerade erstellten Fork zu "Settings → Secrets and Variables → Actions".
