@@ -3,6 +3,10 @@ title: Windows und PM2 oder NSSM
 weight: 20
 ---
 
+{{% notice note %}}
+Die Sicherheitsrichtlinien von Windows sind knifflig. Wenn diese Anleitung bei Ihnen nicht funktioniert oder Sie eine instabile Verbindung feststellen, wechseln Sie bitte zu einem Linux-Server.
+{{% /notice %}}
+
 ### Optionen
 Sie haben nun zwei Möglichkeiten, Sie können entweder PM2 (einfacher) oder NSSM (etwas schwieriger) verwenden, um den RustDesk-Server zu starten.
 Die Verwendung von NSSM hat einige Vorteile:
@@ -20,7 +24,7 @@ Die Vorteile von PM2 sind unter anderem:
 ### Installation mit NSSM
 
 #### Installation von NSSM
-Bitte laden Sie [NSSM](https://nssm.cc/release/nssm-2.24.zip) herunter, extrahieren Sie es und wählen Sie die entsprechende
+Bitte laden Sie [NSSM](https://github.com/dkxce/NSSM/releases/download/v2.25/NSSM_v2.25.zip) herunter, extrahieren Sie es und wählen Sie die entsprechende
 Architektur für Ihr Windows-System (für x86 verwenden Sie den Inhalt des win32-Ordners, für x64 den
 Inhalt des win64-Ordners). Es ist auch sinnvoll, die Binärdatei von NSSM nach `Program Files\NSSM` zu verschieben.
 Wenn NSSM einmal als Dienst gestartet wurde, kann es nicht mehr aus dem Ordner verschoben werden, in dem es abgelegt wurde.
@@ -43,7 +47,7 @@ dass sich der Ort nach der Installation des Dienstes nicht ändert. Gehen Sie nu
 
 In diesem Beispiel wird `C:\Program Files\RustDesk Server` verwendet.
 ```cmd
-nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe" -r 0.0.0.0 -k _
+nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe" -k _
 nssm install "RustDesk hbbr service" "C:\Program Files\RustDesk Server\hbbr.exe" -k _
 ```
 **Hinweise:**
@@ -51,7 +55,7 @@ nssm install "RustDesk hbbr service" "C:\Program Files\RustDesk Server\hbbr.exe"
 - Sie können `RustDesk hbbr service` in einen beliebigen Namen für den Dienst hbbr ändern.
 - Sie können `C:\Programme\RustDesk Server\hbbs.exe` in den Ort ändern, an dem Sie die RustDesk-Binärdateien abgelegt haben.
 - Sie können `C:\Programme\RustDesk Server\hbbr.exe` in den Ort ändern, an dem Sie die RustDesk-Binärdateien abgelegt haben.
-- Die Option `-k _` ist optional und dient nur der Sicherheit.
+- Die Option `-k _` ist optional und dient nur der Sicherheit. In der `Pro`-Version ignorieren Sie bitte `-k _`, das implizit angewendet wird.
 
 **Befehlsvorlagen:**
 
@@ -95,11 +99,11 @@ pm2-startup install
 
 #### hbbr und hbbs ausführen
 
-Laden Sie die Windows-Version von [RustDesk Server](https://github.com/rustdesk/rustdesk-server/releases) herunter. Entpacken Sie das Programm auf Laufwerk C:. Führen Sie die folgenden vier Befehle aus und achten Sie darauf, den Parameter `-r` zu bearbeiten:
+Laden Sie die Windows-Version von [RustDesk Server](https://github.com/rustdesk/rustdesk-server/releases) herunter. Entpacken Sie das Programm auf Laufwerk C:. Führen Sie die folgenden vier Befehle aus:
 
 ```cmd
 cd C:\rustdesk-server-windows-x64
-pm2 start hbbs.exe -- -r <Der Host, auf dem hbbr läuft>
+pm2 start hbbs.exe
 pm2 start hbbr.exe
 pm2 save
 ```
