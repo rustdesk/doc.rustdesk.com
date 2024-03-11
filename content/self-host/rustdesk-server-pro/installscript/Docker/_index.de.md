@@ -60,3 +60,5 @@ services:
 ```
 
 Der Aufruf lautet `docker compose up -d`.
+
+> Wenn Sie Schwierigkeiten mit seLinux unter Fedora haben, überprüfen Sie bitte dieses [Problem](https://github.com/rustdesk/rustdesk-server/issues/230).

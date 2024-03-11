@@ -5,6 +5,14 @@ weight: 17
 
 ### RustDesk Pro - Zusätzliche Relais-Server mit Geo-Standort mit Docker installieren
 
+{{% notice note %}}
+[Die einfache Installation](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/installscript/) erstellt implizit einen Relay-Server (den Prozess `hbbr`) auf demselben Rechner. Sie müssen den Relay-Server nicht explizit angeben.
+
+Wenn Sie einen zusätzlichen Relay-Server explizit auf einem anderen Rechner einrichten wollen, führen Sie bitte `hbbr` aus, indem Sie der [OSS-Installation](https://rustdesk.com/docs/de/self-host/rustdesk-server-oss/install/) folgen. Sie finden `hbbr` in `rustdesk-server-linux-amd64.tar.gz`, `rustdesk-server-hbbr_<version>-<arch>.deb`, `rustdesk-server-windows-x86_64.tar.gz` oder in `docker` (`sudo docker run ... rustdesk/rustdesk-server-pro hbbr`).
+
+`hbbr` benötigt keine Lizenz und ist die gleiche wie die Open-Source-Version.
+{{% /notice %}}
+
 Sie können mehrere Relay-Server auf der ganzen Welt betreiben und GeoLocation nutzen, um den nächstgelegenen Relay-Server zu verwenden, sodass Sie eine schnellere Verbindung zu entfernten Computern herstellen können.
 
 > Sie benötigen das private Schlüsselpaar `id_ed25519` und `id_ed25519.pub`.
@@ -94,13 +102,14 @@ Gehen Sie zu `Manage License Keys` und erzeugen Sie einen neuen Lizenzschlüssel
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/3e178174-5fbf-46b7-a335-01f77125dfad">
 
 Sie können den [Download-Prozess](https://dev.maxmind.com/geoip/updating-databases) auf verschiedene Weise automatisieren. Fügen Sie den folgenden Befehl zu Ihrer crontab hinzu und ersetzen Sie {Your Access Key} durch den API-Schlüssel, den Sie im vorherigen Schritt erhalten haben.
+
 ```
 /usr/bin/curl -L --silent 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={Your Access Key}&suffix=tar.gz' | /bin/tar -C '/var/lib/rustdesk-server/' -xvz --keep-newer-files --strip-components=1 --wildcards '*GeoLite2-City.mmdb'
 ```
 
 #### Einstellungen in der RustDesk Pro Webkonsole ändern
 
-Fügen Sie die IP-Adressen Ihrer Relay-Server in die Relay-Serverliste hinzu, indem Sie nur die IP-Adresse angeben. **Fügen Sie nicht den Port hinzu.** <br>
+Fügen Sie die IP-Adressen oder DNS-Namen Ihrer Relay-Server (DNS wird ab Version 1.1.11 unterstützt) zu den `Relay-Servern` hinzu. **Der Port ist nicht erforderlich, der Port `21117` wird explizit verwendet.** <br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/c4452ba4-5e1d-437a-ae1d-fc0070bfa26c">
 
 Fügen Sie einen Geo-Override hinzu, indem Sie die IP-Adresse des Servers und die Koordinaten des Serverstandorts angeben. <br>

@@ -17,7 +17,7 @@ weight: 600
 ### Wie kann ich von RustDesk Server zu RustDesk Server Pro konvertieren?
 1. Holen Sie sich Ihre Lizenz von [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html). Auf der Seite [Lizenz](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/license/) finden Sie weitere Informationen.
 2. Öffnen Sie den TCP-Port 21114.
-3. Melden Sie sich bei Ihrem RustDesk Server an.
+3. Melden Sie sich bei Ihrem RustDesk-Server an.
 4. Wenn Sie noch kein DNS verwenden und SSL nutzen wollen, erstellen Sie einen DNS-Namen, z. B. `rustdesk.ihredomain.com`.
 5. Gehen Sie zu [dieser Seite](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/installscript/#konvertierung-von-open-source).
 6. Kopieren Sie den Befehl und fügen Sie ihn in Ihr Linux-Terminal ein.
@@ -149,3 +149,6 @@ Bitte konfigurieren Sie Ihren Client mit dem [richtigen Schlüssel](https://rust
 ### Fehler `Failed to connect to relay server`
 Bitte stellen Sie sicher, dass `hbbr` läuft. Mehr Informationen über `hbbr` finden Sie [hier](https://rustdesk.com/docs/de/self-host/rustdesk-server-oss/install/).
 Wenn Ihr `hbbr` nicht auf dem gleichen Rechner wie `hbbs` läuft, oder Sie mehrere Relay-Server haben, oder Sie es nicht auf dem Standard-Port `21117` laufen lassen, müssen Sie es explizit bei `hbbs` mitteilen. Bitte lesen Sie [hier](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/relay/) nach.
+
+### MFA für Admin-Konto zurücksetzen
+https://github.com/rustdesk/rustdesk/discussions/6576

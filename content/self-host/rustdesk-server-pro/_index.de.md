@@ -6,18 +6,28 @@ pre: "<b>2.2. </b>"
 
 RustDesk Server Pro hat im Vergleich zur Open-Source-Version mehr Funktionen.
 
-- OIDC, LDAP, 2FA (E-Mail-Verifizierung)
+- Keine Begrenzung der gleichzeitigen Verbindungen (die OSS-Version hat auch keine Begrenzung, aber TeamViewer usw. haben diese Begrenzung)
+- [Webkonsole](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/console/)
+- API
+- [OIDC](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/oidc/), LDAP, [2FA](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/2fa/)
 - Adressbuch
 - Umbenennen
 - Protokollverwaltung (Verbindung, Dateiübertragung, Alarm usw.)
 - Geräteverwaltung
-- Einstellungen synchronisieren
-- Zugriffskontrolle
-- Mehrere Relay-Server (wählt automatisch das nächstgelegene Relay aus)
+- [Sicherheitseinstellungen synchronisieren](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/strategy/)
+- [Zugriffskontrolle](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/permissions/)
+- [Mehrere Relay-Server](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/relay/) (wählt automatisch das nächstgelegene Relay aus)
 
 {{% notice note %}}
 RustDesk-Client ≥ 1.2.0 erforderlich
 {{% /notice %}}
+{{% notice note %}}
+Wenn Sie Ihren eigenen Server zu Hause oder im Büro aufbauen und ihn nicht über eine öffentliche IP oder Domain verbinden können, lesen Sie bitte [diesen Artikel](https://rustdesk.com/docs/en/self-host/nat-loopback-issues/).
+{{% /notice %}}
+
+### Hardware-Anforderungen
+
+Ein VPS der niedrigsten Stufe ist für Ihren Anwendungsfall ausreichend. Die Serversoftware ist nicht CPU- und speicherintensiv. Unser öffentlicher ID-Server, der auf einem Vultr-Server mit 2 CPU und 4 GB RAM gehostet wird, bedient mehr als 1,5 Millionen Endgeräte.
 
 ### Herunterladen
 

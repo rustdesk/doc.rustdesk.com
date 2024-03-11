@@ -23,7 +23,7 @@ $rustdesk_cfg="configstring"
 
 ############################## Bitte nicht unterhalb dieser Zeile bearbeiten ###################################
 
-# Als Administrator ausführen und im selben Verzeichnis bleiben
+# Als Administrator ausführen und im gleichen Verzeichnis bleiben
 if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
 {
     if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000)
@@ -47,13 +47,13 @@ function getLatest()
         $src = [System.Text.Encoding]::Unicode.GetBytes($Page.Content)
         $HTML.write($src)
     }
-    
+
     # Aktueller Beispiellink: https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.exe
     $Downloadlink = ($HTML.Links | Where {$_.href -match '(.)+\/rustdesk\/rustdesk\/releases\/download\/\d{1}.\d{1,2}.\d{1,2}(.{0,3})\/rustdesk(.)+x86_64.exe'} | select -first 1).href
-    
-    # bugfix - Manchmal muss man das "about:" ersetzen
+
+    # Bugfix - manchmal muss man das "about:" ersetzen
     $Downloadlink = $Downloadlink.Replace('about:', 'https://github.com')
-    
+
     $Version = "unknown"
     if ($Downloadlink -match './rustdesk/rustdesk/releases/download/(?<content>.*)/rustdesk-(.)+x86_64.exe')
     {
@@ -67,7 +67,7 @@ function getLatest()
     }
 
     # Zurückgebendes Objekt erstellen
-    $Result = New-Object PSObject -Property 
+    $Result = New-Object PSObject -Property
     @{
         Version = $Version
         Downloadlink = $Downloadlink
@@ -83,7 +83,7 @@ $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Un
 
 if ($rdver -eq $RustDeskOnGitHub.Version)
 {
-    Write-Output "RustDesk $rdver ist die neuste Version"
+    Write-Output "RustDesk $rdver ist die neuste Version."
     Exit
 }
 

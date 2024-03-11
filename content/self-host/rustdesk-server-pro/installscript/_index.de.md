@@ -5,6 +5,8 @@ weight: 10
 
 {{% notice note %}}
 Vergessen Sie nicht, Ihre Lizenz unter [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) zu erwerben, auf der Seite [Lizenz](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/license/) finden Sie weitere Informationen.
+
+Bitte lesen Sie zuerst die [OSS-Installation](https://rustdesk.com/docs/de/self-host/rustdesk-server-oss/install/), bevor Sie diese einfache Installation durchführen. Dort erfahren Sie mehr über die zugrunde liegenden Details.
 {{% /notice %}}
 
 ### Installation
@@ -55,7 +57,7 @@ Was es bewirkt:
 
 Um das Leben einfach zu machen, haben wir ein Sicherungs- und Wiederherstellungsskript erstellt, das die Schlüssel, die gesamte Konfiguration und die Datenbank übernimmt und eine TAR-Datei erstellt, die an einem anderen Ort gespeichert werden kann.
 
-Um das Sicherungsskript auf Ihrem RustDesk Server einzurichten, gehen Sie wie folgt vor:
+Um das Sicherungsskript auf Ihrem RustDesk-Server einzurichten, gehen Sie wie folgt vor:
 ```
 wget https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/backup.sh
 chmod +x backup.sh

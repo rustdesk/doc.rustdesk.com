@@ -5,7 +5,7 @@ weight: 49
 
 ### Benutzerdefinierter Server
 {{% notice note %}}
-Um benutzerdefinierte Servereinstellungen in Ihren ausführbaren Dateien fest einzubinden, müssen Sie den Client auf Ihrem Rechner selbst [erstellen](https://rustdesk.com/docs/de/dev/build/) oder mit [GitHub-Aktionen](https://rustdesk.com/docs/de/dev/build/all/) bauen.<br>
+Um benutzerdefinierte Servereinstellungen in Ihren ausführbaren Dateien fest einzubinden, müssen Sie den Client auf Ihrem Rechner selbst [erstellen](https://rustdesk.com/docs/de/dev/build/) oder mit [GitHub-Aktionen](https://rustdesk.com/docs/de/dev/build/all/) bauen. <br>
 **Hinweis**: [Selbst gehostete Runner](https://docs.github.com/de/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners) für Arm werden in unseren GitHub-Aktionen verwendet, bitte richten Sie sie selbst ein.
 {{% /notice %}}
 {{% notice note %}}
@@ -30,4 +30,12 @@ Diese Variable wird Ihr öffentlicher Schlüssel sein, weitere Informationen üb
 Es sollte eine Zeichenkette sein wie
 ```
 OeVuKk5nlHiXp+APNn0Y3pC1Iwpwn44JGqrQCsWqmBw=
+```
+
+#### API_SERVER
+Standardmäßig läuft der API_SERVER auf `http://rustdesk.my-domain.com:21114`. Sie sollten ihn aus Sicherheitsgründen besser mit Nginx über HTTPS laufen lassen.
+
+Es sollte eine Zeichenkette sein wie
+```
+https://rustdesk.my-domain.com
 ```

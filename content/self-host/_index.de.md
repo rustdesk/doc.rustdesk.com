@@ -15,7 +15,7 @@ Support ist über unser [Discord](https://discord.com/invite/nDceKgxnkV) für OS
 
 ### Grundlegende Einrichtung
 
-https://rustdesk.com/docs/de/self-host/rustdesk-server-oss/install/#richten-sie-ihre-eigene-serverinstanz-manuell-ein
+[Richten Sie Ihre eigene Serverinstanz manuell ein.](https://rustdesk.com/docs/de/self-host/rustdesk-server-oss/install/#richten-sie-ihre-eigene-serverinstanz-manuell-ein)
 
 ### Erforderliche Ports
 
