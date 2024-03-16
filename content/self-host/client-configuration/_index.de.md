@@ -8,6 +8,13 @@ pre: "<b>2.3. </b>"
 
 Es gibt eine Reihe von Möglichkeiten, RustDesk-Clients so zu konfigurieren, dass sie Ihren eigenen, selbst gehosteten Server nutzen können. Einige davon werden im Folgenden beschrieben.
 
+### 1. Benutzerdefinierter Client-Generator (nur Pro)
+
+Sie können Ihren eigenen Namen, Ihr eigenes Logo, Ihr eigenes Symbol, Ihre eigene Konfiguration und mehr haben.
+
+![](images/custom-client-qs.png)
+![](images/web_console_custom_client_config.jpeg)
+
 ### 2. Manuelle Konfiguration
 
 Im Hauptmenü des RustDesk-Clients klicken Sie auf die Menü-Schaltfläche [ &#8942; ] neben Ihrer ID und dann auf Netzwerk. Sie können nun die Einstellungen mit erhöhten Rechten freischalten und Ihre ID, Relay, API und Schlüssel einstellen.

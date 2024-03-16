@@ -10,6 +10,9 @@ There are a number of ways to configure RustDesk Clients to use your own self-ho
 
 ### 1. Custom client generator (Pro only)
 
+You can have your own name, logo, icon, config and more.
+
+![](images/custom-client-qs.png)
 ![](images/web_console_custom_client_config.jpeg)
 
 ### 2. Manual Config
