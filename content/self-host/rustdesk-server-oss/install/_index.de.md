@@ -97,7 +97,7 @@ Standardmäßig lauscht `hbbs` auf 21115 (TCP), 21116 (TCP/UDP) und 21118 (TCP),
 
 Wenn Sie einen eigenen Port auswählen möchten, geben Sie bitte die Option `-h` ein, um die Hilfe anzuzeigen.
 
-#### Schritt 3: hbbs/hbbr-Adresse auf der Client-Seite einstellen
+#### Schritt 3: [hbbs/hbbr-Adresse auf der Client-Seite einstellen](/docs/de/self-host/client-configuration/)
 
 Klicken Sie auf die Menü-Schaltfläche [ &#8942; ] rechts neben ID, wie unten gezeigt, und wählen Sie "ID/Relay-Server".
 

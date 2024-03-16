@@ -97,42 +97,7 @@ By default, `hbbs` listens on 21115 (TCP), 21116 (TCP/UDP) and 21118 (TCP), `hbb
 
 Please run with the `-h` option to see help if you want to choose your own port.
 
-#### STEP 3: Set hbbs/hbbr address on client-side
-
-Click on the Menu button [ &#8942; ] on the right side of ID as shown below, and choose "ID/Relay Server".
-
-![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-menu.png)
-
-Enter the `hbbs` host or IP Address in the **ID Server** input box (local side + remote side). The other two addresses can be left blank, RustDesk will automatically deduce (if not specially set), and the Relay Server refers to `hbbr` (port 21117).
-
-e.g.
-
-```nolang
-hbbs.example.com
-```
-
-or
-
-```nolang
-hbbs.example.com:21116
-```
-
-![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-window.png)
-
-##### Put config in rustdesk.exe file name (Windows only)
-
-Change `rustdesk.exe` to rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe, e.g. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe. You can see the config result in the About Window below.
-
-<a name="invalidchar"></a>
-{{% notice note %}}
-You need to set both `host` and `key`, missing either one will not work.
-
-Optionally add a `,` (comma) character after the key, before the `.exe` part as a delimiter, to avoid the key being mangled if Windows or the browser renames the file when downloading duplicated names.
-
-If there are invalid characters in the key which can not be used in a Windows file name, please remove the
-`id_ed25519` file from your server and restart `hbbs`/`hbbr`. This will cause the `id_ed25519.pub` file to regenerate. You may need to
-repeat this process until you get valid characters.
-{{% /notice %}}
+#### STEP 3: [Set hbbs/hbbr address on client-side](/docs/en/self-host/client-configuration/)
 
 ### Key
 
