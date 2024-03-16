@@ -99,41 +99,6 @@ Wenn Sie einen eigenen Port auswählen möchten, geben Sie bitte die Option `-h`
 
 #### Schritt 3: [hbbs/hbbr-Adresse auf der Client-Seite einstellen](/docs/de/self-host/client-configuration/)
 
-Klicken Sie auf die Menü-Schaltfläche [ &#8942; ] rechts neben ID, wie unten gezeigt, und wählen Sie "ID/Relay-Server".
-
-![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-menu.png)
-
-Geben Sie in das Eingabefeld **ID-Server** den `hbbs`-Host oder die IP-Adresse ein (lokale Seite und entfernte Seite). Die anderen beiden Adressen und Key können leer bleiben, RustDesk wird sie automatisch ableiten (falls nicht speziell eingestellt). Der Relay-Server verweist auf `hbbr` (Port 21117).
-
-Zum Beispiel
-
-```nolang
-hbbs.example.com
-```
-
-oder
-
-```nolang
-hbbs.example.com:21116
-```
-
-![](/docs/en/self-host/rustdesk-server-oss/install/images/server-set-window.png)
-
-##### Konfiguration in den Dateinamen von rustdesk.exe einfügen (nur Windows)
-
-Ändern Sie `rustdesk.exe` in rustdesk-`host=<host-ip-or-name>,key=<public-key-string>`.exe, z. B. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe. Das Ergebnis der Konfiguration können Sie im untenstehenden Über-Fenster sehen.
-
-<a name="invalidchar"></a>
-{{% notice note %}}
-Sie müssen sowohl `host` als auch `key` setzen, das Fehlen eines der beiden wird nicht funktionieren.
-
-Fügen Sie nach dem Schlüssel optional ein `,` (Komma) als Trennzeichen vor `.exe` hinzu, um zu verhindern, dass der Schlüssel verstümmelt wird, wenn Windows oder der Browser die Datei beim Herunterladen von doppelten Namen umbenennt.
-
-Wenn der Schlüssel ungültige Zeichen enthält, die nicht in einem Windows-Dateinamen verwendet werden können, entfernen Sie
-bitte die Datei `id_ed25519` von Ihrem Server und starten Sie `hbbs`/`hbbr` neu. Dadurch wird die Datei `id_ed25519.pub` neu generiert.
-Möglicherweise müssen Sie diesen Vorgang wiederholen, bis Sie gültige Zeichen erhalten.
-{{% /notice %}}
-
 ### Schlüssel
 
 Anders als in der alten Version ist der Schlüssel in dieser Version obligatorisch, aber Sie brauchen ihn nicht selbst zu setzen. Wenn `hbbs` zum ersten Mal ausgeführt wird, erzeugt es automatisch ein Paar verschlüsselter privater und öffentlicher Schlüssel (die sich jeweils in den Dateien `id_ed25519` und `id_ed25519.pub` im aktuellen Ordner befinden), deren Hauptzweck in der Verschlüsselung der Kommunikation besteht.
