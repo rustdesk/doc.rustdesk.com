@@ -8,7 +8,7 @@ pre: "<b>2.3. </b>"
 
 Es gibt eine Reihe von Möglichkeiten, RustDesk-Clients so zu konfigurieren, dass sie Ihren eigenen, selbst gehosteten Server nutzen können. Einige davon werden im Folgenden beschrieben.
 
-### 1. Manuelle Konfiguration
+### 2. Manuelle Konfiguration
 
 Im Hauptmenü des RustDesk-Clients klicken Sie auf die Menü-Schaltfläche [ &#8942; ] neben Ihrer ID und dann auf Netzwerk. Sie können nun die Einstellungen mit erhöhten Rechten freischalten und Ihre ID, Relay, API und Schlüssel einstellen.
 
@@ -43,7 +43,7 @@ Wenn Ihr API-Server z. B. auf dem Standard-HTTPS-Port läuft, geben Sie bitte `A
 
 Wenn Sie den Wert des `API-Servers` immer noch nicht bestätigen können, gehen Sie bitte auf die Willkommenseite der Webkonsole, der `API-Server` ist im obigen Bild zu sehen (das Eingabefeld mit der Bezeichnung `API:`).
 
-### 2. Mit Import oder Export einrichten
+### 3. Mit Import oder Export einrichten
 
 1. Verwenden Sie die Schritte [oben](https://rustdesk.com/docs/de/self-host/client-configuration/#manuelle-konfiguration), um den RustDesk-Client auf einem Gerät zu konfigurieren.
 2. Gehen Sie für das oben genannte Gerät zu Einstellungen, dann zu Netzwerk und entsperren.
@@ -54,7 +54,7 @@ Wenn Sie den Wert des `API-Servers` immer noch nicht bestätigen können, gehen 
 7. Die Einstellungen werden dann automatisch eingefügt.
 8. Klicken Sie auf `Anwenden`.
 
-### 3. Automatische Konfiguration
+### 4. Automatische Konfiguration
 
 Der einfachste Weg zur automatischen Einrichtung ist die Verwendung von Bereitstellungsskripten, die Sie [hier](https://rustdesk.com/docs/de/self-host/client-deployment/) finden.
 
@@ -62,7 +62,7 @@ Sie können festlegen, dass das Passwort erforderlich ist und einen umgekehrten 
 
 Sie können auch die Schritte von [oben](https://rustdesk.com/docs/de/self-host/client-configuration/#mit-import-oder-export-einrichten) verwenden, um die Zeichenkette zu exportieren und dabei alle `=` am Anfang oder Ende der Zeichenkette entfernen. Starten Sie den RustDesk-Client neu, wenn die Einstellungen nicht angezeigt werden.
 
-### 4. Konfiguration in den Dateinamen von rustdesk.exe einfügen (nur Windows)
+### 5. Konfiguration in den Dateinamen von rustdesk.exe einfügen (nur Windows)
 
 Ändern Sie `rustdesk.exe` in rustdesk-`host=<host-ip-oder-name>,key=<public-key-string>`.exe, z. B. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe. Das Ergebnis der Konfiguration sehen Sie im untenstehenden Über-Fenster.
 
@@ -93,9 +93,9 @@ Wir haben festgestellt, dass in einigen Fällen beim doppelten Herunterladen etw
 
 Durch das Hinzufügen von `--` am Ende direkt nach der Konfigurationszeichenkette wird diese nicht beschädigt. RustDesk kann sie korrekt abrufen, selbst wenn dem Dateinamen etwas hinzugefügt wird.
 
-### 5. [Benutzerdefinierte Einstellungen fest codieren](https://rustdesk.com/docs/de/self-host/client-configuration/hardcode-settings/)
+### 6. [Benutzerdefinierte Einstellungen fest codieren](https://rustdesk.com/docs/de/self-host/client-configuration/hardcode-settings/)
 
-### 6. Befehlszeile `--config` verwenden
+### 7. Befehlszeile `--config` verwenden
 `rustdesk.exe --config <config-string>`
 
 Sie können die Konfigurationszeichenkette über die Webkonsole (wie auf dem obigen Bild zu sehen) oder über den RustDesk-Client unter "Einstellungen → Netzwerk" abrufen ([hier](https://github.com/rustdesk/rustdesk/discussions/7118) gibt es eine Diskussion darüber).
