@@ -17,6 +17,8 @@ RustDesk Server Pro hat im Vergleich zur Open-Source-Version mehr Funktionen.
 - [Sicherheitseinstellungen synchronisieren](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/strategy/)
 - [Zugriffskontrolle](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/permissions/)
 - [Mehrere Relay-Server](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/relay/) (wählt automatisch das nächstgelegene Relay aus)
+- [Benutzerdefinierter Client-Generator](https://rustdesk.com/docs/de/self-host/client-configuration/#1-custom-client-generator-pro-only)
+
 
 {{% notice note %}}
 RustDesk-Client ≥ 1.2.0 erforderlich
