@@ -12,6 +12,8 @@ Es gibt eine Reihe von Möglichkeiten, RustDesk-Clients so zu konfigurieren, das
 
 Sie können Ihren eigenen Namen, Ihr eigenes Logo, Ihr eigenes Symbol, Ihre eigene Konfiguration und mehr haben.
 
+[Videos](https://twitter.com/rustdesk/status/1769171628426944539)
+
 ![](images/custom-client-qs.png)
 ![](images/web_console_custom_client_config.jpeg)
 
