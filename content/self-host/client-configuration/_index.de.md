@@ -10,7 +10,7 @@ Es gibt eine Reihe von Möglichkeiten, RustDesk-Clients so zu konfigurieren, das
 
 ### 1. Benutzerdefinierter Client-Generator (nur Pro)
 
-Sie können Ihren eigenen Namen, Ihr eigenes Logo, Ihr eigenes Symbol, Ihre eigene Konfiguration und mehr haben.
+Sie können Ihren eigenen Namen, Ihr eigenes Logo, Ihr eigenes Symbol, Ihre eigene Konfiguration, eine Signatur und mehr haben.
 
 [Videos](https://twitter.com/rustdesk/status/1769171628426944539)
 
