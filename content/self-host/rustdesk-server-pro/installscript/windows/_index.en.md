@@ -7,6 +7,10 @@ weight: 2
 Windows security policy is tricky, if this tutorial does not work for you, or you encounter unstable connection, please migrate to a Linux server.
 {{% /notice %}}
 
+{{% notice note %}}
+The GUI version, `RustDeskServer.exe` has not been maintained any more, not recommended.
+{{% /notice %}}
+
 ### Install
 
 1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
