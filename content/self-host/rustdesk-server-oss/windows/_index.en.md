@@ -7,6 +7,10 @@ weight: 20
 Windows security policy is tricky, if this tutorial does not work for you, or you encounter unstable connection, please migrate to a Linux server.
 {{% /notice %}}
 
+{{% notice note %}}
+The GUI version, `RustDeskServer.exe` has not been maintained any more, not recommended.
+{{% /notice %}}
+
 ### A crossroads
 You now either have two choices, you can either use PM2 (easier) or NSSM (a bit harder) to start the RustDesk server
 There are some benefits to using NSSM:
