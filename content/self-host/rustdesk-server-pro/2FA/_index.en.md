@@ -91,7 +91,7 @@ When 2FA is enabled, modifying account settings requires additional 2FA verifica
 
 ![](./images/3-2fa-state-enabled.png)
 
-![](./images/s/3-2fa-state-expired.png)
+![](./images/3-2fa-state-expired.png)
 
 {{% notice note %}}
 2FA can still be used normally after it expires. It just means that the 2FA settings haven't been changed for a long time (default 180 days). For security reasons, we recommend re-enabling 2FA, so the secret data can been updated.
