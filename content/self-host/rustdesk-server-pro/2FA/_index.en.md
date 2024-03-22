@@ -12,7 +12,7 @@ Our web console currently supports two kinds of 2FA:
 
 You first need to go to the account settings page.
 
-![](./images/s/1-settings-account.png)
+![](./images/1-settings-account.png)
 
 ### Email verification
 
