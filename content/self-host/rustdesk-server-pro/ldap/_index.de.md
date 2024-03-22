@@ -1,6 +1,6 @@
 ---
-Titel: LDAP
-Gewicht: 17
+title: LDAP
+weight: 17
 ---
 
 ## Aufbau
