@@ -22,9 +22,9 @@ Bitte gehen Sie wie folgt zur Seite `LDAP`-Einstellungen.
 
 - **Benutzernamensattribut:** Dies ist das Attribut, das den Benutzernamen enthält. Zum Beispiel `uid` oder `sAMAccountName`. Standardmäßig werden `uid` und `cn` verwendet. Hier ist eine Diskussion dazu: [https://github.com/rustdesk/rustdesk-server-pro/issues/140#issuecomment-1916804393](https://github.com/rustdesk/rustdesk-server-pro/issues/140#issuecomment-1916804393).
 
-- **StartTLS:** Dies ist ein boolescher Wert (wahr oder falsch), der bestimmt, ob StartTLS verwendet werden soll, um die Verbindung auf eine sichere Verbindung zu aktualisieren.
+- **StartTLS:** Dies bestimmt, ob StartTLS verwendet werden soll, um die Verbindung auf eine sichere Verbindung zu aktualisieren.
 
-- **NoTLSVerify:** Dies ist ein boolescher Wert (wahr oder falsch), der bestimmt, ob die TLS-Zertifikatsüberprüfung übersprungen werden soll. Es wird empfohlen, dies auf `false` zu belassen (d. h. eine Zertifikatsüberprüfung durchzuführen), es sei denn, Sie sind sich sicher, was Sie tun.
+- **NoTLSVerify:** Dies bestimmt, ob die TLS-Zertifikatsüberprüfung übersprungen werden soll. Es wird empfohlen, dies auf `false` zu belassen (d. h. eine Zertifikatsüberprüfung durchzuführen), es sei denn, Sie sind sich sicher, was Sie tun.
 
 ## Wie funktioniert es?
 - Wie funktionieren LDAP-Logins, z.B. Muss ich zuerst einen neuen Benutzer erstellen, erstellt RustDesk beim ersten Anmelden einen Benutzer usw.?
