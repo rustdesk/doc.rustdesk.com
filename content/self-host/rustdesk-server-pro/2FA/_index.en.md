@@ -12,7 +12,7 @@ Our web console currently supports two kinds of 2FA:
 
 You first need to go to the account settings page.
 
-![](/docs/en/self-host/rustdesk-server-pro/2FA/images/1-settings-account.png)
+![](./images/s/1-settings-account.png)
 
 ### Email verification
 
@@ -22,11 +22,11 @@ To enable email verification for login, you need:
 2. Enable the `Enable email login verification` option.
 3. Click on `Submit`.
 
-![](/docs/en/self-host/rustdesk-server-pro/2FA/images/2-2fa-email-1.png)
+![](./images/2-2fa-email-1.png)
 
 When we log in next time, RustDesk will send us a verification code email, and the web page will also jump to the verification page.
 
-![](/docs/en/self-host/rustdesk-server-pro/2FA/images/2-2fa-email-2.png)
+![](./images/2-2fa-email-2.png)
 
 ### TOTP
 
@@ -41,23 +41,23 @@ You can choose from these types [Authy](https://authy.com), [Microsoft Authentic
 
 When the `Enable 2FA` button is displayed on the settings page, it means that 2FA is not currently enabled.
 
-![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-enable-1.png)
+![](./images/3-2fa-enable-1.png)
 
 Click the button and a form will pop up to enable 2FA.
 
-![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-enable-2.png)
+![](./images/3-2fa-enable-2.png)
 
 Open the authenticator app, add an account by scanning the QR code.
 
 If you are inconvenient to scan the QR code, you can also enter the code here directly.
 
-![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-enable-3.png)
+![](./images/3-2fa-enable-3.png)
 
 After adding the account in the authenticator app, enter the verification code in the authenticator app to turn on 2FA.
 
 After 2FA is successfully turned on, RustDesk Server Pro will also be bound to 6 **backup codes**. So that you can use these **backup codes** to pass the verification even if you are unable to use the authenticator app.
 
-![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-enable-4.png)
+![](./images/3-2fa-enable-4.png)
 
 {{% notice note %}}
 1. These backup codes can only be used once.
@@ -69,29 +69,29 @@ After 2FA is successfully turned on, RustDesk Server Pro will also be bound to 6
 
 When 2FA is enabled, email login verification is no longer used. We will be using 2FA login verification instead.
 
-![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-enable-login-5.png)
+![](./images/3-2fa-enable-login-5.png)
 
 When logging in, you will be redirected to the verification page.
 
-![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-enable-login-6.png)
+![](./images/3-2fa-enable-login-6.png)
 
 #### Modify settings
 
 When 2FA is enabled, modifying account settings requires additional 2FA verification.
 
-![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-settings-1.png)
+![](./images/3-2fa-settings-1.png)
 
-![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-settings-2.png)
+![](./images/3-2fa-settings-2.png)
 
 #### 2FA state
 
 2FA has a total of 3 states: not enabled, enabled and expired.
 
-![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-state-not-enabled.png)
+![](./images/3-2fa-state-not-enabled.png)
 
-![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-state-enabled.png)
+![](./images/3-2fa-state-enabled.png)
 
-![](/docs/en/self-host/rustdesk-server-pro/2FA/images/3-2fa-state-expired.png)
+![](./images/s/3-2fa-state-expired.png)
 
 {{% notice note %}}
 2FA can still be used normally after it expires. It just means that the 2FA settings haven't been changed for a long time (default 180 days). For security reasons, we recommend re-enabling 2FA, so the secret data can been updated.
