@@ -8,7 +8,7 @@ Windows security policy is tricky, if this tutorial does not work for you, or yo
 {{% /notice %}}
 
 {{% notice note %}}
-The GUI version, `RustDeskServer.exe` has not been maintained any more, not recommended.
+The GUI version, `RustDeskServer.setup.exe` has not been maintained any more, not recommended.
 {{% /notice %}}
 
 ### A crossroads
