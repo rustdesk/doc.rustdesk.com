@@ -174,7 +174,7 @@ https://github.com/rustdesk/rustdesk/discussions/6576
 * Arch: `sudo pacman -S install nginx`
 * openSUSE: `sudo zypper install nginx`
 * Gentoo: `sudo emerge -av nginx`
-* Appine: `apk add --no-cache nginx`
+* Appine: `sudo apk add --no-cache nginx`
 
 Run `nginx -h` to check whether it has been installed successfully.
 
@@ -202,6 +202,8 @@ EOF
 ```
 Then run `sudo ln -s /etc/nginx/sites-available/rustdesk.conf /etc/nginx/sites-enabled/rustdesk.conf`.
 
+Run `cat /etc/nginx/sites-available/rustdesk.conf` to make sure its content is correct.
+
 * If directory `/etc/nginx/sites-available` and `/etc/nginx/sites-enabled` don't exist and directory `/etc/nginx/conf.d` exists, replace `<YOUR_DOMAIN>` of the following command with your domain name and run it.
 ```bash
 cat > /etc/nginx/conf.d/rustdesk.conf << EOF
@@ -215,8 +217,7 @@ server_name <YOUR_DOMAIN>;
 }
 EOF
 ```
-
-After any of the above methods, run `cat /etc/nginx/conf.d/rustdesk.conf` to ensure the content of `rustdesk.conf` is correct.
+Run `cat /etc/nginx/conf.d/rustdesk.conf` to make sure its content is correct.
 
 #### 5. Enable firewall rules for the domain
 
