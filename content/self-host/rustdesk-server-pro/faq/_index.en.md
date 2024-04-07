@@ -153,3 +153,139 @@ If your `hbbr` does not run on the same machine of `hbbs`, or you have multiple 
 ### Reset MFA for Admin account
 https://github.com/rustdesk/rustdesk/discussions/6576
 
+
+### Setup https for web console manually
+
+1. Buy a domain name and resolve it to your server's IP address. 
+* Buy a domain name from a domain registrar like GoDaddy, Namecheap, or Namesilo.
+* Resolve the domain name to your server's IP address with one of the following: 
+    - Your domain registrar's control panel (recommended)
+    - DNS providers, https://en.wikipedia.org/wiki/List_of_managed_DNS_providers 
+
+ For example, if you buy a domain name `rustdesk.example.com` from Namesilo and your server's IP address is 123.123.123.123, you need to open link https://www.namesilo.com/account_domains.php, click the button with tooltip `Manage dns for the domain`, add add a `A` record with the hostname name `rustdesk` and the IP address of your server.
+![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-button.png)
+![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-add-a-record.png)
+![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-table.png)
+* It takes some time for dns to take effect, go to https://www.whatsmydns.net and check whether the domain name has been resolved to your server's IP address, step 6 depends on the correct resolve result.
+
+2. Install nginx.
+* Debian/Ubuntu: `sudo apt-get install nginx`
+* Fedora/CentOS: `sudo dnf install nginx` or `sudo yum install nginx`
+* Arch: `sudo pacman -S install nginx`
+* openSUSE: `sudo zypper install nginx`
+* Gentoo: `sudo emerge -av nginx`
+* Appine: `apk add --no-cache nginx`
+
+Run `nginx -h` to check whether it has been installed successfully.
+
+3. Install Certbot
+* Method 1 (Recommended): Install with snap. If snap not instaled, install snap first via following https://snapcraft.io/docs/search?q=installing+snap+on, then run `sudo snap install certbot --classic`
+* Method 2: Using `python3-certbot-nginx` instead. eg: `sudo apt-get install python3-certbot-nginx` for ubuntu
+
+Run `certbot -h` to check successful installation.
+
+4. Config nginx
+
+There are two ways:
+* If directory `/etc/nginx/sites-available` and `/etc/nginx/sites-enabled` exists, replace `<YOUR_DOMAIN>` of the following command with your domain name and run it.
+```bash
+cat > /etc/nginx/sites-available/rustdesk.conf << EOF
+server {
+server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       \$remote_addr;
+        proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+}
+EOF
+```
+Then run `sudo ln -s /etc/nginx/sites-available/rustdesk.conf /etc/nginx/sites-enabled/rustdesk.conf`.
+
+* If directory `/etc/nginx/sites-available` and `/etc/nginx/sites-enabled` don't exist and directory `/etc/nginx/conf.d` exists, replace `<YOUR_DOMAIN>` of the following command with your domain name and run it.
+```bash
+cat > /etc/nginx/conf.d/rustdesk.conf << EOF
+server {
+server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       \$remote_addr;
+        proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+}
+EOF
+```
+
+After any of the above methods, run `cat /etc/nginx/conf.d/rustdesk.conf` to ensure the content of `rustdesk.conf` is correct.
+
+5. Enable firewall rules for the domain
+
+Run the following commands:
+```bash
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw --force enable
+sudo ufw --force reload
+```
+
+6. Generate SSL certificate
+
+Replace `<YOUR_DOMAIN>` with your domain name, then run
+`sudo certbot --nginx --cert-name <YOUR_DOMAIN> --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d <YOUR_DOMAIN>`
+
+If it prompts `Enter email address (used for urgent renewal and security notices)`, enter your email address.
+
+Finally, the content of `rustdesk.conf` should be like this:
+```
+server {
+server_name <Your_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       $remote_addr;
+        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/<Your_DOMAIN>/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/<Your_DOMAIN>/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    if ($host = <Your_DOMAIN>) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+server_name <Your_DOMAIN>;
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
+```
+
+Here are some common errors:
+
+* The console prints `Successfully deployed certificate for <YOUR_DOMAIN> to /etc/nginx/.../default`  rather than `Successfully deployed certificate for <YOUR_DOMAIN> to /etc/nginx/.../rustdesk.conf`.
+
+Solution: The reason may be certbot doesn't find the rustdesk.conf file, you can try one of the following solutions:
+    - Check the result of the step 5, run `sudo service nginx restart`. 
+    - Copy the server configs `server{...}` which contain `<YOUR_DOMAIN>` to `rustdesk.conf`, and change `location{...}` to the content below.
+```bash
+location / {
+           proxy_set_header        X-Real-IP       \$remote_addr;
+           proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+      }
+```  
+
+* `too many certificates (5) already issued for this exact set of domains in the last 168 hours`
+
+Solution: add another domain name to dns and change `<YOUR_DOMAIN>` to it, eg: `rustdesk2.example.com`, then repeat step 1, 4, 6.
+
+Notice: Run `sudo service nginx restart` if you change the rustdesk.conf manually.
+
+
