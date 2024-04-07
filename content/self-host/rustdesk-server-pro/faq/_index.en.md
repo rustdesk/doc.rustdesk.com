@@ -154,9 +154,7 @@ If your `hbbr` does not run on the same machine of `hbbs`, or you have multiple 
 https://github.com/rustdesk/rustdesk/discussions/6576
 
 
-### Setup RustDesk Server Pro with DNS/Domain manually
-
-If you install with [install.sh](https://github.com/rustdesk/rustdesk-server-pro/blob/main/install.sh) but the DNS/Domain step was failed, or you have installed successfully with IP but want to change to DNS/Domain, you can continue with the following steps.
+### Setup https for web console manually
 
 1. Buy a domain name and resolve it to your server's IP address. 
 * Buy a domain name from a domain registrar like GoDaddy, Namecheap, or Namesilo.
