@@ -25,6 +25,11 @@ What it does:
 - Create systemd services for hbbs and hbbr (service names are rustdesk-hbbs.service and rustdesk-hbbr.service)
 - If you choose Domain, it will install Nginx and Certbot, allowing the API to be available on port 443 (HTTPS) and get an SSL certificate over port 80, it is automatically renewed
 
+{{% notice note %}}
+https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#setup-rustdesk-server-pro-with-dnsdomain-manually,
+{{% /notice %}}
+
+
 ### Upgrade
 
 Copy and paste the above command into your Linux terminal to upgrade your existing RustDesk Server Pro installation, this could also be saved locally and scheduled with cron.
