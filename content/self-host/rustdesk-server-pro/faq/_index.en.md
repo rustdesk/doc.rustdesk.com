@@ -153,3 +153,11 @@ If your `hbbr` does not run on the same machine of `hbbs`, or you have multiple 
 ### Reset MFA for Admin account
 https://github.com/rustdesk/rustdesk/discussions/6576
 
+### install Certbot
+If the installation of Certbot fails and snap is not installed, please first try to manually install snap according to https://snapcraft.io/docs/search?q=installing+snap+on, and then install Certbot via `snap install certbot --classic`.
+
+### Please check that port 80/443 are correctly port forwarded
+1. Check whether the domain has been resolved to the current server IP through DNS. You can confirm this through websites like https://www.whatsmydns.net.
+2. Check whether the 80 and 443 ports are open. You can use https://www.yougetsignal.com/tools/open-ports to check, and open ports through the control panel provided by your server provider.
+
+

@@ -25,6 +25,26 @@ What it does:
 - Create systemd services for hbbs and hbbr (service names are rustdesk-hbbs.service and rustdesk-hbbr.service)
 - If you choose Domain, it will install Nginx and Certbot, allowing the API to be available on port 443 (HTTPS) and get an SSL certificate over port 80, it is automatically renewed
 
+Here are the detailed steps:
+
+- If the current user is not root, switch to the root user.
+- Run `bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh)` in terminal. 
+- Press Enter to confirm the dialog box below
+![](/docs/en/self-host/rustdesk-server-pro/installscript/Linux/images/unprivileged_recommended.png)
+- Choose whether to run the rustdesk service as a root user, it is recommended to use a non-root user.
+![](/docs/en/self-host/rustdesk-server-pro/installscript/Linux/images/unprivileged_confirm.png)
+If you choose Yes, please enter an existing non-root username and press Enter to confirm.
+![](/docs/en/self-host/rustdesk-server-pro/installscript/Linux/images/input_non-root_user.png)
+- Choose whether to use IP or DNS/Domain to setup the rustdesk service.
+![](/docs/en/self-host/rustdesk-server-pro/installscript/Linux/images/ip_or_domain.png)
+For users who choose to use DNS, you need to enter the domain name and install Certbot
+![](/docs/en/self-host/rustdesk-server-pro/installscript/Linux/images/input_domain.png)
+![](/docs/en/self-host/rustdesk-server-pro/installscript/Linux/images/certbot.png)
+{{% notice note %}}
+Related FAQ: https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#install-certbot, https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#please-check-that-port-80443-are-correctly-port-forwarded
+{{% /notice %}}
+- If the installation is successful, the access address of the web console and the default username and password will be displayed.
+
 ### Upgrade
 
 Copy and paste the above command into your Linux terminal to upgrade your existing RustDesk Server Pro installation, this could also be saved locally and scheduled with cron.
