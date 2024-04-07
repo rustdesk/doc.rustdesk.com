@@ -289,6 +289,6 @@ Solution: add another domain name to dns and change `<YOUR_DOMAIN>` to it, eg: `
 Notice: Run `sudo service nginx restart` if you change the rustdesk.conf manually.
 
 
-7. Login to the web page
+#### 7. Login to the web page
 
 * Open https://<YOUR_DOMAIN> in the browser, log in using the default user name "admin" and password "test1234", then change the password to your own.
