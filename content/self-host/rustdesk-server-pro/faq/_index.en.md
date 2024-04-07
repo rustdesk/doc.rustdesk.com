@@ -162,7 +162,7 @@ https://github.com/rustdesk/rustdesk/discussions/6576
     - Your domain registrar's control panel (recommended)
     - DNS providers, https://en.wikipedia.org/wiki/List_of_managed_DNS_providers 
 
- For example, if you buy a domain name `rustdesk.example.com` from Namesilo and your server's IP address is 123.123.123.123, you need to open link https://www.namesilo.com/account_domains.php, click the button with tooltip `Manage dns for the domain`, add add a `A` record with the hostname name `rustdesk` and the IP address of your server.
+ For example, if you buy a domain name `example.com` from `Namesilo` and your server's IP address is `123.123.123.123`, you want to use `rustdesk.example.com` subdomain as your https web console address. You need to open link https://www.namesilo.com/account_domains.php, click the button with tooltip `Manage dns for the domain`, add add a `A` record with the hostname name `rustdesk` and the IP address of your server.
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-button.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-add-a-record.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-table.png)
