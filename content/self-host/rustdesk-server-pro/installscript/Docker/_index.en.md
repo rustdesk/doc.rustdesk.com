@@ -62,3 +62,8 @@ services:
 The run `docker compose up -d`.
 
 > If you have problem with seLinux on Fedora, please check this [issue](https://github.com/rustdesk/rustdesk-server/issues/230).
+
+{{% notice note %}}
+How to set up https for your web console.
+https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually
+{{% /notice %}}
