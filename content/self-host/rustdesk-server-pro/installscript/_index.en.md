@@ -27,7 +27,7 @@ What it does:
 
 {{% notice note %}}
 If you want to set up https for web console manually, please check this
-https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#setup-https-for-web-console-manually
+https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually
 {{% /notice %}}
 
 
