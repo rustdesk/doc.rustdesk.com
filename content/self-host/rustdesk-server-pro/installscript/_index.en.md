@@ -26,6 +26,7 @@ What it does:
 - If you choose Domain, it will install Nginx and Certbot, allowing the API to be available on port 443 (HTTPS) and get an SSL certificate over port 80, it is automatically renewed
 
 {{% notice note %}}
+If you want to set up https for web console manually, please check this
 https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#setup-rustdesk-server-pro-with-dnsdomain-manually,
 {{% /notice %}}
 
