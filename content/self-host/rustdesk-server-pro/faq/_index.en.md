@@ -156,7 +156,7 @@ https://github.com/rustdesk/rustdesk/discussions/6576
 
 ### Setup https for web console manually
 
-1. Buy a domain name and resolve it to your server's IP address. 
+#### 1. Buy a domain name and resolve it to your server's IP address. 
 * Buy a domain name from a domain registrar like GoDaddy, Namecheap, or Namesilo.
 * Resolve the domain name to your server's IP address with one of the following: 
     - Your domain registrar's control panel (recommended)
@@ -168,7 +168,7 @@ https://github.com/rustdesk/rustdesk/discussions/6576
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-table.png)
 * It takes some time for dns to take effect, go to https://www.whatsmydns.net and check whether the domain name has been resolved to your server's IP address, step 6 depends on the correct resolve result.
 
-2. Install nginx.
+#### 2. Install nginx.
 * Debian/Ubuntu: `sudo apt-get install nginx`
 * Fedora/CentOS: `sudo dnf install nginx` or `sudo yum install nginx`
 * Arch: `sudo pacman -S install nginx`
@@ -178,13 +178,13 @@ https://github.com/rustdesk/rustdesk/discussions/6576
 
 Run `nginx -h` to check whether it has been installed successfully.
 
-3. Install Certbot
+#### 3. Install Certbot
 * Method 1 (Recommended): Install with snap. If snap not instaled, install snap first via following https://snapcraft.io/docs/search?q=installing+snap+on, then run `sudo snap install certbot --classic`
 * Method 2: Using `python3-certbot-nginx` instead. eg: `sudo apt-get install python3-certbot-nginx` for ubuntu
 
 Run `certbot -h` to check successful installation.
 
-4. Config nginx
+#### 4. Config nginx
 
 There are two ways:
 * If directory `/etc/nginx/sites-available` and `/etc/nginx/sites-enabled` exists, replace `<YOUR_DOMAIN>` of the following command with your domain name and run it.
@@ -218,7 +218,7 @@ EOF
 
 After any of the above methods, run `cat /etc/nginx/conf.d/rustdesk.conf` to ensure the content of `rustdesk.conf` is correct.
 
-5. Enable firewall rules for the domain
+#### 5. Enable firewall rules for the domain
 
 Run the following commands:
 ```bash
@@ -228,7 +228,7 @@ sudo ufw --force enable
 sudo ufw --force reload
 ```
 
-6. Generate SSL certificate
+#### 6. Generate SSL certificate
 
 Replace `<YOUR_DOMAIN>` with your domain name, then run
 `sudo certbot --nginx --cert-name <YOUR_DOMAIN> --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d <YOUR_DOMAIN>`
