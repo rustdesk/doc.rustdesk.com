@@ -154,7 +154,7 @@ If your `hbbr` does not run on the same machine of `hbbs`, or you have multiple 
 https://github.com/rustdesk/rustdesk/discussions/6576
 
 
-### Setup https for web console manually
+### Set up https for web console manually
 
 #### 1. Buy a domain name and resolve it to your server's IP address. 
 * Buy a domain name from a domain registrar like GoDaddy, Namecheap, or Namesilo.
