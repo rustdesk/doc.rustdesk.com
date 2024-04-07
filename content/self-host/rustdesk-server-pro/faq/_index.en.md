@@ -166,7 +166,7 @@ https://github.com/rustdesk/rustdesk/discussions/6576
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-button.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-add-a-record.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-table.png)
-* It takes some time for dns to take effect, go to https://www.whatsmydns.net and check whether the domain name has been resolved to your server's IP address, step 6 depends on the correct resolve result.
+* It takes some time for dns to take effect, go to https://www.whatsmydns.net and check whether the domain name has been resolved to your server's IP address, step 6 depends on the correct resolve result. In the following steps, replace `<YOUR_DOMAIN>` with your subdomain, eg: `rustdesk.example.com`.
 
 #### 2. Install nginx.
 * Debian/Ubuntu: `sudo apt-get install nginx`
@@ -182,7 +182,7 @@ Run `nginx -h` to check whether it has been installed successfully.
 * Method 1 (Recommended): Install with snap. If snap not instaled, install snap first via following https://snapcraft.io/docs/search?q=installing+snap+on, then run `sudo snap install certbot --classic`
 * Method 2: Using `python3-certbot-nginx` instead. eg: `sudo apt-get install python3-certbot-nginx` for ubuntu
 
-Run `certbot -h` to check successful installation.
+Run `certbot -h` to check whether it has been installed successfully..
 
 #### 4. Config nginx
 
@@ -289,3 +289,6 @@ Solution: add another domain name to dns and change `<YOUR_DOMAIN>` to it, eg: `
 Notice: Run `sudo service nginx restart` if you change the rustdesk.conf manually.
 
 
+#### 7. Login to the web page
+
+* Open https://<YOUR_DOMAIN> in the browser, log in using the default user name "admin" and password "test1234", then change the password to your own.
