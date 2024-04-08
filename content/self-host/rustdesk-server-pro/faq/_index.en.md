@@ -223,12 +223,11 @@ Run `cat /etc/nginx/conf.d/rustdesk.conf` to make sure its content is correct.
 #### 5. Enable firewall rules for the domain
 
 Run the following commands:
-```bash
-sudo ufw allow 80/tcp
-sudo ufw allow 443/tcp
-sudo ufw --force enable
-sudo ufw --force reload
-```
+
+`sudo ufw allow 80/tcp`  
+`sudo ufw allow 443/tcp`  
+`sudo ufw --force enable`  
+`sudo ufw --force reload`  
 
 #### 6. Generate SSL certificate
 
@@ -302,23 +301,21 @@ Notice: Run `sudo service nginx restart` if you change the rustdesk.conf manuall
 ### Selinux
 
 If `Waiting for RustDesk Relay service to become active...` appears when install, it may be caused by selinux. You can try the following commands:
-```
-sudo semanage fcontext -a -t NetworkManager_dispatcher_exec_t 'hbbs'
-sudo semanage fcontext -a -t NetworkManager_dispatcher_exec_t 'hbbr'
-restorecon -v '/usr/bin/hbbs'
-restorecon -v '/usr/bin/hbbr'
-```
+`sudo semanage fcontext -a -t NetworkManager_dispatcher_exec_t 'hbbs'`  
+`sudo semanage fcontext -a -t NetworkManager_dispatcher_exec_t 'hbbr'`  
+`sudo restorecon -v '/usr/bin/hbbs'`  
+`sudo restorecon -v '/usr/bin/hbbr'`  
 
 ### Firewall
 
-Rustdesk set fireware with `uwf`, it may not work on some distros like CentOS 9, you can try with `firewall-cmd`.
+Rustdesk set firewall with `ufw`, it may not work on some distros like CentOS 9, you can try with `firewall-cmd`.
 
-`sudo firewall-cmd --permanent --add-port=21115/tcp`
-`sudo firewall-cmd --permanent --add-port=21116/tcp`
-`sudo firewall-cmd --permanent --add-port=21117/tcp`
-`sudo firewall-cmd --permanent --add-port=21118/tcp`
-`sudo firewall-cmd --permanent --add-port=21119/tcp`
-`sudo firewall-cmd --permanent --add-port=21116/udp`
+`sudo firewall-cmd --permanent --add-port=21115/tcp`  
+`sudo firewall-cmd --permanent --add-port=21116/tcp`  
+`sudo firewall-cmd --permanent --add-port=21117/tcp`  
+`sudo firewall-cmd --permanent --add-port=21118/tcp`  
+`sudo firewall-cmd --permanent --add-port=21119/tcp`  
+`sudo firewall-cmd --permanent --add-port=21116/udp`  
 
 If you use IP:
 
@@ -326,7 +323,7 @@ If you use IP:
 
 If you use DNS/Domain:
 
-`sudo firewall-cmd --permanent --add-port=80/tcp`
-`sudo firewall-cmd --permanent --add-port=443/tcp`
+`sudo firewall-cmd --permanent --add-port=80/tcp`  
+`sudo firewall-cmd --permanent --add-port=443/tcp`  
 
 After above, run `sudo firewall-cmd --reload` to reload firewall.
