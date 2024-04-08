@@ -31,7 +31,7 @@ https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for
 {{% /notice %}}
 
 {{% notice note %}}
-If you are using selinux, please check this
+If the systemd service fails to start, it is probably related to SELinux, please check this
 https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#selinux
 {{% /notice %}}
 
