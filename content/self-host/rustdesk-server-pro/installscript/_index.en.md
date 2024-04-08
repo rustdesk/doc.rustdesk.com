@@ -30,6 +30,15 @@ If you want to set up https for web console manually, please check this
 https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually
 {{% /notice %}}
 
+{{% notice note %}}
+If you are using selinux, please check this
+https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#selinux
+{{% /notice %}}
+
+{{% notice note %}}
+If your client cannot connect to your server or you cannot access the web console, please check this
+https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#firewall
+{{% /notice %}}
 
 ### Upgrade
 
