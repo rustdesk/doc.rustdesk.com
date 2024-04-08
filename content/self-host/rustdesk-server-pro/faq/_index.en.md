@@ -179,8 +179,9 @@ https://github.com/rustdesk/rustdesk/discussions/6576
 Run `nginx -h` to check whether it has been installed successfully.
 
 #### 3. Install Certbot
-* Method 1 (Recommended): Install with snap. If snap not instaled, install snap first via following https://snapcraft.io/docs/search?q=installing+snap+on, then run `sudo snap install certbot --classic`
+* Method 1: If snap is installed, run `sudo snap install certbot --classic`
 * Method 2: Using `python3-certbot-nginx` instead. eg: `sudo apt-get install python3-certbot-nginx` for ubuntu
+* Method 3: If the above two methods failed, try install `certbot-nginx`, eg: `sudo yum install certbot-nginx` for centos 7
 
 Run `certbot -h` to check whether it has been installed successfully..
 
@@ -287,9 +288,45 @@ location / {
 
 Solution: add another domain name to dns and change `<YOUR_DOMAIN>` to it, eg: `rustdesk2.example.com`, then repeat step 1, 4, 6.
 
+* `Error getting validation data`
+
+Solution: it may be caused by firewall, please refer to https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#firewall
+
 Notice: Run `sudo service nginx restart` if you change the rustdesk.conf manually.
 
 
 #### 7. Login to the web page
 
 * Open https://<YOUR_DOMAIN> in the browser, log in using the default user name "admin" and password "test1234", then change the password to your own.
+
+### Selinux
+
+If `Waiting for RustDesk Relay service to become active...` appears when install, it may be caused by selinux. You can try the following commands:
+```
+sudo semanage fcontext -a -t NetworkManager_dispatcher_exec_t 'hbbs'
+sudo semanage fcontext -a -t NetworkManager_dispatcher_exec_t 'hbbr'
+restorecon -v '/usr/bin/hbbs'
+restorecon -v '/usr/bin/hbbr'
+```
+
+### Firewall
+
+Rustdesk set fireware with `uwf`, it may not work on some distros like CentOS 9, you can try with `firewall-cmd`.
+
+`sudo firewall-cmd --permanent --add-port=21115/tcp`
+`sudo firewall-cmd --permanent --add-port=21116/tcp`
+`sudo firewall-cmd --permanent --add-port=21117/tcp`
+`sudo firewall-cmd --permanent --add-port=21118/tcp`
+`sudo firewall-cmd --permanent --add-port=21119/tcp`
+`sudo firewall-cmd --permanent --add-port=21116/udp`
+
+If you use IP:
+
+`sudo firewall-cmd --permanent --add-port=21114/tcp`
+
+If you use DNS/Domain:
+
+`sudo firewall-cmd --permanent --add-port=80/tcp`
+`sudo firewall-cmd --permanent --add-port=443/tcp`
+
+After above, run `sudo firewall-cmd --reload` to reload firewall.
