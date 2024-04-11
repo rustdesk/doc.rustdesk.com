@@ -83,7 +83,7 @@ The User is the RustDesk User logged in on the device or assigned to the device 
 
 This can also be done via the API at command line on deployment or later by calling the RustDesk executable followed by `--assign --token <generatedtoken> --user_name <username>`. You need to go to `Settings → Tokens → Create` and create a token with Device permissions first to do this. An example of this on windows would be `"C:\Program Files\RustDesk\rustdesk.exe" --assign --token <generatedtoken> --user_name <newuser>`.
 
-You can also assign strategy in this way, e.g. `--assign --token <generatedtoken> --strategy_name_name <strategy_name name>`.
+You can also assign strategy in this way, e.g. `--assign --token <generatedtoken> --strategy_name <strategy name>`.
 
 The command line on Windows does not have output by default, to get output, please run like this, `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | more`, or `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | Out-String`, https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomment-8094952.
 
