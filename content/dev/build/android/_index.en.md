@@ -63,7 +63,7 @@ You also might be required to install some prerequisites if you are doing this f
 ```
 sudo apt install ca-certificates -y
 sudo apt update -y
-sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang cmake libclang-dev ninja-build llvm-dev libclang-10-dev llvm-10-dev pkg-config
+sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang cmake libclang-dev ninja-build llvm-dev libclang-10-dev llvm-10-dev pkg-config rustfmt
 ```
 #### Installing Flutter Rust Bridge dependencies
 At this step you'll install additional dependencies required by [Flutter Rust Bridge](https://cjycode.com/flutter_rust_bridge/index.html) also you'll download Flutter dependencies from `pubspec.yaml` file.
