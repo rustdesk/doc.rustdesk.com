@@ -50,7 +50,7 @@ Modificar la linea mostrada abajo por `WaylandEnable=false` en `/etc/gdm/custom.
 Por favor **reinicia** para que los cambios tomen efecto en el sistema.
 {{% /notice %}}
 
-#### Problemas de permisos
+### Problemas de permisos
 
 Si el proceso  RustDesk --server no esta corriendo, es decir, no hay salida al ejecutar `ps -ef | grep -E 'rustdesk +--server'`.
 Entonces probablemente hay un problema de permisos.

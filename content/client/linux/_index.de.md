@@ -53,7 +53,7 @@ Der Anmeldebildschirm mit Wayland wird noch nicht unterstützt. Wenn Sie nach de
 Bitte **neu starten**, damit die oben genannten Änderungen wirksam werden.
 {{% /notice %}}
 
-#### Berechtigungsproblem
+### Berechtigungsproblem
 
 Wenn SELinux aktiviert ist, funktioniert RustDesk weder in X11- noch in Wayland-Umgebungen ordnungsgemäß, siehe zugehörige [Probleme](https://github.com/search?q=repo%3Arustdesk%2Frustdesk+SElinux&type=issues).
 

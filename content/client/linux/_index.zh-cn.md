@@ -55,7 +55,7 @@ RustDesk 现在有实验性的 Wayland 支持，您可能需要下载 [nightly v
 {{% /notice %}}
 
 
-#### 权限问题
+### 权限问题
 
 如果启用了 SELinux ，那么无论是 X11 环境 还是 Wayland 环境， RustDesk 都无法正常工作。
 
