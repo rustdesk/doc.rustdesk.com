@@ -30,6 +30,23 @@ sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
+#### AppImage
+Below is for Fedora user, on Ubuntu, you may do not need to install fuse (for libfuse2) and libnsl (for libnsl.so.1).
+
+```sh
+sudo yum install fuse
+sudo yum install libnsl
+./rustdesk-<version>.AppImage
+```
+
+#### Flatpak
+
+```sh
+flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak --user install ./rustdesk-<version>.flatpak
+flatpak run com.rustdesk.RustDesk
+```
+
 ### ~~X11 Required~~
 ~~RustDesk does not support Wayland yet; you need switch to X11 manually.~~
 
