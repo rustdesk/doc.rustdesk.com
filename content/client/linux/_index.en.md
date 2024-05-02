@@ -31,11 +31,16 @@ sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
 #### AppImage
-Below is for Fedora user, on Ubuntu, you may do not need to install fuse (for libfuse2) and libnsl (for libnsl.so.1).
 
 ```sh
-sudo yum install fuse
+# For Fedora
 sudo yum install libnsl
+./rustdesk-<version>.AppImage
+```
+
+```sh
+# For Ubuntu
+sudo yum install libfuse2
 ./rustdesk-<version>.AppImage
 ```
 
