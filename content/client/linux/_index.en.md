@@ -5,14 +5,21 @@ weight: 4
 
 ### Installation
 
-#### Ubuntu (≥ 16)
+#### Ubuntu (≥ 18)
 
 ```sh
 # please ignore the wrong disk usage report
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
-#### CentOS/Fedora (≥ 18)
+For Ubuntu 18.04, please do below first for pipewire, https://github.com/rustdesk/rustdesk/discussions/6148#discussioncomment-9295883.
+```sh
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:pipewire-debian/pipewire-upstream
+sudo apt update
+```
+
+#### CentOS/Fedora (≥ 28)
 
 ```sh
 sudo yum localinstall ./rustdesk-<version>.rpm
