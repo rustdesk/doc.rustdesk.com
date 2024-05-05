@@ -21,7 +21,7 @@ ufw allow proto tcp from YOURIP to any port 22
 
 If you have UFW installed use the following commands to configure the firewall (port 8000 only needed if you want to use the auto generated install files):
 ```
-ufw allow 21115:21119/tcp
+ufw allow 21114:21119/tcp
 ufw allow 8000/tcp
 ufw allow 21116/udp
 sudo ufw enable
