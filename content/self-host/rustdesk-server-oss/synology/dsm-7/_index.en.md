@@ -61,10 +61,12 @@ services:
 
 # Because using docker host mode
 # Just in case you forgot the ports:
-# 21115 TCP For NAT type test
+# 21114 TCP for web console, only available in Pro version
+# 21115 TCP for NAT type test
 # 21116 TCP TCP hole punching
-# 21116 UDP Heartbeat/ID server
-# 21117 TCP Relay
+# 21116 UDP heartbeat/ID server
+# 21117 TCP relay
+# 21118/21119 TCP for web socket if you want to run web client
 ```
 
 Please skip `Web portal settings` then done.
@@ -103,7 +105,10 @@ Go to your router's admin webpage, find anything related to `Port forwarding`, i
 If you still can't find the setting, Google search `{Router brand} + port forwarding` or `{Router model} + port forwarding`. If this device is from your ISP, ask them.
 
 Open these required ports:
+  * `21114` TCP for web console, only available in Pro version
   * `21115` `TCP` For NAT type test
   * `21116` `TCP` TCP hole punching
   * `21116` `UDP` Heartbeat/ID server
   * `21117` `TCP` Relay
+  * `21118/21119` TCP for web socket if you want to run web client
+
