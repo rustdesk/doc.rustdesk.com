@@ -57,6 +57,10 @@ Copy and paste the above command into your Linux terminal to convert from RustDe
 
 `bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/convertfromos.sh)`
 
+{{% notice note %}}
+Please add `21114` TCP port to your firewal, this is additional port for web console and user login in RustDesk client.
+{{% /notice %}}
+
 What it does:
 
 - Disable and removes the old services
