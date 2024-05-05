@@ -17,10 +17,10 @@ Support is available via our [Discord](https://discord.com/invite/nDceKgxnkV) fo
 Ports required for RustDesk Server self-hosting depends largely on your environment and what you want to do with RustDesk. The Examples shown throughout the docs will generally have all ports suggested to be opened.
 
 Core Ports: \
-TCP `21115-21117` \
+TCP `21114-21119` \
 UDP `21116`
 
-The above are the minimum required ports for RustDesk to work, these handle the signal and relay ports as well as NAT traversal.
+The above 21115-21117 are the minimum required ports for RustDesk to work, these handle the signal and relay ports as well as NAT traversal.
 
 Additionally TCP ports `21118` and `21119` can be opened if you want to use the [RustDesk Web Client](https://rustdesk.com/docs/en/dev/build/web/).
 
