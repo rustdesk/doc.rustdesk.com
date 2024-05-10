@@ -77,7 +77,7 @@ Der öffentliche Schlüssel sieht wie folgt aus:
 
 ![](images/dsm7_viewing_public_key_though_syno_text_editor.png)
 
-Lesen Sie [hier](/docs/de/self-host/rustdesk-server-oss/install/#schritt-3-hbbshbbr-adresse-auf-der-client-seite-einstellen), um Ihren Client einzurichten. Nur `ID-Server` und `Key` werden benötigt. `Relais-Server` wird nicht benötigt, da wir ihn in `hbbs` festgelegt haben. Diese Informationen werden von hbbs automatisch bereitgestellt.
+Lesen Sie [hier](/docs/de/client), um Ihren Client einzurichten. Nur `ID-Server` und `Key` werden benötigt. `Relais-Server` wird nicht benötigt, da wir ihn in `hbbs` festgelegt haben. Diese Informationen werden von hbbs automatisch bereitgestellt.
 
 ### 5. Legen Sie Ihre hbbs so fest, dass sie auf Ihre Domäne zeigen
 
