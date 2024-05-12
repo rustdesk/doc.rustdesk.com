@@ -308,6 +308,17 @@ If `Waiting for RustDesk Relay service to become active...` appears when install
 
 ### Firewall
 
+#### Firewall of cloud.
+If you run on AWS/Azure/Google/DigitalOcean cloud, please open UDP(21116) + TCP(21114-21119) inbound port on cloud vendor's dashboard.
+
+AWS: https://docs.aws.amazon.com/network-firewall/latest/developerguide/getting-started.html
+Azure: https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+Google: https://cloud.google.com/firewall/docs/firewalls
+DigitalOcean: https://docs.digitalocean.com/products/networking/firewalls/
+
+
+### Firewall of on-premise server
+
 Rustdesk set firewall with `ufw`, it may not work on some distros like CentOS 9, you can try with `firewall-cmd`.
 
 `sudo firewall-cmd --permanent --add-port=21115/tcp`  
