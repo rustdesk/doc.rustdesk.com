@@ -75,7 +75,7 @@ services:
 
 ![](images/dsm7_viewing_public_key_though_syno_text_editor.png)
 
-看看[這裡](/docs/zh-tw/self-host/rustdesk-server-oss/install/#step-3-set-hbbshbbr-address-on-client-side)來設置您的客戶端，只有 `ID 伺服器` 以及 `Key` 是需要的，中繼伺服器不需設定，因為我們已經把它設置在 `hbbs` 了，hbbs 會自動提供這項資訊。
+看看[這裡](/docs/zh-tw/client)來設置您的客戶端，只有 `ID 伺服器` 以及 `Key` 是需要的，中繼伺服器不需設定，因為我們已經把它設置在 `hbbs` 了，hbbs 會自動提供這項資訊。
 
 ## 5. 設置 hbbs 讓它指向至您的網域
 

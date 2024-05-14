@@ -79,7 +79,7 @@ The public key will looks like this:
 
 ![](images/dsm7_viewing_public_key_though_syno_text_editor.png)
 
-Check [here](/docs/en/self-host/rustdesk-server-oss/install/#step-3-set-hbbshbbr-address-on-client-side) to set up your client. Only `ID server` and `Key` is needed. `Relay server` isn't needed because we've set it in `hbbs`, hbbs will provide this information automatically.
+Check [here](/docs/en/client) to set up your client. Only `ID server` and `Key` is needed. `Relay server` isn't needed because we've set it in `hbbs`, hbbs will provide this information automatically.
 
 ### 5. Set your hbbs to point to your domain
 
