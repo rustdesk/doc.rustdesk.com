@@ -17,6 +17,7 @@ You can have your own name, logo, icon, configuration, be signed and more.
 ![](images/custom-client-qs.png)
 ![](images/web_console_custom_client_config.jpeg)
 
+
 ### 2. Manual Config
 
 In the main RustDesk Client home click on the Menu button [ &#8942; ] next to your ID then click on Network, you can now unlock the settings using elevated privileges and set your ID, Relay, API and Keys.
@@ -108,3 +109,5 @@ By adding `--` at the end right after our config string, even if something is ad
 `rustdesk.exe --config <config-string>`
 
 You can get the config string from web console (you can see it on above picture) or from RustDesk client "Settings → Network" ([here](https://github.com/rustdesk/rustdesk/discussions/7118) is a discussion about this).
+
+### 8. [Advanced Settings](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/)
