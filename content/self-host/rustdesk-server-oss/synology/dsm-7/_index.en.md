@@ -83,7 +83,7 @@ Check [here](/docs/en/self-host/rustdesk-server-oss/install/#step-3-set-hbbshbbr
 
 ### 5. Set your hbbs to point to your domain
 
-If you have set your `hbbs` command to point to your LAN IP, and verified it is working, it is time to change to the domain, because it will not working if you using it outside your LAN.
+If you require access from outside your LAN, setting your `hbbs` command to reference your LAN IP to check everything is working, you should now update the LAN IP to your chosen domain.
 <hr>
 
 5.1. Go to Container Manager → Project → Click "rustdesk-server" → Action → Stop
