@@ -33,7 +33,6 @@ With Docker Compose you HAVE to use `network_mode: "host"` to ensure licensing w
 Copy the below into `docker-compose.yml`.
 
 ```yaml
-version: '3'
 
 services:
   hbbs:

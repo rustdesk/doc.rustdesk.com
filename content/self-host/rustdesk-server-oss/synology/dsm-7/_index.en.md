@@ -37,7 +37,6 @@ You could modify the line with `hbbs` to your NAS's LAN IP temporarily just like
 ![](images/dsm7_creating_project_init.png)
 
 ```yaml
-version: '3'
 services:
   hbbs:
     container_name: hbbs

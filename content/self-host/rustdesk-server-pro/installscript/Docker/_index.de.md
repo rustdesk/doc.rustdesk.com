@@ -33,7 +33,6 @@ Mit Docker Compose MÜSSEN Sie `network_mode: "host"` verwenden, um sicherzustel
 Kopieren Sie den folgenden Text in die Datei `docker-compose.yml`.
 
 ```yaml
-version: '3'
 
 services:
   hbbs:

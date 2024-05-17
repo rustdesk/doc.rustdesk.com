@@ -58,7 +58,6 @@ Als `--net=host` goed werkt, worden de `-p` opties niet gebruikt. Indien op Wind
 ### Docker-Compose voorbeelden
 Voor het uitvoeren van de dockerbestanden met de docker-compose.yml zoals hier beschreven heb je [**docker-compose**](https://docs.docker.com/compose/) nodig en werkende.
 ```yaml
-version: '3'
 
 networks:
   rustdesk-net:

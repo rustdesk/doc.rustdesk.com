@@ -35,7 +35,6 @@ Container Manager 為部分低階的 ARM64 的機型帶來支援，例如 j 系�
 ![](images/dsm7_creating_project_init.png)
 
 ````yaml
-version: '3'
 services:
   hbbs:
     container_name: hbbs

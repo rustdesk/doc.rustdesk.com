@@ -61,7 +61,6 @@ Si `--net=host` fonctionne , l'option `-p` ne sera pas utile. Pour windows, omet
 Pour exécuter les fichiers docker avec docker-compose.yml comme ci-dessous, vous devez avoir [**docker-compose**] (https://docs.docker.com/compose/) d'installé.
 
 ```yaml
-version: '3'
 
 networks:
   rustdesk-net:

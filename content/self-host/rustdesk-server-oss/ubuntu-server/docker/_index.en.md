@@ -177,7 +177,6 @@ You could modify the line with `hbbs` to your server's LAN IP  temporarily (If y
 Having problem after you changed LAN IP to domain? You should check [this article](/docs/en/self-host/nat-loopback-issues/).
 {{% /notice %}}
 ```yml
-version: '3'
 services:
   hbbs:
     container_name: hbbs
