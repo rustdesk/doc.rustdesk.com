@@ -34,7 +34,7 @@ If you can not see logs with `-td`, you can see logs via `docker logs hbbs`. Or 
 {{% /notice %}}
 
 #### Docker Compose examples
-For running the Docker files with the `docker-compose.yml` as described here you need to have [Docker Compose](https://docs.docker.com/compose/) installed.
+For running the Docker files with the `compose.yml` as described here you need to have [Docker Compose](https://docs.docker.com/compose/) installed.
 ```yaml
 
 services:

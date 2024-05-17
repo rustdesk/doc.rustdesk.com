@@ -30,7 +30,7 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v ./data:/root -td --
 
 With Docker Compose you HAVE to use `network_mode: "host"` to ensure licensing works. Install Docker using this [guide](https://docs.docker.com/engine/install) to ensure its the most up to date!
 
-Copy the below into `docker-compose.yml`.
+Copy the below into `compose.yml`.
 
 ```yaml
 

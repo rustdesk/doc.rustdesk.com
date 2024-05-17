@@ -58,7 +58,7 @@ Si `--net=host` fonctionne , l'option `-p` ne sera pas utile. Pour windows, omet
 {{% /notice %}}
 
 ### Exemples avec Docker-Compose
-Pour exécuter les fichiers docker avec docker-compose.yml comme ci-dessous, vous devez avoir [**docker-compose**] (https://docs.docker.com/compose/) d'installé.
+Pour exécuter les fichiers docker avec compose.yml comme ci-dessous, vous devez avoir [**docker-compose**] (https://docs.docker.com/compose/) d'installé.
 
 ```yaml
 

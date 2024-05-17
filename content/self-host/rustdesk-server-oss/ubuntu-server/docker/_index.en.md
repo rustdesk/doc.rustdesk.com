@@ -162,11 +162,11 @@ sudo rm /swap.img
 cd ~ && mkdir -p docker/rustdesk-server/data
 ```
 
-2. Create `docker-compose.yml`
+2. Create `compose.yml`
 
-Right click `rustdesk-server` folder, create new file named `docker-compose.yml`
+Right click `rustdesk-server` folder, create new file named `compose.yml`
 
-Paste this to `docker-compose.yml`.
+Paste this to `compose.yml`.
 
  After you copied, you should replace `rustdesk.example.com` (Which point to your hbbr) to the domain that will point to your server.
 
@@ -238,7 +238,7 @@ Open these required ports:
   * `21118/21119` TCP for web socket if you want to run web client
 
 ## 6. Some basics
-1. How to apply the settings after you modified `docker-compose.yml`?
+1. How to apply the settings after you modified `compose.yml`?
 
 Run this again:
 ```
@@ -264,7 +264,7 @@ Drag and drop them to VSCode Explorer if you want to upload it.
 Use [Watchtower](https://containrrr.dev/watchtower/).
 
 
-Create folder and put the `docker-compose.yml` in it.
+Create folder and put the `compose.yml` in it.
 
 ```
 mkdir ~/docker/watchtower
