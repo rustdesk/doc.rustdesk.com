@@ -71,7 +71,6 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --n
 ##### Docker Compose
 
 ```yaml
-version: '3'
 
 networks:
   rustdesk-net:

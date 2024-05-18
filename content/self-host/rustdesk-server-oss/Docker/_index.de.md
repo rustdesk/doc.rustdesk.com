@@ -34,10 +34,8 @@ Sie können die Protokolle mit `docker logs hbbs` ansehen, wenn sie mit `-td` ni
 {{% /notice %}}
 
 #### Docker Compose-Beispiele
-Um die Dockerdateien mit `docker-compose.yml` wie hier beschrieben ausführen zu können, müssen Sie [Docker Compose](https://docs.docker.com/compose/) installiert haben.
+Um die Dockerdateien mit `compose.yml` wie hier beschrieben ausführen zu können, müssen Sie [Docker Compose](https://docs.docker.com/compose/) installiert haben.
 ```yaml
-version: '3'
-
 services:
   hbbs:
     container_name: hbbs

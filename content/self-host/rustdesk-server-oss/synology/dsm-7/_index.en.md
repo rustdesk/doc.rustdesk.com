@@ -28,7 +28,7 @@ Open your File Station, create a folder named `rustdesk-server`(or whatever you 
 
 Open your Container Manager, go to Project and click Create.
 
-Enter the project name `rustdesk-server` and change Source from "Upload docker-compose.yml" to "Create docker-compose.yml", and copy following contents to the box. After you copied, you should replace `rustdesk.example.com` (Which point to your `hbbr`) to the domain that will point to your NAS.
+Enter the project name `rustdesk-server` and change Source from "Upload compose.yml" to "Create compose.yml", and copy following contents to the box. After you copied, you should replace `rustdesk.example.com` (Which point to your `hbbr`) to the domain that will point to your NAS.
 
 {{% notice note %}}
 You could modify the line with `hbbs` to your NAS's LAN IP temporarily just like the picture. After you verify your server is working, you **should** change back.
@@ -37,7 +37,6 @@ You could modify the line with `hbbs` to your NAS's LAN IP temporarily just like
 ![](images/dsm7_creating_project_init.png)
 
 ```yaml
-version: '3'
 services:
   hbbs:
     container_name: hbbs
