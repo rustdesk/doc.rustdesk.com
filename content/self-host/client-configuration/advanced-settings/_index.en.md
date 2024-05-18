@@ -152,6 +152,21 @@ The "disable-audio" option in each peer's settings will then control whether to 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `disable-audio=Y` |
 
+#### enable-file-copy-paste
+
+This option will set the "enable-file-copy-paste" option for every peer after the first connection.
+
+The "enable-file-copy-paste" option in each peer's settings will then control enable file copy and paste in connection.
+
+**Location**:
+
+1. **Desktop** Settings -> Display -> Other default options -> Enable file copy and paste (Windows only) 
+1. **Mobile**
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | Y,N | N | `enable-file-copy-paste=Y` |
+
 #### disable-clipboard
 
 This option will set the "disable-clipboard" option for every peer after the first connection.

@@ -152,6 +152,21 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `disable-audio=Y` |
 
+#### enable-file-copy-paste
+
+这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "enable-file-copy-paste"。
+
+被控端设置中的 "enable-file-copy-paste" 控制连接中，是否可以复制粘贴文件。
+
+**位置**:
+
+1. **桌面端** 设置 -> 显示 -> 其他默认选项 -> 静音允许复制粘贴文件 (仅支持 Windows)
+1. **移动端**
+
+| 是否需要安装 | 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: | :------: |
+| N | Y,N | N | `enable-file-copy-paste=Y` |
+
 #### disable-clipboard
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "disable-clipboard"。
