@@ -5,13 +5,14 @@ weight: 49
 
 ### Privilege Levels for Settings
 
-There are three types of settings:
+There are four types of settings:
 
 1. Override settings, in "Web Console -> Custom Clients".
 1. Default settings, in "Web Console -> Custom Clients".
 1. User settings, in the RustDesk client.
+1. Stragegy settings, in "Web Console -> Strategies".
 
-The hierarchy of privilege for these settings is as follows: `Override > User > Default`.
+The hierarchy of privilege for these settings is as follows: `Override > Stragegy > User > Default`.
 
 ### Settings
 
@@ -241,6 +242,37 @@ Accept incoming connections via password or manually click.
 | :------: | :------: | :------: | :------: |
 | N | password,click,password-click | password-click | `approve-mode=password-click` |
 
+##### proxy-url
+
+The proxy url.
+
+Currently support `http` and `socks5`.
+
+**Location**:
+
+1. **Desktop** Settings -> Network -> Proxy -> Socks5/Http(s) proxy
+1. **Mobile**
+
+Examples:
+
+1. **http** `proxy-url=http://192.168.0.2:12345`
+1. **https** `proxy-url=https://192.168.0.2:12345`
+1. **socks5** `proxy-url=socks5://192.168.0.2:1080`
+
+##### proxy-username & proxy-password
+
+Proxy username and password.
+
+**Location**:
+
+1. **Desktop** Settings -> Network -> Proxy -> Socks5/Http(s) proxy
+1. **Mobile**
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | | | `proxy-username=user` |
+| N | | | `proxy-password=pass` |
+
 #### General
 
 ##### theme
@@ -370,19 +402,6 @@ Always use software rendering.
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `allow-always-software-render=N` |
-
-##### enable-check-update
-
-Check for software update on startup.
-
-**Location**:
-
-1. **Desktop** Settings -> General -> Other -> Check for software update on startup
-1. **Mobile**
-
-| Install required | Values | Default | Example |
-| :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-check-update=N` |
 
 ##### allow-linux-headless
 

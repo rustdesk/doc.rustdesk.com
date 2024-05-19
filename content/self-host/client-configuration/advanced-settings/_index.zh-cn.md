@@ -241,6 +241,37 @@ IP 直接访问的端口。
 | :------: | :------: | :------: | :------: |
 | N | password,click,password-click | password-click | `approve-mode=password-click` |
 
+##### proxy-url
+
+代理的 url 。
+
+目前支持 `http` 和 `socks5` 。
+
+**位置**:
+
+1. **桌面端** 设置 -> 网络 -> 代理 -> Socks5/Http(s) 代理
+1. **移动端**
+
+示例:
+
+1. **http** `proxy-url=http://192.168.0.2:12345`
+1. **https** `proxy-url=https://192.168.0.2:12345`
+1. **socks5** `proxy-url=socks5://192.168.0.2:1080`
+
+##### proxy-username & proxy-password
+
+代理的 用户名 和 密码。
+
+**位置**:
+
+1. **桌面端** 设置 -> 网络 -> 代理 -> Socks5/Http(s) 代理
+1. **移动端**
+
+| 是否需要安装 | 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: | :------: |
+| N | | | `proxy-username=user` |
+| N | | | `proxy-password=pass` |
+
 #### 常规
 
 ##### theme
@@ -370,19 +401,6 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `allow-always-software-render=N` |
-
-##### enable-check-update
-
-启动时检查软件更新.
-
-**Location**:
-
-1. **Desktop** 设置 -> 常规 -> 其他 -> 启动时检查软件更新
-1. **Mobile**
-
-| 是否需要安装 | 可设值 | 默认值 | 示例 |
-| :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-check-update=N` |
 
 ##### allow-linux-headless
 
