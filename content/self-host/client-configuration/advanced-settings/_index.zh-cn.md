@@ -208,7 +208,7 @@ IP 直接访问的端口。
 1. **桌面端** 设置 -> 安全 -> 安全 -> 自动关闭不活跃的会话
 1. **移动端** 设置 -> 共享屏幕 -> 自动关闭不活跃的会话
 
-| Option | 是否需要安装 | 可设值 | 默认值 | 示例 |
+| 设置项 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: | :------: |
 | allow-auto-disconnect | N | Y, N | N | `allow-auto-disconnect=Y` |
 | auto-disconnect-timeout | N | Timeout in minutes | 10 | `auto-disconnect-timeout=10` |
@@ -265,10 +265,10 @@ IP 直接访问的端口。
 1. **桌面端** 设置 -> 网络 -> 代理 -> Socks5/Http(s) 代理
 1. **移动端**
 
-| 是否需要安装 | 可设值 | 默认值 | 示例 |
-| :------: | :------: | :------: | :------: |
-| N | | | `proxy-username=user` |
-| N | | | `proxy-password=pass` |
+| 设置项 | 是否需要安装 | 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: | :------: | :------: |
+| proxy-username | N | | | `proxy-username=user` |
+| proxy-password | N | | | `proxy-password=pass` |
 
 ## 常规设置
 
@@ -441,8 +441,8 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | 0, 1, 2 | 0 | `peer-card-ui-type=0` |
 
-**0** "大磁贴"
-**1** "小磁贴"
+**0** "大磁贴"  
+**1** "小磁贴"  
 **2** "列表"
 
 ### peer-sorting
