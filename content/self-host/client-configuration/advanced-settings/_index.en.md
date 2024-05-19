@@ -198,7 +198,7 @@ Use IP Whitelisting.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | `,` or `<ip1>`, `<ip2>`, `<ip3>` | `,` means no filter | `whitelist=,` |
+| N | `,` or `<ip1>,<ip2>,<ip3>` | `,` means no filter | `whitelist=,` |
 
 ### allow-auto-disconnect & auto-disconnect-timeout
 
