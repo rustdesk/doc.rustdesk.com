@@ -266,10 +266,10 @@ Proxy username and password.
 1. **Desktop** Settings -> Network -> Proxy -> Socks5/Http(s) proxy
 1. **Mobile**
 
-| Install required | Values | Default | Example |
-| :------: | :------: | :------: | :------: |
-| N | | | `proxy-username=user` |
-| N | | | `proxy-password=pass` |
+| Option | Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: | :------: |
+| proxy-username | N | | | `proxy-username=user` |
+| proxy-password | N | | | `proxy-password=pass` |
 
 ## General Settings
 
@@ -442,8 +442,8 @@ Controls the view of peer cards, includes "Big tiles", "Small tiles" and "List".
 | :------: | :------: | :------: | :------: |
 | N | 0, 1, 2 | 0 | `peer-card-ui-type=0` |
 
-**0** Big tiles
-**1** Small tiles
+**0** Big tiles  
+**1** Small tiles  
 **2** List
 
 ### peer-sorting
