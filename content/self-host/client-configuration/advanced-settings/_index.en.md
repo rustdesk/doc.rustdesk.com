@@ -14,11 +14,9 @@ There are four types of settings:
 
 The hierarchy of privilege for these settings is as follows: `Override > Stragegy > User > Default`.
 
-### Settings
+### Security Settings
 
-#### Security
-
-##### access-mode
+#### access-mode
 
 Set the access mode (permissions) for incoming connections.
 
@@ -31,7 +29,7 @@ Set the access mode (permissions) for incoming connections.
 | :------: | :------: | :------: | :------: |
 | N | custom,full,view | custom | `access-mode=custom` |
 
-##### enable-keyboard
+#### enable-keyboard
 
 Enable keyboard/mouse input for incoming connections.
 
@@ -44,7 +42,7 @@ Enable keyboard/mouse input for incoming connections.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-keyboard=Y` |
 
-##### enable-clipboard
+#### enable-clipboard
 
 Enable copy and paste for the incomign connections.
 
@@ -57,7 +55,7 @@ Enable copy and paste for the incomign connections.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-clipboard=Y` |
 
-##### enable-file-transfer
+#### enable-file-transfer
 
 Enable file copy and paster or filte transfer(session) for incoming connections.
 
@@ -70,7 +68,7 @@ Enable file copy and paster or filte transfer(session) for incoming connections.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-file-transfer=Y` |
 
-##### enable-audio
+#### enable-audio
 
 Enable audio record and transfer to peer.
 
@@ -83,7 +81,7 @@ Enable audio record and transfer to peer.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-audio=Y` |
 
-##### enable-tunnel
+#### enable-tunnel
 
 Enable TCP tunneling.
 
@@ -96,7 +94,7 @@ Enable TCP tunneling.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-tunnel=Y` |
 
-##### enable-remote-restart
+#### enable-remote-restart
 
 Enable restarting by the control side.
 
@@ -109,7 +107,7 @@ Enable restarting by the control side.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-remote-restart=Y` |
 
-##### enable-record-session
+#### enable-record-session
 
 Enable sessions to be recorded.
 
@@ -122,7 +120,7 @@ Enable sessions to be recorded.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-record-session=Y` |
 
-##### enable-block-input
+#### enable-block-input
 
 Enable the control side to block other users' input.
 
@@ -135,7 +133,7 @@ Enable the control side to block other users' input.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-block-input=Y` |
 
-##### allow-remote-config-modification
+#### allow-remote-config-modification
 
 Allow the control side to change the settings in conrolled RustDesk UI.
 
@@ -148,7 +146,7 @@ Allow the control side to change the settings in conrolled RustDesk UI.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `allow-remote-config-modification=Y` |
 
-##### enable-lan-discovery
+#### enable-lan-discovery
 
 Allows LAN peers to discover me.
 
@@ -163,7 +161,7 @@ After LAN discovery, [WOL](https://en.wikipedia.org/wiki/Wake-on-LAN) can work i
 | :------: | :------: | :------: | :------: |
 | Y | Y,N | Y | `enable-lan-discovery=Y` |
 
-##### direct-server
+#### direct-server
 
 Enable direct IP access.
 
@@ -176,7 +174,7 @@ Enable direct IP access.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `direct-server=Y` |
 
-##### direct-access-port
+#### direct-access-port
 
 Direct IP access port.
 
@@ -189,7 +187,7 @@ Direct IP access port.
 | :------: | :------: | :------: | :------: |
 | N |  | 21118 | `direct-access-port=21118` |
 
-##### whitelist
+#### whitelist
 
 Use IP Whitelisting.
 
@@ -202,7 +200,7 @@ Use IP Whitelisting.
 | :------: | :------: | :------: | :------: |
 | N | , or ip1,ip2,ip3 | , means no filter | `whitelist=,` |
 
-##### allow-auto-disconnect & auto-disconnect-timeout
+#### allow-auto-disconnect & auto-disconnect-timeout
 
 Automatically close incoming sessions after a period of user inactivity.
 
@@ -216,7 +214,7 @@ Automatically close incoming sessions after a period of user inactivity.
 | allow-auto-disconnect | N | Y,N | N | `allow-auto-disconnect=Y` |
 | auto-disconnect-timeout | N | Timeout in minutes | 10 | `auto-disconnect-timeout=10` |
 
-##### allow-only-conn-window-open
+#### allow-only-conn-window-open
 
 Only allow connection if RustDesk window is open.
 
@@ -229,7 +227,7 @@ Only allow connection if RustDesk window is open.
 | :------: | :------: | :------: | :------: |
 | Y | Y,N | N | `allow-only-conn-window-open=N` |
 
-##### approve-mode
+#### approve-mode
 
 Accept incoming connections via password or manually click.
 
@@ -242,7 +240,7 @@ Accept incoming connections via password or manually click.
 | :------: | :------: | :------: | :------: |
 | N | password,click,password-click | password-click | `approve-mode=password-click` |
 
-##### proxy-url
+#### proxy-url
 
 The proxy url.
 
@@ -259,7 +257,7 @@ Examples:
 1. **https** `proxy-url=https://192.168.0.2:12345`
 1. **socks5** `proxy-url=socks5://192.168.0.2:1080`
 
-##### proxy-username & proxy-password
+#### proxy-username & proxy-password
 
 Proxy username and password.
 
@@ -273,9 +271,9 @@ Proxy username and password.
 | N | | | `proxy-username=user` |
 | N | | | `proxy-password=pass` |
 
-#### General
+### General Settings
 
-##### theme
+#### theme
 
 Controls the UI theme of RustDesk client.
 
@@ -288,7 +286,7 @@ Controls the UI theme of RustDesk client.
 | :------: | :------: | :------: | :------: |
 | N | dark,light,system | system | `theme=system` |
 
-##### lang
+#### lang
 
 Controls the language of RustDesk client.
 
@@ -307,7 +305,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 You can check [LANGS](https://github.com/rustdesk/rustdesk/blob/master/src/lang.rs#L45) in the code for the latest language list.
 
-##### allow-auto-record-incoming
+#### allow-auto-record-incoming
 
 Automatically record incoming sessions.
 
@@ -320,7 +318,7 @@ Automatically record incoming sessions.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `allow-auto-record-incoming=N` |
 
-##### video-save-directory
+#### video-save-directory
 
 The directory to save recorded videos.
 
@@ -338,7 +336,7 @@ Default values:
 
 **Note**: Relace **app_name** means current app name.
 
-##### enable-confirm-closing-tabs
+#### enable-confirm-closing-tabs
 
 Controls whether to show a confirm dialog before closing all remote tabs.
 
@@ -351,7 +349,7 @@ Controls whether to show a confirm dialog before closing all remote tabs.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-confirm-closing-tabs=Y` |
 
-##### enable-abr
+#### enable-abr
 
 Enable adaptive bitrate.
 
@@ -364,7 +362,7 @@ Enable adaptive bitrate.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-abr=Y` |
 
-##### allow-remove-wallpaper
+#### allow-remove-wallpaper
 
 Remove wallpaper during incoming sessions.
 
@@ -377,7 +375,7 @@ Remove wallpaper during incoming sessions.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `allow-remove-wallpaper=N` |
 
-##### enable-open-new-connections-in-tabs
+#### enable-open-new-connections-in-tabs
 
 Controls whether to use a new tab or a new window to open a new connection.
 
@@ -390,7 +388,7 @@ Controls whether to use a new tab or a new window to open a new connection.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-open-new-connections-in-tabs=Y` |
 
-##### allow-always-software-render
+#### allow-always-software-render
 
 Always use software rendering.
 
@@ -403,7 +401,7 @@ Always use software rendering.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `allow-always-software-render=N` |
 
-##### allow-linux-headless
+#### allow-linux-headless
 
 Allow incoming connection if there's no displays.
 
@@ -418,7 +416,7 @@ This option requires desktop environment, xorg server and gdm, see [PR 3902](htt
 | :------: | :------: | :------: | :------: |
 | Y | Y,N | N | `allow-linux-headless=N` |
 
-##### enable-hwcodec
+#### enable-hwcodec
 
 Enable hardware encoding to make the picture smoother.
 
@@ -431,7 +429,7 @@ Enable hardware encoding to make the picture smoother.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-hwcodec=Y` |
 
-##### peer-card-ui-type
+#### peer-card-ui-type
 
 Controls the view of peer cards, includes "Big tiles", "Small tiles" and "List".
 
@@ -448,7 +446,7 @@ Controls the view of peer cards, includes "Big tiles", "Small tiles" and "List".
 **1** Small tiles
 **2** List
 
-##### peer-sorting
+#### peer-sorting
 
 Controls the ordering of peer cards.
 
@@ -461,7 +459,7 @@ Controls the ordering of peer cards.
 | :------: | :------: | :------: | :------: |
 | N | Remote ID,Remote Host,Username | Remote ID | `peer-sorting=Remote ID` |
 
-##### sync-ab-with-recent-sessions
+#### sync-ab-with-recent-sessions
 
 Controls whether to sync the address book with recent sessions.
 
@@ -474,7 +472,7 @@ Controls whether to sync the address book with recent sessions.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `sync-ab-with-recent-sessions=N` |
 
-##### sync-ab-tags
+#### sync-ab-tags
 
 Controls whether to sort the address book tags.
 
@@ -487,7 +485,7 @@ Controls whether to sort the address book tags.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `sync-ab-tags=N` |
 
-##### filter-ab-by-intersection
+#### filter-ab-by-intersection
 
 Filter address book by tag intersection.
 
@@ -502,9 +500,9 @@ Filter address book by tag intersection.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `filter-ab-by-intersection=N` |
 
-#### Display
+### Display Settings
 
-##### view-only
+#### view-only
 
 This option will set the "view-only" option for every peer after the first connection.
 
@@ -519,7 +517,7 @@ Then the "view-only" option in each peer's settings will controls whether the co
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `view-only=Y` |
 
-##### show-monitors-toolbar
+#### show-monitors-toolbar
 
 Controls whether to show monitors in toolbar.
 
@@ -534,7 +532,7 @@ Controls whether to show monitors in toolbar.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `show-monitors-toolbar=Y` |
 
-##### collapse-toolbar
+#### collapse-toolbar
 
 Controls whether the remote toolbar is collapsed after connecting.
 
@@ -547,7 +545,7 @@ Controls whether the remote toolbar is collapsed after connecting.
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `collapse-toolbar=Y` |
 
-##### show-remote-cursor
+#### show-remote-cursor
 
 This option will set the "show-remote-cursor" option for every peer after the first connection.
 
@@ -562,7 +560,7 @@ Then the "show-remote-cursor" option in each peer's settings will controls wheth
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `show-remote-cursor=N` |
 
-##### follow-remote-cursor
+#### follow-remote-cursor
 
 This option will set the "follow-remote-cursor" option for every peer after the first connection.
 
@@ -579,7 +577,7 @@ Then the "follow-remote-cursor" option in each peer's settings will controls whe
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `follow-remote-cursor=Y` |
 
-##### follow-remote-window
+#### follow-remote-window
 
 This option will set the "follow-remote-window" option for every peer after the first connection.
 
@@ -596,7 +594,7 @@ Then the "follow-remote-window" option in each peer's settings will controls whe
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `follow-remote-window=Y` |
 
-##### zoom-cursor
+#### zoom-cursor
 
 This option will set the "zoom-cursor" option for every peer after the first connection.
 
@@ -611,7 +609,7 @@ The "zoom-cursor" option in each peer's settings will then control whether the c
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `zoom-cursor=Y` |
 
-##### show-quality-monitor
+#### show-quality-monitor
 
 This option will set the "show-quality-monitor" option for every peer after the first connection.
 
@@ -626,7 +624,7 @@ The "show-quality-monitor" option in each peer's settings will then control whet
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `show-quality-monitor=Y` |
 
-##### disable-audio
+#### disable-audio
 
 This option will set the "disable-audio" option for every peer after the first connection.
 
@@ -641,7 +639,7 @@ The "disable-audio" option in each peer's settings will then control whether to 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `disable-audio=Y` |
 
-##### enable-file-copy-paste
+#### enable-file-copy-paste
 
 This option will set the "enable-file-copy-paste" option for every peer after the first connection.
 
@@ -656,7 +654,7 @@ The "enable-file-copy-paste" option in each peer's settings will then control en
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `enable-file-copy-paste=Y` |
 
-##### disable-clipboard
+#### disable-clipboard
 
 This option will set the "disable-clipboard" option for every peer after the first connection.
 
@@ -671,7 +669,7 @@ The "disable-clipboard" option in each peer's settings will then control whether
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `disable-clipboard=Y` |
 
-##### lock-after-session-end
+#### lock-after-session-end
 
 This option will set the "lock-after-session-end" option for every peer after the first connection.
 
@@ -686,7 +684,7 @@ The "lock-after-session-end" option in each peer's settings will then control wh
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `lock-after-session-end=Y` |
 
-##### privacy-mode
+#### privacy-mode
 
 This option will set the "privacy-mode" option for every peer after the first connection.
 
@@ -701,7 +699,7 @@ The "privacy-mode" option in each peer's settings will then control whether to u
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `privacy-mode=Y` |
 
-##### touch-mode
+#### touch-mode
 
 This option will set the "touch-mode" option for every peer after the first connection.
 
@@ -716,7 +714,7 @@ The "touch-mode" option in each peer's settings will then control whether to use
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `touch-mode=Y` |
 
-##### i444
+#### i444
 
 This option will set the "i444" option for every peer after the first connection.
 
@@ -731,7 +729,7 @@ The "i444" option in each peer's settings will then control whether to use true 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `i444=Y` |
 
-##### reverse-mouse-wheel
+#### reverse-mouse-wheel
 
 This option will set the "reverse-mouse-wheel" option for every peer after the first connection.
 
@@ -746,7 +744,7 @@ The "reverse-mouse-wheel" option in each peer's settings will then control wheth
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `reverse-mouse-wheel=Y` |
 
-##### swap-left-right-mouse
+#### swap-left-right-mouse
 
 This option will set the "swap-left-right-mouse" option for every peer after the first connection.
 
@@ -761,7 +759,7 @@ The "swap-left-right-mouse" option in each peer's settings will then control whe
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `swap-left-right-mouse=Y` |
 
-##### displays-as-individual-windows
+#### displays-as-individual-windows
 
 This option will set the "displays-as-individual-windows" option for every peer after the first connection.
 
@@ -778,7 +776,7 @@ The "displays-as-individual-windows" option in each peer's settings will then co
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `displays-as-individual-windows=Y` |
 
-##### use-all-my-displays-for-the-remote_session
+#### use-all-my-displays-for-the-remote_session
 
 This option will set the "use-all-my-displays-for-the-remote_session" option for every peer after the first connection.
 
@@ -795,7 +793,7 @@ The "use-all-my-displays-for-the-remote_session" option in each peer's settings 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `use-all-my-displays-for-the-remote_session=Y` |
 
-##### view-style
+#### view-style
 
 This option will set the "view-style" option for every peer after the first connection.
 
@@ -810,7 +808,7 @@ The "view-style" option in each peer's settings will then control the view style
 | :------: | :------: | :------: | :------: |
 | N | original,adaptive | original | `view-style=original` |
 
-##### scroll-style
+#### scroll-style
 
 This option will set the "scroll-style" option for every peer after the first connection.
 
@@ -825,7 +823,7 @@ The "scroll-style" option in each peer's settings will then control the scroll s
 | :------: | :------: | :------: | :------: |
 | N | scrollauto,scrollbar | scrollauto | `scroll-style=scrollauto` |
 
-##### image-quality
+#### image-quality
 
 This option will set the "image-quality" option for every peer after the first connection.
 
@@ -840,7 +838,7 @@ The "image-quality" option in each peer's settings will then control the image q
 | :------: | :------: | :------: | :------: |
 | N | best,balanced,low,custom | balanced | `image-quality=balanced` |
 
-##### custom-image-quality
+#### custom-image-quality
 
 This option will set the "custom-image-quality" option for every peer after the first connection.
 
@@ -855,7 +853,7 @@ The "custom-image-quality" option in each peer's settings will then control the 
 | :------: | :------: | :------: | :------: |
 | N | [10.0, 2000.0] | 50.0 | `custom-image-quality=50` |
 
-##### custom-fps
+#### custom-fps
 
 This option will set the "custom-fps" option for every peer after the first connection.
 
@@ -870,7 +868,7 @@ The "custom-fps" option in each peer's settings will then control the fps if "im
 | :------: | :------: | :------: | :------: |
 | N | [5,120] | 30 | `custom-fps=30` |
 
-##### codec-preference
+#### codec-preference
 
 This option will set the "codec-preference" option for every peer after the first connection.
 
