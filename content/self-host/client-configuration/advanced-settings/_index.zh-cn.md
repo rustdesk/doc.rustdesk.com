@@ -13,11 +13,9 @@ weight: 49
 
 这些设置的优先级是：`覆盖 > 用户 > 默认`。
 
-### 设置
+### 安全设置
 
-#### 安全
-
-##### access-mode
+#### access-mode
 
 设置传入连接的访问模式（权限）。
 
@@ -30,7 +28,7 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | N | custom,full,view | custom | `access-mode=custom` |
 
-##### enable-keyboard
+#### enable-keyboard
 
 允许传入连接控制键盘/鼠标。
 
@@ -43,7 +41,7 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-keyboard=Y` |
 
-##### enable-clipboard
+#### enable-clipboard
 
 允许使用粘贴板。
 
@@ -56,7 +54,7 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-clipboard=Y` |
 
-##### enable-file-transfer
+#### enable-file-transfer
 
 允许文件复制和粘贴或文件传输（会话）。
 
@@ -69,7 +67,7 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-file-transfer=Y` |
 
-##### enable-audio
+#### enable-audio
 
 允许音频录制并传输给控制端。
 
@@ -82,7 +80,7 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-audio=Y` |
 
-##### enable-tunnel
+#### enable-tunnel
 
 允许建立 TCP 隧道。
 
@@ -95,7 +93,7 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-tunnel=Y` |
 
-##### enable-remote-restart
+#### enable-remote-restart
 
 允许远程重启。
 
@@ -108,7 +106,7 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-remote-restart=Y` |
 
-##### enable-record-session
+#### enable-record-session
 
 允许录制会话。
 
@@ -121,7 +119,7 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-record-session=Y` |
 
-##### enable-block-input
+#### enable-block-input
 
 允许控制端阻止其他用户的输入。
 
@@ -134,7 +132,7 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-block-input=Y` |
 
-##### allow-remote-config-modification
+#### allow-remote-config-modification
 
 允许控制方更改受控 RustDesk UI 中的设置。
 
@@ -147,7 +145,7 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `allow-remote-config-modification=Y` |
 
-##### enable-lan-discovery
+#### enable-lan-discovery
 
 允许局域网发现。
 
@@ -162,7 +160,7 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | Y | Y,N | Y | `enable-lan-discovery=Y` |
 
-##### direct-server
+#### direct-server
 
 允许 IP 直接访问。
 
@@ -175,7 +173,7 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `direct-server=Y` |
 
-##### direct-access-port
+#### direct-access-port
 
 IP 直接访问的端口。
 
@@ -188,7 +186,7 @@ IP 直接访问的端口。
 | :------: | :------: | :------: | :------: |
 | N |  | 21118 | `direct-access-port=21118` |
 
-##### whitelist
+#### whitelist
 
 只允许白名单上的 IP 访问。
 
@@ -201,7 +199,7 @@ IP 直接访问的端口。
 | :------: | :------: | :------: | :------: |
 | N | , or ip1,ip2,ip3 | , means no filter | `whitelist=,` |
 
-##### allow-auto-disconnect & auto-disconnect-timeout
+#### allow-auto-disconnect & auto-disconnect-timeout
 
 用户不活动一段时间后自动关闭会话。
 
@@ -215,7 +213,7 @@ IP 直接访问的端口。
 | allow-auto-disconnect | N | Y,N | N | `allow-auto-disconnect=Y` |
 | auto-disconnect-timeout | N | Timeout in minutes | 10 | `auto-disconnect-timeout=10` |
 
-##### allow-only-conn-window-open
+#### allow-only-conn-window-open
 
 仅当 RustDesk 窗口打开时才允许连接。
 
@@ -228,7 +226,7 @@ IP 直接访问的端口。
 | :------: | :------: | :------: | :------: |
 | Y | Y,N | N | `allow-only-conn-window-open=N` |
 
-##### approve-mode
+#### approve-mode
 
 通过密码或手动单击接受传入连接。
 
@@ -241,7 +239,7 @@ IP 直接访问的端口。
 | :------: | :------: | :------: | :------: |
 | N | password,click,password-click | password-click | `approve-mode=password-click` |
 
-##### proxy-url
+#### proxy-url
 
 代理的 url 。
 
@@ -258,7 +256,7 @@ IP 直接访问的端口。
 1. **https** `proxy-url=https://192.168.0.2:12345`
 1. **socks5** `proxy-url=socks5://192.168.0.2:1080`
 
-##### proxy-username & proxy-password
+#### proxy-username & proxy-password
 
 代理的 用户名 和 密码。
 
@@ -272,9 +270,9 @@ IP 直接访问的端口。
 | N | | | `proxy-username=user` |
 | N | | | `proxy-password=pass` |
 
-#### 常规
+### 常规设置
 
-##### theme
+#### theme
 
 控制 RustDesk 客户端的 UI 主题。
 
@@ -287,7 +285,7 @@ IP 直接访问的端口。
 | :------: | :------: | :------: | :------: |
 | N | dark,light,system | system | `theme=system` |
 
-##### lang
+#### lang
 
 控制 RustDesk 客户端的语言。
 
@@ -306,7 +304,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 您可以查看代码中的 [LANGS](https://github.com/rustdesk/rustdesk/blob/master/src/lang.rs#L45) 获取最新的语言列表。
 
-##### allow-auto-record-incoming
+#### allow-auto-record-incoming
 
 自动录制来访会话。
 
@@ -319,7 +317,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `allow-auto-record-incoming=N` |
 
-##### video-save-directory
+#### video-save-directory
 
 保存录制的视频的目录。
 
@@ -337,7 +335,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 **Note**: **app_name** 代表当前的 app 名。
 
-##### enable-confirm-closing-tabs
+#### enable-confirm-closing-tabs
 
 控制在关闭所有远程选项卡之前是否显示确认对话框。
 
@@ -350,7 +348,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-confirm-closing-tabs=Y` |
 
-##### enable-abr
+#### enable-abr
 
 启用自适应码率。
 
@@ -363,7 +361,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-abr=Y` |
 
-##### allow-remove-wallpaper
+#### allow-remove-wallpaper
 
 接受会话时移除桌面壁纸。
 
@@ -376,7 +374,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `allow-remove-wallpaper=N` |
 
-##### enable-open-new-connections-in-tabs
+#### enable-open-new-connections-in-tabs
 
 控制是否使用新选项卡或新窗口来打开新连接。
 
@@ -389,7 +387,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-open-new-connections-in-tabs=Y` |
 
-##### allow-always-software-render
+#### allow-always-software-render
 
 始终使用软渲染。
 
@@ -402,7 +400,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `allow-always-software-render=N` |
 
-##### allow-linux-headless
+#### allow-linux-headless
 
 在没有显示器的时候，允许传入会话。
 
@@ -417,7 +415,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | Y | Y,N | N | `allow-linux-headless=N` |
 
-##### enable-hwcodec
+#### enable-hwcodec
 
 启用硬件编码，使画面更加流畅。
 
@@ -430,7 +428,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | Y | `enable-hwcodec=Y` |
 
-##### peer-card-ui-type
+#### peer-card-ui-type
 
 控制 peer 卡片 的视图，包括 "大磁贴"、"小磁贴" 和 "列表"。
 
@@ -447,7 +445,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 **1** "小磁贴"
 **2** "列表"
 
-##### peer-sorting
+#### peer-sorting
 
 控制 peer 卡片 的顺序。
 
@@ -460,7 +458,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Remote ID,Remote Host,Username | Remote ID | `peer-sorting=Remote ID` |
 
-##### sync-ab-with-recent-sessions
+#### sync-ab-with-recent-sessions
 
 控制是否将地址簿与最近的会话同步。
 
@@ -473,7 +471,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `sync-ab-with-recent-sessions=N` |
 
-##### sync-ab-tags
+#### sync-ab-tags
 
 控制是否对通讯录标签进行排序。
 
@@ -486,7 +484,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `sync-ab-tags=N` |
 
-##### filter-ab-by-intersection
+#### filter-ab-by-intersection
 
 按标签交集过滤地址簿。
 
@@ -501,9 +499,9 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `filter-ab-by-intersection=N` |
 
-#### 显示
+### 显示设置
 
-##### view-only
+#### view-only
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "view-only"。
 
@@ -518,7 +516,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `view-only=Y` |
 
-##### show-monitors-toolbar
+#### show-monitors-toolbar
 
 控制是否在工具栏上显示监视器列表。
 
@@ -533,7 +531,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `show-monitors-toolbar=Y` |
 
-##### collapse-toolbar
+#### collapse-toolbar
 
 控制连接建立后，是否折叠工具栏。
 
@@ -546,7 +544,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `collapse-toolbar=Y` |
 
-##### show-remote-cursor
+#### show-remote-cursor
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "show-remote-cursor"。
 
@@ -561,7 +559,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `show-remote-cursor=N` |
 
-##### follow-remote-cursor
+#### follow-remote-cursor
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "follow-remote-cursor"。
 
@@ -578,7 +576,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `follow-remote-cursor=Y` |
 
-##### follow-remote-window
+#### follow-remote-window
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "follow-remote-window"。
 
@@ -595,7 +593,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `follow-remote-window=Y` |
 
-##### zoom-cursor
+#### zoom-cursor
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "zoom-cursor"。
 
@@ -610,7 +608,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `zoom-cursor=Y` |
 
-##### show-quality-monitor
+#### show-quality-monitor
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "show-quality-monitor"。
 
@@ -625,7 +623,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `show-quality-monitor=Y` |
 
-##### disable-audio
+#### disable-audio
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "disable-audio"。
 
@@ -640,7 +638,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `disable-audio=Y` |
 
-##### enable-file-copy-paste
+#### enable-file-copy-paste
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "enable-file-copy-paste"。
 
@@ -655,7 +653,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `enable-file-copy-paste=Y` |
 
-##### disable-clipboard
+#### disable-clipboard
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "disable-clipboard"。
 
@@ -670,7 +668,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `disable-clipboard=Y` |
 
-##### lock-after-session-end
+#### lock-after-session-end
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "lock-after-session-end"。
 
@@ -685,7 +683,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `lock-after-session-end=Y` |
 
-##### privacy-mode
+#### privacy-mode
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "privacy-mode"。
 
@@ -700,7 +698,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `privacy-mode=Y` |
 
-##### touch-mode
+#### touch-mode
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "touch-mode"。
 
@@ -715,7 +713,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `touch-mode=Y` |
 
-##### i444
+#### i444
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "i444"。
 
@@ -730,7 +728,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `i444=Y` |
 
-##### reverse-mouse-wheel
+#### reverse-mouse-wheel
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "reverse-mouse-wheel"。
 
@@ -745,7 +743,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `reverse-mouse-wheel=Y` |
 
-##### swap-left-right-mouse
+#### swap-left-right-mouse
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "swap-left-right-mouse"。
 
@@ -760,7 +758,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `swap-left-right-mouse=Y` |
 
-##### displays-as-individual-windows
+#### displays-as-individual-windows
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "displays-as-individual-windows"。
 
@@ -777,7 +775,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `displays-as-individual-windows=Y` |
 
-##### use-all-my-displays-for-the-remote_session
+#### use-all-my-displays-for-the-remote_session
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "use-all-my-displays-for-the-remote_session"。
 
@@ -794,7 +792,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y,N | N | `use-all-my-displays-for-the-remote_session=Y` |
 
-##### view-style
+#### view-style
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "view-style"。
 
@@ -809,7 +807,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | original,adaptive | original | `view-style=original` |
 
-##### scroll-style
+#### scroll-style
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "scroll-style"。
 
@@ -824,7 +822,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | scrollauto,scrollbar | scrollauto | `scroll-style=scrollauto` |
 
-##### image-quality
+#### image-quality
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "image-quality"。
 
@@ -839,7 +837,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | best,balanced,low,custom | balanced | `image-quality=balanced` |
 
-##### custom-image-quality
+#### custom-image-quality
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "custom-image-quality"。
 
@@ -854,7 +852,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | [10.0, 2000.0] | 50.0 | `custom-image-quality=50` |
 
-##### custom-fps
+#### custom-fps
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "custom-fps"。
 
@@ -869,7 +867,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | [5,120] | 30 | `custom-fps=30` |
 
-##### codec-preference
+#### codec-preference
 
 这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "codec-preference"。
 
