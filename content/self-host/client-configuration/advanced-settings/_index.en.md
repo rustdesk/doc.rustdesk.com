@@ -27,7 +27,7 @@ Set the access mode (permissions) for incoming connections.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | custom,full,view | custom | `access-mode=custom` |
+| N | custom, full, view | custom | `access-mode=custom` |
 
 ### enable-keyboard
 
@@ -40,7 +40,7 @@ Enable keyboard/mouse input for incoming connections.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-keyboard=Y` |
+| N | Y, N | Y | `enable-keyboard=Y` |
 
 ### enable-clipboard
 
@@ -53,7 +53,7 @@ Enable copy and paste for the incomign connections.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-clipboard=Y` |
+| N | Y, N | Y | `enable-clipboard=Y` |
 
 ### enable-file-transfer
 
@@ -66,7 +66,7 @@ Enable file copy and paster or filte transfer(session) for incoming connections.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-file-transfer=Y` |
+| N | Y, N | Y | `enable-file-transfer=Y` |
 
 ### enable-audio
 
@@ -79,7 +79,7 @@ Enable audio record and transfer to peer.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-audio=Y` |
+| N | Y, N | Y | `enable-audio=Y` |
 
 ### enable-tunnel
 
@@ -92,7 +92,7 @@ Enable TCP tunneling.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-tunnel=Y` |
+| N | Y, N | Y | `enable-tunnel=Y` |
 
 ### enable-remote-restart
 
@@ -105,7 +105,7 @@ Enable restarting by the control side.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-remote-restart=Y` |
+| N | Y, N | Y | `enable-remote-restart=Y` |
 
 ### enable-record-session
 
@@ -118,7 +118,7 @@ Enable sessions to be recorded.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-record-session=Y` |
+| N | Y, N | Y | `enable-record-session=Y` |
 
 ### enable-block-input
 
@@ -131,7 +131,7 @@ Enable the control side to block other users' input.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-block-input=Y` |
+| N | Y, N | Y | `enable-block-input=Y` |
 
 ### allow-remote-config-modification
 
@@ -144,7 +144,7 @@ Allow the control side to change the settings in conrolled RustDesk UI.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `allow-remote-config-modification=Y` |
+| N | Y, N | Y | `allow-remote-config-modification=Y` |
 
 ### enable-lan-discovery
 
@@ -159,7 +159,7 @@ After LAN discovery, [WOL](https://en.wikipedia.org/wiki/Wake-on-LAN) can work i
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| Y | Y,N | Y | `enable-lan-discovery=Y` |
+| Y | Y, N | Y | `enable-lan-discovery=Y` |
 
 ### direct-server
 
@@ -172,7 +172,7 @@ Enable direct IP access.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `direct-server=Y` |
+| N | Y, N | N | `direct-server=Y` |
 
 ### direct-access-port
 
@@ -198,7 +198,7 @@ Use IP Whitelisting.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | , or ip1,ip2,ip3 | , means no filter | `whitelist=,` |
+| N | `,` or `<ip1>`, `<ip2>`, `<ip3>` | `,` means no filter | `whitelist=,` |
 
 ### allow-auto-disconnect & auto-disconnect-timeout
 
@@ -211,7 +211,7 @@ Automatically close incoming sessions after a period of user inactivity.
 
 | Option | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: | :------: |
-| allow-auto-disconnect | N | Y,N | N | `allow-auto-disconnect=Y` |
+| allow-auto-disconnect | N | Y, N | N | `allow-auto-disconnect=Y` |
 | auto-disconnect-timeout | N | Timeout in minutes | 10 | `auto-disconnect-timeout=10` |
 
 ### allow-only-conn-window-open
@@ -225,7 +225,7 @@ Only allow connection if RustDesk window is open.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| Y | Y,N | N | `allow-only-conn-window-open=N` |
+| Y | Y, N | N | `allow-only-conn-window-open=N` |
 
 ### approve-mode
 
@@ -238,7 +238,7 @@ Accept incoming connections via password or manually click.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | password,click,password-click | password-click | `approve-mode=password-click` |
+| N | password, click, password-click | password-click | `approve-mode=password-click` |
 
 ### proxy-url
 
@@ -284,7 +284,7 @@ Controls the UI theme of RustDesk client.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | dark,light,system | system | `theme=system` |
+| N | dark, light, system | system | `theme=system` |
 
 ### lang
 
@@ -297,7 +297,7 @@ Controls the language of RustDesk client.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | default,ar,bg,... | default | `lang=default` |
+| N | default, ar, bg, ... | default | `lang=default` |
 
 Currently available languages are:
 
@@ -316,7 +316,7 @@ Automatically record incoming sessions.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `allow-auto-record-incoming=N` |
+| N | Y, N | N | `allow-auto-record-incoming=N` |
 
 ### video-save-directory
 
@@ -347,7 +347,7 @@ Controls whether to show a confirm dialog before closing all remote tabs.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-confirm-closing-tabs=Y` |
+| N | Y, N | Y | `enable-confirm-closing-tabs=Y` |
 
 ### enable-abr
 
@@ -360,7 +360,7 @@ Enable adaptive bitrate.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-abr=Y` |
+| N | Y, N | Y | `enable-abr=Y` |
 
 ### allow-remove-wallpaper
 
@@ -373,7 +373,7 @@ Remove wallpaper during incoming sessions.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `allow-remove-wallpaper=N` |
+| N | Y, N | N | `allow-remove-wallpaper=N` |
 
 ### enable-open-new-connections-in-tabs
 
@@ -386,7 +386,7 @@ Controls whether to use a new tab or a new window to open a new connection.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-open-new-connections-in-tabs=Y` |
+| N | Y, N | Y | `enable-open-new-connections-in-tabs=Y` |
 
 ### allow-always-software-render
 
@@ -399,7 +399,7 @@ Always use software rendering.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `allow-always-software-render=N` |
+| N | Y, N | N | `allow-always-software-render=N` |
 
 ### allow-linux-headless
 
@@ -414,7 +414,7 @@ This option requires desktop environment, xorg server and gdm, see [PR 3902](htt
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| Y | Y,N | N | `allow-linux-headless=N` |
+| Y | Y, N | N | `allow-linux-headless=N` |
 
 ### enable-hwcodec
 
@@ -427,7 +427,7 @@ Enable hardware encoding to make the picture smoother.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-hwcodec=Y` |
+| N | Y, N | Y | `enable-hwcodec=Y` |
 
 ### peer-card-ui-type
 
@@ -440,7 +440,7 @@ Controls the view of peer cards, includes "Big tiles", "Small tiles" and "List".
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | 0,1,2 | 0 | `peer-card-ui-type=0` |
+| N | 0, 1, 2 | 0 | `peer-card-ui-type=0` |
 
 **0** Big tiles
 **1** Small tiles
@@ -457,7 +457,7 @@ Controls the ordering of peer cards.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Remote ID,Remote Host,Username | Remote ID | `peer-sorting=Remote ID` |
+| N | Remote ID, Remote Host, Username | Remote ID | `peer-sorting=Remote ID` |
 
 ### sync-ab-with-recent-sessions
 
@@ -470,7 +470,7 @@ Controls whether to sync the address book with recent sessions.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `sync-ab-with-recent-sessions=N` |
+| N | Y, N | N | `sync-ab-with-recent-sessions=N` |
 
 ### sync-ab-tags
 
@@ -483,7 +483,7 @@ Controls whether to sort the address book tags.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `sync-ab-tags=N` |
+| N | Y, N | N | `sync-ab-tags=N` |
 
 ### filter-ab-by-intersection
 
@@ -498,7 +498,7 @@ Filter address book by tag intersection.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `filter-ab-by-intersection=N` |
+| N | Y, N | N | `filter-ab-by-intersection=N` |
 
 ## Display Settings
 
@@ -515,7 +515,7 @@ Then the "view-only" option in each peer's settings will controls whether the co
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `view-only=Y` |
+| N | Y, N | N | `view-only=Y` |
 
 ### show-monitors-toolbar
 
@@ -530,7 +530,7 @@ Controls whether to show monitors in toolbar.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `show-monitors-toolbar=Y` |
+| N | Y, N | N | `show-monitors-toolbar=Y` |
 
 ### collapse-toolbar
 
@@ -543,7 +543,7 @@ Controls whether the remote toolbar is collapsed after connecting.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `collapse-toolbar=Y` |
+| N | Y, N | N | `collapse-toolbar=Y` |
 
 ### show-remote-cursor
 
@@ -558,7 +558,7 @@ Then the "show-remote-cursor" option in each peer's settings will controls wheth
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `show-remote-cursor=N` |
+| N | Y, N | N | `show-remote-cursor=N` |
 
 ### follow-remote-cursor
 
@@ -575,7 +575,7 @@ Then the "follow-remote-cursor" option in each peer's settings will controls whe
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `follow-remote-cursor=Y` |
+| N | Y, N | N | `follow-remote-cursor=Y` |
 
 ### follow-remote-window
 
@@ -592,7 +592,7 @@ Then the "follow-remote-window" option in each peer's settings will controls whe
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `follow-remote-window=Y` |
+| N | Y, N | N | `follow-remote-window=Y` |
 
 ### zoom-cursor
 
@@ -607,7 +607,7 @@ The "zoom-cursor" option in each peer's settings will then control whether the c
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `zoom-cursor=Y` |
+| N | Y, N | N | `zoom-cursor=Y` |
 
 ### show-quality-monitor
 
@@ -622,7 +622,7 @@ The "show-quality-monitor" option in each peer's settings will then control whet
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `show-quality-monitor=Y` |
+| N | Y, N | N | `show-quality-monitor=Y` |
 
 ### disable-audio
 
@@ -637,7 +637,7 @@ The "disable-audio" option in each peer's settings will then control whether to 
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `disable-audio=Y` |
+| N | Y, N | N | `disable-audio=Y` |
 
 ### enable-file-copy-paste
 
@@ -652,7 +652,7 @@ The "enable-file-copy-paste" option in each peer's settings will then control en
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `enable-file-copy-paste=Y` |
+| N | Y, N | N | `enable-file-copy-paste=Y` |
 
 ### disable-clipboard
 
@@ -667,7 +667,7 @@ The "disable-clipboard" option in each peer's settings will then control whether
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `disable-clipboard=Y` |
+| N | Y, N | N | `disable-clipboard=Y` |
 
 ### lock-after-session-end
 
@@ -682,7 +682,7 @@ The "lock-after-session-end" option in each peer's settings will then control wh
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `lock-after-session-end=Y` |
+| N | Y, N | N | `lock-after-session-end=Y` |
 
 ### privacy-mode
 
@@ -697,7 +697,7 @@ The "privacy-mode" option in each peer's settings will then control whether to u
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `privacy-mode=Y` |
+| N | Y, N | N | `privacy-mode=Y` |
 
 ### touch-mode
 
@@ -712,7 +712,7 @@ The "touch-mode" option in each peer's settings will then control whether to use
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `touch-mode=Y` |
+| N | Y, N | N | `touch-mode=Y` |
 
 ### i444
 
@@ -727,7 +727,7 @@ The "i444" option in each peer's settings will then control whether to use true 
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `i444=Y` |
+| N | Y, N | N | `i444=Y` |
 
 ### reverse-mouse-wheel
 
@@ -742,7 +742,7 @@ The "reverse-mouse-wheel" option in each peer's settings will then control wheth
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `reverse-mouse-wheel=Y` |
+| N | Y, N | N | `reverse-mouse-wheel=Y` |
 
 ### swap-left-right-mouse
 
@@ -757,7 +757,7 @@ The "swap-left-right-mouse" option in each peer's settings will then control whe
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `swap-left-right-mouse=Y` |
+| N | Y, N | N | `swap-left-right-mouse=Y` |
 
 ### displays-as-individual-windows
 
@@ -774,7 +774,7 @@ The "displays-as-individual-windows" option in each peer's settings will then co
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `displays-as-individual-windows=Y` |
+| N | Y, N | N | `displays-as-individual-windows=Y` |
 
 ### use-all-my-displays-for-the-remote_session
 
@@ -791,7 +791,7 @@ The "use-all-my-displays-for-the-remote_session" option in each peer's settings 
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `use-all-my-displays-for-the-remote_session=Y` |
+| N | Y, N | N | `use-all-my-displays-for-the-remote_session=Y` |
 
 ### view-style
 
@@ -806,7 +806,7 @@ The "view-style" option in each peer's settings will then control the view style
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | original,adaptive | original | `view-style=original` |
+| N | original, adaptive | original | `view-style=original` |
 
 ### scroll-style
 
@@ -821,7 +821,7 @@ The "scroll-style" option in each peer's settings will then control the scroll s
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | scrollauto,scrollbar | scrollauto | `scroll-style=scrollauto` |
+| N | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
 
 ### image-quality
 
@@ -836,7 +836,7 @@ The "image-quality" option in each peer's settings will then control the image q
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | best,balanced,low,custom | balanced | `image-quality=balanced` |
+| N | best, balanced, low, custom | balanced | `image-quality=balanced` |
 
 ### custom-image-quality
 
@@ -866,7 +866,7 @@ The "custom-fps" option in each peer's settings will then control the fps if "im
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | [5,120] | 30 | `custom-fps=30` |
+| N | [5, 120] | 30 | `custom-fps=30` |
 
 ### codec-preference
 
@@ -881,6 +881,6 @@ The "codec-preference" option in each peer's settings will then control codec fo
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | auto,vp8,vp9,av1,h264,h265 | auto | `codec-preference=auto` |
+| N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
 
 **CAUTION**: Options other than "vp8" and "vp9" may not work. This depends on what your machine supports.
