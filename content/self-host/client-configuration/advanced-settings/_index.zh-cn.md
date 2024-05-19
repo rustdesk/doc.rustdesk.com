@@ -7,9 +7,9 @@ weight: 49
 
 一共有 3 中类型的设置项：
 
-1. 覆盖设置，在 "Web Console -> Custom Clients" 中。
-1. 默认设置，在 "Web Console -> Custom Clients" 中。
-1. 用户设置，在 RustDesk 客户端中。
+1. 覆盖设置, 在 "Web Console -> Custom Clients" 中。
+1. 默认设置, 在 "Web Console -> Custom Clients" 中。
+1. 用户设置, 在 RustDesk 客户端中。
 
 这些设置的优先级是：`覆盖 > 用户 > 默认`。
 
@@ -26,7 +26,7 @@ weight: 49
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | custom,full,view | custom | `access-mode=custom` |
+| N | custom, full, view | custom | `access-mode=custom` |
 
 ### enable-keyboard
 
@@ -39,7 +39,7 @@ weight: 49
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-keyboard=Y` |
+| N | Y, N | Y | `enable-keyboard=Y` |
 
 ### enable-clipboard
 
@@ -52,7 +52,7 @@ weight: 49
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-clipboard=Y` |
+| N | Y, N | Y | `enable-clipboard=Y` |
 
 ### enable-file-transfer
 
@@ -65,7 +65,7 @@ weight: 49
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-file-transfer=Y` |
+| N | Y, N | Y | `enable-file-transfer=Y` |
 
 ### enable-audio
 
@@ -78,7 +78,7 @@ weight: 49
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-audio=Y` |
+| N | Y, N | Y | `enable-audio=Y` |
 
 ### enable-tunnel
 
@@ -91,7 +91,7 @@ weight: 49
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-tunnel=Y` |
+| N | Y, N | Y | `enable-tunnel=Y` |
 
 ### enable-remote-restart
 
@@ -104,7 +104,7 @@ weight: 49
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-remote-restart=Y` |
+| N | Y, N | Y | `enable-remote-restart=Y` |
 
 ### enable-record-session
 
@@ -117,7 +117,7 @@ weight: 49
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-record-session=Y` |
+| N | Y, N | Y | `enable-record-session=Y` |
 
 ### enable-block-input
 
@@ -130,7 +130,7 @@ weight: 49
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-block-input=Y` |
+| N | Y, N | Y | `enable-block-input=Y` |
 
 ### allow-remote-config-modification
 
@@ -143,13 +143,13 @@ weight: 49
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `allow-remote-config-modification=Y` |
+| N | Y, N | Y | `allow-remote-config-modification=Y` |
 
 ### enable-lan-discovery
 
 允许局域网发现。
 
-局域网法相后，如果支持 [WOL](https://en.wikipedia.org/wiki/Wake-on-LAN) ，则可使用 WOL 。
+局域网法相后, 如果支持 [WOL](https://en.wikipedia.org/wiki/Wake-on-LAN) , 则可使用 WOL 。
 
 **位置**:
 
@@ -158,7 +158,7 @@ weight: 49
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| Y | Y,N | Y | `enable-lan-discovery=Y` |
+| Y | Y, N | Y | `enable-lan-discovery=Y` |
 
 ### direct-server
 
@@ -171,7 +171,7 @@ weight: 49
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `direct-server=Y` |
+| N | Y, N | N | `direct-server=Y` |
 
 ### direct-access-port
 
@@ -197,7 +197,7 @@ IP 直接访问的端口。
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | , or ip1,ip2,ip3 | , means no filter | `whitelist=,` |
+| N | `,` or `<ip1>,<ip2>,<ip3>` | , means no filter | `whitelist=, ` |
 
 ### allow-auto-disconnect & auto-disconnect-timeout
 
@@ -210,7 +210,7 @@ IP 直接访问的端口。
 
 | Option | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: | :------: |
-| allow-auto-disconnect | N | Y,N | N | `allow-auto-disconnect=Y` |
+| allow-auto-disconnect | N | Y, N | N | `allow-auto-disconnect=Y` |
 | auto-disconnect-timeout | N | Timeout in minutes | 10 | `auto-disconnect-timeout=10` |
 
 ### allow-only-conn-window-open
@@ -224,7 +224,7 @@ IP 直接访问的端口。
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| Y | Y,N | N | `allow-only-conn-window-open=N` |
+| Y | Y, N | N | `allow-only-conn-window-open=N` |
 
 ### approve-mode
 
@@ -237,7 +237,7 @@ IP 直接访问的端口。
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | password,click,password-click | password-click | `approve-mode=password-click` |
+| N | password, click, password-click | password-click | `approve-mode=password-click` |
 
 ### proxy-url
 
@@ -283,7 +283,7 @@ IP 直接访问的端口。
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | dark,light,system | system | `theme=system` |
+| N | dark, light, system | system | `theme=system` |
 
 ### lang
 
@@ -296,7 +296,7 @@ IP 直接访问的端口。
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | default,ar,bg,... | default | `lang=default` |
+| N | default, ar, bg, ... | default | `lang=default` |
 
 当前可用的语言有:
 
@@ -315,7 +315,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `allow-auto-record-incoming=N` |
+| N | Y, N | N | `allow-auto-record-incoming=N` |
 
 ### video-save-directory
 
@@ -346,7 +346,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-confirm-closing-tabs=Y` |
+| N | Y, N | Y | `enable-confirm-closing-tabs=Y` |
 
 ### enable-abr
 
@@ -359,7 +359,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-abr=Y` |
+| N | Y, N | Y | `enable-abr=Y` |
 
 ### allow-remove-wallpaper
 
@@ -372,7 +372,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `allow-remove-wallpaper=N` |
+| N | Y, N | N | `allow-remove-wallpaper=N` |
 
 ### enable-open-new-connections-in-tabs
 
@@ -385,7 +385,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-open-new-connections-in-tabs=Y` |
+| N | Y, N | Y | `enable-open-new-connections-in-tabs=Y` |
 
 ### allow-always-software-render
 
@@ -398,13 +398,13 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `allow-always-software-render=N` |
+| N | Y, N | N | `allow-always-software-render=N` |
 
 ### allow-linux-headless
 
-在没有显示器的时候，允许传入会话。
+在没有显示器的时候, 允许传入会话。
 
-启用次选项，需要桌面环境, xorg 服务 和 gdm, 参考 [PR 3902](https://github.com/rustdesk/rustdesk/pull/3902).
+启用次选项, 需要桌面环境, xorg 服务 和 gdm, 参考 [PR 3902](https://github.com/rustdesk/rustdesk/pull/3902).
 
 **位置**:
 
@@ -413,11 +413,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| Y | Y,N | N | `allow-linux-headless=N` |
+| Y | Y, N | N | `allow-linux-headless=N` |
 
 ### enable-hwcodec
 
-启用硬件编码，使画面更加流畅。
+启用硬件编码, 使画面更加流畅。
 
 **位置**:
 
@@ -426,11 +426,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | Y | `enable-hwcodec=Y` |
+| N | Y, N | Y | `enable-hwcodec=Y` |
 
 ### peer-card-ui-type
 
-控制 peer 卡片 的视图，包括 "大磁贴"、"小磁贴" 和 "列表"。
+控制 peer 卡片 的视图, 包括 "大磁贴"、"小磁贴" 和 "列表"。
 
 **Location**:
 
@@ -439,7 +439,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | 0,1,2 | 0 | `peer-card-ui-type=0` |
+| N | 0, 1, 2 | 0 | `peer-card-ui-type=0` |
 
 **0** "大磁贴"
 **1** "小磁贴"
@@ -456,7 +456,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Remote ID,Remote Host,Username | Remote ID | `peer-sorting=Remote ID` |
+| N | Remote ID, Remote Host, Username | Remote ID | `peer-sorting=Remote ID` |
 
 ### sync-ab-with-recent-sessions
 
@@ -469,7 +469,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `sync-ab-with-recent-sessions=N` |
+| N | Y, N | N | `sync-ab-with-recent-sessions=N` |
 
 ### sync-ab-tags
 
@@ -482,7 +482,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `sync-ab-tags=N` |
+| N | Y, N | N | `sync-ab-tags=N` |
 
 ### filter-ab-by-intersection
 
@@ -497,13 +497,13 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `filter-ab-by-intersection=N` |
+| N | Y, N | N | `filter-ab-by-intersection=N` |
 
 ## 显示设置
 
 ### view-only
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "view-only"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "view-only"。
 
 被控端设置中的 "view-only" 会控制连接是否为浏览模式。
 
@@ -514,7 +514,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `view-only=Y` |
+| N | Y, N | N | `view-only=Y` |
 
 ### show-monitors-toolbar
 
@@ -529,11 +529,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `show-monitors-toolbar=Y` |
+| N | Y, N | N | `show-monitors-toolbar=Y` |
 
 ### collapse-toolbar
 
-控制连接建立后，是否折叠工具栏。
+控制连接建立后, 是否折叠工具栏。
 
 **位置**:
 
@@ -542,11 +542,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `collapse-toolbar=Y` |
+| N | Y, N | N | `collapse-toolbar=Y` |
 
 ### show-remote-cursor
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "show-remote-cursor"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "show-remote-cursor"。
 
 被控端设置中的 "show-remote-cursor" 会控制是否显示被控端的光标。
 
@@ -557,11 +557,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `show-remote-cursor=N` |
+| N | Y, N | N | `show-remote-cursor=N` |
 
 ### follow-remote-cursor
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "follow-remote-cursor"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "follow-remote-cursor"。
 
 被控端设置中的 "follow-remote-cursor" 控制画面是否跟随远程光标。
 
@@ -574,11 +574,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `follow-remote-cursor=Y` |
+| N | Y, N | N | `follow-remote-cursor=Y` |
 
 ### follow-remote-window
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "follow-remote-window"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "follow-remote-window"。
 
 被控端设置中的 "follow-remote-window" 控制画面是否跟随远程窗口焦点。
 
@@ -591,11 +591,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `follow-remote-window=Y` |
+| N | Y, N | N | `follow-remote-window=Y` |
 
 ### zoom-cursor
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "zoom-cursor"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "zoom-cursor"。
 
 被控端设置中的 "zoom-cursor" 控制画面中的光标按照画面的比例进行缩放。
 
@@ -606,11 +606,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `zoom-cursor=Y` |
+| N | Y, N | N | `zoom-cursor=Y` |
 
 ### show-quality-monitor
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "show-quality-monitor"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "show-quality-monitor"。
 
 被控端设置中的 "show-quality-monitor" 控制是否显示质量监测。
 
@@ -621,11 +621,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `show-quality-monitor=Y` |
+| N | Y, N | N | `show-quality-monitor=Y` |
 
 ### disable-audio
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "disable-audio"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "disable-audio"。
 
 被控端设置中的 "disable-audio" 控制是否播放声音。
 
@@ -636,13 +636,13 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `disable-audio=Y` |
+| N | Y, N | N | `disable-audio=Y` |
 
 ### enable-file-copy-paste
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "enable-file-copy-paste"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "enable-file-copy-paste"。
 
-被控端设置中的 "enable-file-copy-paste" 控制连接中，是否可以复制粘贴文件。
+被控端设置中的 "enable-file-copy-paste" 控制连接中, 是否可以复制粘贴文件。
 
 **位置**:
 
@@ -651,11 +651,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `enable-file-copy-paste=Y` |
+| N | Y, N | N | `enable-file-copy-paste=Y` |
 
 ### disable-clipboard
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "disable-clipboard"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "disable-clipboard"。
 
 被控端设置中的 "disable-clipboard" 控制是否允许文本复制粘贴。
 
@@ -666,13 +666,13 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `disable-clipboard=Y` |
+| N | Y, N | N | `disable-clipboard=Y` |
 
 ### lock-after-session-end
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "lock-after-session-end"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "lock-after-session-end"。
 
-被控端设置中的 "lock-after-session-end" 控制是否在连接结束后，锁定被控端电脑。
+被控端设置中的 "lock-after-session-end" 控制是否在连接结束后, 锁定被控端电脑。
 
 **位置**:
 
@@ -681,13 +681,13 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `lock-after-session-end=Y` |
+| N | Y, N | N | `lock-after-session-end=Y` |
 
 ### privacy-mode
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "privacy-mode"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "privacy-mode"。
 
-被控端设置中的 "privacy-mode" 控制是否在连接后，启用隐私模式。
+被控端设置中的 "privacy-mode" 控制是否在连接后, 启用隐私模式。
 
 **位置**:
 
@@ -696,13 +696,13 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `privacy-mode=Y` |
+| N | Y, N | N | `privacy-mode=Y` |
 
 ### touch-mode
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "touch-mode"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "touch-mode"。
 
-被控端设置中的 "touch-mode" 控制是否在连接后，使用触屏模式还是鼠标模式。
+被控端设置中的 "touch-mode" 控制是否在连接后, 使用触屏模式还是鼠标模式。
 
 **位置**:
 
@@ -711,11 +711,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `touch-mode=Y` |
+| N | Y, N | N | `touch-mode=Y` |
 
 ### i444
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "i444"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "i444"。
 
 被控端设置中的 "i444" 控制是否使用真彩模式 (4:4:4)。
 
@@ -726,11 +726,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `i444=Y` |
+| N | Y, N | N | `i444=Y` |
 
 ### reverse-mouse-wheel
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "reverse-mouse-wheel"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "reverse-mouse-wheel"。
 
 被控端设置中的 "reverse-mouse-wheel" 控制是否反转鼠标滚轮方向。
 
@@ -741,11 +741,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `reverse-mouse-wheel=Y` |
+| N | Y, N | N | `reverse-mouse-wheel=Y` |
 
 ### swap-left-right-mouse
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "swap-left-right-mouse"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "swap-left-right-mouse"。
 
 被控端设置中的 "swap-left-right-mouse" 控制是否交换鼠标左右键。
 
@@ -756,11 +756,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `swap-left-right-mouse=Y` |
+| N | Y, N | N | `swap-left-right-mouse=Y` |
 
 ### displays-as-individual-windows
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "displays-as-individual-windows"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "displays-as-individual-windows"。
 
 被控端设置中的 "displays-as-individual-windows" 控制是否在在单个窗口打开显示器。
 
@@ -773,13 +773,13 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `displays-as-individual-windows=Y` |
+| N | Y, N | N | `displays-as-individual-windows=Y` |
 
 ### use-all-my-displays-for-the-remote_session
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "use-all-my-displays-for-the-remote_session"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "use-all-my-displays-for-the-remote_session"。
 
-被控端设置中的 "use-all-my-displays-for-the-remote_session" 控制是否在连接时，尽量使用所有的本地显示器连接被控所有显示器。
+被控端设置中的 "use-all-my-displays-for-the-remote_session" 控制是否在连接时, 尽量使用所有的本地显示器连接被控所有显示器。
 
 **预览** [PR 6064](https://github.com/rustdesk/rustdesk/pull/6064)
 
@@ -790,11 +790,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y,N | N | `use-all-my-displays-for-the-remote_session=Y` |
+| N | Y, N | N | `use-all-my-displays-for-the-remote_session=Y` |
 
 ### view-style
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "view-style"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "view-style"。
 
 被控端设置中的 "view-style" 控制是否显示方式。
 
@@ -805,11 +805,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | original,adaptive | original | `view-style=original` |
+| N | original, adaptive | original | `view-style=original` |
 
 ### scroll-style
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "scroll-style"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "scroll-style"。
 
 被控端设置中的 "scroll-style" 控制是否滚动方式。
 
@@ -820,11 +820,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | scrollauto,scrollbar | scrollauto | `scroll-style=scrollauto` |
+| N | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
 
 ### image-quality
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "image-quality"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "image-quality"。
 
 被控端设置中的 "image-quality" 控制图像质量。
 
@@ -835,11 +835,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | best,balanced,low,custom | balanced | `image-quality=balanced` |
+| N | best, balanced, low, custom | balanced | `image-quality=balanced` |
 
 ### custom-image-quality
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "custom-image-quality"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "custom-image-quality"。
 
 被控端设置中的 "custom-image-quality" 控制图像质量（当 "image-quality" 为 custom 的时候）。
 
@@ -854,7 +854,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 ### custom-fps
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "custom-fps"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "custom-fps"。
 
 被控端设置中的 "custom-fps" 控制 fps（当 "image-quality" 为 custom 的时候）。
 
@@ -865,11 +865,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | [5,120] | 30 | `custom-fps=30` |
+| N | [5, 120] | 30 | `custom-fps=30` |
 
 ### codec-preference
 
-这个选项会在第一次连接每个被控端的后，设置关于该被控端的 "codec-preference"。
+这个选项会在第一次连接每个被控端的后, 设置关于该被控端的 "codec-preference"。
 
 被控端设置中的 "codec-preference" 控制图像的编解码。
 
@@ -880,6 +880,6 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | auto,vp8,vp9,av1,h264,h265 | auto | `codec-preference=auto` |
+| N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
 
 **注意**: "vp8" 和 "vp9" 以外的选项可能不起作用。 这取决于您的机器支持什么。
