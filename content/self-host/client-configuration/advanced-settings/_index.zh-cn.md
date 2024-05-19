@@ -5,13 +5,14 @@ weight: 49
 
 ## 设置项的优先级
 
-一共有 3 中类型的设置项：
+一共有 4 中类型的设置项：
 
 1. 覆盖设置, 在 "Web Console -> Custom Clients" 中。
 1. 默认设置, 在 "Web Console -> Custom Clients" 中。
 1. 用户设置, 在 RustDesk 客户端中。
+1. 策略设置, 在 "Web Console -> Strategies" 中。
 
-这些设置的优先级是：`覆盖 > 用户 > 默认`。
+这些设置的优先级是：`覆盖 > 策略 > 用户 > 默认`。
 
 ## 安全设置
 
