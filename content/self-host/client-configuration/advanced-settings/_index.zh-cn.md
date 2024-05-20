@@ -198,7 +198,7 @@ IP 直接访问的端口。
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | `,` or `<ip1>,<ip2>,<ip3>` | , means no filter | `whitelist=, ` |
+| N | `,` 或者 `<ip1>,<ip2>,<ip3>` | `,` 表示不过滤 | `whitelist=,` |
 
 ### allow-auto-disconnect & auto-disconnect-timeout
 
@@ -212,7 +212,7 @@ IP 直接访问的端口。
 | 设置项 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: | :------: |
 | allow-auto-disconnect | N | Y, N | N | `allow-auto-disconnect=Y` |
-| auto-disconnect-timeout | N | Timeout in minutes | 10 | `auto-disconnect-timeout=10` |
+| auto-disconnect-timeout | N | 按分钟计的超时时间 | 10 | `auto-disconnect-timeout=10` |
 
 ### allow-only-conn-window-open
 
