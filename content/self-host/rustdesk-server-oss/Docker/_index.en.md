@@ -35,8 +35,8 @@ If you can not see logs with `-td`, you can see logs via `docker logs hbbs`. Or 
 
 #### Docker Compose examples
 For running the Docker files with the `compose.yml` as described here you need to have [Docker Compose](https://docs.docker.com/compose/) installed.
-```yaml
 
+```yaml
 services:
   hbbs:
     container_name: hbbs
@@ -49,7 +49,6 @@ services:
     depends_on:
       - hbbr
     restart: unless-stopped
-
 
   hbbr:
     container_name: hbbr
