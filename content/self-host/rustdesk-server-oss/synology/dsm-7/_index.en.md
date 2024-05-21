@@ -78,7 +78,7 @@ The public key will looks like this:
 
 ![](images/dsm7_viewing_public_key_though_syno_text_editor.png)
 
-Check [here](/docs/en/client) to set up your client. Only `ID server` and `Key` is needed. `Relay server` isn't needed because we've set it in `hbbs`, hbbs will provide this information automatically.
+Check [here](/docs/en/client) to set up your client. Only `ID server` and `Key` is needed. `Relay server` isn't needed because we've set it in `hbbs`, `hbbs` will provide this information automatically.
 
 ### 5. Set your hbbs to point to your domain
 
@@ -105,9 +105,9 @@ If you still can't find the setting, Google search `{Router brand} + port forwar
 
 Open these required ports:
   * `21114` TCP for web console, only available in Pro version
-  * `21115` `TCP` For NAT type test
-  * `21116` `TCP` TCP hole punching
-  * `21116` `UDP` Heartbeat/ID server
-  * `21117` `TCP` Relay
+  * `21115` TCP for NAT type test
+  * `21116` TCP TCP hole punching
+  * `21116` UDP heartbeat/ID server
+  * `21117` TCP relay
   * `21118/21119` TCP for web socket if you want to run web client
 
