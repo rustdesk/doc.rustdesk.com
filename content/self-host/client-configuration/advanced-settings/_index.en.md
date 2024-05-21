@@ -7,12 +7,12 @@ weight: 49
 
 There are four types of settings:
 
-1. Override settings, in "Web Console -> Custom Clients".
-1. Default settings, in "Web Console -> Custom Clients".
-1. User settings, in the RustDesk client.
-1. Stragegy settings, in "Web Console -> Strategies".
+1. Override settings, in "Web Console → Custom Clients"
+2. Default settings, in "Web Console → Custom Clients"
+3. User settings, in the RustDesk client
+4. Strategy settings, in "Web Console → Strategies"
 
-The hierarchy of privilege for these settings is as follows: `Override > Stragegy > User > Default`.
+The hierarchy of privilege for these settings is as follows: `Override > Strategy > User > Default`.
 
 ## Security Settings
 
@@ -22,8 +22,8 @@ Set the access mode (permissions) for incoming connections.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Permissions
-1. **Mobile**
+1. **Desktop** Settings → Security → Permissions
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -35,8 +35,8 @@ Enable keyboard/mouse input for incoming connections.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Permissions -> Enable keyboard
-1. **Mobile**
+1. **Desktop** Settings → Security → Permissions → Enable keyboard
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -44,12 +44,12 @@ Enable keyboard/mouse input for incoming connections.
 
 ### enable-clipboard
 
-Enable copy and paste for the incomign connections.
+Enable copy and paste for the incoming connections.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Permissions -> Enable clipboard
-1. **Mobile**
+1. **Desktop** Settings → Security → Permissions → Enable clipboard
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -57,12 +57,12 @@ Enable copy and paste for the incomign connections.
 
 ### enable-file-transfer
 
-Enable file copy and paster or filte transfer(session) for incoming connections.
+Enable file copy and paste or file transfer (session) for incoming connections.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Permissions -> Enable file transfer
-1. **Mobile**
+1. **Desktop** Settings → Security → Permissions → Enable file transfer
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -74,8 +74,8 @@ Enable audio record and transfer to peer.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Permissions -> Enable audio
-1. **Mobile**
+1. **Desktop** Settings → Security → Permissions → Enable audio
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -87,8 +87,8 @@ Enable TCP tunneling.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Permissions -> Enable TCP tunneling
-1. **Mobile**
+1. **Desktop** Settings → Security → Permissions → Enable TCP tunneling
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -100,8 +100,8 @@ Enable restarting by the control side.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Permissions -> Enable remote restart
-1. **Mobile**
+1. **Desktop** Settings → Security → Permissions → Enable remote restart
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -113,8 +113,8 @@ Enable sessions to be recorded.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Permissions -> Enable recording session
-1. **Mobile** Settings -> Share screen -> Enable recording session
+1. **Desktop** Settings → Security → Permissions → Enable recording session
+2. **Mobile** Settings → Share screen → Enable recording session
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -126,8 +126,8 @@ Enable the control side to block other users' input.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Permissions -> Enable blocking user input (Windows only)
-1. **Mobile**
+1. **Desktop** Settings → Security → Permissions → Enable blocking user input (Windows only)
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -135,12 +135,12 @@ Enable the control side to block other users' input.
 
 ### allow-remote-config-modification
 
-Allow the control side to change the settings in conrolled RustDesk UI.
+Allow the control side to change the settings in controlled RustDesk UI.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Permissions -> Enable remote configuration modification
-1. **Mobile**
+1. **Desktop** Settings → Security → Permissions → Enable remote configuration modification
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -154,8 +154,8 @@ After LAN discovery, [WOL](https://en.wikipedia.org/wiki/Wake-on-LAN) can work i
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Security -> Deny LAN discovery
-1. **Mobile** Settings -> Share screen -> Deny LAN discovery
+1. **Desktop** Settings → Security → Security → Deny LAN discovery
+2. **Mobile** Settings → Share screen → Deny LAN discovery
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -167,8 +167,8 @@ Enable direct IP access.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Security -> Enable direct IP access
-1. **Mobile** Settings -> Share screen -> Direct IP access
+1. **Desktop** Settings → Security → Security → Enable direct IP access
+2. **Mobile** Settings → Share screen → Direct IP access
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -180,8 +180,8 @@ Direct IP access port.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Security -> Direct IP access port (Show if "Enable direct IP access" is checked)
-1. **Mobile** Settings -> Share screen -> Direct IP access
+1. **Desktop** Settings → Security → Security → Direct IP access port (Show if "Enable direct IP access" is checked)
+2. **Mobile** Settings → Share screen → Direct IP access
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -193,8 +193,8 @@ Use IP Whitelisting.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Security -> Use IP Whitelisting
-1. **Mobile** Settings -> Share screen -> Use IP Whitelisting
+1. **Desktop** Settings → Security → Security → Use IP Whitelisting
+2. **Mobile** Settings → Share screen → Use IP Whitelisting
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -206,8 +206,8 @@ Automatically close incoming sessions after a period of user inactivity.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Security -> Automatically close incoming sessions on user inactivity
-1. **Mobile** Settings -> Share screen -> Automatically close incoming sessions on user inactivity
+1. **Desktop** Settings → Security → Security → Automatically close incoming sessions on user inactivity
+2. **Mobile** Settings → Share screen → Automatically close incoming sessions on user inactivity
 
 | Option | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: | :------: |
@@ -220,8 +220,8 @@ Only allow connection if RustDesk window is open.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Security -> Only allow connection if RustDesk window is open
-1. **Mobile**
+1. **Desktop** Settings → Security → Security → Only allow connection if RustDesk window is open
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -233,8 +233,8 @@ Accept incoming connections via password or manually click.
 
 **Location**:
 
-1. **Desktop** Settings -> Security -> Password -> Dropdown box
-1. **Mobile** Share screen -> Dropdown menu on right-up corner
+1. **Desktop** Settings → Security → Password → Dropdown box
+2. **Mobile** Share screen → Dropdown menu on right-up corner
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -242,20 +242,20 @@ Accept incoming connections via password or manually click.
 
 ### proxy-url
 
-The proxy url.
+The proxy URL.
 
 Currently support `http` and `socks5`.
 
 **Location**:
 
-1. **Desktop** Settings -> Network -> Proxy -> Socks5/Http(s) proxy
-1. **Mobile**
+1. **Desktop** Settings → Network → Proxy → Socks5/Http(s) proxy
+2. **Mobile**
 
 Examples:
 
 1. **http** `proxy-url=http://192.168.0.2:12345`
-1. **https** `proxy-url=https://192.168.0.2:12345`
-1. **socks5** `proxy-url=socks5://192.168.0.2:1080`
+2. **https** `proxy-url=https://192.168.0.2:12345`
+3. **socks5** `proxy-url=socks5://192.168.0.2:1080`
 
 ### proxy-username & proxy-password
 
@@ -263,8 +263,8 @@ Proxy username and password.
 
 **Location**:
 
-1. **Desktop** Settings -> Network -> Proxy -> Socks5/Http(s) proxy
-1. **Mobile**
+1. **Desktop** Settings → Network → Proxy → Socks5/Http(s) proxy
+2. **Mobile**
 
 | Option | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: | :------: |
@@ -279,8 +279,8 @@ Controls the UI theme of RustDesk client.
 
 **Location**:
 
-1. **Desktop** Settings -> General -> Theme
-1. **Mobile** Settings -> Settings -> Theme
+1. **Desktop** Settings → General → Theme
+2. **Mobile** Settings → Settings → Theme
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -292,8 +292,8 @@ Controls the language of RustDesk client.
 
 **Location**:
 
-1. **Desktop** Settings -> General -> Luanguage
-1. **Mobile** Settings -> Settings -> Luanguage
+1. **Desktop** Settings → General → Language
+2. **Mobile** Settings → Settings → Language
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -311,8 +311,8 @@ Automatically record incoming sessions.
 
 **Location**:
 
-1. **Desktop** Settings -> General -> Recording -> Automatically record incoming sessions
-1. **Mobile** Settings -> Recording -> Automatically record incoming sessions
+1. **Desktop** Settings → General → Recording → Automatically record incoming sessions
+2. **Mobile** Settings → Recording → Automatically record incoming sessions
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -324,17 +324,17 @@ The directory to save recorded videos.
 
 **Location**:
 
-1. **Desktop** Settings -> General -> Recording -> Video save directory
-1. **Mobile** Settings -> Recording
+1. **Desktop** Settings → General → Recording → Video save directory
+2. **Mobile** Settings → Recording
 
 Default values:
 
 1. **MacOS** ~/Movies/**app_name**
-1. **Linux** ~/Videos/**app_name**
-1. **Windows** %USERPROFILE%\Videos\\**app_name**
-1. **Android** /Storage/emulated/0/**app_name**/ScreenRecord
+2. **Linux** ~/Videos/**app_name**
+3. **Windows** %USERPROFILE%\Videos\\**app_name**
+4. **Android** /Storage/emulated/0/**app_name**/ScreenRecord
 
-**Note**: Relace **app_name** means current app name.
+**Note**: Replace **app_name** means current app name.
 
 ### enable-confirm-closing-tabs
 
@@ -342,8 +342,8 @@ Controls whether to show a confirm dialog before closing all remote tabs.
 
 **Location**:
 
-1. **Desktop** Settings -> General -> Other -> Confirm before closing multiple tabs
-1. **Mobile**
+1. **Desktop** Settings → General → Other → Confirm before closing multiple tabs
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -355,8 +355,8 @@ Enable adaptive bitrate.
 
 **Location**:
 
-1. **Desktop** Settings -> General -> Other -> Adaptive bitrate
-1. **Mobile** Settings -> Share screen -> Adaptive bitrate (beta)
+1. **Desktop** Settings → General → Other → Adaptive bitrate
+2. **Mobile** Settings → Share screen → Adaptive bitrate (beta)
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -368,8 +368,8 @@ Remove wallpaper during incoming sessions.
 
 **Location**:
 
-1. **Desktop** Settings -> General -> Other -> Remove wallpaper during incoming sessions
-1. **Mobile**
+1. **Desktop** Settings → General → Other → Remove wallpaper during incoming sessions
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -381,8 +381,8 @@ Controls whether to use a new tab or a new window to open a new connection.
 
 **Location**:
 
-1. **Desktop** Settings -> General -> Other -> Open connection in new tab
-1. **Mobile**
+1. **Desktop** Settings → General → Other → Open connection in new tab
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -394,8 +394,8 @@ Always use software rendering.
 
 **Location**:
 
-1. **Desktop** Settings -> General -> Other -> Always use software rendering
-1. **Mobile**
+1. **Desktop** Settings → General → Other → Always use software rendering
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -405,12 +405,12 @@ Always use software rendering.
 
 Allow incoming connection if there's no displays.
 
-This option requires desktop environment, xorg server and gdm, see [PR 3902](https://github.com/rustdesk/rustdesk/pull/3902).
+This option requires desktop environment, Xorg server and GDM, see [PR 3902](https://github.com/rustdesk/rustdesk/pull/3902).
 
 **Location**:
 
-1. **Desktop** Settings -> General -> Other -> Allow linux headless
-1. **Mobile**
+1. **Desktop** Settings → General → Other → Allow Linux headless
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -423,7 +423,7 @@ Enable hardware encoding to make the picture smoother.
 **Location**:
 
 1. **Desktop**
-1. **Mobile** Settings -> Hardware codec
+2. **Mobile** Settings → Hardware codec
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -435,8 +435,8 @@ Controls the view of peer cards, includes "Big tiles", "Small tiles" and "List".
 
 **Location**:
 
-1. **Desktop** Home -> Peer panel -> Right top grid icon
-1. **Mobile**
+1. **Desktop** Home → Peer panel → Right top grid icon
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -452,8 +452,8 @@ Controls the ordering of peer cards.
 
 **Location**:
 
-1. **Desktop** Home -> Peer panel -> Right top sort icon
-1. **Mobile**
+1. **Desktop** Home → Peer panel → Right top sort icon
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -465,8 +465,8 @@ Controls whether to sync the address book with recent sessions.
 
 **Location**:
 
-1. **Desktop** Home -> Peer panel -> Address book -> Tags -> Dropdown menu -> Sync with recent sessions
-1. **Mobile** Home -> Peer panel -> Address book -> Tags -> Dropdown menu -> Sync with recent sessions
+1. **Desktop** Home → Peer panel → Address book → Tags → Dropdown menu → Sync with recent sessions
+2. **Mobile** Home → Peer panel → Address book → Tags → Dropdown menu → Sync with recent sessions
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -478,8 +478,8 @@ Controls whether to sort the address book tags.
 
 **Location**:
 
-1. **Desktop** Home -> Peer panel -> Address book -> Tags -> Dropdown menu -> Sort tags
-1. **Mobile** Home -> Peer panel -> Address book -> Tags -> Dropdown menu -> Sort tags
+1. **Desktop** Home → Peer panel → Address book → Tags → Dropdown menu → Sort tags
+2. **Mobile** Home → Peer panel → Address book → Tags → Dropdown menu → Sort tags
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -493,8 +493,8 @@ Filter address book by tag intersection.
 
 **Location**:
 
-1. **Desktop** Home -> Peer panel -> Address book -> Tags -> Dropdown menu -> Filter by intersection
-1. **Mobile** Home -> Peer panel -> Address book -> Tags -> Dropdown menu -> Filter by intersection
+1. **Desktop** Home → Peer panel → Address book → Tags → Dropdown menu → Filter by intersection
+2. **Mobile** Home → Peer panel → Address book → Tags → Dropdown menu → Filter by intersection
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -510,8 +510,8 @@ Then the "view-only" option in each peer's settings will controls whether the co
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> View mode
-1. **Mobile** Settings -> Display settings -> Other default options -> View mode
+1. **Desktop** Settings → Display → Other default options → View mode
+2. **Mobile** Settings → Display settings → Other default options → View mode
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -525,8 +525,8 @@ Controls whether to show monitors in toolbar.
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Show monitors toolbar
-1. **Mobile**
+1. **Desktop** Settings → Display → Other default options → Show monitors toolbar
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -538,8 +538,8 @@ Controls whether the remote toolbar is collapsed after connecting.
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Collapse toolbar
-1. **Mobile**
+1. **Desktop** Settings → Display → Other default options → Collapse toolbar
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -553,8 +553,8 @@ Then the "show-remote-cursor" option in each peer's settings will controls wheth
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Show remote cursor
-1. **Mobile** Settings -> Display settings -> Other default options -> Show remote cursor
+1. **Desktop** Settings → Display → Other default options → Show remote cursor
+2. **Mobile** Settings → Display settings → Other default options → Show remote cursor
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -570,8 +570,8 @@ Then the "follow-remote-cursor" option in each peer's settings will controls whe
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Follow remote cursor
-1. **Mobile** Settings -> Display settings -> Other default options -> Follow remote cursor
+1. **Desktop** Settings → Display → Other default options → Follow remote cursor
+2. **Mobile** Settings → Display settings → Other default options → Follow remote cursor
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -587,8 +587,8 @@ Then the "follow-remote-window" option in each peer's settings will controls whe
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Follow remote window focus
-1. **Mobile** Settings -> Display settings -> Other default options -> Follow remote window focus
+1. **Desktop** Settings → Display → Other default options → Follow remote window focus
+2. **Mobile** Settings → Display settings → Other default options → Follow remote window focus
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -602,8 +602,8 @@ The "zoom-cursor" option in each peer's settings will then control whether the c
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Zoom cursor
-1. **Mobile**
+1. **Desktop** Settings → Display → Other default options → Zoom cursor
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -617,8 +617,8 @@ The "show-quality-monitor" option in each peer's settings will then control whet
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Show quality monitor
-1. **Mobile** Settings -> Display settings -> Other default options -> Show quality monitor
+1. **Desktop** Settings → Display → Other default options → Show quality monitor
+2. **Mobile** Settings → Display settings → Other default options → Show quality monitor
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -632,8 +632,8 @@ The "disable-audio" option in each peer's settings will then control whether to 
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Mute
-1. **Mobile** Settings -> Display settings -> Other default options -> Mute
+1. **Desktop** Settings → Display → Other default options → Mute
+2. **Mobile** Settings → Display settings → Other default options → Mute
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -647,8 +647,8 @@ The "enable-file-copy-paste" option in each peer's settings will then control en
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Enable file copy and paste (Windows only)
-1. **Mobile**
+1. **Desktop** Settings → Display → Other default options → Enable file copy and paste (Windows only)
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -662,8 +662,8 @@ The "disable-clipboard" option in each peer's settings will then control whether
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Disable clipboard
-1. **Mobile** Settings -> Display settings -> Other default options -> Disable clipboard
+1. **Desktop** Settings → Display → Other default options → Disable clipboard
+2. **Mobile** Settings → Display settings → Other default options → Disable clipboard
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -677,8 +677,8 @@ The "lock-after-session-end" option in each peer's settings will then control wh
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Lock after session end
-1. **Mobile** Settings -> Display settings -> Other default options -> Lock after session end
+1. **Desktop** Settings → Display → Other default options → Lock after session end
+2. **Mobile** Settings → Display settings → Other default options → Lock after session end
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -692,8 +692,8 @@ The "privacy-mode" option in each peer's settings will then control whether to u
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Privacy mode
-1. **Mobile** Settings -> Display settings -> Other default options -> Privacy mode
+1. **Desktop** Settings → Display → Other default options → Privacy mode
+2. **Mobile** Settings → Display settings → Other default options → Privacy mode
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -708,7 +708,7 @@ The "touch-mode" option in each peer's settings will then control whether to use
 **Location**:
 
 1. **Desktop**
-1. **Mobile** Settings -> Display settings -> Other default options -> Touch mode
+2. **Mobile** Settings → Display settings → Other default options → Touch mode
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -722,8 +722,8 @@ The "i444" option in each peer's settings will then control whether to use true 
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> True color (4:4:4)
-1. **Mobile** Settings -> Display settings -> Other default options -> True color (4:4:4)
+1. **Desktop** Settings → Display → Other default options → True color (4:4:4)
+2. **Mobile** Settings → Display settings → Other default options → True color (4:4:4)
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -737,8 +737,8 @@ The "reverse-mouse-wheel" option in each peer's settings will then control wheth
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Reverse mouse wheel
-1. **Mobile** Settings -> Display settings -> Other default options -> Reverse mouse wheel
+1. **Desktop** Settings → Display → Other default options → Reverse mouse wheel
+2. **Mobile** Settings → Display settings → Other default options → Reverse mouse wheel
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -752,8 +752,8 @@ The "swap-left-right-mouse" option in each peer's settings will then control whe
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Swap left-right mouse button
-1. **Mobile** Settings -> Display settings -> Other default options -> Swap left-right mouse button
+1. **Desktop** Settings → Display → Other default options → Swap left-right mouse button
+2. **Mobile** Settings → Display settings → Other default options → Swap left-right mouse button
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -769,8 +769,8 @@ The "displays-as-individual-windows" option in each peer's settings will then co
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Show displays as individual windows
-1. **Mobile**
+1. **Desktop** Settings → Display → Other default options → Show displays as individual windows
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -786,8 +786,8 @@ The "use-all-my-displays-for-the-remote_session" option in each peer's settings 
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Other default options -> Use all my displays for the remote session
-1. **Mobile**
+1. **Desktop** Settings → Display → Other default options → Use all my displays for the remote session
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -801,8 +801,8 @@ The "view-style" option in each peer's settings will then control the view style
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Default view style
-1. **Mobile** Settings -> Display settings -> Default view style
+1. **Desktop** Settings → Display → Default view style
+2. **Mobile** Settings → Display settings → Default view style
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -816,8 +816,8 @@ The "scroll-style" option in each peer's settings will then control the scroll s
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Default scroll style
-1. **Mobile**
+1. **Desktop** Settings → Display → Default scroll style
+2. **Mobile**
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -831,8 +831,8 @@ The "image-quality" option in each peer's settings will then control the image q
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Default image quality
-1. **Mobile** Settings -> Display settings -> Default image quality
+1. **Desktop** Settings → Display → Default image quality
+2. **Mobile** Settings → Display settings → Default image quality
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -846,8 +846,8 @@ The "custom-image-quality" option in each peer's settings will then control the 
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Default image quality -> Custom
-1. **Mobile** Settings -> Display settings -> Default image quality -> Custom
+1. **Desktop** Settings → Display → Default image quality → Custom
+2. **Mobile** Settings → Display settings → Default image quality → Custom
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -861,8 +861,8 @@ The "custom-fps" option in each peer's settings will then control the fps if "im
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Default image quality -> Custom
-1. **Mobile** Settings -> Display settings -> Default image quality -> Custom
+1. **Desktop** Settings → Display → Default image quality → Custom
+2. **Mobile** Settings → Display settings → Default image quality → Custom
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -876,8 +876,8 @@ The "codec-preference" option in each peer's settings will then control codec fo
 
 **Location**:
 
-1. **Desktop** Settings -> Display -> Default codec
-1. **Mobile** Settings -> Display settings -> Default codec
+1. **Desktop** Settings → Display → Default codec
+2. **Mobile** Settings → Display settings → Default codec
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
