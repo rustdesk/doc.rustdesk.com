@@ -26,18 +26,15 @@ What it does:
 - If you choose Domain, it will install Nginx and Certbot, allowing the API to be available on port 443 (HTTPS) and get an SSL certificate over port 80, it is automatically renewed
 
 {{% notice note %}}
-If you want to set up https for web console manually, please check this
-https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually
+How to [Set up HTTPS for web console manually](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
 {{% /notice %}}
 
 {{% notice note %}}
-If the systemd service fails to start, it is probably related to SELinux, please check this
-https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#selinux
+If the systemd service fails to start, it is probably related to SELinux, please check [this](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#selinux).
 {{% /notice %}}
 
 {{% notice note %}}
-If your client cannot connect to your server or you cannot access the web console, please check this
-https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#firewall
+If your client cannot connect to your server or you cannot access the web console, please check [this](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#firewall).
 {{% /notice %}}
 
 ### Upgrade
@@ -58,7 +55,7 @@ Copy and paste the above command into your Linux terminal to convert from RustDe
 `bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/convertfromos.sh)`
 
 {{% notice note %}}
-Please add `21114` TCP port to your firewal, this is additional port for web console and user login in RustDesk client.
+Please add `21114` TCP port to your firewall, this is additional port for web console and user login in RustDesk client.
 {{% /notice %}}
 
 What it does:
