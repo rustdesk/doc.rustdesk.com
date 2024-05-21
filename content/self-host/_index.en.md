@@ -20,7 +20,7 @@ Core Ports: \
 TCP `21114-21119` \
 UDP `21116`
 
-The above 21115-21117 are the minimum required ports for RustDesk to work, these handle the signal and relay ports as well as NAT traversal.
+The above `21115-21117` are the minimum required ports for RustDesk to work, these handle the signal and relay ports as well as NAT traversal.
 
 Additionally TCP ports `21118` and `21119` can be opened if you want to use the [RustDesk Web Client](https://rustdesk.com/docs/en/dev/build/web/).
 
