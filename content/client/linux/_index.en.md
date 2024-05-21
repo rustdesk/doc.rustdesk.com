@@ -12,7 +12,7 @@ weight: 4
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
-For Ubuntu 18.04, please do below first for pipewire, https://github.com/rustdesk/rustdesk/discussions/6148#discussioncomment-9295883.
+For Ubuntu 18.04, please do below first for [pipewire](https://github.com/rustdesk/rustdesk/discussions/6148#discussioncomment-9295883).
 ```sh
 sudo apt install software-properties-common
 sudo add-apt-repository ppa:pipewire-debian/pipewire-upstream
