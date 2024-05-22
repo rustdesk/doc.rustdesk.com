@@ -1,5 +1,5 @@
 ---
-title: LDAP 
+title: LDAP
 weight: 17
 ---
 
@@ -20,7 +20,7 @@ Please go to `LDAP` settings page as below.
 
 - **Filter:** This is the search filter for the LDAP query. For example, `(objectClass=person)`, or `(&(age=28)(!(name=Bob)))`.
 
-- **Username Attribute:** This is the attribute which contains the username. For example, `uid` or `sAMAccountName`. By default, it uses `uid` and `cn`. Here is a discussion about this, [https://github.com/rustdesk/rustdesk-server-pro/issues/140#issuecomment-1916804393](https://github.com/rustdesk/rustdesk-server-pro/issues/140#issuecomment-1916804393).
+- **Username Attribute:** This is the attribute which contains the username. For example, `uid` or `sAMAccountName`. By default, it uses `uid` and `cn`. Here is a [discussion](https://github.com/rustdesk/rustdesk-server-pro/issues/140#issuecomment-1916804393) about this.
 
 - **StartTLS:** This determines whether to use StartTLS to upgrade the connection to a secure one.
 
@@ -30,10 +30,8 @@ Please go to `LDAP` settings page as below.
 - How do LDAP logins work e.g. do I need to create a new user first, does RustDesk create a user on first login, etc?
   > RustDesk create a user on first login
 - How do I check LDAP is working (ideally a command I can give to RustDesk to return the discovered users.)?
-  > When you submit the configuration, it will connect to your ldap server with binddn/password you have given and verify if it works.
+  > When you submit the configuration, it will connect to your LDAP server with binddn/password you have given and verify if it works.
 - How do I change local users to LDAP users?
   > Not yet
-- Does it support LDAP group?
+- Does it support LDAP groups?
   > Not yet
-
-

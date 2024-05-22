@@ -70,7 +70,7 @@ function getLatest()
     $params += @{Version = $Version}
     $params += @{Downloadlink = $Downloadlink}
     $Result = New-Object PSObject -Property $params
-    
+
     return($Result)
 }
 

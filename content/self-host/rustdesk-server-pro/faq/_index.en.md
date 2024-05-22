@@ -153,22 +153,21 @@ If your `hbbr` does not run on the same machine of `hbbs`, or you have multiple 
 ### Reset MFA for Admin account
 https://github.com/rustdesk/rustdesk/discussions/6576
 
+### Set up HTTPS for web console manually
 
-### Set up https for web console manually
-
-#### 1. Buy a domain name and resolve it to your server's IP address. 
+#### 1. Buy a domain name and resolve it to your server's IP address.
 * Buy a domain name from a domain registrar like GoDaddy, Namecheap, or Namesilo.
-* Resolve the domain name to your server's IP address with one of the following: 
+* Resolve the domain name to your server's IP address with one of the following:
     - Your domain registrar's control panel (recommended)
-    - DNS providers, https://en.wikipedia.org/wiki/List_of_managed_DNS_providers 
+    - [DNS providers](https://en.wikipedia.org/wiki/List_of_managed_DNS_providers)
 
- For example, if you buy a domain name `example.com` from `Namesilo` and your server's IP address is `123.123.123.123`, you want to use `rustdesk.example.com` subdomain as your https web console address. You need to open link https://www.namesilo.com/account_domains.php, click the button with tooltip `Manage dns for the domain`, add add a `A` record with the hostname name `rustdesk` and the IP address of your server.
+For example, if you buy a domain name `example.com` from `Namesilo` and your server's IP address is `123.123.123.123`, you want to use `rustdesk.example.com` subdomain as your HTTPS web console address. You need to open [link](https://www.namesilo.com/account_domains.php), click the button with tooltip `Manage dns for the domain`, add add a `A` record with the hostname name `rustdesk` and the IP address of your server.
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-button.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-add-a-record.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-table.png)
-* It takes some time for dns to take effect, go to https://www.whatsmydns.net and check whether the domain name has been resolved to your server's IP address, step 6 depends on the correct resolve result. In the following steps, replace `<YOUR_DOMAIN>` with your subdomain, eg: `rustdesk.example.com`.
+* It takes some time for DNS to take effect, go to https://www.whatsmydns.net and check whether the domain name has been resolved to your server's IP address. Step 6 depends on the correct resolve result. In the following steps, replace `<YOUR_DOMAIN>` with your subdomain, e.g. `rustdesk.example.com`.
 
-#### 2. Install nginx.
+#### 2. Install Nginx
 * Debian/Ubuntu: `sudo apt-get install nginx`
 * Fedora/CentOS: `sudo dnf install nginx` or `sudo yum install nginx`
 * Arch: `sudo pacman -S install nginx`
@@ -180,16 +179,15 @@ Run `nginx -h` to check whether it has been installed successfully.
 
 #### 3. Install Certbot
 * Method 1: If snap is installed, run `sudo snap install certbot --classic`
-* Method 2: Using `python3-certbot-nginx` instead. eg: `sudo apt-get install python3-certbot-nginx` for ubuntu
-* Method 3: If the above two methods failed, try install `certbot-nginx`, eg: `sudo yum install certbot-nginx` for centos 7
+* Method 2: Using `python3-certbot-nginx` instead. e.g. `sudo apt-get install python3-certbot-nginx` for ubuntu
+* Method 3: If the above two methods failed, try install `certbot-nginx`, e.g. `sudo yum install certbot-nginx` for centos 7
 
 Run `certbot -h` to check whether it has been installed successfully..
 
-#### 4. Config nginx
-
+#### 4. Config Nginx
 There are two ways:
 * If directory `/etc/nginx/sites-available` and `/etc/nginx/sites-enabled` exists, replace `<YOUR_DOMAIN>` of the following command with your domain name and run it.
-```bash
+```sh
 cat > /etc/nginx/sites-available/rustdesk.conf << EOF
 server {
 server_name <YOUR_DOMAIN>;
@@ -206,7 +204,7 @@ Then run `sudo ln -s /etc/nginx/sites-available/rustdesk.conf /etc/nginx/sites-e
 Run `cat /etc/nginx/sites-available/rustdesk.conf` to make sure its content is correct.
 
 * If directory `/etc/nginx/sites-available` and `/etc/nginx/sites-enabled` don't exist and directory `/etc/nginx/conf.d` exists, replace `<YOUR_DOMAIN>` of the following command with your domain name and run it.
-```bash
+```sh
 cat > /etc/nginx/conf.d/rustdesk.conf << EOF
 server {
 server_name <YOUR_DOMAIN>;
@@ -221,49 +219,46 @@ EOF
 Run `cat /etc/nginx/conf.d/rustdesk.conf` to make sure its content is correct.
 
 #### 5. Enable firewall rules for the domain
-
 Run the following commands:
 
-`sudo ufw allow 80/tcp`  
-`sudo ufw allow 443/tcp`  
-`sudo ufw --force enable`  
-`sudo ufw --force reload`  
+```sh
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw --force enable
+sudo ufw --force reload
+```
 
 #### 6. Generate SSL certificate
-
 Replace `<YOUR_DOMAIN>` with your domain name, then run
-`sudo certbot --nginx --cert-name <YOUR_DOMAIN> --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d <YOUR_DOMAIN>`
+`sudo certbot --nginx --cert-name <YOUR_DOMAIN> --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d <YOUR_DOMAIN>`.
 
 If it prompts `Enter email address (used for urgent renewal and security notices)`, enter your email address.
 
 Finally, the content of `rustdesk.conf` should be like this:
 ```
 server {
-server_name <Your_DOMAIN>;
+server_name <YOUR_DOMAIN>;
     location / {
         proxy_set_header        X-Real-IP       $remote_addr;
         proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_pass http://127.0.0.1:21114/;
     }
 
-
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/<Your_DOMAIN>/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/<Your_DOMAIN>/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/<YOUR_DOMAIN>/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/<YOUR_DOMAIN>/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 }
 server {
-    if ($host = <Your_DOMAIN>) {
+    if ($host = <YOUR_DOMAIN>) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
-
-server_name <Your_DOMAIN>;
+server_name <YOUR_DOMAIN>;
     listen 80;
     return 404; # managed by Certbot
-
 
 }
 ```
@@ -272,69 +267,75 @@ Here are some common errors:
 
 * The console prints `Successfully deployed certificate for <YOUR_DOMAIN> to /etc/nginx/.../default`  rather than `Successfully deployed certificate for <YOUR_DOMAIN> to /etc/nginx/.../rustdesk.conf`.
 
-Solution: The reason may be certbot doesn't find the rustdesk.conf file, you can try one of the following solutions:
-    - Check the result of the step 5, run `sudo service nginx restart`. 
-    - Copy the server configs `server{...}` which contain `<YOUR_DOMAIN>` to `rustdesk.conf`, and change `location{...}` to the content below.
-```bash
+The reason may be Certbot doesn't find the `rustdesk.conf` file, you can try one of the following solutions:
+- Check the result of the step 5, run `sudo service nginx restart`.
+- Copy the server configs `server{...}` which contain `<YOUR_DOMAIN>` to `rustdesk.conf`, and change `location{...}` to the content below.
+
+```sh
 location / {
            proxy_set_header        X-Real-IP       \$remote_addr;
            proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
         proxy_pass http://127.0.0.1:21114/;
       }
-```  
+```
 
 * `too many certificates (5) already issued for this exact set of domains in the last 168 hours`
 
-Solution: add another domain name to dns and change `<YOUR_DOMAIN>` to it, eg: `rustdesk2.example.com`, then repeat step 1, 4, 6.
+Solution: Add another domain name to DNS and change `<YOUR_DOMAIN>` to it, e.g. `rustdesk2.example.com`. Then repeat step 1, 4, 6.
 
 * `Error getting validation data`
 
 Solution: it may be caused by firewall, please refer to https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#firewall
 
-Notice: Run `sudo service nginx restart` if you change the rustdesk.conf manually.
-
+Notice: Run `sudo service nginx restart` if you change the `rustdesk.conf` manually.
 
 #### 7. Login to the web page
-
 * Open https://<YOUR_DOMAIN> in the browser, log in using the default user name "admin" and password "test1234", then change the password to your own.
 
-### Selinux
+### SELinux
 
-If `Waiting for RustDesk Relay service to become active...` appears when install, it may be caused by selinux. You can try the following commands:
-`sudo semanage fcontext -a -t NetworkManager_dispatcher_exec_t 'hbbs'`  
-`sudo semanage fcontext -a -t NetworkManager_dispatcher_exec_t 'hbbr'`  
-`sudo restorecon -v '/usr/bin/hbbs'`  
-`sudo restorecon -v '/usr/bin/hbbr'`  
+If `Waiting for RustDesk Relay service to become active...` appears when install, it may be caused by SELinux. You can try the following commands:
+
+```sh
+sudo semanage fcontext -a -t NetworkManager_dispatcher_exec_t 'hbbs'
+sudo semanage fcontext -a -t NetworkManager_dispatcher_exec_t 'hbbr'
+sudo restorecon -v '/usr/bin/hbbs'
+sudo restorecon -v '/usr/bin/hbbr'
+```
 
 ### Firewall
 
-#### Firewall of cloud.
-If you run on AWS/Azure/Google/DigitalOcean cloud, please open UDP(21116) + TCP(21114-21119) inbound port on cloud vendor's dashboard.
+#### Firewall of cloud
+If you run on AWS/Azure/Google/DigitalOcean cloud, please open UDP (21116) and TCP (21114-21119) inbound port on cloud vendor's dashboard.
 
-- AWS: https://docs.aws.amazon.com/network-firewall/latest/developerguide/getting-started.html
-- Azure: https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
-- Google: https://cloud.google.com/firewall/docs/firewalls
-- DigitalOcean: https://docs.digitalocean.com/products/networking/firewalls/
+- [AWS] https://docs.aws.amazon.com/network-firewall/latest/developerguide/getting-started.html
+- [Azure] https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+- [Google] https://cloud.google.com/firewall/docs/firewalls
+- [DigitalOcean] https://docs.digitalocean.com/products/networking/firewalls/
 
+#### Firewall of on-premise server
+RustDesk set firewall with `ufw`. It may not work on some distros like CentOS 9, you can try with `firewall-cmd`:
 
-### Firewall of on-premise server
-
-Rustdesk set firewall with `ufw`, it may not work on some distros like CentOS 9, you can try with `firewall-cmd`.
-
-`sudo firewall-cmd --permanent --add-port=21115/tcp`  
-`sudo firewall-cmd --permanent --add-port=21116/tcp`  
-`sudo firewall-cmd --permanent --add-port=21117/tcp`  
-`sudo firewall-cmd --permanent --add-port=21118/tcp`  
-`sudo firewall-cmd --permanent --add-port=21119/tcp`  
-`sudo firewall-cmd --permanent --add-port=21116/udp`  
+```sh
+sudo firewall-cmd --permanent --add-port=21115/tcp
+sudo firewall-cmd --permanent --add-port=21116/tcp
+sudo firewall-cmd --permanent --add-port=21117/tcp
+sudo firewall-cmd --permanent --add-port=21118/tcp
+sudo firewall-cmd --permanent --add-port=21119/tcp
+sudo firewall-cmd --permanent --add-port=21116/udp
+```
 
 If you use IP:
 
-`sudo firewall-cmd --permanent --add-port=21114/tcp`
+```sh
+sudo firewall-cmd --permanent --add-port=21114/tcp
+```
 
 If you use DNS/Domain:
 
-`sudo firewall-cmd --permanent --add-port=80/tcp`  
-`sudo firewall-cmd --permanent --add-port=443/tcp`  
+```sh
+sudo firewall-cmd --permanent --add-port=80/tcp
+sudo firewall-cmd --permanent --add-port=443/tcp
+```
 
 After above, run `sudo firewall-cmd --reload` to reload firewall.
