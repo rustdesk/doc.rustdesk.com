@@ -10,9 +10,9 @@ There are four types of settings:
 1. Override settings, in "Web Console -> Custom Clients".
 1. Default settings, in "Web Console -> Custom Clients".
 1. User settings, in the RustDesk client.
-1. Stragegy settings, in "Web Console -> Strategies".
+1. Strategy settings, in "Web Console -> Strategies".
 
-The hierarchy of privilege for these settings is as follows: `Override > Stragegy > User > Default`.
+The hierarchy of privilege for these settings is as follows: `Override > Strategy > User > Default`.
 
 ## Security Settings
 
