@@ -114,7 +114,7 @@ If you find anything similar to:
 ```
 /swap.img       none    swap    sw      0       0
 ```
-If not: Type `:qa!` then `Enter` to exit. And go to step 12
+If not: Type `:qa!` then `Enter` to exit. And skip to step 11
 
 If yes: Press `i` to activate edit mode, comment that line with `#` like this:
 ```
