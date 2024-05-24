@@ -192,7 +192,7 @@ services:
   hbbs:
     container_name: hbbs
     image: rustdesk/rustdesk-server:latest
-    command: hbbs -r rustdesk.example.com:21117 -k _
+    command: hbbs -r rustdesk.example.com:21117
     volumes:
       - ./data:/root
     network_mode: host
@@ -203,7 +203,7 @@ services:
   hbbr:
     container_name: hbbr
     image: rustdesk/rustdesk-server:latest
-    command: hbbr -k _
+    command: hbbr
     volumes:
       - ./data:/root
     network_mode: host
