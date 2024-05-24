@@ -78,10 +78,14 @@ Gmail in diesem Beispiel
 7. Geben Sie  in `Von` Ihr Gmail-Konto ein, z. B. `myrustdeskserver@gmail.com`.
 8. Klicken Sie zum Speichern auf `Check`.
 
-### Gerätebenutzer und -gruppen den Geräten zuweisen
+### Gerätebenutzer, -gruppen und -strategien den Geräten zuweisen
 Der Benutzer ist der RustDesk-Benutzer, der auf dem Gerät eingeloggt ist oder dem Gerät zugewiesen wurde, indem Sie auf `Bearbeiten` neben dem Gerät klicken. Klicken Sie auf das Feld `Benutzer` und wählen Sie Ihren Benutzer aus der Dropdown-Liste aus. Damit wird die Gruppe auf der Grundlage der Gruppe, der der Benutzer zugewiesen wurde, automatisch zugewiesen.
 
-Dies kann auch über die API in der Befehlszeile bei der Bereitstellung oder später erfolgen, indem Sie die ausführbare Datei RustDesk aufrufen, gefolgt von `--assign --token <generatedtoken> --user_name <username>`. Dazu gehen Sie zu "Einstellungen → Token → Erstellen" und erstellen ein Token mit Geräteberechtigungen. Ein Beispiel hierfür wäre unter Windows: `"C:\Program Files\RustDesk\rustdesk.exe" --assign --token <generatedtoken> --user_name <newuser>`.
+Dies kann auch über die API in der Befehlszeile bei der Bereitstellung oder später erfolgen, indem Sie die ausführbare Datei RustDesk aufrufen, gefolgt von `--assign --token <generatedtoken> --user_name <username>`. Dazu gehen Sie zu `Einstellungen → Token → Erstellen` und erstellen ein Token mit Geräteberechtigungen. Ein Beispiel hierfür wäre unter Windows: `"C:\Program Files\RustDesk\rustdesk.exe" --assign --token <generatedtoken> --user_name <newuser>`.
+
+Sie können die Strategie z. B. auch mit `--assign --token <generatedtoken> --strategy_name <strategyname>` zuweisen.
+
+Die Befehlszeile unter Windows hat standardmäßig keine Ausgabe. Um die Ausgabe zu erhalten, führen Sie bitte `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | more` oder `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | Out-String` aus, siehe [hier](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomment-8094952).
 
 ### Suche nach einem Gerät
 1. Gehen Sie zu Geräte.
