@@ -10,9 +10,9 @@ Es gibt eine Reihe von Möglichkeiten, RustDesk-Clients so zu konfigurieren, das
 
 ### 1. Benutzerdefinierter Client-Generator (nur Pro)
 
-Sie können Ihren eigenen Namen, Ihr eigenes Logo, Ihr eigenes Symbol, Ihre eigene Konfiguration, eine Signatur und mehr haben.
+Sie können Ihren eigenen Namen, Ihr Logo, Ihr Symbol, Ihre Konfiguration, eine Signatur und mehr haben.
 
-[Videos](https://twitter.com/rustdesk/status/1769171628426944539)
+[Video](https://twitter.com/rustdesk/status/1769171628426944539)
 
 ![](images/custom-client-qs.png)
 ![](images/web_console_custom_client_config.jpeg)
@@ -47,7 +47,7 @@ Als `Pro`-Benutzer können Sie den Schlüssel über die [Webkonsole](https://rus
 
 Dies gilt nur für `Pro`-Benutzer. Wenn Sie sich über die Webkonsole anmelden können, aber nicht über den RustDesk-Client, haben Sie wahrscheinlich den `API-Server` nicht richtig eingestellt.
 
-Wenn Ihr API-Server nicht auf dem Standard-Port `21114` läuft, geben Sie bitte ausdrücklich `API-Server` an.
+Wenn Ihr API-Server nicht auf dem Standard-Port `21114` läuft, geben Sie bitte ausdrücklich `API-Server` an. Sie dürfen diesen Port nicht zur Firewall hinzufügen, wenn Sie von der Open-Source-Version kommen.
 Wenn Ihr API-Server z. B. auf dem Standard-HTTPS-Port läuft, geben Sie bitte `API-Server` mit `https://hbbs.example.com` an.
 
 Wenn Sie den Wert des `API-Servers` immer noch nicht bestätigen können, gehen Sie bitte auf die Willkommenseite der Webkonsole, der `API-Server` ist im obigen Bild zu sehen (das Eingabefeld mit der Bezeichnung `API:`).
@@ -108,3 +108,5 @@ Durch das Hinzufügen von `--` am Ende direkt nach der Konfigurationszeichenkett
 `rustdesk.exe --config <config-string>`
 
 Sie können die Konfigurationszeichenkette über die Webkonsole (wie auf dem obigen Bild zu sehen) oder über den RustDesk-Client unter "Einstellungen → Netzwerk" abrufen ([hier](https://github.com/rustdesk/rustdesk/discussions/7118) gibt es eine Diskussion darüber).
+
+### 8. [Erweiterte Einstellungen](https://rustdesk.com/docs/de/self-host/client-configuration/advanced-settings/)
