@@ -51,15 +51,14 @@ doesn't change after the service is installed). Now get back to Command prompt.
 
 We will be using `C:\Program Files\RustDesk Server` in this example.
 ```cmd
-nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe" -k _
-nssm install "RustDesk hbbr service" "C:\Program Files\RustDesk Server\hbbr.exe" -k _
+nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe"
+nssm install "RustDesk hbbr service" "C:\Program Files\RustDesk Server\hbbr.exe"
 ```
 **Note:**
 - You can change `RustDesk hbbs service` to whatever you desire to name hbbs the service
 - You can change `RustDesk hbbr service` to whatever you desire to name hbbr the service
 - You can change `C:\Program Files\RustDesk Server\hbbs.exe` to wherever you placed the RustDesk binaries
 - You can change `C:\Program Files\RustDesk Server\hbbr.exe` to wherever you placed the RustDesk binaries
-- You do not need the `-k _` option which is optional, it's just for better security. In the `Pro` version, please ignore `-k _` which is applied implicitly.
 
 **Command templates:**
 
