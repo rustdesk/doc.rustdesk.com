@@ -63,7 +63,7 @@ Möglicherweise müssen Sie auch einige Komponenten installieren, wenn Sie dies 
 ```
 sudo apt install ca-certificates -y
 sudo apt update -y
-sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang cmake libclang-dev ninja-build llvm-dev libclang-10-dev llvm-10-dev pkg-config
+sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang cmake libclang-dev ninja-build llvm-dev libclang-10-dev llvm-10-dev pkg-config rustfmt
 ```
 #### Abhängigkeiten der Flutter-Rust-Bridge installieren
 In diesem Schritt werden Sie zusätzliche Abhängigkeiten installieren, die von [flutter-rust-bridge](https://cjycode.com/flutter_rust_bridge/index.html) benötigt werden. Außerdem werden Sie die Flutter-Abhängigkeiten aus der Datei `pubspec.yaml` herunterladen.
