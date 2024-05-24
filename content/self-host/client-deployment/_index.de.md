@@ -67,11 +67,9 @@ function getLatest()
     }
 
     # Zurückgebendes Objekt erstellen
-    $Result = New-Object PSObject -Property
-    @{
-        Version = $Version
-        Downloadlink = $Downloadlink
-    }
+    $params += @{Version = $Version}
+    $params += @{Downloadlink = $Downloadlink}
+    $Result = New-Object PSObject -Property $params
 
     return($Result)
 }
