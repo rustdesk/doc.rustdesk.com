@@ -33,7 +33,6 @@ Mit Docker Compose MÜSSEN Sie `network_mode: "host"` verwenden, um sicherzustel
 Kopieren Sie den folgenden Text in die Datei `compose.yml`.
 
 ```yaml
-
 services:
   hbbs:
     container_name: hbbs
@@ -46,7 +45,6 @@ services:
     depends_on:
       - hbbr
     restart: unless-stopped
-
 
   hbbr:
     container_name: hbbr
@@ -61,3 +59,7 @@ services:
 Der Aufruf lautet `docker compose up -d`.
 
 > Wenn Sie Schwierigkeiten mit seLinux unter Fedora haben, überprüfen Sie bitte dieses [Problem](https://github.com/rustdesk/rustdesk-server/issues/230).
+
+{{% notice note %}}
+So können Sie [HTTPS für die Webkonsole manuell einrichten](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/faq/#https-für-die-webkonsole-manuell-einrichten).
+{{% /notice %}}
