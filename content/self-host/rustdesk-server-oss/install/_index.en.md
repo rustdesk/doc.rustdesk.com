@@ -101,19 +101,12 @@ Please run with the `-h` option to see help if you want to choose your own port.
 
 ### Key
 
-Different from the old version, the key in this version is mandatory, but you don't need to set it yourself. When `hbbs` runs for the first time, it will automatically generate a pair of encrypted private and public keys (respectively located in the `id_ed25519` and `id_ed25519.pub` files in the running directory), whose main purpose is for communication encryption.
+The key is mandatory, but you don't need to set it yourself. When `hbbs` runs for the first time, it will automatically generate a pair of encrypted private and public keys (respectively located in the `id_ed25519` and `id_ed25519.pub` files in the running directory), whose main purpose is for communication encryption.
 
 If you did not fill in the `Key:` (the content in the public key file `id_ed25519.pub`) in the previous step, it does not affect the connection, but the connection cannot be encrypted.
 
 ```sh
 cat ./id_ed25519.pub
-```
-
-If you want to prohibit users without the key from establishing non-encrypted connections, please add the `-k _` parameter when running `hbbs` and `hbbr`, for example:
-
-```sh
-./hbbs -r <relay-server-ip[:port]> -k _
-./hbbr -k _
 ```
 
 If you want to change the key, remove the `id_ed25519` and `id_ed25519.pub` files and restart `hbbs`/`hbbr`, `hbbs` will generate a new key pair.
