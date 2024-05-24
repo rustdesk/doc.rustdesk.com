@@ -7,6 +7,10 @@ weight: 2
 Die Sicherheitsrichtlinien von Windows sind knifflig. Wenn diese Anleitung bei Ihnen nicht funktioniert oder Sie eine instabile Verbindung feststellen, wechseln Sie bitte zu einem Linux-Server.
 {{% /notice %}}
 
+{{% notice note %}}
+Die GUI-Version `RustDeskServer.setup.exe` wird nicht mehr gepflegt und nicht empfohlen.
+{{% /notice %}}
+
 ### Installation
 
 1. Holen Sie sich Ihre Lizenz von [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html). Auf der Seite [Lizenz](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/license/) finden Sie weitere Informationen.
