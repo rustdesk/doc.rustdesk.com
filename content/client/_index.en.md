@@ -136,4 +136,4 @@ If you manually setup a client, you can retrieve the `RustDesk2.toml` (in the us
 
 Additional Advanced parameters can be found [here](https://github.com/rustdesk/rustdesk/blob/bdc5cded221af9697eb29aa30babce75e987fcc9/src/core_main.rs#L242).
 
-{{% children depth="1" showhidden="true" %}}
+{{% children depth="3" showhidden="true" %}}

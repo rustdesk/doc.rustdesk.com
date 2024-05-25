@@ -28,7 +28,7 @@ Nach der Installation von "Container Manager" wird ein gemeinsamer Ordner `docke
 
 Öffnen Sie Ihren Container Manager, gehen Sie zu Project und klicken Sie auf Create.
 
-Geben Sie den Projektnamen `rustdesk-server` ein, ändern Sie Source von "Upload docker-compose.yml" zu "Create docker-compose.yml" und kopieren Sie den folgenden Inhalt in das Feld. Danach sollten Sie `rustdesk.example.com` (die auf Ihre `hbbr` verweist) durch die Domain ersetzen, die auf Ihr NAS verweist.
+Geben Sie den Projektnamen `rustdesk-server` ein, ändern Sie Source von "Upload compose.yml" zu "Create compose.yml" und kopieren Sie den folgenden Inhalt in das Feld. Danach sollten Sie `rustdesk.example.com` (die auf Ihre `hbbr` verweist) durch die Domain ersetzen, die auf Ihr NAS verweist.
 
 {{% notice note %}}
 Sie könnten die Zeile mit `hbbs` vorübergehend in die LAN-IP Ihres NAS ändern, wie auf dem Bild gelb markiert zu sehen. Nachdem Sie sich vergewissert haben, dass Ihr Server funktioniert, **sollten** Sie die Änderung zurücknehmen.
@@ -37,7 +37,6 @@ Sie könnten die Zeile mit `hbbs` vorübergehend in die LAN-IP Ihres NAS ändern
 ![](images/dsm7_creating_project_init.png)
 
 ```yaml
-version: '3'
 services:
   hbbs:
     container_name: hbbs
@@ -77,7 +76,7 @@ Der öffentliche Schlüssel sieht wie folgt aus:
 
 ![](images/dsm7_viewing_public_key_though_syno_text_editor.png)
 
-Lesen Sie [hier](/docs/de/self-host/rustdesk-server-oss/install/#schritt-3-hbbshbbr-adresse-auf-der-client-seite-einstellen), um Ihren Client einzurichten. Nur `ID-Server` und `Key` werden benötigt. `Relais-Server` wird nicht benötigt, da wir ihn in `hbbs` festgelegt haben. Diese Informationen werden von hbbs automatisch bereitgestellt.
+Lesen Sie [hier](/docs/de/client), um Ihren Client einzurichten. Nur `ID-Server` und `Key` werden benötigt. `Relais-Server` wird nicht benötigt, da wir ihn in `hbbs` festgelegt haben. Diese Informationen werden von hbbs automatisch bereitgestellt.
 
 ### 5. Legen Sie Ihre hbbs so fest, dass sie auf Ihre Domäne zeigen
 

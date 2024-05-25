@@ -28,7 +28,7 @@ Open your File Station, create a folder named `rustdesk-server`(or whatever you 
 
 Open your Container Manager, go to Project and click Create.
 
-Enter the project name `rustdesk-server` and change Source from "Upload docker-compose.yml" to "Create docker-compose.yml", and copy following contents to the box. After you copied, you should replace `rustdesk.example.com` (Which point to your `hbbr`) to the domain that will point to your NAS.
+Enter the project name `rustdesk-server` and change Source from "Upload compose.yml" to "Create compose.yml", and copy following contents to the box. After you copied, you should replace `rustdesk.example.com` (Which point to your `hbbr`) to the domain that will point to your NAS.
 
 {{% notice note %}}
 You could modify the line with `hbbs` to your NAS's LAN IP temporarily just like the picture. After you verify your server is working, you **should** change back.
@@ -37,7 +37,6 @@ You could modify the line with `hbbs` to your NAS's LAN IP temporarily just like
 ![](images/dsm7_creating_project_init.png)
 
 ```yaml
-version: '3'
 services:
   hbbs:
     container_name: hbbs
@@ -61,10 +60,12 @@ services:
 
 # Because using docker host mode
 # Just in case you forgot the ports:
-# 21115 TCP For NAT type test
+# 21114 TCP for web console, only available in Pro version
+# 21115 TCP for NAT type test
 # 21116 TCP TCP hole punching
-# 21116 UDP Heartbeat/ID server
-# 21117 TCP Relay
+# 21116 UDP heartbeat/ID server
+# 21117 TCP relay
+# 21118/21119 TCP for web socket if you want to run web client
 ```
 
 Please skip `Web portal settings` then done.
@@ -77,11 +78,11 @@ The public key will looks like this:
 
 ![](images/dsm7_viewing_public_key_though_syno_text_editor.png)
 
-Check [here](/docs/en/self-host/rustdesk-server-oss/install/#step-3-set-hbbshbbr-address-on-client-side) to set up your client. Only `ID server` and `Key` is needed. `Relay server` isn't needed because we've set it in `hbbs`, hbbs will provide this information automatically.
+Check [here](/docs/en/client) to set up your client. Only `ID server` and `Key` is needed. `Relay server` isn't needed because we've set it in `hbbs`, `hbbs` will provide this information automatically.
 
 ### 5. Set your hbbs to point to your domain
 
-If you have set your `hbbs` command to point to your LAN IP, and verified it is working, it is time to change to the domain, because it will not working if you using it outside your LAN.
+If you have set your `hbbs` command to point to your LAN IP, and verified it is working, it is time to change to the domain, as it will not work when attempting to use it outside of your LAN.
 <hr>
 
 5.1. Go to Container Manager → Project → Click "rustdesk-server" → Action → Stop
@@ -103,7 +104,10 @@ Go to your router's admin webpage, find anything related to `Port forwarding`, i
 If you still can't find the setting, Google search `{Router brand} + port forwarding` or `{Router model} + port forwarding`. If this device is from your ISP, ask them.
 
 Open these required ports:
-  * `21115` `TCP` For NAT type test
-  * `21116` `TCP` TCP hole punching
-  * `21116` `UDP` Heartbeat/ID server
-  * `21117` `TCP` Relay
+  * `21114` TCP for web console, only available in Pro version
+  * `21115` TCP for NAT type test
+  * `21116` TCP TCP hole punching
+  * `21116` UDP heartbeat/ID server
+  * `21117` TCP relay
+  * `21118/21119` TCP for web socket if you want to run web client
+

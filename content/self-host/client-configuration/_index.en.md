@@ -12,7 +12,7 @@ There are a number of ways to configure RustDesk Clients to use your own self-ho
 
 You can have your own name, logo, icon, configuration, be signed and more.
 
-[Videos](https://twitter.com/rustdesk/status/1769171628426944539)
+[Video](https://twitter.com/rustdesk/status/1769171628426944539)
 
 ![](images/custom-client-qs.png)
 ![](images/web_console_custom_client_config.jpeg)
@@ -47,8 +47,8 @@ As a `Pro` user you will be able to retrieve the `Key` from the [web console](ht
 
 This is for `Pro` user only. When you can log in on web console, but fail to log in on RustDesk client, it probably you have not set `API Server` correctly.
 
-If your API Server does not run on default `21114` port, please specify `API Server` explicitly.
-e.g. your API Server runs on default https port, please specify `API Server` with `https://hbbs.example.com`.
+If your API Server does not run on default `21114` port (you may not add this port to firewall if you come from open source version), please specify `API Server` explicitly.
+e.g. your API Server runs on default HTTPS port, please specify `API Server` with `https://hbbs.example.com`.
 
 If you still can not confirm the value of `API Server`, please go to the welcome page of web console, the `API Server` is shown in above picture (The input box with `API:` label).
 
@@ -108,3 +108,5 @@ By adding `--` at the end right after our config string, even if something is ad
 `rustdesk.exe --config <config-string>`
 
 You can get the config string from web console (you can see it on above picture) or from RustDesk client "Settings → Network" ([here](https://github.com/rustdesk/rustdesk/discussions/7118) is a discussion about this).
+
+### 8. [Advanced Settings](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/)
