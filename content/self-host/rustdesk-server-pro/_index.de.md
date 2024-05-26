@@ -9,7 +9,7 @@ RustDesk Server Pro hat im Vergleich zur Open-Source-Version mehr Funktionen.
 - Keine Begrenzung der gleichzeitigen Verbindungen (die OSS-Version hat auch keine Begrenzung, aber TeamViewer usw. haben diese Begrenzung)
 - [Webkonsole](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/console/)
 - API
-- [OIDC](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/oidc/), LDAP, [2FA](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/2fa/)
+- [OIDC](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/oidc/), [LDAP](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/ldap/), [2FA](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/2fa/)
 - Adressbuch
 - Umbenennen
 - Protokollverwaltung (Verbindung, Dateiübertragung, Alarm usw.)
@@ -17,8 +17,7 @@ RustDesk Server Pro hat im Vergleich zur Open-Source-Version mehr Funktionen.
 - [Sicherheitseinstellungen synchronisieren](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/strategy/)
 - [Zugriffskontrolle](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/permissions/)
 - [Mehrere Relay-Server](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/relay/) (wählt automatisch das nächstgelegene Relay aus)
-- [Benutzerdefinierter Client-Generator](https://rustdesk.com/docs/de/self-host/client-configuration/#1-custom-client-generator-pro-only)
-
+- [Benutzerdefinierter Client-Generator](https://rustdesk.com/docs/de/self-host/client-configuration/#1-benutzerdefinierter-client-generator-nur-pro)
 
 {{% notice note %}}
 RustDesk-Client ≥ 1.2.0 erforderlich

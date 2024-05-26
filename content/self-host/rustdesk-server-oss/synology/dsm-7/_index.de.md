@@ -60,10 +60,12 @@ services:
 
 # Weil der Docker-Host-Modus verwendet wird
 # Nur für den Fall, dass Sie die Ports vergessen haben:
-# 21115 TCP For NAT type test
+# 21114 TCP für Webkonsole, nur in der Pro-Version verfügbar
+# 21115 TCP für NAT type test
 # 21116 TCP TCP hole punching
-# 21116 UDP Heartbeat/ID server
+# 21116 UDP Heartbeat/ID-Server
 # 21117 TCP Relay
+# 21118/21119 TCP für Websocket, wenn Sie einen Webclient betreiben wollen
 ```
 
 Bitte überspringen Sie `Web portal settings`, dann ist das erledigt.
@@ -76,14 +78,14 @@ Der öffentliche Schlüssel sieht wie folgt aus:
 
 ![](images/dsm7_viewing_public_key_though_syno_text_editor.png)
 
-Lesen Sie [hier](/docs/de/client), um Ihren Client einzurichten. Nur `ID-Server` und `Key` werden benötigt. `Relais-Server` wird nicht benötigt, da wir ihn in `hbbs` festgelegt haben. Diese Informationen werden von hbbs automatisch bereitgestellt.
+Lesen Sie [hier](/docs/de/client), wie Sie Ihren Client einrichten. Nur `ID-Server` und `Key` werden benötigt. `Relais-Server` wird nicht benötigt, da wir ihn in `hbbs` festgelegt haben. Diese Informationen werden von `hbbs` automatisch bereitgestellt.
 
 ### 5. Legen Sie Ihre hbbs so fest, dass sie auf Ihre Domäne zeigen
 
-Wenn Sie Ihren `hbbs`-Befehl so eingestellt haben, dass er auf Ihre LAN-IP verweist, und überprüft haben, dass er funktioniert, ist es an der Zeit, zur Domäne zu wechseln, da er nicht funktioniert, wenn Sie ihn außerhalb Ihres LAN verwenden.
+Wenn Sie Ihren `hbbs`-Befehl so eingestellt haben, dass er auf Ihre LAN-IP verweist, und überprüft haben, dass er funktioniert, ist es an der Zeit, zur Domäne zu wechseln, da er nicht funktioniert, wenn Sie versuchen, ihn außerhalb Ihres LAN zu verwenden.
 <hr>
 
-5.1. Gehen Sie zu Container Manager → Project → Klicken "rustdesk-server" → Action → Stop
+5.1. Gehen Sie zu Container Manager → Project → Klicken Sie "rustdesk-server" → Action → Stop
 
 5.2. Nach dem Stoppen klicken Sie auf "YAML Configurations", ändern Sie die Zeile, die mit `command: hbbs` beginnt, in Ihre Domäne und klicken Sie dann auf "Save". Stellen Sie sicher, dass Sie "Build and start the project (rebuild the image)" wählen.
 
@@ -102,7 +104,9 @@ Gehen Sie auf die Verwaltungswebseite Ihres Routers und suchen Sie nach etwas, d
 Wenn Sie die Einstellung immer noch nicht finden können, suchen Sie in Google nach `{Router brand} + port forwarding` oder `{Router model} + port forwarding`. Wenn das Gerät von Ihrem ISP stammt, fragen Sie ihn.
 
 Öffnen Sie die erforderlichen Ports:
-  * `21115` `TCP` For NAT type test
-  * `21116` `TCP` TCP hole punching
-  * `21116` `UDP` Heartbeat/ID server
-  * `21117` `TCP` Relay
+  * `21114` TCP für Webkonsole, nur in der Pro-Version verfügbar
+  * `21115` TCP für NAT type test
+  * `21116` TCP TCP hole punching
+  * `21116` UDP Heartbeat/ID-Server
+  * `21117` TCP Relay
+  * `21118/21119` TCP für Websocket, wenn Sie einen Webclient betreiben wollen

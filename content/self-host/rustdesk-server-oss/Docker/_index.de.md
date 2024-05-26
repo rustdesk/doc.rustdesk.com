@@ -8,9 +8,9 @@ weight: 7
 #### Anforderungen
 Sie müssen Docker/Podman installiert haben, um einen RustDesk-Server als Docker-Container zu betreiben. Im Zweifelsfall installieren Sie Docker mit dieser [Anleitung](https://docs.docker.com/engine/install), um sicherzustellen, dass es auf dem neuesten Stand ist!
 
-Standardmäßig lauscht `hbbs` auf 21115 (TCP), 21116 (TCP/UDP) und 21118 (TCP), `hbbr` lauscht auf 21117 (TCP) und 21119 (TCP). Diese Ports müssen in der Firewall geöffnet sein. **Bitte beachten Sie, dass 21116 sowohl für TCP als auch für UDP aktiviert sein muss.** 21115 wird für den NAT-Typ-Test verwendet, 21116/UDP wird für die ID-Registrierung und den Heartbeat-Dienst verwendet, 21116/TCP wird für das TCP-Hole-Punching und den Verbindungsdienst verwendet, 21117 wird für die Relay-Dienste verwendet und 21118 sowie 21119 werden zur Unterstützung von Webclients verwendet. *Wenn Sie die Webclient-Unterstützung (21118, 21119) nicht benötigen, können die entsprechenden Ports deaktiviert werden.*
+Standardmäßig lauscht `hbbs` auf 21114 (TCP für die Webkonsole, nur in der Pro-Version verfügbar), 21115 (TCP), 21116 (TCP/UDP) und 21118 (TCP), `hbbr` lauscht auf 21117 (TCP) und 21119 (TCP). Diese Ports müssen in der Firewall geöffnet sein. **Bitte beachten Sie, dass 21116 sowohl für TCP als auch für UDP aktiviert sein muss.** 21115 wird für den NAT-Typ-Test verwendet, 21116/UDP wird für die ID-Registrierung und den Heartbeat-Dienst verwendet, 21116/TCP wird für das TCP-Hole-Punching und den Verbindungsdienst verwendet, 21117 wird für die Relay-Dienste verwendet und 21118 sowie 21119 werden zur Unterstützung von Webclients verwendet. *Wenn Sie die Webclient-Unterstützung (21118, 21119) nicht benötigen, können die entsprechenden Ports deaktiviert werden.*
 
-- TCP (**21115, 21116, 21117, 21118, 21119**)
+- TCP (**21114, 21115, 21116, 21117, 21118, 21119**)
 - UDP (**21116**)
 
 #### Docker-Beispiele
@@ -35,6 +35,7 @@ Sie können die Protokolle mit `docker logs hbbs` ansehen, wenn sie mit `-td` ni
 
 #### Docker Compose-Beispiele
 Um die Dockerdateien mit `compose.yml` wie hier beschrieben ausführen zu können, müssen Sie [Docker Compose](https://docs.docker.com/compose/) installiert haben.
+
 ```yaml
 services:
   hbbs:
@@ -48,7 +49,6 @@ services:
     depends_on:
       - hbbr
     restart: unless-stopped
-
 
   hbbr:
     container_name: hbbr
