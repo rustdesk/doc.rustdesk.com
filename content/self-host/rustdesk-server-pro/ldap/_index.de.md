@@ -20,7 +20,7 @@ Bitte gehen Sie wie folgt zur Seite `LDAP`-Einstellungen.
 
 - **Filter:** Dies ist der Suchfilter für die LDAP-Abfrage. Zum Beispiel `(objectClass=person)` oder `(&(age=28)(!(name=Bob)))`.
 
-- **Benutzernamensattribut:** Dies ist das Attribut, das den Benutzernamen enthält. Zum Beispiel `uid` oder `sAMAccountName`. Standardmäßig werden `uid` und `cn` verwendet. Hier ist eine Diskussion dazu: [https://github.com/rustdesk/rustdesk-server-pro/issues/140#issuecomment-1916804393](https://github.com/rustdesk/rustdesk-server-pro/issues/140#issuecomment-1916804393).
+- **Benutzernamensattribut:** Dies ist das Attribut, das den Benutzernamen enthält. Zum Beispiel `uid` oder `sAMAccountName`. Standardmäßig werden `uid` und `cn` verwendet. Hier ist eine [Diskussion](https://github.com/rustdesk/rustdesk-server-pro/issues/140#issuecomment-1916804393) dazu.
 
 - **StartTLS:** Dies bestimmt, ob StartTLS verwendet werden soll, um die Verbindung auf eine sichere Verbindung zu aktualisieren.
 
@@ -33,5 +33,5 @@ Bitte gehen Sie wie folgt zur Seite `LDAP`-Einstellungen.
    > Wenn Sie die Konfiguration übermitteln, stellt sie mit dem von Ihnen angegebenen Binddn/Passwort eine Verbindung zu Ihrem LDAP-Server her und überprüft, ob sie funktioniert.
 - Wie ändere ich lokale Benutzer in LDAP-Benutzer?
    > Noch nicht
-- Unterstützt es die LDAP-Gruppe?
+- Unterstützt es LDAP-Gruppen?
    > Noch nicht

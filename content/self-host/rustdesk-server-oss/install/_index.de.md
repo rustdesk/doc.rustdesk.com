@@ -21,7 +21,7 @@ ufw allow proto tcp from YOURIP to any port 22
 
 Wenn Sie UFW installiert haben, verwenden Sie die folgenden Befehle, um die Firewall zu konfigurieren (Port 8000 wird nur benötigt, wenn Sie die automatisch generierten Installationsdateien verwenden möchten):
 ```
-ufw allow 21115:21119/tcp
+ufw allow 21114:21119/tcp
 ufw allow 8000/tcp
 ufw allow 21116/udp
 sudo ufw enable
@@ -90,9 +90,9 @@ PM2 benötigt Node.js v16+. Wenn Sie PM2 nicht starten können (z. B. können Si
 Der Parameter `-r` von `hbbs` ist nicht zwingend erforderlich. Es ist nur praktisch, wenn Sie auf der kontrollierten Client-Seite keinen Relay-Server angeben müssen. Sie müssen den Port nicht angeben, wenn Sie den Standardport 21117 verwenden. Der vom Client angegebene Relay-Server hat eine höhere Priorität als dieser.
 {{% /notice %}}
 
-Standardmäßig lauscht `hbbs` auf 21115 (TCP), 21116 (TCP/UDP) und 21118 (TCP), `hbbr` lauscht auf 21117 (TCP) und 21119 (TCP). Diese Ports müssen in der Firewall geöffnet sein. **Bitte beachten Sie, dass 21116 sowohl für TCP als auch für UDP aktiviert sein muss.** 21115 wird für den NAT-Typ-Test verwendet, 21116/UDP wird für die ID-Registrierung und den Heartbeat-Dienst verwendet, 21116/TCP wird für das TCP-Hole-Punching und den Verbindungsdienst verwendet, 21117 wird für die Relay-Dienste verwendet und 21118 sowie 21119 werden zur Unterstützung von Webclients verwendet. *Wenn Sie die Webclient-Unterstützung (21118, 21119) nicht benötigen, können die entsprechenden Ports deaktiviert werden.*
+Standardmäßig lauscht `hbbs` auf 21114 (TCP für die Webkonsole, nur in der Pro-Version verfügbar), 21115 (TCP), 21116 (TCP/UDP) und 21118 (TCP), `hbbr` lauscht auf 21117 (TCP) und 21119 (TCP). Diese Ports müssen in der Firewall geöffnet sein. **Bitte beachten Sie, dass 21116 sowohl für TCP als auch für UDP aktiviert sein muss.** 21115 wird für den NAT-Typ-Test verwendet, 21116/UDP wird für die ID-Registrierung und den Heartbeat-Dienst verwendet, 21116/TCP wird für das TCP-Hole-Punching und den Verbindungsdienst verwendet, 21117 wird für die Relay-Dienste verwendet und 21118 sowie 21119 werden zur Unterstützung von Webclients verwendet. *Wenn Sie die Webclient-Unterstützung (21118, 21119) nicht benötigen, können die entsprechenden Ports deaktiviert werden.*
 
-- TCP (**21115, 21116, 21117, 21118, 21119**)
+- TCP (**21114, 21115, 21116, 21117, 21118, 21119**)
 - UDP (**21116**)
 
 Wenn Sie einen eigenen Port auswählen möchten, geben Sie bitte die Option `-h` ein, um die Hilfe anzuzeigen.
@@ -101,19 +101,12 @@ Wenn Sie einen eigenen Port auswählen möchten, geben Sie bitte die Option `-h`
 
 ### Schlüssel
 
-Anders als in der alten Version ist der Schlüssel in dieser Version obligatorisch, aber Sie brauchen ihn nicht selbst zu setzen. Wenn `hbbs` zum ersten Mal ausgeführt wird, erzeugt es automatisch ein Paar verschlüsselter privater und öffentlicher Schlüssel (die sich jeweils in den Dateien `id_ed25519` und `id_ed25519.pub` im aktuellen Ordner befinden), deren Hauptzweck in der Verschlüsselung der Kommunikation besteht.
+Der Schlüssel ist obligatorisch, aber Sie brauchen ihn nicht selbst zu setzen. Wenn `hbbs` zum ersten Mal ausgeführt wird, erzeugt es automatisch ein Paar verschlüsselter privater und öffentlicher Schlüssel (die sich jeweils in den Dateien `id_ed25519` und `id_ed25519.pub` im aktuellen Ordner befinden), deren Hauptzweck in der Verschlüsselung der Kommunikation besteht.
 
 Wenn Sie `Key:` (mit dem Inhalt der öffentlichen Schlüsseldatei `id_ed25519.pub`) im vorherigen Schritt nicht ausgefüllt haben, hat dies keine Auswirkungen auf die Verbindung, aber diese kann nicht verschlüsselt werden.
 
 ```sh
 cat ./id_ed25519.pub
-```
-
-Wenn Sie Benutzern ohne den Schlüssel den Aufbau unverschlüsselter Verbindungen verbieten wollen, fügen Sie bitte den Parameter `-k _` hinzu, wenn Sie z. B. `hbbs` und `hbbr` ausführen:
-
-```sh
-./hbbs -r <relay-server-ip[:port]> -k _
-./hbbr -k _
 ```
 
 Wenn Sie den Schlüssel ändern wollen, entfernen Sie die Dateien `id_ed25519` und `id_ed25519.pub` und starten Sie `hbbs`/`hbbr`, `hbbs` wird ein neues Schlüsselpaar erzeugen.

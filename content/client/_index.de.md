@@ -136,4 +136,4 @@ Wenn Sie einen Client manuell einrichten, können Sie die Datei `RustDesk2.toml`
 
 Zusätzliche erweiterte Parameter finden Sie [hier](https://github.com/rustdesk/rustdesk/blob/bdc5cded221af9697eb29aa30babce75e987fcc9/src/core_main.rs#L242).
 
-{{% children depth="1" showhidden="true" %}}
+{{% children depth="3" showhidden="true" %}}

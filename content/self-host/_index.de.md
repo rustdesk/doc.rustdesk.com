@@ -2,12 +2,7 @@
 title: Selbst-Host
 weight: 5
 pre: "<b>2. </b>"
-
 ---
-
-
-
-
 
 Wenn Sie RustDesk verwenden, sollten Sie Ihren eigenen RustDesk-Server haben. Diese Dokumente werden Ihnen auf Ihrer RustDesk-Reise helfen.
 
@@ -22,10 +17,10 @@ Support ist über unser [Discord](https://discord.com/invite/nDceKgxnkV) für OS
 Die für das Selbst-Hosten des RustDesk-Servers erforderlichen Ports hängen weitgehend von Ihrer Umgebung und den Anforderungen ab, die Sie an RustDesk stellen. In den Beispielen, die in der Dokumentation gezeigt werden, sind in der Regel alle vorgeschlagenen Ports geöffnet.
 
 Grundlegende Ports: \
-TCP `21115-21117` \
+TCP `21114-21119` \
 UDP `21116`
 
-Dies sind die mindestens erforderlichen Ports, damit RustDesk funktionieren kann. Sie sind für die Signal- und Relais-Ports sowie für NAT-Traversal zuständig.
+`21114-21117` sind die mindestens erforderlichen Ports, damit RustDesk funktionieren kann. Sie sind für die Signal- und Relais-Ports sowie für NAT-Traversal zuständig.
 
 Zusätzlich können die TCP-Ports `21118` und `21119` geöffnet werden, wenn Sie den [RustDesk-Webclient](https://rustdesk.com/docs/de/dev/build/web/) verwenden möchten.
 

@@ -7,6 +7,10 @@ weight: 20
 Die Sicherheitsrichtlinien von Windows sind knifflig. Wenn diese Anleitung bei Ihnen nicht funktioniert oder Sie eine instabile Verbindung feststellen, wechseln Sie bitte zu einem Linux-Server.
 {{% /notice %}}
 
+{{% notice note %}}
+Die GUI-Version `RustDeskServer.setup.exe` wird nicht mehr gepflegt und nicht empfohlen.
+{{% /notice %}}
+
 ### Optionen
 Sie haben nun zwei Möglichkeiten, Sie können entweder PM2 (einfacher) oder NSSM (etwas schwieriger) verwenden, um den RustDesk-Server zu starten.
 Die Verwendung von NSSM hat einige Vorteile:
@@ -23,7 +27,7 @@ Die Vorteile von PM2 sind unter anderem:
 
 ### Installation mit NSSM
 
-#### Installation von NSSM
+#### NSSM installieren
 Bitte laden Sie [NSSM](https://github.com/dkxce/NSSM/releases/download/v2.25/NSSM_v2.25.zip) herunter, extrahieren Sie es und wählen Sie die entsprechende
 Architektur für Ihr Windows-System (für x86 verwenden Sie den Inhalt des win32-Ordners, für x64 den
 Inhalt des win64-Ordners). Es ist auch sinnvoll, die Binärdatei von NSSM nach `Program Files\NSSM` zu verschieben.
@@ -47,15 +51,14 @@ dass sich der Ort nach der Installation des Dienstes nicht ändert. Gehen Sie nu
 
 In diesem Beispiel wird `C:\Program Files\RustDesk Server` verwendet.
 ```cmd
-nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe" -k _
-nssm install "RustDesk hbbr service" "C:\Program Files\RustDesk Server\hbbr.exe" -k _
+nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe"
+nssm install "RustDesk hbbr service" "C:\Program Files\RustDesk Server\hbbr.exe"
 ```
 **Hinweise:**
 - Sie können `RustDesk hbbs service` in einen beliebigen Namen für den Dienst hbbs ändern.
 - Sie können `RustDesk hbbr service` in einen beliebigen Namen für den Dienst hbbr ändern.
 - Sie können `C:\Programme\RustDesk Server\hbbs.exe` in den Ort ändern, an dem Sie die RustDesk-Binärdateien abgelegt haben.
 - Sie können `C:\Programme\RustDesk Server\hbbr.exe` in den Ort ändern, an dem Sie die RustDesk-Binärdateien abgelegt haben.
-- Die Option `-k _` ist optional und dient nur der Sicherheit. In der `Pro`-Version ignorieren Sie bitte `-k _`, das implizit angewendet wird.
 
 **Befehlsvorlagen:**
 
@@ -114,3 +117,6 @@ pm2 save
 pm2 log hbbr
 pm2 log hbbs
 ```
+
+### Alternative Anleitungen
+https://pedja.supurovic.net/setting-up-self-hosted-rustdesk-server-on-windows/?lang=lat
