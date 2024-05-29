@@ -13,7 +13,7 @@ If you wanna create additional relay server explicitly on another machine, pleas
 `hbbr` does not require a license and is the same as the open source version.
 {{% /notice %}}
 
-You can have several relay servers running across the globe and leverage GeoLocation to use the closest relay server, giving you a faster experience when connecting to remote computers.
+You can have several relay servers running across the globe and leverage GeoLocation automatically to use the closest relay server, giving you a faster experience when connecting to remote computers. `hbbs` automatically checks if these relay servers are online every several seconds, it only choose online relay servers.
 
 > You will need the private key pair `id_ed25519` and `id_ed25519.pub`.
 
