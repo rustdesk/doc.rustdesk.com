@@ -15,6 +15,10 @@ If you wanna create additional relay server explicitly on another machine, pleas
 
 You can have several relay servers running across the globe and leverage GeoLocation automatically to use the closest relay server, giving you a faster experience when connecting to remote computers. `hbbs` automatically checks if these relay servers are online every several seconds, it only choose online relay servers.
 
+{{% notice note %}}
+Known issue: https://github.com/rustdesk/rustdesk/discussions/7934
+{{% /notice %}}
+
 > You will need the private key pair `id_ed25519` and `id_ed25519.pub`.
 
 1 - If docker is already installed, connect to your server via SSH and create a volume for hbbr.
