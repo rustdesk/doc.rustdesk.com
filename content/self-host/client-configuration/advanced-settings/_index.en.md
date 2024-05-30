@@ -884,3 +884,31 @@ The "codec-preference" option in each peer's settings will then control codec fo
 | N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
 
 **CAUTION**: Options other than "vp8" and "vp9" may not work. This depends on what your machine supports.
+
+### preset-address-book-name & preset-address-book-tag
+
+Preset address book name and tag, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
+You can set preset-address-book-name only if you do not want to set tag.
+Please use valid address book name and tag on your address book page of web console.
+
+| Option | Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: | :------: |
+| preset-address-book-name | N | | | `preset-address-book-name=name` |
+| preset-address-book-tag | N | | | `preset-address-book-tag=tag` |
+
+
+### disable-group-panel
+
+Disable group panel (next to address book panel) on RustDesk client, https://github.com/rustdesk/rustdesk-server-pro/issues/250
+
+| Option | Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: | :------: |
+| disable-group-panel | N | Y, N | N | `disable-group-panel=Y` |
+
+### pre-elevate-service
+
+Automatic elevation on run for Windows portable, https://github.com/rustdesk/rustdesk-server-pro/issues/252
+
+| Option | Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: | :------: |
+| pre-elevate-service | N | Y, N | N | `pre-elevate-service=Y` |
