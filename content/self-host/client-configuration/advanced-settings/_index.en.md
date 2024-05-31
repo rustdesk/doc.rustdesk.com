@@ -893,8 +893,8 @@ Please use valid address book name and tag on your address book page of web cons
 
 | Option | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: | :------: |
-| preset-address-book-name | N | | | `preset-address-book-name=name` |
-| preset-address-book-tag | N | | | `preset-address-book-tag=tag` |
+| preset-address-book-name | N | | | `preset-address-book-name=<address book name>` |
+| preset-address-book-tag | N | | | `preset-address-book-tag=<address book tag name>` |
 
 
 ### disable-group-panel
