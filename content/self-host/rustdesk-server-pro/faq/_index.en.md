@@ -339,3 +339,10 @@ sudo firewall-cmd --permanent --add-port=443/tcp
 ```
 
 After above, run `sudo firewall-cmd --reload` to reload firewall.
+
+#### After changing the admin password in the web console I cannot log in. Is there a simple way to reset the password?
+
+1. Ensure you have rustdesk-utils installed (if not you can get it [here](https://github.com/rustdesk/rustdesk-server-pro), also you need to execute the command from the folder where the database is, ie /var/lib/rustdesk-server).
+2. The command is `rustdesk-utils set_password username password` if it works it will say *Done*
+
+You also have the following other commands `genkeypair,  validatekeypair [public key] [secret key] , doctor [rustdesk-server], reset_email_verification and reset_2fa_verification` which can be used with rustdesk-utils.
