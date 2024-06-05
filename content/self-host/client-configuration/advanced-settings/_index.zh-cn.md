@@ -884,3 +884,73 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
 
 **注意**: "vp8" 和 "vp9" 以外的选项可能不起作用。 这取决于您的机器支持什么。
+
+### preset-address-book-name & preset-address-book-tag
+
+预设地址簿名称和标签, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
+仅当您不想设置标签时，才可以设置预设地址簿名称。
+请在 Web 控制台的地址簿页面上使用有效的地址簿名称和标签。
+
+| 选项 | 是否需要安装 | 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: | :------: | :------: |
+| preset-address-book-name | N | | | `preset-address-book-name=<address book name>` |
+| preset-address-book-tag | N | | | `preset-address-book-tag=<address book tag name>` |
+
+
+### disable-group-panel
+
+在 RustDesk 客户端上禁用组面板（地址簿面板旁边）, https://github.com/rustdesk/rustdesk-server-pro/issues/250
+
+| 是否需要安装 | 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `disable-group-panel=Y` |
+
+### pre-elevate-service
+
+Windows 非安装版运行时自动提升, https://github.com/rustdesk/rustdesk-server-pro/issues/252
+
+| 是否需要安装 | 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `pre-elevate-service=Y` |
+
+
+### disable-floating-window
+
+当Android服务启动时, 它会显示一个悬浮窗, 这有助于防止系统杀死RustDesk服务。
+
+| 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-floating-window=Y` |
+
+### floating-window-size
+
+当Android服务启动时, 它会显示一个浮动窗口, 这有助于防止系统杀死RustDesk服务。当尺寸小于120时, 浮动窗口将难以点击。设置成非常小的size时, 在有些设备上可能起不到保持后台服务的作用。
+
+| 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| [32, 320] | 120 | `floating-window-size=120` |
+
+### floating-window-untouchable
+
+默认情况下, 点击浮动窗口会弹出菜单。但是将其设置为'不可触摸'状态后, 点击或滑动操作将穿透浮动窗口, 传递给下层窗口。当浮动窗口被设置为'不可触摸'状态后, 浮动窗口的位置不能再改变, 系统可能会自动将其设置为半透明。然而, 这个功能在少数应用程序中可能无法生效, 比如 GitHub 应用程序。
+
+| 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-floating-untouchable=Y` |
+
+### floating-window-transparency
+
+Android 浮动窗口具有可调整的透明度。如果您想启用但隐藏浮动窗口, 可以将透明度设置为0, 此时浮动窗口将自动设置为'不可触摸'状态,以便能够通过点击事件进行交互操作。
+
+| 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| [0, 10] | 10 | `floating-window-transparency=5` |
+
+### floating-window-svg
+
+如果没有为 Android 浮动窗口设置图标, 它将默认显示 RustDesk 图标。
+设置时请将svg的文本内容写到一行里，并注意[svg支持限制](https://bigbadaboom.github.io/androidsvg/index.html)。
+
+| 默认值 | 示例 |
+| :------: | :------: |
+| RustDesk icon | `floating-window-svg=<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1717559129252" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4248" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><path d="M950.857143 512c0 242.285714-196.571429 438.857143-438.857143 438.857143S73.142857 754.285714 73.142857 512 269.714286 73.142857 512 73.142857s438.857143 196.571429 438.857143 438.857143z" fill="#1296db" p-id="4249"></path></svg>` |
