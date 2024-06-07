@@ -182,7 +182,7 @@ Führen Sie `nginx -h` aus, um zu überprüfen, ob es erfolgreich installiert wu
 * Method 2: Using `python3-certbot-nginx` instead. eg: `sudo apt-get install python3-certbot-nginx` for ubuntu
 * Method 3: If the above two methods failed, try install `certbot-nginx`, eg: `sudo yum install certbot-nginx` for centos 7
 
-Run `certbot -h` to check whether it has been installed successfully..
+Run `certbot -h` to check whether it has been installed successfully.
 
 #### 4. Nginx einrichten
 Es gibt zwei Möglichkeiten:

@@ -912,3 +912,45 @@ Automatic elevation on run for Windows portable, https://github.com/rustdesk/rus
 | Option | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: | :------: |
 | pre-elevate-service | N | Y, N | N | `pre-elevate-service=Y` |
+
+
+### disable-floating-window
+
+When the Android service starts, it will display a floating window, which helps prevent the system from killing the RustDesk service.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-floating-window=Y` |
+
+### floating-window-size
+
+When the Android service starts, it will display a floating window, which helps prevent the system from killing the RustDesk service. When the size is less than 120, the floating window will be difficult to be clicked. A very small size may not be able to keep the background service on some devices.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| [32, 320] | 120 | `floating-window-size=120` |
+
+### floating-window-untouchable
+
+By default, clicking on the floating window will pop up a menu. After setting it to 'untouchable', clicking or swiping will pass through the floating window and be transmitted to the underlying window. After being set to 'untouchable', the position of the floating window cannot be changed, and the system may automatically set the floating window to be semi-transparent. However, this feature may not work in a small number of applications, such as the GitHub app.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-floating-untouchable=Y` |
+
+### floating-window-transparency
+
+Android floating windows have adjustable transparency. If you want to enable but hide the floating window, you can set the transparency to 0, the floating window will be automatically set to 'untouchable' in order to pass through click events.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| [0, 10] | 10 | `floating-window-transparency=5` |
+
+### floating-window-svg
+
+If an icon is not set for the Android floating window, it will default to displaying the RustDesk icon.
+When setting, please write the text content of svg into one line, and pay attention to [the svg support limitations](https://bigbadaboom.github.io/androidsvg/index.html)
+
+| Default | Example |
+| :------: | :------: |
+| RustDesk icon | `floating-window-svg=<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1717559129252" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4248" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><path d="M950.857143 512c0 242.285714-196.571429 438.857143-438.857143 438.857143S73.142857 754.285714 73.142857 512 269.714286 73.142857 512 73.142857s438.857143 196.571429 438.857143 438.857143z" fill="#1296db" p-id="4249"></path></svg>` |
