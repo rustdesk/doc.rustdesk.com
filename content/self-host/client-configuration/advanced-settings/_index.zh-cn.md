@@ -936,7 +936,7 @@ Windows 非安装版运行时自动提升, https://github.com/rustdesk/rustdesk-
 
 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: |
-| Y, N | N | `disable-floating-untouchable=Y` |
+| Y, N | N | `floating-window-untouchable=Y` |
 
 ### floating-window-transparency
 

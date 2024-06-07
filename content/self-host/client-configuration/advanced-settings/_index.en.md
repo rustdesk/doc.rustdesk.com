@@ -936,7 +936,7 @@ By default, clicking on the floating window will pop up a menu. After setting it
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
-| Y, N | N | `disable-floating-untouchable=Y` |
+| Y, N | N | `floating-window-untouchable=Y` |
 
 ### floating-window-transparency
 
