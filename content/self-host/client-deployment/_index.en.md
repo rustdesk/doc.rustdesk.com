@@ -4,6 +4,8 @@ weight: 400
 pre: "<b>2.4. </b>"
 ---
 
+The simplest way is to use custom client, https://twitter.com/rustdesk/status/1788905463678951787.
+
 You can deploy using a number of methods, some are covered in [Client Configuration](https://rustdesk.com/docs/en/self-host/client-configuration/).
 
 Alternatively you can use mass deployment scripts with your RMM, Intune, etc. The ID and password are output by the script. You should collect this or split it into different scripts to collect the ID and password.
