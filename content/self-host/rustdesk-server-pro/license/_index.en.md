@@ -11,7 +11,7 @@ Please get your license from [https://rustdesk.com/pricing.html](https://rustdes
 
 ### Set license
 
-You will be required to enter license in the web console, or change license later.
+You will be required to enter license in the web console (`http://<host-ip>:21114`), or change license later.
 
 | Set license | Change license |
 | --- | --- |
