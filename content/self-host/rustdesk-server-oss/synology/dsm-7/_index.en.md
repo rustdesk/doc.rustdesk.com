@@ -40,7 +40,7 @@ You could modify the line with `hbbs` to your NAS's LAN IP temporarily just like
 services:
   hbbs:
     container_name: hbbs
-    image: rustdesk/rustdesk-server:latest
+    image: rustdesk/rustdesk-server:latest # please change this to rustdesk/rustdesk-server-pro:latest if you want to install Pro.
     command: hbbs -r rustdesk.example.com:21117 -k _
     volumes:
       - ./data:/root
@@ -51,7 +51,7 @@ services:
 
   hbbr:
     container_name: hbbr
-    image: rustdesk/rustdesk-server:latest
+    image: rustdesk/rustdesk-server:latest # please change this to rustdesk/rustdesk-server-pro:latest if you want to install Pro.
     command: hbbr -k _
     volumes:
       - ./data:/root
