@@ -977,4 +977,4 @@ This is for the Android controlled side. By default, when the resolution is grea
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
-| Y, N | Y | `andriod-software-encoding-half-scale=N` |
+| Y, N | Y | `enable-andriod-software-encoding-half-scale=N` |
