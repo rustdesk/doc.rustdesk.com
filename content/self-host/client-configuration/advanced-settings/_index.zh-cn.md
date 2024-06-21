@@ -971,10 +971,10 @@ Android 浮动窗口具有可调整的透明度。如果您想启用但隐藏浮
 | :------: | :------: | :------: |
 | Y, N | Y | `enable-directx-capture=N` |
 
-### andriod-software-encoding-half-scale
+### enable-android-software-encoding-half-scale
 
 这个选项用于Android做被控。默认情况下,当分辨率大于1200时,硬件编码使用原始分辨率,而软件编码使用一半的分辨率,因为软件编码比较慢。这个选项用于设置软件编码是否应该缩放到一半分辨率。
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
-| Y, N | Y | `andriod-software-encoding-half-scale=N` |
+| Y, N | Y | `enable-android-software-encoding-half-scale=N` |

@@ -971,10 +971,10 @@ This is for the Windows controlled side. If you don't encounter any problems, it
 | :------: | :------: | :------: |
 | Y, N | Y | `enable-directx-capture=N` |
 
-### andriod-software-encoding-half-scale
+### enable-android-software-encoding-half-scale
 
 This is for the Android controlled side. By default, when the resolution is greater than 1200, hardware encoding uses the original resolution, while software encoding uses half the resolution, as software encoding is slower. This option is used to set whether software encoding should be scaled to half the resolution.
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
-| Y, N | Y | `enable-andriod-software-encoding-half-scale=N` |
+| Y, N | Y | `enable-android-software-encoding-half-scale=N` |
