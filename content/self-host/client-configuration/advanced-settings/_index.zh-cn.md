@@ -962,3 +962,19 @@ Android 浮动窗口具有可调整的透明度。如果您想启用但隐藏浮
 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: |
 | never, during-controlled, service-on | during-controlled | `keep-screen-on=never` |
+
+### enable-directx-capture
+
+这个选项用于Windows做被控。如果没有遇到任何问题,建议使用默认设置,默认设置会优先使用DirectX进行截图,而不是直接使用GDI。
+
+| 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-directx-capture=N` |
+
+### andriod-software-encoding-half-scale
+
+这个选项用于Android做被控。默认情况下,当分辨率大于1200时,硬件编码使用原始分辨率,而软件编码使用一半的分辨率,因为软件编码比较慢。这个选项用于设置软件编码是否应该缩放到一半分辨率。
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `andriod-software-encoding-half-scale=N` |
