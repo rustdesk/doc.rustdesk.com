@@ -7,10 +7,10 @@ weight: 600
 1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 2. Spin up a VPS, bare metal or Linux VM.
 3. If you want to use DNS and SSL create a DNS name i.e. `rustdesk.yourdomain.com`.
-4. Go to [this page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#install).
+4. [this page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#install).
 5. Copy and paste the command into your Linux terminal.
 6. Follow the prompts as they guide you through the install.
-7. Once the install is complete go to `https://rustdesk.yourdomain.com` or `http://youripaddress:21114`.
+7. Once the install is complete `https://rustdesk.yourdomain.com` or `http://youripaddress:21114`.
 8. Log in with the username `admin` and password `test1234`.
 9. Enter your license code purchased in step 1.
 
@@ -19,7 +19,7 @@ weight: 600
 2. Open TCP port 21114.
 3. Log into your RustDesk Server.
 4. If you didn't already use DNS and want to use SSL create a DNS name i.e. `rustdesk.yourdomain.com`.
-5. Go to [this page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#convert-from-open-source).
+5. [this page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#convert-from-open-source).
 6. Copy and paste the command into your Linux terminal.
 7. Follow the prompts as they guide you through the install.
 8. Once the install is complete go to `https://rustdesk.yourdomain.com` or `http://youripaddress:21114`.
@@ -27,9 +27,26 @@ weight: 600
 10. Enter your license code purchased in step 1.
 
 ### There is a new version of RustDesk Server Pro out, how can I upgrade?
-1. Go to [this page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#upgrade).
+You'd better back up data files (sqlite3 files etc) first, https://github.com/rustdesk/rustdesk-server-pro/discussions/184#discussioncomment-8013375. 
+#### If you installed via script
+1. [this page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#upgrade).
 2. Copy and paste the command into your Linux terminal.
 3. Follow the prompts as they guide you through the upgrade.
+#### Docker Compose
+```
+docker compose up -d --build --pull always
+```
+But this dependos on your docker version, for more discussion, check this, https://stackoverflow.com/questions/37685581/how-to-get-docker-compose-to-use-the-latest-image-from-repository.
+#### Docker 
+```
+docker ps
+docker stop <CONTAINER ID>
+docker rm <CONTAINER ID>
+docker rmi <IMAGE ID>
+docker run ..... # same as you installed it before
+```
+For more details, check this, https://www.cherryservers.com/blog/how-to-update-docker-image
+
 
 ### I installed with the script, how can I start and stop services?
 The services use systemd so can be started and stopped using `sudo systemctl stop|start|restart rustdesk-hbbs|rustdesk-hbbr` e.g. `sudo systemctl restart rustdesk-hbbs`.
@@ -41,7 +58,7 @@ The logs are stored in `/var/log/rustdesk-server`, you can view them using `tail
 To check the status `sudo systemctl status rustdesk-hbbs|rustdesk-hbbr` e.g. `sudo systemctl status rustdesk-hbbs`.
 
 ### How can I change the admin password?
-1. Go to `https://rustdesk.yourdomain.com` or `http://youripaddress:21114`.
+1. `https://rustdesk.yourdomain.com` or `http://youripaddress:21114`.
 2. Log in with the username `admin` and password `test1234`.
 3. Click on `admin` in the top right hand corner.
 4. Click on `Settings`.
@@ -165,7 +182,7 @@ For example, if you buy a domain name `example.com` from `Namesilo` and your ser
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-button.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-add-a-record.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-table.png)
-* It takes some time for DNS to take effect, go to https://www.whatsmydns.net and check whether the domain name has been resolved to your server's IP address. Step 6 depends on the correct resolve result. In the following steps, replace `<YOUR_DOMAIN>` with your subdomain, e.g. `rustdesk.example.com`.
+* It takes some time for DNS to take effect, https://www.whatsmydns.net and check whether the domain name has been resolved to your server's IP address. Step 6 depends on the correct resolve result. In the following steps, replace `<YOUR_DOMAIN>` with your subdomain, e.g. `rustdesk.example.com`.
 
 #### 2. Install Nginx
 * Debian/Ubuntu: `sudo apt-get install nginx`
