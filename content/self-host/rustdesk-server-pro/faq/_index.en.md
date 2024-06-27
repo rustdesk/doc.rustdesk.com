@@ -36,7 +36,7 @@ You'd better back up data files (sqlite3 files etc) first, https://github.com/ru
 ```
 docker compose up -d --build --pull always
 ```
-But this dependos on your docker version, for more discussion, check this, https://stackoverflow.com/questions/37685581/how-to-get-docker-compose-to-use-the-latest-image-from-repository.
+But this dependos on your docker version, for more discussion, check this, https://stackoverflow.com/questions/37685581/how-to-get-docker-compose-to-use-the-latest-image-from-repository
 #### Docker 
 ```
 docker ps
