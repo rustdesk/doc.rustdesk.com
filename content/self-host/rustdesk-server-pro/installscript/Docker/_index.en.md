@@ -30,7 +30,7 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v ./data:/root -td --
 
 With Docker Compose you HAVE to use `network_mode: "host"` to ensure licensing works. Install Docker using this [guide](https://docs.docker.com/engine/install) to ensure its the most up to date!
 
-Here is a A Step-by-Step Guide, https://h3x0r.tech/setting-up-a-rustdesk-server-with-docker.
+Here is a A Step-by-Step Guide, https://h3x0r.tech/setting-up-a-rustdesk-server-with-docker, please change to rustdesk-server-pro accordingly.
 
 Copy the below into `compose.yml`.
 
