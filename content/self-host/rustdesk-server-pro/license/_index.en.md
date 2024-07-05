@@ -34,3 +34,9 @@ After payment, you need to proceed to the web console to activate it manually as
 The license can be only used on one machine (for hbbs only, hbbr does not require license), if you want to migrate to the other machine, retrieve your license or download invoices, please go to [https://rustdesk.com/self-host/account/](https://rustdesk.com/self-host/account/). Log in with the email address used for Stripe checkout, unbind the old machine you want to migrate from as below, when you set the license in the new servers web console it will assign the license and register automatically in the console.
 
 ![](/docs/en/self-host/rustdesk-server-pro/license/images/unbind.jpg)
+
+### Proxy
+If your server can not access internet to verify license directly, you can add proxy. e.g. `proxy=http://username:password@example.com:8080 ./hbbs`.
+Alternatively, you can add `proxy=http://username:password@example.com:8080` to `.env` file
+under working directory (where `id_ed25519` / `db.sqlite3` files reside). `http` can be replaced with `https` or `socks5`.
+If there is no `username` / `password` / `port`, it can be `proxy=http://example.com`.
