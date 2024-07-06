@@ -3,13 +3,18 @@ title: Web Console
 weight: 10
 ---
 
+The web console is integrated in the RustDesk server Pro, serviced by the `21114` port.
+
 Features:
 
+- Browse devices
 - Add/modify users and user groups
 - Modify device access permissions
 - Browse device connection logs and the other logs
 - Update settings
 - Manage client settings sync strategies
+- Manage shared address books
+- Generate custom client build
 
 ### Log in
 
