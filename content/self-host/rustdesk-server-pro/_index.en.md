@@ -53,7 +53,7 @@ Almost the same as [the open source version](https://rustdesk.com/docs/en/self-h
 
 #### Docker Installation
 
-[Here](docs/en/self-host/rustdesk-server-pro/installscript/docker/)
+[Here](/docs/en/self-host/rustdesk-server-pro/installscript/docker/)
 
 #### Ports Required
 
