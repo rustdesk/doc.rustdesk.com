@@ -110,9 +110,8 @@ Please get in touch with our [sales](mailto://sales@rustdesk.com) team.
 ### Is there somewhere I can see video setup guides?
 Yes! We have a [YouTube Channel](https://youtube.com/@RustDesk).
 
-### Why are my logs are empty?
-Ensure API is set on both the device being controlled and the machine controlling.
-On the left hand side click on `Logs`.
+### Why are my logs / device names are empty?
+Ensure API is set correctly on the device being controlled, https://github.com/rustdesk/rustdesk-server-pro/issues/21#issuecomment-1637935750.
 
 ### How can I uninstall RustDesk Server Pro?
 Run the following commands:
