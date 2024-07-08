@@ -3,6 +3,8 @@ title: Advanced Settings
 weight: 49
 ---
 
+All adavanced settings in custom clients are covered here.
+
 ## Privilege Levels for Settings
 
 There are four types of settings:
