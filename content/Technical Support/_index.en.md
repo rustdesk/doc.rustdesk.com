@@ -19,6 +19,6 @@ We can help with lots of problems, installations and configurations. Fully manag
 
 You get Priority #1 fast responses and service.
 
-### Ticket
+### Ticket for Pro User
 
 Please post the ticket on https://github.com/rustdesk/rustdesk-server-pro/discussions, it is more efficient for us to communicate and track issue there than email.
