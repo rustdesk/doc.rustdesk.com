@@ -980,3 +980,11 @@ This is for the Android controlled side. By default, when the resolution is grea
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | Y | `enable-android-software-encoding-half-scale=N` |
+
+### allow-remote-cm-modification
+
+Whether to allow the control side to click on the connection management window to accept connections, change permissions, etc.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-remote-cm-modification=Y` |
