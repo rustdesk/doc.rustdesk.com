@@ -985,6 +985,8 @@ This is for the Android controlled side. By default, when the resolution is grea
 
 Whether to allow the control side to click on the connection management window to accept connections, change permissions, etc.
 
+https://github.com/rustdesk/rustdesk/issues/7425
+
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-remote-cm-modification=Y` |
