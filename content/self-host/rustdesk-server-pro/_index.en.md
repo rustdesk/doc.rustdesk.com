@@ -61,10 +61,6 @@ You need port 21114-21119 TCP and 21116 UDP open, please ensure these ports are 
 
 More information about these ports, please check [here](/docs/en/self-host/rustdesk-server-oss/install/#ports).
 
-{{% notice note %}}
-You should use a proxy like Nginx to deliver this over HTTPS requiring port 443 to be opened.
-{{% /notice %}}
-
 ### Upgrade
 
 This guide (https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/) covers how to upgrade RustDesk Server Pro from a lower version, addressing different installation methods.
