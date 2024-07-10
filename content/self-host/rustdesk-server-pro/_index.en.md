@@ -68,3 +68,9 @@ You should use a proxy like Nginx to deliver this over HTTPS requiring port 443 
 ### Upgrade
 
 [Here](/docs/en/self-host/rustdesk-server-pro/faq/#there-is-a-new-version-of-rustdesk-server-pro-out-how-can-i-upgrade)
+
+## Setup https for web console
+
+The simple install script includes https setup, but it may fail or you do not like it, and it can not be used for the other installation methods.
+
+Here is a simple tutorial of [manual https setup](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually)
