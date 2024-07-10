@@ -53,7 +53,7 @@ Almost the same as [the open source version](https://rustdesk.com/docs/en/self-h
 
 #### Docker Installation
 
-[Here](/docs/en/self-host/rustdesk-server-pro/installscript/docker/)
+Most users choose to install RustDesk server Pro with [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/)
 
 #### Ports Required
 
@@ -67,10 +67,18 @@ You should use a proxy like Nginx to deliver this over HTTPS requiring port 443 
 
 ### Upgrade
 
-[Here](/docs/en/self-host/rustdesk-server-pro/faq/#there-is-a-new-version-of-rustdesk-server-pro-out-how-can-i-upgrade)
+This guide (https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/) covers how to upgrade RustDesk Server Pro from a lower version, addressing different installation methods.
 
 ## Setup https for web console
 
 The simple install script includes https setup, but it may fail or you do not like it, and it can not be used for the other installation methods.
 
 Here is a simple tutorial of [manual https setup](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually)
+
+## Migrate to new host and backup / restore
+
+Here is a detailed [tutorial](https://github.com/rustdesk/rustdesk-server-pro/discussions/184)
+
+## Migrate license
+
+Please follow [this](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#invoices-license-retrieval-and-migration)
