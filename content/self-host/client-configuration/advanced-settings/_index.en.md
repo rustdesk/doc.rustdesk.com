@@ -990,3 +990,68 @@ https://github.com/rustdesk/rustdesk/issues/7425
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-remote-cm-modification=Y` |
+
+
+### remove-preset-password-warning
+
+Whether to remove the security warning on GUI when there is preset password in custom client. 
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/286
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `remove-preset-password-warning=Y` |
+
+### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings
+
+Whether to hide some settings, please ensure `Disable settings` is turned off, otherwise these won't work.
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/263
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/276
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-security-settings=Y` |
+
+### hide-username-on-card
+
+Whether to show username in the list of devices, because sometimes, the username is too long, will hide the other info.
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/284#issuecomment-2216521407
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-username-on-card=Y` |
+
+### hide-help-cards
+
+Whether to show UAC / permission warnings on GUI.
+
+https://github.com/rustdesk/rustdesk/issues/8687
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-help-cards=Y` |
+
+### display-name
+
+Change your display name which will be shown on the popup when you connect to remote device. By default it displays your OS username.
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/277
+
+### disable-udp
+
+Whether to use TCP only, it will not use UDP 21116 any more, TCP 21116 will be used instead.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-udp=Y` |
+
+
+### preset-username / preset-strategy-name
+
+Assign user / strategy to device, you can also do this via command line, https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices
+https://github.com/rustdesk/rustdesk-server-pro/discussions/304
+
+
