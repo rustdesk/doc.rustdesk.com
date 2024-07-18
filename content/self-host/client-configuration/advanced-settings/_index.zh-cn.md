@@ -986,3 +986,67 @@ Android 浮动窗口具有可调整的透明度。如果您想启用但隐藏浮
 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-remote-cm-modification=Y` |
+
+
+### remove-preset-password-warning
+
+当自定义客户端有预设密码时是否去除GUI上的安全警告。
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/286
+
+| 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | Y | `remove-preset-password-warning=Y` |
+
+### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings
+
+是否隐藏某些设置，请确保`Disable settings`已关闭，否则这些设置将不起作用。
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/263
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/276
+
+| 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-security-settings=Y` |
+
+### hide-username-on-card
+
+是否在设备列表中显示用户名，因为有时用户名太长，会隐藏其他信息。
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/284#issuecomment-2216521407
+
+| 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-username-on-card=Y` |
+
+### hide-help-cards
+
+是否在 GUI 上显示 UAC/权限警告。
+
+https://github.com/rustdesk/rustdesk/issues/8687
+
+| 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-help-cards=Y` |
+
+### display-name
+
+更改连接到远程设备时将在弹出窗口中显示的显示名称。默认情况下，它显示您的操作系统用户名。
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/277
+
+### disable-udp
+
+是否仅使用TCP，不再使用UDP 21116，而是使用TCP 21116。
+
+| 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-udp=Y` |
+
+
+### preset-user-name / preset-strategy-name
+
+将用户/策略分配给设备，您也可以通过[命令行](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices)执行此操作
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/304

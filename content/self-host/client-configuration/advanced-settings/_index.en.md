@@ -1049,7 +1049,7 @@ Whether to use TCP only, it will not use UDP 21116 any more, TCP 21116 will be u
 | Y, N | N | `disable-udp=Y` |
 
 
-### preset-username / preset-strategy-name
+### preset-user-name / preset-strategy-name
 
 Assign user / strategy to device, you can also do this via [command line](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices)
 
