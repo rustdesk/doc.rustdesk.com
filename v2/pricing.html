@@ -678,12 +678,12 @@ label {
                   <br>
                   <form>
                     <label for="users">Number of Licensed Users:</label>
-                    <input type="number" id="users" name="users" value="10" min="10" max="100" step="10"><br>
-                    <input type="range" id="usersSlider" class="slider" name="usersRange" value="10" min="10" max="100" step="10"><br>
+                    <input type="number" id="users" name="users" value="10" min="10" max="500" step="10"><br>
+                    <input type="range" id="usersSlider" class="slider" name="usersRange" value="10" min="10" max="500" step="10"><br>
                 
                     <label for="devices">Number of Managed Devices:</label>
-                    <input type="number" id="devices" name="devices" value="100" min="100" max="1500" step="100"><br>
-                    <input type="range" id="devicesSlider" class="slider" name="devicesRange" value="100" min="100" max="1500" step="100">
+                    <input type="number" id="devices" name="devices" value="100" min="100" max="5000" step="100"><br>
+                    <input type="range" id="devicesSlider" class="slider" name="devicesRange" value="100" min="100" max="5000" step="100">
                   </form>
                   <br>
                   <script>
@@ -720,6 +720,136 @@ label {
                     document.getElementById("devicesSlider").oninput = function() {
                       document.getElementById("devices").value = this.value;
                       calculatePrice();
+                    }
+                  </script>
+                  <div class="uui-pricing08_content">
+                    <a href="#" class="uui-button-15 w-inline-block" onClick="submit()">
+                      <div>Buy now</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="uui-pricing08_plan" style="min-width: 450px; display: none" id="custom2">
+                  <a name="custom2"></a>
+                  <div class="uui-text-align-center-5">
+                      <h2 class="uui-heading-xxsmall-2">Customized plan <br>(Limited concurrent connections)</h2>
+                    <div class="uui-pricing08_price">$<span id="cprice2">19.90</span><span class="uui-pricing08_price-text">/month</span></div>
+                    <div class="uui-text-size-medium-10">billed annually</div>
+                  </div>
+                  <br>
+                  <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c877c9-47ad0af8" class="uui-pricing08_feature">
+                    <div class="uui-pricing08_icon-wrapper">
+                      <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                        </svg></div>
+                    </div>
+                    <div class="uui-text-size-medium-10">Everything what in the basic self-hosting plan <span style="font-style: italic; text-decoration: underline;">but with limited concurrent connections, excessive managed devices won't be disabled</span></div>
+                  </div>
+                  <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c87789-47ad0af8" class="uui-pricing08_feature">
+                  <div class="uui-pricing08_icon-wrapper">
+                      <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                        </svg></div>
+                    </div>
+                    <div class="uui-text-size-medium-10">Unlimited concurrent sessions (in tabs or seperate windows) per concurrent connection</div>
+                  </div>
+                  <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c87789-47ad0af8" class="uui-pricing08_feature">
+                      <div class="uui-pricing08_icon-wrapper">
+                          <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                      </div>
+                      <div class="uui-text-size-medium-10">$1 for each additional user</div>
+                  </div>
+                  <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c87789-47ad0af8" class="uui-pricing08_feature">
+                      <div class="uui-pricing08_icon-wrapper">
+                          <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                      </div>
+                      <div class="uui-text-size-medium-10">$0.1 for each additional device</div>
+                  </div>
+                  <div id="w-node-_0ae53630-2fcd-6e7f-a2f1-2bb955c87789-47ad0af8" class="uui-pricing08_feature">
+                      <div class="uui-pricing08_icon-wrapper">
+                          <div class="uui-icon-1x1-xsmall-9 w-embed"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#D1FADF"></path>
+                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M17.096 7.39004L9.93602 14.3L8.03602 12.27C7.68602 11.94 7.13602 11.92 6.73602 12.2C6.34602 12.49 6.23602 13 6.47602 13.41L8.72602 17.07C8.94602 17.41 9.32601 17.62 9.75601 17.62C10.166 17.62 10.556 17.41 10.776 17.07C11.136 16.6 18.006 8.41004 18.006 8.41004C18.906 7.49004 17.816 6.68004 17.096 7.38004V7.39004Z" fill="#12B76A"></path>
+                              </svg></div>
+                      </div>
+                      <div class="uui-text-size-medium-10">$20 for each additional concurrent connection</div>
+                  </div>
+                  <br>
+                  <form>
+                    <label for="users">Number of Licensed Users:</label>
+                    <input type="number" id="users2" name="users" value="10" min="10" max="500" step="10"><br>
+                    <input type="range" id="usersSlider2" class="slider" name="usersRange" value="10" min="10" max="500" step="10"><br>
+                
+                    <label for="devices">Number of Managed Devices:</label>
+                    <input type="number" id="devices2" name="devices" value="100" min="100" max="5000" step="100"><br>
+                    <input type="range" id="devicesSlider2" class="slider" name="devicesRange" value="100" min="100" max="5000" step="100"> 
+
+                    <br>
+
+                    <label for="conns">Number of Concurrent Connections:</label>
+                    <input type="number" id="conns" name="devices" value="1" min="1" max="50" step="100"><br>
+                    <input type="range" id="connsSlider" class="slider" name="connsRange" value="1" min="1" max="50" step="1">
+                  </form>
+                  <br>
+                  <script>
+                    var users2 = 10;
+                    var devices2 = 100;
+                    var conns = 1;
+                    function submit() {
+                      redirectUrl = "https://rustdesk.com/api/lic/stripe/checkout?type=Customized&users=" + users2 + "&devices=" + devices2 + "&conns=" + conns;
+                      gotoBuy(redirectUrl);
+                    }
+                    function calculatePrice2() {
+                      users2 = parseInt(document.getElementById("users2").value);
+                      devices2 = parseInt(document.getElementById("devices2").value);
+                      conns = parseInt(document.getElementById("conns").value);
+                      if (!users2 || users2 < 10) users2 = 10;
+                      if (devices2 < 100) devices2 = 100;
+                      if (conns < 1) conns = 1;
+                      var price =  19.9 + (users2 - 10) + (devices2 - 100) * 0.1 + (conns - 1) * 20;
+                      document.getElementById("cprice2").innerText = price.toFixed(2);
+                    }
+
+                    if (window.location.href.indexOf("custom2") > 0) {
+                        document.getElementById("custom2").style.display = 'block';
+                        setTimeout(function() { window.location = "#custom2"; }, 150);
+                    }
+                
+                    document.getElementById("users2").oninput = function() {
+                      document.getElementById("usersSlider2").value = this.value;
+                      calculatePrice2();
+                    }
+                
+                    document.getElementById("devices2").oninput = function() {
+                      document.getElementById("devicesSlider2").value = this.value;
+                      calculatePrice2();
+                    }
+                 
+                    document.getElementById("conns").oninput = function() {
+                      document.getElementById("connsSlider").value = this.value;
+                      calculatePrice2();
+                    }
+
+                    document.getElementById("usersSlider2").oninput = function() {
+                      document.getElementById("users2").value = this.value;
+                      calculatePrice2();
+                    }
+                
+                    document.getElementById("devicesSlider2").oninput = function() {
+                      document.getElementById("devices2").value = this.value;
+                      calculatePrice2();
+                    }
+
+                    document.getElementById("connsSlider").oninput = function() {
+                      document.getElementById("conns").value = this.value;
+                      calculatePrice2();
                     }
                   </script>
                   <div class="uui-pricing08_content">
