@@ -38,7 +38,7 @@ The installation of the Pro version is almost identical, except for the followin
 
 - Different download path and Docker images are required.
 - An additional TCP port (21114) is needed for the web console.
-- 
+
 ## License
 
 You can get license from https://rustdesk.com/pricing.html, check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
