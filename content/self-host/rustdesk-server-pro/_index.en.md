@@ -30,6 +30,15 @@ If you build you own server on your home/office, and can't connect it through pu
 
 Lowest level VPS is enough for your use case. The server software is not CPU and memory intensive. Our public ID server hosted on a 2 CPU/4 GB Vultr server serves 1.5+ million endpoints.
 
+## Video tutorials
+
+There are many video tutorials available online that can guide you through installing the OSS version, https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/#video-tutorials.
+
+The installation of the Pro version is almost identical, except for the following differences:
+
+- Different download path and Docker images are required.
+- An additional TCP port (21114) is needed for the web console.
+- 
 ## License
 
 You can get license from https://rustdesk.com/pricing.html, check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
