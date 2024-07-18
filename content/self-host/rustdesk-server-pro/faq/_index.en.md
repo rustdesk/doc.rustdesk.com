@@ -362,3 +362,7 @@ After above, run `sudo firewall-cmd --reload` to reload firewall.
 2. The command is `rustdesk-utils set_password username password` if it works it will say *Done*
 
 You also have the following other commands `genkeypair,  validatekeypair [public key] [secret key] , doctor [rustdesk-server], reset_email_verification and reset_2fa_verification` which can be used with rustdesk-utils.
+
+### Add root CA certificate into Docker container (for tls failure with stmp, oidc etc)
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703
