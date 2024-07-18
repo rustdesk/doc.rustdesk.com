@@ -998,6 +998,8 @@ Whether to remove the security warning on GUI when there is preset password in c
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/286
 
+https://github.com/rustdesk/rustdesk/discussions/7956
+
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | Y | `remove-preset-password-warning=Y` |
