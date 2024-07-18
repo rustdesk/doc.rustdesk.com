@@ -3,6 +3,9 @@ title: Installation
 weight: 1
 ---
 
+### Video tutorials
+There are many video tutorials on YouTube, https://github.com/rustdesk/rustdesk/wiki/FAQ#video-tutorials.
+
 ### Install your own server as systemd service using a simple to run install script
 Script is hosted on [Techahold](https://github.com/techahold/rustdeskinstall) and supported on our [Discord](https://discord.com/invite/nDceKgxnkV).
 
