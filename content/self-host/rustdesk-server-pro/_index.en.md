@@ -76,7 +76,7 @@ More information about these ports, please check [here](/docs/en/self-host/rustd
 
 ### Upgrade
 
-This guide (https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/) covers how to upgrade RustDesk Server Pro from a lower version, addressing different installation methods.
+This guide (https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#there-is-a-new-version-of-rustdesk-server-pro-out-how-can-i-upgrade) covers how to upgrade RustDesk Server Pro from a lower version, addressing different installation methods.
 
 ## Setup https for web console
 
