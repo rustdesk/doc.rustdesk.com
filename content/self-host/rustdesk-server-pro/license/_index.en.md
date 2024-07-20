@@ -36,9 +36,8 @@ The license can be only used on one machine (for hbbs only, hbbr does not requir
 ![](/docs/en/self-host/rustdesk-server-pro/license/images/unbind.jpg)
 
 ### Proxy
-If your server can not access internet to verify license directly, you can add proxy. e.g. `proxy=http://username:password@example.com:8080 ./hbbs`.
+If your server can not access internet to verify license directly, you can add proxy, e.g. `proxy=http://username:password@example.com:8080 ./hbbs`.
 
-Alternatively, you can add `proxy=http://username:password@example.com:8080` to `.env` file
-under working directory (where `id_ed25519` / `db.sqlite3` files reside).
+Alternatively, you can add `proxy=http://username:password@example.com:8080` to `.env` file under working directory (where `id_ed25519` / `db.sqlite3` files reside).
 
 `http` can be replaced with `https` or `socks5`. If there is no `username` / `password` / `port`, it can be `proxy=http://example.com`.
