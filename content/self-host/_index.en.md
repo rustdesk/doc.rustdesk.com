@@ -30,4 +30,4 @@ For Pro users without an SSL Proxy you will need to open TCP port `21114` for th
 
 To check ports are opened and working you can use `test-netconnection domain.com -p 21115` with PowerShell or [CanYouSeeMe.org](https://canyouseeme.org/).
 
-{{% children depth="3" showhidden="true" %}}
+{{% children depth="4" showhidden="true" %}}
