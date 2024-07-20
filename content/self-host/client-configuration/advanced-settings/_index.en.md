@@ -3,7 +3,7 @@ title: Advanced Settings
 weight: 49
 ---
 
-All adavanced settings in custom clients are covered here.
+All advanced settings in custom clients are covered here.
 
 ## Privilege Levels for Settings
 
@@ -46,7 +46,7 @@ Enable keyboard/mouse input for incoming connections.
 
 ### enable-clipboard
 
-Enable copy and paste for the incoming connections.
+Enable copy and paste for incoming connections.
 
 **Location**:
 
@@ -331,7 +331,7 @@ The directory to save recorded videos.
 
 Default values:
 
-1. **MacOS** ~/Movies/**app_name**
+1. **macOS** ~/Movies/**app_name**
 2. **Linux** ~/Videos/**app_name**
 3. **Windows** %USERPROFILE%\Videos\\**app_name**
 4. **Android** /Storage/emulated/0/**app_name**/ScreenRecord
@@ -568,7 +568,7 @@ This option will set the "follow-remote-cursor" option for every peer after the 
 
 Then the "follow-remote-cursor" option in each peer's settings will controls whether to follow the remote cursor.
 
-**Preview** [PR 7717](https://github.com/rustdesk/rustdesk/pull/7717)
+**Preview**: [PR 7717](https://github.com/rustdesk/rustdesk/pull/7717)
 
 **Location**:
 
@@ -585,7 +585,7 @@ This option will set the "follow-remote-window" option for every peer after the 
 
 Then the "follow-remote-window" option in each peer's settings will controls whether to follow the remote window.
 
-**Preview** [PR 7717](https://github.com/rustdesk/rustdesk/pull/7717)
+**Preview**: [PR 7717](https://github.com/rustdesk/rustdesk/pull/7717)
 
 **Location**:
 
@@ -767,7 +767,7 @@ This option will set the "displays-as-individual-windows" option for every peer 
 
 The "displays-as-individual-windows" option in each peer's settings will then control whether to show displays as individual windows.
 
-**Preview** [PR 5945](https://github.com/rustdesk/rustdesk/pull/5945)
+**Preview**: [PR 5945](https://github.com/rustdesk/rustdesk/pull/5945)
 
 **Location**:
 
@@ -784,7 +784,7 @@ This option will set the "use-all-my-displays-for-the-remote_session" option for
 
 The "use-all-my-displays-for-the-remote_session" option in each peer's settings will then control whether to use all my displays for the remote session.
 
-**Preview** [PR 6064](https://github.com/rustdesk/rustdesk/pull/6064)
+**Preview**: [PR 6064](https://github.com/rustdesk/rustdesk/pull/6064)
 
 **Location**:
 
@@ -885,7 +885,7 @@ The "codec-preference" option in each peer's settings will then control codec fo
 | :------: | :------: | :------: | :------: |
 | N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
 
-**CAUTION**: Options other than "vp8" and "vp9" may not work. This depends on what your machine supports.
+**Caution**: Options other than "vp8" and "vp9" may not work. This depends on what your machine supports.
 
 ### preset-address-book-name & preset-address-book-tag
 
@@ -898,10 +898,9 @@ Please use valid address book name and tag on your address book page of web cons
 | preset-address-book-name | N | | | `preset-address-book-name=<address book name>` |
 | preset-address-book-tag | N | | | `preset-address-book-tag=<address book tag name>` |
 
-
 ### disable-group-panel
 
-Disable group panel (next to address book panel) on RustDesk client, https://github.com/rustdesk/rustdesk-server-pro/issues/250
+Disable group panel (next to address book panel) on RustDesk client, https://github.com/rustdesk/rustdesk-server-pro/issues/250.
 
 | Option | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: | :------: |
@@ -909,12 +908,11 @@ Disable group panel (next to address book panel) on RustDesk client, https://git
 
 ### pre-elevate-service
 
-Automatic elevation on run for Windows portable, https://github.com/rustdesk/rustdesk-server-pro/issues/252
+Automatic elevation on run for Windows portable, https://github.com/rustdesk/rustdesk-server-pro/issues/252.
 
 | Option | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: | :------: |
 | pre-elevate-service | N | Y, N | N | `pre-elevate-service=Y` |
-
 
 ### disable-floating-window
 
@@ -951,7 +949,7 @@ Android floating windows have adjustable transparency. If you want to enable but
 ### floating-window-svg
 
 If an icon is not set for the Android floating window, it will default to displaying the RustDesk icon.
-When setting, please write the text content of svg into one line, and pay attention to [the svg support limitations](https://bigbadaboom.github.io/androidsvg/index.html)
+When setting, please write the text content of SVG into one line, and pay attention to the [SVG support limitations](https://bigbadaboom.github.io/androidsvg/index.html).
 
 | Default | Example |
 | :------: | :------: |
@@ -983,7 +981,7 @@ This is for the Android controlled side. By default, when the resolution is grea
 
 ### allow-remote-cm-modification
 
-Whether to allow the control side to click on the connection management window to accept connections, change permissions, etc.
+Controls whether to allow the control side to click on the connection management window to accept connections, change permissions, etc.
 
 https://github.com/rustdesk/rustdesk/issues/7425
 
@@ -991,10 +989,9 @@ https://github.com/rustdesk/rustdesk/issues/7425
 | :------: | :------: | :------: |
 | Y, N | N | `allow-remote-cm-modification=Y` |
 
-
 ### remove-preset-password-warning
 
-Whether to remove the security warning on GUI when there is preset password in custom client. 
+Controls whether to remove the security warning on GUI when there is preset password in custom client. 
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/286
 
@@ -1006,7 +1003,7 @@ https://github.com/rustdesk/rustdesk/discussions/7956
 
 ### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings
 
-Whether to hide some settings, please ensure `Disable settings` is turned off, otherwise these won't work.
+Controls whether to hide some settings. Please ensure `Disable settings` is turned off, otherwise these won't work.
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/263
 
@@ -1018,7 +1015,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 
 ### hide-username-on-card
 
-Whether to show username in the list of devices, because sometimes, the username is too long, will hide the other info.
+Controls whether to show username in the list of devices. Because sometimes, the username is too long, will hide the other info.
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/284#issuecomment-2216521407
 
@@ -1028,7 +1025,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/284#issuecomment-22165214
 
 ### hide-help-cards
 
-Whether to show UAC / permission warnings on GUI.
+Controls whether to show UAC / permission warnings on GUI.
 
 https://github.com/rustdesk/rustdesk/issues/8687
 
@@ -1044,17 +1041,14 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/277
 
 ### disable-udp
 
-Whether to use TCP only, it will not use UDP 21116 any more, TCP 21116 will be used instead.
+Controls whether to use TCP only. It will not use UDP 21116 any more, TCP 21116 will be used instead.
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | N | `disable-udp=Y` |
 
-
 ### preset-user-name / preset-strategy-name
 
-Assign user / strategy to device, you can also do this via [command line](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices)
+Assign user / strategy to device. You can also do this via [command line](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
-
-
