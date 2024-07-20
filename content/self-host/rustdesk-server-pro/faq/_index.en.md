@@ -7,7 +7,7 @@ weight: 600
 1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 2. Spin up a VPS, bare metal or Linux VM.
 3. If you want to use DNS and SSL create a DNS name i.e. `rustdesk.yourdomain.com`.
-4. [this page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#install).
+4. [This page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#install).
 5. Copy and paste the command into your Linux terminal.
 6. Follow the prompts as they guide you through the install.
 7. Once the install is complete `https://rustdesk.yourdomain.com` or `http://youripaddress:21114`.
@@ -19,7 +19,7 @@ weight: 600
 2. Open TCP port 21114.
 3. Log into your RustDesk Server.
 4. If you didn't already use DNS and want to use SSL create a DNS name i.e. `rustdesk.yourdomain.com`.
-5. [this page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#convert-from-open-source).
+5. [This page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#convert-from-open-source).
 6. Copy and paste the command into your Linux terminal.
 7. Follow the prompts as they guide you through the install.
 8. Once the install is complete go to `https://rustdesk.yourdomain.com` or `http://youripaddress:21114`.
@@ -27,17 +27,17 @@ weight: 600
 10. Enter your license code purchased in step 1.
 
 ### There is a new version of RustDesk Server Pro out, how can I upgrade?
-You'd better back up data files (sqlite3 files etc) first, https://github.com/rustdesk/rustdesk-server-pro/discussions/184#discussioncomment-8013375. 
+You'd better back up data files (sqlite3 files etc.) first, https://github.com/rustdesk/rustdesk-server-pro/discussions/184#discussioncomment-8013375.
 #### If you installed with script
-1. [this page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#upgrade).
+1. [This page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#upgrade).
 2. Copy and paste the command into your Linux terminal.
 3. Follow the prompts as they guide you through the upgrade.
 #### Docker Compose
 ```
 docker compose up -d --build --pull always
 ```
-But this dependos on your docker version, for more discussion, check this, https://stackoverflow.com/questions/37685581/how-to-get-docker-compose-to-use-the-latest-image-from-repository
-#### Docker 
+But this depends on your docker version, for more discussion, check [this](https://stackoverflow.com/questions/37685581/how-to-get-docker-compose-to-use-the-latest-image-from-repository).
+#### Docker
 ```
 docker ps
 docker stop <CONTAINER ID>
@@ -45,8 +45,7 @@ docker rm <CONTAINER ID>
 docker rmi <IMAGE ID>
 docker run ..... # same as you installed it before
 ```
-For more details, check this, https://www.cherryservers.com/blog/how-to-update-docker-image
-
+For more details, check [this](https://www.cherryservers.com/blog/how-to-update-docker-image).
 
 ### I installed with the script, how can I start and stop services?
 The services use systemd so can be started and stopped using `sudo systemctl stop|start|restart rustdesk-hbbs|rustdesk-hbbr` e.g. `sudo systemctl restart rustdesk-hbbs`.
@@ -142,7 +141,7 @@ $ErrorActionPreference= 'silentlycontinue'
 
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
-if ($rdver -eq "1.2.3")
+if ($rdver -eq "1.2.6")
 {
     Write-Output "RustDesk $rdver is the newest version."
     Exit
@@ -155,7 +154,7 @@ if (!(Test-Path C:\Temp))
 
 cd C:\Temp
 
-Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.exe" -Outfile "rustdesk.exe"
+Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.6/rustdesk-1.2.6-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
 ```
 
@@ -194,9 +193,9 @@ For example, if you buy a domain name `example.com` from `Namesilo` and your ser
 Run `nginx -h` to check whether it has been installed successfully.
 
 #### 3. Install Certbot
-* Method 1: If snap is installed, run `sudo snap install certbot --classic`
-* Method 2: Using `python3-certbot-nginx` instead. e.g. `sudo apt-get install python3-certbot-nginx` for ubuntu
-* Method 3: If the above two methods failed, try install `certbot-nginx`, e.g. `sudo yum install certbot-nginx` for centos 7
+* Method 1: If `snap` is installed, run `sudo snap install certbot --classic`.
+* Method 2: Using `python3-certbot-nginx` instead, e.g. `sudo apt-get install python3-certbot-nginx` for Ubuntu.
+* Method 3: If the above two methods failed, try install `certbot-nginx`, e.g. `sudo yum install certbot-nginx` for CentOS 7.
 
 Run `certbot -h` to check whether it has been installed successfully.
 
@@ -356,15 +355,13 @@ sudo firewall-cmd --permanent --add-port=443/tcp
 
 After above, run `sudo firewall-cmd --reload` to reload firewall.
 
-#### After changing the admin password in the web console I cannot log in. Is there a simple way to reset the password?
+### After changing the admin password in the web console I cannot log in. Is there a simple way to reset the password?
+1. Ensure you have `rustdesk-utils` installed. If not you can get it [here](https://github.com/rustdesk/rustdesk-server-pro). Also you need to execute the command from the folder where the database is, i.e. `/var/lib/rustdesk-server`.
+2. The command is `rustdesk-utils set_password username password`. If it works it will say *Done*.
 
-1. Ensure you have rustdesk-utils installed (if not you can get it [here](https://github.com/rustdesk/rustdesk-server-pro), also you need to execute the command from the folder where the database is, ie /var/lib/rustdesk-server).
-2. The command is `rustdesk-utils set_password username password` if it works it will say *Done*
-
-You also have the following other commands `genkeypair,  validatekeypair [public key] [secret key] , doctor [rustdesk-server], reset_email_verification and reset_2fa_verification` which can be used with rustdesk-utils.
+You also have the following other commands `genkeypair`, `validatekeypair [public key] [secret key]`, `doctor [rustdesk-server]`, `reset_email_verification` and `reset_2fa_verification` which can be used with `rustdesk-utils`.
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/183
 
-### Add root CA certificate into Docker container (for tls failure with stmp, oidc etc)
-
+### Add root CA certificate into Docker container (for TLS failure with SMTP, OIDC etc.)
 https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703
