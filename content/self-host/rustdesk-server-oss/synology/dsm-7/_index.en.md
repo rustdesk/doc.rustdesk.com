@@ -40,7 +40,7 @@ You could modify the line with `hbbs` to your NAS's LAN IP temporarily just like
 services:
   hbbs:
     container_name: hbbs
-    image: rustdesk/rustdesk-server:latest # please change this to rustdesk/rustdesk-server-pro:latest if you want to install Pro.
+    image: rustdesk/rustdesk-server:latest # Please change this to rustdesk/rustdesk-server-pro:latest if you want to install Pro.
     command: hbbs -r rustdesk.example.com:21117 -k _
     volumes:
       - ./data:/root
@@ -51,7 +51,7 @@ services:
 
   hbbr:
     container_name: hbbr
-    image: rustdesk/rustdesk-server:latest # please change this to rustdesk/rustdesk-server-pro:latest if you want to install Pro.
+    image: rustdesk/rustdesk-server:latest # Please change this to rustdesk/rustdesk-server-pro:latest if you want to install Pro.
     command: hbbr -k _
     volumes:
       - ./data:/root
@@ -110,4 +110,3 @@ Open these required ports:
   * `21116` UDP heartbeat/ID server
   * `21117` TCP relay
   * `21118/21119` TCP for web socket if you want to run web client
-

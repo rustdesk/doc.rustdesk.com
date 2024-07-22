@@ -30,7 +30,7 @@ If you build you own server on your home/office, and can't connect it through pu
 
 Lowest level VPS is enough for your use case. The server software is not CPU and memory intensive. Our public ID server hosted on a 2 CPU/4 GB Vultr server serves 1.5+ million endpoints.
 
-## Video tutorials
+### Video tutorials
 
 There are many video tutorials available online that can guide you through installing the OSS version, https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/#video-tutorials.
 
@@ -39,7 +39,7 @@ The installation of the Pro version is almost identical, except for the followin
 - Different download path and Docker images are required.
 - An additional TCP port (21114) is needed for the web console.
 
-## License
+### License
 
 You can get license from https://rustdesk.com/pricing.html, check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 
@@ -66,7 +66,7 @@ Almost the same as [the open source version](https://rustdesk.com/docs/en/self-h
 
 #### Docker Installation
 
-Most users choose to install RustDesk server Pro with [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/)
+Most users choose to install RustDesk server Pro with [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/).
 
 #### Ports Required
 
@@ -78,16 +78,16 @@ More information about these ports, please check [here](/docs/en/self-host/rustd
 
 This [guide](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#there-is-a-new-version-of-rustdesk-server-pro-out-how-can-i-upgrade) covers how to upgrade RustDesk Server Pro from a lower version, addressing different installation methods.
 
-## Setup https for web console
+### Setup HTTPS for web console
 
-The simple install script includes https setup, but it may fail or you do not like it, and it can not be used for the other installation methods.
+The simple install script includes HTTPS setup, but it may fail or you do not like it. It can not be used for the other installation methods.
 
-Here is a simple tutorial of [manual https setup](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually)
+Here is a simple tutorial of [manual HTTPS setup](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
 
-## Migrate to new host and backup / restore
+### Migrate to new host and backup / restore
 
-Here is a detailed [tutorial](https://github.com/rustdesk/rustdesk-server-pro/discussions/184)
+Here is a detailed [tutorial](https://github.com/rustdesk/rustdesk-server-pro/discussions/184).
 
-## Migrate license
+### Migrate license
 
-Please follow [this](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#invoices-license-retrieval-and-migration)
+Please follow this [guide](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#invoices-license-retrieval-and-migration).

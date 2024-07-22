@@ -21,5 +21,4 @@ Open source Server Repository: https://github.com/rustdesk/rustdesk-server</br>
 Pro Server Repository: https://github.com/rustdesk/rustdesk-server-pro</br>
 Doc Repository: https://github.com/rustdesk/doc.rustdesk.com</br>
 
-{{% children depth="3" showhidden="true" %}}
-
+{{% children depth="4" showhidden="true" %}}
