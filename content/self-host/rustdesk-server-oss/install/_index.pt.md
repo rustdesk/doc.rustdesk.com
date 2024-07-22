@@ -1,6 +1,6 @@
 ---
 title: Instalação
-weight: 1
+weight: 10
 ---
 
 Instalação do RustDesk
