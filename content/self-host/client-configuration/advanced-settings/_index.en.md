@@ -1052,3 +1052,7 @@ Controls whether to use TCP only. It will not use UDP 21116 any more, TCP 21116 
 Assign user / strategy to device. You can also do this via [command line](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
+
+### default-connect-password
+
+Default password used to connect to remote devices, this password has lower priority than address book password and local saved password.
