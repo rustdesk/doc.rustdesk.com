@@ -59,3 +59,31 @@ services:
     network_mode: "host"
     restart: unless-stopped
 ```
+
+If you need to make config changes e.g. set ALWAYS_USE_RELAY=Y you can use environment in the docker-compose.yml
+
+```yaml
+services:
+  hbbs:
+    container_name: hbbs
+    image: rustdesk/rustdesk-server:latest
+    environment:
+      - ALWAYS_USE_RELAY=Y
+    command: hbbs
+    volumes:
+      - ./data:/root
+    network_mode: "host"
+
+    depends_on:
+      - hbbr
+    restart: unless-stopped
+
+  hbbr:
+    container_name: hbbr
+    image: rustdesk/rustdesk-server:latest
+    command: hbbr
+    volumes:
+      - ./data:/root
+    network_mode: "host"
+    restart: unless-stopped
+```
