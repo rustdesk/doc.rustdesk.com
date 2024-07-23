@@ -1056,3 +1056,5 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/304
 ### default-connect-password
 
 Default password used to connect to remote devices, this password has lower priority than address book password and local saved password.
+
+e.g. `default-connect-password=abcd1234`
