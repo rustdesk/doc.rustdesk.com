@@ -13,7 +13,7 @@ The biggest challenge is probably to find versions of all the tools that work to
 ### Install the tools we're going to use from Homebrew
 
 ```sh
-brew install python3 create-dmg nasm cmake ggc wget ninja pkg-config wget rustup
+brew install python3 create-dmg nasm cmake gcc wget ninja pkg-config wget rustup
 ```
 
 Some of the installations might fail because some of the target folders don't exist on our system. In that case, create the folder, set owner and permissions and run the `brew` command again. Example if `/usr/local/include` doesn't exist:
