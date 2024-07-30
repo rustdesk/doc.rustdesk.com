@@ -25,9 +25,6 @@ If you don't have `Git` installed, get `Git` [here](https://git-scm.com/download
 
 ```sh
 git clone https://github.com/microsoft/vcpkg
-cd vcpkg
-git checkout 2023.04.15
-cd ..
 vcpkg/bootstrap-vcpkg.bat
 export VCPKG_ROOT=$PWD/vcpkg
 vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
