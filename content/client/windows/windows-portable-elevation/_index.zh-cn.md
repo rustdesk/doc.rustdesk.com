@@ -1,6 +1,6 @@
 ---
 title: Windows Portable 提权
-weight: 4
+weight: 49
 ---
 
 在Windows下，Portable程序没有管理员权限，这会导致以下问题：
