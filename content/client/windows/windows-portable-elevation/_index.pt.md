@@ -1,6 +1,6 @@
 ---
 title: Elevação de Privilégios portáteis Windows
-weight: 4
+weight: 49
 ---
 
 Programas portáteis do Windows não possuem privilégios de administrador, o que pode levar aos seguintes problemas:
