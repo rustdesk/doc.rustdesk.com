@@ -301,7 +301,7 @@ IP 直接访问的端口。
 
 当前可用的语言有:
 
-ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, kz, lt, lv, nb, nl, pl, pt, ro, ru, sk, sl, sq, sr, sv, th, tr, ua, vn, zh-cn, zh-tw
+ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, kz, lt, lv, nb, nl, pl, pt, ro, ru, sk, sl, sq, sr, sv, th, tr, uk, vn, zh-cn, zh-tw
 
 您可以查看代码中的 [LANGS](https://github.com/rustdesk/rustdesk/blob/master/src/lang.rs#L45) 获取最新的语言列表。
 
