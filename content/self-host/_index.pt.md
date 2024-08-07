@@ -10,7 +10,7 @@ O suporte está disponível através do nosso [Discord](https://discord.com/invi
 
 ### Configuração básica
 
-[Configure manualmente sua própria instância do servidor.](https://rustdesk.com/docs/pt/self-host/rustdesk-server-oss/install/#set-up-your-own-server-instance-manually)
+[Configure manualmente sua própria instância do servidor.](https://rustdesk.com/docs/pt/self-host/rustdesk-server-oss/install/#configurar-sua-própria-instância-de-servidor-manualmente)
 
 ### Portas necessárias
 
