@@ -301,7 +301,7 @@ Steuert die Sprache des RustDesk-Clients.
 
 Derzeit sind folgende Sprachen verfügbar:
 
-ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, kz, lt, lv, nb, nl, pl, pt, ro, ru, sk, sl, sq, sr, sv, th, tr, ua, vn, zh-cn, zh-tw
+ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, kz, lt, lv, nb, nl, pl, pt, ro, ru, sk, sl, sq, sr, sv, th, tr, uk, vn, zh-cn, zh-tw
 
 Die aktuelle Sprachliste finden Sie im Code unter [LANGS](https://github.com/rustdesk/rustdesk/blob/master/src/lang.rs#L45).
 
