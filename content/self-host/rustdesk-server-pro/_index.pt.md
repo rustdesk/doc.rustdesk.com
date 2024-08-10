@@ -10,9 +10,9 @@ O RustDesk Server Pro oferece mais recursos em comparação com a versão gratui
 - [Console web](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/console/)
 - API
 - Suporte a OIDC, LDAP e 2FA:
-- OIDC [invalid URL removed]
-- LDAP [invalid URL removed]
-- 2FA [invalid URL removed]
+- [OIDC](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/oidc/)
+- [LDAP](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/ldap/)
+- [2FA](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/2fa/)
 - Lista de endereços
 - Renomeação de dispositivos
 - Gerenciamento de logs (conexão, transferência de arquivos, alarmes, etc.)
