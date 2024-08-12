@@ -1058,3 +1058,13 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/304
 Default password used to connect to remote devices, this password has lower priority than address book password and local saved password.
 
 e.g. `default-connect-password=abcd1234`
+
+### enable-trusted-devices
+
+Allow trusted devices to skip 2FA verification.
+
+https://github.com/rustdesk/rustdesk/discussions/8513#discussioncomment-10234494
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-trusted-devices=N` |
