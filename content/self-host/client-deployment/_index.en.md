@@ -180,6 +180,12 @@ echo Password: %rustdesk_pw%
 echo ...............................................
 ```
 
+### MSI
+
+You can also use msi instead of `rustdesk.exe --silent-install`.
+
+https://rustdesk.com/docs/en/client/windows/msi/
+
 ### macOS Bash
 
 ```sh
