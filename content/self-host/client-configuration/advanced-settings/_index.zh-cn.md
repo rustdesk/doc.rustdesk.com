@@ -1050,3 +1050,20 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/277
 将用户/策略分配给设备，您也可以通过[命令行](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices)执行此操作
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
+
+
+### default-connect-password
+
+用于连接远程设备的默认密码，该密码的优先级低于通讯录密码和本地保存的密码。
+
+e.g. `default-connect-password=abcd1234`
+
+### enable-trusted-devices
+
+允许可信设备跳过2FA验证。
+
+https://github.com/rustdesk/rustdesk/discussions/8513#discussioncomment-10234494
+
+| 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-trusted-devices=N` |
