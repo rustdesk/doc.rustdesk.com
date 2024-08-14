@@ -90,6 +90,8 @@ This can also be done via the API at command line on deployment or later by call
 
 You can also assign strategy in this way, e.g. `--assign --token <generatedtoken> --strategy_name <strategyname>`.
 
+You can also assign address book in this way, e.g. `--assign --token <generatedtoken> --address_book_name <addressbookname>` or `--assign --token <generatedtoken> --address_book_name <addressbookname> --address_book_tag <addressbooktag>`
+
 The command line on Windows does not have output by default. To get output, please run like this, `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | more` or `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | Out-String`, see [here](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomment-8094952).
 
 ### Searching for a device
