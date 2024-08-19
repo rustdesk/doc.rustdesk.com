@@ -39,7 +39,7 @@ hbbs.example.com:21116
 
 #### `Key` festlegen
 
-Um eine verschlüsselte Verbindung zu Ihrem self-hosted Server herzustellen, müssen Sie dessen öffentlichen Schlüssel (Publik Key) eingeben. Der Schlüssel wird normalerweise beim ersten Start von `hbbs` erzeugt und befindet sich in der Datei id_ed25519.pub in Ihrem Arbeitsverzeichnis / Data-Ordner.
+Um eine verschlüsselte Verbindung zu Ihrem self-hosted Server herzustellen, müssen Sie dessen öffentlichen Schlüssel (Publik Key) eingeben. Der Schlüssel wird normalerweise beim ersten Start von `hbbs` erzeugt und befindet sich in der Datei `id_ed25519.pub` in Ihrem Arbeitsverzeichnis / Data-Ordner.
 
 Als `Pro`-Benutzer können Sie den Schlüssel zusätzlich über die [Webkonsole](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/console/) abrufen.
 
