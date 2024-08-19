@@ -39,7 +39,9 @@ hbbs.example.com:21116
 
 #### Set `Key`
 
-As a `Pro` user you will be able to retrieve the `Key` from the [web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/), or you can find it in `id_ed25519.pub` file under your working directory.
+In order to establish an encrypted connection to your self-hosted server, you need to enter its public key. The key is usualy generated on the first run of `hbbs` and can be found in the file `id_ed25519.pub` in your working directory / data folder.
+
+As a `Pro` user you will additionally be able to retrieve the `Key` from the [web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/).
 
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
