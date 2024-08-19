@@ -34,7 +34,10 @@ hbbs.example.com:21116
 ```
 
 #### Defina a `Key`
-Como usuário `Pro`, você poderá recuperar a `Key` no [console web](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/console/) ou encontrá-la no arquivo `id_ed25519.pub` em seu diretório de trabalho.
+
+Para estabelecer uma ligação encriptada ao seu servidor auto-hospedado, é necessário introduzir a sua chave pública. A chave é normalmente gerada na primeira execução do `hbbs` e pode ser encontrada no ficheiro `id_ed25519.pub` no seu diretório de trabalho / pasta de dados.
+
+Como utilizador `Pro`, poderá também obter a `Key` a partir da [console web](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/console/).
 
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
