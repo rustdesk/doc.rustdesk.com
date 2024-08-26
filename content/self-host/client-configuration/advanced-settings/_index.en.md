@@ -1068,3 +1068,13 @@ https://github.com/rustdesk/rustdesk/discussions/8513#discussioncomment-10234494
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | Y | `enable-trusted-devices=N` |
+
+### hide-tray
+
+Disable the tray icon in the systray.
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/332
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | M | `hide-tray=Y` |
