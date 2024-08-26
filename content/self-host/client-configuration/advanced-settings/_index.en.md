@@ -1077,4 +1077,4 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/332
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
-| Y, N | M | `hide-tray=Y` |
+| Y, N | N | `hide-tray=Y` |
