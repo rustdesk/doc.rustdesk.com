@@ -12,6 +12,8 @@ There are a number of ways to configure RustDesk Clients to use your own self-ho
 
 You can have your own name, logo, icon, configuration, be signed and more.
 
+Currently, Windows X64, Mac Arm64 / X64, [Linux](https://twitter.com/rustdesk/status/1788905463678951787), Android Arm 64 are supported.
+
 [Video](https://twitter.com/rustdesk/status/1769171628426944539)
 
 ![](images/custom-client-qs.png)
