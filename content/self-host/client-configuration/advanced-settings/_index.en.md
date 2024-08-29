@@ -9,10 +9,10 @@ All advanced settings in custom clients are covered here.
 
 There are four types of settings:
 
-1. Override settings, in "Web Console → Custom Clients"
-2. Default settings, in "Web Console → Custom Clients"
+1. Override settings, in `Web Console` → `Custom Clients`
+2. Default settings, in `Web Console` → `Custom Clients`
 3. User settings, in the RustDesk client
-4. Strategy settings, in "Web Console → Strategies"
+4. Strategy settings, in `Web Console` → `Strategies`
 
 The hierarchy of privilege for these settings is as follows: `Override > Strategy > User > Default`.
 
