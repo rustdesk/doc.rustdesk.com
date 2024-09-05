@@ -3,25 +3,6 @@ title: Linux
 weight: 10
 ---
 
-### Abhängigkeiten
-
-Desktop-Versionen nutzen [Sciter](https://sciter.com/) für die Benutzeroberfläche, bitte laden Sie die dynamische Bibliothek Sciter selbst herunter.
-
-[Windows](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll) |
-[Linux](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so) |
-[macOS](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.osx/libsciter.dylib)
-
-### Grobe Schritte zum Erstellen
-
-- Bereiten Sie Ihre Rust-Entwicklungsumgebung und Ihre C++-Build-Umgebung vor
-
-- Installieren Sie [vcpkg](https://github.com/microsoft/vcpkg) und setzen Sie die Umgebungsvariable `VCPKG_ROOT` korrekt
-
-  - Windows: `vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static`
-  - Linux/macOS: `vcpkg install
-
-- Nutzen Sie `cargo run`
-
 ### Auf Linux erstellen
 
 #### Ubuntu 18 (Debian 10)
