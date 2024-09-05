@@ -3,26 +3,6 @@ title: Linux
 weight: 10
 ---
 
-
-## Зависимости
-
-Настольные версии используют [sciter](https://sciter.com/) для графического интерфейса, загрузите динамическую библиотеку sciter самостоятельно.
-
-[Windows](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll) |
-[Linux](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so) |
-[MacOS](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.osx/libsciter.dylib)
-
-## Первичные шаги для сборки
-
-- Подготовьте среду разработки Rust и среду сборки C++.
-
-- Установите [vcpkg](https://github.com/microsoft/vcpkg), и правильно установите переменную `VCPKG_ROOT`
-
-  - Windows: vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
-  - Linux/MacOS: vcpkg install
-
-- Запустите`cargo run`
-
 ## Как собрать в Linux 
 
 ### Ubuntu 18 (Debian 10)
