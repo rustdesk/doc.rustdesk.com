@@ -3,26 +3,6 @@ title: Linux
 weight: 10
 ---
 
-
-## 依存関係
-
-デスクトップ版ではGUIに [sciter](https://sciter.com/) が使われています。 sciter dynamic library をダウンロードしてください。
-
-[Windows](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll) |
-[Linux](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so) |
-[MacOS](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.osx/libsciter.dylib)
-
-## ビルド手順
-
-- Rust開発環境とC ++ビルド環境を準備します
-
-- [vcpkg](https://github.com/microsoft/vcpkg), をインストールし、 `VCPKG_ROOT` 環境変数を正しく設定します。
-
-  - Windows: vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
-  - Linux/MacOS: vcpkg install
-
-- run `cargo run`
-
 ## Linuxでのビルド手順
 
 ### Ubuntu 18 (Debian 10)
