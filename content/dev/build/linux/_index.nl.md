@@ -61,7 +61,3 @@ mv libsciter-gtk.so target/debug
 # Note: VCPKG_ROOT still set
 cargo run
 ```
-
-### Verander Wayland in X11 (Xorg)
-
-RustDesk ondersteunt Wayland niet. Controleer [dit](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/) om Xorg te configureren als de standaard GNOME sessie.
