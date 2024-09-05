@@ -51,7 +51,7 @@ git checkout 2023.10.19
 cd ..
 vcpkg/bootstrap-vcpkg.sh
 export VCPKG_ROOT=$PWD/vcpkg
-vcpkg/vcpkg install --x-install-root="$VCPKG_ROOT/installed"
+vcpkg/vcpkg install libvpx --x-install-root="$VCPKG_ROOT/installed"
 ```
 
 #### Fix libvpx (for Fedora)
