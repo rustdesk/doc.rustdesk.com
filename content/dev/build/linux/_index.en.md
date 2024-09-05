@@ -62,9 +62,4 @@ mv libsciter-gtk.so target/debug
 cargo run
 ```
 
-#### Change Wayland to X11 (Xorg)
-
-~~RustDesk does not support Wayland.~~ Check this [guide](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/) to configuring Xorg as the default GNOME session.
-
-RustDesk now has experimental Wayland support. You may need to download the [nightly version](https://github.com/rustdesk/rustdesk/releases/tag/nightly) to enable this feature.
 
