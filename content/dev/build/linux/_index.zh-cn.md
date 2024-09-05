@@ -3,25 +3,6 @@ title: Linux
 weight: 10
 ---
 
-## 依赖
-
-桌面版本界面使用[sciter](https://sciter.com/), 请自行下载。
-
-[Windows](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll) |
-[Linux](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so) |
-[macOS](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.osx/libsciter.dylib)
-
-## 基本构建步骤
-
-- 请准备好 Rust 开发环境和 C++编译环境
-
-- 安装[vcpkg](https://github.com/microsoft/vcpkg), 正确设置`VCPKG_ROOT`环境变量
-
-  - Windows: vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
-  - Linux/Osx: vcpkg install
-
-- 运行 `cargo run`
-
 ## 在 Linux 上编译
 
 ### Ubuntu 18 (Debian 10)
