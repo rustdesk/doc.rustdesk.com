@@ -46,8 +46,6 @@ Click on above `Advanced Settings`.
 {{% notice note %}}
 Synology's OS is Debian based, so host net (--net=host) works fine, we do not need to map ports with `-p` option.
 
-`192.168.16.98` is an internal IP used here for demonstration only, please set it to a public IP when you deploy (or you can use your DDNS address if you have configured one in "Control Panel → Connectivity → DDNS") and don't forget to open ports on your router and your Synology firewall if this is enabled ("Control Panel → Connectivity → Firewall")!
-
 {{% /notice %}}
 
 ![](images/hbbs-cmd.png?v2)
