@@ -43,7 +43,7 @@ U moet Docker/Podman installeren om een rustdesk-server als docker container te 
 ### Docker voorbeelden
 ```bash
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr
 ```
 <a name="net-host"></a>
@@ -72,7 +72,7 @@ services:
       - 21116:21116/udp
       - 21118:21118
     image: rustdesk/rustdesk-server:latest
-    command: hbbs -r example.com:21117
+    command: hbbs
     volumes:
       - ./data:/root
     networks:
@@ -126,7 +126,7 @@ De hardwarevereisten zijn zeer laag; de minimale configuratie van een basiscloud
 Voer hbbs/hbbr uit op uw server (CentOS of Ubuntu). We stellen voor dat u [pm2](https://pm2.keymetrics.io/) gebruikt voor het beheer van uw service.
 
 ```bash
-./hbbs -r <relay-server-ip[:port]>
+./hbbs 
 ./hbbr
 ```
 
@@ -134,7 +134,7 @@ Voer hbbs/hbbr uit op uw server (CentOS of Ubuntu). We stellen voor dat u [pm2](
 Voer hbbs/hbbr uit met pm2
 
 ```bash
-pm2 start hbbs -- -r <relay-server-ip[:port]>
+pm2 start hbbs 
 pm2 start hbbr
 ```
 
@@ -142,7 +142,6 @@ pm2 start hbbr
 {{% notice note %}}
 pm2 vereist Node.js v16+, Als het niet lukt om pm2 te starten (bijv. u kunt `hbbs`/`hbbr` niet zien in `pm2 list`), download en installeer dan de Node.js LTS versie van https://nodejs.org. Als je `hbbs`/`hbbr` automatisch wilt laten draaien na een herstart, kijk dan naar `pm2 save` en `pm2 startup`. Meer over [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Een ander goed hulpmiddel voor uw logs is [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
 
-De `-r` parameter van `hbbs` is niet verplicht, het is gewoon handig om geen relay server te specificeren aan de gecontroleerde client kant. U hoeft geen poort op te geven als u de standaardpoort 21117 gebruikt. De door de klant opgegeven relaisserver heeft dan een hogere prioriteit.
 {{% /notice %}}
 
 Standaard luistert `hbbs` op 21115 (TCP) en 21116 (TCP/UDP), 21118 (TCP), en `hbbr` luistert op 21117 (TCP), 21119 (TCP). Zorg ervoor dat u deze poorten in de firewall opent. **Let op: 21116 moet zowel voor TCP als voor UDP zijn ingeschakeld**. 21115 wordt gebruikt voor de NAT type test, 21116/UDP wordt gebruikt voor de ID registratie en heartbeat service, 21116/TCP wordt gebruikt voor TCP hole punching en connection service, 21117 wordt gebruikt voor de Relay services, en 21118 en 21119 worden gebruikt om web clients te ondersteunen. *Als u geen ondersteuning voor webclients (21118, 21119) nodig hebt, kunnen de corresponderende poorten worden uitgeschakeld.
@@ -200,13 +199,6 @@ Ials u de `Sleutel:` (de inhoud van het openbare sleutelbestand `id_ed25519.pub`
 ```bash
 cat ./id_ed25519.pub
 ````
-
-Als u wilt voorkomen dat gebruikers zonder sleutel niet-versleutelde verbindingen tot stand brengen, voeg dan bijvoorbeeld de `-k _` parameter toe bij het uitvoeren van `hbbs` en `hbbr`:
-
-```bash
-./hbbs -r <relay-server-ip[:port]> -k _
-./hbbr -k _
-```
 
 Als je de sleutel wilt veranderen, verwijder dan de `id_ed25519` en `id_ed25519.pub` bestanden en herstart `hbbs`/`hbbr`，`hbbs` zal een nieuw sleutelpaar genereren.
 

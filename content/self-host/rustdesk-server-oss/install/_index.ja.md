@@ -31,14 +31,14 @@ Centos7 でビルドされ Centos7/8, Ubuntu18/20 で動作確認されていま
 あなたのサーバー (Centos または Ubuntu) でhbbs/hbbrを実行します。[pm2](https://pm2.keymetrics.io/) を使用してサービスを管理することを推奨します。
 
 ```
-./hbbs -r <relay-server-ip[:port]> 
+./hbbs
 ./hbbr 
 ```
 
 もしくは hbbs/hbbr を pm2 を使用して実行します
 
 ```
-pm2 start hbbs -- -r <relay-server-ip[:port]> 
+pm2 start hbbs
 pm2 start hbbr 
 ```
 
@@ -46,7 +46,6 @@ pm2 start hbbr
 {{% notice note %}}
 pm2 を動作させるには nodejs v16+ が必要です。pm2 を実行できない場合 (例えば `pm2 list` に hbbs/hbbr が表示されない時) はLTS版の node.js を https://nodejs.org からダウンロードしインストールしてください。もし hbbs/hbbr を再起動後に自動実行させたいなら `pm2 save` と `pm2 startup` を確認してみてください。 詳しくは [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/) から確認できます。 ログを記録するのは [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate) を使うのがオススメです。
 
-hhbsの `-r` パラメータは必須ではなくサーバー側で指定するとクライアント側で中継サーバを指定せず済むので便利です。またデフォルトの 21117 ポートを使う場合はポートを指定する必要はありません。クライアント側が指定するリレーサーバーはこれよりも優先度が高いです。 **RustDeskコントロールクライアント 1.1.9 以降では中継サーバーが別のホストやポートで動作していない場合、クライアント側でも中継サーバーのアドレスを指定する必要はありません。**
 {{% /notice %}}
 
 デフォルトでは hbbs は 21115(tcp) と 21116(tcp/udp) と 21118(tcp) を使用し hbbr は 21117(tcp) と 21119(tcp) を使用します。ファイアウォールでこれらのポートを必ず開放してください。**21116はTCPとUDPの両方で開放する必要があることに注意してください。** 21115 はNATタイプの確認、21116/UDP はTCPホールパンチング,コネクションサービス、21117はリレーサービス、21118 と 21119 はWebクライアントのサポートに使用します。ウェブクライアント(21118, 21119) のサポートが不要な場合は該当するポートを無効にしても良いです。
@@ -60,7 +59,7 @@ hhbsの `-r` パラメータは必須ではなくサーバー側で指定する�
 
 ```
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> 
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs 
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr 
 ```
 
@@ -116,12 +115,6 @@ hbbs.example.com:21116
 
 ````
 cat ./id_ed25519.pub
-````
-
-もし鍵のないユーザが暗号化されていない接続を確立することを禁止したい場合は、hbbs と hbbr を実行する際に `-k _` パラメータを追加してください。
-````
-./hbbs -r <relay-server-ip[:port]> -k _
-./hbbr -k _
 ````
 
 鍵を変更したい場合は `id_ed25519` と `id_ed25519.pub` を削除し hbbs/hbbr を再起動すると新しい鍵ペアが生成されます。

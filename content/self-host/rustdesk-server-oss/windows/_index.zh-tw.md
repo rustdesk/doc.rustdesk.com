@@ -38,15 +38,14 @@ Windows 安全政策較為複雜，如果這份教程對您不適用，或您遇
 
 我們將在範例中使用 `C:\Program Files\RustDesk Server`。
 ```cmd
-nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe" -k _
-nssm install "RustDesk hbbr service" "C:\Program Files\RustDesk Server\hbbr.exe" -k _
+nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe" 
+nssm install "RustDesk hbbr service" "C:\Program Files\RustDesk Server\hbbr.exe" 
 ```
 **注意：**
 - 您可以將 `RustDesk hbbs service` 改為任何您希望命名 hbbs 的服務名稱。
 - 您可以將 `RustDesk hbbr service` 改為任何您希望命名 hbbr 的服務名稱。
 - 您可以將 `C:\Program Files\RustDesk Server\hbbs.exe` 改為 RustDesk 執行檔所在的位置。
 - 您可以將 `C:\Program Files\RustDesk Server\hbbr.exe` 改為 RustDesk 執行檔所在的位置。
-- 您不需要使用 `-k _` 選項，這是可選的，只是為了更好的安全性。在 `Pro` 版本中，請忽略 `-k _`，它是隱含應用的。
 
 **指令範例：**
 

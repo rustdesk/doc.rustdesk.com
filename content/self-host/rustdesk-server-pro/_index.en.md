@@ -59,10 +59,7 @@ Don't forget to get your license from [https://rustdesk.com/pricing.html](https:
 
 #### Manual Installation
 
-Almost the same as [the open source version](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/), but you do not need to run hbbs/hbbr with any arguments. These can be set later in web console.
-
-- `-k _` is set by default
-- `-r <server:host>` is not needed any more if the relay server runs on the same machine with hbbs, and you can set multiple relay servers in the web console
+Almost the same as [the open source version](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/), but please use the `Pro` version of the software.
 
 #### Docker Installation
 

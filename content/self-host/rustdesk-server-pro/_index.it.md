@@ -41,10 +41,7 @@ Non dimenticare di prendere la tua licenza da [https://rustdesk.com/pricing.html
 
 #### Installazione Manuale
 
-L' installazione è simile alla [versione opensource](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/), ma non è necessario eseguire hbbs/hbbr con alcun argomento. Possono essere inseriti in seguito dalla console web.
-
-- `-k _` è impostato di default
-- `-r <server:host>` non è più necessario se il server relay è eseguito sulla stessa macchina tramite hbbs, in seguito possono essere impostati relay multipli dalla console web.
+L' installazione è simile alla [versione opensource](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/), ma ti preghiamo di utilizzare la versione Pro del software.
 
 #### Porte Richieste
 

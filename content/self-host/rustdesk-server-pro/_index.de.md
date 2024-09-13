@@ -46,10 +46,7 @@ Vergessen Sie nicht, Ihre Lizenz unter [https://rustdesk.com/pricing.html](https
 
 #### Manuelle Installation
 
-Fast dasselbe wie die [Open-Source-Version](https://rustdesk.com/docs/de/self-host/rustdesk-server-oss/install/), aber Sie müssen hbbs/hbbr nicht mit irgendwelchen Argumenten ausführen. Diese können später in der Webkonsole eingestellt werden.
-
-- `-k _` ist standardmäßig eingestellt
-- `-r <server:host>` wird nicht mehr benötigt, wenn der Relay-Server auf demselben Rechner wie hbbs läuft. Sie können in der Webkonsole mehrere Relay-Server einstellen.
+Fast dasselbe wie die [Open-Source-Version](https://rustdesk.com/docs/de/self-host/rustdesk-server-oss/install/), sondern verwenden Sie die Pro-Version der Software.
 
 #### Erforderliche Ports
 

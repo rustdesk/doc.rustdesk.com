@@ -177,8 +177,6 @@ Klicken Sie mit der rechten Maustaste auf den Ordner `rustdesk-server` und erste
 
 Fügen Sie dies in `compose.yml` ein.
 
-Nach dem Kopieren sollten Sie `rustdesk.example.com` (die auf Ihr `hbbr` verweist) durch die Domäne ersetzen, die auf Ihren Server verweist.
-
 {{% notice note %}}
 Sie könnten die Zeile mit `hbbs` vorübergehend in die LAN-IP Ihres Servers ändern (wenn Sie in Ihrem LAN arbeiten), um sicherzustellen, dass er funktioniert. Nachdem Sie sich vergewissert haben, dass Ihr Server funktioniert, **sollten** Sie die Änderung zurücknehmen.
 {{% /notice %}}
@@ -192,7 +190,7 @@ services:
   hbbs:
     container_name: hbbs
     image: rustdesk/rustdesk-server:latest
-    command: hbbs -r rustdesk.example.com:21117
+    command: hbbs 
     volumes:
       - ./data:/root
     network_mode: host

@@ -34,7 +34,7 @@ Le sugerimos que use [pm2](https://pm2.keymetrics.io/) para administrar su servi
 Ejecute hbbs/hbbr sin usar pm2
 
 ```
-./hbbs -r <relay-server-ip[:port]> 
+./hbbs
 ./hbbr 
 ```
 
@@ -42,7 +42,7 @@ Ejecute hbbs/hbbr sin usar pm2
 Ejecute hbbs/hbbr usando pm2
 
 ```
-pm2 start hbbs -- -r <relay-server-ip[:port]> 
+pm2 start hbbs
 pm2 start hbbr 
 ```
 
@@ -50,7 +50,6 @@ pm2 start hbbr
 {{% notice note %}}
 pm2 requiere nodejs v16+, si fallas al correr pm2 (e.g. No puedes ver hbbs/hbbr in `pm2 list`), descargue e instale la versión LTS nodejs desde https://nodejs.org. Si desea que hbbs/hbbr se ejecute automáticamente después de reiniciar, consulte `pm2 save` y `pm2 startup`. Más sobre [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/). Otra buena herramienta para su registro es [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
 
-El `-r` El parámetro de hhbs no es obligatorio, solo es conveniente que no especifique un servidor de retransmisión en el lado del cliente controlado, no necesita especificar el puerto si está utilizando el puerto predeterminado 21117. El servidor de retransmisión especificado por el cliente tiene una prioridad más alta que esta.
 {{% /notice %}}
 
 Por defecto, hbbs escucha en 21115(tcp) y 21116(tcp/udp), 21118(tcp), hbbr escucha en 21117(tcp), 21119(tcp). Asegúrese de abrir estos puertos en el firewall. **Tenga en cuenta que 21116 debe estar habilitado tanto para TCP como para UDP**. 21115 se utiliza para la prueba de tipo NAT, 21116/UDP se utiliza para el registro de ID y el servicio de latidos, 21116/TCP se utiliza para el servicio de conexión y perforación de agujeros TCP, 21117 se utiliza para los servicios de retransmisión, 21118 y 21119 se utilizan para admitir clientes web. Si no necesitas cliente web (21118, 21119) soporte, los puertos correspondientes se pueden deshabilitar.
@@ -64,7 +63,7 @@ Ejecute con la opción "-h" para ver ayuda si desea elegir su propio puerto.
 
 ```
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]> 
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr 
 ```
 
@@ -125,13 +124,6 @@ Si no completó la `key:` (el contenido en el archivo de clave pública `id_ed25
 
 ````
 cat ./id_ed25519.pub
-````
-
-Si desea prohibir que los usuarios sin clave establezcan conexiones no cifradas, agregue el parámetro `-k _` cuando ejecute hbbs y hbbr, por ejemplo:
-
-````
-./hbbs -r <relay-server-ip[:port]> -k _
-./hbbr -k _
 ````
 
 Si desea cambiar la clave, elimine los archivos `id_ed25519` e `id_ed25519.pub` y reinicie hbbs/hbbr, hbbs generará un nuevo par de claves.

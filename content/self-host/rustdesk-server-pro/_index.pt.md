@@ -59,10 +59,7 @@ Você pode obter a licença em [https://rustdesk.com/pricing.html](https://rustd
 
 ### Instalação manual
 
-É quase idêntica à versão [gratuita](https://rustdesk.com/docs/pt/self-host/rustdesk-server-oss/install/), mas você não precisa executar hbbs/hbbr com nenhum argumento. Eles podem ser definidos posteriormente no console web.
-
-- `-k _` é definido por padrão.
-- `-r <servidor:host>` não é mais necessário se o servidor de retransmissão estiver executando na mesma máquina que o hbbs, e você pode definir vários servidores de retransmissão no console web.
+É quase idêntica à versão [gratuita](https://rustdesk.com/docs/pt/self-host/rustdesk-server-oss/install/), mas utilize a versão Pro do software.
 
 #### Instalação Docker
 

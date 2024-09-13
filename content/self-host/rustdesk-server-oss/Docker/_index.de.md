@@ -17,7 +17,7 @@ Standardmäßig lauscht `hbbs` auf 21114 (TCP für die Webkonsole, nur in der Pr
 
 ```sh
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -v ./data:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
+sudo docker run --name hbbs -v ./data:/root -td --net=host rustdesk/rustdesk-server hbbs
 sudo docker run --name hbbr -v ./data:/root -td --net=host rustdesk/rustdesk-server hbbr
 ```
 <a name="net-host"></a>

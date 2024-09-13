@@ -28,7 +28,7 @@ Nach der Installation von "Container Manager" wird ein gemeinsamer Ordner `docke
 
 Öffnen Sie Ihren Container Manager, gehen Sie zu Project und klicken Sie auf Create.
 
-Geben Sie den Projektnamen `rustdesk-server` ein, ändern Sie Source von "Upload compose.yml" zu "Create compose.yml" und kopieren Sie den folgenden Inhalt in das Feld. Danach sollten Sie `rustdesk.example.com` (die auf Ihre `hbbr` verweist) durch die Domain ersetzen, die auf Ihr NAS verweist.
+Geben Sie den Projektnamen `rustdesk-server` ein, ändern Sie Source von "Upload compose.yml" zu "Create compose.yml" und kopieren Sie den folgenden Inhalt in das Feld. 
 
 {{% notice note %}}
 Sie könnten die Zeile mit `hbbs` vorübergehend in die LAN-IP Ihres NAS ändern, wie auf dem Bild gelb markiert zu sehen. Nachdem Sie sich vergewissert haben, dass Ihr Server funktioniert, **sollten** Sie die Änderung zurücknehmen.
@@ -41,7 +41,7 @@ services:
   hbbs:
     container_name: hbbs
     image: rustdesk/rustdesk-server:latest
-    command: hbbs -r rustdesk.example.com:21117 -k _
+    command: hbbs
     volumes:
       - ./data:/root
     network_mode: host
@@ -52,7 +52,7 @@ services:
   hbbr:
     container_name: hbbr
     image: rustdesk/rustdesk-server:latest
-    command: hbbr -k _
+    command: hbbr
     volumes:
       - ./data:/root
     network_mode: host

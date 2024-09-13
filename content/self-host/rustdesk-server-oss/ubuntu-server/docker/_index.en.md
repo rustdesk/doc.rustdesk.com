@@ -177,8 +177,6 @@ Right click `rustdesk-server` folder, create new file named `compose.yml`.
 
 Paste this to `compose.yml`.
 
-After you copied, you should replace `rustdesk.example.com` (Which point to your `hbbr`) to the domain that will point to your server.
-
 {{% notice note %}}
 You could modify the line with `hbbs` to your server's LAN IP  temporarily (If you're deploying in your LAN) to ensure it is working. After you verify your server is working, you **should** change back.
 {{% /notice %}}

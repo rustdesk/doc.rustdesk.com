@@ -75,7 +75,7 @@ Sugerimos usar o [PM2](https://pm2.keymetrics.io/) (em inglês) para gerenciar s
 Executar hbbs/hbbr sem PM2.
 
 ```sh
-./hbbs -r <ip_do_servidor_relay[:porta]>
+./hbbs 
 ./hbbr
 ```
 
@@ -83,7 +83,7 @@ Executar hbbs/hbbr sem PM2.
 Executar hbbs/hbbr com PM2.
 
 ```sh
-pm2 start hbbs -- -r <ip_do_servidor_relay[:porta]>
+pm2 start hbbs 
 pm2 start hbbr
 ```
 
@@ -91,7 +91,6 @@ pm2 start hbbr
 {{% notice note %}}
 O PM2 requer Node.js v16+. Se você não conseguir executar o PM2 (por exemplo, não consegue ver `hbbs/hbbr` em `pm2 list`), faça o [download](https://nodejs.org/pt) e instale a versão LTS do Node.js. Para configurar a execução automática do `hbbs/hbbr` após a reinicialização, use os comandos `pm2 save` e `pm2 startup`. Saiba mais sobre o [PM2](https://pm2.keymetrics.io/docs/usage/quick-start/) (em inglês). Outra ferramenta útil para seus logs é o [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate) (em inglês).
 
-O parâmetro `-r` do hbbs é opcional, serve apenas para sua conveniência para não precisar especificar um servidor relay no lado do cliente controlado. Você não precisa especificar a porta se estiver usando a porta padrão **21117**. O servidor relay especificado pelo cliente tem prioridade sobre esta opção.
 {{% /notice %}}
 
 #### Portas

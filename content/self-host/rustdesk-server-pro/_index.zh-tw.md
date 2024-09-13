@@ -34,10 +34,7 @@ weight: 100
 
 ### 手動安裝
 
-幾乎與[開源版本](/docs/zh-tw/self-host/install/)相同，但您在執行 hbbs/hbbr 時不需加上任何參數，全部都能在網頁控制台中設定。
-
-- `-k _` 預設設定
-- `-r <server:host>` 如果中繼伺服器跟 hbbs 在同一台伺服器執行，便不需要加上此參數。且您可以在網頁控制台設置多台中繼伺服器。
+幾乎與[開源版本](/docs/zh-tw/self-host/install/)相同，只是注意換成`Pro`版本的軟體。
 
 ### 額外連接埠 (或使用 Proxy)
 
