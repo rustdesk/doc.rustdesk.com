@@ -41,7 +41,7 @@ services:
   hbbs:
     container_name: hbbs
     image: rustdesk/rustdesk-server:latest # Please change this to rustdesk/rustdesk-server-pro:latest if you want to install Pro.
-    command: hbbs -r rustdesk.example.com:21117 -k _
+    command: hbbs
     volumes:
       - ./data:/root
     network_mode: host
@@ -52,7 +52,7 @@ services:
   hbbr:
     container_name: hbbr
     image: rustdesk/rustdesk-server:latest # Please change this to rustdesk/rustdesk-server-pro:latest if you want to install Pro.
-    command: hbbr -k _
+    command: hbbr
     volumes:
       - ./data:/root
     network_mode: host
