@@ -32,7 +32,7 @@ Container Manager 為部分低階的 ARM64 的機型帶來支援，例如 j 系�
 如圖所示，您可以暫時將 `hbbs` 那行改為指向至您的NAS的 LAN IP，在您驗證您的伺服器可以正常運作後，您**應當**變更回來。
 {{% /notice %}}
 
-![](images/dsm7_creating_project_init.png)
+![](images/dsm7_creating_project_init.png?v2)
 
 ````yaml
 services:
@@ -86,7 +86,7 @@ services:
 
 5.2 在停止之後，點擊 "YAML 設定"，修改開始為 `command: hbbs` 的那一行至您的網域，接著點擊 "停止"，請確保您選擇了 "建立並啟動專案(重建映像檔)"
 
-![](images/dsm7_recreate_project_after_modified_args.png)
+![](images/dsm7_recreate_project_after_modified_args.png?v2)
 
 5.3 您的 RustDesk 伺服器應該可接受來自網際網路的連線了，接著，您應該設定 port forwarding (通訊埠轉發)。
 
