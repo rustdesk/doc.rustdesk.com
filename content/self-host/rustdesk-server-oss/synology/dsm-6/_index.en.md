@@ -48,7 +48,7 @@ Synology's OS is Debian based, so host net (--net=host) works fine, we do not ne
 
 {{% /notice %}}
 
-![](images/hbbs-cmd.png?v2)
+![](images/hbbs-cmd.png?v3)
 
 - Done
 

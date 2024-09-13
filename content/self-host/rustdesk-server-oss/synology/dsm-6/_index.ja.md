@@ -47,7 +47,7 @@ Synology の OS は Debian ベースなのでホストネット (--net=host) は
 
 {{% /notice %}}
 
-![](images/hbbs-cmd.png?v2) 
+![](images/hbbs-cmd.png?v3) 
 
 - 完了
   

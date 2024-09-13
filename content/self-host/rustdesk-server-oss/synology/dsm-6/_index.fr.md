@@ -47,7 +47,7 @@ Le système d'exploitation Synology est basé sur Debian. La configuration sur r
 
 {{% /notice %}}
 
-![](images/hbbs-cmd.png?v2) 
+![](images/hbbs-cmd.png?v3) 
 
 - Terminé
   

@@ -47,7 +47,7 @@ weight: 22
 
 {{% /notice %}}
 
-![](images/hbbs-cmd.png?v2)
+![](images/hbbs-cmd.png?v3)
 
 - 搞定
 
