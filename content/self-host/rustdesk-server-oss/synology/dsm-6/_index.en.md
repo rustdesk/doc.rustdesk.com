@@ -56,7 +56,7 @@ Synology's OS is Debian based, so host net (--net=host) works fine, we do not ne
 
 ### Create hbbr container
 
-Please repeat above `hbbs` steps, but name the container `hbbr` and command (for Set Command Step) should be `hbbr -k _`.
+Please repeat above `hbbs` steps, but name the container `hbbr` and command (for Set Command Step) should be `hbbr`.
 
 ![](images/hbbr-config.png)
 
