@@ -74,7 +74,7 @@ We suggest you use [PM2](https://pm2.keymetrics.io/) for managing your service.
 Run hbbs/hbbr without PM2.
 
 ```sh
-./hbbs -r <relay-server-ip[:port]>
+./hbbs
 ./hbbr
 ```
 
@@ -82,7 +82,7 @@ Run hbbs/hbbr without PM2.
 Run hbbs/hbbr with PM2.
 
 ```sh
-pm2 start hbbs -- -r <relay-server-ip[:port]>
+pm2 start hbbs
 pm2 start hbbr
 ```
 
