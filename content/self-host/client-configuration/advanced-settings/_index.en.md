@@ -1081,7 +1081,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/332
 
 ### one-way-clipboard-redirection
 
-Disable clipboard sync from remote side to local side, available in RustDesk client >=1.3.1 (controlled side)
+Disable clipboard sync from controlled side to controlling side, available in RustDesk client >=1.3.1 (controlled side)
 
 https://github.com/rustdesk/rustdesk/discussions/9010
 
@@ -1089,9 +1089,20 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 | :------: | :------: | :------: |
 | Y, N | N | `one-way-clipboard-redirection=Y` |
 
+### one-way-file-transfer
+
+Disable file transfer from controlled side to controlling side, available in RustDesk client >=1.3.1 (controlled side)
+
+https://github.com/rustdesk/rustdesk/discussions/9010
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `one-way-file-transfer=Y` |
+
+
 ### enable-clipboard-init-sync
 
-If sync initial clipboard when establishing connection (only from local side to remote side), available in RustDesk client >=1.3.1 (controlling side)
+If sync initial clipboard when establishing connection (only from controlling side to controlled side), available in RustDesk client >=1.3.1 (controlling side)
 
 https://github.com/rustdesk/rustdesk/discussions/9010
 
