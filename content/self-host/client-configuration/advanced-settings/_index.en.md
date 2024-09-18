@@ -1083,7 +1083,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/332
 
 Disable clipboard sync from controlled side to controlling side, available in RustDesk client >=1.3.1 (controlled side)
 
-https://github.com/rustdesk/rustdesk/discussions/9010
+https://github.com/rustdesk/rustdesk/discussions/7837
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
@@ -1093,7 +1093,7 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 Disable file transfer from controlled side to controlling side, available in RustDesk client >=1.3.1 (controlled side)
 
-https://github.com/rustdesk/rustdesk/discussions/9010
+https://github.com/rustdesk/rustdesk/discussions/7837
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
