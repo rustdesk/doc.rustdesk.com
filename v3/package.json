@@ -32,7 +32,8 @@
     "astro-icon": "^1.1.1",
     "limax": "4.1.0",
     "lodash.merge": "^4.6.2",
-    "unpic": "^3.18.0"
+    "unpic": "^3.18.0",
+    "vanilla-cookieconsent": "^3.0.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.3",
