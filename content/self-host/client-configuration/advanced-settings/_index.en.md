@@ -146,7 +146,7 @@ Allow the control side to change the settings in controlled RustDesk UI.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y, N | Y | `allow-remote-config-modification=Y` |
+| N | Y, N | N | `allow-remote-config-modification=Y` |
 
 ### enable-lan-discovery
 
@@ -1078,3 +1078,35 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/332
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-tray=Y` |
+
+### one-way-clipboard-redirection
+
+Disable clipboard sync from remote side to local side, available in RustDesk client >=1.3.1 (controlled side)
+
+https://github.com/rustdesk/rustdesk/discussions/9010
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `one-way-clipboard-redirection=Y` |
+
+### enable-clipboard-init-sync
+
+If sync initial clipboard when establishing connection (only from local side to remote side), available in RustDesk client >=1.3.1 (controlling side)
+
+https://github.com/rustdesk/rustdesk/discussions/9010
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-clipboard-init-sync=N` |
+
+### allow-logon-screen-password
+
+If allow password input on logon screen when [click-only approve mode](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode) is used, available in RustDesk client >=1.3.1 (controlled side)
+
+https://github.com/rustdesk/rustdesk/discussions/9269
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-logon-screen-password=Y` |
+
+
