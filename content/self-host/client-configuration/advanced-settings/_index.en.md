@@ -1100,7 +1100,7 @@ https://github.com/rustdesk/rustdesk/discussions/7837
 | Y, N | N | `one-way-file-transfer=Y` |
 
 
-### enable-clipboard-init-sync
+### sync-init-clipboard
 
 If sync initial clipboard when establishing connection (only from controlling side to controlled side), available in RustDesk client >=1.3.1 (controlling side)
 
@@ -1108,7 +1108,7 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
-| Y, N | Y | `enable-clipboard-init-sync=N` |
+| Y, N | N | `sync-init-clipboard=Y` |
 
 ### allow-logon-screen-password
 
