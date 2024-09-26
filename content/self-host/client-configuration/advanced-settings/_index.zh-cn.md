@@ -150,7 +150,7 @@ weight: 49
 
 允许局域网发现。
 
-局域网法相后, 如果支持 [WOL](https://en.wikipedia.org/wiki/Wake-on-LAN) , 则可使用 WOL 。
+局域网发现后, 如果支持 [WOL](https://en.wikipedia.org/wiki/Wake-on-LAN) , 则可使用 WOL 。
 
 **位置**:
 
