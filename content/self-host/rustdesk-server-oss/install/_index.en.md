@@ -17,7 +17,7 @@ You need to have Linux installed, script is tested working with CentOS Linux 7/8
 ##### How to Install the server
 Please setup your firewall on your server prior to running the script.
 
-Make sure you have got access via SSH or otherwise setup prior setting up the firewall. The example commands for UFW (Debian based) are:
+Make sure you have got access via SSH or otherwise setup prior to setting up the firewall. The example commands for UFW (Debian based) are:
 ```
 ufw allow proto tcp from YOURIP to any port 22
 ```
