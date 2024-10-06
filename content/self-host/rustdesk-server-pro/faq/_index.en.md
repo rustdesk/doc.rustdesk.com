@@ -366,7 +366,7 @@ Notice: Run `sudo service nginx restart` if you change the `rustdesk.conf` manua
 
 ### 8. Add WebSocket Secure (WSS) support for the id server and relay server to enable secure communication for the web client.
 
-Add the following configuration to the first server section of the `/etc/nginx/.../rustdesk.conf` file, then restart the Nginx service.
+Add the following configuration to the first `server` section of the `/etc/nginx/.../rustdesk.conf` file, then restart the `Nginx` service.
 
 ```
     location /ws/id {
