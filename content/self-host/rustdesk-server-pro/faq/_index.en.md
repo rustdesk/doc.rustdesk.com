@@ -302,8 +302,8 @@ sudo ufw --force reload
 ```
 
 #### 6. Generate SSL certificate
-Replace `<YOUR_DOMAIN>` with your domain name, then run
-`sudo certbot --nginx --cert-name <YOUR_DOMAIN> --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d <YOUR_DOMAIN>`.
+Replace `$YOUR_DOMAIN` with your domain name, then run
+`sudo certbot --nginx --cert-name $YOUR_DOMAIN --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d $YOUR_DOMAIN`.
 
 If it prompts `Enter email address (used for urgent renewal and security notices)`, enter your email address.
 
