@@ -15,8 +15,6 @@ We may give pointers, or provide additional troubleshooting steps if we believe 
 
 Paid Support: You can [email](mailto:support@rustdesk.com) to get started.
 
-We can help with lots of problems, installations and configurations. Fully managed hosted servers are also available as well as monthly support packages.
-
 You get Priority #1 fast responses and service.
 
 ### Ticket for Pro User
