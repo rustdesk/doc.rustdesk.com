@@ -30,6 +30,7 @@ export interface Props {
   showToggleTheme?: boolean;
   showRssFeed?: boolean;
   position?: string;
+  showGithubStar?: boolean;
 }
 
 const {
@@ -41,6 +42,7 @@ const {
   isFullWidth = false,
   showToggleTheme = false,
   showRssFeed = false,
+  showGithubStar = false,
   position = 'center',
 } = Astro.props;
 
@@ -143,6 +145,19 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                 href={getAsset('/rss.xml')}
               >
                 <Icon name="tabler:rss" class="w-5 h-5" />
+              </a>
+            )
+          }
+          {
+            showGithubStar && (
+              <a
+                target="_blank"
+                rel="noopener"
+                class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center ltr:ml-auto rtl:mr-auto"
+                title="If you like RustDesk, give us a star."
+                href="https://github.com/rustdesk/rustdesk"
+              >
+                <span class="w-[5.6rem] h-[1.25rem] bg-contain bg-[url(https://img.shields.io/github/stars/rustdesk/rustdesk.svg?style=social&label=Stars&maxAge=86400)]" />
               </a>
             )
           }

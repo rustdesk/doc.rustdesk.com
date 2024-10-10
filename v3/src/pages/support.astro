@@ -1,0 +1,49 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <!--<HeroText tagline="Support" title="Hello, how can we help?" />-->
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="We are here to help!"
+    items={[
+      {
+        title: 'Issues',
+        description: `Found a bug? We'd love to hear about it in our GitHub issues.`,
+      },
+      {
+        title: 'Community Support',
+        description: 'Join our Discord server to browse for help and best practices.',
+      },
+      {
+        title: 'Ticket for Pro User',
+        description: 'Email us if you encounter any issues while using RustDesk Server Pro.',
+      },
+      {
+        title: 'GitHub',
+        description: '<a target="_blank" href="https://github.com/rustdesk/rustdesk/issues">Open an issue</a>',
+        icon: 'tabler:brand-github',
+      },
+      {
+        title: 'Discord',
+        description: '<a target="_blank" href="https://discord.com/invite/nDceKgxnkV">Join our server</a>',
+        icon: 'tabler:brand-discord',
+      },
+      {
+        title: 'Email',
+        description: '<a href="mailto:support@rustdesk.com">support@rustdesk.com</a>',
+        icon: 'tabler:mail',
+      },
+    ]}
+  />
+</Layout>
