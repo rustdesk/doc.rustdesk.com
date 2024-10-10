@@ -1,9 +1,11 @@
 ---
 import { SITE } from 'astrowind:config';
+import logo from '~/assets/images/logo.svg';
 ---
 
 <span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
+  class="flex items-center self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
 >
-  🚀 {SITE?.name}
+  <img src={logo.src} loading="lazy" alt="RustDesk Logo" class="h-8 w-8 mr-2" />
+  {SITE?.name?.toLowerCase()}
 </span>
