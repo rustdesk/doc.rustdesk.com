@@ -45,48 +45,22 @@ export const headerData = {
 
 export const footerData = {
   links: [
+    { title: 'Resources', links: headerData.links[0].links },
     {
-      title: 'Product',
+      title: 'Community',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        { text: 'X', href: 'https://twitter.com/rustdesk' },
+        { text: 'Discord', href: 'https://discord.com/invite/nDceKgxnkV' },
+        { text: 'Reddit', href: 'https://www.reddit.com/r/rustdesk/' },
+        { text: 'GitHub', href: 'https://github.com/rustdesk/rustdesk' },
       ],
     },
     {
-      title: 'Platform',
+      title: 'Download',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'RustDesk Desktop', href: '#' },
-      ],
-    },
-    {
-      title: 'Support',
-      links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
-      ],
-    },
-    {
-      title: 'Company',
-      links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: 'RustDesk Client', href: 'https://github.com/rustdesk/rustdesk/releases/latest' },
+        { text: 'RustDesk Server OSS', href: 'https://github.com/rustdesk/rustdesk-server/releases/latest' },
+        { text: 'RustDesk Server Pro', href: 'https://github.com/rustdesk/rustdesk-server-pro/releases/latest' },
       ],
     },
   ],
