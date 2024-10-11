@@ -149,6 +149,7 @@ export interface Price {
   period?: string;
   items?: Array<Item>;
   callToAction?: CallToAction;
+  callToAction2?: CallToAction;
   hasRibbon?: boolean;
   ribbonTitle?: string;
 }
@@ -283,4 +284,4 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
   callToAction?: CallToAction;
 }
 
-export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
+export interface Contact extends Omit<Headline, 'classes'>, Form, Widget { }

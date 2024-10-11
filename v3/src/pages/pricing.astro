@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
+import Note from '~/components/widgets/Note.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Steps from '~/components/widgets/Steps.astro';
@@ -13,37 +13,82 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-
-  <HeroText
-    tagline="Pricing"
-    title="Stellar Pricing for Every Journey"
-    subtitle="Choose the perfect plan that aligns with your cosmic goals."
+  <Note
+    title="Note"
+    subtitle='This pricing is for <span class="text-xl text-blue-500">self-hosting</span>solution, it is not a <span class="line-through text-xl text-blue-500">SaaS</span> subscription.'
   />
 
   <!-- Pricing Widget ******************* -->
 
   <Prices
-    title="Our prices"
+    title='Pricing of our <span class="text-5xl text-blue-500">self-hosting</span> solutions'
     subtitle="Only pay for what you need"
     prices={[
       {
-        title: 'basic',
-        subtitle: 'Optimal choice for personal use',
-        price: 29,
-        period: 'per month',
+        title: 'Free',
+        subtitle: 'Free Self-hosting Plan',
+        price: '0 <span class="text-sm">/month</span>',
+        period: 'Open source and free',
         items: [
           {
-            description: 'Etiam in libero, et volutpat',
+            description: 'Online status',
           },
           {
-            description: 'Aenean ac nunc dolor tristique',
+            description: 'Community support',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Get started',
+          href: 'https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/',
+        },
+      },
+      {
+        title: 'Individual',
+        subtitle: 'Individual Self-hosting Pro Plan',
+        price: '9.90 <span class="text-sm">/month</span>',
+        period: 'billed annually',
+        items: [
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">1 licensed user</a>',
           },
           {
-            description: 'Cras scelerisque accumsan lib',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">20 managed devices</a>',
           },
           {
-            description: 'In hac habitasse',
+            description:
+              '<a class="underline text-blue-500 font-bold" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">Unlimited concurrent connections</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/">2FA</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/">Web console</a>',
+          },
+          {
+            description: 'Address book',
+          },
+          {
+            description: 'Audit log',
+          },
+          {
+            description: 'Change ID',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/">Access control</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/">Centralized settings</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/">Distributed relay servers</a>',
           },
         ],
         callToAction: {
@@ -53,25 +98,38 @@ const metadata = {
         },
       },
       {
-        title: 'standard',
-        subtitle: 'Optimal choice for small teams',
-        price: 69,
-        period: 'Per Month',
+        title: 'Basic',
+        subtitle: 'Basic Self-hosting Pro Plan',
+        price: '19.90 <span class="text-sm">/month</span>',
+        period: 'billed annually',
         items: [
           {
-            description: 'Proin vel laoreet',
+            description: '<span class="font-bold">Everything in the individual plan</span>',
+            icon: 'tabler:checks',
           },
           {
-            description: 'Ut efficitur habitasse egestas',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">10 licensed users</a>',
           },
           {
-            description: 'Volutpat hac curabitur',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">100 managed devices</a>',
           },
           {
-            description: 'Pellentesque blandit ut nibh',
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/">OIDC (SSO)</a>',
           },
           {
-            description: 'Donec fringilla sem',
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/">LDAP integration</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/#cross-group-settings">Cross group access</a>',
+          },
+          {
+            description:
+              '<a class="underline text-blue-500 font-bold" target="_blank" href="https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only">Custom client generator</a>',
           },
         ],
         callToAction: {
@@ -83,28 +141,26 @@ const metadata = {
         ribbonTitle: 'popular',
       },
       {
-        title: 'premium',
-        subtitle: 'Optimal choice for companies',
-        price: 199,
-        period: 'Per Month',
+        title: 'Customized',
+        subtitle: 'Customized Pro Plan',
+        price: '0 <span class="text-sm">/month</span>',
+        period: 'billed annually',
         items: [
           {
-            description: 'Curabitur suscipit risus',
+            description: '<span class="font-bold">Everything in the basic plan</span>',
+            icon: 'tabler:checks',
           },
           {
-            description: 'Aliquam habitasse malesuada',
+            description: '$1 for each additional user',
           },
           {
-            description: 'Suspendisse sit amet blandit',
-          },
-          {
-            description: 'Suspendisse auctor blandit dui',
+            description: '$0.1 for each additional device',
           },
         ],
         callToAction: {
           target: '_blank',
           text: 'Get started',
-          href: '#',
+          href: 'https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/',
         },
       },
     ]}
