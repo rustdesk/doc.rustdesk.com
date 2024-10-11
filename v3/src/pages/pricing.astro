@@ -166,6 +166,19 @@ const metadata = {
     ]}
   />
 
+  <CallToAction
+    actions={[
+      {
+        text: 'sales@rustdesk.com',
+        href: 'mailto:sales@rustdesk.com',
+        target: '_blank',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">Contact us for bigger plans & help</Fragment>
+  </CallToAction>
+
   <!-- Features3 Widget ************** -->
 
   <Features3
@@ -190,7 +203,7 @@ const metadata = {
       },
       {
         title: 'Instant Access',
-        description: `Immediate access to your chosen plan's features and templates upon subscription.`,
+        description: `Immediate access to your chosen plan's features after you activate your license.`,
         icon: 'tabler:accessible',
       },
       {
@@ -199,8 +212,8 @@ const metadata = {
         icon: 'tabler:chevrons-up',
       },
       {
-        title: '24H support',
-        description: 'Questions answered via live chat, email or phone, every calendar day.',
+        title: 'Quick support',
+        description: 'Questions answered via email or GitHub, every day.',
         icon: 'tabler:headset',
       },
     ]}
@@ -210,41 +223,39 @@ const metadata = {
   <!-- Steps Widget ****************** -->
 
   <Steps
-    title="A guided journey from plans to creativity"
+    title="A guided journey from plans to production"
     tagline="simplified process"
     isReversed={true}
     items={[
       {
-        title: 'Explore plans',
+        title: 'Install RustDesk Server Pro',
         icon: 'tabler:number-1',
+        description:
+          '<code>sudo apt install -y docker.io<br>wget rustdesk.com/pro.yml -O compose.yml<br>docker compose up -d</code>',
       },
       {
-        title: 'Select a plan',
+        title: 'Explore plans',
         icon: 'tabler:number-2',
       },
       {
-        title: 'Sign Up / Log In',
+        title: 'Select a plan',
         icon: 'tabler:number-3',
       },
       {
-        title: 'Review order',
+        title: 'Enter email and payment details',
         icon: 'tabler:number-4',
       },
       {
-        title: 'Enter payment details',
+        title: 'Get the license key via the email you entered',
         icon: 'tabler:number-5',
       },
       {
-        title: 'Confirmation',
+        title: 'Enter the license key in the web console of RustDesk Server Pro',
         icon: 'tabler:number-6',
-      },
-      {
-        title: 'Download and start using the template(s)',
-        icon: 'tabler:number-7',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1536816579748-4ecb3f03d72a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      src: '~/assets/images/steps.jpg',
       alt: 'Steps image',
     }}
   />
@@ -259,41 +270,35 @@ const metadata = {
       {
         title: 'Do the plans come with customer support?',
         description:
-          'Absolutely, all plans include access to our dedicated customer support to assist you with any queries or concerns.',
+          'Absolutely, all paid plans include access to our dedicated customer support to assist you with any queries or concerns.',
       },
       {
-        title: 'Is there a trial period for the different plans?',
-        description:
-          "Unfortunately, we don't offer trial periods for the plans. However, you can check out our demo section to preview the quality of our templates.",
+        title: 'Is there a trial license?',
+        description: 'Please <a class="underline" href="mailto:sales@rustdesk.com">contact us</a>',
       },
       {
-        title: 'Can I switch between plans?',
+        title: 'How to upgrade my plan?',
         description:
-          'Certainly! You can easily upgrade or downgrade your plan, at any time, to find the one that best suits your evolving requirements.',
+          'Certainly! You can easily <a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license">upgrade your plan</a>, at any time, to find the one that best suits your evolving requirements.',
       },
       {
         title: 'What payment methods do you accept?',
         description:
-          'We accept major credit cards and online payment methods to ensure a convenient and secure transaction process.',
+          'We accept major credit cards and online payment methods to ensure a convenient and secure transaction process. If you want to pay via bank transfer, please <a class="underline" href="mailto:sales@rustdesk.com">contact us</a>; you will be charged extra bank process fee, and we will send you the license key once we receive the offline payment in the bank; it takes 3~5 working days.',
       },
       {
         title: 'Are there any hidden fees beyond the displayed cost?',
         description:
-          'No, the subscription cost covers all the features and templates listed under each plan. There are no hidden fees or extra charges.',
+          'No, the cost covers all the features and  listed under each plan. There are no hidden fees or extra charges.',
       },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    title="Ready to boost your projects?"
-    subtitle="Join our community of satisfied customers who have transformed their work with our templates."
-    actions={[
       {
-        variant: 'primary',
-        text: 'Get started now',
-        href: '/',
+        title: 'Do you have monthly payment?',
+        description:
+          'No, we only offer annual payment plans. We do not auto-renew; you will receive an email to remind you to renew your license 14 days before the expiration date.',
+      },
+      {
+        title: 'Do you have discount for non-profit or education organization?',
+        description: 'No, we do not have it yet. You are encouraged to use the free plan.',
       },
     ]}
   />
