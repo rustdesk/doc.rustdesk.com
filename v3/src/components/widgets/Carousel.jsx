@@ -15,6 +15,7 @@ const Carousel = ({ list }) => {
       pagination={{ clickable: true }}
       style={{
         '--swiper-pagination-bullet-inactive-color': '#fff',
+        '--swiper-pagination-bullet-inactive-opacity': 0.5,
         '--swiper-pagination-bullet-size': '12px',
       }}
       mousewheel={{ forceToAxis: true, sensitivity: 0.1, releaseOnEdges: true }}
