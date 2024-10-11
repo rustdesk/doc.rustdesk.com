@@ -1,0 +1,18 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Success',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero tagline="">
+    <Fragment slot="title"> You have cancelled the payment!
+    </Fragment>
+  </Hero>
+
+</Layout>

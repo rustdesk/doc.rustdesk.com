@@ -1,0 +1,24 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Success',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero tagline="">
+    <Fragment slot="title"> Payment successful! </Fragment>
+
+    <Fragment slot="content">
+      <p class="text-center leading-10 text-lg">The license has been sent to the email you entered on the payment page.<br>
+        Please contact us at <a class="underline text-secondary" href="mailto:support@rustdesk.com">support@rustdesk.com</a> if you didn't receive the email.<br>
+        Getting Started? Read our <a class="underline text-secondary" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/">docs</a>.
+      </p>
+    </Fragment>
+  </Hero>
+
+</Layout>
