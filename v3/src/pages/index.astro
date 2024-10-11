@@ -143,18 +143,19 @@ const metadata = {
     items={[
       {
         title: 'Step 1: Install Docker',
-        description: '<code>sudo apt install -y docker.io</code>',
+        description: '<pre class="text-gray-600 dark:text-gray-500">sudo apt install -y docker.io</pre>',
         icon: 'tabler:package',
       },
       {
         title: 'Step 2: Download compose.yml',
-        description:
-          '<code>wget rustdesk.com/oss.yml -O compose.yml<br>or<br>wget rustdesk.com/pro.yml -O compose.yml</code>',
+        description: `<pre class="text-gray-600 dark:text-gray-500">wget rustdesk.com/oss.yml -O compose.yml</pre>
+          <p class="text-center text-sm">or</p>
+          <pre class="text-gray-600 dark:text-gray-500">wget rustdesk.com/pro.yml -O compose.yml</pre>`,
         icon: 'tabler:download',
       },
       {
         title: `Step 3: Compose`,
-        description: '<code>docker compose up -d</code>',
+        description: '<pre class="text-gray-600 dark:text-gray-500">docker compose up -d</pre>',
         icon: 'tabler:hammer',
       },
       {
@@ -166,7 +167,11 @@ const metadata = {
       src: '~/assets/images/steps.jpg',
       alt: 'Steps image',
     }}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps>
 
   <!-- Stats Widget ****************** -->
   <Stats
