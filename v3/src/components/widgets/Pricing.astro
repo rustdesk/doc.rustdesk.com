@@ -21,7 +21,14 @@ const {
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} />
   <div class="flex items-stretch justify-center">
-    <div class="grid grid-cols-4 gap-4 dark:text-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+    <div
+      class={`grid grid-cols-` +
+        prices.length +
+        ` gap-4 dark:text-white sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-` +
+        prices.length +
+        ` xl:grid-cols-` +
+        prices.length}
+    >
       {
         prices &&
           prices.map(
@@ -35,11 +42,16 @@ const {
               callToAction2,
               hasRibbon = false,
               content,
+              id,
               ribbonTitle,
             }) => (
-              <div class="col-span-3 mx-auto flex w-full sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1">
+              <div
+                class="col-span-3 mx-auto flex w-full sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1"
+                id={id || ''}
+              >
+                {id && <a name={id} />}
                 {price && period && (
-                  <div class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow px-3 py-6 flex w-full max-w-sm flex-col justify-between text-center">
+                  <div class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow px-3 py-6 flex w-full flex-col justify-between text-center">
                     {hasRibbon && ribbonTitle && (
                       <div class="absolute right-[-5px] 2xl:right-[-8px] rtl:right-auto rtl:left-[-8px] rtl:2xl:left-[-10px] top-[-5px] 2xl:top-[-10px] z-[1] h-[100px] w-[100px] overflow-hidden text-right">
                         <span class="absolute top-[19px] right-[-21px] rtl:right-auto rtl:left-[-21px] block w-full rotate-45 rtl:-rotate-45 bg-green-700 text-center text-[10px] font-bold uppercase leading-5 text-white shadow-[0_3px_10px_-5px_rgba(0,0,0,0.3)] before:absolute before:left-0 before:top-full before:z-[-1] before:border-[3px] before:border-r-transparent before:border-b-transparent before:border-l-green-800 before:border-t-green-800 before:content-[''] after:absolute after:right-0 after:top-full after:z-[-1] after:border-[3px] after:border-l-transparent after:border-b-transparent after:border-r-green-800 after:border-t-green-800 after:content-['']">
@@ -53,8 +65,12 @@ const {
                           {title}
                         </h3>
                       )}
-                      {subtitle && <p class="font-light sm:text-lg text-gray-600 dark:text-slate-400">{subtitle}</p>}
-                      <div class="my-8">
+                      {subtitle && (
+                        <p class="font-light sm:text-lg text-gray-600 dark:text-slate-400">
+                          <Fragment set:html={subtitle} />
+                        </p>
+                      )}
+                      <div class="my-6">
                         <div class="flex items-center justify-center text-center mb-1">
                           <span class="text-5xl">$</span>
                           <span class="text-5xl font-extrabold">
@@ -64,12 +80,12 @@ const {
                         <span class="text-base leading-6 lowercase text-gray-600 dark:text-slate-400">{period}</span>
                       </div>
                       {items && (
-                        <ul class="my-8 md:my-10 space-y-2 text-left">
+                        <ul class="my-4 space-y-2 text-left">
                           {items.map(
                             ({ description, icon }) =>
                               description && (
-                                <li class="mb-1.5 flex items-start space-x-3 leading-7 text-sm">
-                                  <div class="mt-1.5">
+                                <li class="flex items-start space-x-3 text-sm">
+                                  <div class="">
                                     <Icon name={icon ? icon : 'tabler:check'} class="size-4 text-blue-500" />
                                   </div>
                                   <span>

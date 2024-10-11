@@ -153,6 +153,7 @@ export interface Price {
   hasRibbon?: boolean;
   ribbonTitle?: string;
   content?: string;
+  id?: string;
 }
 
 export interface Testimonial {
