@@ -7,6 +7,7 @@ import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Carousel from '~/components/widgets/Carousel.jsx';
 
 const metadata = {
   title: 'RustDesk: Open-Source Remote Desktop with Self-Hosted Server Solutions',
@@ -16,7 +17,6 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
   <Hero
     actions={[
       {
@@ -28,14 +28,24 @@ const metadata = {
       },
       { text: 'Self-Hosting', href: 'https://rustdesk.com/docs/en/self-host/', target: '_blank', icon: 'tabler:book' },
     ]}
-    image={{ src: '~/assets/images/console.png', alt: 'RustDesk Web Console Image', class: "rounded-lg border border-gray-700" }}
   >
-    <Fragment slot="title">
-      The Fast Open-Source Remote Access and Support Software
-    </Fragment>
+    <Fragment slot="title"> The Fast Open-Source Remote Access and Support Software </Fragment>
 
     <Fragment slot="subtitle">
-      Switch from TeamViewer, AnyDesk, and Splashtop to RustDesk for a secure and reliable remote desktop experience with your own self-hosted servers.
+      Switch from TeamViewer, AnyDesk, and Splashtop to RustDesk for a secure and reliable remote desktop experience
+      with your own self-hosted servers.
+    </Fragment>
+    <Fragment slot="content">
+      <br /><br />
+      <Carousel
+        client:load
+        list={[
+          { src: 'remote.jpg', className: 'rounded-[15px] border border-gray-700' },
+          { src: 'main.png', className: 'rounded-[15px] border border-gray-700' },
+          { src: 'console.png', className: 'rounded-[15px] border border-gray-700' },
+          { src: 'custom.png', className: 'rounded-[15px] border border-gray-700' },
+        ]}
+      />
     </Fragment>
   </Hero>
 
@@ -52,23 +62,19 @@ const metadata = {
     items={[
       {
         title: 'Data sovereignty',
-        description:
-          'Regulatory compliance made easy: self-hosted RustDesk ensures data sovereignty.',
+        description: 'Regulatory compliance made easy: self-hosted RustDesk ensures data sovereignty.',
       },
       {
         title: 'Enhanced security',
-        description:
-          'Fortify your security: on-premise deployment keeps your data under your control.',
+        description: 'Fortify your security: on-premise deployment keeps your data under your control.',
       },
       {
         title: 'Performance and reliability',
-        description:
-          'Guaranteed uptime: on-premise deployment ensures optimal performance and minimal downtime.',
+        description: 'Guaranteed uptime: on-premise deployment ensures optimal performance and minimal downtime.',
       },
       {
         title: 'Flexibility and customization',
-        description:
-          'Tailor RustDesk on-premise to fit your unique requirements.',
+        description: 'Tailor RustDesk on-premise to fit your unique requirements.',
       },
     ]}
     image={{
@@ -78,7 +84,8 @@ const metadata = {
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Why self-hosting?</h3>
-      Are you frustrated with SaaS platforms due to their unstable performance, lack of transparency, and uncertain data security risks?
+      Are you frustrated with SaaS platforms due to their unstable performance, lack of transparency, and uncertain data
+      security risks?
     </Fragment>
 
     <Fragment slot="bg">
@@ -119,7 +126,7 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Custom client</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Custom Client</h3>
       Customize your client with your brand and make it truly yours.
     </Fragment>
 
@@ -136,18 +143,18 @@ const metadata = {
     items={[
       {
         title: 'Step 1: Install Docker',
-        description:
-          "<code>sudo apt install -y docker.io</code>",
+        description: '<code>sudo apt install -y docker.io</code>',
         icon: 'tabler:package',
       },
       {
         title: 'Step 2: Download compose.yml',
-        description: '<code>wget rustdesk.com/oss.yml -O compose.yml<br>or<br>wget rustdesk.com/pro.yml -O compose.yml</code>',
+        description:
+          '<code>wget rustdesk.com/oss.yml -O compose.yml<br>or<br>wget rustdesk.com/pro.yml -O compose.yml</code>',
         icon: 'tabler:download',
       },
       {
         title: `Step 3: Compose`,
-        description: "<code>docker compose up -d</code>",
+        description: '<code>docker compose up -d</code>',
         icon: 'tabler:hammer',
       },
       {
@@ -163,27 +170,25 @@ const metadata = {
 
   <!-- Stats Widget ****************** -->
   <Stats
-  tagline="Scenarios"
-  title="Who are using self-hosting?"
-  subtitle='The data below is from our online survey covering over 1,000 self-hosting users.'
-  stats={[
-    { title: 'IT Support', amount: '37%' },
-    { title: 'IT Administration', amount: '25%' },
-    { title: 'Remote Work', amount: '29%' },
-    { title: 'Industrial and others', amount: '9%' },
-  ]}
+    tagline="Scenarios"
+    title="Who are using self-hosting?"
+    subtitle="The data below is from our online survey covering over 1,000 self-hosting users."
+    stats={[
+      { title: 'IT Support', amount: '37%' },
+      { title: 'IT Administration', amount: '25%' },
+      { title: 'Remote Work', amount: '29%' },
+      { title: 'Industrial and others', amount: '9%' },
+    ]}
   />
 
   <!-- HighlightedPosts Widget ******* -->
-  
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-  />
+
+  <BlogLatestPosts title="Find out more content in our Blog" />
 
   <Stats
     tagline="Open Source"
     title="Built in public with a vibrant community"
-    subtitle='Join a community driven solution that has millions of downloads and used by thousands of organisations.'
+    subtitle="Join a community driven solution that has millions of downloads and used by thousands of organisations."
     stats={[
       { title: 'Client downloads', amount: '10M+' },
       { title: 'Docker downloads', amount: '1M+' },
@@ -217,13 +222,9 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title">
-      Join the community
-    </Fragment>
+    <Fragment slot="title"> Join the community </Fragment>
 
-    <Fragment slot="subtitle">
-      Discover what our community has to say about their RustDesk experience.
-    </Fragment>
+    <Fragment slot="subtitle"> Discover what our community has to say about their RustDesk experience. </Fragment>
   </Hero>
 
   <CallToAction
@@ -238,8 +239,6 @@ const metadata = {
       { text: 'Self-Hosting', href: 'https://rustdesk.com/docs/en/self-host/', target: '_blank', icon: 'tabler:book' },
     ]}
   >
-    <Fragment slot="title">
-      Experience RustDesk for yourself
-    </Fragment>
+    <Fragment slot="title"> Experience RustDesk for yourself </Fragment>
   </CallToAction>
 </Layout>
