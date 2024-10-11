@@ -152,6 +152,7 @@ export interface Price {
   callToAction2?: CallToAction;
   hasRibbon?: boolean;
   ribbonTitle?: string;
+  content?: string;
 }
 
 export interface Testimonial {

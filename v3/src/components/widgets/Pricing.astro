@@ -34,6 +34,7 @@ const {
               callToAction,
               callToAction2,
               hasRibbon = false,
+              content,
               ribbonTitle,
             }) => (
               <div class="col-span-3 mx-auto flex w-full sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1">
@@ -80,13 +81,14 @@ const {
                         </ul>
                       )}
                     </div>
+                    {content && <Fragment set:html={content} />}
                     {callToAction && (
                       <div class={`flex justify-center`}>
                         {typeof callToAction === 'string' ? (
                           <Fragment set:html={callToAction} />
                         ) : (
                           callToAction &&
-                          callToAction.href && (
+                          (callToAction.href || callToAction.onclick) && (
                             <Button {...(hasRibbon ? { variant: 'primary' } : {})} {...callToAction} />
                           )
                         )}
@@ -98,7 +100,7 @@ const {
                           <Fragment set:html={callToAction2} />
                         ) : (
                           callToAction2 &&
-                          callToAction2.href && (
+                          (callToAction2.href || callToAction2.onclick) && (
                             <Button {...(hasRibbon ? { variant: 'primary' } : {})} {...callToAction2} />
                           )
                         )}

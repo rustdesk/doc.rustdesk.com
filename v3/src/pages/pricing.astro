@@ -12,10 +12,38 @@ const metadata = {
 };
 ---
 
+<script>
+  import Swal from 'sweetalert2';
+  window['gotoBuy'] = function (redirectUrl) {
+    Swal.fire({
+      title: 'Please Confirm',
+      html: '<p style="text-align:left">Do you want to proceed to the purchase page? <br><br>Please note that what you are purchasing is <b style="font-size: 2em">NOT</b> a <span style="text-decoration:line-through">SaaS(Software as a Service)</span> subscription. <br><br>Instead, it is a license for a <b style="font-size: 2em">self-hosting</b> solution, which requires you to deploy it on your own server (cloud server, e.g. AWS EC2, Azure VM, Vultr VPS etc, or your on-premise server). <br><br>Please <b style="font-size: 2em">don\'t</b> buy if you don\'t know what is self-hosting',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Please Confirm',
+          html: 'Please note that we <span class="text-3xl font-bold">don\'t</span> offer <span class="text-3xl font-bold">refunds</span>. We strongly recommend <span class="underline font-bold">testing our free self-hosting plan</span> before considering the purchase of our Pro plan. Are you still interested in proceeding?',
+          showCancelButton: true,
+          confirmButtonText: 'Yes',
+          cancelButtonText: 'No',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.open(redirectUrl, '_blank');
+          }
+        });
+      }
+    });
+  };
+</script>
+
 <Layout metadata={metadata}>
   <Note
     title="Note"
-    subtitle='This pricing is for <span class="text-xl text-blue-500">self-hosting</span>solution, it is not a <span class="line-through text-xl text-blue-500">SaaS</span> subscription.'
+    subtitle='This pricing is for <span class="text-xl text-blue-500">self-hosting</span>solution, it is <span class="text-3xl font-extrabold">NOT</span> a <span class="line-through text-xl text-blue-500">SaaS</span> subscription.'
   />
 
   <!-- Pricing Widget ******************* -->
@@ -92,9 +120,9 @@ const metadata = {
           },
         ],
         callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
+          text: 'Buy now',
+          onclick: 'gotoBuy("https://rustdesk.com/api/lic/stripe/checkout?type=Individual")',
+          variant: 'primary',
         },
       },
       {
@@ -133,9 +161,8 @@ const metadata = {
           },
         ],
         callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
+          text: 'Buy now',
+          onclick: 'gotoBuy("https://rustdesk.com/api/lic/stripe/checkout?type=Basic")',
         },
         hasRibbon: true,
         ribbonTitle: 'popular',
@@ -143,7 +170,7 @@ const metadata = {
       {
         title: 'Customized',
         subtitle: 'Customized Pro Plan',
-        price: '0 <span class="text-sm">/month</span>',
+        price: '<span id="cprice">19.90</span> <span class="text-sm">/month</span>',
         period: 'billed annually',
         items: [
           {
@@ -157,10 +184,56 @@ const metadata = {
             description: '$0.1 for each additional device',
           },
         ],
+        content: `
+<form class="flex flex-col space-y-4 mx-3">
+  <label for="users" class="text-left font-bold">Number of Licensed Users:</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="users" name="users" value="10" min="10" max="500" step="10">
+  <input type="range" id="usersSlider" class="slider" name="usersRange" value="10" min="10" max="500" step="10">
+  <label for="devices" class="text-left font-bold">Number of Managed Devices:</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="devices" name="devices" value="100" min="100" max="5000" step="100">
+  <input type="range" id="devicesSlider" class="slider" name="devicesRange" value="100" min="100" max="5000" step="100">
+</form>
+<script>
+  var users = 10;
+  var devices = 100;
+  function submit() {
+    redirectUrl = "https://rustdesk.com/api/lic/stripe/checkout?type=Customized&users=" + users + "&devices=" + devices;
+    gotoBuy(redirectUrl);
+  }
+  function calculatePrice() {
+    users = parseInt(document.getElementById("users").value);
+    devices = parseInt(document.getElementById("devices").value);
+    if (!users || users < 10) users = 10;
+    if (devices < 100) devices = 100;
+    var price =  19.9 + (users - 10) + (devices - 100) * 0.1;
+    document.getElementById("cprice").innerText = price.toFixed(price >= 100 ? 1 : 2);
+  }
+
+  document.getElementById("users").oninput = function() {
+    document.getElementById("usersSlider").value = this.value;
+    calculatePrice();
+  }
+
+  document.getElementById("devices").oninput = function() {
+    document.getElementById("devicesSlider").value = this.value;
+    calculatePrice();
+  }
+
+  document.getElementById("usersSlider").oninput = function() {
+    document.getElementById("users").value = this.value;
+    calculatePrice();
+  }
+
+  document.getElementById("devicesSlider").oninput = function() {
+    document.getElementById("devices").value = this.value;
+    calculatePrice();
+  }
+</script>
+`,
         callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: 'https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/',
+          text: 'Buy now',
+          onclick: 'submit()',
+          variant: 'primary',
         },
       },
     ]}
