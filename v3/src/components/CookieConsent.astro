@@ -4,7 +4,6 @@ import '../assets/styles/ccElegantBlack.css';
 ---
 
 <!--<button type="button" class="cc-button">Show preferences modal</button>-->
-
 <script>
   import { run } from 'vanilla-cookieconsent';
   import { config } from './CookieConsentConfig';
@@ -12,5 +11,15 @@ import '../assets/styles/ccElegantBlack.css';
   // toggle custom black theme
   document.body.classList.add('cc--elegant-black');
 
-  run(config);
+  function checkCookieConsent() {
+    // this cookie consent use cookie to store the consent status, but our webiste v2 use localStorage
+    // this is used to compliant with v2
+    const consentStatus = localStorage.getItem('cookie-accepted');
+    return consentStatus === 'true';
+  }
+
+  // If consent is not given, run the cookie consent config
+  if (!checkCookieConsent()) {
+    run(config);
+  }
 </script>

@@ -23,7 +23,9 @@ const Carousel = ({ list }) => {
         delay: 2500,
         disableOnInteraction: true,
       }}
-      lazy={true}
+      // https://github.com/nolimits4web/swiper/blob/40a705e5bcadf2ee2ee90591ff9ed95c1aaf9026/src/swiper-element.mjs#L286
+      // workaround for {true} which cause console error
+      lazy='true'
       scrollbar
       modules={[Pagination, Autoplay, Scrollbar, Mousewheel]}
     >
