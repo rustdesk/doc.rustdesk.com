@@ -4,7 +4,6 @@ import Note from '~/components/widgets/Note.astro';
 import Prices from '~/components/widgets/Pricing.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
@@ -358,47 +357,6 @@ const metadata = {
     <Fragment slot="title">Contact us for larger plans & inquiries</Fragment>
   </CallToAction>
 
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    title="Price-related features"
-    subtitle="Discover the advantages of choosing our plans"
-    columns={2}
-    items={[
-      {
-        title: 'Tiered Pricing Plans',
-        description: 'Choose from a range of pricing plans designed to accommodate different budgets and requirements.',
-        icon: 'tabler:stairs',
-      },
-      {
-        title: 'Transparent Pricing',
-        description: 'Clearly displayed pricing details for each plan, with no hidden costs or unexpected charges.',
-        icon: 'tabler:flip-vertical',
-      },
-      {
-        title: 'Secure Payment Methods',
-        description: 'Secure payment gateways to protect your financial information during transactions.',
-        icon: 'tabler:shield-lock',
-      },
-      {
-        title: 'Instant Access',
-        description: `Immediate access to your chosen plan's features after you activate your license.`,
-        icon: 'tabler:accessible',
-      },
-      {
-        title: 'Upgrade Value',
-        description: 'Upgrade to higher-tier plans to unlock more features and benefits for an enhanced experience.',
-        icon: 'tabler:chevrons-up',
-      },
-      {
-        title: 'Quick support',
-        description: 'Questions answered via email or GitHub, every day.',
-        icon: 'tabler:headset',
-      },
-    ]}
-    classes={{ container: 'max-w-5xl' }}
-  />
-
   <!-- Steps Widget ****************** -->
 
   <Steps
@@ -413,24 +371,25 @@ const metadata = {
           '<code>sudo apt install -y docker.io<br>wget rustdesk.com/pro.yml -O compose.yml<br>docker compose up -d</code>',
       },
       {
-        title: 'Explore plans',
+        title: 'Explore plans and select a plan',
         icon: 'tabler:number-2',
       },
       {
-        title: 'Select a plan',
+        title: 'Enter email and payment details',
         icon: 'tabler:number-3',
       },
       {
-        title: 'Enter email and payment details',
+        title: 'Get the license key via the email you entered',
         icon: 'tabler:number-4',
       },
       {
-        title: 'Get the license key via the email you entered',
+        title: 'Enter the license key in the web console of RustDesk Server Pro',
         icon: 'tabler:number-5',
       },
       {
-        title: 'Enter the license key in the web console of RustDesk Server Pro',
-        icon: 'tabler:number-6',
+        title: 'Ready!',
+        icon: 'tabler:check',
+        description: 'For detailed instructions, please refer to our <a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/">documentation</a>.',
       },
     ]}
     image={{
