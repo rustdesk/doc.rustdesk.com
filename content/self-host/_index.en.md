@@ -10,7 +10,7 @@ Support is available via our [Discord](https://discord.com/invite/nDceKgxnkV) fo
 
 ### How does self-hosted server work?
 
-There are technically two executables (services):
+There are technically two executables (servers):
 
 - `hbbs` - RustDesk ID (rendezvous / signaling) server, listen on TCP (`21114` - for http in Pro only, `21115`, `21116`, `21118` for web socket) and UDP (`21116`)
 - `hbbr` - RustDesk relay server, listen on TCP (`21117`, `21119` for web socket)
