@@ -10,8 +10,6 @@ const Carousel = ({ list }) => {
     <Swiper
       spaceBetween={0}
       slidesPerView={1}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
       pagination={{ clickable: true }}
       style={{
         '--swiper-pagination-bullet-inactive-color': '#fff',

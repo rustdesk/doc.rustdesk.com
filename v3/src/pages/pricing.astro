@@ -302,7 +302,7 @@ const metadata = {
  if (window.location.href.indexOf("custom2") > 0) {
     setTimeout(function() { window.location = "#custom2"; }, 150);
  } else {
-    document.getElementById("custom2").parentElement.parentElement.parentElement.style.display = 'none';
+    setTimeout(function() { document.getElementById("custom2").parentElement.parentElement.parentElement.style.display = 'none'; }, 0);
  }
 
  document.getElementById("users2").oninput = function() {
