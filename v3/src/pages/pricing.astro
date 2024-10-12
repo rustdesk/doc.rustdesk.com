@@ -300,10 +300,9 @@ const metadata = {
  }
 
  if (window.location.href.indexOf("custom2") > 0) {
-    document.getElementById("custom2").style.display = 'block';
     setTimeout(function() { window.location = "#custom2"; }, 150);
  } else {
-    document.getElementById("custom2").style.display = 'none';
+    document.getElementById("custom2").parentElement.parentElement.parentElement.style.display = 'none';
  }
 
  document.getElementById("users2").oninput = function() {
@@ -356,7 +355,7 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title">Contact us for bigger plans & help</Fragment>
+    <Fragment slot="title">Contact us for larger plans & inquiries</Fragment>
   </CallToAction>
 
   <!-- Features3 Widget ************** -->
