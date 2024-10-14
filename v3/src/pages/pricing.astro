@@ -13,6 +13,7 @@ const metadata = {
 
 <script>
   import Swal from 'sweetalert2';
+  import 'sweetalert2/dist/sweetalert2.min.css';
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: 'Please Confirm',
@@ -389,7 +390,8 @@ const metadata = {
       {
         title: 'Ready!',
         icon: 'tabler:check',
-        description: 'For detailed instructions, please refer to our <a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/">documentation</a>.',
+        description:
+          'For detailed instructions, please refer to our <a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/">documentation</a>.',
       },
     ]}
     image={{
