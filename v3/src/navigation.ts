@@ -7,7 +7,7 @@ export const headerData = {
       links: [
         {
           text: 'About us',
-          href: getPermalink('/about'),
+          href: getPermalink('/team'),
         },
         {
           text: 'Support',
@@ -40,7 +40,7 @@ export const headerData = {
       href: getPermalink('/blog'),
     },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  actions: [{ text: 'Download', href: 'https://github.com/rustdesk/rustdesk/releases/latest', target: '_blank' }],
 };
 
 export const footerData = {
