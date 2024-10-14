@@ -9,6 +9,8 @@
  ln -s team/index.html team.html
  ln -s careers/index.html careers.html
  ln -s open-source/index.html open-source.html
+ ln -s ../v2/self-host
+ ln -s ../v2/web
  cp -rf ../zh ./
  tar czf x *
  scp x ot:/tmp/
