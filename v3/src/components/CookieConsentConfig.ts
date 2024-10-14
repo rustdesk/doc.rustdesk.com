@@ -25,6 +25,7 @@ export const config: CookieConsentConfig = {
             '<a href="https://marketingplatform.google.com/about/analytics/terms/us/" target="_blank">Google Analytics 4 (dummy)</a>',
           onAccept: () => {
             // TODO: load ga4
+            localStorage.setItem('cookie-accepted', 'true');
           },
           onReject: () => {
             console.log('ga4 rejected');

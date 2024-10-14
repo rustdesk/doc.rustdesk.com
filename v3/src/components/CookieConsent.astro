@@ -12,8 +12,6 @@ import '../assets/styles/ccElegantBlack.css';
   document.body.classList.add('cc--elegant-black');
 
   function checkCookieConsent() {
-    // this cookie consent use cookie to store the consent status, but our webiste v2 use localStorage
-    // this is used to compliant with v2
     const consentStatus = localStorage.getItem('cookie-accepted');
     return consentStatus === 'true';
   }
