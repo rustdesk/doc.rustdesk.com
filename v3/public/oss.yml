@@ -6,7 +6,6 @@ services:
     volumes:
       - ./data:/root
     network_mode: "host"
-
     depends_on:
       - hbbr
     restart: unless-stopped
