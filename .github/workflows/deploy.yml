@@ -14,7 +14,7 @@ jobs:
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.135.0'
 
       - name: Add SSH key to agent
         run: |
