@@ -318,7 +318,20 @@ Gravar automaticamente sessões recebidas.
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
-| N | Y, N | N | `allow-auto-record-incoming=N` |
+| N | Y, N | N | `allow-auto-record-incoming=Y` |
+
+### allow-auto-record-outgoing
+
+Grave automaticamente sessões de saída.
+
+**Localização**:
+
+1. **Desktop**: Configurações → Geral → Gravação → Grave automaticamente sessões de saída
+2. **Mobile**: Configurações → Gravação → Grave automaticamente sessões de saída
+
+| Instalação necessária | Valores | Padrão | Exemplo | Versão |
+| :------: | :------: | :------: | :------: | :------: |
+| N | Y, N | N | `allow-auto-record-outgoing=Y` | >= 1.3.2 |
 
 ### video-save-directory
 
