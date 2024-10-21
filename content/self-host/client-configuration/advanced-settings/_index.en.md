@@ -318,7 +318,20 @@ Automatically record incoming sessions.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y, N | N | `allow-auto-record-incoming=N` |
+| N | Y, N | N | `allow-auto-record-incoming=Y` |
+
+### allow-auto-record-outgoing
+
+Automatically record outgoing sessions.
+
+**Location**:
+
+1. **Desktop** Settings → General → Recording → Automatically record outgoing sessions
+2. **Mobile** Settings → Recording → Automatically record outgoing sessions
+
+| Install required | Values | Default | Example | Version |
+| :------: | :------: | :------: | :------: | :------: |
+| N | Y, N | N | `allow-auto-record-outgoing=Y` | >= 1.3.2 |
 
 ### video-save-directory
 
