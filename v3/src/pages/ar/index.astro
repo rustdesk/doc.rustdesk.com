@@ -1,0 +1,240 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Carousel from '~/components/widgets/Carousel.jsx';
+import Note from '~/components/widgets/Note.astro';
+
+const metadata = {
+  title: 'رست ديسك: سطح المكتب البعيد مفتوح المصدر مع حلول الخادم المستضاف ذاتيًا',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata} i18n>
+  <Note
+    title="ملاحظة"
+    subtitle='<span class="text-2xl text-font-bold">rustdesk.com</span> هو نطاقنا الرسمي الوحيد. يرجى عدم تنزيل رست ديسك من النطاقات الأخرى.'
+  />
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'تحميل',
+        href: 'https://rustdesk.com/download',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: 'الاستضافة الذاتية', href: 'https://rustdesk.com/docs/en/self-host/', target: '_blank', icon: 'tabler:book' },
+    ]}
+  >
+    <Fragment slot="title">برنامج الوصول والدعم عن بُعد مفتوح المصدر السريع</Fragment>
+
+    <Fragment slot="subtitle">
+      انتقل من تيم فيور وأني ديسك وسبلاش توب إلى رست ديسك لتجربة سطح مكتب بعيد آمنة وموثوقة
+      مع خوادمك المستضافة ذاتيًا.
+    </Fragment>
+    <Fragment slot="content">
+      <br /><br />
+      <Carousel
+        client:load
+        list={[
+          { src: '/remote.jpg', className: 'rounded-[15px] border border-gray-700' },
+          { src: '/main.png', className: 'rounded-[15px] border border-gray-700' },
+          { src: '/console.png', className: 'rounded-[15px] border border-gray-700' },
+          { src: '/custom.png', className: 'rounded-[15px] border border-gray-700' },
+        ]}
+      />
+    </Fragment>
+  </Hero>
+
+  <Content
+    isReversed
+    tagline="داخل الاستضافة الذاتية"
+    title="قم بتمكين وصولك عن بُعد باستخدام الخوادم المستضافة ذاتيًا"
+    items={[
+      {
+        title: 'سيادة البيانات',
+        description: 'الامتثال التنظيمي أصبح سهلاً: رست ديسك المستضاف ذاتيًا يضمن سيادة البيانات.',
+      },
+      {
+        title: 'أمان معزز',
+        description: 'قم بتعزيز أمانك: النشر في الموقع يبقي بياناتك تحت سيطرتك.',
+      },
+      {
+        title: 'الأداء والموثوقية',
+        description: 'وقت تشغيل مضمون: النشر في الموقع يضمن الأداء الأمثل والحد الأدنى من وقت التوقف.',
+      },
+      {
+        title: 'المرونة والتخصيص',
+        description: 'قم بتخصيص رست ديسك في الموقع ليناسب متطلباتك الفريدة.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hosting.jpg',
+      alt: 'صورة الاستضافة',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">لماذا الاستضافة الذاتية؟</h3>
+      هل أنت محبط من منصات البرمجيات كخدمة بسبب أدائها غير المستقر، وعدم الشفافية، ومخاطر أمن البيانات غير المؤكدة؟
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'علامتك التجارية، بطريقتك',
+        description: 'قم بتخصيص عميل رست ديسك باسمك وأيقونتك وشعارك.',
+      },
+      {
+        title: 'نشر سهل',
+        description: 'تكوين الشبكة المدمج وإعداد الخادم يجعل نشر رست ديسك في الموقع أمرًا سهلاً.',
+      },
+      {
+        title: 'خيارات تكوين متقدمة',
+        description: 'يمكن تكوين أكثر من 90 خيارًا لتلبية احتياجاتك المحددة.',
+      },
+      {
+        title: 'دعم متعدد المنصات',
+        description: 'ويندوز، ماك أو إس، لينكس، أندرويد.',
+      },
+      {
+        title: 'عميل الويب',
+        description: 'استضف عميل الويب على خادمك باسم النطاق الخاص بك لجعل الوصول عن بُعد أسهل.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/qs.png',
+      alt: 'صورة الدعم السريع',
+      class: 'bg-transparent',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">عميل مخصص</h3>
+      قم بتخصيص عميلك بعلامتك التجارية واجعله خاصًا بك حقًا.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    isReversed
+    title="تثبيت الاستضافة الذاتية البسيط"
+    items={[
+      {
+        title: 'الخطوة 1: تثبيت دوكر',
+        description: '<code class="text-gray-600 dark:text-gray-500">bash <(wget -qO- https://get.docker.com)</code>',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'الخطوة 2: تنزيل compose.yml',
+        description: `<code class="text-gray-600 dark:text-gray-500">wget rustdesk.com/oss.yml -O compose.yml</code>
+          <p class="text-center text-sm">أو</p>
+          <code class="text-gray-600 dark:text-gray-500">wget rustdesk.com/pro.yml -O compose.yml</code>`,
+        icon: 'tabler:download',
+      },
+      {
+        title: 'الخطوة 3: التركيب',
+        description: '<code class="text-gray-600 dark:text-gray-500">docker compose up -d</code>',
+        icon: 'tabler:hammer',
+      },
+      {
+        title: 'جاهز!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/steps.jpg',
+      alt: 'صورة الخطوات',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps>
+
+  <Stats
+    tagline="السيناريوهات"
+    title="من يستخدم الاستضافة الذاتية؟"
+    subtitle="البيانات أدناه مأخوذة من استطلاعنا عبر الإنترنت الذي شمل أكثر من 1000 مستخدم للاستضافة الذاتية."
+    stats={[
+      { title: 'دعم تكنولوجيا المعلومات', amount: '37%' },
+      { title: 'إدارة تكنولوجيا المعلومات', amount: '25%' },
+      { title: 'العمل عن بُعد', amount: '29%' },
+      { title: 'الصناعة وغيرها', amount: '9%' },
+    ]}
+  />
+
+  <BlogLatestPosts title="اكتشف المزيد من المحتوى في مدونتنا" />
+
+  <Stats
+    tagline="مفتوح المصدر"
+    title="تم بناؤه علنًا مع مجتمع نابض بالحياة"
+    subtitle="انضم إلى حل مدفوع بالمجتمع تم تنزيله ملايين المرات ويستخدمه آلاف المنظمات."
+    stats={[
+      { title: 'تنزيلات العميل', amount: '+10 مليون' },
+      { title: 'تنزيلات دوكر', amount: '+1 مليون' },
+      { title: 'الأجهزة النشطة', amount: '+3 مليون' },
+      { title: 'النجوم', amount: '+74 ألف' },
+      { title: 'التفرعات', amount: '+9 آلاف' },
+      { title: 'أعضاء المجتمع', amount: '+22 ألف' },
+      { title: 'اللغات', amount: '45' },
+    ]}
+  />
+
+  <Hero
+    actions={[
+      {
+        text: 'جيت هب',
+        href: 'https://github.com/rustdesk/rustdesk/discussions',
+        target: '_blank',
+        icon: 'tabler:message-circle',
+      },
+      {
+        text: 'ديسكورد',
+        href: 'https://discord.gg/nDceKgxnkV',
+        target: '_blank',
+        icon: 'tabler:message-circle',
+      },
+      {
+        text: 'ريديت',
+        href: 'https://www.reddit.com/r/rustdesk/',
+        target: '_blank',
+        icon: 'tabler:message-circle',
+      },
+    ]}
+  >
+    <Fragment slot="title">انضم إلى المجتمع</Fragment>
+
+    <Fragment slot="subtitle">اكتشف ما يقوله مجتمعنا عن تجربتهم مع رست ديسك.</Fragment>
+  </Hero>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'تحميل',
+        href: 'https://rustdesk.com/download',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: 'الاستضافة الذاتية', href: 'https://rustdesk.com/docs/en/self-host/', target: '_blank', icon: 'tabler:book' },
+    ]}
+  >
+    <Fragment slot="title">جرب رست ديسك بنفسك</Fragment>
+  </CallToAction>
+</Layout>

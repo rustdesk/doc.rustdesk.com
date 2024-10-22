@@ -1,0 +1,55 @@
+{
+  "consentModal": {
+    "label": "موافقة ملفات تعريف الارتباط",
+    "title": "مرحبًا أيها المسافر، حان وقت ملفات تعريف الارتباط!",
+    "description": "يستخدم موقعنا ملفات تعريف ارتباط أساسية لضمان التشغيل السليم وملفات تعريف ارتباط للتتبع لفهم كيفية تفاعلك معه. سيتم تعيين الأخيرة فقط بعد الموافقة. <button type=\"button\" data-cc=\"show-preferencesModal\" class=\"cc__link\">إدارة التفضيلات</button>",
+    "acceptAllBtn": "قبول الكل",
+    "acceptNecessaryBtn": "رفض الكل",
+    "showPreferencesBtn": "إدارة التفضيلات"
+  },
+  "preferencesModal": {
+    "title": "تفضيلات ملفات تعريف الارتباط",
+    "acceptAllBtn": "قبول الكل",
+    "acceptNecessaryBtn": "رفض الكل",
+    "savePreferencesBtn": "حفظ التفضيلات",
+    "closeIconLabel": "إغلاق",
+    "sections": [
+      {
+        "title": "استخدام ملفات تعريف الارتباط",
+        "description": "نحن نستخدم ملفات تعريف الارتباط لضمان الوظائف الأساسية للموقع ولتحسين تجربتك عبر الإنترنت ..."
+      },
+      {
+        "title": "ملفات تعريف الارتباط الضرورية للغاية",
+        "description": "هذه الملفات ضرورية للتشغيل السليم لموقعي. بدون هذه الملفات، لن يعمل الموقع بشكل صحيح",
+        "linkedCategory": "necessary"
+      },
+      {
+        "title": "ملفات تعريف الارتباط الخاصة بالأداء والتحليلات",
+        "description": "تسمح هذه الملفات للموقع بتذكر الاختيارات التي قمت بها في الماضي",
+        "linkedCategory": "analytics",
+        "cookieTable": {
+          "headers": {
+            "name": "الاسم",
+            "domain": "الخدمة",
+            "description": "الوصف",
+            "expiration": "انتهاء الصلاحية"
+          },
+          "body": [
+            {
+              "name": "_ga",
+              "domain": "Google Analytics",
+              "description": "ملف تعريف ارتباط تم تعيينه بواسطة <a href=\"#das\">Google Analytics</a>.",
+              "expiration": "تنتهي صلاحيته بعد 12 يومًا"
+            },
+            {
+              "name": "_gid",
+              "domain": "Google Analytics",
+              "description": "ملف تعريف ارتباط تم تعيينه بواسطة <a href=\"#das\">Google Analytics</a>",
+              "expiration": "الجلسة"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -23,6 +23,9 @@ export const LOCALES_SETTING: LocaleSetting = {
   "ja": {
     "label": "日本語"
   },
+  "ko": {
+    "label": "한국어"
+  },
   "pt": {
     "label": "Português"
   },
@@ -34,12 +37,10 @@ export const LOCALES_SETTING: LocaleSetting = {
     "label": "繁體中文",
     "lang": "zh-TW"
   },
-  /*
   "ar": {
     "label": "العربية",
     "dir": "rtl"
   },
-  */
 };
 
 interface LocaleSetting {

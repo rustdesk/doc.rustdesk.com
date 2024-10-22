@@ -16,6 +16,8 @@ export const headerData = (locale?: Lang) => {
           pt: 'Recursos',
           'zh-cn': '资源',
           'zh-tw': '資源',
+          ar: 'موارد',
+          ko: '자원',
         }),
         links: [
           {
@@ -29,6 +31,8 @@ export const headerData = (locale?: Lang) => {
               pt: 'Sobre nós',
               'zh-cn': '关于我们',
               'zh-tw': '關於我們',
+              ar: 'من نحن',
+              ko: '우리에 대해',
             }),
             href: getPermalink(getLocalPath(locale || '', '/team')),
           },
@@ -43,6 +47,8 @@ export const headerData = (locale?: Lang) => {
               pt: 'Suporte',
               'zh-cn': '支持',
               'zh-tw': '支持',
+              ar: 'الدعم',
+              ko: '지원',
             }),
             href: getPermalink(getLocalPath(locale || '', '/support')),
           },
@@ -57,6 +63,8 @@ export const headerData = (locale?: Lang) => {
               pt: 'Cliente Web',
               'zh-cn': 'Web客户端',
               'zh-tw': 'Web客戶端',
+              ar: 'عميل الويب',
+              ko: '웹 클라이언트',
             }),
             href: getPermalink('/web'),
           },
@@ -71,6 +79,8 @@ export const headerData = (locale?: Lang) => {
               pt: 'Portal de licença Pro',
               'zh-cn': '专业许可证门户',
               'zh-tw': '專業許可證門戶',
+              ar: 'بوابة ترخيص Pro',
+              ko: 'Pro 라이선스 포털',
             }),
             href: getPermalink('/self-host/account'),
           },
@@ -91,6 +101,8 @@ export const headerData = (locale?: Lang) => {
           pt: 'Preços',
           'zh-cn': '定价',
           'zh-tw': '定價',
+          ar: 'التسعير',
+          ko: '가격',
         }),
         href: getPermalink(getLocalPath(locale || '', '/pricing')),
       },
@@ -105,6 +117,8 @@ export const headerData = (locale?: Lang) => {
           pt: 'Documentação',
           'zh-cn': '文档',
           'zh-tw': '文件',
+          ar: 'وثائق',
+          ko: '문서',
         }),
         href: getPermalink('/docs'),
       },
@@ -114,6 +128,8 @@ export const headerData = (locale?: Lang) => {
           ja: 'ブログ',
           'zh-cn': '博客',
           'zh-tw': '博客',
+          ar: 'مدونة',
+          ko: '블로그',
         }),
         href: getPermalink('/blog'),
       },
@@ -129,6 +145,8 @@ export const headerData = (locale?: Lang) => {
         pt: 'Baixar',
         'zh-cn': '下载',
         'zh-tw': '下載',
+        ar: 'تحميل',
+        ko: '다운로드',
       })
       , href: 'https://github.com/rustdesk/rustdesk/releases/latest', target: '_blank'
     }],
@@ -152,6 +170,8 @@ export const footerData = (locale?: Lang) => {
           pt: 'Comunidade',
           'zh-cn': '社区',
           'zh-tw': '社區',
+          ar: 'مجتمع',
+          ko: '커뮤니티',
         }),
         links: [
           { text: 'X', href: 'https://twitter.com/rustdesk' },
@@ -171,6 +191,8 @@ export const footerData = (locale?: Lang) => {
           pt: 'Baixar',
           'zh-cn': '下载',
           'zh-tw': '下載',
+          ar: 'تحميل',
+          kernel: '다운로드',
         }),
         links: [
           {
@@ -184,6 +206,8 @@ export const footerData = (locale?: Lang) => {
               pt: 'Cliente RustDesk',
               'zh-cn': 'RustDesk客户端',
               'zh-tw': 'RustDesk客戶端',
+              ar: 'عميل RustDesk',
+              ko: 'RustDesk 클라이언트',
             })
             , href: 'https://github.com/rustdesk/rustdesk/releases/latest'
           },
@@ -204,6 +228,8 @@ export const footerData = (locale?: Lang) => {
           pt: 'Termos',
           'zh-cn': '条款',
           'zh-tw': '條款',
+          ar: 'شروط',
+          ko: '약관',
         })
         , href: getPermalink('/terms')
       },
@@ -218,6 +244,8 @@ export const footerData = (locale?: Lang) => {
           pt: 'Política de Privacidade',
           'zh-cn': '隐私政策',
           'zh-tw': '隱私政策',
+          ar: 'سياسة الخصوصية',
+          ko: '개인정보 처리방침',
         })
         , href: getPermalink('/privacy')
       },

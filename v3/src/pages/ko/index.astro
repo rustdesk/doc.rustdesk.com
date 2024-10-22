@@ -1,0 +1,239 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Carousel from '~/components/widgets/Carousel.jsx';
+import Note from '~/components/widgets/Note.astro';
+
+const metadata = {
+  title: 'RustDesk: 오픈 소스 원격 데스크탑 및 자체 호스팅 서버 솔루션',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata} i18n>
+  <Note
+    title="알림"
+    subtitle='<span class="text-2xl text-font-bold">rustdesk.com</span>은 우리의 유일한 공식 도메인입니다. 다른 도메인에서 RustDesk를 다운로드하지 마십시오.'
+  />
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: '다운로드',
+        href: 'https://rustdesk.com/download',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: '자체 호스팅', href: 'https://rustdesk.com/docs/en/self-host/', target: '_blank', icon: 'tabler:book' },
+    ]}
+  >
+    <Fragment slot="title"> 빠른 오픈 소스 원격 액세스 및 지원 소프트웨어 </Fragment>
+
+    <Fragment slot="subtitle">
+      TeamViewer, AnyDesk 및 Splashtop에서 RustDesk로 전환하여 안전하고 신뢰할 수 있는 원격 데스크탑 경험을 제공하며, 자체 호스팅 서버를 사용하세요.
+    </Fragment>
+    <Fragment slot="content">
+      <br /><br />
+      <Carousel
+        client:load
+        list={[
+          { src: '/remote.jpg', className: 'rounded-[15px] border border-gray-700' },
+          { src: '/main.png', className: 'rounded-[15px] border border-gray-700' },
+          { src: '/console.png', className: 'rounded-[15px] border border-gray-700' },
+          { src: '/custom.png', className: 'rounded-[15px] border border-gray-700' },
+        ]}
+      />
+    </Fragment>
+  </Hero>
+
+  <Content
+    isReversed
+    tagline="자체 호스팅 내부"
+    title="자체 호스팅 서버로 원격 액세스를 강화하세요"
+    items={[
+      {
+        title: '데이터 주권',
+        description: '규제 준수가 쉬워집니다: 자체 호스팅 RustDesk는 데이터 주권을 보장합니다.',
+      },
+      {
+        title: '강화된 보안',
+        description: '보안을 강화하세요: 온프레미스 배포는 데이터를 제어할 수 있도록 합니다.',
+      },
+      {
+        title: '성능 및 신뢰성',
+        description: '보장된 가동 시간: 온프레미스 배포는 최적의 성능과 최소한의 다운타임을 보장합니다.',
+      },
+      {
+        title: '유연성 및 사용자 정의',
+        description: 'RustDesk 온프레미스를 귀하의 고유한 요구 사항에 맞게 조정하세요.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hosting.jpg',
+      alt: '호스팅 이미지',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">왜 자체 호스팅인가요?</h3>
+      SaaS 플랫폼의 불안정한 성능, 투명성 부족 및 불확실한 데이터 보안 위험에 불만이 있으신가요?
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: '당신의 브랜드, 당신의 방식',
+        description: `RustDesk 클라이언트를 귀하의 이름, 아이콘, 로고로 개인화하세요.`,
+      },
+      {
+        title: '쉬운 배포',
+        description: `내장된 네트워크 구성 및 서버 설정으로 RustDesk를 온프레미스에서 쉽게 배포할 수 있습니다.`,
+      },
+      {
+        title: '고급 구성 옵션',
+        description: '90개 이상의 옵션을 구성하여 귀하의 특정 요구 사항을 충족할 수 있습니다.',
+      },
+      {
+        title: '다중 플랫폼 지원',
+        description: 'Windows, macOS, Linux, Android.',
+      },
+      {
+        title: '웹 클라이언트',
+        description: '귀하의 도메인 이름으로 서버에서 웹 클라이언트를 호스팅하여 원격 액세스를 더욱 쉽게 만드세요.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/qs.png',
+      alt: 'QuickSupport 이미지',
+      class: 'bg-transparent',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">맞춤 클라이언트</h3>
+      귀하의 브랜드로 클라이언트를 사용자 정의하여 진정으로 귀하의 것으로 만드세요.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    isReversed
+    title="간단한 자체 호스팅 설치"
+    items={[
+      {
+        title: '1단계: Docker 설치',
+        description: '<code class="text-gray-600 dark:text-gray-500">bash <(wget -qO- https://get.docker.com)</code>',
+        icon: 'tabler:package',
+      },
+      {
+        title: '2단계: compose.yml 다운로드',
+        description: `<code class="text-gray-600 dark:text-gray-500">wget rustdesk.com/oss.yml -O compose.yml</code>
+          <p class="text-center text-sm">또는</p>
+          <code class="text-gray-600 dark:text-gray-500">wget rustdesk.com/pro.yml -O compose.yml</code>`,
+        icon: 'tabler:download',
+      },
+      {
+        title: `3단계: Compose`,
+        description: '<code class="text-gray-600 dark:text-gray-500">docker compose up -d</code>',
+        icon: 'tabler:hammer',
+      },
+      {
+        title: '준비 완료!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/steps.jpg',
+      alt: '단계 이미지',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps>
+
+  <Stats
+    tagline="시나리오"
+    title="누가 자체 호스팅을 사용하고 있나요?"
+    subtitle="아래 데이터는 1,000명 이상의 자체 호스팅 사용자에 대한 온라인 설문조사에서 수집되었습니다."
+    stats={[
+      { title: 'IT 지원', amount: '37%' },
+      { title: 'IT 관리', amount: '25%' },
+      { title: '원격 근무', amount: '29%' },
+      { title: '산업 및 기타', amount: '9%' },
+    ]}
+  />
+
+  <BlogLatestPosts title="블로그에서 더 많은 콘텐츠를 확인하세요" />
+
+  <Stats
+    tagline="오픈 소스"
+    title="공개적으로 구축된 활기찬 커뮤니티"
+    subtitle="수백만 번의 다운로드와 수천 개의 조직에서 사용되는 커뮤니티 주도 솔루션에 참여하세요."
+    stats={[
+      { title: '클라이언트 다운로드', amount: '10M+' },
+      { title: 'Docker 다운로드', amount: '1M+' },
+      { title: '활성 장치', amount: '3M+' },
+      { title: '스타', amount: '74K+' },
+      { title: '포크', amount: '9K+' },
+      { title: '커뮤니티 회원', amount: '22K+' },
+      { title: '언어', amount: '45' },
+    ]}
+  />
+
+  <Hero
+    actions={[
+      {
+        text: 'GitHub',
+        href: 'https://github.com/rustdesk/rustdesk/discussions',
+        target: '_blank',
+        icon: 'tabler:message-circle',
+      },
+      {
+        text: 'Discord',
+        href: 'https://discord.gg/nDceKgxnkV',
+        target: '_blank',
+        icon: 'tabler:message-circle',
+      },
+      {
+        text: 'Reddit',
+        href: 'https://www.reddit.com/r/rustdesk/',
+        target: '_blank',
+        icon: 'tabler:message-circle',
+      },
+    ]}
+  >
+    <Fragment slot="title"> 커뮤니티에 참여하세요 </Fragment>
+
+    <Fragment slot="subtitle"> 커뮤니티가 RustDesk 경험에 대해 이야기하는 내용을 확인하세요. </Fragment>
+  </Hero>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: '다운로드',
+        href: 'https://rustdesk.com/download',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: '자체 호스팅', href: 'https://rustdesk.com/docs/en/self-host/', target: '_blank', icon: 'tabler:book' },
+    ]}
+  >
+    <Fragment slot="title"> RustDesk를 직접 경험해 보세요 </Fragment>
+  </CallToAction>
+</Layout>

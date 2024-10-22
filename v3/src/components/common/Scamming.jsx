@@ -109,6 +109,24 @@ const ScammingBanner = ({ lang }) => {
               Probabilmente sono truffatori che cercano di rubarti i soldi o
             </>
           ),
+          ko: (
+            <>
+              경고: 사기당하고 있을 수 있습니다! <br />
+              RustDesk를 설치하라고 요청한 사람과 전화 중이고, 그 사람을 모르고 믿을 수 없다면,
+              <br />
+              설치하지 말고 즉시 전화를 끊으십시오. <br />
+              그들은 아마도 돈이나 다른 개인 정보를 훔치려는 사기꾼일 가능성이 높습니다.
+            </>
+          ),
+          ar: (
+            <>
+              تحذير: قد تكون ضحية احتيال! <br />
+              إذا كنت تتحدث عبر الهاتف مع شخص لا تعرفه وطلب منك تثبيت RustDesk،
+              <br />
+              لا تقم بالتثبيت واغلق المكالمة فوراً. <br />
+              من المحتمل أنهم محتالون يحاولون سرقة أموالك.
+            </>
+          ),
         })}
       </span>
       <button className="bg-none border-none text-lg cursor-pointer mr-4" onClick={handleClose}>
