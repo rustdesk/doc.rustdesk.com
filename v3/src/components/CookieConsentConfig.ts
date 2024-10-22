@@ -1,4 +1,13 @@
 import type { CookieConsentConfig } from 'vanilla-cookieconsent';
+import en from './cookie/en.json';
+import de from './cookie/de.json';
+import es from './cookie/es.json';
+import fr from './cookie/fr.json';
+import pt from './cookie/pt.json';
+import it from './cookie/pt.json';
+import ja from './cookie/pt.json';
+import zhCN from './cookie/zh-CN.json';
+import zhTW from './cookie/zh-TW.json';
 
 export const config: CookieConsentConfig = {
   guiOptions: {
@@ -46,57 +55,7 @@ export const config: CookieConsentConfig = {
     default: 'en',
     autoDetect: 'browser',
     translations: {
-      en: {
-        consentModal: {
-          title: "Hello traveller, it's cookie time!",
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
-          acceptAllBtn: 'Accept all',
-          acceptNecessaryBtn: 'Reject all',
-          showPreferencesBtn: 'Manage preferences',
-          footer:
-            '<a href="/privacy">Privacy Policy</a>\n<a href="/term">Terms and conditions</a>',
-        },
-        preferencesModal: {
-          title: 'Consent Preferences Center',
-          acceptAllBtn: 'Accept all',
-          acceptNecessaryBtn: 'Reject all',
-          savePreferencesBtn: 'Save preferences',
-          closeIconLabel: 'Close modal',
-          serviceCounterLabel: 'Service|Services',
-          sections: [
-            {
-              title: 'Cookie Usage',
-              description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            },
-            {
-              title:
-                'Strictly Necessary Cookies <span class="pm__badge">Always Enabled</span>',
-              description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-              linkedCategory: 'necessary',
-            },
-            {
-              title: 'Functionality Cookies',
-              description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-              linkedCategory: 'functionality',
-            },
-            {
-              title: 'Analytics Cookies',
-              description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-              linkedCategory: 'analytics',
-            },
-            {
-              title: 'More information',
-              description:
-                'For any query in relation to my policy on cookies and your choices, please <a class="cc__link" href="#yourdomain.com">contact me</a>.',
-            },
-          ],
-        },
-      },
+      en, de, es, fr, ja, pt, it, 'zh-CN': zhCN, 'zh-TW': zhTW,
     },
   },
 };

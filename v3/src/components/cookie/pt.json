@@ -1,0 +1,55 @@
+{
+  "consentModal": {
+    "label": "Consentimento de Cookies",
+    "title": "Olá viajante, é hora dos cookies!",
+    "description": "Nosso site usa cookies essenciais para garantir seu funcionamento adequado e cookies de rastreamento para entender como você interage com ele. Estes últimos só serão definidos após o consentimento. <button type=\"button\" data-cc=\"show-preferencesModal\" class=\"cc__link\">Gerenciar preferências</button>",
+    "acceptAllBtn": "Aceitar todos",
+    "acceptNecessaryBtn": "Rejeitar todos",
+    "showPreferencesBtn": "Gerenciar preferências"
+  },
+  "preferencesModal": {
+    "title": "Preferências de cookies",
+    "acceptAllBtn": "Aceitar todos",
+    "acceptNecessaryBtn": "Rejeitar todos",
+    "savePreferencesBtn": "Salvar preferências",
+    "closeIconLabel": "Fechar",
+    "sections": [
+      {
+        "title": "Uso de cookies",
+        "description": "Usamos cookies para garantir as funcionalidades básicas do site e para melhorar sua experiência online ..."
+      },
+      {
+        "title": "Cookies estritamente necessários",
+        "description": "Esses cookies são essenciais para o funcionamento adequado do nosso site. Sem esses cookies, o site não funcionaria corretamente",
+        "linkedCategory": "necessary"
+      },
+      {
+        "title": "Cookies de desempenho e análise",
+        "description": "Esses cookies permitem que o site lembre as escolhas que você fez no passado",
+        "linkedCategory": "analytics",
+        "cookieTable": {
+          "headers": {
+            "name": "Nome",
+            "domain": "Serviço",
+            "description": "Descrição",
+            "expiration": "Expiração"
+          },
+          "body": [
+            {
+              "name": "_ga",
+              "domain": "Google Analytics",
+              "description": "Cookie definido pelo <a href=\"#das\">Google Analytics</a>.",
+              "expiration": "Expira após 12 dias"
+            },
+            {
+              "name": "_gid",
+              "domain": "Google Analytics",
+              "description": "Cookie definido pelo <a href=\"#das\">Google Analytics</a>",
+              "expiration": "Sessão"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

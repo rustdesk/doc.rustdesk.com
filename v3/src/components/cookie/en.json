@@ -1,0 +1,55 @@
+{
+  "consentModal": {
+    "label": "Cookie Consent",
+    "title": "Hello traveller, it's cookie time!",
+    "description": "Our website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent. <button type=\"button\" data-cc=\"show-preferencesModal\" class=\"cc__link\">Manage preferences</button>",
+    "acceptAllBtn": "Accept all",
+    "acceptNecessaryBtn": "Reject all",
+    "showPreferencesBtn": "Manage preferences"
+  },
+  "preferencesModal": {
+    "title": "Cookie preferences",
+    "acceptAllBtn": "Accept all",
+    "acceptNecessaryBtn": "Reject all",
+    "savePreferencesBtn": "Save preferences",
+    "closeIconLabel": "Close",
+    "sections": [
+      {
+        "title": "Cookie usage",
+        "description": "We use cookies to ensure the basic functionalities of the website and to enhance your online experience ..."
+      },
+      {
+        "title": "Strictly necessary cookies",
+        "description": "These cookies are essential for the proper functioning of my website. Without these cookies, the website would not work properly",
+        "linkedCategory": "necessary"
+      },
+      {
+        "title": "Performance and Analytics cookies",
+        "description": "These cookies allow the website to remember the choices you have made in the past",
+        "linkedCategory": "analytics",
+        "cookieTable": {
+          "headers": {
+            "name": "Name",
+            "domain": "Service",
+            "description": "Description",
+            "expiration": "Expiration"
+          },
+          "body": [
+            {
+              "name": "_ga",
+              "domain": "Google Analytics",
+              "description": "Cookie set by <a href=\"#das\">Google Analytics</a>.",
+              "expiration": "Expires after 12 days"
+            },
+            {
+              "name": "_gid",
+              "domain": "Google Analytics",
+              "description": "Cookie set by <a href=\"#das\">Google Analytics</a>",
+              "expiration": "Session"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

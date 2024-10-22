@@ -44,7 +44,7 @@ metadata.description = t({
   ja: "RustDeskは、セルフホスト型サーバーオプションを備えたオープンソースのリモートデスクトップソリューションを提供しています。安全でプライベート、カスタマイズ可能なリモートアクセスのための完璧なTeamViewerの代替です。プロフェッショナルなオンプレミスライセンスをご覧ください。",
   "zh-cn": "RustDesk提供了一个开源的远程桌面解决方案，具有自托管服务器选项。是安全、私密和可定制的远程访问的完美TeamViewer替代品。探索我们的专业本地许可证。",
   "zh-tw": "RustDesk 提供了一個開源的遠程桌面解決方案，具有自托管伺服器選項。是安全、私密和可定制的遠程訪問的完美 TeamViewer 替代品。探索我們的專業本地許可證。",
-  });
+  }) as string;
 ---
 
 <!doctype html>
@@ -98,7 +98,7 @@ metadata.description = t({
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
-    <Scamming client:load />
+    <Scamming lang={Astro.currentLocale as Lang} client:load />
     <slot />
 
     <BasicScripts />
