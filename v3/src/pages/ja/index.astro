@@ -1,0 +1,239 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Carousel from '~/components/widgets/Carousel.jsx';
+import Note from '~/components/widgets/Note.astro';
+
+const metadata = {
+  title: 'RustDesk: オープンソースのリモートデスクトップ - セルフホスティングサーバーソリューション',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata} i18n>
+  <Note
+    title="注意"
+    subtitle='<span class="text-2xl text-font-bold">rustdesk.com</span>が唯一の公式ドメインです。他のドメインからRustDeskをダウンロードしないでください。'
+  />
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'ダウンロード',
+        href: 'https://rustdesk.com/download',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: 'セルフホスティング', href: 'https://rustdesk.com/docs/en/self-host/', target: '_blank', icon: 'tabler:book' },
+    ]}
+  >
+    <Fragment slot="title">高速オープンソースのリモートアクセスおよびサポートソフトウェア</Fragment>
+
+    <Fragment slot="subtitle">
+      TeamViewer、AnyDesk、Splashtopから、自身のセルフホストサーバーを使用した安全で信頼性の高いリモートデスクトップ体験のRustDeskに切り替えましょう。
+    </Fragment>
+    <Fragment slot="content">
+      <br /><br />
+      <Carousel
+        client:load
+        list={[
+          { src: '/remote.jpg', className: 'rounded-[15px] border border-gray-700' },
+          { src: '/main.png', className: 'rounded-[15px] border border-gray-700' },
+          { src: '/console.png', className: 'rounded-[15px] border border-gray-700' },
+          { src: '/custom.png', className: 'rounded-[15px] border border-gray-700' },
+        ]}
+      />
+    </Fragment>
+  </Hero>
+
+  <Content
+    isReversed
+    tagline="セルフホスティングについての洞察"
+    title="セルフホストサーバーでリモートアクセスを強化"
+    items={[
+      {
+        title: 'データ主権',
+        description: '規制遵守が容易に：セルフホストのRustDeskがデータ主権を確保します。',
+      },
+      {
+        title: '強化されたセキュリティ',
+        description: 'セキュリティを強化：オンプレミス展開によりデータを自身の管理下に置きます。',
+      },
+      {
+        title: 'パフォーマンスと信頼性',
+        description: '稼働時間保証：オンプレミス展開により最適なパフォーマンスと最小限のダウンタイムを確保します。',
+      },
+      {
+        title: '柔軟性とカスタマイズ',
+        description: 'RustDeskのオンプレミスを独自の要件に合わせてカスタマイズします。',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hosting.jpg',
+      alt: 'ホスティングイメージ',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">なぜセルフホスティングなのか？</h3>
+      不安定なパフォーマンス、透明性の欠如、不確実なデータセキュリティリスクのためにSaaSプラットフォームに不満を感じていませんか？
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'あなたのブランド、あなたのやり方',
+        description: `RustDeskクライアントを自分の名前、アイコン、ロゴでパーソナライズします。`,
+      },
+      {
+        title: '簡単な展開',
+        description: `内蔵のネットワーク設定とサーバーセットアップにより、RustDeskのオンプレミス展開が容易になります。`,
+      },
+      {
+        title: '高度な設定オプション',
+        description: '90以上のオプションを特定のニーズに合わせて設定できます。',
+      },
+      {
+        title: 'マルチプラットフォームサポート',
+        description: 'Windows、macOS、Linux、Android。',
+      },
+      {
+        title: 'Webクライアント',
+        description: '自身のサーバーに自身のドメイン名でWebクライアントをホストし、リモートアクセスをさらに容易にします。',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/qs.png',
+      alt: 'クイックサポートイメージ',
+      class: 'bg-transparent',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">カスタムクライアント</h3>
+      クライアントを自身のブランドでカスタマイズし、真に自分のものにします。
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    isReversed
+    title="簡単なセルフホスティングインストール"
+    items={[
+      {
+        title: 'ステップ1: Dockerのインストール',
+        description: '<code class="text-gray-600 dark:text-gray-500">bash <(wget -qO- https://get.docker.com)</code>',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'ステップ2: compose.ymlのダウンロード',
+        description: `<code class="text-gray-600 dark:text-gray-500">wget rustdesk.com/oss.yml -O compose.yml</code>
+          <p class="text-center text-sm">または</p>
+          <code class="text-gray-600 dark:text-gray-500">wget rustdesk.com/pro.yml -O compose.yml</code>`,
+        icon: 'tabler:download',
+      },
+      {
+        title: `ステップ3: コンポーズ`,
+        description: '<code class="text-gray-600 dark:text-gray-500">docker compose up -d</code>',
+        icon: 'tabler:hammer',
+      },
+      {
+        title: '準備完了！',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/steps.jpg',
+      alt: 'ステップイメージ',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps>
+
+  <Stats
+    tagline="シナリオ"
+    title="誰がセルフホスティングを使用していますか？"
+    subtitle="以下のデータは、1,000人以上のセルフホスティングユーザーを対象としたオンライン調査からのものです。"
+    stats={[
+      { title: 'ITサポート', amount: '37%' },
+      { title: 'IT管理', amount: '25%' },
+      { title: 'リモートワーク', amount: '29%' },
+      { title: '産業およびその他', amount: '9%' },
+    ]}
+  />
+
+  <BlogLatestPosts title="ブログでさらに多くのコンテンツを見つける" />
+
+  <Stats
+    tagline="オープンソース"
+    title="活気あるコミュニティと共に公開で構築"
+    subtitle="何百万ものダウンロード数と何千もの組織で使用されている、コミュニティ主導のソリューションに参加しましょう。"
+    stats={[
+      { title: 'クライアントダウンロード数', amount: '1000万+' },
+      { title: 'Dockerダウンロード数', amount: '100万+' },
+      { title: 'アクティブデバイス', amount: '300万+' },
+      { title: 'スター数', amount: '7.4万+' },
+      { title: 'フォーク数', amount: '9000+' },
+      { title: 'コミュニティメンバー', amount: '2.2万+' },
+      { title: '言語', amount: '45' },
+    ]}
+  />
+
+  <Hero
+    actions={[
+      {
+        text: 'GitHub',
+        href: 'https://github.com/rustdesk/rustdesk/discussions',
+        target: '_blank',
+        icon: 'tabler:message-circle',
+      },
+      {
+        text: 'Discord',
+        href: 'https://discord.gg/nDceKgxnkV',
+        target: '_blank',
+        icon: 'tabler:message-circle',
+      },
+      {
+        text: 'Reddit',
+        href: 'https://www.reddit.com/r/rustdesk/',
+        target: '_blank',
+        icon: 'tabler:message-circle',
+      },
+    ]}
+  >
+    <Fragment slot="title">コミュニティに参加する</Fragment>
+
+    <Fragment slot="subtitle">コミュニティがRustDeskの体験についてどのように語っているかを発見してください。</Fragment>
+  </Hero>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'ダウンロード',
+        href: 'https://rustdesk.com/download',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: 'セルフホスティング', href: 'https://rustdesk.com/docs/en/self-host/', target: '_blank', icon: 'tabler:book' },
+    ]}
+  >
+    <Fragment slot="title">自分でRustDeskを体験してみましょう</Fragment>
+  </CallToAction>
+</Layout>

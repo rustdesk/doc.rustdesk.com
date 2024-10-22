@@ -17,7 +17,7 @@ const metadata = {
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: 'Please Confirm',
-      html: '<p style="text-align:left">Do you want to proceed to the purchase page? <br><br>Please note that what you are purchasing is <b style="font-size: 2em">NOT</b> a <span style="text-decoration:line-through">SaaS(Software as a Service)</span> subscription. <br><br>Instead, it is a license for a <b style="font-size: 2em">self-hosting</b> solution, which requires you to deploy it on your own server (cloud server, e.g. AWS EC2, Azure VM, Vultr VPS etc, or your on-premise server). <br><br>Please <b style="font-size: 2em">don\'t</b> buy if you don\'t know what is self-hosting',
+      html: `<p style="text-align:left">Do you want to proceed to the purchase page? <br><br>Please note that what you are purchasing is <b style="font-size: 2em">NOT</b> a <span style="text-decoration:line-through">SaaS(Software as a Service)</span> subscription. <br><br>Instead, it is a license for a <b style="font-size: 2em">self-hosting</b> solution, which requires you to deploy it on your own server (cloud server, e.g. AWS EC2, Azure VM, Vultr VPS etc, or your on-premise server). <br><br>Please <b style="font-size: 2em">don't</b> buy if you don't know what is self-hosting`,
       icon: 'question',
       showCancelButton: true,
       confirmButtonText: 'Yes',
@@ -26,7 +26,7 @@ const metadata = {
       if (result.isConfirmed) {
         Swal.fire({
           title: 'Please Confirm',
-          html: 'Please note that we <span class="text-3xl font-bold">don\'t</span> offer <span class="text-3xl font-bold">refunds</span>. We strongly recommend <span class="underline font-bold">testing our free self-hosting plan</span> before considering the purchase of our Pro plan. Are you still interested in proceeding?',
+          html: `Please note that we <span class="text-3xl font-bold">don't</span> offer <span class="text-3xl font-bold">refunds</span>. We strongly recommend <span class="underline font-bold">testing our free self-hosting plan</span> before considering the purchase of our Pro plan. Are you still interested in proceeding?`,
           showCancelButton: true,
           confirmButtonText: 'Yes',
           cancelButtonText: 'No',
@@ -40,13 +40,11 @@ const metadata = {
   };
 </script>
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} i18n>
   <Note
     title="Note"
     subtitle='This pricing is for <span class="text-xl text-blue-500">self-hosting</span> solution, it is <span class="text-3xl font-extrabold">NOT</span> a <span class="line-through text-xl text-blue-500">SaaS</span> subscription.'
   />
-
-  <!-- Pricing Widget ******************* -->
 
   <Prices
     title='Pricing of our <span class="text-5xl text-blue-500">self-hosting</span> solutions'
@@ -185,7 +183,7 @@ const metadata = {
           },
         ],
         content: `
-<form class="flex flex-col space-y-3 mx-3">
+<form class="flex flex-col space-y-3 mx-3 min-w-[200px]">
   <label for="users" class="text-left font-bold">Number of Licensed Users:</label>
   <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="users" name="users" value="10" min="10" max="500" step="10">
   <input type="range" id="usersSlider" class="slider" name="usersRange" value="10" min="10" max="500" step="10">
@@ -249,8 +247,7 @@ const metadata = {
         period: 'billed annually',
         items: [
           {
-            description:
-              '<span class="font-bold">Everything in the basic self-hosting plan <span class="underline font-normal">but with limited concurrent connections, excessive managed devices won\'t be disabled</span></span>',
+            description: `<span class="font-bold">Everything in the basic self-hosting plan <span class="underline font-normal">but with limited concurrent connections, excessive managed devices won't be disabled</span></span>`,
             icon: 'tabler:checks',
           },
           {
@@ -358,8 +355,6 @@ const metadata = {
     <Fragment slot="title">Contact us for larger plans & inquiries</Fragment>
   </CallToAction>
 
-  <!-- Steps Widget ****************** -->
-
   <Steps
     title="A guided journey from plans to production"
     tagline="simplified process"
@@ -399,8 +394,6 @@ const metadata = {
       alt: 'Steps image',
     }}
   />
-
-  <!-- FAQs Widget ******************* -->
 
   <FAQs
     title="Pricing FAQs"
@@ -444,6 +437,12 @@ const metadata = {
         title: "What's your terms?",
         description:
           'Please check this <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">terms</a>',
+      },
+      {
+        title:
+          'What about casual support cases? We have some devices that need to be supported occasionally without unattended access.',
+        description:
+          'We provide this <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">solution</a>',
       },
     ]}
   />

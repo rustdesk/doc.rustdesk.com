@@ -1,0 +1,43 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'サポート',
+};
+---
+
+<Layout metadata={metadata} i18n>
+  <Features2
+    title="お手伝いさせていただきます！"
+    items={[
+      {
+        title: '問題報告',
+        description: 'バグを見つけましたか？GitHubのイシューでお知らせください。',
+      },
+      {
+        title: 'コミュニティサポート',
+        description: '私たちのDiscordサーバーに参加して、ヘルプやベストプラクティスを探してください。',
+      },
+      {
+        title: 'Proユーザー向けチケット',
+        description: 'RustDesk Server Proの使用中に問題が発生した場合は、メールでお問い合わせください。',
+      },
+      {
+        title: 'GitHub',
+        description: '<a target="_blank" href="https://github.com/rustdesk/rustdesk/issues">イシューを開く</a>',
+        icon: 'tabler:brand-github',
+      },
+      {
+        title: 'Discord',
+        description: '<a target="_blank" href="https://discord.com/invite/nDceKgxnkV">サーバーに参加する</a>',
+        icon: 'tabler:brand-discord',
+      },
+      {
+        title: 'メール',
+        description: '<a href="mailto:support@rustdesk.com">support@rustdesk.com</a>',
+        icon: 'tabler:mail',
+      },
+    ]}
+  />
+</Layout>

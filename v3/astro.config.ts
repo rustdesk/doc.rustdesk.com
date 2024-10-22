@@ -25,7 +25,14 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
-
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'de', 'es', 'fr', 'it', 'ja', 'pt', 'zh-cn', 'zh-tw'],
+    routing: {
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: false,
+    },
+  },
   integrations: [
     react(),
     tailwind({

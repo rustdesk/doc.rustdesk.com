@@ -11,22 +11,22 @@ import Carousel from '~/components/widgets/Carousel.jsx';
 import Note from '~/components/widgets/Note.astro';
 
 const metadata = {
-  title: 'RustDesk: Open-Source Remote Desktop with Self-Hosted Server Solutions',
+  title: 'RustDesk: Desktop Remoto Open-Source con Soluzioni Server Self-Hosted',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata} i18n>
   <Note
-    title="Note"
-    subtitle='<span class="text-2xl text-font-bold">rustdesk.com</span> is our only official domain. Please do not download RustDesk from the other domains.'
+    title="Nota"
+    subtitle='<span class="text-2xl text-font-bold">rustdesk.com</span> è il nostro unico dominio ufficiale. Si prega di non scaricare RustDesk da altri domini.'
   />
 
   <Hero
     actions={[
       {
         variant: 'primary',
-        text: 'Download',
+        text: 'Scaricare',
         href: 'https://rustdesk.com/download',
         target: '_blank',
         icon: 'tabler:download',
@@ -34,11 +34,11 @@ const metadata = {
       { text: 'Self-Hosting', href: 'https://rustdesk.com/docs/en/self-host/', target: '_blank', icon: 'tabler:book' },
     ]}
   >
-    <Fragment slot="title"> The Fast Open-Source Remote Access and Support Software </Fragment>
+    <Fragment slot="title"> Il Software Open-Source Veloce per Accesso Remoto e Supporto </Fragment>
 
     <Fragment slot="subtitle">
-      Switch from TeamViewer, AnyDesk, and Splashtop to RustDesk for a secure and reliable remote desktop experience
-      with your own self-hosted servers.
+      Passa da TeamViewer, AnyDesk e Splashtop a RustDesk per un'esperienza di desktop remoto sicura e affidabile
+      con i tuoi server self-hosted.
     </Fragment>
     <Fragment slot="content">
       <br /><br />
@@ -56,35 +56,34 @@ const metadata = {
 
   <Content
     isReversed
-    tagline="Inside Self-Hosting"
-    title="Empower your remote access with self-hosted servers"
+    tagline="Approfondimento sul self-hosting"
+    title="Potenzia il tuo accesso remoto con server self-hosted"
     items={[
       {
-        title: 'Data sovereignty',
-        description: 'Regulatory compliance made easy: self-hosted RustDesk ensures data sovereignty.',
+        title: 'Sovranità dei dati',
+        description: 'Conformità normativa semplificata: RustDesk self-hosted garantisce la sovranità dei dati.',
       },
       {
-        title: 'Enhanced security',
-        description: 'Fortify your security: on-premise deployment keeps your data under your control.',
+        title: 'Sicurezza migliorata',
+        description: 'Rafforza la tua sicurezza: il deployment on-premise mantiene i tuoi dati sotto il tuo controllo.',
       },
       {
-        title: 'Performance and reliability',
-        description: 'Guaranteed uptime: on-premise deployment ensures optimal performance and minimal downtime.',
+        title: 'Prestazioni e affidabilità',
+        description: 'Uptime garantito: il deployment on-premise assicura prestazioni ottimali e tempi di inattività minimi.',
       },
       {
-        title: 'Flexibility and customization',
-        description: 'Tailor RustDesk on-premise to fit your unique requirements.',
+        title: 'Flessibilità e personalizzazione',
+        description: 'Adatta RustDesk on-premise per soddisfare le tue esigenze uniche.',
       },
     ]}
     image={{
       src: '~/assets/images/hosting.jpg',
-      alt: 'Hosting Image',
+      alt: 'Immagine Hosting',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Why self-hosting?</h3>
-      Are you frustrated with SaaS platforms due to their unstable performance, lack of transparency, and uncertain data
-      security risks?
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Perché il self-hosting?</h3>
+      Sei frustrato dalle piattaforme SaaS a causa delle loro prestazioni instabili, mancanza di trasparenza e rischi incerti per la sicurezza dei dati?
     </Fragment>
 
     <Fragment slot="bg">
@@ -96,35 +95,35 @@ const metadata = {
     isAfterContent
     items={[
       {
-        title: 'Your brand, your way',
-        description: `Personalize RustDesk client with your name, icon, logo.`,
+        title: 'Il tuo marchio, a modo tuo',
+        description: `Personalizza il client RustDesk con il tuo nome, icona, logo.`,
       },
       {
-        title: 'Easy deployment',
-        description: `Built-in network configuration and server setup make deploying RustDesk on-premise a breeze.`,
+        title: 'Facile implementazione',
+        description: `La configurazione di rete integrata e la configurazione del server rendono l'implementazione di RustDesk on-premise un gioco da ragazzi.`,
       },
       {
-        title: 'Advanced configuration options',
-        description: 'More than 90 options can be configured to meet your specific needs.',
+        title: 'Opzioni di configurazione avanzate',
+        description: 'Più di 90 opzioni possono essere configurate per soddisfare le tue esigenze specifiche.',
       },
       {
-        title: 'Multi-platform support',
+        title: 'Supporto multi-piattaforma',
         description: 'Windows, macOS, Linux, Android.',
       },
       {
-        title: 'Web client',
-        description: 'Host the web client on your server with your domain name to make remote access even easier.',
+        title: 'Client web',
+        description: 'Ospita il client web sul tuo server con il tuo nome di dominio per rendere l\'accesso remoto ancora più facile.',
       },
     ]}
     image={{
       src: '~/assets/images/qs.png',
-      alt: 'QuickSupport Image',
+      alt: 'Immagine QuickSupport',
       class: 'bg-transparent',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Custom Client</h3>
-      Customize your client with your brand and make it truly yours.
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Client Personalizzato</h3>
+      Personalizza il tuo client con il tuo marchio e rendilo veramente tuo.
     </Fragment>
 
     <Fragment slot="bg">
@@ -134,33 +133,33 @@ const metadata = {
 
   <Steps
     isReversed
-    title="Simple self-hosting installation"
+    title="Installazione self-hosting semplice"
     items={[
       {
-        title: 'Step 1: Install Docker',
+        title: 'Passo 1: Installa Docker',
         description: '<code class="text-gray-600 dark:text-gray-500">bash <(wget -qO- https://get.docker.com)</code>',
         icon: 'tabler:package',
       },
       {
-        title: 'Step 2: Download compose.yml',
+        title: 'Passo 2: Scarica compose.yml',
         description: `<code class="text-gray-600 dark:text-gray-500">wget rustdesk.com/oss.yml -O compose.yml</code>
-          <p class="text-center text-sm">or</p>
+          <p class="text-center text-sm">oppure</p>
           <code class="text-gray-600 dark:text-gray-500">wget rustdesk.com/pro.yml -O compose.yml</code>`,
         icon: 'tabler:download',
       },
       {
-        title: `Step 3: Compose`,
+        title: `Passo 3: Componi`,
         description: '<code class="text-gray-600 dark:text-gray-500">docker compose up -d</code>',
         icon: 'tabler:hammer',
       },
       {
-        title: 'Ready!',
+        title: 'Pronto!',
         icon: 'tabler:check',
       },
     ]}
     image={{
       src: '~/assets/images/steps.jpg',
-      alt: 'Steps image',
+      alt: 'Immagine passi',
     }}
   >
     <Fragment slot="bg">
@@ -169,31 +168,31 @@ const metadata = {
   </Steps>
 
   <Stats
-    tagline="Scenarios"
-    title="Who are using self-hosting?"
-    subtitle="The data below is from our online survey covering over 1,000 self-hosting users."
+    tagline="Scenari"
+    title="Chi sta utilizzando il self-hosting?"
+    subtitle="I dati seguenti provengono dal nostro sondaggio online che copre oltre 1.000 utenti self-hosting."
     stats={[
-      { title: 'IT Support', amount: '37%' },
-      { title: 'IT Administration', amount: '25%' },
-      { title: 'Remote Work', amount: '29%' },
-      { title: 'Industrial and others', amount: '9%' },
+      { title: 'Supporto IT', amount: '37%' },
+      { title: 'Amministrazione IT', amount: '25%' },
+      { title: 'Lavoro Remoto', amount: '29%' },
+      { title: 'Industria e altri', amount: '9%' },
     ]}
   />
 
-  <BlogLatestPosts title="Find out more content in our Blog" />
+  <BlogLatestPosts title="Scopri altri contenuti nel nostro Blog" />
 
   <Stats
     tagline="Open Source"
-    title="Built in public with a vibrant community"
-    subtitle="Join a community driven solution that has millions of downloads and used by thousands of organisations."
+    title="Costruito pubblicamente con una comunità vivace"
+    subtitle="Unisciti a una soluzione guidata dalla comunità che ha milioni di download ed è utilizzata da migliaia di organizzazioni."
     stats={[
-      { title: 'Client downloads', amount: '10M+' },
-      { title: 'Docker downloads', amount: '1M+' },
-      { title: 'Alive devices', amount: '3M+' },
-      { title: 'Stars', amount: '74K+' },
-      { title: 'Forks', amount: '9K+' },
-      { title: 'Community members', amount: '22K+' },
-      { title: 'Languages', amount: '45' },
+      { title: 'Download client', amount: '10M+' },
+      { title: 'Download Docker', amount: '1M+' },
+      { title: 'Dispositivi attivi', amount: '3M+' },
+      { title: 'Stelle', amount: '74K+' },
+      { title: 'Fork', amount: '9K+' },
+      { title: 'Membri della comunità', amount: '22K+' },
+      { title: 'Lingue', amount: '45' },
     ]}
   />
 
@@ -219,16 +218,16 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title"> Join the community </Fragment>
+    <Fragment slot="title"> Unisciti alla comunità </Fragment>
 
-    <Fragment slot="subtitle"> Discover what our community has to say about their RustDesk experience. </Fragment>
+    <Fragment slot="subtitle"> Scopri cosa ha da dire la nostra comunità sulla loro esperienza con RustDesk. </Fragment>
   </Hero>
 
   <CallToAction
     actions={[
       {
         variant: 'primary',
-        text: 'Download',
+        text: 'Scaricare',
         href: 'https://rustdesk.com/download',
         target: '_blank',
         icon: 'tabler:download',
@@ -236,6 +235,6 @@ const metadata = {
       { text: 'Self-Hosting', href: 'https://rustdesk.com/docs/en/self-host/', target: '_blank', icon: 'tabler:book' },
     ]}
   >
-    <Fragment slot="title"> Experience RustDesk for yourself </Fragment>
+    <Fragment slot="title"> Prova RustDesk tu stesso </Fragment>
   </CallToAction>
 </Layout>

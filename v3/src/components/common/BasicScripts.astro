@@ -44,6 +44,24 @@ import { UI } from 'astrowind:config';
     let lastKnownScrollPosition = window.scrollY;
     let ticking = true;
 
+    attachEvent('#languageSelect', 'click', function () {
+      document.getElementById('languages')?.classList.remove('hidden');
+    });
+
+    /*
+    attachEvent('#languages', 'mouseleave', function () {
+      document.getElementById('languages')?.classList.add('hidden');
+    });
+    */
+
+    document.addEventListener('click', function (event) {
+      const languagesDropdown = document.getElementById('languages');
+      const languageSelect = document.getElementById('languageSelect');
+      if (languagesDropdown && !languagesDropdown.contains(event.target) && !languageSelect.contains(event.target)) {
+        languagesDropdown.classList.add('hidden');
+      }
+    });
+
     attachEvent('#header nav', 'click', function () {
       document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
       document.body.classList.remove('overflow-hidden');
@@ -56,6 +74,7 @@ import { UI } from 'astrowind:config';
 
     attachEvent('[data-aw-toggle-menu]', 'click', function (_, elem) {
       elem.classList.toggle('expanded');
+      document.getElementById('languages')?.classList.toggle('expanded');
       document.body.classList.toggle('overflow-hidden');
       document.getElementById('header')?.classList.toggle('h-screen');
       document.getElementById('header')?.classList.toggle('expanded');

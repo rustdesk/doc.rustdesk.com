@@ -1,0 +1,240 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Carousel from '~/components/widgets/Carousel.jsx';
+import Note from '~/components/widgets/Note.astro';
+
+const metadata = {
+  title: 'RustDesk: Software de Área de Trabalho Remota de Código Aberto com Soluções de Servidor Auto-Hospedado',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata} i18n>
+  <Note
+    title="Nota"
+    subtitle='<span class="text-2xl text-font-bold">rustdesk.com</span> é nosso único domínio oficial. Por favor, não baixe o RustDesk de outros domínios.'
+  />
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Baixar',
+        href: 'https://rustdesk.com/download',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: 'Auto-Hospedagem', href: 'https://rustdesk.com/docs/en/self-host/', target: '_blank', icon: 'tabler:book' },
+    ]}
+  >
+    <Fragment slot="title"> O Software de Acesso Remoto e Suporte de Código Aberto Rápido </Fragment>
+
+    <Fragment slot="subtitle">
+      Mude do TeamViewer, AnyDesk e Splashtop para o RustDesk para uma experiência de área de trabalho remota segura e confiável
+      com seus próprios servidores auto-hospedados.
+    </Fragment>
+    <Fragment slot="content">
+      <br /><br />
+      <Carousel
+        client:load
+        list={[
+          { src: '/remote.jpg', className: 'rounded-[15px] border border-gray-700' },
+          { src: '/main.png', className: 'rounded-[15px] border border-gray-700' },
+          { src: '/console.png', className: 'rounded-[15px] border border-gray-700' },
+          { src: '/custom.png', className: 'rounded-[15px] border border-gray-700' },
+        ]}
+      />
+    </Fragment>
+  </Hero>
+
+  <Content
+    isReversed
+    tagline="Insights sobre auto-hospedagem"
+    title="Potencialize seu acesso remoto com servidores auto-hospedados"
+    items={[
+      {
+        title: 'Soberania de dados',
+        description: 'Conformidade regulatória facilitada: o RustDesk auto-hospedado garante a soberania dos dados.',
+      },
+      {
+        title: 'Segurança aprimorada',
+        description: 'Fortifique sua segurança: a implantação local mantém seus dados sob seu controle.',
+      },
+      {
+        title: 'Desempenho e confiabilidade',
+        description: 'Tempo de atividade garantido: a implantação local garante desempenho ideal e tempo de inatividade mínimo.',
+      },
+      {
+        title: 'Flexibilidade e personalização',
+        description: 'Adapte o RustDesk local para atender às suas necessidades únicas.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hosting.jpg',
+      alt: 'Imagem de Hospedagem',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Por que auto-hospedar?</h3>
+      Você está frustrado com plataformas SaaS devido ao seu desempenho instável, falta de transparência e riscos incertos de segurança de dados?
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Sua marca, do seu jeito',
+        description: `Personalize o cliente RustDesk com seu nome, ícone e logotipo.`,
+      },
+      {
+        title: 'Implantação fácil',
+        description: `A configuração de rede e servidor integrada torna a implantação do RustDesk local uma tarefa simples.`,
+      },
+      {
+        title: 'Opções de configuração avançadas',
+        description: 'Mais de 90 opções podem ser configuradas para atender às suas necessidades específicas.',
+      },
+      {
+        title: 'Suporte multiplataforma',
+        description: 'Windows, macOS, Linux, Android.',
+      },
+      {
+        title: 'Cliente web',
+        description: 'Hospede o cliente web em seu servidor com seu nome de domínio para tornar o acesso remoto ainda mais fácil.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/qs.png',
+      alt: 'Imagem de Suporte Rápido',
+      class: 'bg-transparent',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Cliente Personalizado</h3>
+      Personalize seu cliente com sua marca e torne-o verdadeiramente seu.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    isReversed
+    title="Instalação simples de auto-hospedagem"
+    items={[
+      {
+        title: 'Passo 1: Instale o Docker',
+        description: '<code class="text-gray-600 dark:text-gray-500">bash <(wget -qO- https://get.docker.com)</code>',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Passo 2: Baixe o compose.yml',
+        description: `<code class="text-gray-600 dark:text-gray-500">wget rustdesk.com/oss.yml -O compose.yml</code>
+          <p class="text-center text-sm">ou</p>
+          <code class="text-gray-600 dark:text-gray-500">wget rustdesk.com/pro.yml -O compose.yml</code>`,
+        icon: 'tabler:download',
+      },
+      {
+        title: `Passo 3: Compose`,
+        description: '<code class="text-gray-600 dark:text-gray-500">docker compose up -d</code>',
+        icon: 'tabler:hammer',
+      },
+      {
+        title: 'Pronto!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/steps.jpg',
+      alt: 'Imagem de passos',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps>
+
+  <Stats
+    tagline="Cenários"
+    title="Quem está usando auto-hospedagem?"
+    subtitle="Os dados abaixo são de nossa pesquisa online cobrindo mais de 1.000 usuários de auto-hospedagem."
+    stats={[
+      { title: 'Suporte de TI', amount: '37%' },
+      { title: 'Administração de TI', amount: '25%' },
+      { title: 'Trabalho Remoto', amount: '29%' },
+      { title: 'Industrial e outros', amount: '9%' },
+    ]}
+  />
+
+  <BlogLatestPosts title="Descubra mais conteúdo em nosso Blog" />
+
+  <Stats
+    tagline="Código Aberto"
+    title="Construído publicamente com uma comunidade vibrante"
+    subtitle="Junte-se a uma solução impulsionada pela comunidade que tem milhões de downloads e é usada por milhares de organizações."
+    stats={[
+      { title: 'Downloads do cliente', amount: '10M+' },
+      { title: 'Downloads do Docker', amount: '1M+' },
+      { title: 'Dispositivos ativos', amount: '3M+' },
+      { title: 'Estrelas', amount: '74K+' },
+      { title: 'Forks', amount: '9K+' },
+      { title: 'Membros da comunidade', amount: '22K+' },
+      { title: 'Idiomas', amount: '45' },
+    ]}
+  />
+
+  <Hero
+    actions={[
+      {
+        text: 'GitHub',
+        href: 'https://github.com/rustdesk/rustdesk/discussions',
+        target: '_blank',
+        icon: 'tabler:message-circle',
+      },
+      {
+        text: 'Discord',
+        href: 'https://discord.gg/nDceKgxnkV',
+        target: '_blank',
+        icon: 'tabler:message-circle',
+      },
+      {
+        text: 'Reddit',
+        href: 'https://www.reddit.com/r/rustdesk/',
+        target: '_blank',
+        icon: 'tabler:message-circle',
+      },
+    ]}
+  >
+    <Fragment slot="title"> Junte-se à comunidade </Fragment>
+
+    <Fragment slot="subtitle"> Descubra o que nossa comunidade tem a dizer sobre sua experiência com o RustDesk. </Fragment>
+  </Hero>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Baixar',
+        href: 'https://rustdesk.com/download',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: 'Auto-Hospedagem', href: 'https://rustdesk.com/docs/en/self-host/', target: '_blank', icon: 'tabler:book' },
+    ]}
+  >
+    <Fragment slot="title"> Experimente o RustDesk por si mesmo </Fragment>
+  </CallToAction>
+</Layout>

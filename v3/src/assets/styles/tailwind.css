@@ -51,7 +51,7 @@
   @apply py-3;
 } */
 
-#header.expanded nav {
+#header.expanded nav, #languages.expanded {
   position: fixed;
   top: 70px;
   left: 0;

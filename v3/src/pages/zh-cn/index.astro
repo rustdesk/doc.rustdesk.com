@@ -1,0 +1,239 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Carousel from '~/components/widgets/Carousel.jsx';
+import Note from '~/components/widgets/Note.astro';
+
+const metadata = {
+  title: 'RustDesk：开源远程桌面与自建服务器解决方案',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata} i18n>
+  <Note
+    title="注意"
+    subtitle='<span class="text-2xl font-bold">rustdesk.com</span> 是我们唯一的官方域名。请不要从其他域名下载 RustDesk。'
+  />
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: '下载',
+        href: 'https://rustdesk.com/download',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: '自托管', href: 'https://rustdesk.com/docs/en/self-host/', target: '_blank', icon: 'tabler:book' },
+    ]}
+  >
+    <Fragment slot="title"> 快速开源远程访问和支持软件 </Fragment>
+
+    <Fragment slot="subtitle">
+      从 TeamViewer、向日葵切换到 RustDesk，享受安全可靠的远程桌面体验，使用您自己的自建服务器。
+    </Fragment>
+    <Fragment slot="content">
+      <br /><br />
+      <Carousel
+        client:load
+        list={[
+          { src: '/remote.jpg', className: 'rounded-[15px] border border-gray-700' },
+          { src: '/main.png', className: 'rounded-[15px] border border-gray-700' },
+          { src: '/console.png', className: 'rounded-[15px] border border-gray-700' },
+          { src: '/custom.png', className: 'rounded-[15px] border border-gray-700' },
+        ]}
+      />
+    </Fragment>
+  </Hero>
+
+  <Content
+    isReversed
+    tagline="深入自托管"
+    title="通过自托管增强您的远程访问"
+    items={[
+      {
+        title: '数据主权',
+        description: '轻松实现合规性：自托管 RustDesk 确保数据主权。',
+      },
+      {
+        title: '增强的安全性',
+        description: '加强您的安全性：本地部署使您的数据保持在您的控制之下。',
+      },
+      {
+        title: '性能和可靠性',
+        description: '保证正常运行时间：本地部署确保最佳性能和最小的停机时间。',
+      },
+      {
+        title: '灵活性和定制化',
+        description: '根据您的独特需求定制本地部署的 RustDesk。',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hosting.jpg',
+      alt: '托管图片',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">为什么选择自托管？</h3>
+      您是否因为 SaaS 平台的不稳定性能、缺乏透明度和不确定的数据安全风险而感到沮丧？
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: '您的品牌，您的方式',
+        description: `个性化 RustDesk 客户端，使用您的名称、图标和标志。`,
+      },
+      {
+        title: '轻松部署',
+        description: `内置网络配置和服务器设置使在本地部署 RustDesk 变得轻而易举。`,
+      },
+      {
+        title: '高级配置选项',
+        description: '超过 90 个选项可以配置以满足您的特定需求。',
+      },
+      {
+        title: '多平台支持',
+        description: 'Windows、macOS、Linux、Android。',
+      },
+      {
+        title: 'Web 客户端',
+        description: '在您的服务器上托管 Web 客户端，使用您的域名，使远程访问更加便捷。',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/qs.png',
+      alt: 'QuickSupport 图片',
+      class: 'bg-transparent',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">自定义客户端</h3>
+      使用您的品牌定制客户端，使其真正属于您。
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    isReversed
+    title="简单的自托管安装"
+    items={[
+      {
+        title: '步骤 1：安装 Docker',
+        description: '<code class="text-gray-600 dark:text-gray-500">bash <(wget -qO- https://get.docker.com)</code>',
+        icon: 'tabler:package',
+      },
+      {
+        title: '步骤 2：下载 compose.yml',
+        description: `<code class="text-gray-600 dark:text-gray-500">wget rustdesk.com/oss.yml -O compose.yml</code>
+        <p class="text-center text-sm">或</p>
+        <code class="text-gray-600 dark:text-gray-500">wget rustdesk.com/pro.yml -O compose.yml</code>`,
+        icon: 'tabler:download',
+      },
+      {
+        title: `步骤 3：启动 Compose`,
+        description: '<code class="text-gray-600 dark:text-gray-500">docker compose up -d</code>',
+        icon: 'tabler:hammer',
+      },
+      {
+        title: '准备就绪！',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/steps.jpg',
+      alt: 'Steps image',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps>
+
+  <Stats
+    tagline="使用场景"
+    title="谁在使用自托管？"
+    subtitle="以下数据来自我们对超过 1,000 名自托管用户的在线调查结果。"
+    stats={[
+      { title: 'IT 支持', amount: '37%' },
+      { title: 'IT 管理', amount: '25%' },
+      { title: '远程工作', amount: '29%' },
+      { title: '工业及其他', amount: '9%' },
+    ]}
+  />
+
+  <BlogLatestPosts title="阅读我们的博客了解更多内容" />
+
+  <Stats
+    tagline="开源"
+    title="在充满活力的社区中公开构建"
+    subtitle="加入一个由社区驱动的解决方案，拥有数百万次下载，并被数千个组织使用。"
+    stats={[
+      { title: '客户端下载量', amount: '1000万+' },
+      { title: 'Docker 下载量', amount: '100万+' },
+      { title: '在线设备', amount: '300万+' },
+      { title: 'Stars', amount: '7.4万+' },
+      { title: 'Forks', amount: '9000+' },
+      { title: '社区成员', amount: '2.2万+' },
+      { title: '语言', amount: '45' },
+    ]}
+  />
+
+  <Hero
+    actions={[
+      {
+        text: 'GitHub',
+        href: 'https://github.com/rustdesk/rustdesk/discussions',
+        target: '_blank',
+        icon: 'tabler:message-circle',
+      },
+      {
+        text: 'Discord',
+        href: 'https://discord.gg/nDceKgxnkV',
+        target: '_blank',
+        icon: 'tabler:message-circle',
+      },
+      {
+        text: 'Reddit',
+        href: 'https://www.reddit.com/r/rustdesk/',
+        target: '_blank',
+        icon: 'tabler:message-circle',
+      },
+    ]}
+  >
+    <Fragment slot="title"> 加入社区 </Fragment>
+
+    <Fragment slot="subtitle"> 看看 RustDesk 社区如何评价 RustDesk。 </Fragment>
+  </Hero>
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: '下载',
+        href: 'https://rustdesk.com/download',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: '自托管', href: 'https://rustdesk.com/docs/en/self-host/', target: '_blank', icon: 'tabler:book' },
+    ]}
+  >
+    <Fragment slot="title"> 亲自体验 RustDesk </Fragment>
+  </CallToAction>
+</Layout>
