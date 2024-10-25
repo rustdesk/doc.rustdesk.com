@@ -8,16 +8,12 @@ weight: 40
 
 ## 部署
 步骤一：登录宝塔面板，在菜单栏中点击 `Docker`
-![](images//Docker.png) 
 
 步骤二：首次会提示安装`Docker`和`Docker Compose`服务，点击立即安装，若已安装请忽略。
-![](images/install-Docker.png)
 
 步骤三：安装完成后在`Docker-应用商店-实用工具`中找到 `RustDesk`，点击`安装`
-![](images/install-RustDesk.png)
 
 步骤四：设置域名等基本信息，点击`确定`
-![](images/config-Rustdesk.png)
 - 名称：应用名称，默认`RustDesk-随机字符`
 - 版本选择：默认`1.1.11`
 - 允许外部访问：请勾选。
