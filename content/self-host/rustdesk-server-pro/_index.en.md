@@ -6,6 +6,7 @@ pre: "<b>2.2. </b>"
 
 RustDesk Server Pro has more features compared to the open source version.
 
+- Account
 - No concurrent connection limit, aka no limit of simultaneous connections (OSS version has no limit either, but TeamViewer etc. have this limit)
 - [Web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
 - API
