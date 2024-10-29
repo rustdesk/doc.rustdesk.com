@@ -242,6 +242,14 @@ Accept incoming connections via password or manually click.
 | :------: | :------: | :------: | :------: |
 | N | password, click, password-click | password-click | `approve-mode=password-click` |
 
+### verification-method
+
+What type of password can be used
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | use-temporary-password, use-permanent-password, both | both | `verification-method=use-permanent-password` |
+
 ### proxy-url
 
 The proxy URL.
