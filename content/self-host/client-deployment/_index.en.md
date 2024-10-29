@@ -14,7 +14,7 @@ The permanent password can be changed from random to one you prefer using by cha
 
 ### PowerShell
 
-```ps
+```powershell
 $ErrorActionPreference= 'silentlycontinue'
 
 # Assign the value random password to the password variable
