@@ -244,7 +244,7 @@ Accept incoming connections via password or manually click.
 
 ### verification-method
 
-What type of password can be used
+What type of password can be used, `temporary password` refers to the one-time random password.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
