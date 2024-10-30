@@ -186,6 +186,17 @@ You can also use msi instead of `rustdesk.exe --silent-install`.
 
 https://rustdesk.com/docs/en/client/windows/msi/
 
+
+### Winget
+
+you can deploy via pwershell with winget as well (this installs via microsofts version of apt - part of most recent windows installs)
+
+from a powershell window or via script (for example via Tactical RMM or GPO)
+
+```
+winget install --id=RustDesk.RustDesk  -e
+```
+
 ### macOS Bash
 
 ```sh
