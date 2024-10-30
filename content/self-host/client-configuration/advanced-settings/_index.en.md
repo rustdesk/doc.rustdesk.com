@@ -248,7 +248,7 @@ What type of password can be used, `temporary password` refers to the one-time r
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | use-temporary-password, use-permanent-password, both | both | `verification-method=use-permanent-password` |
+| N | use-temporary-password, use-permanent-password, use-both-passwords | use-both-passwords | `verification-method=use-permanent-password` |
 
 ### proxy-url
 

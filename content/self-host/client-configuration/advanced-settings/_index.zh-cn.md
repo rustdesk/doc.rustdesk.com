@@ -240,6 +240,14 @@ IP 直接访问的端口。
 | :------: | :------: | :------: | :------: |
 | N | password, click, password-click | password-click | `approve-mode=password-click` |
 
+### verification-method
+
+可以使用什么类型的密码，“临时密码”是指一次性随机密码。
+
+| 是否需要安装 | 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: | :------: |
+| N | use-temporary-password, use-permanent-password, use-both-passwords | use-both-passwords | `verification-method=use-permanent-password` |
+
 ### proxy-url
 
 代理的 url 。
