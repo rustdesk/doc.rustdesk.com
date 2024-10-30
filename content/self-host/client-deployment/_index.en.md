@@ -189,7 +189,7 @@ https://rustdesk.com/docs/en/client/windows/msi/
 
 ### Winget
 
-you can deploy via pwershell with winget as well (this installs via microsofts version of apt - part of most recent windows installs)
+you can deploy via powershell with winget as well (this installs via microsofts version of apt - part of most recent windows installs)
 
 from a powershell window or via script (for example via GPO)
 
