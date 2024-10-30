@@ -191,7 +191,7 @@ https://rustdesk.com/docs/en/client/windows/msi/
 
 you can deploy via pwershell with winget as well (this installs via microsofts version of apt - part of most recent windows installs)
 
-from a powershell window or via script (for example via Tactical RMM or GPO)
+from a powershell window or via script (for example via GPO)
 
 ```
 winget install --id=RustDesk.RustDesk  -e
