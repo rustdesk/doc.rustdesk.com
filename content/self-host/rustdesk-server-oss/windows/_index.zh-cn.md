@@ -44,8 +44,8 @@ win64 文件夹的内容）。 将 NSSM 的二进制文件移至
 在此示例中，我们将使用`C:\Program Files\RustDesk Server`
 
 ```cmd
-nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe" -r 0.0.0.0 -k _
-nssm install "RustDesk hbbr Service" "C:\Program Files\RustDesk Server\hbbr.exe" -k _
+nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe" 
+nssm install "RustDesk hbbr Service" "C:\Program Files\RustDesk Server\hbbr.exe" 
 ```
 
 **笔记：**
@@ -53,7 +53,6 @@ nssm install "RustDesk hbbr Service" "C:\Program Files\RustDesk Server\hbbr.exe"
 - 您可以将`RustDesk hbbr 服务`更改为您想要将 hbbr 服务命名为任何名称
 - 您可以将 `C:\Program Files\RustDesk Server\hbbs.exe` 更改为放置 RustDesk 二进制文件的位置
 - 您可以将 `C:\Program Files\RustDesk Server\hbbr.exe` 更改为放置 RustDesk 二进制文件的位置
-- 你不需要`-k _`选项，它是可选的，它只是为了更好的安全性
 
 **命令模板：**
 
@@ -96,7 +95,7 @@ pm2-startup install
 下载Windows版本[服务器程序](https://github.com/rustdesk/rustdesk-server/releases)，假设你解压缩到了C盘下。分别运行下面四行命令。
 ```
 cd c:\rustdesk-server-windows-x64
-pm2 start hbbs.exe -- -r hbbr运行所在主机的地址
+pm2 start hbbs.exe 
 pm2 start hbbr.exe 
 pm2 save
 ```

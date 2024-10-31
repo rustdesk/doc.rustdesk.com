@@ -20,7 +20,7 @@ pm2-startup install
 Windows版のサーバープログラムをダウンロードします。Cドライブに解凍するのであれば以下の4行のコマンドをそれぞれ実行します。
 ```
 cd c:\rustdesk-server-windows-x64
-pm2 start hbbs.exe -- -r <The address of the host where hbbr is running>
+pm2 start hbbs.exe 
 pm2 start hbbr.exe 
 pm2 save
 ```

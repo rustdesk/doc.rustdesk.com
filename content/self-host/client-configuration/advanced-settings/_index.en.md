@@ -146,7 +146,7 @@ Allow the control side to change the settings in controlled RustDesk UI.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y, N | Y | `allow-remote-config-modification=Y` |
+| N | Y, N | N | `allow-remote-config-modification=Y` |
 
 ### enable-lan-discovery
 
@@ -242,6 +242,14 @@ Accept incoming connections via password or manually click.
 | :------: | :------: | :------: | :------: |
 | N | password, click, password-click | password-click | `approve-mode=password-click` |
 
+### verification-method
+
+What type of password can be used, `temporary password` refers to the one-time random password.
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | use-temporary-password, use-permanent-password, use-both-passwords | use-both-passwords | `verification-method=use-permanent-password` |
+
 ### proxy-url
 
 The proxy URL.
@@ -318,7 +326,20 @@ Automatically record incoming sessions.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y, N | N | `allow-auto-record-incoming=N` |
+| N | Y, N | N | `allow-auto-record-incoming=Y` |
+
+### allow-auto-record-outgoing
+
+Automatically record outgoing sessions.
+
+**Location**:
+
+1. **Desktop** Settings → General → Recording → Automatically record outgoing sessions
+2. **Mobile** Settings → Recording → Automatically record outgoing sessions
+
+| Install required | Values | Default | Example | Version |
+| :------: | :------: | :------: | :------: | :------: |
+| N | Y, N | N | `allow-auto-record-outgoing=Y` | >= 1.3.2 |
 
 ### video-save-directory
 
@@ -1078,3 +1099,46 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/332
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-tray=Y` |
+
+### one-way-clipboard-redirection
+
+Disable clipboard sync from controlled side to controlling side, available in RustDesk client >=1.3.1 (controlled side)
+
+https://github.com/rustdesk/rustdesk/discussions/7837
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `one-way-clipboard-redirection=Y` |
+
+### one-way-file-transfer
+
+Disable file transfer from controlled side to controlling side, available in RustDesk client >=1.3.1 (controlled side)
+
+https://github.com/rustdesk/rustdesk/discussions/7837
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `one-way-file-transfer=Y` |
+
+
+### sync-init-clipboard
+
+If sync initial clipboard when establishing connection (only from controlling side to controlled side), available in RustDesk client >=1.3.1 (controlling side)
+
+https://github.com/rustdesk/rustdesk/discussions/9010
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `sync-init-clipboard=Y` |
+
+### allow-logon-screen-password
+
+If allow password input on logon screen when [click-only approve mode](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode) is used, available in RustDesk client >=1.3.1 (controlled side)
+
+https://github.com/rustdesk/rustdesk/discussions/9269
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-logon-screen-password=Y` |
+
+

@@ -28,20 +28,20 @@ Open your File Station, create a folder named `rustdesk-server`(or whatever you 
 
 Open your Container Manager, go to Project and click Create.
 
-Enter the project name `rustdesk-server` and change Source from "Upload compose.yml" to "Create compose.yml", and copy following contents to the box. After you copied, you should replace `rustdesk.example.com` (Which point to your `hbbr`) to the domain that will point to your NAS.
+Enter the project name `rustdesk-server` and change Source from "Upload compose.yml" to "Create compose.yml", and copy following contents to the box.
 
 {{% notice note %}}
 You could modify the line with `hbbs` to your NAS's LAN IP temporarily just like the picture. After you verify your server is working, you **should** change back.
 {{% /notice %}}
 
-![](images/dsm7_creating_project_init.png)
+![](images/dsm7_creating_project_init.png?v2)
 
 ```yaml
 services:
   hbbs:
     container_name: hbbs
     image: rustdesk/rustdesk-server:latest # Please change this to rustdesk/rustdesk-server-pro:latest if you want to install Pro.
-    command: hbbs -r rustdesk.example.com:21117 -k _
+    command: hbbs
     volumes:
       - ./data:/root
     network_mode: host
@@ -52,7 +52,7 @@ services:
   hbbr:
     container_name: hbbr
     image: rustdesk/rustdesk-server:latest # Please change this to rustdesk/rustdesk-server-pro:latest if you want to install Pro.
-    command: hbbr -k _
+    command: hbbr
     volumes:
       - ./data:/root
     network_mode: host
@@ -89,7 +89,7 @@ If you have set your `hbbs` command to point to your LAN IP, and verified it is 
 
 5.2. After stopped, click "YAML Configurations", modify the line start with `command: hbbs` to your domain, then click "Save". Make sure you choose "Build and start the project (rebuild the image)".
 
-![](images/dsm7_recreate_project_after_modified_args.png)
+![](images/dsm7_recreate_project_after_modified_args.png?v2)
 
 5.3. Your RustDesk Server should ready for connections from the Internet, next, you should setup port forwarding.
 

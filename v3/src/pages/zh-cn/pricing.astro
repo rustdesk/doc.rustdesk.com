@@ -1,0 +1,453 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Note from '~/components/widgets/Note.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: '定价',
+};
+---
+
+<script>
+  import Swal from 'sweetalert2';
+  import 'sweetalert2/dist/sweetalert2.min.css';
+  window['gotoBuy'] = function (redirectUrl) {
+    Swal.fire({
+      title: '请确认',
+      html: '<p style="text-align:left">您是否要继续前往购买页面？<br><br>请注意，您购买的<b style="font-size: 2em">不是</b> <span style="text-decoration:line-through">SaaS（软件即服务）</span> 订阅。<br><br>相反，这是一个 <b style="font-size: 2em">自托管</b> 解决方案的许可证，您需要将其部署在您自己的服务器上（云服务器，例如 AWS EC2、Azure VM、Vultr VPS 等，或您的本地服务器）。<br><br>如果您不知道什么是自托管，请<b style="font-size: 2em">不要</b>购买。',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: '是',
+      cancelButtonText: '否',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: '请确认',
+          html: '请注意，我们 <span class="text-3xl font-bold">不</span> 提供 <span class="text-3xl font-bold">退款</span>。我们强烈建议在考虑购买我们的专业版计划之前，<span class="underline font-bold">测试我们的免费自托管计划</span>。您是否仍然有兴趣继续？',
+          showCancelButton: true,
+          confirmButtonText: '是',
+          cancelButtonText: '否',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.open(redirectUrl + '&currency=cny', '_blank');
+          }
+        });
+      }
+    });
+  };
+</script>
+
+<Layout metadata={metadata} i18n>
+  <Note
+    title="注意"
+    subtitle='此定价适用于 <span class="text-xl text-blue-500">自托管</span> 解决方案，它 <span class="text-3xl font-extrabold">不是</span> <span class="line-through text-xl text-blue-500">SaaS</span> 订阅。'
+  />
+
+  <!-- Pricing Widget ******************* -->
+
+  <Prices
+    title='我们的 <span class="text-5xl text-blue-500">自托管</span> 解决方案的定价'
+    subtitle="按需付费"
+    prices={[
+      {
+        title: '免费',
+        subtitle: '免费自托管计划',
+        price: '0 <span class="text-sm">/月</span>',
+        period: '开源且免费',
+        items: [
+          {
+            description: '在线状态',
+          },
+          {
+            description: '社区支持',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: '开始使用',
+          href: 'https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/',
+        },
+      },
+      {
+        title: '个人',
+        subtitle: '个人自托管 <span class="font-bold">专业版</span> 计划',
+        price: '9.90 <span class="text-sm">/月</span>',
+        period: '按年计费',
+        items: [
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">1 个授权用户</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">20 个管理设备</a>',
+          },
+          {
+            description:
+              '<a class="underline text-blue-500 font-bold" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">无限并发连接</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/">双因素认证 (2FA)</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/">Web 控制台</a>',
+          },
+          {
+            description: '通讯录',
+          },
+          {
+            description: '审计日志',
+          },
+          {
+            description: '更改 ID',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/">访问控制</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/">集中设置</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/">分布式中继服务器</a>',
+          },
+        ],
+        callToAction: {
+          text: '立即购买',
+          onclick: 'gotoBuy("https://rustdesk.com/api/lic/stripe/checkout?type=Individual")',
+          variant: 'primary',
+        },
+      },
+      {
+        title: '基础版',
+        subtitle: '基础自托管 <span class="font-bold">专业版</span> 计划',
+        price: '19.90 <span class="text-sm">/月</span>',
+        period: '按年计费',
+        items: [
+          {
+            description: '<span class="font-bold">个人计划中的所有内容</span>',
+            icon: 'tabler:checks',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">10 个授权用户</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">100 个管理设备</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/">OIDC (单点登录)</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/">LDAP 集成</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/#cross-group-settings">跨组访问</a>',
+          },
+          {
+            description:
+              '<a class="underline text-blue-500 font-bold" target="_blank" href="https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only">自定义客户端生成器</a>',
+          },
+        ],
+        callToAction: {
+          text: '立即购买',
+          onclick: 'gotoBuy("https://rustdesk.com/api/lic/stripe/checkout?type=Basic")',
+        },
+        hasRibbon: true,
+        ribbonTitle: '热门',
+      },
+      {
+        title: '定制版',
+        subtitle: '定制 <span class="font-bold">专业版</span> 计划',
+        price: '<span id="cprice">19.90</span> <span class="text-sm">/月</span>',
+        period: '按年计费',
+        items: [
+          {
+            description: '<span class="font-bold">基础计划中的所有内容</span>',
+            icon: 'tabler:checks',
+          },
+          {
+            description: '每增加一个用户 $1',
+          },
+          {
+            description: '每增加一个设备 $0.1',
+          },
+        ],
+        content: `
+<form class="flex flex-col space-y-3 mx-3 min-w-[200px]">
+  <label for="users" class="text-left font-bold">授权用户数量：</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="users" name="users" value="10" min="10" max="500" step="10">
+  <input type="range" id="usersSlider" class="slider" name="usersRange" value="10" min="10" max="500" step="10">
+  <label for="devices" class="text-left font-bold">管理设备数量：</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="devices" name="devices" value="100" min="100" max="5000" step="100">
+  <input type="range" id="devicesSlider" class="slider" name="devicesRange" value="100" min="100" max="5000" step="100">
+</form>
+<br>
+<script>
+  var users = 10;
+  var devices = 100;
+  function submit() {
+    redirectUrl = "https://rustdesk.com/api/lic/stripe/checkout?type=Customized&users=" + users + "&devices=" + devices;
+    gotoBuy(redirectUrl);
+  }
+  function calculatePrice() {
+    users = parseInt(document.getElementById("users").value);
+    devices = parseInt(document.getElementById("devices").value);
+    if (!users || users < 10) users = 10;
+    if (devices < 100) devices = 100;
+    var price =  19.9 + (users - 10) + (devices - 100) * 0.1;
+    document.getElementById("cprice").innerText = price.toFixed(price >= 100 ? 1 : 2);
+  }
+
+  document.getElementById("users").oninput = function() {
+    document.getElementById("usersSlider").value = this.value;
+    calculatePrice();
+  }
+
+  document.getElementById("devices").oninput = function() {
+    document.getElementById("devicesSlider").value = this.value;
+    calculatePrice();
+  }
+
+  document.getElementById("usersSlider").oninput = function() {
+    document.getElementById("users").value = this.value;
+    calculatePrice();
+  }
+
+  document.getElementById("devicesSlider").oninput = function() {
+    document.getElementById("devices").value = this.value;
+    calculatePrice();
+  }
+</script>
+`,
+        callToAction: {
+          text: '立即购买',
+          onclick: 'submit()',
+          variant: 'primary',
+        },
+      },
+    ]}
+  />
+
+  <Prices
+    prices={[
+      {
+        title: '定制版 V2',
+        subtitle: '定制 <span class="font-bold">专业版</span> 计划，有限的并发连接',
+        price: '<span id="cprice2">19.90</span> <span class="text-sm">/月</span>',
+        period: '按年计费',
+        items: [
+          {
+            description:
+              '<span class="font-bold">基础自托管计划中的所有内容 <span class="underline font-normal">但并发连接有限，超出管理设备不会被禁用</span></span>',
+            icon: 'tabler:checks',
+          },
+          {
+            description: '每个并发连接的无限并发会话（在标签页或单独的窗口中）',
+          },
+          {
+            description: '每增加一个用户 $1',
+          },
+          {
+            description: '每增加一个设备 $0.1',
+          },
+          {
+            description: '每增加一个并发连接 $20',
+          },
+        ],
+        id: 'custom2',
+        content: `
+<form class="flex flex-col space-y-3 mx-3">
+  <label for="users2" class="text-left font-bold">授权用户数量：</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="users2" name="users2" value="10" min="10" max="500" step="10">
+  <input type="range" id="usersSlider2" class="slider" name="usersRange2" value="10" min="10" max="500" step="10">
+  <label for="devices2" class="text-left font-bold">管理设备数量：</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="devices2" name="devices2" value="100" min="100" max="5000" step="100">
+  <input type="range" id="devicesSlider2" class="slider" name="devicesRange2" value="100" min="100" max="5000" step="100">
+  <label for="conns" class="text-left font-bold">并发连接数量：</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="conns" name="conns" value="1" min="1" max="50" step="1">
+  <input type="range" id="connsSlider" class="slider" name="connsRange" value="1" min="1" max="50" step="1">
+</form>
+<br>
+<script>
+ var users2 = 10;
+ var devices2 = 100;
+ var conns = 1;
+ function submit2() {
+   redirectUrl = "https://rustdesk.com/api/lic/stripe/checkout?type=Customized&users=" + users2 + "&devices=" + devices2 + "&conns=" + conns;
+   gotoBuy(redirectUrl);
+ }
+ function calculatePrice2() {
+   users2 = parseInt(document.getElementById("users2").value);
+   devices2 = parseInt(document.getElementById("devices2").value);
+   conns = parseInt(document.getElementById("conns").value);
+   if (!users2 || users2 < 10) users2 = 10;
+   if (devices2 < 100) devices2 = 100;
+   if (conns < 1) conns = 1;
+   var price =  19.9 + (users2 - 10) + (devices2 - 100) * 0.1 + (conns - 1) * 20;
+   document.getElementById("cprice2").innerText = price.toFixed(price >= 100 ? 1 : 2);
+ }
+
+ if (window.location.href.indexOf("custom2") > 0) {
+    setTimeout(function() { window.location = "#custom2"; }, 150);
+ } else {
+    setTimeout(function() { document.getElementById("custom2").parentElement.parentElement.parentElement.style.display = 'none'; }, 0);
+ }
+
+ document.getElementById("users2").oninput = function() {
+   document.getElementById("usersSlider2").value = this.value;
+   calculatePrice2();
+ }
+
+ document.getElementById("devices2").oninput = function() {
+   document.getElementById("devicesSlider2").value = this.value;
+   calculatePrice2();
+ }
+
+ document.getElementById("conns").oninput = function() {
+   document.getElementById("connsSlider").value = this.value;
+   calculatePrice2();
+ }
+
+ document.getElementById("usersSlider2").oninput = function() {
+   document.getElementById("users2").value = this.value;
+   calculatePrice2();
+ }                    
+ 
+ document.getElementById("devicesSlider2").oninput = function() {
+   document.getElementById("devices2").value = this.value;
+   calculatePrice2();
+ }
+
+ document.getElementById("connsSlider").oninput = function() {
+   document.getElementById("conns").value = this.value;
+   calculatePrice2();
+ }
+</script>
+`,
+        callToAction: {
+          text: '立即购买',
+          onclick: 'submit2()',
+          variant: 'primary',
+        },
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        text: 'sales@rustdesk.com',
+        href: 'mailto:sales@rustdesk.com',
+        target: '_blank',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">联系我们获取更大的计划和咨询</Fragment>
+  </CallToAction>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="从计划到生产的引导旅程"
+    tagline="简化的流程"
+    isReversed={true}
+    items={[
+      {
+        title: '安装 RustDesk Server Pro',
+        icon: 'tabler:number-1',
+        description:
+          '<code>bash <(wget -qO- https://get.docker.com)<br>wget rustdesk.com/pro.yml -O compose.yml<br>docker compose up -d</code>',
+      },
+      {
+        title: '探索计划并选择一个计划',
+        icon: 'tabler:number-2',
+      },
+      {
+        title: '输入电子邮件和支付信息',
+        icon: 'tabler:number-3',
+      },
+      {
+        title: '通过您输入的电子邮件获取许可证密钥',
+        icon: 'tabler:number-4',
+      },
+      {
+        title: '在 RustDesk Server Pro 的 Web 控制台中输入许可证密钥',
+        icon: 'tabler:number-5',
+      },
+      {
+        title: '准备就绪！',
+        icon: 'tabler:check',
+        description:
+          '有关详细说明，请参阅我们的 <a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/">文档</a>',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/steps.jpg',
+      alt: 'Steps image',
+    }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="定价常见问题"
+    subtitle="选择合适的计划很重要，我们在这里回答您的问题。如果您对我们的定价选项有疑问，您来对地方了。"
+    columns={1}
+    items={[
+      {
+        title: '这些计划是否包含客户支持？',
+        description: '当然，所有付费计划都包括专属客户支持，以帮助您解决任何疑问或问题。',
+      },
+      {
+        title: '是否有试用许可证？',
+        description: '请 <a class="underline" href="mailto:sales@rustdesk.com">联系我们</a>',
+      },
+      {
+        title: '如何升级我的计划？',
+        description:
+          '当然可以！您可以随时轻松<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license">升级您的计划</a>，以找到最适合您不断变化需求的方案。',
+      },
+      {
+        title: '您接受哪些付款方式？',
+        description:
+          '我们接受主要的信用卡和在线支付方式，以确保便捷和安全的交易过程。如果您想通过银行转账支付，请<a class="underline" href="mailto:sales@rustdesk.com">联系我们</a>；您将被收取额外的银行处理费用，我们将在收到银行的离线付款后向您发送许可证密钥；这需要 3~5 个工作日。',
+      },
+      {
+        title: '除了显示的费用外，还有其他隐藏费用吗？',
+        description: '没有，费用涵盖了每个计划下列出的所有功能。没有隐藏费用或额外收费。',
+      },
+      {
+        title: '您有月付计划吗？',
+        description:
+          '没有，我们只提供年度付款计划。我们不会自动续订；您将在到期日前 14 天收到提醒续订许可证的电子邮件。',
+      },
+      {
+        title: '您对非营利或教育机构有折扣吗？',
+        description: '没有，我们目前还没有。我们鼓励您使用免费计划。',
+      },
+      {
+        title: '您的条款是什么？',
+        description:
+          '请查看这个<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">条款</a>',
+      },
+      {
+        title: '临时支持案例怎么办？我们有一些无需无人值守的设备需要偶尔支持',
+        description:
+          '我们提供这个<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">方案</a>',
+      },
+    ]}
+  />
+</Layout>

@@ -21,7 +21,7 @@ Téléchargez la version Windows du [programme serveur](https://github.com/rustd
 ```
 cd c:\rustdesk-server-windows-x64
 pm2 start hbbr.exe
-pm2 start hbbs.exe -- -r <L'adresse de l'hôte sur lequel hbbr est exécuté>
+pm2 start hbbs.exe 
 pm2 save
 ```
 

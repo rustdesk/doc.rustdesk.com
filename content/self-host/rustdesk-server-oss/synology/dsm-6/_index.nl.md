@@ -47,7 +47,7 @@ Het OS van Synology is gebaseerd op Debian, dus host net (--net=host) werkt prim
 
 {{% /notice %}}
 
-![](images/hbbs-cmd.png?v2) 
+![](images/hbbs-cmd.png?v3) 
 
 - Klaar
   

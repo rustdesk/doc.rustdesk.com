@@ -17,7 +17,7 @@ You need to have Linux installed, script is tested working with CentOS Linux 7/8
 ##### How to Install the server
 Please setup your firewall on your server prior to running the script.
 
-Make sure you have got access via SSH or otherwise setup prior setting up the firewall. The example commands for UFW (Debian based) are:
+Make sure you have got access via SSH or otherwise setup prior to setting up the firewall. The example commands for UFW (Debian based) are:
 ```
 ufw allow proto tcp from YOURIP to any port 22
 ```
@@ -74,7 +74,7 @@ We suggest you use [PM2](https://pm2.keymetrics.io/) for managing your service.
 Run hbbs/hbbr without PM2.
 
 ```sh
-./hbbs -r <relay-server-ip[:port]>
+./hbbs
 ./hbbr
 ```
 
@@ -82,15 +82,13 @@ Run hbbs/hbbr without PM2.
 Run hbbs/hbbr with PM2.
 
 ```sh
-pm2 start hbbs -- -r <relay-server-ip[:port]>
+pm2 start hbbs
 pm2 start hbbr
 ```
 
 <a name="demo"></a>
 {{% notice note %}}
 PM2 requires Node.js v16+, if you fail to run PM2 (e.g. you can not see `hbbs`/`hbbr` in `pm2 list`), please download and install the Node.js LTS version from https://nodejs.org. If you want to make `hbbs`/`hbbr` auto-run after reboot, please check out `pm2 save` and `pm2 startup`. More about [PM2](https://pm2.keymetrics.io/docs/usage/quick-start/). Another good tool for your logs is [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
-
-The `-r` parameter of `hbbs` is not mandatory, it is just convenient for you not to specify a relay server on the controlled client side. You do not need to specify port if you are using default 21117 port. The relay server specified by the client has a higher priority than this.
 {{% /notice %}}
 
 #### Ports

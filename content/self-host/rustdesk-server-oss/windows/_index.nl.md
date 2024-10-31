@@ -43,15 +43,14 @@ het niet verandert nadat de service is ingesteld). Ga nu terug naar de Command p
 
 In dit voorbeeld gebruiken we `C:\Program Files\RustDesk Server`.
 ```cmd
-nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe" -r 0.0.0.0 -k _
-nssm install "RustDesk hbbr Service" "C:\Program Files\RustDesk Server\hbbr.exe" -k _
+nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe" 
+nssm install "RustDesk hbbr Service" "C:\Program Files\RustDesk Server\hbbr.exe"
 ```
 **Merk op:**
 - U kunt `RustDesk hbbs service` wijzigen in wat u wenst om de service hbbs te benoemen
 - U kunt `RustDesk hbbr service` aanpassen in wat u wenst om hbbr de service te noemen.
 - U kunt `C:\Program Files\RustDesk Server\hbbs.exe` veranderen naar waar u de rustdesk bestanden heeft geplaatst.
 - U kunt `C:\Program Files\RustDesk Serverhbbr.exe` veranderen naar waar u de rustdesk bestanden hebt geplaatst
-- U hebt de optie `-k _` niet nodig, die is optioneel, het is alleen voor een betere beveiliging
 
 **Commando-sjablonen:**
 
@@ -95,11 +94,11 @@ pm2-startup install
 
 ### Voer hbbr en hbbs uit
 
-Download de Windows-versie van het [serverprogramma] (https://github.com/rustdesk/rustdesk-server/releases). Unzip het programma naar de C: drive. Voer de volgende vier commando's uit (let op de `-r` parameter):
+Download de Windows-versie van het [serverprogramma] (https://github.com/rustdesk/rustdesk-server/releases). Unzip het programma naar de C: drive. Voer de volgende vier commando's uit:
 
 ```cmd
 cd c:\rustdesk-server-windows-x64
-pm2 start hbbs.exe -- -r <De host waar hbbr draait>
+pm2 start hbbs.exe 
 pm2 start hbbr.exe
 pm2 save
 ```

@@ -1,0 +1,55 @@
+{
+  "consentModal": {
+    "label": "クッキー同意",
+    "title": "こんにちは旅人さん、クッキーの時間です！",
+    "description": "当ウェブサイトは、適切な運営を確保するために必要不可欠なクッキーと、お客様との対話を理解するための追跡クッキーを使用しています。後者は同意後にのみ設定されます。<button type=\"button\" data-cc=\"show-preferencesModal\" class=\"cc__link\">設定を管理する</button>",
+    "acceptAllBtn": "すべて受け入れる",
+    "acceptNecessaryBtn": "すべて拒否する",
+    "showPreferencesBtn": "設定を管理する"
+  },
+  "preferencesModal": {
+    "title": "クッキー設定",
+    "acceptAllBtn": "すべて受け入れる",
+    "acceptNecessaryBtn": "すべて拒否する",
+    "savePreferencesBtn": "設定を保存する",
+    "closeIconLabel": "閉じる",
+    "sections": [
+      {
+        "title": "クッキーの使用",
+        "description": "私たちはウェブサイトの基本的な機能を確保し、オンライン体験を向上させるためにクッキーを使用しています..."
+      },
+      {
+        "title": "厳密に必要なクッキー",
+        "description": "これらのクッキーは、当ウェブサイトの適切な機能のために不可欠です。これらのクッキーがなければ、ウェブサイトは正常に動作しません",
+        "linkedCategory": "necessary"
+      },
+      {
+        "title": "パフォーマンスと分析用クッキー",
+        "description": "これらのクッキーにより、ウェブサイトはあなたが過去に行った選択を記憶することができます",
+        "linkedCategory": "analytics",
+        "cookieTable": {
+          "headers": {
+            "name": "名前",
+            "domain": "サービス",
+            "description": "説明",
+            "expiration": "有効期限"
+          },
+          "body": [
+            {
+              "name": "_ga",
+              "domain": "Google Analytics",
+              "description": "<a href=\"#das\">Google Analytics</a>によって設定されたクッキー。",
+              "expiration": "12日後に有効期限切れ"
+            },
+            {
+              "name": "_gid",
+              "domain": "Google Analytics",
+              "description": "<a href=\"#das\">Google Analytics</a>によって設定されたクッキー",
+              "expiration": "セッション"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -30,14 +30,14 @@ Linux版本在Centos7構建，在 Centos7/8，Ubuntu 18/20上測試過，Debian�
 在伺服器上運行 hbbs/hbbr (Centos 或 Ubuntu)。建議使用[pm2](https://pm2.keymetrics.io/) 管理服務。
 
 ```
-./hbbs -r <hbbr運行所在主機的地址[:port]>
+./hbbs 
 ./hbbr
 ```
 
 或者使用 pm2 運行 hbbs/hbbr
 
 ```
-pm2 start hbbs -- -r <relay-server-ip[:port]>
+pm2 start hbbs 
 pm2 start hbbr
 ```
 
@@ -45,9 +45,6 @@ pm2 start hbbr
 {{% notice note %}}
 
 `pm2` 需要 nodejs v16+，如果你運行 pm2 失敗（例如在 `pm2 list` 中看不到 hbbs/hbbr），請從 https://nodejs.org 下載並安裝 LTS 版本的 nodejs。如果你想讓 hbbs/hbbr 在重啟後自動運行，請查看 `pm2 save` 和 `pm2 startup`。更多關於 [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/)。另一個不錯的日誌工具是 [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate)。
-
-
-hhbs的`-r`參數不是必須的，他只是方便你不用在客戶端指定中繼伺服器。客戶端指定的中繼伺服器優先級高於這個。
 
 {{% /notice %}}
 
@@ -61,7 +58,7 @@ hhbs的`-r`參數不是必須的，他只是方便你不用在客戶端指定中
 #### Docker示範
 ```
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs 
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr
 ```
 
@@ -117,12 +114,6 @@ If there are invalid characters in the key which can not be used in file name, p
 
 ```
 cat ./id_ed25519.pub
-```
-如果您禁止沒有key的用戶建立非加密連接，請在運行hbbs和hbbr的時候添加`-k _ `參數，例如:
-
-```
-./hbbs -r <relay-server-ip[:port]> -k _
-./hbbr -k _
 ```
 
 如果要更改key，請刪除 `id_ed25519` 和 `id_ed25519.pub` 文件並重新啟動 hbbs/hbbr，hbbs將會產生新的密鑰對。

@@ -3,25 +3,6 @@ title: Linux
 weight: 10
 ---
 
-## 依賴
-
-桌面版本界面使用[sciter](https://sciter.com/), 請自行下載。
-
-[Windows](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll) |
-[Linux](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so) |
-[macOS](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.osx/libsciter.dylib)
-
-## 基本構建步驟
-
-- 請準備好 Rust 開發環境和 C++編譯環境
-
-- 安裝[vcpkg](https://github.com/microsoft/vcpkg), 正確設置`VCPKG_ROOT`環境變量
-
-  - Windows: vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
-  - Linux/Osx: vcpkg install
-
-- 運行 `cargo run`
-
 ## 在 Linux 上編譯
 
 ### Ubuntu 18 (Debian 10)
@@ -80,8 +61,3 @@ mv libsciter-gtk.so target/debug
 # Note: VCPKG_ROOT still set
 cargo run
 ```
-
-### 把 Wayland 修改成 X11 (Xorg)
-
-RustDesk 暫時不支持 Wayland，不過正在積極開發中.
-請查看[this](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/)配置 X11.

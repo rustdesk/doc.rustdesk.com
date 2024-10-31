@@ -1,0 +1,109 @@
+---
+import '~/assets/styles/tailwind.css';
+
+import { I18N } from 'astrowind:config';
+
+import CommonMeta from '~/components/common/CommonMeta.astro';
+import Favicons from '~/components/Favicons.astro';
+import CustomStyles from '~/components/CustomStyles.astro';
+import ApplyColorMode from '~/components/common/ApplyColorMode.astro';
+import Metadata from '~/components/common/Metadata.astro';
+import SiteVerification from '~/components/common/SiteVerification.astro';
+import Analytics from '~/components/common/Analytics.astro';
+import BasicScripts from '~/components/common/BasicScripts.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+import Scamming from '../components/common/Scamming.jsx';
+
+// Comment the line below to disable View Transitions
+import { ViewTransitions } from 'astro:transitions';
+
+import { useTranslations, getLocalePaths, LOCALES, DEFAULT_LOCALE, type Lang } from '@/i18n';
+
+import type { MetaData as MetaDataType } from '~/types';
+
+export interface Props {
+  metadata?: MetaDataType;
+  i18n?: boolean;
+}
+
+const { metadata = {}, i18n } = Astro.props;
+const { language, textDirection } = I18N;
+const t = useTranslations(Astro.currentLocale as Lang);
+const langs = Object.keys(LOCALES);
+const baseUrl = import.meta.env.PROD ? Astro.site : '/';
+const defaultLocale = DEFAULT_LOCALE;
+const locale = Astro.currentLocale as Lang;
+
+metadata.description = t({
+  en: "RustDesk offers an open-source remote desktop solution with self-hosted server options. Perfect TeamViewer alternative for secure, private, and customizable remote access. Explore our professional on-premise licenses.",
+  es: "RustDesk ofrece una solución de escritorio remoto de código abierto con opciones de servidor autohospedado. La alternativa perfecta a TeamViewer para un acceso remoto seguro, privado y personalizable. Explore nuestras licencias profesionales locales.",
+  pt: "RustDesk oferece uma solução de desktop remoto de código aberto com opções de servidor auto-hospedado. Alternativa perfeita ao TeamViewer para acesso remoto seguro, privado e personalizável. Explore nossas licenças profissionais locais.",
+  fr: "RustDesk propose une solution de bureau à distance open source avec des options de serveur auto-hébergé. Alternative parfaite à TeamViewer pour un accès à distance sécurisé, privé et personnalisable. Explorez nos licences professionnel.",
+  de: "RustDesk bietet eine Open-Source-Lösung für Remote-Desktops mit selbstgehosteten Serveroptionen. Perfekte TeamViewer-Alternative für sicheren, privaten",
+  it: "RustDesk offre una soluzione open source per desktop remoto con opzioni di server self-hosted. Alternativa perfetta a TeamViewer per un accesso remoto sicuro, privato e personalizzabile. Esplora le nostre licenze professionali on-premise.",
+  ja: "RustDeskは、セルフホスト型サーバーオプションを備えたオープンソースのリモートデスクトップソリューションを提供しています。安全でプライベート、カスタマイズ可能なリモートアクセスのための完璧なTeamViewerの代替です。プロフェッショナルなオンプレミスライセンスをご覧ください。",
+  "zh-cn": "RustDesk提供了一个开源的远程桌面解决方案，具有自托管服务器选项。是安全、私密和可定制的远程访问的完美TeamViewer替代品。探索我们的专业本地许可证。",
+  "zh-tw": "RustDesk 提供了一個開源的遠程桌面解決方案，具有自托管伺服器選項。是安全、私密和可定制的遠程訪問的完美 TeamViewer 替代品。探索我們的專業本地許可證。",
+  ar: "تقدم RustDesk حلاً لسطح المكتب عن بعد مفتوح المصدر مع خيارات خادم مضيف ذاتيًا. بديل مثالي لـ TeamViewer للوصول عن بُعد الآمن والخاص والقابل للتخصيص. استكشف تراخيصنا المهنية على الأرض.",
+  ko: "RustDesk는 자체 호스팅 서버 옵션을 갖춘 오픈 소스 원격 데스크톱 솔루션을 제공합니다. 안전하고 개인 정보 보호되며 사용자 정의 가능한 원격 액세스를 위한 완벽한 TeamViewer 대체품입니다. 전문 온프레미스 라이선스를 살펴보세요.",
+  }) as string;
+---
+
+<!doctype html>
+<html lang={LOCALES[locale].lang || locale || language} dir={LOCALES[locale].dir || textDirection} class="2xl:text-[20px]">
+  <head>
+    <CommonMeta />
+    <Favicons />
+    <CustomStyles />
+    <ApplyColorMode />
+    <Metadata {...metadata} />
+    <SiteVerification />
+    <Analytics />
+
+    <!-- Comment the line below to disable View Transitions -->
+    <ViewTransitions fallback="swap" />
+    {
+      i18n &&
+        getLocalePaths(Astro.url).map(({ path, lang }) => (
+          <link
+            rel="alternate"
+            hreflang={LOCALES[lang].lang || lang}
+            href={Astro.site?.origin + path.replace('/' + defaultLocale, '').replace(/\/$/, '')}
+          />
+        ))
+    }
+    { i18n && Astro.currentLocale == defaultLocale && <script is:inline define:vars={{ langs, baseUrl, defaultLocale }}>
+      let lang;
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        lang = urlParams.get('lang');
+      } catch (e) {
+        console.error(e);
+      }
+      if (lang) {
+        //
+      } else if (localStorage.selectedLang && langs.includes(localStorage.selectedLang)) {
+        lang = localStorage.selectedLang;
+      } else {
+        const browserLang = navigator.language.toLowerCase();
+
+        if (langs.includes(browserLang)) {
+          lang = browserLang;
+        } else if (langs.includes(browserLang.split('-')[0])) {
+          lang = browserLang.split('-')[0];
+        }
+      }
+      if (lang && lang !== defaultLocale) {
+        location.href = `${baseUrl + lang + location.pathname + (location.hash || location.search || '')}`.replace(/\/$/, '');
+      }
+    </script> }
+  </head>
+
+  <body class="antialiased text-default bg-page tracking-tight">
+    <Scamming lang={Astro.currentLocale as Lang} client:load />
+    <slot />
+
+    <BasicScripts />
+    <CookieConsent />
+  </body>
+</html>

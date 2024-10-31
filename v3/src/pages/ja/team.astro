@@ -1,0 +1,64 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: '私たちについて',
+};
+---
+
+<Layout metadata={metadata} i18n>
+  <!-- Hero Widget ******************* -->
+
+  <Hero tagline="私たちについて">
+    <Fragment slot="title">なぜ私たちはこれを構築しているのか？</Fragment>
+
+    <Fragment slot="subtitle">
+      <p class="text-left">
+        2020年半ばのCovid-19パンデミックの最中、現在のリードデベロッパー/創設者はシンガポールでのリモートワークを促進するためにTeamViewerの商用ライセンスを取得する必要に迫られました。しかし、その法外な費用に驚愕しました。一晩の不眠の後、彼らは代替ソリューションを作成するミッションに乗り出しました。こうしてRustDeskが誕生しました - オープンソースで自由にアクセスできるリモートデスクトップソフトウェアで、��多くの不眠の夜を通じて丹念に作り上げられました。この献身と決意の労働の結果、RustDeskは2021年にGitHubでリリースされ、世界中の人々が利用できるようになりました。
+      </p>
+    </Fragment>
+  </Hero>
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="コアチーム"
+    items={[
+      {
+        title: 'ジョセフ・ジャックス<br><small>CEO</small>',
+        description:
+          "ジョセフ・ジャックスは2018年にOSS Capitalを設立しました。これは、世界初かつ唯一のCOSS（商用オープンソース）スタートアップに専念する初期段階のVCです。以前は、最初のKubernetesスタートアップ（Kismatic）の立ち上げと運営を支援し、また2016年にLinux Foundationに寄贈される前に、KubeCon（Kubernetesコミュニティカンファレンス）を設立・運営しました。CNCF（Cloud Native Computing Foundation）が形成されつつある時期でした。",
+        icon: 'tabler:user',
+      },
+      {
+        title: '周華兵<br><small>CTO</small>',
+        description:
+          'RustDeskを創設し開発する前、周華兵はシンガポールで金融ITの分野で12年以上の経験を積みました。プロジェクトとビジネスの管理の両方に豊富な実生活の経験をもたらしています。',
+        icon: 'tabler:user',
+      },
+      {
+        title: 'ダニエル・ラム<br><small>コミュニティアシスタント</small>',
+        description:
+          "IT業界で25年の注目すべきキャリアを持つダニエル・ラムは、多数のオープンソースプロジェクトに積極的に参加し、さまざまな役割と責任を担ってきました。さらに、スコットランドを拠点とし、世界中の顧客にサービスを提供するITサービス会社の設立も成功させました。ダニエルの幅広い専門知識はサポート、販売、コミュニティエンゲージメントを網羅しており、プロジェクトに大量の知識と経験をもたらしています。",
+        icon: 'tabler:user',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="私たちの所在地"
+    tagline="私たちを見つける"
+    columns={1}
+    items={[
+      {
+        title: 'シンガポール',
+        description: '18A, Canberra Drive, Yishun',
+      },
+    ]}
+  />
+</Layout>

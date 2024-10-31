@@ -22,7 +22,7 @@ pm2-startup install
 В консоли (cmd, PowerShell, и т.п.) используйте команды:
 ```
 cd <каталог с распакованными файлами сервера>
-pm2 start hbbs.exe -- -r <адрес ретранслятора>
+pm2 start hbbs.exe
 pm2 start hbbr.exe
 pm2 save
 ```

@@ -1,0 +1,70 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'À propos de nous',
+};
+---
+
+<Layout metadata={metadata} i18n>
+  <!-- Hero Widget ******************* -->
+
+  <Hero tagline="À propos de nous">
+    <Fragment slot="title">Pourquoi Construisons-Nous Cela ?</Fragment>
+
+    <Fragment slot="subtitle">
+      <p class="text-left">
+        Au milieu de la pandémie de Covid-19 mi-2020, le développeur principal / fondateur actuel s'est trouvé contraint
+        d'acquérir une licence commerciale pour TeamViewer afin de faciliter le travail à distance à Singapour. Cependant,
+        ils ont été surpris par le coût exorbitant. Après une nuit agitée, ils se sont lancés dans une mission pour créer
+        une solution alternative. Ainsi, RustDesk a été conçu — un logiciel de bureau à distance open-source, librement
+        accessible, qui a été méticuleusement élaboré au cours de nombreuses nuits blanches. Ce travail de dévouement et
+        de détermination a abouti à la sortie de RustDesk sur GitHub en 2021, permettant son utilisation par des personnes
+        du monde entier.
+      </p>
+    </Fragment>
+  </Hero>
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Équipe Principale"
+    items={[
+      {
+        title: 'Joseph Jacks<br><small>PDG</small>',
+        description:
+          "Joseph Jacks a fondé OSS Capital en 2018. C'est le premier et unique VC de stade précoce au monde dédié exclusivement aux startups COSS (open source commercial) à l'échelle mondiale. Auparavant, il a aidé à démarrer et à gérer la toute première startup Kubernetes (Kismatic) et a également fondé et géré KubeCon (la conférence de la communauté Kubernetes) avant de la donner à la Linux Foundation en 2016 alors que la CNCF (Cloud Native Computing Foundation) se matérialisait.",
+        icon: 'tabler:user',
+      },
+      {
+        title: 'Huabing Zhou<br><small>Directeur Technique</small>',
+        description:
+          "Avant de fonder et de développer RustDesk, Huabing Zhou a accumulé plus de 12 ans d'expérience dans le domaine de l'IT financier tout en travaillant à Singapour. Apportant une richesse d'expérience de la vie réelle au projet et à la gestion de l'entreprise.",
+        icon: 'tabler:user',
+      },
+      {
+        title: 'Daniel Lamb<br><small>Assistant Communautaire</small>',
+        description:
+          "Avec une carrière remarquable d'un quart de siècle dans l'industrie IT, Daniel Lamb a activement participé à de nombreux projets open-source, assumant divers rôles et responsabilités. De plus, il a réussi à établir une entreprise de services IT basée en Écosse, servant des clients du monde entier. L'expertise étendue de Daniel englobe le support, les ventes et l'engagement communautaire, apportant une grande quantité de connaissances et d'expérience au projet.",
+        icon: 'tabler:user',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Nos emplacements"
+    tagline="Trouvez-nous"
+    columns={1}
+    items={[
+      {
+        title: 'Singapour',
+        description: '18A, Canberra Drive, Yishun',
+      },
+    ]}
+  />
+</Layout>

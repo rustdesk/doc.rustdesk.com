@@ -1,0 +1,64 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: '關於我們',
+};
+---
+
+<Layout metadata={metadata} i18n>
+  <!-- Hero Widget ******************* -->
+
+  <Hero tagline="關於我們">
+    <Fragment slot="title">為什麼我們要建立這個？</Fragment>
+
+    <Fragment slot="subtitle">
+      <p class="text-left">
+        在2020年中新冠疫情期間，現在的首席開發者/創始人發現自己需要購買TeamViewer的商業許可證以便在新加坡進行遠程工作。然而，他們對其高昂的成本感到震驚。經過一個不眠之夜後，他們開始著手創建一個替代解決方案。因此，RustDesk誕生了——這是一個開源、免費使用的遠程桌面軟件，是通過無數個不眠之夜精心打造的。這份奉獻和決心的成果最終在2021年在GitHub上發布，使世界各地的人們都能使用RustDesk。
+      </p>
+    </Fragment>
+  </Hero>
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="核心團隊"
+    items={[
+      {
+        title: 'Joseph Jacks<br><small>執行長</small>',
+        description:
+          "Joseph Jacks於2018年創立了OSS Capital。這是世界上第一個也是唯一一個專門針對全球COSS（商業開源）初創公司的早期風險投資公司。此前，他幫助創立並運營了第一家Kubernetes初創公司（Kismatic），還創立並運營了KubeCon（Kubernetes社區會議），後來在2016年將其捐贈給Linux基金會，當時CNCF（雲原生計算基金會）正在形成。",
+        icon: 'tabler:user',
+      },
+      {
+        title: 'Huabing Zhou<br><small>技術總監</small>',
+        description:
+          '在創立和開發RustDesk之前，Huabing Zhou在新加坡金融IT領域積累了超過12年的經驗。為項目和業務管理帶來了豐富的實際生活經驗。',
+        icon: 'tabler:user',
+      },
+      {
+        title: 'Daniel Lamb<br><small>社群助理</small>',
+        description:
+          "Daniel Lamb在IT行業擁有長達四分之一世紀的卓越職業生涯，積極參與了眾多開源項目，承擔各種角色和責任。此外，他還成功地在蘇格蘭建立了一家IT服務公司，為全球客戶提供服務。Daniel豐富的專業知識涵蓋支援、銷售和社群參與，為項目帶來了大量的知識和經驗。",
+        icon: 'tabler:user',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="我們的位置"
+    tagline="找到我們"
+    columns={1}
+    items={[
+      {
+        title: '新加坡',
+        description: '義順，堪培拉道18A',
+      },
+    ]}
+  />
+</Layout>

@@ -1,0 +1,23 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Careers',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero tagline="Careers">
+    <Fragment slot="title"> Current Job Openings </Fragment>
+
+    <Fragment slot="subtitle">
+      We are not currently hiring, but please check back later.
+      <p class="text-slate-500">
+        Meanwhile, feel free to contribute to our open-source repository and collaborate with us there!
+      </p>
+    </Fragment>
+  </Hero>
+</Layout>

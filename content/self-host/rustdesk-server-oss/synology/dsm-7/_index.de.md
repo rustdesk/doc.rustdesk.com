@@ -28,20 +28,20 @@ Nach der Installation von "Container Manager" wird ein gemeinsamer Ordner `docke
 
 Öffnen Sie Ihren Container Manager, gehen Sie zu Project und klicken Sie auf Create.
 
-Geben Sie den Projektnamen `rustdesk-server` ein, ändern Sie Source von "Upload compose.yml" zu "Create compose.yml" und kopieren Sie den folgenden Inhalt in das Feld. Danach sollten Sie `rustdesk.example.com` (die auf Ihre `hbbr` verweist) durch die Domain ersetzen, die auf Ihr NAS verweist.
+Geben Sie den Projektnamen `rustdesk-server` ein, ändern Sie Source von "Upload compose.yml" zu "Create compose.yml" und kopieren Sie den folgenden Inhalt in das Feld. 
 
 {{% notice note %}}
 Sie könnten die Zeile mit `hbbs` vorübergehend in die LAN-IP Ihres NAS ändern, wie auf dem Bild gelb markiert zu sehen. Nachdem Sie sich vergewissert haben, dass Ihr Server funktioniert, **sollten** Sie die Änderung zurücknehmen.
 {{% /notice %}}
 
-![](images/dsm7_creating_project_init.png)
+![](images/dsm7_creating_project_init.png?v2)
 
 ```yaml
 services:
   hbbs:
     container_name: hbbs
     image: rustdesk/rustdesk-server:latest
-    command: hbbs -r rustdesk.example.com:21117 -k _
+    command: hbbs
     volumes:
       - ./data:/root
     network_mode: host
@@ -52,7 +52,7 @@ services:
   hbbr:
     container_name: hbbr
     image: rustdesk/rustdesk-server:latest
-    command: hbbr -k _
+    command: hbbr
     volumes:
       - ./data:/root
     network_mode: host
@@ -89,7 +89,7 @@ Wenn Sie Ihren `hbbs`-Befehl so eingestellt haben, dass er auf Ihre LAN-IP verwe
 
 5.2. Nach dem Stoppen klicken Sie auf "YAML Configurations", ändern Sie die Zeile, die mit `command: hbbs` beginnt, in Ihre Domäne und klicken Sie dann auf "Save". Stellen Sie sicher, dass Sie "Build and start the project (rebuild the image)" wählen.
 
-![](images/dsm7_recreate_project_after_modified_args.png)
+![](images/dsm7_recreate_project_after_modified_args.png?v2)
 
 5.3. Ihr RustDesk-Server sollte für Verbindungen aus dem Internet bereit sein, als nächstes sollten Sie eine Portweiterleitung einrichten.
 

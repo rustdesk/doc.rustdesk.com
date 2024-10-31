@@ -26,20 +26,20 @@ Container Manager 為部分低階的 ARM64 的機型帶來支援，例如 j 系�
 
 打開您的 Container Manager，前往專案並點擊新增。
 
-輸入您的專案名稱 `rustdesk-server` 然後變更來源從"上傳 compose.yml" 至 "建立 compose.yml"，接著複製下方內容到框框，在您複製貼上後，您應該將 `rustdesk.example.com` (它該指向到您的 `hbbr`) 改為會指向至您NAS的網域。
+輸入您的專案名稱 `rustdesk-server` 然後變更來源從"上傳 compose.yml" 至 "建立 compose.yml"，接著複製下方內容到框框。
 
 {{% notice note %}}
 如圖所示，您可以暫時將 `hbbs` 那行改為指向至您的NAS的 LAN IP，在您驗證您的伺服器可以正常運作後，您**應當**變更回來。
 {{% /notice %}}
 
-![](images/dsm7_creating_project_init.png)
+![](images/dsm7_creating_project_init.png?v2)
 
 ````yaml
 services:
   hbbs:
     container_name: hbbs
     image: rustdesk/rustdesk-server:latest
-    command: hbbs -r rustdesk.example.com:21117 -k _
+    command: hbbs 
     volumes:
       - ./data:/root
     network_mode: host
@@ -50,7 +50,7 @@ services:
   hbbr:
     container_name: hbbr
     image: rustdesk/rustdesk-server:latest
-    command: hbbr -k _
+    command: hbbr
     volumes:
       - ./data:/root
     network_mode: host
@@ -86,7 +86,7 @@ services:
 
 5.2 在停止之後，點擊 "YAML 設定"，修改開始為 `command: hbbs` 的那一行至您的網域，接著點擊 "停止"，請確保您選擇了 "建立並啟動專案(重建映像檔)"
 
-![](images/dsm7_recreate_project_after_modified_args.png)
+![](images/dsm7_recreate_project_after_modified_args.png?v2)
 
 5.3 您的 RustDesk 伺服器應該可接受來自網際網路的連線了，接著，您應該設定 port forwarding (通訊埠轉發)。
 

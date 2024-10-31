@@ -134,11 +134,6 @@ Your mail server may not be using port 25. Please make sure you are using the co
 ### Can I deploy RustDesk using PowerShell or similar?
 Sure, you can find scripts to aid deployment [here](https://rustdesk.com/docs/en/self-host/client-deployment/).
 
-### I have installed RustDesk Server Pro manually but the API web console isn't behind SSL, how can I secure this?
-Use a proxy like Nginx, the simple install script has one, it's really simple. [This is how we do it](https://github.com/rustdesk/rustdesk-server-pro/blob/493ad90daf8815c3052ff4d0d4aa9cc07e411efa/install.sh#L252).
-
-Similar configs should work with Traefik v2, HAProxy, Apache Proxy and Cloudflare Tunnel.
-
 ### How can I file a bug report?
 Please file via [GitHub](https://github.com/rustdesk/rustdesk-server-pro/issues).
 
@@ -263,7 +258,7 @@ There are two ways:
 ```sh
 cat > /etc/nginx/sites-available/rustdesk.conf << EOF
 server {
-server_name <YOUR_DOMAIN>;
+    server_name <YOUR_DOMAIN>;
     location / {
         proxy_set_header        X-Real-IP       \$remote_addr;
         proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
@@ -280,7 +275,7 @@ Run `cat /etc/nginx/sites-available/rustdesk.conf` to make sure its content is c
 ```sh
 cat > /etc/nginx/conf.d/rustdesk.conf << EOF
 server {
-server_name <YOUR_DOMAIN>;
+    server_name <YOUR_DOMAIN>;
     location / {
         proxy_set_header        X-Real-IP       \$remote_addr;
         proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
@@ -302,15 +297,15 @@ sudo ufw --force reload
 ```
 
 #### 6. Generate SSL certificate
-Replace `<YOUR_DOMAIN>` with your domain name, then run
-`sudo certbot --nginx --cert-name <YOUR_DOMAIN> --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d <YOUR_DOMAIN>`.
+Replace `$YOUR_DOMAIN` with your domain name, then run
+`sudo certbot --nginx --cert-name $YOUR_DOMAIN --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d $YOUR_DOMAIN`.
 
 If it prompts `Enter email address (used for urgent renewal and security notices)`, enter your email address.
 
 Finally, the content of `rustdesk.conf` should be like this:
 ```
 server {
-server_name <YOUR_DOMAIN>;
+    server_name <YOUR_DOMAIN>;
     location / {
         proxy_set_header        X-Real-IP       $remote_addr;
         proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -322,17 +317,16 @@ server_name <YOUR_DOMAIN>;
     ssl_certificate_key /etc/letsencrypt/live/<YOUR_DOMAIN>/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
-
 }
+
 server {
     if ($host = <YOUR_DOMAIN>) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
-server_name <YOUR_DOMAIN>;
+    server_name <YOUR_DOMAIN>;
     listen 80;
     return 404; # managed by Certbot
-
 }
 ```
 
@@ -363,7 +357,109 @@ Solution: it may be caused by firewall, please refer to https://rustdesk.com/doc
 Notice: Run `sudo service nginx restart` if you change the `rustdesk.conf` manually.
 
 #### 7. Login to the web page
-* Open https://<YOUR_DOMAIN> in the browser, log in using the default user name "admin" and password "test1234", then change the password to your own.
+* Open `https://<YOUR_DOMAIN>` in the browser, log in using the default user name "admin" and password "test1234", then change the password to your own.
+
+#### 8. Add WebSocket Secure (WSS) support for the id server and relay server to enable secure communication for the web client.
+
+Add the following configuration to the first `server` section of the `/etc/nginx/.../rustdesk.conf` file, then restart the `Nginx` service.
+
+```
+    location /ws/id {
+        proxy_pass http://localhost:21118;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location /ws/relay {
+        proxy_pass http://localhost:21119;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+```
+
+The full configuration is
+
+```
+server {
+    server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       $remote_addr;
+        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+
+    location /ws/id {
+        proxy_pass http://localhost:21118;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location /ws/relay {
+        proxy_pass http://localhost:21119;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/<YOUR_DOMAIN>/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/<YOUR_DOMAIN>/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = <YOUR_DOMAIN>) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    server_name <YOUR_DOMAIN>;
+    listen 80;
+    return 404; # managed by Certbot
+}
+```
+
+#### 9. Log in to your server from RustDesk public web client at `https://rustdesk.com/web`.
+
+You need to add below in the `location /` section of the `/etc/nginx/.../rustdesk.conf` to bypass CORS limitation of browsers.
+
+```
+        if ($http_origin ~* (https?://(www\.)?rustdesk\.com)) {
+            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
+            add_header 'Access-Control-Allow-Credentials' 'true' always;
+        }
+        if ($request_method = 'OPTIONS') {
+            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
+            add_header 'Access-Control-Allow-Credentials' 'true' always;
+            add_header 'Content-Length' 0;
+            add_header 'Content-Type' 'text/plain charset=UTF-8';
+            return 204;
+        }
+```
+
 
 ### SELinux
 

@@ -30,14 +30,14 @@ Linux版本在Centos7构建，在 Centos7/8，Ubuntu 18/20上测试过，Debian�
 在服务器上运行 hbbs/hbbr (Centos 或 Ubuntu)。建议使用[pm2](https://pm2.keymetrics.io/) 管理服务。
 
 ```
-./hbbs -r <hbbr运行所在主机的地址[:port]> 
+./hbbs 
 ./hbbr
 ```
 
 或者使用 pm2 运行 hbbs/hbbr
 
 ```
-pm2 start hbbs -- -r <relay-server-ip[:port]> 
+pm2 start hbbs 
 pm2 start hbbr 
 ```
 
@@ -46,7 +46,6 @@ pm2 start hbbr
 
 `pm2` 需要 nodejs v16+，如果你运行 pm2 失败（例如在 `pm2 list` 中看不到 hbbs/hbbr），请从 https://nodejs.org 下载并安装 LTS 版本的 nodejs。 如果你想让 hbbs/hbbr 在重启后自动运行，请查看 `pm2 save` 和 `pm2 startup`。 更多关于 [pm2](https://pm2.keymetrics.io/docs/usage/quick-start/)。另一个不错的日志工具是 [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate)。
 
-hhbs的`-r`参数不是必须的，他只是方便你不用在客户端指定中继服务器，如果是默认21117端口，可以不填port。客户端指定的中继服务器优先级高于这个。
 {{% /notice %}}
 
 默认情况下，hbbs 监听21115(tcp), 21116(tcp/udp), 21118(tcp)，hbbr 监听21117(tcp), 21119(tcp)。务必在防火墙开启这几个端口， **请注意21116同时要开启TCP和UDP**。其中21115是hbbs用作NAT类型测试，21116/UDP是hbbs用作ID注册与心跳服务，21116/TCP是hbbs用作TCP打洞与连接服务，21117是hbbr用作中继服务, 21118和21119是为了支持网页客户端。如果您不需要网页客户端（21118，21119）支持，对应端口可以不开。
@@ -64,7 +63,7 @@ hhbs的`-r`参数不是必须的，他只是方便你不用在客户端指定中
 
 ```
 sudo docker image pull rustdesk/rustdesk-server
-sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs 
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbr
 ```
 
@@ -84,7 +83,7 @@ services:
       - <hbbs_port>:21116 # 自定义 hbbs 映射端口
       - <hbbs_port>:21116/udp # 自定义 hbbs 映射端口
     image: rustdesk/rustdesk-server
-    command: hbbs -r <your_domain>:<hbbr_port> # 填入个人域名或 IP + hbbr 暴露端口
+    command: hbbs 
     volumes:
       - <mount_path>:/root # 自定义挂载目录
     networks:
@@ -166,12 +165,6 @@ If there are invalid characters in the key which can not be used in file name, p
 
 ```
 cat ./id_ed25519.pub
-```
-
-如果您禁止没有key的用户建立非加密连接，请在运行hbbs和hbbr的时候添加`-k _ `参数，例如:
-```
-./hbbs -r <relay-server-ip[:port]> -k _
-./hbbr -k _
 ```
 
 如果要更改key，请删除 `id_ed25519` 和 `id_ed25519.pub` 文件并重新启动 hbbs/hbbr，hbbs将会产生新的密钥对。

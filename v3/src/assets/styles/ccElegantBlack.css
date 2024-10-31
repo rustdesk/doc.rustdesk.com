@@ -1,0 +1,52 @@
+.cc--elegant-black {
+  --cc-bg: #000;
+  --cc-primary-color: rgb(239, 244, 246);
+  --cc-secondary-color: #b1bdc3 !important;
+
+  --cc-btn-primary-bg: #ffffff;
+  --cc-btn-primary-color: #000;
+  --cc-btn-primary-hover-bg: #ccd4d8;
+  --cc-btn-primary-hover-color: #000;
+  --cc-btn-primary-border-color: var(--cc-btn-primary-bg);
+
+  --cc-btn-secondary-bg: rgba(255, 255, 255, 0.039);
+  --cc-btn-secondary-color: var(--cc-primary-color);
+  --cc-btn-secondary-border-color: #252729;
+  --cc-btn-secondary-hover-bg: #252729;
+  --cc-btn-secondary-hover-color: #fff;
+  --cc-btn-secondary-hover-border-color: #252729;
+
+  --cc-cookie-category-block-bg: #101111;
+  --cc-cookie-category-block-border: #1d1e1f;
+  --cc-cookie-category-block-hover-bg: #151516;
+  --cc-cookie-category-block-hover-border: #1d1e1f;
+  --cc-cookie-category-expanded-block-hover-bg: #1d1e1f;
+  --cc-cookie-category-expanded-block-bg: #101111;
+  --cc-toggle-readonly-bg: #2f3132;
+  --cc-overlay-bg: rgba(0, 0, 0, 0.9) !important;
+
+  --cc-toggle-on-bg: var(--cc-btn-primary-bg);
+  --cc-toggle-off-bg: #525f6b;
+  --cc-toggle-on-knob-bg: var(--cc-bg);
+  --cc-toggle-off-knob-bg: var(--cc-btn-primary-color);
+  --cc-toggle-readonly-knob-bg: var(--cc-cookie-category-block-bg);
+  --cc-toggle-enabled-icon-color: var(--cc-btn-primary-color);
+  --cc-toggle-disabled-icon-color: var(--cc-btn-primary-color);
+  --cc-toggle-readonly-knob-icon-color: var(--cc-toggle-readonly-bg);
+  --cc-section-category-border: #1e2428;
+
+  --cc-webkit-scrollbar-bg: var(--cc-section-category-border);
+  --cc-webkit-scrollbar-hover-bg: var(--cc-btn-primary-hover-bg);
+
+  --cc-separator-border-color: #252729;
+
+  --cc-footer-bg: #000;
+  --cc-footer-color: var(--cc-secondary-color);
+  --cc-footer-border-color: #212529;
+}
+
+.cc--elegant-black #cc-main .cm,
+.cc--elegant-black #cc-main .pm {
+  color-scheme: dark;
+  border: 1px solid var(--cc-separator-border-color);
+}

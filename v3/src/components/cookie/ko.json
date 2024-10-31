@@ -1,0 +1,55 @@
+{
+  "consentModal": {
+    "label": "쿠키 동의",
+    "title": "안녕하세요 여행자님, 쿠키 시간입니다!",
+    "description": "우리 웹사이트는 적절한 운영을 위해 필수 쿠키를 사용하며, 귀하와의 상호작용을 이해하기 위해 추적 쿠키를 사용합니다. 후자는 동의 후에만 설정됩니다. <button type=\"button\" data-cc=\"show-preferencesModal\" class=\"cc__link\">환경설정 관리</button>",
+    "acceptAllBtn": "모두 수락",
+    "acceptNecessaryBtn": "모두 거부",
+    "showPreferencesBtn": "환경설정 관리"
+  },
+  "preferencesModal": {
+    "title": "쿠키 환경설정",
+    "acceptAllBtn": "모두 수락",
+    "acceptNecessaryBtn": "모두 거부",
+    "savePreferencesBtn": "환경설정 저장",
+    "closeIconLabel": "닫기",
+    "sections": [
+      {
+        "title": "쿠키 사용",
+        "description": "우리는 웹사이트의 기본 기능을 보장하고 귀하의 온라인 경험을 향상시키기 위해 쿠키를 사용합니다 ..."
+      },
+      {
+        "title": "엄격히 필요한 쿠키",
+        "description": "이 쿠키들은 제 웹사이트의 적절한 기능을 위해 필수적입니다. 이 쿠키들이 없으면 웹사이트가 제대로 작동하지 않을 것입니다",
+        "linkedCategory": "necessary"
+      },
+      {
+        "title": "성능 및 분석 쿠키",
+        "description": "이 쿠키들은 웹사이트가 귀하가 과거에 선택한 사항들을 기억할 수 있게 합니다",
+        "linkedCategory": "analytics",
+        "cookieTable": {
+          "headers": {
+            "name": "이름",
+            "domain": "서비스",
+            "description": "설명",
+            "expiration": "만료"
+          },
+          "body": [
+            {
+              "name": "_ga",
+              "domain": "Google Analytics",
+              "description": "<a href=\"#das\">Google Analytics</a>에 의해 설정된 쿠키입니다.",
+              "expiration": "12일 후 만료"
+            },
+            {
+              "name": "_gid",
+              "domain": "Google Analytics",
+              "description": "<a href=\"#das\">Google Analytics</a>에 의해 설정된 쿠키입니다",
+              "expiration": "세션"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

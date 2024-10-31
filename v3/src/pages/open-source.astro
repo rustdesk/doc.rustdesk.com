@@ -1,0 +1,38 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Open Source',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="We love Open-Source"
+    actions={[
+      {
+        text: 'Find Open Issues',
+        href: 'https://github.com/rustdesk/rustdesk/issues',
+        icon: 'tabler:brand-github',
+        target: '_blank',
+      },
+      {
+        text: 'Follow on GitHub',
+        href: 'https://github.com/rustdesk/rustdesk',
+        icon: 'tabler:brand-github',
+        variant: 'primary',
+        target: '_blank',
+      },
+    ]}
+  >
+    <Fragment slot="title"> RustDesk is built by the open-source community </Fragment>
+
+    <Fragment slot="subtitle">
+      Be inspired and inspire others by joining our community of maintainers and contributors. Together, let's make
+      RustDesk better for people all around the world.
+    </Fragment>
+  </Hero>
+</Layout>

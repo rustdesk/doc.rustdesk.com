@@ -3,25 +3,6 @@ title: Linux
 weight: 10
 ---
 
-### Abhängigkeiten
-
-Desktop-Versionen nutzen [Sciter](https://sciter.com/) für die Benutzeroberfläche, bitte laden Sie die dynamische Bibliothek Sciter selbst herunter.
-
-[Windows](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll) |
-[Linux](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so) |
-[macOS](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.osx/libsciter.dylib)
-
-### Grobe Schritte zum Erstellen
-
-- Bereiten Sie Ihre Rust-Entwicklungsumgebung und Ihre C++-Build-Umgebung vor
-
-- Installieren Sie [vcpkg](https://github.com/microsoft/vcpkg) und setzen Sie die Umgebungsvariable `VCPKG_ROOT` korrekt
-
-  - Windows: `vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static`
-  - Linux/macOS: `vcpkg install
-
-- Nutzen Sie `cargo run`
-
 ### Auf Linux erstellen
 
 #### Ubuntu 18 (Debian 10)
@@ -80,9 +61,3 @@ mv libsciter-gtk.so target/debug
 # Note: VCPKG_ROOT still set
 cargo run
 ```
-
-#### Wayland zu X11 ändern (Xorg)
-
-~~RustDesk unterstützt Wayland nicht.~~ Lesen Sie diese [Anleitung](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/), um Xorg als Standard-GNOME-Sitzung zu konfigurieren.
-
-RustDesk unterstützt jetzt experimentell Wayland. Um dieses Feature zu aktivieren, müssen Sie möglicherweise die [Nightly-Version](https://github.com/rustdesk/rustdesk/releases/tag/nightly) herunterladen.

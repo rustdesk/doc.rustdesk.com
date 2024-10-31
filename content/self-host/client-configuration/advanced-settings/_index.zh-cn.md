@@ -150,7 +150,7 @@ weight: 49
 
 允许局域网发现。
 
-局域网法相后, 如果支持 [WOL](https://en.wikipedia.org/wiki/Wake-on-LAN) , 则可使用 WOL 。
+局域网发现后, 如果支持 [WOL](https://en.wikipedia.org/wiki/Wake-on-LAN) , 则可使用 WOL 。
 
 **位置**:
 
@@ -240,6 +240,14 @@ IP 直接访问的端口。
 | :------: | :------: | :------: | :------: |
 | N | password, click, password-click | password-click | `approve-mode=password-click` |
 
+### verification-method
+
+可以使用什么类型的密码，“临时密码”是指一次性随机密码。
+
+| 是否需要安装 | 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: | :------: |
+| N | use-temporary-password, use-permanent-password, use-both-passwords | use-both-passwords | `verification-method=use-permanent-password` |
+
 ### proxy-url
 
 代理的 url 。
@@ -307,16 +315,29 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 ### allow-auto-record-incoming
 
-自动录制来访会话。
+自动录制传入会话。
 
 **位置**:
 
-1. **桌面端** 设置 -> 常规 -> 录屏 -> 自动录制来访会话
-1. **移动端** 设置 -> 录屏 -> 自动录制来访会话
+1. **桌面端** 设置 -> 常规 -> 录屏 -> 自动录制传入会话
+1. **移动端** 设置 -> 录屏 -> 自动录制传入会话
 
 | 是否需要安装 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| N | Y, N | N | `allow-auto-record-incoming=N` |
+| N | Y, N | N | `allow-auto-record-incoming=Y` |
+
+### allow-auto-record-outgoing
+
+自动录制传出会话。
+
+**位置**:
+
+1. **桌面端** 设置 -> 常规 -> 录屏 -> 自动录制传出会话
+1. **移动端** 设置 -> 录屏 -> 自动录制传出会话
+
+| 是否需要安装 | 可设值 | 默认值 | 示例 | 版本 |
+| :------: | :------: | :------: | :------: | :------: |
+| N | Y, N | N | `allow-auto-record-outgoing=Y` | >= 1.3.2 |
 
 ### video-save-directory
 

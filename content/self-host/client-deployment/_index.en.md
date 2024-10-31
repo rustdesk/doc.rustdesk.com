@@ -14,7 +14,7 @@ The permanent password can be changed from random to one you prefer using by cha
 
 ### PowerShell
 
-```ps
+```powershell
 $ErrorActionPreference= 'silentlycontinue'
 
 # Assign the value random password to the password variable
@@ -185,6 +185,17 @@ echo ...............................................
 You can also use msi instead of `rustdesk.exe --silent-install`.
 
 https://rustdesk.com/docs/en/client/windows/msi/
+
+
+### Winget
+
+you can deploy via powershell with winget as well (this installs via microsofts version of apt - part of most recent windows installs)
+
+from a powershell window or via script (for example via GPO)
+
+```
+winget install --id=RustDesk.RustDesk  -e
+```
 
 ### macOS Bash
 

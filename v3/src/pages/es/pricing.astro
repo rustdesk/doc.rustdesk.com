@@ -1,0 +1,449 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Note from '~/components/widgets/Note.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Precios',
+};
+---
+
+<script>
+  import Swal from 'sweetalert2';
+  import 'sweetalert2/dist/sweetalert2.min.css';
+  window['gotoBuy'] = function (redirectUrl) {
+    Swal.fire({
+      title: 'Por favor, confirme',
+      html: '<p style="text-align:left">¿Desea proceder a la página de compra? <br><br>Tenga en cuenta que lo que está comprando <b style="font-size: 2em">NO</b> es una suscripción <span style="text-decoration:line-through">SaaS (Software como Servicio)</span>. <br><br>En su lugar, es una licencia para una solución de <b style="font-size: 2em">alojamiento propio</b>, que requiere que la implemente en su propio servidor (servidor en la nube, por ejemplo, AWS EC2, Azure VM, Vultr VPS, etc., o su servidor local). <br><br>Por favor, <b style="font-size: 2em">no</b> compre si no sabe qué es el alojamiento propio',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Sí',
+      cancelButtonText: 'No',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Por favor, confirme',
+          html: 'Tenga en cuenta que <span class="text-3xl font-bold">no</span> ofrecemos <span class="text-3xl font-bold">reembolsos</span>. Recomendamos encarecidamente <span class="underline font-bold">probar nuestro plan gratuito de alojamiento propio</span> antes de considerar la compra de nuestro plan Pro. ¿Aún está interesado en continuar?',
+          showCancelButton: true,
+          confirmButtonText: 'Sí',
+          cancelButtonText: 'No',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.open(redirectUrl, '_blank');
+          }
+        });
+      }
+    });
+  };
+</script>
+
+<Layout metadata={metadata} i18n>
+  <Note
+    title="Nota"
+    subtitle='Este precio es para una solución de <span class="text-xl text-blue-500">alojamiento propio</span>, <span class="text-3xl font-extrabold">NO</span> es una suscripción <span class="line-through text-xl text-blue-500">SaaS</span>.'
+  />
+
+  <Prices
+    title='Precios de nuestras soluciones de <span class="text-5xl text-blue-500">alojamiento propio</span>'
+    subtitle="Solo pague por lo que necesita"
+    prices={[
+      {
+        title: 'Gratis',
+        subtitle: 'Plan de alojamiento propio gratuito',
+        price: '0 <span class="text-sm">/mes</span>',
+        period: 'Código abierto y gratuito',
+        items: [
+          {
+            description: 'Estado en línea',
+          },
+          {
+            description: 'Soporte de la comunidad',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Comenzar',
+          href: 'https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/',
+        },
+      },
+      {
+        title: 'Individual',
+        subtitle: 'Plan <span class="font-bold">Pro</span> de alojamiento propio individual',
+        price: '9.90 <span class="text-sm">/mes</span>',
+        period: 'facturado anualmente',
+        items: [
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">1 usuario con licencia</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">20 dispositivos gestionados</a>',
+          },
+          {
+            description:
+              '<a class="underline text-blue-500 font-bold" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">Conexiones concurrentes ilimitadas</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/">2FA</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/">Consola web</a>',
+          },
+          {
+            description: 'Libreta de direcciones',
+          },
+          {
+            description: 'Registro de auditoría',
+          },
+          {
+            description: 'Cambiar ID',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/">Control de acceso</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/">Configuraciones centralizadas</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/">Servidores de retransmisión distribuidos</a>',
+          },
+        ],
+        callToAction: {
+          text: 'Comprar ahora',
+          onclick: 'gotoBuy("https://rustdesk.com/api/lic/stripe/checkout?type=Individual")',
+          variant: 'primary',
+        },
+      },
+      {
+        title: 'Básico',
+        subtitle: 'Plan <span class="font-bold">Pro</span> de alojamiento propio básico',
+        price: '19.90 <span class="text-sm">/mes</span>',
+        period: 'facturado anualmente',
+        items: [
+          {
+            description: '<span class="font-bold">Todo lo incluido en el plan individual</span>',
+            icon: 'tabler:checks',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">10 usuarios con licencia</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">100 dispositivos gestionados</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/">OIDC (SSO)</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/">Integración LDAP</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/#cross-group-settings">Acceso entre grupos</a>',
+          },
+          {
+            description:
+              '<a class="underline text-blue-500 font-bold" target="_blank" href="https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only">Generador de cliente personalizado</a>',
+          },
+        ],
+        callToAction: {
+          text: 'Comprar ahora',
+          onclick: 'gotoBuy("https://rustdesk.com/api/lic/stripe/checkout?type=Basic")',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'popular',
+      },
+      {
+        title: 'Personalizado',
+        subtitle: 'Plan <span class="font-bold">Pro</span> personalizado',
+        price: '<span id="cprice">19.90</span> <span class="text-sm">/mes</span>',
+        period: 'facturado anualmente',
+        items: [
+          {
+            description: '<span class="font-bold">Todo lo incluido en el plan básico</span>',
+            icon: 'tabler:checks',
+          },
+          {
+            description: '$1 por cada usuario adicional',
+          },
+          {
+            description: '$0.1 por cada dispositivo adicional',
+          },
+        ],
+        content: `
+<form class="flex flex-col space-y-3 mx-3 min-w-[200px]">
+  <label for="users" class="text-left font-bold">Número de usuarios con licencia:</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="users" name="users" value="10" min="10" max="500" step="10">
+  <input type="range" id="usersSlider" class="slider" name="usersRange" value="10" min="10" max="500" step="10">
+  <label for="devices" class="text-left font-bold">Número de dispositivos gestionados:</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="devices" name="devices" value="100" min="100" max="5000" step="100">
+  <input type="range" id="devicesSlider" class="slider" name="devicesRange" value="100" min="100" max="5000" step="100">
+</form>
+<br>
+<script>
+  var users = 10;
+  var devices = 100;
+  function submit() {
+    redirectUrl = "https://rustdesk.com/api/lic/stripe/checkout?type=Customized&users=" + users + "&devices=" + devices;
+    gotoBuy(redirectUrl);
+  }
+  function calculatePrice() {
+    users = parseInt(document.getElementById("users").value);
+    devices = parseInt(document.getElementById("devices").value);
+    if (!users || users < 10) users = 10;
+    if (devices < 100) devices = 100;
+    var price =  19.9 + (users - 10) + (devices - 100) * 0.1;
+    document.getElementById("cprice").innerText = price.toFixed(price >= 100 ? 1 : 2);
+  }
+
+  document.getElementById("users").oninput = function() {
+    document.getElementById("usersSlider").value = this.value;
+    calculatePrice();
+  }
+
+  document.getElementById("devices").oninput = function() {
+    document.getElementById("devicesSlider").value = this.value;
+    calculatePrice();
+  }
+
+  document.getElementById("usersSlider").oninput = function() {
+    document.getElementById("users").value = this.value;
+    calculatePrice();
+  }
+
+  document.getElementById("devicesSlider").oninput = function() {
+    document.getElementById("devices").value = this.value;
+    calculatePrice();
+  }
+</script>
+`,
+        callToAction: {
+          text: 'Comprar ahora',
+          onclick: 'submit()',
+          variant: 'primary',
+        },
+      },
+    ]}
+  />
+
+  <Prices
+    prices={[
+      {
+        title: 'Personalizado V2',
+        subtitle: 'Plan <span class="font-bold">Pro</span> personalizado con conexiones concurrentes limitadas',
+        price: '<span id="cprice2">19.90</span> <span class="text-sm">/mes</span>',
+        period: 'facturado anualmente',
+        items: [
+          {
+            description:
+              '<span class="font-bold">Todo lo incluido en el plan básico de alojamiento propio <span class="underline font-normal">pero con conexiones concurrentes limitadas, los dispositivos gestionados excesivos no se deshabilitarán</span></span>',
+            icon: 'tabler:checks',
+          },
+          {
+            description: 'Sesiones concurrentes ilimitadas (en pestañas o ventanas separadas) por conexión concurrente',
+          },
+          {
+            description: '$1 por cada usuario adicional',
+          },
+          {
+            description: '$0.1 por cada dispositivo adicional',
+          },
+          {
+            description: '$20 por cada conexión concurrente adicional',
+          },
+        ],
+        id: 'custom2',
+        content: `
+<form class="flex flex-col space-y-3 mx-3">
+  <label for="users2" class="text-left font-bold">Número de usuarios con licencia:</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="users2" name="users2" value="10" min="10" max="500" step="10">
+  <input type="range" id="usersSlider2" class="slider" name="usersRange2" value="10" min="10" max="500" step="10">
+  <label for="devices2" class="text-left font-bold">Número de dispositivos gestionados:</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="devices2" name="devices2" value="100" min="100" max="5000" step="100">
+  <input type="range" id="devicesSlider2" class="slider" name="devicesRange2" value="100" min="100" max="5000" step="100">
+  <label for="conns" class="text-left font-bold">Número de conexiones concurrentes:</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="conns" name="conns" value="1" min="1" max="50" step="1">
+  <input type="range" id="connsSlider" class="slider" name="connsRange" value="1" min="1" max="50" step="1">
+</form>
+<br>
+<script>
+ var users2 = 10;
+ var devices2 = 100;
+ var conns = 1;
+ function submit2() {
+   redirectUrl = "https://rustdesk.com/api/lic/stripe/checkout?type=Customized&users=" + users2 + "&devices=" + devices2 + "&conns=" + conns;
+   gotoBuy(redirectUrl);
+ }
+ function calculatePrice2() {
+   users2 = parseInt(document.getElementById("users2").value);
+   devices2 = parseInt(document.getElementById("devices2").value);
+   conns = parseInt(document.getElementById("conns").value);
+   if (!users2 || users2 < 10) users2 = 10;
+   if (devices2 < 100) devices2 = 100;
+   if (conns < 1) conns = 1;
+   var price =  19.9 + (users2 - 10) + (devices2 - 100) * 0.1 + (conns - 1) * 20;
+   document.getElementById("cprice2").innerText = price.toFixed(price >= 100 ? 1 : 2);
+ }
+
+ if (window.location.href.indexOf("custom2") > 0) {
+    setTimeout(function() { window.location = "#custom2"; }, 150);
+ } else {
+    setTimeout(function() { document.getElementById("custom2").parentElement.parentElement.parentElement.style.display = 'none'; }, 0);
+ }
+
+ document.getElementById("users2").oninput = function() {
+   document.getElementById("usersSlider2").value = this.value;
+   calculatePrice2();
+ }
+
+ document.getElementById("devices2").oninput = function() {
+   document.getElementById("devicesSlider2").value = this.value;
+   calculatePrice2();
+ }
+
+ document.getElementById("conns").oninput = function() {
+   document.getElementById("connsSlider").value = this.value;
+   calculatePrice2();
+ }
+
+ document.getElementById("usersSlider2").oninput = function() {
+   document.getElementById("users2").value = this.value;
+   calculatePrice2();
+ }                    
+ 
+ document.getElementById("devicesSlider2").oninput = function() {
+   document.getElementById("devices2").value = this.value;
+   calculatePrice2();
+ }
+
+ document.getElementById("connsSlider").oninput = function() {
+   document.getElementById("conns").value = this.value;
+   calculatePrice2();
+ }
+</script>
+`,
+        callToAction: {
+          text: 'Comprar ahora',
+          onclick: 'submit2()',
+          variant: 'primary',
+        },
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        text: 'sales@rustdesk.com',
+        href: 'mailto:sales@rustdesk.com',
+        target: '_blank',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">Contáctenos para planes más grandes y consultas</Fragment>
+  </CallToAction>
+
+  <Steps
+    title="Un viaje guiado desde los planes hasta la producción"
+    tagline="proceso simplificado"
+    isReversed={true}
+    items={[
+      {
+        title: 'Instalar RustDesk Server Pro',
+        icon: 'tabler:number-1',
+        description:
+          '<code>bash <(wget -qO- https://get.docker.com)<br>wget rustdesk.com/pro.yml -O compose.yml<br>docker compose up -d</code>',
+      },
+      {
+        title: 'Explorar planes y seleccionar uno',
+        icon: 'tabler:number-2',
+      },
+      {
+        title: 'Ingresar correo electrónico y detalles de pago',
+        icon: 'tabler:number-3',
+      },
+      {
+        title: 'Obtener la clave de licencia a través del correo electrónico ingresado',
+        icon: 'tabler:number-4',
+      },
+      {
+        title: 'Ingresar la clave de licencia en la consola web de RustDesk Server Pro',
+        icon: 'tabler:number-5',
+      },
+      {
+        title: '¡Listo!',
+        icon: 'tabler:check',
+        description:
+          'Para instrucciones detalladas, consulte nuestra <a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/">documentación</a>.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/steps.jpg',
+      alt: 'Imagen de pasos',
+    }}
+  />
+
+  <FAQs
+    title="Preguntas frecuentes sobre precios"
+    subtitle="Elegir el plan correcto es importante, y estamos aquí para responder sus preguntas. Si tiene dudas sobre nuestras opciones de precios, está en el lugar correcto."
+    columns={1}
+    items={[
+      {
+        title: '¿Los planes incluyen soporte al cliente?',
+        description:
+          'Absolutamente, todos los planes de pago incluyen acceso a nuestro soporte al cliente dedicado para ayudarlo con cualquier consulta o inquietud.',
+      },
+      {
+        title: '¿Hay una licencia de prueba?',
+        description: 'Por favor, <a class="underline" href="mailto:sales@rustdesk.com">contáctenos</a>',
+      },
+      {
+        title: '¿Cómo puedo actualizar mi plan?',
+        description:
+          '¡Ciertamente! Puede <a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license">actualizar su plan</a> fácilmente, en cualquier momento, para encontrar el que mejor se adapte a sus requisitos en evolución.',
+      },
+      {
+        title: '¿Qué métodos de pago aceptan?',
+        description:
+          'Aceptamos las principales tarjetas de crédito y métodos de pago en línea para garantizar un proceso de transacción conveniente y seguro. Si desea pagar mediante transferencia bancaria, por favor <a class="underline" href="mailto:sales@rustdesk.com">contáctenos</a>; se le cobrará una tarifa adicional por el proceso bancario, y le enviaremos la clave de licencia una vez que recibamos el pago offline en el banco; toma de 3 a 5 días hábiles.',
+      },
+      {
+        title: '¿Hay alguna tarifa oculta más allá del costo mostrado?',
+        description:
+          'No, el costo cubre todas las características y elementos listados bajo cada plan. No hay tarifas ocultas ni cargos extra.',
+      },
+      {
+        title: '¿Tienen pago mensual?',
+        description:
+          'No, solo ofrecemos planes de pago anual. No renovamos automáticamente; recibirá un correo electrónico para recordarle que renueve su licencia 14 días antes de la fecha de vencimiento.',
+      },
+      {
+        title: '¿Tienen descuento para organizaciones sin fines de lucro o educativas?',
+        description: 'No, aún no lo tenemos. Se le anima a usar el plan gratuito.',
+      },
+      {
+        title: "¿Cuáles son sus términos?",
+        description:
+          'Por favor, revise estos <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">términos</a>',
+      },
+      {
+        title: '¿Qué hay de los casos de soporte ocasional? Tenemos algunos dispositivos que necesitan ser soportados ocasionalmente sin acceso desatendido.',
+        description:
+          'Proporcionamos esta <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">solución</a>',
+      }
+    ]}
+  />
+</Layout>

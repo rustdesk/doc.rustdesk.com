@@ -3,25 +3,6 @@ title: Linux
 weight: 10
 ---
 
-## Afhankelijkheden
-
-Desktop versies gebruiken [sciter](https://sciter.com/) voor GUI, download dan zelf de sciter dynamische bibliotheek.
-
-[Windows](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll) |
-[Linux](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so) |
-[MacOS](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.osx/libsciter.dylib)
-
-## Ruwe build stappen
-
-- Bereid uw Rust ontwikkelomgeving en C++ build omgeving voor
-
-- Installeer [vcpkg](https://github.com/microsoft/vcpkg), en stel `VCPKG_ROOT` omgevingsvariabele correct
-
-  - Windows: vcpkg installeer libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
-  - Linux/MacOS: vcpkg install
-
-- run `cargo run`
-
 ## Build op Linux
 
 ### Ubuntu 18 (Debian 10)
@@ -80,7 +61,3 @@ mv libsciter-gtk.so target/debug
 # Note: VCPKG_ROOT still set
 cargo run
 ```
-
-### Verander Wayland in X11 (Xorg)
-
-RustDesk ondersteunt Wayland niet. Controleer [dit](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/) om Xorg te configureren als de standaard GNOME sessie.

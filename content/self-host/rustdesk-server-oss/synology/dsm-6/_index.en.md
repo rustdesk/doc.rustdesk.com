@@ -46,11 +46,9 @@ Click on above `Advanced Settings`.
 {{% notice note %}}
 Synology's OS is Debian based, so host net (--net=host) works fine, we do not need to map ports with `-p` option.
 
-`192.168.16.98` is an internal IP used here for demonstration only, please set it to a public IP when you deploy (or you can use your DDNS address if you have configured one in "Control Panel → Connectivity → DDNS") and don't forget to open ports on your router and your Synology firewall if this is enabled ("Control Panel → Connectivity → Firewall")!
-
 {{% /notice %}}
 
-![](images/hbbs-cmd.png?v2)
+![](images/hbbs-cmd.png?v3)
 
 - Done
 
@@ -58,7 +56,7 @@ Synology's OS is Debian based, so host net (--net=host) works fine, we do not ne
 
 ### Create hbbr container
 
-Please repeat above `hbbs` steps, but name the container `hbbr` and command (for Set Command Step) should be `hbbr -k _`.
+Please repeat above `hbbs` steps, but name the container `hbbr` and command (for Set Command Step) should be `hbbr`.
 
 ![](images/hbbr-config.png)
 

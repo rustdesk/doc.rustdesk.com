@@ -20,7 +20,7 @@ pm2-startup install
 Descargue la versión de Windows de [server program](https://github.com/rustdesk/rustdesk-server/releases), suponiendo que lo descomprima en la unidad C. Ejecute las siguientes cuatro líneas de comandos respectivamente.
 ```
 cd c:\rustdesk-server-windows-x64
-pm2 start hbbs.exe -- -r <The address of the host where hbbr is running>
+pm2 start hbbs.exe 
 pm2 start hbbr.exe 
 pm2 save
 ```

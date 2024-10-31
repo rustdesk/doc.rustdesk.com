@@ -48,7 +48,7 @@ Synology 的操作系统是基于 Debian 的，因此host net (--net=host) 可�
 
 {{% /notice %}}
 
-![](images/hbbs-cmd.png?v2) 
+![](images/hbbs-cmd.png?v3) 
 
 - 搞定
   

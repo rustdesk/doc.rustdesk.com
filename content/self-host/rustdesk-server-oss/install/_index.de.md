@@ -71,7 +71,7 @@ Wir empfehlen Ihnen die Verwendung von [PM2](https://pm2.keymetrics.io/) für di
 Starten Sie hbbs/hbbr ohne PM2.
 
 ```sh
-./hbbs -r <relay-server-ip[:port]>
+./hbbs
 ./hbbr
 ```
 
@@ -79,7 +79,7 @@ Starten Sie hbbs/hbbr ohne PM2.
 Starten Sie hbbs/hbbr mit PM2.
 
 ```sh
-pm2 start hbbs -- -r <relay-server-ip[:port]>
+pm2 start hbbs
 pm2 start hbbr
 ```
 
@@ -87,7 +87,6 @@ pm2 start hbbr
 {{% notice note %}}
 PM2 benötigt Node.js v16+. Wenn Sie PM2 nicht starten können (z. B. können Sie `hbbs`/`hbbr` nicht in `pm2 list` sehen), laden Sie bitte die Node.js-LTS-Version von https://nodejs.org herunter und installieren Sie sie. Wenn Sie `hbbs`/`hbbr` nach einem Neustart automatisch ausführen lassen wollen, schauen Sie sich bitte `pm2 save` und `pm2 startup` an. Mehr über [PM2](https://pm2.keymetrics.io/docs/usage/quick-start/). Ein weiteres gutes Werkzeug für Ihre Logs ist [pm2-logrotate](https://github.com/keymetrics/pm2-logrotate).
 
-Der Parameter `-r` von `hbbs` ist nicht zwingend erforderlich. Es ist nur praktisch, wenn Sie auf der kontrollierten Client-Seite keinen Relay-Server angeben müssen. Sie müssen den Port nicht angeben, wenn Sie den Standardport 21117 verwenden. Der vom Client angegebene Relay-Server hat eine höhere Priorität als dieser.
 {{% /notice %}}
 
 Standardmäßig lauscht `hbbs` auf 21114 (TCP für die Webkonsole, nur in der Pro-Version verfügbar), 21115 (TCP), 21116 (TCP/UDP) und 21118 (TCP), `hbbr` lauscht auf 21117 (TCP) und 21119 (TCP). Diese Ports müssen in der Firewall geöffnet sein. **Bitte beachten Sie, dass 21116 sowohl für TCP als auch für UDP aktiviert sein muss.** 21115 wird für den NAT-Typ-Test verwendet, 21116/UDP wird für die ID-Registrierung und den Heartbeat-Dienst verwendet, 21116/TCP wird für das TCP-Hole-Punching und den Verbindungsdienst verwendet, 21117 wird für die Relay-Dienste verwendet und 21118 sowie 21119 werden zur Unterstützung von Webclients verwendet. *Wenn Sie die Webclient-Unterstützung (21118, 21119) nicht benötigen, können die entsprechenden Ports deaktiviert werden.*

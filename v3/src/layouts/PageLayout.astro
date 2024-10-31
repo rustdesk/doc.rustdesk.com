@@ -1,0 +1,32 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer, { type Props as FD } from '~/components/widgets/Footer.astro';
+import Announcement from '~/components/widgets/Announcement.astro';
+
+import { headerData, footerData } from '~/navigation';
+
+import type { MetaData } from '~/types';
+
+export interface Props {
+  metadata?: MetaData;
+  i18n?: boolean;
+}
+
+const { metadata, i18n } = Astro.props;
+---
+
+<Layout metadata={metadata} i18n={i18n}>
+  <slot name="announcement">
+    <Announcement />
+  </slot>
+  <slot name="header">
+    <Header {...headerData(Astro.currentLocale)} isSticky showGithubStar showToggleTheme i18n={i18n} />
+  </slot>
+  <main>
+    <slot />
+  </main>
+  <slot name="footer">
+    <Footer {...footerData(Astro.currentLocale) as FD} />
+  </slot>
+</Layout>

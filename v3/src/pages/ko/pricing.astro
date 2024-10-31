@@ -1,0 +1,449 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Note from '~/components/widgets/Note.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: '가격',
+};
+---
+
+<script>
+  import Swal from 'sweetalert2';
+  import 'sweetalert2/dist/sweetalert2.min.css';
+  window['gotoBuy'] = function (redirectUrl) {
+    Swal.fire({
+      title: '확인해 주세요',
+      html: `<p style="text-align:left">구매 페이지로 진행하시겠습니까? <br><br>구매하시는 것은 <b style="font-size: 2em">SaaS(서비스형 소프트웨어)</b> 구독이 아닌 <b style="font-size: 2em">자체 호스팅</b> 솔루션의 라이센스입니다. 이 솔루션은 귀하의 서버(클라우드 서버, 예: AWS EC2, Azure VM, Vultr VPS 등)에서 배포해야 합니다. <br><br>자체 호스팅이 무엇인지 모른다면 <b style="font-size: 2em">구매하지 마세요</b>`,
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: '예',
+      cancelButtonText: '아니오',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: '확인해 주세요',
+          html: `환불을 <span class="text-3xl font-bold">제공하지 않습니다</span>. 구매하기 전에 <span class="underline font-bold">무료 자체 호스팅 계획을 테스트</span>하는 것을 강력히 권장합니다. 계속 진행하시겠습니까?`,
+          showCancelButton: true,
+          confirmButtonText: '예',
+          cancelButtonText: '아니오',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.open(redirectUrl, '_blank');
+          }
+        });
+      }
+    });
+  };
+</script>
+
+<Layout metadata={metadata} i18n>
+  <Note
+    title="알림"
+    subtitle='이 가격은 <span class="text-xl text-blue-500">자체 호스팅</span> 솔루션에 대한 것이며, <span class="text-3xl font-extrabold">SaaS</span> 구독이 아닙니다.'
+  />
+
+  <Prices
+    title='우리의 <span class="text-5xl text-blue-500">자체 호스팅</span> 솔루션 가격'
+    subtitle="필요한 만큼만 지불하세요"
+    prices={[
+      {
+        title: '무료',
+        subtitle: '무료 자체 호스팅 계획',
+        price: '0 <span class="text-sm">/월</span>',
+        period: '오픈 소스 및 무료',
+        items: [
+          {
+            description: '온라인 상태',
+          },
+          {
+            description: '커뮤니티 지원',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: '시작하기',
+          href: 'https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/',
+        },
+      },
+      {
+        title: '개인',
+        subtitle: '개인 자체 호스팅 <span class="font-bold">Pro</span> 계획',
+        price: '9.90 <span class="text-sm">/월</span>',
+        period: '연간 청구',
+        items: [
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">1 라이센스 사용자</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">20 관리 장치</a>',
+          },
+          {
+            description:
+              '<a class="underline text-blue-500 font-bold" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">무제한 동시 연결</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/">2FA</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/">웹 콘솔</a>',
+          },
+          {
+            description: '주소록',
+          },
+          {
+            description: '감사 로그',
+          },
+          {
+            description: '변경 ID',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/">액세스 제어</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/">중앙 집중식 설정</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/">분산 릴레이 서버</a>',
+          },
+        ],
+        callToAction: {
+          text: '지금 구매',
+          onclick: 'gotoBuy("https://rustdesk.com/api/lic/stripe/checkout?type=Individual")',
+          variant: 'primary',
+        },
+      },
+      {
+        title: '기본',
+        subtitle: '기본 자체 호스팅 <span class="font-bold">Pro</span> 계획',
+        price: '19.90 <span class="text-sm">/월</span>',
+        period: '연간 청구',
+        items: [
+          {
+            description: '<span class="font-bold">개인 계획의 모든 것</span>',
+            icon: 'tabler:checks',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">10 라이센스 사용자</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#what-are-managed-devices--licensed-users--concurrent-connections-in-pro">100 관리 장치</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/">OIDC (SSO)</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/">LDAP 통합</a>',
+          },
+          {
+            description:
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/#cross-group-settings">그룹 간 액세스</a>',
+          },
+          {
+            description:
+              '<a class="underline text-blue-500 font-bold" target="_blank" href="https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only">맞춤 클라이언트 생성기</a>',
+          },
+        ],
+        callToAction: {
+          text: '지금 구매',
+          onclick: 'gotoBuy("https://rustdesk.com/api/lic/stripe/checkout?type=Basic")',
+        },
+        hasRibbon: true,
+        ribbonTitle: '인기',
+      },
+      {
+        title: '맞춤형',
+        subtitle: '맞춤형 <span class="font-bold">Pro</span> 계획',
+        price: '<span id="cprice">19.90</span> <span class="text-sm">/월</span>',
+        period: '연간 청구',
+        items: [
+          {
+            description: '<span class="font-bold">기본 계획의 모든 것</span>',
+            icon: 'tabler:checks',
+          },
+          {
+            description: '$1 추가 사용자당',
+          },
+          {
+            description: '$0.1 추가 장치당',
+          },
+        ],
+        content: `
+<form class="flex flex-col space-y-3 mx-3 min-w-[200px]">
+  <label for="users" class="text-left font-bold">라이센스 사용자 수:</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="users" name="users" value="10" min="10" max="500" step="10">
+  <input type="range" id="usersSlider" class="slider" name="usersRange" value="10" min="10" max="500" step="10">
+  <label for="devices" class="text-left font-bold">관리 장치 수:</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="devices" name="devices" value="100" min="100" max="5000" step="100">
+  <input type="range" id="devicesSlider" class="slider" name="devicesRange" value="100" min="100" max="5000" step="100">
+</form>
+<br>
+<script>
+  var users = 10;
+  var devices = 100;
+  function submit() {
+    redirectUrl = "https://rustdesk.com/api/lic/stripe/checkout?type=Customized&users=" + users + "&devices=" + devices;
+    gotoBuy(redirectUrl);
+  }
+  function calculatePrice() {
+    users = parseInt(document.getElementById("users").value);
+    devices = parseInt(document.getElementById("devices").value);
+    if (!users || users < 10) users = 10;
+    if (devices < 100) devices = 100;
+    var price =  19.9 + (users - 10) + (devices - 100) * 0.1;
+    document.getElementById("cprice").innerText = price.toFixed(price >= 100 ? 1 : 2);
+  }
+
+  document.getElementById("users").oninput = function() {
+    document.getElementById("usersSlider").value = this.value;
+    calculatePrice();
+  }
+
+  document.getElementById("devices").oninput = function() {
+    document.getElementById("devicesSlider").value = this.value;
+    calculatePrice();
+  }
+
+  document.getElementById("usersSlider").oninput = function() {
+    document.getElementById("users").value = this.value;
+    calculatePrice();
+  }
+
+  document.getElementById("devicesSlider").oninput = function() {
+    document.getElementById("devices").value = this.value;
+    calculatePrice();
+  }
+</script>
+`,
+        callToAction: {
+          text: '지금 구매',
+          onclick: 'submit()',
+          variant: 'primary',
+        },
+      },
+    ]}
+  />
+
+  <Prices
+    prices={[
+      {
+        title: '맞춤형 V2',
+        subtitle: '제한된 동시 연결이 있는 맞춤형 <span class="font-bold">Pro</span> 계획',
+        price: '<span id="cprice2">19.90</span> <span class="text-sm">/월</span>',
+        period: '연간 청구',
+        items: [
+          {
+            description: `<span class="font-bold">기본 자체 호스팅 계획의 모든 것 <span class="underline font-normal">단, 제한된 동시 연결이 있으며, 과도한 관리 장치는 비활성화되지 않습니다</span></span>`,
+            icon: 'tabler:checks',
+          },
+          {
+            description: '동시 연결당 무제한 동시 세션(탭 또는 별도의 창)',
+          },
+          {
+            description: '$1 추가 사용자당',
+          },
+          {
+            description: '$0.1 추가 장치당',
+          },
+          {
+            description: '$20 추가 동시 연결당',
+          },
+        ],
+        id: 'custom2',
+        content: `
+<form class="flex flex-col space-y-3 mx-3">
+  <label for="users2" class="text-left font-bold">라이센스 사용자 수:</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="users2" name="users2" value="10" min="10" max="500" step="10">
+  <input class="range" id="usersSlider2" class="slider" name="usersRange2" value="10" min="10" max="500" step="10">
+  <label for="devices2" class="text-left font-bold">관리 장치 수:</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="devices2" name="devices2" value="100" min="100" max="5000" step="100">
+  <input type="range" id="devicesSlider2" class="slider" name="devicesRange2" value="100" min="100" max="5000" step="100">
+  <label for="conns" class="text-left font-bold">동시 연결 수:</label>
+  <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="conns" name="conns" value="1" min="1" max="50" step="1">
+  <input type="range" id="connsSlider" class="slider" name="connsRange" value="1" min="1" max="50" step="1">
+</form>
+<br>
+<script>
+ var users2 = 10;
+ var devices2 = 100;
+ var conns = 1;
+ function submit2() {
+   redirectUrl = "https://rustdesk.com/api/lic/stripe/checkout?type=Customized&users=" + users2 + "&devices=" + devices2 + "&conns=" + conns;
+   gotoBuy(redirectUrl);
+ }
+ function calculatePrice2() {
+   users2 = parseInt(document.getElementById("users2").value);
+   devices2 = parseInt(document.getElementById("devices2").value);
+   conns = parseInt(document.getElementById("conns").value);
+   if (!users2 || users2 < 10) users2 = 10;
+   if (devices2 < 100) devices2 = 100;
+   if (conns < 1) conns = 1;
+   var price =  19.9 + (users2 - 10) + (devices2 - 100) * 0.1 + (conns - 1) * 20;
+   document.getElementById("cprice2").innerText = price.toFixed(price >= 100 ? 1 : 2);
+ }
+
+ if (window.location.href.indexOf("custom2") > 0) {
+    setTimeout(function() { window.location = "#custom2"; }, 150);
+ } else {
+    setTimeout(function() { document.getElementById("custom2").parentElement.parentElement.parentElement.style.display = 'none'; }, 0);
+ }
+
+ document.getElementById("users2").oninput = function() {
+   document.getElementById("usersSlider2").value = this.value;
+   calculatePrice2();
+ }
+
+ document.getElementById("devices2").oninput = function() {
+   document.getElementById("devicesSlider2").value = this.value;
+   calculatePrice2();
+ }
+
+ document.getElementById("conns").oninput = function() {
+   document.getElementById("connsSlider").value = this.value;
+   calculatePrice2();
+ }
+
+ document.getElementById("usersSlider2").oninput = function() {
+   document.getElementById("users2").value = this.value;
+   calculatePrice2();
+ }                    
+ 
+ document.getElementById("devicesSlider2").oninput = function() {
+   document.getElementById("devices2").value = this.value;
+   calculatePrice2();
+ }
+
+ document.getElementById("connsSlider").oninput = function() {
+   document.getElementById("conns").value = this.value;
+   calculatePrice2();
+ }
+</script>
+`,
+        callToAction: {
+          text: '지금 구매',
+          onclick: 'submit2()',
+          variant: 'primary',
+        },
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        text: 'sales@rustdesk.com',
+        href: 'mailto:sales@rustdesk.com',
+        target: '_blank',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">대규모 계획 및 문의를 위해 저희에게 연락해 주세요</Fragment>
+  </CallToAction>
+
+  <Steps
+    title="계획에서 생산까지의 안내 여정"
+    tagline="간소화된 프로세스"
+    isReversed={true}
+    items={[
+      {
+        title: 'RustDesk Server Pro 설치',
+        icon: 'tabler:number-1',
+        description:
+          '<code>bash <(wget -qO- https://get.docker.com)<br>wget rustdesk.com/pro.yml -O compose.yml<br>docker compose up -d</code>',
+      },
+      {
+        title: '계획 탐색 및 선택',
+        icon: 'tabler:number-2',
+      },
+      {
+        title: '이메일 및 결제 정보 입력',
+        icon: 'tabler:number-3',
+      },
+      {
+        title: '입력한 이메일로 라이센스 키 수신',
+        icon: 'tabler:number-4',
+      },
+      {
+        title: 'RustDesk Server Pro의 웹 콘솔에 라이센스 키 입력',
+        icon: 'tabler:number-5',
+      },
+      {
+        title: '준비 완료!',
+        icon: 'tabler:check',
+        description:
+          '자세한 지침은 저희 <a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/">문서</a>를 참조해 주세요.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/steps.jpg',
+      alt: '단계 이미지',
+    }}
+  />
+
+  <FAQs
+    title="가격 FAQ"
+    subtitle="올바른 계획을 선택하는 것은 중요하며, 우리는 귀하의 질문에 답변하기 위해 여기 있습니다. 가격 옵션에 대한 질문이 있으시면, 올바른 장소에 계십니다."
+    columns={1}
+    items={[
+      {
+        title: '계획에 고객 지원이 포함되나요?',
+        description:
+          '물론입니다. 모든 유료 계획에는 귀하의 질문이나 우려 사항을 도와줄 전담 고객 지원이 포함됩니다.',
+      },
+      {
+        title: '시험 라이센스가 있나요?',
+        description: '자세한 내용은 <a class="underline" href="mailto:sales@rustdesk.com">저희에게 연락해 주세요</a>',
+      },
+      {
+        title: '계획을 어떻게 업그레이드하나요?',
+        description:
+          '물론입니다! 언제든지 <a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license">계획을 업그레이드</a>하여 귀하의 요구에 가장 적합한 계획을 찾을 수 있습니다.',
+      },
+      {
+        title: '어떤 결제 방법을 받나요?',
+        description:
+          '주요 신용 카드 및 온라인 결제 방법을 수락하여 편리하고 안전한 거래 프로세스를 보장합니다. 은행 송금으로 결제하고 싶으시면 <a class="underline" href="mailto:sales@rustdesk.com">저희에게 연락해 주세요</a>; 추가 은행 처리 수수료가 부과되며, 오프라인 결제를 은행에서 수령한 후 라이센스 키를 보내드립니다. 이 과정은 3~5일이 소요됩니다.',
+      },
+      {
+        title: '표시된 비용 외에 숨겨진 수수료가 있나요?',
+        description:
+          '아니요, 비용은 각 계획에 나열된 모든 기능을 포함합니다. 숨겨진 수수료나 추가 요금은 없습니다.',
+      },
+      {
+        title: '월별 결제가 있나요?',
+        description:
+          '아니요, 연간 결제 계획만 제공합니다. 자동 갱신은 하지 않으며, 만료일 14일 전에 갱신 알림 이메일을 받게 됩니다.',
+      },
+      {
+        title: '비영리 또는 교육 기관에 대한 할인 혜택이 있나요?',
+        description: '아니요, 현재로서는 없습니다. 무료 계획을 사용하시기를 권장합니다.',
+      },
+      {
+        title: "약관은 무엇인가요?",
+        description:
+          '이 <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">약관</a>을 확인해 주세요.',
+      },
+      {
+        title:
+          '가끔 지원이 필요한 장치가 있습니다. 무인 액세스 없이 지원이 가능한가요?',
+        description:
+          '이 <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">해결책</a>을 제공합니다.',
+      },
+    ]}
+  />
+</Layout>

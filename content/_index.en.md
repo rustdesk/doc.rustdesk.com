@@ -5,7 +5,7 @@ weight: 1
 
 # RustDesk Documentation
 
-RustDesk is a full-featured open source remote control alternative for self-hosting and security with minimal configuration. You have full control of your data, with no concerns about security. The Client is open source and theres a choice between the fully featured **Professional Server** available to purchase on our [website](https://rustdesk.com) and the basic free and OSS Server based on our **Professional Server**.
+RustDesk is a full-featured open source remote control alternative for self-hosting and security with minimal configuration. You have full control of your data, with no concerns about security. The Client is open source and there's a choice between the fully featured **Professional Server** available to purchase on our [website](https://rustdesk.com) and the basic free and OSS Server based on our **Professional Server**.
 
 ### Features
 - Works on Windows, macOS, Linux, iOS, Android, Web.

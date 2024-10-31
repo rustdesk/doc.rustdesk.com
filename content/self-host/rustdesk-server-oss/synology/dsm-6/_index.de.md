@@ -50,7 +50,7 @@ Das Betriebssystem von Synology basiert auf Debian, daher funktioniert das Hostn
 
 {{% /notice %}}
 
-![](images/hbbs-cmd.png?v2)
+![](images/hbbs-cmd.png?v3)
 
 - Fertig
 

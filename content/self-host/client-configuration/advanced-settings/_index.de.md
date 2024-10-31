@@ -316,7 +316,20 @@ Eingehende Sitzungen automatisch aufzeichnen.
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
-| N | Y, N | N | `allow-auto-record-incoming=N` |
+| N | Y, N | N | `allow-auto-record-incoming=Y` |
+
+### allow-auto-record-outgoing
+
+Ausgehende Sitzungen automatisch aufzeichnen.
+
+**Position**:
+
+1. **Desktop** Einstellungen → Allgemein → Aufnahme → Ausgehende Sitzungen automatisch aufzeichnen
+2. **Mobil** Einstellungen → Aufnahme → Ausgehende Sitzungen automatisch aufzeichnen
+
+| Installation erforderlich | Werte | Standard | Beispiel | Version |
+| :------: | :------: | :------: | :------: | :------: |
+| N | Y, N | N | `allow-auto-record-outgoing=Y` | >= 1.3.2 |
 
 ### video-save-directory
 

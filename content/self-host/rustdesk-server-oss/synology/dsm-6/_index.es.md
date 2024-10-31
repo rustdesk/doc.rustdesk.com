@@ -47,7 +47,7 @@ Synology OS está basado en Debian, os host net (--net=host) funciona bien, no n
 
 {{% /notice %}}
 
-![](images/hbbs-cmd.png?v2) 
+![](images/hbbs-cmd.png?v3) 
 
 - Hecho
   
