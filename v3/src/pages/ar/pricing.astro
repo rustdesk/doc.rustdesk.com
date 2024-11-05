@@ -192,43 +192,7 @@ const metadata = {
   <input type="range" id="devicesSlider" class="slider" name="devicesRange" value="100" min="100" max="5000" step="100">
 </form>
 <br>
-<script>
-  console.log('loaded'); // no idea why but this fixes below "users" not found.
-  var users = 10;
-  var devices = 100;
-  function submit() {
-    redirectUrl = "https://rustdesk.com/api/lic/stripe/checkout?type=Customized&users=" + users + "&devices=" + devices;
-    gotoBuy(redirectUrl);
-  }
-  function calculatePrice() {
-    users = parseInt(document.getElementById("users").value);
-    devices = parseInt(document.getElementById("devices").value);
-    if (!users || users < 10) users = 10;
-    if (devices < 100) devices = 100;
-    var price =  19.9 + (users - 10) + (devices - 100) * 0.1;
-    document.getElementById("cprice").innerText = price.toFixed(price >= 100 ? 1 : 2);
-  }
 
-  document.getElementById("users").oninput = function() {
-    document.getElementById("usersSlider").value = this.value;
-    calculatePrice();
-  }
-
-  document.getElementById("devices").oninput = function() {
-    document.getElementById("devicesSlider").value = this.value;
-    calculatePrice();
-  }
-
-  document.getElementById("usersSlider").oninput = function() {
-    document.getElementById("users").value = this.value;
-    calculatePrice();
-  }
-
-  document.getElementById("devicesSlider").oninput = function() {
-    document.getElementById("devices").value = this.value;
-    calculatePrice();
-  }
-</script>
 `,
         callToAction: {
           text: 'اشترِ الآن',

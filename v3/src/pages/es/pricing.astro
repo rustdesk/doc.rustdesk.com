@@ -192,43 +192,6 @@ const metadata = {
   <input type="range" id="devicesSlider" class="slider" name="devicesRange" value="100" min="100" max="5000" step="100">
 </form>
 <br>
-<script>
-  console.log('loaded'); // no idea why but this fixes below "users" not found.
-  var users = 10;
-  var devices = 100;
-  function submit() {
-    redirectUrl = "https://rustdesk.com/api/lic/stripe/checkout?type=Customized&users=" + users + "&devices=" + devices;
-    gotoBuy(redirectUrl);
-  }
-  function calculatePrice() {
-    users = parseInt(document.getElementById("users").value);
-    devices = parseInt(document.getElementById("devices").value);
-    if (!users || users < 10) users = 10;
-    if (devices < 100) devices = 100;
-    var price =  19.9 + (users - 10) + (devices - 100) * 0.1;
-    document.getElementById("cprice").innerText = price.toFixed(price >= 100 ? 1 : 2);
-  }
-
-  document.getElementById("users").oninput = function() {
-    document.getElementById("usersSlider").value = this.value;
-    calculatePrice();
-  }
-
-  document.getElementById("devices").oninput = function() {
-    document.getElementById("devicesSlider").value = this.value;
-    calculatePrice();
-  }
-
-  document.getElementById("usersSlider").oninput = function() {
-    document.getElementById("users").value = this.value;
-    calculatePrice();
-  }
-
-  document.getElementById("devicesSlider").oninput = function() {
-    document.getElementById("devices").value = this.value;
-    calculatePrice();
-  }
-</script>
 `,
         callToAction: {
           text: 'Comprar ahora',
@@ -279,61 +242,6 @@ const metadata = {
   <input type="range" id="connsSlider" class="slider" name="connsRange" value="1" min="1" max="50" step="1">
 </form>
 <br>
-<script>
- var users2 = 10;
- var devices2 = 100;
- var conns = 1;
- function submit2() {
-   redirectUrl = "https://rustdesk.com/api/lic/stripe/checkout?type=Customized&users=" + users2 + "&devices=" + devices2 + "&conns=" + conns;
-   gotoBuy(redirectUrl);
- }
- function calculatePrice2() {
-   users2 = parseInt(document.getElementById("users2").value);
-   devices2 = parseInt(document.getElementById("devices2").value);
-   conns = parseInt(document.getElementById("conns").value);
-   if (!users2 || users2 < 10) users2 = 10;
-   if (devices2 < 100) devices2 = 100;
-   if (conns < 1) conns = 1;
-   var price =  19.9 + (users2 - 10) + (devices2 - 100) * 0.1 + (conns - 1) * 20;
-   document.getElementById("cprice2").innerText = price.toFixed(price >= 100 ? 1 : 2);
- }
-
- if (window.location.href.indexOf("custom2") > 0) {
-    setTimeout(function() { window.location = "#custom2"; }, 150);
- } else {
-    setTimeout(function() { document.getElementById("custom2").parentElement.parentElement.parentElement.style.display = 'none'; }, 0);
- }
-
- document.getElementById("users2").oninput = function() {
-   document.getElementById("usersSlider2").value = this.value;
-   calculatePrice2();
- }
-
- document.getElementById("devices2").oninput = function() {
-   document.getElementById("devicesSlider2").value = this.value;
-   calculatePrice2();
- }
-
- document.getElementById("conns").oninput = function() {
-   document.getElementById("connsSlider").value = this.value;
-   calculatePrice2();
- }
-
- document.getElementById("usersSlider2").oninput = function() {
-   document.getElementById("users2").value = this.value;
-   calculatePrice2();
- }                    
- 
- document.getElementById("devicesSlider2").oninput = function() {
-   document.getElementById("devices2").value = this.value;
-   calculatePrice2();
- }
-
- document.getElementById("connsSlider").oninput = function() {
-   document.getElementById("conns").value = this.value;
-   calculatePrice2();
- }
-</script>
 `,
         callToAction: {
           text: 'Comprar ahora',
