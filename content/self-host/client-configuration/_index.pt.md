@@ -69,34 +69,11 @@ Você pode definir a senha como obrigatória e usar uma string codificada em Bas
 
 Você também pode seguir as etapas [acima](https://rustdesk.com/docs/pt/self-host/client-configuration/#configuração-usando-importar-ou-exportar) para exportar a string, remova qualquer `=` do início ou do final da string. Reinicie o Cliente RustDesk se as configurações não forem exibidas.
 
-### 5. Inserir configuração no nome do arquivo rustdesk.exe (somente Windows)
-
-Altere `rustdesk.exe` para rustdesk-`host=<endereço-ip-ou-nome-do-host>,key=<cadeia-de-caracteres-da-chave-pública>`.exe, por exemplo rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe. Você pode ver o resultado da configuração na janela Sobre abaixo.
-
-Como usuário `Pro`, você poderá recuperar a string criptografada inteira do [console web](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/) e, em seguida, baixar e renomear o executável do Cliente RustDesk. Você pode carregá-lo em um local fácil para seus clientes usarem.
+### 5. Importar configuração do `Pro` via área de transferência
 
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
-<a name="invalidchar"></a>
-{{% notice note %}}
-É necessário definir tanto `host` quanto `key`, a falta de qualquer um deles não funcionará.
-
-Opcionalmente, adicione um caractere `,` (vírgula) após a chave, antes da parte `.exe` como delimitador, para evitar que a chave seja truncada se o Windows ou o navegador renomear o arquivo ao baixar nomes duplicados, por exemplo `host=<endereço-ip-ou-nome-do-host>,key=<cadeia-de-caracteres-da-chave-pública>,.exe`.
-
-Se houver caracteres inválidos na chave que não possam ser usados em um nome de arquivo do Windows, remova o arquivo `id_ed25519` do seu servidor e reinicie `hbbs/hbbr`. Isso fará com que o arquivo `id_ed25519.pub` seja gerado novamente. Você pode precisar repetir esse processo até obter caracteres válidos.
-{{% /notice %}}
-
-#### Embasar string de configuração com `--` no nome
-
-Exemplo: `rustdesk--{string-de-configuração}--.exe`
-
-{{% notice note %}}
-Por favor, não use `-licensed-` junto com `--`, por exemplo `rustdesk-licensed-{string-de-configuração}--.exe` não funciona na versão 1.2.3. Corrigiremos isso na versão 1.2.4.
-{{% /notice %}}
-
-Percebemos que, em alguns casos, quando baixado duas vezes, algo como `cópia (1)` é adicionado ao final do nome do arquivo, o que corrompe a configuração.
-
-Ao adicionar `--` no final, logo após a nossa string de configuração, mesmo que algo seja adicionado ao nome do arquivo, a string de configuração não será corrompida e o RustDesk a recuperará corretamente.
+https://github.com/rustdesk/rustdesk-server-pro/discussions/372#discussioncomment-10473298
 
 ### 6. [Configurações Personalizadas de Codificação](https://rustdesk.com/docs/pt/self-host/client-configuration/hardcode-settings/)
 
@@ -105,4 +82,3 @@ Ao adicionar `--` no final, logo após a nossa string de configuração, mesmo q
 
 Você pode obter a string de configuração do console web (você pode vê-la na imagem acima) ou do cliente RustDesk "Configurações → Rede" ([aqui](https://github.com/rustdesk/rustdesk/discussions/7118) (Em inglês) há uma discussão sobre isso).
 
-### 8. [Configurações Avançadas](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/)
