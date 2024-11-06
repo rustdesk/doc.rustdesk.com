@@ -8,21 +8,20 @@ pre: "<b>2.5. </b>"
 This explanation involves complex networking knowledge, we need your assistance to improve its readability.
 {{% /notice %}}
 
-When you're deploying RustDesk server on your home network or any other network environment that you will put your RustDesk server and your clients on the **same LAN or behind the same router**, you may notice you are unable to connect to your server through your **Public IP** or **Domain** (Which in theory points to your public IP).
 
-More details about NAT Loopback, please check [Wikipedia](https://en.m.wikipedia.org/wiki/Network_address_translation#NAT_hairpinning) page.
+For more details about NAT Loopback, please check the [Wikipedia](https://en.m.wikipedia.org/wiki/Network_address_translation#NAT_hairpinning) page.
 
-Explain this in a simple way:
+When you're deploying RustDesk server on your home network or any other network environment, the RustDesk server and your clients **MUST** be on the **same LAN or behind the same router**, you may notice you are unable to connect to your server through your **Public IP** or **Domain** (Which in theory points to your public IP). The self-hosted server is not intended for access outside of the network without additional configuration which is beyond the scope of this explanation.
 
-For example: Your router's public IP is `8.8.8.8`, the LAN IP of your server is `192.168.11.20` and the domain you desire is `rustdesk.example.com`. Router port forwarding is set up to your server behind your LAN (NAT/router).
-
-Your client and server are behind the same router, so when your LAN devices connect to `rustdesk.example.com`. First, it will query the domain IP, which will be `8.8.8.8`, and connect to this IP. Then your router may just **not know** where this connection needs to go, and it will think this connection should go to the router itself, and your connection will fail.
+## Problem 
+In this example we will follow what happens when LAN devices try connecting to `rustdesk.example.com`. Assume your router's public IP will be `8.8.8.8`, the LAN IP of your server is `192.168.11.20` and the domain you desire is `rustdesk.example.com`. 
+First, the LAN device will query the router to get the IP for `rustdesk.example.com`, which will be `8.8.8.8` because the router doesn't have an entry in its DNS for `rustdesk.example.com`. It will try to establish a connection to this IP assuming you want to connect to the router, not the server. However, since the router is not configured to accept that connection, it will not know what to do with that request and the connection will fail.
 
 ## Solutions
 There are three ways to solve this issue.
 
 ### 1. Set up NAT Loopback on your router
-You could set up NAT Loopback on your router if you know how to, but setting this requires knowledge of networking. Some routers don't have the ability to adjust this setting, so this is not the best option.
+You could set up NAT Loopback on your router if you know how to, but setting this requires knowledge of networking. Some routers don't have the ability to adjust this setting, so this is not the best option for everyone.
 
 {{% notice note %}}
 An article from [MikroTik](https://help.mikrotik.com/docs/display/ROS/NAT#NAT-HairpinNAT) explains this very well. You could start learning from here.
@@ -47,11 +46,11 @@ Go to "DNS rewrites" setting.
 ![](images/adguard_home_click_dns_rewrites.png)
 <br>
 
-Click "Add DNS rewrite", than type your `domain` and server's `LAN IP` in the field.
+Click "Add DNS rewrite", then type your `domain` and server's `LAN IP` in the field.
 
 ![](images/adguard_home_dns_rewrite_dialog.png)
 
-Here is the final result looks like.
+Here is what the final result looks like.
 
 ![](images/adguard_home_dns_rewrite_final_result.png)
 
@@ -73,10 +72,10 @@ To check the final results, check the yellow lines in this picture.
 ***Don't forget to assign your Pi-hole to your router's LAN DHCP!***
 
 ### 3. Add rules to your hosts file
-Only recommend this method when you have only few devices. If you have many devices, DNS method is more recommend.
+This method is only recommended if you have a small number of devices. If you have many devices the DNS method is preferred. Otherwise you would have to manually do this on each device that needs access to the server.
 
 {{% notice warning %}}
-**Don't** use this method if your environment have laptops, because this laptop will not able to connect the server when outside your LAN.
+If this method is used on a portable device like a laptop, it will not be able to connect to the server when outside your LAN.
 {{% /notice %}}
 
 Path for different OS:
@@ -85,7 +84,7 @@ Path for different OS:
 ```text
 C:\Windows\system32\drivers\etc\hosts
 ```
-Copy this file to `Desktop` and edit it. After you edited, copy back to original path.
+You can edit with elevated privilages or you can copy this file to `Desktop` and edit it. After you edit it, copy back to original path.
 
 #### macOS
 ```text
@@ -107,7 +106,7 @@ sudo vim /etc/hosts
 
 <hr>
 
-The format among three operating systems is same, all with `IP` first, than `domain`.
+The format is the same in all three operating systems. `IP` first followed by `domain`. One entry per line.
 
 For example:
 ```text
