@@ -87,6 +87,4 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/372#discussioncommen
 
 `rustdesk.exe --config <config-string>`
 
-You can get the config string from web console (you can see it on above picture) or from RustDesk client "Settings → Network" ([here](https://github.com/rustdesk/rustdesk/discussions/7118) is a discussion about this).
-
 您可以从 Web 控制台（您可以在上图中看到它）或从 RustDesk 客户端 "设置 → 网络" 获取配置字符串（[此处](https://github.com/rustdesk/rustdesk/discussions/7118)对此进行讨论）。
