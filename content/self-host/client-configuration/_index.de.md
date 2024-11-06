@@ -73,36 +73,11 @@ Sie können festlegen, dass das Passwort erforderlich ist und einen umgekehrten 
 
 Sie können auch die Schritte von [oben](https://rustdesk.com/docs/de/self-host/client-configuration/#mit-import-oder-export-einrichten) verwenden, um die Zeichenkette zu exportieren und dabei alle `=` am Anfang oder Ende der Zeichenkette entfernen. Starten Sie den RustDesk-Client neu, wenn die Einstellungen nicht angezeigt werden.
 
-### 5. Konfiguration in den Dateinamen von rustdesk.exe einfügen (nur Windows)
-
-Ändern Sie `rustdesk.exe` in rustdesk-`host=<host-ip-oder-name>,key=<public-key-string>`.exe, z. B. rustdesk-`host=192.168.1.137,key=xfdsfsd32=32`.exe. Das Ergebnis der Konfiguration sehen Sie im untenstehenden Über-Fenster.
-
-Als `Pro`-Benutzer können Sie die gesamte verschlüsselte Zeichenkette über die [Webkonsole](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/console/) abrufen, dann die RustDesk-Client-Exe herunterladen und umbenennen, die Sie dann irgendwo hochladen können, damit Ihre Kunden sie verwenden können.
+### 5. Konfiguration aus `Pro` über die Zwischenablage importieren
 
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
-<a name="invalidchar"></a>
-{{% notice note %}}
-Sie müssen sowohl `host` als auch `key` setzen, das Fehlen eines der beiden wird nicht funktionieren.
-
-Fügen Sie nach dem Schlüssel optional ein `,` (Komma) als Trennzeichen vor `.exe` hinzu, um zu verhindern, dass der Schlüssel verstümmelt wird, wenn Windows oder der Browser die Datei beim Herunterladen von doppelten Namen umbenennt, z. B. `host=<host-ip-or-name>,key=<public-key-string>,.exe`.
-
-Wenn der Schlüssel ungültige Zeichen enthält, die nicht in einem Windows-Dateinamen verwendet werden können, entfernen Sie
-bitte die Datei `id_ed25519` von Ihrem Server und starten Sie `hbbs`/`hbbr` neu. Dadurch wird die Datei `id_ed25519.pub` neu generiert.
-Möglicherweise müssen Sie diesen Vorgang wiederholen, bis Sie gültige Zeichen erhalten.
-{{% /notice %}}
-
-#### Einbetten von Konfigurationszeichenketten mit `--` im Namen
-
-Beispiel: `rustdesk-licensed--{config-string}--.exe`
-
-{{% notice note %}}
-Bitte verwenden Sie `-licensed-` nicht zusammen mit `--`, z. B. funktioniert `rustdesk-licensed-{config-string}--.exe` nicht in Version 1.2.3. Wir werden dies in Version 1.2.4 beheben.
-{{% /notice %}}
-
-Wir haben festgestellt, dass in einigen Fällen beim doppelten Herunterladen etwas wie `copy (1)` an das Ende des Dateinamens angehängt wird, was die Konfiguration ruiniert.
-
-Durch das Hinzufügen von `--` am Ende direkt nach der Konfigurationszeichenkette wird diese nicht beschädigt. RustDesk kann sie korrekt abrufen, selbst wenn dem Dateinamen etwas hinzugefügt wird.
+https://github.com/rustdesk/rustdesk-server-pro/discussions/372#discussioncomment-10473298
 
 ### 6. [Benutzerdefinierte Einstellungen fest codieren](https://rustdesk.com/docs/de/self-host/client-configuration/hardcode-settings/)
 
@@ -110,5 +85,3 @@ Durch das Hinzufügen von `--` am Ende direkt nach der Konfigurationszeichenkett
 `rustdesk.exe --config <config-string>`
 
 Sie können die Konfigurationszeichenkette über die Webkonsole (wie auf dem obigen Bild zu sehen) oder über den RustDesk-Client unter "Einstellungen → Netzwerk" abrufen ([hier](https://github.com/rustdesk/rustdesk/discussions/7118) gibt es eine Diskussion darüber).
-
-### 8. [Erweiterte Einstellungen](https://rustdesk.com/docs/de/self-host/client-configuration/advanced-settings/)
