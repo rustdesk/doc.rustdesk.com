@@ -18,7 +18,7 @@ Features:
 
 ### Log in
 
-The default port of the web console is 21114. Enter `http://<hbbs host>:21114` in the browser to enter the console page, as shown in the following figure. The default administrator username/password is admin/test1234:
+The default port of the web console is 21114. Enter `http://<hbbs host>:21114` in the browser to enter the console page, as shown in the following figure. The default administrator username/password is `admin`/`test1234`:
 
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-login.png)
 
