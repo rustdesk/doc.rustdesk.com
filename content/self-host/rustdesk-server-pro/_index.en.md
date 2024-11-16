@@ -50,21 +50,17 @@ You can get license from https://rustdesk.com/pricing.html, check [license](http
 
 ### Installation
 
-#### Simple Install
+```
+bash <(wget -qO- https://get.docker.com)
+wget rustdesk.com/pro.yml -O compose.yml
+docker compose up -d
+```
 
-To make life easy, we have developed scripts which take care of everything (install/upgrade/convert from open source) [Simple Install Script](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/).
+For me details, please check [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/).
 
 {{% notice note %}}
 Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 {{% /notice %}}
-
-#### Manual Installation
-
-Almost the same as [the open source version](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/), but please use the `Pro` version of the software.
-
-#### Docker Installation
-
-Most users choose to install RustDesk server Pro with [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/).
 
 #### Ports Required
 
