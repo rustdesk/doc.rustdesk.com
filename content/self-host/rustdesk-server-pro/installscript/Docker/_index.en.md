@@ -7,6 +7,12 @@ weight: 6
 
 Install Docker with this [guide](https://docs.docker.com/engine/install) to ensure its the most up to date!
 
+Or you can install docker wit this single command.
+
+```
+bash <(wget -qO- https://get.docker.com)
+```
+
 Run the following commands (s6 image may need `./data:/data` instead of `./data:/root`):
 
 ```sh
