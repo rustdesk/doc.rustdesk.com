@@ -21,9 +21,6 @@ RustDesk Server Pro has more features compared to the open source version.
 - [Custom client generator](https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only)
 
 {{% notice note %}}
-RustDesk Client ≥ 1.2.0 required
-{{% /notice %}}
-{{% notice note %}}
 If you build your own server on your home/office, and can't connect it through public IP/domain, please check [this article](https://rustdesk.com/docs/en/self-host/nat-loopback-issues/).
 {{% /notice %}}
 
