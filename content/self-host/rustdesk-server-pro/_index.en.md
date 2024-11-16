@@ -64,7 +64,7 @@ Don't forget to get your license from [https://rustdesk.com/pricing.html](https:
 
 #### Ports Required
 
-You need port 21114-21119 TCP and 21116 UDP open, please ensure these ports are setup when you set firewall rules and Docker port mapping.
+You need port `21114`-`21119` TCP and `21116` UDP open, please ensure these ports are setup when you set firewall rules and Docker port mapping.
 
 More information about these ports, please check [here](/docs/en/self-host/rustdesk-server-oss/install/#ports).
 
