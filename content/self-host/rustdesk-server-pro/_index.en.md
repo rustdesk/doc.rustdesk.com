@@ -24,7 +24,11 @@ RustDesk Server Pro has more features compared to the open source version.
 RustDesk Client ≥ 1.2.0 required
 {{% /notice %}}
 {{% notice note %}}
-If you build you own server on your home/office, and can't connect it through public IP/domain, please check [this article](https://rustdesk.com/docs/en/self-host/nat-loopback-issues/).
+If you build your own server on your home/office, and can't connect it through public IP/domain, please check [this article](https://rustdesk.com/docs/en/self-host/nat-loopback-issues/).
+{{% /notice %}}
+
+{{% notice note %}}
+We recommend reading this first before proceeding, [How does self-hosted server work?](/docs/en/self-host/#how-does-self-hosted-server-work).
 {{% /notice %}}
 
 ### Hardware requirement
