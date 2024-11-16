@@ -7,7 +7,7 @@ weight: 6
 
 Install Docker with this [guide](https://docs.docker.com/engine/install) to ensure its the most up to date!
 
-Or you can install docker wit this single command.
+Or you can install docker with this single command.
 
 ```
 bash <(wget -qO- https://get.docker.com)
