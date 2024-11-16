@@ -56,7 +56,7 @@ wget rustdesk.com/pro.yml -O compose.yml
 docker compose up -d
 ```
 
-For me details, please check [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/).
+For more details, please check [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/).
 
 {{% notice note %}}
 Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
