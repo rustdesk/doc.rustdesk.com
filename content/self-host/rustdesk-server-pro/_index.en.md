@@ -58,15 +58,15 @@ docker compose up -d
 
 For more details, please check [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/).
 
-{{% notice note %}}
-Don't forget to get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
-{{% /notice %}}
-
 #### Ports Required
 
 You need port `21114`-`21119` TCP and `21116` UDP open, please ensure these ports are setup when you set firewall rules and Docker port mapping.
 
 More information about these ports, please check [here](/docs/en/self-host/rustdesk-server-oss/install/#ports).
+
+### Set license
+
+Please obtain your license from [https://rustdesk.com/pricing.html] first. Then open your web console by accessing `http://<hbbs host>:21114`, [log in](/docs/en/self-host/rustdesk-server-pro/console/#log-in) using the default credentials admin/test1234 `admin`/`test1234`. Folow [this guide]([/docs/en/self-host/rustdesk-server-pro/license/#set-license)) to set the license.
 
 ### Upgrade
 
