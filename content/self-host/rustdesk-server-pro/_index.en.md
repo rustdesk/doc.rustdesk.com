@@ -84,4 +84,4 @@ Please follow this [guide](https://rustdesk.com/docs/en/self-host/rustdesk-serve
 
 ### Upgrade license
 
-Follow [this guidde](/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license) to upgrade your license for more users and devices at any time.
+Follow [this guide](/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license) to upgrade your license for more users and devices at any time.
