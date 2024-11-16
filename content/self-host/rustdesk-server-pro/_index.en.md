@@ -70,8 +70,6 @@ This [guide](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#the
 
 ### Setup HTTPS for web console
 
-The simple install script includes HTTPS setup, but it may fail or you do not like it. It can not be used for the other installation methods.
-
 Here is a simple tutorial of [manual HTTPS setup](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
 
 ### Migrate to new host and backup / restore
