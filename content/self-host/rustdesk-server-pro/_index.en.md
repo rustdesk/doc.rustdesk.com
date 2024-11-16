@@ -81,3 +81,7 @@ Here is a detailed [tutorial](https://github.com/rustdesk/rustdesk-server-pro/di
 ### Migrate license
 
 Please follow this [guide](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#invoices-license-retrieval-and-migration).
+
+### Upgrade license
+
+Follow [this guidde](/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license) to upgrade your license for more users and devices at any time.
