@@ -44,10 +44,6 @@ The installation of the Pro version is almost identical, except for the followin
 
 You can get license from https://rustdesk.com/pricing.html, check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 
-### Download
-
-[https://github.com/rustdesk/rustdesk-server-pro/releases/latest](https://github.com/rustdesk/rustdesk-server-pro/releases/latest)
-
 ### Installation
 
 ```
@@ -66,9 +62,9 @@ More information about these ports, please check [here](/docs/en/self-host/rustd
 
 ### Set license
 
-Please obtain your license from [https://rustdesk.com/pricing.html] first. Then open your web console by accessing `http://<hbbs host>:21114`, [log in](/docs/en/self-host/rustdesk-server-pro/console/#log-in) using the default credentials admin/test1234 `admin`/`test1234`. Folow [this guide]([/docs/en/self-host/rustdesk-server-pro/license/#set-license)) to set the license.
+Open your web console by accessing `http://<hbbs host>:21114`, [log in](/docs/en/self-host/rustdesk-server-pro/console/#log-in) using the default credentials admin/test1234 `admin`/`test1234`. Follow [this guide]([/docs/en/self-host/rustdesk-server-pro/license/#set-license)) to set the license.
 
-### Upgrade
+### Upgrade Server
 
 This [guide](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#there-is-a-new-version-of-rustdesk-server-pro-out-how-can-i-upgrade) covers how to upgrade RustDesk Server Pro from a lower version, addressing different installation methods.
 
