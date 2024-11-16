@@ -46,13 +46,10 @@ const ScammingBanner = ({ lang }) => {
           ),
           de: (
             <>
-              WARNUNG: Sie könnten betrogen worden sein! <br />
-              Wenn du mit jemanden telefoniest, der du nicht kennst und vertraust, der dich fragt, RustDesk zu
-              installieren,
+              WARNUNG: Jemand könnte dich gerade betrügen! <br />
+              Wenn du gerade mit jemandem telefonierst, den du nicht kennst und nicht vertraust – und diese Person möchte, dass du RustDesk installierst – dann installiere es nicht und lege sofort auf!
               <br />
-              installiere es nicht und hänge sofort auf. <br />
-              Sie sind wahrscheinlich ein Betrüger, der versucht, dein Geld oder andere private Informationen zu
-              stehlen.
+	      Mit hoher Wahrscheinlichkeit sind dies Betrüger, die versuchen, dein Geld oder private Informationen zu stehlen.
             </>
           ),
           es: (
