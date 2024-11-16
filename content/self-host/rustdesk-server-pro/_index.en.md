@@ -62,7 +62,7 @@ More information about these ports, please check [here](/docs/en/self-host/rustd
 
 ### Set license
 
-Open your web console by accessing `http://<hbbs host>:21114`, [log in](/docs/en/self-host/rustdesk-server-pro/console/#log-in) using the default credentials admin/test1234 `admin`/`test1234`. Follow [this guide]([/docs/en/self-host/rustdesk-server-pro/license/#set-license)) to set the license.
+Open your web console by accessing `http://<hbbs host>:21114`, [log in](/docs/en/self-host/rustdesk-server-pro/console/#log-in) using the default credentials admin/test1234 `admin`/`test1234`. Follow [this guide]([/docs/en/self-host/rustdesk-server-pro/license/#set-license) to set the license.
 
 ### Upgrade Server
 
