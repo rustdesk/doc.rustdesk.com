@@ -8,10 +8,17 @@ weight: 7
 #### Requirements
 You need to have Docker/Podman installed to run a rustdesk-server as a Docker container. If in doubt, install Docker with this [guide](https://docs.docker.com/engine/install) to ensure it's the most up to date!
 
-By default, `hbbs` listens on 21114 (TCP, for web console, only available in Pro version), 21115 (TCP), 21116 (TCP/UDP) and 21118 (TCP), `hbbr` listens on 21117 (TCP) and 21119 (TCP). Be sure to open these ports in the firewall. **Please note that 21116 should be enabled both for TCP and UDP.** 21115 is used for the NAT type test, 21116/UDP is used for the ID registration and heartbeat service, 21116/TCP is used for TCP hole punching and connection service, 21117 is used for the Relay services, and 21118 and 21119 are used to support web clients. *If you do not need web client (21118, 21119) support, the corresponding ports can be disabled.*
+Be sure to open these ports in the firewall:
+- `hbbs`:
+  - `21114` (TCP): used for web console, only available in Pro version.
+  - `21115` (TCP): used for the NAT type test.
+  - `21116` (TCP/UDP): **Please note that 21116 should be enabled both for TCP and UDP.** 21116/UDP is used for the ID registration and heartbeat service. 21116/TCP is used for TCP hole punching and connection service.
+  - `21118` (TCP): used to support web clients.
+- `hbbr`:
+  - `21117` (TCP): used for the Relay services.
+  - `21119` (TCP): used to support web clients.
 
-- TCP (**21114, 21115, 21116, 21117, 21118, 21119**)
-- UDP (**21116**)
+*If you do not need web client support, the corresponding ports 21118, 21119 can be disabled.*
 
 #### Docker examples
 
