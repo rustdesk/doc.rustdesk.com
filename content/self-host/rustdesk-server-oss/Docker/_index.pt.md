@@ -41,7 +41,7 @@ Se a opção `--net=host` funcionar bem, as opções `-p` não são necessárias
 Se não conseguir visualizar os logs com `-td`, você pode vê-los através de `docker logs hbbs`.  Você também pode executar com `-it`, mas `hbbs/hbbr` não será executado em modo daemon.
 {{% /notice %}}
 
-####Exemplos de Docker Compose
+#### Exemplos de Docker Compose
 
 Para executar os arquivos Docker usando o `compose.yml` conforme descrito aqui, você precisa ter o [Docker Compose](https://docs.docker.com/compose/) instalado.
 
@@ -50,6 +50,34 @@ services:
   hbbs:
     container_name: hbbs
     image: rustdesk/rustdesk-server:latest
+    command: hbbs
+    volumes:
+      - ./data:/root
+    network_mode: "host"
+
+    depends_on:
+      - hbbr
+    restart: unless-stopped
+
+  hbbr:
+    container_name: hbbr
+    image: rustdesk/rustdesk-server:latest
+    command: hbbr
+    volumes:
+      - ./data:/root
+    network_mode: "host"
+    restart: unless-stopped
+```
+
+Se você precisar fazer alterações na configuração, por exemplo, definir ALWAYS_USE_RELAY=Y, você pode usar o ambiente no docker-compose.yml
+
+```yaml
+services:
+  hbbs:
+    container_name: hbbs
+    image: rustdesk/rustdesk-server:latest
+    environment:
+      - ALWAYS_USE_RELAY=Y
     command: hbbs
     volumes:
       - ./data:/root
