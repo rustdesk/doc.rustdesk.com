@@ -9,7 +9,7 @@ weight: 30
 Begin by cloning the repository and building the Docker container:
 
 ```sh
-git clone https://github.com/rustdesk/rustdesk
+git clone --depth=1 https://github.com/rustdesk/rustdesk
 cd rustdesk
 docker build -t "rustdesk-builder" .
 ```
