@@ -35,7 +35,7 @@ Una VPS di basso livello è abbastanza. Il server non fa un uso intensivo di CPU
 Per rendere più facile l' installazione abbiamo sviluppato script che pensano a tutto (installazione/aggiornamenti/conversione da open source) [Script di Installazione Semplice](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/).
 
 {{% notice note %}}
-Non dimenticare di prendere la tua licenza da [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), controlla la pagina [licenza](https://rustdesk.com/docs/it/self-host/rustdesk-server-pro/license/) per maggiori informazioni.
+Non dimenticare di prendere la tua licenza da [https://rustdesk.com/pricing/](https://rustdesk.com/pricing/), controlla la pagina [licenza](https://rustdesk.com/docs/it/self-host/rustdesk-server-pro/license/) per maggiori informazioni.
 {{% /notice %}}
 
 
