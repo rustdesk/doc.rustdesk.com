@@ -4,7 +4,7 @@ weight: 10
 ---
 
 {{% notice note %}}
-Vergessen Sie nicht, Ihre Lizenz unter [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) zu erwerben, auf der Seite [Lizenz](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/license/) finden Sie weitere Informationen.
+Vergessen Sie nicht, Ihre Lizenz unter [https://rustdesk.com/pricing/](https://rustdesk.com/pricing/) zu erwerben, auf der Seite [Lizenz](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/license/) finden Sie weitere Informationen.
 
 Bitte lesen Sie zuerst die [OSS-Installation](https://rustdesk.com/docs/de/self-host/rustdesk-server-oss/install/), bevor Sie diese einfache Installation durchführen. Dort erfahren Sie mehr über die zugrunde liegenden Details.
 {{% /notice %}}
