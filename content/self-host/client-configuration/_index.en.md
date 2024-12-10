@@ -71,10 +71,6 @@ If you still can not confirm the value of `API Server`, please go to the welcome
 
 The easiest way to setup automatically is using deployment scripts found [here](https://rustdesk.com/docs/en/self-host/client-deployment/).
 
-You can fix the Password is required and use a reverse Base64 string in the format `{"host":"HOSTADDRESS","key":"HOSTKEY","api":"http://HOSTADDRESS:21114"}` to automatically configure the clients, this is available automatically with RustDesk Server Pro via the console.
-
-You can also use the steps from [above](https://rustdesk.com/docs/en/self-host/client-configuration/#setup-using-import-or-export) to export the string, remove any `=` at the start or end of the string. Restart RustDesk Client if settings don't show.
-
 ### 5, Import config from `Pro` via clipboard
 
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
