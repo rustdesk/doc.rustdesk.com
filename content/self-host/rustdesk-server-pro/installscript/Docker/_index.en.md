@@ -61,7 +61,9 @@ services:
     restart: unless-stopped
 ```
 
-The run `docker compose up -d`.
+Then run `docker compose up -d` or `podman-compose up -d`
+
+> `apt install podman-compose` for `podman-compose` installation
 
 > If you have problem with SELinux on Fedora, please check this [issue](https://github.com/rustdesk/rustdesk-server/issues/230).
 
