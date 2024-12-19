@@ -17,8 +17,8 @@ Run the following commands (s6 image may need `./data:/data` instead of `./data:
 
 ```sh
 sudo docker image pull rustdesk/rustdesk-server-pro
-sudo docker run --name hbbs -v ./data:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbs
-sudo docker run --name hbbr -v ./data:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbr
+sudo docker run --name hbbs -v ./data:/root -td --net=host --restart unless-stopped docker.io/rustdesk/rustdesk-server-pro hbbs
+sudo docker run --name hbbr -v ./data:/root -td --net=host --restart unless-stopped docker.io/rustdesk/rustdesk-server-pro hbbr
 ```
 
 {{% notice note %}}
@@ -27,9 +27,8 @@ The above example uses `sudo` and `--net=host`, this will not work on Windows pl
 
 ```sh
 macaddrhbbs=$(echo -n A0-62-2F; dd bs=1 count=3 if=/dev/random 2>/dev/null |hexdump -v -e '/1 "-%02X"')
-sudo docker image pull rustdesk/rustdesk-server-pro
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v ./data:/root -td --mac-address="$macaddrhbbs" --restart unless-stopped rustdesk/rustdesk-server-pro hbbs
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v ./data:/root -td --restart unless-stopped rustdesk/rustdesk-server-pro hbbr
+sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v ./data:/root -td --mac-address="$macaddrhbbs" --restart unless-stopped docker.io/rustdesk/rustdesk-server-pro hbbs
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v ./data:/root -td --restart unless-stopped docker.io/rustdesk/rustdesk-server-pro hbbr
 ```
 
 ### Docker Compose
@@ -42,7 +41,7 @@ Copy the below into `compose.yml`.
 services:
   hbbs:
     container_name: hbbs
-    image: rustdesk/rustdesk-server-pro:latest
+    image: docker.io/rustdesk/rustdesk-server-pro:latest
     command: hbbs
     volumes:
       - ./data:/root
@@ -54,7 +53,7 @@ services:
 
   hbbr:
     container_name: hbbr
-    image: rustdesk/rustdesk-server-pro:latest
+    image: docker.io/rustdesk/rustdesk-server-pro:latest
     command: hbbr
     volumes:
       - ./data:/root
