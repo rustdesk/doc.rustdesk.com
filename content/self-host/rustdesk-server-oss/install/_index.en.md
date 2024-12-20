@@ -42,7 +42,12 @@ chmod +x install.sh
 There is also an update script on [Techahold's](https://github.com/techahold/rustdeskinstall) repository.
 
 From there, note down the IP/DNS and Key shown at the end of the install and insert those into your client Settings > Network > ID/Relay server `ID server` and `Key` fields, respectively, leaving the other fields blank.
+
 If the server is on your LAN, use it's LAN IP in the `ID server` field and use the WAN IP/DNS for machines outside of the LAN.
+
+{{% notice note %}}
+If you wish to connect to a host on the server local network from an external network, you may need to add the WAN IP/DNS of the server to the host `Relay server` field in the client network configuration.
+{{% /notice %}}
 
 ### Install your own server as systemd service using deb file for debian distros
 
