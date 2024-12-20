@@ -12,17 +12,19 @@ Script is hosted on [Techahold](https://github.com/techahold/rustdeskinstall) an
 Currently the script will download and setup the Relay and Signal Servers (hbbr and hbbs), generate configs and host them on a password protected web page for simple deployment to clients.
 
 #### Requirements
-You need to have Linux installed, script is tested working with CentOS Linux 7/8, Ubuntu 18/20 and Debian. A server with 1 CPU, 1 GB RAM and 10 GB disk is plenty to run RustDesk.
+You need to have Linux installed, script is tested working with CentOS Linux 7/8, Ubuntu 18/20/22/24, and Debian. A server with 1 CPU, 1 GB RAM, and 10 GB disk is plenty to run RustDesk.
 
 ##### How to Install the server
 Please setup your firewall on your server prior to running the script.
 
-Make sure you have got access via SSH or otherwise setup prior to setting up the firewall. The example commands for UFW (Debian based) are:
+Make sure you have access via SSH, or otherwise, set up prior to enabling the firewall. The example commands for UFW (Debian based) are:
 ```
 ufw allow proto tcp from YOURIP to any port 22
 ```
 
-If you have UFW installed use the following commands to configure the firewall (port 8000 only needed if you want to use the auto generated install files):
+When hosting locally, like on a Raspberry Pi, `YOURIP` will be the LAN IP of the machine used to SSH into the server. If the machine doesn't have a static IP, you may also declare a subnet with something like `192.168.0.0/24`.
+
+If you have UFW installed use the following commands to configure the firewall (port 8000 is only needed if you want to use the auto generated install files):
 ```
 ufw allow 21114:21119/tcp
 ufw allow 8000/tcp
@@ -36,13 +38,17 @@ wget https://raw.githubusercontent.com/techahold/rustdeskinstall/master/install.
 chmod +x install.sh
 ./install.sh
 ```
+
 There is also an update script on [Techahold's](https://github.com/techahold/rustdeskinstall) repository.
+
+From there, note down the IP/DNS and Key shown at the end of the install and insert those into your client Settings > Network > ID/Relay server `ID server` and `Key` fields, respectively, leaving the other fields blank.
+If the server is on your LAN, use it's LAN IP in the `ID server` field and use the WAN IP/DNS for machines outside of the LAN.
 
 ### Install your own server as systemd service using deb file for debian distros
 
 Please [Download](https://github.com/rustdesk/rustdesk-server/releases/latest) deb files yourself and install with `apt-get -f install <filename>.deb` or `dpkg -i <filename>.deb`.
 
-### Set up your own server instance manually.
+### Set up your own server instance manually
 
 #### STEP 1: Download server-side software programs
 
