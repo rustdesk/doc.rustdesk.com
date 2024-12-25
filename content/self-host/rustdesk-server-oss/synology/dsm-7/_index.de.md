@@ -65,7 +65,6 @@ services:
 # 21116 TCP TCP hole punching
 # 21116 UDP Heartbeat/ID-Server
 # 21117 TCP Relay
-# 21118/21119 TCP für Websocket, wenn Sie einen Webclient betreiben wollen
 ```
 
 Bitte überspringen Sie `Web portal settings`, dann ist das erledigt.
@@ -109,4 +108,3 @@ Wenn Sie die Einstellung immer noch nicht finden können, suchen Sie in Google n
   * `21116` TCP TCP hole punching
   * `21116` UDP Heartbeat/ID-Server
   * `21117` TCP Relay
-  * `21118/21119` TCP für Websocket, wenn Sie einen Webclient betreiben wollen
