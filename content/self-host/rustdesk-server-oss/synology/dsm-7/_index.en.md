@@ -65,7 +65,6 @@ services:
 # 21116 TCP TCP hole punching
 # 21116 UDP heartbeat/ID server
 # 21117 TCP relay
-# 21118/21119 TCP for web socket if you want to run web client
 ```
 
 Please skip `Web portal settings` then done.
@@ -109,4 +108,3 @@ Open these required ports:
   * `21116` TCP TCP hole punching
   * `21116` UDP heartbeat/ID server
   * `21117` TCP relay
-  * `21118/21119` TCP for web socket if you want to run web client
