@@ -45,7 +45,7 @@ UDP `21116`
 
 The above `21115-21117` are the minimum required ports for RustDesk to work, these handle the signal and relay ports as well as NAT traversal.
 
-Additionally TCP ports `21118` and `21119` can be opened if you want to use the [RustDesk Web Client](https://rustdesk.com/docs/en/dev/build/web/).
+TCP ports `21118` and `21119` are the WebSocket ports for the [RustDesk Web Client](https://rustdesk.com/web/), but it won't works if you open them, it needs a reverse proxy to make it support HTTPS, please refer this [sample Nginx configuration](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client).
 
 For Pro users without an SSL Proxy you will need to open TCP port `21114` for the API to work alternatively using an SSL Proxy open TCP port `443`.
 
