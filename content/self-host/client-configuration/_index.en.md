@@ -8,7 +8,7 @@ pre: "<b>2.3. </b>"
 
 There are a number of ways to configure RustDesk Clients to use your own self-hosted server, we will cover some below.
 
-### 1. Custom client generator (Pro only)
+### 1. Custom client generator (Pro only, basic plan or custom plan)
 
 You can have your own name, logo, icon, configuration, be signed and more.
 
