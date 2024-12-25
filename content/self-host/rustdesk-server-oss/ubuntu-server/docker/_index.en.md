@@ -214,7 +214,6 @@ services:
 # 21116 TCP TCP hole punching
 # 21116 UDP heartbeat/ID server
 # 21117 TCP relay
-# 21118/21119 TCP for web socket if you want to run web client
 ```
 Check [here](/docs/en/client) to set up your client. Only `ID server` and `Key` is needed. `Relay server` isn't needed because we've set it in `hbbs`, hbbs will provide this information automatically.
 
@@ -245,7 +244,6 @@ Open these required ports:
   * `21116` TCP TCP hole punching
   * `21116` UDP heartbeat/ID server
   * `21117` TCP relay
-  * `21118/21119` TCP for web socket if you want to run web client
 
 ### 5. Some basics
 

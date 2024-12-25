@@ -30,10 +30,6 @@ Open your Container Manager, go to Project and click Create.
 
 Enter the project name `rustdesk-server` and change Source from "Upload compose.yml" to "Create compose.yml", and copy following contents to the box.
 
-{{% notice note %}}
-You could modify the line with `hbbs` to your NAS's LAN IP temporarily just like the picture. After you verify your server is working, you **should** change back.
-{{% /notice %}}
-
 ![](images/dsm7_creating_project_init.png?v2)
 
 ```yaml
@@ -65,7 +61,6 @@ services:
 # 21116 TCP TCP hole punching
 # 21116 UDP heartbeat/ID server
 # 21117 TCP relay
-# 21118/21119 TCP for web socket if you want to run web client
 ```
 
 Please skip `Web portal settings` then done.
@@ -109,4 +104,3 @@ Open these required ports:
   * `21116` TCP TCP hole punching
   * `21116` UDP heartbeat/ID server
   * `21117` TCP relay
-  * `21118/21119` TCP for web socket if you want to run web client

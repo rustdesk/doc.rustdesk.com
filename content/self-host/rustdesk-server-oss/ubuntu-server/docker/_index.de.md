@@ -214,7 +214,6 @@ services:
 # 21116 TCP TCP hole punching
 # 21116 UDP heartbeat/ID server
 # 21117 TCP relay
-# 21118/21119 TCP für Websocket, wenn Sie einen Webclient betreiben wollen
 ```
 Lesen Sie [hier](/docs/de/client), wie Sie Ihren Client einrichten. Nur `ID-Server` und `Key` werden benötigt. `Relais-Server` wird nicht benötigt, da wir ihn in `hbbs` festgelegt haben. Diese Informationen werden von `hbbs` automatisch bereitgestellt.
 
@@ -245,7 +244,6 @@ Wenn Sie einen VPS verwenden, suchen Sie mit Google nach `Name des VPS-Anbieters
   * `21116` TCP TCP hole punching
   * `21116` UDP Heartbeat/ID-Server
   * `21117` TCP Relay
-  * `21118/21119` TCP für Websocket, wenn Sie einen Webclient betreiben wollen
 
 ### 5. Einige Grundlagen
 

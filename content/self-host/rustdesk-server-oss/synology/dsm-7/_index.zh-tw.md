@@ -28,10 +28,6 @@ Container Manager 為部分低階的 ARM64 的機型帶來支援，例如 j 系�
 
 輸入您的專案名稱 `rustdesk-server` 然後變更來源從"上傳 compose.yml" 至 "建立 compose.yml"，接著複製下方內容到框框。
 
-{{% notice note %}}
-如圖所示，您可以暫時將 `hbbs` 那行改為指向至您的NAS的 LAN IP，在您驗證您的伺服器可以正常運作後，您**應當**變更回來。
-{{% /notice %}}
-
 ![](images/dsm7_creating_project_init.png?v2)
 
 ````yaml
