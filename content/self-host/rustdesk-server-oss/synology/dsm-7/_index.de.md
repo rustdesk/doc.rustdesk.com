@@ -30,10 +30,6 @@ Nach der Installation von "Container Manager" wird ein gemeinsamer Ordner `docke
 
 Geben Sie den Projektnamen `rustdesk-server` ein, ändern Sie Source von "Upload compose.yml" zu "Create compose.yml" und kopieren Sie den folgenden Inhalt in das Feld. 
 
-{{% notice note %}}
-Sie könnten die Zeile mit `hbbs` vorübergehend in die LAN-IP Ihres NAS ändern, wie auf dem Bild gelb markiert zu sehen. Nachdem Sie sich vergewissert haben, dass Ihr Server funktioniert, **sollten** Sie die Änderung zurücknehmen.
-{{% /notice %}}
-
 ![](images/dsm7_creating_project_init.png?v2)
 
 ```yaml

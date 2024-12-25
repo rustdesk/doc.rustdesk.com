@@ -30,10 +30,6 @@ Open your Container Manager, go to Project and click Create.
 
 Enter the project name `rustdesk-server` and change Source from "Upload compose.yml" to "Create compose.yml", and copy following contents to the box.
 
-{{% notice note %}}
-You could modify the line with `hbbs` to your NAS's LAN IP temporarily just like the picture. After you verify your server is working, you **should** change back.
-{{% /notice %}}
-
 ![](images/dsm7_creating_project_init.png?v2)
 
 ```yaml
