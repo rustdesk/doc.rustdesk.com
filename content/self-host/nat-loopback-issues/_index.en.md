@@ -11,13 +11,36 @@ This explanation involves complex networking knowledge, we need your assistance 
 
 For more details about NAT Loopback, please check the [Wikipedia](https://en.m.wikipedia.org/wiki/Network_address_translation#NAT_hairpinning) page.
 
-When you're deploying RustDesk server on your home network or any other network environment, the RustDesk server and your clients **MUST** be on the **same LAN or behind the same router**, you may notice you are unable to connect to your server through your **Public IP** or **Domain** (Which in theory points to your public IP). The self-hosted server is not intended for access outside of the network without additional configuration which is beyond the scope of this explanation.
+In a nutshell, NAT loopback is the feature of a router that can route a network request for an external IP address from an internal network or device back to the same network rather than directing it to the internet. To understand NAT loopback in more detail, let's take a look at a simplified home network diagram below:
+![Network Diagram](images/networkDiagram.png)
 
-## Problem 
-In this example we will follow what happens when LAN devices try connecting to `rustdesk.example.com`. Assume your router's public IP will be `8.8.8.8`, the LAN IP of your server is `192.168.11.20` and the domain you desire is `rustdesk.example.com`. 
-First, the LAN device will query the router to get the IP for `rustdesk.example.com`, which will be `8.8.8.8` because the router doesn't have an entry in its DNS for `rustdesk.example.com`. It will try to establish a connection to this IP assuming you want to connect to the router, not the server. However, since the router is not configured to accept that connection, it will not know what to do with that request and the connection will fail.
+1. MacBook: A MacBook on your internal network you run the Rustdesk client to connect to the Windows PC.
+2. LinuxComputer: This is another computer running on your internal network where you installed docker and you run the two Rustdesk containers: hbbs(RustDesk ID rendezvous / signaling server) and hbbr (RustDesk relay server). Both containers have dedicated IP addresses (192.168.1.150 and 192.168.1.151) configured as per the Docker installation guide (https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/).
+3. Windows PC: Runs the Rustdesk client listening for incoming Rustdesk client connections.
 
-## Solutions
+When the MacBook connects to the Windows PC using the internal IP address (192.168.1.102) the connection works as long as the the Rustdesk client network settings on the MacBook is configured to use the internal IP addresses (192.168.1.150 and 192.168.1.151) for the ID server and Relay server. However, when the MacBook connects to the Windows PC using an external domain name from the internal network there are a couple of things you need to configure as a prerequisite:
+
+1. You need an external domain registered (eg. myowndomain.com) as a prerequisite for this scenario. 
+2. You need to configure an A record under myowndomain.com (eg. "remoteconnection") so that remoteconnection.myowndomain.com resolves to your external ISP IP address (203.100.100.12).
+3. You need Nat Loopback configured on your Home Wireless ISP Router with DNAT/port forwarding rules configured.
+
+## Without Nat Loopback
+Without the Nat Loopback configured on your Home Wireless ISP Router receives the packet from the MacBook the following happens:
+
+Source IP: 192.168.1.100
+Destination IP: 203.100.100.12
+Action: Your Home Wireless ISP Router forwards the packet to it's Default Gateway IP. This is usually the IP address of your ISP where the packet is dropped by the ISP.
+
+## With Nat Loopback
+Nat Loopback requires additional configuration on your router. When configured the following happens:
+
+Source IP: 192.168.1.100
+Destination IP: 203.100.100.12
+Action: The router detects that the destination IP is its own WAN IP address and:  
+- The router changes the Source IP to 203.100.100.12
+- The router determines the destination for the packet based on DNAT (port forwarding) rules and forwards the packet to the internal IP address of the Rustdesk server.
+
+## Solutions and Workarounds
 There are three ways to solve this issue.
 
 ### 1. Set up NAT Loopback on your router
@@ -72,7 +95,7 @@ To check the final results, check the yellow lines in this picture.
 ***Don't forget to assign your Pi-hole to your router's LAN DHCP!***
 
 ### 3. Add rules to your hosts file
-This method is only recommended if you have a small number of devices. If you have many devices the DNS method is preferred. Otherwise you would have to manually do this on each device that needs access to the server.
+This method is only recommended if you have a small number of devices and will only work when you connect from your internal network. This workaround essentially makes sure that the external domain name resolves to the internal IP address of your Rustdesk server. If you have many devices the DNS method is preferred. Otherwise you would have to manually do this on each device that needs access to the server.
 
 {{% notice warning %}}
 If this method is used on a portable device like a laptop, it will not be able to connect to the server when outside your LAN.
