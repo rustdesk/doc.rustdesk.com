@@ -18,7 +18,7 @@ In a nutshell, NAT loopback is the feature of a router that can route a network 
 2. LinuxComputer: This is another computer running on your internal network where you installed docker and you run the two Rustdesk containers: hbbs(RustDesk ID rendezvous / signaling server) and hbbr (RustDesk relay server). Both containers have dedicated IP addresses (192.168.1.150 and 192.168.1.151) configured as per the Docker installation guide (https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/).
 3. Windows PC: Runs the Rustdesk client listening for incoming Rustdesk client connections.
 
-When the MacBook connects to the Windows PC using the internal IP address (192.168.1.102) the connection works as long as the the Rustdesk client network settings on the MacBook is configured to use the internal IP addresses (192.168.1.150 and 192.168.1.151) for the ID server and Relay server. However, when the MacBook connects to the Windows PC using an external domain name from the internal network there are a couple of things you need to configure as a prerequisite:
+When the MacBook connects to the Windows PC using the internal IP address (192.168.1.102) the connection works as long as the Rustdesk client network settings on the MacBook is configured to use the internal IP addresses (192.168.1.150 and 192.168.1.151) for the ID server and Relay server. However, when the MacBook connects to the Windows PC using an external domain name from the internal network there are a couple of things you need to configure as a prerequisite:
 
 1. You need an external domain registered (eg. myowndomain.com) as a prerequisite for this scenario. 
 2. You need to configure an A record under myowndomain.com (eg. "remoteconnection") so that remoteconnection.myowndomain.com resolves to your external ISP IP address (203.100.100.12).
@@ -51,7 +51,7 @@ An article from [MikroTik](https://help.mikrotik.com/docs/display/ROS/NAT#NAT-Ha
 {{% /notice %}}
 
 ### 2. Deploy a DNS server on your LAN
-First, choose which you prefer, [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome/wiki/Docker) or [Pi-hole](https://github.com/pi-hole/docker-pi-hole). You could deploy it through docker, or you could deploy on the same server as your RustDesk Server. The example below will show you some steps for this example.
+With this workaround you configure an internal DNS server and configure it to resolve the external domain of your preference (eg. remoteconnection.myowndomain.com or rustdesk.example.com) to the internal IP address of your Rustdesk server. First, choose which you prefer, [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome/wiki/Docker) or [Pi-hole](https://github.com/pi-hole/docker-pi-hole). You could deploy it through docker, or you could deploy on the same server as your RustDesk Server. The example below will show you some steps for this example.
 
 Both of them are DNS based adblockers, but you could disable this functionality if you don't want to block ads.
 
@@ -95,7 +95,7 @@ To check the final results, check the yellow lines in this picture.
 ***Don't forget to assign your Pi-hole to your router's LAN DHCP!***
 
 ### 3. Add rules to your hosts file
-This method is only recommended if you have a small number of devices and will only work when you connect from your internal network. This workaround essentially makes sure that the external domain name resolves to the internal IP address of your Rustdesk server. If you have many devices the DNS method is preferred. Otherwise you would have to manually do this on each device that needs access to the server.
+This workaround is similar to the "Deploy a DNS server on your LAN" section: you configure the external domain name of your preference (eg. remoteconnection.myowndomain.com or rustdesk.example.com) to resolves to the internal IP address of your Rustdesk server. This method is only recommended if you have a small number of devices and will only work when you connect from your internal network. If you have many devices the DNS method is preferred. Otherwise you would have to manually do this on each device that needs access to the server.
 
 {{% notice warning %}}
 If this method is used on a portable device like a laptop, it will not be able to connect to the server when outside your LAN.
