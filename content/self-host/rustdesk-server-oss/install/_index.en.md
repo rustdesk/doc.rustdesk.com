@@ -41,13 +41,23 @@ chmod +x install.sh
 
 There is also an update script on [Techahold's](https://github.com/techahold/rustdeskinstall) repository.
 
-From there, note down the IP/DNS and Key shown at the end of the install and insert those into your client Settings > Network > ID/Relay server `ID server` and `Key` fields, respectively, leaving the other fields blank.
+From there, note down the IP/DNS and Key shown at the end of the install and insert those into your client Settings > Network > ID/Relay server `ID server` and `Key` fields, respectively, leaving the other fields blank (see note below).
 
 If the server is on your LAN, use it's LAN IP in the `ID server` field and use the WAN IP/DNS for machines outside of the LAN.
 
 {{% notice note %}}
 If you wish to connect to a host on the server local network from an external network, you may need to add the WAN IP/DNS of the server to the host `Relay server` field in the client network configuration.
 {{% /notice %}}
+
+##### VLAN Traffic Rules
+
+In the following example, I'm running a Raspberry Pi as a relay server at 10.94.200.112, and a Valheim game server on a Proxmox VM at 10.94.100.87. These two servers are on seperate VLANs. My network is controlled by a Unifi Dream Machine, but these rules should work for most networking equipment.
+
+To connect to the Valheim server, we need to open the RustDesk ports between the Relay Server and Valheim Server VLANs. We also need to open IP protocol, as that is what RustDesk uses for connection and the relay server readiness check. This results in something like the following in my UDM Traffic & Firewall Rules:
+
+![VLAN Traffic Rules](./images/vlan-traffic-rules.png)
+
+Again, if connecting from outside the local network, ensure the host machine (in this case the Valheim Server) has it's network ID/Relay server settings 'ID server' field pointing to the LAN IP of the Relay Server (in this case 10.94.200.112) and it's 'Relay server' field pointing to the Relay Server WAN IP/DNS.
 
 ### Install your own server as systemd service using deb file for debian distros
 
