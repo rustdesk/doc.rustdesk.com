@@ -12,7 +12,7 @@ a#logo span {
     margin-top: 3px;
 }
 
-/* Add a space beetween icon and language choice dropdown until better solution is found */
+/* Add a space between icon and language choice dropdown until better solution is found */
 a.padding i.fa-language{
     margin-right: 6px; 
 }
