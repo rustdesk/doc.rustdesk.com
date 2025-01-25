@@ -79,9 +79,7 @@ Sie können auch die Schritte von [oben](https://rustdesk.com/docs/de/self-host/
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/372#discussioncomment-10473298
 
-### 6. [Benutzerdefinierte Einstellungen fest codieren](https://rustdesk.com/docs/de/self-host/client-configuration/hardcode-settings/)
-
-### 7. Befehlszeile `--config` verwenden
+### 6. Befehlszeile `--config` verwenden
 `rustdesk.exe --config <config-string>`
 
 Sie können die Konfigurationszeichenkette über die Webkonsole (wie auf dem obigen Bild zu sehen) oder über den RustDesk-Client unter "Einstellungen → Netzwerk" abrufen ([hier](https://github.com/rustdesk/rustdesk/discussions/7118) gibt es eine Diskussion darüber).

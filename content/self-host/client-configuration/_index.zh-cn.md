@@ -81,9 +81,7 @@ hbbs.example.com:21116
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/372#discussioncomment-10473298
 
-### 6. [硬编码](https://rustdesk.com/docs/en/self-host/client-configuration/hardcode-settings/)
-
-### 7. 通过命令行 `--config`
+### 6. 通过命令行 `--config`
 
 `rustdesk.exe --config <config-string>`
 

@@ -75,9 +75,7 @@ Você também pode seguir as etapas [acima](https://rustdesk.com/docs/pt/self-ho
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/372#discussioncomment-10473298
 
-### 6. [Configurações Personalizadas de Codificação](https://rustdesk.com/docs/pt/self-host/client-configuration/hardcode-settings/)
-
-### 7. Use a linha de comando `--config`
+### 6. Use a linha de comando `--config`
 `rustdesk.exe --config <string-de-configuração>`
 
 Você pode obter a string de configuração do console web (você pode vê-la na imagem acima) ou do cliente RustDesk "Configurações → Rede" ([aqui](https://github.com/rustdesk/rustdesk/discussions/7118) (Em inglês) há uma discussão sobre isso).

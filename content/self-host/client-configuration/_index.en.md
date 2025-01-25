@@ -77,9 +77,7 @@ The easiest way to setup automatically is using deployment scripts found [here](
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/372#discussioncomment-10473298
 
-### 6. [Hardcoding Custom Settings](https://rustdesk.com/docs/en/self-host/client-configuration/hardcode-settings/)
-
-### 7. Use command line `--config`
+### 6. Use command line `--config`
 `rustdesk.exe --config <config-string>`
 
 You can get the config string from web console (you can see it on above picture) or from RustDesk client "Settings → Network" ([here](https://github.com/rustdesk/rustdesk/discussions/7118) is a discussion about this).
