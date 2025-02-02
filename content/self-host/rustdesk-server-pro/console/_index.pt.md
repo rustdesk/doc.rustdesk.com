@@ -38,6 +38,11 @@ Para clientes Windows, você pode ignorar a configuração personalizada do serv
 Você pode usar isso em conjunto com [configuração do cliente](https://rustdesk.com/docs/pt/self-host/client-configuration/) e [scripts de implantação](https://rustdesk.com/docs/en/self-host/client-deployment/) para configurar seus clientes.
 
 ### Criando um novo usuário (diferente do padrão `admin`)
+
+{{% notice note %}}
+The `Individual` plan does not have this feature.
+{{% /notice %}}
+
 1. Clique em `Users` no menu à esquerda.
 2. Crie uma nova conta com a opção `administrador` habilitada.
 3. Faça login com a nova conta administrativa.
