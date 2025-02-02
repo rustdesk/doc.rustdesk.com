@@ -34,6 +34,11 @@ Bei Windows-Clients können Sie die benutzerdefinierte Serverkonfiguration wegla
 Sie können dies in Verbindung mit der [Client-Konfiguration](https://rustdesk.com/docs/de/self-host/client-configuration/) und den [Bereitstellungsskripten](https://rustdesk.com/docs/de/self-host/client-deployment/) zur Einrichtung Ihrer Clients verwenden.
 
 ### Neuen Benutzer erstellen, der nicht der Standardbenutzer `admin` ist
+
+{{% notice note %}}
+The `Individual` plan does not have this feature.
+{{% /notice %}}
+
 1. Klicken Sie im linken Menü auf `Benutzer`.
 2. Erstellen Sie ein weiteres Konto mit der Berechtigung `Administrator`.
 3. Melden Sie sich mit dem neuen Administratorkonto an.
