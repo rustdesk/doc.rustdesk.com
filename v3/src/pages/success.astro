@@ -11,14 +11,37 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero tagline="">
-    <Fragment slot="title"> Payment successful! </Fragment>
+    <Fragment slot="title"><span id="title-fragment">Payment Successful!</span></Fragment>
 
     <Fragment slot="content">
-      <p class="text-center leading-10 text-lg">The license has been sent to the email you entered on the payment page.<br>
+      <p class="text-center leading-10 text-lg" id="content-fragment">
+        The license has been sent to the email you entered on the payment page.<br>
         Please contact us at <a class="underline text-secondary" href="mailto:support@rustdesk.com">support@rustdesk.com</a> if you didn't receive the email.<br>
         Getting Started? Read our <a class="underline text-secondary" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/">docs</a>.
       </p>
     </Fragment>
   </Hero>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      let action = urlParams.get('action');
+      const titleFragment = document.getElementById('title-fragment');
+      const contentFragment = document.getElementById('content-fragment');
+
+      if (contentFragment && titleFragment && (action === 'renew' || action === 'upgrade')) {
+        if (action === 'renew') {
+          action = 'renewed';
+        } else {
+          action = 'upgraded';
+        }
+        titleFragment.innerHTML = 'License ' + action + ' successfully!';
+        contentFragment.innerHTML = `
+          <p class="text-center leading-10 text-lg">
+            Your license has been successfully ${action}. Please follow <a class="underline text-secondary" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#:~:text=you%20need%20to-,proceed,-to%20the%20web">this link</a> to activate it.
+          </p>
+        `;
+      }
+    });
+  </script>
 </Layout>
