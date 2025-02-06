@@ -12,7 +12,7 @@ This explanation involves complex networking knowledge, we need your assistance 
 For more details about NAT Loopback, please check the [Wikipedia](https://en.m.wikipedia.org/wiki/Network_address_translation#NAT_hairpinning) page.
 
 When you're deploying RustDesk server on your home network or any other network environment that is behind a NAT firewall, the RustDesk server and your clients **MUST** either:
-A: Use the local ip addresss to access eachother OR:
+A: Use the local ip addresss to access each other OR:
 B: Have a firewall that supports and has enabled the NAT Loopback.
 
 You may notice you are unable to connect to your server through your **Public IP** or **Domain** (Which in theory points to your public IP).
