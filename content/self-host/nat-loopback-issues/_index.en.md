@@ -11,11 +11,29 @@ This explanation involves complex networking knowledge, we need your assistance 
 
 For more details about NAT Loopback, please check the [Wikipedia](https://en.m.wikipedia.org/wiki/Network_address_translation#NAT_hairpinning) page.
 
-When you're deploying RustDesk server on your home network or any other network environment, the RustDesk server and your clients **MUST** be on the **same LAN or behind the same router**, you may notice you are unable to connect to your server through your **Public IP** or **Domain** (Which in theory points to your public IP). The self-hosted server is not intended for access outside of the network without additional configuration which is beyond the scope of this explanation.
+When you're deploying RustDesk server on your home network or any other network environment that is behind a NAT firewall, the RustDesk server and your clients **MUST** either:
+A: Use the local ip addresss to access each other OR:
+B: Have a firewall that supports and has enabled the NAT Loopback.
+
+You may notice you are unable to connect to your server through your **Public IP** or **Domain** (Which in theory points to your public IP).
 
 ## Problem 
-In this example we will follow what happens when LAN devices try connecting to `rustdesk.example.com`. Assume your router's public IP will be `8.8.8.8`, the LAN IP of your server is `192.168.11.20` and the domain you desire is `rustdesk.example.com`. 
-First, the LAN device will query the router to get the IP for `rustdesk.example.com`, which will be `8.8.8.8` because the router doesn't have an entry in its DNS for `rustdesk.example.com`. It will try to establish a connection to this IP assuming you want to connect to the router, not the server. However, since the router is not configured to accept that connection, it will not know what to do with that request and the connection will fail.
+In this example we will follow what happens when LAN devices try connecting to `rustdesk.example.com`. Assume your router's public IP will be `172.16.16.1`, the LAN IP of your server is `192.168.11.20` and the domain you desire is `rustdesk.example.com`, and you have a client with using '192.168.11.2'.
+
+When you setup a server behind the router's NAT you can add a port forward in the router to change any incoming messages to the PUBLIC IP 172.16.16.1 to go to the server at 192.168.11.20
+
+When a LAN device wants to access the internet, say a webserver on 8.8.8.8, it sends the request as coming from 192.168.11.2, and sends it to the router.  The router will intercept that request and will rewrite that request to 8.8.8.8 as coming from 172.16.16.1.  When 8.8.8.8 replies to 172.16.16.1 the router will check for a previous conneciton and re route that responce back to 192.168.11.2.
+
+If the user at 8.8.8.8 sends a message to our network using 172.16.16.1 the port forward rull will change the destination of 172.168.16.16.1 to the server at 192.168.11.20 leaving the source of the request as 8.8.8.8 so the server can respond (more or less) direclty to 8.8.8.8.
+
+If the user 8.8.8.8 decides to try to hack our network and claims to be sending it's messages from 192.168.11.2 the router knows that traffic comeing from 192.168.11.2 is only valid from the LAN devices and will typically block that traffic.  
+
+The problem occurs when you try to loop back into the LAN.  If the LAN device tries to connect to `rustdesk.example.com`, which will be `172.16.16.1`.  At this point the router has lots of choices to make.  It just sent a message from it's LAN port to it's WAN port coming FROM 192.168.11.2 going to 172.16.16.1.  Once it hit's the WAN port this message is indistingusable by itself from the above example where someone on the internet was trying to hack into our network.
+
+The NAT Loopback feature will effectively change the source "From 192.168.11.2" part of the address earlier in the process so that it knows it has to use the NAT table to pass messages back and forth between the server and the client.  
+
+If there is an issue with connections only while you are inside the LAN, but it works fine from offsice this may be the problem you are having.  
+
 
 ## Solutions
 There are three ways to solve this issue.
@@ -112,3 +130,4 @@ For example:
 ```text
 192.168.11.20   rustdesk.example.com
 ```
+
