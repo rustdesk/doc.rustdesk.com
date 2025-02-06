@@ -130,5 +130,4 @@ For example:
 ```text
 192.168.11.20   rustdesk.example.com
 ```
-## Workaround
-A workaround for this issue is while you are on the LAN of the problem network to manually use the LAN ip of the server instead of the WAN IP or the DNS Name. 
+
