@@ -36,16 +36,14 @@ $ ps -eZ | grep rustdesk
 system_u:system_r:init_t:s0 80439 ? 00:00:02 rustdesk
 ```
 
-`system_u:system_r:init_t:s0` is the security context of the RustDesk process, where the third field `init_t` is the type of the process.
+`system_u:system_r:init_t:s0` is the security context of the RustDesk process, where the third field (init_t) represents the type of the process.
 
-There are two ways to write SELinux type rules:
 
-1. Add rules to the default `init_t`.
-2. Add a new type `rustdesk_t` and add rules.
+There are two ways to define SELinux type rules:
 
-The first method has relatively minor modifications, but because the default `init_t` is changed, it is equivalent to adding authorization to other services using the `init_t` type. **Not recommended for use.**
-
-The second method is to add rules from scratch. There will be many rules that need to be added, and different systems may have differences. It may be necessary to make some adjustments during actual use.
+Modify the default init_t type (Not recommended).
+Create a new rustdesk_t type and add necessary rules.
+Modifying init_t can introduce security risks by granting unnecessary permissions to other services. Instead, creating a new type (rustdesk_t) ensures a more secure and controlled environment.
 
 #### Use The Default Type
 
