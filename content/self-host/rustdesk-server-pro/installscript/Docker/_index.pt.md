@@ -63,5 +63,4 @@ E execute `docker compose up -d`.
 {{% notice note %}}
 Disponível um guia sobre como [Configurar manualmente o HTTPS para o console web](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
 
-Aqui está um [Guia Passo a Passo](https://h3x0r.tech/setting-up-a-rustdesk-server-with-docker) (em inglês). Por favor, adicione a porta `21114` e modifique para `rustdesk-server-pro` de acordo.
 {{% /notice %}}
