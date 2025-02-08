@@ -1709,23 +1709,24 @@ allow rustdesk_t xserver_t:unix_stream_socket connectto;
 
 
 ```
-
-`rustdesk.fc`:
-
+###  rustdesk.fc
+This file defines the file context for RustDesk in SELinux. It ensures that RustDesk executes with the correct security context:
 ```text
 
 /usr/bin/rustdesk --  gen_context(system_u:object_r:rustdesk_exec_t,s0)
 ```
 
-`rustdesk.if`:
 
+###  rustdesk.if
+This interface file contains metadata about RustDesk’s SELinux policy:
 ```text
 
 ## <summary>RustDesk</summary>
 ```
 
-`Makefile`:
 
+###  Makefile
+The Makefile is used to compile and apply the SELinux module for RustDesk, ensuring that necessary security policies are enforced.
 ```makefile
 
 TARGET?=rustdesk
