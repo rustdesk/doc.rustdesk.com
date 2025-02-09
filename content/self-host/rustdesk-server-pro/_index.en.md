@@ -34,11 +34,13 @@ Lowest level VPS is enough for your use cases. The server software is not CPU an
 
 ### Video tutorials
 
-There are many video tutorials available online that can guide you through installing the OSS version, https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/#video-tutorials.
+There are [many video tutorials](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/#video-tutorials) available online that can guide you through installing the OSS free version.
+
+Here is another [good tutorial](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f/?trackingId=a07rn2fkBW1ctLHaJ0tVcg%3D%3D) of self-hosting the OSS free version on Hetzner cloud with docker.
 
 The installation of the Pro version is almost identical, except for the following differences:
 
-- Different download path and Docker images are required.
+- Different download path and [Docker images](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/) / [compose file](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/#docker-compose) are required.
 - An additional TCP port (21114) is needed for the web console.
 
 ### License
