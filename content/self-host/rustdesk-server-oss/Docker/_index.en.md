@@ -3,6 +3,8 @@ title: Docker
 weight: 7
 ---
 
+> Here is another good tutorial: [Building Your Own Remote Desktop Solution: RustDesk Self-Hosted on Cloud with Docker (Hetzner)](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f)
+
 ### Install your own server with Docker
 
 #### Requirements
