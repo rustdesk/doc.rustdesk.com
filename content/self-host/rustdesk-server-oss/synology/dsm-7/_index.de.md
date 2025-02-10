@@ -30,10 +30,6 @@ Nach der Installation von "Container Manager" wird ein gemeinsamer Ordner `docke
 
 Geben Sie den Projektnamen `rustdesk-server` ein, ändern Sie Source von "Upload compose.yml" zu "Create compose.yml" und kopieren Sie den folgenden Inhalt in das Feld. 
 
-{{% notice note %}}
-Sie könnten die Zeile mit `hbbs` vorübergehend in die LAN-IP Ihres NAS ändern, wie auf dem Bild gelb markiert zu sehen. Nachdem Sie sich vergewissert haben, dass Ihr Server funktioniert, **sollten** Sie die Änderung zurücknehmen.
-{{% /notice %}}
-
 ![](images/dsm7_creating_project_init.png?v2)
 
 ```yaml
@@ -65,7 +61,6 @@ services:
 # 21116 TCP TCP hole punching
 # 21116 UDP Heartbeat/ID-Server
 # 21117 TCP Relay
-# 21118/21119 TCP für Websocket, wenn Sie einen Webclient betreiben wollen
 ```
 
 Bitte überspringen Sie `Web portal settings`, dann ist das erledigt.
@@ -109,4 +104,3 @@ Wenn Sie die Einstellung immer noch nicht finden können, suchen Sie in Google n
   * `21116` TCP TCP hole punching
   * `21116` UDP Heartbeat/ID-Server
   * `21117` TCP Relay
-  * `21118/21119` TCP für Websocket, wenn Sie einen Webclient betreiben wollen
