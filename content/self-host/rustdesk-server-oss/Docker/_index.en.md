@@ -96,3 +96,39 @@ services:
     network_mode: "host"
     restart: unless-stopped
 ```
+
+#### Podman Quadlet examples
+
+If you would like to run the containers with Podman as a systemd service you can use these sample Podman Quadlet configurations:
+
+```ini
+[Container]
+AutoUpdate=registry
+Image=ghcr.io/rustdesk/rustdesk-server:latest
+Exec=hbbs
+Volume=/path/to/rustdesk-server/data:/root
+Network=host
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
+```
+
+or
+
+```ini
+[Container]
+AutoUpdate=registry
+Image=ghcr.io/rustdesk/rustdesk-server:latest
+Exec=hbbr
+Volume=/path/to/rustdesk-server/data:/root
+Network=host
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
+```
