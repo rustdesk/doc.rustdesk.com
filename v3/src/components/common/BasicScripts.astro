@@ -194,7 +194,7 @@ import { UI } from 'astrowind:config';
       devices = parseInt(document.getElementById('devices').value);
       if (!users || users < 10) users = 10;
       if (devices < 100) devices = 100;
-      const price = 19.9 + (users - 10) + (devices - 100) * 0.1;
+      const price = 19.9 + (Math.min(users, devices) - 10) + (Math.max(devices, users) - 100) * 0.1;
       document.getElementById('cprice').innerText = price.toFixed(price >= 100 ? 1 : 2);
     }
 
@@ -238,7 +238,7 @@ import { UI } from 'astrowind:config';
       if (!users2 || users2 < 10) users2 = 10;
       if (devices2 < 100) devices2 = 100;
       if (conns < 1) conns = 1;
-      const price = 19.9 + (users2 - 10) + (devices2 - 100) * 0.1 + (conns - 1) * 20;
+      const price = 19.9 + (Math.min(users2, devices2) - 10) + (Math.max(devices2, users2) - 100) * 0.1 + (conns - 1) * 20;
       document.getElementById('cprice2').innerText = price.toFixed(price >= 100 ? 1 : 2);
     }
 
