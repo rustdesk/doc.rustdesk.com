@@ -89,7 +89,7 @@ if ($rdver -eq $RustDeskOnGitHub.Version)
 
 if (!(Test-Path C:\Temp))
 {
-    New-Item -ItemType Directory -Force -Path C:\Temp > null
+    New-Item -ItemType Directory -Force -Path C:\Temp | Out-Null
 }
 
 cd C:\Temp
