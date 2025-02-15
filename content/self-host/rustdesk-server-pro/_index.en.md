@@ -67,6 +67,10 @@ More information about these ports, please check [here](/docs/en/self-host/rustd
 
 Open your web console by accessing `http://<server ip>:21114`, [log in](/docs/en/self-host/rustdesk-server-pro/console/#log-in) using the default credentials admin/test1234 `admin`/`test1234`. Follow [this guide](/docs/en/self-host/rustdesk-server-pro/license/#set-license) to set the license.
 
+### Configure client to use the self-hosted server
+
+https://rustdesk.com/docs/en/self-host/client-configuration/
+
 ### Upgrade Server
 
 This [guide](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#there-is-a-new-version-of-rustdesk-server-pro-out-how-can-i-upgrade) covers how to upgrade RustDesk Server Pro from a lower version, addressing different installation methods.
