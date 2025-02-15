@@ -49,7 +49,7 @@ The installation of the Pro version is almost identical, except for the followin
 You can get license from https://rustdesk.com/pricing.html, check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 
 ## Get started
-1, Installation
+### 1, Installation
 
 ```
 bash <(wget -qO- https://get.docker.com)
@@ -59,23 +59,23 @@ docker compose up -d
 
 For more details, please check [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/).
 
-2, Ports Required
+### 2, Ports Required
 
 You need port `21114`-`21119` TCP and `21116` UDP open, please ensure these ports are setup when you set firewall rules and Docker port mapping.
 
 More information about these ports, please check [here](/docs/en/self-host/rustdesk-server-oss/install/#ports).
 
-3, Set license
+### 3, Set license
 
 Open your web console by accessing `http://<server ip>:21114`, [log in](/docs/en/self-host/rustdesk-server-pro/console/#log-in) using the default credentials admin/test1234 `admin`/`test1234`. Follow [this guide](/docs/en/self-host/rustdesk-server-pro/license/#set-license) to set the license.
 
-4, Setup HTTPS for web console
+### 4, Setup HTTPS for web console
 
 > You can skip this step if you don't want to use HTTPS during the trial, but remember to change the client's API address after you set up HTTPS
 
 Here is a simple tutorial of [manual HTTPS setup](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
 
-5, Configure client to use the self-hosted server
+### 5, Configure client to use the self-hosted server
 
 https://rustdesk.com/docs/en/self-host/client-configuration/
 
