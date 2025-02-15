@@ -71,13 +71,13 @@ Open your web console by accessing `http://<server ip>:21114`, [log in](/docs/en
 
 https://rustdesk.com/docs/en/self-host/client-configuration/
 
-### Upgrade Server
-
-This [guide](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#there-is-a-new-version-of-rustdesk-server-pro-out-how-can-i-upgrade) covers how to upgrade RustDesk Server Pro from a lower version, addressing different installation methods.
-
 ### Setup HTTPS for web console
 
 Here is a simple tutorial of [manual HTTPS setup](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
+
+### Upgrade Server
+
+This [guide](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#there-is-a-new-version-of-rustdesk-server-pro-out-how-can-i-upgrade) covers how to upgrade RustDesk Server Pro from a lower version, addressing different installation methods.
 
 ### Migrate to new host and backup / restore
 
