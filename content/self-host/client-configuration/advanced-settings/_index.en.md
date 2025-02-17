@@ -921,7 +921,7 @@ Please use valid address book name and tag on your address book page of web cons
 
 ### disable-group-panel
 
-Disable group panel (next to address book panel) on RustDesk client, https://github.com/rustdesk/rustdesk-server-pro/issues/250.
+Disable group panel (next to address book panel, it is named to "Accessible devices" since 1.3.8) on RustDesk client, https://github.com/rustdesk/rustdesk-server-pro/issues/250.
 
 | Option | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: | :------: |
