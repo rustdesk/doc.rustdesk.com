@@ -1,50 +1,68 @@
 ---
-title: Strategy
+title: Strategia
 weight: 200
 ---
 
-### Strategy
+## Strategia
 
-Strategy è un tool per gli amministratori di Server RustDesk utilizzato per aggiornare in blocco le opzioni di sicurezza dei client. Gli amministratori possono creare strategie diverse ed applicarle a diversi dispositivi.
+La strategia è uno strumento per gli amministratori RustDesk per aggiornare in blocco le opzioni di sicurezza delle pagine di impostazione del client. Gli amministratori possono creare diverse strategie e applicarle a diversi dispositivi.
 
-#### Creazione di una Stragtegia
+### Creare Strategie
 
-È possibile creare una nuova strategia facendo clic sul pulsante `+` ed eseguire varie azioni sulla strategia passandoci sopra e facendo clic sul menu.
+Puoi creare una nuova strategia cliccando sul pulsante `+` ed eseguire varie azioni sulla strategia passando il mouse su di essa e cliccando sul menu.
 
-Nel menu pop-up è possibile scegliere di `Abilitare (Enable)` o `Disabilitare (Disable)` la strategia, `Rinominarla (Rename)`, `Duplicarla (Duplicate)` o `Eliminarla`. Inoltre è possibile cliccare su `Modifica Dispositivi (Edit Devices)` e su `Modifica Utenti` per modificare i dispositivi o gli utenti a cui è stata applicata la strategia.
+Nel menu a comparsa, puoi scegliere di `Attivare` o `Disattivare` la strategia, `Rinominare`, `Duplicare` o `Eliminare`. Inoltre, puoi cliccare su `Modifica Dispositivi` per modificare i dispositivi applicati a quella strategia o cliccare su `Modifica Utenti` per modificare gli utenti applicati a quella strategia.
 
-Sulla parte destra del menu strategia è possibile verificare a quanti dispositivi è stata applicata la strategia.
+Sul lato destro del menu della strategia, puoi vedere il numero di dispositivi effettivamente applicati alla strategia, tenendo conto della priorità della strategia.
 
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/strategy_menu.png)
 
-#### Strategie per Dispositivi e per Utenti
+## Strategia Dispositivo, Utente e Gruppo di Dispositivi
 
-Ogni dispositivo può essere gestito da una sola strategia e le strategie sui dispositivi hanno priorità rispetto alle strategie utente. Le strategie utente sono responsabili della gestione di tutti i dispositivi dell'utente a cui non è assegnata una strategia specifica.
+Le strategie vengono applicate secondo il seguente ordine di priorità:
+1. Strategia Dispositivo (Priorità più alta)
+2. Strategia Utente
+3. Strategia Gruppo di Dispositivi (Priorità più bassa)
 
-#### Modifica Dispositivi
+Ogni dispositivo può essere gestito da una sola strategia alla volta. Il sistema di priorità funziona come segue:
+- Le strategie dispositivo hanno la precedenza sia sulle strategie utente che sulle strategie gruppo di dispositivi
+- Le strategie utente hanno la precedenza sulle strategie gruppo di dispositivi
+- Le strategie gruppo di dispositivi si applicano a tutti i dispositivi nel gruppo che non hanno una strategia dispositivo o utente assegnata
 
-Facendo click sul menu `Modifica Dispositivi (Edit Devices)` si apre una finestra che mostra tutti i dispositivi. Dopo la modifica fare clic sul pulsante `Salva (Save)` per applicare le modifiche apportate. È inoltre possibile utilizzare il menu a discesa disponibile nell'angolo superiore destro per filtrare i dispositivi.
+### Modificare Dispositivi
 
-Qui un esempio del menu che appare cliccando `Modifica Dispositivi (Edit Devices)` su "demo2". In questo esempio, il dispositivo "362587269" è applicato alla strategia "demo2". Il dispositivo "157333666" era inizialmente applicato alla strategia default, una volta cliccato il pulsante `Salva (Save)` sarà applicato alla strategia "demo2". Il dispositivo "232026634" ha una strategia dispotivo di "demo1" e una strategia utente di "demo2", la strategia dispositivo ha la priorità quindi "232026634" avrà una strategia di tipo "demo1".
+Quando clicchi sul menu `Modifica Dispositivi`, si aprirà una finestra di dialogo di modifica che mostra tutti i dispositivi. Puoi modificare lo stato di selezione delle caselle di controllo e quindi cliccare sul pulsante `Salva` per applicare le modifiche ai dispositivi effettuate nella pagina corrente. Se devi modificare dispositivi in altre pagine, naviga fino a quelle pagine. Puoi anche utilizzare il menu a discesa nell'angolo in alto a destra per filtrare i dispositivi.
+
+Formato della colonna strategia: strategia dispositivo/strategia utente/strategia gruppo di dispositivi, oppure "-" per la strategia predefinita.
+
+Ecco un esempio della finestra di dialogo che appare quando clicchi su `Modifica Dispositivi` nel menu "demo1". In questo esempio, il dispositivo "1981241962" è applicato alla strategia "demo3"; Il dispositivo "1279471875" è applicato alla strategia "demo2"; Il dispositivo "a123456" è applicato alla strategia "demo1"; Il dispositivo "1227624460" è applicato alla strategia predefinita.
 
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/edit_devices.png)
 
-#### Modifica Utenti
+### Modificare Utenti
 
-Facendo click sul menu `Modifica Utenti (Edit Users)` si apre una finestra che mostra tutti gli utenti. Dopo la modifica fare clic sul pulsante `Salva (Save)` per applicare le modifiche apportate. È inoltre possibile utilizzare il menu a discesa disponibile nell'angolo superiore destro per filtrare gli utenti.
+Quando clicchi sul menu `Modifica Utenti`, si aprirà una finestra di dialogo di modifica che mostra tutti gli utenti. Puoi modificare lo stato di selezione delle caselle di controllo e quindi cliccare sul pulsante `Salva` per applicare le modifiche agli utenti effettuate nella pagina corrente. Se devi modificare utenti in altre pagine, naviga fino a quelle pagine. Puoi anche utilizzare il menu a discesa nell'angolo in alto a destra per filtrare gli utenti.
 
-Qui un esempio del menu che appare cliccando `Modifica Utenti (Edit Users)` su "demo2". In questo esempio, l' utente "user2" era inizialmente applicato alla strategia default, una volta cliccato il pulsante `Salva (Save)` sarà applicato alla strategia "demo2". L' utente "user1" è applicato alla strategia default e l' utente admin alla strategia "demo2"
+Ecco un esempio della finestra di dialogo che appare quando clicchi su `Modifica Utenti` nel menu "demo2". In questo esempio, l'utente "admin" è applicato alla strategia "default"; L'utente "user1" è applicato alla strategia "demo2"; L'utente "user2" è applicato alla strategia "demo3".
 
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/edit_users.png)
 
-#### Sincronizzazione della Strategia
+### Modificare Gruppi di Dispositivi
 
-Ogni dispositivo può essere controllato da una unica strategia, se questa è disabilitata il dispositivo non sarà controllato da nessuna strategia. Per sincronizzare le strategie RustDesk controllerà i timestamp locali e del server per determinare se la sincronizzazione è necessaria. Una volta che la sincronizzazione è completata:
+Quando clicchi sul menu `Modifica Gruppo di Dispositivi`, si aprirà una finestra di dialogo di modifica che mostra tutti i gruppi di dispositivi. Puoi modificare lo stato di selezione delle caselle di controllo e quindi cliccare sul pulsante `Salva` per applicare le modifiche ai gruppi di dispositivi effettuate nella pagina corrente. Se devi modificare gruppi di dispositivi in altre pagine, naviga fino a quelle pagine. Puoi anche utilizzare il menu a discesa nell'angolo in alto a destra per filtrare i gruppi di dispositivi.
 
-* Se l'utente cambia qualche impostazione, il client userà le impostazioni dell' utente.
-* Se l' amministratore cambia la strategia, le opzioni del client saranno sincronizzate.
-* Se l'amministratore cambia i dispositivi assegnati alla strategia, le opzioni del client saranno sincronizzate.
+Ecco un esempio della finestra di dialogo che appare quando clicchi su `Modifica Gruppo di Dispositivi` nel menu "demo1". In questo esempio, il gruppo di dispositivi "device_group1" è applicato alla strategia "demo1"; Il gruppo di dispositivi "group2" è applicato alla strategia "demo2"; Il gruppo di dispositivi "group3" è applicato alla strategia "default".
 
-##### Modifica delle Strategie
+![](/docs/en/self-host/rustdesk-server-pro/strategy/images/edit_device_groups.png)
 
-Facendo click sul pulsante `Modifica (Edit)` è possibile modificare una strategia e cliccando `Invia (Submit)` la strategia verrà sincronizzata ai dispositivi entro 30 secondi.
+### Sincronizzazione Strategia
+
+Ogni dispositivo può essere gestito da una sola strategia, e se quella strategia è disabilitata, il dispositivo non sarà gestito da nessuna strategia. Durante la sincronizzazione delle strategie, RustDesk registra i timestamp della strategia locale e del server per determinare se è necessaria la sincronizzazione. Cioè, dopo che la sincronizzazione della strategia è completata:
+
+* Se l'utente modifica alcune opzioni, il client utilizzerà le opzioni dell'utente.
+* Se l'amministratore modifica il contenuto della strategia, le opzioni del client verranno sincronizzate.
+* Se l'amministratore modifica la strategia a cui appartiene il dispositivo, le opzioni del client verranno sincronizzate.
+
+### Modificare Strategie
+
+Nella parte inferiore della strategia, clicca su `Modifica`, effettua le modifiche e clicca su `Invia`. La strategia verrà sincronizzata con i dispositivi entro 30 secondi.

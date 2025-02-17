@@ -1066,12 +1066,13 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/277
 | Y, N | N | `disable-udp=Y` |
 
 
-### preset-user-name / preset-strategy-name
+### preset-user-name / preset-strategy-name / preset-device-group-name
 
-将用户/策略分配给设备，您也可以通过[命令行](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices)执行此操作
+分配用户/策略/设备组到设备。您也可以通过[命令行](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices)来完成此操作。
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
 
+设备组功能需要 RustDesk 客户端 >=1.3.8, pro >= 1.5.0
 
 ### default-connect-password
 

@@ -1060,11 +1060,13 @@ Controla se deseja usar apenas TCP. Não usará mais UDP 21116, TCP 21116 será 
 | :------: | :------: | :------: |
 | Y, N | N | `disable-udp=Y` |
 
-### preset-user-name / preset-strategy-name
+### preset-user-name / preset-strategy-name / preset-device-group-name
 
-Atribuir usuário / estratégia ao dispositivo. Você também pode fazer isso por meio da linha de comando [invalid URL removed].
+Atribuir usuário/estratégia/grupo de dispositivos aos dispositivos. Você também pode fazer isso via [linha de comando](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
+
+grupo de dispositivos está disponível no cliente RustDesk >=1.3.8, pro >= 1.5.0
 
 ### default-connect-password
 
