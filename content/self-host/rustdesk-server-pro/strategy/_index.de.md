@@ -1,50 +1,68 @@
 ---
-title: Strategy
+title: Strategie
 weight: 200
 ---
 
-### Strategy
+## Strategie
 
-Strategy ist ein Werkzeug für RustDesk-Administratoren, um die Sicherheitsoptionen der Client-Einstellungsseiten in großen Mengen zu aktualisieren. Administratoren können verschiedene Strategien erstellen und sie auf verschiedene Geräte anwenden.
+Strategie ist ein Werkzeug für RustDesk-Administratoren, um die Sicherheitsoptionen der Client-Einstellungsseiten in großem Umfang zu aktualisieren. Administratoren können verschiedene Strategien erstellen und diese auf verschiedene Geräte anwenden.
 
-#### Strategien erstellen
+### Strategien erstellen
 
-Sie können eine neue Strategie erstellen, indem Sie auf die Schaltfläche `+` klicken und verschiedene Aktionen auf der Strategie ausführen, indem Sie darüber schweben und auf das Menü klicken.
+Sie können eine neue Strategie erstellen, indem Sie auf die Schaltfläche `+` klicken und verschiedene Aktionen an der Strategie ausführen, indem Sie mit der Maus darüber fahren und auf das Menü klicken.
 
-Im Pop-up-Menü können Sie wählen, die Strategie zu `aktivieren` oder `deaktivieren`, sie `umbenennen`, `duplizieren` oder `löschen`. Zusätzlich können Sie auf `Geräte bearbeiten` klicken, um die auf diese Strategie angewendeten Geräte zu ändern, oder auf `Benutzer bearbeiten`, um die auf diese Strategie angewendeten Benutzer zu ändern.
+Im Popup-Menü können Sie die Strategie `Aktivieren` oder `Deaktivieren`, `Umbenennen`, `Duplizieren` oder `Löschen`. Zusätzlich können Sie auf `Geräte bearbeiten` klicken, um die auf diese Strategie angewendeten Geräte zu ändern, oder auf `Benutzer bearbeiten` klicken, um die auf diese Strategie angewendeten Benutzer zu ändern.
 
-Auf der rechten Seite des Strategiemenüs können Sie die Anzahl der tatsächlich auf die Strategie angewendeten Geräte sehen, unter Berücksichtigung der Priorität der Strategie.
+Auf der rechten Seite des Strategie-Menüs können Sie die Anzahl der tatsächlich auf die Strategie angewendeten Geräte sehen, unter Berücksichtigung der Priorität der Strategie.
 
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/strategy_menu.png)
 
-#### Gerätestrategie und Benutzerstrategie
+## Geräte-, Benutzer- und Gerätegruppen-Strategie
 
-Jedes Gerät kann nur von einer Strategie verwaltet werden, wobei Gerätestrategien Vorrang vor Benutzerstrategien haben. Benutzerstrategien sind dafür verantwortlich, alle Geräte unter dem Benutzer zu verwalten, denen keine spezifische Strategie zugewiesen ist.
+Strategien werden in der folgenden Prioritätsreihenfolge angewendet:
+1. Geräte-Strategie (Höchste Priorität)
+2. Benutzer-Strategie
+3. Gerätegruppen-Strategie (Niedrigste Priorität)
 
-#### Geräte bearbeiten
+Jedes Gerät kann nur von einer Strategie gleichzeitig verwaltet werden. Das Prioritätssystem funktioniert wie folgt:
+- Geräte-Strategien haben Vorrang vor Benutzer- und Gerätegruppen-Strategien
+- Benutzer-Strategien haben Vorrang vor Gerätegruppen-Strategien
+- Gerätegruppen-Strategien gelten für alle Geräte in der Gruppe, die keine Geräte- oder Benutzer-Strategie zugewiesen haben
 
-Wenn Sie auf das Menü `Geräte bearbeiten` klicken, öffnet sich ein Bearbeitungsdialogfeld, das alle Geräte anzeigt. Sie können den Auswahlstatus der Kontrollkästchen ändern und dann auf die Schaltfläche `Save` klicken, um die auf der aktuellen Seite vorgenommenen Geräteänderungen anzuwenden. Wenn Sie Geräte auf anderen Seiten ändern möchten, navigieren Sie bitte zu diesen Seiten. Sie können auch das Drop-down-Menü in der oberen rechten Ecke verwenden, um Geräte zu filtern.
+### Geräte bearbeiten
 
-Hier ist ein Beispiel für das Dialogfeld, das angezeigt wird, wenn Sie im Menü "Demo2" auf `Geräte bearbeiten` klicken. In diesem Beispiel ist das Gerät "362587269" der Strategie "Demo2" zugeordnet. Das Gerät "157333666" war ursprünglich der Standardstrategie zugeordnet, wird aber nach dem Klicken auf `Save` der Strategie "Demo2" zugewiesen. Das Gerät "232026634" verfügt über eine Gerätestrategie für "Demo1" und eine Benutzerstrategie für "Demo2". Da die Gerätestrategie Vorrang hat, wird dieses Gerät der Strategie "Demo1" zugewiesen.
+Wenn Sie auf das Menü `Geräte bearbeiten` klicken, öffnet sich ein Bearbeitungsdialog, der alle Geräte anzeigt. Sie können den Auswahlstatus der Kontrollkästchen ändern und dann auf die Schaltfläche `Speichern` klicken, um die auf der aktuellen Seite vorgenommenen Geräteänderungen anzuwenden. Wenn Sie Geräte auf anderen Seiten ändern müssen, navigieren Sie zu diesen Seiten. Sie können auch das Dropdown-Menü in der oberen rechten Ecke verwenden, um Geräte zu filtern.
+
+Format der Strategie-Spalte: Geräte-Strategie/Benutzer-Strategie/Gerätegruppen-Strategie, oder "-" für die Standardstrategie.
+
+Hier ist ein Beispiel des Dialogs, der erscheint, wenn Sie auf `Geräte bearbeiten` im Menü "demo1" klicken. In diesem Beispiel wird das Gerät "1981241962" auf die Strategie "demo3" angewendet; Das Gerät "1279471875" wird auf die Strategie "demo2" angewendet; Das Gerät "a123456" wird auf die Strategie "demo1" angewendet; Das Gerät "1227624460" wird auf die Standardstrategie angewendet.
 
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/edit_devices.png)
 
-#### Benutzer bearbeiten
+### Benutzer bearbeiten
 
-Wenn Sie auf das Menü `Benutzer bearbeiten` klicken, öffnet sich ein Bearbeitungsdialogfeld, das alle Benutzer anzeigt. Sie können den Auswahlstatus der Kontrollkästchen ändern und dann auf die Schaltfläche `Save` klicken, um die auf der aktuellen Seite vorgenommenen Benutzeränderungen anzuwenden. Wenn Sie Benutzer auf anderen Seiten ändern möchten, navigieren Sie bitte zu diesen Seiten. Sie können auch das Drop-down-Menü in der oberen rechten Ecke verwenden, um Benutzer zu filtern.
+Wenn Sie auf das Menü `Benutzer bearbeiten` klicken, öffnet sich ein Bearbeitungsdialog, der alle Benutzer anzeigt. Sie können den Auswahlstatus der Kontrollkästchen ändern und dann auf die Schaltfläche `Speichern` klicken, um die auf der aktuellen Seite vorgenommenen Benutzeränderungen anzuwenden. Wenn Sie Benutzer auf anderen Seiten ändern müssen, navigieren Sie zu diesen Seiten. Sie können auch das Dropdown-Menü in der oberen rechten Ecke verwenden, um Benutzer zu filtern.
 
-Hier ist ein Beispiel für das Dialogfeld, das angezeigt wird, wenn Sie auf dem Menü "Demo2" auf `Benutzer bearbeiten` klicken. In diesem Beispiel war der Benutzer "user2" ursprünglich der Standardstrategie zugeordnet und wird nach dem Klicken auf `Save` der Strategie "Demo2" zugewiesen. Der Benutzer "user1" ist der Standardstrategie zugeordnet und der Benutzer "admin" ist der Strategie "Demo2" zugeordnet.
+Hier ist ein Beispiel des Dialogs, der erscheint, wenn Sie auf `Benutzer bearbeiten` im Menü "demo2" klicken. In diesem Beispiel wird der Benutzer "admin" auf die Strategie "default" angewendet; Der Benutzer "user1" wird auf die Strategie "demo2" angewendet; Der Benutzer "user2" wird auf die Strategie "demo3" angewendet.
 
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/edit_users.png)
 
-#### Strategie-Synchronisation
+### Gerätegruppen bearbeiten
 
-Jedes Gerät kann nur von einer Strategie verwaltet werden. Wenn diese Strategie deaktiviert ist, wird das Gerät von keiner anderen Strategie verwaltet. Bei der Synchronisierung von Strategien zeichnet RustDesk die Zeitstempel der lokalen und der Serverstrategie auf, um festzustellen, ob eine Synchronisierung erforderlich ist. Das heißt, die Strategie-Synchronisation ist abgeschlossen:
+Wenn Sie auf das Menü `Gerätegruppe bearbeiten` klicken, öffnet sich ein Bearbeitungsdialog, der alle Gerätegruppen anzeigt. Sie können den Auswahlstatus der Kontrollkästchen ändern und dann auf die Schaltfläche `Speichern` klicken, um die auf der aktuellen Seite vorgenommenen Gerätegruppen-Änderungen anzuwenden. Wenn Sie Gerätegruppen auf anderen Seiten ändern müssen, navigieren Sie zu diesen Seiten. Sie können auch das Dropdown-Menü in der oberen rechten Ecke verwenden, um Gerätegruppen zu filtern.
+
+Hier ist ein Beispiel des Dialogs, der erscheint, wenn Sie auf `Gerätegruppe bearbeiten` im Menü "demo1" klicken. In diesem Beispiel wird die Gerätegruppe "device_group1" auf die Strategie "demo1" angewendet; Die Gerätegruppe "group2" wird auf die Strategie "demo2" angewendet; Die Gerätegruppe "group3" wird auf die Strategie "default" angewendet.
+
+![](/docs/en/self-host/rustdesk-server-pro/strategy/images/edit_device_groups.png)
+
+### Strategie-Synchronisation
+
+Jedes Gerät kann nur von einer Strategie verwaltet werden, und wenn diese Strategie deaktiviert ist, wird das Gerät von keiner Strategie verwaltet. Bei der Synchronisierung von Strategien zeichnet RustDesk die Zeitstempel der lokalen und Server-Strategie auf, um zu bestimmen, ob eine Synchronisierung erforderlich ist. Das heißt, nach Abschluss der Strategie-Synchronisation:
 
 * Wenn der Benutzer einige Optionen ändert, verwendet der Client die Optionen des Benutzers.
 * Wenn der Administrator den Inhalt der Strategie ändert, werden die Optionen des Clients synchronisiert.
 * Wenn der Administrator die Strategie ändert, zu der das Gerät gehört, werden die Optionen des Clients synchronisiert.
 
-#### Strategien bearbeiten
+### Strategien bearbeiten
 
-Klicken Sie unten in der Strategie auf `Bearbeiten`, nehmen Sie Änderungen vor und klicken Sie auf `Senden`. Die Strategie wird innerhalb von 30 Sekunden mit den Geräten synchronisiert.
+Klicken Sie am unteren Rand der Strategie auf `Bearbeiten`, nehmen Sie die Änderungen vor und klicken Sie auf `Senden`. Die Strategie wird innerhalb von 30 Sekunden mit den Geräten synchronisiert.

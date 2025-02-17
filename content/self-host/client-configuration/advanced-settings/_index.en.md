@@ -1068,11 +1068,13 @@ Controls whether to use TCP only. It will not use UDP 21116 any more, TCP 21116 
 | :------: | :------: | :------: |
 | Y, N | N | `disable-udp=Y` |
 
-### preset-user-name / preset-strategy-name
+### preset-user-name / preset-strategy-name / preset-device-group-name
 
-Assign user / strategy to device. You can also do this via [command line](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
+Assign user / strategy / device group to device. You can also do this via [command line](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
+
+device group is available in RustDesk client >=1.3.8, pro >= 1.5.0
 
 ### default-connect-password
 

@@ -88,7 +88,7 @@ Gmail in this example
 7. Enter your Gmail account i.e. `myrustdeskserver@gmail.com` in `From`.
 8. Click `Check` to save.
 
-### Assign Device Users/Groups/Strategies to Devices
+### Assign Device Users/Groups/Strategies/DeviceGroup to Devices
 The User is the RustDesk User logged in on the device or assigned to the device by clicking `Edit` next to the device, click in the `User` box and drop-down to select your user, this will auto assign the group based on the group the user as been assigned to.
 
 This can also be done via the API at command line on deployment or later by calling the RustDesk executable followed by `--assign --token <generatedtoken> --user_name <username>`. You need to go to `Settings → Tokens → Create` and create a token with Device permissions first to do this. An example of this on windows would be `"C:\Program Files\RustDesk\rustdesk.exe" --assign --token <generatedtoken> --user_name <newuser>`.
@@ -96,6 +96,8 @@ This can also be done via the API at command line on deployment or later by call
 You can also assign strategy in this way, e.g. `--assign --token <generatedtoken> --strategy_name <strategyname>`.
 
 You can also assign address book in this way, e.g. `--assign --token <generatedtoken> --address_book_name <addressbookname>` or `--assign --token <generatedtoken> --address_book_name <addressbookname> --address_book_tag <addressbooktag>`
+
+You can also assign device group name in this way, e.g. `--assign --token <generatedtoken> --device_group_name <devicegroupname>`.
 
 The command line on Windows does not have output by default. To get output, please run like this, `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | more` or `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | Out-String`, see [here](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomment-8094952).
 
