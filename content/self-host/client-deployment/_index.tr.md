@@ -104,6 +104,7 @@ if ($arrService -eq $null)
     cd $env:ProgramFiles\RustDesk
     Start-Process .\rustdesk.exe --install-service
     Start-Sleep -seconds 20
+    $arrService = Get-Service -Name $ServiceName
 }
 
 while ($arrService.Status -ne 'Running')
