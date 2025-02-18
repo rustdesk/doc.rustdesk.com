@@ -1,0 +1,27 @@
+---
+publishDate: 2025-02-19T00:00:00Z
+title: Enhanced ACL in RustDesk Server Pro 1.5.0
+excerpt: RustDesk Server Pro now supports user-level ACL and device groups in addition of user groups.
+image: ~/assets/images/blog/device-group.png
+category: Release
+slug: enhanced-acl-in-rustdesk-server-pro-1-5-0
+tags:
+  - RustDesk Server Pro
+  - release
+---
+
+RustDesk Server Pro 1.5.0 is now available.
+
+## Changelogs
+
+* Add device group and its ACL
+* Add user grained ACL
+* Add strategy on device group
+* Add sortable tables
+* OIDC links to old account if email conflicts
+* Allow - (dash) in id
+* Fix failure if OIDC has null name
+
+The device group feature is a new addition in RustDesk Server Pro 1.5.0. Previously, RustDesk prioritized simplicity and avoided introducing device groups, relying solely on user groups for ACL (Access Control List) management. However, this approach made access permission settings cumbersome for large organizations. As a result, we decided to introduce device groups and user-level ACL in version 1.5.0. This enhancement allows you to group devices and apply policies to these groups, significantly improving device management in large-scale environments.
+
+Originally, RustDesk Server Pro only supported user groups, but with this update, it now supports device groups as well. Each device can be assigned to a single device group in addition to being associated with a user. This enables you to implement additional policies based on device groups, such as restricting or granting access to specific devices. Furthermore, this release introduces user-level ACL, which allows you to set permissions for individual users in addition to user groups, providing greater flexibility and control over access management.
