@@ -47,6 +47,10 @@ Copy and paste the above command into your Linux terminal to upgrade your existi
 
 `bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/update.sh)`
 
+{{% notice note %}}
+If you encounter issues with this script, I would suggest you go through the script and execute the steps manually, one by one.
+{{% /notice %}}
+
 What it does:
 
 - Checks for new versions of RustDesk Server Pro
@@ -60,6 +64,10 @@ Copy and paste the above command into your Linux terminal to convert from RustDe
 
 {{% notice note %}}
 Please add `21114` TCP port to your firewall, this is additional port for web console and user login in RustDesk client.
+{{% /notice %}}
+
+{{% notice note %}}
+I would suggest switching to a Docker installation if you encounter issues with this script. Alternatively, you can go through the script and execute the steps manually, one by one.
 {{% /notice %}}
 
 What it does:
