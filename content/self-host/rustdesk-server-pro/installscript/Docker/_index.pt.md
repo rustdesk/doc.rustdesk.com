@@ -3,7 +3,7 @@ title: Docker
 weight: 3
 ---
 
-### Docker Compose
+### Docker Compose (Recomendada)
 
 Com Docker Compose, você **PRECISA** usar `network_mode: "host"` para garantir que o licenciamento funcione. Instale o Docker usando este [guia](https://docs.docker.com/engine/install) para garantir que esteja com a versão mais atualizada!
 
