@@ -1,6 +1,6 @@
 ---
 title: Instalação no Windows
-weight: 4
+weight: 5
 ---
 
 {{% notice note %}}
