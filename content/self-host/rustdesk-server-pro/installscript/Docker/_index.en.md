@@ -3,7 +3,7 @@ title: Docker
 weight: 3
 ---
 
-### Docker Compose
+### Docker Compose (Recommended)
 
 With Docker Compose you HAVE to use `network_mode: "host"` to ensure licensing works. Install Docker using this [guide](https://docs.docker.com/engine/install) to ensure its the most up to date!
 
@@ -36,6 +36,10 @@ services:
 Then run `docker compose up -d` or `podman-compose up -d`
 
 > `apt install podman-compose` for `podman-compose` installation
+
+{{% notice note %}}
+How to [Set up HTTPS for web console manually](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
+{{% /notice %}}
 
 ### Docker Commands
 
@@ -71,7 +75,3 @@ How to [Set up HTTPS for web console manually](https://rustdesk.com/docs/en/self
 
 
 > If you have problem with SELinux on Fedora, please check this [issue](https://github.com/rustdesk/rustdesk-server/issues/230).
-
-{{% notice note %}}
-How to [Set up HTTPS for web console manually](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
-{{% /notice %}}
