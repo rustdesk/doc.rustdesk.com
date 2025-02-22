@@ -31,6 +31,10 @@ sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 2111
 sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v ./data:/root -td --restart unless-stopped docker.io/rustdesk/rustdesk-server-pro hbbr
 ```
 
+{{% notice note %}}
+How to [Set up HTTPS for web console manually](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
+{{% /notice %}}
+
 ### Docker Compose
 
 With Docker Compose you HAVE to use `network_mode: "host"` to ensure licensing works. Install Docker using this [guide](https://docs.docker.com/engine/install) to ensure its the most up to date!
