@@ -1,6 +1,6 @@
 ---
 title: install.sh 
-weight: 3
+weight: 100
 ---
 
 {{% notice note %}}
