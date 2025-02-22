@@ -27,7 +27,7 @@ weight: 600
 10. Geben Sie Ihren in Schritt 1 erworbenen Lizenzcode ein.
 
 ### Es gibt eine neue Version von RustDesk Server Pro, wie kann ich ein Upgrade durchführen?
-1. Gehen Sie zu [dieser Seite](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/installscript/#upgrade).
+1. Gehen Sie zu [dieser Seite](/docs/en/self-host/rustdesk-server-pro/installscript/script/#upgrade).
 2. Kopieren Sie den Befehl und fügen Sie ihn in Ihr Linux-Terminal ein.
 3. Folgen Sie den Aufforderungen, die Sie durch das Upgrade führen.
 
