@@ -1,6 +1,6 @@
 ---
 title: Windows Install
-weight: 2
+weight: 11
 ---
 
 {{% notice note %}}
