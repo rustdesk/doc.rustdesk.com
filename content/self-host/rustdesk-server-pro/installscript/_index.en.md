@@ -23,5 +23,8 @@ For more details, please check [install.sh](/docs/en/self-host/rustdesk-server-p
 
 ## Convert from open source
 
-- If you install the open-source version using Docker, there is no direct way to convert it. Instead, you’ll need to run a new container with the Pro image. Before doing this, please back up your private key (the id_ed25519 file, not id_ed25519.pub). Once the new container is set up, copy the old id_ed25519 private key file to the working directory of the new container, then restart the container.
-- If you install the open-source version using install.sh, please follow [this](/docs/en/self-host/rustdesk-server-pro/installscript/script/#convert-from-open-source).
+### Docker
+If you install the open-source version using Docker, there is no direct way to convert it. Instead, you’ll need to run a new container with the Pro image. Before doing this, please back up your private key (the id_ed25519 file, not id_ed25519.pub). Once the new container is set up, copy the old id_ed25519 private key file to the working directory of the new container, then restart the container.
+
+### install.sh
+If you install the open-source version using install.sh, please follow [this](/docs/en/self-host/rustdesk-server-pro/installscript/script/#convert-from-open-source).
