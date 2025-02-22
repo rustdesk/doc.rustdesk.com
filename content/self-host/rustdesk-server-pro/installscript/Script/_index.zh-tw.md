@@ -1,6 +1,6 @@
 ---
-title: 簡易安裝
-weight: 10
+title: install.sh 
+weight: 3
 ---
 
 {{% notice note %}}
