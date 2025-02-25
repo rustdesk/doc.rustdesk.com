@@ -13,7 +13,7 @@ Please read [OSS installation](https://rustdesk.com/docs/en/self-host/rustdesk-s
 
 Copy and paste the above command into your Linux terminal to install RustDesk Server Pro.
 
-`bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh)`
+`wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh | bash`
 
 {{% notice note %}}
 I recommend using [the Docker image](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/#docker-compose); it greatly simplifies the process of deploying the solution as well as updating it. The resource consumption is very low.
@@ -45,7 +45,7 @@ If your client cannot connect to your server or you cannot access the web consol
 
 Copy and paste the above command into your Linux terminal to upgrade your existing RustDesk Server Pro installation, this could also be saved locally and scheduled with cron.
 
-`bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/update.sh)`
+`wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/update.sh | bash`
 
 {{% notice note %}}
 If you encounter issues with this script, I would suggest you go through the script and execute the steps manually, one by one.
@@ -60,7 +60,7 @@ What it does:
 
 Copy and paste the above command into your Linux terminal to convert from RustDesk Server to RustDesk Server Pro.
 
-`bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/convertfromos.sh)`
+`wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/convertfromos.sh | bash`
 
 {{% notice note %}}
 Please add `21114` TCP port to your firewall, this is additional port for web console and user login in RustDesk client.

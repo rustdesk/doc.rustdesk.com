@@ -13,7 +13,7 @@ Leia primeiro a [instalação do OSS](https://rustdesk.com/docs/pt/self-host/rus
 
 Copie e cole o comando acima em seu terminal Linux para instalar o RustDesk Server Pro.
 
-`bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh)`
+`wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh | bash`
 
 O que ele faz:
 
@@ -41,7 +41,7 @@ Se o seu cliente não consegue se conectar ao servidor ou você não consegue ac
 
 Copie e cole o comando acima em seu terminal Linux para atualizar sua instalação existente do RustDesk Server Pro. Isso também pode ser salvo localmente e agendado com o cron.
 
-`bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/update.sh)`
+`wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/update.sh | bash`
 
 O que ele faz:
 
@@ -52,7 +52,7 @@ O que ele faz:
 
 Copie e cole o comando acima em seu terminal Linux para converter do RustDesk Server para o RustDesk Server Pro.
 
-`bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/convertfromos.sh)`
+`wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/convertfromos.sh | bash`
 
 {{% notice note %}}
 Adicione a porta TCP `21114` ao seu firewall. Esta é a porta adicional para o console web e login do usuário no cliente RustDesk.

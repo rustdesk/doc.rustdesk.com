@@ -11,7 +11,7 @@ weight: 4
 
 复制并在您的 Linux 控制台中贴上下列指令以安装 RustDesk 服务器专业版。
 
-`bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh)`
+`wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh | bash`
 
 流程：
 
@@ -27,7 +27,7 @@ weight: 4
 
 复制并在您的 Linux 终端机中贴上下列指令以升级现有的 RustDesk 服务器专业版安装。您可以使用 cron 定期执行此命令。
 
-`bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/update.sh)`
+`wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/update.sh | bash`
 
 流程：
 
@@ -38,7 +38,7 @@ weight: 4
 
 复制并在您的 Linux 终端机中贴上下列指令以从 RustDesk 伺服器转换至 RustDesk 伺服器专业版。
 
-`bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/convertfromos.sh)`
+`wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/convertfromos.sh | bash`
 
 流程：
 
