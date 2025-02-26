@@ -4,44 +4,54 @@ weight: 200
 pre: "<b>2.2. </b>"
 ---
 
-RustDesk Server Pro has more features compared to the open source version.
+RustDesk Server Pro hat mehr Funktionen im Vergleich zur Open-Source-Version.
 
-- Account
-- No concurrent connection limit, aka no limit of simultaneous connections (OSS version has no limit either, but TeamViewer etc. have this limit)
-- [Web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
+- Konto
+- Keine gleichzeitige Verbindungsbegrenzung, d.h. keine Begrenzung der gleichzeitigen Verbindungen (die OSS-Version hat ebenfalls keine Begrenzung, aber TeamViewer usw. haben diese Begrenzung)
+- [Webkonsole](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
 - API
 - [OIDC](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/), [LDAP](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/), [2FA](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/)
-- Address book
-- Rename
-- Log management (Connection, file transfer, alarm, etc.)
-- Device management
-- [Security Settings sync](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/)
-- [Access control](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/)
-- [Multiple relay servers](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/) (automatically selects your closest relay)
-- [Custom client generator](https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only)
+- Adressbuch
+- Umbenennen
+- Protokollverwaltung (Verbindung, Dateiübertragung, Alarm, etc.)
+- Gerätemanagement
+- [Synchronisierung der Sicherheitseinstellungen](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/)
+- [Zugriffskontrolle](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/)
+- [Mehrere Relay-Server](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/) (wählt automatisch den nächstgelegenen Relay aus)
+- [Benutzerdefinierter Client-Generator](https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only)
 
 {{% notice note %}}
-If you build your own server on your home/office, and can't connect it through public IP/domain, please check [this article](https://rustdesk.com/docs/en/self-host/nat-loopback-issues/).
+Wenn Sie Ihren eigenen Server zu Hause/im Büro aufbauen und keine Verbindung über öffentliche IP/Domain herstellen können, lesen Sie bitte [diesen Artikel](https://rustdesk.com/docs/en/self-host/nat-loopback-issues/).
 {{% /notice %}}
-<<<<<<< HEAD
+
 {{% notice note %}}
-Wenn Sie Ihren eigenen Server zu Hause oder im Büro aufbauen und ihn nicht über eine öffentliche IP oder Domain verbinden können, lesen Sie bitte [diesen Artikel](https://rustdesk.com/docs/en/self-host/nat-loopback-issues/).
+Wir empfehlen, dies zuerst zu lesen, bevor Sie fortfahren: [Wie funktioniert der selbstgehostete Server?](/docs/en/self-host/#how-does-self-hosted-server-work).
 {{% /notice %}}
 
-### Hardware-Anforderungen
+## Hardwareanforderungen
 
-Ein VPS der niedrigsten Stufe ist für Ihren Anwendungsfall ausreichend. Die Serversoftware ist nicht CPU- und speicherintensiv. Unser öffentlicher ID-Server, der auf einem Vultr-Server mit 2 CPU und 4 GB RAM gehostet wird, bedient mehr als 1,5 Millionen Endgeräte.
+Das niedrigste VPS-Level reicht für Ihre Anwendungsfälle aus. Die Serversoftware ist nicht CPU- und speicherintensiv. Unser öffentlicher ID-Server, der auf einem 2 CPU/4 GB Vultr-Server gehostet wird, bedient über 1,0 Millionen Endpunkte. Jede Relay-Verbindung verbraucht durchschnittlich 180 kb pro Sekunde. 1 CPU-Kern und 1 GB RAM reichen aus, um 1000 gleichzeitige Relay-Verbindungen zu unterstützen.
 
-## Article tutorials
-- [Step-by-Step Guide: Self-Host RustDesk Server Pro on Cloud via Docker for Secure Remote Access](https://www.linkedin.com/pulse/step-by-step-guide-self-host-rustdesk-server-pro-cloud-montinaro-fwnmf/)
-  
-### Herunterladen
+## Artikel-Tutorials
+- [Schritt-für-Schritt-Anleitung: Selbstgehosteter RustDesk Server Pro in der Cloud über Docker für sicheren Fernzugriff](https://www.linkedin.com/pulse/step-by-step-guide-self-host-rustdesk-server-pro-cloud-montinaro-fwnmf/)
 
-[https://github.com/rustdesk/rustdesk-server-pro/releases/latest](https://github.com/rustdesk/rustdesk-server-pro/releases/latest)
+## Video-Tutorials
 
-### Installation
+Es gibt [viele Video-Tutorials](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/#video-tutorials) online, die Sie durch die Installation der kostenlosen OSS-Version führen können.
 
-#### Installation
+Hier ist ein weiteres [gutes Tutorial](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f/?trackingId=a07rn2fkBW1ctLHaJ0tVcg%3D%3D) zur Selbsthosting der kostenlosen OSS-Version auf Hetzner Cloud mit Docker.
+
+Die Installation der Pro-Version ist fast identisch, mit den folgenden Unterschieden:
+
+- Ein anderer Download-Pfad und [Docker-Images](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/) / [Compose-Datei](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/#docker-compose) sind erforderlich.
+- Ein zusätzlicher TCP-Port (21114) wird für die Webkonsole benötigt.
+
+## Lizenz
+
+Sie können eine Lizenz von https://rustdesk.com/pricing.html erhalten, weitere Details finden Sie auf der [Lizenzseite](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/).
+
+## Erste Schritte
+### 1. Installation
 
 ```
 bash <(wget -qO- https://get.docker.com)
@@ -49,81 +59,44 @@ wget rustdesk.com/pro.yml -O compose.yml
 docker compose up -d
 ```
 
-For more details, please check [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/).
-=======
+Weitere Details finden Sie unter [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/).
 
-{{% notice note %}}
-We recommend reading this first before proceeding, [How does self-hosted server work?](/docs/en/self-host/#how-does-self-hosted-server-work).
-{{% /notice %}}
->>>>>>> 2e72b70 (update doc)
+### 2. Erforderliche Ports
 
-## Hardware requirement
+Sie benötigen die Ports `21114`-`21119` TCP und `21116` UDP, bitte stellen Sie sicher, dass diese Ports eingerichtet sind, wenn Sie Firewall-Regeln und Docker-Port-Mapping einrichten.
 
-Lowest level VPS is enough for your use cases. The server software is not CPU and memory intensive. Our public ID server hosted on a 2 CPU/4 GB Vultr server serves 1.0+ million endpoints. Each relay connection consumes avg 180kb per second. 1 cpu core and 1G ram is enough to support 1000 relay concurrent connections.
+Weitere Informationen zu diesen Ports finden Sie [hier](/docs/en/self-host/rustdesk-server-oss/install/#ports).
 
-## Video tutorials
+### 3. Lizenz einrichten
 
-There are [many video tutorials](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/#video-tutorials) available online that can guide you through installing the OSS free version.
+Öffnen Sie Ihre Webkonsole, indem Sie `http://<server ip>:21114` aufrufen, und [melden Sie sich an](/docs/en/self-host/rustdesk-server-pro/console/#log-in) mit den Standardanmeldedaten admin/test1234 `admin`/`test1234`. Folgen Sie [dieser Anleitung](/docs/en/self-host/rustdesk-server-pro/license/#set-license), um die Lizenz einzurichten.
 
-Here is another [good tutorial](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f/?trackingId=a07rn2fkBW1ctLHaJ0tVcg%3D%3D) of self-hosting the OSS free version on Hetzner cloud with docker.
+### 4. HTTPS für die Webkonsole einrichten
 
-The installation of the Pro version is almost identical, except for the following differences:
+> Sie können diesen Schritt überspringen, wenn Sie während der Testphase kein HTTPS verwenden möchten, aber denken Sie daran, die API-Adresse des Clients zu ändern, nachdem Sie HTTPS eingerichtet haben.
 
-- Different download path and [Docker images](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/) / [compose file](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/#docker-compose) are required.
-- An additional TCP port (21114) is needed for the web console.
+Hier ist ein einfaches Tutorial zur [manuellen HTTPS-Einrichtung](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
 
-
-## License
-
-You can get license from https://rustdesk.com/pricing.html, check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
-
-## Get started
-### 1, Installation
-
-```
-bash <(wget -qO- https://get.docker.com)
-wget rustdesk.com/pro.yml -O compose.yml
-docker compose up -d
-```
-
-For more details, please check [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/).
-
-### 2, Ports Required
-
-You need port `21114`-`21119` TCP and `21116` UDP open, please ensure these ports are setup when you set firewall rules and Docker port mapping.
-
-More information about these ports, please check [here](/docs/en/self-host/rustdesk-server-oss/install/#ports).
-
-### 3, Set license
-
-Open your web console by accessing `http://<server ip>:21114`, [log in](/docs/en/self-host/rustdesk-server-pro/console/#log-in) using the default credentials admin/test1234 `admin`/`test1234`. Follow [this guide](/docs/en/self-host/rustdesk-server-pro/license/#set-license) to set the license.
-
-### 4, Setup HTTPS for web console
-
-> You can skip this step if you don't want to use HTTPS during the trial, but remember to change the client's API address after you set up HTTPS
-
-Here is a simple tutorial of [manual HTTPS setup](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
-
-### 5, Configure client to use the self-hosted server
+### 5. Client konfigurieren, um den selbstgehosteten Server zu verwenden
 
 https://rustdesk.com/docs/en/self-host/client-configuration/
 
-## Upgrade Server
+## Server-Upgrade
 
-This [guide](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#there-is-a-new-version-of-rustdesk-server-pro-out-how-can-i-upgrade) covers how to upgrade RustDesk Server Pro from a lower version, addressing different installation methods.
+Diese [Anleitung](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#there-is-a-new-version-of-rustdesk-server-pro-out-how-can-i-upgrade) beschreibt, wie Sie RustDesk Server Pro von einer niedrigeren Version upgraden können und behandelt verschiedene Installationsmethoden.
 
-## Migrate to new host and backup / restore
+## Migration auf neuen Host und Backup / Wiederherstellung
 
-Here is a detailed [tutorial](https://github.com/rustdesk/rustdesk-server-pro/discussions/184).
+Hier ist ein detailliertes [Tutorial](https://github.com/rustdesk/rustdesk-server-pro/discussions/184).
 
-## Migrate license
+## Lizenz migrieren
 
-Please follow this [guide](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#invoices-license-retrieval-and-migration).
+Bitte folgen Sie dieser [Anleitung](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#invoices-license-retrieval-and-migration).
 
-## Upgrade license
+## Lizenz upgraden
 
-Follow [this guide](/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license) to upgrade your license for more users and devices at any time.
+Folgen Sie [dieser Anleitung](/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license), um Ihre Lizenz jederzeit für mehr Benutzer und Geräte zu upgraden.
 
-## About security
+## Über Sicherheit
 
 https://github.com/rustdesk/rustdesk/discussions/9835
