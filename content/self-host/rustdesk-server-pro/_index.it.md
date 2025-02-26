@@ -24,6 +24,9 @@ Versione di RustDesk Client >= 1.2.0 necessaria
 
 Una VPS di basso livello è abbastanza. Il server non fa un uso intensivo di CPU e RAM. Gli ID dei nostri server pubblici sono ospitati in server Vultr da 2 CPU e 4 GB di Ram e supportano 1.5+ milioni di utenti.
 
+## Article tutorials
+- [Step-by-Step Guide: Self-Host RustDesk Server Pro on Cloud via Docker for Secure Remote Access](https://www.linkedin.com/pulse/step-by-step-guide-self-host-rustdesk-server-pro-cloud-montinaro-fwnmf/)
+  
 ### Download
 
 [Download da GitHub](https://github.com/rustdesk/rustdesk-server-pro/releases/latest)
