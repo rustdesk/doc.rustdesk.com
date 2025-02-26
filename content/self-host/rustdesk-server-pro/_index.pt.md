@@ -33,6 +33,9 @@ Se você montar seu próprio servidor em casa/trabalho e não conseguir se conec
 
 Um VPS básico é suficiente para a maioria dos casos. O software do servidor não exige muito processamento nem memória. Nosso servidor público de ID, hospedado em um servidor Vultr de 2 CPUs e 4 GB de RAM, atende a mais de 1,5 milhão de dispositivos.
 
+## Article tutorials
+- [Step-by-Step Guide: Self-Host RustDesk Server Pro on Cloud via Docker for Secure Remote Access](https://www.linkedin.com/pulse/step-by-step-guide-self-host-rustdesk-server-pro-cloud-montinaro-fwnmf/)
+  
 ## Tutoriais em vídeo
 Existem muitos tutoriais em vídeo disponíveis online que podem guiá-lo pela instalação da versão gratuita (OSS), [consulte a documentação](https://rustdesk.com/docs/pt/self-host/rustdesk-server-oss/install/#video-tutorials).
 
