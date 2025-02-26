@@ -39,13 +39,15 @@ Ein VPS der niedrigsten Stufe ist für Ihren Anwendungsfall ausreichend. Die Ser
 
 ### Installation
 
-#### Einfache Installation
+#### Installation
 
-Um das Leben einfach zu machen, haben wir [einfache Installationsskripte](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/installscript/) entwickelt, die sich um alles kümmern (Installation/Upgrade/Konvertierung von Open Source).
+```
+bash <(wget -qO- https://get.docker.com)
+wget rustdesk.com/pro.yml -O compose.yml
+docker compose up -d
+```
 
-{{% notice note %}}
-Vergessen Sie nicht, Ihre Lizenz unter [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) zu erwerben. Auf der Seite [Lizenz](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/license/) finden Sie weitere Informationen.
-{{% /notice %}}
+For more details, please check [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/).
 
 #### Manuelle Installation
 
