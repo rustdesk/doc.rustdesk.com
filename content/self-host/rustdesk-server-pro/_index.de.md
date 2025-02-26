@@ -30,6 +30,9 @@ Wenn Sie Ihren eigenen Server zu Hause oder im Büro aufbauen und ihn nicht übe
 
 Ein VPS der niedrigsten Stufe ist für Ihren Anwendungsfall ausreichend. Die Serversoftware ist nicht CPU- und speicherintensiv. Unser öffentlicher ID-Server, der auf einem Vultr-Server mit 2 CPU und 4 GB RAM gehostet wird, bedient mehr als 1,5 Millionen Endgeräte.
 
+## Article tutorials
+- [Step-by-Step Guide: Self-Host RustDesk Server Pro on Cloud via Docker for Secure Remote Access](https://www.linkedin.com/pulse/step-by-step-guide-self-host-rustdesk-server-pro-cloud-montinaro-fwnmf/)
+  
 ### Herunterladen
 
 [https://github.com/rustdesk/rustdesk-server-pro/releases/latest](https://github.com/rustdesk/rustdesk-server-pro/releases/latest)
