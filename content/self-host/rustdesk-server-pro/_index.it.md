@@ -33,7 +33,7 @@ Consigliamo di leggere prima questo, [Come funziona il server self-hosted?](/doc
 Il livello VPS più basso è sufficiente per i tuoi casi d'uso. Il software del server non è intensivo in termini di CPU e memoria. Il nostro server ID pubblico ospitato su un server Vultr da 2 CPU/4 GB serve oltre 1,0 milioni di endpoint. Ogni connessione relay consuma in media 180 kb al secondo. 1 core CPU e 1 GB di RAM sono sufficienti per supportare 1000 connessioni relay simultanee.
 
 ## Tutorial articoli
-- [Guida passo-passo: Self-Host RustDesk Server Pro su Cloud tramite Docker per accesso remoto sicuro](https://www.linkedin.com/pulse/step-by-step-guide-self-host-rustdesk-server-pro-cloud-montinaro-fwnmf/)
+[Guida passo-passo: Self-Host RustDesk Server Pro su Cloud tramite Docker per accesso remoto sicuro](https://www.linkedin.com/pulse/step-by-step-guide-self-host-rustdesk-server-pro-cloud-montinaro-fwnmf/)
 
 ## Tutorial video
 

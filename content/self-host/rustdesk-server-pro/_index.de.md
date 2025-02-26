@@ -33,7 +33,7 @@ Wir empfehlen, dies zuerst zu lesen, bevor Sie fortfahren: [Wie funktioniert der
 Das niedrigste VPS-Level reicht für Ihre Anwendungsfälle aus. Die Serversoftware ist nicht CPU- und speicherintensiv. Unser öffentlicher ID-Server, der auf einem 2 CPU/4 GB Vultr-Server gehostet wird, bedient über 1,0 Millionen Endpunkte. Jede Relay-Verbindung verbraucht durchschnittlich 180 kb pro Sekunde. 1 CPU-Kern und 1 GB RAM reichen aus, um 1000 gleichzeitige Relay-Verbindungen zu unterstützen.
 
 ## Artikel-Tutorials
-- [Schritt-für-Schritt-Anleitung: Selbstgehosteter RustDesk Server Pro in der Cloud über Docker für sicheren Fernzugriff](https://www.linkedin.com/pulse/step-by-step-guide-self-host-rustdesk-server-pro-cloud-montinaro-fwnmf/)
+[Schritt-für-Schritt-Anleitung: Selbstgehosteter RustDesk Server Pro in der Cloud über Docker für sicheren Fernzugriff](https://www.linkedin.com/pulse/step-by-step-guide-self-host-rustdesk-server-pro-cloud-montinaro-fwnmf/)
 
 ## Video-Tutorials
 

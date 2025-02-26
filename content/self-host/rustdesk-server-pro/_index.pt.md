@@ -33,7 +33,7 @@ Recomendamos ler isto primeiro antes de prosseguir, [Como funciona o servidor au
 O nível mais baixo de VPS é suficiente para seus casos de uso. O software do servidor não é intensivo em CPU e memória. Nosso servidor de ID público hospedado em um servidor Vultr de 2 CPU/4 GB atende a mais de 1,0 milhão de endpoints. Cada conexão de retransmissão consome em média 180 kb por segundo. 1 núcleo de CPU e 1 GB de RAM são suficientes para suportar 1000 conexões de retransmissão simultâneas.
 
 ## Tutoriais de artigos
-- [Guia passo a passo: Auto-hospedar RustDesk Server Pro na nuvem via Docker para acesso remoto seguro](https://www.linkedin.com/pulse/step-by-step-guide-self-host-rustdesk-server-pro-cloud-montinaro-fwnmf/)
+[Guia passo a passo: Auto-hospedar RustDesk Server Pro na nuvem via Docker para acesso remoto seguro](https://www.linkedin.com/pulse/step-by-step-guide-self-host-rustdesk-server-pro-cloud-montinaro-fwnmf/)
 
 ## Tutoriais em vídeo
 
