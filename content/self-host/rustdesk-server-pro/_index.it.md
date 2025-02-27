@@ -7,7 +7,7 @@ pre: "<b>2.2. </b>"
 RustDesk Server Pro ha più funzionalità rispetto alla versione open source.
 
 - Account
-- Nessun limite di connessioni simultanee, ovvero nessun limite di connessioni simultanee (anche la versione OSS non ha limiti, ma TeamViewer ecc. hanno questo limite)
+- Nessun limite di connessioni simultanee, ovvero nessun limite di connessioni simultanee
 - [Console web](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
 - API
 - [OIDC](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/), [LDAP](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/), [2FA](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/)
