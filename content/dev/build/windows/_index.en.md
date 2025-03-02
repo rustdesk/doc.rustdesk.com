@@ -24,7 +24,7 @@ Go to the folder you want to clone vcpkg and use [Git Bash](https://git-scm.com/
 If you don't have `Git` installed, get `Git` [here](https://git-scm.com/download/win).
 
 ```sh
-git clone https://github.com/microsoft/vcpkg
+git clone --recurse-submodules https://github.com/microsoft/vcpkg
 vcpkg/bootstrap-vcpkg.bat
 export VCPKG_ROOT=$PWD/vcpkg
 vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
