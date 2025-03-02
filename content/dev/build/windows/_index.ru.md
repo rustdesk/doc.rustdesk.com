@@ -42,7 +42,7 @@ rust-bindgen зависит от clang, скачайте и установите
 ## Сборка
 
 ```sh
-git clone https://github.com/rustdesk/rustdesk
+git clone --recurse-submodules https://github.com/rustdesk/rustdesk
 cd rustdesk
 mkdir -p target/debug
 mv sciter.dll target/debug

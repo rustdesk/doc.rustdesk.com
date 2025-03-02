@@ -8,7 +8,7 @@ weight: 30
 リポジトリのクローンを作成し、Dockerコンテナを構築することから始めます。
 
 ```sh
-git clone https://github.com/rustdesk/rustdesk
+git clone --recurse-submodules https://github.com/rustdesk/rustdesk
 cd rustdesk
 docker build -t "rustdesk-builder" .
 ```

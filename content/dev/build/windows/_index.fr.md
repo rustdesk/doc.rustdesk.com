@@ -50,7 +50,7 @@ Vous pouvez télécharger LLVM 15.02 ici : [64-bit](https://github.com/llvm/llvm
 ## Compilation
 
 ```sh
-git clone https://github.com/rustdesk/rustdesk
+git clone --recurse-submodules https://github.com/rustdesk/rustdesk
 cd rustdesk
 mkdir -p target/debug
 wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll
