@@ -52,7 +52,7 @@ Sie können die Version 15.0.2 der LLVM-Binärdateien hier herunterladen: [64 Bi
 #### Standard
 
 ```sh
-git clone https://github.com/rustdesk/rustdesk
+git clone --recurse-submodules https://github.com/rustdesk/rustdesk
 cd rustdesk
 mkdir -p target/debug
 wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll

@@ -50,7 +50,7 @@ Für einen Überblick über die installierten und standardmäßigen Rust-Toolcha
 Entscheiden Sie, wo Sie die RustDesk-Quelldateien haben möchten, und führen Sie den folgenden Befehl in dem Ordner aus, in dem sich der Ordner `rustdesk` befinden soll. In diesem Beispiel wird `/Users/<Benutzername>/repos/` als Speicherort verwendet.
 
 ```sh
-git clone https://github.com/rustdesk/rustdesk
+git clone --recurse-submodules https://github.com/rustdesk/rustdesk
 cd rustdesk/libs/portable/
 python3 -m pip install --upgrade pip
 pip3 install -r requirements.txt

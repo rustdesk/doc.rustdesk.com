@@ -24,7 +24,7 @@ Go to the folder you want to clone vcpkg and use [Git Bash](https://git-scm.com/
 If you don't have `Git` installed, get `Git` [here](https://git-scm.com/download/win).
 
 ```sh
-git clone --recurse-submodules https://github.com/microsoft/vcpkg
+git clone https://github.com/microsoft/vcpkg
 vcpkg/bootstrap-vcpkg.bat
 export VCPKG_ROOT=$PWD/vcpkg
 vcpkg/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static aom:x64-windows-static
@@ -49,7 +49,7 @@ You can download version 15.0.2 of the LLVM binaries here: [64 bit](https://gith
 #### Default
 
 ```sh
-git clone https://github.com/rustdesk/rustdesk
+git clone --recurse-submodules https://github.com/rustdesk/rustdesk
 cd rustdesk
 mkdir -p target/debug
 wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll

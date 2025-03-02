@@ -43,7 +43,7 @@ rust-bindgen依赖于clang, 下载[llvm](https://github.com/llvm/llvm-project/re
 ## 构建
 
 ```sh
-git clone https://github.com/rustdesk/rustdesk
+git clone --recurse-submodules https://github.com/rustdesk/rustdesk
 cd rustdesk
 mkdir -p target/debug
 mv sciter.dll target/debug

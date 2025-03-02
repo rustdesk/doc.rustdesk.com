@@ -51,7 +51,7 @@ rust-bindgen 依賴 clang，下載 [llvm](https://github.com/llvm/llvm-project/r
 ### 預設
 
 ```sh
-git clone https://github.com/rustdesk/rustdesk
+git clone --recurse-submodules https://github.com/rustdesk/rustdesk
 cd rustdesk
 mkdir -p target/debug
 wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll

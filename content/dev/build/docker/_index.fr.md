@@ -8,7 +8,7 @@ weight: 30
 Commencez par cloner le dépôt et construire le conteneur Docker :
 
 ```sh
-git clone https://github.com/rustdesk/rustdesk
+git clone --recurse-submodules https://github.com/rustdesk/rustdesk
 cd rustdesk
 docker build -t "rustdesk-builder" .
 ```

@@ -50,7 +50,7 @@ For an overview over installed and default Rust toolchains, run `rustup show`.
 Decide where you want the RustDesk source files and run the following from the folder in which you want the `rustdesk` folder to reside. In this example `/Users/<username>/repos/` is used as the location.
 
 ```sh
-git clone https://github.com/rustdesk/rustdesk
+git clone --recurse-submodules https://github.com/rustdesk/rustdesk
 cd rustdesk/libs/portable/
 python3 -m pip install --upgrade pip
 pip3 install -r requirements.txt

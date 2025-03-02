@@ -8,7 +8,7 @@ weight: 30
 首先克隆存储库并构建 docker 容器：
 
 ```sh
-git clone https://github.com/rustdesk/rustdesk
+git clone --recurse-submodules https://github.com/rustdesk/rustdesk
 cd rustdesk
 docker build -t "rustdesk-builder" .
 ```
