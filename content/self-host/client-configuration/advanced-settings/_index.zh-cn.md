@@ -1089,3 +1089,13 @@ https://github.com/rustdesk/rustdesk/discussions/8513#discussioncomment-10234494
 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: |
 | Y, N | Y | `enable-trusted-devices=N` |
+
+### allow-https-21114
+
+通常，HTTPS 使用端口 443。当 API 服务器的端口错误地设置为 21114 时，默认操作将是移除 21114 端口设置。将选项设置为 Y 允许使用 21114 作为 HTTPS 端口。此功能在 RustDesk 客户端 >=1.3.9 中可用。
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/570
+
+| 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-https-21114=Y` |

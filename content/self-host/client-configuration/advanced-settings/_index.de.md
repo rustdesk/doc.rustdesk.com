@@ -897,3 +897,13 @@ Die Option "codec-preference" in den Einstellungen jeder Gegenstelle steuert dan
 | N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
 
 **Achtung**: Andere Optionen als "vp8" und "vp9" funktionieren möglicherweise nicht. Dies hängt davon ab, was Ihr Rechner unterstützt.
+
+### allow-https-21114
+
+Normalerweise verwendet HTTPS Port 443. Wenn der Port des API-Servers fälschlicherweise auf 21114 eingestellt ist, besteht die Standardaktion darin, die Porteinstellung 21114 zu entfernen. Wenn Sie die Option auf Y setzen, kann 21114 als HTTPS-Port verwendet werden. Verfügbar im RustDesk-Client >=1.3.9.
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/570
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-https-21114=Y` |

@@ -1083,3 +1083,14 @@ https://github.com/rustdesk/rustdesk/discussions/8513#discussioncomment-10234494
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
 | Y, N | Y | `enable-trusted-devices=N` |
+
+
+### allow-https-21114
+
+Normalmente, o HTTPS usa a porta 443. Quando a porta do servidor de API é definida erroneamente como 21114, a ação padrão será remover a configuração da porta 21114. Definir a opção como Y permite o uso de 21114 como a porta HTTPS. Disponível no cliente RustDesk >=1.3.9.
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/570
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-https-21114=Y` |
