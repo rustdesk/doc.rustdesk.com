@@ -1143,4 +1143,12 @@ https://github.com/rustdesk/rustdesk/discussions/9269
 | :------: | :------: | :------: |
 | Y, N | N | `allow-logon-screen-password=Y` |
 
+### allow-https-21114
 
+Typically, HTTPS uses port 443. When the API server's port is mistakenly set to 21114, the default action will be to remove the 21114 port setting. Setting the option to Y allows the use of 21114 as the HTTPS port. Available in RustDesk client >=1.3.9.
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/570
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-https-21114=Y` |
