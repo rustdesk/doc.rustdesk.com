@@ -72,10 +72,17 @@ RustDesk now has experimental Wayland support since version 1.2.0.
 
 #### Login Screen
 
-Login screen using Wayland is not supported yet. If you wanna access login screen after reboot or logout with RustDesk, you need to change login screen to X11, please modify below line to `WaylandEnable=false` in `/etc/gdm/custom.conf` or `/etc/gdm3/custom.conf`:
+Login screen using Wayland is not supported yet. If you wanna access login screen after reboot or logout with RustDesk, you need to change login screen to X11.
+For gdm modify below line to `WaylandEnable=false` in `/etc/gdm/custom.conf` or `/etc/gdm3/custom.conf`:
 
 ```ini
 #WaylandEnable=false
+```
+For sddm add a configuration `/etc/sddm.conf.d/10-x11.conf `:
+
+```ini
+[General]
+DisplayServer=x11
 ```
 
 {{% notice note %}}
