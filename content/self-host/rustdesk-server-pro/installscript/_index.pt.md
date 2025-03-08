@@ -3,7 +3,7 @@ title: Installation
 weight: 2
 ---
 
-## Docker (Recommended)
+## Docker (Recomendado)
 
 ```
 bash <(wget -qO- https://get.docker.com)
@@ -11,20 +11,20 @@ wget rustdesk.com/pro.yml -O compose.yml
 docker compose up -d
 ```
 
-For more details, please check [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/).
+Para mais detalhes, por favor, verifique [Docker](/docs/pt/self-host/rustdesk-server-pro/installscript/docker/).
 
 ## install.sh
 
-If you are proficient in Linux, please use the script below. Otherwise, you may encounter significant issues if it fails, and it could be difficult to determine why it isn’t working.
+Se você é proficiente em Linux, por favor, utilize o script abaixo. Caso contrário, você pode encontrar problemas significativos se ele falhar, e pode ser difícil determinar por que não está funcionando.
 
 `bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh)`
 
-For more details, please check [install.sh](/docs/en/self-host/rustdesk-server-pro/installscript/script/).
+Para mais detalhes, por favor, verifique [install.sh](/docs/pt/self-host/rustdesk-server-pro/installscript/script/).
 
-## Convert from open source
+## Converter da versão de código aberto
 
 ### Docker
-If you install the open-source version using Docker, there is no direct way to convert it. Instead, you’ll need to run a new container with the Pro image. Before doing this, please back up your private key (the `id_ed25519` file, not `id_ed25519.pub`). Once the new container is set up, copy the old `id_ed25519` private key file to the working directory of the new container, then restart the container.
+Se você instalou a versão de código aberto usando Docker, não há uma maneira direta de convertê-la. Em vez disso, você precisará executar um novo contêiner com a imagem Pro. Antes de fazer isso, faça backup de sua chave privada (o arquivo `id_ed25519`, não `id_ed25519.pub`). Depois que o novo contêiner estiver configurado, copie o arquivo de chave privada `id_ed25519` antigo para o diretório de trabalho do novo contêiner e, em seguida, reinicie o contêiner.
 
 ### install.sh
-If you install the open-source version using install.sh, please follow [this](/docs/en/self-host/rustdesk-server-pro/installscript/script/#convert-from-open-source).
+Se você instalou a versão de código aberto usando install.sh, por favor, siga [isso](/docs/pt/self-host/rustdesk-server-pro/installscript/script/#convert-from-open-source).
