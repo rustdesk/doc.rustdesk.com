@@ -4,16 +4,24 @@ weight: 16
 ---
 
 ### Zugriffsberechtigungen für Geräte
+Das Gerät kann entweder einem einzelnen Benutzer, einer einzelnen Gerätegruppe oder beiden zugewiesen werden.
 
-Es gibt zwei Möglichkeiten, ein Gerät mit einem Benutzer zu verknüpfen:
-- Über die Geräteseite der Konsole
-- Anmeldung bei dem angegebenen Benutzerkonto auf der Client-Seite
+Wenn das Gerät einem Benutzer zugewiesen ist, kann es von diesem Benutzer, einer Benutzergruppe oder durch entsprechende gruppenübergreifende Einstellungen zugegriffen werden.
 
-In den folgenden beiden Fällen wird der Zugriff auf das Gerät verhindert:
-- Gerät in der Konsole auf der Geräteseite `deaktivieren`
-- Benutzer in der Konsole `deaktivieren`
+Wenn das Gerät einer Gerätegruppe zugewiesen ist, kann es über entsprechende gruppenübergreifende Geräteeinstellungen zugegriffen werden.
 
-Auf das zugehörige Gerät kann nur von den Geräten desselben Benutzers oder derselben Benutzergruppe bzw. mit den korrekten gruppenübergreifenden Einstellungen zugegriffen werden.
+Es gibt drei Möglichkeiten, ein Gerät einem Benutzer zuzuweisen:
+- Über die Konsolengeräteseite
+- Anmeldung beim angegebenen Benutzerkonto auf der Clientseite
+- Zuweisung über die Befehlszeile
+
+Es gibt zwei Möglichkeiten, ein Gerät einer Gerätegruppe zuzuweisen:
+- Über die Konsolengeräteseite
+- Zuweisung über die Befehlszeile
+
+Die folgenden zwei Situationen verhindern den Zugriff auf das Gerät:
+- Gerät auf der Konsolengeräteseite `deaktivieren`
+- Benutzer auf der Konsolenbenutzerseite `deaktivieren`
 
 ### Gruppenübergreifende Einstellungen
 

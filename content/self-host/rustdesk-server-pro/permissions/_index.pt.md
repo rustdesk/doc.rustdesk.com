@@ -4,16 +4,24 @@ weight: 16
 ---
 
 ### Permissões de acesso ao dispositivo
+O dispositivo pode ser atribuído a um único usuário, a um único grupo de dispositivos ou a ambos.
 
-Existem duas maneiras de associar um dispositivo a um usuário:
+Quando o dispositivo é atribuído a um usuário, ele pode ser acessado por esse usuário, por um grupo de usuários ou através das configurações apropriadas de grupo cruzado de usuários.
+
+Quando o dispositivo é atribuído a um grupo de dispositivos, ele pode ser acessado através das configurações apropriadas de grupo cruzado de dispositivos.
+
+Existem três maneiras de atribuir um dispositivo a um usuário:
 - Via página de dispositivos do console
-- Fazendo login na conta de usuário especificada no lado do cliente
+- Fazer login na conta de usuário especificada no lado do cliente
+- Comando de atribuição via linha de comando
+
+Existem duas maneiras de atribuir um dispositivo a um grupo de dispositivos:
+- Via página de dispositivos do console
+- Comando de atribuição via linha de comando
 
 As duas situações a seguir impedirão o acesso ao dispositivo:
-- `Desativar` o dispositivo na página de dispositivos do console
-- `Desativar` o usuário na página de usuários do console
-
-O dispositivo associado só pode ser acessado por dispositivos do mesmo usuário ou grupo de usuários, ou em configurações de grupo cruzado corretas.
+- Tornar o dispositivo `desativado` na página de dispositivos do console
+- Tornar o usuário `desativado` na página de usuários do console
 
 ### Configurações de Acesso do Grupo de Usuários
 
