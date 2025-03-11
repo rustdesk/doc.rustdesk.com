@@ -5,15 +5,24 @@ weight: 16
 
 ### Device access permissions
 
-There are two ways to associate a device with a user:
+The device can be assigned to either a single user, a single device group, or both.
+
+When the device is assigned to a user, it can be accessed by that user, a user group, or through appropriate cross-user-group settings.
+
+When the device is assigned to a device group, it can be accessed via appropriate cross-user-device-group settings.
+
+There are three ways to assign a device to a user:
 - Via console device page
 - Log in to the specified user account on the client side
+- Assign command line
+  
+There are two ways to assign a device to a device group:
+- Via console device page
+- Assign command line
 
 The following two situations will prevent the device from being accessed:
 - Make device `disable` in console devices page
 - Make user `disable` in console user page
-
-The associated device can only be accessed by the devices of the same user or user group, or in correct cross-group settings.
 
 ### User Group Access Settings
 
