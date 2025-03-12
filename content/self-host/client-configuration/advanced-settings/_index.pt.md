@@ -1094,3 +1094,11 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/570
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-https-21114=Y` |
+
+### allow-d3d-render
+
+A renderização D3D pode obter FPS mais alto e reduzir o uso da CPU, mas a tela de controle remoto pode ficar preta em alguns dispositivos. Disponível apenas no cliente RustDesk >=1.3.9, somente para Windows.
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-d3d-render=Y` |
