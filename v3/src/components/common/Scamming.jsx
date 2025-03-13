@@ -99,11 +99,11 @@ const ScammingBanner = ({ lang }) => {
           ),
           it: (
             <>
-              AVVISO: POTRESTI ESSERE TRUFFATO! <br />
-              Se sei al telefono con qualcuno che NON conosci e in cui CONFIANZA ti ha chiesto di installare RustDesk,
-              <br />
-              non installare e riaggancia immediatamente. <br />
-              Probabilmente sono truffatori che cercano di rubarti i soldi o
+	      ATTENZIONE: POTRESTI ESSERE TRUFFATO! <br />
+	      Se sei al telefono con qualcuno di cui NON TI FIDI e che NON CONOSCI e che ti ha chiesto di installare RustDesk,
+	      <br />
+	      non installare nulla e riaggancia immediatamente. <br />
+	      Probabilmente è un truffatore che cerca di rubare i tuoi soldi o altre informazioni private.
             </>
           ),
           ko: (
