@@ -907,3 +907,11 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/570
 | Werte | Standard | Beispiel |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-https-21114=Y` |
+
+### allow-d3d-render
+
+D3D-Rendering kann eine höhere FPS erreichen und die CPU-Auslastung reduzieren, aber der Fernsteuerungsbildschirm kann auf einigen Geräten schwarz sein. Nur verfügbar in RustDesk Client >=1.3.9, nur für Windows.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-d3d-render=Y` |
