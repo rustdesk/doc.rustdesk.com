@@ -25,7 +25,7 @@ Renew/upgrade license can be found via the [self-service license portal](https:/
 | --- | --- |
 | ![](/docs/en/self-host/rustdesk-server-pro/license/images/renew.jpg) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/upgrade.png) |
 
-After making the payment, please refresh the license as below to activate it.
+After making the payment, please refresh the license [as below](/docs/en/self-host/rustdesk-server-pro/license/#refresh-license) to activate it.
 
 #### Refresh license
 After payment, you need to proceed to the web console to activate it manually as below. Just click on `Edit`, then `OK`, no need to edit anything, because your license key remains the same.
