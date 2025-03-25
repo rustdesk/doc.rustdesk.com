@@ -3,7 +3,7 @@ title: Installation
 weight: 2
 ---
 
-## Docker (Recomendado)
+## método 1: Docker (Recomendado)
 
 ```
 bash <(wget -qO- https://get.docker.com)
@@ -13,7 +13,7 @@ docker compose up -d
 
 Para mais detalhes, por favor, verifique [Docker](/docs/pt/self-host/rustdesk-server-pro/installscript/docker/).
 
-## install.sh
+## método 2: install.sh
 
 Se você é proficiente em Linux, por favor, utilize o script abaixo. Caso contrário, você pode encontrar problemas significativos se ele falhar, e pode ser difícil determinar por que não está funcionando.
 
