@@ -44,6 +44,23 @@ Whether to create a desktop shortcut.
 | 3 | `Y` | Yes, same as `1` |
 | 4 | `N` | No, same as `0` |
 
+### INSTALLPRINTER
+
+Whether to install a printer. The printer is used to execute the print jobs of the controlled side locally.
+
+Since version `1.3.9`.
+
+**Default**:
+1. Install. Defaults to `1`.
+2. Upgrade. Defaults to the last installed options.
+
+| No | Value | Desc |
+| :---: | :---: | :---: |
+| 1 | `1` | Yes |
+| 2 | `0` | No |
+| 3 | `Y` | Yes, same as `1` |
+| 4 | `N` | No, same as `0` |
+
 ## Examples
 
 **Caution**: For versions prior to `2024-08-05`, there are issues with silent installation and silent repair. Please uninstall first, then install.
@@ -53,7 +70,7 @@ Whether to create a desktop shortcut.
 Silent installation, set the installation path, do not create a desktop shortcut, create a start menu shortcut.
 
 ```
-msiexec /i RustDesk-1.msi /qn INSTALLFOLDER="D:\Program Files\RustDesk" CREATESTARTMENUSHORTCUTS="Y" CREATEDESKTOPSHORTCUTS="N" /l*v install.log
+msiexec /i RustDesk-1.msi /qn INSTALLFOLDER="D:\Program Files\RustDesk" CREATESTARTMENUSHORTCUTS="Y" CREATEDESKTOPSHORTCUTS="N" INSTALLPRINTER="N" /l*v install.log
 ```
 
 **Note**: `/l*v install.log` means printing the execution log to `install.log`.
@@ -69,5 +86,5 @@ msiexec /i RustDesk-2.msi /qn /l*v install.log
 ### Upgrade, modify installation options
 
 ```
-msiexec /i RustDesk-1.msi /qn INSTALLFOLDER="C:\Program Files\RustDesk" CREATESTARTMENUSHORTCUTS="N" CREATEDESKTOPSHORTCUTS="N" /l*v install.log
+msiexec /i RustDesk-1.msi /qn INSTALLFOLDER="C:\Program Files\RustDesk" CREATESTARTMENUSHORTCUTS="N" CREATEDESKTOPSHORTCUTS="N" INSTALLPRINTER="N" /l*v install.log
 ```
