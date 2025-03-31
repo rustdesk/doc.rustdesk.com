@@ -26,8 +26,8 @@ What it does:
 - Create a working directory `/var/lib/rustdesk-server` and a log directory `/var/log/rustdesk-server`
 - Installs executables into `/usr/bin`
 - Download and extract RustDesk Pro Services to the above folder
-- Create systemd services for hbbs and hbbr (service names are rustdesk-hbbs.service and rustdesk-hbbr.service)
-- If you choose Domain, it will install Nginx and Certbot, allowing the API to be available on port 443 (HTTPS) and get an SSL certificate over port 80, it is automatically renewed. When the https is ready, please access with https://yourdomain.com rather than https://yourdomain.com:21114.
+- Create systemd services for hbbs and hbbr (service names are `rustdesk-hbbs.service` and `rustdesk-hbbr.service`)
+- If you choose Domain, it will install Nginx and Certbot, allowing the API to be available on port `443` (HTTPS) and get an SSL certificate over port `80`, it is automatically renewed. When the https is ready, please access with `https://yourdomain.com` rather than `https://yourdomain.com:21114`.
 
 {{% notice note %}}
 How to [Set up HTTPS for web console manually](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
