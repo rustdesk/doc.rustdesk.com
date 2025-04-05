@@ -1056,7 +1056,7 @@ https://github.com/rustdesk/rustdesk/issues/8687
 
 ### display-name
 
-Change your display name which will be shown on the popup when you connect to remote device. By default it displays your OS username.
+Change your display name which will be shown on the popup when you connect to remote device. By default it displays login user's name first, otherwise it displays your OS username.
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/277
 
