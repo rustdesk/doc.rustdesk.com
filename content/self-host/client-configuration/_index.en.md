@@ -71,7 +71,7 @@ If you still can not confirm the value of `API Server`, please go to the welcome
 
 The easiest way to setup automatically is using deployment scripts found [here](https://rustdesk.com/docs/en/self-host/client-deployment/).
 
-### 5, Import config from `Pro` via clipboard
+### 5. Import config from `Pro` via clipboard
 
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
