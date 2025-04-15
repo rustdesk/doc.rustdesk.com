@@ -5,6 +5,8 @@ import Prices from '~/components/widgets/Pricing.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { Image } from 'astro:assets';
+import wxImage from '~/assets/images/wx.png';
 
 const metadata = {
   title: '定价',
@@ -254,17 +256,11 @@ const metadata = {
     ]}
   />
 
-  <CallToAction
-    actions={[
-      {
-        text: 'sales@rustdesk.com',
-        href: 'mailto:sales@rustdesk.com',
-        target: '_blank',
-        icon: 'tabler:mail',
-      },
-    ]}
-  >
+  <CallToAction>
     <Fragment slot="title">联系我们获取更大的计划和咨询</Fragment>
+    <Fragment slot="subtitle">
+      <Image src={wxImage} alt="微信二维码" class="mx-auto mt-4" width={128} height={128} />
+    </Fragment>
   </CallToAction>
 
   <!-- Steps Widget ****************** -->
