@@ -70,6 +70,20 @@ Enable file copy and paste or file transfer (session) for incoming connections.
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-file-transfer=Y` |
 
+
+### enable-camera
+
+Enable camera for incoming connections.
+
+**Location**:
+
+1. **Desktop** Settings → Security → Permissions → Enable camera
+2. **Mobile**
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-camera=Y` |
+
 ### enable-audio
 
 Enable audio record and transfer to peer.
