@@ -84,6 +84,18 @@ Enable camera for incoming connections.
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-camera=Y` |
 
+### enable-remote-printer
+
+Enable remote printer for incoming connections.
+
+**Location**:
+
+1. **Windows** Settings → Security → Permissions → Enable remote printer
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-remote-printer=Y` |
+
 ### enable-audio
 
 Enable audio record and transfer to peer.
