@@ -19,7 +19,7 @@ You will be required to enter license in the web console (`http://<rustdesk-serv
 
 ### Renew/upgrade license
 
-Renew/upgrade license can be found via the [self-service license portal](https://rustdesk.com/self-host/account/) as described below.
+Renew/upgrade license can be found via the [self-service license portal](https://rustdesk.com/self-host/account/) as described below, log in with the email you used to buy the license as above picture.
 
 | License page with renew/upgrade actions | Upgrade window |
 | --- | --- |
