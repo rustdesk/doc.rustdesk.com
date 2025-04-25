@@ -72,25 +72,7 @@ services:
 
 看看[這裡](/docs/zh-tw/client)來設置您的客戶端，只有 `ID 伺服器` 以及 `Key` 是需要的，中繼伺服器不需設定，因為我們已經把它設置在 `hbbs` 了，hbbs 會自動提供這項資訊。
 
-## 5. 設置 hbbs 讓它指向至您的網域
-
-如果您設置了 `hbbs` 指向至您的 LAN IP，並且確認它正常運作，現在是時候改回網域了，因為它會在您的區域網路之外不能正常運作。
-
-<hr>
-
-5.1 前往 Container Manager > 專案 > 點擊 "rustdesk-server" > 操作 > 停止
-
-5.2 在停止之後，點擊 "YAML 設定"，修改開始為 `command: hbbs` 的那一行至您的網域，接著點擊 "停止"，請確保您選擇了 "建立並啟動專案(重建映像檔)"
-
-![](images/dsm7_recreate_project_after_modified_args.png?v2)
-
-5.3 您的 RustDesk 伺服器應該可接受來自網際網路的連線了，接著，您應該設定 port forwarding (通訊埠轉發)。
-
-{{% notice note %}}
-在完成這個步驟後就遇到問題了? 那麼你應該看看 [這個文章](/docs/zh-tw/self-host/nat-loopback-issues/)。
-{{% /notice %}}
-
-## 6. 在您的路由器設置 port forwarding (通訊埠轉發)
+## 5. 在您的路由器設置 port forwarding (通訊埠轉發)
 
 前往您的路由器的管理頁面，尋找任何有關於 `Port forwarding` 或是 `通訊埠轉發` 的設定，他應該在 `WAN`、`網際網路` 或是 `防火牆` 設置。
 
