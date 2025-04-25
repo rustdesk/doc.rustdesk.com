@@ -75,24 +75,7 @@ The public key will looks like this:
 
 Check [here](/docs/en/client) to set up your client. Only `ID server` and `Key` is needed. `Relay server` isn't needed because we've set it in `hbbs`, `hbbs` will provide this information automatically.
 
-### 5. Set your hbbs to point to your domain
-
-If you have set your `hbbs` command to point to your LAN IP, and verified it is working, it is time to change to the domain, as it will not work when attempting to use it outside of your LAN.
-<hr>
-
-5.1. Go to Container Manager → Project → Click "rustdesk-server" → Action → Stop
-
-5.2. After stopped, click "YAML Configurations", modify the line start with `command: hbbs` to your domain, then click "Save". Make sure you choose "Build and start the project (rebuild the image)".
-
-![](images/dsm7_recreate_project_after_modified_args.png?v2)
-
-5.3. Your RustDesk Server should ready for connections from the Internet, next, you should setup port forwarding.
-
-{{% notice note %}}
-Having problem after you done this step? You should check [this article](/docs/en/self-host/nat-loopback-issues/).
-{{% /notice %}}
-
-### 6. Set port forwarding on your router
+### 5. Set port forwarding on your router
 
 Go to your router's admin webpage, find anything related to `Port forwarding`, it should appear in `WAN` or `Firewall` settings.
 
