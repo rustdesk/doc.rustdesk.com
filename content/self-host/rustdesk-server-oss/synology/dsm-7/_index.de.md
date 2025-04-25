@@ -75,24 +75,7 @@ Der öffentliche Schlüssel sieht wie folgt aus:
 
 Lesen Sie [hier](/docs/de/client), wie Sie Ihren Client einrichten. Nur `ID-Server` und `Key` werden benötigt. `Relais-Server` wird nicht benötigt, da wir ihn in `hbbs` festgelegt haben. Diese Informationen werden von `hbbs` automatisch bereitgestellt.
 
-### 5. Legen Sie Ihre hbbs so fest, dass sie auf Ihre Domäne zeigen
-
-Wenn Sie Ihren `hbbs`-Befehl so eingestellt haben, dass er auf Ihre LAN-IP verweist, und überprüft haben, dass er funktioniert, ist es an der Zeit, zur Domäne zu wechseln, da er nicht funktioniert, wenn Sie versuchen, ihn außerhalb Ihres LAN zu verwenden.
-<hr>
-
-5.1. Gehen Sie zu Container Manager → Project → Klicken Sie "rustdesk-server" → Action → Stop
-
-5.2. Nach dem Stoppen klicken Sie auf "YAML Configurations", ändern Sie die Zeile, die mit `command: hbbs` beginnt, in Ihre Domäne und klicken Sie dann auf "Save". Stellen Sie sicher, dass Sie "Build and start the project (rebuild the image)" wählen.
-
-![](images/dsm7_recreate_project_after_modified_args.png?v2)
-
-5.3. Ihr RustDesk-Server sollte für Verbindungen aus dem Internet bereit sein, als nächstes sollten Sie eine Portweiterleitung einrichten.
-
-{{% notice note %}}
-Haben Sie Probleme, nachdem Sie diesen Schritt durchgeführt haben? Sie sollten [diesen Artikel](/docs/de/self-host/nat-loopback-issues/) überprüfen.
-{{% /notice %}}
-
-### 6. Portweiterleitung auf Ihrem Router einrichten
+### 5. Portweiterleitung auf Ihrem Router einrichten
 
 Gehen Sie auf die Verwaltungswebseite Ihres Routers und suchen Sie nach etwas, das mit `Portweiterleitung` zu tun hat. Es sollte unter `WAN` oder `Firewall` erscheinen.
 
