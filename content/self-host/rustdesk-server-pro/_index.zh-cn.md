@@ -1,10 +1,10 @@
 ---
-title: RustDesk Server Pro
+title: 自建服务器专业版
 weight: 200
 pre: "<b>2.2. </b>"
 ---
 
-RustDesk Server Pro 相较于开源版本拥有更多功能。
+自建服务器专业版相较于开源版本拥有更多功能。
 
 - 账户
 - 无限并发连接限制，即无限制的同时连接
