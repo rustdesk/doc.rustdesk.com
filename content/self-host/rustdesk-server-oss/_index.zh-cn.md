@@ -1,5 +1,5 @@
 ---
-title: RustDesk Server OSS
+title: 自建服务器开源版
 weight: 100
 pre: "<b>2.1. </b>"
 ---
