@@ -1190,7 +1190,7 @@ D3D render can get high FPS and reduce the cpu usage, but the remote control scr
 
 ### allow-hostname-as-id
 
-[Use hostname as id](https://github.com/rustdesk/rustdesk-server-pro/discussions/483), spaces in the hostname are replaced with '-'. This is not 100% guaranteed; if a conflict occurs, a random ID will be assigned. Available in RustDesk client version 1.4.0 and later."
+[Use hostname as id](https://github.com/rustdesk/rustdesk-server-pro/discussions/483), spaces in the hostname are replaced with '-'. This is not 100% guaranteed; if a conflict occurs, a random ID will be assigned. Available in RustDesk client version 1.4.0 and later.
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
