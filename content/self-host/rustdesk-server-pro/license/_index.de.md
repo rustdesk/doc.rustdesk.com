@@ -23,7 +23,7 @@ Verlängerung bzw. Aktualisierung der Lizenz erfolgt über das [Self-Service-Liz
 
 | Lizenzseite mit Verlängerungs-/Aktualisierungsaktionen | Aktualisierungsfenster |
 | --- | --- |
-| ![](/docs/en/self-host/rustdesk-server-pro/license/images/renew.jpg) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/upgrade.png) |
+| ![](/docs/en/self-host/rustdesk-server-pro/license/images/renew.jpg?v2) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/upgrade.png) |
 
 Nach der Zahlung müssen Sie die Webkonsole aufrufen, um sie manuell zu aktivieren. Klicken Sie einfach auf `Edit` und dann auf `OK`. Sie brauchen nichts zu bearbeiten, denn Ihr Lizenzschlüssel bleibt derselbe.
 

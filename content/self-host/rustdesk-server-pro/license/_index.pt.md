@@ -23,7 +23,7 @@ A renovação/atualização da licença pode ser encontrada no [portal de autoat
 
 | Página de licença com ações de renovação/atualização | Janela de atualização |
 | --- | --- |
-| ![](/docs/en/self-host/rustdesk-server-pro/license/images/renew.jpg) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/upgrade.png) |
+| ![](/docs/en/self-host/rustdesk-server-pro/license/images/renew.jpg?v2) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/upgrade.png) |
 
 Após o pagamento, você precisa acessar o console web para ativá-la manualmente como mostrado abaixo. Basta clicar em `Editar` e depois em `OK`, não é necessário editar nada, pois sua chave de licença permanece a mesma.
 
