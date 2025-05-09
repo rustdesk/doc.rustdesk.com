@@ -271,6 +271,18 @@ Proxy-Benutzername und -Passwort.
 | proxy-username | N | | | `proxy-username=user` |
 | proxy-password | N | | | `proxy-password=pass` |
 
+### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings
+
+Steuert, ob einige Einstellungen ausgeblendet werden sollen. Bitte stellen Sie sicher, dass "Einstellungen deaktivieren" ausgeschaltet ist, da diese sonst nicht funktionieren.
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/263
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/276
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-security-settings=Y` |
+
 ## Allgemeine Einstellungen
 
 ### theme
@@ -915,3 +927,11 @@ D3D-Rendering kann eine höhere FPS erreichen und die CPU-Auslastung reduzieren,
 | Werte | Standard | Beispiel |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-d3d-render=Y` |
+
+### allow-websocket
+
+Verwenden Sie das WebSocket-Protokoll, um Server und Client zu verbinden. Nur verfügbar im RustDesk Client >=1.4.0 und Pro Server >= 1.5.7. Beachten Sie, dass WebSocket nur Relay-Verbindungen unterstützt.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-websocket=Y` |

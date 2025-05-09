@@ -359,13 +359,13 @@ Notice: Run `sudo service nginx restart` if you change the `rustdesk.conf` manua
 #### 7. Login to the web page
 * Open `https://<YOUR_DOMAIN>` in the browser, log in using the default user name "admin" and password "test1234", then change the password to your own.
 
-#### 8. Add WebSocket Secure (WSS) support for the id server and relay server to enable secure communication for the web client.
+#### 8. Add WebSocket Secure (WSS) support for the id server and relay server to enable secure communication for all platforms.
 
 Add the following configuration to the first `server` section of the `/etc/nginx/.../rustdesk.conf` file, then restart the `Nginx` service.
 
 ```
     location /ws/id {
-        proxy_pass http://localhost:21118;
+        proxy_pass http://127.0.0.1:21118;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "Upgrade";
@@ -373,10 +373,11 @@ Add the following configuration to the first `server` section of the `/etc/nginx
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
     }
 
     location /ws/relay {
-        proxy_pass http://localhost:21119;
+        proxy_pass http://127.0.0.1:21119;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "Upgrade";
@@ -384,6 +385,7 @@ Add the following configuration to the first `server` section of the `/etc/nginx
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
     }
 ```
 
@@ -399,7 +401,7 @@ server {
     }
 
     location /ws/id {
-        proxy_pass http://localhost:21118;
+        proxy_pass http://127.0.0.1:21118;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "Upgrade";
@@ -407,10 +409,11 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
     }
 
     location /ws/relay {
-        proxy_pass http://localhost:21119;
+        proxy_pass http://127.0.0.1:21119;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "Upgrade";
@@ -418,6 +421,7 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
     }
 
     listen 443 ssl; # managed by Certbot
@@ -437,6 +441,10 @@ server {
     return 404; # managed by Certbot
 }
 ```
+
+{{% notice note %}}
+If you have previously deployed for web clients and want to use it across all platforms, you need to add `proxy_read_timeout`. You can also add the `allow-websocket` option in your custom client to use WebSocket.
+{{% /notice %}}
 
 #### 9. Log in to your server from RustDesk public web client at `https://rustdesk.com/web`.
 

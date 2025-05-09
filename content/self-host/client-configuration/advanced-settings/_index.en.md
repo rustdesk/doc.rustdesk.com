@@ -1048,7 +1048,7 @@ https://github.com/rustdesk/rustdesk/discussions/7956
 | :------: | :------: | :------: |
 | Y, N | Y | `remove-preset-password-warning=Y` |
 
-### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings
+### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings
 
 Controls whether to hide some settings. Please ensure `Disable settings` is turned off, otherwise these won't work.
 
@@ -1197,3 +1197,11 @@ Available in RustDesk client version 1.4.0 and later.
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-hostname-as-id=Y` |
+
+### allow-websocket
+
+Use WebSocket protocol to connect server and client. Only available in RustDesk client >=1.4.0 and Pro server >= 1.5.7. Note that WebSocket only supports relay connection.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-websocket=Y` |

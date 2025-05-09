@@ -214,3 +214,321 @@ net start rustdesk > null
 
 ## 有什么地方可以看到视频设置指南吗？
 是的！ 我们有一个 [YouTube 频道](https://youtube.com/@RustDesk)，稍后会创建B站频道。
+
+### 手动设置 Web 控制台的 HTTPS
+
+#### 1. 购买域名并将其解析到您的服务器 IP 地址
+* 从域名注册商（如 GoDaddy、Namecheap 或 Namesilo）购买域名
+* 通过以下方式之一将域名解析到您的服务器 IP 地址：
+    - 您的域名注册商的控制面板（推荐）
+    - [DNS 提供商](https://en.wikipedia.org/wiki/List_of_managed_DNS_providers)
+
+例如，如果您从 `Namesilo` 购买域名 `example.com`，您的服务器 IP 地址是 `123.123.123.123`，您想使用 `rustdesk.example.com` 子域名作为您的 HTTPS Web 控制台地址。您需要打开[链接](https://www.namesilo.com/account_domains.php)，点击带有工具提示 `Manage dns for the domain` 的按钮，添加一个主机名为 `rustdesk` 且 IP 地址为您的服务器 IP 的 `A` 记录。
+![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-button.png)
+![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-add-a-record.png)
+![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-table.png)
+* DNS 生效需要一些时间，访问 https://www.whatsmydns.net 检查域名是否已解析到您的服务器 IP 地址。第 6 步取决于正确的解析结果。在以下步骤中，将 `<YOUR_DOMAIN>` 替换为您的子域名，例如 `rustdesk.example.com`。
+
+#### 2. 安装 Nginx
+* Debian/Ubuntu: `sudo apt-get install nginx`
+* Fedora/CentOS: `sudo dnf install nginx` 或 `sudo yum install nginx`
+* Arch: `sudo pacman -S install nginx`
+* openSUSE: `sudo zypper install nginx`
+* Gentoo: `sudo emerge -av nginx`
+* Appine: `sudo apk add --no-cache nginx`
+
+运行 `nginx -h` 检查是否安装成功。
+
+#### 3. 安装 Certbot
+* 方法 1：如果已安装 `snap`，运行 `sudo snap install certbot --classic`
+* 方法 2：使用 `python3-certbot-nginx`，例如 Ubuntu 的 `sudo apt-get install python3-certbot-nginx`
+* 方法 3：如果上述两种方法失败，尝试安装 `certbot-nginx`，例如 CentOS 7 的 `sudo yum install certbot-nginx`
+
+运行 `certbot -h` 检查是否安装成功。
+
+#### 4. 配置 Nginx
+有两种方式：
+* 如果存在目录 `/etc/nginx/sites-available` 和 `/etc/nginx/sites-enabled`，将以下命令中的 `<YOUR_DOMAIN>` 替换为您的域名并运行。
+```sh
+cat > /etc/nginx/sites-available/rustdesk.conf << EOF
+server {
+    server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       \$remote_addr;
+        proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+}
+EOF
+```
+然后运行 `sudo ln -s /etc/nginx/sites-available/rustdesk.conf /etc/nginx/sites-enabled/rustdesk.conf`。
+
+运行 `cat /etc/nginx/sites-available/rustdesk.conf` 确保其内容正确。
+
+* 如果目录 `/etc/nginx/sites-available` 和 `/etc/nginx/sites-enabled` 不存在，但目录 `/etc/nginx/conf.d` 存在，将以下命令中的 `<YOUR_DOMAIN>` 替换为您的域名并运行。
+```sh
+cat > /etc/nginx/conf.d/rustdesk.conf << EOF
+server {
+    server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       \$remote_addr;
+        proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+}
+EOF
+```
+运行 `cat /etc/nginx/conf.d/rustdesk.conf` 确保其内容正确。
+
+#### 5. 为域名启用防火墙规则
+运行以下命令：
+
+```sh
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw --force enable
+sudo ufw --force reload
+```
+
+#### 6. 生成 SSL 证书
+将 `$YOUR_DOMAIN` 替换为您的域名，然后运行
+`sudo certbot --nginx --cert-name $YOUR_DOMAIN --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d $YOUR_DOMAIN`。
+
+如果提示 `Enter email address (used for urgent renewal and security notices)`，输入您的电子邮件地址。
+
+最后，`rustdesk.conf` 的内容应该如下：
+
+```
+server {
+    server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       $remote_addr;
+        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/<YOUR_DOMAIN>/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/<YOUR_DOMAIN>/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = <YOUR_DOMAIN>) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    server_name <YOUR_DOMAIN>;
+    listen 80;
+    return 404; # managed by Certbot
+}
+```
+
+以下是一些常见错误：
+
+* 控制台打印 `Successfully deployed certificate for <YOUR_DOMAIN> to /etc/nginx/.../default` 而不是 `Successfully deployed certificate for <YOUR_DOMAIN> to /etc/nginx/.../rustdesk.conf`。
+
+原因可能是 Certbot 找不到 `rustdesk.conf` 文件，您可以尝试以下解决方案之一：
+- 检查第 5 步的结果，运行 `sudo service nginx restart`。
+- 将包含 `<YOUR_DOMAIN>` 的服务器配置 `server{...}` 复制到 `rustdesk.conf`，并将 `location{...}` 更改为以下内容。
+
+```sh
+location / {
+           proxy_set_header        X-Real-IP       \$remote_addr;
+           proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+      }
+```
+
+* `too many certificates (5) already issued for this exact set of domains in the last 168 hours`
+
+解决方案：向 DNS 添加另一个域名并将 `<YOUR_DOMAIN>` 更改为它，例如 `rustdesk2.example.com`。然后重复步骤 1、4、6。
+
+* `Error getting validation data`
+
+解决方案：可能是由防火墙引起的，请参阅 https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#firewall
+
+注意：如果您手动更改了 `rustdesk.conf`，请运行 `sudo service nginx restart`。
+
+#### 7. 登录网页
+* 在浏览器中打开 `https://<YOUR_DOMAIN>`，使用默认用户名 "admin" 和密码 "test1234" 登录，然后将密码更改为您自己的密码。
+
+#### 8. 为 ID 服务器和中继服务器添加 WebSocket Secure (WSS) 支持，以启用所有平台的安全通信
+
+将以下配置添加到 `/etc/nginx/.../rustdesk.conf` 文件的第一个 `server` 部分，然后重启 `Nginx` 服务。
+
+```
+    location /ws/id {
+        proxy_pass http://127.0.0.1:21118;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+
+    location /ws/relay {
+        proxy_pass http://127.0.0.1:21119;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+```
+
+完整配置如下：
+
+```
+server {
+    server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       $remote_addr;
+        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+
+    location /ws/id {
+        proxy_pass http://127.0.0.1:21118;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+
+    location /ws/relay {
+        proxy_pass http://127.0.0.1:21119;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/<YOUR_DOMAIN>/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/<YOUR_DOMAIN>/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = <YOUR_DOMAIN>) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    server_name <YOUR_DOMAIN>;
+    listen 80;
+    return 404; # managed by Certbot
+}
+```
+
+{{% notice note %}}
+如果您之前为 Web 客户端部署过，并想在所有平台上使用，您需要添加 `proxy_read_timeout`。您也可以在自定义客户端中添加 `allow-websocket` 选项来使用 WebSocket。
+{{% /notice %}}
+
+#### 9. 从 RustDesk 公共 Web 客户端 `https://rustdesk.com/web` 登录到您的服务器
+
+您需要在 `/etc/nginx/.../rustdesk.conf` 的 `location /` 部分添加以下内容，以绕过浏览器的 CORS 限制。
+
+```
+        if ($http_origin ~* (https?://(www\.)?rustdesk\.com)) {
+            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
+            add_header 'Access-Control-Allow-Credentials' 'true' always;
+        }
+        if ($request_method = 'OPTIONS') {
+            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
+            add_header 'Access-Control-Allow-Credentials' 'true' always;
+            add_header 'Content-Length' 0;
+            add_header 'Content-Type' 'text/plain charset=UTF-8';
+            return 204;
+        }
+```
+
+### 为什么我的日志/设备名称为空？
+确保在被控制的设备上正确设置了 API，https://github.com/rustdesk/rustdesk-server-pro/issues/21#issuecomment-1637935750。
+
+### 如何卸载 RustDesk Server Pro？
+运行以下命令：
+```sh
+sudo systemctl stop rustdesk-hbbs.service
+sudo systemctl disable rustdesk-hbbs.service
+sudo systemctl stop rustdesk-hbbr.service
+sudo systemctl disable rustdesk-hbbr.service
+sudo systemctl daemon-reload
+sudo rm /etc/systemd/system/rustdesk-hbbs.service
+sudo rm etc/systemd/system/rustdesk-hbbr.service
+sudo rm /usr/bin/hbbs
+sudo rm /usr/bin/hbbr
+sudo rm -rf /var/lib/rustdesk-server/
+sudo rm -rf /var/log/rustdesk-server/
+```
+如果脚本安装了 Nginx，则使用以下命令删除：
+```sh
+sudo apt remove nginx
+```
+
+### 如何从 Web 控制台的设备列表中删除设备？
+禁用然后删除现在可用。
+
+### 如何使用 PowerShell 更新 RustDesk？
+```ps
+$ErrorActionPreference= 'silentlycontinue'
+
+$rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
+
+if ($rdver -eq "1.2.6")
+{
+    Write-Output "RustDesk $rdver 是最新版本。"
+    Exit
+}
+
+if (!(Test-Path C:\Temp))
+{
+    New-Item -ItemType Directory -Force -Path C:\Temp > null
+}
+
+cd C:\Temp
+
+Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.6/rustdesk-1.2.6-x86_64.exe" -Outfile "rustdesk.exe"
+Start-Process .\rustdesk.exe --silent-install -wait
+```
+
+### `Key mismatch` 错误
+请使用[正确的密钥](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-pro/relay/)配置您的客户端。
+
+### `Failed to connect to relay server` 错误
+请确保 `hbbr` 正在运行。有关 `hbbr` 的更多信息，您可以[在此处](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-oss/install/)找到。
+如果您的 `hbbr` 不在与 `hbbs` 相同的机器上运行，或者您有多个中继服务器，或者您不在默认端口 `21117` 上运行它，您必须明确告诉 `hbbs`。请查看[此处](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-pro/relay/)。
+
+### 重置管理员账户的 MFA
+https://github.com/rustdesk/rustdesk/discussions/6576
+
+### 在 Web 控制台中更改管理员密码后无法登录。是否有简单的方法重置密码？
+1. 确保您已安装 `rustdesk-utils`。如果没有，您可以从[这里](https://github.com/rustdesk/rustdesk-server-pro)获取。此外，您需要从数据库所在的文件夹执行命令，即 `/var/lib/rustdesk-server`。
+2. 命令是 `rustdesk-utils set_password username password`。如果成功，它将显示 *Done*。
+
+您还可以使用以下其他命令 `genkeypair`、`validatekeypair [public key] [secret key]`、`doctor [rustdesk-server]`、`reset_email_verification` 和 `reset_2fa_verification`，这些命令可以与 `rustdesk-utils` 一起使用。
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/183
+
+### 将根 CA 证书添加到 Docker 容器中（用于 SMTP、OIDC 等的 TLS 失败）
+https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703
