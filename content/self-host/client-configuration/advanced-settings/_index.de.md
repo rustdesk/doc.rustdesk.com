@@ -271,7 +271,7 @@ Proxy-Benutzername und -Passwort.
 | proxy-username | N | | | `proxy-username=user` |
 | proxy-password | N | | | `proxy-password=pass` |
 
-### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings
+### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings / hide-remote-printer-settings
 
 Steuert, ob einige Einstellungen ausgeblendet werden sollen. Bitte stellen Sie sicher, dass "Einstellungen deaktivieren" ausgeschaltet ist, da diese sonst nicht funktionieren.
 

@@ -1019,7 +1019,7 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/286
 | :------: | :------: | :------: |
 | Y, N | Y | `remove-preset-password-warning=Y` |
 
-### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings
+### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings / hide-remote-printer-settings
 
 是否隐藏某些设置，请确保`Disable settings`已关闭，否则这些设置将不起作用。
 
