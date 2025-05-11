@@ -1014,7 +1014,7 @@ https://github.com/rustdesk/rustdesk/discussions/7956
 | :------: | :------: | :------: |
 | Y, N | Y | `remove-preset-password-warning=Y` |
 
-### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings
+### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings
 
 Controla se deseja ocultar algumas configurações. Certifique-se de que "Desativar configurações" esteja desativado, caso contrário, elas não funcionarão.
 
@@ -1102,3 +1102,11 @@ A renderização D3D pode obter FPS mais alto e reduzir o uso da CPU, mas a tela
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-d3d-render=Y` |
+
+### allow-websocket
+
+Use o protocolo WebSocket para conectar servidor e cliente. Disponível apenas no cliente RustDesk >=1.4.0 e servidor Pro >= 1.5.7. Observe que o WebSocket suporta apenas conexão de retransmissão.
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-websocket=Y` |

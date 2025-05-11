@@ -292,6 +292,115 @@ Hinweis: Führen Sie `sudo service nginx restart` aus, wenn Sie die `rustdesk.co
 #### 7. Anmeldung auf der Webseite
 * Öffnen Sie `https://<IHRE_DOMAIN>` im Browser, melden Sie sich mit dem Standard-Benutzernamen "admin" und dem Passwort "test1234" an und ändern Sie dann das Passwort in Ihr eigenes.
 
+#### 8. WebSocket Secure (WSS) Unterstützung für den ID-Server und Relay-Server hinzufügen, um sichere Kommunikation für alle Plattformen zu ermöglichen
+
+Fügen Sie die folgende Konfiguration zum ersten `server`-Abschnitt der Datei `/etc/nginx/.../rustdesk.conf` hinzu und starten Sie dann den `Nginx`-Dienst neu.
+
+```
+    location /ws/id {
+        proxy_pass http://127.0.0.1:21118;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+
+    location /ws/relay {
+        proxy_pass http://127.0.0.1:21119;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+```
+
+Die vollständige Konfiguration lautet:
+
+```
+server {
+    server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       $remote_addr;
+        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+
+    location /ws/id {
+        proxy_pass http://127.0.0.1:21118;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+
+    location /ws/relay {
+        proxy_pass http://127.0.0.1:21119;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/<YOUR_DOMAIN>/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/<YOUR_DOMAIN>/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = <YOUR_DOMAIN>) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    server_name <YOUR_DOMAIN>;
+    listen 80;
+    return 404; # managed by Certbot
+}
+```
+
+{{% notice note %}}
+Wenn Sie zuvor für Web-Clients bereitgestellt haben und es auf allen Plattformen verwenden möchten, müssen Sie `proxy_read_timeout` hinzufügen. Sie können auch die Option `allow-websocket` in Ihrem benutzerdefinierten Client hinzufügen, um WebSocket zu verwenden.
+{{% /notice %}}
+
+#### 9. Melden Sie sich von dem RustDesk öffentlichen Web-Client unter `https://rustdesk.com/web` bei Ihrem Server an.
+
+Sie müssen Folgendes im `location /`-Abschnitt der Datei `/etc/nginx/.../rustdesk.conf` hinzufügen, um die CORS-Beschränkungen der Browser zu umgehen.
+
+```
+        if ($http_origin ~* (https?://(www\.)?rustdesk\.com)) {
+            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
+            add_header 'Access-Control-Allow-Credentials' 'true' always;
+        }
+        if ($request_method = 'OPTIONS') {
+            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
+            add_header 'Access-Control-Allow-Credentials' 'true' always;
+            add_header 'Content-Length' 0;
+            add_header 'Content-Type' 'text/plain charset=UTF-8';
+            return 204;
+        }
+```
+
 ### SELinux
 
 Wenn bei der Installation die Meldung `Waiting for RustDesk Relay service to become active...` erscheint, kann dies durch SELinux verursacht werden. Sie können die folgenden Befehle ausprobieren:

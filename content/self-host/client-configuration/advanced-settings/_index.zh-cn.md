@@ -1019,7 +1019,7 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/286
 | :------: | :------: | :------: |
 | Y, N | Y | `remove-preset-password-warning=Y` |
 
-### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings
+### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings
 
 是否隐藏某些设置，请确保`Disable settings`已关闭，否则这些设置将不起作用。
 
@@ -1096,7 +1096,7 @@ https://github.com/rustdesk/rustdesk/discussions/8513#discussioncomment-10234494
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/570
 
-| 可设值 | 可设值 | 示例 |
+| 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-https-21114=Y` |
 
@@ -1104,6 +1104,14 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/570
 
 D3D渲染可以获得更高的帧率并减少CPU使用率，但在某些设备上远程控制画面可能会出现黑屏。仅在 RustDesk 客户端 >=1.3.9 版本和 Windows 系统上可用。
 
-| 可设值 | 可设值 | 示例 |
+| 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-d3d-render=Y` |
+
+### allow-websocket
+
+使用WebSocket协议连接服务器和客户端。仅在 RustDesk 客户端 >=1.4.0 版本 和 Pro 服务器 >= 1.5.7 版本可用。注意WebSocket仅支持中继连接。
+
+| 可设值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-websocket=Y` |
