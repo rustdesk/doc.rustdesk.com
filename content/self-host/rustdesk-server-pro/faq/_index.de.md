@@ -273,10 +273,10 @@ Der Grund könnte sein, dass Certbot die Datei `rustdesk.conf` nicht findet. Sie
 
 ```sh
 location / {
-           proxy_set_header        X-Real-IP       \$remote_addr;
-           proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
-        proxy_pass http://127.0.0.1:21114/;
-      }
+    proxy_set_header        X-Real-IP       $remote_addr;
+    proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_pass http://127.0.0.1:21114/;
+}
 ```
 
 * `too many certificates (5) already issued for this exact set of domains in the last 168 hours`
