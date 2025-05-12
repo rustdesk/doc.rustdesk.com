@@ -361,7 +361,11 @@ Notice: Run `sudo service nginx restart` if you change the `rustdesk.conf` manua
 
 #### 8. Add WebSocket Secure (WSS) support for the id server and relay server to enable secure communication for all platforms.
 
-Add the following configuration to the first `server` section of the `/etc/nginx/.../rustdesk.conf` file, then restart the `Nginx` service.
+Add the following configuration to the first `server` section of the `/etc/nginx/.../rustdesk.conf` file, then restart the `Nginx` service. 
+The web client can be accessed via `https://<YOUR_DOMAIN>/web`. Custom clients can use WebSocket by setting `allow-websocket=Y` in the advanced options. If the custom client with WebSocket enabled is used, it will not utilize TCP/UDP and can only connect through a relay (except for direct IP connections). If only this WebSocket-enabled client is used, the server can close ports 21114 to 21119 and only keep port 443 open.
+
+
+
 
 ```
     location /ws/id {
@@ -443,30 +447,8 @@ server {
 ```
 
 {{% notice note %}}
-If you have previously deployed for web clients and want to use it across all platforms, you need to add `proxy_read_timeout`. You can also add the `allow-websocket` option in your custom client to use WebSocket.
+If you have previously deployed for web clients and want to use it across all platforms, you need to add `proxy_read_timeout`.
 {{% /notice %}}
-
-#### 9. Log in to your server from RustDesk public web client at `https://rustdesk.com/web`.
-
-You need to add below in the `location /` section of the `/etc/nginx/.../rustdesk.conf` to bypass CORS limitation of browsers.
-
-```
-        if ($http_origin ~* (https?://(www\.)?rustdesk\.com)) {
-            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
-            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
-            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
-            add_header 'Access-Control-Allow-Credentials' 'true' always;
-        }
-        if ($request_method = 'OPTIONS') {
-            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
-            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
-            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
-            add_header 'Access-Control-Allow-Credentials' 'true' always;
-            add_header 'Content-Length' 0;
-            add_header 'Content-Type' 'text/plain charset=UTF-8';
-            return 204;
-        }
-```
 
 
 ### SELinux
