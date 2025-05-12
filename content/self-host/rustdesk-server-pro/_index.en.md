@@ -82,6 +82,13 @@ Here is a simple tutorial of [manual HTTPS setup](https://rustdesk.com/docs/en/s
 
 https://rustdesk.com/docs/en/self-host/client-configuration/
 
+### 6, Set up WebSocket
+
+To enable web client or [desktop / mobile client](/docs/en/self-host/client-configuration/advanced-settings/#allow-websocket) work properly with WebSocket, you need to add the following settings to your reverse proxy configuration.
+
+https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
+
+
 ## Upgrade Server
 
 This [guide](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#there-is-a-new-version-of-rustdesk-server-pro-out-how-can-i-upgrade) covers how to upgrade RustDesk Server Pro from a lower version, addressing different installation methods.
