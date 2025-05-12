@@ -357,7 +357,7 @@ location / {
 #### 8. 为 ID 服务器和中继服务器添加 WebSocket Secure (WSS) 支持，以启用所有平台的安全通信
 
 将以下配置添加到 `/etc/nginx/.../rustdesk.conf` 文件的第一个 `server` 部分，然后重启 `Nginx` 服务。
-
+Web客户端通过 `https://<YOUR_DOMAIN>/web`访问, 自定义客户端通过在高级选项中设置 `allow-websocket=Y`来使用websocket。如果自定义客户端中启用了websocket，该自定义客户端将不会被使用tcp/udp, 只能通过中继连接(除IP直连)。如果只使用这种启用了websocket的客户端, 也可以关闭服务器的21114~21119端口, 只开启443端口。
 ```
     location /ws/id {
         proxy_pass http://127.0.0.1:21118;
@@ -438,30 +438,8 @@ server {
 ```
 
 {{% notice note %}}
-如果您之前为 Web 客户端部署过，并想在所有平台上使用，您需要添加 `proxy_read_timeout`。您也可以在自定义客户端中添加 `allow-websocket` 选项来使用 WebSocket。
+如果您之前为 Web 客户端部署过，并想在所有平台上使用，您需要添加 `proxy_read_timeout`。
 {{% /notice %}}
-
-#### 9. 从 RustDesk 公共 Web 客户端 `https://rustdesk.com/web` 登录到您的服务器
-
-您需要在 `/etc/nginx/.../rustdesk.conf` 的 `location /` 部分添加以下内容，以绕过浏览器的 CORS 限制。
-
-```
-        if ($http_origin ~* (https?://(www\.)?rustdesk\.com)) {
-            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
-            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
-            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
-            add_header 'Access-Control-Allow-Credentials' 'true' always;
-        }
-        if ($request_method = 'OPTIONS') {
-            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
-            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
-            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
-            add_header 'Access-Control-Allow-Credentials' 'true' always;
-            add_header 'Content-Length' 0;
-            add_header 'Content-Type' 'text/plain charset=UTF-8';
-            return 204;
-        }
-```
 
 ### 为什么我的日志/设备名称为空？
 确保在被控制的设备上正确设置了 API，https://github.com/rustdesk/rustdesk-server-pro/issues/21#issuecomment-1637935750。
