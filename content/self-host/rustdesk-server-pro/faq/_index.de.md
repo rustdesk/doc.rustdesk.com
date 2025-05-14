@@ -380,6 +380,28 @@ server {
 Wenn Sie zuvor für Web-Clients bereitgestellt haben und es auf allen Plattformen verwenden möchten, müssen Sie `proxy_read_timeout` hinzufügen.
 {{% /notice %}}
 
+#### 9. CORS-Umgehung bei Verwendung des RustDesk öffentlichen Web-Clients `https://rustdesk.com/web`
+
+Sie müssen Folgendes im `location /`-Abschnitt der Datei `/etc/nginx/.../rustdesk.conf` hinzufügen, um die CORS-Beschränkungen der Browser zu umgehen. Überspringen Sie diesen Schritt, wenn Sie Ihren eigenen Web-Client verwenden.
+
+```
+        if ($http_origin ~* (https?://(www\.)?rustdesk\.com)) {
+            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
+            add_header 'Access-Control-Allow-Credentials' 'true' always;
+        }
+        if ($request_method = 'OPTIONS') {
+            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
+            add_header 'Access-Control-Allow-Credentials' 'true' always;
+            add_header 'Content-Length' 0;
+            add_header 'Content-Type' 'text/plain charset=UTF-8';
+            return 204;
+        }
+```
+
 ### SELinux
 
 Wenn bei der Installation die Meldung `Waiting for RustDesk Relay service to become active...` erscheint, kann dies durch SELinux verursacht werden. Sie können die folgenden Befehle ausprobieren:
