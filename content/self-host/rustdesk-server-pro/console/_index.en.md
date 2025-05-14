@@ -95,7 +95,7 @@ This can also be done via the API at command line on deployment or later by call
 
 You can also assign strategy in this way, e.g. `--assign --token <generatedtoken> --strategy_name <strategyname>`.
 
-You can also assign address book in this way, e.g. `--assign --token <generatedtoken> --address_book_name <addressbookname>` or `--assign --token <generatedtoken> --address_book_name <addressbookname> --address_book_tag <addressbooktag>`
+You can also assign address book in this way, e.g. `--assign --token <generatedtoken> --address_book_name <addressbookname>` or `--assign --token <generatedtoken> --address_book_name <addressbookname> --address_book_tag <addressbooktag> --address_book_alias <alias>`.  `--address_book_alias` requires RustDesk server Pro >=1.5.8 and client >=1.4.1.
 
 You can also assign device group name in this way, e.g. `--assign --token <generatedtoken> --device_group_name <devicegroupname>`.
 
