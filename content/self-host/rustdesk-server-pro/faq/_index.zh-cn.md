@@ -441,6 +441,28 @@ server {
 如果您之前为 Web 客户端部署过，并想在所有平台上使用，您需要添加 `proxy_read_timeout`。
 {{% /notice %}}
 
+#### 9. 如果您使用 RustDesk 公共 Web 客户端 `https://rustdesk.com/web`，需要绕过 CORS 限制
+
+您需要在 `/etc/nginx/.../rustdesk.conf` 的 `location /` 部分添加以下内容，以绕过浏览器的 CORS 限制。如果您使用自己的 Web 客户端，可以跳过此步骤。
+
+```
+        if ($http_origin ~* (https?://(www\.)?rustdesk\.com)) {
+            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
+            add_header 'Access-Control-Allow-Credentials' 'true' always;
+        }
+        if ($request_method = 'OPTIONS') {
+            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
+            add_header 'Access-Control-Allow-Credentials' 'true' always;
+            add_header 'Content-Length' 0;
+            add_header 'Content-Type' 'text/plain charset=UTF-8';
+            return 204;
+        }
+```
+
 ### 为什么我的日志/设备名称为空？
 确保在被控制的设备上正确设置了 API，https://github.com/rustdesk/rustdesk-server-pro/issues/21#issuecomment-1637935750。
 
