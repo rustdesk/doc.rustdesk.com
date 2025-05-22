@@ -1115,3 +1115,17 @@ D3D渲染可以获得更高的帧率并减少CPU使用率，但在某些设备�
 | 可设值 | 默认值 | 示例 |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-websocket=Y` |
+
+### allow-numeric-one-time-password
+
+这个选项用于 启用/禁用 一次性密码仅为数字。
+仅在 RustDesk 客户端 >=1.4.1 版本 和 Pro 服务器 >= 1.5.9 版本可用。
+
+**讨论**: https://github.com/rustdesk/rustdesk-server-pro/discussions/685
+
+**预览**: https://github.com/rustdesk/rustdesk/pull/11846
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-numeric-one-time-password=Y` |
+
