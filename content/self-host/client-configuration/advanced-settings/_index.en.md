@@ -934,6 +934,8 @@ The "codec-preference" option in each peer's settings will then control codec fo
 
 **Caution**: Options other than "vp8" and "vp9" may not work. This depends on what your machine supports.
 
+## Others
+
 ### preset-address-book-name & preset-address-book-tag
 
 Preset address book name and tag, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
