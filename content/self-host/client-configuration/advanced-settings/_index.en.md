@@ -1205,3 +1205,16 @@ Use WebSocket protocol to connect server and client. Only available in RustDesk 
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-websocket=Y` |
+
+### allow-numeric-one-time-password
+
+This option enables or disables the use of numeric-only one-time passwords.
+Only available in RustDesk client >=1.4.1 and Pro server >= 1.5.9.
+
+**Discussion**: https://github.com/rustdesk/rustdesk-server-pro/discussions/685
+
+**Preview**: https://github.com/rustdesk/rustdesk/pull/11846
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-numeric-one-time-password=Y` |
