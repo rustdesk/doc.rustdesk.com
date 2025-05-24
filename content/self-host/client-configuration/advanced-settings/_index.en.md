@@ -1234,7 +1234,7 @@ If `register-device=N`, below will not work for this device.
 - Audit Logs
 - Strategy
 
-**Discussion**: https://github.com/rustdesk/rustdesk-server-pro/discussions/685 and https://github.com/rustdesk/rustdesk-server-pro/discussions/182
+**Discussion**: https://github.com/rustdesk/rustdesk-server-pro/discussions/672 and https://github.com/rustdesk/rustdesk-server-pro/discussions/182
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
