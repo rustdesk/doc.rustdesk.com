@@ -1227,11 +1227,12 @@ Do not register the device, you will not see it in the devices page on web conso
 
 **Only available in Pro server >= 1.6.0 and requires [custom2 license](https://rustdesk.com/pricing#custom2) and number of concurrent connections >= 2.**
 
-If `register-device=N`, below will not work on client.
+If `register-device=N`, below will not work for this device.
 - Log in
 - `--assign` command
 - `preset-address-book-name`, `--preset-address-book-tag`, `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`
 - Audit Logs
+- Strategy
 
 **Discussion**: https://github.com/rustdesk/rustdesk-server-pro/discussions/685 and https://github.com/rustdesk/rustdesk-server-pro/discussions/182
 
