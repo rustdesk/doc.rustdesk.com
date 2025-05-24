@@ -1207,3 +1207,28 @@ Use WebSocket protocol to connect server and client. Only available in RustDesk 
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-websocket=Y` |
+
+### allow-numeric-one-time-password
+
+This option enables or disables the use of numeric-only one-time passwords.
+Only available in RustDesk client >=1.4.1 and Pro server >= 1.5.9.
+
+**Discussion**: https://github.com/rustdesk/rustdesk-server-pro/discussions/685
+
+**Preview**: https://github.com/rustdesk/rustdesk/pull/11846
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-numeric-one-time-password=Y` |
+
+### register-device
+
+Do not register the device, you will not see it in the devices page on web console. 
+Only available in Pro server >= 1.6.0 and requires [custom2 license](https://rustdesk.com/pricing#custom2) and number of concurrent connections >= 2.
+
+**Discussion**: https://github.com/rustdesk/rustdesk-server-pro/discussions/685 and https://github.com/rustdesk/rustdesk-server-pro/discussions/182
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `register-device=N` |
+
