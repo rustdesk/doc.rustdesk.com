@@ -1224,7 +1224,8 @@ Only available in RustDesk client >=1.4.1 and Pro server >= 1.5.9.
 ### register-device
 
 Do not register the device, you will not see it in the devices page on web console. 
-Only available in Pro server >= 1.6.0 and requires [custom2 license](https://rustdesk.com/pricing#custom2) and number of concurrent connections >= 2.
+
+**Only available in Pro server >= 1.6.0 and requires [custom2 license](https://rustdesk.com/pricing#custom2) and number of concurrent connections >= 2.**
 
 If `register-device=N`, below will not work on client.
 - Log in
