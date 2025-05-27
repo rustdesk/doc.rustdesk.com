@@ -1204,6 +1204,8 @@ Available in RustDesk client version 1.4.0 and later.
 
 Use WebSocket protocol to connect server and client. Only available in RustDesk client >=1.4.0 and Pro server >= 1.5.7. Note that WebSocket only supports relay connection.
 
+To make WebSocket work, you need to configure your reverse proxy correctly, https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
+
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-websocket=Y` |
