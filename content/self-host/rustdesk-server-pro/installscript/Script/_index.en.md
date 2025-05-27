@@ -17,6 +17,8 @@ Copy and paste the above command into your Linux terminal to install RustDesk Se
 
 {{% notice note %}}
 I recommend using [the Docker image](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/#docker-compose); it greatly simplifies the process of deploying the solution as well as updating it. The resource consumption is very low.
+
+And please run above under your home directory rather than a diretory you have no write permission.
 {{% /notice %}}
 
 What it does:
