@@ -18,6 +18,8 @@ RustDesk Server Pro has more features compared to the open source version.
 - [Access control](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/)
 - [Multiple relay servers](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/) (automatically selects your closest relay)
 - [Custom client generator](https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only)
+- WebSocket
+- Web client self-host
 
 {{% notice note %}}
 If you build your own server on your home/office, and can't connect it through public IP/domain, please check [this article](https://rustdesk.com/docs/en/self-host/nat-loopback-issues/).
