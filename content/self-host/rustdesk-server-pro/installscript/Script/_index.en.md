@@ -51,6 +51,8 @@ Copy and paste the above command into your Linux terminal to upgrade your existi
 
 {{% notice note %}}
 If you encounter issues with this script, I would suggest you go through the script and execute the steps manually, one by one.
+
+And please run above under your home directory rather than a diretory you have no write permission.
 {{% /notice %}}
 
 What it does:
