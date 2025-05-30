@@ -3,6 +3,10 @@ title: Azure
 weight: 16
 ---
 
+### Video tutorial
+
+[https://www.youtube.com/watch?v=izGxSmifURI](https://www.youtube.com/watch?v=izGxSmifURI)
+
 ### Configuration
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
