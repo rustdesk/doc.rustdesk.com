@@ -34,8 +34,11 @@ You'd better back up data files (sqlite3 files etc.) first, https://github.com/r
 3. Follow the prompts as they guide you through the upgrade.
 #### Docker Compose
 ```
+tar -czvf "RustdeskDB$(date +'%Y%m%d%H%M%S').tar.gz" /path/to/your/data
 docker compose down
-docker compose pull 
+docker rmi rustdesk/rustdesk-server-pro
+docker image prune -f
+docker compose pull
 docker compose up -d
 ```
 But this depends on your docker version, for more discussion, check [this](https://stackoverflow.com/questions/37685581/how-to-get-docker-compose-to-use-the-latest-image-from-repository).
