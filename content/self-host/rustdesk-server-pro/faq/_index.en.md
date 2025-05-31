@@ -35,7 +35,7 @@ You'd better back up data files (sqlite3 files etc.) first, https://github.com/r
 #### Docker Compose
 ```
 tar -czvf "RustdeskDB$(date +'%Y%m%d%H%M%S').tar.gz" /path/to/your/data
-docker kill hbbr hbbs                        # Stop the running containers
+docker stop hbbr hbbs                        # Stop the running containers
 docker rm hbbr hbbs                          # Remove the stopped containers
 docker rmi rustdesk/rustdesk-server-pro      # Remove the current RustDesk image
 docker image prune -f                        # Clean up any unused, untagged images (this will clear out _every_ unused or untagged docker image on the system, without asking!)
