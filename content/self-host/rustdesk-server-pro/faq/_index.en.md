@@ -35,11 +35,11 @@ You'd better back up data files (sqlite3 files etc.) first, https://github.com/r
 #### Docker Compose
 ```
 tar -czvf "RustdeskDB$(date +'%Y%m%d%H%M%S').tar.gz" /path/to/your/data
-docker stop hbbr hbbs                        # Stop the running containers
-docker rm hbbr hbbs                          # Remove the stopped containers
-docker rmi rustdesk/rustdesk-server-pro      # Remove the current RustDesk image
-docker image prune -f                        # Clean up any unused, untagged images (this will clear out _every_ unused or untagged docker image on the system, without asking!)
-docker compose up -d --build --pull always   # Pull and rebuild the latest image
+docker compose down
+docker rmi rustdesk/rustdesk-server-pro
+docker image prune -f
+docker compose pull
+docker compose up -d
 ```
 But this depends on your docker version, for more discussion, check [this](https://stackoverflow.com/questions/37685581/how-to-get-docker-compose-to-use-the-latest-image-from-repository).
 #### Docker
