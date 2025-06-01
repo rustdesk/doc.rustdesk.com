@@ -33,9 +33,9 @@ services:
     restart: unless-stopped
 ```
 
-Then run `docker compose up -d` or `podman-compose up -d`
+Then run `sudo docker compose up -d` or `podman-compose up -d`
 
-> `apt install podman-compose` for `podman-compose` installation
+> `sudo apt install podman-compose` for `podman-compose` installation
 
 {{% notice note %}}
 How to [Set up HTTPS for web console manually](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
