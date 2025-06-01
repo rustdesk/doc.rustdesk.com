@@ -8,7 +8,7 @@ weight: 2
 ```
 bash <(wget -qO- https://get.docker.com)
 wget rustdesk.com/pro.yml -O compose.yml
-docker compose up -d
+sudo docker compose up -d
 ```
 
 For more details, please check [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/).
