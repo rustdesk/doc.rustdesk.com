@@ -34,19 +34,19 @@ You'd better back up data files (sqlite3 files etc.) first, https://github.com/r
 3. Follow the prompts as they guide you through the upgrade.
 #### Docker Compose
 ```
-docker compose down
-docker compose pull 
-docker compose up -d
+sudo docker compose down
+sudo docker compose pull 
+sudo docker compose up -d
 ```
 But this depends on your docker version, for more discussion, check [this](https://stackoverflow.com/questions/37685581/how-to-get-docker-compose-to-use-the-latest-image-from-repository).
 #### Docker
 ```
-docker ps
+sudo docker ps
 # you can also use <CONTAINER NAME>, e.g. `hbbs` and `hbbr` if you follow our manual.
-docker stop <CONTAINER ID>
-docker rm <CONTAINER ID>
-docker rmi <IMAGE ID>
-docker run ..... # same as you installed it before
+sudo docker stop <CONTAINER ID>
+sudo docker rm <CONTAINER ID>
+sudo docker rmi <IMAGE ID>
+sudo docker run ..... # same as you installed it before
 ```
 
 e.g.
