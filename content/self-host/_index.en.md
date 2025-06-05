@@ -45,8 +45,3 @@ TCP ports `21118` and `21119` are the WebSocket ports for the [RustDesk Web Clie
 
 For Pro users without an SSL Proxy you will need to open TCP port `21114` for the API to work alternatively using an SSL Proxy open TCP port `443`.
 
-### Test Ports are opened
-
-To check ports are opened and working you can use `test-netconnection domain.com -p 21115` with PowerShell or [CanYouSeeMe.org](https://canyouseeme.org/).
-
-{{% children depth="4" showhidden="true" %}}
