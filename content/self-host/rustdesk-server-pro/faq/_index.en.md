@@ -37,7 +37,7 @@ sudo docker compose pull
 sudo docker compose up -d
 ```
 But this depends on your docker version, for more discussion, check [this](https://stackoverflow.com/questions/37685581/how-to-get-docker-compose-to-use-the-latest-image-from-repository).
-### Docker
+- ### Docker
 ```
 sudo docker ps
 # you can also use <CONTAINER NAME>, e.g. `hbbs` and `hbbr` if you follow our manual.
