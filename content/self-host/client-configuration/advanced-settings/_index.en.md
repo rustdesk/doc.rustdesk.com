@@ -1106,7 +1106,7 @@ device group is available in RustDesk client >=1.3.8, pro >= 1.5.0
 
 ### default-connect-password
 
-Default password used to connect to remote devices, this password has lower priority than address book password and local saved password.
+You use the `default connection password` to establish connections to remote devices. This password is configured on the controlling side and should not be confused with any [preset password](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-can-we-set-up-a-client-with-a-fixed-password-for-unattended-remote-access) found on the controlled (incoming-only) client.
 
 e.g. `default-connect-password=abcd1234`
 
