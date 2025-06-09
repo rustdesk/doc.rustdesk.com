@@ -28,11 +28,9 @@ weight: 600
 
 ## There is a new version of RustDesk Server Pro out, how can I upgrade?
 You'd better back up data files (sqlite3 files etc.) first, https://github.com/rustdesk/rustdesk-server-pro/discussions/184#discussioncomment-8013375.
-### If you installed with script
-1. [This page](/docs/en/self-host/rustdesk-server-pro/installscript/script/#upgrade).
-2. Copy and paste the command into your Linux terminal.
-3. Follow the prompts as they guide you through the upgrade.
-### Docker Compose
+- ### If you installed with script (`install.sh`)
+Please run [upgrade.sh](/docs/en/self-host/rustdesk-server-pro/installscript/script/#upgrade).
+- ### Docker Compose
 ```
 sudo docker compose down
 sudo docker compose pull 
