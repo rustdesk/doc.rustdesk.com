@@ -3,7 +3,7 @@ title: FAQ
 weight: 600
 ---
 
-### How can I install with the Simple Install Script (`install.sh`)?
+### How can I install with the Simple Install Script?
 1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 2. Spin up a VPS, bare metal or Linux VM.
 3. If you want to use DNS and SSL create a DNS name i.e. `rustdesk.yourdomain.com`.
