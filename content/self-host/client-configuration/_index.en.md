@@ -21,7 +21,7 @@ Currently, Windows X64, Mac Arm64 / X64, [Linux](https://twitter.com/rustdesk/st
 
 ### 2. Manual Config
 
-In the main RustDesk Client home click on the Menu button [ &#8942; ] next to your ID then click on Network, you can now unlock the settings using elevated privileges and set your ID, Relay, API and Keys.
+In the main RustDesk Client home click on the Menu button [ &#8942; ] next to your ID then click on Network, you can now unlock the settings using elevated privileges and set your `ID`, `Relay`, `API` and `Key`. It's important to note that this `Key` is the public key used for connection encryption, distinct from the license key provided with your Pro version purchase.
 
 ![](/docs/en/self-host/client-configuration/images/network-config.png)
 
