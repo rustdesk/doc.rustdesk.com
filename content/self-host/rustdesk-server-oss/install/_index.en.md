@@ -47,3 +47,6 @@ From there, note down the IP/DNS and Key shown at the end of the install and ins
 #### Method 3: Install your own server as systemd service using deb file for debian distros
 
 Please [Download](https://github.com/rustdesk/rustdesk-server/releases/latest) deb files yourself and install with `apt-get -f install <filename>.deb` or `dpkg -i <filename>.deb`.
+
+### Configure client
+Please check [this](/docs/en/self-host/client-configuration/#2-manual-config).
