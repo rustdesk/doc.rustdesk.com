@@ -1,45 +1,46 @@
 ---
-title: licença
+title: Licença
 weight: 15
 ---
 
-### Aquisição de licença
+### Comprar licença
 
-Por favor, obtenha sua licença em [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html). Informe um endereço de e-mail válido na página de pagamento do Stripe. A licença (e a fatura em um e-mail separado) será enviada para o seu e-mail assim que o pagamento for concluído com sucesso.
+Por favor obtenha sua licença em [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), digite um endereço de email válido na página de checkout do Stripe. A licença (e a fatura em um email separado) será enviada para seu email uma vez que o pagamento seja concluído com sucesso.
 
 ![](/docs/en/self-host/rustdesk-server-pro/license/images/stripe.jpg)
 
 ### Definir licença
 
-Você será solicitado a inserir a licença no console web (`http://<ip-do-servidor-rustdesk-pro>:21114`) ou alterar a licença posteriormente.
+Você será obrigado a inserir a licença no console web (`http://<rustdesk-server-pro-ip>:21114`), ou alterar a licença mais tarde.
 
 | Definir licença | Alterar licença |
 | --- | --- |
 | ![](/docs/en/self-host/rustdesk-server-pro/license/images/set.png) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/change.png) |
 
-### Renovar/Atualizar licença
+### Renovar/atualizar licença
 
-A renovação/atualização da licença pode ser encontrada no [portal de autoatendimento de licenças](https://rustdesk.com/self-host/account/), conforme descrito abaixo.
+Renovar/atualizar licença pode ser encontrado através do [portal de licença self-service](https://rustdesk.com/self-host/account/) como descrito abaixo, faça login com o email que você usou para comprar a licença como a imagem acima.
 
 | Página de licença com ações de renovação/atualização | Janela de atualização |
 | --- | --- |
 | ![](/docs/en/self-host/rustdesk-server-pro/license/images/renew.jpg?v2) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/upgrade.png) |
 
-Após o pagamento, você precisa acessar o console web para ativá-la manualmente como mostrado abaixo. Basta clicar em `Editar` e depois em `OK`, não é necessário editar nada, pois sua chave de licença permanece a mesma.
+Após fazer o pagamento, por favor atualize a licença [como abaixo](/docs/en/self-host/rustdesk-server-pro/license/#refresh-license) para ativá-la.
+
+#### Atualizar licença
+Após o pagamento, você precisa prosseguir para o console web para ativá-la manualmente como abaixo. Apenas clique em `Editar`, depois `OK`, não precisa editar nada, porque sua chave de licença permanece a mesma.
 
 ![](/docs/en/self-host/rustdesk-server-pro/license/images/updatelic.jpg)
 
 ### Faturas, Recuperação de Licença e Migração
 
-A licença só pode ser usada em uma máquina (apenas para hbbs, hbbr não requer licença). Se você deseja migrá-la para outra máquina, recuperar sua licença ou baixar faturas, acesse o portal [https://rustdesk.com/self-host/account/](https://rustdesk.com/self-host/account/). Faça login com o endereço de e-mail usado no checkout do Stripe, desvincule a máquina antiga da qual deseja migrar conforme as instruções abaixo. Ao definir a licença no console web do novo servidor, ela será atribuída e registrada automaticamente no console.
+A licença só pode ser usada em uma máquina (apenas para hbbs, hbbr não requer licença), se você quiser migrar para outra máquina, recuperar sua licença ou baixar faturas, por favor vá para [https://rustdesk.com/self-host/account/](https://rustdesk.com/self-host/account/). Faça login com o endereço de email usado para checkout do Stripe, desvincule a máquina antiga da qual você quer migrar como abaixo, quando você definir a licença no console web do novo servidor, ela atribuirá a licença e se registrará automaticamente no console.
 
 ![](/docs/en/self-host/rustdesk-server-pro/license/images/unbind.jpg)
 
 ### Proxy
+Se seu servidor não puder acessar a internet para verificar a licença diretamente, você pode adicionar um proxy, ex. `proxy=http://username:password@example.com:8080 ./hbbs`.
 
-Se o seu servidor não consegue acessar a internet para verificar a licença diretamente, você pode adicionar um proxy. Por exemplo: `proxy=http://username:password@example.com:8080 ./hbbs`.
+Alternativamente, você pode adicionar `proxy=http://username:password@example.com:8080` ao arquivo `.env` no diretório de trabalho (onde residem os arquivos `id_ed25519` / `db.sqlite3`).
 
-Como alternativa, você pode adicionar `proxy=http://usuario:senha@exemplo.com:8080` ao arquivo `.env` no diretório de trabalho (onde os arquivos `id_ed25519` / `db.sqlite3` estão localizados).
-
-`http` pode ser substituído por `https` ou `socks5`.
-Se não houver `usuario` / `senha` / `porta`, pode ser usado `proxy=http://exemplo.com`.
+`http` pode ser substituído por `https` ou `socks5`. Se não houver `username` / `password` / `port`, pode ser `proxy=http://example.com`.

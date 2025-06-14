@@ -1,25 +1,24 @@
 ---
-title: "Documentazione di RustDesk"
+title: "Documentazione RustDesk"
 weight: 1
 ---
 
-# Documentazione di RustDesk
+# Documentazione RustDesk
 
-RustDesk è una piattaforma di desktop remoto open source e completa che necessità solamente minima configurazione. Hai pienamente controllo dei tuoi dati, senza doverti preoccupare della sicurezza. Il client è open source e si può scegliere tra il **Server Professionale** con tutte le funzionalità, disponibile per l'acquisto sul nostro [sito web](https://rustdesk.com) e il server di base gratuito e open source basato sul nostro **Server Professionale**.
+RustDesk è un'alternativa completa di controllo remoto open source per self-hosting e sicurezza con configurazione minima. Hai il controllo completo sui tuoi dati, senza preoccupazioni sulla sicurezza. Il client è open source e c'è una scelta tra il **Server Professionale** completo disponibile per l'acquisto sul nostro [sito web](https://rustdesk.com) e il server OSS gratuito di base basato sul nostro **Server Professionale**.
 
 ### Funzionalità
-- Disponibile su Windows, macOS, Linux, iOS, Android e Web.
-- Codifiche software VP8 / VP9 / AV1 e codifiche hardware  H264 / H265 supportate.
-- Possiedi i tuoi dati, i server sono configurabili nella propria infrastruttura.
-- Connessioni P2P con crittografia end-to-end basata su NaCl.
-- Nessun privilegio da amministratore o installazione obbligatoria su Windows. I privilegi possono essere aumentati da remoto o dal dispositivo a cui si è connessi.
-- Ci piace mantenere le cose semplici e cercare di semplificarle ancora di più dove necessario.
+- Funziona su Windows, macOS, Linux, iOS, Android, Web.
+- Supporta codec software VP8 / VP9 / AV1, e codec hardware H264 / H265.
+- Possiedi i tuoi dati, configura facilmente una soluzione di self-hosting sulla tua infrastruttura.
+- Connessione P2P con crittografia end-to-end basata su NaCl.
+- Non sono necessari privilegi amministrativi o installazione per Windows, eleva i privilegi localmente o da remoto on demand.
+- Ci piace mantenere le cose semplici e ci sforzeremo di renderle più semplici dove possibile.
 
-### GitHub Repo
-Client Principale: https://github.com/rustdesk/rustdesk</br>
-Server Open Source: https://github.com/rustdesk/rustdesk-server</br>
-Server Pro: https://github.com/rustdesk/rustdesk-server-pro</br>
-Documentazione: https://github.com/rustdesk/doc.rustdesk.com</br>
+### Repository GitHub
+Repository client principale: https://github.com/rustdesk/rustdesk</br>
+Repository server open source: https://github.com/rustdesk/rustdesk-server</br>
+Repository server Pro: https://github.com/rustdesk/rustdesk-server-pro</br>
+Repository documentazione: https://github.com/rustdesk/doc.rustdesk.com</br>
 
-{{% children depth="3" showhidden="true" %}}
-
+{{% children depth="4" showhidden="true" %}}

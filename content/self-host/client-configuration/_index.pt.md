@@ -1,73 +1,75 @@
 ---
-title: Configuração de Cliente
+title: Configuração do Cliente
 weight: 300
 pre: "<b>2.3. </b>"
 ---
 
-### Visão Geral
-Existem várias maneiras de configurar os Clientes RustDesk para usar seu próprio servidor auto-hospedado, abordaremos algumas delas abaixo.
+### Visão geral
 
-### 1. Gerador de cliente personalizado (Somente Pro)
+Existem várias maneiras de configurar os clientes RustDesk para usar seu próprio servidor auto-hospedado, cobriremos algumas abaixo.
 
-Você pode ter seu próprio nome, logotipo, ícone, configuração, ser assinado e muito mais.
+### 1. Gerador de cliente personalizado (somente Pro, plano básico ou plano personalizado)
 
-[Video](https://twitter.com/rustdesk/status/1769171628426944539)
+Você pode ter seu próprio nome, logotipo, ícone, configuração, assinatura e mais.
+
+Atualmente, Windows X64, Mac Arm64 / X64, [Linux](https://twitter.com/rustdesk/status/1788905463678951787), Android Arm 64 são suportados.
+
+[Vídeo](https://twitter.com/rustdesk/status/1769171628426944539)
 
 ![](images/custom-client-qs.png)
 ![](images/web_console_custom_client_config.jpeg)
 
-### 2. Configuração Manual
-Na tela inicial do Cliente RustDesk, clique no botão de Menu [ &#8942; ] ao lado do seu ID e depois em Rede. Agora você pode desbloquear as configurações usando privilégios elevados e definir seu ID, Relay, API e Keys.
+### 2. Configuração manual
 
-Digite o host `hbbs` ou endereço IP na caixa de entrada **Servidor de ID** (lado local + lado remoto). Os outros dois endereços podem ser deixados em branco, o RustDesk irá deduzi-los automaticamente (se não estiverem especificamente definidos). O Servidor de Relay se refere a `hbbr` (porta 21117).
+Na página inicial do cliente RustDesk, clique no botão de menu [ &#8942; ] ao lado do seu ID e depois clique em Rede, agora você pode desbloquear as configurações usando privilégios elevados e definir seu `ID`, `Relay`, `API` e `Chave`. É importante notar que esta `Chave` é a chave pública usada para criptografia de conexão, distinta da chave de licença fornecida com sua compra da versão Pro.
 
-Exemplos:
+![](/docs/en/self-host/client-configuration/images/network-config.png)
+
+Digite o host ou endereço IP `hbbs` na caixa de entrada **Servidor ID** (lado local + lado remoto). Os outros dois endereços podem ser deixados em branco, RustDesk deduzirá automaticamente (se não especialmente configurado), e o Servidor Relay refere-se ao `hbbr` (porta 21117).
+
+por exemplo
 
 ```nolang
 hbbs.example.com
 ```
 
-Ou
+ou
 
 ```nolang
 hbbs.example.com:21116
 ```
 
-#### Defina a `Key`
+#### Definir `Chave`
 
-Para estabelecer uma ligação encriptada ao seu servidor auto-hospedado, é necessário introduzir a sua chave pública. A chave é normalmente gerada na primeira execução do `hbbs` e pode ser encontrada no ficheiro `id_ed25519.pub` no seu diretório de trabalho / pasta de dados.
+Para estabelecer uma conexão criptografada com seu servidor auto-hospedado, você precisa inserir sua chave pública. A chave geralmente é gerada na primeira execução do `hbbs` e pode ser encontrada no arquivo `id_ed25519.pub` em seu diretório de trabalho / pasta de dados.
 
-Como utilizador `Pro`, poderá também obter a `Key` a partir da [console web](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/console/).
+Como usuário `Pro`, você também poderá recuperar a `Chave` do [console web](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/).
 
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
-#### Definir `Servidor de API`
+#### Definir `Servidor API`
 
-Esta opção é exclusiva para usuários `Pro`. Se você consegue fazer login no console web, mas não no cliente RustDesk, provavelmente não configurou o `Servidor de API` corretamente.
+Isso é apenas para usuários `Pro`. Quando você pode fazer login no console web, mas falha ao fazer login no cliente RustDesk, provavelmente você não definiu o `Servidor API` corretamente.
 
-Se o seu Servidor de API não estiver usando a porta padrão `21114` (você pode não ter adicionado esta porta ao firewall se vier da versão open source), especifique o `Servidor de API` explicitamente.
-Por exemplo, se o seu Servidor de API executa na porta HTTPS padrão, especifique o `Servidor de API` com `https://hbbs.exemplo.com`.
+Se seu Servidor API não roda na porta padrão `21114` (você pode não adicionar esta porta ao firewall se vier da versão open source), especifique explicitamente o `Servidor API`.
+por exemplo, se seu Servidor API roda na porta HTTPS padrão, especifique o `Servidor API` com `https://hbbs.example.com`.
 
-Se você ainda não consegue confirmar o valor do `Servidor de API`, vá para a página inicial do console web O `API Server` é mostrado na imagem acima (a caixa de entrada com a etiqueta `API:`).
+Se você ainda não consegue confirmar o valor do `Servidor API`, vá para a página de boas-vindas do console web, o `Servidor API` é mostrado na imagem acima (A caixa de entrada com o rótulo `API:`).
 
 ### 3. Configuração usando Importar ou Exportar
 
-1. Siga as etapas [acima](https://rustdesk.com/docs/pt/self-host/client-configuration/#configuração-manual) para configurar o Cliente RustDesk em um dispositivo.
-2. Na máquina configurada, vá para ≡ (Configurações), depois Rede e desbloqueie.
-3. Clique em ![image](https://github.com/user-attachments/assets/3355de5a-86a6-4d77-b1fd-f1b0810146af) (`Exportar Configuração do Servidor`.)
-4. Cole a string copiada no Bloco de Notas ou similar.
-5. Acesse o novo cliente, copie o texto do bloco de notas para a área de transferência.
-6. No Cliente RustDesk, vá para Configurações, depois Rede, desbloqueie e clique em ![image](https://github.com/user-attachments/assets/b5e23188-04e8-472b-9101-49d53b42fbce) (`Importar Configuração do Servidor`.)
-7. As configurações serão automaticamente importadas.
+1. Use os passos [acima](https://rustdesk.com/docs/en/self-host/client-configuration/#manual-config) para configurar o Cliente RustDesk em um dispositivo.
+2. Usando a máquina acima, vá para Configurações depois Rede e desbloqueie.
+3. Clique em `Exportar Configuração do Servidor`.
+4. Cole a string copiada no Bloco de notas ou similar.
+5. Vá para o novo cliente, copie o acima para a área de transferência.
+6. Vá para Configurações depois Rede no Cliente RustDesk, desbloqueie e clique em `Importar Configuração do Servidor`.
+7. Ele colará automaticamente as configurações.
 8. Clique em `Aplicar`.
 
-### 4. Configuração Automática
+### 4. Configuração automática
 
-A maneira mais fácil de configurar automaticamente é usar scripts de implantação encontrados [aqui](https://rustdesk.com/docs/pt/self-host/client-deployment/).
-
-Você pode definir a senha como obrigatória e usar uma string codificada em Base64 reversa no formato `{"host":"HOSTADDRESS","key":"HOSTKEY","api":"http://HOSTADDRESS:21114"}` para configurar automaticamente os clientes. Isso está disponível automaticamente com o RustDesk Server Pro por meio do console.
-
-Você também pode seguir as etapas [acima](https://rustdesk.com/docs/pt/self-host/client-configuration/#configuração-usando-importar-ou-exportar) para exportar a string, remova qualquer `=` do início ou do final da string. Reinicie o Cliente RustDesk se as configurações não forem exibidas.
+A maneira mais fácil de configurar automaticamente é usar os scripts de implantação encontrados [aqui](https://rustdesk.com/docs/en/self-host/client-deployment/).
 
 ### 5. Importar configuração do `Pro` via área de transferência
 
@@ -75,8 +77,7 @@ Você também pode seguir as etapas [acima](https://rustdesk.com/docs/pt/self-ho
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/372#discussioncomment-10473298
 
-### 6. Use a linha de comando `--config`
-`rustdesk.exe --config <string-de-configuração>`
+### 6. Usar linha de comando `--config`
+`rustdesk.exe --config <string-config>`
 
-Você pode obter a string de configuração do console web (você pode vê-la na imagem acima) ou do cliente RustDesk "Configurações → Rede" ([aqui](https://github.com/rustdesk/rustdesk/discussions/7118) (Em inglês) há uma discussão sobre isso).
-
+Você pode obter a string de configuração do console web (você pode vê-la na imagem acima) ou do cliente RustDesk "Configurações → Rede" ([aqui](https://github.com/rustdesk/rustdesk/discussions/7118) há uma discussão sobre isso).

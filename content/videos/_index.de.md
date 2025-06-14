@@ -1,16 +1,15 @@
 ---
-title: Video-Anleitungen
+title: Video-Tutorials
 weight: 50
 ---
 
-[Awesome Open Source](https://www.youtube.com/@AwesomeOpenSource) (englisch) hat einige großartige Youtube-Videos über RustDesk gemacht, die Sie unten finden können.
+## OSS
+[NetworkChuck: Ihr Remote Desktop ist SCHRECKLICH!! Probieren Sie stattdessen das hier (KOSTENLOS + Open Source)
+](https://www.youtube.com/watch?v=EXL8mMUXs88)
 
-[Installations- und Bedienungsanleitung](https://www.youtube.com/watch?v=9nzHm3xGz2I) (englisch)
+[Installation und Benutzerhandbuch](https://www.youtube.com/watch?v=9nzHm3xGz2I)
 
-[RustDesk-Sicherheit](https://www.youtube.com/watch?v=EeFqj23jxMk) (englisch)
+[RustDesk Sicherheit](https://www.youtube.com/watch?v=EeFqj23jxMk)
 
-[Installation eines RustDesk Servers](https://www.youtube.com/watch?v=e5U9orq5dRY) (deutsch)
-
-[Installation eines Verbindungsservers auf Linux](https://www.youtube.com/watch?v=YzZtXR6o3GE) (deutsch)
-
-[Rustdesk auf Synology unter Docker](https://www.youtube.com/watch?v=r8sf22_PkYk) (deutsch)
+## Pro
+[Youtube Kanal](https://youtube.com/@rustdesk)

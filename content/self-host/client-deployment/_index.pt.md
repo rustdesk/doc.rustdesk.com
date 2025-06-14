@@ -1,31 +1,31 @@
 ---
-title: Implantação de cliente
+title: Implantação do Cliente
 weight: 400
 pre: "<b>2.4. </b>"
 ---
 
 A maneira mais simples é usar um cliente personalizado, https://twitter.com/rustdesk/status/1788905463678951787.
 
-Você pode implementar o cliente personalizado usando vários métodos, alguns dos quais são abordados em [Configuração do Cliente](https://rustdesk.com/docs/pt/self-host/client-configuration/).
+Você pode implantar usando vários métodos, alguns são cobertos em [Configuração do Cliente](https://rustdesk.com/docs/en/self-host/client-configuration/).
 
-Como alternativa, você pode usar scripts de implementação em massa com seu RMM, Intune etc. O script irá gerar a ID e a senha. Você deve coletar essas informações ou dividi-las em scripts diferentes para coletar a ID e a senha separadamente.
+Alternativamente, você pode usar scripts de implantação em massa com seu RMM, Intune, etc. O ID e a senha são outputados pelo script. Você deve coletar isso ou dividi-lo em scripts diferentes para coletar o ID e a senha.
 
-A senha permanente aleatória pode ser alterada para uma senha de sua preferência. Para fazer isso, altere o conteúdo dentro dos `()` após `rustdesk_pw` para a senha desejada no PowerShell e na linha correspondente para qualquer outra plataforma.
+A senha permanente pode ser alterada de aleatória para uma de sua preferência modificando o conteúdo dentro de `()` após `rustdesk_pw` para sua senha preferida para PowerShell e a linha correspondente para qualquer outra plataforma.
 
 ### PowerShell
 
-```ps
+```powershell
 $ErrorActionPreference= 'silentlycontinue'
 
-# Atribua o valor de senha aleatória à variável password
+# Atribuir o valor da senha aleatória à variável senha
 $rustdesk_pw=(-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_}))
 
-# Obtenha sua string de configuração do seu portal da Web e preencha abaixo
+# Obtenha sua string de configuração do seu portal Web e preencha abaixo
 $rustdesk_cfg="configstring"
 
-################################### Please Do Not Edit Below This Line #########################################
+################################### Por favor não edite abaixo desta linha #########################################
 
-# Execute como administrador e permaneça no diretório atual
+# Executar como administrador e permanecer no diretório atual
 if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
 {
     if ([int](Get-CimInstance -Class Win32_OperatingSystem | Select-Object -ExpandProperty BuildNumber) -ge 6000)
@@ -35,7 +35,7 @@ if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     }
 }
 
-# Esta função retornará a versão mais recente e o link de download como um objeto
+# Esta função retornará a última versão e link de download como um objeto
 function getLatest()
 {
     $Page = Invoke-WebRequest -Uri 'https://github.com/rustdesk/rustdesk/releases/latest' -UseBasicParsing
@@ -50,10 +50,10 @@ function getLatest()
         $HTML.write($src)
     }
 
-   # Link de exemplo atual: https://github.com/rustdesk/rustdesk/releases/download/1.2.6/rustdesk-1.2.6-x86_64.exe
+    # Link de exemplo atual: https://github.com/rustdesk/rustdesk/releases/download/1.2.6/rustdesk-1.2.6-x86_64.exe
     $Downloadlink = ($HTML.Links | Where {$_.href -match '(.)+\/rustdesk\/rustdesk\/releases\/download\/\d{1}.\d{1,2}.\d{1,2}(.{0,3})\/rustdesk(.)+x86_64.exe'} | select -first 1).href
 
-   # correção de bug - às vezes é necessário substituir "about:"
+    # correção de bug - às vezes você precisa substituir "about:"
     $Downloadlink = $Downloadlink.Replace('about:', 'https://github.com')
 
     $Version = "unknown"
@@ -64,11 +64,11 @@ function getLatest()
 
     if ($Version -eq "unknown" -or $Downloadlink -eq "")
     {
-        Write-Output "ERROR: Version or download link not found."
+        Write-Output "ERRO: Versão ou link de download não encontrado."
         Exit
     }
 
-    # Crie um objeto para retornar
+    # Criar objeto para retornar
     $params += @{Version = $Version}
     $params += @{Downloadlink = $Downloadlink}
     $Result = New-Object PSObject -Property $params
@@ -83,13 +83,13 @@ $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Un
 
 if ($rdver -eq $RustDeskOnGitHub.Version)
 {
-    Write-Output "RustDesk $rdver is the newest version."
+    Write-Output "RustDesk $rdver é a versão mais recente."
     Exit
 }
 
 if (!(Test-Path C:\Temp))
 {
-    New-Item -ItemType Directory -Force -Path C:\Temp > null
+    New-Item -ItemType Directory -Force -Path C:\Temp | Out-Null
 }
 
 cd C:\Temp
@@ -103,7 +103,7 @@ $arrService = Get-Service -Name $ServiceName -ErrorAction SilentlyContinue
 
 if ($arrService -eq $null)
 {
-    Write-Output "Installing service"
+    Write-Output "Instalando serviço"
     cd $env:ProgramFiles\RustDesk
     Start-Process .\rustdesk.exe --install-service
     Start-Sleep -seconds 20
@@ -125,11 +125,11 @@ cd $env:ProgramFiles\RustDesk\
 .\rustdesk.exe --password $rustdesk_pw
 
 Write-Output "..............................................."
-# Mostre o valor da variável ID
-Write-Output "RustDesk ID: $rustdesk_id"
+# Mostrar o valor da variável ID
+Write-Output "ID RustDesk: $rustdesk_id"
 
-# Mostre o valor da variável Password
-Write-Output "Password: $rustdesk_pw"
+# Mostrar o valor da variável senha
+Write-Output "Senha: $rustdesk_pw"
 Write-Output "..............................................."
 ```
 
@@ -138,7 +138,7 @@ Write-Output "..............................................."
 ```bat
 @echo off
 
-REM Define o valor da senha aleatória para a variável password
+REM Atribuir o valor da senha aleatória à variável senha
 setlocal ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 set alfanum=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 set rustdesk_pw=
@@ -149,10 +149,10 @@ for /L %%b in (1, 1, 12) do (
     )
 )
 
-REM Preencha a string de configuração (configstring) obtida do portal web
+REM Obtenha sua string de configuração do seu portal Web e preencha abaixo
 set rustdesk_cfg="configstring"
 
-REM ############################### Por favor, não edite abaixo desta linha #########################################
+REM ############################### Por favor não edite abaixo desta linha #########################################
 
 if not exist C:\Temp\ md C:\Temp\
 cd C:\Temp\
@@ -174,10 +174,10 @@ rustdesk.exe --password %rustdesk_pw%
 
 echo ...............................................
 REM Mostrar o valor da variável ID
-echo RustDesk ID: %rustdesk_id%
+echo ID RustDesk: %rustdesk_id%
 
-REM Mostra o valor da variável de senha
-echo Password: %rustdesk_pw%
+REM Mostrar o valor da variável senha
+echo Senha: %rustdesk_pw%
 echo ...............................................
 ```
 
@@ -187,82 +187,91 @@ Você também pode usar msi em vez de `rustdesk.exe --silent-install`.
 
 https://rustdesk.com/docs/en/client/windows/msi/
 
+
+### Winget
+
+você pode implantar via powershell com winget também (isso instala via a versão da Microsoft do apt - parte das instalações mais recentes do Windows)
+
+de uma janela do powershell ou via script (por exemplo via GPO)
+
+```
+winget install --id=RustDesk.RustDesk  -e
+```
+
 ### macOS Bash
 
 ```sh
 #!/bin/bash
 
-# Define o valor da senha aleatória para a variável password
+# Atribuir o valor da senha aleatória à variável senha
 rustdesk_pw=$(openssl rand -hex 4)
 
-# Preencha a string de configuração (configstring) obtida do portal web
+# Obtenha sua string de configuração do seu portal Web e preencha abaixo
 rustdesk_cfg="configstring"
 
-################################### Por favor, não edite abaixo desta linha #########################################
+################################### Por favor não edite abaixo desta linha #########################################
 
-# Verifica se o script está sendo executado como root
-if [[ $EUID -ne 0 ]]; then
-    echo "Este script deve ser executado como root."
-    exit 1
-fi
+# Solicitação de senha de root para elevação de privilégio
+[ "$UID" -eq 0 ] || exec sudo bash "$0" "$@"
 
-# Define o caminho para o arquivo rustdesk.dmg
-dmg_file="/tmp/rustdesk-1.2.6-x86_64.dmg"
-
-# Define o ponto de montagem para o DMG (diretório temporário)
+# Especificar o ponto de montagem para o DMG (diretório temporário)
 mount_point="/Volumes/RustDesk"
 
-# Baixa o arquivo rustdesk.dmg
-echo "Baixando o RustDesk agora"
+# Baixar o arquivo rustdesk.dmg
+echo "Baixando RustDesk agora"
 
 if [[ $(arch) == 'arm64' ]]; then
-    curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.6/rustdesk-1.2.6-aarch64.dmg --output "$dmg_file"
+    rd_link=$(curl -sL https://github.com/rustdesk/rustdesk/releases/latest | grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*/\d{1}.\d{1,2}.\d{1,2}/rustdesk.\d{1}.\d{1,2}.\d{1,2}.aarch64.dmg")
+    dmg_file=$(echo $rd_link | grep -Eo "rustdesk.\d{1}.\d{1,2}.\d{1,2}.aarch64.dmg")
+    curl -L "$rd_link" --output "$dmg_file"
 else
-    curl -L https://github.com/rustdesk/rustdesk/releases/download/1.2.6/rustdesk-1.2.6-x86_64.dmg --output "$dmg_file"
+    rd_link=$(curl -sL https://github.com/rustdesk/rustdesk/releases/latest | grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*/\d{1}.\d{1,2}.\d{1,2}/rustdesk.\d{1}.\d{1,2}.\d{1,2}.x86_64.dmg")
+    dmg_file=$(echo $rd_link | grep -Eo "rustdesk.\d{1}.\d{1,2}.\d{1,2}.x86_64.dmg")
+    curl -L "$rd_link" --output "$dmg_file"
 fi
 
-# Monta o arquivo DMG no ponto de montagem especificado
+# Montar o arquivo DMG no ponto de montagem especificado
 hdiutil attach "$dmg_file" -mountpoint "$mount_point" &> /dev/null
 
-# Verifica se a montagem foi bem-sucedida
+# Verificar se a montagem foi bem-sucedida
 if [ $? -eq 0 ]; then
-    # Move o conteúdo do DMG montado para a pasta /Applications
+    # Mover o conteúdo do DMG montado para a pasta /Applications
     cp -R "$mount_point/RustDesk.app" "/Applications/" &> /dev/null
 
-    # Desmonta o arquivo DMG
+    # Desmontar o arquivo DMG
     hdiutil detach "$mount_point" &> /dev/null
 else
     echo "Falha ao montar o DMG do RustDesk. Instalação abortada."
     exit 1
 fi
 
-# Executa o comando rustdesk com --get-id e armazena a saída na variável rustdesk_id
+# Executar o comando rustdesk com --get-id e armazenar a saída na variável rustdesk_id
 cd /Applications/RustDesk.app/Contents/MacOS/
 rustdesk_id=$(./RustDesk --get-id)
 
-# Aplica a nova senha ao RustDesk
+# Aplicar nova senha ao RustDesk
 ./RustDesk --server &
 /Applications/RustDesk.app/Contents/MacOS/RustDesk --password $rustdesk_pw &> /dev/null
 
 /Applications/RustDesk.app/Contents/MacOS/RustDesk --config $rustdesk_cfg
 
-# Kill all processes named RustDesk
+# Matar todos os processos chamados RustDesk
 rdpid=$(pgrep RustDesk)
 kill $rdpid &> /dev/null
 
 echo "..............................................."
-# Check if the rustdesk_id is not empty
+# Verificar se rustdesk_id não está vazio
 if [ -n "$rustdesk_id" ]; then
-    echo "RustDesk ID: $rustdesk_id"
+    echo "ID RustDesk: $rustdesk_id"
 else
-    echo "Failed to get RustDesk ID."
+    echo "Falha ao obter o ID do RustDesk."
 fi
 
-# Echo the value of the password variable
-echo "Password: $rustdesk_pw"
+# Mostrar o valor da variável senha
+echo "Senha: $rustdesk_pw"
 echo "..............................................."
 
-echo "Please complete install on GUI, launching RustDesk now."
+echo "Por favor complete a instalação na GUI, lançando RustDesk agora."
 open -n /Applications/RustDesk.app
 ```
 
@@ -271,21 +280,21 @@ open -n /Applications/RustDesk.app
 ```sh
 #!/bin/bash
 
-# Define um valor aleatório para a senha e armazena na variável password
+# Atribuir um valor aleatório à variável senha
 rustdesk_pw=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 
-# Preencha a string de configuração (configstring) obtida do portal web
+# Obtenha sua string de configuração do seu portal Web e preencha abaixo
 rustdesk_cfg="configstring"
 
-################################### Por favor, não edite abaixo desta linha #########################################
+################################### Por favor não edite abaixo desta linha #########################################
 
-# Verifica se o script está sendo executado como root
+# Verificar se o script está sendo executado como root
 if [[ $EUID -ne 0 ]]; then
     echo "Este script deve ser executado como root."
     exit 1
 fi
 
-# Identifica o Sistema Operacional (SO)
+# Identificar OS
 if [ -f /etc/os-release ]; then
     # freedesktop.org e systemd
     . /etc/os-release
@@ -294,7 +303,7 @@ if [ -f /etc/os-release ]; then
 
     UPSTREAM_ID=${ID_LIKE,,}
 
-    # Retorna para ID_LIKE se ID não for 'ubuntu' ou 'debian'
+    # Retornar para ID_LIKE se ID não era 'ubuntu' ou 'debian'
     if [ "${UPSTREAM_ID}" != "debian" ] && [ "${UPSTREAM_ID}" != "ubuntu" ]; then
         UPSTREAM_ID="$(echo ${ID_LIKE,,} | sed s/\"//g | cut -d' ' -f1)"
     fi
@@ -309,24 +318,24 @@ elif [ -f /etc/lsb-release ]; then
     OS=$DISTRIB_ID
     VER=$DISTRIB_RELEASE
 elif [ -f /etc/debian_version ]; then
-    # mais antigos Debian, Ubuntu, etc.
+    # Debian mais antigo, Ubuntu, etc.
     OS=Debian
     VER=$(cat /etc/debian_version)
 elif [ -f /etc/SuSE-release ]; then
-    # mais antigos SuSE etc.
+    # SuSE mais antigo etc.
     OS=SuSE
     VER=$(cat /etc/SuSE-release)
 elif [ -f /etc/redhat-release ]; then
-    # mais antigos Red Hat, CentOS, etc.
+    # Red Hat mais antigo, CentOS, etc.
     OS=RedHat
     VER=$(cat /etc/redhat-release)
 else
-    # Retorna para uname, por exemplo, "Linux <versão>". Isso também funciona para BSD, etc.
+    # Retornar para uname, ex. "Linux <version>", também funciona para BSD, etc.
     OS=$(uname -s)
     VER=$(uname -r)
 fi
 
-# Instala o RustDesk
+# Instalar RustDesk
 
 echo "Instalando RustDesk"
 if [ "${ID}" = "debian" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Debian" ] || [ "${UPSTREAM_ID}" = "ubuntu" ] || [ "${UPSTREAM_ID}" = "debian" ]; then
@@ -336,17 +345,17 @@ elif [ "$OS" = "CentOS" ] || [ "$OS" = "RedHat" ] || [ "$OS" = "Fedora Linux" ] 
     wget https://github.com/rustdesk/rustdesk/releases/download/1.2.6/rustdesk-1.2.6-0.x86_64.rpm
     yum localinstall ./rustdesk-1.2.6-0.x86_64.rpm -y > null
 else
-    echo "Sistema operacional não suportado"
-    # Aqui você poderia pedir permissão ao usuário para tentar instalar mesmo assim
+    echo "SO não suportado"
+    # aqui você pode perguntar ao usuário permissão para tentar instalar mesmo assim
     # se eles disserem sim, então faça a instalação
     # se eles disserem não, saia do script
     exit 1
 fi
 
-# Executa o comando rustdesk com --get-id e armazena a saída na variável rustdesk_id
+# Executar o comando rustdesk com --get-id e armazenar a saída na variável rustdesk_id
 rustdesk_id=$(rustdesk --get-id)
 
-# Aplica a nova senha ao RustDesk
+# Aplicar nova senha ao RustDesk
 rustdesk --password $rustdesk_pw &> /dev/null
 
 rustdesk --config $rustdesk_cfg
@@ -354,14 +363,14 @@ rustdesk --config $rustdesk_cfg
 systemctl restart rustdesk
 
 echo "..............................................."
-# Verifica se o rustdesk_id não está vazio
+# Verificar se rustdesk_id não está vazio
 if [ -n "$rustdesk_id" ]; then
-    echo "RustDesk ID: $rustdesk_id"
+    echo "ID RustDesk: $rustdesk_id"
 else
-    echo "Falha para pegar RustDesk ID."
+    echo "Falha ao obter o ID do RustDesk."
 fi
 
-# Exiba o valor da variável de senha
-echo "Password: $rustdesk_pw"
+# Mostrar o valor da variável senha
+echo "Senha: $rustdesk_pw"
 echo "..............................................."
 ```

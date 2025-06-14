@@ -1,24 +1,24 @@
 ---
-title: "RustDesk 說明文件"
+title: "RustDesk 文件"
 weight: 1
 ---
 
-# RustDesk說明文件
+# RustDesk 文件
 
-RustDesk 是一個功能齊全的開源遠端控制替代方案，您可以自行架設以確保安全性，且設置簡單。您可以對於您的數據具有完整的掌控權，無需擔心安全問題。客戶端是開源的，您可以在我們的網站上選擇購買功能完善的專業版伺服器，或者使用基於我們專業版伺服器的免費和開源伺服器。
+RustDesk 是一個功能完整的開源遠端控制替代方案，支援自託管和安全性，設定簡單。您完全控制自己的資料，無需擔心安全問題。客戶端是開源的，您可以選擇在我們的[網站](https://rustdesk.com)上購買功能完整的**專業伺服器**，或使用基於我們**專業伺服器**的基礎免費開源伺服器。
 
-### 特色
-  - 支援 Windows、macOS、Linux、iOS、Android、Web 平台。
-  - 支援 VP8 / VP9 / AV1 軟體編解碼器，以及 H264 / H265 硬體編解碼器。
-  - 掌控您的數據，輕鬆在您的設備自行架設。
-  - 基於 NaCl 的點對點（P2P）連線，提供端到端加密。
-  - 對於Windows，無需管理員權限或安裝，可按需提升權限。
-  - 我們喜歡保持事物簡單，並會盡可能使其更加簡單化。
+### 功能特性
+- 支援 Windows、macOS、Linux、iOS、Android、Web。
+- 支援 VP8 / VP9 / AV1 軟體編解碼器，以及 H264 / H265 硬體編解碼器。
+- 擁有您的資料，輕鬆在您的基礎設施上建立自託管解決方案。
+- 基於 NaCl 的端到端加密 P2P 連接。
+- Windows 無需管理員權限或安裝，可按需在本地或遠端提升權限。
+- 我們喜歡保持簡單，並將努力在可能的地方變得更簡單。
 
-### GitHub 代碼庫
-主要客戶端代碼庫：https://github.com/rustdesk/rustdesk</br>
-開源伺服器代碼庫：https://github.com/rustdesk/rustdesk-server</br>
-專業版伺服器代碼庫：https://github.com/rustdesk/rustdesk-server-pro</br>
-說明文件代碼庫：https://github.com/rustdesk/doc.rustdesk.com</br>
+### GitHub 儲存庫
+主客戶端儲存庫：https://github.com/rustdesk/rustdesk</br>
+開源伺服器儲存庫：https://github.com/rustdesk/rustdesk-server</br>
+專業伺服器儲存庫：https://github.com/rustdesk/rustdesk-server-pro</br>
+文件儲存庫：https://github.com/rustdesk/doc.rustdesk.com</br>
 
-{{% children depth="3" showhidden="true" %}}
+{{% children depth="4" showhidden="true" %}}

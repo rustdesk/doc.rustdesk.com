@@ -1,25 +1,24 @@
 ---
-title: "RustDesk-Dokumentation"
+title: "RustDesk Dokumentation"
 weight: 1
 ---
 
-# RustDesk-Dokumentation
+# RustDesk Dokumentation
 
-RustDesk ist eine vollwertige Open-Source-Fernsteuerungsalternative für das Selbst-Hosten und die Sicherheit mit minimaler Konfiguration. Sie haben die volle Kontrolle über Ihre Daten und müssen sich keine Sorgen um die Sicherheit machen. Der Client ist Open Source. Sie haben die Wahl zwischen dem voll ausgestatteten **Professional Server**, der auf unserer [Website](https://rustdesk.com) zu erwerben ist, und dem kostenlosen OSS-Server, der auf unserem **Professional Server** basiert.
+RustDesk ist eine vollausgestattete Open-Source-Alternative für Fernsteuerung mit Self-Hosting und Sicherheit bei minimaler Konfiguration. Sie haben die volle Kontrolle über Ihre Daten, ohne Sicherheitsbedenken. Der Client ist Open Source und es gibt die Wahl zwischen dem vollausgestatteten **Professional Server**, der auf unserer [Website](https://rustdesk.com) erworben werden kann, und dem grundlegenden kostenlosen OSS-Server, der auf unserem **Professional Server** basiert.
 
 ### Funktionen
 - Funktioniert unter Windows, macOS, Linux, iOS, Android, Web.
-- Unterstützt Software-Codecs VP8, VP9, AV1 und Hardware-Codecs H264, H265.
-- Sie besitzen Ihre Daten und können eine Selbst-Hosting-Lösung in Ihrer Infrastruktur einrichten.
-- P2P-Verbindung mit Ende-zu-Ende-Verschlüsselung auf Basis von NaCl.
-- Für Windows sind keine administrativen Rechte oder Installationen erforderlich. Sie können die Rechte lokal oder bei Bedarf aus der Ferne erhöhen.
-- Wir möchten die Dinge einfach halten und werden uns bemühen, sie so einfach wie möglich zu machen.
+- Unterstützt VP8 / VP9 / AV1 Software-Codecs und H264 / H265 Hardware-Codecs.
+- Besitzen Sie Ihre Daten, richten Sie einfach eine Self-Hosting-Lösung auf Ihrer Infrastruktur ein.
+- P2P-Verbindung mit Ende-zu-Ende-Verschlüsselung basierend auf NaCl.
+- Keine Administratorrechte oder Installation für Windows erforderlich, Rechte bei Bedarf lokal oder remote erhöhen.
+- Wir mögen es einfach und werden uns bemühen, es wo möglich noch einfacher zu machen.
 
-### GitHub-Repositorys
-Client-Repository: https://github.com/rustdesk/rustdesk</br>
-Open Source Server-Repository: https://github.com/rustdesk/rustdesk-server</br>
-Pro Server-Repository: https://github.com/rustdesk/rustdesk-server-pro</br>
+### GitHub Repositories
+Haupt-Client-Repository: https://github.com/rustdesk/rustdesk</br>
+Open-Source-Server-Repository: https://github.com/rustdesk/rustdesk-server</br>
+Pro-Server-Repository: https://github.com/rustdesk/rustdesk-server-pro</br>
 Dokumentations-Repository: https://github.com/rustdesk/doc.rustdesk.com</br>
 
-{{% children depth="3" showhidden="true" %}}
-
+{{% children depth="4" showhidden="true" %}}

@@ -1,8 +1,8 @@
 ---
-title: Build 
+title: ビルド
 weight: 1
 ---
 
-Check out [build.py](https://github.com/rustdesk/rustdesk/blob/master/build.py) for packaging desktop version.
+デスクトップ版のパッケージ化については、[build.py](https://github.com/rustdesk/rustdesk/blob/master/build.py) をご確認ください。
 
 {{% children depth="3" showhidden="true" %}}

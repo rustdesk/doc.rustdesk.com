@@ -3,22 +3,16 @@ title: Linux
 weight: 4
 ---
 
-### Instalação do RustDesk
+### Instalação
 
 #### Ubuntu (≥ 18)
 
-{{% notice note %}}
-Observação: Você pode ignorar qualquer relatório incorreto de uso do disco durante a instalação.
-{{% /notice %}}
-
 ```sh
-# Instale o RustDesk usando o arquivo DEB
-sudo apt install -fy ./rustdesk-<versão>.deb
+# por favor ignore o relatório de uso de disco incorreto
+sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
-##### Ubuntu 18.04
-Devido a uma dependência do RustDesk, é necessário instalar o Pipewire antes de prosseguir. Siga as instruções abaixo para instalar o [Pipewire](https://github.com/rustdesk/rustdesk/discussions/6148#discussioncomment-9295883) no Ubuntu 18.04
-
+Para Ubuntu 18.04, faça primeiro o seguinte para [pipewire](https://github.com/rustdesk/rustdesk/discussions/6148#discussioncomment-9295883).
 ```sh
 sudo apt install software-properties-common
 sudo add-apt-repository ppa:pipewire-debian/pipewire-upstream
@@ -52,24 +46,25 @@ sudo yum install libnsl
 ```
 
 ```sh
-# For Ubuntu
+# Para Ubuntu
 sudo yum install libfuse2
-./rustdesk-<versão>.AppImage
+./rustdesk-<version>.AppImage
 ```
 
 #### Flatpak
 
 ```sh
 flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak --user install ./rustdesk-<versão>.flatpak
+flatpak --user install ./rustdesk-<version>.flatpak
 flatpak run com.rustdesk.RustDesk
 ```
 
-#### Suporte Wayland
+### ~~X11 Necessário~~
+~~RustDesk ainda não suporta Wayland; você precisa mudar para X11 manualmente.~~
 
-O RustDesk possui suporte experimental ao Wayland desde a versão 1.2.0.
+RustDesk agora tem suporte experimental ao Wayland desde a versão 1.2.0.
 
-#### Servidor de Exibição
+#### Servidor de Display
 
 [Ubuntu](https://askubuntu.com/questions/1260142/ubuntu-set-default-login-desktop) | 
 [Fedora](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/) | 
@@ -77,20 +72,21 @@ O RustDesk possui suporte experimental ao Wayland desde a versão 1.2.0.
 
 #### Tela de Login
 
-A tela de login usando Wayland ainda não é suportada. Se você deseja acessar a tela de login após reiniciar ou sair com o RustDesk, é necessário alterar a tela de login para X11. Modifique a linha abaixo para `WaylandEnable=false` em `/etc/gdm/custom.conf` ou `/etc/gdm3/custom.conf`:
+A tela de login usando Wayland ainda não é suportada. Se você quiser acessar a tela de login após reiniciar ou sair com o RustDesk, você precisa alterar a tela de login para X11, por favor modifique a linha abaixo para `WaylandEnable=false` em `/etc/gdm/custom.conf` ou `/etc/gdm3/custom.conf`:
 
 ```ini
 #WaylandEnable=false
 ```
 
 {{% notice note %}}
-É necessário reiniciar o sistema para que as alterações tenham efeito.
+Por favor **reinicie** para que as alterações acima tenham efeito.
 {{% /notice %}}
 
-#### Problemas de permissão com SELinux
-Se o SELinux estiver habilitado, o RustDesk não funcionará corretamente nos ambientes X11 ou Wayland. Veja os problemas [relacionados](https://github.com/search?q=repo%3Arustdesk%2Frustdesk+SElinux&type=issues) (em inglês).
+#### Problema de Permissões
 
-Você pode executar o seguinte comando para verificar se há problemas de permissão:
+Se o SELinux estiver habilitado, o RustDesk não funcionará corretamente nem em ambientes X11 nem Wayland, relacionado aos [problemas](https://github.com/search?q=repo%3Arustdesk%2Frustdesk+SElinux&type=issues).
+
+Você pode executar:
 
 ```sh
 $ sudo grep 'comm="rustdesk"' /var/log/audit/audit.log | tail -1
@@ -98,7 +94,7 @@ type=AVC msg=audit(1697902459.165:707): avc:  denied  { name_connect } for  pid=
 ```
 
 {{% notice note %}}
-O número entre parênteses após `audit` é um registro de data e hora.
+O número entre parênteses após `audit` é o timestamp.
 {{% /notice %}}
 
-Se a saída do comando contiver `avc: denied`, significa que há permissões negadas pelo SELinux. Para corrigir isso, você precisa adicionar políticas SELinux. Veja as instruções em [SELinux](https://rustdesk.com/docs/pt/client/linux/selinux/).
+Se a saída contiver `avc: denied`, você precisa adicionar políticas do SELinux, por favor consulte [SELinux](https://rustdesk.com/docs/en/client/linux/selinux/).

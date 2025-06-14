@@ -4,56 +4,59 @@ weight: 5
 ---
 
 {{% notice note %}}
-A política de segurança do Windows pode ser complexa. Se este tutorial não funcionar para você ou se você encontrar uma conexão instável, considere migrar para um servidor Linux.
+A política de segurança do Windows é complicada, se este tutorial não funcionar para você, ou você encontrar conexão instável, migre para um servidor Linux.
 {{% /notice %}}
 
 {{% notice note %}}
-A versão GUI, `RustDeskServer.setup.exe`, não está mais sendo mantida e não é recomendada.
+A versão GUI, `RustDeskServer.setup.exe` não é mais mantida, não recomendada.
 {{% /notice %}}
 
-### Instalação
+### Instalar
 
-1. Obtenha sua licença acessando [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) verifique a pagina da [licença](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/license/) para obeter mais detalhes.
-2. Baixe o instalador do Windows a partir do [GitHub](https://github.com/rustdesk/rustdesk-server-pro/releases/latest).
-3. Descompacte o arquivo baixado.
-4. Execute o instalador e siga as instruções na tela. Você também pode instalar manualmente usando [PM2 ou NSSM](https://rustdesk.com/docs/pt/self-host/rustdesk-server-oss/windows/).
-5. Após concluir a instalação, abra o RustDesk Server.
-6. Siga as instruções para concluir a configuração.
-7. Clique em `Serviços` e depois em `Iniciar`.
-8. Assim que a instalação estiver concluída, acesse `http://seu_endereço_ip:21114`.
-9. Use o nome de usuário `admin` e a senha `test1234` para fazer login.
-10. Digite o código de licença adquirido na etapa 1.
+## Pré-requisito
+O Microsoft Visual C++ Redistributable é necessário para executar rustdesk no Windows. Você pode baixá-lo [aqui](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)
 
-### Usar o IIS como proxy
+1. Obtenha sua licença em [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), consulte a página de [licença](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) para mais detalhes.
+2. Baixe o instalador do Windows do [GitHub](https://github.com/rustdesk/rustdesk-server-pro/releases/latest).
+3. Descompacte o instalador do Windows.
+4. Execute o Instalador e siga os passos na tela. Ou instale manualmente com [PM2 ou NSSM](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/windows/).
+5. Uma vez concluído, abra o RustDesk Server.
+6. Siga as instruções que o guiam pela instalação.
+7. Clique em `Services` e depois em `Start`.
+8. Uma vez que a instalação esteja completa vá para `http://youripaddress:21114`.
+9. Faça login com o nome de usuário `admin` e senha `test1234`.
+10. Digite seu código de licença comprado no passo 1.
 
-Observação: Certifique-se de ter o `Dynamic Content Compression` instalado (recurso do IIS que pode ser instalado com as Funções do Servidor).
-1. Abra o IIS (ou instale-o, caso necessário).
-2. Crie um novo site para o RustDesk com as vinculações (idealmente 443) e o certificado SSL relevante. As configurações básicas devem apontar para uma pasta vazia (se usar o site padrão, certifique-se de que não haja outros arquivos na pasta).
-3. No IIS, instale o [Application Request Routing](https://www.iis.net/downloads/microsoft/application-request-routing) (em Inglês) e o [Reescrita de URL](https://learn.microsoft.com/pt-br/iis/extensions/url-rewrite-module/using-the-url-rewrite-module).
+### Usar IIS como Proxy
 
-### Roteamento de Solicitações de Aplicativo
+Certifique-se de que `Dynamic Content Compression` esteja instalado (esta é uma Funcionalidade do IIS que pode ser instalada com Funções do Servidor).
+1. Abra o IIS (Ou instale-o).
+2. Crie um novo website para RustDesk com as vinculações (Idealmente 443) e certificado relevante. As configurações básicas devem apontar para uma pasta em branco. (Se você usar o site padrão, certifique-se de que não há outros arquivos na pasta).
+3. No IIS, instale [Application Request Routing](https://www.iis.net/downloads/microsoft/application-request-routing) e [URL Rewrite](https://learn.microsoft.com/en-us/iis/extensions/url-rewrite-module/using-the-url-rewrite-module).
 
-1. No host do servidor IIS, abra o Roteamento de Solicitações de Aplicativo.
-2. Acesse Configurações de Proxy do Servidor.
-3. Habilite o proxy e todas as configurações serão exibidas (você pode deixá-las como padrão).
-4. Salve as configurações e prossiga para a etapa de Reescrita de URL.
+### Application Request Routing
 
-### Reescrita de URL
+1. Sob o Host do Servidor IIS abra Application Request Routing.
+2. Vá para Server Proxy Settings.
+3. Habilite proxy e todas as configurações aparecerão, você pode deixá-las como os padrões.
+4. Salve as configurações e podemos ir para o próximo passo: URL Rewrite.
 
-1. No painel esquerdo do IIS, abra o site e de dois cliques em "Reescrita de URL".
-2. Clique em `Adicionar Regras`.
+### URL Rewrite
+
+1. Abra o site no IIS no painel esquerdo e clique duas vezes em URL Rewrite.
+2. Clique em `Add rules`.
 3. Configure uma nova regra de proxy reverso.
-4. Defina o endereço local (endereço 21114). \
-Regra de entrada - Endereço interno 21114 do RustDesk. \
-Regras de saída - `De` é o endereço interno 21114 do RustDesk e `Para` é o endereço externo. \
-Observação: Não é necessário incluir http/https antes dos endereços (eles são tratados automaticamente). Além disso, certifique-se de que todos os endereços sejam acessíveis interna e externamente.
+4. Configure o endereço local (o endereço 21114) \
+Regra de Entrada – o endereço interno RustDesk 21114 \
+Regras de Saída – `From` é o endereço interno RustDesk 21114 e `To` é o endereço externo. \
+Nota: Nenhum http / https antes dos endereços – eles são tratados automaticamente. Além disso, certifique-se de que todos os endereços sejam acessíveis tanto interna quanto externamente.
 
 ### Compressão
 
-Desative o `Dynamic Content Compression`.
+1. Desabilite `Dynamic Content Compression`.
 
-### Solução de Problemas
+### Solução de problemas
 
-Se você encontrar o erro 500.52, adicione as variáveis mencionadas: [IIS acting as reverse proxy: Where the problems start](https://techcommunity.microsoft.com/t5/iis-support-blog/iis-acting-as-reverse-proxy-where-the-problems-start/ba-p/846259) (em inglês).
+Se você tiver um erro 500.52 adicione as variáveis mencionadas: [IIS acting as reverse proxy: Where the problems start](https://techcommunity.microsoft.com/t5/iis-support-blog/iis-acting-as-reverse-proxy-where-the-problems-start/ba-p/846259).
 
-Você pode precisar alterar suas Configurações de SSL para "Require SSL → Ignore".
+Você pode precisar alterar suas Configurações SSL para "Require SSL → Ignore".

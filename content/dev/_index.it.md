@@ -1,12 +1,12 @@
 ---
-title: Development
+title: Sviluppo
 weight: 8
 pre: "<b>3. </b>"
 chapter: true
 ---
 
-### Chapter 3
+### Capitolo 3
 
-# Development
+# Sviluppo
 
 {{% children depth="3" showhidden="true" %}}

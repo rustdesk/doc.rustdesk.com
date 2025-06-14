@@ -1,0 +1,3 @@
+This is the content directory of a hugo doc project. Currently only the english version is full, all other languages are not full transalted.
+Please help me translate _index.en.md file to other languages, so far please translate languages of (zh-cn, zh-tw, de, fr, es, pt, ja, it), e.g.
+for german translation, the new file name should be _index.de.md, if the file exists, please overwrite it.  please handle all files, traverse all files under all directories recursively.

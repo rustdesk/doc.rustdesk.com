@@ -8,9 +8,11 @@ pre: "<b>2.3. </b>"
 
 Es gibt eine Reihe von Möglichkeiten, RustDesk-Clients so zu konfigurieren, dass sie Ihren eigenen, selbst gehosteten Server nutzen können. Einige davon werden im Folgenden beschrieben.
 
-### 1. Benutzerdefinierter Client-Generator (nur Pro)
+### 1. Benutzerdefinierter Client-Generator (nur Pro, Basisplan oder benutzerdefinierter Plan)
 
-Sie können Ihren eigenen Namen, Ihr Logo, Ihr Symbol, Ihre Konfiguration, eine Signatur und mehr haben.
+Sie können Ihren eigenen Namen, Logo, Symbol, Konfiguration, Signatur und mehr haben.
+
+Derzeit werden Windows X64, Mac Arm64 / X64, [Linux](https://twitter.com/rustdesk/status/1788905463678951787), Android Arm 64 unterstützt.
 
 [Video](https://twitter.com/rustdesk/status/1769171628426944539)
 

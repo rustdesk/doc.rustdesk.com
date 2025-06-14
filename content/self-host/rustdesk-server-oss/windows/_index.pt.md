@@ -4,96 +4,98 @@ weight: 20
 ---
 
 {{% notice note %}}
-A política de segurança do Windows pode ser complicada. Se este tutorial não funcionar para você ou você encontrar uma conexão instável, considere migrar para um servidor Linux.
+A política de segurança do Windows é complicada, se este tutorial não funcionar para você, ou se encontrar conexão instável, migre para um servidor Linux.
 {{% /notice %}}
 
 {{% notice note %}}
-A versão GUI, RustDeskServer.setup.exe, não é mais mantida e não é recomendada.
+A versão GUI, `RustDeskServer.setup.exe` não é mais mantida, não recomendada.
 {{% /notice %}}
 
-### Escolhendo o método de instalação
-Você tem duas opções para iniciar o servidor RustDesk: PM2 (mais fácil) ou NSSM (um pouco mais difícil).
+### Uma encruzilhada
+Agora você tem duas escolhas, pode usar PM2 (mais fácil) ou NSSM (um pouco mais difícil) para iniciar o servidor RustDesk
+Há alguns benefícios em usar NSSM:
+- Compatibilidade com versões mais antigas do Windows (Windows Server 2008 R2/Windows 7 e anteriores, embora não testado).
+- Ideal para Windows Server
+- Início automático na inicialização sem login (O usuário que criou a entrada de inicialização não precisa fazer login para que inicie).
+- Executar ambos os binários como Serviços.
+- Independente (sem dependência do Node.js)
 
-O NSSM oferece alguns benefícios:
-- Compatibilidade com versões anteriores do Windows (Windows Server 2008 R2/Windows 7 e anteriores, embora não testado).
-- Ideal para Windows Server.
-- Inicia automaticamente na inicialização sem login (o usuário que criou a entrada de inicialização não precisa fazer login para que ela seja iniciada).
-- Executa os dois binários como serviços independentes
-- Sem dependência do Node.js.
-
-Já o PM2 oferece:
-- Ideal se você executa o servidor no mesmo computador que seu computador principal de trabalho.
-- Requer login regular do usuário que criou a entrada de inicialização do RustDesk.
-- Mais fácil de usar.
+Enquanto os benefícios do PM2 incluem:
+- Boa ideia se você executar o servidor no mesmo computador que seu principal computador de trabalho
+- Você faz login regularmente no usuário que criou a entrada de inicialização do RustDesk
+- Mais amigável ao usuário
 
 ### Instalando usando NSSM
 
-#### Baixando e instalando o NSSM
-Faça o [download](https://github.com/dkxce/NSSM/releases/download/v2.25/NSSM_v2.25.zip) do NSSM e extraia o arquivo. Selecione a arquitetura apropriada para o seu sistema Windows (se x86 use o conteúdo da pasta win32, se x64 use o conteúdo da pasta win64).
-A melhor prática é mover o binário do NSSM para o diretório `Program Files\NSSM` (o NSSM, uma vez iniciado como serviço, não pode ser movido do diretório em que foi colocado portanto, é melhor guardá-lo em `Program Files`).
-Também é recomendável adicionar o caminho (C:\Program Files\NSSM) à variável de ambiente Path.
+#### Instalando NSSM
+Por favor [baixe](https://github.com/dkxce/NSSM/releases/download/v2.25/NSSM_v2.25.zip) e extraia o NSSM, selecione a arquitetura apropriada para seu sistema Windows (se x86 use o conteúdo da pasta win32, se x64 use o conteúdo da pasta win64). É também uma boa prática mover o binário do NSSM para o diretório `Program Files\NSSM` (O NSSM uma vez iniciado como serviço, não pode ser movido do diretório onde foi colocado. assim é melhor guardá-lo em `Program Files`) do seu drive de instalação (Normalmente o drive C:).
+É também aconselhável adicionar o caminho (como `C:\Program Files\NSSM`) à variável de caminho.
 
-#### Verificando a instalação do NSSM
-Se tudo foi feito corretamente, a pasta C:\Program Files\NSSM (neste exemplo, usamos a unidade C:, mas você pode usar qualquer unidade em que instalou o Windows ou o caminho desejado) deverá conter apenas o arquivo `nssm.exe`.
+#### Verificando se o NSSM está instalado corretamente
+Se você fez tudo corretamente, a pasta `C:\Program Files\NSSM` (neste exemplo uso o drive C: mas você pode usar qualquer drive onde instalou o Windows ou qualquer caminho que desejar) deve conter apenas o arquivo `nssm.exe`.
 
-Abra o prompt de comando e execute `nssm`. Se você vir uma página de ajuda, está pronto para seguir para a próxima etapa.
+Usaremos `C:\Program Files\NSSM` neste exemplo.
 
-#### Executando hbbr e hbbs
-Baixe a versão Windows do Servidor RustDesk. Descompacte o programa para C:\Program Files\RustDesk Server (ou qualquer outro local desejado, apenas certifique-se de que não seja alterado após a instalação do serviço). Agora volte para o prompt de comando.
+Abra o Prompt de Comando e execute `nssm` se ver uma página de ajuda você está pronto para ir para o próximo passo.
+
+#### Executar hbbr e hbbs
+Baixe a versão Windows do [RustDesk Server](https://github.com/rustdesk/rustdesk-server/releases).
+Descompacte o programa para `C:\Program Files\RustDesk Server` (ou onde desejar, apenas certifique-se de que não mude após o serviço ser instalado). Agora volte para o Prompt de Comando.
 
 Usaremos `C:\Program Files\RustDesk Server` neste exemplo.
-
 ```cmd
 nssm install "RustDesk hbbs service" "C:\Program Files\RustDesk Server\hbbs.exe"
 nssm install "RustDesk hbbr service" "C:\Program Files\RustDesk Server\hbbr.exe"
 ```
-**Observação:**
-- Você pode alterar `RustDesk hbbs service` para o nome desejado para o serviço hbbs.
-- Você pode alterar `RustDesk hbbr service` para o nome desejado para o serviço hbbr.
-- Você pode alterar `C:\Program Files\RustDesk Server\hbbs.exe` para onde quer que tenha colocado os binários do RustDesk.
-- Você pode alterar `C:\Program Files\RustDesk Server\hbbr.exe` para onde quer que tenha colocado os binários do RustDesk.
+**Nota:**
+- Você pode mudar `RustDesk hbbs service` para qualquer nome que desejar para o serviço hbbs
+- Você pode mudar `RustDesk hbbr service` para qualquer nome que desejar para o serviço hbbr
+- Você pode mudar `C:\Program Files\RustDesk Server\hbbs.exe` para onde quer que tenha colocado os binários do RustDesk
+- Você pode mudar `C:\Program Files\RustDesk Server\hbbr.exe` para onde quer que tenha colocado os binários do RustDesk
 
-**Modelos de comandos:**
+**Modelos de comando:**
 
-Modelos de comandos caso você queira apenas copiar, colar e editar.
+O modelo de comando caso você queira apenas copiar e colar e editar.
 
 ```cmd
-nssm install <Nome do serviço hbbs desejado> <Caminho binário do RustDesk hbbs> <Argumentos do RustDesk hbbs>
-nssm install <Nome do serviço hbbr desejado> <Caminho binário do RustDesk hbbr> <Argumentos do RustDesk hbbr>
+nssm install <Nome do serviço hbbs desejado> <Caminho do binário hbbs do RustDesk> <Argumentos do hbbs do RustDesk>
+nssm install <Nome do serviço hbbr desejado> <Caminho do binário hbbr do RustDesk> <Argumentos do hbbr do RustDesk>
 ```
 
-**Iniciando os serviços**
+**Iniciar serviços**
 
 Após a instalação bem-sucedida dos serviços, eles precisam ser iniciados.
-
 ```cmd
-nssm start <Desired hbbs servicename>
-nssm start <Desired hbbr servicename>
+nssm start <Nome do serviço hbbs desejado>
+nssm start <Nome do serviço hbbr desejado>
 ```
 
-**Pronto!** (O método acima foi testado no Windows Server Core 2022 Standard).
+**Pronto!**
+
+(O método acima foi testado no Windows Server Core 2022 Standard).
 
 ### ou
 
 ### Instalando usando PM2
 
-#### Instalando o Node.js
+#### Instalar Node.js
 
-Por favor, faça o [download](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi) e instale o Node.js.
-O Node.js é o ambiente de execução do PM2, então você precisa instalá-lo primeiro.
+Por favor [baixe](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi) e instale o Node.js.
+Node.js é o ambiente de execução do PM2, então você precisa instalar o Node.js primeiro.
 
-#### Instalando o PM2
+#### Instalar PM2
 
-Digite o seguinte no `cmd.exe`, pressione a tecla <kbd>Enter</kbd> para cada linha e execute-as linha por linha.
+Digite os comandos abaixo em `cmd.exe`, pressione a tecla <kbd>Enter</kbd> para cada linha, e execute-os linha por linha.
+
 ```cmd
 npm install -g pm2
 npm install pm2-windows-startup -g
 pm2-startup install
 ```
 
-#### Executando hbbr e hbbs
+#### Executar hbbr e hbbs
 
-Baixe a versão Windows do [Servidor RustDesk](https://github.com/rustdesk/rustdesk-server/releases). Descompacte o programa na unidade `C:` e execute os quatro comandos a seguir:
+Baixe a versão Windows do [RustDesk Server](https://github.com/rustdesk/rustdesk-server/releases). Descompacte o programa para o drive C:. Execute os seguintes quatro comandos:
 
 ```cmd
 cd C:\rustdesk-server-windows-x64
@@ -102,7 +104,7 @@ pm2 start hbbr.exe
 pm2 save
 ```
 
-#### Visualizando o log
+#### Ver o log
 
 ```cmd
 pm2 log hbbr

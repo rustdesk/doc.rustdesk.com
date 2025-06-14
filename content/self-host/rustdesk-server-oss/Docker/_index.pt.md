@@ -3,25 +3,26 @@ title: Docker
 weight: 7
 ---
 
+> Aqui está outro bom tutorial: [Building Your Own Remote Desktop Solution: RustDesk Self-Hosted on Cloud with Docker (Hetzner)](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f)
+
 ### Instale seu próprio servidor com Docker
 
 #### Requisitos
-Você precisa ter o Docker/Podman instalado para executar um rustdesk-server como um contêiner Docker. Se estiver em dúvida, instale o Docker com este [guia](https://docs.docker.com/engine/install/)! (em inglês)
+Você precisa ter Docker/Podman instalado para executar um rustdesk-server como um contêiner Docker. Se estiver em dúvida, instale o Docker com este [guia](https://docs.docker.com/engine/install) para garantir que esteja o mais atualizado possível!
 
-Por padrão, o `hbbs` escuta nas portas 21114 (TCP, para console web, disponível apenas na versão Pro), 21115 (TCP), 21116 (TCP/UDP) e 21118 (TCP). O `hbbr` escuta nas portas 21117 (TCP) e 21119 (TCP). Certifique-se de abrir essas portas no firewall. **Observe que a porta 21116 deve estar habilitada para TCP e UDP.**
+Certifique-se de abrir essas portas no firewall:
+- `hbbs`:
+  - `21114` (TCP): usado para console web, disponível apenas na versão `Pro`.
+  - `21115` (TCP): usado para o teste de tipo NAT.
+  - `21116` (TCP/UDP): **Observe que `21116` deve ser habilitado tanto para TCP quanto para UDP.** `21116/UDP` é usado para o serviço de registro de ID e heartbeat. `21116/TCP` é usado para TCP hole punching e serviço de conexão.
+  - `21118` (TCP): usado para suportar clientes web.
+- `hbbr`:
+  - `21117` (TCP): usado para os serviços de Retransmissão.
+  - `21119` (TCP): usado para suportar clientes web.
 
-- TCP (**21114, 21115, 21116, 21117, 21118, 21119**)
-- UDP (**21116**)
+*Se você não precisar de suporte para cliente web, as portas correspondentes `21118`, `21119` podem ser desabilitadas.*
 
-#### Detalhes das portas
-
-- A porta 21115 é usada para o teste de tipo NAT.
-- A porta 21116/UDP é usada para o serviço de registro de ID e pulsação.
-- A porta 21116/TCP é usada para o serviço de conexão e perfuração de tunelamento TCP.
-- A porta 21117 é usada para os serviços de retransmissão.
-- As portas 21118 e 21119 são usadas para oferecer suporte a clientes web. Se você não precisa de suporte a cliente web (21118, 21119), as portas correspondentes podem ser desabilitadas.
-
-#### Exemplos de Docker
+#### Exemplos Docker
 
 ```sh
 sudo docker image pull rustdesk/rustdesk-server
@@ -31,19 +32,18 @@ sudo docker run --name hbbr -v ./data:/root -td --net=host --restart unless-stop
 <a name="net-host"></a>
 
 {{% notice note %}}
-A opção `--net=host` funciona apenas no **Linux**. Com ela, os contêineres `hbbs` e `hbbr` conseguem ver o endereço IP real de entrada, em vez do endereço IP do contêiner (172.17.0.1).
-Se a opção `--net=host` funcionar bem, as opções `-p` não são necessárias. Caso esteja usando Windows, deixe de fora o `sudo` e `--net=host`.
+`--net=host` funciona apenas no **Linux**, o que faz `hbbs`/`hbbr` ver o endereço IP real de entrada em vez do IP do contêiner (172.17.0.1).
+Se `--net=host` funcionar bem, as opções `-p` não são usadas. Se no Windows, remova `sudo` e `--net=host`.
 
-**⚠️Importante: Remova `--net=host` se estiver enfrentando problemas de conexão na sua plataforma.⚠️**
+**Por favor, remova `--net=host` se você estiver tendo problemas de conexão na sua plataforma.**
 {{% /notice %}}
 
 {{% notice note %}}
-Se não conseguir visualizar os logs com `-td`, você pode vê-los através de `docker logs hbbs`.  Você também pode executar com `-it`, mas `hbbs/hbbr` não será executado em modo daemon.
+Se você não conseguir ver logs com `-td`, pode ver logs via `docker logs hbbs`. Ou pode executar com `-it`, `hbbs/hbbr` não executará como modo daemon.
 {{% /notice %}}
 
-#### Exemplos de Docker Compose
-
-Para executar os arquivos Docker usando o `compose.yml` conforme descrito aqui, você precisa ter o [Docker Compose](https://docs.docker.com/compose/) instalado.
+#### Exemplos Docker Compose
+Para executar os arquivos Docker com o `compose.yml` conforme descrito aqui, você precisa ter o [Docker Compose](https://docs.docker.com/compose/) instalado.
 
 ```yaml
 services:
@@ -69,7 +69,7 @@ services:
     restart: unless-stopped
 ```
 
-Se você precisar fazer alterações na configuração, por exemplo, definir ALWAYS_USE_RELAY=Y, você pode usar o ambiente no docker-compose.yml
+Se você precisar fazer mudanças de configuração, por exemplo, definir ALWAYS_USE_RELAY=Y, pode usar environment no docker-compose.yml
 
 ```yaml
 services:
@@ -95,4 +95,40 @@ services:
       - ./data:/root
     network_mode: "host"
     restart: unless-stopped
+```
+
+#### Exemplos Podman Quadlet
+
+Se você quiser executar os contêineres com Podman como um serviço systemd, pode usar essas configurações exemplo do Podman Quadlet:
+
+```ini
+[Container]
+AutoUpdate=registry
+Image=ghcr.io/rustdesk/rustdesk-server:latest
+Exec=hbbs
+Volume=/path/to/rustdesk-server/data:/root
+Network=host
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
+```
+
+ou
+
+```ini
+[Container]
+AutoUpdate=registry
+Image=ghcr.io/rustdesk/rustdesk-server:latest
+Exec=hbbr
+Volume=/path/to/rustdesk-server/data:/root
+Network=host
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
 ```

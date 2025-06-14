@@ -3,17 +3,17 @@ title: Docker
 weight: 3
 ---
 
-### Docker Compose (Recomendada)
+### Docker Compose (Recomendado)
 
-Com Docker Compose, você **PRECISA** usar `network_mode: "host"` para garantir que o licenciamento funcione. Instale o Docker usando este [guia](https://docs.docker.com/engine/install) para garantir que esteja com a versão mais atualizada!
+Com Docker Compose você DEVE usar `network_mode: "host"` para garantir que o licenciamento funcione. Instale o Docker usando este [guia](https://docs.docker.com/engine/install) para garantir que esteja atualizado!
 
-Copie o seguinte conteúdo para o arquivo `compose.yml`.
+Copie o conteúdo abaixo para `compose.yml`.
 
 ```yaml
 services:
   hbbs:
     container_name: hbbs
-    image: rustdesk/rustdesk-server-pro:latest
+    image: docker.io/rustdesk/rustdesk-server-pro:latest
     command: hbbs
     volumes:
       - ./data:/root
@@ -25,7 +25,7 @@ services:
 
   hbbr:
     container_name: hbbr
-    image: rustdesk/rustdesk-server-pro:latest
+    image: docker.io/rustdesk/rustdesk-server-pro:latest
     command: hbbr
     volumes:
       - ./data:/root
@@ -33,35 +33,45 @@ services:
     restart: unless-stopped
 ```
 
-E execute `docker compose up -d`.
+Em seguida execute `sudo docker compose up -d` ou `podman-compose up -d`
 
-> Se você está enfrentando problemas com o SELinux no Fedora, por favor, verifique essa discussão no [GitHub](https://github.com/rustdesk/rustdesk-server/issues/230).
+> `sudo apt install podman-compose` para instalação do `podman-compose`
 
 {{% notice note %}}
-Disponível um guia sobre como [Configurar manualmente o HTTPS para o console web](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
-
+Como [configurar HTTPS para o console web manualmente](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
 {{% /notice %}}
 
-### Comandos do Docker
+### Comandos Docker
 
-Instale o Docker seguindo este [guia](https://docs.docker.com/engine/install/) (em inglês) para garantir que esteja com a versão mais atualizada!
+Instale o Docker com este [guia](https://docs.docker.com/engine/install) para garantir que esteja atualizado!
+
+Ou você pode instalar o docker com este único comando.
+
+```
+bash <(wget -qO- https://get.docker.com)
+```
 
 Execute os seguintes comandos (a imagem s6 pode precisar de `./data:/data` em vez de `./data:/root`):
 
 ```sh
 sudo docker image pull rustdesk/rustdesk-server-pro
-sudo docker run --name hbbs -v ./data:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbs
-sudo docker run --name hbbr -v ./data:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbr
+sudo docker run --name hbbs -v ./data:/root -td --net=host --restart unless-stopped docker.io/rustdesk/rustdesk-server-pro hbbs
+sudo docker run --name hbbr -v ./data:/root -td --net=host --restart unless-stopped docker.io/rustdesk/rustdesk-server-pro hbbr
 ```
 
 {{% notice note %}}
-O exemplo acima usa `sudo` e `--net=host`, isso não funcionará no Windows, remova esses comandos. Se você remover `--net=host`, verifique abaixo.
+O exemplo acima usa `sudo` e `--net=host`, isso não funcionará no Windows, remova estes comandos, se remover `--net=host` verifique abaixo.
 {{% /notice %}}
 
 ```sh
 macaddrhbbs=$(echo -n A0-62-2F; dd bs=1 count=3 if=/dev/random 2>/dev/null |hexdump -v -e '/1 "-%02X"')
-sudo docker image pull rustdesk/rustdesk-server-pro
-sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v ./data:/root -td --mac-address="$macaddrhbbs" --restart unless-stopped rustdesk/rustdesk-server-pro hbbs
-sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v ./data:/root -td --restart unless-stopped rustdesk/rustdesk-server-pro hbbr
+sudo docker run --name hbbs -p 21114:21114 -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v ./data:/root -td --mac-address="$macaddrhbbs" --restart unless-stopped docker.io/rustdesk/rustdesk-server-pro hbbs
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v ./data:/root -td --restart unless-stopped docker.io/rustdesk/rustdesk-server-pro hbbr
 ```
 
+{{% notice note %}}
+Como [configurar HTTPS para o console web manualmente](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
+{{% /notice %}}
+
+
+> Se você tiver problemas com SELinux no Fedora, verifique este [problema](https://github.com/rustdesk/rustdesk-server/issues/230).

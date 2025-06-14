@@ -7,18 +7,18 @@ pre: "<b>2.2. </b>"
 RustDesk Server Pro ha più funzionalità rispetto alla versione open source.
 
 - Account
-- Nessun limite di connessioni simultanee, ovvero nessun limite di connessioni simultanee
 - [Console web](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
-- API
+- [API](https://github.com/rustdesk/rustdesk/wiki/FAQ#api-of-rustdesk-server-pro)
 - [OIDC](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/), [LDAP](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/), [2FA](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/)
 - Rubrica
-- Rinomina
 - Gestione dei log (connessione, trasferimento file, allarme, ecc.)
 - Gestione dei dispositivi
 - [Sincronizzazione delle impostazioni di sicurezza](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/)
 - [Controllo degli accessi](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/)
 - [Server di relay multipli](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/) (seleziona automaticamente il relay più vicino)
 - [Generatore di client personalizzato](https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only)
+- WebSocket
+- Self-hosting del client web
 
 {{% notice note %}}
 Se costruisci il tuo server a casa/ufficio e non riesci a connetterti tramite IP pubblico/dominio, controlla [questo articolo](https://rustdesk.com/docs/en/self-host/nat-loopback-issues/).
@@ -37,14 +37,9 @@ Il livello VPS più basso è sufficiente per i tuoi casi d'uso. Il software del 
 
 ## Tutorial video
 
-Ci sono [molti tutorial video](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/#video-tutorials) disponibili online che possono guidarti nell'installazione della versione gratuita OSS.
+[Guida per principianti: Self-Host RustDesk Server Pro per utenti Linux alle prime armi](https://www.youtube.com/watch?v=MclmfYR3frk)
 
-Ecco un altro [buon tutorial](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f/?trackingId=a07rn2fkBW1ctLHaJ0tVcg%3D%3D) per l'auto-hosting della versione gratuita OSS su Hetzner cloud con docker.
-
-L'installazione della versione Pro è quasi identica, tranne per le seguenti differenze:
-
-- Sono richiesti un percorso di download diverso e [immagini Docker](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/) / [file compose](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/#docker-compose).
-- È necessaria una porta TCP aggiuntiva (21114) per la console web.
+[Guida veloce: Self-Host RustDesk Server Pro per utenti Linux avanzati](https://youtu.be/gMKFEziajmo)
 
 ## Licenza
 
@@ -80,6 +75,12 @@ Ecco un semplice tutorial per la [configurazione manuale di HTTPS](https://rustd
 ### 5. Configurare il client per utilizzare il server self-hosted
 
 https://rustdesk.com/docs/en/self-host/client-configuration/
+
+### 6. Configurare WebSocket
+
+Per abilitare il client web o [client desktop/mobile](/docs/en/self-host/client-configuration/advanced-settings/#allow-websocket) per funzionare correttamente con WebSocket, devi aggiungere le seguenti impostazioni alla configurazione del tuo reverse proxy.
+
+https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
 
 ## Aggiornamento del server
 

@@ -1,11 +1,15 @@
 ---
-title: Tutorial Video
+title: Video Tutorial
 weight: 50
 ---
 
-[Awesome Open Source](https://www.youtube.com/@AwesomeOpenSource) (inglese) ha caricato degli ottimi video su RustDesk, li trovi qua sotto.
+## OSS
+[NetworkChuck: Il vostro Desktop Remoto fa SCHIFO!! Provate questo invece (GRATUITO + Open Source)
+](https://www.youtube.com/watch?v=EXL8mMUXs88)
 
-[Installazione e Guida Utente](https://www.youtube.com/watch?v=9nzHm3xGz2I)(inglese)
+[Installazione e Guida Utente](https://www.youtube.com/watch?v=9nzHm3xGz2I)
 
-[La sicurezza di RustDesk](https://www.youtube.com/watch?v=EeFqj23jxMk)
-(inglese)
+[Sicurezza RustDesk](https://www.youtube.com/watch?v=EeFqj23jxMk)
+
+## Pro
+[Canale Youtube](https://youtube.com/@rustdesk)
