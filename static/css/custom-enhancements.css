@@ -1,0 +1,85 @@
+/* RustDesk Documentation Enhancements */
+
+/* Better link styling */
+.prose a {
+  color: #0071ff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 0.2s ease;
+}
+
+.prose a:hover {
+  border-bottom-color: #0071ff;
+}
+
+/* Enhanced code blocks */
+.prose pre {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.dark .prose pre {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+/* Better spacing for feature lists */
+.prose ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Enhanced GitHub repository section */
+.prose h3 + ul {
+  margin-top: 1rem;
+  border-left: 4px solid #0071ff;
+  padding-left: 1rem;
+  background: linear-gradient(90deg, rgba(0, 113, 255, 0.05) 0%, transparent 100%);
+  border-radius: 0 8px 8px 0;
+}
+
+/* Better button styling for cards */
+.hextra-cards a {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hextra-cards a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Improved notice blocks */
+.prose .notices {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Better mobile responsiveness */
+@media (max-width: 768px) {
+  .hextra-cards {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Enhanced search box styling */
+.search-input {
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: #0071ff;
+  box-shadow: 0 0 0 3px rgba(0, 113, 255, 0.1);
+}
+
+/* Better footer styling */
+.hextra-custom-footer {
+  border-top: 1px solid #e2e8f0;
+  background: linear-gradient(180deg, transparent 0%, rgba(248, 250, 252, 0.5) 100%);
+}
+
+.dark .hextra-custom-footer {
+  border-top-color: #334155;
+  background: linear-gradient(180deg, transparent 0%, rgba(30, 41, 59, 0.5) 100%);
+}

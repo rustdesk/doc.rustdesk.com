@@ -1,5 +1,6 @@
 ---
 title: "RustDesk 文档"
+type: docs
 weight: 1
 ---
 
@@ -16,9 +17,9 @@ RustDesk 是一个功能完整的开源远程控制替代方案，支持自托�
 - 我们喜欢保持简单，并将努力在可能的地方变得更简单。
 
 ### GitHub 存储库
-主客户端存储库：https://github.com/rustdesk/rustdesk</br>
-开源服务器存储库：https://github.com/rustdesk/rustdesk-server</br>
-专业服务器存储库：https://github.com/rustdesk/rustdesk-server-pro</br>
-文档存储库：https://github.com/rustdesk/doc.rustdesk.com</br>
+- **主客户端存储库**: https://github.com/rustdesk/rustdesk
+- **开源服务器存储库**: https://github.com/rustdesk/rustdesk-server
+- **专业服务器存储库**: https://github.com/rustdesk/rustdesk-server-pro
+- **文档存储库**: https://github.com/rustdesk/doc.rustdesk.com
 
 {{% children depth="4" showhidden="true" %}}

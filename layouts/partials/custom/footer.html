@@ -1,14 +1,4 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WCJMDEZ618"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WCJMDEZ618');
-</script>
-
-{{ if not .Site.Params.disable_cookie }}
+{{ if not .context.Site.Params.disable_cookie }}
 <div class="cookie-consent">
   This website uses cookies to ensure you get the best experience on our website. <a target="_blank" rel="noopener"
     href="https://www.cookiesandyou.com">Learn More</a>

@@ -1,5 +1,6 @@
 ---
 title: "Docs of RustDesk"
+type: docs
 weight: 1
 ---
 
@@ -16,9 +17,9 @@ RustDesk is a full-featured open source remote control alternative for self-host
 - We like to keep things simple and will strive to make simpler where possible.
 
 ### GitHub Repositories
-Main Client Repository: https://github.com/rustdesk/rustdesk</br>
-Open source Server Repository: https://github.com/rustdesk/rustdesk-server</br>
-Pro Server Repository: https://github.com/rustdesk/rustdesk-server-pro</br>
-Doc Repository: https://github.com/rustdesk/doc.rustdesk.com</br>
+- **Main Client Repository**: https://github.com/rustdesk/rustdesk
+- **Open Source Server Repository**: https://github.com/rustdesk/rustdesk-server  
+- **Pro Server Repository**: https://github.com/rustdesk/rustdesk-server-pro
+- **Documentation Repository**: https://github.com/rustdesk/doc.rustdesk.com
 
 {{% children depth="4" showhidden="true" %}}

@@ -1,0 +1,187 @@
+# Hugo configuration file
+title: RustDesk Documentation
+baseURL: "https://rustdesk.com/docs"
+languageCode: "en-US"
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: true
+
+# Use Hextra theme
+theme: hextra
+
+# Metadata format
+metaDataFormat: yaml
+
+# Markup configuration
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+
+# Enable page bundles and resource processing
+enableEmoji: true
+enableRobotsTXT: true
+
+# Configure static file handling for absolute paths
+staticDir: ["static"]
+
+# Configure resource processing
+imaging:
+  resampleFilter: "lanczos"
+  quality: 85
+
+# Output formats
+outputs:
+  home: ["HTML", "RSS", "JSON"]
+
+# Parameters
+params:
+  disable_cookie: true
+  description: "Documentation for RustDesk"
+  author: "RustDesk"
+  showVisitedLinks: false
+  disableSearch: false
+  disableBreadcrumb: false
+  disableNextPrev: false
+  disableLandingPageButton: true
+  disableMermaid: false
+  titleSeparator: "::"
+  themeVariant: "blue"
+  custom_css: ["css/theme-mine.css", "css/custom-enhancements.css"]
+  
+  navbar:
+    displayTitle: true
+    displayLogo: true
+    logo:
+      path: images/logo.svg
+      width: 24
+      height: 24
+  
+  footer:
+    displayCopyright: true
+    displayPoweredBy: false
+  
+  theme:
+    default: system
+    displayToggle: true
+  
+  editURL:
+    enable: true
+    base: "https://github.com/rustdesk/doc.rustdesk.com/edit/master/content"
+
+# Main navigation menu
+menu:
+  main:
+    - name: Search
+      weight: 1
+      params:
+        type: search
+    - name: GitHub
+      url: "https://github.com/rustdesk/doc.rustdesk.com"
+      weight: 2
+      params:
+        icon: github
+    - name: Discord
+      url: "https://discord.com/invite/nDceKgxnkV"
+      weight: 3
+      params:
+        icon: discord
+    - name: Twitter
+      url: "https://twitter.com/rustdesk"
+      weight: 4
+      params:
+        icon: x-twitter
+    - name: Reddit
+      url: "https://www.reddit.com/r/rustdesk/"
+      weight: 5
+      params:
+        icon: reddit
+
+# Multi-language configuration
+languages:
+  en:
+    title: "Documentation for RustDesk"
+    weight: 1
+    languageName: "English"
+    params:
+      landingPageName: "🏠 Home"
+      disable_cookie: true
+
+  es:
+    title: "Documentación para RustDesk"
+    weight: 1
+    languageName: "Español"
+    params:
+      landingPageName: "🏠 Principal"
+
+  fr:
+    title: "Documentation du RustDesk"
+    weight: 2
+    languageName: "Français"
+    params:
+      landingPageName: "🏠 Page d'accueil"
+
+  # ru:
+  #  title: "Документация для RustDesk"
+  #  weight: 2
+  #  languageName: "Русский"
+  #  params:
+  #    landingPageName: "🏠 Домашняя страница"
+
+  pt:
+    title: "Documentação para RustDesk"
+    weight: 2
+    languageName: "Português"
+    params:
+      landingPageName: "🏠 Pagina inicial"
+
+  it:
+    title: "Documentazione per RustDesk"
+    weight: 2
+    languageName: "Italiano"
+    params:
+      landingPageName: "🏠 Pagina iniziale"
+
+  de:
+    title: "Dokumentation für RustDesk"
+    weight: 2
+    languageName: "Deutsch"
+    params:
+      landingPageName: "🏠 Startseite"
+
+  #nl:
+  #  title: "Documentatie voor RustDesk"
+  #  weight: 2
+  #  languageName: "Nederlands"
+  #  params:
+  #    landingPageName: "🏠 Startpagina"
+
+  # tr:
+  #  title: "RustDesk için Belgeler"
+  #  weight: 2
+  #  languageName: "Türkçe"
+  #  params:
+  #    landingPageName: "🏠 Ana sayfa"
+
+  ja:
+    title: "RustDeskのドキュメント"
+    weight: 2
+    languageName: "日本語"
+    params:
+      landingPageName: "🏠 ホームページ"
+
+  zh-cn:
+    title: "RustDesk文档"
+    weight: 3
+    languageName: "简体中文"
+    params:
+      landingPageName: "🏠 首页"
+      disable_cookie: true
+
+  zh-tw:
+    title: "RustDesk文檔"
+    weight: 3
+    languageName: "繁體中文"
+    params:
+      landingPageName: "🏠 首頁"

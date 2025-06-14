@@ -1,5 +1,6 @@
 ---
 title: "RustDesk 文件"
+type: docs
 weight: 1
 ---
 
@@ -16,9 +17,9 @@ RustDesk 是一個功能完整的開源遠端控制替代方案，支援自託�
 - 我們喜歡保持簡單，並將努力在可能的地方變得更簡單。
 
 ### GitHub 儲存庫
-主客戶端儲存庫：https://github.com/rustdesk/rustdesk</br>
-開源伺服器儲存庫：https://github.com/rustdesk/rustdesk-server</br>
-專業伺服器儲存庫：https://github.com/rustdesk/rustdesk-server-pro</br>
-文件儲存庫：https://github.com/rustdesk/doc.rustdesk.com</br>
+- **主客戶端儲存庫**: https://github.com/rustdesk/rustdesk
+- **開源伺服器儲存庫**: https://github.com/rustdesk/rustdesk-server
+- **專業伺服器儲存庫**: https://github.com/rustdesk/rustdesk-server-pro
+- **文件儲存庫**: https://github.com/rustdesk/doc.rustdesk.com
 
 {{% children depth="4" showhidden="true" %}}

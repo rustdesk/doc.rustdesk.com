@@ -1,0 +1,26 @@
+{{/* Children shortcode - simple top-level cards with titles only */}}
+{{- $showhidden := .Get "showhidden" | default false -}}
+{{- $cols := (.Get "cols" | default "2") | int -}}
+
+{{/* Get direct children only */}}
+{{- $pages := .Page.Pages -}}
+{{- if not $showhidden -}}
+  {{- $pages = where .Page.Pages "Params.hidden" "!=" true -}}
+{{- end -}}
+
+{{/* Sort by weight */}}
+{{- $pages = sort $pages "Weight" -}}
+
+{{- if $pages -}}
+{{/* Create Hextra cards container */}}
+<div class="hextra-cards hx:mt-4 hx:gap-4 hx:grid not-prose" style="--hextra-cards-grid-cols: {{ $cols }};">
+  {{- range $pages -}}
+    {{/* Use Hextra's card partial - title only, no subtitle */}}
+    {{- partial "shortcodes/card.html" (dict 
+      "link" .RelPermalink
+      "title" .Title
+      "icon" (.Params.icon | default "document-text")
+    ) -}}
+  {{- end -}}
+</div>
+{{- end -}}

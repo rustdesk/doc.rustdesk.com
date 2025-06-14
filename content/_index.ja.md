@@ -1,5 +1,6 @@
 ---
 title: "RustDesk ドキュメント"
+type: docs
 weight: 1
 ---
 
@@ -16,9 +17,9 @@ RustDesk は、最小限の設定でセルフホスティングとセキュリ�
 - 物事をシンプルに保つことを好み、可能な限りよりシンプルにするよう努力します。
 
 ### GitHub リポジトリ
-メインクライアントリポジトリ：https://github.com/rustdesk/rustdesk</br>
-オープンソースサーバーリポジトリ：https://github.com/rustdesk/rustdesk-server</br>
-プロサーバーリポジトリ：https://github.com/rustdesk/rustdesk-server-pro</br>
-ドキュメントリポジトリ：https://github.com/rustdesk/doc.rustdesk.com</br>
+- **メインクライアントリポジトリ**: https://github.com/rustdesk/rustdesk
+- **オープンソースサーバーリポジトリ**: https://github.com/rustdesk/rustdesk-server
+- **プロサーバーリポジトリ**: https://github.com/rustdesk/rustdesk-server-pro
+- **ドキュメントリポジトリ**: https://github.com/rustdesk/doc.rustdesk.com
 
 {{% children depth="4" showhidden="true" %}}

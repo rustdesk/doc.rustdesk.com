@@ -21,5 +21,4 @@ yarn-error.log*
 *lock
 public/
 .DS_Store
-themes
 hugo.toml

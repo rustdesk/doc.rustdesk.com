@@ -1,0 +1,17 @@
+{{/* 
+Notice shortcode for alerts/callouts (replacement for Learn theme)
+Uses Hextra's native GitHub-style alert system
+*/}}
+{{- $type := .Get 0 | default "note" -}}
+{{- $content := .Inner | strings.TrimSpace -}}
+
+{{/* Map Learn theme notice types to Hextra alert types */}}
+{{- $alertType := $type -}}
+{{- if eq $type "info" -}}
+  {{- $alertType = "note" -}}
+{{- else if eq $type "danger" -}}
+  {{- $alertType = "caution" -}}
+{{- end -}}
+
+{{/* Use Hextra's GitHub-style alert component */}}
+{{- partial "components/github-style-alert.html" (dict "content" ($content | markdownify) "alertType" $alertType "alertTitle" "") -}}

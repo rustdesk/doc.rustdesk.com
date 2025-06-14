@@ -1,5 +1,6 @@
 ---
 title: "RustDesk Dokumentation"
+type: docs
 weight: 1
 ---
 
@@ -16,9 +17,9 @@ RustDesk ist eine vollausgestattete Open-Source-Alternative für Fernsteuerung m
 - Wir mögen es einfach und werden uns bemühen, es wo möglich noch einfacher zu machen.
 
 ### GitHub Repositories
-Haupt-Client-Repository: https://github.com/rustdesk/rustdesk</br>
-Open-Source-Server-Repository: https://github.com/rustdesk/rustdesk-server</br>
-Pro-Server-Repository: https://github.com/rustdesk/rustdesk-server-pro</br>
-Dokumentations-Repository: https://github.com/rustdesk/doc.rustdesk.com</br>
+- **Haupt-Client-Repository**: https://github.com/rustdesk/rustdesk
+- **Open-Source-Server-Repository**: https://github.com/rustdesk/rustdesk-server
+- **Pro-Server-Repository**: https://github.com/rustdesk/rustdesk-server-pro
+- **Dokumentations-Repository**: https://github.com/rustdesk/doc.rustdesk.com
 
 {{% children depth="4" showhidden="true" %}}

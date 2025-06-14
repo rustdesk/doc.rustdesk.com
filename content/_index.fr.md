@@ -1,5 +1,6 @@
 ---
 title: "Documentation RustDesk"
+type: docs
 weight: 1
 ---
 
@@ -16,9 +17,9 @@ RustDesk est une alternative de contrôle à distance open source complète pour
 - Nous aimons garder les choses simples et nous efforcerons de les simplifier autant que possible.
 
 ### Dépôts GitHub
-Dépôt client principal : https://github.com/rustdesk/rustdesk</br>
-Dépôt serveur open source : https://github.com/rustdesk/rustdesk-server</br>
-Dépôt serveur Pro : https://github.com/rustdesk/rustdesk-server-pro</br>
-Dépôt de documentation : https://github.com/rustdesk/doc.rustdesk.com</br>
+- **Dépôt client principal** : https://github.com/rustdesk/rustdesk
+- **Dépôt serveur open source** : https://github.com/rustdesk/rustdesk-server
+- **Dépôt serveur Pro** : https://github.com/rustdesk/rustdesk-server-pro
+- **Dépôt de documentation** : https://github.com/rustdesk/doc.rustdesk.com
 
 {{% children depth="4" showhidden="true" %}}
