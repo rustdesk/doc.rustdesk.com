@@ -33,7 +33,7 @@ imaging:
 
 # Output formats
 outputs:
-  home: ["HTML", "RSS", "JSON"]
+  home: ["HTML", "RSS"]
 
 # Parameters
 params:
@@ -59,7 +59,7 @@ params:
       height: 24
   
   footer:
-    displayCopyright: true
+    displayCopyright: false
     displayPoweredBy: false
   
   theme:
