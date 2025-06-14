@@ -8,7 +8,7 @@ Se stai usando RustDesk dovresti avere il tuo server RustDesk, questi documenti 
 
 Il supporto è disponibile tramite il nostro [Discord](https://discord.com/invite/nDceKgxnkV) per OSS e via [email](mailto:support@rustdesk.com) per Pro.
 
-### Come funziona il server self-hosted?
+## Come funziona il server self-hosted?
 
 Tecnicamente ci sono due eseguibili (server):
 
@@ -31,7 +31,7 @@ Nella maggior parte dei casi, il hole punching ha successo e il server relay non
 
 Ecco una discussione su [Dovresti self-hostare un server rustdesk?](https://www.reddit.com/r/rustdesk/comments/1cr8kfv/should_you_selfhost_a_rustdesk_server/)
 
-### Porte Richieste
+## Porte Richieste
 
 Le porte richieste per il self-hosting del server RustDesk dipendono largamente dal tuo ambiente e da cosa vuoi fare con RustDesk. Gli esempi mostrati nella documentazione avranno generalmente tutte le porte suggerite da aprire.
 

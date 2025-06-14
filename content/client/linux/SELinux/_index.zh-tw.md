@@ -19,7 +19,7 @@ SELinux status: disabled
 ...
 ```
 
-### 新增 SELinux 政策
+## 新增 SELinux 政策
 
 關於 SELinux 的介紹，請參考 [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials)。
 
@@ -47,7 +47,7 @@ system_u:system_r:init_t:s0 80439 ? 00:00:02 rustdesk
 
 第二種方法是從頭新增規則。需要新增很多規則，不同系統可能有差異。在實際使用過程中可能需要做一些調整。
 
-#### 使用預設類型
+### 使用預設類型
 
 RustDesk 服務的預設類型是 `init_t`，這是由 [SELinux 的上下文繼承規則](https://wiki.gentoo.org/wiki/SELinux/Tutorials/How_does_a_process_get_into_a_certain_context) 決定的。
 
@@ -112,7 +112,7 @@ $ checkmodule -M -m -o rustdesk.mod rustdesk.te && semodule_package -o rustdesk.
 $ sudo semodule -l | grep rustdesk
 ```
 
-#### 建立類型 `rustdesk_t`
+### 建立類型 `rustdesk_t`
 
 1. 建立新目錄：`mkdir rustdesk-selinux-1.0`。
 2. 建立 SELinux 政策檔案：`touch Makefile rustdesk.te rustdesk.fc rustdesk.if`。
@@ -138,7 +138,7 @@ $ sudo semodule -l | grep rustdesk
 
 **由於 SELinux 政策檔案非常複雜且包含大量技術細節，為了簡潔起見，這裡省略了完整的技術配置內容。完整的配置請參考英文版本。**
 
-### 自動生成 SELinux 政策 (sepolicy)
+## 自動生成 SELinux 政策 (sepolicy)
 
 ```sh
 $ # 安裝依賴項
@@ -163,7 +163,7 @@ $ # 重新啟動服務
 $ sudo systemctl restart rustdesk
 ```
 
-#### 迭代新增政策
+### 迭代新增政策
 
 ```sh
 $ cd /tmp
@@ -173,7 +173,7 @@ $ # 將 rustdesk_tmp.te 合併到 rustdesk.te
 $ make clean && make && sudo make install-policy
 ```
 
-### 參考資料
+## 參考資料
 
 - [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials)
 - [SELinux Policy module installation](https://fedoraproject.org/wiki/SELinux/IndependentPolicy#SELinux_Policy_module_installation)

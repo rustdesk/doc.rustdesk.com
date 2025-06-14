@@ -11,19 +11,19 @@ This tutorial is based on latest DSM v6 and v7.
 After DSM 7.2 update, the Docker is upgraded to new "Container Manager", please check [this article](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7) instead.
 {{% /notice %}}
 
-### Install Docker
+## Install Docker
 
 | Open Package Center | Install Docker |
 | --- | --- |
 | ![](images/package-manager.png) | ![](images/docker.png) |
 
-### Install RustDesk Server
+## Install RustDesk Server
 
 | Search rustdesk-server in Docker's registry and install by double click | Installed rustdesk-server image, double click to create rustdesk-server container |
 | --- | --- |
 | ![](images/pull-rustdesk-server.png) | ![](images/rustdesk-server-installed.png) |
 
-### Create hbbs container
+## Create hbbs container
 
 As mentioned above, double click on rustdesk-server image to create new container, set it name to `hbbs`.
 ![](images/hbbs.png)
@@ -52,13 +52,13 @@ Synology's OS is Debian based, so host net (--net=host) works fine, we do not ne
 
 - Done
 
-### Create hbbr container
+## Create hbbr container
 
 Please repeat above `hbbs` steps, but name the container `hbbr` and command (for Set Command Step) should be `hbbr`.
 
 ![](images/hbbr-config.png)
 
-### hbbr/hbbs containers
+## hbbr/hbbs containers
 
 ![](images/containers.png)
 
@@ -66,6 +66,6 @@ Please repeat above `hbbs` steps, but name the container `hbbr` and command (for
 | --- | --- |
 | ![](images/log.png) | ![](images/network-types.png) |
 
-### Retrieve your Key
+## Retrieve your Key
 
 Browse to the folder setup before using File Station, download `id_ed25519.pub` and open with a text editor to via your key.

@@ -9,7 +9,7 @@ weight: 4
 この簡単インストールを行う前に、まず[OSSインストール](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/)をお読みください。そこでより多くの基礎的な詳細を知ることができます。
 {{% /notice %}}
 
-### インストール
+## インストール
 
 RustDesk Server Proをインストールするために、上記のコマンドをLinuxターミナルにコピーして貼り付けてください。
 
@@ -43,7 +43,7 @@ systemdサービスの開始に失敗した場合、おそらくSELinuxに関連
 クライアントがサーバーに接続できない、またはWebコンソールにアクセスできない場合は、[こちら](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#firewall)をご確認ください。
 {{% /notice %}}
 
-### アップグレード
+## アップグレード
 
 既存のRustDesk Server Proインストールをアップグレードするために、上記のコマンドをLinuxターミナルにコピーして貼り付けてください。これはローカルに保存してcronでスケジュールすることもできます。
 
@@ -60,7 +60,7 @@ systemdサービスの開始に失敗した場合、おそらくSELinuxに関連
 - RustDesk Server Proの新しいバージョンを確認
 - 新しいバージョンが見つかった場合、APIファイルを削除し、新しい実行ファイルとAPIファイルをダウンロード
 
-### オープンソースからの変換
+## オープンソースからの変換
 
 RustDesk ServerからRustDesk Server Proに変換するために、上記のコマンドをLinuxターミナルにコピーして貼り付けてください。
 

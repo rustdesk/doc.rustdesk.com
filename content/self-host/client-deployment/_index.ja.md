@@ -12,7 +12,7 @@ pre: "<b>2.4. </b>"
 
 永続パスワードは、PowerShellの`rustdesk_pw`の後の`()`内の内容をお好みのパスワードに変更し、他のプラットフォームの対応する行を変更することで、ランダムからお好みのものに変更できます。
 
-### PowerShell
+## PowerShell
 
 ```powershell
 $ErrorActionPreference= 'silentlycontinue'
@@ -23,7 +23,7 @@ $rustdesk_pw=(-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})
 # Webポータルから設定文字列を取得し、以下で入力してください
 $rustdesk_cfg="configstring"
 
-################################### この線より下を編集しないでください #########################################
+################################## この線より下を編集しないでください #########################################
 
 # 管理者として実行し、現在のディレクトリに残る
 if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
@@ -133,7 +133,7 @@ Write-Output "パスワード: $rustdesk_pw"
 Write-Output "..............................................."
 ```
 
-### Windows batch/cmd
+## Windows batch/cmd
 
 ```bat
 @echo off
@@ -181,14 +181,14 @@ echo パスワード: %rustdesk_pw%
 echo ...............................................
 ```
 
-### MSI
+## MSI
 
 `rustdesk.exe --silent-install`の代わりにmsiを使用することもできます。
 
 https://rustdesk.com/docs/en/client/windows/msi/
 
 
-### Winget
+## Winget
 
 wingetを使ってpowershell経由でデプロイすることもできます（これは最近のWindowsインストールの一部であるMicrosoft版apt経由でインストールします）
 
@@ -198,7 +198,7 @@ powershellウィンドウから、またはスクリプト経由で（例えばG
 winget install --id=RustDesk.RustDesk  -e
 ```
 
-### macOS Bash
+## macOS Bash
 
 ```sh
 #!/bin/bash
@@ -209,7 +209,7 @@ rustdesk_pw=$(openssl rand -hex 4)
 # Webポータルから設定文字列を取得し、以下で入力してください
 rustdesk_cfg="configstring"
 
-################################### この線より下を編集しないでください #########################################
+################################## この線より下を編集しないでください #########################################
 
 # 特権昇格のためのrootパスワードの要求
 [ "$UID" -eq 0 ] || exec sudo bash "$0" "$@"
@@ -275,7 +275,7 @@ echo "GUIでインストールを完了してください。RustDeskを起動し
 open -n /Applications/RustDesk.app
 ```
 
-### Linux
+## Linux
 
 ```sh
 #!/bin/bash
@@ -286,7 +286,7 @@ rustdesk_pw=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 # Webポータルから設定文字列を取得し、以下で入力してください
 rustdesk_cfg="configstring"
 
-################################### この線より下を編集しないでください #########################################
+################################## この線より下を編集しないでください #########################################
 
 # スクリプトがrootとして実行されているか確認
 if [[ $EUID -ne 0 ]]; then

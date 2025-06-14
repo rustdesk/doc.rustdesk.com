@@ -14,7 +14,7 @@ You first need to go to the account settings page.
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/1-settings-account.png)
 
-### Email verification
+## Email verification
 
 To enable email verification for login, you need:
 
@@ -28,16 +28,16 @@ When we log in next time, RustDesk will send us a verification code email, and t
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/2-2fa-email-2.png)
 
-### TOTP
+## TOTP
 
 TOTP is a widely used 2FA method, so in the web console of RustDesk Server Pro, 2FA refers to TOTP verification.
 
-#### Prepare authentication app
+### Prepare authentication app
 
 First, you need to prepare an authentication app.
 You can choose from these types [Authy](https://authy.com), [Microsoft Authenticator](https://www.microsoft.com/en-us/security/mobile-authenticator-app/) and [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2) authentication app.
 
-#### Enable 2FA
+### Enable 2FA
 
 When the `Enable 2FA` button is displayed on the settings page, it means that 2FA is not currently enabled.
 
@@ -65,7 +65,7 @@ After 2FA is successfully turned on, RustDesk Server Pro will also be bound to 6
 2. Please keep the backup codes in a safe place.
 {{% /notice %}}
 
-#### Login verification
+### Login verification
 
 When 2FA is enabled, email login verification is no longer used. We will be using 2FA login verification instead.
 
@@ -75,7 +75,7 @@ When logging in, you will be redirected to the verification page.
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-enable-login-6.png)
 
-#### Modify settings
+### Modify settings
 
 When 2FA is enabled, modifying account settings requires additional 2FA verification.
 
@@ -83,7 +83,7 @@ When 2FA is enabled, modifying account settings requires additional 2FA verifica
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-settings-2.png)
 
-#### 2FA state
+### 2FA state
 
 2FA has a total of 3 states: not enabled, enabled and expired.
 

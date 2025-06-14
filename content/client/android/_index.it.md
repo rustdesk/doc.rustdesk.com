@@ -3,7 +3,7 @@ title: Android
 weight: 4
 ---
 
-### Controllo remoto
+## Controllo remoto
 
 Inserisci l'ID del dispositivo remoto nella pagina iniziale o seleziona un dispositivo storico per verificare.
 Dopo la verifica riuscita, puoi controllare il dispositivo remoto.
@@ -22,7 +22,7 @@ Il controllo input offre due modalità: `Modalità mouse` e `Modalità touch`, c
 In `Modalità mouse`, puoi anche attivare il `Clic destro` del dispositivo remoto con un `Tocco a due dita`
 {{% /notice %}}
 
-### Trasferimento file (Android)
+## Trasferimento file (Android)
 
 > Richiede RustDesk ≥ 1.1.9
 
@@ -40,7 +40,7 @@ Tieni premuto o tocca il menu a destra per selezionare `Trasferimento file`.
 - Il percorso assoluto corrente e le statistiche del progetto saranno visualizzati in fondo alla lista.
 - Clicca su `Locale` / `Remoto` nella barra del titolo per cambiare pagina.
 
-#### Come trasferire i file?
+### Come trasferire i file?
 
 1. **Tieni premuto** un file o cartella nella lista per entrare rapidamente in **modalità selezione multipla**, che può selezionare più elementi.
 2. Dopo aver selezionato il/i file, cambia la pagina `Locale` / `Remoto`. Dopo il cambio, vedrai il prompt `Incolla qui?` in fondo allo schermo.
@@ -50,7 +50,7 @@ Tieni premuto o tocca il menu a destra per selezionare `Trasferimento file`.
 | --- | --- |
 | ![](/docs/en/client/android/images/file_multi_select_en.jpg?width=300px) | ![](/docs/en/client/android/images/file_copy_en.jpg?width=300px) |
 
-### Imposta server ID/Relay
+## Imposta server ID/Relay
 
 1. Clicca su `Impostazioni` nella barra di navigazione inferiore.
 2. Clicca su `Server ID/Relay`.
@@ -68,7 +68,7 @@ L'immagine sotto è uno screenshot di Android. Se è iOS, controlla il menu in a
 
 ![](/docs/en/client/android/images/id_setting_en.jpg?width=300px)
 
-### Condividi schermo/file del tuo telefono Android
+## Condividi schermo/file del tuo telefono Android
 
 A partire dalla versione 1.1.9, il client Android ha aggiunto le funzioni di condivisione dello schermo del telefono e di condivisione del file system del telefono.
 
@@ -76,7 +76,7 @@ A partire dalla versione 1.1.9, il client Android ha aggiunto le funzioni di con
 - Android 10 o superiore è richiesto per condividere l'audio interno del sistema del telefono cellulare
 - iOS non supporta ancora la condivisione dello schermo
 
-#### Richiedi permessi e avvia servizi
+### Richiedi permessi e avvia servizi
 
 Clicca su `Condividi schermo` nella barra di navigazione inferiore.
 
@@ -95,13 +95,13 @@ Configura vari permessi secondo necessità. Ogni volta che avvii RustDesk, devi 
 Il * sopra rappresenta permessi speciali. Per ottenere tali permessi, devi saltare alla pagina delle impostazioni del sistema Android per ottenerli manualmente. I dettagli sono i seguenti
 {{% /notice %}}
 
-#### Richiesta permesso speciale - File
+### Richiesta permesso speciale - File
 
 | Richiedere permessi file Android salterà automaticamente alla pagina delle impostazioni di sistema |
 | :---: |
 | ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
-#### Richiesta permesso speciale - input mouse
+### Richiesta permesso speciale - input mouse
 | Passo 1: Trova "Servizi installati" | Passo 2: Avvia RustDesk Input |
 | --- | --- |
 | ![](/docs/en/client/android/images/get_input1_en.jpg?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
@@ -117,7 +117,7 @@ La pagina delle impostazioni di sistema di diversi fornitori può essere diversa
 | Pressione lunga rotella del mouse | App aperte di recente |
 | Scorrimento rotella del mouse | Simula scorrimento verticale |
 
-#### Avvia servizio
+### Avvia servizio
 
 Dopo aver ottenuto il permesso `Cattura schermo`, il servizio sarà avviato automaticamente. Puoi anche cliccare sul pulsante `Avvia servizio` per avviare il servizio. Una volta avviato il servizio, può accettare richieste di controllo desktop da altri dispositivi.
 
@@ -135,11 +135,11 @@ Dopo aver avviato il servizio, un ID unico e una password casuale saranno automa
 3. Eccetto per il permesso `Cattura schermo`, il cambio di altri permessi influenzerà solo le nuove connessioni e non influenzerà la connessione stabilita. Se devi cambiare permessi per una connessione stabilita, chiudi prima la connessione corrente, modifica i permessi e poi ricevi una richiesta di controllo.
 {{% /notice %}}
 
-##### PC
+#### PC
 
 ![](/docs/en/client/android/images/android_server_pc_side_en.png?width=700px)
 
-##### Terminale mobile
+#### Terminale mobile
 
 | Puoi fermare il servizio o chiudere la connessione specificata in qualsiasi momento | Puoi ricevere o iniziare chat |
 | --- | --- |

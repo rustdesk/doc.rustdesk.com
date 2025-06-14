@@ -3,27 +3,27 @@ title: Linux
 weight: 10
 ---
 
-### Auf Linux erstellen
+## Auf Linux erstellen
 
-#### Ubuntu 18 (Debian 10)
+### Ubuntu 18 (Debian 10)
 
 ```sh
 sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang libxcb-randr0-dev libxdo-dev libxfixes-dev libxcb-shape0-dev libxcb-xfixes0-dev libasound2-dev libpulse-dev cmake
 ```
 
-#### Fedora 28 (CentOS 8)
+### Fedora 28 (CentOS 8)
 
 ```sh
 sudo yum -y install gcc-c++ git curl wget nasm yasm gcc gtk3-devel clang libxcb-devel libxdo-devel libXfixes-devel pulseaudio-libs-devel cmake alsa-lib-devel
 ```
 
-#### Arch Linux (Manjaro)
+### Arch Linux (Manjaro)
 
 ```sh
 sudo pacman -Syu --needed unzip git cmake gcc curl wget yasm nasm zip make pkg-config clang gtk3 xdotool libxcb libxfixes alsa-lib pulseaudio
 ```
 
-#### vcpkg installieren
+### vcpkg installieren
 
 ```sh
 git clone https://github.com/microsoft/vcpkg
@@ -35,7 +35,7 @@ export VCPKG_ROOT=$PWD/vcpkg
 vcpkg/vcpkg install --x-install-root="$VCPKG_ROOT/installed"
 ```
 
-#### libvpx reparieren (für Fedora)
+### libvpx reparieren (für Fedora)
 
 ```sh
 cd vcpkg/buildtrees/libvpx/src
@@ -48,7 +48,7 @@ cp libvpx.a $VCPKG_ROOT/installed/x64-linux/lib/
 cd
 ```
 
-#### Erstellen
+### Erstellen
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

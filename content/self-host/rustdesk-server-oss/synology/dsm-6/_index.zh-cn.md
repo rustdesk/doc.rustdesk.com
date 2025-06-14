@@ -11,19 +11,19 @@ weight: 22
 DSM 7.2 更新后，Docker 升级为新的 "Container Manager"，请查看[这篇文章](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7)。
 {{% /notice %}}
 
-### 安装 Docker
+## 安装 Docker
 
 | 打开套件中心 | 安装 Docker |
 | --- | --- |
 | ![](images/package-manager.png) | ![](images/docker.png) |
 
-### 安装 RustDesk Server
+## 安装 RustDesk Server
 
 | 在 Docker 注册表中搜索 rustdesk-server 并双击安装 | 已安装 rustdesk-server 镜像，双击创建 rustdesk-server 容器 |
 | --- | --- |
 | ![](images/pull-rustdesk-server.png) | ![](images/rustdesk-server-installed.png) |
 
-### 创建 hbbs 容器
+## 创建 hbbs 容器
 
 如上所述，双击 rustdesk-server 镜像创建新容器，设置名称为 `hbbs`。
 ![](images/hbbs.png)
@@ -52,13 +52,13 @@ Synology 的操作系统基于 Debian，所以主机网络 (--net=host) 工作�
 
 - 完成
 
-### 创建 hbbr 容器
+## 创建 hbbr 容器
 
 请重复上面的 `hbbs` 步骤，但将容器命名为 `hbbr`，命令（设置命令步骤）应该是 `hbbr`。
 
 ![](images/hbbr-config.png)
 
-### hbbr/hbbs 容器
+## hbbr/hbbs 容器
 
 ![](images/containers.png)
 
@@ -66,6 +66,6 @@ Synology 的操作系统基于 Debian，所以主机网络 (--net=host) 工作�
 | --- | --- |
 | ![](images/log.png) | ![](images/network-types.png) |
 
-### 获取您的密钥
+## 获取您的密钥
 
 使用 File Station 浏览到之前设置的文件夹，下载 `id_ed25519.pub` 并用文本编辑器打开以查看您的密钥。

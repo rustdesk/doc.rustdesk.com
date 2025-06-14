@@ -40,7 +40,7 @@ sudo docker compose up -d
 - ### Docker
 ```
 sudo docker ps
-# 您也可以使用 <容器名稱>，例如 `hbbs` 和 `hbbr`（如果您按照我們的手冊操作）。
+## 您也可以使用 <容器名稱>，例如 `hbbs` 和 `hbbr`（如果您按照我們的手冊操作）。
 sudo docker stop <容器ID>
 sudo docker rm <容器ID>
 sudo docker rmi <映像ID>

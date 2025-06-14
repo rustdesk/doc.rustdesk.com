@@ -4,10 +4,10 @@ weight: 2
 pre: "<b>1. </b>"
 ---
 
-### Introducción
+## Introducción
 El cliente RustDesk es utilizado en dispositivos para conectar con los servidores de RustDesk, tanto el servidor Pro como el de código abierto. El cliente esta disponible en [GitHub](https://github.com/rustdesk/rustdesk/releases/latest).
 
-### Plataformas compatibles
+## Plataformas compatibles
 - Microsoft Windows
 - macOS
 - Derivados de Debian (Ubuntu, Mint, etc.)
@@ -19,16 +19,16 @@ El cliente RustDesk es utilizado en dispositivos para conectar con los servidore
 - iOS (no soporta control remoto)
 - Web (1.1.9 Beta)
 
-### Instalación
+## Instalación
 
-#### Windows
+### Windows
 
 Descarga el .exe de Github y ejecútalo.
 
 Para instalar silenciosamente ejecuta el .exe con el parámetro `--silent-install`.
 
 
-#### macOS
+### macOS
 
 Descarga el archivo .dmg de Github, mas información en la [pagina de macOS](/docs/es/client/mac/).
 
@@ -39,43 +39,43 @@ Permite la ejecución de RustDesk
 Habilita la petición de permisos y seguí las instrucciones del lado inquiero del cliente de RustDesk para terminar la configuración.
 Enable permissions requested and follow prompts on the left hand side of RustDesk to finish setup.
 
-#### Linux
+### Linux
 
 Por favor lee las instrucciones de abajo para instalar en los distintos "sabores" de Linux, todos los instaladores están en GitHub
 
 
-#### Derivados de  Debian (>= 16)
+### Derivados de  Debian (>= 16)
 
 ```sh
 # Ignora el reporte de uso incorrecto del disco {wrong disk usage}.
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
-#### CentOS/Fedora (>= 18)
+### CentOS/Fedora (>= 18)
 
 ```sh
 sudo yum localinstall ./rustdesk-<version>.rpm
 ```
 
-#### Arch/Manjaro
+### Arch/Manjaro
 
 ```sh
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 ```
 
-#### openSUSE (>= Leap 15.0)
+### openSUSE (>= Leap 15.0)
 
 ```sh
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
-#### Android
+### Android
 Instala el archivo .apk de nuestro GitHub, mas información en la [Pagina de android](/docs/es/client/android/)
 
-#### iOS (iPhone, iPad)
+### iOS (iPhone, iPad)
 Descarga la app de la [App Store](https://apps.apple.com/us/app/rustdesk-remote-desktop/id1581225015).
 
 
-### Utilización
+## Utilización
 Una vez instalado(o ejecutado de manera temporal) RustDesk se conectara a los servidores públicos. Veras un mensaje en la parte inferior con el texto (1) "Listo, Para una conexión mas rápida, configure su propio servidor". En la parte superior izquierda veras (2) ID, (3) Contraseña de un solo uso, (4) entrada de texto para conectar a otra computadora mediante su ID
 
 ![image](/docs/en/client/images/client.png)
@@ -91,7 +91,7 @@ En ajustes encontraras:
 - About - Muestra información sobre el software.
 
 
-### Configurando RustDesk
+## Configurando RustDesk
 
 Hay varias maneras de configurar RUstDesk
 
@@ -109,7 +109,7 @@ Podes configurar el cliente manualmente también, para hacerlo:
 
 Si configuras el cliente manualmente, podes usar el archivo `RustDesk2.toml` (en la carpeta de usuarios) y usar `--import-config` de manera similar al ejemplo de arriba.
 
-### Parámetros de la linea de comandos
+## Parámetros de la linea de comandos
 - `--password` Puede ser usado para establecer un parámetro de contraseña
 - `--get-id` Puede ser usado para obtener la ID
 - `--set-id` Puede ser usado para establecer una ID, tenga en cuenta que las ID necesitan empezar con una letra.

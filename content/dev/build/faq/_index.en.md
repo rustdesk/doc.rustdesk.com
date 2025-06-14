@@ -3,9 +3,9 @@ title: FAQ for Windows
 weight: 40
 ---
 
-### vcpkg download package failed
+## vcpkg download package failed
 
-#### Error
+### Error
 
 ```
  -- Fetching https://chromium.googlesource.com/libyuv/libyuv 287158925b0e03ea4499a18b4e08478c5781541b...
@@ -13,15 +13,15 @@ weight: 40
        Command failed: D:/program/Git/mingw64/bin/git.exe fetch https://chromium.googlesource.com/libyuv/libyuv 287158925b0e03ea4499a18b4e08478c5781541b --depth 1 -n
 ```
 
-#### Solution
+### Solution
 
 Use a browser to download [libyuv-287158925b0e03ea4499a18b4e08478c5781541b.tar.gz](https://chromium.googlesource.com/libyuv/libyuv/+archive/287158925b0e03ea4499a18b4e08478c5781541b.tar.gz), then move it into `vcpkg/downloads` and reinstall.
 
 
 
-### Package in Cargo.lock not exist
+## Package in Cargo.lock not exist
 
-#### Error
+### Error
 
 ```
 $ cargo run
@@ -42,34 +42,34 @@ $ cargo run
 
 Maybe the author used `git force push` and the previous commit was overwritten.
 
-#### Solution
+### Solution
 
 `cargo update`, force the package to be updated.
 
 
 
-### VCPKG_ROOT not set
+## VCPKG_ROOT not set
 
-#### Error
+### Error
 
 ```
 thread 'main' panicked at 'Failed to find package: VcpkgNotFound("No vcpkg installation found. Set the VCPKG_ROOT environment variable or run 'vcpkg integrate install'")', libs\scrap\build.rs:7:45
 ```
 
-#### Solution
+### Solution
 
 Add `VCPKG_ROOT` environment variable, or run with `VCPKG_ROOT=<vcpkg_dir> cargo run`.
 
 
 
-### clang not installed, or LIBCLANG_PATH not set
+## clang not installed, or LIBCLANG_PATH not set
 
-#### Error
+### Error
 
 ```
 thread 'main' panicked at 'Unable to find libclang: "couldn't find any valid shared libraries matching: ['clang.dll', 'libclang.dll'], set the `LIBCLANG_PATH` environment variable to a path where one of these files can be found (invalid: [])"', C:\Users\selfd\.cargo\registry\src\mirrors.ustc.edu.cn-61ef6e0cd06fb9b8\bindgen-0.59.2\src/lib.rs:2144:31
 ```
 
-#### Solution
+### Solution
 
 Install [LLVM](https://releases.llvm.org/download.html), add the `LIBCLANG_PATH` environment variable as `llvm_install_dir/bin`.

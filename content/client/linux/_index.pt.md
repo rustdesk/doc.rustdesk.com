@@ -3,9 +3,9 @@ title: Linux
 weight: 4
 ---
 
-### Instalação
+## Instalação
 
-#### Ubuntu (≥ 18)
+### Ubuntu (≥ 18)
 
 ```sh
 # por favor ignore o relatório de uso de disco incorreto
@@ -19,25 +19,25 @@ sudo add-apt-repository ppa:pipewire-debian/pipewire-upstream
 sudo apt update
 ```
 
-#### CentOS/Fedora (≥ 28)
+### CentOS/Fedora (≥ 28)
 
 ```sh
 sudo yum localinstall ./rustdesk-<version>.rpm
 ```
 
-#### Arch Linux/Manjaro
+### Arch Linux/Manjaro
 
 ```sh
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 ```
 
-#### openSUSE (≥ Leap 15.0)
+### openSUSE (≥ Leap 15.0)
 
 ```sh
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
-#### AppImage
+### AppImage
 
 ```sh
 # Para Fedora
@@ -51,7 +51,7 @@ sudo yum install libfuse2
 ./rustdesk-<version>.AppImage
 ```
 
-#### Flatpak
+### Flatpak
 
 ```sh
 flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -59,18 +59,18 @@ flatpak --user install ./rustdesk-<version>.flatpak
 flatpak run com.rustdesk.RustDesk
 ```
 
-### ~~X11 Necessário~~
+## ~~X11 Necessário~~
 ~~RustDesk ainda não suporta Wayland; você precisa mudar para X11 manualmente.~~
 
 RustDesk agora tem suporte experimental ao Wayland desde a versão 1.2.0.
 
-#### Servidor de Display
+### Servidor de Display
 
 [Ubuntu](https://askubuntu.com/questions/1260142/ubuntu-set-default-login-desktop) | 
 [Fedora](https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-default-gnome-session/) | 
 [Arch Linux](https://bbs.archlinux.org/viewtopic.php?id=218319)
 
-#### Tela de Login
+### Tela de Login
 
 A tela de login usando Wayland ainda não é suportada. Se você quiser acessar a tela de login após reiniciar ou sair com o RustDesk, você precisa alterar a tela de login para X11, por favor modifique a linha abaixo para `WaylandEnable=false` em `/etc/gdm/custom.conf` ou `/etc/gdm3/custom.conf`:
 
@@ -82,7 +82,7 @@ A tela de login usando Wayland ainda não é suportada. Se você quiser acessar 
 Por favor **reinicie** para que as alterações acima tenham efeito.
 {{% /notice %}}
 
-#### Problema de Permissões
+### Problema de Permissões
 
 Se o SELinux estiver habilitado, o RustDesk não funcionará corretamente nem em ambientes X11 nem Wayland, relacionado aos [problemas](https://github.com/search?q=repo%3Arustdesk%2Frustdesk+SElinux&type=issues).
 

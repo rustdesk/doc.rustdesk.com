@@ -14,7 +14,7 @@ Devi prima andare alla pagina delle impostazioni dell'account.
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/1-settings-account.png)
 
-### Verifica email
+## Verifica email
 
 Per abilitare la verifica email per il login, devi:
 
@@ -28,16 +28,16 @@ Quando effettueremo il login la prossima volta, RustDesk ci invierà un'email co
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/2-2fa-email-2.png)
 
-### TOTP
+## TOTP
 
 TOTP è un metodo 2FA ampiamente utilizzato, quindi nella console web di RustDesk Server Pro, 2FA si riferisce alla verifica TOTP.
 
-#### Preparare l'app di autenticazione
+### Preparare l'app di autenticazione
 
 Prima, devi preparare un'app di autenticazione.
 Puoi scegliere tra questi tipi [Authy](https://authy.com), [Microsoft Authenticator](https://www.microsoft.com/en-us/security/mobile-authenticator-app/) e [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2).
 
-#### Abilitare 2FA
+### Abilitare 2FA
 
 Quando il pulsante `Abilita 2FA` viene visualizzato nella pagina delle impostazioni, significa che 2FA non è attualmente abilitato.
 
@@ -65,7 +65,7 @@ Dopo che 2FA è stato attivato con successo, RustDesk Server Pro sarà anche ass
 2. Per favore mantieni i codici di backup in un posto sicuro.
 {{% /notice %}}
 
-#### Verifica di login
+### Verifica di login
 
 Quando 2FA è abilitato, la verifica login email non viene più usata. Useremo invece la verifica login 2FA.
 
@@ -75,7 +75,7 @@ Quando fai il login, sarai reindirizzato alla pagina di verifica.
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-enable-login-6.png)
 
-#### Modificare le impostazioni
+### Modificare le impostazioni
 
 Quando 2FA è abilitato, modificare le impostazioni dell'account richiede verifica 2FA aggiuntiva.
 
@@ -83,7 +83,7 @@ Quando 2FA è abilitato, modificare le impostazioni dell'account richiede verifi
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-settings-2.png)
 
-#### Stato 2FA
+### Stato 2FA
 
 2FA ha un totale di 3 stati: non abilitato, abilitato e scaduto.
 

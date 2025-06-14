@@ -8,7 +8,7 @@ RustDesk を使用している場合は、独自の RustDesk サーバーを持�
 
 OSS については [Discord](https://discord.com/invite/nDceKgxnkV) で、Pro については[メール](mailto:support@rustdesk.com)でサポートを利用できます。
 
-### セルフホストサーバーはどのように動作しますか？
+## セルフホストサーバーはどのように動作しますか？
 
 技術的には2つの実行可能ファイル（サーバー）があります：
 
@@ -31,7 +31,7 @@ ID サーバーは、ホールパンチングを使用して A と B を直接�
 
 [rustdesk サーバーをセルフホストすべきか？](https://www.reddit.com/r/rustdesk/comments/1cr8kfv/should_you_selfhost_a_rustdesk_server/)についての議論はこちらです
 
-### 必要なポート
+## 必要なポート
 
 RustDesk サーバーのセルフホスティングに必要なポートは、主に環境と RustDesk で何をしたいかによって大きく異なります。ドキュメント全体で示されている例では、一般的にすべてのポートを開くことが推奨されています。
 

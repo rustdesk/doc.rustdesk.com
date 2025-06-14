@@ -40,7 +40,7 @@ But this depends on your docker version, for more discussion, check [this](https
 - ### Docker
 ```
 sudo docker ps
-# you can also use <CONTAINER NAME>, e.g. `hbbs` and `hbbr` if you follow our manual.
+## you can also use <CONTAINER NAME>, e.g. `hbbs` and `hbbr` if you follow our manual.
 sudo docker stop <CONTAINER ID>
 sudo docker rm <CONTAINER ID>
 sudo docker rmi <IMAGE ID>

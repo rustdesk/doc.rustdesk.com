@@ -15,7 +15,7 @@ weight: 16
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/1-settings-account.png)
 
-### 邮件验证
+## 邮件验证
 
 开启登录的邮件验证，需要：
 
@@ -29,16 +29,16 @@ weight: 16
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/2-2fa-email-2.png)
 
 
-### TOTP
+## TOTP
 
 TOTP 是广泛使用的 2FA 方式，因此在 RustDesk Server Pro 的 web console 中，2FA 就是指 TOTP 验证。
 
-#### 准备 authentication app
+### 准备 authentication app
 
 首先，您需要准备一个 authentication app。
 您可以选这几种 [Authy](https://authy.com/), [Microsoft](https://www.microsoft.com/en-us/security/mobile-authenticator-app/), [Google](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2/) authentication app 。
 
-#### 开启 2FA
+### 开启 2FA
 
 当设置页显示 "Enable 2FA" 的按钮时，说明 2FA 当前未开启。
 
@@ -68,7 +68,7 @@ authenticator app 添加账户后，输入 authenticator app 中的验证码，�
 1. 这些备用码只能使用一次。
 2. 请把备用码保管在安全的地方。
 
-#### 登录验证
+### 登录验证
 
 开启 2FA 后，邮箱登录验证不再使用。我们会使用 2FA 登录验证。
 
@@ -80,7 +80,7 @@ authenticator app 添加账户后，输入 authenticator app 中的验证码，�
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-enable-login-6.png)
 
 
-#### 修改设置
+### 修改设置
 
 开启 2FA 后，修改账户设置，需要额外的 2FA 验证。
 
@@ -90,7 +90,7 @@ authenticator app 添加账户后，输入 authenticator app 中的验证码，�
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-settings-2.png)
 
 
-#### 状态
+### 状态
 
 2FA 一共有3个状态：未启用， 已启用 和 过期。
 

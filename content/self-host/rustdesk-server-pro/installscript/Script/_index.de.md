@@ -9,7 +9,7 @@ Vergessen Sie nicht, Ihre Lizenz unter [https://rustdesk.com/pricing/](https://r
 Bitte lesen Sie zuerst die [OSS-Installation](https://rustdesk.com/docs/de/self-host/rustdesk-server-oss/install/), bevor Sie diese einfache Installation durchführen. Dort erfahren Sie mehr über die zugrunde liegenden Details.
 {{% /notice %}}
 
-### Installation
+## Installation
 
 Kopieren Sie den obigen Befehl und fügen Sie ihn in Ihr Linux-Terminal ein, um RustDesk Server Pro zu installieren.
 
@@ -37,7 +37,7 @@ Wenn der systemd-Dienst nicht gestartet werden kann, hängt es wahrscheinlich mi
 Wenn Ihr Client keine Verbindung zu Ihrem Server herstellen kann oder Sie keinen Zugriff auf die Webkonsole haben, überprüfen Sie dies [hier](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/faq/#firewall).
 {{% /notice %}}
 
-### Upgrade
+## Upgrade
 
 Kopieren Sie den obigen Befehl und fügen Sie ihn in Ihr Linux-Terminal ein, um Ihre bestehende RustDesk Server Pro-Installation zu aktualisieren. Dies kann auch lokal gespeichert und mit cron geplant werden.
 
@@ -48,7 +48,7 @@ Was es bewirkt:
 - Überprüft auf neue Versionen von RustDesk Server Pro
 - Wenn eine neue Version gefunden wird, werden die API-Dateien entfernt und neue ausführbare Dateien und API-Dateien heruntergeladen
 
-### Konvertierung von Open Source
+## Konvertierung von Open Source
 
 Kopieren Sie den obigen Befehl und fügen Sie ihn in Ihr Linux-Terminal ein, um von RustDesk Server zu RustDesk Server Pro zu konvertieren.
 

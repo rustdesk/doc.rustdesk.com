@@ -11,19 +11,19 @@ Dieses Tutorial basiert auf den neuesten DSM v6 und v7.
 Nach dem DSM 7.2 Update wurde Docker auf den neuen "Container Manager" aktualisiert, bitte prüfen Sie [diesen Artikel](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7) stattdessen.
 {{% /notice %}}
 
-### Docker installieren
+## Docker installieren
 
 | Paketzentrum öffnen | Docker installieren |
 | --- | --- |
 | ![](images/package-manager.png) | ![](images/docker.png) |
 
-### RustDesk Server installieren
+## RustDesk Server installieren
 
 | Suchen Sie rustdesk-server in Docker's Registry und installieren Sie per Doppelklick | Installiertes rustdesk-server Image, doppelklicken Sie um rustdesk-server Container zu erstellen |
 | --- | --- |
 | ![](images/pull-rustdesk-server.png) | ![](images/rustdesk-server-installed.png) |
 
-### hbbs Container erstellen
+## hbbs Container erstellen
 
 Wie oben erwähnt, doppelklicken Sie auf das rustdesk-server Image um einen neuen Container zu erstellen, setzen Sie den Namen auf `hbbs`.
 ![](images/hbbs.png)
@@ -52,13 +52,13 @@ Synology's OS ist Debian-basiert, daher funktioniert Host-Netz (--net=host) gut,
 
 - Fertig
 
-### hbbr Container erstellen
+## hbbr Container erstellen
 
 Bitte wiederholen Sie die obigen `hbbs` Schritte, aber benennen Sie den Container `hbbr` und der Befehl (für Befehl setzen Schritt) sollte `hbbr` sein.
 
 ![](images/hbbr-config.png)
 
-### hbbr/hbbs Container
+## hbbr/hbbs Container
 
 ![](images/containers.png)
 
@@ -66,6 +66,6 @@ Bitte wiederholen Sie die obigen `hbbs` Schritte, aber benennen Sie den Containe
 | --- | --- |
 | ![](images/log.png) | ![](images/network-types.png) |
 
-### Ihren Schlüssel abrufen
+## Ihren Schlüssel abrufen
 
 Navigieren Sie zu dem zuvor eingerichteten Ordner mit File Station, laden Sie `id_ed25519.pub` herunter und öffnen Sie es mit einem Texteditor um Ihren Schlüssel zu sehen.

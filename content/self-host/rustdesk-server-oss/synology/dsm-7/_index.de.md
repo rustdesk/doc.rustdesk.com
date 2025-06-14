@@ -5,18 +5,18 @@ weight: 20
 <!-- For translators: When translating elements like "buttons", don't just translate, please refer actual naming in their interface. -->
 Nach dem DSM 7.2-Update hat Synology sein "Docker"-Paket in "Container Manager" umbenannt. Es bringt eine neue grafische Benutzeroberfläche mit und enthält "docker-compose" in der GUI, mit der Sie Docker einfacher erstellen können.
 
-### Unterstützte Modelle und Voraussetzungen
+## Unterstützte Modelle und Voraussetzungen
 
 Der Container Manager bietet ARM64-Unterstützung für einige Low-End-Modelle, wie z. B. die J-Serie. Eine detaillierte Liste der unterstützten Modelle finden Sie auf der [Synology-Website] (https://www.synology.com/en-us/dsm/packages/ContainerManager).
 In den meisten Fällen müssen Sie für die Installation von Docker und RustDesk Server keinen zusätzlichen RAM installieren.
 
-### 1. Container Manager (Docker) installieren
+## 1. Container Manager (Docker) installieren
 
 Öffnen Sie das "Package Center", suchen und installieren Sie "Container Manager".
 
 ![](images/dsm7_install_container_manager_though_package_center.png)
 
-### 2. Ordner erstellen
+## 2. Ordner erstellen
 
 Nach der Installation von "Container Manager" wird ein gemeinsamer Ordner `docker` erstellt, in dem wir die Daten unseres Servers ablegen.
 
@@ -24,7 +24,7 @@ Nach der Installation von "Container Manager" wird ein gemeinsamer Ordner `docke
 
 ![](images/dsm7_create_required_folders.png)
 
-### 3. Container erstellen
+## 3. Container erstellen
 
 Öffnen Sie Ihren Container Manager, gehen Sie zu Project und klicken Sie auf Create.
 
@@ -65,7 +65,7 @@ services:
 
 Bitte überspringen Sie `Web portal settings`, dann ist das erledigt.
 
-### 4. Prüfen, ob es funktioniert
+## 4. Prüfen, ob es funktioniert
 
 Öffnen Sie Ihre File Station, Sie sollten `id_ed25519`, `id_ed25519.pub` in Ihrem Ordner `docker/rustdesk-server/data` sehen. Sie können diese Datei herunterladen und mit einem beliebigen Texteditor öffnen oder [Synology Text Editor](https://www.synology.com/de-de/dsm/packages/TextEditor) verwenden. Dies ist der öffentliche Schlüssel, den Sie für Ihren RustDesk-Client benötigen.
 
@@ -75,7 +75,7 @@ Der öffentliche Schlüssel sieht wie folgt aus:
 
 Lesen Sie [hier](/docs/de/client), wie Sie Ihren Client einrichten. Nur `ID-Server` und `Key` werden benötigt. `Relais-Server` wird nicht benötigt, da wir ihn in `hbbs` festgelegt haben. Diese Informationen werden von `hbbs` automatisch bereitgestellt.
 
-### 5. Portweiterleitung auf Ihrem Router einrichten
+## 5. Portweiterleitung auf Ihrem Router einrichten
 
 Gehen Sie auf die Verwaltungswebseite Ihres Routers und suchen Sie nach etwas, das mit `Portweiterleitung` zu tun hat. Es sollte unter `WAN` oder `Firewall` erscheinen.
 

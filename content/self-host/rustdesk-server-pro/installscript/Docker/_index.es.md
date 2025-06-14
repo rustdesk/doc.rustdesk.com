@@ -3,7 +3,7 @@ title: Docker
 weight: 3
 ---
 
-### Docker Compose (Recomendado)
+## Docker Compose (Recomendado)
 
 Con Docker Compose DEBES usar `network_mode: "host"` para asegurar que las licencias funcionen. Instala Docker usando esta [guía](https://docs.docker.com/engine/install) para asegurar que esté actualizado!
 
@@ -41,7 +41,7 @@ Luego ejecuta `sudo docker compose up -d` o `podman-compose up -d`
 Cómo [configurar HTTPS para la consola web manualmente](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
 {{% /notice %}}
 
-### Comandos Docker
+## Comandos Docker
 
 Instala Docker con esta [guía](https://docs.docker.com/engine/install) para asegurar que esté actualizado!
 

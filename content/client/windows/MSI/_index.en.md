@@ -5,16 +5,16 @@ weight: 49
 
 The MSI package supports command line parameters for silent installation.
 
-### Parameters
+## Parameters
 
-### INSTALLFOLDER
+## INSTALLFOLDER
 
 The installation folder.
 
 **Default**: `[ProgramFiles6432Folder]\[app name]`, usually `C:\Program Files\[app name]`.
 
 
-### CREATESTARTMENUSHORTCUTS
+## CREATESTARTMENUSHORTCUTS
 
 Whether to create a start menu shortcut.
 
@@ -29,7 +29,7 @@ Whether to create a start menu shortcut.
 | 3 | `Y` | Yes, same as `1` |
 | 4 | `N` | No, same as `0` |
 
-### CREATEDESKTOPSHORTCUTS
+## CREATEDESKTOPSHORTCUTS
 
 Whether to create a desktop shortcut.
 
@@ -44,7 +44,7 @@ Whether to create a desktop shortcut.
 | 3 | `Y` | Yes, same as `1` |
 | 4 | `N` | No, same as `0` |
 
-### INSTALLPRINTER
+## INSTALLPRINTER
 
 Whether to install a printer. The printer is used to execute the print jobs of the controlled side locally.
 
@@ -61,11 +61,11 @@ Since version `1.3.9`.
 | 3 | `Y` | Yes, same as `1` |
 | 4 | `N` | No, same as `0` |
 
-## Examples
+# Examples
 
 **Caution**: For versions prior to `2024-08-05`, there are issues with silent installation and silent repair. Please uninstall first, then install.
 
-### Install with installation parameters
+## Install with installation parameters
 
 Silent installation, set the installation path, do not create a desktop shortcut, create a start menu shortcut.
 
@@ -75,7 +75,7 @@ msiexec /i RustDesk-1.msi /qn INSTALLFOLDER="D:\Program Files\RustDesk" CREATEST
 
 **Note**: `/l*v install.log` means printing the execution log to `install.log`.
 
-### Upgrade, without parameters
+## Upgrade, without parameters
 
 Upgrade with the previous installation path and installation options.
 
@@ -83,7 +83,7 @@ Upgrade with the previous installation path and installation options.
 msiexec /i RustDesk-2.msi /qn /l*v install.log
 ```
 
-### Upgrade, modify installation options
+## Upgrade, modify installation options
 
 ```
 msiexec /i RustDesk-1.msi /qn INSTALLFOLDER="C:\Program Files\RustDesk" CREATESTARTMENUSHORTCUTS="N" CREATEDESKTOPSHORTCUTS="N" INSTALLPRINTER="N" /l*v install.log

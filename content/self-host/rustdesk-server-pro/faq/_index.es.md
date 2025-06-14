@@ -40,7 +40,7 @@ Pero esto depende de tu versión de docker, para más discusión, consulta [esto
 - ### Docker
 ```
 sudo docker ps
-# también puedes usar <NOMBRE DEL CONTENEDOR>, ej. `hbbs` y `hbbr` si sigues nuestro manual.
+## también puedes usar <NOMBRE DEL CONTENEDOR>, ej. `hbbs` y `hbbr` si sigues nuestro manual.
 sudo docker stop <ID DEL CONTENEDOR>
 sudo docker rm <ID DEL CONTENEDOR>
 sudo docker rmi <ID DE LA IMAGEN>

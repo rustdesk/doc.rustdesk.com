@@ -7,10 +7,10 @@ weight: 21
 
 最大的挑战可能是找到所有能够协同工作的工具版本，特别是因为工具链的某些部分（如 Xcode 和 LLVM）由您的 macOS 版本决定。本指南中使用的版本可能不是您应该使用的版本。确定使用什么版本的起点是查看您想要构建的 RustDesk 版本的 [GitHub 构建工作流](https://github.com/rustdesk/rustdesk/blob/master/.github/workflows/flutter-build.yml)。在页面左上角选择要查看文件的标签。但这可能不一定有效，因为 GitHub 运行器附带的 macOS 工具可能与您本地系统上的版本不同。
 
-#### Export
+### Export
 `export` 用于设置各种环境变量。当您运行 `export` 时，该变量仅为当前终端会话设置，因此必须在每个新的终端窗口中重复这些设置，无论是现在还是将来想要构建 RustDesk 时。通常，最好将所有 `export` 添加到为每个打开的终端自动执行的脚本中，例如 `~/.bash_profile`。这里列出的完整 `export` 命令可以简单地追加到文件中，但也必须在当前终端中运行，因为文件在打开*新*终端之前不会被读取。
 
-### 从 Homebrew 安装我们要使用的工具
+## 从 Homebrew 安装我们要使用的工具
 
 ```sh
 brew install python3 create-dmg nasm cmake gcc wget ninja pkg-config wget rustup
@@ -23,7 +23,7 @@ sudo chown <username>:admin /usr/local/include
 sudo chmod 775 /usr/local/include
 ```
 
-### 安装 vcpkg
+## 安装 vcpkg
 Vcpkg 用于管理 RustDesk 使用的 C/C++ 依赖项。决定您希望安装的位置，并从您希望 `vcpkg` 文件夹所在的文件夹运行以下命令。在此示例中，使用 `/Users/<username>/repos/` 作为位置，使用标签 `2023.04.15` 作为版本。
 
 ```sh
@@ -35,7 +35,7 @@ git checkout 2023.04.15
 export VCPKG_ROOT=~/repos/vcpkg
 ```
 
-### 安装和配置 Rust
+## 安装和配置 Rust
 我们使用 `rustup` 来管理 Rust，它已经通过上面的 Homebrew 安装了。但是，它仍然需要配置。按照说明操作，并确保 `rustup` 和 `rustc` 都在 `PATH` 中。在这个示例中我们使用 Rust 版本 `1.75.0`，但您可能需要使用不同的版本。您可以使用 `rustup` 安装和管理多个版本的 Rust。
 
 ```sh
@@ -45,7 +45,7 @@ rustup component add rustfmt
 ```
 要查看已安装和默认的 Rust 工具链概述，请运行 `rustup show`。
 
-### 下载 RustDesk 源文件
+## 下载 RustDesk 源文件
 
 决定您希望 RustDesk 源文件的位置，并从您希望 `rustdesk` 文件夹所在的文件夹运行以下命令。在此示例中，使用 `/Users/<username>/repos/` 作为位置。
 
@@ -62,17 +62,17 @@ export PATH=~/Library/Python/3.9/bin:$PATH
 ```
 完成后，再次运行失败的命令。记住也要编辑 `~/.bash_profile`。
 
-### 安装用户界面组件
+## 安装用户界面组件
 RustDesk 可以使用 [Sciter](https://sciter.com/) 和 [Flutter](https://flutter.dev/) 构建。这两者都需要额外的组件，因此请按照相关版本或两者的步骤进行操作。
 
-#### Sciter
+### Sciter
 
 从 `rustdesk` 文件夹运行：
 ```sh
 wget https://github.com/c-smile/sciter-sdk/raw/master/bin.osx/libsciter.dylib
 ```
 
-#### Flutter
+### Flutter
 
 [FVM](https://fvm.app/) 让您管理使用的 Flutter 版本，可能是能够轻松尝试不同 Flutter 版本的最简单方法。
 
@@ -106,7 +106,7 @@ Flutter 启动并运行后，就该安装将 Rust 和 Flutter 绑定在一起的
 cargo install flutter_rust_bridge_codegen --version "1.80.1" --features "uuid"
 ```
 
-### 构建
+## 构建
 
 从 `rustdesk` 文件夹构建。构建 Sciter 版本：
 

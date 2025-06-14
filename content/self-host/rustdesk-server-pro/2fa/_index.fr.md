@@ -14,7 +14,7 @@ Vous devez d'abord accéder à la page des paramètres du compte.
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/1-settings-account.png)
 
-### Vérification par email
+## Vérification par email
 
 Pour activer la vérification par email pour la connexion, vous devez :
 
@@ -28,16 +28,16 @@ Lors de notre prochaine connexion, RustDesk nous enverra un email avec un code d
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/2-2fa-email-2.png)
 
-### TOTP
+## TOTP
 
 TOTP est une méthode 2FA largement utilisée, donc dans la console web de RustDesk Server Pro, 2FA se réfère à la vérification TOTP.
 
-#### Préparer l'application d'authentification
+### Préparer l'application d'authentification
 
 Tout d'abord, vous devez préparer une application d'authentification.
 Vous pouvez choisir parmi ces types [Authy](https://authy.com), [Microsoft Authenticator](https://www.microsoft.com/en-us/security/mobile-authenticator-app/) et [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2).
 
-#### Activer 2FA
+### Activer 2FA
 
 Lorsque le bouton `Activer 2FA` est affiché sur la page des paramètres, cela signifie que 2FA n'est pas actuellement activé.
 
@@ -65,7 +65,7 @@ Après que 2FA soit activé avec succès, RustDesk Server Pro sera également li
 2. Veuillez conserver les codes de sauvegarde dans un endroit sûr.
 {{% /notice %}}
 
-#### Vérification de connexion
+### Vérification de connexion
 
 Lorsque 2FA est activé, la vérification de connexion par email n'est plus utilisée. Nous utiliserons la vérification de connexion 2FA à la place.
 
@@ -75,7 +75,7 @@ Lors de la connexion, vous serez redirigé vers la page de vérification.
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-enable-login-6.png)
 
-#### Modifier les paramètres
+### Modifier les paramètres
 
 Lorsque 2FA est activé, modifier les paramètres du compte nécessite une vérification 2FA supplémentaire.
 
@@ -83,7 +83,7 @@ Lorsque 2FA est activé, modifier les paramètres du compte nécessite une véri
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-settings-2.png)
 
-#### État 2FA
+### État 2FA
 
 2FA a un total de 3 états : non activé, activé et expiré.
 

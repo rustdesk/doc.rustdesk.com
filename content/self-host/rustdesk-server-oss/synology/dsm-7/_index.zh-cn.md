@@ -5,18 +5,18 @@ weight: 20
 <!-- For translators: When translating elements like "buttons", don't just translate, please refer actual naming in their interface. -->
 DSM 7.2 更新后，Synology 将其"Docker"包重命名为"Container Manager"。它带来了新的 GUI，并在其 GUI 中提供了"docker-compose"，这使您可以更轻松地创建 Docker。
 
-### 支持的型号和要求
+## 支持的型号和要求
 
 Container Manager 为一些低端型号（如 J 系列）带来了 ARM64 支持，有关支持型号的详细列表，请查看 [Synology 网站](https://www.synology.com/en-us/dsm/packages/ContainerManager)。
 大多数时候，您不需要为安装 Docker 和 RustDesk Server 安装额外的 RAM。
 
-### 1. 安装 Container Manager（Docker）
+## 1. 安装 Container Manager（Docker）
 
 打开"套件中心"，搜索并安装"Container Manager"。
 
 ![](images/dsm7_install_container_manager_though_package_center.png)
 
-### 2. 创建文件夹
+## 2. 创建文件夹
 
 安装"Container Manager"后，它将创建一个名为 `docker` 的共享文件夹，让我们将服务器数据放在这里。
 
@@ -24,7 +24,7 @@ Container Manager 为一些低端型号（如 J 系列）带来了 ARM64 支持�
 
 ![](images/dsm7_create_required_folders.png)
 
-### 3. 创建容器
+## 3. 创建容器
 
 打开您的 Container Manager，转到项目并单击创建。
 
@@ -65,7 +65,7 @@ services:
 
 请跳过"网页门户设置"然后完成。
 
-### 4. 检查是否正常工作
+## 4. 检查是否正常工作
 
 打开您的 File Station，您应该在 `docker/rustdesk-server/data` 文件夹中看到 `id_ed25519`、`id_ed25519.pub`。您可以下载它并通过任何文本编辑器或使用 [Synology Text Editor](https://www.synology.com/en-us/dsm/packages/TextEditor) 打开它。这是您的 RustDesk 客户端需要的公钥。
 
@@ -75,7 +75,7 @@ services:
 
 查看[这里](/docs/en/client)设置您的客户端。只需要 `ID 服务器` 和 `密钥`。不需要 `中继服务器`，因为我们已在 `hbbs` 中设置，`hbbs` 将自动提供此信息。
 
-### 5. 在路由器上设置端口转发
+## 5. 在路由器上设置端口转发
 
 转到您路由器的管理网页，找到与"端口转发"相关的任何内容，它应该出现在"WAN"或"防火墙"设置中。
 

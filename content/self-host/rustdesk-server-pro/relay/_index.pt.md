@@ -3,7 +3,7 @@ title: Configurar servidores de retransmissão
 weight: 17
 ---
 
-### RustDesk Pro - Instalar servidores de retransmissão adicionais com geolocalização usando docker
+## RustDesk Pro - Instalar servidores de retransmissão adicionais com geolocalização usando docker
 
 {{% notice note %}}
 [A instalação simples](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/) cria um servidor de retransmissão (o processo `hbbr`) implicitamente na mesma máquina, você não precisa especificar o servidor de retransmissão explicitamente.
@@ -81,9 +81,9 @@ To                         Action      From
 21117,21119/tcp (v6)       ALLOW       Anywhere (v6)
 ```
 
-### Configurar RustDesk Pro para geolocalização usando o console web
+## Configurar RustDesk Pro para geolocalização usando o console web
 
-#### Registrar e baixar o arquivo de banco de dados GeoLite2 City
+### Registrar e baixar o arquivo de banco de dados GeoLite2 City
 
 Para usar geolocalização, hbbs precisa de acesso ao banco de dados MaxMind GeoLite2 City. O banco de dados é gratuito e você pode se registrar para baixar o arquivo e obter uma chave API.
 
@@ -96,7 +96,7 @@ Se você instalou RustDesk Pro usando o script de instalação em uma máquina L
 
 Para instalações Docker, o arquivo deve estar no volume que você mapeou ao implantar o contêiner mapeado para `/root`.
 
-#### Obter uma chave API para automatizar o processo - servidores Linux
+### Obter uma chave API para automatizar o processo - servidores Linux
 
 Você precisa atualizar este arquivo regularmente e podemos usar um cronjob para isso. Você precisará de uma chave API para acessar o link de download que é gratuito.
 
@@ -111,7 +111,7 @@ Você pode automatizar o [processo de download](https://dev.maxmind.com/geoip/up
 /usr/bin/curl -L --silent 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={Your Access Key}&suffix=tar.gz' | /bin/tar -C '/var/lib/rustdesk-server/' -xvz --keep-newer-files --strip-components=1 --wildcards '*GeoLite2-City.mmdb'
 ```
 
-#### Alterar configurações no console web RustDesk Pro
+### Alterar configurações no console web RustDesk Pro
 
 Adicione seus endereços IP ou nomes DNS de servidores de retransmissão (DNS é suportado a partir da versão 1.1.11) aos `Servidores de retransmissão`. **A porta não é necessária, a porta `21117` é usada explicitamente.** <br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/c4452ba4-5e1d-437a-ae1d-fc0070bfa26c">

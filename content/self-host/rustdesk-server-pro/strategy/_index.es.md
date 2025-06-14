@@ -3,11 +3,9 @@ title: Estrategia
 weight: 200
 ---
 
-### Estrategia
-
 La estrategia es una herramienta para que los administradores de RustDesk actualicen en lote las opciones de seguridad de las páginas de configuración del cliente. Los administradores pueden crear diferentes estrategias y aplicarlas a diferentes dispositivos.
 
-#### Crear estrategias
+## Crear estrategias
 
 Puede crear una nueva estrategia haciendo clic en el botón `+` y realizar varias acciones en la estrategia pasando el cursor por encima y haciendo clic en el menú.
 
@@ -17,7 +15,7 @@ En el lado derecho del menú de estrategia, puede ver el número de dispositivos
 
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/strategy_menu.png)
 
-#### Estrategia de dispositivo, estrategia de usuario y estrategia de grupo de dispositivos
+## Estrategia de dispositivo, estrategia de usuario y estrategia de grupo de dispositivos
 
 Las estrategias se aplican según el siguiente orden de prioridad:
 1. Estrategia de dispositivo (Prioridad más alta)
@@ -29,7 +27,7 @@ Cada dispositivo solo puede ser gestionado por una estrategia a la vez. El siste
 - Las estrategias de usuario tienen prioridad sobre las estrategias de grupo de dispositivos
 - Las estrategias de grupo de dispositivos se aplican a todos los dispositivos en el grupo de dispositivos que no tienen una estrategia de dispositivo o estrategia de usuario asignada
 
-#### Editar dispositivos
+## Editar dispositivos
 
 Cuando hace clic en el menú `Editar dispositivos`, se abre un cuadro de diálogo de edición que muestra todos los dispositivos. Puede cambiar el estado de selección de las casillas de verificación y luego hacer clic en el botón `Guardar` para aplicar los cambios de dispositivos realizados en la página actual. Si necesita modificar dispositivos en otras páginas, navegue a esas páginas. También puede usar el menú desplegable en la esquina superior derecha para filtrar dispositivos.
 
@@ -39,7 +37,7 @@ Aquí hay un ejemplo del cuadro de diálogo que aparece cuando hace clic en `Edi
 
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/edit_devices.png)
 
-#### Editar usuarios
+## Editar usuarios
 
 Cuando hace clic en el menú `Editar usuarios`, se abre un cuadro de diálogo de edición que muestra todos los usuarios. Puede cambiar el estado de selección de las casillas de verificación y luego hacer clic en el botón `Guardar` para aplicar los cambios de usuarios realizados en la página actual. Si necesita modificar usuarios en otras páginas, navegue a esas páginas. También puede usar el menú desplegable en la esquina superior derecha para filtrar usuarios.
 
@@ -47,7 +45,7 @@ Aquí hay un ejemplo del cuadro de diálogo que aparece cuando hace clic en `Edi
 
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/edit_users.png)
 
-#### Editar grupos de dispositivos
+## Editar grupos de dispositivos
 
 Cuando hace clic en el menú `Editar grupo de dispositivos`, se abre un cuadro de diálogo de edición que muestra todos los grupos de dispositivos. Puede cambiar el estado de selección de las casillas de verificación y luego hacer clic en el botón `Guardar` para aplicar los cambios de grupos de dispositivos realizados en la página actual. Si necesita modificar grupos de dispositivos en otras páginas, navegue a esas páginas. También puede usar el menú desplegable en la esquina superior derecha para filtrar grupos de dispositivos.
 
@@ -55,7 +53,7 @@ Aquí hay un ejemplo del cuadro de diálogo que aparece cuando hace clic en `Edi
 
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/edit_device_groups.png)
 
-#### Sincronización de estrategias
+## Sincronización de estrategias
 
 Cada dispositivo solo puede ser gestionado por una estrategia, y si esa estrategia está deshabilitada, el dispositivo no será gestionado por ninguna estrategia. Al sincronizar estrategias, RustDesk registra las marcas de tiempo de estrategia local y del servidor para determinar si es necesaria la sincronización. Es decir, después de que se complete la sincronización de estrategias:
 
@@ -63,6 +61,6 @@ Cada dispositivo solo puede ser gestionado por una estrategia, y si esa estrateg
 * Si el administrador cambia el contenido de la estrategia, las opciones del cliente se sincronizarán.
 * Si el administrador cambia la estrategia a la que pertenece el dispositivo, las opciones del cliente se sincronizarán.
 
-#### Editar estrategias
+## Editar estrategias
 
 En la parte inferior de la estrategia, haga clic en `Editar`, realice modificaciones y haga clic en `Enviar`. La estrategia se sincronizará con los dispositivos en 30 segundos.

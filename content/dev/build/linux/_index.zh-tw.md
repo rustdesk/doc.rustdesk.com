@@ -3,27 +3,27 @@ title: Linux
 weight: 10
 ---
 
-## 在 Linux 上編譯
+# 在 Linux 上編譯
 
-### Ubuntu 18 (Debian 10)
+## Ubuntu 18 (Debian 10)
 
 ```sh
 sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang libxcb-randr0-dev libxdo-dev libxfixes-dev libxcb-shape0-dev libxcb-xfixes0-dev libasound2-dev libpulse-dev cmake
 ```
 
-### Fedora 28 (CentOS 8)
+## Fedora 28 (CentOS 8)
 
 ```sh
 sudo yum -y install gcc-c++ git curl wget nasm yasm gcc gtk3-devel clang libxcb-devel libxdo-devel libXfixes-devel pulseaudio-libs-devel cmake alsa-lib-devel
 ```
 
-### Arch (Manjaro)
+## Arch (Manjaro)
 
 ```sh
 sudo pacman -Syu --needed unzip git cmake gcc curl wget yasm nasm zip make pkg-config clang gtk3 xdotool libxcb libxfixes alsa-lib pulseaudio
 ```
 
-### 安裝 vcpkg
+## 安裝 vcpkg
 
 ```sh
 git clone https://github.com/microsoft/vcpkg
@@ -35,7 +35,7 @@ export VCPKG_ROOT=$PWD/vcpkg
 vcpkg/vcpkg install --x-install-root="$VCPKG_ROOT/installed"
 ```
 
-### 修復 libvpx (僅僅針對 Fedora)
+## 修復 libvpx (僅僅針對 Fedora)
 
 ```sh
 cd vcpkg/buildtrees/libvpx/src
@@ -48,7 +48,7 @@ cp libvpx.a $VCPKG_ROOT/installed/x64-linux/lib/
 cd
 ```
 
-### 構建
+## 構建
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

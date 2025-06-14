@@ -5,13 +5,13 @@ weight: 100
 
 Amablemente escrito por [@I-Am-Skoot](https://github.com/I-Am-Skoot/RustDeskNPMDocker/commits?author=I-Am-Skoot).
 
-### Capas
+## Capas
 - [RustDesk](https://github.com/rustdesk/rustdesk) Herramienta de Soporte Remoto
 - [NPM](https://nginxproxymanager.com/) Herramienta de Gestión de Proxy
 - [Docker](https://www.docker.com) Herramienta de Contenedorización
 - Herramienta de Firewall
 
-#### Suposiciones
+### Suposiciones
 Este ejemplo es un Todo en Uno para alojar solo servicios RustDesk. Esto puede expandirse a una solución más flexible dividiendo el NPM en su propio Docker Compose.
 - Red DMZ: 192.168.1.0/24
   - NPM (Externo): 192.168.1.250
@@ -27,7 +27,7 @@ Este ejemplo es un Todo en Uno para alojar solo servicios RustDesk. Esto puede e
 
 Realiza modificaciones a los ejemplos según sea necesario.
 
-### Preparar Docker
+## Preparar Docker
 Debes tener Docker ya instalado, esta guía no entra en los detalles específicos de eso.
 
 Necesitarás crear una red para el Backend del Servidor RustDesk y la DMZ.
@@ -45,7 +45,7 @@ Para cada aplicación que uses con el NPM (Nginx Proxy Manager) deberías tener 
    -o parent=eth0 DMZ
 ```
 
-### Configurar Firewall
+## Configurar Firewall
 Configura los siguientes puertos de reenvío/NAT desde tu IP pública al Servidor NPM.
 - 21114 => 8080 TCP
 - 21115 => 21115 TCP
@@ -55,7 +55,7 @@ Configura los siguientes puertos de reenvío/NAT desde tu IP pública al Servido
 - 21119 => 21119 TCP
 - 443 => 443 TCP  # Si quieres usar SSL
 
-### Configurar Docker Compose
+## Configurar Docker Compose
 Esto iniciará un contenedor con NPM y las redes correctas.
 
 Copia lo siguiente en docker-compose.yaml.
@@ -107,7 +107,7 @@ networks:
     external: true
 ```
 
-### Configurar NPM
+## Configurar NPM
 Configura Hosts de Stream para los siguientes Puertos:
 - 21115 => 192.168.254.2:21115 TCP
 - 21116 => 192.168.254.2:21116 TCP / UDP
@@ -124,15 +124,15 @@ Configura Host Proxy:
 - Bloquear Exploits Comunes: Marcado
 - Opcional: Configurar SSL **(NO REQUERIR - El cliente necesita poder comunicarse sin SSL.)**
 
-### Configurar Servidor RustDesk
+## Configurar Servidor RustDesk
 Conéctate a la interfaz del servidor http://rustdesk.example.com o https://rustdesk.example.com si has configurado SSL para la interfaz web.
 
-### Configurar Cliente RustDesk
+## Configurar Cliente RustDesk
 Configura el cliente:
 - Servidor ID: rustdesk.example.com
 - Servidor Relay: rustdesk.example.com
 - Servidor API: http://rustdesk.example.com (usa HTTPS si has configurado SSL)
 - Clave: {Clave del Servidor Aquí}
 
-### Resultado Final
+## Resultado Final
 Tu solución será accesible externamente a través del gestor de proxy. Tendrás aislamiento de tus Servidores RustDesk de otros sistemas. Especialmente si usas un sistema de configuración dividida y tienes otras aplicaciones / sitios detrás de un NPM común.

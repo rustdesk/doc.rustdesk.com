@@ -3,7 +3,7 @@ title: Android
 weight: 4
 ---
 
-### Control remoto
+## Control remoto
 
 Ingrese la ID del dispositivo remoto en la página de inicio o seleccione un dispositivo histórico para verificar.
 Después de una verificación exitosa, puede controlar el dispositivo remoto.
@@ -22,7 +22,7 @@ El control de entrada ofrece dos modos: `Modo ratón` y `Modo táctil`, que se p
 En `Modo ratón`, también puede activar el `Clic derecho` del dispositivo remoto con un `Toque de dos dedos`
 {{% /notice %}}
 
-### Transferencia de archivos (Android)
+## Transferencia de archivos (Android)
 
 > Requiere RustDesk ≥ 1.1.9
 
@@ -40,7 +40,7 @@ Mantenga presionado o toque el menú a la derecha para seleccionar `Transferenci
 - La ruta absoluta actual y las estadísticas del proyecto se mostrarán en la parte inferior de la lista.
 - Haga clic en `Local` / `Remoto` en la barra de título para cambiar páginas.
 
-#### ¿Cómo transferir archivos?
+### ¿Cómo transferir archivos?
 
 1. **Mantenga presionado** un archivo o carpeta en la lista para entrar rápidamente en **modo de selección múltiple**, que puede seleccionar múltiples elementos.
 2. Después de seleccionar el/los archivo(s), cambie la página `Local` / `Remoto`. Después del cambio, verá el aviso `¿Pegar aquí?` en la parte inferior de la pantalla.
@@ -50,7 +50,7 @@ Mantenga presionado o toque el menú a la derecha para seleccionar `Transferenci
 | --- | --- |
 | ![](/docs/en/client/android/images/file_multi_select_en.jpg?width=300px) | ![](/docs/en/client/android/images/file_copy_en.jpg?width=300px) |
 
-### Configurar servidor ID/Relé
+## Configurar servidor ID/Relé
 
 1. Haga clic en `Configuración` en la barra de navegación inferior.
 2. Haga clic en `Servidor ID/Relé`.
@@ -68,7 +68,7 @@ La imagen a continuación es una captura de pantalla de Android. Si es iOS, veri
 
 ![](/docs/en/client/android/images/id_setting_en.jpg?width=300px)
 
-### Compartir pantalla/archivos de su teléfono Android
+## Compartir pantalla/archivos de su teléfono Android
 
 A partir de la versión 1.1.9, el cliente Android ha agregado las funciones de compartir la pantalla del teléfono y compartir el sistema de archivos del teléfono.
 
@@ -76,7 +76,7 @@ A partir de la versión 1.1.9, el cliente Android ha agregado las funciones de c
 - Se requiere Android 10 o superior para compartir el audio interno del sistema del teléfono móvil
 - iOS aún no admite el uso compartido de pantalla
 
-#### Solicitar permisos e iniciar servicios
+### Solicitar permisos e iniciar servicios
 
 Haga clic en `Compartir pantalla` en la barra de navegación inferior.
 
@@ -95,13 +95,13 @@ Configure varios permisos según sea necesario. Cada vez que inicie RustDesk, de
 El * anterior representa permisos especiales. Para obtener tales permisos, debe saltar a la página de configuración del sistema Android para obtenerlos manualmente. Los detalles son los siguientes
 {{% /notice %}}
 
-#### Solicitud de permiso especial - Archivo
+### Solicitud de permiso especial - Archivo
 
 | Solicitar permisos de archivo de Android saltará automáticamente a la página de configuración del sistema |
 | :---: |
 | ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
-#### Solicitud de permiso especial - entrada de ratón
+### Solicitud de permiso especial - entrada de ratón
 | Paso 1: Encuentre "Servicios instalados" | Paso 2: Inicie RustDesk Input |
 | --- | --- |
 | ![](/docs/en/client/android/images/get_input1_en.jpg?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
@@ -117,7 +117,7 @@ La página de configuración del sistema de diferentes proveedores puede ser dif
 | Presión larga de la rueda del ratón | Aplicaciones abiertas recientemente |
 | Desplazamiento de la rueda del ratón | Simular deslizamiento vertical |
 
-#### Iniciar servicio
+### Iniciar servicio
 
 Después de obtener el permiso `Captura de pantalla`, el servicio se iniciará automáticamente. También puede hacer clic en el botón `Iniciar servicio` para iniciar el servicio. Una vez iniciado el servicio, puede aceptar solicitudes de control de escritorio de otros dispositivos.
 
@@ -135,11 +135,11 @@ Después de iniciar el servicio, se obtendrá automáticamente una ID única y u
 3. Excepto por el permiso `Captura de pantalla`, el cambio de otros permisos solo afectará las nuevas conexiones y no afectará la conexión establecida. Si necesita cambiar permisos para una conexión establecida, cierre primero la conexión actual, modifique los permisos y luego reciba una solicitud de control.
 {{% /notice %}}
 
-##### PC
+#### PC
 
 ![](/docs/en/client/android/images/android_server_pc_side_en.png?width=700px)
 
-##### Terminal móvil
+#### Terminal móvil
 
 | Puede detener el servicio o cerrar la conexión especificada en cualquier momento | Puede recibir o iniciar chats |
 | --- | --- |

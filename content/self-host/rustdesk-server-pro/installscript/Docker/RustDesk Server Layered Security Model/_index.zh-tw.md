@@ -5,13 +5,13 @@ weight: 100
 
 由 [@I-Am-Skoot](https://github.com/I-Am-Skoot/RustDeskNPMDocker/commits?author=I-Am-Skoot) 精心編寫。
 
-### 層級
+## 層級
 - [RustDesk](https://github.com/rustdesk/rustdesk) 遠端支援工具
 - [NPM](https://nginxproxymanager.com/) 代理管理工具
 - [Docker](https://www.docker.com) 容器化工具
 - 防火牆工具
 
-#### 假設
+### 假設
 這個範例是一個僅用於代管 RustDesk 服務的一體化解決方案。可以通過將 NPM 拆分為獨立的 Docker Compose 來擴展為更靈活的解決方案。
 - DMZ 網路：192.168.1.0/24
   - NPM（外部）：192.168.1.250
@@ -27,7 +27,7 @@ weight: 100
 
 請根據需要修改範例。
 
-### 準備 Docker
+## 準備 Docker
 您必須已安裝 Docker，本指南不涉及具體安裝細節。
 
 您需要為 RustDesk 伺服器後端和 DMZ 建立一個網路。
@@ -45,7 +45,7 @@ weight: 100
    -o parent=eth0 DMZ
 ```
 
-### 設置防火牆
+## 設置防火牆
 配置以下連接埠轉發/NAT 連接埠，從您的公共 IP 到 NPM 伺服器。
 - 21114 => 8080 TCP
 - 21115 => 21115 TCP
@@ -55,7 +55,7 @@ weight: 100
 - 21119 => 21119 TCP
 - 443 => 443 TCP  # 如果您想使用 SSL
 
-### 設置 Docker Compose
+## 設置 Docker Compose
 這將啟動一個包含 NPM 和正確網路的容器。
 
 將以下內容複製到 docker-compose.yaml 中。
@@ -107,7 +107,7 @@ networks:
     external: true
 ```
 
-### 設置 NPM
+## 設置 NPM
 為以下連接埠配置串流主機：
 - 21115 => 192.168.254.2:21115 TCP
 - 21116 => 192.168.254.2:21116 TCP / UDP
@@ -124,15 +124,15 @@ networks:
 - 阻止常見漏洞：已勾選
 - 可選：配置 SSL **（不要強制 - 客戶端需要能夠在不使用 SSL 的情況下通信。）**
 
-### 設置 RustDesk 伺服器
+## 設置 RustDesk 伺服器
 連接到伺服器界面 http://rustdesk.example.com 或 https://rustdesk.example.com（如果您已為 Web 界面配置了 SSL）。
 
-### 設置 RustDesk 客戶端
+## 設置 RustDesk 客戶端
 配置客戶端：
 - ID 伺服器：rustdesk.example.com
 - 中繼伺服器：rustdesk.example.com
 - API 伺服器：http://rustdesk.example.com（如果您已配置 SSL，請使用 HTTPS）
 - 密鑰：{伺服器密鑰在此處}
 
-### 最終結果
+## 最終結果
 您的解決方案將可通過代理管理器在外部訪問。您將實現 RustDesk 伺服器與其他系統的隔離。特別是如果您使用分離配置系統並在公共 NPM 後面有其他應用程式/站點。

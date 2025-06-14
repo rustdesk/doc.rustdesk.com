@@ -7,10 +7,10 @@ weight: 21
 
 最大の課題は、特に Xcode や LLVM などのツールチェーンの一部が macOS バージョンによって決まるため、すべてのツールが連携して動作するバージョンを見つけることです。このガイドで使用されているバージョンは、あなたが使用すべきバージョンではない可能性があります。使用するバージョンを決定する開始点として、ビルドしたい RustDesk バージョンの [GitHub ビルドワークフロー](https://github.com/rustdesk/rustdesk/blob/master/.github/workflows/flutter-build.yml) を参照してください。ページの左上でファイルを表示するタグを選択してください。ただし、GitHub ランナーに付属する macOS ツールが、ローカルシステムのものと同じバージョンでない可能性があるため、これが必ずしも機能するとは限りません。
 
-#### Export
+### Export
 `export` は様々な環境変数を設定するために使用されます。`export` を実行すると、その変数は現在のターミナルセッションのみに設定され、現在または将来 RustDesk をビルドするために使用したい新しいターミナルウィンドウごとに繰り返す必要があります。一般的には、すべての `export` を、開かれるすべてのターミナルに対して自動的に実行されるスクリプト（例：`~/.bash_profile`）に追加することが望ましいです。ここに記載されている完全な `export` コマンドは、単純にファイルに追加できますが、ファイルは *新しい* ターミナルが開かれるまで読み込まれないため、現在のターミナルでも実行する必要があります。
 
-### Homebrew から使用するツールをインストールする
+## Homebrew から使用するツールをインストールする
 
 ```sh
 brew install python3 create-dmg nasm cmake gcc wget ninja pkg-config wget rustup
@@ -23,7 +23,7 @@ sudo chown <username>:admin /usr/local/include
 sudo chmod 775 /usr/local/include
 ```
 
-### vcpkg をインストールする
+## vcpkg をインストールする
 Vcpkg は RustDesk が使用する C/C++ 依存関係を管理するために使用されます。インストール場所を決定し、`vcpkg` フォルダを配置したいフォルダから以下を実行してください。この例では、場所として `/Users/<username>/repos/` を使用し、バージョンとしてタグ `2023.04.15` を使用しています。
 
 ```sh
@@ -35,7 +35,7 @@ git checkout 2023.04.15
 export VCPKG_ROOT=~/repos/vcpkg
 ```
 
-### Rust をインストールして設定する
+## Rust をインストールして設定する
 Rust の管理には `rustup` を使用しますが、これは上記で Homebrew を使用して既にインストールされています。ただし、まだ設定が必要です。指示に従い、`rustup` と `rustc` の両方が `PATH` にあることを確認してください。この例では Rust バージョン `1.75.0` を使用していますが、異なるバージョンを使用する必要がある場合があります。`rustup` を使用して複数のバージョンの Rust をインストールして管理できます。
 
 ```sh
@@ -45,7 +45,7 @@ rustup component add rustfmt
 ```
 インストールされたデフォルトの Rust ツールチェーンの概要を確認するには、`rustup show` を実行してください。
 
-### RustDesk ソースファイルをダウンロードする
+## RustDesk ソースファイルをダウンロードする
 
 RustDesk ソースファイルを配置する場所を決定し、`rustdesk` フォルダを配置したいフォルダから以下を実行してください。この例では、場所として `/Users/<username>/repos/` を使用しています。
 
@@ -62,17 +62,17 @@ export PATH=~/Library/Python/3.9/bin:$PATH
 ```
 それが完了したら、失敗したコマンドを再度実行してください。`~/.bash_profile` も編集することを忘れないでください。
 
-### ユーザーインターフェイスコンポーネントをインストールする
+## ユーザーインターフェイスコンポーネントをインストールする
 RustDesk は [Sciter](https://sciter.com/) と [Flutter](https://flutter.dev/) の両方を使用してビルドできます。これらの両方には追加のコンポーネントが必要なので、関連するバージョンまたは両方の手順に従ってください。
 
-#### Sciter
+### Sciter
 
 `rustdesk` フォルダから実行してください：
 ```sh
 wget https://github.com/c-smile/sciter-sdk/raw/master/bin.osx/libsciter.dylib
 ```
 
-#### Flutter
+### Flutter
 
 [FVM](https://fvm.app/) を使用すると、使用する Flutter のバージョンを管理でき、異なる Flutter バージョンを簡単に試すための最も簡単な方法です。
 
@@ -106,7 +106,7 @@ Flutter が起動して実行されたら、Rust と Flutter を結びつける�
 cargo install flutter_rust_bridge_codegen --version "1.80.1" --features "uuid"
 ```
 
-### ビルド
+## ビルド
 
 `rustdesk` フォルダからビルドしてください。Sciter バージョンをビルドするには：
 

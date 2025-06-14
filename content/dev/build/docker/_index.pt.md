@@ -3,8 +3,8 @@ title: Docker
 weight: 30
 ---
 
-### Como compilar com Docker
-#### Isto não funcionará no Windows
+## Como compilar com Docker
+### Isto não funcionará no Windows
 
 Comece clonando o repositório e compilando o container Docker:
 

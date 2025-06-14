@@ -3,11 +3,11 @@ title: Azure
 weight: 16
 ---
 
-### Tutorial en vídeo
+## Tutorial en vídeo
 
 [https://www.youtube.com/watch?v=izGxSmifURI](https://www.youtube.com/watch?v=izGxSmifURI)
 
-### Configuración
+## Configuración
 
 1. Inicie sesión en el [portal de Azure](https://portal.azure.com).
 2. Busque y seleccione **Microsoft Entra ID**.
@@ -36,7 +36,7 @@ weight: 16
 13. En Azure, seleccione el menú **Autenticación**. Luego configure la autorización, eligiendo **Tokens de ID (utilizados para flujos implícitos e híbridos)**.
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/11-Azure-Auth.png)
 
-### Referencias
+## Referencias
 
 - [Configurar un proveedor OpenID Connect con Azure AD](https://learn.microsoft.com/en-us/power-pages/security/authentication/openid-settings)
 - [OpenID Connect en la plataforma de identidad de Microsoft](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-protocols-oidc)

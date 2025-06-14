@@ -11,7 +11,7 @@ Windows security policy is tricky, if this tutorial does not work for you, or yo
 The GUI version, `RustDeskServer.setup.exe` has not been maintained any more, not recommended.
 {{% /notice %}}
 
-### A crossroads
+## A crossroads
 You now either have two choices, you can either use PM2 (easier) or NSSM (a bit harder) to start the RustDesk server
 There are some benefits to using NSSM:
 - Backwards compatibility with older Windows (Windows Server 2008 R2/Windows 7 and earlier although untested).
@@ -25,9 +25,9 @@ While the benefits of PM2 include:
 - You logon regularly to the user that created the RustDesk startup entry
 - More user friendly
 
-### Installing using NSSM
+## Installing using NSSM
 
-#### Installing NSSM
+### Installing NSSM
 Please [download](https://github.com/dkxce/NSSM/releases/download/v2.25/NSSM_v2.25.zip) and extract NSSM select the appropriate
 architecture to your Windows system (if x86 use the contents of the win32 folder, if x64 use the
 contents of win64 folder). It is also best practice to move the binary of NSSM into the
@@ -35,7 +35,7 @@ contents of win64 folder). It is also best practice to move the binary of NSSM i
 thus it is best to tuck it away in `Program Files`) directory of your Installation drive (Usually the C: drive).
 It is also advisable to add the path (such as `C:\Program Files\NSSM`) to the path variable.
 
-#### Checking if NSSM is installed properly
+### Checking if NSSM is installed properly
 If you've done everything correctly the folder `C:\Program Files\NSSM` (in this example I use the C:
 drive but you can use whatever drive you installed Windows to or whatever path you desire) should
 only contain the file `nssm.exe`.
@@ -44,7 +44,7 @@ We will be using `C:\Program Files\NSSM` in this example.
 
 Open Command prompt and run `nssm` if you see a help page you are ready to move onto the next step.
 
-#### Run hbbr and hbbs
+### Run hbbr and hbbs
 Download the Windows version of [RustDesk Server](https://github.com/rustdesk/rustdesk-server/releases).
 Unzip the program to the `C:\Program Files\RustDesk Server` (or anywhere you desire just make sure it
 doesn't change after the service is installed). Now get back to Command prompt.
@@ -81,16 +81,16 @@ nssm start <Desired hbbr servicename>
 
 (The method above has been tested on Windows Server Core 2022 Standard).
 
-### or
+## or
 
-### Installing using PM2
+## Installing using PM2
 
-#### Install Node.js
+### Install Node.js
 
 Please [download](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi) and install Node.js.
 Node.js is the runtime environment of PM2, so you need to install Node.js first.
 
-#### Install PM2
+### Install PM2
 
 Enter belows in `cmd.exe`, press the <kbd>Enter</kbd> key for each line, and run them line by line.
 
@@ -100,7 +100,7 @@ npm install pm2-windows-startup -g
 pm2-startup install
 ```
 
-#### Run hbbr and hbbs
+### Run hbbr and hbbs
 
 Download the Windows version of [RustDesk Server](https://github.com/rustdesk/rustdesk-server/releases). Unzip the program to the C: drive. Run the following four commands:
 
@@ -111,12 +111,12 @@ pm2 start hbbr.exe
 pm2 save
 ```
 
-#### View the log
+### View the log
 
 ```cmd
 pm2 log hbbr
 pm2 log hbbs
 ```
 
-### Alternative tutorials
+## Alternative tutorials
 https://pedja.supurovic.net/setting-up-self-hosted-rustdesk-server-on-windows/?lang=lat

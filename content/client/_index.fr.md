@@ -4,10 +4,10 @@ weight: 2
 pre: "<b>1. </b>"
 ---
 
-### Introduction
+## Introduction
 Le client RustDesk est utilisé sur les appareils pour se connecter via notre serveur RustDesk, qu'il soit open source ou Pro. Il est disponible au téléchargement sur [GitHub](https://github.com/rustdesk/rustdesk/releases/latest).
 
-### Plateformes supportées
+## Plateformes supportées
 - Microsoft Windows
 - macOS
 - Dérivés Debian (Ubuntu ≥ 16, Linux Mint, etc.)
@@ -20,15 +20,15 @@ Le client RustDesk est utilisé sur les appareils pour se connecter via notre se
 - iOS (ne supporte pas le contrôle)
 - Web
 
-### Installation
+## Installation
 
-#### Windows
+### Windows
 
 Téléchargez l'exécutable depuis GitHub et installez-le.
 
 Pour installer silencieusement, appelez l'exe d'installation avec `--silent-install`.
 
-#### macOS
+### macOS
 
 Téléchargez le fichier dmg depuis GitHub. Plus d'informations sont disponibles sur la [page macOS](https://rustdesk.com/docs/en/client/mac/).
 
@@ -38,36 +38,36 @@ Autorisez RustDesk à s'exécuter.
 
 Activez les permissions demandées et suivez les invites sur le côté gauche de RustDesk pour terminer la configuration.
 
-#### Linux
+### Linux
 
 Veuillez consulter les instructions ci-dessous pour installer sur les différentes "saveurs" de Linux (les installeurs sont sur GitHub ou disponibles depuis le dépôt d'une distribution).
 
-##### Dérivés Debian
+#### Dérivés Debian
 
 ```sh
 # veuillez ignorer le rapport d'utilisation du disque incorrect
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
-##### Dérivés Red Hat
+#### Dérivés Red Hat
 
 ```sh
 sudo yum localinstall ./rustdesk-<version>.rpm
 ```
 
-##### Arch Linux/Manjaro
+#### Arch Linux/Manjaro
 
 ```sh
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 ```
 
-##### openSUSE (≥ Leap 15.0)
+#### openSUSE (≥ Leap 15.0)
 
 ```sh
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
-##### Nix / NixOS (≥ 22.05)
+#### Nix / NixOS (≥ 22.05)
 
 Entrer temporairement dans un shell avec `rustdesk` prêt à s'exécuter :
 
@@ -90,13 +90,13 @@ Pour installer à l'échelle du système dans NixOS, exécutez `nixos-rebuild sw
   ];
 ```
 
-#### Android
+### Android
 Installez l'apk depuis notre GitHub. Plus d'informations sont disponibles sur la [page Android](https://rustdesk.com/docs/en/client/android/).
 
-#### iOS (iPhone, iPad)
+### iOS (iPhone, iPad)
 Téléchargez l'application depuis l'[App Store](https://apps.apple.com/us/app/rustdesk-remote-desktop/id1581225015).
 
-### Utilisation
+## Utilisation
 Une fois installé (ou exécuté comme un exécutable temporaire), RustDesk se connectera aux serveurs publics. Vous verrez un message en bas indiquant (1) "Prêt, Pour une connexion plus rapide, veuillez configurer votre propre serveur". En haut à gauche, vous verrez votre (2) ID, (3) Mot de passe à usage unique et à droite une (4) boîte pour vous connecter à un autre ordinateur si vous connaissez leur ID.
 
 ![](/docs/en/client/images/client.png)
@@ -111,7 +111,7 @@ Sous Paramètres, vous trouverez :
 - Compte - Ceci peut être utilisé en conjonction avec le serveur Pro pour se connecter à l'API
 - À propos - Affiche des informations sur le logiciel.
 
-### Configuration de RustDesk
+## Configuration de RustDesk
 Il existe plusieurs façons de configurer RustDesk.
 
 Le moyen le plus simple est d'utiliser RustDesk Server Pro pour obtenir une chaîne de configuration chiffrée, qui peut être utilisée avec `--config` pour importer les paramètres. Pour ce faire :
@@ -128,7 +128,7 @@ Vous pouvez configurer manuellement un client. Pour ce faire :
 
 Si vous configurez manuellement un client, vous pouvez récupérer le fichier `RustDesk2.toml` (dans le dossier utilisateurs) et utiliser `--import-config` de manière similaire à l'exemple ci-dessus.
 
-### Paramètres de ligne de commande
+## Paramètres de ligne de commande
 - `--password` peut être utilisé pour définir un mot de passe permanent.
 - `--get-id` peut être utilisé pour récupérer l'ID.
 - `--set-id` peut être utilisé pour définir un ID, veuillez noter que les ID doivent commencer par une lettre.

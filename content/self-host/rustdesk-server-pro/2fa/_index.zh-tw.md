@@ -14,7 +14,7 @@ weight: 16
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/1-settings-account.png)
 
-### 電子郵件驗證
+## 電子郵件驗證
 
 要啟用登入電子郵件驗證，您需要：
 
@@ -28,16 +28,16 @@ weight: 16
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/2-2fa-email-2.png)
 
-### TOTP
+## TOTP
 
 TOTP 是廣泛使用的 2FA 方法，因此在 RustDesk Server Pro 的網頁控制台中，2FA 指的是 TOTP 驗證。
 
-#### 準備認證應用程式
+### 準備認證應用程式
 
 首先，您需要準備一個認證應用程式。
 您可以從這些類型中選擇 [Authy](https://authy.com)、[Microsoft Authenticator](https://www.microsoft.com/en-us/security/mobile-authenticator-app/) 和 [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2) 認證應用程式。
 
-#### 啟用 2FA
+### 啟用 2FA
 
 當設定頁面顯示 `啟用 2FA` 按鈕時，表示目前尚未啟用 2FA。
 
@@ -65,7 +65,7 @@ TOTP 是廣泛使用的 2FA 方法，因此在 RustDesk Server Pro 的網頁控�
 2. 請將備用碼保存在安全的地方。
 {{% /notice %}}
 
-#### 登入驗證
+### 登入驗證
 
 啟用 2FA 後，將不再使用電子郵件登入驗證。我們將改為使用 2FA 登入驗證。
 
@@ -75,7 +75,7 @@ TOTP 是廣泛使用的 2FA 方法，因此在 RustDesk Server Pro 的網頁控�
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-enable-login-6.png)
 
-#### 修改設定
+### 修改設定
 
 啟用 2FA 後，修改帳戶設定需要額外的 2FA 驗證。
 
@@ -83,7 +83,7 @@ TOTP 是廣泛使用的 2FA 方法，因此在 RustDesk Server Pro 的網頁控�
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-settings-2.png)
 
-#### 2FA 狀態
+### 2FA 狀態
 
 2FA 總共有 3 種狀態：未啟用、已啟用和已過期。
 

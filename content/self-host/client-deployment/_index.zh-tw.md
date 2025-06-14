@@ -12,7 +12,7 @@ pre: "<b>2.4. </b>"
 
 永久密碼可以透過修改 PowerShell 中 `rustdesk_pw` 後面的 `()` 中的內容，以及其他平台相應行的內容，從隨機密碼更改為您偏好的密碼。
 
-### PowerShell
+## PowerShell
 
 ```powershell
 $ErrorActionPreference= 'silentlycontinue'
@@ -23,7 +23,7 @@ $rustdesk_pw=(-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})
 # 從您的 Web 門戶獲取配置字串並填入以下位置
 $rustdesk_cfg="configstring"
 
-################################### 請勿編輯此行以下的內容 #########################################
+################################## 請勿編輯此行以下的內容 #########################################
 
 # 以管理員身份執行並保持在目前目錄
 if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
@@ -133,7 +133,7 @@ Write-Output "密碼：$rustdesk_pw"
 Write-Output "..............................................."
 ```
 
-### Windows batch/cmd
+## Windows batch/cmd
 
 ```bat
 @echo off
@@ -181,14 +181,14 @@ echo 密碼：%rustdesk_pw%
 echo ...............................................
 ```
 
-### MSI
+## MSI
 
 您也可以使用 msi 代替 `rustdesk.exe --silent-install`。
 
 https://rustdesk.com/docs/en/client/windows/msi/
 
 
-### Winget
+## Winget
 
 您也可以透過帶有 winget 的 powershell 進行部署（這會透過 Microsoft 版本的 apt 進行安裝 - 大多數最新 Windows 安裝的一部分）
 
@@ -198,7 +198,7 @@ https://rustdesk.com/docs/en/client/windows/msi/
 winget install --id=RustDesk.RustDesk  -e
 ```
 
-### macOS Bash
+## macOS Bash
 
 ```sh
 #!/bin/bash
@@ -209,7 +209,7 @@ rustdesk_pw=$(openssl rand -hex 4)
 # 從您的 Web 門戶獲取配置字串並填入以下位置
 rustdesk_cfg="configstring"
 
-################################### 請勿編輯此行以下的內容 #########################################
+################################## 請勿編輯此行以下的內容 #########################################
 
 # 需要 root 密碼進行權限提升
 [ "$UID" -eq 0 ] || exec sudo bash "$0" "$@"
@@ -275,7 +275,7 @@ echo "請在 GUI 上完成安裝，正在啟動 RustDesk。"
 open -n /Applications/RustDesk.app
 ```
 
-### Linux
+## Linux
 
 ```sh
 #!/bin/bash
@@ -286,7 +286,7 @@ rustdesk_pw=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 # 從您的 Web 門戶獲取配置字串並填入以下位置
 rustdesk_cfg="configstring"
 
-################################### 請勿編輯此行以下的內容 #########################################
+################################## 請勿編輯此行以下的內容 #########################################
 
 # 檢查腳本是否以 root 身份執行
 if [[ $EUID -ne 0 ]]; then

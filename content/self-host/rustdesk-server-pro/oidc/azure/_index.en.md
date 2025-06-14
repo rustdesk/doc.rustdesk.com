@@ -3,11 +3,11 @@ title: Azure
 weight: 16
 ---
 
-### Video tutorial
+## Video tutorial
 
 [https://www.youtube.com/watch?v=izGxSmifURI](https://www.youtube.com/watch?v=izGxSmifURI)
 
-### Configuration
+## Configuration
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 2. Search for and select **Microsoft Entra ID**.
@@ -36,7 +36,7 @@ weight: 16
 13. In Azure, select **Authentication** menu. Then set up authorization, by choosing **ID tokens (used for implicit and hybrid flows)**.
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/11-Azure-Auth.png)
 
-### References
+## References
 
 - [Set up an OpenID Connect provider with Azure AD](https://learn.microsoft.com/en-us/power-pages/security/authentication/openid-settings)
 - [OpenID Connect on the Microsoft identity platform](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-protocols-oidc)

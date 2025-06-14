@@ -14,7 +14,7 @@ Webコンソールは現在2種類の2FAをサポートしています：
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/1-settings-account.png)
 
-### メール検証
+## メール検証
 
 ログインのメール検証を有効にするには、以下が必要です：
 
@@ -28,16 +28,16 @@ Webコンソールは現在2種類の2FAをサポートしています：
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/2-2fa-email-2.png)
 
-### TOTP
+## TOTP
 
 TOTPは広く使用されている2FA方法なので、RustDesk Server ProのWebコンソールでは、2FAはTOTP検証を指します。
 
-#### 認証アプリの準備
+### 認証アプリの準備
 
 まず、認証アプリを準備する必要があります。
 [Authy](https://authy.com)、[Microsoft Authenticator](https://www.microsoft.com/en-us/security/mobile-authenticator-app/)、[Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2)などの認証アプリから選択できます。
 
-#### 2FAを有効にする
+### 2FAを有効にする
 
 設定ページに`2FAを有効にする`ボタンが表示されている場合、現在2FAが有効になっていないことを意味します。
 
@@ -65,7 +65,7 @@ QRコードをスキャンするのが不便な場合は、ここで直接コー
 2. バックアップコードを安全な場所に保管してください。
 {{% /notice %}}
 
-#### ログイン検証
+### ログイン検証
 
 2FAが有効になると、メールログイン検証は使用されなくなります。代わりに2FAログイン検証を使用します。
 
@@ -75,7 +75,7 @@ QRコードをスキャンするのが不便な場合は、ここで直接コー
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-enable-login-6.png)
 
-#### 設定の変更
+### 設定の変更
 
 2FAが有効になっている場合、アカウント設定の変更には追加の2FA検証が必要です。
 
@@ -83,7 +83,7 @@ QRコードをスキャンするのが不便な場合は、ここで直接コー
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-settings-2.png)
 
-#### 2FAの状態
+### 2FAの状態
 
 2FAには合計3つの状態があります：有効でない、有効、期限切れ。
 

@@ -5,16 +5,16 @@ weight: 49
 
 MSIパッケージは、サイレントインストール用のコマンドラインパラメータをサポートしています。
 
-### パラメータ
+## パラメータ
 
-### INSTALLFOLDER
+## INSTALLFOLDER
 
 インストールフォルダ。
 
 **デフォルト**: `[ProgramFiles6432Folder]\[app name]`、通常は `C:\Program Files\[app name]`。
 
 
-### CREATESTARTMENUSHORTCUTS
+## CREATESTARTMENUSHORTCUTS
 
 スタートメニューのショートカットを作成するかどうか。
 
@@ -29,7 +29,7 @@ MSIパッケージは、サイレントインストール用のコマンドラ�
 | 3 | `Y` | はい、`1` と同じ |
 | 4 | `N` | いいえ、`0` と同じ |
 
-### CREATEDESKTOPSHORTCUTS
+## CREATEDESKTOPSHORTCUTS
 
 デスクトップショートカットを作成するかどうか。
 
@@ -44,7 +44,7 @@ MSIパッケージは、サイレントインストール用のコマンドラ�
 | 3 | `Y` | はい、`1` と同じ |
 | 4 | `N` | いいえ、`0` と同じ |
 
-### INSTALLPRINTER
+## INSTALLPRINTER
 
 プリンターをインストールするかどうか。プリンターは、制御される側の印刷ジョブをローカルで実行するために使用されます。
 
@@ -61,11 +61,11 @@ MSIパッケージは、サイレントインストール用のコマンドラ�
 | 3 | `Y` | はい、`1` と同じ |
 | 4 | `N` | いいえ、`0` と同じ |
 
-## 例
+# 例
 
 **注意**: `2024-08-05` より前のバージョンでは、サイレントインストールとサイレント修復に問題があります。まずアンインストールしてから、インストールしてください。
 
-### インストールパラメータを使用したインストール
+## インストールパラメータを使用したインストール
 
 サイレントインストール、インストールパスを設定、デスクトップショートカットは作成しない、スタートメニューショートカットを作成。
 
@@ -75,7 +75,7 @@ msiexec /i RustDesk-1.msi /qn INSTALLFOLDER="D:\Program Files\RustDesk" CREATEST
 
 **注意**: `/l*v install.log` は、実行ログを `install.log` に出力することを意味します。
 
-### アップグレード、パラメータなし
+## アップグレード、パラメータなし
 
 以前のインストールパスとインストールオプションでアップグレード。
 
@@ -83,7 +83,7 @@ msiexec /i RustDesk-1.msi /qn INSTALLFOLDER="D:\Program Files\RustDesk" CREATEST
 msiexec /i RustDesk-2.msi /qn /l*v install.log
 ```
 
-### アップグレード、インストールオプションを変更
+## アップグレード、インストールオプションを変更
 
 ```
 msiexec /i RustDesk-1.msi /qn INSTALLFOLDER="C:\Program Files\RustDesk" CREATESTARTMENUSHORTCUTS="N" CREATEDESKTOPSHORTCUTS="N" INSTALLPRINTER="N" /l*v install.log

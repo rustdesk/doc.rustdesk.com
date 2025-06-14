@@ -5,18 +5,18 @@ weight: 20
 <!-- For translators: When translating elements like "buttons", don't just translate, please refer actual naming in their interface. -->
 Após a atualização DSM 7.2, a Synology renomeou seu pacote "Docker" para "Container Manager". Traz uma nova GUI, e vem com "docker-compose" dentro de sua GUI, o que torna mais fácil criar Docker.
 
-### Modelos suportados e requisitos
+## Modelos suportados e requisitos
 
 O Container Manager traz suporte ARM64 para alguns modelos de entrada, como a série J, para lista detalhada de modelos suportados, verifique o [site da Synology](https://www.synology.com/en-us/dsm/packages/ContainerManager).
 Na maioria das vezes você não precisará instalar RAM extra para instalar Docker e RustDesk Server.
 
-### 1. Instalar Container Manager (Docker)
+## 1. Instalar Container Manager (Docker)
 
 Abra "Central de Pacotes", pesquise e instale "Container Manager".
 
 ![](images/dsm7_install_container_manager_though_package_center.png)
 
-### 2. Criar pasta
+## 2. Criar pasta
 
 Após instalar "Container Manager", ele criará uma Pasta Compartilhada chamada `docker`, vamos colocar os dados do nosso servidor aqui.
 
@@ -24,7 +24,7 @@ Abra seu File Station, crie uma pasta chamada `rustdesk-server` (ou como desejar
 
 ![](images/dsm7_create_required_folders.png)
 
-### 3. Criar contêiner
+## 3. Criar contêiner
 
 Abra seu Container Manager, vá para Projeto e clique em Criar.
 
@@ -65,7 +65,7 @@ services:
 
 Por favor, pule `Configurações do portal web` e termine.
 
-### 4. Verificar se está funcionando
+## 4. Verificar se está funcionando
 
 Abra seu File Station, você deve ver `id_ed25519`, `id_ed25519.pub` na sua pasta `docker/rustdesk-server/data`. Você pode baixá-lo e abri-lo através de qualquer editor de texto ou usar [Synology Text Editor](https://www.synology.com/en-us/dsm/packages/TextEditor). Esta é a chave pública que você precisa para seu cliente RustDesk.
 
@@ -75,7 +75,7 @@ A chave pública ficará assim:
 
 Verifique [aqui](/docs/en/client) para configurar seu cliente. Apenas `servidor ID` e `Chave` são necessários. `Servidor relay` não é necessário porque definimos em `hbbs`, `hbbs` fornecerá esta informação automaticamente.
 
-### 5. Configurar encaminhamento de porta no seu roteador
+## 5. Configurar encaminhamento de porta no seu roteador
 
 Vá para a página web de administração do seu roteador, encontre qualquer coisa relacionada a `Encaminhamento de porta`, deve aparecer nas configurações `WAN` ou `Firewall`.
 

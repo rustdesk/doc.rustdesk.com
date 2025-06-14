@@ -11,19 +11,19 @@ weight: 22
 DSM 7.2 アップデート後、Docker は新しい「Container Manager」にアップグレードされました。代わりに[この記事](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7)をご確認ください。
 {{% /notice %}}
 
-### Docker をインストール
+## Docker をインストール
 
 | パッケージセンターを開く | Docker をインストール |
 | --- | --- |
 | ![](images/package-manager.png) | ![](images/docker.png) |
 
-### RustDesk Server をインストール
+## RustDesk Server をインストール
 
 | Docker のレジストリで rustdesk-server を検索し、ダブルクリックでインストール | インストールされた rustdesk-server イメージ、ダブルクリックで rustdesk-server コンテナを作成 |
 | --- | --- |
 | ![](images/pull-rustdesk-server.png) | ![](images/rustdesk-server-installed.png) |
 
-### hbbs コンテナを作成
+## hbbs コンテナを作成
 
 上記の通り、rustdesk-server イメージをダブルクリックして新しいコンテナを作成し、名前を `hbbs` に設定します。
 ![](images/hbbs.png)
@@ -52,13 +52,13 @@ Synology の OS は Debian ベースなので、ホストネット（--net=host�
 
 - 完了
 
-### hbbr コンテナを作成
+## hbbr コンテナを作成
 
 上記の `hbbs` の手順を繰り返しますが、コンテナ名を `hbbr` にし、コマンド（コマンド設定ステップ）は `hbbr` にしてください。
 
 ![](images/hbbr-config.png)
 
-### hbbr/hbbs コンテナ
+## hbbr/hbbs コンテナ
 
 ![](images/containers.png)
 
@@ -66,6 +66,6 @@ Synology の OS は Debian ベースなので、ホストネット（--net=host�
 | --- | --- |
 | ![](images/log.png) | ![](images/network-types.png) |
 
-### キーを取得
+## キーを取得
 
 File Station を使用して以前に設定したフォルダを参照し、`id_ed25519.pub` をダウンロードしてテキストエディタで開いてキーを確認します。

@@ -19,7 +19,7 @@ SELinux status: disabled
 ...
 ```
 
-## Añadir Políticas de SELinux  
+# Añadir Políticas de SELinux  
 
 Para una introducción a SELinux, consulte  [SELinux/Tutorials (ingles)](https://wiki.gentoo.org/wiki/SELinux/Tutorials).
 
@@ -47,7 +47,7 @@ Con el primer método vas a tener que hacer modificaciones menores, pero como el
 El segundo método se basa en crear un nuevo tipo de cero con todas las reglas. Va a ser necesario añadir muchas reglas y según el sistema estas reglas serán diferentes. Quizás sea necesario hacer ajustes durante el uso del programa.
 
 
-### Usa el Tipo Por Defecto
+## Usa el Tipo Por Defecto
 
 El tipo por defecto del servicio de RustDesk es `init_t`, que es de determinado por [las reglas de herencia de contexto de SELinux (ingles)](https://wiki.gentoo.org/wiki/SELinux/Tutorials/How_does_a_process_get_into_a_certain_context).
 
@@ -113,7 +113,7 @@ checkmodule -M -m -o rustdesk.mod rustdesk.te && semodule_package -o rustdesk.pp
 sudo semodule -l | grep rustdesk
 ```
 
-### Crea un tipo "rustdesk_t"
+## Crea un tipo "rustdesk_t"
 
 1. Crea un nuevo directorio. `mkdir rustdesk-selinux-1.0`
 2. Crea los archivos de políticas de SELinux. `touch Makefile rustdesk.te rustdesk.fc rustdesk.if`.
@@ -533,7 +533,7 @@ gen_require(`
         type xserver_t;
 ')
 
-###############################################################################
+##############################################################################
 #
 # Parte 1. Las reglas siguientes son mayormente para el `init.te` de codigo abierto.
 #               https://github.com/fedora-selinux/selinux-policy/blob/rawhide/policy/modules/system/init.te
@@ -551,7 +551,7 @@ corecmd_shell_entry_type(rustdesk_t)
 typeattribute rustdesk_t init_script_domain_type;
 
 
-########################################
+#######################################
 
 # Use capabilities. old rule:
 allow rustdesk_t self:capability ~{ audit_control audit_write sys_module };
@@ -1016,7 +1016,7 @@ allow systemprocess rustdesk_t:unix_dgram_socket sendto;
 allow systemprocess rustdesk_t:unix_stream_socket { append write read getattr ioctl };
 
 
-###############################################################################
+##############################################################################
 #
 # parte 2. Las siguientes reglas son generadas por:
 #               `grep rustdesk /var/log/audit/audit.log | audit2allow -a -M test`
@@ -1049,7 +1049,7 @@ allow rustdesk_t xserver_t:unix_stream_socket connectto;
 allow rustdesk_t ephemeral_port_t:tcp_socket name_connect;
 
 
-###############################################################################
+##############################################################################
 #
 # Parte 3. Las siguientes reglas son para las reglas instaladas por el sistema
 #               `dnf install setools-console`
@@ -1713,7 +1713,7 @@ rustdesk.if:
 
 ```text
 
-## <summary>RustDesk</summary>
+# <summary>RustDesk</summary>
 ```
 
 Makefile:
@@ -1750,7 +1750,7 @@ install: man
 
 ```
 
-#### Habilitar directamente
+### Habilitar directamente
 
 Comprueba el contexto de seguridad de RustDesk antes de modificar:
 
@@ -1784,8 +1784,8 @@ $ ps -eZ | grep rustdesk
 system_u:system_r:rustdesk_t:s0  110565 ?        00:00:00 rustdesk
 ```
 
-### Habilita mediante instalación rpm  
-#### Enable through rpm installation
+## Habilita mediante instalación rpm  
+### Enable through rpm installation
 
 Crea un nuevo archivo de spec `rustdesk-selinux.spec`:
 
@@ -1874,9 +1874,9 @@ $ rpmbuild -ba rustdesk-selinux.spec
 
 Después de que el empaquetado es completado, ejecuta la instalación via rpm
 
-## Resolución De Problemas
+# Resolución De Problemas
 
-### Añadir políticas de forma iterativa
+## Añadir políticas de forma iterativa
 
 ```sh
 $ cd /tmp
@@ -1886,7 +1886,7 @@ $ # merge rustdesk_tmp.te a rustdesk.te
 $ make clean && make && sudo make install-policy
 ```
 
-## Referencias
+# Referencias
 
 1. [SELinux/tutoriales (ingles)](https://wiki.gentoo.org/wiki/SELinux/Tutorials)
 1. [Instalación del modulo de políticas de SELinux (ingles)](https://fedoraproject.org/wiki/SELinux/IndependentPolicy#SELinux_Policy_module_installation)

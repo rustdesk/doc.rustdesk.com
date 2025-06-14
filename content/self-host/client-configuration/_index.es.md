@@ -4,11 +4,11 @@ weight: 300
 pre: "<b>2.3. </b>"
 ---
 
-### Descripción general
+## Descripción general
 
 Hay varias formas de configurar los clientes de RustDesk para usar su propio servidor auto-hospedado, cubriremos algunas a continuación.
 
-### 1. Generador de cliente personalizado (solo Pro, plan básico o plan personalizado)
+## 1. Generador de cliente personalizado (solo Pro, plan básico o plan personalizado)
 
 Puede tener su propio nombre, logotipo, icono, configuración, firma y más.
 
@@ -19,7 +19,7 @@ Actualmente se admite Windows X64, Mac Arm64 / X64, [Linux](https://twitter.com/
 ![](images/custom-client-qs.png)
 ![](images/web_console_custom_client_config.jpeg)
 
-### 2. Configuración manual
+## 2. Configuración manual
 
 En la página principal del cliente RustDesk, haga clic en el botón de menú [ &#8942; ] al lado de su ID y luego haga clic en Red, ahora puede desbloquear la configuración usando privilegios elevados y establecer su `ID`, `Relé`, `API` y `Clave`. Es importante tener en cuenta que esta `Clave` es la clave pública utilizada para el cifrado de conexión, distinta de la clave de licencia proporcionada con su compra de la versión Pro.
 
@@ -39,7 +39,7 @@ o
 hbbs.example.com:21116
 ```
 
-#### Establecer `Clave`
+### Establecer `Clave`
 
 Para establecer una conexión cifrada a su servidor auto-hospedado, necesita ingresar su clave pública. La clave generalmente se genera en la primera ejecución de `hbbs` y se puede encontrar en el archivo `id_ed25519.pub` en su directorio de trabajo / carpeta de datos.
 
@@ -47,7 +47,7 @@ Como usuario `Pro`, adicionalmente podrá recuperar la `Clave` desde la [consola
 
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
-#### Establecer `Servidor API`
+### Establecer `Servidor API`
 
 Esto es solo para usuarios `Pro`. Cuando puede iniciar sesión en la consola web, pero falla al iniciar sesión en el cliente RustDesk, probablemente no haya establecido el `Servidor API` correctamente.
 
@@ -56,7 +56,7 @@ por ejemplo, si su servidor API funciona en el puerto HTTPS por defecto, especif
 
 Si aún no puede confirmar el valor del `Servidor API`, vaya a la página de bienvenida de la consola web, el `Servidor API` se muestra en la imagen anterior (El cuadro de entrada con la etiqueta `API:`).
 
-### 3. Configuración usando Importar o Exportar
+## 3. Configuración usando Importar o Exportar
 
 1. Use los pasos [anteriores](https://rustdesk.com/docs/en/self-host/client-configuration/#manual-config) para configurar el Cliente RustDesk en un dispositivo.
 2. Usando la máquina anterior, vaya a Configuración luego Red y desbloquee.
@@ -67,17 +67,17 @@ Si aún no puede confirmar el valor del `Servidor API`, vaya a la página de bie
 7. Pegará automáticamente la configuración.
 8. Haga clic en `Aplicar`.
 
-### 4. Configuración automática
+## 4. Configuración automática
 
 La forma más fácil de configurar automáticamente es usar los scripts de implementación que se encuentran [aquí](https://rustdesk.com/docs/en/self-host/client-deployment/).
 
-### 5. Importar configuración desde `Pro` a través del portapapeles
+## 5. Importar configuración desde `Pro` a través del portapapeles
 
 ![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/372#discussioncomment-10473298
 
-### 6. Usar línea de comandos `--config`
+## 6. Usar línea de comandos `--config`
 `rustdesk.exe --config <cadena-config>`
 
 Puede obtener la cadena de configuración desde la consola web (puede verla en la imagen anterior) o desde el cliente RustDesk "Configuración → Red" ([aquí](https://github.com/rustdesk/rustdesk/discussions/7118) hay una discusión sobre esto).

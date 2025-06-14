@@ -10,7 +10,7 @@ Programas portáteis do Windows não têm privilégios de administrador, o que p
 
 Ao elevar privilégios, o RustDesk pode criar um processo com privilégios de administrador durante a inicialização ou uma sessão, permitindo que execute capturas de tela e operações do mouse, evitando assim os problemas acima.
 
-### Elevar na inicialização
+## Elevar na inicialização
 
 Dessa forma, usuários remotos não precisam solicitar elevação ao conectar. Existem dois métodos:
 
@@ -18,7 +18,7 @@ Dessa forma, usuários remotos não precisam solicitar elevação ao conectar. E
 
 * Método 2: Clique com o botão direito e execute como administrador.
 
-### Elevar no lado controlado
+## Elevar no lado controlado
 
 O lado controlado pode clicar diretamente em `Aceitar e Elevar` ao conectar, ou clicar em `Elevar` quando já conectado.
 
@@ -26,7 +26,7 @@ O lado controlado pode clicar diretamente em `Aceitar e Elevar` ao conectar, ou 
 | :---: | :---: |
 | ![](images/cm_unauth.jpg) | ![](images/cm_auth.jpg) |
 
-### Solicitar elevação no lado de controle
+## Solicitar elevação no lado de controle
 
 Após selecionar `Solicitar Elevação` no menu de ação, a seguinte caixa de diálogo aparecerá. Se você escolher `Pedir ao usuário remoto para autenticação`, você não precisará inserir um nome de usuário e senha, mas o usuário no computador remoto deve ter privilégios de administrador. Se você selecionar `Transmitir o nome de usuário e senha do administrador`, o usuário no computador remoto só precisa aceitar na janela UAC. Após enviar a solicitação, aguarde que o usuário do outro lado aceite a janela UAC. Após a confirmação, uma mensagem de sucesso aparecerá. Note que **ambos os métodos requerem que alguém no lado controlado aceite a janela UAC**. Portanto, se não houver ninguém disponível do outro lado, a elevação não deve ser solicitada no lado de controle.
 
@@ -36,7 +36,7 @@ Após selecionar `Solicitar Elevação` no menu de ação, a seguinte caixa de d
 | **Aguardar** | **Sucesso** |
 | ![](images/wait.png) | ![](images/success.png) |
 
-### Como Escolher
+## Como Escolher
 
 | Cenário | Método |
 | :---: | :---: |

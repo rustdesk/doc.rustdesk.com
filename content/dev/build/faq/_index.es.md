@@ -3,9 +3,9 @@ title: FAQ para Windows
 weight: 40
 ---
 
-## vcpkg el paquete de descarga falló
+# vcpkg el paquete de descarga falló
 
-### Error
+## Error
 
 ```
  -- Fetching https://chromium.googlesource.com/libyuv/libyuv 287158925b0e03ea4499a18b4e08478c5781541b...
@@ -13,15 +13,15 @@ weight: 40
        Command failed: D:/program/Git/mingw64/bin/git.exe fetch https://chromium.googlesource.com/libyuv/libyuv 287158925b0e03ea4499a18b4e08478c5781541b --depth 1 -n
 ```
 
-### Solución
+## Solución
 
 Usa un navegador para descargar `https://chromium.googlesource.com/libyuv/libyuv/+archive/287158925b0e03ea4499a18b4e08478c5781541b.tar.gz`, luego muévelo a `vcpkg/downloads` y reinstalar.
 
 
 
-## El paquete en Cargo.lock no existe
+# El paquete en Cargo.lock no existe
 
-### Error
+## Error
 
 ```
 $ cargo run
@@ -42,34 +42,34 @@ $ cargo run
 
 Tal vez el autor usó `git force push` y la confirmación anterior se sobrescribió.
 
-### Solución
+## Solución
 
 `cargo update`, forzar la actualización del paquete
 
 
 
-## VCPKG_ROOT no establecido
+# VCPKG_ROOT no establecido
 
-### Error
+## Error
 
 ```
 thread 'main' panicked at 'Failed to find package: VcpkgNotFound("No vcpkg installation found. Set the VCPKG_ROOT environment variable or run 'vcpkg integrate install'")', libs\scrap\build.rs:7:45
 ```
 
-### Solución
+## Solución
 
 Agregar `VCPKG_ROOT` variable de entorno, o ejecutar con `VCPKG_ROOT=<vcpkg_dir> cargo run`
 
 
 
-## clang no instalado, o LIBCLANG_PATH no establecido
+# clang no instalado, o LIBCLANG_PATH no establecido
 
-### Error
+## Error
 
 ```
 thread 'main' panicked at 'Unable to find libclang: "couldn't find any valid shared libraries matching: ['clang.dll', 'libclang.dll'], set the `LIBCLANG_PATH` environment variable to a path where one of these files can be found (invalid: [])"', C:\Users\selfd\.cargo\registry\src\mirrors.ustc.edu.cn-61ef6e0cd06fb9b8\bindgen-0.59.2\src/lib.rs:2144:31
 ```
 
-### Solución
+## Solución
 
 Instalar [llvm](https://releases.llvm.org/download.html), Añade el `LIBCLANG_PATH` variable de entorno como `llvm_install_dir/bin`

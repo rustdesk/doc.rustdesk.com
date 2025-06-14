@@ -5,9 +5,9 @@ weight: 7
 
 > こちらもう一つの良いチュートリアルです：[Building Your Own Remote Desktop Solution: RustDesk Self-Hosted on Cloud with Docker (Hetzner)](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f)
 
-### Docker で独自のサーバーをインストール
+## Docker で独自のサーバーをインストール
 
-#### 要件
+### 要件
 rustdesk-server を Docker コンテナとして実行するには、Docker/Podman がインストールされている必要があります。疑問がある場合は、この[ガイド](https://docs.docker.com/engine/install)で Docker をインストールして、最新であることを確認してください！
 
 ファイアウォールでこれらのポートを開いてください：
@@ -22,7 +22,7 @@ rustdesk-server を Docker コンテナとして実行するには、Docker/Podm
 
 *ウェブクライアントサポートが不要な場合、対応するポート `21118`、`21119` は無効にできます。*
 
-#### Docker の例
+### Docker の例
 
 ```sh
 sudo docker image pull rustdesk/rustdesk-server
@@ -42,7 +42,7 @@ sudo docker run --name hbbr -v ./data:/root -td --net=host --restart unless-stop
 `-td` でログが見えない場合は、`docker logs hbbs` でログを確認できます。または `-it` で実行すると、`hbbs/hbbr` はデーモンモードで実行されません。
 {{% /notice %}}
 
-#### Docker Compose の例
+### Docker Compose の例
 ここで説明されている `compose.yml` で Docker ファイルを実行するには、[Docker Compose](https://docs.docker.com/compose/) がインストールされている必要があります。
 
 ```yaml
@@ -97,7 +97,7 @@ services:
     restart: unless-stopped
 ```
 
-#### Podman Quadlet の例
+### Podman Quadlet の例
 
 systemd サービスとして Podman でコンテナを実行したい場合は、これらのサンプル Podman Quadlet 設定を使用できます：
 

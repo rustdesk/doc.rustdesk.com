@@ -3,7 +3,7 @@ title: リレーサーバーの設定
 weight: 17
 ---
 
-### RustDesk Pro - dockerを使用してジオロケーション付きの追加リレーサーバーをインストール
+## RustDesk Pro - dockerを使用してジオロケーション付きの追加リレーサーバーをインストール
 
 {{% notice note %}}
 [シンプルインストール](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/)は、同じマシン上に暗黙的にリレーサーバー（`hbbr`プロセス）を作成します。リレーサーバーを明示的に指定する必要はありません。
@@ -81,9 +81,9 @@ To                         Action      From
 21117,21119/tcp (v6)       ALLOW       Anywhere (v6)
 ```
 
-### Webコンソールを使用してジオロケーション用にRustDesk Proを設定
+## Webコンソールを使用してジオロケーション用にRustDesk Proを設定
 
-#### GeoLite2 Cityデータベースファイルの登録とダウンロード
+### GeoLite2 Cityデータベースファイルの登録とダウンロード
 
 ジオロケーションを使用するには、hbbsがMaxMind GeoLite2 Cityデータベースにアクセスする必要があります。データベースは無料で、登録してファイルをダウンロードし、APIキーを取得できます。
 
@@ -96,7 +96,7 @@ Linuxマシンでインストールスクリプトを使用してRustDesk Proを
 
 Dockerインストールの場合、ファイルは`/root`にマップされたコンテナをデプロイする際にマップしたボリューム内にある必要があります。
 
-#### プロセスを自動化するためのAPIキーの取得 - Linuxサーバー
+### プロセスを自動化するためのAPIキーの取得 - Linuxサーバー
 
 このファイルを定期的に更新する必要があり、cronjobを使用できます。無料のダウンロードリンクにアクセスするためのAPIキーが必要です。
 
@@ -111,7 +111,7 @@ Dockerインストールの場合、ファイルは`/root`にマップされた�
 /usr/bin/curl -L --silent 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={Your Access Key}&suffix=tar.gz' | /bin/tar -C '/var/lib/rustdesk-server/' -xvz --keep-newer-files --strip-components=1 --wildcards '*GeoLite2-City.mmdb'
 ```
 
-#### RustDesk Pro Webコンソールで設定を変更
+### RustDesk Pro Webコンソールで設定を変更
 
 リレーサーバーのIPアドレスまたはDNS名（DNSはバージョン1.1.11以降でサポート）を`リレーサーバー`に追加します。**ポートは必要ありません。`21117`ポートが明示的に使用されます。** <br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/c4452ba4-5e1d-437a-ae1d-fc0070bfa26c">

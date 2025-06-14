@@ -3,11 +3,9 @@ title: Stratégie
 weight: 200
 ---
 
-### Stratégie
-
 La stratégie est un outil pour les administrateurs RustDesk pour mettre à jour en masse les options de sécurité des pages de paramètres client. Les administrateurs peuvent créer différentes stratégies et les appliquer à différents appareils.
 
-#### Créer des stratégies
+## Créer des stratégies
 
 Vous pouvez créer une nouvelle stratégie en cliquant sur le bouton `+` et effectuer diverses actions sur la stratégie en la survolant et en cliquant sur le menu.
 
@@ -17,7 +15,7 @@ Sur le côté droit du menu de stratégie, vous pouvez voir le nombre d'appareil
 
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/strategy_menu.png)
 
-#### Stratégie d'appareil, stratégie d'utilisateur et stratégie de groupe d'appareils
+## Stratégie d'appareil, stratégie d'utilisateur et stratégie de groupe d'appareils
 
 Les stratégies sont appliquées selon l'ordre de priorité suivant :
 1. Stratégie d'appareil (Priorité la plus élevée)
@@ -29,7 +27,7 @@ Chaque appareil ne peut être géré que par une seule stratégie à la fois. Le
 - Les stratégies d'utilisateur ont la priorité sur les stratégies de groupe d'appareils
 - Les stratégies de groupe d'appareils s'appliquent à tous les appareils du groupe d'appareils qui n'ont pas de stratégie d'appareil ou de stratégie d'utilisateur assignée
 
-#### Modifier les appareils
+## Modifier les appareils
 
 Lorsque vous cliquez sur le menu `Modifier les appareils`, une boîte de dialogue d'édition affichant tous les appareils s'ouvre. Vous pouvez changer l'état de sélection des cases à cocher puis cliquer sur le bouton `Enregistrer` pour appliquer les modifications d'appareils effectuées sur la page actuelle. Si vous devez modifier des appareils sur d'autres pages, veuillez naviguer vers ces pages. Vous pouvez également utiliser le menu déroulant dans le coin supérieur droit pour filtrer les appareils.
 
@@ -39,7 +37,7 @@ Voici un exemple de la boîte de dialogue qui apparaît lorsque vous cliquez sur
 
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/edit_devices.png)
 
-#### Modifier les utilisateurs
+## Modifier les utilisateurs
 
 Lorsque vous cliquez sur le menu `Modifier les utilisateurs`, une boîte de dialogue d'édition affichant tous les utilisateurs s'ouvre. Vous pouvez changer l'état de sélection des cases à cocher puis cliquer sur le bouton `Enregistrer` pour appliquer les modifications d'utilisateurs effectuées sur la page actuelle. Si vous devez modifier des utilisateurs sur d'autres pages, veuillez naviguer vers ces pages. Vous pouvez également utiliser le menu déroulant dans le coin supérieur droit pour filtrer les utilisateurs.
 
@@ -47,7 +45,7 @@ Voici un exemple de la boîte de dialogue qui apparaît lorsque vous cliquez sur
 
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/edit_users.png)
 
-#### Modifier les groupes d'appareils
+## Modifier les groupes d'appareils
 
 Lorsque vous cliquez sur le menu `Modifier le groupe d'appareils`, une boîte de dialogue d'édition affichant tous les groupes d'appareils s'ouvre. Vous pouvez changer l'état de sélection des cases à cocher puis cliquer sur le bouton `Enregistrer` pour appliquer les modifications de groupes d'appareils effectuées sur la page actuelle. Si vous devez modifier des groupes d'appareils sur d'autres pages, veuillez naviguer vers ces pages. Vous pouvez également utiliser le menu déroulant dans le coin supérieur droit pour filtrer les groupes d'appareils.
 
@@ -55,7 +53,7 @@ Voici un exemple de la boîte de dialogue qui apparaît lorsque vous cliquez sur
 
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/edit_device_groups.png)
 
-#### Synchronisation des stratégies
+## Synchronisation des stratégies
 
 Chaque appareil ne peut être géré que par une seule stratégie, et si cette stratégie est désactivée, l'appareil ne sera géré par aucune stratégie. Lors de la synchronisation des stratégies, RustDesk enregistre les horodatages de stratégie locaux et serveur pour déterminer si la synchronisation est nécessaire. C'est-à-dire qu'après la synchronisation complète des stratégies :
 
@@ -63,6 +61,6 @@ Chaque appareil ne peut être géré que par une seule stratégie, et si cette s
 * Si l'administrateur modifie le contenu de la stratégie, les options du client seront synchronisées.
 * Si l'administrateur modifie la stratégie à laquelle appartient l'appareil, les options du client seront synchronisées.
 
-#### Modifier les stratégies
+## Modifier les stratégies
 
 Au bas de la stratégie, cliquez sur `Modifier`, effectuez des modifications et cliquez sur `Soumettre`. La stratégie sera synchronisée avec les appareils dans les 30 secondes.

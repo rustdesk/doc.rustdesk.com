@@ -5,16 +5,16 @@ weight: 49
 
 O pacote MSI suporta parâmetros de linha de comando para instalação silenciosa.
 
-### Parâmetros
+## Parâmetros
 
-### INSTALLFOLDER
+## INSTALLFOLDER
 
 A pasta de instalação.
 
 **Padrão**: `[ProgramFiles6432Folder]\[app name]`, normalmente `C:\Program Files\[app name]`.
 
 
-### CREATESTARTMENUSHORTCUTS
+## CREATESTARTMENUSHORTCUTS
 
 Se deve criar um atalho do menu iniciar.
 
@@ -29,7 +29,7 @@ Se deve criar um atalho do menu iniciar.
 | 3 | `Y` | Sim, mesmo que `1` |
 | 4 | `N` | Não, mesmo que `0` |
 
-### CREATEDESKTOPSHORTCUTS
+## CREATEDESKTOPSHORTCUTS
 
 Se deve criar um atalho da área de trabalho.
 
@@ -44,7 +44,7 @@ Se deve criar um atalho da área de trabalho.
 | 3 | `Y` | Sim, mesmo que `1` |
 | 4 | `N` | Não, mesmo que `0` |
 
-### INSTALLPRINTER
+## INSTALLPRINTER
 
 Se deve instalar uma impressora. A impressora é usada para executar os trabalhos de impressão do lado controlado localmente.
 
@@ -61,11 +61,11 @@ Desde a versão `1.3.9`.
 | 3 | `Y` | Sim, mesmo que `1` |
 | 4 | `N` | Não, mesmo que `0` |
 
-## Exemplos
+# Exemplos
 
 **Cuidado**: Para versões anteriores a `2024-08-05`, há problemas com instalação silenciosa e reparo silencioso. Por favor desinstale primeiro, depois instale.
 
-### Instalar com parâmetros de instalação
+## Instalar com parâmetros de instalação
 
 Instalação silenciosa, definir o caminho de instalação, não criar atalho da área de trabalho, criar atalho do menu iniciar.
 
@@ -75,7 +75,7 @@ msiexec /i RustDesk-1.msi /qn INSTALLFOLDER="D:\Program Files\RustDesk" CREATEST
 
 **Nota**: `/l*v install.log` significa imprimir o log de execução para `install.log`.
 
-### Atualização, sem parâmetros
+## Atualização, sem parâmetros
 
 Atualização com o caminho de instalação anterior e opções de instalação.
 
@@ -83,7 +83,7 @@ Atualização com o caminho de instalação anterior e opções de instalação.
 msiexec /i RustDesk-2.msi /qn /l*v install.log
 ```
 
-### Atualização, modificar opções de instalação
+## Atualização, modificar opções de instalação
 
 ```
 msiexec /i RustDesk-1.msi /qn INSTALLFOLDER="C:\Program Files\RustDesk" CREATESTARTMENUSHORTCUTS="N" CREATEDESKTOPSHORTCUTS="N" INSTALLPRINTER="N" /l*v install.log

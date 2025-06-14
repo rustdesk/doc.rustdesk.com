@@ -3,7 +3,7 @@ title: Configurar servidores de relé
 weight: 17
 ---
 
-### RustDesk Pro - Instalar servidores de relé adicionales con geolocalización usando docker
+## RustDesk Pro - Instalar servidores de relé adicionales con geolocalización usando docker
 
 {{% notice note %}}
 [La instalación simple](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/) crea un servidor de relé (el proceso `hbbr`) implícitamente en la misma máquina, no necesita especificar el servidor de relé explícitamente.
@@ -81,9 +81,9 @@ To                         Action      From
 21117,21119/tcp (v6)       ALLOW       Anywhere (v6)
 ```
 
-### Configurar RustDesk Pro para geolocalización usando la consola web
+## Configurar RustDesk Pro para geolocalización usando la consola web
 
-#### Registrarse y descargar el archivo de base de datos GeoLite2 City
+### Registrarse y descargar el archivo de base de datos GeoLite2 City
 
 Para usar geolocalización, hbbs necesita acceso a la base de datos MaxMind GeoLite2 City. La base de datos es gratuita y puede registrarse para descargar el archivo y obtener una clave API.
 
@@ -96,7 +96,7 @@ Si instaló RustDesk Pro usando el script de instalación en una máquina Linux,
 
 Para instalaciones de Docker, el archivo debería estar en el volumen que mapeó al desplegar el contenedor mapeado a `/root`.
 
-#### Obtener una clave API para automatizar el proceso - servidores Linux
+### Obtener una clave API para automatizar el proceso - servidores Linux
 
 Necesita actualizar este archivo regularmente y podemos usar un cronjob para eso. Necesitará una clave API para acceder al enlace de descarga que es gratuito.
 
@@ -111,7 +111,7 @@ Puede automatizar el [proceso de descarga](https://dev.maxmind.com/geoip/updatin
 /usr/bin/curl -L --silent 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={Your Access Key}&suffix=tar.gz' | /bin/tar -C '/var/lib/rustdesk-server/' -xvz --keep-newer-files --strip-components=1 --wildcards '*GeoLite2-City.mmdb'
 ```
 
-#### Cambiar configuraciones en la consola web RustDesk Pro
+### Cambiar configuraciones en la consola web RustDesk Pro
 
 Agregue sus direcciones IP o nombres DNS de servidores de relé (DNS es compatible desde la versión 1.1.11) a los `Servidores de relé`. **El puerto no es requerido, el puerto `21117` se usa explícitamente.** <br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/c4452ba4-5e1d-437a-ae1d-fc0070bfa26c">

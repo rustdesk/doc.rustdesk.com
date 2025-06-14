@@ -11,9 +11,8 @@ Windowsのセキュリティポリシーは複雑です。このチュートリ�
 GUI版の`RustDeskServer.setup.exe`はもうメンテナンスされておらず、推奨されません。
 {{% /notice %}}
 
-### インストール
+## インストール
 
-## 前提条件
 Windowsでrustdeskを実行するにはMicrosoft Visual C++ Redistributableが必要です。[こちら](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)からダウンロードできます。
 
 1. [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html)からライセンスを取得し、詳細については[ライセンス](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/)ページを確認してください。
@@ -27,21 +26,21 @@ Windowsでrustdeskを実行するにはMicrosoft Visual C++ Redistributableが�
 9. ユーザー名`admin`、パスワード`test1234`でログインしてください。
 10. ステップ1で購入したライセンスコードを入力してください。
 
-### IISをプロキシとして使用
+## IISをプロキシとして使用
 
 `Dynamic Content Compression`がインストールされていることを確認してください（これはサーバー役割でインストールできるIIS機能です）。
 1. IISを開く（またはインストールする）。
 2. RustDesk用の新しいウェブサイトをバインディング（理想的には443）と関連証明書で作成してください。基本設定は空のフォルダーを指す必要があります。（デフォルトサイトを使用する場合は、フォルダーに他のファイルがないことを確認してください）。
 3. IISで[Application Request Routing](https://www.iis.net/downloads/microsoft/application-request-routing)と[URL Rewrite](https://learn.microsoft.com/en-us/iis/extensions/url-rewrite-module/using-the-url-rewrite-module)をインストールしてください。
 
-### Application Request Routing
+## Application Request Routing
 
 1. IISサーバーホストの下でApplication Request Routingを開いてください。
 2. Server Proxy Settingsに移動してください。
 3. プロキシを有効にすると、すべての設定が表示されます。デフォルトのままにしておくことができます。
 4. 設定を保存し、次のステップにURL Rewriteに進みます。
 
-### URL Rewrite
+## URL Rewrite
 
 1. 左ペインでIISのサイトを開き、URL Rewriteをダブルクリックしてください。
 2. `Add rules`をクリックしてください。
@@ -51,11 +50,11 @@ Inbound Rule – RustDesk内部 21114アドレス\
 Outbound Rules – `From`はRustDesk内部 21114アドレス、`To`は外部アドレスです。\
 注意：アドレスの前にhttp / httpsは付けないでください – 自動的に処理されます。また、すべてのアドレスが内部および外部の両方からアクセス可能であることを確認してください。
 
-### 圧縮
+## 圧縮
 
 1. `Dynamic Content Compression`を無効にしてください。
 
-### トラブルシューティング
+## トラブルシューティング
 
 500.52エラーが発生した場合は、記載されている変数を追加してください：[IIS acting as reverse proxy: Where the problems start](https://techcommunity.microsoft.com/t5/iis-support-blog/iis-acting-as-reverse-proxy-where-the-problems-start/ba-p/846259)。
 

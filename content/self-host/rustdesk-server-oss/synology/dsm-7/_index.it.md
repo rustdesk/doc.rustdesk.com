@@ -5,18 +5,18 @@ weight: 20
 <!-- For translators: When translating elements like "buttons", don't just translate, please refer actual naming in their interface. -->
 Dopo l'aggiornamento DSM 7.2, Synology ha rinominato il suo pacchetto "Docker" in "Container Manager". Porta una nuova GUI, e viene fornito con "docker-compose" all'interno della sua GUI, che rende più facile creare Docker.
 
-### Modelli supportati e requisiti
+## Modelli supportati e requisiti
 
 Container Manager porta il supporto ARM64 per alcuni modelli di fascia bassa, come la serie J, per l'elenco dettagliato dei modelli supportati, si prega di controllare il [sito web Synology](https://www.synology.com/en-us/dsm/packages/ContainerManager).
 La maggior parte delle volte non avrai bisogno di installare RAM extra per installare Docker e RustDesk Server.
 
-### 1. Installare Container Manager (Docker)
+## 1. Installare Container Manager (Docker)
 
 Apri "Centro Pacchetti", cerca e installa "Container Manager".
 
 ![](images/dsm7_install_container_manager_though_package_center.png)
 
-### 2. Creare cartella
+## 2. Creare cartella
 
 Dopo aver installato "Container Manager", creerà una Cartella Condivisa chiamata `docker`, mettiamo i dati del nostro server qui.
 
@@ -24,7 +24,7 @@ Apri il tuo File Station, crea una cartella chiamata `rustdesk-server` (o come p
 
 ![](images/dsm7_create_required_folders.png)
 
-### 3. Creare contenitore
+## 3. Creare contenitore
 
 Apri il tuo Container Manager, vai su Progetto e clicca Crea.
 
@@ -65,7 +65,7 @@ services:
 
 Si prega di saltare `Impostazioni portale web` poi finire.
 
-### 4. Controllare che funzioni
+## 4. Controllare che funzioni
 
 Apri il tuo File Station, dovresti vedere `id_ed25519`, `id_ed25519.pub` nella tua cartella `docker/rustdesk-server/data`. Potresti scaricarlo e aprirlo tramite qualsiasi editor di testo o usare [Synology Text Editor](https://www.synology.com/en-us/dsm/packages/TextEditor). Questa è la chiave pubblica di cui hai bisogno per il tuo client RustDesk.
 
@@ -75,7 +75,7 @@ La chiave pubblica apparirà così:
 
 Controlla [qui](/docs/en/client) per configurare il tuo client. Solo `server ID` e `Chiave` sono necessari. `Server relay` non è necessario perché l'abbiamo impostato in `hbbs`, `hbbs` fornirà queste informazioni automaticamente.
 
-### 5. Impostare port forwarding sul tuo router
+## 5. Impostare port forwarding sul tuo router
 
 Vai alla pagina web di amministrazione del tuo router, trova qualsiasi cosa relativa al `Port forwarding`, dovrebbe apparire nelle impostazioni `WAN` o `Firewall`.
 

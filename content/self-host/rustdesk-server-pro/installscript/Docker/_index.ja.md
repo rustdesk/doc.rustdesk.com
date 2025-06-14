@@ -3,7 +3,7 @@ title: Docker
 weight: 3
 ---
 
-### Docker Compose（推奨）
+## Docker Compose（推奨）
 
 Docker Composeでは、ライセンスが正常に動作するように `network_mode: "host"` を使用する必要があります。最新版であることを確実にするために、この[ガイド](https://docs.docker.com/engine/install)を使用してDockerをインストールしてください！
 
@@ -41,7 +41,7 @@ services:
 [Webコンソール用のHTTPSを手動で設定する方法](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually)。
 {{% /notice %}}
 
-### Dockerコマンド
+## Dockerコマンド
 
 最新版であることを確実にするために、この[ガイド](https://docs.docker.com/engine/install)でDockerをインストールしてください！
 

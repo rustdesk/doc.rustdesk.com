@@ -3,16 +3,16 @@ title: Windows
 weight: 20
 ---
 
-## 依赖
+# 依赖
 
-### C++编译环境
+## C++编译环境
 
 推荐下载[msvc](https://visualstudio.microsoft.com/)并安装
 
-### Rust 开发环境
+## Rust 开发环境
 下载[rustup-init.exe](https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe)并安装
 
-### vcpkg
+## vcpkg
 
 使用[git-bash](https://git-scm.com/download/win)运行下列命令, 下载`vcpkg`, 安装`libvpx`, `libyuv`, `opus`
 
@@ -30,17 +30,17 @@ weight: 20
 
 ![](/docs/en/dev/build/windows/images/env.png)
 
-### Sciter
+## Sciter
 
 桌面版本使用[sciter](https://sciter.com/) , 下载动态库[sciter.dll](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll)
 
-### llvm
+## llvm
 
 rust-bindgen依赖于clang, 下载[llvm](https://github.com/llvm/llvm-project/releases)并安装， 添加环境变量`LIBCLANG_PATH`，值为`<llvm_install_dir>/bin`
 
 
 
-## 构建
+# 构建
 
 ```sh
 git clone --recurse-submodules https://github.com/rustdesk/rustdesk

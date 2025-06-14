@@ -3,11 +3,11 @@ title: Azure
 weight: 16
 ---
 
-### 視頻教程
+## 視頻教程
 
 [https://www.youtube.com/watch?v=izGxSmifURI](https://www.youtube.com/watch?v=izGxSmifURI)
 
-### 配置
+## 配置
 
 1. 登錄到 [Azure 門戶](https://portal.azure.com)。
 2. 搜索並選擇 **Microsoft Entra ID**。
@@ -36,7 +36,7 @@ weight: 16
 13. 在 Azure 中，選擇 **驗證** 菜單。然後透過選擇 **ID 令牌（用於隱式和混合流）** 來設置授權。
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/11-Azure-Auth.png)
 
-### 參考資料
+## 參考資料
 
 - [使用 Azure AD 設置 OpenID Connect 提供者](https://learn.microsoft.com/en-us/power-pages/security/authentication/openid-settings)
 - [Microsoft 身份平台上的 OpenID Connect](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-protocols-oidc)

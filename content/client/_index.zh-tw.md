@@ -5,10 +5,10 @@ pre: "<b>1. </b>"
 chapter: true
 ---
 
-### 簡介
+## 簡介
 RustDesk 客戶端可用於透過我們的 RustDesk 伺服器（無論是開源還是專業版）連接設備，可從 [GitHub](https://github.com/rustdesk/rustdesk/releases/latest) 下載。
 
-### 支援平台
+## 支援平台
 - Microsoft Windows
 - macOS
 - Debian 衍生版（Ubuntu ≥ 16、Linux Mint 等）
@@ -21,15 +21,15 @@ RustDesk 客戶端可用於透過我們的 RustDesk 伺服器（無論是開源�
 - iOS（不支援被控制）
 - Web
 
-### 安裝
+## 安裝
 
-#### Windows
+### Windows
 
 從 GitHub 下載 exe 檔案並安裝。
 
 要靜默安裝，請使用 `--silent-install` 參數執行安裝程序。
 
-#### macOS
+### macOS
 
 從 GitHub 下載 dmg 檔案，更多資訊可在 [macOS 頁面](https://rustdesk.com/docs/zh-tw/client/mac/)找到。
 
@@ -39,36 +39,36 @@ RustDesk 客戶端可用於透過我們的 RustDesk 伺服器（無論是開源�
 
 啟用所需的權限並按照 RustDesk 左側的提示完成設置。
 
-#### Linux
+### Linux
 
 請參照以下指南安裝各種 Linux "口味" 的 RustDesk（安裝程序可在 GitHub 或發行版的代碼庫中找到）。
 
-##### Debian 衍生版
+#### Debian 衍生版
 
 ```sh
 # 請忽略錯誤的磁碟占用率報告
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
-##### Red Hat 衍生版
+#### Red Hat 衍生版
 
 ```sh
 sudo yum localinstall ./rustdesk-<version>.rpm
 ```
 
-##### Arch Linux/Manjaro
+#### Arch Linux/Manjaro
 
 ```sh
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 ```
 
-##### openSUSE（≥ Leap 15.0）
+#### openSUSE（≥ Leap 15.0）
 
 ```sh
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
-##### Nix / NixOS（≥ 22.05）
+#### Nix / NixOS（≥ 22.05）
 
 臨時進入一個帶有 `rustdesk` 的 shell：
 
@@ -91,13 +91,13 @@ nix profile install nixpkgs#rustdesk
   ];
 ```
 
-#### Android
+### Android
 從我們的 GitHub 安裝 apk，更多資訊可在 [Android 頁面](https://rustdesk.com/docs/zh-tw/client/android/)找到。
 
-#### iOS（iPhone、iPad）
+### iOS（iPhone、iPad）
 從 [App Store](https://apps.apple.com/us/app/rustdesk-remote-desktop/id1581225015) 下載。
 
-### 使用
+## 使用
 安裝後（或作為臨時可執行文件執行），RustDesk 將連接到公共伺服器。您將在底部看到消息 (1) "準備就緒，若您需要更快的連線速度，您可以選擇自行建立伺服器"。在左上角您會看到您的 (2) ID，(3) 一次性密碼，以及在右側的 (4) 方框，用於連接到另一台電腦（如果您知道他們的 ID）。
 
 ![](/docs/en/client/images/client.png)
@@ -112,7 +112,7 @@ nix profile install nixpkgs#rustdesk
 - 帳戶 - 可與專業版伺服器一起使用，以登入 API
 - 關於 - 顯示有關軟體的資訊。
 
-### 配置 RustDesk
+## 配置 RustDesk
 有多種方法可以配置 RustDesk。
 
 最簡單的方法是使用 RustDesk 伺服器專業版，您可以獲得一個加密的配置字符串，這可以與 `--config` 一起使用來導入設置。要做到這一點：
@@ -129,7 +129,7 @@ nix profile install nixpkgs#rustdesk
 
 如果您手動設定了客戶端，您可以搜尋 `RustDesk2.toml` 文件（在用戶文件夾中），並使用 `--import-config` 以類似於上面的範例。
 
-### 命令行參數
+## 命令行參數
 - `--password` 可用於設置固定密碼。
 - `--get-id` 可用於取得 ID。
 - `--set-id` 可用於設置 ID，請注意 ID 應以字母開頭。

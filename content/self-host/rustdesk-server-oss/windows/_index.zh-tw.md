@@ -6,7 +6,7 @@ weight: 20
 Windows 安全政策較為複雜，如果這份教程對您不適用，或您遇到連線不穩定的情況，請考慮轉移到 `Linux` 伺服器。
 {{% /notice %}}
 
-## 十字路口
+# 十字路口
 
 您現在有兩個選擇，您可以使用 pm2 (較簡單) 或 NSSM (稍難) 來啟動 RustDesk 伺服器
 使用 NSSM 的好處：
@@ -21,19 +21,19 @@ Windows 安全政策較為複雜，如果這份教程對您不適用，或您遇
 - 您會定期登入創建 RustDesk 啟動項目的使用者帳戶。
 - 對使用者友好
 
-### 使用 NSSM 安裝
+## 使用 NSSM 安裝
 
-#### 安裝 NSSM
+### 安裝 NSSM
 請[下載](https://nssm.cc/release/nssm-2.24.zip)並解壓縮 NSSM，選擇適合您的 Windows 系統架構的版本（如果是 x86，使用 win32 資料夾內的檔案；如果是 x64，則使用 win64 資料夾）。最佳做法是將 NSSM 的執行檔移動到 `Program Files\NSSM` 目錄（一旦作為服務啟動，NSSM 不能從其放置的目錄中移動，因此最好放在 `Program Files` 中）。建議將路徑（如 `C:\Program Files\NSSM`）添加到環境變數中。
 
-#### 檢查 NSSM 是否正確安裝
+### 檢查 NSSM 是否正確安裝
 如果一切正確，`C:\Program Files\NSSM` 資料夾（在這個例子中使用 C: 磁碟，但您可以使用安裝 Windows 的任何磁碟或所需的任何路徑）應該只包含 `nssm.exe` 檔案。
 
 我們將在範例中使用 `C:\Program Files\NSSM`。
 
 打開命令提示字元並運行 `nssm`，如果您看到幫助頁面，則可以進行下一步。
 
-#### 運行 hbbr 和 hbbs
+### 運行 hbbr 和 hbbs
 下載 [RustDesk 伺服器](https://github.com/rustdesk/rustdesk-server/releases)的 Windows 版本。解壓縮至 `C:\Program Files\RustDesk Server`（或任何您想要的地方，只要確保在服務安裝後不會改變）。現在回到命令提示字元。
 
 我們將在範例中使用 `C:\Program Files\RustDesk Server`。
@@ -68,16 +68,16 @@ nssm start <所需的 hbbr 服務名稱>
 
 （以上方法已在 Windows Server Core 2022 標準版上測試。）
 
-### 或者
+## 或者
 
-### 使用 PM2 安裝
+## 使用 PM2 安裝
 
-#### 安裝 Node.js
+### 安裝 Node.js
 
 請[下載](https://nodejs.org/dist/v16.14.2/node-v16.14.2-x86.msi)並安裝 Node.js。
 Node.js 是 PM2 的運行環境，所以您需要先安裝 Node.js。
 
-#### 安裝 PM2
+### 安裝 PM2
 
 在 `cmd.exe` 中輸入以下內容，每行輸入後按 <kbd>Enter</kbd> 鍵，逐行運行。
 
@@ -87,7 +87,7 @@ npm install pm2-windows-startup -g
 pm2-startup install
 ```
 
-#### 運行 hbbr 和 hbbs
+### 運行 hbbr 和 hbbs
 
 下載 [RustDesk 伺服器](https://github.com/rustdesk/rustdesk-server/releases)的 Windows 版本。將程序解壓縮到 C: 磁碟。執行以下四個命令：
 
@@ -98,7 +98,7 @@ pm2 start hbbr.exe
 pm2 save
 ```
 
-#### 查看日誌
+### 查看日誌
 
 ```cmd
 pm2 log hbbr

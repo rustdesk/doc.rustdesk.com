@@ -3,7 +3,7 @@ title: Control de acceso
 weight: 16
 ---
 
-### Permisos de acceso a dispositivos
+## Permisos de acceso a dispositivos
 
 El dispositivo puede asignarse a un solo usuario, a un solo grupo de dispositivos, o a ambos.
 
@@ -24,7 +24,7 @@ Las siguientes dos situaciones impedirán que el dispositivo sea accedido:
 - Hacer que el dispositivo esté `deshabilitado` en la página de dispositivos de la consola
 - Hacer que el usuario esté `deshabilitado` en la página de usuarios de la consola
 
-### Configuraciones de acceso a grupos de usuarios
+## Configuraciones de acceso a grupos de usuarios
 
 Vaya a la página de grupos en la consola web, haga clic en `Editar` para editar las configuraciones entre grupos como se muestra a continuación.
 
@@ -38,7 +38,7 @@ El usuario y grupo asignados al lado de control están determinados por el usuar
 
 ![](/docs/en/self-host/rustdesk-server-pro/permissions/images/crossgrp.png)
 
-### Configuraciones de acceso a grupos de dispositivos
+## Configuraciones de acceso a grupos de dispositivos
 
 Los grupos de dispositivos proporcionan otra forma de gestionar permisos de acceso. Estas son las reglas clave:
 

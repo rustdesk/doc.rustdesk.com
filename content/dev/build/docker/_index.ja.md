@@ -3,7 +3,7 @@ title: Docker
 weight: 30
 ---
 
-## Dockerでビルドする方法
+# Dockerでビルドする方法
 
 リポジトリのクローンを作成し、Dockerコンテナを構築することから始めます。
 

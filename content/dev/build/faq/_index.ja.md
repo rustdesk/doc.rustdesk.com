@@ -3,9 +3,9 @@ title: Windows FAQ
 weight: 40
 ---
 
-### vcpkg パッケージダウンロード失敗
+## vcpkg パッケージダウンロード失敗
 
-#### エラー
+### エラー
 
 ```
  -- Fetching https://chromium.googlesource.com/libyuv/libyuv 287158925b0e03ea4499a18b4e08478c5781541b...
@@ -13,15 +13,15 @@ weight: 40
        Command failed: D:/program/Git/mingw64/bin/git.exe fetch https://chromium.googlesource.com/libyuv/libyuv 287158925b0e03ea4499a18b4e08478c5781541b --depth 1 -n
 ```
 
-#### 解決策
+### 解決策
 
 ブラウザを使用して [libyuv-287158925b0e03ea4499a18b4e08478c5781541b.tar.gz](https://chromium.googlesource.com/libyuv/libyuv/+archive/287158925b0e03ea4499a18b4e08478c5781541b.tar.gz) をダウンロードし、`vcpkg/downloads` に移動して再インストールしてください。
 
 
 
-### Cargo.lock 内のパッケージが存在しない
+## Cargo.lock 内のパッケージが存在しない
 
-#### エラー
+### エラー
 
 ```
 $ cargo run
@@ -42,34 +42,34 @@ $ cargo run
 
 おそらく作者が `git force push` を使用して以前のコミットを上書きしたようです。
 
-#### 解決策
+### 解決策
 
 `cargo update` を実行して、パッケージを強制的に更新してください。
 
 
 
-### VCPKG_ROOT が設定されていない
+## VCPKG_ROOT が設定されていない
 
-#### エラー
+### エラー
 
 ```
 thread 'main' panicked at 'Failed to find package: VcpkgNotFound("No vcpkg installation found. Set the VCPKG_ROOT environment variable or run 'vcpkg integrate install'")', libs\scrap\build.rs:7:45
 ```
 
-#### 解決策
+### 解決策
 
 `VCPKG_ROOT` 環境変数を追加するか、`VCPKG_ROOT=<vcpkg_dir> cargo run` で実行してください。
 
 
 
-### clang がインストールされていない、または LIBCLANG_PATH が設定されていない
+## clang がインストールされていない、または LIBCLANG_PATH が設定されていない
 
-#### エラー
+### エラー
 
 ```
 thread 'main' panicked at 'Unable to find libclang: "couldn't find any valid shared libraries matching: ['clang.dll', 'libclang.dll'], set the `LIBCLANG_PATH` environment variable to a path where one of these files can be found (invalid: [])"', C:\Users\selfd\.cargo\registry\src\mirrors.ustc.edu.cn-61ef6e0cd06fb9b8\bindgen-0.59.2\src/lib.rs:2144:31
 ```
 
-#### 解決策
+### 解決策
 
 [LLVM](https://releases.llvm.org/download.html) をインストールし、`LIBCLANG_PATH` 環境変数を `llvm_install_dir/bin` として追加してください。

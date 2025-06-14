@@ -3,7 +3,7 @@ title: Android
 weight: 4
 ---
 
-### Fernsteuerung
+## Fernsteuerung
 
 Geben Sie die ID des entfernten Geräts auf der Startseite ein oder wählen Sie ein historisches Gerät zur Verifizierung aus.
 Nach erfolgreicher Verifizierung können Sie das entfernte Gerät steuern.
@@ -22,7 +22,7 @@ Die Eingabesteuerung bietet zwei Modi: `Mausmodus` und `Touch-Modus`, die über 
 Im `Mausmodus` können Sie auch mit einem `Zwei-Finger-Tippen` die `Rechte Maustaste` des entfernten Geräts auslösen
 {{% /notice %}}
 
-### Dateiübertragung (Android)
+## Dateiübertragung (Android)
 
 > Erfordert RustDesk ≥ 1.1.9
 
@@ -40,7 +40,7 @@ Drücken Sie lange oder tippen Sie auf das Menü rechts, um `Dateiübertragung` 
 - Am unteren Ende der Liste werden der aktuelle absolute Pfad und Projektstatistiken angezeigt.
 - Klicken Sie auf `Lokal` / `Entfernt` in der Titelleiste, um zwischen den Seiten zu wechseln.
 
-#### Wie übertrage ich Dateien?
+### Wie übertrage ich Dateien?
 
 1. **Drücken Sie lange** auf eine Datei oder einen Ordner in der Liste, um schnell in den **Mehrfachauswahlmodus** zu gelangen, in dem mehrere Elemente ausgewählt werden können.
 2. Wechseln Sie nach der Dateiauswahl zwischen den Seiten `Lokal` / `Entfernt`. Nach dem Wechsel wird am unteren Bildschirmrand die Aufforderung `Hier einfügen?` angezeigt.
@@ -50,7 +50,7 @@ Drücken Sie lange oder tippen Sie auf das Menü rechts, um `Dateiübertragung` 
 | --- | --- |
 | ![](/docs/en/client/android/images/file_multi_select_en.jpg?width=300px) | ![](/docs/en/client/android/images/file_copy_en.jpg?width=300px) |
 
-### ID/Relay-Server einstellen
+## ID/Relay-Server einstellen
 
 1. Klicken Sie auf `Einstellungen` in der unteren Navigationsleiste.
 2. Klicken Sie auf `ID/Relay-Server`.
@@ -68,7 +68,7 @@ Das Bild unten ist ein Screenshot von Android. Wenn es iOS ist, überprüfen Sie
 
 ![](/docs/en/client/android/images/id_setting_en.jpg?width=300px)
 
-### Bildschirm/Dateien Ihres Android-Telefons teilen
+## Bildschirm/Dateien Ihres Android-Telefons teilen
 
 Ab Version 1.1.9 hat der Android-Client die Funktionen zum Teilen des Telefonbildschirms und des Dateisystems des Telefons hinzugefügt.
 
@@ -76,7 +76,7 @@ Ab Version 1.1.9 hat der Android-Client die Funktionen zum Teilen des Telefonbil
 - Android 10 oder höher ist erforderlich, um das interne Audio des Mobiltelefonsystems zu teilen
 - iOS unterstützt noch keine Bildschirmfreigabe
 
-#### Berechtigungen anfordern und Dienste starten
+### Berechtigungen anfordern und Dienste starten
 
 Klicken Sie auf `Bildschirm teilen` in der unteren Navigationsleiste.
 
@@ -95,13 +95,13 @@ Konfigurieren Sie verschiedene Berechtigungen nach Bedarf. Jedes Mal, wenn Sie R
 Das obige * stellt spezielle Berechtigungen dar. Um solche Berechtigungen zu erhalten, müssen Sie zur Android-Systemeinstellungsseite springen, um sie manuell zu erhalten. Die Details sind wie folgt
 {{% /notice %}}
 
-#### Spezielle Berechtigungsanfrage - Datei
+### Spezielle Berechtigungsanfrage - Datei
 
 | Die Anforderung von Android-Dateiberechtigungen springt automatisch zur Systemeinstellungsseite |
 | :---: |
 | ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
-#### Spezielle Berechtigungsanfrage - Mauseingabe
+### Spezielle Berechtigungsanfrage - Mauseingabe
 | Schritt 1: "Installierte Dienste" finden | Schritt 2: RustDesk Input starten |
 | --- | --- |
 | ![](/docs/en/client/android/images/get_input1_en.jpg?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
@@ -117,7 +117,7 @@ Die Systemeinstellungsseite verschiedener Anbieter kann unterschiedlich sein. Bi
 | Mausrad lange drücken | Kürzlich geöffnete Apps |
 | Mausrad scrollen | Vertikales Scrollen simulieren |
 
-#### Dienst starten
+### Dienst starten
 
 Nach Erhalt der Berechtigung `Bildschirmaufnahme` wird der Dienst automatisch gestartet. Sie können auch auf die Schaltfläche `Dienst starten` klicken, um den Dienst zu starten. Nach dem Start des Dienstes kann er Desktop-Steuerungsanfragen von anderen Geräten akzeptieren.
 
@@ -135,11 +135,11 @@ Nach dem Start des Dienstes wird automatisch eine eindeutige ID und ein zufälli
 3. Außer der Berechtigung `Bildschirmaufnahme` wirkt sich das Umschalten anderer Berechtigungen nur auf neue Verbindungen aus und beeinflusst nicht die bestehende Verbindung. Wenn Sie Berechtigungen für eine bestehende Verbindung umschalten müssen, schließen Sie bitte zuerst die aktuelle Verbindung, ändern Sie die Berechtigungen und empfangen Sie dann eine Steuerungsanfrage.
 {{% /notice %}}
 
-##### PC
+#### PC
 
 ![](/docs/en/client/android/images/android_server_pc_side_en.png?width=700px)
 
-##### Mobiles Endgerät
+#### Mobiles Endgerät
 
 | Sie können den Dienst jederzeit stoppen oder bestimmte Verbindungen schließen | Sie können Chats empfangen oder initiieren |
 | --- | --- |

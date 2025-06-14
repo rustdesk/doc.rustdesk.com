@@ -3,7 +3,7 @@ title: Android
 weight: 4
 ---
 
-### 遠端控制
+## 遠端控制
 
 在主頁輸入遠端設備的ID或選擇歷史設備進行驗證。
 驗證成功後，即可控制遠端設備。
@@ -22,7 +22,7 @@ weight: 4
 在`滑鼠模式`下，您也可以透過`雙指點擊`觸發遠端設備的`右鍵`
 {{% /notice %}}
 
-### 檔案傳輸（Android）
+## 檔案傳輸（Android）
 
 > 需要 RustDesk ≥ 1.1.9
 
@@ -40,7 +40,7 @@ weight: 4
 - 列表底部會提示目前絕對路徑和項目統計。
 - 點擊標題列中的`本機`/`遠端`切換頁面。
 
-#### 如何傳輸檔案？
+### 如何傳輸檔案？
 
 1. 在列表中**長按**檔案或資料夾，快速進入**多選模式**，可選擇多個項目。
 2. 選擇檔案後，切換`本機`/`遠端`頁面。切換後，螢幕底部會出現`貼上到此處？`提示。
@@ -50,7 +50,7 @@ weight: 4
 | --- | --- |
 | ![](/docs/en/client/android/images/file_multi_select_en.jpg?width=300px) | ![](/docs/en/client/android/images/file_copy_en.jpg?width=300px) |
 
-### 設定ID/中繼伺服器
+## 設定ID/中繼伺服器
 
 1. 點擊底部導航列的`設定`。
 2. 點擊`ID/中繼伺服器`。
@@ -68,7 +68,7 @@ config={"host": "xxx", "key": "xxx"}
 
 ![](/docs/en/client/android/images/id_setting_en.jpg?width=300px)
 
-### 分享您Android手機的螢幕/檔案
+## 分享您Android手機的螢幕/檔案
 
 從1.1.9版本開始，Android用戶端增加了分享手機螢幕和分享手機檔案系統的功能。
 
@@ -76,7 +76,7 @@ config={"host": "xxx", "key": "xxx"}
 - 分享手機系統內部音訊需要Android 10及以上版本
 - iOS暫不支援螢幕分享
 
-#### 請求權限並啟動服務
+### 請求權限並啟動服務
 
 從底部導航列點擊`分享螢幕`。
 
@@ -95,13 +95,13 @@ config={"host": "xxx", "key": "xxx"}
 上述*代表特殊權限。要獲得此類權限，需要跳轉到Android系統設定頁面手動獲取。詳情如下
 {{% /notice %}}
 
-#### 特殊權限請求 - 檔案
+### 特殊權限請求 - 檔案
 
 | 請求Android檔案權限會自動跳轉到系統設定頁面 |
 | :---: |
 | ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
-#### 特殊權限請求 - 滑鼠輸入
+### 特殊權限請求 - 滑鼠輸入
 | 步驟1：找到「已安裝的服務」 | 步驟2：啟動RustDesk輸入 |
 | --- | --- |
 | ![](/docs/en/client/android/images/get_input1_en.jpg?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
@@ -117,7 +117,7 @@ config={"host": "xxx", "key": "xxx"}
 | 長按滑鼠滾輪 | 最近開啟的應用程式 |
 | 滑鼠滾輪滾動 | 模擬垂直滑動 |
 
-#### 啟動服務
+### 啟動服務
 
 獲得`螢幕擷取`權限後，服務會自動啟動。您也可以點擊`啟動服務`按鈕啟動服務。服務啟動後，可以接受來自其他設備的桌面控制請求。
 
@@ -135,11 +135,11 @@ config={"host": "xxx", "key": "xxx"}
 3. 除`螢幕擷取`權限外，其他權限的切換只會對新連接生效，不會影響已建立的連接。如需對已建立的連接切換權限，請先關閉目前連接，修改權限後再接受控制請求。
 {{% /notice %}}
 
-##### PC端
+#### PC端
 
 ![](/docs/en/client/android/images/android_server_pc_side_en.png?width=700px)
 
-##### 行動端
+#### 行動端
 
 | 您可以隨時停止服務或關閉指定連接 | 您可以接收或發起聊天 |
 | --- | --- |

@@ -5,9 +5,9 @@ weight: 7
 
 > Here is another good tutorial: [Building Your Own Remote Desktop Solution: RustDesk Self-Hosted on Cloud with Docker (Hetzner)](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f)
 
-### Install your own server with Docker
+## Install your own server with Docker
 
-#### Requirements
+### Requirements
 You need to have Docker/Podman installed to run a rustdesk-server as a Docker container. If in doubt, install Docker with this [guide](https://docs.docker.com/engine/install) to ensure it's the most up to date!
 
 Be sure to open these ports in the firewall:
@@ -22,7 +22,7 @@ Be sure to open these ports in the firewall:
 
 *If you do not need web client support, the corresponding ports `21118`, `21119` can be disabled.*
 
-#### Docker examples
+### Docker examples
 
 ```sh
 sudo docker image pull rustdesk/rustdesk-server
@@ -42,7 +42,7 @@ If `--net=host` works fine, the `-p` options are not used. If on Windows, leave 
 If you cannot see logs with `-td`, you can see logs via `docker logs hbbs`. Or you can run with `-it`, `hbbs/hbbr` will not run as daemon mode.
 {{% /notice %}}
 
-#### Docker Compose examples
+### Docker Compose examples
 For running the Docker files with the `compose.yml` as described here you need to have [Docker Compose](https://docs.docker.com/compose/) installed.
 
 ```yaml
@@ -97,7 +97,7 @@ services:
     restart: unless-stopped
 ```
 
-#### Podman Quadlet examples
+### Podman Quadlet examples
 
 If you would like to run the containers with Podman as a systemd service you can use these sample Podman Quadlet configurations:
 

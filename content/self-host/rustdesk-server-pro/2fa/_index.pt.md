@@ -14,7 +14,7 @@ Você primeiro precisa ir para a página de configurações da conta.
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/1-settings-account.png)
 
-### Verificação por email
+## Verificação por email
 
 Para habilitar a verificação por email para login, você precisa:
 
@@ -28,16 +28,16 @@ Quando fizermos login na próxima vez, o RustDesk nos enviará um email com cód
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/2-2fa-email-2.png)
 
-### TOTP
+## TOTP
 
 TOTP é um método 2FA amplamente usado, então no console web do RustDesk Server Pro, 2FA refere-se à verificação TOTP.
 
-#### Preparar aplicativo de autenticação
+### Preparar aplicativo de autenticação
 
 Primeiro, você precisa preparar um aplicativo de autenticação.
 Você pode escolher entre estes tipos [Authy](https://authy.com), [Microsoft Authenticator](https://www.microsoft.com/en-us/security/mobile-authenticator-app/) e [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2).
 
-#### Habilitar 2FA
+### Habilitar 2FA
 
 Quando o botão `Habilitar 2FA` é exibido na página de configurações, significa que o 2FA não está atualmente habilitado.
 
@@ -65,7 +65,7 @@ Após o 2FA ser ativado com sucesso, o RustDesk Server Pro também será vincula
 2. Por favor mantenha os códigos de backup em um local seguro.
 {{% /notice %}}
 
-#### Verificação de login
+### Verificação de login
 
 Quando o 2FA está habilitado, a verificação de login por email não é mais usada. Usaremos verificação de login 2FA em seu lugar.
 
@@ -75,7 +75,7 @@ Ao fazer login, você será redirecionado para a página de verificação.
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-enable-login-6.png)
 
-#### Modificar configurações
+### Modificar configurações
 
 Quando o 2FA está habilitado, modificar as configurações da conta requer verificação 2FA adicional.
 
@@ -83,7 +83,7 @@ Quando o 2FA está habilitado, modificar as configurações da conta requer veri
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-settings-2.png)
 
-#### Estado do 2FA
+### Estado do 2FA
 
 O 2FA tem um total de 3 estados: não habilitado, habilitado e expirado.
 

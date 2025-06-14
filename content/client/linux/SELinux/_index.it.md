@@ -19,7 +19,7 @@ SELinux status: disabled
 ...
 ```
 
-### Aggiungere Politiche SELinux
+## Aggiungere Politiche SELinux
 
 Per un'introduzione a SELinux, si prega di fare riferimento a [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials).
 
@@ -47,7 +47,7 @@ Il primo metodo ha modifiche relativamente minori, ma poiché il `init_t` predef
 
 Il secondo metodo è aggiungere regole da zero. Ci saranno molte regole che devono essere aggiunte, e sistemi diversi possono avere differenze. Potrebbe essere necessario fare alcuni aggiustamenti durante l'uso effettivo.
 
-#### Usare il Tipo Predefinito
+### Usare il Tipo Predefinito
 
 Il tipo predefinito del servizio RustDesk è `init_t`, che è determinato dalle [regole di ereditarietà del contesto di SELinux](https://wiki.gentoo.org/wiki/SELinux/Tutorials/How_does_a_process_get_into_a_certain_context).
 
@@ -112,7 +112,7 @@ $ checkmodule -M -m -o rustdesk.mod rustdesk.te && semodule_package -o rustdesk.
 $ sudo semodule -l | grep rustdesk
 ```
 
-#### Creare un tipo `rustdesk_t`
+### Creare un tipo `rustdesk_t`
 
 1. Creare una nuova directory: `mkdir rustdesk-selinux-1.0`.
 2. Creare file di politica SELinux: `touch Makefile rustdesk.te rustdesk.fc rustdesk.if`.
@@ -136,7 +136,7 @@ Alcune politiche sono duplicate e alcune sono ridondanti, ma va bene poiché fun
 
 **A causa della complessità dei file di politica SELinux e del loro contenuto tecnico dettagliato, il contenuto di configurazione tecnica completo è omesso qui per brevità. Si prega di fare riferimento alla versione inglese per la configurazione completa.**
 
-### Generazione Automatica di Politiche SELinux (sepolicy)
+## Generazione Automatica di Politiche SELinux (sepolicy)
 
 ```sh
 $ # installare dipendenze
@@ -161,7 +161,7 @@ $ # riavviare il servizio
 $ sudo systemctl restart rustdesk
 ```
 
-#### Aggiungere Politiche Iterativamente
+### Aggiungere Politiche Iterativamente
 
 ```sh
 $ cd /tmp
@@ -171,7 +171,7 @@ $ # unire rustdesk_tmp.te in rustdesk.te
 $ make clean && make && sudo make install-policy
 ```
 
-### Riferimenti
+## Riferimenti
 
 - [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials)
 - [SELinux Policy module installation](https://fedoraproject.org/wiki/SELinux/IndependentPolicy#SELinux_Policy_module_installation)

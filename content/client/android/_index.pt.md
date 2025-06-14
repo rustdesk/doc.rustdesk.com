@@ -3,7 +3,7 @@ title: Android
 weight: 4
 ---
 
-### Controle remoto
+## Controle remoto
 
 Digite o ID do dispositivo remoto na página inicial ou selecione um dispositivo histórico para verificar.
 Após a verificação bem-sucedida, você pode controlar o dispositivo remoto.
@@ -22,7 +22,7 @@ O controle de entrada oferece dois modos: `Modo mouse` e `Modo toque`, que podem
 No `Modo mouse`, você também pode acionar o `Clique direito` do dispositivo remoto com um `Toque de dois dedos`
 {{% /notice %}}
 
-### Transferência de arquivos (Android)
+## Transferência de arquivos (Android)
 
 > Requer RustDesk ≥ 1.1.9
 
@@ -40,7 +40,7 @@ Pressione e segure ou toque no menu à direita para selecionar `Transferência d
 - O caminho absoluto atual e as estatísticas do projeto serão exibidos na parte inferior da lista.
 - Clique em `Local` / `Remoto` na barra de título para trocar páginas.
 
-#### Como transferir arquivos?
+### Como transferir arquivos?
 
 1. **Pressione e segure** um arquivo ou pasta na lista para entrar rapidamente no **modo de seleção múltipla**, que pode selecionar múltiplos itens.
 2. Após selecionar o(s) arquivo(s), troque a página `Local` / `Remoto`. Após a troca, você verá o prompt `Colar aqui?` na parte inferior da tela.
@@ -50,7 +50,7 @@ Pressione e segure ou toque no menu à direita para selecionar `Transferência d
 | --- | --- |
 | ![](/docs/en/client/android/images/file_multi_select_en.jpg?width=300px) | ![](/docs/en/client/android/images/file_copy_en.jpg?width=300px) |
 
-### Configurar servidor ID/Relay
+## Configurar servidor ID/Relay
 
 1. Clique em `Configurações` na barra de navegação inferior.
 2. Clique em `Servidor ID/Relay`.
@@ -68,7 +68,7 @@ A imagem abaixo é uma captura de tela do Android. Se for iOS, verifique o menu 
 
 ![](/docs/en/client/android/images/id_setting_en.jpg?width=300px)
 
-### Compartilhar tela/arquivos do seu telefone Android
+## Compartilhar tela/arquivos do seu telefone Android
 
 A partir da versão 1.1.9, o cliente Android adicionou as funções de compartilhamento da tela do telefone e compartilhamento do sistema de arquivos do telefone.
 
@@ -76,7 +76,7 @@ A partir da versão 1.1.9, o cliente Android adicionou as funções de compartil
 - Android 10 ou superior é necessário para compartilhar o áudio interno do sistema do telefone móvel
 - iOS ainda não suporta compartilhamento de tela
 
-#### Solicitar permissões e iniciar serviços
+### Solicitar permissões e iniciar serviços
 
 Clique em `Compartilhar tela` na barra de navegação inferior.
 
@@ -95,13 +95,13 @@ Configure várias permissões conforme necessário. Toda vez que você iniciar o
 O * acima representa permissões especiais. Para obter tais permissões, você precisa pular para a página de configurações do sistema Android para obtê-las manualmente. Os detalhes são os seguintes
 {{% /notice %}}
 
-#### Solicitação de permissão especial - Arquivo
+### Solicitação de permissão especial - Arquivo
 
 | Solicitar permissões de arquivo Android pulará automaticamente para a página de configurações do sistema |
 | :---: |
 | ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
-#### Solicitação de permissão especial - entrada do mouse
+### Solicitação de permissão especial - entrada do mouse
 | Passo 1: Encontre "Serviços instalados" | Passo 2: Inicie RustDesk Input |
 | --- | --- |
 | ![](/docs/en/client/android/images/get_input1_en.jpg?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
@@ -117,7 +117,7 @@ A página de configurações do sistema de diferentes fornecedores pode ser dife
 | Pressão longa na roda do mouse | Aplicativos abertos recentemente |
 | Rolagem da roda do mouse | Simular deslizamento vertical |
 
-#### Iniciar serviço
+### Iniciar serviço
 
 Após obter a permissão `Captura de tela`, o serviço será iniciado automaticamente. Você também pode clicar no botão `Iniciar serviço` para iniciar o serviço. Uma vez que o serviço seja iniciado, ele pode aceitar solicitações de controle de desktop de outros dispositivos.
 
@@ -135,11 +135,11 @@ Após iniciar o serviço, um ID único e senha aleatória serão automaticamente
 3. Exceto pela permissão `Captura de tela`, a troca de outras permissões só afetará as novas conexões e não afetará a conexão estabelecida. Se você precisar trocar permissões para uma conexão estabelecida, feche primeiro a conexão atual, modifique as permissões e então receba uma solicitação de controle.
 {{% /notice %}}
 
-##### PC
+#### PC
 
 ![](/docs/en/client/android/images/android_server_pc_side_en.png?width=700px)
 
-##### Terminal móvel
+#### Terminal móvel
 
 | Você pode parar o serviço ou fechar a conexão especificada a qualquer momento | Você pode receber ou iniciar chats |
 | --- | --- |

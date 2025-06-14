@@ -3,7 +3,7 @@ title: Access Control
 weight: 16
 ---
 
-### Device access permissions
+## Device access permissions
 
 The device can be assigned to either a single user, a single device group, or both.
 
@@ -24,7 +24,7 @@ The following two situations will prevent the device from being accessed:
 - Make device `disable` in console devices page
 - Make user `disable` in console user page
 
-### User Group Access Settings
+## User Group Access Settings
 
 Please go to group page in the web console, click on `Edit` to edit cross group settings as below.
 
@@ -38,7 +38,7 @@ The user and group assigned to the controlling side are determined by the user w
 
 ![](/docs/en/self-host/rustdesk-server-pro/permissions/images/crossgrp.png)
 
-### Device Group Access Settings
+## Device Group Access Settings
 
 Device groups provide another way to manage access permissions. Here are the key rules:
 

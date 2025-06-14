@@ -8,7 +8,7 @@ pre: "<b>2. </b>"
 
 开源版支持可通过我们的 [Discord](https://discord.com/invite/nDceKgxnkV) 获取，专业版支持可通过[邮件](mailto:support@rustdesk.com)获取。
 
-### 自托管服务器如何工作？
+## 自托管服务器如何工作？
 
 技术上有两个可执行文件（服务器）：
 
@@ -31,7 +31,7 @@ pre: "<b>2. </b>"
 
 这里有一个关于[您是否应该自托管 rustdesk 服务器？](https://www.reddit.com/r/rustdesk/comments/1cr8kfv/should_you_selfhost_a_rustdesk_server/)的讨论
 
-### 所需端口
+## 所需端口
 
 RustDesk 服务器自托管所需的端口很大程度上取决于您的环境以及您想用 RustDesk 做什么。整个文档中显示的示例通常会建议打开所有端口。
 

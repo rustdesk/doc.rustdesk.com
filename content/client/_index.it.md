@@ -4,10 +4,10 @@ weight: 2
 pre: "<b>1. </b>"
 ---
 
-### Introduzione
+## Introduzione
 Il client RustDesk è utilizzato sui dispositivi per connettersi tramite il nostro server RustDesk, sia open source che Pro. È disponibile per il download su [GitHub](https://github.com/rustdesk/rustdesk/releases/latest).
 
-### Piattaforme Supportate
+## Piattaforme Supportate
 - Microsoft Windows
 - macOS
 - Derivati Debian (Ubuntu ≥ 16, Linux Mint, ecc.)
@@ -20,15 +20,15 @@ Il client RustDesk è utilizzato sui dispositivi per connettersi tramite il nost
 - iOS (non supporta essere controllato)
 - Web
 
-### Installazione
+## Installazione
 
-#### Windows
+### Windows
 
 Scarica l'exe da GitHub e installa.
 
 Per installare silenziosamente, chiama l'exe di installazione con `--silent-install`.
 
-#### macOS
+### macOS
 
 Scarica il file dmg da GitHub. Maggiori informazioni possono essere trovate nella [pagina macOS](https://rustdesk.com/docs/en/client/mac/).
 
@@ -38,36 +38,36 @@ Consenti l'esecuzione di RustDesk.
 
 Abilita le autorizzazioni richieste e segui le istruzioni sul lato sinistro di RustDesk per completare la configurazione.
 
-#### Linux
+### Linux
 
 Consulta le istruzioni qui sotto per installare sui vari "sapori" di Linux (gli installer sono su GitHub o disponibili dal repository di una distribuzione).
 
-##### Derivati Debian
+#### Derivati Debian
 
 ```sh
 # ignora il report errato dell'utilizzo del disco
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
-##### Derivati Red Hat
+#### Derivati Red Hat
 
 ```sh
 sudo yum localinstall ./rustdesk-<version>.rpm
 ```
 
-##### Arch Linux/Manjaro
+#### Arch Linux/Manjaro
 
 ```sh
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 ```
 
-##### openSUSE (≥ Leap 15.0)
+#### openSUSE (≥ Leap 15.0)
 
 ```sh
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
-##### Nix / NixOS (≥ 22.05)
+#### Nix / NixOS (≥ 22.05)
 
 Entra temporaneamente in una shell con `rustdesk` pronto per l'esecuzione:
 
@@ -90,13 +90,13 @@ Per installare a livello di sistema in NixOS, esegui `nixos-rebuild switch --fla
   ];
 ```
 
-#### Android
+### Android
 Installa l'apk dal nostro GitHub. Maggiori informazioni possono essere trovate nella [pagina Android](https://rustdesk.com/docs/en/client/android/).
 
-#### iOS (iPhone, iPad)
+### iOS (iPhone, iPad)
 Scarica l'app dall'[App Store](https://apps.apple.com/us/app/rustdesk-remote-desktop/id1581225015).
 
-### Utilizzo
+## Utilizzo
 Una volta installato (o eseguito come eseguibile temporaneo), RustDesk si connetterà ai server pubblici. Vedrai un messaggio in basso che dice (1) "Pronto, Per una connessione più veloce, configura il tuo server". In alto a sinistra vedrai il tuo (2) ID, (3) Password monouso e a destra una (4) casella per connetterti a un altro computer se conosci il loro ID.
 
 ![](/docs/en/client/images/client.png)
@@ -111,7 +111,7 @@ Nelle Impostazioni troverai:
 - Account - Questo può essere usato insieme al server Pro per accedere all'API
 - Informazioni - Mostra informazioni sul software.
 
-### Configurazione di RustDesk
+## Configurazione di RustDesk
 Ci sono diversi modi per configurare RustDesk.
 
 Il modo più semplice è utilizzare RustDesk Server Pro. Puoi ottenere una stringa di configurazione crittografata, che può essere utilizzata insieme a `--config` per importare le impostazioni. Per fare questo:
@@ -128,7 +128,7 @@ Puoi configurare manualmente un client. Per fare questo:
 
 Se configuri manualmente un client, puoi recuperare il file `RustDesk2.toml` (nella cartella utenti) e usare `--import-config` in modo simile all'esempio sopra.
 
-### Parametri da riga di comando
+## Parametri da riga di comando
 - `--password` può essere usato per impostare una password permanente.
 - `--get-id` può essere usato per recuperare l'ID.
 - `--set-id` può essere usato per impostare un ID. Nota che gli ID dovrebbero iniziare con una lettera.

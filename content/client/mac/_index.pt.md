@@ -3,7 +3,7 @@ title: Mac
 weight: 3
 ---
 
-### Instalação
+## Instalação
 
 Abra o arquivo .dmg e arraste `RustDesk` para `Applications` como mostrado abaixo.
 
@@ -13,13 +13,13 @@ Certifique-se de ter fechado todos os RustDesk em execução. Também certifique
 
 ![](/docs/en/client/mac/images/tray.png)
 
-### Permitir execução do RustDesk
+## Permitir execução do RustDesk
 
 | Desbloquear para alterar | Clicar em `App Store and identified developers` |
 | --- | --- |
 | ![](/docs/en/client/mac/images/allow2.png) | ![](/docs/en/client/mac/images/allow.png) |
 
-### Habilitar permissões
+## Habilitar permissões
 
 {{% notice note %}}
 Devido à mudança na política de segurança do macOS, nossa API que captura entrada no lado local não funciona mais. Você deve habilitar a permissão "Input Monitoring" no lado local do Mac.

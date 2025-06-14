@@ -17,7 +17,7 @@ B: Have a firewall that supports and has enabled the NAT Loopback.
 
 You may notice you are unable to connect to your server through your **Public IP** or **Domain** (Which in theory points to your public IP).
 
-## Problem 
+# Problem 
 In this example we will follow what happens when LAN devices try connecting to `rustdesk.example.com`. Assume your router's public IP will be `172.16.16.1`, the LAN IP of your server is `192.168.11.20` and the domain you desire is `rustdesk.example.com`, and you have a client using '192.168.11.2'.
 
 When you setup a server behind the router's NAT you can add a port forward in the router to change any incoming messages to the PUBLIC IP 172.16.16.1 to go to the server at 192.168.11.20
@@ -35,17 +35,17 @@ The NAT Loopback feature will effectively change the source "From 192.168.11.2" 
 If there is an issue with connections only while you are inside the LAN, but it works fine from offsite this may be the problem you are having.  
 
 
-## Solutions
+# Solutions
 There are three ways to solve this issue.
 
-### 1. Set up NAT Loopback on your router
+## 1. Set up NAT Loopback on your router
 You could set up NAT Loopback on your router if you know how to, but setting this requires knowledge of networking. Some routers don't have the ability to adjust this setting, so this is not the best option for everyone.
 
 {{% notice note %}}
 An article from [MikroTik](https://help.mikrotik.com/docs/display/ROS/NAT#NAT-HairpinNAT) explains this very well. You could start learning from here.
 {{% /notice %}}
 
-### 2. Deploy a DNS server on your LAN
+## 2. Deploy a DNS server on your LAN
 First, choose which you prefer, [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome/wiki/Docker) or [Pi-hole](https://github.com/pi-hole/docker-pi-hole). You could deploy it through docker, or you could deploy on the same server as your RustDesk Server. The example below will show you some steps for this example.
 
 Both of them are DNS based adblockers, but you could disable this functionality if you don't want to block ads.
@@ -53,7 +53,7 @@ Both of them are DNS based adblockers, but you could disable this functionality 
 First, point your `domain` to your RustDesk server's LAN IP (for example `192.168.11.20`). Then go to your router's `DHCP` setting (Caution: NOT WAN) and set your `First` DNS IP to the server that you deployed AdGuard Home or Pi-hole. `Secondary` DNS could be your ISP's DNS or other public DNS, e.g. `1.1.1.1` for Cloudflare or `8.8.8.8` for Google, and you're done!
 
 Here is an example:
-#### AdGuard Home
+### AdGuard Home
 Blocking ads may cause problems, if you don't want to figure out the solution and want to disable this functionality, click "Disable protection" button.
 
 ![](images/adguard_home_disable_protection.png)
@@ -75,7 +75,7 @@ Here is what the final result looks like.
 ***Don't forget to assign your AdGuard Home to your router's LAN DHCP!***
 <hr>
 
-#### Pi-hole
+### Pi-hole
 Blocking ads may cause problems, if you don't want to figure out the solution and want to disable this functionality, click "Indefinitely" button within the "Disable Blocking" submenu.
 
 ![](images/pi_hole_disable_blocking.png)
@@ -89,7 +89,7 @@ To check the final results, check the yellow lines in this picture.
 
 ***Don't forget to assign your Pi-hole to your router's LAN DHCP!***
 
-### 3. Add rules to your hosts file
+## 3. Add rules to your hosts file
 This method is only recommended if you have a small number of devices. If you have many devices the DNS method is preferred. Otherwise you would have to manually do this on each device that needs access to the server.
 
 {{% notice warning %}}
@@ -98,13 +98,13 @@ If this method is used on a portable device like a laptop, it will not be able t
 
 Path for different OS:
 
-#### Windows
+### Windows
 ```text
 C:\Windows\system32\drivers\etc\hosts
 ```
 You can edit with elevated privilages or you can copy this file to `Desktop` and edit it. After you edit it, copy back to original path.
 
-#### macOS
+### macOS
 ```text
 /etc/hosts
 ```
@@ -113,7 +113,7 @@ You could use `vim`, it is pre-installed.
 sudo vim /etc/hosts
 ```
 
-#### Linux
+### Linux
 ```text
 /etc/hosts
 ```

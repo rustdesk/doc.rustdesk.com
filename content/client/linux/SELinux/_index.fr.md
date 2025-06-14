@@ -19,7 +19,7 @@ SELinux status: disabled
 ...
 ```
 
-### Ajouter des politiques SELinux
+## Ajouter des politiques SELinux
 
 Pour une introduction à SELinux, veuillez vous référer à [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials).
 
@@ -47,7 +47,7 @@ La première méthode a des modifications relativement mineures, mais parce que 
 
 La deuxième méthode consiste à ajouter des règles à partir de zéro. Il y aura de nombreuses règles qui doivent être ajoutées, et différents systèmes peuvent avoir des différences. Il peut être nécessaire de faire quelques ajustements lors de l'utilisation réelle.
 
-#### Utiliser le type par défaut
+### Utiliser le type par défaut
 
 Le type par défaut du service RustDesk est `init_t`, qui est déterminé par [les règles d'héritage de contexte de SELinux](https://wiki.gentoo.org/wiki/SELinux/Tutorials/How_does_a_process_get_into_a_certain_context).
 
@@ -112,7 +112,7 @@ $ checkmodule -M -m -o rustdesk.mod rustdesk.te && semodule_package -o rustdesk.
 $ sudo semodule -l | grep rustdesk
 ```
 
-#### Créer un type `rustdesk_t`
+### Créer un type `rustdesk_t`
 
 1. Créer un nouveau répertoire : `mkdir rustdesk-selinux-1.0`.
 2. Créer des fichiers de politique SELinux : `touch Makefile rustdesk.te rustdesk.fc rustdesk.if`.
@@ -136,7 +136,7 @@ Certaines politiques sont dupliquées et certaines sont redondantes, mais c'est 
 
 **En raison de la complexité des fichiers de politique SELinux et de leur contenu technique détaillé, le contenu de configuration technique complet est omis ici pour des raisons de concision. Veuillez vous référer à la version anglaise pour la configuration complète.**
 
-### Génération automatique de politique SELinux (sepolicy)
+## Génération automatique de politique SELinux (sepolicy)
 
 ```sh
 $ # installer les dépendances
@@ -161,7 +161,7 @@ $ # redémarrer le service
 $ sudo systemctl restart rustdesk
 ```
 
-#### Ajouter des politiques de manière itérative
+### Ajouter des politiques de manière itérative
 
 ```sh
 $ cd /tmp
@@ -171,7 +171,7 @@ $ # fusionner rustdesk_tmp.te dans rustdesk.te
 $ make clean && make && sudo make install-policy
 ```
 
-### Références
+## Références
 
 - [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials)
 - [SELinux Policy module installation](https://fedoraproject.org/wiki/SELinux/IndependentPolicy#SELinux_Policy_module_installation)

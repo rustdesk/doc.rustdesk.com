@@ -19,7 +19,7 @@ SELinux status: disabled
 ...
 ```
 
-### SELinux-Richtlinien hinzufügen
+## SELinux-Richtlinien hinzufügen
 
 Eine Einführung in SELinux finden Sie unter [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials).
 
@@ -47,7 +47,7 @@ Bei der ersten Methode sind die Änderungen relativ gering, aber da der Standard
 
 Die zweite Methode besteht darin, Regeln von Grund auf neu hinzuzufügen. Es gibt viele Regeln, die hinzugefügt werden müssen, und verschiedene Systeme können Unterschiede aufweisen. Es kann notwendig sein, einige Anpassungen während der praktischen Nutzung vorzunehmen.
 
-#### Den Standardtyp verwenden
+### Den Standardtyp verwenden
 
 Der Standardtyp des RustDesk-Dienstes ist `init_t`, der durch die [Kontextvererbungsregeln von SELinux](https://wiki.gentoo.org/wiki/SELinux/Tutorials/How_does_a_process_get_into_a_certain_context) bestimmt wird.
 
@@ -113,7 +113,7 @@ $ checkmodule -M -m -o rustdesk.mod rustdesk.te && semodule_package -o rustdesk.
 $ sudo semodule -l | grep rustdesk
 ```
 
-#### Einen Typ `rustdesk_t` erstellen
+### Einen Typ `rustdesk_t` erstellen
 
 1. Ein neues Verzeichnis erstellen: `mkdir rustdesk-selinux-1.0`.
 2. SELinux-Richtliniendateien erstellen: `touch Makefile rustdesk.te rustdesk.fc rustdesk.if`.
@@ -539,7 +539,7 @@ gen_require(`
         type xserver_t;
 ')
 
-###############################################################################
+##############################################################################
 #
 # Teil 1. Die folgenden Regeln stammen hauptsächlich aus der Open-Source-Datei `init.te`.
 #               https://github.com/fedora-selinux/selinux-policy/blob/rawhide/policy/modules/system/init.te
@@ -557,7 +557,7 @@ corecmd_shell_entry_type(rustdesk_t)
 typeattribute rustdesk_t init_script_domain_type;
 
 
-########################################
+#######################################
 
 # Möglichkeiten nutzen, alte Regel:
 allow rustdesk_t self:capability ~{ audit_control audit_write sys_module };
@@ -1022,7 +1022,7 @@ allow systemprocess rustdesk_t:unix_dgram_socket sendto;
 allow systemprocess rustdesk_t:unix_stream_socket { append write read getattr ioctl };
 
 
-###############################################################################
+##############################################################################
 #
 # Teil 2. Die folgenden Regeln werden erstellt von
 #               `grep rustdesk /var/log/audit/audit.log | audit2allow -a -M test`
@@ -1057,7 +1057,7 @@ allow rustdesk_t xserver_t:unix_stream_socket connectto;
 allow rustdesk_t ephemeral_port_t:tcp_socket name_connect;
 
 
-###############################################################################
+##############################################################################
 #
 # Teil 3. Die folgenden Regeln gehören zu den vom System installierten Regeln.
 #               `dnf install setools-console`
@@ -1721,7 +1721,7 @@ allow rustdesk_t xserver_t:unix_stream_socket connectto;
 
 ```text
 
-## <summary>RustDesk</summary>
+# <summary>RustDesk</summary>
 ```
 
 `Makefile`:
@@ -1758,7 +1758,7 @@ install: man
 
 ```
 
-##### Direkt aktivieren
+#### Direkt aktivieren
 
 Zeigen Sie den Sicherheitskontext von RustDesk vor der Änderung an:
 
@@ -1792,7 +1792,7 @@ $ ps -eZ | grep rustdesk
 system_u:system_r:rustdesk_t:s0  110565 ?        00:00:00 rustdesk
 ```
 
-##### Durch RPM-Installation aktivieren
+#### Durch RPM-Installation aktivieren
 
 Sie können den Befehl `sepolicy generate` verwenden:
 
@@ -1819,7 +1819,7 @@ $ # Dienst neu starten
 $ sudo systemctl restart rustdesk
 ```
 
-#### Richtlinien iterativ hinzufügen
+### Richtlinien iterativ hinzufügen
 
 ```sh
 $ cd /tmp
@@ -1829,7 +1829,7 @@ $ # rustdesk_tmp.te zu rustdesk.te zusammenführen
 $ make clean && make && sudo make install-policy
 ```
 
-### Referenzen
+## Referenzen
 
 - [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials)
 - [SELinux Policy module installation](https://fedoraproject.org/wiki/SELinux/IndependentPolicy#SELinux_Policy_module_installation)

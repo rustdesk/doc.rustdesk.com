@@ -8,7 +8,7 @@ If you are using RustDesk you should have your own RustDesk Server, these docs w
 
 Support is available via our [Discord](https://discord.com/invite/nDceKgxnkV) for OSS and [email](mailto:support@rustdesk.com) for Pro.
 
-### How does self-hosted server work?
+## How does self-hosted server work?
 
 There are technically two executables (servers):
 
@@ -31,7 +31,7 @@ In the majority of cases, hole punching is successful, and the relay server is n
 
 Here is a discussion about [Should you self-host a rustdesk server?](https://www.reddit.com/r/rustdesk/comments/1cr8kfv/should_you_selfhost_a_rustdesk_server/)
 
-### Ports Required
+## Ports Required
 
 Ports required for RustDesk Server self-hosting depends largely on your environment and what you want to do with RustDesk. The Examples shown throughout the docs will generally have all ports suggested to be opened.
 

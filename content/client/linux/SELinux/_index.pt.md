@@ -19,7 +19,7 @@ SELinux status: disabled
 ...
 ```
 
-### Adicionar Políticas SELinux
+## Adicionar Políticas SELinux
 
 Para uma introdução ao SELinux, consulte [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials).
 
@@ -47,7 +47,7 @@ O primeiro método tem modificações relativamente menores, mas porque o `init_
 
 O segundo método é adicionar regras do zero. Haverá muitas regras que precisam ser adicionadas, e diferentes sistemas podem ter diferenças. Pode ser necessário fazer alguns ajustes durante o uso real.
 
-#### Usar o Tipo Padrão
+### Usar o Tipo Padrão
 
 O tipo padrão do serviço RustDesk é `init_t`, que é determinado pelas [regras de herança de contexto do SELinux](https://wiki.gentoo.org/wiki/SELinux/Tutorials/How_does_a_process_get_into_a_certain_context).
 
@@ -112,7 +112,7 @@ $ checkmodule -M -m -o rustdesk.mod rustdesk.te && semodule_package -o rustdesk.
 $ sudo semodule -l | grep rustdesk
 ```
 
-#### Criar um tipo `rustdesk_t`
+### Criar um tipo `rustdesk_t`
 
 1. Criar um novo diretório: `mkdir rustdesk-selinux-1.0`.
 2. Criar arquivos de política SELinux: `touch Makefile rustdesk.te rustdesk.fc rustdesk.if`.
@@ -136,7 +136,7 @@ Algumas políticas são duplicadas e algumas são redundantes, mas isso é ok, p
 
 **Devido à complexidade dos arquivos de política SELinux e seu conteúdo técnico detalhado, o conteúdo de configuração técnica completa é omitido aqui para brevidade. Consulte a versão em inglês para a configuração completa.**
 
-### Geração Automática de Política SELinux (sepolicy)
+## Geração Automática de Política SELinux (sepolicy)
 
 ```sh
 $ # instalar dependências
@@ -161,7 +161,7 @@ $ # reiniciar o serviço
 $ sudo systemctl restart rustdesk
 ```
 
-#### Adicionar Políticas Iterativamente
+### Adicionar Políticas Iterativamente
 
 ```sh
 $ cd /tmp
@@ -171,7 +171,7 @@ $ # mesclar rustdesk_tmp.te no rustdesk.te
 $ make clean && make && sudo make install-policy
 ```
 
-### Referências
+## Referências
 
 - [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials)
 - [SELinux Policy module installation](https://fedoraproject.org/wiki/SELinux/IndependentPolicy#SELinux_Policy_module_installation)

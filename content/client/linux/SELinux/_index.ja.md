@@ -19,7 +19,7 @@ SELinux status: disabled
 ...
 ```
 
-### SELinuxポリシーの追加
+## SELinuxポリシーの追加
 
 SELinuxの紹介については、[SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials)を参照してください。
 
@@ -47,7 +47,7 @@ SELinux型ルールを記述する方法は2つあります：
 
 2番目の方法は、ゼロからルールを追加することです。追加する必要があるルールが多く、異なるシステムでは違いがある可能性があります。実際の使用中にいくつかの調整が必要になる場合があります。
 
-#### デフォルト型の使用
+### デフォルト型の使用
 
 RustDeskサービスのデフォルト型は `init_t` で、これは[SELinuxのコンテキスト継承ルール](https://wiki.gentoo.org/wiki/SELinux/Tutorials/How_does_a_process_get_into_a_certain_context)によって決定されます。
 
@@ -112,7 +112,7 @@ $ checkmodule -M -m -o rustdesk.mod rustdesk.te && semodule_package -o rustdesk.
 $ sudo semodule -l | grep rustdesk
 ```
 
-#### 型 `rustdesk_t` の作成
+### 型 `rustdesk_t` の作成
 
 1. 新しいディレクトリを作成：`mkdir rustdesk-selinux-1.0`。
 2. SELinuxポリシーファイルを作成：`touch Makefile rustdesk.te rustdesk.fc rustdesk.if`。
@@ -136,7 +136,7 @@ $ sudo semodule -l | grep rustdesk
 
 **SELinuxポリシーファイルの複雑さと詳細な技術的内容のため、簡潔性のため完全な技術設定内容はここでは省略されています。完全な設定については英語版を参照してください。**
 
-### SELinuxポリシーの自動生成（sepolicy）
+## SELinuxポリシーの自動生成（sepolicy）
 
 ```sh
 $ # 依存関係をインストール
@@ -161,7 +161,7 @@ $ # サービスを再起動
 $ sudo systemctl restart rustdesk
 ```
 
-#### 反復的なポリシーの追加
+### 反復的なポリシーの追加
 
 ```sh
 $ cd /tmp
@@ -171,7 +171,7 @@ $ # rustdesk_tmp.teをrustdesk.teにマージ
 $ make clean && make && sudo make install-policy
 ```
 
-### 参考文献
+## 参考文献
 
 - [SELinux/Tutorials](https://wiki.gentoo.org/wiki/SELinux/Tutorials)
 - [SELinux Policy module installation](https://fedoraproject.org/wiki/SELinux/IndependentPolicy#SELinux_Policy_module_installation)

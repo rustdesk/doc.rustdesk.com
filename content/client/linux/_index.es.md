@@ -3,7 +3,7 @@ title: Linux
 weight: 4
 ---
 
-### Instalación
+## Instalación
 ------
 
 - Ubuntu (>= 16)
@@ -27,11 +27,11 @@ sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
-### ~~X11 Required~~
+## ~~X11 Required~~
 ~~RustDesk aún no admite wayland, debe cambiar a X11. RustDesk lo guiará para cambiar a X11.~~
 
 
-#### Servidor de visualización
+### Servidor de visualización
 
 Ubuntu: https://askubuntu.com/questions/1260142/ubuntu-set-default-login-desktop
 
@@ -39,7 +39,7 @@ Fedora: https://docs.fedoraproject.org/en-US/quick-docs/configuring-xorg-as-defa
 
 Arch: https://bbs.archlinux.org/viewtopic.php?id=218319
 
-##### Login Screen
+#### Login Screen
 
 Modificar la linea mostrada abajo por `WaylandEnable=false` en `/etc/gdm/custom.conf` o `/etc/gdm3/custom.conf`.
 ```
@@ -50,7 +50,7 @@ Modificar la linea mostrada abajo por `WaylandEnable=false` en `/etc/gdm/custom.
 Por favor **reinicia** para que los cambios tomen efecto en el sistema.
 {{% /notice %}}
 
-#### Problemas de permisos
+### Problemas de permisos
 
 Si el proceso  RustDesk --server no esta corriendo, es decir, no hay salida al ejecutar `ps -ef | grep -E 'rustdesk +--server'`.
 Entonces probablemente hay un problema de permisos.

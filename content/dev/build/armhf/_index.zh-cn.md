@@ -7,7 +7,7 @@ weight: 24
 
 https://github.com/rustdesk/rustdesk/issues/175#issuecomment-1129516367
 
-## 基本构建步骤
+# 基本构建步骤
 - 下载[ubuntu18.04_rootfs.tar.gz](https://pan.baidu.com/s/1pmjw7OBn5NbiCvM6GGaEgQ) 提取码：xlnx (我试了好几个版本的ubuntu系统，只有在这个上面成功了，编译好的可执行文件是可以在其他armhf系统下面用的。PS：如果你不放心系统来源，你也可以基于本教程在你的系统中编译，如果成功了记得提交方案来取代本教程。)
 - [PYNQ官方资源](http://www.pynq.io)|[PYNQ-github](https://github.com/Xilinx/PYNQ)|[ubuntu](https://ubuntu.com/blog/microk8s-memory-optimisation)
 - 下载编译[cmake-3.14.5](https://cmake.org/files/v3.14/cmake-3.14.5.tar.gz)  编译[参考教程](https://blog.csdn.net/weixin_43793181/article/details/118157012) 系统自带的cmake版本为3.10.2，编译[vcpkg-2020.11](https://github.com/microsoft/vcpkg/archive/refs/tags/2020.11.tar.gz)时会报版本过低
@@ -21,9 +21,9 @@ https://github.com/rustdesk/rustdesk/issues/175#issuecomment-1129516367
 
 - 编译 `cargo build --release`
 
-## 在 armhf 上编译
+# 在 armhf 上编译
 
-### 安装Ubuntu 18.04到SD卡
+## 安装Ubuntu 18.04到SD卡
 
 ```sh
 sudo tar zxmf ./ubuntu18.04_rootfs.tar.gz -C /your sd path/rootfs/
@@ -31,7 +31,7 @@ sudo tar zxmf ./ubuntu18.04_rootfs.tar.gz -C /your sd path/rootfs/
 #密码(passwd)：xilinx
 ```
 
-### 安装cmake
+## 安装cmake
 ```sh
 tar -xzvf cmake-3.14.5.tar.gz
 cd cmake-3.14.5/
@@ -61,13 +61,13 @@ cmake version 3.14.5
 
 CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
-### 安装依赖项
+## 安装依赖项
 
 ```sh
 sudo apt install -y g++ gcc git curl wget nasm yasm libgtk-3-dev clang libxcb-randr0-dev libxdo-dev libxfixes-dev libxcb-shape0-dev libxcb-xfixes0-dev libasound2-dev libpulse-dev ninja-build
 ```
 
-### 安装 vcpkg
+## 安装 vcpkg
 
 ```sh
 tar zxmf vcpkg-2020.11.tar.gz
@@ -180,7 +180,7 @@ The package libyuv:arm-linux provides CMake targets:
     target_link_libraries(main PRIVATE yuv)
 ```
 
-### 安装 libvpx 
+## 安装 libvpx 
 
 ```sh
 mv webmproject-libvpx-v1.9.0.tar.gz vcpkg/downloads/
@@ -230,7 +230,7 @@ make[1]: Nothing to be done for 'install'.
 make[1]: Nothing to be done for 'install'.
 ```
 
-### 安装 opus 
+## 安装 opus 
 
 ```sh
 mv xiph-opus-5c94ec3205c30171ffd01056f5b4622b7c0ab54c.tar.gz vcpkg/downloads/
@@ -302,7 +302,7 @@ configure:
  Type "make check" to run the test suite
 ```
 
-### 构建
+## 构建
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -375,7 +375,7 @@ Caused by:
 warning: `hbb_common` (lib) generated 1 warning
     Finished release [optimized] target(s) in 141m 20s
 ```
-### 测试
+## 测试
 - 查看版本号
 ```sh
 root@pynq:~/rustdesk# ./target/release/rustdesk --version

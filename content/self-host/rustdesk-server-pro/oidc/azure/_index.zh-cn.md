@@ -3,7 +3,7 @@ title: Azure
 weight: 16
 ---
 
-## 配置
+# 配置
 
 1. 登录 [Azure 门户](portal.azure.com)。
 2. 查找并选择 **Microsoft Entra ID**。
@@ -33,9 +33,9 @@ weight: 16
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/11-Azure-Auth.png)
 
 
-## 故障排除
+# 故障排除
 
-## 参考
+# 参考
 
 - [openid-settings](https://learn.microsoft.com/en-us/power-pages/security/authentication/openid-settings)
 - [v2-protocols-oidc](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-protocols-oidc)

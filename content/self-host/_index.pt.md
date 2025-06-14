@@ -8,7 +8,7 @@ Se você está usando RustDesk, você deve ter seu próprio servidor RustDesk. E
 
 O suporte está disponível através do nosso [Discord](https://discord.com/invite/nDceKgxnkV) para OSS e por [email](mailto:support@rustdesk.com) para Pro.
 
-### Como funciona o servidor auto-hospedado?
+## Como funciona o servidor auto-hospedado?
 
 Tecnicamente há dois executáveis (servidores):
 
@@ -31,7 +31,7 @@ Na maioria dos casos, o hole punching é bem-sucedido, e o servidor de retransmi
 
 Aqui está uma discussão sobre [Você deve auto-hospedar um servidor rustdesk?](https://www.reddit.com/r/rustdesk/comments/1cr8kfv/should_you_selfhost_a_rustdesk_server/)
 
-### Portas Necessárias
+## Portas Necessárias
 
 As portas necessárias para auto-hospedagem do servidor RustDesk dependem amplamente do seu ambiente e do que você quer fazer com o RustDesk. Os exemplos mostrados ao longo da documentação geralmente terão todas as portas sugeridas para serem abertas.
 

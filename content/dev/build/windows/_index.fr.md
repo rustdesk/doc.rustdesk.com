@@ -8,17 +8,17 @@ weight: 20
 Les lignes de commande ce dessous doivent être exécutées dans `git-bash` et non dans "l'invite de commande", sinon vous obtiendrez des erreurs de syntaxe.
 {{% /notice %}}
 
-## Dépendances
+# Dépendances
 
-### Environnement de compilation C++
+## Environnement de compilation C++
 
 Télécharger et installer [msvc](https://visualstudio.microsoft.com/).
 Sélectionner "Windows" en tant que système d'exploitation de la machine de développement et "C++", puis téléchargez la version Visual Studio Community et installez-la. L'installation peut prendre un certain temps.
 
-### Environnement de développement Rust
+## Environnement de développement Rust
 Téléchargez et exécuter en tant qu'administrateur pour installer "rust" [rustup-init.exe](https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe) 
 
-### vcpkg
+## vcpkg
 
 Accédez au dossier dans lequel vous souhaitez cloner vcpkg et utilisez [git-bash](https://git-scm.com/download/win) afin d'exécuter les commandes données ci après qui permettrons de télécharger "vcpkg", et installer la version 64 bits de "libvpx", "libyuv" et "opus".
 Si vous n'avez pas installé "git", téléchargez le [ici](https://git-scm.com/download/win).
@@ -36,18 +36,18 @@ Ajoutez la variable d'environnement système `VCPKG_ROOT=<chemin>\vcpkg`. Le "\<
 
 ![](/docs/en/dev/build/windows/images/env.png)
 
-### sciter
+## sciter
 
 Les versions Bureau utilisent la bibliothèque [sciter](https://sciter.com/) pour l'interface graphique. Téléchargez [sciter.dll](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll)
 
-### llvm
+## llvm
 
 rust-bindgen dépend de clang, téléchargez et installez [llvm](https://github.com/llvm/llvm-project/releases), ajoutez la variable d'environnement système `LIBCLANG_PATH=<llvm_install_dir>/bin`.
 
 Vous pouvez télécharger LLVM 15.02 ici : [64-bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win64.exe) / [32-bit](https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.2/LLVM-15.0.2-win32.exe)
 
 
-## Compilation
+# Compilation
 
 ```sh
 git clone --recurse-submodules https://github.com/rustdesk/rustdesk

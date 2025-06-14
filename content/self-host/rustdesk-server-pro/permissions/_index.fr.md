@@ -3,7 +3,7 @@ title: Contrôle d'accès
 weight: 16
 ---
 
-### Permissions d'accès aux appareils
+## Permissions d'accès aux appareils
 
 L'appareil peut être assigné soit à un seul utilisateur, soit à un seul groupe d'appareils, soit aux deux.
 
@@ -24,7 +24,7 @@ Les deux situations suivantes empêcheront l'appareil d'être accessible :
 - Rendre l'appareil `désactivé` dans la page d'appareils de la console
 - Rendre l'utilisateur `désactivé` dans la page d'utilisateurs de la console
 
-### Paramètres d'accès aux groupes d'utilisateurs
+## Paramètres d'accès aux groupes d'utilisateurs
 
 Veuillez aller à la page des groupes dans la console web, cliquez sur `Modifier` pour éditer les paramètres croisés de groupe comme ci-dessous.
 
@@ -38,7 +38,7 @@ L'utilisateur et le groupe assignés au côté contrôlant sont déterminés par
 
 ![](/docs/en/self-host/rustdesk-server-pro/permissions/images/crossgrp.png)
 
-### Paramètres d'accès aux groupes d'appareils
+## Paramètres d'accès aux groupes d'appareils
 
 Les groupes d'appareils fournissent une autre façon de gérer les permissions d'accès. Voici les règles clés :
 

@@ -3,7 +3,7 @@ title: Configure Relay Servers
 weight: 17
 ---
 
-### RustDesk Pro - Install Additional Relay Servers with Geo Location using docker
+## RustDesk Pro - Install Additional Relay Servers with Geo Location using docker
 
 {{% notice note %}}
 [The simple install](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/) creates a relay server (the `hbbr` process) implicitly on the same machine, you do not need to specify relay server explicitly.
@@ -81,9 +81,9 @@ To                         Action      From
 21117,21119/tcp (v6)       ALLOW       Anywhere (v6)
 ```
 
-### Configure RustDesk Pro for Geo Location using Web Console
+## Configure RustDesk Pro for Geo Location using Web Console
 
-#### Register and Download the GeoLite2 City database file
+### Register and Download the GeoLite2 City database file
 
 To use geo location, hbbs needs access to the MaxMind GeoLite2 City database. The database is free and you can register to download the file and get an API key.
 
@@ -96,7 +96,7 @@ If you installed RustDesk Pro using the installation script on a Linux machine, 
 
 For Docker installations the file should be in the volume you mapped when deploying the container mapped to `/root`.
 
-#### Get an API key to automate the process - Linux servers
+### Get an API key to automate the process - Linux servers
 
 You need to update this file regularly and we can use a cronjob to do that. You will need an API key to access the download link which is free.
 
@@ -111,7 +111,7 @@ You can automate the [download process](https://dev.maxmind.com/geoip/updating-d
 /usr/bin/curl -L --silent 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={Your Access Key}&suffix=tar.gz' | /bin/tar -C '/var/lib/rustdesk-server/' -xvz --keep-newer-files --strip-components=1 --wildcards '*GeoLite2-City.mmdb'
 ```
 
-#### Change settings in RustDesk Pro Web Console
+### Change settings in RustDesk Pro Web Console
 
 Add your relay server IP addresses or DNS names (DNS is supported as of version 1.1.11) to the `Relay Servers`. **Port is not required, `21117` port is used explicitly.** <br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/c4452ba4-5e1d-437a-ae1d-fc0070bfa26c">

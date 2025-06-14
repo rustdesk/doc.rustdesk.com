@@ -5,18 +5,18 @@ weight: 20
 <!-- For translators: When translating elements like "buttons", don't just translate, please refer actual naming in their interface. -->
 Después de la actualización DSM 7.2, Synology renombró su paquete "Docker" a "Container Manager". Trae una nueva GUI, y viene con "docker-compose" dentro de su GUI, lo que hace que crear Docker sea más fácil.
 
-### Modelos soportados y requisitos
+## Modelos soportados y requisitos
 
 Container Manager trae soporte ARM64 para algunos modelos de gama baja, como la serie J, para lista detallada de modelos soportados, por favor verifique [sitio web de Synology](https://www.synology.com/en-us/dsm/packages/ContainerManager).
 La mayoría de las veces no necesitará instalar RAM extra para instalar Docker y RustDesk Server.
 
-### 1. Instalar Container Manager (Docker)
+## 1. Instalar Container Manager (Docker)
 
 Abra "Centro de Paquetes", busque e instale "Container Manager".
 
 ![](images/dsm7_install_container_manager_though_package_center.png)
 
-### 2. Crear carpeta
+## 2. Crear carpeta
 
 Después de instalar "Container Manager", creará una Carpeta Compartida llamada `docker`, pongamos los datos de nuestro servidor aquí.
 
@@ -24,7 +24,7 @@ Abra su File Station, cree una carpeta llamada `rustdesk-server` (o como guste).
 
 ![](images/dsm7_create_required_folders.png)
 
-### 3. Crear contenedor
+## 3. Crear contenedor
 
 Abra su Container Manager, vaya a Proyecto y haga clic en Crear.
 
@@ -65,7 +65,7 @@ services:
 
 Por favor omita `Configuración del portal web` luego termine.
 
-### 4. Verificar que funciona
+## 4. Verificar que funciona
 
 Abra su File Station, debería ver `id_ed25519`, `id_ed25519.pub` en su carpeta `docker/rustdesk-server/data`. Podría descargarlo y abrirlo a través de cualquier editor de texto o usar [Synology Text Editor](https://www.synology.com/en-us/dsm/packages/TextEditor). Esta es la clave pública que necesita para su cliente RustDesk.
 
@@ -75,7 +75,7 @@ La clave pública se verá así:
 
 Verifique [aquí](/docs/en/client) para configurar su cliente. Solo se necesita `servidor ID` y `Clave`. `Servidor relay` no es necesario porque lo hemos configurado en `hbbs`, `hbbs` proporcionará esta información automáticamente.
 
-### 5. Configurar reenvío de puertos en su router
+## 5. Configurar reenvío de puertos en su router
 
 Vaya a la página web de administración de su router, encuentre cualquier cosa relacionada con `Reenvío de puertos`, debería aparecer en configuraciones de `WAN` o `Firewall`.
 

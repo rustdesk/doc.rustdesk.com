@@ -12,7 +12,7 @@ In alternativa, puoi utilizzare script di distribuzione di massa con il tuo RMM,
 
 La password permanente può essere cambiata da casuale a una che preferisci modificando il contenuto dentro `()` dopo `rustdesk_pw` alla tua password preferita per PowerShell e la riga corrispondente per qualsiasi altra piattaforma.
 
-### PowerShell
+## PowerShell
 
 ```powershell
 $ErrorActionPreference= 'silentlycontinue'
@@ -23,7 +23,7 @@ $rustdesk_pw=(-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})
 # Ottieni la tua stringa di configurazione dal tuo portale Web e compila qui sotto
 $rustdesk_cfg="configstring"
 
-################################### Per favore non modificare sotto questa linea #########################################
+################################## Per favore non modificare sotto questa linea #########################################
 
 # Esegui come amministratore e rimani nella directory corrente
 if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
@@ -133,7 +133,7 @@ Write-Output "Password: $rustdesk_pw"
 Write-Output "..............................................."
 ```
 
-### Windows batch/cmd
+## Windows batch/cmd
 
 ```bat
 @echo off
@@ -181,14 +181,14 @@ echo Password: %rustdesk_pw%
 echo ...............................................
 ```
 
-### MSI
+## MSI
 
 Puoi anche usare msi invece di `rustdesk.exe --silent-install`.
 
 https://rustdesk.com/docs/en/client/windows/msi/
 
 
-### Winget
+## Winget
 
 puoi distribuire tramite powershell con winget anche (questo installa tramite la versione Microsoft di apt - parte delle installazioni Windows più recenti)
 
@@ -198,7 +198,7 @@ da una finestra powershell o tramite script (ad esempio tramite GPO)
 winget install --id=RustDesk.RustDesk  -e
 ```
 
-### macOS Bash
+## macOS Bash
 
 ```sh
 #!/bin/bash
@@ -209,7 +209,7 @@ rustdesk_pw=$(openssl rand -hex 4)
 # Ottieni la tua stringa di configurazione dal tuo portale Web e compila qui sotto
 rustdesk_cfg="configstring"
 
-################################### Per favore non modificare sotto questa linea #########################################
+################################## Per favore non modificare sotto questa linea #########################################
 
 # Richiesta password root per l'elevazione dei privilegi
 [ "$UID" -eq 0 ] || exec sudo bash "$0" "$@"
@@ -275,7 +275,7 @@ echo "Per favore completa l'installazione su GUI, avviando RustDesk ora."
 open -n /Applications/RustDesk.app
 ```
 
-### Linux
+## Linux
 
 ```sh
 #!/bin/bash
@@ -286,7 +286,7 @@ rustdesk_pw=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 # Ottieni la tua stringa di configurazione dal tuo portale Web e compila qui sotto
 rustdesk_cfg="configstring"
 
-################################### Per favore non modificare sotto questa linea #########################################
+################################## Per favore non modificare sotto questa linea #########################################
 
 # Controlla se lo script è in esecuzione come root
 if [[ $EUID -ne 0 ]]; then

@@ -3,7 +3,7 @@ title: Mac
 weight: 3
 ---
 
-### Installation
+## Installation
 
 Open the .dmg file and drag `RustDesk` to `Applications` as below.
 
@@ -13,13 +13,13 @@ Make sure you have quit all running RustDesk. Also make sure you quit the RustDe
 
 ![](/docs/en/client/mac/images/tray.png)
 
-### Allow RustDesk run
+## Allow RustDesk run
 
 | Unlock to change | Click on `App Store and identified developers` |
 | --- | --- |
 | ![](/docs/en/client/mac/images/allow2.png) | ![](/docs/en/client/mac/images/allow.png) |
 
-### Enable permissions
+## Enable permissions
 
 {{% notice note %}}
 Due to macOS security policy change, our api which captures input on local side does not work any

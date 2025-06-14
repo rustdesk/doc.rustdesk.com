@@ -3,7 +3,7 @@ title: Mac
 weight: 3
 ---
 
-### Installation
+## Installation
 
 Öffnen Sie die DMG-Datei und ziehen Sie `RustDesk` zu `Applications`, wie unten dargestellt.
 
@@ -13,13 +13,13 @@ Stellen Sie sicher, dass Sie alle laufenden RustDesk beendet haben. Stellen Sie 
 
 ![](/docs/en/client/mac/images/tray.png)
 
-### Ausführen von RustDesk zulassen
+## Ausführen von RustDesk zulassen
 
 | Zum Ändern entsperren | Klicken Sie auf `App Store und identifizierte Entwickler` |
 | --- | --- |
 | ![](/docs/en/client/mac/images/allow2.png) | ![](/docs/en/client/mac/images/allow.png) |
 
-### Berechtigungen aktivieren
+## Berechtigungen aktivieren
 
 {{% notice note %}}
 Aufgrund einer Änderung der macOS-Sicherheitspolitik funktioniert unsere API, die Eingaben auf der lokalen Seite erfasst, nicht mehr.

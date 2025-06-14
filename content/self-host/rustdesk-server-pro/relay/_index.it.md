@@ -3,7 +3,7 @@ title: Configurare server di relay
 weight: 17
 ---
 
-### RustDesk Pro - Installare server di relay aggiuntivi con geolocalizzazione usando docker
+## RustDesk Pro - Installare server di relay aggiuntivi con geolocalizzazione usando docker
 
 {{% notice note %}}
 [L'installazione semplice](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/) crea un server di relay (il processo `hbbr`) implicitamente sulla stessa macchina, non è necessario specificare il server di relay esplicitamente.
@@ -81,9 +81,9 @@ To                         Action      From
 21117,21119/tcp (v6)       ALLOW       Anywhere (v6)
 ```
 
-### Configurare RustDesk Pro per la geolocalizzazione usando la console web
+## Configurare RustDesk Pro per la geolocalizzazione usando la console web
 
-#### Registrarsi e scaricare il file del database GeoLite2 City
+### Registrarsi e scaricare il file del database GeoLite2 City
 
 Per utilizzare la geolocalizzazione, hbbs ha bisogno di accesso al database MaxMind GeoLite2 City. Il database è gratuito e puoi registrarti per scaricare il file e ottenere una chiave API.
 
@@ -96,7 +96,7 @@ Se hai installato RustDesk Pro usando lo script di installazione su una macchina
 
 Per le installazioni Docker il file dovrebbe essere nel volume che hai mappato quando hai distribuito il container mappato su `/root`.
 
-#### Ottenere una chiave API per automatizzare il processo - server Linux
+### Ottenere una chiave API per automatizzare il processo - server Linux
 
 Devi aggiornare questo file regolarmente e possiamo usare un cronjob per farlo. Avrai bisogno di una chiave API per accedere al link di download che è gratuito.
 
@@ -111,7 +111,7 @@ Puoi automatizzare il [processo di download](https://dev.maxmind.com/geoip/updat
 /usr/bin/curl -L --silent 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={Your Access Key}&suffix=tar.gz' | /bin/tar -C '/var/lib/rustdesk-server/' -xvz --keep-newer-files --strip-components=1 --wildcards '*GeoLite2-City.mmdb'
 ```
 
-#### Modificare le impostazioni nella console web RustDesk Pro
+### Modificare le impostazioni nella console web RustDesk Pro
 
 Aggiungi i tuoi indirizzi IP o nomi DNS dei server di relay (DNS è supportato dalla versione 1.1.11) ai `Server di relay`. **La porta non è richiesta, la porta `21117` è utilizzata esplicitamente.** <br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/c4452ba4-5e1d-437a-ae1d-fc0070bfa26c">

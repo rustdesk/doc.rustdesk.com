@@ -5,18 +5,18 @@ weight: 20
 <!-- For translators: When translating elements like "buttons", don't just translate, please refer actual naming in their interface. -->
 Après la mise à jour DSM 7.2, Synology a renommé son paquet "Docker" en "Container Manager". Il apporte une nouvelle interface graphique, et vient avec "docker-compose" dans son interface graphique, ce qui vous permet de créer Docker plus facilement.
 
-### Modèles supportés et exigences
+## Modèles supportés et exigences
 
 Container Manager apporte le support ARM64 pour certains modèles d'entrée de gamme, comme la série J, pour la liste détaillée des modèles supportés, veuillez vérifier le [site web Synology](https://www.synology.com/en-us/dsm/packages/ContainerManager).
 La plupart du temps, vous n'aurez pas besoin d'installer de RAM supplémentaire pour installer Docker et RustDesk Server.
 
-### 1. Installer Container Manager (Docker)
+## 1. Installer Container Manager (Docker)
 
 Ouvrez "Centre de Paquets", recherchez et installez "Container Manager".
 
 ![](images/dsm7_install_container_manager_though_package_center.png)
 
-### 2. Créer un dossier
+## 2. Créer un dossier
 
 Après avoir installé "Container Manager", il créera un Dossier Partagé appelé `docker`, mettons les données de notre serveur ici.
 
@@ -24,7 +24,7 @@ Ouvrez votre File Station, créez un dossier nommé `rustdesk-server` (ou comme 
 
 ![](images/dsm7_create_required_folders.png)
 
-### 3. Créer un conteneur
+## 3. Créer un conteneur
 
 Ouvrez votre Container Manager, allez dans Projet et cliquez sur Créer.
 
@@ -65,7 +65,7 @@ services:
 
 Veuillez ignorer `Paramètres du portail web` puis terminer.
 
-### 4. Vérifier que ça fonctionne
+## 4. Vérifier que ça fonctionne
 
 Ouvrez votre File Station, vous devriez voir `id_ed25519`, `id_ed25519.pub` dans votre dossier `docker/rustdesk-server/data`. Vous pourriez le télécharger et l'ouvrir via n'importe quel éditeur de texte ou utiliser [Synology Text Editor](https://www.synology.com/en-us/dsm/packages/TextEditor). C'est la clé publique dont vous avez besoin pour votre client RustDesk.
 
@@ -75,7 +75,7 @@ La clé publique ressemblera à ceci :
 
 Vérifiez [ici](/docs/en/client) pour configurer votre client. Seuls `serveur ID` et `Clé` sont nécessaires. `Serveur relay` n'est pas nécessaire car nous l'avons configuré dans `hbbs`, `hbbs` fournira cette information automatiquement.
 
-### 5. Configurer la redirection de port sur votre routeur
+## 5. Configurer la redirection de port sur votre routeur
 
 Allez sur la page web d'administration de votre routeur, trouvez tout ce qui concerne la `Redirection de port`, cela devrait apparaître dans les paramètres `WAN` ou `Pare-feu`.
 

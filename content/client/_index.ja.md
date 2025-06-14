@@ -4,10 +4,10 @@ weight: 2
 pre: "<b>1. </b>"
 ---
 
-### 紹介
+## 紹介
 RustDesk クライアントは、オープンソースまたはプロ版の RustDesk サーバー経由で接続するためにデバイスで使用されます。[GitHub](https://github.com/rustdesk/rustdesk/releases/latest) からダウンロードできます。
 
-### サポートされているプラットフォーム
+## サポートされているプラットフォーム
 - Microsoft Windows
 - macOS
 - Debian 派生 (Ubuntu ≥ 16、Linux Mint など)
@@ -20,15 +20,15 @@ RustDesk クライアントは、オープンソースまたはプロ版の Rust
 - iOS (制御されることはサポートしていません)
 - Web
 
-### インストール
+## インストール
 
-#### Windows
+### Windows
 
 GitHub から exe をダウンロードしてインストールします。
 
 サイレントインストールするには、`--silent-install` でインストール exe を呼び出します。
 
-#### macOS
+### macOS
 
 GitHub から dmg ファイルをダウンロードします。詳細については [macOS ページ](https://rustdesk.com/docs/en/client/mac/) をご覧ください。
 
@@ -38,36 +38,36 @@ RustDesk の実行を許可します。
 
 要求された権限を有効にし、RustDesk の左側のプロンプトに従ってセットアップを完了します。
 
-#### Linux
+### Linux
 
 さまざまな Linux の「フレーバー」にインストールするための以下の手順をご覧ください（インストーラーは GitHub にあるか、ディストリビューションのリポジトリから利用できます）。
 
-##### Debian 派生
+#### Debian 派生
 
 ```sh
 # 間違ったディスク使用量レポートを無視してください
 sudo apt install -fy ./rustdesk-<version>.deb
 ```
 
-##### Red Hat 派生
+#### Red Hat 派生
 
 ```sh
 sudo yum localinstall ./rustdesk-<version>.rpm
 ```
 
-##### Arch Linux/Manjaro
+#### Arch Linux/Manjaro
 
 ```sh
 sudo pacman -U ./rustdesk-<version>.pkg.tar.zst
 ```
 
-##### openSUSE (≥ Leap 15.0)
+#### openSUSE (≥ Leap 15.0)
 
 ```sh
 sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 ```
 
-##### Nix / NixOS (≥ 22.05)
+#### Nix / NixOS (≥ 22.05)
 
 `rustdesk` を実行する準備ができたシェルに一時的に入る：
 
@@ -90,13 +90,13 @@ NixOS でシステム全体にインストールするには、`configuration.ni
   ];
 ```
 
-#### Android
+### Android
 GitHub から apk をインストールします。詳細については [Android ページ](https://rustdesk.com/docs/en/client/android/) をご覧ください。
 
-#### iOS (iPhone、iPad)
+### iOS (iPhone、iPad)
 [App Store](https://apps.apple.com/us/app/rustdesk-remote-desktop/id1581225015) からアプリをダウンロードします。
 
-### 使用方法
+## 使用方法
 インストール後（または一時的な実行可能ファイルとして実行）、RustDesk はパブリックサーバーに接続します。下部に (1) "Ready, For faster connection, please set up your own server"（準備完了、より高速な接続のために独自のサーバーをセットアップしてください）というメッセージが表示されます。左上に (2) ID、(3) ワンタイムパスワードが表示され、右側に他のコンピューターの ID を知っている場合に接続するための (4) ボックスがあります。
 
 ![](/docs/en/client/images/client.png)
@@ -111,7 +111,7 @@ GitHub から apk をインストールします。詳細については [Androi
 - アカウント - これはプロサーバーと組み合わせて API にサインインするために使用できます
 - バージョン情報 - ソフトウェアに関する情報を表示
 
-### RustDesk の設定
+## RustDesk の設定
 RustDesk を設定する方法は複数あります。
 
 最も簡単な方法は RustDesk Server Pro を使用することです。暗号化された設定文字列を取得でき、これを `--config` と組み合わせて設定をインポートできます。これを行うには：
@@ -128,7 +128,7 @@ RustDesk を設定する方法は複数あります。
 
 手動でクライアントを設定した場合、`RustDesk2.toml` ファイル（ユーザーフォルダー内）を取得し、上記の例と同様の方法で `--import-config` を使用できます。
 
-### コマンドラインパラメーター
+## コマンドラインパラメーター
 - `--password` は永続的なパスワードを設定するために使用できます。
 - `--get-id` は ID を取得するために使用できます。
 - `--set-id` は ID を設定するために使用できます。ID は文字で始まる必要があることに注意してください。

@@ -4,7 +4,7 @@ weight: 30
 ---
 
 
-## Cómo compilar con Docker
+# Cómo compilar con Docker
 
 Comience clonando el repositorio y construyendo el contenedor docker:
 

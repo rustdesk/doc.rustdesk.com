@@ -14,7 +14,7 @@ Zuerst müssen Sie die Seite mit den Kontoeinstellungen aufrufen.
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/1-settings-account.png)
 
-### E-Mail-Überprüfung
+## E-Mail-Überprüfung
 
 Um die E-Mail-Überprüfung für die Anmeldung zu aktivieren, müssen Sie:
 
@@ -28,16 +28,16 @@ Wenn wir uns das nächste Mal anmelden, schickt uns RustDesk eine E-Mail mit ein
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/2-2fa-email-2.png)
 
-### TOTP
+## TOTP
 
 TOTP ist eine weit verbreitete 2FA-Methode, daher bezieht sich 2FA in der Webkonsole von RustDesk Server Pro auf die TOTP-Verifizierung.
 
-#### Authentifizierungs-App vorbereiten
+### Authentifizierungs-App vorbereiten
 
 Zunächst müssen Sie eine Authentifizierungs-App vorbereiten.
 Sie können zwischen den Authentifizierungs-Apps [Authy](https://authy.com), [Microsoft Authenticator](https://www.microsoft.com/de-de/security/mobile-authenticator-app/) and [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=de) wählen.
 
-#### 2FA aktivieren
+### 2FA aktivieren
 
 Wenn die Schaltfläche `2FA aktivieren` auf der Einstellungsseite angezeigt wird, bedeutet dies, dass 2FA derzeit nicht aktiviert ist.
 
@@ -65,7 +65,7 @@ Nachdem 2FA erfolgreich aktiviert wurde, wird RustDesk Server Pro auch an 6 **Ba
 2. Bitte bewahren Sie die Backup-Codes an einem sicheren Ort auf.
 {{% /notice %}}
 
-#### Überprüfung der Anmeldung
+### Überprüfung der Anmeldung
 
 Wenn 2FA aktiviert ist, wird die E-Mail-Anmeldebestätigung nicht mehr verwendet. Stattdessen wird die 2FA-Anmeldebestätigung verwendet.
 
@@ -75,7 +75,7 @@ Wenn Sie sich anmelden, werden Sie zur Verifizierungsseite weitergeleitet.
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-enable-login-6.png)
 
-#### Einstellungen ändern
+### Einstellungen ändern
 
 Wenn 2FA aktiviert ist, erfordert die Änderung von Kontoeinstellungen eine zusätzliche 2FA-Verifizierung.
 
@@ -83,7 +83,7 @@ Wenn 2FA aktiviert ist, erfordert die Änderung von Kontoeinstellungen eine zus�
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-settings-2.png)
 
-#### 2FA-Status
+### 2FA-Status
 
 2FA hat insgesamt 3 Zustände: nicht aktiviert, aktiviert und abgelaufen.
 

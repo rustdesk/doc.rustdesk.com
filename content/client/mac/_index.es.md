@@ -3,7 +3,7 @@ title: Mac
 weight: 3
 ---
 
-### Instalación
+## Instalación
 ------
 
 Abra el archivo .dmg y arrastre `RustDesk` a `Applications` como a continuación.
@@ -14,13 +14,13 @@ Asegúrese de haber dejado de ejecutar RustDesk. También asegúrese de salir de
 
 ![](/docs/en/client/mac/images/tray.png)
 
-### Permitir la ejecución de RustDesk
+## Permitir la ejecución de RustDesk
 
 | Desbloquear para cambiar | Haga clic en "App Store y desarrolladores identificados" |
 | ---- | ---- |
 |![](/docs/en/client/mac/images/allow2.png)|![](/docs/en/client/mac/images/allow.png)|
 
-### Habilitar permisos
+## Habilitar permisos
 
 Para capturar la pantalla, debe otorgar `RustDesk` **accesibilidad** permiso y **grabación de pantalla** permiso. RustDesk lo guiará a la ventana de configuración.
 

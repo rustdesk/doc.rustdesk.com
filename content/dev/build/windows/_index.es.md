@@ -3,17 +3,17 @@ title: Windows
 weight: 20
 ---
 
-## Dependencias
+# Dependencias
 
-### Entorno de compilación C++
+## Entorno de compilación C++
 
 Descargar [msvc](https://visualstudio.microsoft.com/) e instalar.
 
-### Entorno de desarrollo Rust
+## Entorno de desarrollo Rust
 
 Descargar [rustup-init.exe](https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe) e instalar.
 
-### vcpkg
+## vcpkg
 
 Usar [git-bash](https://git-scm.com/download/win) para ejecutar los siguientes comandos， download `vcpkg`, install `libvpx`, `libyuv`, `opus`.
 
@@ -31,19 +31,19 @@ Agregar variable de entorno `VCPKG_ROOT`=`<path>\vcpkg`.
 
 ![](/docs/en/dev/build/windows/images/env.png)
 
-### sciter
+## sciter
 
 Uso de versiones de escritorio [sciter](https://sciter.com/) para GUI, descargue [sciter.dll](https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.win/x64/sciter.dll)
 
-### llvm
+## llvm
 
 rust-bindgen depende del clang, descargar [llvm](https://github.com/llvm/llvm-project/releases) e instalar, agregar variable de entorno `LIBCLANG_PATH`=`<llvm_install_dir>/bin`.
 
 
 
-## Construir
+# Construir
 
-### Por defecto
+## Por defecto
 
 ```sh
 git clone --recurse-submodules https://github.com/rustdesk/rustdesk

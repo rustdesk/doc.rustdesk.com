@@ -3,7 +3,7 @@ title: 配置中繼伺服器
 weight: 17
 ---
 
-### RustDesk Pro - 使用docker安裝具有地理位置的附加中繼伺服器
+## RustDesk Pro - 使用docker安裝具有地理位置的附加中繼伺服器
 
 {{% notice note %}}
 [簡單安裝](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/)會在同一台機器上隱式創建一個中繼伺服器（`hbbr`進程），您無需顯式指定中繼伺服器。
@@ -17,7 +17,7 @@ weight: 17
 
 > 您需要私鑰對`id_ed25519`和`id_ed25519.pub`。
 
-## 安裝步驟
+# 安裝步驟
 
 1. 如果已安裝docker，通過SSH連接到您的伺服器並為hbbr創建卷：
 ```
@@ -40,15 +40,15 @@ weight: 17
 # docker logs hbbr
 ```
 
-## 防火牆配置
+# 防火牆配置
 ```
 # sudo ufw allow proto tcp from any to any port 21117,21119
 # sudo ufw enable
 ```
 
-### 使用Web控制台為地理位置配置RustDesk Pro
+## 使用Web控制台為地理位置配置RustDesk Pro
 
-#### 註冊並下載GeoLite2 City資料庫檔案
+### 註冊並下載GeoLite2 City資料庫檔案
 
 要使用地理位置，hbbs需要訪問MaxMind GeoLite2 City資料庫。該資料庫是免費的，您可以註冊下載檔案並獲取API密鑰。
 
@@ -59,7 +59,7 @@ weight: 17
 對於Linux安裝，`mmdb`檔案需要移動到`/var/lib/rustdesk-server/`。
 對於Docker安裝，檔案應該在您映射到`/root`的卷中。
 
-#### 在RustDesk Pro Web控制台中更改設置
+### 在RustDesk Pro Web控制台中更改設置
 
 1. 將中繼伺服器IP地址或DNS名稱添加到`Relay Servers`（不需要端口，顯式使用`21117`端口）
 2. 添加地理覆蓋，通過添加伺服器IP地址和伺服器所在位置的坐標

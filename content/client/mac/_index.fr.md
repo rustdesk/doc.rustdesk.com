@@ -3,7 +3,7 @@ title: Mac
 weight: 3
 ---
 
-### Installation
+## Installation
 ------
 
 Ouvrez le fichier .dmg et faites glisser "RustDesk" vers "Applications" comme ci-dessous.
@@ -13,13 +13,13 @@ Assurez-vous que vous avez quitté les instance des "RustDesk" en cours d'exécu
 
 ![](/docs/en/client/mac/images/tray.png)
 
-### Autoriser l'exécution de "RustDesk"
+## Autoriser l'exécution de "RustDesk"
 
 | Déverrouillez pour modifier | Cliquez sur "App Store et développeurs identifiés" |
 | ---- | ---- |
 |![](/docs/en/client/mac/images/allow2.png)|![](/docs/en/client/mac/images/allow.png)|
 
-### Activer les autorisations
+## Activer les autorisations
 
 {{% notice note %}}
 En raison du changement de politique de sécurité de MacOS, notre API qui capture les entrées du côté local ne fonctionne plus du tout. Vous devez activer l'autorisation "Surveillance des entrées" du côté Mac.

@@ -3,7 +3,7 @@ title: Configurer les serveurs de relais
 weight: 17
 ---
 
-### RustDesk Pro - Installer des serveurs de relais supplémentaires avec géolocalisation en utilisant docker
+## RustDesk Pro - Installer des serveurs de relais supplémentaires avec géolocalisation en utilisant docker
 
 {{% notice note %}}
 [L'installation simple](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/) crée un serveur de relais (le processus `hbbr`) implicitement sur la même machine, vous n'avez pas besoin de spécifier le serveur de relais explicitement.
@@ -81,9 +81,9 @@ To                         Action      From
 21117,21119/tcp (v6)       ALLOW       Anywhere (v6)
 ```
 
-### Configurer RustDesk Pro pour la géolocalisation en utilisant la console Web
+## Configurer RustDesk Pro pour la géolocalisation en utilisant la console Web
 
-#### Enregistrer et télécharger le fichier de base de données GeoLite2 City
+### Enregistrer et télécharger le fichier de base de données GeoLite2 City
 
 Pour utiliser la géolocalisation, hbbs a besoin d'accéder à la base de données MaxMind GeoLite2 City. La base de données est gratuite et vous pouvez vous enregistrer pour télécharger le fichier et obtenir une clé API.
 
@@ -96,7 +96,7 @@ Si vous avez installé RustDesk Pro en utilisant le script d'installation sur un
 
 Pour les installations Docker, le fichier devrait être dans le volume que vous avez mappé lors du déploiement du conteneur mappé vers `/root`.
 
-#### Obtenir une clé API pour automatiser le processus - serveurs Linux
+### Obtenir une clé API pour automatiser le processus - serveurs Linux
 
 Vous devez mettre à jour ce fichier régulièrement et nous pouvons utiliser un cronjob pour cela. Vous aurez besoin d'une clé API pour accéder au lien de téléchargement qui est gratuit.
 
@@ -111,7 +111,7 @@ Vous pouvez automatiser le [processus de téléchargement](https://dev.maxmind.c
 /usr/bin/curl -L --silent 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={Your Access Key}&suffix=tar.gz' | /bin/tar -C '/var/lib/rustdesk-server/' -xvz --keep-newer-files --strip-components=1 --wildcards '*GeoLite2-City.mmdb'
 ```
 
-#### Modifier les paramètres dans la console Web RustDesk Pro
+### Modifier les paramètres dans la console Web RustDesk Pro
 
 Ajoutez vos adresses IP ou noms DNS des serveurs de relais (DNS est supporté depuis la version 1.1.11) aux `Serveurs de relais`. **Le port n'est pas requis, le port `21117` est utilisé explicitement.** <br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/c4452ba4-5e1d-437a-ae1d-fc0070bfa26c">

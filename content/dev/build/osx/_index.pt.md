@@ -7,10 +7,10 @@ Existem várias maneiras de fazer isso, este guia assume que `Xcode`, `Git` e `H
 
 O maior desafio é provavelmente encontrar versões de todas as ferramentas que funcionem juntas, especialmente desde que partes da cadeia de ferramentas como Xcode e LLVM são ditadas pela sua versão do macOS. As versões usadas neste guia provavelmente não são as que você deve usar. Como ponto de partida para descobrir quais versões usar, consulte o [workflow de compilação do GitHub](https://github.com/rustdesk/rustdesk/blob/master/.github/workflows/flutter-build.yml) para a versão RustDesk que você quer compilar. Escolha a tag para ver o arquivo no canto superior esquerdo da página. Mas isso não necessariamente funcionará porque as ferramentas do macOS que vêm com o runner do GitHub podem não ser as mesmas versões que as do seu sistema local.
 
-#### Export
+### Export
 `export` é usado para definir várias variáveis ambientais. Quando você executa `export`, essa variável é definida apenas para a sessão atual do terminal, e essas devem ser repetidas para cada nova janela do terminal que você quiser usar para compilar RustDesk, agora ou no futuro. Geralmente, é preferível adicionar todos os `export`s a um script que é executado automaticamente para cada terminal que é aberto, por exemplo `~/.bash_profile`. Os comandos `export` completos listados aqui podem simplesmente ser anexados ao arquivo, mas também devem ser executados no terminal atual porque o arquivo não é lido até que um *novo* terminal seja aberto.
 
-### Instalar as ferramentas que vamos usar do Homebrew
+## Instalar as ferramentas que vamos usar do Homebrew
 
 ```sh
 brew install python3 create-dmg nasm cmake gcc wget ninja pkg-config wget rustup
@@ -23,7 +23,7 @@ sudo chown <nome_usuario>:admin /usr/local/include
 sudo chmod 775 /usr/local/include
 ```
 
-### Instalar vcpkg
+## Instalar vcpkg
 Vcpkg é usado para gerenciar as dependências C/C++ usadas pelo RustDesk. Decida onde você quer a instalação e execute o seguinte da pasta na qual você quer que a pasta `vcpkg` resida. Neste exemplo `/Users/<nome_usuario>/repos/` é usado como localização, e a tag `2023.04.15` é usada como versão.
 
 ```sh
@@ -35,7 +35,7 @@ git checkout 2023.04.15
 export VCPKG_ROOT=~/repos/vcpkg
 ```
 
-### Instalar e configurar Rust
+## Instalar e configurar Rust
 Usamos `rustup` para gerenciar o Rust, que já foi instalado acima usando Homebrew. Mas, ainda precisa ser configurado. Siga as instruções e certifique-se de que tanto `rustup` quanto `rustc` estão no `PATH`. Neste exemplo usamos a versão `1.75.0` do Rust, mas você pode precisar usar uma versão diferente. Você pode instalar e gerenciar múltiplas versões do Rust com `rustup`.
 
 ```sh
@@ -45,7 +45,7 @@ rustup component add rustfmt
 ```
 Para uma visão geral sobre as cadeias de ferramentas Rust instaladas e padrão, execute `rustup show`.
 
-### Baixar os arquivos fonte do RustDesk
+## Baixar os arquivos fonte do RustDesk
 
 Decida onde você quer os arquivos fonte do RustDesk e execute o seguinte da pasta na qual você quer que a pasta `rustdesk` resida. Neste exemplo `/Users/<nome_usuario>/repos/` é usado como localização.
 
@@ -62,17 +62,17 @@ export PATH=~/Library/Python/3.9/bin:$PATH
 ```
 Uma vez feito isso, execute o(s) comando(s) falhado(s) novamente. Lembre-se de também editar `~/.bash_profile`.
 
-### Instalar componentes da interface do usuário
+## Instalar componentes da interface do usuário
 RustDesk pode ser compilado usando tanto [Sciter](https://sciter.com/) quanto [Flutter](https://flutter.dev/). Ambos precisam de componentes adicionais, então siga os passos para a versão relevante, ou ambos.
 
-#### Sciter
+### Sciter
 
 Da pasta `rustdesk`, execute:
 ```sh
 wget https://github.com/c-smile/sciter-sdk/raw/master/bin.osx/libsciter.dylib
 ```
 
-#### Flutter
+### Flutter
 
 [FVM](https://fvm.app/) permite gerenciar qual versão do Flutter é usada, e é provavelmente a maneira mais fácil de poder facilmente testar diferentes versões do Flutter.
 
@@ -106,7 +106,7 @@ Uma vez que o Flutter esteja funcionando, é hora de instalar a "ponte" que liga
 cargo install flutter_rust_bridge_codegen --version "1.80.1" --features "uuid"
 ```
 
-### Compilar
+## Compilar
 
 Compile da pasta `rustdesk`. Compile a versão Sciter com:
 

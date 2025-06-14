@@ -3,7 +3,7 @@ title: Android
 weight: 4
 ---
 
-### Contrôle à distance
+## Contrôle à distance
 
 Entrez l'ID de l'appareil distant sur la page d'accueil ou sélectionnez un appareil historique pour vérifier.
 Après une vérification réussie, vous pouvez contrôler l'appareil distant.
@@ -22,7 +22,7 @@ Le contrôle d'entrée offre deux modes : `Mode souris` et `Mode tactile`, qui p
 En `Mode souris`, vous pouvez également déclencher le `Clic droit` de l'appareil distant avec un `Tap à deux doigts`
 {{% /notice %}}
 
-### Transfert de fichiers (Android)
+## Transfert de fichiers (Android)
 
 > Nécessite RustDesk ≥ 1.1.9
 
@@ -40,7 +40,7 @@ Appuyez longuement ou tapez sur le menu à droite pour sélectionner `Transfert 
 - Le chemin absolu actuel et les statistiques du projet seront affichés en bas de la liste.
 - Cliquez sur `Local` / `Distant` dans la barre de titre pour changer de page.
 
-#### Comment transférer des fichiers ?
+### Comment transférer des fichiers ?
 
 1. **Appuyez longuement** sur un fichier ou un dossier dans la liste pour entrer rapidement en **mode de sélection multiple**, qui peut sélectionner plusieurs éléments.
 2. Après avoir sélectionné le(s) fichier(s), changez de page `Local` / `Distant`. Après le changement, vous verrez l'invite `Coller ici ?` en bas de l'écran.
@@ -50,7 +50,7 @@ Appuyez longuement ou tapez sur le menu à droite pour sélectionner `Transfert 
 | --- | --- |
 | ![](/docs/en/client/android/images/file_multi_select_en.jpg?width=300px) | ![](/docs/en/client/android/images/file_copy_en.jpg?width=300px) |
 
-### Définir le serveur ID/Relais
+## Définir le serveur ID/Relais
 
 1. Cliquez sur `Paramètres` dans la barre de navigation inférieure.
 2. Cliquez sur `Serveur ID/Relais`.
@@ -68,7 +68,7 @@ L'image ci-dessous est une capture d'écran d'Android. Si c'est iOS, veuillez v�
 
 ![](/docs/en/client/android/images/id_setting_en.jpg?width=300px)
 
-### Partager l'écran/fichiers de votre téléphone Android
+## Partager l'écran/fichiers de votre téléphone Android
 
 À partir de la version 1.1.9, le client Android a ajouté les fonctions de partage de l'écran du téléphone et de partage du système de fichiers du téléphone.
 
@@ -76,7 +76,7 @@ L'image ci-dessous est une capture d'écran d'Android. Si c'est iOS, veuillez v�
 - Android 10 ou plus est requis pour partager l'audio interne du système de téléphone mobile
 - iOS ne prend pas encore en charge le partage d'écran
 
-#### Demander des autorisations et démarrer les services
+### Demander des autorisations et démarrer les services
 
 Cliquez sur `Partager l'écran` dans la barre de navigation inférieure.
 
@@ -95,13 +95,13 @@ Configurez diverses autorisations selon les besoins. Chaque fois que vous démar
 Le * ci-dessus représente des autorisations spéciales. Pour obtenir de telles autorisations, vous devez accéder à la page des paramètres du système Android pour les obtenir manuellement. Les détails sont les suivants
 {{% /notice %}}
 
-#### Demande d'autorisation spéciale - Fichier
+### Demande d'autorisation spéciale - Fichier
 
 | Demander des autorisations de fichier Android sautera automatiquement à la page des paramètres système |
 | :---: |
 | ![](/docs/en/client/android/images/get_file_en.jpg?width=300px) |
 
-#### Demande d'autorisation spéciale - entrée souris
+### Demande d'autorisation spéciale - entrée souris
 | Étape 1 : Trouvez "Services installés" | Étape 2 : Démarrez RustDesk Input |
 | --- | --- |
 | ![](/docs/en/client/android/images/get_input1_en.jpg?width=300px) | ![](/docs/en/client/android/images/get_input2_en.jpg?width=300px) |
@@ -117,7 +117,7 @@ La page des paramètres système de différents fournisseurs peut être différe
 | Appui long sur la molette de la souris | Applications récemment ouvertes |
 | Défilement de la molette de la souris | Simuler le glissement vertical |
 
-#### Démarrer le service
+### Démarrer le service
 
 Après avoir obtenu l'autorisation `Capture d'écran`, le service sera automatiquement démarré. Vous pouvez également cliquer sur le bouton `Démarrer le service` pour démarrer le service. Une fois le service démarré, il peut accepter les demandes de contrôle de bureau d'autres appareils.
 
@@ -135,11 +135,11 @@ Après le démarrage du service, un ID unique et un mot de passe aléatoire sero
 3. Sauf pour l'autorisation `Capture d'écran`, le changement d'autres autorisations n'affectera que les nouvelles connexions et n'affectera pas la connexion établie. Si vous devez changer les autorisations pour une connexion établie, veuillez d'abord fermer la connexion actuelle, modifier les autorisations, puis recevoir une demande de contrôle.
 {{% /notice %}}
 
-##### PC
+#### PC
 
 ![](/docs/en/client/android/images/android_server_pc_side_en.png?width=700px)
 
-##### Terminal mobile
+#### Terminal mobile
 
 | Vous pouvez arrêter le service ou fermer la connexion spécifiée à tout moment | Vous pouvez recevoir ou initier des discussions |
 | --- | --- |

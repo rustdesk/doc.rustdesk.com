@@ -10,7 +10,7 @@ Alternativ können Sie Skripte für die Massenbereitstellung mit Ihrem RMM, Intu
 
 Das permanente Passwort kann von einem Zufallspasswort in ein von Ihnen bevorzugtes Passwort geändert werden, indem Sie den Inhalt in `()` nach `rustdesk_pw` in Ihr bevorzugtes Passwort für PowerShell und die entsprechende Zeile für jede andere Plattform ändern.
 
-### PowerShell
+## PowerShell
 
 ```ps
 $ErrorActionPreference= 'silentlycontinue'
@@ -21,7 +21,7 @@ $rustdesk_pw=(-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})
 # Die Konfigurationszeichenkette von Ihrem Webportal abrufen und unten ausfüllen
 $rustdesk_cfg="configstring"
 
-############################## Bitte nicht unterhalb dieser Zeile bearbeiten ###################################
+############################# Bitte nicht unterhalb dieser Zeile bearbeiten ###################################
 
 # Als Administrator ausführen und im gleichen Verzeichnis bleiben
 if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
@@ -131,7 +131,7 @@ Write-Output "Passwort: $rustdesk_pw"
 Write-Output "..............................................."
 ```
 
-### Windows Batch/CMD
+## Windows Batch/CMD
 
 ```bat
 @echo off
@@ -181,7 +181,7 @@ echo Passwort: %rustdesk_pw%
 echo ...............................................
 ```
 
-### macOS Bash
+## macOS Bash
 
 ```sh
 #!/bin/bash
@@ -192,7 +192,7 @@ rustdesk_pw=$(openssl rand -hex 4)
 # Die Konfigurationszeichenkette von Ihrem Webportal abrufen und unten ausfüllen
 rustdesk_cfg="configstring"
 
-############################## Bitte nicht unterhalb dieser Zeile bearbeiten ###################################
+############################# Bitte nicht unterhalb dieser Zeile bearbeiten ###################################
 
 # Prüfen, ob das Skript als root ausgeführt wird
 if [[ $EUID -ne 0 ]]; then
@@ -260,7 +260,7 @@ echo "Bitte schließen Sie die Installation auf der GUI ab und starten Sie RustD
 open -n /Applications/RustDesk.app
 ```
 
-### Linux
+## Linux
 
 ```sh
 #!/bin/bash
@@ -271,7 +271,7 @@ rustdesk_pw=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 # Die Konfigurationszeichenkette von Ihrem Webportal abrufen und unten ausfüllen
 rustdesk_cfg="configstring"
 
-############################## Bitte nicht unterhalb dieser Zeile bearbeiten ###################################
+############################# Bitte nicht unterhalb dieser Zeile bearbeiten ###################################
 
 # Prüfen, ob das Skript als root ausgeführt wird
 if [[ $EUID -ne 0 ]]; then

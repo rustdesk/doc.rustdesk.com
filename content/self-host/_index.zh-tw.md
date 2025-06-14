@@ -8,11 +8,11 @@ pre: "<b>2. </b>"
 
 支援服務可透過我們的 [Discord](https://discord.com/invite/nDceKgxnkV) 獲得開源版本的協助，以及透過[Email](mailto:support@rustdesk.com)獲得專業版支援。
 
-### 基本設置
+## 基本設置
 
 https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-oss/install/#set-up-your-own-server-instance-manually
 
-### 所需的連結埠
+## 所需的連結埠
 
 自行架設的 RustDesk 伺服器所需的連結埠主要取決於您的環境以及您想要使用 RustDesk 做什麼。在文件中展示的範例通常會建議打開所有埠號。
 
@@ -26,7 +26,7 @@ UDP `21116`
 
 對於沒有 SSL Proxy 的專業用戶，您將需要開放 TCP 埠號 `21114` 以使 API 能夠運作，或者使用 SSL Proxy 則開放 TCP 連結埠 `443`。
 
-### 測試連結埠是否開放
+## 測試連結埠是否開放
 
 要檢查連結埠是否已開放且運作正常，您可以使用 PowerShell 的 `test-netconnection domain.com -p 21115` 指令或者使用 [CanYouSeeMe.org](https://canyouseeme.org/) 網站。
 

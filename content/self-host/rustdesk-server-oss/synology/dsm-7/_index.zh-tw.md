@@ -4,17 +4,17 @@ weight: 20
 ---
 <!--to translater: When translating elements like "buttons", don't just translate, please refer actual naming in their interface.-->
 在 DSM 7.2 更新之後，Synology 已將 "Docker" 套件改名為 "Container Manager"，它採用新的介面，並且在其圖形介面內建 docker-compose，可讓您更容易地建立 Docker。
-## 支援的機型以及需求
+# 支援的機型以及需求
 
 Container Manager 為部分低階的 ARM64 的機型帶來支援，例如 j 系列，如要獲取更多支援機型，請參閱 [Synology 網站](https://www.synology.com/zh-tw/dsm/packages/ContainerManager)。
 
-## 1. 安裝 Container Manager (Docker)
+# 1. 安裝 Container Manager (Docker)
 
 開啟"套件中心"，搜尋並安裝 "Container Manager"。
 
 ![](images/dsm7_install_container_manager_though_package_center.png)
 
-## 2. 建立資料夾
+# 2. 建立資料夾
 
 在您安裝完 "Container Manager" 之後，它會建立一個叫做 "docker" 的共享資料夾，讓我們把伺服器的資料放這。
 
@@ -22,7 +22,7 @@ Container Manager 為部分低階的 ARM64 的機型帶來支援，例如 j 系�
 
 ![](images/dsm7_create_required_folders.png)
 
-## 3. 建立容器
+# 3. 建立容器
 
 打開您的 Container Manager，前往專案並點擊新增。
 
@@ -72,7 +72,7 @@ services:
 
 看看[這裡](/docs/zh-tw/client)來設置您的客戶端，只有 `ID 伺服器` 以及 `Key` 是需要的，中繼伺服器不需設定，因為我們已經把它設置在 `hbbs` 了，hbbs 會自動提供這項資訊。
 
-## 5. 在您的路由器設置 port forwarding (通訊埠轉發)
+# 5. 在您的路由器設置 port forwarding (通訊埠轉發)
 
 前往您的路由器的管理頁面，尋找任何有關於 `Port forwarding` 或是 `通訊埠轉發` 的設定，他應該在 `WAN`、`網際網路` 或是 `防火牆` 設置。
 

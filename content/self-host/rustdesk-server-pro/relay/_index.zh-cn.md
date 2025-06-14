@@ -3,7 +3,7 @@ title: 配置中继服务器
 weight: 17
 ---
 
-### RustDesk Pro - 使用docker安装具有地理位置的附加中继服务器
+## RustDesk Pro - 使用docker安装具有地理位置的附加中继服务器
 
 {{% notice note %}}
 [简单安装](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/)会在同一台机器上隐式创建一个中继服务器（`hbbr`进程），您无需显式指定中继服务器。
@@ -21,7 +21,7 @@ weight: 17
 
 > 您需要私钥对`id_ed25519`和`id_ed25519.pub`。
 
-## 安装步骤
+# 安装步骤
 
 1. 如果已安装docker，通过SSH连接到您的服务器并为hbbr创建卷：
 ```
@@ -44,15 +44,15 @@ weight: 17
 # docker logs hbbr
 ```
 
-## 防火墙配置
+# 防火墙配置
 ```
 # sudo ufw allow proto tcp from any to any port 21117,21119
 # sudo ufw enable
 ```
 
-### 使用Web控制台为地理位置配置RustDesk Pro
+## 使用Web控制台为地理位置配置RustDesk Pro
 
-#### 注册并下载GeoLite2 City数据库文件
+### 注册并下载GeoLite2 City数据库文件
 
 要使用地理位置，hbbs需要访问MaxMind GeoLite2 City数据库。该数据库是免费的，您可以注册下载文件并获取API密钥。
 
@@ -63,7 +63,7 @@ weight: 17
 对于Linux安装，`mmdb`文件需要移动到`/var/lib/rustdesk-server/`。
 对于Docker安装，文件应该在您映射到`/root`的卷中。
 
-#### 获取API密钥以自动化流程
+### 获取API密钥以自动化流程
 
 您需要定期更新此文件，可以使用cronjob来执行。您需要一个API密钥来访问下载链接，这是免费的。
 
@@ -74,7 +74,7 @@ weight: 17
 /usr/bin/curl -L --silent 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={Your Access Key}&suffix=tar.gz' | /bin/tar -C '/var/lib/rustdesk-server/' -xvz --keep-newer-files --strip-components=1 --wildcards '*GeoLite2-City.mmdb'
 ```
 
-#### 在RustDesk Pro Web控制台中更改设置
+### 在RustDesk Pro Web控制台中更改设置
 
 1. 将中继服务器IP地址或DNS名称添加到`Relay Servers`（不需要端口，显式使用`21117`端口）
 2. 添加地理覆盖，通过添加服务器IP地址和服务器所在位置的坐标

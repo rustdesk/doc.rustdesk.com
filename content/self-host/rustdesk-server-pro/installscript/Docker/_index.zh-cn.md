@@ -3,7 +3,7 @@ title: Docker
 weight: 3
 ---
 
-### Docker Compose（推荐）
+## Docker Compose（推荐）
 
 使用 Docker Compose 时，必须使用 `network_mode: "host"` 来确保许可证正常工作。请使用此[指南](https://docs.docker.com/engine/install)安装 Docker，以确保它是最新版本！
 
@@ -41,7 +41,7 @@ services:
 如何[手动为 Web 控制台设置 HTTPS](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually)。
 {{% /notice %}}
 
-### Docker 命令
+## Docker 命令
 
 使用此[指南](https://docs.docker.com/engine/install)安装 Docker，以确保它是最新版本！
 

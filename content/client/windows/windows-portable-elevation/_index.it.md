@@ -10,7 +10,7 @@ I programmi portatili di Windows non hanno privilegi di amministratore, il che p
 
 Elevando i privilegi, RustDesk può creare un processo con privilegi di amministratore durante l'avvio o una sessione, consentendogli di eseguire screenshot e operazioni del mouse, evitando così i problemi sopra citati.
 
-### Elevare all'avvio
+## Elevare all'avvio
 
 In questo modo, gli utenti remoti non hanno bisogno di richiedere l'elevazione durante la connessione. Ci sono due metodi:
 
@@ -18,7 +18,7 @@ In questo modo, gli utenti remoti non hanno bisogno di richiedere l'elevazione d
 
 * Metodo 2: Fare clic destro ed eseguire come amministratore.
 
-### Elevare dal lato controllato
+## Elevare dal lato controllato
 
 Il lato controllato può fare clic direttamente su `Accetta ed Eleva` durante la connessione, o fare clic su `Eleva` quando già connesso.
 
@@ -26,7 +26,7 @@ Il lato controllato può fare clic direttamente su `Accetta ed Eleva` durante la
 | :---: | :---: |
 | ![](images/cm_unauth.jpg) | ![](images/cm_auth.jpg) |
 
-### Richiedere elevazione dal lato controllore
+## Richiedere elevazione dal lato controllore
 
 Dopo aver selezionato `Richiedi Elevazione` dal menu azioni, apparirà la seguente finestra di dialogo. Se scegli `Chiedi all'utente remoto di autenticarsi`, non avrai bisogno di inserire un nome utente e una password, ma l'utente sul computer remoto deve avere privilegi di amministratore. Se selezioni `Trasmetti il nome utente e la password dell'amministratore`, l'utente sul computer remoto deve solo accettare nella finestra UAC. Dopo aver inviato la richiesta, attendi che l'utente dall'altra parte accetti la finestra UAC. Alla conferma, apparirà un messaggio di successo. Nota che **entrambi i metodi richiedono che qualcuno dal lato controllato accetti la finestra UAC**. Pertanto, se non c'è nessuno disponibile dall'altra parte, l'elevazione non dovrebbe essere richiesta dal lato controllore.
 
@@ -36,7 +36,7 @@ Dopo aver selezionato `Richiedi Elevazione` dal menu azioni, apparirà la seguen
 | **Attesa** | **Successo** |
 | ![](images/wait.png) | ![](images/success.png) |
 
-### Come Scegliere
+## Come Scegliere
 
 | Scenario | Metodo |
 | :---: | :---: |

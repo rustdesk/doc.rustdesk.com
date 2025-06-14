@@ -17,7 +17,7 @@ B: Ter um firewall que suporte e tenha habilitado o NAT Loopback.
 
 Você pode notar que não consegue se conectar ao seu servidor através do seu **IP Público** ou **Domínio** (que em teoria aponta para seu IP público).
 
-## Problema
+# Problema
 Neste exemplo seguiremos o que acontece quando dispositivos LAN tentam se conectar a `rustdesk.example.com`. Assuma que o IP público do seu roteador será `172.16.16.1`, o IP LAN do seu servidor é `192.168.11.20` e o domínio que você deseja é `rustdesk.example.com`, e você tem um cliente usando '192.168.11.2'.
 
 Quando você configura um servidor atrás do NAT do roteador, pode adicionar um encaminhamento de porta no roteador para alterar qualquer mensagem de entrada para o IP PÚBLICO 172.16.16.1 para ir ao servidor em 192.168.11.20
@@ -35,17 +35,17 @@ O recurso NAT Loopback efetivamente mudará a parte de origem "De 192.168.11.2" 
 Se há um problema com conexões apenas enquanto você está dentro da LAN, mas funciona bem de fora do local, este pode ser o problema que você está tendo.
 
 
-## Soluções
+# Soluções
 Há três maneiras de resolver este problema.
 
-### 1. Configurar NAT Loopback no seu roteador
+## 1. Configurar NAT Loopback no seu roteador
 Você poderia configurar NAT Loopback no seu roteador se souber como, mas configurar isso requer conhecimento de redes. Alguns roteadores não têm a capacidade de ajustar esta configuração, então esta não é a melhor opção para todos.
 
 {{% notice note %}}
 Um artigo da [MikroTik](https://help.mikrotik.com/docs/display/ROS/NAT#NAT-HairpinNAT) explica isso muito bem. Você poderia começar a aprender a partir daqui.
 {{% /notice %}}
 
-### 2. Implantar um servidor DNS na sua LAN
+## 2. Implantar um servidor DNS na sua LAN
 Primeiro, escolha qual você prefere, [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome/wiki/Docker) ou [Pi-hole](https://github.com/pi-hole/docker-pi-hole). Você poderia implantá-lo via docker, ou poderia implantá-lo no mesmo servidor que seu Servidor RustDesk. O exemplo abaixo mostrará alguns passos para este exemplo.
 
 Ambos são bloqueadores de anúncios baseados em DNS, mas você poderia desabilitar esta funcionalidade se não quiser bloquear anúncios.
@@ -53,7 +53,7 @@ Ambos são bloqueadores de anúncios baseados em DNS, mas você poderia desabili
 Primeiro, aponte seu `domínio` para o IP LAN do seu servidor RustDesk (por exemplo `192.168.11.20`). Depois vá para a configuração `DHCP` do seu roteador (Cuidado: NÃO WAN) e defina seu `Primeiro` IP DNS para o servidor onde você implantou AdGuard Home ou Pi-hole. O DNS `Secundário` poderia ser o DNS do seu ISP ou outro DNS público, ex. `1.1.1.1` para Cloudflare ou `8.8.8.8` para Google, e está pronto!
 
 Aqui está um exemplo:
-#### AdGuard Home
+### AdGuard Home
 Bloquear anúncios pode causar problemas, se você não quer descobrir a solução e quer desabilitar esta funcionalidade, clique no botão "Desabilitar proteção".
 
 ![](images/adguard_home_disable_protection.png)
@@ -75,7 +75,7 @@ Aqui está como fica o resultado final.
 ***Não esqueça de atribuir seu AdGuard Home ao DHCP LAN do seu roteador!***
 <hr>
 
-#### Pi-hole
+### Pi-hole
 Bloquear anúncios pode causar problemas, se você não quer descobrir a solução e quer desabilitar esta funcionalidade, clique no botão "Indefinidamente" dentro do submenu "Desabilitar Bloqueio".
 
 ![](images/pi_hole_disable_blocking.png)
@@ -89,7 +89,7 @@ Para verificar os resultados finais, verifique as linhas amarelas nesta imagem.
 
 ***Não esqueça de atribuir seu Pi-hole ao DHCP LAN do seu roteador!***
 
-### 3. Adicionar regras ao seu arquivo hosts
+## 3. Adicionar regras ao seu arquivo hosts
 Este método só é recomendado se você tem um pequeno número de dispositivos. Se você tem muitos dispositivos, o método DNS é preferido. Caso contrário você teria que fazer isso manualmente em cada dispositivo que precisa de acesso ao servidor.
 
 {{% notice warning %}}
@@ -98,13 +98,13 @@ Se este método for usado em um dispositivo portátil como um laptop, ele não c
 
 Caminho para diferentes OS:
 
-#### Windows
+### Windows
 ```text
 C:\Windows\system32\drivers\etc\hosts
 ```
 Você pode editar com privilégios elevados ou pode copiar este arquivo para a `Área de Trabalho` e editá-lo. Depois de editá-lo, copie de volta para o caminho original.
 
-#### macOS
+### macOS
 ```text
 /etc/hosts
 ```
@@ -113,7 +113,7 @@ Você poderia usar `vim`, ele vem pré-instalado.
 sudo vim /etc/hosts
 ```
 
-#### Linux
+### Linux
 ```text
 /etc/hosts
 ```

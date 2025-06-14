@@ -3,7 +3,7 @@ title: Mac
 weight: 3
 ---
 
-### 安裝
+## 安裝
 ------
 
 打開 .dmg 檔案並將 `RustDesk` 拖到 `應用程式`，如下所示。
@@ -14,13 +14,13 @@ weight: 3
 
 ![](/docs/en/client/mac/images/tray.png)
 
-### 允許 RustDesk 執行
+## 允許 RustDesk 執行
 
 | 解鎖以變更 | 點擊 "App Store 和已確認的開發者"  |
 | ---- | ---- |
 |![](/docs/en/client/mac/images/allow2.png)|![](/docs/en/client/mac/images/allow.png)|
 
-### 啟用權限
+## 啟用權限
 
 {{% notice note %}}
 MacOS 的安全政策更動，導致我們擷取本機端輸入的 API 失效。您必須在本機 Mac 端啟用 "輸入監測" 權限。

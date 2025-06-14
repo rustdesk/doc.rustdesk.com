@@ -12,7 +12,7 @@ Alternatively you can use mass deployment scripts with your RMM, Intune, etc. Th
 
 The permanent password can be changed from random to one you prefer using by changing the content inside `()` after `rustdesk_pw` to your preferred password for PowerShell and the corresponding line for any other platform.
 
-### PowerShell
+## PowerShell
 
 ```powershell
 $ErrorActionPreference= 'silentlycontinue'
@@ -23,7 +23,7 @@ $rustdesk_pw=(-join ((65..90) + (97..122) | Get-Random -Count 12 | % {[char]$_})
 # Get your config string from your Web portal and Fill Below
 $rustdesk_cfg="configstring"
 
-################################### Please Do Not Edit Below This Line #########################################
+################################## Please Do Not Edit Below This Line #########################################
 
 # Run as administrator and stays in the current directory
 if (-Not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
@@ -133,7 +133,7 @@ Write-Output "Password: $rustdesk_pw"
 Write-Output "..............................................."
 ```
 
-### Windows batch/cmd
+## Windows batch/cmd
 
 ```bat
 @echo off
@@ -181,14 +181,14 @@ echo Password: %rustdesk_pw%
 echo ...............................................
 ```
 
-### MSI
+## MSI
 
 You can also use msi instead of `rustdesk.exe --silent-install`.
 
 https://rustdesk.com/docs/en/client/windows/msi/
 
 
-### Winget
+## Winget
 
 you can deploy via powershell with winget as well (this installs via microsofts version of apt - part of most recent windows installs)
 
@@ -198,7 +198,7 @@ from a powershell window or via script (for example via GPO)
 winget install --id=RustDesk.RustDesk  -e
 ```
 
-### macOS Bash
+## macOS Bash
 
 ```sh
 #!/bin/bash
@@ -209,7 +209,7 @@ rustdesk_pw=$(openssl rand -hex 4)
 # Get your config string from your Web portal and Fill Below
 rustdesk_cfg="configstring"
 
-################################### Please Do Not Edit Below This Line #########################################
+################################## Please Do Not Edit Below This Line #########################################
 
 # Root password request for privilege escalation
 [ "$UID" -eq 0 ] || exec sudo bash "$0" "$@"
@@ -275,7 +275,7 @@ echo "Please complete install on GUI, launching RustDesk now."
 open -n /Applications/RustDesk.app
 ```
 
-### Linux
+## Linux
 
 ```sh
 #!/bin/bash
@@ -286,7 +286,7 @@ rustdesk_pw=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 # Get your config string from your Web portal and Fill Below
 rustdesk_cfg="configstring"
 
-################################### Please Do Not Edit Below This Line #########################################
+################################## Please Do Not Edit Below This Line #########################################
 
 # Check if the script is being run as root
 if [[ $EUID -ne 0 ]]; then

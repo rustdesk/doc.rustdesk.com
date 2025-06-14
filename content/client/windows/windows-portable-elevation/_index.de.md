@@ -10,7 +10,7 @@ Portable Windows-Programme haben keine Administratorrechte, was zu den folgenden
 
 Durch die Erhöhung der Berechtigungen kann RustDesk während des Starts oder in einer Sitzung einen Prozess mit Administratorrechten erstellen, der Bildschirmfotos und Mausoperationen ausführen kann, wodurch die oben genannten Probleme vermieden werden.
 
-### Erhöhen beim Starten
+## Erhöhen beim Starten
 
 Auf diese Weise müssen entfernte Benutzer bei der Verbindung keine Berechtigungsanfrage stellen. Es gibt zwei Methoden:
 
@@ -18,7 +18,7 @@ Auf diese Weise müssen entfernte Benutzer bei der Verbindung keine Berechtigung
 
 * Methode 2: Klicken Sie mit der rechten Maustaste und führen Sie das Programm als Administrator aus.
 
-### Erhöhen auf der Steuerungsseite
+## Erhöhen auf der Steuerungsseite
 
 Die kontrollierte Seite kann direkt auf `Akzeptieren und Erhöhen` klicken, wenn eine Verbindung hergestellt wird, oder auf `Erhöhen`, wenn bereits eine Verbindung besteht.
 
@@ -26,7 +26,7 @@ Die kontrollierte Seite kann direkt auf `Akzeptieren und Erhöhen` klicken, wenn
 | :---: | :---: |
 | ![](images/cm_unauth.jpg) | ![](images/cm_auth.jpg) |
 
-### Anfrage der Erhöhung auf der Steuerungsseite
+## Anfrage der Erhöhung auf der Steuerungsseite
 
 Nach der Auswahl von `Erhöhte Rechte anfordern` aus dem Aktionsmenü wird das folgende Dialogfeld angezeigt. Wenn Sie `Den entfernten Benutzer zur Authentifizierung auffordern` wählen, müssen Sie keinen Benutzernamen und kein Passwort eingeben, aber der Benutzer auf dem entfernten Computer muss über Administratorrechte verfügen. Wenn Sie `Benutzernamen und Passwort des Administrators übertragen` wählen, muss der Benutzer auf dem entfernten Computer nur im UAC-Fenster zustimmen. Nachdem Sie die Anfrage gesendet haben, warten Sie bitte, bis der Benutzer auf der anderen Seite das UAC-Fenster akzeptiert hat. Nach der Bestätigung wird eine Erfolgsmeldung angezeigt. Beachten Sie, dass es **bei beiden Methoden erforderlich ist, dass jemand auf der kontrollierten Seite das UAC-Fenster akzeptiert**. Wenn also auf der anderen Seite niemand verfügbar ist, sollte auf der Steuerungsseite keine Aufschaltung beantragt werden.
 
@@ -36,7 +36,7 @@ Nach der Auswahl von `Erhöhte Rechte anfordern` aus dem Aktionsmenü wird das f
 | **Warten** | **Erfolg** |
 | ![](images/wait.png) | ![](images/success.png) |
 
-### Wie Sie wählen
+## Wie Sie wählen
 
 | Szenario | Methode |
 | :---: | :---: |

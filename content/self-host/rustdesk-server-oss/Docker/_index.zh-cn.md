@@ -5,9 +5,9 @@ weight: 7
 
 > 这里有另一个很好的教程：[Building Your Own Remote Desktop Solution: RustDesk Self-Hosted on Cloud with Docker (Hetzner)](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f)
 
-### 使用 Docker 安装您自己的服务器
+## 使用 Docker 安装您自己的服务器
 
-#### 要求
+### 要求
 您需要安装 Docker/Podman 才能将 rustdesk-server 作为 Docker 容器运行。如有疑问，请使用此[指南](https://docs.docker.com/engine/install)安装 Docker，以确保它是最新的！
 
 确保在防火墙中打开这些端口：
@@ -22,7 +22,7 @@ weight: 7
 
 *如果您不需要网页客户端支持，可以禁用相应的端口 `21118`、`21119`。*
 
-#### Docker 示例
+### Docker 示例
 
 ```sh
 sudo docker image pull rustdesk/rustdesk-server
@@ -42,7 +42,7 @@ sudo docker run --name hbbr -v ./data:/root -td --net=host --restart unless-stop
 如果您无法使用 `-td` 看到日志，可以通过 `docker logs hbbs` 查看日志。或者您可以使用 `-it` 运行，`hbbs/hbbr` 不会作为守护进程模式运行。
 {{% /notice %}}
 
-#### Docker Compose 示例
+### Docker Compose 示例
 要使用这里描述的 `compose.yml` 运行 Docker 文件，您需要安装 [Docker Compose](https://docs.docker.com/compose/)。
 
 ```yaml
@@ -97,7 +97,7 @@ services:
     restart: unless-stopped
 ```
 
-#### Podman Quadlet 示例
+### Podman Quadlet 示例
 
 如果您想使用 Podman 作为 systemd 服务运行容器，可以使用这些示例 Podman Quadlet 配置：
 

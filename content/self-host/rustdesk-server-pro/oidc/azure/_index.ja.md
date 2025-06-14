@@ -3,11 +3,11 @@ title: Azure
 weight: 16
 ---
 
-### ビデオチュートリアル
+## ビデオチュートリアル
 
 [https://www.youtube.com/watch?v=izGxSmifURI](https://www.youtube.com/watch?v=izGxSmifURI)
 
-### 設定
+## 設定
 
 1. [Azureポータル](https://portal.azure.com)にサインインします。
 2. **Microsoft Entra ID**を検索して選択します。
@@ -36,7 +36,7 @@ weight: 16
 13. Azureで、**認証**メニューを選択します。次に、**IDトークン（暗黙的およびハイブリッドフローで使用）**を選択して認証を設定します。
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/11-Azure-Auth.png)
 
-### 参考資料
+## 参考資料
 
 - [Azure ADでOpenID Connectプロバイダーを設定する](https://learn.microsoft.com/en-us/power-pages/security/authentication/openid-settings)
 - [Microsoft IDプラットフォームでのOpenID Connect](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-protocols-oidc)

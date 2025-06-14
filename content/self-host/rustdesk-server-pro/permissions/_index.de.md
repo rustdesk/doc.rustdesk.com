@@ -3,7 +3,7 @@ title: Zugriffskontrolle
 weight: 16
 ---
 
-### Zugriffsberechtigungen für Geräte
+## Zugriffsberechtigungen für Geräte
 Das Gerät kann entweder einem einzelnen Benutzer, einer einzelnen Gerätegruppe oder beiden zugewiesen werden.
 
 Wenn das Gerät einem Benutzer zugewiesen ist, kann es von diesem Benutzer, einer Benutzergruppe oder durch entsprechende gruppenübergreifende Einstellungen zugegriffen werden.
@@ -23,7 +23,7 @@ Die folgenden zwei Situationen verhindern den Zugriff auf das Gerät:
 - Gerät auf der Konsolengeräteseite `deaktivieren`
 - Benutzer auf der Konsolenbenutzerseite `deaktivieren`
 
-### Gruppenübergreifende Einstellungen
+## Gruppenübergreifende Einstellungen
 
 Gehen Sie bitte in der Webkonsole auf die Gruppenseite und klicken Sie auf `Bearbeiten`, um die gruppenübergreifenden Einstellungen wie unten beschrieben zu bearbeiten.
 
