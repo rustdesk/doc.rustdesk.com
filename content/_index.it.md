@@ -4,8 +4,6 @@ type: docs
 weight: 1
 ---
 
-# Documentazione RustDesk
-
 RustDesk è un'alternativa completa di controllo remoto open source per self-hosting e sicurezza con configurazione minima. Hai il controllo completo sui tuoi dati, senza preoccupazioni sulla sicurezza. Il client è open source e c'è una scelta tra il **Server Professionale** completo disponibile per l'acquisto sul nostro [sito web](https://rustdesk.com) e il server OSS gratuito di base basato sul nostro **Server Professionale**.
 
 ### Funzionalità

@@ -4,8 +4,6 @@ type: docs
 weight: 1
 ---
 
-# RustDesk Dokumentation
-
 RustDesk ist eine vollausgestattete Open-Source-Alternative für Fernsteuerung mit Self-Hosting und Sicherheit bei minimaler Konfiguration. Sie haben die volle Kontrolle über Ihre Daten, ohne Sicherheitsbedenken. Der Client ist Open Source und es gibt die Wahl zwischen dem vollausgestatteten **Professional Server**, der auf unserer [Website](https://rustdesk.com) erworben werden kann, und dem grundlegenden kostenlosen OSS-Server, der auf unserem **Professional Server** basiert.
 
 ### Funktionen
