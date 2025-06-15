@@ -18,10 +18,10 @@ pre: "<b>2.5. </b>"
 
 您的客戶端和伺服器在同一臺路由器之後，所以當您區域網路的裝置要連線到 ``rustdesk.example.com`` 的時候，首先，它會解析這個網域的IP，也就是 ``8.8.8.8``，然後連接到這個IP，接著您的路由器可能會直接**不知道**這條連線該去哪裡，然後它會覺得這個連接應該會想要去路由器它自己，接著您的連結就會失敗。
 
-# 解決方法
+## 解決方法
 有3個方式可以解決這個問題。
  
-## 1. 在您的路由器設置 NAT Loopback
+### 1. 在您的路由器設置 NAT Loopback
 
 如果您知道如何設置的話您可以直接設置，但是設定這個需要網路知識，而且有些路由器可能沒有調整這個設定的能力，所以這不是最好的解決方案。
 
@@ -29,7 +29,7 @@ pre: "<b>2.5. </b>"
 一篇來自 [MikroTik](https://help.mikrotik.com/docs/display/ROS/NAT#NAT-HairpinNAT) 的文章解釋這個的非常棒，您可以從這開始學習。
 {{% /notice %}}
 
-## 2. 在您的區域網路部署一個DNS伺服器
+### 2. 在您的區域網路部署一個DNS伺服器
 首先，挑一個您喜歡的 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome/wiki/Docker) 或 [PiHole](https://github.com/pi-hole/docker-pi-hole)，您可以使用 docker 部署，也可以部署這個跟 RustDesk Server 在同一台伺服器。以下範例會使用它們作為範例。
 
 它們都是基於 DNS 的廣告攔截器，如果您不想要封鎖廣告，您可以關閉此功能。
@@ -37,7 +37,7 @@ pre: "<b>2.5. </b>"
 首先，指向您的 ``網域`` 至您的 RustDesk Server 的 LAN IP (例如: ``192.168.11.20``)，接著到您的路由器的 ``DHCP`` 設定 **(警告: 不是 WAN 網際網路)**
 
 請看範例:
-### AdGuard Home
+#### AdGuard Home
 封鎖廣告可能會造成問題，如果您不想要尋找解決方法，並且想要關閉這個功能，請選擇"禁用保護"按鈕。
 
 ![](images/adguard_home_disable_protection.png)
@@ -57,7 +57,7 @@ pre: "<b>2.5. </b>"
 ***別忘記指派 AdGuard Home 到您路由器的LAN DHCP!***
 <hr>
 
-## PiHole
+### PiHole
 封鎖廣告可能會造成問題，如果您不想要尋找解決方法，並且想要關閉這個功能，請選擇 "Disable Blocking" 中的 "Indefinitely" 按鈕。
 
 ![](images/pi_hole_disable_blocking.png)
@@ -71,7 +71,7 @@ pre: "<b>2.5. </b>"
 
 ***別忘記指派 PiHole 到您路由器的LAN DHCP!***
 
-## 3. 在您的 hosts 檔案中添加規則
+### 3. 在您的 hosts 檔案中添加規則
 只當您只有幾臺設備時建議採用此做法，如果您有很多的設備，DNS 方法是更推薦的。
 
 {{% notice warning %}}

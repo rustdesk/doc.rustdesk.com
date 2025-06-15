@@ -16,7 +16,7 @@ B：拥有支持并启用了 NAT 环回的防火墙。
 
 您可能会注意到无法通过**公共 IP** 或**域名**（理论上指向您的公共 IP）连接到您的服务器。
 
-# 问题
+## 问题
 在此示例中，我们将跟踪 LAN 设备尝试连接到 `rustdesk.example.com` 时发生的情况。假设您的路由器的公共 IP 为 `172.16.16.1`，服务器的 LAN IP 为 `192.168.11.20`，您想要的域名为 `rustdesk.example.com`，并且您有一个使用 '192.168.11.2' 的客户端。
 
 当您在路由器的 NAT 后面设置服务器时，您可以在路由器中添加端口转发规则，将任何传入到公共 IP 172.16.16.1 的消息转发到 192.168.11.20 的服务器。
@@ -33,17 +33,17 @@ NAT 环回功能将有效地在过程早期更改源"从 192.168.11.2"地址部�
 
 如果只有在您在 LAN 内部时连接才有问题，但从异地工作正常，这可能就是您遇到的问题。
 
-# 解决方案
+## 解决方案
 有三种方法可以解决此问题。
 
-## 1. 在路由器上设置 NAT 环回
+### 1. 在路由器上设置 NAT 环回
 如果您知道如何操作，您可以在路由器上设置 NAT 环回，但这需要网络知识。某些路由器没有调整此设置的能力，因此这不是每个人的最佳选择。
 
 {{% notice note %}}
 来自 [MikroTik](https://help.mikrotik.com/docs/display/ROS/NAT#NAT-HairpinNAT) 的文章很好地解释了这一点。您可以从这里开始学习。
 {{% /notice %}}
 
-## 2. 在您的 LAN 上部署 DNS 服务器
+### 2. 在您的 LAN 上部署 DNS 服务器
 首先，选择您偏好的，[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome/wiki/Docker) 或 [Pi-hole](https://github.com/pi-hole/docker-pi-hole)。您可以通过 docker 部署它，或者可以部署在与 RustDesk 服务器相同的服务器上。下面的示例将为您展示此示例的一些步骤。
 
 它们都是基于 DNS 的广告拦截器，但如果您不想拦截广告，可以禁用此功能。
@@ -51,7 +51,7 @@ NAT 环回功能将有效地在过程早期更改源"从 192.168.11.2"地址部�
 首先，将您的`域名`指向您的 RustDesk 服务器的 LAN IP（例如 `192.168.11.20`）。然后转到路由器的 `DHCP` 设置（注意：不是 WAN）并将您的`第一` DNS IP 设置为您部署了 AdGuard Home 或 Pi-hole 的服务器。`第二` DNS 可以是您的 ISP 的 DNS 或其他公共 DNS，例如 Cloudflare 的 `1.1.1.1` 或 Google 的 `8.8.8.8`，您就完成了！
 
 这里是一个示例：
-### AdGuard Home
+#### AdGuard Home
 拦截广告可能会导致问题，如果您不想找出解决方案并想禁用此功能，请点击"禁用保护"按钮。
 
 ![](images/adguard_home_disable_protection.png)
@@ -73,7 +73,7 @@ NAT 环回功能将有效地在过程早期更改源"从 192.168.11.2"地址部�
 ***不要忘记将您的 AdGuard Home 分配给路由器的 LAN DHCP！***
 <hr>
 
-### Pi-hole
+#### Pi-hole
 拦截广告可能会导致问题，如果您不想找出解决方案并想禁用此功能，请在"禁用拦截"子菜单中点击"无限期"按钮。
 
 ![](images/pi_hole_disable_blocking.png)
@@ -87,7 +87,7 @@ NAT 环回功能将有效地在过程早期更改源"从 192.168.11.2"地址部�
 
 ***不要忘记将您的 Pi-hole 分配给路由器的 LAN DHCP！***
 
-## 3. 向您的 hosts 文件添加规则
+### 3. 向您的 hosts 文件添加规则
 仅在您有少量设备时才推荐此方法。如果您有很多设备，首选 DNS 方法。否则，您必须在需要访问服务器的每个设备上手动执行此操作。
 
 {{% notice warning %}}
@@ -96,13 +96,13 @@ NAT 环回功能将有效地在过程早期更改源"从 192.168.11.2"地址部�
 
 不同操作系统的路径：
 
-### Windows
+#### Windows
 ```text
 C:\Windows\system32\drivers\etc\hosts
 ```
 您可以使用提升的权限进行编辑，或者可以将此文件复制到`桌面`并编辑它。编辑后，复制回原始路径。
 
-### macOS
+#### macOS
 ```text
 /etc/hosts
 ```
@@ -111,7 +111,7 @@ C:\Windows\system32\drivers\etc\hosts
 sudo vim /etc/hosts
 ```
 
-### Linux
+#### Linux
 ```text
 /etc/hosts
 ```

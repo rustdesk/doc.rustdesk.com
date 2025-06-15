@@ -17,7 +17,7 @@ B: Tener un firewall que soporte y tenga habilitado el NAT Loopback.
 
 Puedes notar que no puedes conectarte a tu servidor a través de tu **IP Pública** o **Dominio** (que en teoría apunta a tu IP pública).
 
-# Problema
+## Problema
 En este ejemplo seguiremos lo que sucede cuando los dispositivos LAN intentan conectarse a `rustdesk.example.com`. Asume que la IP pública de tu router será `172.16.16.1`, la IP LAN de tu servidor es `192.168.11.20` y el dominio que deseas es `rustdesk.example.com`, y tienes un cliente usando '192.168.11.2'.
 
 Cuando configuras un servidor detrás del NAT del router puedes agregar un reenvío de puerto en el router para cambiar cualquier mensaje entrante a la IP PÚBLICA 172.16.16.1 para que vaya al servidor en 192.168.11.20
@@ -35,17 +35,17 @@ La característica NAT Loopback efectivamente cambiará la parte de origen "Desd
 Si hay un problema con las conexiones solo mientras estás dentro de la LAN, pero funciona bien desde fuera del sitio, este puede ser el problema que estás teniendo.
 
 
-# Soluciones
+## Soluciones
 Hay tres maneras de resolver este problema.
 
-## 1. Configurar NAT Loopback en tu router
+### 1. Configurar NAT Loopback en tu router
 Podrías configurar NAT Loopback en tu router si sabes cómo, pero configurar esto requiere conocimiento de redes. Algunos routers no tienen la capacidad de ajustar esta configuración, por lo que esta no es la mejor opción para todos.
 
 {{% notice note %}}
 Un artículo de [MikroTik](https://help.mikrotik.com/docs/display/ROS/NAT#NAT-HairpinNAT) explica esto muy bien. Podrías empezar a aprender desde aquí.
 {{% /notice %}}
 
-## 2. Desplegar un servidor DNS en tu LAN
+### 2. Desplegar un servidor DNS en tu LAN
 Primero, elige cuál prefieres, [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome/wiki/Docker) o [Pi-hole](https://github.com/pi-hole/docker-pi-hole). Podrías desplegarlo a través de docker, o podrías desplegarlo en el mismo servidor que tu Servidor RustDesk. El ejemplo de abajo te mostrará algunos pasos para este ejemplo.
 
 Ambos son bloqueadores de anuncios basados en DNS, pero podrías deshabilitar esta funcionalidad si no quieres bloquear anuncios.
@@ -53,7 +53,7 @@ Ambos son bloqueadores de anuncios basados en DNS, pero podrías deshabilitar es
 Primero, apunta tu `dominio` a la IP LAN de tu servidor RustDesk (por ejemplo `192.168.11.20`). Luego ve a la configuración `DHCP` de tu router (Precaución: NO WAN) y establece tu `Primera` IP DNS al servidor donde desplegaste AdGuard Home o Pi-hole. El DNS `Secundario` podría ser el DNS de tu ISP u otro DNS público, ej. `1.1.1.1` para Cloudflare o `8.8.8.8` para Google, ¡y listo!
 
 Aquí hay un ejemplo:
-### AdGuard Home
+#### AdGuard Home
 Bloquear anuncios puede causar problemas, si no quieres averiguar la solución y quieres deshabilitar esta funcionalidad, haz clic en el botón "Deshabilitar protección".
 
 ![](images/adguard_home_disable_protection.png)
@@ -75,7 +75,7 @@ Así es como se ve el resultado final.
 ***¡No olvides asignar tu AdGuard Home al DHCP LAN de tu router!***
 <hr>
 
-### Pi-hole
+#### Pi-hole
 Bloquear anuncios puede causar problemas, si no quieres averiguar la solución y quieres deshabilitar esta funcionalidad, haz clic en el botón "Indefinidamente" dentro del submenú "Deshabilitar Bloqueo".
 
 ![](images/pi_hole_disable_blocking.png)
@@ -89,7 +89,7 @@ Para verificar los resultados finales, revisa las líneas amarillas en esta imag
 
 ***¡No olvides asignar tu Pi-hole al DHCP LAN de tu router!***
 
-## 3. Agregar reglas a tu archivo hosts
+### 3. Agregar reglas a tu archivo hosts
 Este método solo se recomienda si tienes un pequeño número de dispositivos. Si tienes muchos dispositivos, se prefiere el método DNS. De lo contrario tendrías que hacer esto manualmente en cada dispositivo que necesite acceso al servidor.
 
 {{% notice warning %}}
@@ -98,13 +98,13 @@ Si este método se usa en un dispositivo portátil como una laptop, no podrá co
 
 Ruta para diferentes OS:
 
-### Windows
+#### Windows
 ```text
 C:\Windows\system32\drivers\etc\hosts
 ```
 Puedes editar con privilegios elevados o puedes copiar este archivo al `Escritorio` y editarlo. Después de editarlo, cópialo de vuelta a la ruta original.
 
-### macOS
+#### macOS
 ```text
 /etc/hosts
 ```
@@ -113,7 +113,7 @@ Podrías usar `vim`, viene preinstalado.
 sudo vim /etc/hosts
 ```
 
-### Linux
+#### Linux
 ```text
 /etc/hosts
 ```
