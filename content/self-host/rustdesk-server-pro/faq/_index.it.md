@@ -150,7 +150,256 @@ Assicurati che `hbbr` sia in esecuzione. Più informazioni su `hbbr`, puoi trova
 https://github.com/rustdesk/rustdesk/discussions/6576
 
 ## Impostare HTTPS per console web manualmente
-Consulta la documentazione completa per istruzioni dettagliate su configurazione dominio, Nginx, Certbot e certificati SSL.
+
+### 1. Acquistare un nome di dominio e risolverlo all'indirizzo IP del tuo server.
+* Acquista un nome di dominio da un registrar come GoDaddy, Namecheap o Namesilo.
+* Risolvi il nome di dominio all'indirizzo IP del tuo server con uno dei seguenti:
+    - Il pannello di controllo del tuo registrar di domini (consigliato)
+    - [Provider DNS](https://en.wikipedia.org/wiki/List_of_managed_DNS_providers)
+
+Ad esempio, se acquisti un nome di dominio `example.com` da `Namesilo` e l'indirizzo IP del tuo server è `123.123.123.123`, vuoi usare il sottodominio `rustdesk.example.com` come indirizzo della console web HTTPS. Devi aprire [link](https://www.namesilo.com/account_domains.php), fare clic sul pulsante con tooltip `Manage dns for the domain`, aggiungere un record `A` con il nome host `rustdesk` e l'indirizzo IP del tuo server.
+![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-button.png)
+![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-add-a-record.png)
+![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-table.png)
+* Ci vuole del tempo perché il DNS abbia effetto, https://www.whatsmydns.net e verifica se il nome di dominio è stato risolto all'indirizzo IP del tuo server. Il passaggio 6 dipende dal risultato corretto della risoluzione. Nei passaggi seguenti, sostituisci `<YOUR_DOMAIN>` con il tuo sottodominio, ad es. `rustdesk.example.com`.
+
+### 2. Installare Nginx
+* Debian/Ubuntu: `sudo apt-get install nginx`
+* Fedora/CentOS: `sudo dnf install nginx` o `sudo yum install nginx`
+* Arch: `sudo pacman -S install nginx`
+* openSUSE: `sudo zypper install nginx`
+* Gentoo: `sudo emerge -av nginx`
+* Appine: `sudo apk add --no-cache nginx`
+
+Esegui `nginx -h` per verificare se è stato installato correttamente.
+
+### 3. Installare Certbot
+* Metodo 1: Se `snap` è installato, esegui `sudo snap install certbot --classic`.
+* Metodo 2: Usando `python3-certbot-nginx` invece, ad es. `sudo apt-get install python3-certbot-nginx` per Ubuntu.
+* Metodo 3: Se i due metodi precedenti sono falliti, prova a installare `certbot-nginx`, ad es. `sudo yum install certbot-nginx` per CentOS 7.
+
+Esegui `certbot -h` per verificare se è stato installato correttamente.
+
+### 4. Configurare Nginx
+Ci sono due modi:
+* Se esistono le directory `/etc/nginx/sites-available` e `/etc/nginx/sites-enabled`, sostituisci `<YOUR_DOMAIN>` del seguente comando con il tuo nome di dominio ed eseguilo.
+```sh
+cat > /etc/nginx/sites-available/rustdesk.conf << EOF
+server {
+    server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       \$remote_addr;
+        proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+}
+EOF
+```
+Quindi esegui `sudo ln -s /etc/nginx/sites-available/rustdesk.conf /etc/nginx/sites-enabled/rustdesk.conf`.
+
+Esegui `cat /etc/nginx/sites-available/rustdesk.conf` per assicurarti che il suo contenuto sia corretto.
+
+* Se le directory `/etc/nginx/sites-available` e `/etc/nginx/sites-enabled` non esistono e la directory `/etc/nginx/conf.d` esiste, sostituisci `<YOUR_DOMAIN>` del seguente comando con il tuo nome di dominio ed eseguilo.
+```sh
+cat > /etc/nginx/conf.d/rustdesk.conf << EOF
+server {
+    server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       \$remote_addr;
+        proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+}
+EOF
+```
+Esegui `cat /etc/nginx/conf.d/rustdesk.conf` per assicurarti che il suo contenuto sia corretto.
+
+### 5. Abilitare le regole del firewall per il dominio
+Esegui i seguenti comandi:
+
+```sh
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw --force enable
+sudo ufw --force reload
+```
+
+### 6. Generare certificato SSL
+Sostituisci `$YOUR_DOMAIN` con il tuo nome di dominio, quindi esegui
+`sudo certbot --nginx --cert-name $YOUR_DOMAIN --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d $YOUR_DOMAIN`.
+
+Se richiede `Enter email address (used for urgent renewal and security notices)`, inserisci il tuo indirizzo email.
+
+Infine, il contenuto di `rustdesk.conf` dovrebbe essere così:
+```
+server {
+    server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       $remote_addr;
+        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/<YOUR_DOMAIN>/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/<YOUR_DOMAIN>/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = <YOUR_DOMAIN>) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    server_name <YOUR_DOMAIN>;
+    listen 80;
+    return 404; # managed by Certbot
+}
+```
+
+Ecco alcuni errori comuni:
+
+* La console stampa `Successfully deployed certificate for <YOUR_DOMAIN> to /etc/nginx/.../default` invece di `Successfully deployed certificate for <YOUR_DOMAIN> to /etc/nginx/.../rustdesk.conf`.
+
+Il motivo potrebbe essere che Certbot non trova il file `rustdesk.conf`, puoi provare una delle seguenti soluzioni:
+- Controlla il risultato del passaggio 5, esegui `sudo service nginx restart`.
+- Copia le configurazioni del server `server{...}` che contengono `<YOUR_DOMAIN>` in `rustdesk.conf`, e cambia `location{...}` nel contenuto seguente.
+
+```sh
+location / {
+    proxy_set_header        X-Real-IP       $remote_addr;
+    proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_pass http://127.0.0.1:21114/;
+}
+```
+
+* `too many certificates (5) already issued for this exact set of domains in the last 168 hours`
+
+Soluzione: Aggiungi un altro nome di dominio al DNS e cambia `<YOUR_DOMAIN>` con esso, ad es. `rustdesk2.example.com`. Quindi ripeti i passaggi 1, 4, 6.
+
+* `Error getting validation data`
+
+Soluzione: potrebbe essere causato dal firewall, consulta https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#firewall
+
+Avviso: Esegui `sudo service nginx restart` se modifichi `rustdesk.conf` manualmente.
+
+### 7. Accedere alla pagina web
+* Apri `https://<YOUR_DOMAIN>` nel browser, accedi usando il nome utente predefinito "admin" e la password "test1234", quindi cambia la password con la tua.
+
+### 8. Aggiungere supporto WebSocket Secure (WSS) per il server ID e il server relay per abilitare la comunicazione sicura su tutte le piattaforme.
+
+Aggiungi la seguente configurazione alla prima sezione `server` del file `/etc/nginx/.../rustdesk.conf`, quindi riavvia il servizio `Nginx`.
+Il client web può essere accessibile tramite `https://<YOUR_DOMAIN>/web`. I client personalizzati possono utilizzare WebSocket impostando `allow-websocket=Y` nelle opzioni avanzate. Se viene utilizzato il client personalizzato con WebSocket abilitato, non utilizzerà TCP/UDP e potrà connettersi solo tramite relay (tranne che per le connessioni IP dirette). Se viene utilizzato solo questo client con WebSocket abilitato, il server può chiudere le porte da 21114 a 21119 e mantenere aperta solo la porta 443.
+
+
+
+
+```
+    location /ws/id {
+        proxy_pass http://127.0.0.1:21118;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+
+    location /ws/relay {
+        proxy_pass http://127.0.0.1:21119;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+```
+
+La configurazione completa è
+
+```
+server {
+    server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       $remote_addr;
+        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+
+    location /ws/id {
+        proxy_pass http://127.0.0.1:21118;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+
+    location /ws/relay {
+        proxy_pass http://127.0.0.1:21119;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/<YOUR_DOMAIN>/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/<YOUR_DOMAIN>/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = <YOUR_DOMAIN>) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    server_name <YOUR_DOMAIN>;
+    listen 80;
+    return 404; # managed by Certbot
+}
+```
+
+{{% notice note %}}
+Se hai distribuito precedentemente per i client web e vuoi usarlo su tutte le piattaforme, devi aggiungere `proxy_read_timeout`.
+{{% /notice %}}
+
+### 9. Bypassare CORS se usi il client web pubblico di RustDesk `https://rustdesk.com/web`
+
+Devi aggiungere quanto segue nella sezione `location /` del `/etc/nginx/.../rustdesk.conf` per bypassare la limitazione CORS dei browser. Salta questo passaggio se stai usando il tuo client web.
+
+```
+        if ($http_origin ~* (https?://(www\.)?rustdesk\.com)) {
+            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
+            add_header 'Access-Control-Allow-Credentials' 'true' always;
+        }
+
+        if ($request_method = 'OPTIONS') {
+            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
+            add_header 'Access-Control-Allow-Credentials' 'true' always;
+            add_header 'Content-Length' 0;
+            add_header 'Content-Type' 'text/plain charset=UTF-8';
+            return 204;
+        }
+```
 
 ## SELinux
 Se `Waiting for RustDesk Relay service to become active...` appare durante l'installazione, potrebbe essere causato da SELinux:

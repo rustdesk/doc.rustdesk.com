@@ -171,23 +171,66 @@ https://github.com/rustdesk/rustdesk/discussions/6576
     - El panel de control de tu registrador de dominios (recomendado)
     - [Proveedores DNS](https://en.wikipedia.org/wiki/List_of_managed_DNS_providers)
 
+Por ejemplo, si compras un nombre de dominio `example.com` de `Namesilo` y la dirección IP de tu servidor es `123.123.123.123`, quieres usar el subdominio `rustdesk.example.com` como tu dirección de consola web HTTPS. Necesitas abrir [link](https://www.namesilo.com/account_domains.php), hacer clic en el botón con información sobre herramientas `Manage dns for the domain`, agregar un registro `A` con el nombre de host `rustdesk` y la dirección IP de tu servidor.
+![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-button.png)
+![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-add-a-record.png)
+![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-table.png)
+* Toma algún tiempo para que el DNS surta efecto, https://www.whatsmydns.net y verifica si el nombre de dominio se ha resuelto a la dirección IP de tu servidor. El paso 6 depende del resultado correcto de resolución. En los siguientes pasos, reemplaza `<YOUR_DOMAIN>` con tu subdominio, ej. `rustdesk.example.com`.
+
 ### 2. Instalar Nginx
 * Debian/Ubuntu: `sudo apt-get install nginx`
 * Fedora/CentOS: `sudo dnf install nginx` o `sudo yum install nginx`
 * Arch: `sudo pacman -S install nginx`
 * openSUSE: `sudo zypper install nginx`
 * Gentoo: `sudo emerge -av nginx`
-* Alpine: `sudo apk add --no-cache nginx`
+* Appine: `sudo apk add --no-cache nginx`
+
+Ejecuta `nginx -h` para verificar si se ha instalado correctamente.
 
 ### 3. Instalar Certbot
 * Método 1: Si `snap` está instalado, ejecuta `sudo snap install certbot --classic`.
-* Método 2: Usa `python3-certbot-nginx` en su lugar, ej. `sudo apt-get install python3-certbot-nginx` para Ubuntu.
+* Método 2: Usando `python3-certbot-nginx` en su lugar, ej. `sudo apt-get install python3-certbot-nginx` para Ubuntu.
 * Método 3: Si los dos métodos anteriores fallaron, intenta instalar `certbot-nginx`, ej. `sudo yum install certbot-nginx` para CentOS 7.
 
+Ejecuta `certbot -h` para verificar si se ha instalado correctamente.
+
 ### 4. Configurar Nginx
-Hay dos formas de hacerlo. Consulta la documentación completa para los pasos detallados.
+Hay dos formas:
+* Si existen los directorios `/etc/nginx/sites-available` y `/etc/nginx/sites-enabled`, reemplaza `<YOUR_DOMAIN>` del siguiente comando con tu nombre de dominio y ejecútalo.
+```sh
+cat > /etc/nginx/sites-available/rustdesk.conf << EOF
+server {
+    server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       \$remote_addr;
+        proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+}
+EOF
+```
+Luego ejecuta `sudo ln -s /etc/nginx/sites-available/rustdesk.conf /etc/nginx/sites-enabled/rustdesk.conf`.
+
+Ejecuta `cat /etc/nginx/sites-available/rustdesk.conf` para asegurarte de que su contenido sea correcto.
+
+* Si los directorios `/etc/nginx/sites-available` y `/etc/nginx/sites-enabled` no existen y existe el directorio `/etc/nginx/conf.d`, reemplaza `<YOUR_DOMAIN>` del siguiente comando con tu nombre de dominio y ejecútalo.
+```sh
+cat > /etc/nginx/conf.d/rustdesk.conf << EOF
+server {
+    server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       \$remote_addr;
+        proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+}
+EOF
+```
+Ejecuta `cat /etc/nginx/conf.d/rustdesk.conf` para asegurarte de que su contenido sea correcto.
 
 ### 5. Habilitar reglas de firewall para el dominio
+Ejecuta los siguientes comandos:
+
 ```sh
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
@@ -196,11 +239,181 @@ sudo ufw --force reload
 ```
 
 ### 6. Generar certificado SSL
-Reemplaza `$YOUR_DOMAIN` con tu nombre de dominio, luego ejecuta:
-`sudo certbot --nginx --cert-name $YOUR_DOMAIN --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d $YOUR_DOMAIN`
+Reemplaza `$YOUR_DOMAIN` con tu nombre de dominio, luego ejecuta
+`sudo certbot --nginx --cert-name $YOUR_DOMAIN --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d $YOUR_DOMAIN`.
+
+Si te solicita `Enter email address (used for urgent renewal and security notices)`, ingresa tu dirección de correo electrónico.
+
+Finalmente, el contenido de `rustdesk.conf` debería ser así:
+```
+server {
+    server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       $remote_addr;
+        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/<YOUR_DOMAIN>/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/<YOUR_DOMAIN>/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = <YOUR_DOMAIN>) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    server_name <YOUR_DOMAIN>;
+    listen 80;
+    return 404; # managed by Certbot
+}
+```
+
+Aquí hay algunos errores comunes:
+
+* La consola imprime `Successfully deployed certificate for <YOUR_DOMAIN> to /etc/nginx/.../default` en lugar de `Successfully deployed certificate for <YOUR_DOMAIN> to /etc/nginx/.../rustdesk.conf`.
+
+La razón puede ser que Certbot no encuentra el archivo `rustdesk.conf`, puedes probar una de las siguientes soluciones:
+- Verifica el resultado del paso 5, ejecuta `sudo service nginx restart`.
+- Copia las configuraciones del servidor `server{...}` que contienen `<YOUR_DOMAIN>` a `rustdesk.conf`, y cambia `location{...}` al contenido siguiente.
+
+```sh
+location / {
+    proxy_set_header        X-Real-IP       $remote_addr;
+    proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_pass http://127.0.0.1:21114/;
+}
+```
+
+* `too many certificates (5) already issued for this exact set of domains in the last 168 hours`
+
+Solución: Agrega otro nombre de dominio a DNS y cambia `<YOUR_DOMAIN>` por él, ej. `rustdesk2.example.com`. Luego repite los pasos 1, 4, 6.
+
+* `Error getting validation data`
+
+Solución: puede ser causado por el firewall, por favor consulta https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#firewall
+
+Aviso: Ejecuta `sudo service nginx restart` si cambias `rustdesk.conf` manualmente.
 
 ### 7. Iniciar sesión en la página web
-Abre `https://<YOUR_DOMAIN>` en el navegador, inicia sesión usando el nombre de usuario predeterminado "admin" y contraseña "test1234", luego cambia la contraseña a la tuya.
+* Abre `https://<YOUR_DOMAIN>` en el navegador, inicia sesión usando el nombre de usuario predeterminado "admin" y contraseña "test1234", luego cambia la contraseña a la tuya.
+
+### 8. Agregar soporte WebSocket Secure (WSS) para el servidor de ID y el servidor relay para habilitar comunicación segura en todas las plataformas.
+
+Agrega la siguiente configuración a la primera sección `server` del archivo `/etc/nginx/.../rustdesk.conf`, luego reinicia el servicio `Nginx`.
+El cliente web se puede acceder a través de `https://<YOUR_DOMAIN>/web`. Los clientes personalizados pueden usar WebSocket estableciendo `allow-websocket=Y` en las opciones avanzadas. Si se usa el cliente personalizado con WebSocket habilitado, no utilizará TCP/UDP y solo podrá conectarse a través de relay (excepto para conexiones IP directas). Si solo se usa este cliente con WebSocket habilitado, el servidor puede cerrar los puertos 21114 a 21119 y solo mantener abierto el puerto 443.
+
+
+
+
+```
+    location /ws/id {
+        proxy_pass http://127.0.0.1:21118;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+
+    location /ws/relay {
+        proxy_pass http://127.0.0.1:21119;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+```
+
+La configuración completa es
+
+```
+server {
+    server_name <YOUR_DOMAIN>;
+    location / {
+        proxy_set_header        X-Real-IP       $remote_addr;
+        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:21114/;
+    }
+
+    location /ws/id {
+        proxy_pass http://127.0.0.1:21118;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+
+    location /ws/relay {
+        proxy_pass http://127.0.0.1:21119;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 120s;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/<YOUR_DOMAIN>/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/<YOUR_DOMAIN>/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = <YOUR_DOMAIN>) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    server_name <YOUR_DOMAIN>;
+    listen 80;
+    return 404; # managed by Certbot
+}
+```
+
+{{% notice note %}}
+Si has implementado previamente para clientes web y quieres usarlo en todas las plataformas, necesitas agregar `proxy_read_timeout`.
+{{% /notice %}}
+
+### 9. Evitar CORS si usas el cliente web público de RustDesk `https://rustdesk.com/web`
+
+Necesitas agregar lo siguiente en la sección `location /` del `/etc/nginx/.../rustdesk.conf` para evitar la limitación CORS de los navegadores. Omite este paso si estás usando tu propio cliente web.
+
+```
+        if ($http_origin ~* (https?://(www\.)?rustdesk\.com)) {
+            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
+            add_header 'Access-Control-Allow-Credentials' 'true' always;
+        }
+
+        if ($request_method = 'OPTIONS') {
+            add_header 'Access-Control-Allow-Origin' "$http_origin" always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
+            add_header 'Access-Control-Allow-Credentials' 'true' always;
+            add_header 'Content-Length' 0;
+            add_header 'Content-Type' 'text/plain charset=UTF-8';
+            return 204;
+        }
+```
 
 ## SELinux
 Si aparece `Waiting for RustDesk Relay service to become active...` al instalar, puede ser causado por SELinux. Puedes intentar los siguientes comandos:
