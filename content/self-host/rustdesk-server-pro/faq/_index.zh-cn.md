@@ -215,9 +215,9 @@ net start rustdesk > null
 ## 有什么地方可以看到视频设置指南吗？
 是的！ 我们有一个 [YouTube 频道](https://youtube.com/@RustDesk)，稍后会创建B站频道。
 
-### 手动设置 Web 控制台的 HTTPS
+## 手动设置 Web 控制台的 HTTPS
 
-#### 1. 购买域名并将其解析到您的服务器 IP 地址
+### 1. 购买域名并将其解析到您的服务器 IP 地址
 * 从域名注册商（如 GoDaddy、Namecheap 或 Namesilo）购买域名
 * 通过以下方式之一将域名解析到您的服务器 IP 地址：
     - 您的域名注册商的控制面板（推荐）
@@ -229,7 +229,7 @@ net start rustdesk > null
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-table.png)
 * DNS 生效需要一些时间，访问 https://www.whatsmydns.net 检查域名是否已解析到您的服务器 IP 地址。第 6 步取决于正确的解析结果。在以下步骤中，将 `<YOUR_DOMAIN>` 替换为您的子域名，例如 `rustdesk.example.com`。
 
-#### 2. 安装 Nginx
+### 2. 安装 Nginx
 * Debian/Ubuntu: `sudo apt-get install nginx`
 * Fedora/CentOS: `sudo dnf install nginx` 或 `sudo yum install nginx`
 * Arch: `sudo pacman -S install nginx`
@@ -239,14 +239,14 @@ net start rustdesk > null
 
 运行 `nginx -h` 检查是否安装成功。
 
-#### 3. 安装 Certbot
+### 3. 安装 Certbot
 * 方法 1：如果已安装 `snap`，运行 `sudo snap install certbot --classic`
 * 方法 2：使用 `python3-certbot-nginx`，例如 Ubuntu 的 `sudo apt-get install python3-certbot-nginx`
 * 方法 3：如果上述两种方法失败，尝试安装 `certbot-nginx`，例如 CentOS 7 的 `sudo yum install certbot-nginx`
 
 运行 `certbot -h` 检查是否安装成功。
 
-#### 4. 配置 Nginx
+### 4. 配置 Nginx
 有两种方式：
 * 如果存在目录 `/etc/nginx/sites-available` 和 `/etc/nginx/sites-enabled`，将以下命令中的 `<YOUR_DOMAIN>` 替换为您的域名并运行。
 ```sh
@@ -290,7 +290,7 @@ sudo ufw --force enable
 sudo ufw --force reload
 ```
 
-#### 6. 生成 SSL 证书
+### 6. 生成 SSL 证书
 将 `$YOUR_DOMAIN` 替换为您的域名，然后运行
 `sudo certbot --nginx --cert-name $YOUR_DOMAIN --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d $YOUR_DOMAIN`。
 
