@@ -14,7 +14,7 @@ Most of time you won't need to install extra RAM for install Docker and RustDesk
 
 Open "Package Center", search and install "Container Manager".
 
-![](images/dsm7_install_container_manager_though_package_center.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_install_container_manager_though_package_center.png)
 
 ## 2. Create folder
 
@@ -22,7 +22,7 @@ After you installed "Container Manager", it will create a Shared Folder called `
 
 Open your File Station, create a folder named `rustdesk-server`(or whatever you like). Then create a folder named `data` in it just like the picture.
 
-![](images/dsm7_create_required_folders.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_create_required_folders.png)
 
 ## 3. Create container
 
@@ -30,7 +30,7 @@ Open your Container Manager, go to Project and click Create.
 
 Enter the project name `rustdesk-server` and change Source from "Upload compose.yml" to "Create compose.yml", and copy following contents to the box.
 
-![](images/dsm7_creating_project_init.png?v2)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_creating_project_init.png?v2)
 
 ```yaml
 services:
@@ -71,7 +71,7 @@ Open your File Station, you should see `id_ed25519`, `id_ed25519.pub` on your `d
 
 The public key will looks like this:
 
-![](images/dsm7_viewing_public_key_though_syno_text_editor.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_viewing_public_key_though_syno_text_editor.png)
 
 Check [here](/docs/en/client) to set up your client. Only `ID server` and `Key` is needed. `Relay server` isn't needed because we've set it in `hbbs`, `hbbs` will provide this information automatically.
 

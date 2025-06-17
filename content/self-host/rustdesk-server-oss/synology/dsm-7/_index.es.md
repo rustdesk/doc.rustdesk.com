@@ -14,7 +14,7 @@ La mayoría de las veces no necesitará instalar RAM extra para instalar Docker 
 
 Abra "Centro de Paquetes", busque e instale "Container Manager".
 
-![](images/dsm7_install_container_manager_though_package_center.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_install_container_manager_though_package_center.png)
 
 ## 2. Crear carpeta
 
@@ -22,7 +22,7 @@ Después de instalar "Container Manager", creará una Carpeta Compartida llamada
 
 Abra su File Station, cree una carpeta llamada `rustdesk-server` (o como guste). Luego cree una carpeta llamada `data` en ella como en la imagen.
 
-![](images/dsm7_create_required_folders.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_create_required_folders.png)
 
 ## 3. Crear contenedor
 
@@ -30,7 +30,7 @@ Abra su Container Manager, vaya a Proyecto y haga clic en Crear.
 
 Ingrese el nombre del proyecto `rustdesk-server` y cambie Fuente de "Subir compose.yml" a "Crear compose.yml", y copie el siguiente contenido en el cuadro.
 
-![](images/dsm7_creating_project_init.png?v2)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_creating_project_init.png?v2)
 
 ```yaml
 services:
@@ -71,7 +71,7 @@ Abra su File Station, debería ver `id_ed25519`, `id_ed25519.pub` en su carpeta 
 
 La clave pública se verá así:
 
-![](images/dsm7_viewing_public_key_though_syno_text_editor.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_viewing_public_key_though_syno_text_editor.png)
 
 Verifique [aquí](/docs/en/client) para configurar su cliente. Solo se necesita `servidor ID` y `Clave`. `Servidor relay` no es necesario porque lo hemos configurado en `hbbs`, `hbbs` proporcionará esta información automáticamente.
 

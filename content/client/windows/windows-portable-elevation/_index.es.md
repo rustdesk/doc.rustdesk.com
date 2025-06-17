@@ -25,7 +25,7 @@ El lado controlado puede hacer click en `Aceptar y Elevar` cuando se este conect
 
 | Conectando | Conectado |
 | :---: | :---: |
-| ![](images/cm_unauth.jpg) | ![](images/cm_auth.jpg) |
+| ![](/docs/en/client/windows/windows-portable-elevation/images/cm_unauth.jpg) | ![](/docs/en/client/windows/windows-portable-elevation/images/cm_auth.jpg) |
 
 ## Pide la elevación de permisos del lado controlador
 
@@ -33,9 +33,9 @@ Después de seleccionar en el menu de acción `Solicitar Elevación`, la siguien
 
 | Menu | Dialogo |
 | :---: | :---: |
-| ![](images/menu.png) | ![](images/dialog.png) |
+| ![](/docs/en/client/windows/windows-portable-elevation/images/menu.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/dialog.png) |
 | **Wait** | **Success** |
-| ![](images/wait.png) | ![](images/success.png) |
+| ![](/docs/en/client/windows/windows-portable-elevation/images/wait.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/success.png) |
 
 ## How to Choose
 

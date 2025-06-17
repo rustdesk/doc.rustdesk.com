@@ -12,11 +12,28 @@ Wenn Sie den RustDesk-Server in Ihrem Heimnetzwerk oder einer anderen Netzwerkum
 
 Weitere Details über NAT-Loopback finden Sie bei [Wikipedia](https://de.m.wikipedia.org/wiki/Netzwerkadressübersetzung).
 
-Auf eine einfache Art und Weise erklärt:
+Wenn Sie den RustDesk-Server in Ihrem Heimnetzwerk oder einer anderen Netzwerkumgebung hinter einer NAT-Firewall einsetzen, **MÜSSEN** der RustDesk-Server und Ihre Clients entweder:
+A: Die lokale IP-Adresse verwenden, um auf einander zuzugreifen ODER:
+B: Eine Firewall haben, die NAT-Loopback unterstützt und aktiviert hat.
 
-Zum Beispiel: Die öffentliche IP Ihres Routers ist `8.8.8.8`, die LAN-IP Ihres Servers ist `192.168.11.20` und die gewünschte Domäne ist `rustdesk.example.com`. Die Portweiterleitung des Routers ist für Ihren Server in Ihrem LAN eingerichtet (NAT/Router).
+Sie werden möglicherweise feststellen, dass Sie sich nicht über Ihre **öffentliche IP** oder **Domain** (die theoretisch auf Ihre öffentliche IP verweist) mit Ihrem Server verbinden können.
 
-Ihr Client und Ihr Server befinden sich hinter demselben Router, so dass Ihre LAN-Geräte eine Verbindung zu `rustdesk.example.com` herstellen. Zuerst wird die Domänen-IP abgefragt, die `8.8.8.8` sein wird, und eine Verbindung zu dieser IP hergestellt. Dann weiß Ihr Router möglicherweise **nicht**, wohin diese Verbindung gehen muss, und er denkt, dass diese Verbindung zum Router selbst gehen sollte, und Ihre Verbindung wird fehlschlagen.
+## Problem
+In diesem Beispiel verfolgen wir, was passiert, wenn LAN-Geräte versuchen, sich mit `rustdesk.example.com` zu verbinden. Nehmen wir an, die öffentliche IP Ihres Routers ist `172.16.16.1`, die LAN-IP Ihres Servers ist `192.168.11.20` und die gewünschte Domäne ist `rustdesk.example.com`, und Sie haben einen Client mit '192.168.11.2'.
+
+Wenn Sie einen Server hinter der NAT des Routers einrichten, können Sie eine Portweiterleitung im Router hinzufügen, um alle eingehenden Nachrichten an die ÖFFENTLICHE IP 172.16.16.1 an den Server unter 192.168.11.20 weiterzuleiten.
+
+Wenn ein LAN-Gerät auf das Internet zugreifen möchte, z. B. auf einen Webserver unter 8.8.8.8, sendet es die Anfrage als von 192.168.11.2 kommend und sendet sie an den Router. Der Router fängt diese Anfrage ab und schreibt sie so um, dass sie an 8.8.8.8 als von 172.16.16.1 kommend gesendet wird. Wenn 8.8.8.8 an 172.16.16.1 antwortet, prüft der Router auf eine vorherige Verbindung und leitet diese Antwort zurück an 192.168.11.2.
+
+Wenn der Benutzer bei 8.8.8.8 eine Nachricht an unser Netzwerk mit 172.16.16.1 sendet, schreibt die Portweiterleitungsregel das Ziel von 172.16.16.1 an den Server bei 192.168.11.20 um, wobei die Quelle der Anfrage bei 8.8.8.8 bleibt, damit der Server (mehr oder weniger) direkt an 8.8.8.8 antworten kann.
+
+Wenn der Benutzer bei 8.8.8.8 beschließt, unser Netzwerk zu hacken und behauptet, seine Nachrichten von 192.168.11.2 zu senden, weiß der Router, dass Verkehr von 192.168.11.2 nur von LAN-Geräten gültig ist und blockiert diesen Verkehr normalerweise.
+
+Das Problem tritt auf, wenn Sie versuchen, zurück ins LAN zu schleifen. Wenn das LAN-Gerät versucht, sich mit `rustdesk.example.com` zu verbinden, was `172.16.16.1` sein wird. An diesem Punkt hat der Router viele Entscheidungen zu treffen. Er hat gerade eine Nachricht von seinem LAN-Port an seinen WAN-Port gesendet, die VON 192.168.11.2 kommt und an 172.16.16.1 geht. Sobald sie den WAN-Port erreicht, ist diese Nachricht für sich allein nicht von dem obigen Beispiel zu unterscheiden, bei dem jemand im Internet versuchte, in unser Netzwerk zu hacken.
+
+Die NAT-Loopback-Funktion ändert effektiv den Quellteil "Von 192.168.11.2" der Adresse früher im Prozess, so dass sie weiß, dass sie die NAT-Tabelle verwenden muss, um Nachrichten zwischen dem Server und dem Client hin und her zu leiten.
+
+Wenn es ein Problem mit Verbindungen nur innerhalb des LANs gibt, aber es von außerhalb gut funktioniert, könnte dies das Problem sein, das Sie haben.
 
 ## Lösungen
 Es gibt drei Möglichkeiten, dieses Problem zu lösen.
@@ -39,21 +56,21 @@ Hier ist ein Beispiel:
 #### AdGuard Home
 Das Blockieren von Werbung kann Probleme verursachen. Wenn Sie keine Lösung finden und diese Funktion deaktivieren möchten, klicken Sie auf die Schaltfläche "Disable protection".
 
-![](images/adguard_home_disable_protection.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_disable_protection.png)
 <br>
 
 Gehen Sie zur Einstellung "DNS rewrites".
 
-![](images/adguard_home_click_dns_rewrites.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_click_dns_rewrites.png)
 <br>
 
 Klicken Sie auf "Add DNS rewrite", und geben Sie Ihre `Domain` und die `LAN-IP` des Servers in das Feld ein.
 
-![](images/adguard_home_dns_rewrite_dialog.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_dns_rewrite_dialog.png)
 
 So sieht das Endergebnis aus.
 
-![](images/adguard_home_dns_rewrite_final_result.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_dns_rewrite_final_result.png)
 
 ***Vergessen Sie nicht, Ihrem AdGuard Home das LAN-DHCP Ihres Routers zuzuweisen!***
 <hr>
@@ -61,14 +78,14 @@ So sieht das Endergebnis aus.
 #### Pi-hole
 Das Blockieren von Werbung kann Probleme verursachen. Wenn Sie keine Lösung finden und diese Funktion deaktivieren möchten, klicken Sie im Untermenü "Disable Blocking" auf die Schaltfläche "Indefinitely".
 
-![](images/pi_hole_disable_blocking.png)
+![](/docs/en/self-host/nat-loopback-issues/images/pi_hole_disable_blocking.png)
 
 Gehen Sie zu "Local DNS → DNS Records".
 Geben Sie Ihre `Domain` und `IP` in das Feld ein und klicken Sie auf "Add".
 
 Das Endergebnis können Sie anhand der gelben Markierung in diesem Bild überprüfen.
 
-![](images/pi_hole_local_dns_dns_records.png)
+![](/docs/en/self-host/nat-loopback-issues/images/pi_hole_local_dns_dns_records.png)
 
 ***Vergessen Sie nicht, Ihrem Pi-hole das LAN-DHCP Ihres Routers zuzuweisen!***
 

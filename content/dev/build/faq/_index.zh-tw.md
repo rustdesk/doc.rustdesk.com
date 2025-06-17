@@ -3,9 +3,9 @@ title: Windows 常見問題
 weight: 40
 ---
 
-# vcpkg 下載包失敗
+## vcpkg 下載包失敗
 
-## 錯誤
+### 錯誤
 
 ```
  -- Fetching https://chromium.googlesource.com/libyuv/libyuv 287158925b0e03ea4499a18b4e08478c5781541b...
@@ -13,15 +13,15 @@ weight: 40
        Command failed: D:/program/Git/mingw64/bin/git.exe fetch https://chromium.googlesource.com/libyuv/libyuv 287158925b0e03ea4499a18b4e08478c5781541b --depth 1 -n
 ```
 
-## 解決方法
+### 解決方法
 
 使用瀏覽器下載 `https://chromium.googlesource.com/libyuv/libyuv/+archive/287158925b0e03ea4499a18b4e08478c5781541b.tar.gz`，然後放到 `vcpkg/downloads下，重新安裝。
 
 
 
-# Cargo.lock 裡的套件不存在
+## Cargo.lock 裡的套件不存在
 
-## 錯誤
+### 錯誤
 
 ```
 $ cargo run
@@ -42,34 +42,34 @@ $ cargo run
 
 可能作者使用 `git force push` 覆蓋了之前的 commit。
 
-## 解決方法
+### 解決方法
 
 使用 `cargo update`，強制更新套件
 
 
 
-# VCPKG_ROOT 環境變數未設置
+## VCPKG_ROOT 環境變數未設置
 
-## 錯誤
+### 錯誤
 
 ```
 thread 'main' panicked at 'Failed to find package: VcpkgNotFound("No vcpkg installation found. Set the VCPKG_ROOT environment variable or run 'vcpkg integrate install'")', libs\scrap\build.rs:7:45
 ```
 
-## 解決辦法
+### 解決辦法
 
 加入 VCPKG_ROOT 環境變數, 或者使用 `VCPKG_ROOT=<vcpkg_dir> cargo run`
 
 
 
-# 未安裝 clang 環境，或未設置 LIBCLANG_PATH 環境變數
+## 未安裝 clang 環境，或未設置 LIBCLANG_PATH 環境變數
 
-## 錯誤
+### 錯誤
 
 ```
 thread 'main' panicked at 'Unable to find libclang: "couldn't find any valid shared libraries matching: ['clang.dll', 'libclang.dll'], set the `LIBCLANG_PATH` environment variable to a path where one of these files can be found (invalid: [])"', C:\Users\selfd\.cargo\registry\src\mirrors.ustc.edu.cn-61ef6e0cd06fb9b8\bindgen-0.59.2\src/lib.rs:2144:31
 ```
 
-## 解決辦法
+### 解決辦法
 
 安裝 [llvm](https://releases.llvm.org/download.html)，設置 `LIBCLANG_PATH` 環境變數為 `llvm_install_dir/bin`

@@ -16,14 +16,14 @@ RustDesk クライアントを自己ホスト型サーバーを使用するよ�
 
 [動画](https://twitter.com/rustdesk/status/1769171628426944539)
 
-![](images/custom-client-qs.png)
-![](images/web_console_custom_client_config.jpeg)
+![](/docs/en/self-host/client-configuration/images/custom-client-qs.png)
+![](/docs/en/self-host/client-configuration/images/web_console_custom_client_config.jpeg)
 
 ## 2. 手動設定
 
 RustDesk クライアントのメインホームで、ID の横にあるメニューボタン [ &#8942; ] をクリックし、次にネットワークをクリックします。これで昇格した権限を使用して設定のロックを解除し、`ID`、`リレー`、`API`、`キー` を設定できます。この `キー` は接続暗号化に使用される公開鍵であり、Pro版購入時に提供されるライセンスキーとは異なることに注意することが重要です。
 
-![](/docs/en/self-host/client-configuration/images/network-config.png)
+![](/docs/en/self-host/client-configuration//docs/en/self-host/client-configuration/images/network-config.png)
 
 **ID サーバー** 入力ボックスに `hbbs` ホストまたは IP アドレス（ローカル側 + リモート側）を入力します。他の2つのアドレスは空白のままにできます。RustDesk が自動的に推定します（特別に設定されていない場合）。リレーサーバーは `hbbr`（ポート21117）を指します。
 
@@ -45,7 +45,7 @@ hbbs.example.com:21116
 
 `Pro` ユーザーとして、[Web コンソール](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)から `キー` を取得することもできます。
 
-![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
+![](/docs/en/self-host/rustdesk-server-pro/console//docs/en/self-host/client-configuration/images/console-home.png?v2)
 
 ### `API サーバー` の設定
 
@@ -73,7 +73,7 @@ API サーバーがデフォルトの `21114` ポートで動作していない�
 
 ## 5. `Pro` からクリップボード経由で設定をインポート
 
-![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
+![](/docs/en/self-host/rustdesk-server-pro/console//docs/en/self-host/client-configuration/images/console-home.png?v2)
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/372#discussioncomment-10473298
 

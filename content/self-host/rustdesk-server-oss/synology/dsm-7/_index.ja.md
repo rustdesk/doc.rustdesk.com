@@ -14,7 +14,7 @@ Container Manager は J シリーズなどの一部のローエンドモデル�
 
 「パッケージセンター」を開き、「Container Manager」を検索してインストールします。
 
-![](images/dsm7_install_container_manager_though_package_center.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_install_container_manager_though_package_center.png)
 
 ## 2. フォルダを作成
 
@@ -22,7 +22,7 @@ Container Manager は J シリーズなどの一部のローエンドモデル�
 
 File Station を開き、`rustdesk-server`（またはお好みの名前）という名前のフォルダを作成します。次に、画像のようにその中に `data` という名前のフォルダを作成します。
 
-![](images/dsm7_create_required_folders.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_create_required_folders.png)
 
 ## 3. コンテナを作成
 
@@ -30,7 +30,7 @@ Container Manager を開き、プロジェクトに移動して作成をクリ�
 
 プロジェクト名 `rustdesk-server` を入力し、ソースを「compose.yml をアップロード」から「compose.yml を作成」に変更し、以下の内容をボックスにコピーします。
 
-![](images/dsm7_creating_project_init.png?v2)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_creating_project_init.png?v2)
 
 ```yaml
 services:
@@ -71,7 +71,7 @@ File Station を開くと、`docker/rustdesk-server/data` フォルダに `id_ed
 
 公開キーは次のようになります：
 
-![](images/dsm7_viewing_public_key_though_syno_text_editor.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_viewing_public_key_though_syno_text_editor.png)
 
 クライアントの設定については[こちら](/docs/en/client)をご確認ください。`ID サーバー` と `キー` のみが必要です。`hbbs` で設定しているため `リレーサーバー` は不要で、`hbbs` がこの情報を自動的に提供します。
 

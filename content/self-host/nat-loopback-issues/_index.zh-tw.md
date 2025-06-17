@@ -12,11 +12,28 @@ pre: "<b>2.5. </b>"
 
 更多有關 NAT Loopback 的詳情，請參閱 [維基百科(英文)](https://en.wikipedia.org/wiki/Network_address_translation#NAT_hairpinning)
 
-用較簡單的方式說明:
+當您在家庭網路或任何其他位於 NAT 防火牆後的網路環境中部署 RustDesk 伺服器時，RustDesk 伺服器和您的客戶端**必須**：
+A：使用本地 IP 地址互相訪問 或：
+B：擁有支援並已啟用 NAT Loopback 的防火牆。
 
-舉例來說: 您的路由器的公共IP是 ``8.8.8.8``，您的伺服器的區網IP是 ``192.168.11.20`` 您所希望的網域是 ``rustdesk.example.com``，然後路由器的 port forwarding 已正確設置。
+您可能會發現無法通過**公共 IP** 或**域名**（理論上指向您的公共 IP）連接到您的伺服器。
 
-您的客戶端和伺服器在同一臺路由器之後，所以當您區域網路的裝置要連線到 ``rustdesk.example.com`` 的時候，首先，它會解析這個網域的IP，也就是 ``8.8.8.8``，然後連接到這個IP，接著您的路由器可能會直接**不知道**這條連線該去哪裡，然後它會覺得這個連接應該會想要去路由器它自己，接著您的連結就會失敗。
+## 問題
+在這個例子中，我們將追蹤當 LAN 設備嘗試連接到 `rustdesk.example.com` 時會發生什麼。假設您的路由器的公共 IP 是 `172.16.16.1`，您的伺服器的 LAN IP 是 `192.168.11.20`，您想要的域名是 `rustdesk.example.com`，並且您有一個使用 '192.168.11.2' 的客戶端。
+
+當您在路由器的 NAT 後面設置伺服器時，您可以在路由器中添加一個端口轉發，將任何傳入到公共 IP 172.16.16.1 的消息轉到 192.168.11.20 的伺服器。
+
+當 LAN 設備想要訪問互聯網時，比如 8.8.8.8 上的網頁伺服器，它會將請求作為來自 192.168.11.2 發送，並將其發送到路由器。路由器將攜獲該請求並將該請求重寫為來自 172.16.16.1 發送到 8.8.8.8。當 8.8.8.8 回覆到 172.16.16.1 時，路由器將檢查先前的連接並將該回應重新路由回 192.168.11.2。
+
+如果 8.8.8.8 的用戶使用 172.16.16.1 向我們的網路發送消息，端口轉發規則將重寫 172.16.16.1 的目的地到 192.168.11.20 的伺服器，保留請求的來源為 8.8.8.8，以便伺服器可以（或多或少）直接回應 8.8.8.8。
+
+如果 8.8.8.8 的用戶決定嘗試入侵我們的網路並聲稱其消息來自 192.168.11.2，路由器知道來自 192.168.11.2 的流量只有從 LAN 設備才有效，通常會阻止該流量。
+
+當您嘗試回環到 LAN 時就會出現問題。如果 LAN 設備嘗試連接到 `rustdesk.example.com`，它將是 `172.16.16.1`。此時路由器有許多選擇。它剛剛從它的 LAN 端口向它的 WAN 端口發送了一條消息，來自 192.168.11.2 發往 172.16.16.1。一旦到達 WAN 端口，這條消息本身與上述網路上某人試圖入侵我們網路的例子無法區分。
+
+NAT Loopback 功能將在過程的更早階段有效地更改地址的來源「來自 192.168.11.2」部分，以便它知道必須使用 NAT 表在伺服器和客戶端之間傳遞消息。
+
+如果只有在 LAN 內部時連接有問題，但從外部工作正常，這可能就是您遇到的問題。
 
 ## 解決方法
 有3個方式可以解決這個問題。
@@ -40,34 +57,34 @@ pre: "<b>2.5. </b>"
 #### AdGuard Home
 封鎖廣告可能會造成問題，如果您不想要尋找解決方法，並且想要關閉這個功能，請選擇"禁用保護"按鈕。
 
-![](images/adguard_home_disable_protection.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_disable_protection.png)
 <br>
 
 去 "DNS 改寫" 設定。
 
-![](images/adguard_home_click_dns_rewrites.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_click_dns_rewrites.png)
 <br>
 
 點擊 "新增 DNS 改寫"，接著輸入 ``網域`` 和伺服器的 ``LAN IP`` 至輸入框。
 
-![](images/adguard_home_dns_rewrite_dialog.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_dns_rewrite_dialog.png)
 最終結果看起來像這樣。
 
-![](images/adguard_home_dns_rewrite_final_result.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_dns_rewrite_final_result.png)
 ***別忘記指派 AdGuard Home 到您路由器的LAN DHCP!***
 <hr>
 
 ### PiHole
 封鎖廣告可能會造成問題，如果您不想要尋找解決方法，並且想要關閉這個功能，請選擇 "Disable Blocking" 中的 "Indefinitely" 按鈕。
 
-![](images/pi_hole_disable_blocking.png)
+![](/docs/en/self-host/nat-loopback-issues/images/pi_hole_disable_blocking.png)
 
 前往 Local DNS >  DNS Records
 輸入 ``網域`` 和伺服器的 ``LAN IP`` 至輸入框， 接著點擊 "Add"。
 
 要檢查最終結果，請檢查圖片中的黃線。
 
-![](images/pi_hole_local_dns_dns_records.png)
+![](/docs/en/self-host/nat-loopback-issues/images/pi_hole_local_dns_dns_records.png)
 
 ***別忘記指派 PiHole 到您路由器的LAN DHCP!***
 

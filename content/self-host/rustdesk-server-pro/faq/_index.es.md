@@ -447,3 +447,24 @@ sudo firewall-cmd --permanent --add-port=21116/udp
 
 ## Agregar certificado CA raíz al contenedor Docker (para falla TLS con SMTP, OIDC etc.)
 https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703
+
+Si usas IP:
+
+```sh
+sudo firewall-cmd --permanent --add-port=21114/tcp
+```
+
+Si usas DNS/Dominio:
+
+```sh
+sudo firewall-cmd --permanent --add-port=80/tcp
+sudo firewall-cmd --permanent --add-port=443/tcp
+```
+
+Después de lo anterior, ejecuta `sudo firewall-cmd --reload` para recargar el firewall.
+
+También necesitas ejecutar el comando desde la carpeta donde está la base de datos, es decir, `/var/lib/rustdesk-server`.
+
+También tienes los siguientes otros comandos `genkeypair`, `validatekeypair [public key] [secret key]`, `doctor [rustdesk-server]`, `reset_email_verification` y `reset_2fa_verification` que se pueden usar con `rustdesk-utils`.
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/183

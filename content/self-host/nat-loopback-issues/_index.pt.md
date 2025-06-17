@@ -56,21 +56,21 @@ Aqui está um exemplo:
 #### AdGuard Home
 Bloquear anúncios pode causar problemas, se você não quer descobrir a solução e quer desabilitar esta funcionalidade, clique no botão "Desabilitar proteção".
 
-![](images/adguard_home_disable_protection.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_disable_protection.png)
 <br>
 
 Vá para a configuração "Reescritas DNS".
 
-![](images/adguard_home_click_dns_rewrites.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_click_dns_rewrites.png)
 <br>
 
 Clique em "Adicionar reescrita DNS", depois digite seu `domínio` e o `IP LAN` do servidor no campo.
 
-![](images/adguard_home_dns_rewrite_dialog.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_dns_rewrite_dialog.png)
 
 Aqui está como fica o resultado final.
 
-![](images/adguard_home_dns_rewrite_final_result.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_dns_rewrite_final_result.png)
 
 ***Não esqueça de atribuir seu AdGuard Home ao DHCP LAN do seu roteador!***
 <hr>
@@ -78,14 +78,14 @@ Aqui está como fica o resultado final.
 #### Pi-hole
 Bloquear anúncios pode causar problemas, se você não quer descobrir a solução e quer desabilitar esta funcionalidade, clique no botão "Indefinidamente" dentro do submenu "Desabilitar Bloqueio".
 
-![](images/pi_hole_disable_blocking.png)
+![](/docs/en/self-host/nat-loopback-issues/images/pi_hole_disable_blocking.png)
 
 Vá para "DNS Local → Registros DNS".
 Digite seu `domínio` e `IP` na caixa, depois clique em "Adicionar".
 
 Para verificar os resultados finais, verifique as linhas amarelas nesta imagem.
 
-![](images/pi_hole_local_dns_dns_records.png)
+![](/docs/en/self-host/nat-loopback-issues/images/pi_hole_local_dns_dns_records.png)
 
 ***Não esqueça de atribuir seu Pi-hole ao DHCP LAN do seu roteador!***
 

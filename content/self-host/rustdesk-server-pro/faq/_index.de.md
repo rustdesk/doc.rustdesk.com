@@ -449,3 +449,14 @@ sudo firewall-cmd --permanent --add-port=443/tcp
 ```
 
 Danach führen Sie `sudo firewall-cmd --reload` aus, um die Firewall neu zu laden.
+
+## Nach dem Ändern des Administrator-Passworts in der Webkonsole kann ich mich nicht anmelden. Gibt es eine einfache Möglichkeit, das Passwort zurückzusetzen?
+1. Stellen Sie sicher, dass Sie `rustdesk-utils` installiert haben. Wenn nicht, können Sie es [hier](https://github.com/rustdesk/rustdesk-server-pro) erhalten. Außerdem müssen Sie den Befehl aus dem Ordner ausführen, in dem sich die Datenbank befindet, d.h. `/var/lib/rustdesk-server`.
+2. Der Befehl lautet `rustdesk-utils set_password username password`. Wenn es funktioniert, wird *Done* angezeigt.
+
+Sie haben auch die folgenden anderen Befehle `genkeypair`, `validatekeypair [public key] [secret key]`, `doctor [rustdesk-server]`, `reset_email_verification` und `reset_2fa_verification`, die mit `rustdesk-utils` verwendet werden können.
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/183
+
+## Root-CA-Zertifikat in Docker-Container hinzufügen (für TLS-Fehler mit SMTP, OIDC usw.)
+https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703

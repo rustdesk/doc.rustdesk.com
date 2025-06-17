@@ -24,7 +24,7 @@ Die kontrollierte Seite kann direkt auf `Akzeptieren und Erhöhen` klicken, wenn
 
 | Verbinden | Verbunden |
 | :---: | :---: |
-| ![](images/cm_unauth.jpg) | ![](images/cm_auth.jpg) |
+| ![](/docs/en/client/windows/windows-portable-elevation/images/cm_unauth.jpg) | ![](/docs/en/client/windows/windows-portable-elevation/images/cm_auth.jpg) |
 
 ## Anfrage der Erhöhung auf der Steuerungsseite
 
@@ -32,9 +32,9 @@ Nach der Auswahl von `Erhöhte Rechte anfordern` aus dem Aktionsmenü wird das f
 
 | Menü | Dialog |
 | :---: | :---: |
-| ![](images/menu.png) | ![](images/dialog.png) |
+| ![](/docs/en/client/windows/windows-portable-elevation/images/menu.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/dialog.png) |
 | **Warten** | **Erfolg** |
-| ![](images/wait.png) | ![](images/success.png) |
+| ![](/docs/en/client/windows/windows-portable-elevation/images/wait.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/success.png) |
 
 ## Wie Sie wählen
 

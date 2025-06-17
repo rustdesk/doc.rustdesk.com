@@ -14,7 +14,7 @@ La maggior parte delle volte non avrai bisogno di installare RAM extra per insta
 
 Apri "Centro Pacchetti", cerca e installa "Container Manager".
 
-![](images/dsm7_install_container_manager_though_package_center.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_install_container_manager_though_package_center.png)
 
 ## 2. Creare cartella
 
@@ -22,7 +22,7 @@ Dopo aver installato "Container Manager", creerà una Cartella Condivisa chiamat
 
 Apri il tuo File Station, crea una cartella chiamata `rustdesk-server` (o come preferisci). Quindi crea una cartella chiamata `data` al suo interno proprio come nell'immagine.
 
-![](images/dsm7_create_required_folders.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_create_required_folders.png)
 
 ## 3. Creare contenitore
 
@@ -30,7 +30,7 @@ Apri il tuo Container Manager, vai su Progetto e clicca Crea.
 
 Inserisci il nome del progetto `rustdesk-server` e cambia Origine da "Carica compose.yml" a "Crea compose.yml", e copia il seguente contenuto nella casella.
 
-![](images/dsm7_creating_project_init.png?v2)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_creating_project_init.png?v2)
 
 ```yaml
 services:
@@ -71,7 +71,7 @@ Apri il tuo File Station, dovresti vedere `id_ed25519`, `id_ed25519.pub` nella t
 
 La chiave pubblica apparirà così:
 
-![](images/dsm7_viewing_public_key_though_syno_text_editor.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_viewing_public_key_though_syno_text_editor.png)
 
 Controlla [qui](/docs/en/client) per configurare il tuo client. Solo `server ID` e `Chiave` sono necessari. `Server relay` non è necessario perché l'abbiamo impostato in `hbbs`, `hbbs` fornirà queste informazioni automaticamente.
 

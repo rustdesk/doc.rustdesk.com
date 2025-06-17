@@ -432,3 +432,114 @@ sudo firewall-cmd --reload
 
 ## DockerコンテナにルートCA証明書を追加（SMTP、OIDCなどのTLS障害用）
 https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703
+
+## RustDesk Server Proの新バージョンが出ました。アップグレードするには？
+まずデータファイル（sqlite3ファイルなど）をバックアップすることをお勧めします、https://github.com/rustdesk/rustdesk-server-pro/discussions/184#discussioncomment-8013375。
+- ### スクリプト（`install.sh`）でインストールした場合
+[update.sh](/docs/en/self-host/rustdesk-server-pro/installscript/script/#upgrade)を実行してください。
+- ### Docker Compose
+```
+sudo docker compose down
+sudo docker compose pull 
+sudo docker compose up -d
+```
+しかし、これはあなたのdockerバージョンに依存します。詳細な議論については、[こちら](https://stackoverflow.com/questions/37685581/how-to-get-docker-compose-to-use-the-latest-image-from-repository)を確認してください。
+- ### Docker
+```
+sudo docker ps
+## マニュアルに従っている場合は、<CONTAINER NAME>も使用できます。例：`hbbs`と`hbbr`。
+sudo docker stop <CONTAINER ID>
+sudo docker rm <CONTAINER ID>
+sudo docker rmi <IMAGE ID>
+sudo docker run ..... # 以前にインストールしたのと同じ
+```
+
+例：
+
+```
+root@hz:~# sudo docker ps
+CONTAINER ID   IMAGE                          COMMAND   CREATED          STATUS                         PORTS     NAMES
+30822972c220   rustdesk/rustdesk-server-pro   "hbbr"    10 seconds ago   Restarting (1) 2 seconds ago             hbbr
+0f3a6f185be3   rustdesk/rustdesk-server-pro   "hbbs"    15 seconds ago   Up 14 seconds                            hbbs
+root@hz:~# sudo docker kill hbbr hbbs
+hbbr
+hbbs
+root@hz:~# sudo docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@hz:~# sudo docker rm hbbr hbbs
+hbbr
+hbbs
+root@hz:~# sudo docker rmi rustdesk/rustdesk-server-pro
+Untagged: rustdesk/rustdesk-server-pro:latest
+Untagged: rustdesk/rustdesk-server-pro@sha256:401b8344323addf777622d0463bd7b964dd18a01599e42e20d8b3818dae71ad2
+Deleted: sha256:a3d9d43a3d1dd84b10c39fe0abf7767b18a87819ff0981443ce9e9a52604c889
+Deleted: sha256:65ae79ecc0f8b1c8a21085d04af7c8d8f368dd5ad844982d4c7b3ac1f38ba33a
+Deleted: sha256:9274a824aef10f2ef106d8f85fbd1905037169cf610951f63dc5109dae4b0825
+Deleted: sha256:aa89ac8b57a49f49f041c01b9c0f016060e611cf282e3fda281bc6bebbabaf3f
+Deleted: sha256:4af9839016f72586a46f915cae8a5ccf3380ba88a2f79532692d3b1d7020387e
+Deleted: sha256:e900a7ffc2fc14fa432cc04823740dcbb78c0aa3508abbbe287ce8b274541ada
+Deleted: sha256:503eeab76c11e8316a2a450ef0790d31c5af203309e9c5b44d1bf8a601e6e587
+Deleted: sha256:825683356e7dbfcbaabcbf469c9aeb34d36ebeab0308170432b9553e28203116
+Deleted: sha256:24a48d4af45bab05d8712fe22abec5761a7781283500e32e34bdff5798c09399
+root@hz:~# sudo docker images
+REPOSITORY         TAG       IMAGE ID       CREATED        SIZE
+rustdesk/makepkg   latest    86a981e2e18f   2 months ago   2.23GB
+root@hz:~# sudo docker run --name hbbs -v ./data:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbs
+Unable to find image 'rustdesk/rustdesk-server-pro:latest' locally
+latest: Pulling from rustdesk/rustdesk-server-pro
+4ce000a43472: Pull complete
+1543f88421d3: Pull complete
+9b209c1f5a8d: Pull complete
+d717f548a400: Pull complete
+1e60b98f5660: Pull complete
+a86960d9bced: Pull complete
+acb361c4bbf6: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:401b8344323addf777622d0463bd7b964dd18a01599e42e20d8b3818dae71ad2
+Status: Downloaded newer image for rustdesk/rustdesk-server-pro:latest
+0cc5387efa8d2099c0d8bc657b10ed153a6b642cd7bbcc56a6c82790a6e49b04
+root@hz:~# sudo docker run --name hbbr -v ./data:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbr
+4eb9da2dc460810547f6371a1c40a9294750960ef2dbd84168079e267e8f371a
+root@hz:~# sudo docker ps
+CONTAINER ID   IMAGE                          COMMAND   CREATED         STATUS                                  PORTS     NAMES
+4eb9da2dc460   rustdesk/rustdesk-server-pro   "hbbr"    5 seconds ago   Restarting (1) Less than a second ago             hbbr
+0cc5387efa8d   rustdesk/rustdesk-server-pro   "hbbs"    8 seconds ago   Up 7 seconds                                      hbbs
+root@hz:~# sudo docker images
+REPOSITORY                     TAG       IMAGE ID       CREATED        SIZE
+rustdesk/rustdesk-server-pro   latest    a3d9d43a3d1d   5 days ago     193MB
+rustdesk/makepkg               latest    86a981e2e18f   2 months ago   2.23GB
+```
+
+詳細については、[こちら](https://www.cherryservers.com/blog/how-to-update-docker-image)を確認してください。
+
+あなたのメールサーバーはポート25を使用していない可能性があります。正しいポートを使用していることを確認してください。
+
+あなたの`hbbr`が`hbbs`と同じマシンで実行されていない場合、または複数のリレーサーバーがある場合、またはデフォルトポート`21117`で実行していない場合は、`hbbs`に明示的に伝える必要があります。[こちら](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/)を確認してください。
+
+また、`rustdesk-utils`で使用できる次のその他のコマンドがあります：`genkeypair`、`validatekeypair [public key] [secret key]`、`doctor [rustdesk-server]`、`reset_email_verification`、`reset_2fa_verification`。
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/183
+
+- [AWS] https://docs.aws.amazon.com/network-firewall/latest/developerguide/getting-started.html
+- [Azure] https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+- [Google] https://cloud.google.com/firewall/docs/firewalls
+- [DigitalOcean] https://docs.digitalocean.com/products/networking/firewalls/
+
+RustDeskは`ufw`でファイアウォールを設定します。CentOS 9のような一部のディストリビューションでは動作しない可能性があります。`firewall-cmd`を試すことができます：
+
+IPを使用する場合：
+
+```sh
+sudo firewall-cmd --permanent --add-port=21114/tcp
+```
+
+DNS/ドメインを使用する場合：
+
+```sh
+sudo firewall-cmd --permanent --add-port=80/tcp
+sudo firewall-cmd --permanent --add-port=443/tcp
+```
+
+上記の後、`sudo firewall-cmd --reload`を実行してファイアウォールをリロードします。
+
+また、データベースがある場所、つまり`/var/lib/rustdesk-server`からコマンドを実行する必要があります。

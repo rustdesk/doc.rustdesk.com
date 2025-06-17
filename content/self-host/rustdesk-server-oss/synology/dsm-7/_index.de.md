@@ -14,7 +14,7 @@ In den meisten Fällen müssen Sie für die Installation von Docker und RustDesk
 
 Öffnen Sie das "Package Center", suchen und installieren Sie "Container Manager".
 
-![](images/dsm7_install_container_manager_though_package_center.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_install_container_manager_though_package_center.png)
 
 ## 2. Ordner erstellen
 
@@ -22,7 +22,7 @@ Nach der Installation von "Container Manager" wird ein gemeinsamer Ordner `docke
 
 Öffnen Sie Ihre File Station, erstellen Sie einen Ordner `rustdesk-server` (oder wie immer Sie wollen). Dann erstellen Sie darin einen Ordner `data`, genau wie auf dem Bild.
 
-![](images/dsm7_create_required_folders.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_create_required_folders.png)
 
 ## 3. Container erstellen
 
@@ -30,7 +30,7 @@ Nach der Installation von "Container Manager" wird ein gemeinsamer Ordner `docke
 
 Geben Sie den Projektnamen `rustdesk-server` ein, ändern Sie Source von "Upload compose.yml" zu "Create compose.yml" und kopieren Sie den folgenden Inhalt in das Feld. 
 
-![](images/dsm7_creating_project_init.png?v2)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_creating_project_init.png?v2)
 
 ```yaml
 services:
@@ -71,7 +71,7 @@ Bitte überspringen Sie `Web portal settings`, dann ist das erledigt.
 
 Der öffentliche Schlüssel sieht wie folgt aus:
 
-![](images/dsm7_viewing_public_key_though_syno_text_editor.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_viewing_public_key_though_syno_text_editor.png)
 
 Lesen Sie [hier](/docs/de/client), wie Sie Ihren Client einrichten. Nur `ID-Server` und `Key` werden benötigt. `Relais-Server` wird nicht benötigt, da wir ihn in `hbbs` festgelegt haben. Diese Informationen werden von `hbbs` automatisch bereitgestellt.
 

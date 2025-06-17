@@ -24,7 +24,7 @@ Windowsポータブルプログラムには管理者権限がないため、以�
 
 | 接続中 | 接続済み |
 | :---: | :---: |
-| ![](images/cm_unauth.jpg) | ![](images/cm_auth.jpg) |
+| ![](/docs/en/client/windows/windows-portable-elevation/images/cm_unauth.jpg) | ![](/docs/en/client/windows/windows-portable-elevation/images/cm_auth.jpg) |
 
 ## 制御側で昇格を要求
 
@@ -32,9 +32,9 @@ Windowsポータブルプログラムには管理者権限がないため、以�
 
 | メニュー | ダイアログ |
 | :---: | :---: |
-| ![](images/menu.png) | ![](images/dialog.png) |
+| ![](/docs/en/client/windows/windows-portable-elevation/images/menu.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/dialog.png) |
 | **待機** | **成功** |
-| ![](images/wait.png) | ![](images/success.png) |
+| ![](/docs/en/client/windows/windows-portable-elevation/images/wait.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/success.png) |
 
 ## 選択方法
 

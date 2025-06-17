@@ -14,7 +14,7 @@ Container Manager 为一些低端型号（如 J 系列）带来了 ARM64 支持�
 
 打开"套件中心"，搜索并安装"Container Manager"。
 
-![](images/dsm7_install_container_manager_though_package_center.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_install_container_manager_though_package_center.png)
 
 ## 2. 创建文件夹
 
@@ -22,7 +22,7 @@ Container Manager 为一些低端型号（如 J 系列）带来了 ARM64 支持�
 
 打开您的 File Station，创建一个名为 `rustdesk-server`（或您喜欢的任何名称）的文件夹。然后在其中创建一个名为 `data` 的文件夹，如图所示。
 
-![](images/dsm7_create_required_folders.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_create_required_folders.png)
 
 ## 3. 创建容器
 
@@ -30,7 +30,7 @@ Container Manager 为一些低端型号（如 J 系列）带来了 ARM64 支持�
 
 输入项目名称 `rustdesk-server` 并将源从"上传 compose.yml"更改为"创建 compose.yml"，并将以下内容复制到框中。
 
-![](images/dsm7_creating_project_init.png?v2)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_creating_project_init.png?v2)
 
 ```yaml
 services:
@@ -71,7 +71,7 @@ services:
 
 公钥看起来像这样：
 
-![](images/dsm7_viewing_public_key_though_syno_text_editor.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_viewing_public_key_though_syno_text_editor.png)
 
 查看[这里](/docs/en/client)设置您的客户端。只需要 `ID 服务器` 和 `密钥`。不需要 `中继服务器`，因为我们已在 `hbbs` 中设置，`hbbs` 将自动提供此信息。
 

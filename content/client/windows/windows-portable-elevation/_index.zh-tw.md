@@ -24,7 +24,7 @@ Windows 便攜式程式沒有管理員權限，這可能導致以下問題：
 
 | 連線中 | 已連線 |
 | :---: | :---: |
-| ![](images/cm_unauth.jpg) | ![](images/cm_auth.jpg) |
+| ![](/docs/en/client/windows/windows-portable-elevation/images/cm_unauth.jpg) | ![](/docs/en/client/windows/windows-portable-elevation/images/cm_auth.jpg) |
 
 ## 在控制端請求提權
 
@@ -32,9 +32,9 @@ Windows 便攜式程式沒有管理員權限，這可能導致以下問題：
 
 | 選單 | 對話方塊 |
 | :---: | :---: |
-| ![](images/menu.png) | ![](images/dialog.png) |
+| ![](/docs/en/client/windows/windows-portable-elevation/images/menu.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/dialog.png) |
 | **等待** | **成功** |
-| ![](images/wait.png) | ![](images/success.png) |
+| ![](/docs/en/client/windows/windows-portable-elevation/images/wait.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/success.png) |
 
 ## 如何選擇
 

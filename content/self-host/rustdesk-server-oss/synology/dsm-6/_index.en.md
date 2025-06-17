@@ -15,32 +15,32 @@ After DSM 7.2 update, the Docker is upgraded to new "Container Manager", please 
 
 | Open Package Center | Install Docker |
 | --- | --- |
-| ![](images/package-manager.png) | ![](images/docker.png) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/package-manager.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/docker.png) |
 
 ## Install RustDesk Server
 
 | Search rustdesk-server in Docker's registry and install by double click | Installed rustdesk-server image, double click to create rustdesk-server container |
 | --- | --- |
-| ![](images/pull-rustdesk-server.png) | ![](images/rustdesk-server-installed.png) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/pull-rustdesk-server.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/rustdesk-server-installed.png) |
 
 ## Create hbbs container
 
 As mentioned above, double click on rustdesk-server image to create new container, set it name to `hbbs`.
-![](images/hbbs.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/hbbs.png)
 
 Click on above `Advanced Settings`.
 
 - Enable `Enable auto-restart`.
-![](images/auto-restart.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/auto-restart.png)
 
 - Enable `Use the same network as Docker Host`. For more about host net, please [check](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/#net-host).
-![](images/host-net.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/host-net.png)
 
 - Mount a host directory (e.g. `/home/rustdesk/`) to `/root`, hbbs will generate some files (database and `key` files) in this directory which need to be persistent over reboots.
 
 | Mount | Files generated in the host directory |
 | --- | --- |
-| ![](images/mount.png) | ![](images/mounted-dir.png) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/mount.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/mounted-dir.png) |
 
 - Set command
 {{% notice note %}}
@@ -48,7 +48,7 @@ Synology's OS is Debian based, so host net (--net=host) works fine, we do not ne
 
 {{% /notice %}}
 
-![](images/hbbs-cmd.png?v3)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/hbbs-cmd.png?v3)
 
 - Done
 
@@ -56,15 +56,15 @@ Synology's OS is Debian based, so host net (--net=host) works fine, we do not ne
 
 Please repeat above `hbbs` steps, but name the container `hbbr` and command (for Set Command Step) should be `hbbr`.
 
-![](images/hbbr-config.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/hbbr-config.png)
 
 ## hbbr/hbbs containers
 
-![](images/containers.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/containers.png)
 
 | Double click on container and check log | Double confirm hbbs/hbbr using host network |
 | --- | --- |
-| ![](images/log.png) | ![](images/network-types.png) |
+| ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/log.png) | ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/network-types.png) |
 
 ## Retrieve your Key
 

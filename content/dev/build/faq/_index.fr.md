@@ -3,9 +3,9 @@ title: FAQ
 weight: 40
 ---
 
-# Échec du téléchargement du package vcpkg
+## Échec du téléchargement du package vcpkg
 
-## Erreur
+### Erreur
 
 ```
  -- Fetching https://chromium.googlesource.com/libyuv/libyuv 287158925b0e03ea4499a18b4e08478c5781541b...
@@ -13,14 +13,14 @@ weight: 40
        Command failed: D:/program/Git/mingw64/bin/git.exe fetch https://chromium.googlesource.com/libyuv/libyuv 287158925b0e03ea4499a18b4e08478c5781541b --depth 1 -n
 ```
 
-## Solution
+### Solution
 
 Utiliser un navigateur pour télécharger `https://chromium.googlesource.com/libyuv/libyuv/+archive/287158925b0e03ea4499a18b4e08478c5781541b.tar.gz`,  puis déplacez-le dans `vcpkg/downloads` et réinstallez.
 
 
-# Le paquet dans Cargo.lock n'existe pas
+## Le paquet dans Cargo.lock n'existe pas
 
-## Erreur
+### Erreur
 
 ```
 $ cargo run
@@ -41,31 +41,31 @@ $ cargo run
 
 Peut-être que l'auteur a utilisé `git force push` et que le commit précédent a été écrasé.
 
-## Solution
+### Solution
 
 `cargo update`, forcer la mise à jour du paquet.
 
 
-# VCPKG_ROOT non défini
+## VCPKG_ROOT non défini
 
-## Erreur
+### Erreur
 
 ```
 thread 'main' panicked at 'Failed to find package: VcpkgNotFound("No vcpkg installation found. Set the VCPKG_ROOT environment variable or run 'vcpkg integrate install'")', libs\scrap\build.rs:7:45
 ```
 
-## Solution
+### Solution
 
 Ajoutez la variable d'environnement `VCPKG_ROOT` ou lancer avec la commande `VCPKG_ROOT=<vcpkg_dir> cargo run`
 
-# clang non installé ou LIBCLANG_PATH non défini
+## clang non installé ou LIBCLANG_PATH non défini
 
-## Erreur
+### Erreur
 
 ```
 thread 'main' panicked at 'Unable to find libclang: "couldn't find any valid shared libraries matching: ['clang.dll', 'libclang.dll'], set the `LIBCLANG_PATH` environment variable to a path where one of these files can be found (invalid: [])"', C:\Users\selfd\.cargo\registry\src\mirrors.ustc.edu.cn-61ef6e0cd06fb9b8\bindgen-0.59.2\src/lib.rs:2144:31
 ```
 
-## Solution
+### Solution
 
 Installer [llvm](https://releases.llvm.org/download.html), et ajoutez la variable d'environnement `LIBCLANG_PATH` avec la valeur `llvm_install_dir/bin`

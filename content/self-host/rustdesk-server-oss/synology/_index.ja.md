@@ -2,7 +2,10 @@
 title: Synology
 weight: 22
 ---
-Synology has two type of Docker, "Docker" and "Container Manager", if you're using DSM 7.2 and latter, please follow the guide for DSM 7.2, or follow the DSM 6 guide if you're on older system.
+SynologyにはDockerの種類が2つあります。「Docker」と「Container Manager」です。DSM 7.2以降を使用している場合は、DSM 7.2のガイドに従ってください。古いシステムを使用している場合は、DSM 6のガイドに従ってください。
+
+PortainerでSynologyを使用している場合は、[このチュートリアル](https://mariushosting.com/how-to-install-rustdesk-on-your-synology-nas/)を参照してください。
+
 {{% children depth="3" showhidden="true" %}}
 
 For DSM 7.2, please check [English](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/).

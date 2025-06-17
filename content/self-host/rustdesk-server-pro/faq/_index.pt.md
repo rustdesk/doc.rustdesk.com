@@ -431,3 +431,9 @@ sudo firewall-cmd --reload
 
 ## Adicionar certificado CA raiz no contêiner Docker (para falha TLS com SMTP, OIDC etc.)
 https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703
+
+Você também precisa executar o comando da pasta onde o banco de dados está, ou seja, `/var/lib/rustdesk-server`.
+
+Você também tem os seguintes outros comandos `genkeypair`, `validatekeypair [public key] [secret key]`, `doctor [rustdesk-server]`, `reset_email_verification` e `reset_2fa_verification` que podem ser usados com `rustdesk-utils`.
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/183

@@ -24,7 +24,7 @@ Il lato controllato può fare clic direttamente su `Accetta ed Eleva` durante la
 
 | Connessione | Connesso |
 | :---: | :---: |
-| ![](images/cm_unauth.jpg) | ![](images/cm_auth.jpg) |
+| ![](/docs/en/client/windows/windows-portable-elevation/images/cm_unauth.jpg) | ![](/docs/en/client/windows/windows-portable-elevation/images/cm_auth.jpg) |
 
 ## Richiedere elevazione dal lato controllore
 
@@ -32,9 +32,9 @@ Dopo aver selezionato `Richiedi Elevazione` dal menu azioni, apparirà la seguen
 
 | Menu | Dialogo |
 | :---: | :---: |
-| ![](images/menu.png) | ![](images/dialog.png) |
+| ![](/docs/en/client/windows/windows-portable-elevation/images/menu.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/dialog.png) |
 | **Attesa** | **Successo** |
-| ![](images/wait.png) | ![](images/success.png) |
+| ![](/docs/en/client/windows/windows-portable-elevation/images/wait.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/success.png) |
 
 ## Come Scegliere
 

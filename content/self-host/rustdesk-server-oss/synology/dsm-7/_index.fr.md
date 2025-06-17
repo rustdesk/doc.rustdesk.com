@@ -14,7 +14,7 @@ La plupart du temps, vous n'aurez pas besoin d'installer de RAM supplémentaire 
 
 Ouvrez "Centre de Paquets", recherchez et installez "Container Manager".
 
-![](images/dsm7_install_container_manager_though_package_center.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_install_container_manager_though_package_center.png)
 
 ## 2. Créer un dossier
 
@@ -22,7 +22,7 @@ Après avoir installé "Container Manager", il créera un Dossier Partagé appel
 
 Ouvrez votre File Station, créez un dossier nommé `rustdesk-server` (ou comme vous le souhaitez). Puis créez un dossier nommé `data` dedans comme sur l'image.
 
-![](images/dsm7_create_required_folders.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_create_required_folders.png)
 
 ## 3. Créer un conteneur
 
@@ -30,7 +30,7 @@ Ouvrez votre Container Manager, allez dans Projet et cliquez sur Créer.
 
 Entrez le nom de projet `rustdesk-server` et changez Source de "Télécharger compose.yml" à "Créer compose.yml", et copiez le contenu suivant dans la boîte.
 
-![](images/dsm7_creating_project_init.png?v2)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_creating_project_init.png?v2)
 
 ```yaml
 services:
@@ -71,7 +71,7 @@ Ouvrez votre File Station, vous devriez voir `id_ed25519`, `id_ed25519.pub` dans
 
 La clé publique ressemblera à ceci :
 
-![](images/dsm7_viewing_public_key_though_syno_text_editor.png)
+![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_viewing_public_key_though_syno_text_editor.png)
 
 Vérifiez [ici](/docs/en/client) pour configurer votre client. Seuls `serveur ID` et `Clé` sont nécessaires. `Serveur relay` n'est pas nécessaire car nous l'avons configuré dans `hbbs`, `hbbs` fournira cette information automatiquement.
 

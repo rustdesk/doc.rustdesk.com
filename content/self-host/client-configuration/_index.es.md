@@ -16,14 +16,14 @@ Actualmente se admite Windows X64, Mac Arm64 / X64, [Linux](https://twitter.com/
 
 [Video](https://twitter.com/rustdesk/status/1769171628426944539)
 
-![](images/custom-client-qs.png)
-![](images/web_console_custom_client_config.jpeg)
+![](/docs/en/self-host/client-configuration/images/custom-client-qs.png)
+![](/docs/en/self-host/client-configuration/images/web_console_custom_client_config.jpeg)
 
 ## 2. Configuración manual
 
 En la página principal del cliente RustDesk, haga clic en el botón de menú [ &#8942; ] al lado de su ID y luego haga clic en Red, ahora puede desbloquear la configuración usando privilegios elevados y establecer su `ID`, `Relé`, `API` y `Clave`. Es importante tener en cuenta que esta `Clave` es la clave pública utilizada para el cifrado de conexión, distinta de la clave de licencia proporcionada con su compra de la versión Pro.
 
-![](/docs/en/self-host/client-configuration/images/network-config.png)
+![](/docs/en/self-host/client-configuration//docs/en/self-host/client-configuration/images/network-config.png)
 
 Ingrese el host o dirección IP `hbbs` en el cuadro de entrada **Servidor ID** (lado local + lado remoto). Las otras dos direcciones se pueden dejar en blanco, RustDesk las deducirá automáticamente (si no se establece especialmente), y el Servidor de Relé se refiere a `hbbr` (puerto 21117).
 
@@ -45,7 +45,7 @@ Para establecer una conexión cifrada a su servidor auto-hospedado, necesita ing
 
 Como usuario `Pro`, adicionalmente podrá recuperar la `Clave` desde la [consola web](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/).
 
-![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
+![](/docs/en/self-host/rustdesk-server-pro/console//docs/en/self-host/client-configuration/images/console-home.png?v2)
 
 ### Establecer `Servidor API`
 
@@ -73,7 +73,7 @@ La forma más fácil de configurar automáticamente es usar los scripts de imple
 
 ## 5. Importar configuración desde `Pro` a través del portapapeles
 
-![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
+![](/docs/en/self-host/rustdesk-server-pro/console//docs/en/self-host/client-configuration/images/console-home.png?v2)
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/372#discussioncomment-10473298
 

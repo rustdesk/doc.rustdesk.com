@@ -16,14 +16,14 @@ pre: "<b>2.3. </b>"
 
 [視頻](https://twitter.com/rustdesk/status/1769171628426944539)
 
-![](images/custom-client-qs.png)
-![](images/web_console_custom_client_config.jpeg)
+![](/docs/en/self-host/client-configuration/images/custom-client-qs.png)
+![](/docs/en/self-host/client-configuration/images/web_console_custom_client_config.jpeg)
 
 ## 2. 手動配置
 
 在 RustDesk 客戶端主介面，點擊 ID 旁邊的選單按鈕 [ &#8942; ]，然後點擊網路，您現在可以使用提升的權限解鎖設定並設定您的 `ID`、`中繼`、`API` 和 `金鑰`。需要注意的是，這個 `金鑰` 是用於連接加密的公鑰，與您購買 Pro 版本時提供的許可證金鑰不同。
 
-![](/docs/en/self-host/client-configuration/images/network-config.png)
+![](/docs/en/self-host/client-configuration//docs/en/self-host/client-configuration/images/network-config.png)
 
 在 **ID 伺服器** 輸入框中輸入 `hbbs` 主機或 IP 地址（本地端 + 遠端）。其他兩個地址可以留空，RustDesk 會自動推導（如果未特別設定），中繼伺服器指的是 `hbbr`（埠 21117）。
 
@@ -45,7 +45,7 @@ hbbs.example.com:21116
 
 作為 `Pro` 使用者，您還可以從 [Web 控制台](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/) 取得 `金鑰`。
 
-![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
+![](/docs/en/self-host/rustdesk-server-pro/console//docs/en/self-host/client-configuration/images/console-home.png?v2)
 
 ### 設定 `API 伺服器`
 
@@ -73,7 +73,7 @@ hbbs.example.com:21116
 
 ## 5. 從 `Pro` 透過剪貼簿匯入配置
 
-![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
+![](/docs/en/self-host/rustdesk-server-pro/console//docs/en/self-host/client-configuration/images/console-home.png?v2)
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/372#discussioncomment-10473298
 

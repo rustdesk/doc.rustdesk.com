@@ -56,21 +56,21 @@ LAN内にいる間だけ接続に問題があるが、オフサイトからは�
 #### AdGuard Home
 広告のブロックは問題を引き起こす可能性があります。解決策を理解したくなく、この機能を無効にしたい場合は、「保護を無効にする」ボタンをクリックしてください。
 
-![](images/adguard_home_disable_protection.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_disable_protection.png)
 <br>
 
 「DNS書き換え」設定に移動します。
 
-![](images/adguard_home_click_dns_rewrites.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_click_dns_rewrites.png)
 <br>
 
 「DNS書き換えを追加」をクリックし、フィールドに`ドメイン`とサーバーの`LAN IP`を入力します。
 
-![](images/adguard_home_dns_rewrite_dialog.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_dns_rewrite_dialog.png)
 
 最終結果は以下のようになります。
 
-![](images/adguard_home_dns_rewrite_final_result.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_dns_rewrite_final_result.png)
 
 ***AdGuard HomeをルーターのLAN DHCPに割り当てることを忘れないでください！***
 <hr>
@@ -78,14 +78,14 @@ LAN内にいる間だけ接続に問題があるが、オフサイトからは�
 #### Pi-hole
 広告のブロックは問題を引き起こす可能性があります。解決策を理解したくなく、この機能を無効にしたい場合は、「ブロックを無効にする」サブメニュー内の「無期限」ボタンをクリックしてください。
 
-![](images/pi_hole_disable_blocking.png)
+![](/docs/en/self-host/nat-loopback-issues/images/pi_hole_disable_blocking.png)
 
 「ローカルDNS → DNSレコード」に移動します。
 ボックスに`ドメイン`と`IP`を入力し、「追加」をクリックします。
 
 最終結果を確認するには、この画像の黄色い線を確認してください。
 
-![](images/pi_hole_local_dns_dns_records.png)
+![](/docs/en/self-host/nat-loopback-issues/images/pi_hole_local_dns_dns_records.png)
 
 ***Pi-holeをルーターのLAN DHCPに割り当てることを忘れないでください！***
 

@@ -54,21 +54,21 @@ NAT 环回功能将有效地在过程早期更改源"从 192.168.11.2"地址部�
 #### AdGuard Home
 拦截广告可能会导致问题，如果您不想找出解决方案并想禁用此功能，请点击"禁用保护"按钮。
 
-![](images/adguard_home_disable_protection.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_disable_protection.png)
 <br>
 
 转到"DNS 重写"设置。
 
-![](images/adguard_home_click_dns_rewrites.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_click_dns_rewrites.png)
 <br>
 
 点击"添加 DNS 重写"，然后在字段中输入您的`域名`和服务器的`LAN IP`。
 
-![](images/adguard_home_dns_rewrite_dialog.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_dns_rewrite_dialog.png)
 
 这是最终结果的样子。
 
-![](images/adguard_home_dns_rewrite_final_result.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_dns_rewrite_final_result.png)
 
 ***不要忘记将您的 AdGuard Home 分配给路由器的 LAN DHCP！***
 <hr>
@@ -76,14 +76,14 @@ NAT 环回功能将有效地在过程早期更改源"从 192.168.11.2"地址部�
 #### Pi-hole
 拦截广告可能会导致问题，如果您不想找出解决方案并想禁用此功能，请在"禁用拦截"子菜单中点击"无限期"按钮。
 
-![](images/pi_hole_disable_blocking.png)
+![](/docs/en/self-host/nat-loopback-issues/images/pi_hole_disable_blocking.png)
 
 转到"本地 DNS → DNS 记录"。
 在框中输入您的`域名`和`IP`，然后点击"添加"。
 
 要检查最终结果，请查看此图片中的黄色线条。
 
-![](images/pi_hole_local_dns_dns_records.png)
+![](/docs/en/self-host/nat-loopback-issues/images/pi_hole_local_dns_dns_records.png)
 
 ***不要忘记将您的 Pi-hole 分配给路由器的 LAN DHCP！***
 

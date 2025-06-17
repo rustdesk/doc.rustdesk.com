@@ -56,21 +56,21 @@ Here is an example:
 #### AdGuard Home
 Blocking ads may cause problems, if you don't want to figure out the solution and want to disable this functionality, click "Disable protection" button.
 
-![](images/adguard_home_disable_protection.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_disable_protection.png)
 <br>
 
 Go to "DNS rewrites" setting.
 
-![](images/adguard_home_click_dns_rewrites.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_click_dns_rewrites.png)
 <br>
 
 Click "Add DNS rewrite", then type your `domain` and server's `LAN IP` in the field.
 
-![](images/adguard_home_dns_rewrite_dialog.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_dns_rewrite_dialog.png)
 
 Here is what the final result looks like.
 
-![](images/adguard_home_dns_rewrite_final_result.png)
+![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_dns_rewrite_final_result.png)
 
 ***Don't forget to assign your AdGuard Home to your router's LAN DHCP!***
 <hr>
@@ -78,14 +78,14 @@ Here is what the final result looks like.
 #### Pi-hole
 Blocking ads may cause problems, if you don't want to figure out the solution and want to disable this functionality, click "Indefinitely" button within the "Disable Blocking" submenu.
 
-![](images/pi_hole_disable_blocking.png)
+![](/docs/en/self-host/nat-loopback-issues/images/pi_hole_disable_blocking.png)
 
 Go to "Local DNS → DNS Records".
 Type your `domain` and `IP` to the box, than click "Add".
 
 To check the final results, check the yellow lines in this picture.
 
-![](images/pi_hole_local_dns_dns_records.png)
+![](/docs/en/self-host/nat-loopback-issues/images/pi_hole_local_dns_dns_records.png)
 
 ***Don't forget to assign your Pi-hole to your router's LAN DHCP!***
 
