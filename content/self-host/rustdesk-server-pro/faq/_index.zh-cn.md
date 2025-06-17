@@ -537,10 +537,10 @@ server {
         }
 ```
 
-### 为什么我的日志/设备名称为空？
+## 为什么我的日志/设备名称为空？
 确保在被控制的设备上正确设置了 API，https://github.com/rustdesk/rustdesk-server-pro/issues/21#issuecomment-1637935750。
 
-### 如何卸载 RustDesk Server Pro？
+## 如何卸载 RustDesk Server Pro？
 运行以下命令：
 ```sh
 sudo systemctl stop rustdesk-hbbs.service
@@ -560,10 +560,10 @@ sudo rm -rf /var/log/rustdesk-server/
 sudo apt remove nginx
 ```
 
-### 如何从 Web 控制台的设备列表中删除设备？
+## 如何从 Web 控制台的设备列表中删除设备？
 禁用然后删除现在可用。
 
-### 如何使用 PowerShell 更新 RustDesk？
+## 如何使用 PowerShell 更新 RustDesk？
 ```ps
 $ErrorActionPreference= 'silentlycontinue'
 
@@ -586,17 +586,17 @@ Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.6/
 Start-Process .\rustdesk.exe --silent-install -wait
 ```
 
-### `Key mismatch` 错误
+## `Key mismatch` 错误
 请使用[正确的密钥](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-pro/relay/)配置您的客户端。
 
-### `Failed to connect to relay server` 错误
+## `Failed to connect to relay server` 错误
 请确保 `hbbr` 正在运行。有关 `hbbr` 的更多信息，您可以[在此处](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-oss/install/)找到。
 如果您的 `hbbr` 不在与 `hbbs` 相同的机器上运行，或者您有多个中继服务器，或者您不在默认端口 `21117` 上运行它，您必须明确告诉 `hbbs`。请查看[此处](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-pro/relay/)。
 
-### 重置管理员账户的 MFA
+## 重置管理员账户的 MFA
 https://github.com/rustdesk/rustdesk/discussions/6576
 
-### 在 Web 控制台中更改管理员密码后无法登录。是否有简单的方法重置密码？
+## 在 Web 控制台中更改管理员密码后无法登录。是否有简单的方法重置密码？
 1. 确保您已安装 `rustdesk-utils`。如果没有，您可以从[这里](https://github.com/rustdesk/rustdesk-server-pro)获取。此外，您需要从数据库所在的文件夹执行命令，即 `/var/lib/rustdesk-server`。
 2. 命令是 `rustdesk-utils set_password username password`。如果成功，它将显示 *Done*。
 
@@ -652,5 +652,5 @@ sudo firewall-cmd --permanent --add-port=443/tcp
 
 完成上述操作后，运行 `sudo firewall-cmd --reload` 重新加载防火墙。
 
-### 将根 CA 证书添加到 Docker 容器中（用于 SMTP、OIDC 等的 TLS 失败）
+## 将根 CA 证书添加到 Docker 容器中（用于 SMTP、OIDC 等的 TLS 失败）
 https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703
