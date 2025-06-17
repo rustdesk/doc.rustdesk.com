@@ -47,6 +47,64 @@ sudo docker rmi <ID DE LA IMAGEN>
 sudo docker run ..... # igual que lo instalaste antes
 ```
 
+ej.
+
+```
+root@hz:~# sudo docker ps
+CONTAINER ID   IMAGE                          COMMAND   CREATED          STATUS                         PORTS     NAMES
+30822972c220   rustdesk/rustdesk-server-pro   "hbbr"    10 seconds ago   Restarting (1) 2 seconds ago             hbbr
+0f3a6f185be3   rustdesk/rustdesk-server-pro   "hbbs"    15 seconds ago   Up 14 seconds                            hbbs
+root@hz:~# sudo docker kill hbbr hbbs
+hbbr
+hbbs
+root@hz:~# sudo docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@hz:~# sudo docker rm hbbr hbbs
+hbbr
+hbbs
+root@hz:~# sudo docker rmi rustdesk/rustdesk-server-pro
+Untagged: rustdesk/rustdesk-server-pro:latest
+Untagged: rustdesk/rustdesk-server-pro@sha256:401b8344323addf777622d0463bd7b964dd18a01599e42e20d8b3818dae71ad2
+Deleted: sha256:a3d9d43a3d1dd84b10c39fe0abf7767b18a87819ff0981443ce9e9a52604c889
+Deleted: sha256:65ae79ecc0f8b1c8a21085d04af7c8d8f368dd5ad844982d4c7b3ac1f38ba33a
+Deleted: sha256:9274a824aef10f2ef106d8f85fbd1905037169cf610951f63dc5109dae4b0825
+Deleted: sha256:aa89ac8b57a49f49f041c01b9c0f016060e611cf282e3fda281bc6bebbabaf3f
+Deleted: sha256:4af9839016f72586a46f915cae8a5ccf3380ba88a2f79532692d3b1d7020387e
+Deleted: sha256:e900a7ffc2fc14fa432cc04823740dcbb78c0aa3508abbbe287ce8b274541ada
+Deleted: sha256:503eeab76c11e8316a2a450ef0790d31c5af203309e9c5b44d1bf8a601e6e587
+Deleted: sha256:825683356e7dbfcbaabcbf469c9aeb34d36ebeab0308170432b9553e28203116
+Deleted: sha256:24a48d4af45bab05d8712fe22abec5761a7781283500e32e34bdff5798c09399
+root@hz:~# sudo docker images
+REPOSITORY         TAG       IMAGE ID       CREATED        SIZE
+rustdesk/makepkg   latest    86a981e2e18f   2 months ago   2.23GB
+root@hz:~# sudo docker run --name hbbs -v ./data:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbs
+Unable to find image 'rustdesk/rustdesk-server-pro:latest' locally
+latest: Pulling from rustdesk/rustdesk-server-pro
+4ce000a43472: Pull complete
+1543f88421d3: Pull complete
+9b209c1f5a8d: Pull complete
+d717f548a400: Pull complete
+1e60b98f5660: Pull complete
+a86960d9bced: Pull complete
+acb361c4bbf6: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:401b8344323addf777622d0463bd7b964dd18a01599e42e20d8b3818dae71ad2
+Status: Downloaded newer image for rustdesk/rustdesk-server-pro:latest
+0cc5387efa8d2099c0d8bc657b10ed153a6b642cd7bbcc56a6c82790a6e49b04
+root@hz:~# sudo docker run --name hbbr -v ./data:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbr
+4eb9da2dc460810547f6371a1c40a9294750960ef2dbd84168079e267e8f371a
+root@hz:~# sudo docker ps
+CONTAINER ID   IMAGE                          COMMAND   CREATED         STATUS                                  PORTS     NAMES
+4eb9da2dc460   rustdesk/rustdesk-server-pro   "hbbr"    5 seconds ago   Restarting (1) Less than a second ago             hbbr
+0cc5387efa8d   rustdesk/rustdesk-server-pro   "hbbs"    8 seconds ago   Up 7 seconds                                      hbbs
+root@hz:~# sudo docker images
+REPOSITORY                     TAG       IMAGE ID       CREATED        SIZE
+rustdesk/rustdesk-server-pro   latest    a3d9d43a3d1d   5 days ago     193MB
+rustdesk/makepkg               latest    86a981e2e18f   2 months ago   2.23GB
+```
+
+Para más detalles, consulta [esto](https://www.cherryservers.com/blog/how-to-update-docker-image).
+
 ## Instalé con el script, ¿cómo puedo iniciar y detener servicios?
 Los servicios usan systemd así que pueden iniciarse y detenerse usando `sudo systemctl stop|start|restart rustdesk-hbbs|rustdesk-hbbr` ej. `sudo systemctl restart rustdesk-hbbs`.
 
@@ -403,7 +461,6 @@ Necesitas agregar lo siguiente en la sección `location /` del `/etc/nginx/.../r
             add_header 'Access-Control-Allow-Headers' 'Origin, Content-Type, Accept, Authorization' always;
             add_header 'Access-Control-Allow-Credentials' 'true' always;
         }
-
         if ($request_method = 'OPTIONS') {
             add_header 'Access-Control-Allow-Origin' "$http_origin" always;
             add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
@@ -429,6 +486,11 @@ sudo restorecon -v '/usr/bin/hbbr'
 ### Firewall de la nube
 Si ejecutas en AWS/Azure/Google/DigitalOcean cloud, por favor abre los puertos entrantes UDP (21116) y TCP (21114-21119) en el dashboard del proveedor de la nube.
 
+- [AWS] https://docs.aws.amazon.com/network-firewall/latest/developerguide/getting-started.html
+- [Azure] https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+- [Google] https://cloud.google.com/firewall/docs/firewalls
+- [DigitalOcean] https://docs.digitalocean.com/products/networking/firewalls/
+
 ### Firewall del servidor local
 RustDesk configura firewall con `ufw`. Puede no funcionar en algunas distribuciones como CentOS 9, puedes intentar con `firewall-cmd`:
 
@@ -440,13 +502,6 @@ sudo firewall-cmd --permanent --add-port=21118/tcp
 sudo firewall-cmd --permanent --add-port=21119/tcp
 sudo firewall-cmd --permanent --add-port=21116/udp
 ```
-
-## Después de cambiar la contraseña de admin en la consola web no puedo iniciar sesión. ¿Hay una forma simple de restablecer la contraseña?
-1. Asegúrate de tener `rustdesk-utils` instalado. Si no lo tienes puedes obtenerlo [aquí](https://github.com/rustdesk/rustdesk-server-pro).
-2. El comando es `rustdesk-utils set_password username password`. Si funciona dirá *Done*.
-
-## Agregar certificado CA raíz al contenedor Docker (para falla TLS con SMTP, OIDC etc.)
-https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703
 
 Si usas IP:
 
@@ -463,8 +518,13 @@ sudo firewall-cmd --permanent --add-port=443/tcp
 
 Después de lo anterior, ejecuta `sudo firewall-cmd --reload` para recargar el firewall.
 
-También necesitas ejecutar el comando desde la carpeta donde está la base de datos, es decir, `/var/lib/rustdesk-server`.
+## Después de cambiar la contraseña de admin en la consola web no puedo iniciar sesión. ¿Hay una forma simple de restablecer la contraseña?
+1. Asegúrate de tener `rustdesk-utils` instalado. Si no lo tienes puedes obtenerlo [aquí](https://github.com/rustdesk/rustdesk-server-pro). También necesitas ejecutar el comando desde la carpeta donde está la base de datos, es decir, `/var/lib/rustdesk-server`.
+2. El comando es `rustdesk-utils set_password username password`. Si funciona dirá *Done*.
 
 También tienes los siguientes otros comandos `genkeypair`, `validatekeypair [public key] [secret key]`, `doctor [rustdesk-server]`, `reset_email_verification` y `reset_2fa_verification` que se pueden usar con `rustdesk-utils`.
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/183
+
+## Agregar certificado CA raíz al contenedor Docker (para falla TLS con SMTP, OIDC etc.)
+https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703

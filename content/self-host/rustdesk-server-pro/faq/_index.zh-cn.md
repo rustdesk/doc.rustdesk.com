@@ -27,9 +27,83 @@ weight: 600
 10. 输入您在步骤 1 中购买的许可证代码。
 
 ## RustDesk Server Pro 有新版本，如何升级？
-1. 转到[此页面](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-pro/installscript/#upgrade)。
-2. 将命令复制并粘贴到 Linux 终端中。
-3. 按照提示进行升级。
+您最好先备份数据文件（sqlite3 文件等），https://github.com/rustdesk/rustdesk-server-pro/discussions/184#discussioncomment-8013375。
+- ### 如果您使用脚本（`install.sh`）安装
+请运行 [update.sh](/docs/zh-cn/self-host/rustdesk-server-pro/installscript/script/#upgrade)。
+- ### Docker Compose
+```
+sudo docker compose down
+sudo docker compose pull 
+sudo docker compose up -d
+```
+但这取决于您的 docker 版本，有关更多讨论，请查看[此处](https://stackoverflow.com/questions/37685581/how-to-get-docker-compose-to-use-the-latest-image-from-repository)。
+- ### Docker
+```
+sudo docker ps
+## 您也可以使用 <CONTAINER NAME>，例如，如果您按照我们的手册操作，则为 `hbbs` 和 `hbbr`。
+sudo docker stop <CONTAINER ID>
+sudo docker rm <CONTAINER ID>
+sudo docker rmi <IMAGE ID>
+sudo docker run ..... # 与您之前安装时相同
+```
+
+例如：
+
+```
+root@hz:~# sudo docker ps
+CONTAINER ID   IMAGE                          COMMAND   CREATED          STATUS                         PORTS     NAMES
+30822972c220   rustdesk/rustdesk-server-pro   "hbbr"    10 seconds ago   Restarting (1) 2 seconds ago             hbbr
+0f3a6f185be3   rustdesk/rustdesk-server-pro   "hbbs"    15 seconds ago   Up 14 seconds                            hbbs
+root@hz:~# sudo docker kill hbbr hbbs
+hbbr
+hbbs
+root@hz:~# sudo docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@hz:~# sudo docker rm hbbr hbbs
+hbbr
+hbbs
+root@hz:~# sudo docker rmi rustdesk/rustdesk-server-pro
+Untagged: rustdesk/rustdesk-server-pro:latest
+Untagged: rustdesk/rustdesk-server-pro@sha256:401b8344323addf777622d0463bd7b964dd18a01599e42e20d8b3818dae71ad2
+Deleted: sha256:a3d9d43a3d1dd84b10c39fe0abf7767b18a87819ff0981443ce9e9a52604c889
+Deleted: sha256:65ae79ecc0f8b1c8a21085d04af7c8d8f368dd5ad844982d4c7b3ac1f38ba33a
+Deleted: sha256:9274a824aef10f2ef106d8f85fbd1905037169cf610951f63dc5109dae4b0825
+Deleted: sha256:aa89ac8b57a49f49f041c01b9c0f016060e611cf282e3fda281bc6bebbabaf3f
+Deleted: sha256:4af9839016f72586a46f915cae8a5ccf3380ba88a2f79532692d3b1d7020387e
+Deleted: sha256:e900a7ffc2fc14fa432cc04823740dcbb78c0aa3508abbbe287ce8b274541ada
+Deleted: sha256:503eeab76c11e8316a2a450ef0790d31c5af203309e9c5b44d1bf8a601e6e587
+Deleted: sha256:825683356e7dbfcbaabcbf469c9aeb34d36ebeab0308170432b9553e28203116
+Deleted: sha256:24a48d4af45bab05d8712fe22abec5761a7781283500e32e34bdff5798c09399
+root@hz:~# sudo docker images
+REPOSITORY         TAG       IMAGE ID       CREATED        SIZE
+rustdesk/makepkg   latest    86a981e2e18f   2 months ago   2.23GB
+root@hz:~# sudo docker run --name hbbs -v ./data:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbs
+Unable to find image 'rustdesk/rustdesk-server-pro:latest' locally
+latest: Pulling from rustdesk/rustdesk-server-pro
+4ce000a43472: Pull complete
+1543f88421d3: Pull complete
+9b209c1f5a8d: Pull complete
+d717f548a400: Pull complete
+1e60b98f5660: Pull complete
+a86960d9bced: Pull complete
+acb361c4bbf6: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:401b8344323addf777622d0463bd7b964dd18a01599e42e20d8b3818dae71ad2
+Status: Downloaded newer image for rustdesk/rustdesk-server-pro:latest
+0cc5387efa8d2099c0d8bc657b10ed153a6b642cd7bbcc56a6c82790a6e49b04
+root@hz:~# sudo docker run --name hbbr -v ./data:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbr
+4eb9da2dc460810547f6371a1c40a9294750960ef2dbd84168079e267e8f371a
+root@hz:~# sudo docker ps
+CONTAINER ID   IMAGE                          COMMAND   CREATED         STATUS                                  PORTS     NAMES
+4eb9da2dc460   rustdesk/rustdesk-server-pro   "hbbr"    5 seconds ago   Restarting (1) Less than a second ago             hbbr
+0cc5387efa8d   rustdesk/rustdesk-server-pro   "hbbs"    8 seconds ago   Up 7 seconds                                      hbbs
+root@hz:~# sudo docker images
+REPOSITORY                     TAG       IMAGE ID       CREATED        SIZE
+rustdesk/rustdesk-server-pro   latest    a3d9d43a3d1d   5 days ago     193MB
+rustdesk/makepkg               latest    86a981e2e18f   2 months ago   2.23GB
+```
+
+有关更多详细信息，请查看[此处](https://www.cherryservers.com/blog/how-to-update-docker-image)。
 
 ## 我使用脚本安装了，如何启动和停止服务？
 这些服务使用 systemd，因此可以使用`sudo systemctl stop|start|restart rustdesk-hbbs|rustdesk-hbbr`来启动和停止，例如 `sudo systemctl restart rustdesk-hbbs`。
@@ -280,7 +354,7 @@ EOF
 ```
 运行 `cat /etc/nginx/conf.d/rustdesk.conf` 确保其内容正确。
 
-#### 5. 为域名启用防火墙规则
+### 5. 为域名启用防火墙规则
 运行以下命令：
 
 ```sh
@@ -351,10 +425,10 @@ location / {
 
 注意：如果您手动更改了 `rustdesk.conf`，请运行 `sudo service nginx restart`。
 
-#### 7. 登录网页
+### 7. 登录网页
 * 在浏览器中打开 `https://<YOUR_DOMAIN>`，使用默认用户名 "admin" 和密码 "test1234" 登录，然后将密码更改为您自己的密码。
 
-#### 8. 为 ID 服务器和中继服务器添加 WebSocket Secure (WSS) 支持，以启用所有平台的安全通信
+### 8. 为 ID 服务器和中继服务器添加 WebSocket Secure (WSS) 支持，以启用所有平台的安全通信
 
 将以下配置添加到 `/etc/nginx/.../rustdesk.conf` 文件的第一个 `server` 部分，然后重启 `Nginx` 服务。
 Web客户端通过 `https://<YOUR_DOMAIN>/web`访问, 自定义客户端通过在高级选项中设置 `allow-websocket=Y`来使用websocket。如果自定义客户端中启用了websocket，该自定义客户端将不会被使用tcp/udp, 只能通过中继连接(除IP直连)。如果只使用这种启用了websocket的客户端, 也可以关闭服务器的21114~21119端口, 只开启443端口。
@@ -441,7 +515,7 @@ server {
 如果您之前为 Web 客户端部署过，并想在所有平台上使用，您需要添加 `proxy_read_timeout`。
 {{% /notice %}}
 
-#### 9. 如果您使用 RustDesk 公共 Web 客户端 `https://rustdesk.com/web`，需要绕过 CORS 限制
+### 9. 如果您使用 RustDesk 公共 Web 客户端 `https://rustdesk.com/web`，需要绕过 CORS 限制
 
 您需要在 `/etc/nginx/.../rustdesk.conf` 的 `location /` 部分添加以下内容，以绕过浏览器的 CORS 限制。如果您使用自己的 Web 客户端，可以跳过此步骤。
 
@@ -529,6 +603,54 @@ https://github.com/rustdesk/rustdesk/discussions/6576
 您还可以使用以下其他命令 `genkeypair`、`validatekeypair [public key] [secret key]`、`doctor [rustdesk-server]`、`reset_email_verification` 和 `reset_2fa_verification`，这些命令可以与 `rustdesk-utils` 一起使用。
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/183
+
+## SELinux
+
+如果安装时出现 `Waiting for RustDesk Relay service to become active...`，可能是由 SELinux 引起的。您可以尝试以下命令：
+
+```sh
+sudo semanage fcontext -a -t NetworkManager_dispatcher_exec_t 'hbbs'
+sudo semanage fcontext -a -t NetworkManager_dispatcher_exec_t 'hbbr'
+sudo restorecon -v '/usr/bin/hbbs'
+sudo restorecon -v '/usr/bin/hbbr'
+```
+
+## 防火墙
+
+### 云防火墙
+如果您在 AWS/Azure/Google/DigitalOcean 云上运行，请在云供应商的仪表板上打开 UDP (21116) 和 TCP (21114-21119) 入站端口。
+
+- [AWS] https://docs.aws.amazon.com/network-firewall/latest/developerguide/getting-started.html
+- [Azure] https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+- [Google] https://cloud.google.com/firewall/docs/firewalls
+- [DigitalOcean] https://docs.digitalocean.com/products/networking/firewalls/
+
+### 本地服务器防火墙
+RustDesk 使用 `ufw` 设置防火墙。它可能在某些发行版（如 CentOS 9）上不起作用，您可以尝试使用 `firewall-cmd`：
+
+```sh
+sudo firewall-cmd --permanent --add-port=21115/tcp
+sudo firewall-cmd --permanent --add-port=21116/tcp
+sudo firewall-cmd --permanent --add-port=21117/tcp
+sudo firewall-cmd --permanent --add-port=21118/tcp
+sudo firewall-cmd --permanent --add-port=21119/tcp
+sudo firewall-cmd --permanent --add-port=21116/udp
+```
+
+如果您使用 IP：
+
+```sh
+sudo firewall-cmd --permanent --add-port=21114/tcp
+```
+
+如果您使用 DNS/域名：
+
+```sh
+sudo firewall-cmd --permanent --add-port=80/tcp
+sudo firewall-cmd --permanent --add-port=443/tcp
+```
+
+完成上述操作后，运行 `sudo firewall-cmd --reload` 重新加载防火墙。
 
 ### 将根 CA 证书添加到 Docker 容器中（用于 SMTP、OIDC 等的 TLS 失败）
 https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703

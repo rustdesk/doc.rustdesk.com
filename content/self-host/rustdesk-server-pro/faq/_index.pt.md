@@ -36,14 +36,74 @@ sudo docker compose down
 sudo docker compose pull 
 sudo docker compose up -d
 ```
+Mas isso depende da sua versão do docker, para mais discussão, verifique [isto](https://stackoverflow.com/questions/37685581/how-to-get-docker-compose-to-use-the-latest-image-from-repository).
 - ### Docker
 ```
 sudo docker ps
+## você também pode usar <CONTAINER NAME>, ex. `hbbs` e `hbbr` se você seguir nosso manual.
 sudo docker stop <CONTAINER ID>
 sudo docker rm <CONTAINER ID>
 sudo docker rmi <IMAGE ID>
 sudo docker run ..... # igual a como você instalou antes
 ```
+
+ex.
+
+```
+root@hz:~# sudo docker ps
+CONTAINER ID   IMAGE                          COMMAND   CREATED          STATUS                         PORTS     NAMES
+30822972c220   rustdesk/rustdesk-server-pro   "hbbr"    10 seconds ago   Restarting (1) 2 seconds ago             hbbr
+0f3a6f185be3   rustdesk/rustdesk-server-pro   "hbbs"    15 seconds ago   Up 14 seconds                            hbbs
+root@hz:~# sudo docker kill hbbr hbbs
+hbbr
+hbbs
+root@hz:~# sudo docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@hz:~# sudo docker rm hbbr hbbs
+hbbr
+hbbs
+root@hz:~# sudo docker rmi rustdesk/rustdesk-server-pro
+Untagged: rustdesk/rustdesk-server-pro:latest
+Untagged: rustdesk/rustdesk-server-pro@sha256:401b8344323addf777622d0463bd7b964dd18a01599e42e20d8b3818dae71ad2
+Deleted: sha256:a3d9d43a3d1dd84b10c39fe0abf7767b18a87819ff0981443ce9e9a52604c889
+Deleted: sha256:65ae79ecc0f8b1c8a21085d04af7c8d8f368dd5ad844982d4c7b3ac1f38ba33a
+Deleted: sha256:9274a824aef10f2ef106d8f85fbd1905037169cf610951f63dc5109dae4b0825
+Deleted: sha256:aa89ac8b57a49f49f041c01b9c0f016060e611cf282e3fda281bc6bebbabaf3f
+Deleted: sha256:4af9839016f72586a46f915cae8a5ccf3380ba88a2f79532692d3b1d7020387e
+Deleted: sha256:e900a7ffc2fc14fa432cc04823740dcbb78c0aa3508abbbe287ce8b274541ada
+Deleted: sha256:503eeab76c11e8316a2a450ef0790d31c5af203309e9c5b44d1bf8a601e6e587
+Deleted: sha256:825683356e7dbfcbaabcbf469c9aeb34d36ebeab0308170432b9553e28203116
+Deleted: sha256:24a48d4af45bab05d8712fe22abec5761a7781283500e32e34bdff5798c09399
+root@hz:~# sudo docker images
+REPOSITORY         TAG       IMAGE ID       CREATED        SIZE
+rustdesk/makepkg   latest    86a981e2e18f   2 months ago   2.23GB
+root@hz:~# sudo docker run --name hbbs -v ./data:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbs
+Unable to find image 'rustdesk/rustdesk-server-pro:latest' locally
+latest: Pulling from rustdesk/rustdesk-server-pro
+4ce000a43472: Pull complete
+1543f88421d3: Pull complete
+9b209c1f5a8d: Pull complete
+d717f548a400: Pull complete
+1e60b98f5660: Pull complete
+a86960d9bced: Pull complete
+acb361c4bbf6: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:401b8344323addf777622d0463bd7b964dd18a01599e42e20d8b3818dae71ad2
+Status: Downloaded newer image for rustdesk/rustdesk-server-pro:latest
+0cc5387efa8d2099c0d8bc657b10ed153a6b642cd7bbcc56a6c82790a6e49b04
+root@hz:~# sudo docker run --name hbbr -v ./data:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbr
+4eb9da2dc460810547f6371a1c40a9294750960ef2dbd84168079e267e8f371a
+root@hz:~# sudo docker ps
+CONTAINER ID   IMAGE                          COMMAND   CREATED         STATUS                                  PORTS     NAMES
+4eb9da2dc460   rustdesk/rustdesk-server-pro   "hbbr"    5 seconds ago   Restarting (1) Less than a second ago             hbbr
+0cc5387efa8d   rustdesk/rustdesk-server-pro   "hbbs"    8 seconds ago   Up 7 seconds                                      hbbs
+root@hz:~# sudo docker images
+REPOSITORY                     TAG       IMAGE ID       CREATED        SIZE
+rustdesk/rustdesk-server-pro   latest    a3d9d43a3d1d   5 days ago     193MB
+rustdesk/makepkg               latest    86a981e2e18f   2 months ago   2.23GB
+```
+
+Para mais detalhes, verifique [isto](https://www.cherryservers.com/blog/how-to-update-docker-image).
 
 ## Instalei com o script, como posso iniciar e parar serviços?
 Os serviços usam systemd então podem ser iniciados e parados usando `sudo systemctl stop|start|restart rustdesk-hbbs|rustdesk-hbbr` ex. `sudo systemctl restart rustdesk-hbbs`.
@@ -68,6 +128,8 @@ Veja [aqui](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#
 Muitos provedores de VPS bloqueiam as portas 465 e 25.
 
 Uma maneira simples de verificar é usando telnet. Para testar no terminal Linux digite `telnet your.mailserver.com 25`. No Windows use PowerShell com `Test-NetConnection -ComputerName your.mailserver.com -Port 25`.
+
+Seu servidor de e-mail pode não estar usando a porta 25. Certifique-se de estar usando as portas corretas.
 
 ## Posso implantar RustDesk usando PowerShell ou similar?
 Claro, você pode encontrar scripts para auxiliar na implantação [aqui](https://rustdesk.com/docs/en/self-host/client-deployment/).
@@ -119,6 +181,11 @@ sudo rm -rf /var/lib/rustdesk-server/
 sudo rm -rf /var/log/rustdesk-server/
 ```
 
+Se o script instalou o Nginx, remova usando:
+```sh
+sudo apt remove nginx
+```
+
 ## Como posso remover dispositivos da lista de dispositivos no console web?
 Desative e então excluir ficará disponível.
 
@@ -145,6 +212,7 @@ Configure seu cliente com a [chave correta](https://rustdesk.com/docs/en/self-ho
 
 ## Erro `Failed to connect to relay server`
 Certifique-se de que `hbbr` esteja rodando. Mais informações sobre `hbbr`, você pode encontrar [aqui](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/).
+Se o seu `hbbr` não roda na mesma máquina que o `hbbs`, ou você tem múltiplos servidores relay, ou você não o executa na porta padrão `21117`, você precisa informá-lo ao `hbbs` explicitamente. Por favor, verifique [aqui](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/).
 
 ## Redefinir MFA para conta Admin
 https://github.com/rustdesk/rustdesk/discussions/6576
@@ -414,7 +482,13 @@ sudo restorecon -v '/usr/bin/hbbr'
 ### Firewall da nuvem
 Se executando em AWS/Azure/Google/DigitalOcean, abra as portas UDP (21116) e TCP (21114-21119) no painel do provedor de nuvem.
 
+- [AWS] https://docs.aws.amazon.com/network-firewall/latest/developerguide/getting-started.html
+- [Azure] https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+- [Google] https://cloud.google.com/firewall/docs/firewalls
+- [DigitalOcean] https://docs.digitalocean.com/products/networking/firewalls/
+
 ### Firewall do servidor local
+RustDesk configura firewall com `ufw`. Pode não funcionar em algumas distros como CentOS 9, você pode tentar com `firewall-cmd`:
 ```sh
 sudo firewall-cmd --permanent --add-port=21115/tcp
 sudo firewall-cmd --permanent --add-port=21116/tcp
@@ -425,15 +499,30 @@ sudo firewall-cmd --permanent --add-port=21116/udp
 sudo firewall-cmd --reload
 ```
 
+Se usando IP:
+
+```sh
+sudo firewall-cmd --permanent --add-port=21114/tcp
+```
+
+Se usando DNS/Domínio:
+
+```sh
+sudo firewall-cmd --permanent --add-port=80/tcp
+sudo firewall-cmd --permanent --add-port=443/tcp
+```
+
+Após o acima, execute `sudo firewall-cmd --reload` para recarregar o firewall.
+
 ## Após alterar a senha do admin no console web não consigo fazer login. Há uma maneira simples de redefinir a senha?
 1. Certifique-se de ter `rustdesk-utils` instalado. Se não, pode obtê-lo [aqui](https://github.com/rustdesk/rustdesk-server-pro).
 2. O comando é `rustdesk-utils set_password username password`. Se funcionar, dirá *Done*.
-
-## Adicionar certificado CA raiz no contêiner Docker (para falha TLS com SMTP, OIDC etc.)
-https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703
 
 Você também precisa executar o comando da pasta onde o banco de dados está, ou seja, `/var/lib/rustdesk-server`.
 
 Você também tem os seguintes outros comandos `genkeypair`, `validatekeypair [public key] [secret key]`, `doctor [rustdesk-server]`, `reset_email_verification` e `reset_2fa_verification` que podem ser usados com `rustdesk-utils`.
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/183
+
+## Adicionar certificado CA raiz no contêiner Docker (para falha TLS com SMTP, OIDC etc.)
+https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703

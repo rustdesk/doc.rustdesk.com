@@ -542,4 +542,13 @@ sudo firewall-cmd --permanent --add-port=443/tcp
 
 上記の後、`sudo firewall-cmd --reload`を実行してファイアウォールをリロードします。
 
-また、データベースがある場所、つまり`/var/lib/rustdesk-server`からコマンドを実行する必要があります。
+## ウェブコンソールで管理者パスワードを変更した後、ログインできません。パスワードをリセットする簡単な方法はありますか？
+1. `rustdesk-utils`がインストールされていることを確認してください。インストールされていない場合は、[こちら](https://github.com/rustdesk/rustdesk-server-pro)から入手できます。また、データベースがある場所、つまり`/var/lib/rustdesk-server`からコマンドを実行する必要があります。
+2. コマンドは`rustdesk-utils set_password username password`です。動作すれば*Done*と表示されます。
+
+また、`rustdesk-utils`で使用できる以下のコマンドもあります：`genkeypair`、`validatekeypair [public key] [secret key]`、`doctor [rustdesk-server]`、`reset_email_verification`、`reset_2fa_verification`。
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/183
+
+## DockerコンテナにルートCA証明書を追加する（SMTP、OIDCなどでのTLS失敗の場合）
+https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703

@@ -27,9 +27,83 @@ weight: 600
 10. Geben Sie Ihren in Schritt 1 erworbenen Lizenzcode ein.
 
 ## Es gibt eine neue Version von RustDesk Server Pro, wie kann ich ein Upgrade durchführen?
-1. Gehen Sie zu [dieser Seite](/docs/en/self-host/rustdesk-server-pro/installscript/script/#upgrade).
-2. Kopieren Sie den Befehl und fügen Sie ihn in Ihr Linux-Terminal ein.
-3. Folgen Sie den Aufforderungen, die Sie durch das Upgrade führen.
+Sie sollten zuerst Ihre Datendateien (sqlite3-Dateien usw.) sichern, https://github.com/rustdesk/rustdesk-server-pro/discussions/184#discussioncomment-8013375.
+- ### Wenn Sie mit dem Skript installiert haben (`install.sh`)
+Bitte führen Sie [update.sh](/docs/en/self-host/rustdesk-server-pro/installscript/script/#upgrade) aus.
+- ### Docker Compose
+```
+sudo docker compose down
+sudo docker compose pull 
+sudo docker compose up -d
+```
+Dies hängt jedoch von Ihrer Docker-Version ab. Weitere Informationen finden Sie [hier](https://stackoverflow.com/questions/37685581/how-to-get-docker-compose-to-use-the-latest-image-from-repository).
+- ### Docker
+```
+sudo docker ps
+## Sie können auch <CONTAINER NAME> verwenden, z. B. `hbbs` und `hbbr`, wenn Sie unserer Anleitung folgen.
+sudo docker stop <CONTAINER ID>
+sudo docker rm <CONTAINER ID>
+sudo docker rmi <IMAGE ID>
+sudo docker run ..... # Gleicher Befehl wie bei der Installation
+```
+
+z. B.
+
+```
+root@hz:~# sudo docker ps
+CONTAINER ID   IMAGE                          COMMAND   CREATED          STATUS                         PORTS     NAMES
+30822972c220   rustdesk/rustdesk-server-pro   "hbbr"    10 seconds ago   Restarting (1) 2 seconds ago             hbbr
+0f3a6f185be3   rustdesk/rustdesk-server-pro   "hbbs"    15 seconds ago   Up 14 seconds                            hbbs
+root@hz:~# sudo docker kill hbbr hbbs
+hbbr
+hbbs
+root@hz:~# sudo docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+root@hz:~# sudo docker rm hbbr hbbs
+hbbr
+hbbs
+root@hz:~# sudo docker rmi rustdesk/rustdesk-server-pro
+Untagged: rustdesk/rustdesk-server-pro:latest
+Untagged: rustdesk/rustdesk-server-pro@sha256:401b8344323addf777622d0463bd7b964dd18a01599e42e20d8b3818dae71ad2
+Deleted: sha256:a3d9d43a3d1dd84b10c39fe0abf7767b18a87819ff0981443ce9e9a52604c889
+Deleted: sha256:65ae79ecc0f8b1c8a21085d04af7c8d8f368dd5ad844982d4c7b3ac1f38ba33a
+Deleted: sha256:9274a824aef10f2ef106d8f85fbd1905037169cf610951f63dc5109dae4b0825
+Deleted: sha256:aa89ac8b57a49f49f041c01b9c0f016060e611cf282e3fda281bc6bebbabaf3f
+Deleted: sha256:4af9839016f72586a46f915cae8a5ccf3380ba88a2f79532692d3b1d7020387e
+Deleted: sha256:e900a7ffc2fc14fa432cc04823740dcbb78c0aa3508abbbe287ce8b274541ada
+Deleted: sha256:503eeab76c11e8316a2a450ef0790d31c5af203309e9c5b44d1bf8a601e6e587
+Deleted: sha256:825683356e7dbfcbaabcbf469c9aeb34d36ebeab0308170432b9553e28203116
+Deleted: sha256:24a48d4af45bab05d8712fe22abec5761a7781283500e32e34bdff5798c09399
+root@hz:~# sudo docker images
+REPOSITORY         TAG       IMAGE ID       CREATED        SIZE
+rustdesk/makepkg   latest    86a981e2e18f   2 months ago   2.23GB
+root@hz:~# sudo docker run --name hbbs -v ./data:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbs
+Unable to find image 'rustdesk/rustdesk-server-pro:latest' locally
+latest: Pulling from rustdesk/rustdesk-server-pro
+4ce000a43472: Pull complete
+1543f88421d3: Pull complete
+9b209c1f5a8d: Pull complete
+d717f548a400: Pull complete
+1e60b98f5660: Pull complete
+a86960d9bced: Pull complete
+acb361c4bbf6: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:401b8344323addf777622d0463bd7b964dd18a01599e42e20d8b3818dae71ad2
+Status: Downloaded newer image for rustdesk/rustdesk-server-pro:latest
+0cc5387efa8d2099c0d8bc657b10ed153a6b642cd7bbcc56a6c82790a6e49b04
+root@hz:~# sudo docker run --name hbbr -v ./data:/root -td --net=host --restart unless-stopped rustdesk/rustdesk-server-pro hbbr
+4eb9da2dc460810547f6371a1c40a9294750960ef2dbd84168079e267e8f371a
+root@hz:~# sudo docker ps
+CONTAINER ID   IMAGE                          COMMAND   CREATED         STATUS                                  PORTS     NAMES
+4eb9da2dc460   rustdesk/rustdesk-server-pro   "hbbr"    5 seconds ago   Restarting (1) Less than a second ago             hbbr
+0cc5387efa8d   rustdesk/rustdesk-server-pro   "hbbs"    8 seconds ago   Up 7 seconds                                      hbbs
+root@hz:~# sudo docker images
+REPOSITORY                     TAG       IMAGE ID       CREATED        SIZE
+rustdesk/rustdesk-server-pro   latest    a3d9d43a3d1d   5 days ago     193MB
+rustdesk/makepkg               latest    86a981e2e18f   2 months ago   2.23GB
+```
+
+Weitere Details finden Sie [hier](https://www.cherryservers.com/blog/how-to-update-docker-image).
 
 ## Ich habe mit dem Skript installiert, wie kann ich Dienste starten und stoppen?
 Die Dienste verwenden systemd und können mit `sudo systemctl stop|start|restart rustdesk-hbbs|rustdesk-hbbr` gestartet und gestoppt werden, z. B. `sudo systemctl restart rustdesk-hbbs`.
@@ -93,9 +167,8 @@ Bitte setzen Sie sich mit unserem [Verkaufsteam](mailto://sales@rustdesk.com) in
 ## Kann ich irgendwo Videoanleitungen zur Inbetriebnahme ansehen?
 Ja! Wir haben einen [YouTube-Kanal](https://youtube.com/@RustDesk).
 
-## Warum sind meine Protokolle leer?
-Stellen Sie sicher, dass API sowohl auf dem zu steuernden Gerät als auch auf der steuernden Maschine eingestellt ist.
-Klicken Sie auf der linken Seite auf `Logs`.
+## Warum sind meine Protokolle / Gerätenamen leer?
+Stellen Sie sicher, dass API sowohl auf dem zu steuernden Gerät als auch auf der steuernden Maschine korrekt eingestellt ist, https://github.com/rustdesk/rustdesk-server-pro/issues/21#issuecomment-1637935750.
 
 ## Wie kann ich RustDesk Server Pro deinstallieren?
 Führen Sie die folgenden Befehle aus:
@@ -126,7 +199,7 @@ $ErrorActionPreference= 'silentlycontinue'
 
 $rdver = ((Get-ItemProperty  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\RustDesk\").Version)
 
-if ($rdver -eq "1.2.3")
+if ($rdver -eq "1.2.6")
 {
     Write-Output "RustDesk $rdver ist die neueste Version."
     Exit
@@ -139,7 +212,7 @@ if (!(Test-Path C:\Temp))
 
 cd C:\Temp
 
-Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.exe" -Outfile "rustdesk.exe"
+Invoke-WebRequest "https://github.com/rustdesk/rustdesk/releases/download/1.2.6/rustdesk-1.2.6-x86_64.exe" -Outfile "rustdesk.exe"
 Start-Process .\rustdesk.exe --silent-install -wait
 ```
 
@@ -167,7 +240,7 @@ Wenn Sie z. B. den Domänennamen `example.com` von `Namesilo` kaufen und die IP-
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-table.png)
 * Es dauert einige Zeit, bis DNS wirksam wird. Rufen Sie https://www.whatsmydns.net auf und prüfen Sie, ob der Domänenname in die IP-Adresse Ihres Servers aufgelöst wurde. Schritt 6 hängt vom korrekten Auflösungsergebnis ab. Ersetzen Sie in den folgenden Schritten `<IHRE_DOMAIN>` durch Ihre Subdomain, z. B. `rustdesk.example.com`.
 
-### 2. Install nginx
+### 2. Nginx installieren
 * Debian/Ubuntu: `sudo apt-get install nginx`
 * Fedora/CentOS: `sudo dnf install nginx` oder `sudo yum install nginx`
 * Arch: `sudo pacman -S install nginx`
@@ -178,13 +251,13 @@ Wenn Sie z. B. den Domänennamen `example.com` von `Namesilo` kaufen und die IP-
 Führen Sie `nginx -h` aus, um zu überprüfen, ob es erfolgreich installiert wurde.
 
 ### 3. Certbot installieren
-* Method 1: If snap is installed, run `sudo snap install certbot --classic`
-* Method 2: Using `python3-certbot-nginx` instead. eg: `sudo apt-get install python3-certbot-nginx` for ubuntu
-* Method 3: If the above two methods failed, try install `certbot-nginx`, eg: `sudo yum install certbot-nginx` for centos 7
+* Methode 1: Wenn `snap` installiert ist, führen Sie `sudo snap install certbot --classic` aus.
+* Methode 2: Verwenden Sie stattdessen `python3-certbot-nginx`, z. B. `sudo apt-get install python3-certbot-nginx` für Ubuntu.
+* Methode 3: Wenn die beiden obigen Methoden fehlgeschlagen sind, versuchen Sie `certbot-nginx` zu installieren, z. B. `sudo yum install certbot-nginx` für CentOS 7.
 
-Run `certbot -h` to check whether it has been installed successfully.
+Führen Sie `certbot -h` aus, um zu überprüfen, ob es erfolgreich installiert wurde.
 
-### 4. Nginx einrichten
+### 4. Nginx konfigurieren
 Es gibt zwei Möglichkeiten:
 * Wenn die Verzeichnisse `/etc/nginx/sites-available` und `/etc/nginx/sites-enabled` vorhanden sind, ersetzen Sie `<IHRE_DOMAIN>` des folgenden Befehls durch Ihren Domainnamen und führen Sie ihn aus.
 ```sh
@@ -201,9 +274,9 @@ EOF
 ```
 Dann führen Sie `sudo ln -s /etc/nginx/sites-available/rustdesk.conf /etc/nginx/sites-enabled/rustdesk.conf` aus.
 
-Run `cat /etc/nginx/sites-available/rustdesk.conf` to make sure its content is correct.
+Führen Sie `cat /etc/nginx/sites-available/rustdesk.conf` aus, um sicherzustellen, dass der Inhalt korrekt ist.
 
-* If directory `/etc/nginx/sites-available` and `/etc/nginx/sites-enabled` don't exist and directory `/etc/nginx/conf.d` exists, replace `<IHRE_DOMAIN>` of the following command with your domain name and run it.
+* Wenn die Verzeichnisse `/etc/nginx/sites-available` und `/etc/nginx/sites-enabled` nicht existieren und das Verzeichnis `/etc/nginx/conf.d` vorhanden ist, ersetzen Sie `<IHRE_DOMAIN>` des folgenden Befehls durch Ihren Domänennamen und führen Sie ihn aus.
 ```sh
 cat > /etc/nginx/conf.d/rustdesk.conf << EOF
 server {
@@ -229,8 +302,8 @@ sudo ufw --force reload
 ```
 
 ### 6. SSL-Zertifikat generieren
-Ersetzen Sie `<IHRE_DOMAIN>` durch Ihren Domänennamen und führen Sie dann
-`sudo certbot --nginx --cert-name <IHRE_DOMAIN> --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d <IHRE_DOMAIN>` aus.
+Ersetzen Sie `$IHRE_DOMAIN` durch Ihren Domänennamen und führen Sie dann
+`sudo certbot --nginx --cert-name $IHRE_DOMAIN --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d $IHRE_DOMAIN` aus.
 
 Wenn Sie die Aufforderung `Enter email address (used for urgent renewal and security notices)` erhalten, geben Sie Ihre E-Mail-Adresse ein.
 
@@ -285,7 +358,7 @@ Lösung: Fügen Sie einen anderen Domänennamen zu DNS hinzu und ändern Sie `<I
 
 * `Error getting validation data`
 
-Lösung: Möglicherweise liegt es an der Firewall, bitte lesen Sie [hier](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/faq/#firewall) nach.
+Lösung: Möglicherweise liegt es an der Firewall, bitte lesen Sie https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/faq/#firewall nach.
 
 Hinweis: Führen Sie `sudo service nginx restart` aus, wenn Sie die `rustdesk.conf` manuell ändern.
 

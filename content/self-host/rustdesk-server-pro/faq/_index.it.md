@@ -542,4 +542,13 @@ sudo firewall-cmd --permanent --add-port=443/tcp
 
 Dopo quanto sopra, esegui `sudo firewall-cmd --reload` per ricaricare il firewall.
 
-Inoltre devi eseguire il comando dalla cartella dove si trova il database, cioè `/var/lib/rustdesk-server`.
+## Dopo aver cambiato la password admin nella console web non riesco ad accedere. C'è un modo semplice per reimpostare la password?
+1. Assicurati di avere `rustdesk-utils` installato. Se non ce l'hai puoi ottenerlo [qui](https://github.com/rustdesk/rustdesk-server-pro). Inoltre devi eseguire il comando dalla cartella dove si trova il database, cioè `/var/lib/rustdesk-server`.
+2. Il comando è `rustdesk-utils set_password username password`. Se funziona dirà *Done*.
+
+Hai anche i seguenti altri comandi `genkeypair`, `validatekeypair [public key] [secret key]`, `doctor [rustdesk-server]`, `reset_email_verification` e `reset_2fa_verification` che possono essere usati con `rustdesk-utils`.
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/183
+
+## Aggiungere certificato CA radice nel contenitore Docker (per errore TLS con SMTP, OIDC ecc.)
+https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703
