@@ -3,6 +3,10 @@ title: Azure
 weight: 16
 ---
 
+## Video-Tutorial
+
+[https://www.youtube.com/watch?v=izGxSmifURI](https://www.youtube.com/watch?v=izGxSmifURI)
+
 ## Konfiguration
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.

@@ -3,4 +3,4 @@ title: Windows
 weight: 4
 ---
 
-[English](/docs/en/client/windows)
+{{% children depth="3" showhidden="true" %}}

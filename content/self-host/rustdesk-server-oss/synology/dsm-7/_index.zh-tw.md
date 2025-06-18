@@ -45,7 +45,7 @@ services:
 
   hbbr:
     container_name: hbbr
-    image: rustdesk/rustdesk-server:latest
+    image: rustdesk/rustdesk-server:latest # 如果您想安裝 Pro 版本，請將此更改為 rustdesk/rustdesk-server-pro:latest。
     command: hbbr
     volumes:
       - ./data:/root
@@ -54,6 +54,7 @@ services:
 
 # 因為使用 docker host mode
 # 以防你忘記這些端口:
+# 21114 TCP 用於網頁控制台，僅在 Pro 版本中可用
 # 21115 TCP NAT 類型測試
 # 21116 TCP TCP 打洞
 # 21116 UDP 心跳/ID 伺服器
