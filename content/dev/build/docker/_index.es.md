@@ -4,7 +4,8 @@ weight: 30
 ---
 
 
-# Cómo compilar con Docker
+## Cómo compilar con Docker
+### Esto no funcionará en Windows
 
 Comience clonando el repositorio y construyendo el contenedor docker:
 

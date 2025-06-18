@@ -61,3 +61,4 @@ mv libsciter-gtk.so target/debug
 # Nota: VCPKG_ROOT ainda definido
 cargo run
 ```
+

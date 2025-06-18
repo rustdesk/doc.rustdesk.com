@@ -58,6 +58,8 @@ thread 'main' panicked at 'Failed to find package: VcpkgNotFound("No vcpkg insta
 
 Ajoutez la variable d'environnement `VCPKG_ROOT` ou lancer avec la commande `VCPKG_ROOT=<vcpkg_dir> cargo run`
 
+
+
 ## clang non installé ou LIBCLANG_PATH non défini
 
 ### Erreur

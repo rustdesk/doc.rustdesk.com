@@ -3,7 +3,8 @@ title: Docker
 weight: 30
 ---
 
-# Comment construire avec Docker
+## Comment construire avec Docker
+### Cela ne fonctionnera pas sous Windows
 
 Commencez par cloner le dépôt et construire le conteneur Docker :
 
