@@ -1204,7 +1204,7 @@ D3D渲染可以獲得高幀率並減少CPU使用率，但在某些設備上遠�
 
 使用WebSocket協定連接伺服器和用戶端。僅在RustDesk用戶端>=1.4.0和Pro伺服器>= 1.5.7中可用。請注意，WebSocket僅支援中繼連接。
 
-要使WebSocket工作，您需要正確設定反向代理，https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
+要使WebSocket工作，您需要正確設定反向代理， https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
 
 | 值 | 預設值 | 範例 |
 | :------: | :------: | :------: |
@@ -1215,9 +1215,9 @@ D3D渲染可以獲得高幀率並減少CPU使用率，但在某些設備上遠�
 此選項啟用或禁用僅數字一次性密碼的使用。
 僅在RustDesk用戶端>=1.4.1和Pro伺服器>= 1.5.9中可用。
 
-**討論**：https://github.com/rustdesk/rustdesk-server-pro/discussions/685
+**討論**： https://github.com/rustdesk/rustdesk-server-pro/discussions/685
 
-**預覽**：https://github.com/rustdesk/rustdesk/pull/11846
+**預覽**： https://github.com/rustdesk/rustdesk/pull/11846
 
 | 值 | 預設值 | 範例 |
 | :------: | :------: | :------: |
@@ -1236,7 +1236,7 @@ D3D渲染可以獲得高幀率並減少CPU使用率，但在某些設備上遠�
 - 稽核日誌
 - 策略
 
-**討論**：https://github.com/rustdesk/rustdesk-server-pro/discussions/672 和 https://github.com/rustdesk/rustdesk-server-pro/discussions/182
+**討論**： https://github.com/rustdesk/rustdesk-server-pro/discussions/672 和 https://github.com/rustdesk/rustdesk-server-pro/discussions/182
 
 | 值 | 預設值 | 範例 |
 | :------: | :------: | :------: |
