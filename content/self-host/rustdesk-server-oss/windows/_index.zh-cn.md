@@ -3,6 +3,14 @@ title: WINDOWS & PM2 或者 NSSM
 weight: 20
 ---
 
+{{% notice note %}}
+Windows 的安全策略很复杂，如果本教程对您不起作用，或者您遇到连接不稳定的问题，请迁移到 Linux 服务器。
+{{% /notice %}}
+
+{{% notice note %}}
+GUI 版本 `RustDeskServer.setup.exe` 已不再维护，不推荐使用。
+{{% /notice %}}
+
 ## 选择哪个？
 现在您有两种选择，可以使用 PM2（更简单）或 NSSM（更难）来启动 RustDesk 服务器
 使用 NSSM 有一些好处：
