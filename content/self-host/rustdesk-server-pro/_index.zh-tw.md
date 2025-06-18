@@ -1,10 +1,10 @@
 ---
-title: RustDesk Server Pro
+title: 自建伺服器專業版
 weight: 200
 pre: "<b>2.2. </b>"
 ---
 
-RustDesk Server Pro 與開源版本相比具有更多功能。
+自建伺服器專業版與開源版本相比具有更多功能。
 
 - 帳戶
 - [網頁控制台](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
