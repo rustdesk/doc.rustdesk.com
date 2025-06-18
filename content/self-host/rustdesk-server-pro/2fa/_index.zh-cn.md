@@ -20,7 +20,7 @@ weight: 16
 开启登录的邮件验证，需要：
 
 1. 设置邮件
-2. 启用 "Enable email login verification" 选项。
+2. 启用 "启用邮件登录验证" 选项。
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/2-2fa-email-1.png)
 
@@ -40,7 +40,7 @@ TOTP 是广泛使用的 2FA 方式，因此在 RustDesk Server Pro 的 web conso
 
 ### 开启 2FA
 
-当设置页显示 "Enable 2FA" 的按钮时，说明 2FA 当前未开启。
+当设置页显示 "启用 2FA" 的按钮时，说明 2FA 当前未开启。
 
 ![](/docs/en/self-host/rustdesk-server-pro/2fa/images/3-2fa-enable-1.png)
 

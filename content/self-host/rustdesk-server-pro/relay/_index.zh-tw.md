@@ -103,10 +103,10 @@ To                         Action      From
 <br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/3e178174-5fbf-46b7-a335-01f77125dfad">
 
-您可以通過幾種方式自動化[下載過程](https://dev.maxmind.com/geoip/updating-databases)，但您可以將以下命令添加到您的crontab中，將{Your Access Key}替換為您從上一步獲得的API密鑰。
+您可以通過幾種方式自動化[下載過程](https://dev.maxmind.com/geoip/updating-databases)，但您可以將以下命令添加到您的crontab中，將{您的訪問密鑰}替換為您從上一步獲得的API密鑰。
 
 ```
-/usr/bin/curl -L --silent 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={Your Access Key}&suffix=tar.gz' | /bin/tar -C '/var/lib/rustdesk-server/' -xvz --keep-newer-files --strip-components=1 --wildcards '*GeoLite2-City.mmdb'
+/usr/bin/curl -L --silent 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={您的訪問密鑰}&suffix=tar.gz' | /bin/tar -C '/var/lib/rustdesk-server/' -xvz --keep-newer-files --strip-components=1 --wildcards '*GeoLite2-City.mmdb'
 ```
 
 ### 在RustDesk Pro Web控制台中更改設置

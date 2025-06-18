@@ -33,9 +33,9 @@ GUI 版本 `RustDeskServer.setup.exe` 已不再维护，不推荐使用。
 2. 为 RustDesk 创建一个新网站，设置绑定（理想情况下为 443）和相关证书。基本设置应该指向一个空白文件夹。（如果您使用默认站点，请确保文件夹中没有其他文件）。
 3. 在 IIS 上，安装 [Application Request Routing](https://www.iis.net/downloads/microsoft/application-request-routing) 和 [URL Rewrite](https://learn.microsoft.com/en-us/iis/extensions/url-rewrite-module/using-the-url-rewrite-module)。
 
-## Application Request Routing
+## 应用程序请求路由
 
-1. 在 IIS 服务器主机下打开 Application Request Routing。
+1. 在 IIS 服务器主机下打开应用程序请求路由。
 2. 转到 Server Proxy Settings。
 3. 启用代理，所有设置都会出现，您可以保持默认值。
 4. 保存设置，然后我们可以进入下一步：URL Rewrite。

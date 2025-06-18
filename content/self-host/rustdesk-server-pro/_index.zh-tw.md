@@ -71,11 +71,17 @@ sudo docker compose up -d
 
 > 如果您在試用期間不想使用 HTTPS，可以跳過此步驟，但請記住在設定 HTTPS 後更改客戶端的 API 位址
 
-這裡有一個簡單的[手動 HTTPS 設定](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually)教學。
+這裡有一個[手動設定 HTTPS](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually) 的簡單教學。
 
 ### 5. 設定客戶端使用自架伺服器
 
 https://rustdesk.com/docs/en/self-host/client-configuration/
+
+### 6. 設定 WebSocket
+
+要啟用網頁客戶端或[桌面/行動客戶端](/docs/en/self-host/client-configuration/advanced-settings/#allow-websocket)使用 WebSocket 正常運作，您需要將以下設定加入您的反向代理設定中。
+
+https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
 
 ### 6. 設定 WebSocket
 

@@ -1,24 +1,24 @@
 ---
-title: 自建服务器专业版
+title: RustDesk Server Pro
 weight: 200
 pre: "<b>2.2. </b>"
 ---
 
-自建服务器专业版相较于开源版本拥有更多功能。
+RustDesk Server Pro 相较于开源版本拥有更多功能。
 
 - 账户
-- 无限并发连接限制，即无限制的同时连接
 - [Web 控制台](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
-- API
-- [OIDC](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/)，[LDAP](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/)，[2FA](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/)
+- [API](https://github.com/rustdesk/rustdesk/wiki/FAQ#api-of-rustdesk-server-pro)
+- [OIDC](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/)、[LDAP](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/)、[2FA](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/)
 - 通讯录
-- 改名
 - 日志管理（连接、文件传输、告警等）
 - 设备管理
 - [安全设置同步](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/)
 - [访问控制](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/)
 - [多中继服务器](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/)（自动选择离您最近的中继）
 - [自定义客户端生成器](https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only)
+- WebSocket
+- Web 客户端自托管
 
 {{% notice note %}}
 如果您在家中或办公室搭建自己的服务器，但无法通过公共 IP/域名进行连接，请查看[这篇文章](https://rustdesk.com/docs/en/self-host/nat-loopback-issues/)。
@@ -37,14 +37,9 @@ pre: "<b>2.2. </b>"
 
 ## 视频教程
 
-网上有[许多视频教程](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/#video-tutorials)可供参考，帮助您安装 OSS 免费版。
+[新手指南：为 Linux 新手用户自托管 RustDesk Server Pro](https://www.youtube.com/watch?v=MclmfYR3frk)
 
-还有另一篇[优秀教程](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f/?trackingId=a07rn2fkBW1ctLHaJ0tVcg%3D%3D)讲解如何在 Hetzner 云上通过 Docker 自托管 OSS 免费版。
-
-Pro 版本的安装几乎相同，除了以下几点不同：
-
-- 需要不同的下载路径以及[Docker 镜像](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/) / [compose 文件](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/#docker-compose)。
-- 控制台需要额外开放 TCP 端口 21114。
+[快速指南：为高级 Linux 用户自托管 RustDesk Server Pro](https://youtu.be/gMKFEziajmo)
 
 ## 许可证
 
@@ -56,10 +51,10 @@ Pro 版本的安装几乎相同，除了以下几点不同：
 ```
 bash <(wget -qO- https://get.docker.com)
 wget rustdesk.com/pro.yml -O compose.yml
-docker compose up -d
+sudo docker compose up -d
 ```
 
-更多详情请查看[Docker]( /docs/en/self-host/rustdesk-server-pro/installscript/docker/)。
+更多详情请查看 [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/)。
 
 ### 2、所需端口
 
@@ -69,17 +64,23 @@ docker compose up -d
 
 ### 3、设置许可证
 
-通过访问 `http://<服务器IP>:21114` 打开您的控制台，使用默认凭据 admin/test1234 登录（用户名：admin，密码：test1234）。按照[此指南](/docs/en/self-host/rustdesk-server-pro/license/#set-license)设置许可证。
+通过访问 `http://<服务器 IP>:21114` 打开您的 Web 控制台，使用默认凭据 `admin`/`test1234` [登录](/docs/en/self-host/rustdesk-server-pro/console/#log-in)。按照[此指南](/docs/en/self-host/rustdesk-server-pro/license/#set-license)设置许可证。
 
-### 4、为控制台配置 HTTPS
+### 4、为 Web 控制台设置 HTTPS
 
-> 如果在试用期间您不希望使用 HTTPS，可以跳过此步骤，但配置 HTTPS 后请记得更改客户端的 API 地址
+> 如果在试用期间您不希望使用 HTTPS，可以跳过此步骤，但设置 HTTPS 后请记得更改客户端的 API 地址
 
-这里提供了一篇[手动配置 HTTPS 的简单教程](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually)。
+这里有一个[手动设置 HTTPS](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually) 的简单教程。
 
 ### 5、配置客户端使用自托管服务器
 
 https://rustdesk.com/docs/en/self-host/client-configuration/
+
+### 6、设置 WebSocket
+
+要使 Web 客户端或[桌面/移动客户端](/docs/en/self-host/client-configuration/advanced-settings/#allow-websocket)能够通过 WebSocket 正常工作，您需要在反向代理配置中添加以下设置。
+
+https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
 
 ## 升级服务器
 

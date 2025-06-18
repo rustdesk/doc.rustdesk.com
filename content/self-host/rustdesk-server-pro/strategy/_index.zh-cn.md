@@ -16,7 +16,7 @@ weight: 200
 ![](/docs/en/self-host/rustdesk-server-pro/strategy/images/strategy_menu.png)
 
 
-# 设备策略、用户策略和设备组策略
+## 设备策略、用户策略和设备组策略
 
 策略按照以下优先级顺序应用：
 1. 设备策略（最高优先级）

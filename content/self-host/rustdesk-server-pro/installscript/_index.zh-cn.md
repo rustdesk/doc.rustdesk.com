@@ -3,7 +3,7 @@ title:  安装
 weight: 2
 ---
 
-## 方法1：Docker (Recommended)
+## 方法1：Docker (推荐)
 
 ```
 bash <(wget -qO- https://get.docker.com)
@@ -11,20 +11,20 @@ wget rustdesk.com/pro.yml -O compose.yml
 docker compose up -d
 ```
 
-For more details, please check [Docker](/docs/en/self-host/rustdesk-server-pro/installscript/docker/).
+更多详情，请查看 [Docker](/docs/zh-cn/self-host/rustdesk-server-pro/installscript/docker/)。
 
 ## 方法 2：install.sh
 
-If you are proficient in Linux, please use the script below. Otherwise, you may encounter significant issues if it fails, and it could be difficult to determine why it isn’t working.
+如果您精通 Linux，请使用下面的脚本。否则，如果脚本执行失败，您可能会遇到严重问题，并且很难确定问题原因。
 
 `bash <(wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh)`
 
-For more details, please check [install.sh](/docs/en/self-host/rustdesk-server-pro/installscript/script/).
+更多详情，请查看 [install.sh](/docs/zh-cn/self-host/rustdesk-server-pro/installscript/script/)。
 
-## Convert from open source
+## 从开源版本转换
 
 ### Docker
-If you install the open-source version using Docker, there is no direct way to convert it. Instead, you’ll need to run a new container with the Pro image. Before doing this, please back up your private key (the `id_ed25519` file, not `id_ed25519.pub`). Once the new container is set up, copy the old `id_ed25519` private key file to the working directory of the new container, then restart the container.
+如果您使用 Docker 安装了开源版本，没有直接的转换方法。相反，您需要使用 Pro 镜像运行一个新容器。在执行此操作之前，请备份您的私钥（`id_ed25519` 文件，而不是 `id_ed25519.pub`）。设置新容器后，将旧的 `id_ed25519` 私钥文件复制到新容器的工作目录中，然后重启容器。
 
 ### install.sh
-If you install the open-source version using install.sh, please follow [this](/docs/en/self-host/rustdesk-server-pro/installscript/script/#convert-from-open-source).
+如果您使用 install.sh 安装了开源版本，请参考[这里](/docs/zh-cn/self-host/rustdesk-server-pro/installscript/script/#convert-from-open-source)。
