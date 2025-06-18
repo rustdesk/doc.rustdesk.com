@@ -113,3 +113,6 @@ pm2 save
 pm2 log hbbr
 pm2 log hbbs
 ```
+
+## 替代教程
+https://pedja.supurovic.net/setting-up-self-hosted-rustdesk-server-on-windows/?lang=lat
