@@ -2,6 +2,8 @@ name: Deploy
 
 on: [workflow_dispatch]
 
+permissions:
+  contents: read
 jobs:
   deploy:
     name: Deploy
@@ -10,9 +12,12 @@ jobs:
       
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          persist-credentials: false
 
       - name: Install Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: '0.147.8'
 
@@ -28,9 +33,6 @@ jobs:
 
       - name: Build
         run: |
-          #sudo apt update
-          #sudo apt install -y git
-          git submodule update --init
           hugo --minify
           cd public; tar czf x *
           scp x ${{ secrets.NAME }}@${{ secrets.HOST }}:/tmp/

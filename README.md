@@ -2,23 +2,40 @@
 
 [**Preview**](https://rustdesk.com/docs/)
 
-Install [hugo](https://gohugo.io/getting-started/installing/)
+## Preview and build at local
 
-The clone this repo
-`git clone https://github.com/rustdesk/doc.rustdesk.com.git`
+1. Install [Hugo](https://gohugo.io/installation)
 
-Change to this folder:
+2. Clone the repo, if you want to submit changes, please [Fork](https://github.com/rustdesk/doc.rustdesk.com/fork) and clone your fork.
 
-`cd docs.rustdesk.com`
-
-Then run the following commands:
+```sh
+git clone --recursive https://github.com/rustdesk/doc.rustdesk.com.git
 ```
-hugo new site quickstart
-cd quickstart
-git init
-git clone https://github.com/matcornic/hugo-theme-learn themes/hugo-theme-learn
-echo "theme = 'hugo-theme-learn'" >> hugo.toml
+
+3. Change to the folder:
+
+```sh
+cd docs.rustdesk.com
+```
+
+4. Start Hugo Server
+
+```sh
 hugo server
 ```
 
-Make any changes and then reupload.
+If you found any bugs, stop the server and delete `public` folder and run again.
+
+You could make changes and than push and create PR.
+
+## Update branch/fork
+
+Sync your fork at GitHub UI or create new branch that points to upstream.
+
+Make sure you've checkout to right branch, and run:
+
+```sh
+git pull --recurse-submodules
+```
+
+If you're cloned from here, just run the command.
