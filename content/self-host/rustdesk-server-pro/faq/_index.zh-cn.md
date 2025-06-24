@@ -301,7 +301,7 @@ net start rustdesk > null
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-button.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-add-a-record.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-table.png)
-* DNS 生效需要一些时间，访问 https://www.whatsmydns.net 检查域名是否已解析到您的服务器 IP 地址。第 6 步取决于正确的解析结果。在以下步骤中，将 `<YOUR_DOMAIN>` 替换为您的子域名，例如 `rustdesk.example.com`。
+* DNS 生效需要一些时间，访问 https://www.whatsmydns.net 检查域名是否已解析到您的服务器 IP 地址。第 6 步取决于正确的解析结果。在以下步骤中，将 `YOUR_DOMAIN` 替换为您的子域名，例如 `rustdesk.example.com`。
 
 ### 2. 安装 Nginx
 * Debian/Ubuntu: `sudo apt-get install nginx`
@@ -322,11 +322,11 @@ net start rustdesk > null
 
 ### 4. 配置 Nginx
 有两种方式：
-* 如果存在目录 `/etc/nginx/sites-available` 和 `/etc/nginx/sites-enabled`，将以下命令中的 `<YOUR_DOMAIN>` 替换为您的域名并运行。
+* 如果存在目录 `/etc/nginx/sites-available` 和 `/etc/nginx/sites-enabled`，将以下命令中的 `YOUR_DOMAIN` 替换为您的域名并运行。
 ```sh
 cat > /etc/nginx/sites-available/rustdesk.conf << EOF
 server {
-    server_name <YOUR_DOMAIN>;
+    server_name YOUR_DOMAIN;
     location / {
         proxy_set_header        X-Real-IP       \$remote_addr;
         proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
@@ -339,11 +339,11 @@ EOF
 
 运行 `cat /etc/nginx/sites-available/rustdesk.conf` 确保其内容正确。
 
-* 如果目录 `/etc/nginx/sites-available` 和 `/etc/nginx/sites-enabled` 不存在，但目录 `/etc/nginx/conf.d` 存在，将以下命令中的 `<YOUR_DOMAIN>` 替换为您的域名并运行。
+* 如果目录 `/etc/nginx/sites-available` 和 `/etc/nginx/sites-enabled` 不存在，但目录 `/etc/nginx/conf.d` 存在，将以下命令中的 `YOUR_DOMAIN` 替换为您的域名并运行。
 ```sh
 cat > /etc/nginx/conf.d/rustdesk.conf << EOF
 server {
-    server_name <YOUR_DOMAIN>;
+    server_name YOUR_DOMAIN;
     location / {
         proxy_set_header        X-Real-IP       \$remote_addr;
         proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
@@ -374,7 +374,7 @@ sudo ufw --force reload
 
 ```
 server {
-    server_name <YOUR_DOMAIN>;
+    server_name YOUR_DOMAIN;
     location / {
         proxy_set_header        X-Real-IP       $remote_addr;
         proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -382,18 +382,18 @@ server {
     }
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/<YOUR_DOMAIN>/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/<YOUR_DOMAIN>/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/YOUR_DOMAIN/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/YOUR_DOMAIN/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 }
 
 server {
-    if ($host = <YOUR_DOMAIN>) {
+    if ($host = YOUR_DOMAIN) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
-    server_name <YOUR_DOMAIN>;
+    server_name YOUR_DOMAIN;
     listen 80;
     return 404; # managed by Certbot
 }
@@ -401,11 +401,11 @@ server {
 
 以下是一些常见错误：
 
-* 控制台打印 `Successfully deployed certificate for <YOUR_DOMAIN> to /etc/nginx/.../default` 而不是 `Successfully deployed certificate for <YOUR_DOMAIN> to /etc/nginx/.../rustdesk.conf`。
+* 控制台打印 `Successfully deployed certificate for YOUR_DOMAIN to /etc/nginx/.../default` 而不是 `Successfully deployed certificate for YOUR_DOMAIN to /etc/nginx/.../rustdesk.conf`。
 
 原因可能是 Certbot 找不到 `rustdesk.conf` 文件，您可以尝试以下解决方案之一：
 - 检查第 5 步的结果，运行 `sudo service nginx restart`。
-- 将包含 `<YOUR_DOMAIN>` 的服务器配置 `server{...}` 复制到 `rustdesk.conf`，并将 `location{...}` 更改为以下内容。
+- 将包含 `YOUR_DOMAIN` 的服务器配置 `server{...}` 复制到 `rustdesk.conf`，并将 `location{...}` 更改为以下内容。
 
 ```sh
 location / {
@@ -417,7 +417,7 @@ location / {
 
 * `too many certificates (5) already issued for this exact set of domains in the last 168 hours`
 
-解决方案：向 DNS 添加另一个域名并将 `<YOUR_DOMAIN>` 更改为它，例如 `rustdesk2.example.com`。然后重复步骤 1、4、6。
+解决方案：向 DNS 添加另一个域名并将 `YOUR_DOMAIN` 更改为它，例如 `rustdesk2.example.com`。然后重复步骤 1、4、6。
 
 * `Error getting validation data`
 
@@ -426,12 +426,12 @@ location / {
 注意：如果您手动更改了 `rustdesk.conf`，请运行 `sudo service nginx restart`。
 
 ### 7. 登录网页
-* 在浏览器中打开 `https://<YOUR_DOMAIN>`，使用默认用户名 "admin" 和密码 "test1234" 登录，然后将密码更改为您自己的密码。
+* 在浏览器中打开 `https://YOUR_DOMAIN`，使用默认用户名 "admin" 和密码 "test1234" 登录，然后将密码更改为您自己的密码。
 
 ### 8. 为 ID 服务器和中继服务器添加 WebSocket Secure (WSS) 支持，以启用所有平台的安全通信
 
 将以下配置添加到 `/etc/nginx/.../rustdesk.conf` 文件的第一个 `server` 部分，然后重启 `Nginx` 服务。
-Web客户端通过 `https://<YOUR_DOMAIN>/web`访问, 自定义客户端通过在高级选项中设置 `allow-websocket=Y`来使用websocket。如果自定义客户端中启用了websocket，该自定义客户端将不会被使用tcp/udp, 只能通过中继连接(除IP直连)。如果只使用这种启用了websocket的客户端, 也可以关闭服务器的21114~21119端口, 只开启443端口。
+Web客户端通过 `https://YOUR_DOMAIN/web`访问, 自定义客户端通过在高级选项中设置 `allow-websocket=Y`来使用websocket。如果自定义客户端中启用了websocket，该自定义客户端将不会被使用tcp/udp, 只能通过中继连接(除IP直连)。如果只使用这种启用了websocket的客户端, 也可以关闭服务器的21114~21119端口, 只开启443端口。
 ```
     location /ws/id {
         proxy_pass http://127.0.0.1:21118;
@@ -462,7 +462,7 @@ Web客户端通过 `https://<YOUR_DOMAIN>/web`访问, 自定义客户端通过�
 
 ```
 server {
-    server_name <YOUR_DOMAIN>;
+    server_name YOUR_DOMAIN;
     location / {
         proxy_set_header        X-Real-IP       $remote_addr;
         proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -494,18 +494,18 @@ server {
     }
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/<YOUR_DOMAIN>/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/<YOUR_DOMAIN>/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/YOUR_DOMAIN/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/YOUR_DOMAIN/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 }
 
 server {
-    if ($host = <YOUR_DOMAIN>) {
+    if ($host = YOUR_DOMAIN) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
-    server_name <YOUR_DOMAIN>;
+    server_name YOUR_DOMAIN;
     listen 80;
     return 404; # managed by Certbot
 }

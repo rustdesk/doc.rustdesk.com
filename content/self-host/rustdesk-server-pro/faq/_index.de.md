@@ -368,7 +368,7 @@ Hinweis: Führen Sie `sudo service nginx restart` aus, wenn Sie die `rustdesk.co
 ### 8. WebSocket Secure (WSS) Unterstützung für den ID-Server und Relay-Server hinzufügen, um sichere Kommunikation für alle Plattformen zu ermöglichen
 
 Fügen Sie die folgende Konfiguration zum ersten `server`-Abschnitt der Datei `/etc/nginx/.../rustdesk.conf` hinzu und starten Sie dann den `Nginx`-Dienst neu. 
-Der Web-Client kann über `https://<YOUR_DOMAIN>/web` aufgerufen werden. Benutzerdefinierte Clients können WebSocket verwenden, indem sie in den erweiterten Optionen `allow-websocket=Y` einstellen. Wenn der benutzerdefinierte Client mit aktiviertem WebSocket verwendet wird, wird er kein TCP/UDP nutzen und kann nur über ein Relais (außer bei direkten IP-Verbindungen) verbunden werden. Wenn nur dieser WebSocket-aktivierte Client verwendet wird, kann der Server die Ports 21114 bis 21119 schließen und nur Port 443 offen halten.
+Der Web-Client kann über `https://YOUR_DOMAIN/web` aufgerufen werden. Benutzerdefinierte Clients können WebSocket verwenden, indem sie in den erweiterten Optionen `allow-websocket=Y` einstellen. Wenn der benutzerdefinierte Client mit aktiviertem WebSocket verwendet wird, wird er kein TCP/UDP nutzen und kann nur über ein Relais (außer bei direkten IP-Verbindungen) verbunden werden. Wenn nur dieser WebSocket-aktivierte Client verwendet wird, kann der Server die Ports 21114 bis 21119 schließen und nur Port 443 offen halten.
 
 ```
     location /ws/id {
@@ -400,7 +400,7 @@ Die vollständige Konfiguration lautet:
 
 ```
 server {
-    server_name <YOUR_DOMAIN>;
+    server_name YOUR_DOMAIN;
     location / {
         proxy_set_header        X-Real-IP       $remote_addr;
         proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -432,18 +432,18 @@ server {
     }
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/<YOUR_DOMAIN>/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/<YOUR_DOMAIN>/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/YOUR_DOMAIN/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/YOUR_DOMAIN/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 }
 
 server {
-    if ($host = <YOUR_DOMAIN>) {
+    if ($host = YOUR_DOMAIN) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
-    server_name <YOUR_DOMAIN>;
+    server_name YOUR_DOMAIN;
     listen 80;
     return 404; # managed by Certbot
 }

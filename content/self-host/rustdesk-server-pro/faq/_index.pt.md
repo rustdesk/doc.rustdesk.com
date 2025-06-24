@@ -229,7 +229,7 @@ Por exemplo, se você comprar um nome de domínio `example.com` da `Namesilo` e 
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-button.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-add-a-record.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-table.png)
-* Leva algum tempo para o DNS ter efeito, https://www.whatsmydns.net e verifique se o nome de domínio foi resolvido para o endereço IP do seu servidor. O passo 6 depende do resultado correto da resolução. Nos próximos passos, substitua `<YOUR_DOMAIN>` pelo seu subdomínio, por exemplo, `rustdesk.example.com`.
+* Leva algum tempo para o DNS ter efeito, https://www.whatsmydns.net e verifique se o nome de domínio foi resolvido para o endereço IP do seu servidor. O passo 6 depende do resultado correto da resolução. Nos próximos passos, substitua `YOUR_DOMAIN` pelo seu subdomínio, por exemplo, `rustdesk.example.com`.
 
 ### 2. Instalar Nginx
 * Debian/Ubuntu: `sudo apt-get install nginx`
@@ -250,11 +250,11 @@ Execute `certbot -h` para verificar se foi instalado com sucesso.
 
 ### 4. Configurar Nginx
 Existem duas maneiras:
-* Se os diretórios `/etc/nginx/sites-available` e `/etc/nginx/sites-enabled` existirem, substitua `<YOUR_DOMAIN>` do seguinte comando pelo seu nome de domínio e execute-o.
+* Se os diretórios `/etc/nginx/sites-available` e `/etc/nginx/sites-enabled` existirem, substitua `YOUR_DOMAIN` do seguinte comando pelo seu nome de domínio e execute-o.
 ```sh
 cat > /etc/nginx/sites-available/rustdesk.conf << EOF
 server {
-    server_name <YOUR_DOMAIN>;
+    server_name YOUR_DOMAIN;
     location / {
         proxy_set_header        X-Real-IP       \$remote_addr;
         proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
@@ -267,11 +267,11 @@ Em seguida, execute `sudo ln -s /etc/nginx/sites-available/rustdesk.conf /etc/ng
 
 Execute `cat /etc/nginx/sites-available/rustdesk.conf` para garantir que seu conteúdo esteja correto.
 
-* Se os diretórios `/etc/nginx/sites-available` e `/etc/nginx/sites-enabled` não existirem e o diretório `/etc/nginx/conf.d` existir, substitua `<YOUR_DOMAIN>` do seguinte comando pelo seu nome de domínio e execute-o.
+* Se os diretórios `/etc/nginx/sites-available` e `/etc/nginx/sites-enabled` não existirem e o diretório `/etc/nginx/conf.d` existir, substitua `YOUR_DOMAIN` do seguinte comando pelo seu nome de domínio e execute-o.
 ```sh
 cat > /etc/nginx/conf.d/rustdesk.conf << EOF
 server {
-    server_name <YOUR_DOMAIN>;
+    server_name YOUR_DOMAIN;
     location / {
         proxy_set_header        X-Real-IP       \$remote_addr;
         proxy_set_header        X-Forwarded-For \$proxy_add_x_forwarded_for;
@@ -301,7 +301,7 @@ Se solicitar `Enter email address (used for urgent renewal and security notices)
 Finalmente, o conteúdo de `rustdesk.conf` deve ser assim:
 ```
 server {
-    server_name <YOUR_DOMAIN>;
+    server_name YOUR_DOMAIN;
     location / {
         proxy_set_header        X-Real-IP       $remote_addr;
         proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -309,18 +309,18 @@ server {
     }
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/<YOUR_DOMAIN>/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/<YOUR_DOMAIN>/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/YOUR_DOMAIN/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/YOUR_DOMAIN/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 }
 
 server {
-    if ($host = <YOUR_DOMAIN>) {
+    if ($host = YOUR_DOMAIN) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
-    server_name <YOUR_DOMAIN>;
+    server_name YOUR_DOMAIN;
     listen 80;
     return 404; # managed by Certbot
 }
@@ -328,11 +328,11 @@ server {
 
 Aqui estão alguns erros comuns:
 
-* O console imprime `Successfully deployed certificate for <YOUR_DOMAIN> to /etc/nginx/.../default` em vez de `Successfully deployed certificate for <YOUR_DOMAIN> to /etc/nginx/.../rustdesk.conf`.
+* O console imprime `Successfully deployed certificate for YOUR_DOMAIN to /etc/nginx/.../default` em vez de `Successfully deployed certificate for YOUR_DOMAIN to /etc/nginx/.../rustdesk.conf`.
 
 O motivo pode ser que o Certbot não encontra o arquivo `rustdesk.conf`, você pode tentar uma das seguintes soluções:
 - Verifique o resultado do passo 5, execute `sudo service nginx restart`.
-- Copie as configurações do servidor `server{...}` que contêm `<YOUR_DOMAIN>` para `rustdesk.conf` e altere `location{...}` para o conteúdo abaixo.
+- Copie as configurações do servidor `server{...}` que contêm `YOUR_DOMAIN` para `rustdesk.conf` e altere `location{...}` para o conteúdo abaixo.
 
 ```sh
 location / {
@@ -344,7 +344,7 @@ location / {
 
 * `too many certificates (5) already issued for this exact set of domains in the last 168 hours`
 
-Solução: Adicione outro nome de domínio ao DNS e altere `<YOUR_DOMAIN>` para ele, por exemplo, `rustdesk2.example.com`. Em seguida, repita os passos 1, 4, 6.
+Solução: Adicione outro nome de domínio ao DNS e altere `YOUR_DOMAIN` para ele, por exemplo, `rustdesk2.example.com`. Em seguida, repita os passos 1, 4, 6.
 
 * `Error getting validation data`
 
@@ -353,12 +353,12 @@ Solução: pode ser causado por firewall, consulte https://rustdesk.com/docs/en/
 Aviso: Execute `sudo service nginx restart` se você alterar o `rustdesk.conf` manualmente.
 
 ### 7. Fazer login na página web
-* Abra `https://<YOUR_DOMAIN>` no navegador, faça login usando o nome de usuário padrão "admin" e senha "test1234", depois altere a senha para a sua própria.
+* Abra `https://YOUR_DOMAIN` no navegador, faça login usando o nome de usuário padrão "admin" e senha "test1234", depois altere a senha para a sua própria.
 
 ### 8. Adicionar suporte WebSocket Secure (WSS) para o servidor de ID e servidor de retransmissão para habilitar comunicação segura em todas as plataformas.
 
 Adicione a seguinte configuração à primeira seção `server` do arquivo `/etc/nginx/.../rustdesk.conf`, depois reinicie o serviço `Nginx`.
-O cliente web pode ser acessado via `https://<YOUR_DOMAIN>/web`. Clientes personalizados podem usar WebSocket definindo `allow-websocket=Y` nas opções avançadas. Se o cliente personalizado com WebSocket habilitado for usado, ele não utilizará TCP/UDP e só poderá se conectar através de um retransmissor (exceto para conexões diretas de IP). Se apenas este cliente habilitado para WebSocket for usado, o servidor pode fechar as portas 21114 a 21119 e manter apenas a porta 443 aberta.
+O cliente web pode ser acessado via `https://YOUR_DOMAIN/web`. Clientes personalizados podem usar WebSocket definindo `allow-websocket=Y` nas opções avançadas. Se o cliente personalizado com WebSocket habilitado for usado, ele não utilizará TCP/UDP e só poderá se conectar através de um retransmissor (exceto para conexões diretas de IP). Se apenas este cliente habilitado para WebSocket for usado, o servidor pode fechar as portas 21114 a 21119 e manter apenas a porta 443 aberta.
 
 
 
@@ -393,7 +393,7 @@ A configuração completa é
 
 ```
 server {
-    server_name <YOUR_DOMAIN>;
+    server_name YOUR_DOMAIN;
     location / {
         proxy_set_header        X-Real-IP       $remote_addr;
         proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -425,18 +425,18 @@ server {
     }
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/<YOUR_DOMAIN>/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/<YOUR_DOMAIN>/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/YOUR_DOMAIN/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/YOUR_DOMAIN/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 }
 
 server {
-    if ($host = <YOUR_DOMAIN>) {
+    if ($host = YOUR_DOMAIN) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
-    server_name <YOUR_DOMAIN>;
+    server_name YOUR_DOMAIN;
     listen 80;
     return 404; # managed by Certbot
 }
