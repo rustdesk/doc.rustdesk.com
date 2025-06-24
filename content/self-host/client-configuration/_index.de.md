@@ -23,7 +23,7 @@ Derzeit werden Windows X64, Mac Arm64 / X64, [Linux](https://twitter.com/rustdes
 
 Im Hauptmenü des RustDesk-Clients klicken Sie auf die Menü-Schaltfläche [ &#8942; ] neben Ihrer ID und dann auf Netzwerk. Sie können nun die Einstellungen mit erhöhten Rechten freischalten und Ihre ID, Relay, API und Schlüssel einstellen.
 
-![](/docs/en/self-host/client-configuration//docs/en/self-host/client-configuration/images/network-config.png)
+![](/docs/en/self-host/client-configuration/images/network-config.png)
 
 Geben Sie in das Eingabefeld **ID-Server** den `hbbs`-Host oder die IP-Adresse ein (lokale Seite und entfernte Seite). Die anderen beiden Adressen können leer gelassen werden, RustDesk wird sie automatisch ermitteln (falls nicht speziell eingestellt). Der Relay-Server bezieht sich auf `hbbr` (Port 21117).
 
@@ -45,7 +45,7 @@ Um eine verschlüsselte Verbindung zu Ihrem self-hosted Server herzustellen, mü
 
 Als `Pro`-Benutzer können Sie den Schlüssel zusätzlich über die [Webkonsole](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/console/) abrufen.
 
-![](/docs/en/self-host/rustdesk-server-pro/console//docs/en/self-host/client-configuration/images/console-home.png?v2)
+![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
 ### `API-Server` festlegen
 
@@ -77,7 +77,7 @@ Sie können auch die Schritte von [oben](https://rustdesk.com/docs/de/self-host/
 
 ## 5. Konfiguration aus `Pro` über die Zwischenablage importieren
 
-![](/docs/en/self-host/rustdesk-server-pro/console//docs/en/self-host/client-configuration/images/console-home.png?v2)
+![](/docs/en/self-host/rustdesk-server-pro/console/images/console-home.png?v2)
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/372#discussioncomment-10473298
 
