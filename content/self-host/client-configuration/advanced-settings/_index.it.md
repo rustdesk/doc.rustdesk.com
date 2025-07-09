@@ -83,6 +83,18 @@ Abilita la fotocamera per le connessioni in ingresso.
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-camera=Y` |
 
+### enable-terminal
+
+Abilita il terminale per le connessioni in entrata.
+
+**Posizione**:
+
+**Desktop** Impostazioni → Sicurezza → Autorizzazioni → Abilita terminale
+
+| Installazione richiesta | Valori | Predefinito | Esempio |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-terminal=Y` |
+
 ### enable-remote-printer
 
 Abilita la stampante remota per le connessioni in ingresso.
@@ -274,6 +286,17 @@ Che tipo di password può essere utilizzata, `password temporanea` si riferisce 
 | Installazione richiesta | Valori | Predefinito | Esempio |
 | :------: | :------: | :------: | :------: |
 | N | use-temporary-password, use-permanent-password, use-both-passwords | use-both-passwords | `verification-method=use-permanent-password` |
+
+### temporary-password-length
+
+1. **Desktop** Impostazioni → Sicurezza → Password → Lunghezza password monouso
+2. **Mobile** Condividi schermo → Menu a discesa in alto a destra → Lunghezza password monouso
+
+La lunghezza della password temporanea.
+
+| Installazione richiesta | Valori | Predefinito | Esempio |
+| :------: | :------: | :------: | :------: |
+| N | 6, 8, 10 | 6 | `temporary-password-length=6` |
 
 ### proxy-url
 
@@ -547,6 +570,44 @@ Filtra rubrica per intersezione di tag.
 | Installazione richiesta | Valori | Predefinito | Esempio |
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `filter-ab-by-intersection=N` |
+
+### use-texture-render
+
+**Posizione**:
+
+**Desktop** Impostazioni → Generale → Altro → Usa rendering texture
+
+Usa il rendering delle texture per rendere le immagini più fluide. Puoi provare a disabilitare questa opzione se riscontri problemi di rendering. Disponibile solo su desktop.
+
+| Valori | Predefinito | Esempio |
+| :------: | :------: | :------: |
+| Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
+
+### enable-udp-punch
+
+**Posizione**:
+
+**Desktop** Impostazioni → Generale → Altro → Abilita UDP hole punching
+**Mobile** Impostazioni → Abilita UDP hole punching
+
+Disponibile da RustDesk 1.4.1, RustDesk Server Pro 1.6.2
+
+| Valori | Predefinito | Esempio |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-udp-punch=N` |
+
+### enable-ipv6-punch
+
+**Posizione**:
+
+**Desktop** Impostazioni → Generale → Altro → Abilita connessione P2P IPv6
+**Mobile** Impostazioni → Generale → Altro → Abilita connessione P2P IPv6
+
+Disponibile da RustDesk 1.4.1, RustDesk Server Pro 1.6.2
+
+| Valori | Predefinito | Esempio |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, altrimenti:Y | `enable-ipv6-punch=N` |
 
 ## Impostazioni Display
 
@@ -824,28 +885,26 @@ L'opzione "display come finestre individuali" nelle impostazioni di ogni peer co
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `displays-as-individual-windows=Y` |
 
-### use-all-my-displays-for-the-remote_session
+### use-all-my-displays-for-the-remote-session
 
-Questa opzione imposterà l'opzione "usa tutti i miei display per la sessione remota" per ogni peer dopo la prima connessione.
+Questa opzione imposterà l'opzione "use-all-my-displays-for-the-remote-session" per ogni peer dopo la prima connessione.
 
-L'opzione "usa tutti i miei display per la sessione remota" nelle impostazioni di ogni peer controllerà quindi se usare tutti i miei display per la sessione remota.
-
-**Anteprima**: [PR 6064](https://github.com/rustdesk/rustdesk/pull/6064)
+L'opzione "use-all-my-displays-for-the-remote-session" nelle impostazioni di ogni peer controllerà quindi se utilizzare tutti i miei display per la sessione remota.
 
 **Posizione**:
 
 1. **Desktop** Impostazioni → Display → Altre opzioni predefinite → Usa tutti i miei display per la sessione remota
-2. **Mobile**
+2. **Mobile** Impostazioni → Impostazioni display → Altre opzioni predefinite → Usa tutti i miei display per la sessione remota
 
 | Installazione richiesta | Valori | Predefinito | Esempio |
 | :------: | :------: | :------: | :------: |
-| N | Y, N | N | `use-all-my-displays-for-the-remote_session=Y` |
+| N | Y, N | N | `use-all-my-displays-for-the-remote-session=Y` |
 
 ### view-style
 
-Questa opzione imposterà l'opzione "stile visualizzazione" per ogni peer dopo la prima connessione.
+Questa opzione imposterà l'opzione "view-style" per ogni peer dopo la prima connessione.
 
-L'opzione "stile visualizzazione" nelle impostazioni di ogni peer controllerà quindi lo stile di visualizzazione.
+L'opzione "view-style" nelle impostazioni di ogni peer controllerà quindi lo stile di visualizzazione.
 
 **Posizione**:
 
@@ -922,16 +981,37 @@ Questa opzione imposterà l'opzione "preferenza codec" per ogni peer dopo la pri
 
 L'opzione "preferenza codec" nelle impostazioni di ogni peer controllerà quindi il codec per le immagini.
 
+**Attenzione**: le opzioni diverse da "vp8" e "vp9" potrebbero non funzionare. Questo dipende da ciò che la tua macchina supporta.
+
+### terminal-persistent
+
+Questa opzione imposterà l'opzione "terminal-persistent" per ogni peer dopo la prima connessione.
+
+L'opzione "terminal-persistent" nelle impostazioni di ogni peer controllerà quindi se mantenere le sessioni del terminale alla disconnessione.
+
 **Posizione**:
 
-1. **Desktop** Impostazioni → Display → Codec predefinito
-2. **Mobile** Impostazioni → Impostazioni display → Codec predefinito
+1. **Desktop** Impostazioni → Visualizzazione → Altre opzioni predefinite → Mantieni le sessioni del terminale alla disconnessione
+2. **Mobile** Impostazioni → Impostazioni di visualizzazione → Altre opzioni predefinite → Mantieni le sessioni del terminale alla disconnessione
 
 | Installazione richiesta | Valori | Predefinito | Esempio |
 | :------: | :------: | :------: | :------: |
-| N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
+| N | Y, N | N | `terminal-persistent=Y` |
 
-**Attenzione**: Opzioni diverse da "vp8" e "vp9" potrebbero non funzionare. Questo dipende da cosa supporta la tua macchina.
+### trackpad-speed
+
+Questa opzione imposterà l'opzione "trackpad-speed" per ogni peer dopo la prima connessione.
+
+L'opzione "trackpad-speed" nelle impostazioni di ogni peer controllerà quindi gli fps se "trackpad-speed" è impostato su personalizzato.
+
+**Posizione**:
+
+1. **Desktop** Impostazioni → Visualizzazione → Velocità predefinita del trackpad
+2. **Mobile** Impostazioni → Impostazioni di visualizzazione → Velocità predefinita del trackpad
+
+| Installazione richiesta | Valori | Predefinito | Esempio |
+| :------: | :------: | :------: | :------: |
+| N | [10, 1000] | 100 | `trackpad-speed=100` |
 
 ## Altri
 

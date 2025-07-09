@@ -84,6 +84,18 @@ Enable camera for incoming connections.
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-camera=Y` |
 
+### enable-terminal
+
+Enable terminal for incoming connections.
+
+**Location**:
+
+**Desktop** Settings → Security → Permissions → Enable terminal
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-terminal=Y` |
+
 ### enable-remote-printer
 
 Enable remote printer for incoming connections.
@@ -275,6 +287,17 @@ What type of password can be used, `temporary password` refers to the one-time r
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
 | N | use-temporary-password, use-permanent-password, use-both-passwords | use-both-passwords | `verification-method=use-permanent-password` |
+
+### temporary-password-length
+
+1. **Desktop** Settings → Security → Password → One-time password length
+2. **Mobile** Share screen → Dropdown menu on right-up corner → One-time password length
+
+The length of the temporary password.
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | 6, 8, 10 | `temporary-password-length=6` |
 
 ### proxy-url
 
@@ -548,6 +571,44 @@ Filter address book by tag intersection.
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `filter-ab-by-intersection=N` |
+
+### use-texture-render
+
+**Location**:
+
+**Desktop** Settings → General → Other → Use texture render
+
+Use texture rendering to make the pictures smoother. You could try disabling this option if you encounter rendering issues. Only available on desktop.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
+
+### enable-udp-punch
+
+**Location**:
+
+**Desktop** Settings → General → Other → Enable UDP hole punching
+**Mobile** Settings → Enable UDP hole punching
+
+Available since RustDesk 1.4.1, RustDesk Server Pro 1.6.2
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-udp-punch=N` |
+
+### enable-ipv6-punch
+
+**Location**:
+
+**Desktop** Settings → General → Other → Enable IPv6 P2P connection
+**Mobile** Settings → General → Other → Enable IPv6 P2P connection
+
+Available since RustDesk 1.4.1, RustDesk Server Pro 1.6.2
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, otherwise:Y | `enable-ipv6-punch=N` |
 
 ## Display Settings
 
@@ -825,9 +886,9 @@ The "displays-as-individual-windows" option in each peer's settings will then co
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `displays-as-individual-windows=Y` |
 
-### use-all-my-displays-for-the-remote_session
+### use-all-my-displays-for-the-remote-session
 
-This option will set the "use-all-my-displays-for-the-remote_session" option for every peer after the first connection.
+This option will set the "use-all-my-displays-for-the-remote-session" option for every peer after the first connection.
 
 The "use-all-my-displays-for-the-remote_session" option in each peer's settings will then control whether to use all my displays for the remote session.
 
@@ -840,7 +901,7 @@ The "use-all-my-displays-for-the-remote_session" option in each peer's settings 
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | Y, N | N | `use-all-my-displays-for-the-remote_session=Y` |
+| N | Y, N | N | `use-all-my-displays-for-the-remote-session=Y` |
 
 ### view-style
 
@@ -933,6 +994,36 @@ The "codec-preference" option in each peer's settings will then control codec fo
 | N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
 
 **Caution**: Options other than "vp8" and "vp9" may not work. This depends on what your machine supports.
+
+### terminal-persistent
+
+This option will set the "terminal-persistent" option for every peer after the first connection.
+
+The "terminal-persistent" option in each peer's settings will then control whether to keep terminal sessions on disconnect.
+
+**Location**:
+
+1. **Desktop** Settings → Display → Other default options → Keep terminal sessions on disconnect
+2. **Mobile** Settings → Display settings → Other default options → Keep terminal sessions on disconnect
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `terminal-persistent=Y` |
+
+### trackpad-speed
+
+This option will set the "trackpad-speed" option for every peer after the first connection.
+
+The "trackpad-speed" option in each peer's settings will then control the fps if "trackpad-speed" is set to custom.
+
+**Location**:
+
+1. **Desktop** Settings → Display → Default trackpad speed
+2. **Mobile** Settings → Display settings → Default trackpad speed
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | [10, 1000] | 100 | `trackpad-speed=100` |
 
 ## Others
 
@@ -1188,7 +1279,6 @@ D3D render can get high FPS and reduce the cpu usage, but the remote control scr
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-d3d-render=Y` |
-
 
 ### allow-hostname-as-id
 

@@ -84,9 +84,21 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | 否 | Y, N | Y | `enable-camera=Y` |
 
+### enable-terminal
+
+為傳入連線啟用終端。
+
+**位置**:
+
+**桌面端** 設定 → 安全 → 權限 → 啟用終端
+
+| 是否需要安裝 | 可選值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: |
+| 否 | Y, N | Y | `enable-terminal=Y` |
+
 ### enable-remote-printer
 
-啟用傳入連接的遠端印表機。
+為傳入連線啟用遠端印表機。
 
 **位置**：
 
@@ -276,9 +288,20 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | 否 | use-temporary-password, use-permanent-password, use-both-passwords | use-both-passwords | `verification-method=use-permanent-password` |
 
+### temporary-password-length
+
+1. **桌面端** 設定 → 安全 → 密碼 → 一次性密碼長度
+2. **行動端** 分享畫面 → 右上角下拉選單 → 一次性密碼長度
+
+臨時密碼的長度。
+
+| 是否需要安裝 | 可選值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: |
+| 否 | 6, 8, 10 | 6 | `temporary-password-length=6` |
+
 ### proxy-url
 
-代理URL。
+代理 URL。
 
 目前支援`http`和`socks5`。
 
@@ -933,6 +956,506 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | 否 | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
 
 **注意**：除了「vp8」和「vp9」之外的選項可能無法工作。這取決於您的機器支援什麼。
+
+## 其他
+
+### preset-address-book-name & preset-address-book-tag
+
+預設通訊錄名稱和標籤，https://github.com/rustdesk/rustdesk-server-pro/issues/257。
+如果不想設定標籤，可以僅設定preset-address-book-name。
+請在Web控制台的通訊錄頁面上使用有效的通訊錄名稱和標籤。
+
+| 選項 | 安裝需要 | 值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: | :------: |
+| preset-address-book-name | 否 | | | `preset-address-book-name=<通訊錄名稱>` |
+| preset-address-book-tag | 否 | | | `preset-address-book-tag=<通訊錄標籤名稱>` |
+
+### disable-group-panel
+
+在RustDesk用戶端上禁用群組面板（在通訊錄面板旁邊，自1.3.8版本起命名為「可存取設備」），https://github.com/rustdesk/rustdesk-server-pro/issues/250。
+
+| 選項 | 安裝需要 | 值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: | :------: |
+| disable-group-panel | 否 | Y, N | N | `disable-group-panel=Y` |
+
+### pre-elevate-service
+
+Windows便攜版執行時自動提升權限，https://github.com/rustdesk/rustdesk-server-pro/issues/252。
+
+| 選項 | 安裝需要 | 值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: | :------: |
+| pre-elevate-service | 否 | Y, N | N | `pre-elevate-service=Y` |
+
+### disable-floating-window
+
+當Android服務啟動時，它會顯示一個浮動視窗，這有助於防止系統終止RustDesk服務。
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-floating-window=Y` |
+
+### floating-window-size
+
+當Android服務啟動時，它會顯示一個浮動視窗，這有助於防止系統終止RustDesk服務。當大小小於120時，浮動視窗將難以被點擊。非常小的尺寸可能無法在某些設備上保持背景服務。
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| [32, 320] | 120 | `floating-window-size=120` |
+
+### floating-window-untouchable
+
+預設情況下，點擊浮動視窗會彈出選單。設定為「不可觸控」後，點擊或滑動將穿過浮動視窗並傳輸到底層視窗。設定為「不可觸控」後，浮動視窗的位置無法更改，系統可能會自動將浮動視窗設定為半透明。但是，此功能可能在少數應用程式中不起作用，例如GitHub應用程式。
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `floating-window-untouchable=Y` |
+
+### floating-window-transparency
+
+Android浮動視窗具有可調節的透明度。如果要啟用但隱藏浮動視窗，可以將透明度設定為0，浮動視窗將自動設定為「不可觸控」以穿透點擊事件。
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| [0, 10] | 10 | `floating-window-transparency=5` |
+
+### floating-window-svg
+
+如果沒有為Android浮動視窗設定圖示，它將預設顯示RustDesk圖示。
+設定時，請將SVG的文字內容寫成一行，並注意[SVG支援限制](https://bigbadaboom.github.io/androidsvg/index.html)。
+
+| 預設值 | 範例 |
+| :------: | :------: |
+| RustDesk圖示 | `floating-window-svg=<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1717559129252" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4248" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><path d="M950.857143 512c0 242.285714-196.571429 438.857143-438.857143 438.857143S73.142857 754.285714 73.142857 512 269.714286 73.142857 512 73.142857s438.857143 196.571429 438.857143 438.857143z" fill="#1296db" p-id="4249"></path></svg>` |
+
+### keep-screen-on
+
+這是針對Android受控端的。請注意，保持螢幕開啟依賴於浮動視窗。
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| never, during-controlled, service-on | during-controlled | `keep-screen-on=never` |
+
+### enable-directx-capture
+
+這是針對Windows受控端的。如果沒有遇到任何問題，建議使用預設設定，優先使用DirectX進行截圖而不是直接使用GDI。
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-directx-capture=N` |
+
+### enable-android-software-encoding-half-scale
+
+這是針對Android受控端的。預設情況下，當解析度大於1200時，硬體編碼使用原始解析度，而軟體編碼使用一半解析度，因為軟體編碼較慢。此選項用於設定軟體編碼是否應縮放到一半解析度。
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-android-software-encoding-half-scale=N` |
+
+### allow-remote-cm-modification
+
+控制是否允許控制端點擊連接管理視窗來接受連接、更改權限等。
+
+https://github.com/rustdesk/rustdesk/issues/7425
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-remote-cm-modification=Y` |
+
+### remove-preset-password-warning
+
+控制當自訂用戶端中有預設密碼時是否移除GUI上的安全警告。
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/286
+
+https://github.com/rustdesk/rustdesk/discussions/7956
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | Y | `remove-preset-password-warning=Y` |
+
+### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings / hide-remote-printer-settings
+
+控制是否隱藏某些設定。請確保`禁用設定`已關閉，否則這些不會生效。
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/263
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/276
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-security-settings=Y` |
+
+### hide-username-on-card
+
+控制是否在設備清單中顯示使用者名稱。因為有時使用者名稱太長，會隱藏其他資訊。
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/284#issuecomment-2216521407
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-username-on-card=Y` |
+
+### hide-help-cards
+
+控制是否在GUI上顯示UAC/權限警告。
+
+https://github.com/rustdesk/rustdesk/issues/8687
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-help-cards=Y` |
+
+### display-name
+
+更改將在連接到遠端設備時彈出視窗中顯示的顯示名稱。預設情況下，它首先顯示登入使用者的名稱，否則顯示您的作業系統使用者名稱。
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/277
+
+### disable-udp
+
+控制是否僅使用TCP。它將不再使用UDP 21116，而是使用TCP 21116。
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-udp=Y` |
+
+### preset-user-name / preset-strategy-name / preset-device-group-name
+
+將使用者/策略/設備群組分配給設備。您也可以透過[命令列](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices)執行此操作。
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/304
+
+設備群組在RustDesk用戶端>=1.3.8、pro >= 1.5.0中可用
+
+### default-connect-password
+
+您使用`預設連接密碼`來建立到遠端設備的連接。此密碼在控制端設定，不應與受控（僅傳入）用戶端上找到的任何[預設密碼](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-can-we-set-up-a-client-with-a-fixed-password-for-unattended-remote-access)混淆。
+
+例如 `default-connect-password=abcd1234`
+
+### enable-trusted-devices
+
+允許受信任的設備跳過2FA驗證。
+
+https://github.com/rustdesk/rustdesk/discussions/8513#discussioncomment-10234494
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-trusted-devices=N` |
+
+### hide-tray
+
+禁用系統匣中的匣圖示。
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/332
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-tray=Y` |
+
+### one-way-clipboard-redirection
+
+禁用從受控端到控制端的剪貼簿同步，在RustDesk用戶端>=1.3.1（受控端）中可用
+
+https://github.com/rustdesk/rustdesk/discussions/7837
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `one-way-clipboard-redirection=Y` |
+
+### one-way-file-transfer
+
+禁用從受控端到控制端的檔案傳輸，在RustDesk用戶端>=1.3.1（受控端）中可用
+
+https://github.com/rustdesk/rustdesk/discussions/7837
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `one-way-file-transfer=Y` |
+
+
+### sync-init-clipboard
+
+建立連接時是否同步初始剪貼簿（僅從控制端到受控端），在RustDesk用戶端>=1.3.1（控制端）中可用
+
+https://github.com/rustdesk/rustdesk/discussions/9010
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `sync-init-clipboard=Y` |
+
+### allow-logon-screen-password
+
+在使用[僅點擊批准模式](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode)時是否允許在登入畫面上輸入密碼，在RustDesk用戶端>=1.3.1（受控端）中可用
+
+https://github.com/rustdesk/rustdesk/discussions/9269
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-logon-screen-password=Y` |
+
+### allow-https-21114
+
+通常，HTTPS使用連接埠443。當API伺服器的連接埠錯誤地設定為21114時，RustDesk用戶端預設會移除21114連接埠設定。將選項設定為Y允許使用21114作為HTTPS連接埠。在RustDesk用戶端>=1.3.9中可用。
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/570
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-https-21114=Y` |
+
+### allow-d3d-render
+
+D3D渲染可以獲得高幀率並減少CPU使用率，但在某些設備上遠端控制螢幕可能會變黑。在RustDesk用戶端>=1.3.9中可用，僅Windows。
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-d3d-render=Y` |
+
+
+### allow-hostname-as-id
+
+[使用主機名作為ID](https://github.com/rustdesk/rustdesk-server-pro/discussions/483)，主機名中的空格會被替換為'-'。這不是100%保證的，只在第一次執行RustDesk用戶端時發生（即在新安裝的用戶端上）；如果發生衝突，將分配一個隨機ID。
+
+在RustDesk用戶端版本1.4.0及更高版本中可用。
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-hostname-as-id=Y` |
+
+### allow-websocket
+
+使用WebSocket協定連接伺服器和用戶端。僅在RustDesk用戶端>=1.4.0和Pro伺服器>= 1.5.7中可用。請注意，WebSocket僅支援中繼連接。
+
+要使WebSocket工作，您需要正確設定反向代理， https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-websocket=Y` |
+
+### allow-numeric-one-time-password
+
+此選項啟用或禁用僅數字一次性密碼的使用。
+僅在RustDesk用戶端>=1.4.1和Pro伺服器>= 1.5.9中可用。
+
+**討論**： https://github.com/rustdesk/rustdesk-server-pro/discussions/685
+
+**預覽**： https://github.com/rustdesk/rustdesk/pull/11846
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-numeric-one-time-password=Y` |
+
+### register-device
+
+不註冊設備，您不會在Web控制台的設備頁面中看到它。
+
+**僅在Pro伺服器>= 1.6.0中可用，需要[custom2許可證](https://rustdesk.com/pricing#custom2)且並行連接數>= 2。**
+
+如果`register-device=N`，以下功能對此設備不起作用。
+- 登入
+- `--assign`命令
+- `preset-address-book-name`, `--preset-address-book-tag`, `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`
+- 稽核日誌
+- 策略
+
+**討論**： https://github.com/rustdesk/rustdesk-server-pro/discussions/672 和 https://github.com/rustdesk/rustdesk-server-pro/discussions/182
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | Y | `register-device=N` |
+
+### use-texture-render
+
+**位置**:
+
+**桌面端** 設定 → 通用 → 其他 → 使用紋理渲染
+
+使用紋理渲染可以使畫面更流暢。如果遇到渲染問題，可以嘗試禁用此選項。僅在桌面端可用。
+
+| 可選值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
+
+### enable-udp-punch
+
+**位置**:
+
+**桌面端** 設定 → 通用 → 其他 → 啟用 UDP 打洞
+**行動端** 設定 → 啟用 UDP 打洞
+
+自 RustDesk 1.4.1, RustDesk Server Pro 1.6.2 起可用
+
+| 可選值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-udp-punch=N` |
+
+### enable-ipv6-punch
+
+**位置**:
+
+**桌面端** 設定 → 通用 → 其他 → 啟用 IPv6 P2P 連線
+**行動端** 設定 → 通用 → 其他 → 啟用 IPv6 P2P 連線
+
+自 RustDesk 1.4.1, RustDesk Server Pro 1.6.2 起可用
+
+| 可選值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, 其他:Y | `enable-ipv6-punch=N` |
+
+## 顯示設定
+
+### view-only
+
+此選項將為每個對等端在首次連接後設定「僅檢視」選項。
+
+然後每個對等端設定中的「僅檢視」選項將控制連接是否為僅檢視模式。
+
+**位置**：
+
+1. **桌面** 設定 → 顯示 → 其他預設選項 → 檢視模式
+2. **行動裝置** 設定 → 顯示設定 → 其他預設選項 → 檢視模式
+
+| 安裝需要 | 值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: |
+| 否 | Y, N | N | `view-only=Y` |
+
+### use-all-my-displays-for-the-remote-session
+
+此選項將在首次連線後為每個裝置設定「use-all-my-displays-for-the-remote-session」選項。
+
+然後，每個裝置設定中的「use-all-my-displays-for-the-remote-session」選項將控制是否為遠端工作階段使用我的所有顯示器。
+
+**位置**:
+
+1. **桌面端** 設定 → 顯示 → 其他預設選項 → 為遠端工作階段使用我的所有顯示器
+2. **行動端** 設定 → 顯示設定 → 其他預設選項 → 為遠端工作階段使用我的所有顯示器
+
+| 是否需要安裝 | 可選值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: |
+| 否 | Y, N | N | `use-all-my-displays-for-the-remote_session=Y` |
+
+### view-style
+
+此選項將在首次連線後為每個裝置設定「view-style」選項。
+
+每個對等端設定中的「檢視樣式」選項將控制檢視樣式。
+
+**位置**：
+
+1. **桌面** 設定 → 顯示 → 預設檢視樣式
+2. **行動裝置** 設定 → 顯示設定 → 預設檢視樣式
+
+| 安裝需要 | 值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: |
+| 否 | original, adaptive | original | `view-style=original` |
+
+### scroll-style
+
+此選項將為每個對等端在首次連接後設定「滾動樣式」選項。
+
+每個對等端設定中的「滾動樣式」選項將控制滾動樣式。
+
+**位置**：
+
+1. **桌面** 設定 → 顯示 → 預設滾動樣式
+2. **行動裝置**
+
+| 安裝需要 | 值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: |
+| 否 | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
+
+### image-quality
+
+此選項將為每個對等端在首次連接後設定「影像品質」選項。
+
+每個對等端設定中的「影像品質」選項將控制影像品質。
+
+**位置**：
+
+1. **桌面** 設定 → 顯示 → 預設影像品質
+2. **行動裝置** 設定 → 顯示設定 → 預設影像品質
+
+| 安裝需要 | 值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: |
+| 否 | best, balanced, low, custom | balanced | `image-quality=balanced` |
+
+### custom-image-quality
+
+此選項將為每個對等端在首次連接後設定「自訂影像品質」選項。
+
+如果「影像品質」設定為自訂，每個對等端設定中的「自訂影像品質」選項將控制影像品質。
+
+**位置**：
+
+1. **桌面** 設定 → 顯示 → 預設影像品質 → 自訂
+2. **行動裝置** 設定 → 顯示設定 → 預設影像品質 → 自訂
+
+| 安裝需要 | 值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: |
+| 否 | [10.0, 2000.0] | 50.0 | `custom-image-quality=50` |
+
+### custom-fps
+
+此選項將為每個對等端在首次連接後設定「自訂幀率」選項。
+
+如果「影像品質」設定為自訂，每個對等端設定中的「自訂幀率」選項將控制幀率。
+
+**位置**：
+
+1. **桌面** 設定 → 顯示 → 預設影像品質 → 自訂
+2. **行動裝置** 設定 → 顯示設定 → 預設影像品質 → 自訂
+
+| 安裝需要 | 值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: |
+| 否 | [5, 120] | 30 | `custom-fps=30` |
+
+### codec-preference
+
+此選項將為每個對等端在首次連接後設定「編解碼器偏好」選項。
+
+每個對等端設定中的「編解碼器偏好」選項將控制影像的編解碼器。
+
+**位置**：
+
+1. **桌面** 設定 → 顯示 → 預設編解碼器
+2. **行動裝置** 設定 → 顯示設定 → 預設編解碼器
+
+| 安裝需要 | 值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: |
+| 否 | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
+
+**注意**：除了「vp8」和「vp9」之外的選項可能無法工作。這取決於您的機器支援什麼。
+
+### terminal-persistent
+
+此選項將在首次連線後為每个裝置設定「terminal-persistent」選項。
+
+然後，每个裝置設定中的「terminal-persistent」選項將控制斷線時是否保留終端工作階段。
+
+**位置**:
+
+1. **桌面端** 設定 → 顯示 → 其他預設選項 → 斷線時保留終端工作階段
+2. **行動端** 設定 → 顯示設定 → 其他預設選項 → 斷線時保留終端工作階段
+
+| 是否需要安裝 | 可選值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: |
+| 否 | Y, N | N | `terminal-persistent=Y` |
+
+### trackpad-speed
+
+此選項將在首次連線後为每個裝置設定「trackpad-speed」選項。
+
+然後，每個裝置設定中的「trackpad-speed」選項將控制「trackpad-speed」設定为自訂時的 fps。
+
+**位置**:
+
+1. **桌面端** 設定 → 顯示 → 預設觸控板速度
+2. **行動端** 設定 → 顯示設定 → 預設觸控板速度
+
+| 是否需要安裝 | 可選值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: |
+| 否 | [10, 1000] | 100 | `trackpad-speed=100` |
 
 ## 其他
 
