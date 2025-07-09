@@ -83,6 +83,18 @@ Active la caméra pour les connexions entrantes.
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-camera=Y` |
 
+### enable-terminal
+
+Activer le terminal pour les connexions entrantes.
+
+**Emplacement**:
+
+**Poste de travail** Paramètres → Sécurité → Autorisations → Activer le terminal
+
+| Installation requise | Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-terminal=Y` |
+
 ### enable-remote-printer
 
 Active l'imprimante distante pour les connexions entrantes.
@@ -274,6 +286,17 @@ Quel type de mot de passe peut être utilisé, `mot de passe temporaire` fait r�
 | Installation requise | Valeurs | Défaut | Exemple |
 | :------: | :------: | :------: | :------: |
 | N | use-temporary-password, use-permanent-password, use-both-passwords | use-both-passwords | `verification-method=use-permanent-password` |
+
+### temporary-password-length
+
+1. **Poste de travail** Paramètres → Sécurité → Mot de passe → Longueur du mot de passe à usage unique
+2. **Mobile** Partager l'écran → Menu déroulant dans le coin supérieur droit → Longueur du mot de passe à usage unique
+
+La longueur du mot de passe temporaire.
+
+| Installation requise | Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: | :------: |
+| N | 6, 8, 10 | 6 | `temporary-password-length=6` |
 
 ### proxy-url
 
@@ -547,6 +570,44 @@ Filtre le carnet d'adresses par intersection de tags.
 | Installation requise | Valeurs | Défaut | Exemple |
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `filter-ab-by-intersection=N` |
+
+### use-texture-render
+
+**Emplacement**:
+
+**Poste de travail** Paramètres → Général → Autre → Utiliser le rendu de texture
+
+Utilisez le rendu de texture pour rendre les images plus fluides. Vous pouvez essayer de désactiver cette option si vous rencontrez des problèmes de rendu. Uniquement disponible sur le poste de travail.
+
+| Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
+
+### enable-udp-punch
+
+**Emplacement**:
+
+**Poste de travail** Paramètres → Général → Autre → Activer la perforation UDP
+**Mobile** Paramètres → Activer la perforation UDP
+
+Disponible depuis RustDesk 1.4.1, RustDesk Server Pro 1.6.2
+
+| Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-udp-punch=N` |
+
+### enable-ipv6-punch
+
+**Emplacement**:
+
+**Poste de travail** Paramètres → Général → Autre → Activer la connexion P2P IPv6
+**Mobile** Paramètres → Général → Autre → Activer la connexion P2P IPv6
+
+Disponible depuis RustDesk 1.4.1, RustDesk Server Pro 1.6.2
+
+| Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | auto-hébergement:N, sinon:Y | `enable-ipv6-punch=N` |
 
 ## Paramètres d'Affichage
 
@@ -824,28 +885,26 @@ L'option "affichages comme fenêtres individuelles" dans les paramètres de chaq
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `displays-as-individual-windows=Y` |
 
-### use-all-my-displays-for-the-remote_session
+### use-all-my-displays-for-the-remote-session
 
-Cette option définira l'option "utiliser tous mes écrans pour la session distante" pour chaque pair après la première connexion.
+Cette option définira l'option "use-all-my-displays-for-the-remote-session" pour chaque pair après la première connexion.
 
-L'option "utiliser tous mes écrans pour la session distante" dans les paramètres de chaque pair contrôlera ensuite s'il faut utiliser tous mes écrans pour la session distante.
+L'option "use-all-my-displays-for-the-remote-session" dans les paramètres de chaque pair contrôlera alors s'il faut utiliser tous mes affichages pour la session à distance.
 
-**Aperçu** : [PR 6064](https://github.com/rustdesk/rustdesk/pull/6064)
+**Emplacement**:
 
-**Emplacement** :
+1. **Bureau** Paramètres → Affichage → Autres options par défaut → Utiliser tous mes affichages pour la session à distance
+2. **Mobile** Paramètres → Paramètres d'affichage → Autres options par défaut → Utiliser tous mes affichages pour la session à distance
 
-1. **Bureau** Paramètres → Affichage → Autres options par défaut → Utiliser tous mes écrans pour la session distante
-2. **Mobile**
-
-| Installation requise | Valeurs | Défaut | Exemple |
+| Installation requise | Valeurs | Par défaut | Exemple |
 | :------: | :------: | :------: | :------: |
-| N | Y, N | N | `use-all-my-displays-for-the-remote_session=Y` |
+| N | Y, N | N | `use-all-my-displays-for-the-remote-session=Y` |
 
 ### view-style
 
-Cette option définira l'option "style de vue" pour chaque pair après la première connexion.
+Cette option définira l'option "view-style" pour chaque pair après la première connexion.
 
-L'option "style de vue" dans les paramètres de chaque pair contrôlera ensuite le style de vue.
+L'option "view-style" dans les paramètres de chaque pair contrôlera ensuite le style de vue.
 
 **Emplacement** :
 
@@ -918,20 +977,41 @@ L'option "fps personnalisé" dans les paramètres de chaque pair contrôlera ens
 
 ### codec-preference
 
-Cette option définira l'option "préférence de codec" pour chaque pair après la première connexion.
+Cette option définira l'option "codec-preference" pour chaque pair après la première connexion.
 
-L'option "préférence de codec" dans les paramètres de chaque pair contrôlera ensuite le codec pour les images.
+L'option "codec-preference" dans les paramètres de chaque pair contrôlera alors le codec pour les images.
 
-**Emplacement** :
+**Attention**: Les options autres que "vp8" et "vp9" peuvent ne pas fonctionner. Cela dépend de ce que votre machine prend en charge.
 
-1. **Bureau** Paramètres → Affichage → Codec par défaut
-2. **Mobile** Paramètres → Paramètres d'affichage → Codec par défaut
+### terminal-persistent
 
-| Installation requise | Valeurs | Défaut | Exemple |
+Cette option définira l'option "terminal-persistent" pour chaque pair après la première connexion.
+
+L'option "terminal-persistent" dans les paramètres de chaque pair contrôlera alors si les sessions de terminal sont conservées lors de la déconnexion.
+
+**Emplacement**:
+
+1. **Poste de travail** Paramètres → Affichage → Autres options par défaut → Conserver les sessions de terminal lors de la déconnexion
+2. **Mobile** Paramètres → Paramètres d'affichage → Autres options par défaut → Conserver les sessions de terminal lors de la déconnexion
+
+| Installation requise | Valeurs | Par défaut | Exemple |
 | :------: | :------: | :------: | :------: |
-| N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
+| N | Y, N | N | `terminal-persistent=Y` |
 
-**Attention** : Les options autres que "vp8" et "vp9" peuvent ne pas fonctionner. Cela dépend de ce que votre machine prend en charge.
+### trackpad-speed
+
+Cette option définira l'option "trackpad-speed" pour chaque pair après la première connexion.
+
+L'option "trackpad-speed" dans les paramètres de chaque pair contrôlera alors les fps si "trackpad-speed" est défini sur personnalisé.
+
+**Emplacement**:
+
+1. **Poste de travail** Paramètres → Affichage → Vitesse du trackpad par défaut
+2. **Mobile** Paramètres → Paramètres d'affichage → Vitesse du trackpad par défaut
+
+| Installation requise | Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: | :------: |
+| N | [10, 1000] | 100 | `trackpad-speed=100` |
 
 ## Autres
 

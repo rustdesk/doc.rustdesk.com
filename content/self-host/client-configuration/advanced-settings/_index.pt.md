@@ -83,9 +83,21 @@ Habilita câmera para conexões de entrada.
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-camera=Y` |
 
+### enable-terminal
+
+Ativar o terminal para ligações de entrada.
+
+**Localização**:
+
+**Desktop** Definições → Segurança → Permissões → Ativar terminal
+
+| Requer instalação | Valores | Predefinição | Exemplo |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-terminal=Y` |
+
 ### enable-remote-printer
 
-Habilita impressora remota para conexões de entrada.
+Ativar a impressora remota para ligações de entrada.
 
 **Localização**:
 
@@ -274,6 +286,17 @@ Que tipo de senha pode ser usada, `senha temporária` refere-se à senha aleató
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
 | N | use-temporary-password, use-permanent-password, use-both-passwords | use-both-passwords | `verification-method=use-permanent-password` |
+
+### temporary-password-length
+
+1. **Desktop** Definições → Segurança → Palavra-passe → Comprimento da palavra-passe de utilização única
+2. **Mobile** Partilhar ecrã → Menu suspenso no canto superior direito → Comprimento da palavra-passe de utilização única
+
+O comprimento da palavra-passe temporária.
+
+| Requer instalação | Valores | Predefinição | Exemplo |
+| :------: | :------: | :------: | :------: |
+| N | 6, 8, 10 | 6 | `temporary-password-length=6` |
 
 ### proxy-url
 
@@ -548,7 +571,45 @@ Filtrar catálogo de endereços por interseção de tags.
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `filter-ab-by-intersection=N` |
 
-## Configurações de Display
+### use-texture-render
+
+**Localização**:
+
+**Desktop** Definições → Geral → Outro → Usar renderização de textura
+
+Use a renderização de textura para tornar as imagens mais suaves. Pode tentar desativar esta opção se encontrar problemas de renderização. Apenas disponível no desktop.
+
+| Valores | Predefinição | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
+
+### enable-udp-punch
+
+**Localização**:
+
+**Desktop** Definições → Geral → Outro → Ativar perfuração UDP
+**Mobile** Definições → Ativar perfuração UDP
+
+Disponível desde RustDesk 1.4.1, RustDesk Server Pro 1.6.2
+
+| Valores | Predefinição | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-udp-punch=N` |
+
+### enable-ipv6-punch
+
+**Localização**:
+
+**Desktop** Definições → Geral → Outro → Ativar ligação P2P IPv6
+**Mobile** Definições → Geral → Outro → Ativar ligação P2P IPv6
+
+Disponível desde RustDesk 1.4.1, RustDesk Server Pro 1.6.2
+
+| Valores | Predefinição | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, caso contrário:Y | `enable-ipv6-punch=N` |
+
+## Definições de visualização
 
 ### view-only
 
@@ -918,20 +979,41 @@ A opção "fps personalizado" nas configurações de cada par controlará então
 
 ### codec-preference
 
-Esta opção definirá a opção "preferência de codec" para cada par após a primeira conexão.
+Esta opção irá definir a opção "codec-preference" para cada par após a primeira ligação.
 
-A opção "preferência de codec" nas configurações de cada par controlará então o codec para imagens.
+A opção "codec-preference" nas definições de cada par irá então controlar o codec para as imagens.
+
+**Atenção**: opções diferentes de "vp8" e "vp9" podem não funcionar. Isto depende do que a sua máquina suporta.
+
+### terminal-persistent
+
+Esta opção irá definir a opção "terminal-persistent" para cada par após a primeira ligação.
+
+A opção "terminal-persistent" nas definições de cada par irá então controlar se as sessões de terminal são mantidas na desconexão.
 
 **Localização**:
 
-1. **Desktop** Configurações → Display → Codec padrão
-2. **Móvel** Configurações → Configurações de display → Codec padrão
+1. **Desktop** Definições → Visualização → Outras opções predefinidas → Manter sessões de terminal na desconexão
+2. **Mobile** Definições → Definições de visualização → Outras opções predefinidas → Manter sessões de terminal na desconexão
 
-| Instalação necessária | Valores | Padrão | Exemplo |
+| Requer instalação | Valores | Predefinição | Exemplo |
 | :------: | :------: | :------: | :------: |
-| N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
+| N | Y, N | N | `terminal-persistent=Y` |
 
-**Cuidado**: Opções diferentes de "vp8" e "vp9" podem não funcionar. Isso depende do que sua máquina suporta.
+### trackpad-speed
+
+Esta opção irá definir a opção "trackpad-speed" para cada par após a primeira ligação.
+
+A opção "trackpad-speed" nas definições de cada par irá então controlar os fps se "trackpad-speed" estiver definido como personalizado.
+
+**Localização**:
+
+1. **Desktop** Definições → Visualização → Velocidade predefinida do trackpad
+2. **Mobile** Definições → Definições de visualização → Velocidade predefinida do trackpad
+
+| Requer instalação | Valores | Predefinição | Exemplo |
+| :------: | :------: | :------: | :------: |
+| N | [10, 1000] | 100 | `trackpad-speed=100` |
 
 ## Outros
 

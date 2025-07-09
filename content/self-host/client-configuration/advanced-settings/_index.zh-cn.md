@@ -84,6 +84,18 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | 否 | Y, N | Y | `enable-camera=Y` |
 
+### enable-terminal
+
+为传入连接启用终端。
+
+**位置**:
+
+**桌面端** 设置 → 安全 → 权限 → 启用终端
+
+| 是否需要安装 | 可选值 | 默认值 | 示例 |
+| :------: | :------: | :------: | :------: |
+| 否 | Y, N | Y | `enable-terminal=Y` |
+
 ### enable-remote-printer
 
 启用传入连接的远程打印机。
@@ -276,9 +288,20 @@ weight: 49
 | :------: | :------: | :------: | :------: |
 | 否 | use-temporary-password, use-permanent-password, use-both-passwords | use-both-passwords | `verification-method=use-permanent-password` |
 
+### temporary-password-length
+
+1. **桌面端** 设置 → 安全 → 密码 → 一次性密码长度
+2. **移动端** 分享屏幕 → 右上角下拉菜单 → 一次性密码长度
+
+临时密码的长度。
+
+| 是否需要安装 | 可选值 | 默认值 | 示例 |
+| :------: | :------: | :------: | :------: |
+| 否 | 6, 8, 10 | 6 | `temporary-password-length=6` |
+
 ### proxy-url
 
-代理URL。
+代理 URL。
 
 目前支持`http`和`socks5`。
 
@@ -548,6 +571,44 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | 安装需要 | 值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
 | 否 | Y, N | N | `filter-ab-by-intersection=N` |
+
+### use-texture-render
+
+**位置**:
+
+**桌面端** 设置 → 通用 → 其他 → 使用纹理渲染
+
+使用纹理渲染可以使画面更流畅。如果遇到渲染问题，可以尝试禁用此选项。仅在桌面端可用。
+
+| 可选值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
+
+### enable-udp-punch
+
+**位置**:
+
+**桌面端** 设置 → 通用 → 其他 → 启用 UDP 打洞
+**移动端** 设置 → 启用 UDP 打洞
+
+自 RustDesk 1.4.1, RustDesk Server Pro 1.6.2 起可用
+
+| 可选值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-udp-punch=N` |
+
+### enable-ipv6-punch
+
+**位置**:
+
+**桌面端** 设置 → 通用 → 其他 → 启用 IPv6 P2P 连接
+**移动端** 设置 → 通用 → 其他 → 启用 IPv6 P2P 连接
+
+自 RustDesk 1.4.1, RustDesk Server Pro 1.6.2 起可用
+
+| 可选值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, 其它:Y | `enable-ipv6-punch=N` |
 
 ## 显示设置
 
@@ -825,26 +886,24 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | 否 | Y, N | N | `displays-as-individual-windows=Y` |
 
-### use-all-my-displays-for-the-remote_session
+### use-all-my-displays-for-the-remote-session
 
-此选项将为每个对等端在首次连接后设置"为远程会话使用我的所有显示器"选项。
+此选项将在首次连接后为每个设备设置“use-all-my-displays-for-the-remote-session”选项。
 
-每个对等端设置中的"为远程会话使用我的所有显示器"选项将控制是否为远程会话使用我的所有显示器。
+然后，每个设备设置中的“use-all-my-displays-for-the-remote-session”选项将控制是否为远程会话使用我的所有显示器。
 
-**预览**：[PR 6064](https://github.com/rustdesk/rustdesk/pull/6064)
+**位置**:
 
-**位置**：
+1. **桌面端** 设置 → 显示 → 其他默认选项 → 为远程会话使用我的所有显示器
+2. **移动端** 设置 → 显示设置 → 其他默认选项 → 为远程会话使用我的所有显示器
 
-1. **桌面** 设置 → 显示 → 其他默认选项 → 为远程会话使用我的所有显示器
-2. **移动端**
-
-| 安装需要 | 值 | 默认值 | 示例 |
+| 是否需要安装 | 可选值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| 否 | Y, N | N | `use-all-my-displays-for-the-remote_session=Y` |
+| 否 | Y, N | N | `use-all-my-displays-for-the-remote-session=Y` |
 
 ### view-style
 
-此选项将为每个对等端在首次连接后设置"查看样式"选项。
+此选项将在首次连接后为每个设备设置“view-style”选项。
 
 每个对等端设置中的"查看样式"选项将控制查看样式。
 
@@ -919,20 +978,41 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 ### codec-preference
 
-此选项将为每个对等端在首次连接后设置"编解码器偏好"选项。
+此选项将在首次连接后为每个设备设置“codec-preference”选项。
 
-每个对等端设置中的"编解码器偏好"选项将控制图像的编解码器。
+然后，每个设备设置中的“codec-preference”选项将控制设备的首选编解码器。
 
-**位置**：
+**警告**: 除“vp8”和“vp9”以外的选项可能无法工作。这取决于您的设备支持。
 
-1. **桌面** 设置 → 显示 → 默认编解码器
-2. **移动端** 设置 → 显示设置 → 默认编解码器
+### terminal-persistent
 
-| 安装需要 | 值 | 默认值 | 示例 |
+此选项将在首次连接后为每个设备设置“terminal-persistent”选项。
+
+然后，每个设备设置中的“terminal-persistent”选项将控制断开连接时是否保留终端会话。
+
+**位置**:
+
+1. **桌面端** 设置 → 显示 → 其他默认选项 → 断开连接时保留终端会话
+2. **移动端** 设置 → 显示设置 → 其他默认选项 → 断开连接时保留终端会话
+
+| 是否需要安装 | 可选值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: |
-| 否 | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
+| 否 | Y, N | N | `terminal-persistent=Y` |
 
-**注意**：除了"vp8"和"vp9"之外的选项可能无法工作。这取决于你的机器支持什么。
+### trackpad-speed
+
+此选项将在首次连接后为每个设备设置“trackpad-speed”选项。
+
+然后，每个设备设置中的“trackpad-speed”选项将控制“trackpad-speed”设置为自定义时的 fps。
+
+**位置**:
+
+1. **桌面端** 设置 → 显示 → 默认触控板速度
+2. **移动端** 设置 → 显示设置 → 默认触控板速度
+
+| 是否需要安装 | 可选值 | 默认值 | 示例 |
+| :------: | :------: | :------: | :------: |
+| 否 | [10, 1000] | 100 | `trackpad-speed=100` |
 
 ## 其他
 

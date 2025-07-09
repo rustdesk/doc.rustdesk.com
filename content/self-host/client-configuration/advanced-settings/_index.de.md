@@ -83,9 +83,21 @@ Aktiviert Kamera für eingehende Verbindungen.
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-camera=Y` |
 
+### enable-terminal
+
+Terminal für eingehende Verbindungen aktivieren.
+
+**Speicherort**:
+
+**Desktop** Einstellungen → Sicherheit → Berechtigungen → Terminal aktivieren
+
+| Installation erforderlich | Werte | Standard | Beispiel |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-terminal=Y` |
+
 ### enable-remote-printer
 
-Aktiviert Remote-Drucker für eingehende Verbindungen.
+Entfernten Drucker für eingehende Verbindungen aktivieren.
 
 **Ort**:
 
@@ -274,6 +286,17 @@ Welche Art von Passwort verwendet werden kann, `temporäres Passwort` bezieht si
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
 | N | use-temporary-password, use-permanent-password, use-both-passwords | use-both-passwords | `verification-method=use-permanent-password` |
+
+### temporary-password-length
+
+1. **Desktop** Einstellungen → Sicherheit → Passwort → Einmalpasswortlänge
+2. **Mobil** Bildschirm freigeben → Dropdown-Menü oben rechts → Einmalpasswortlänge
+
+Die Länge des temporären Passworts.
+
+| Installation erforderlich | Werte | Standard | Beispiel |
+| :------: | :------: | :------: | :------: |
+| N | 6, 8, 10 | 6 | `temporary-password-length=6` |
 
 ### proxy-url
 
@@ -547,6 +570,44 @@ Adressbuch nach Tag-Schnittpunkt filtern.
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `filter-ab-by-intersection=N` |
+
+### use-texture-render
+
+**Speicherort**:
+
+**Desktop** Einstellungen → Allgemein → Sonstiges → Textur-Rendering verwenden
+
+Verwenden Sie Textur-Rendering, um die Bilder flüssiger zu machen. Sie können versuchen, diese Option zu deaktivieren, wenn Sie auf Rendering-Probleme stoßen. Nur auf dem Desktop verfügbar.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
+
+### enable-udp-punch
+
+**Speicherort**:
+
+**Desktop** Einstellungen → Allgemein → Sonstiges → UDP-Hole-Punching aktivieren
+**Mobil** Einstellungen → UDP-Hole-Punching aktivieren
+
+Verfügbar seit RustDesk 1.4.1, RustDesk Server Pro 1.6.2
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-udp-punch=N` |
+
+### enable-ipv6-punch
+
+**Speicherort**:
+
+**Desktop** Einstellungen → Allgemein → Sonstiges → IPv6-P2P-Verbindung aktivieren
+**Mobil** Einstellungen → Allgemein → Sonstiges → IPv6-P2P-Verbindung aktivieren
+
+Verfügbar seit RustDesk 1.4.1, RustDesk Server Pro 1.6.2
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, sonst:Y | `enable-ipv6-punch=N` |
 
 ## Anzeigeeinstellungen
 
@@ -824,22 +885,20 @@ Die "Displays als einzelne Fenster anzeigen"-Option in den Einstellungen jedes P
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `displays-as-individual-windows=Y` |
 
-### use-all-my-displays-for-the-remote_session
+### use-all-my-displays-for-the-remote-session
 
-Diese Option setzt die "Alle meine Displays für die Remote-Sitzung verwenden"-Option für jeden Peer nach der ersten Verbindung.
+Diese Option setzt die Option „use-all-my-displays-for-the-remote-session“ für jeden Peer nach der ersten Verbindung.
 
-Die "Alle meine Displays für die Remote-Sitzung verwenden"-Option in den Einstellungen jedes Peers steuert dann, ob alle meine Displays für die Remote-Sitzung verwendet werden.
+Die Option „use-all-my-displays-for-the-remote-session“ in den Einstellungen jedes Peers steuert dann, ob alle meine Anzeigen für die Remote-Sitzung verwendet werden.
 
-**Vorschau**: [PR 6064](https://github.com/rustdesk/rustdesk/pull/6064)
+**Speicherort**:
 
-**Ort**:
-
-1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Alle meine Displays für die Remote-Sitzung verwenden
-2. **Mobil**
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Alle meine Anzeigen für die Remote-Sitzung verwenden
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Alle meine Anzeigen für die Remote-Sitzung verwenden
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
-| N | Y, N | N | `use-all-my-displays-for-the-remote_session=Y` |
+| N | Y, N | N | `use-all-my-displays-for-the-remote-session=Y` |
 
 ### view-style
 
@@ -920,18 +979,39 @@ Die "Benutzerdefinierte FPS"-Option in den Einstellungen jedes Peers steuert dan
 
 Diese Option setzt die "Codec-Präferenz"-Option für jeden Peer nach der ersten Verbindung.
 
-Die "Codec-Präferenz"-Option in den Einstellungen jedes Peers steuert dann den Codec für Bilder.
+Die "Codec-Präferenz"-Option in den Einstellungen jedes Peers steuert dann den Codec für das Bild.
 
-**Ort**:
+**Achtung**: Andere Optionen als „vp8“ und „vp9“ funktionieren möglicherweise nicht. Dies hängt davon ab, was Ihr Gerät unterstützt.
 
-1. **Desktop** Einstellungen → Anzeige → Standard-Codec
-2. **Mobil** Einstellungen → Anzeigeeinstellungen → Standard-Codec
+### terminal-persistent
+
+Diese Option setzt die Option „terminal-persistent“ für jeden Peer nach der ersten Verbindung.
+
+Die Option „terminal-persistent“ in den Einstellungen jedes Peers steuert dann, ob Terminalsitzungen bei Verbindungsabbruch beibehalten werden.
+
+**Speicherort**:
+
+1. **Desktop** Einstellungen → Anzeige → Andere Standardoptionen → Terminalsitzungen bei Verbindungsabbruch beibehalten
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Terminalsitzungen bei Verbindungsabbruch beibehalten
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
-| N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
+| N | Y, N | N | `terminal-persistent=Y` |
 
-**Vorsicht**: Optionen außer "vp8" und "vp9" funktionieren möglicherweise nicht. Dies hängt davon ab, was Ihre Maschine unterstützt.
+### trackpad-speed
+
+Diese Option setzt die Option „trackpad-speed“ für jeden Peer nach der ersten Verbindung.
+
+Die Option „trackpad-speed“ in den Einstellungen jedes Peers steuert dann die FPS, wenn „trackpad-speed“ auf benutzerdefiniert eingestellt ist.
+
+**Speicherort**:
+
+1. **Desktop** Einstellungen → Anzeige → Standard-Trackpad-Geschwindigkeit
+2. **Mobil** Einstellungen → Anzeigeeinstellungen → Standard-Trackpad-Geschwindigkeit
+
+| Installation erforderlich | Werte | Standard | Beispiel |
+| :------: | :------: | :------: | :------: |
+| N | [10, 1000] | 100 | `trackpad-speed=100` |
 
 ## Sonstiges
 

@@ -83,6 +83,18 @@ Habilita cámara para conexiones entrantes.
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-camera=Y` |
 
+### enable-terminal
+
+Habilitar terminal para conexiones entrantes.
+
+**Ubicación**:
+
+**Escritorio** Ajustes → Seguridad → Permisos → Habilitar terminal
+
+| Instalación requerida | Valores | Predeterminado | Ejemplo |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-terminal=Y` |
+
 ### enable-remote-printer
 
 Habilita impresora remota para conexiones entrantes.
@@ -274,6 +286,17 @@ Qué tipo de contraseña se puede usar, `contraseña temporal` se refiere a la c
 | Instalación requerida | Valores | Predeterminado | Ejemplo |
 | :------: | :------: | :------: | :------: |
 | N | use-temporary-password, use-permanent-password, use-both-passwords | use-both-passwords | `verification-method=use-permanent-password` |
+
+### temporary-password-length
+
+1. **Escritorio** Ajustes → Seguridad → Contraseña → Longitud de la contraseña de un solo uso
+2. **Móvil** Compartir pantalla → Menú desplegable en la esquina superior derecha → Longitud de la contraseña de un solo uso
+
+La longitud de la contraseña temporal.
+
+| Instalación requerida | Valores | Predeterminado | Ejemplo |
+| :------: | :------: | :------: | :------: |
+| N | 6, 8, 10 | 6 | `temporary-password-length=6` |
 
 ### proxy-url
 
@@ -548,7 +571,45 @@ Filtrar libreta de direcciones por intersección de etiquetas.
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `filter-ab-by-intersection=N` |
 
-## Configuración de Pantalla
+### use-texture-render
+
+**Ubicación**:
+
+**Escritorio** Ajustes → General → Otros → Usar renderizado de texturas
+
+Use el renderizado de texturas para que las imágenes sean más suaves. Puede intentar deshabilitar esta opción si encuentra problemas de renderizado. Solo disponible en escritorio.
+
+| Valores | Predeterminado | Ejemplo |
+| :------: | :------: | :------: |
+| Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
+
+### enable-udp-punch
+
+**Ubicación**:
+
+**Escritorio** Ajustes → General → Otros → Habilitar perforación de UDP
+**Móvil** Ajustes → Habilitar perforación de UDP
+
+Disponible desde RustDesk 1.4.1, RustDesk Server Pro 1.6.2
+
+| Valores | Predeterminado | Ejemplo |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-udp-punch=N` |
+
+### enable-ipv6-punch
+
+**Ubicación**:
+
+**Escritorio** Ajustes → General → Otros → Habilitar conexión P2P IPv6
+**Móvil** Ajustes → General → Otros → Habilitar conexión P2P IPv6
+
+Disponible desde RustDesk 1.4.1, RustDesk Server Pro 1.6.2
+
+| Valores | Predeterminado | Ejemplo |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, de lo contrario:Y | `enable-ipv6-punch=N` |
+
+## Ajustes de pantalla
 
 ### view-only
 
@@ -824,28 +885,26 @@ La opción "pantallas como ventanas individuales" en las configuraciones de cada
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `displays-as-individual-windows=Y` |
 
-### use-all-my-displays-for-the-remote_session
+### use-all-my-displays-for-the-remote-session
 
-Esta opción establecerá la opción "usar todas mis pantallas para la sesión remota" para cada par después de la primera conexión.
+Esta opción establecerá la opción "use-all-my-displays-for-the-remote-session" para cada par después de la primera conexión.
 
-La opción "usar todas mis pantallas para la sesión remota" en las configuraciones de cada par controlará luego si usar todas mis pantallas para la sesión remota.
-
-**Vista previa**: [PR 6064](https://github.com/rustdesk/rustdesk/pull/6064)
+La opción "use-all-my-displays-for-the-remote-session" en la configuración de cada par controlará si se usarán todas mis pantallas para la sesión remota.
 
 **Ubicación**:
 
-1. **Escritorio** Configuración → Pantalla → Otras opciones predeterminadas → Usar todas mis pantallas para la sesión remota
-2. **Móvil**
+1. **Escritorio** Ajustes → Pantalla → Otras opciones predeterminadas → Usar todas mis pantallas para la sesión remota
+2. **Móvil** Ajustes → Ajustes de pantalla → Otras opciones predeterminadas → Usar todas mis pantallas para la sesión remota
 
 | Instalación requerida | Valores | Predeterminado | Ejemplo |
 | :------: | :------: | :------: | :------: |
-| N | Y, N | N | `use-all-my-displays-for-the-remote_session=Y` |
+| N | Y, N | N | `use-all-my-displays-for-the-remote-session=Y` |
 
 ### view-style
 
-Esta opción establecerá la opción "estilo de vista" para cada par después de la primera conexión.
+Esta opción establecerá la opción "view-style" para cada par después de la primera conexión.
 
-La opción "estilo de vista" en las configuraciones de cada par controlará luego el estilo de vista.
+La opción "view-style" en las configuraciones de cada par controlará luego el estilo de vista.
 
 **Ubicación**:
 
@@ -918,20 +977,41 @@ La opción "fps personalizado" en las configuraciones de cada par controlará lu
 
 ### codec-preference
 
-Esta opción establecerá la opción "preferencia de codec" para cada par después de la primera conexión.
+Esta opción establecerá la opción "codec-preference" para cada par después de la primera conexión.
 
-La opción "preferencia de codec" en las configuraciones de cada par controlará luego el codec para imágenes.
+La opción "codec-preference" en la configuración de cada par controlará el códec para la imagen.
+
+**Precaución**: Las opciones que no sean "vp8" y "vp9" pueden no funcionar. Esto depende de lo que admita su máquina.
+
+### terminal-persistent
+
+Esta opción establecerá la opción "terminal-persistent" para cada par después de la primera conexión.
+
+La opción "terminal-persistent" en la configuración de cada par controlará si se mantienen las sesiones de terminal al desconectar.
 
 **Ubicación**:
 
-1. **Escritorio** Configuración → Pantalla → Codec predeterminado
-2. **Móvil** Configuración → Configuración de pantalla → Codec predeterminado
+1. **Escritorio** Ajustes → Pantalla → Otras opciones predeterminadas → Mantener sesiones de terminal al desconectar
+2. **Móvil** Ajustes → Ajustes de pantalla → Otras opciones predeterminadas → Mantener sesiones de terminal al desconectar
 
 | Instalación requerida | Valores | Predeterminado | Ejemplo |
 | :------: | :------: | :------: | :------: |
-| N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
+| N | Y, N | N | `terminal-persistent=Y` |
 
-**Precaución**: Opciones distintas a "vp8" y "vp9" pueden no funcionar. Esto depende de lo que su máquina soporte.
+### trackpad-speed
+
+Esta opción establecerá la opción "trackpad-speed" para cada par después de la primera conexión.
+
+La opción "trackpad-speed" en la configuración de cada par controlará los fps si "trackpad-speed" se establece en personalizado.
+
+**Ubicación**:
+
+1. **Escritorio** Ajustes → Pantalla → Velocidad predeterminada del trackpad
+2. **Móvil** Ajustes → Ajustes de pantalla → Velocidad predeterminada del trackpad
+
+| Instalación requerida | Valores | Predeterminado | Ejemplo |
+| :------: | :------: | :------: | :------: |
+| N | [10, 1000] | 100 | `trackpad-speed=100` |
 
 ## Otros
 
