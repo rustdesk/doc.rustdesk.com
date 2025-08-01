@@ -4,7 +4,7 @@ type: docs
 weight: 1
 ---
 
-RustDesk to pełnoprawna alternatywa open source do zdalnego zarządzania urządzeniami, przeznaczona do samodzielnego hostowania z rozbudowanymi funkcjami bezpieczeństwa oraz minimalną konfiguracją. Masz pełną kontrolę nad swoimi danymi, bez obaw o bezpieczeństwo. Klient jest open source, a do wyboru masz w pełni funkcjonaly **Serwer Profesjonalny** dostępny do zakupu na naszej [stronie](https://rustdesk.com) oraz podstawowy, darmowy i open source'owy serwer bazując na naszym **Serwerze Profesjonalnym**.
+RustDesk to pełnoprawna alternatywa open source do zdalnego zarządzania urządzeniami, przeznaczona do samodzielnego hostowania z rozbudowanymi funkcjami bezpieczeństwa oraz minimalną konfiguracją. Masz pełną kontrolę nad swoimi danymi, bez obaw o bezpieczeństwo. Klient jest open source, a do wyboru masz w pełni funkcjonalny **Serwer Profesjonalny** dostępny do zakupu na naszej [stronie](https://rustdesk.com) oraz podstawowy, darmowy i open source'owy serwer bazując na naszym **Serwerze Profesjonalnym**.
 
 ## Funkcje
 - Działa na Windowsie, macOSie, Linuxie, iOSie, Androidzie i w przeglądarkach.
