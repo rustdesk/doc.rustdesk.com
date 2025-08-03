@@ -1325,7 +1325,7 @@ Jeśli `register-device=N`, poniższe nie będzie działać dla tego urządzenia
 - Dzienniki audytowe
 - Strategie
 
-**Dyskusje**: https://github.com/rustdesk/rustdesk-server-pro/discussions/672 and https://github.com/rustdesk/rustdesk-server-pro/discussions/182
+**Dyskusje**: https://github.com/rustdesk/rustdesk-server-pro/discussions/672 i https://github.com/rustdesk/rustdesk-server-pro/discussions/182
 
 | Wartości | Domyślnie | Przykład |
 | :------: | :------: | :------: |
