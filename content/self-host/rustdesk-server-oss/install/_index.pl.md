@@ -42,15 +42,11 @@ chmod +x install.sh
 
 W repozytorium [Techaholda](https://github.com/techahold/rustdeskinstall) znajduje się również skrypt aktualizacyjny.
 
-From there, note down the IP/DNS and Key shown at the end of the install and insert those into your client Settings > Network > ID/Relay server `ID server` and `Key` fields, respectively, leaving the other fields blank (see note below).
-
 Następnie zapisz adres IP/DNS i klucz wyświetlone na końcu instalacji i wprowadź je odpowiednio w ustawieniach klienta > Sieć > Serwer identyfikacyjny/serwer przekaźnikowy w polach `Serwer ID` i `Klucz`, pozostawiając pozostałe pola puste (patrz uwaga poniżej).
 
 ### Metoda 3.: Zainstaluj własny serwer jako usługę systemd przy użyciu pliku deb dla dystrybucji Debiana
 
-Please [Download](https://github.com/rustdesk/rustdesk-server/releases/latest) deb files yourself and install with `apt-get -f install <filename>.deb` or `dpkg -i <filename>.deb`.
-
-Musiz samodzielnie [pobrać](https://github.com/rustdesk/rustdesk-server/releases/latest) pliki deb i zainstalować je za pomocą polecenia `apt-get -f install <nazwa pliku>.deb` lub `dpkg -i <nazwa pliku>.deb`.
+Musisz samodzielnie [pobrać](https://github.com/rustdesk/rustdesk-server/releases/latest) pliki deb i zainstalować je za pomocą polecenia `apt-get -f install <nazwa pliku>.deb` lub `dpkg -i <nazwa pliku>.deb`.
 
 ## Skonfiguruj klienta
 Sprawdź ten [artykuł](/docs/pl/self-host/client-configuration/#2-ręczna-konfiguracja).
