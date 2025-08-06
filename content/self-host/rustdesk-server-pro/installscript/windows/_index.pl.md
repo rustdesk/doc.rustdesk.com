@@ -1,5 +1,5 @@
 ---
-title: Instalacja na Windowsie
+title: Instalacja na Windowsie (przestarzałe)
 weight: 5
 ---
 
