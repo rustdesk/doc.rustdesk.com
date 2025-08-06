@@ -1,5 +1,5 @@
 ---
-title: Windows Install
+title: Windows Install (deprecated)
 weight: 5
 ---
 
