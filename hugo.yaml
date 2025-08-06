@@ -129,6 +129,13 @@ languages:
   #  params:
   #    landingPageName: "🏠 Домашняя страница"
 
+  pl:
+    title: "Dokumentacja RustDesk"
+    weight: 2
+    languageName: "Polski"
+    params:
+      landingPageName: "Strona główna"
+
   pt:
     title: "Documentação para RustDesk"
     weight: 2
