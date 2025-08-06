@@ -4,9 +4,9 @@ weight: 4
 ---
 
 {{% notice note %}}
-Nie zapomnij uzyskać licencji na [https://rustdesk.com/pricing/](https://rustdesk.com/pricing/). Więcej szczegółów znajdziesz na stronie [licencji](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/).
+Nie zapomnij uzyskać licencji na [https://rustdesk.com/pricing/](https://rustdesk.com/pricing/). Więcej szczegółów znajdziesz na stronie [licencji](https://rustdesk.com/docs/pl/self-host/rustdesk-server-pro/license/).
 
-Przed wykonaniem tej prostej instalacji zaleca się zapoznanie z [instalacją OSS](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/). Znajdziesz tam więcej szczegółów technicznych.
+Przed wykonaniem tej prostej instalacji zaleca się zapoznanie z [instalacją OSS](https://rustdesk.com/docs/pl/self-host/rustdesk-server-oss/install/). Znajdziesz tam więcej szczegółów technicznych.
 {{% /notice %}}
 
 ## Instalacja
@@ -16,7 +16,7 @@ Skopiuj i wklej poniższą komendę w terminalu Linuxa, aby zainstalować serwer
 `wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh | bash`
 
 {{% notice note %}}
-Zalecam użycie [obrazu Dockera](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/#docker-compose), który znacznie upraszcza proces wdrażania i aktualizacji rozwiązania. Zużycie zasobów jest bardzo niskie.
+Zalecam użycie [obrazu Dockera](https://rustdesk.com/docs/pl/self-host/rustdesk-server-pro/installscript/docker/#docker-compose), który znacznie upraszcza proces wdrażania i aktualizacji rozwiązania. Zużycie zasobów jest bardzo niskie.
 
 Pamiętaj, aby uruchomić powyższą komendę w katalogu domowym, a nie w katalogu, w którym nie masz uprawnień do zapisu.
 {{% /notice %}}
@@ -32,7 +32,7 @@ Co robi skrypt:
 - W przypadku wybrania domeny instaluje Nginx i Certbot, umożliwiając dostęp do API na porcie `443` (HTTPS) oraz uzyskanie certyfikatu SSL przez port `80` (automatycznie odnawiany). Po skonfigurowaniu HTTPS należy korzystać z adresu `https://twojadomena.com` zamiast `https://twojadomena.com:21114`.
 
 {{% notice note %}}
-Jak [ręcznie skonfigurować HTTPS dla konsoli webowej](https://rustdesk.com/docs/pl/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
+Jak [ręcznie skonfigurować HTTPS dla konsoli webowej](https://rustdesk.com/docs/pl/self-host/rustdesk-server-pro/faq/#ręczna-konfiguracja-https-dla-konsoli-webowej).
 {{% /notice %}}
 
 {{% notice note %}}

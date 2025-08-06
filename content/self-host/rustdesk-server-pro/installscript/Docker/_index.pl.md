@@ -38,7 +38,7 @@ Następnie uruchom `sudo docker compose up -d` lub `podman-compose up -d`
 > `sudo apt install podman-compose` w celu zainstalowania `podman-compose`
 
 {{% notice note %}}
-[Jak ręcznie skonfigurować protokół HTTPS dla konsoli internetowej](https://rustdesk.com/docs/pl/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
+[Jak ręcznie skonfigurować protokół HTTPS dla konsoli internetowej](https://rustdesk.com/docs/pl/self-host/rustdesk-server-pro/faq/#ręczna-konfiguracja-https-dla-konsoli-webowej).
 {{% /notice %}}
 
 ## Polecenia Dockera
@@ -70,7 +70,7 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v ./data:/root -td --
 ```
 
 {{% notice note %}}
-[Jak ręcznie skonfigurować protokół HTTPS dla konsoli internetowej](https://rustdesk.com/docs/pl/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually).
+[Jak ręcznie skonfigurować protokół HTTPS dla konsoli internetowej](https://rustdesk.com/docs/pl/self-host/rustdesk-server-pro/faq/#ręczna-konfiguracja-https-dla-konsoli-webowej).
 {{% /notice %}}
 
 
