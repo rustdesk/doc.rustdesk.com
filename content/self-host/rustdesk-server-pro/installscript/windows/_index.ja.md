@@ -1,5 +1,5 @@
 ---
-title: Windowsインストール
+title: Windowsインストール (deprecated)
 weight: 5
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Instalação no Windows
+title: Instalação no Windows (deprecated)
 weight: 5
 ---
 

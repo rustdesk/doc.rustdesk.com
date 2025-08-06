@@ -1,5 +1,5 @@
 ---
-title: Windows 安装
+title: Windows 安装 (deprecated)
 weight: 5
 ---
 
