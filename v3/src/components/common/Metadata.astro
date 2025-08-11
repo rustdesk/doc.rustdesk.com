@@ -20,6 +20,8 @@ const {
   canonical = String(getCanonical(String(Astro.url.pathname))),
   robots = {},
   description,
+  keywords,
+  author,
   openGraph = {},
   twitter = {},
 } = Astro.props;
@@ -66,3 +68,7 @@ const seoProps: AstroSeoProps = merge(
 ---
 
 <AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site) }} />
+
+<!-- Additional SEO meta tags -->
+{keywords && <meta name="keywords" content={keywords} />}
+{author && <meta name="author" content={author} />}

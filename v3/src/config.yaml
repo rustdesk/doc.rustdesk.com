@@ -11,6 +11,9 @@ metadata:
   title:
     default: RustDesk
     template: '%s — RustDesk'
+  description: 'RustDesk - Open-source remote desktop software with self-hosted server solutions. Secure alternative to TeamViewer and AnyDesk.'
+  keywords: 'remote desktop software, open source, self-hosted, TeamViewer alternative, AnyDesk alternative, secure remote access'
+  author: 'RustDesk Team'
   robots:
     index: true
     follow: true
