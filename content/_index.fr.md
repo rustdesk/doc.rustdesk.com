@@ -1,5 +1,7 @@
 ---
-title: "Documentation RustDesk"
+title: "Documentation RustDesk - Bureau à Distance Open Source"
+description: "Documentation complète pour RustDesk - le logiciel de bureau à distance open source. Apprenez à auto-héberger, configurer les clients et déployer RustDesk sur votre infrastructure."
+keywords: ["rustdesk", "bureau à distance", "open source", "auto-hébergement", "documentation", "accès distant", "alternative VNC", "alternative teamviewer"]
 type: docs
 weight: 1
 ---

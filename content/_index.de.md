@@ -1,5 +1,7 @@
 ---
-title: "RustDesk Dokumentation"
+title: "RustDesk Dokumentation - Open Source Remote Desktop"
+description: "Vollständige Dokumentation für RustDesk - die Open-Source-Remote-Desktop-Software. Lernen Sie Self-Hosting, Client-Konfiguration und RustDesk-Bereitstellung in Ihrer Infrastruktur."
+keywords: ["rustdesk", "remote desktop", "open source", "self-hosting", "dokumentation", "fernzugriff", "VNC alternative", "teamviewer alternative"]
 type: docs
 weight: 1
 ---

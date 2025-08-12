@@ -1,0 +1,33 @@
+{{/* Enhanced breadcrumb with Schema.org markup for better SEO */}}
+{{ if not .Params.disableBreadcrumb }}
+{{ $ancestors := slice }}
+{{ $current := . }}
+{{ range $current.Ancestors.Reverse }}
+  {{ $ancestors = $ancestors | append . }}
+{{ end }}
+
+{{ if $ancestors }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {{ range $index, $ancestor := $ancestors }}
+    {
+      "@type": "ListItem",
+      "position": {{ add $index 1 }},
+      "name": "{{ $ancestor.Title }}",
+      "item": "{{ $ancestor.Permalink }}"
+    }{{ if ne $index (sub (len $ancestors) 1) }},{{ end }}
+    {{ end }}
+    ,{
+      "@type": "ListItem", 
+      "position": {{ add (len $ancestors) 1 }},
+      "name": "{{ .Title }}",
+      "item": "{{ .Permalink }}"
+    }
+  ]
+}
+</script>
+{{ end }}
+{{ end }}

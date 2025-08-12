@@ -1,0 +1,74 @@
+{{/* Schema.org JSON-LD structured data */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ if .IsPage }}Article{{ else }}WebSite{{ end }}",
+  "name": "{{ .Title }}",
+  "headline": "{{ .Title }}",
+  {{- if .IsPage }}
+  "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}",
+  "author": {
+    "@type": "Organization",
+    "name": "{{ .Site.Params.author }}",
+    "url": "https://rustdesk.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Params.author }}",
+    "url": "https://rustdesk.com",
+    {{- with .Site.Params.images }}
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ index . 0 | absURL }}"
+    }
+    {{- end }}
+  },
+  {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+  {{- with .PublishDate }}"datePublished": "{{ .Format $iso8601 }}",{{ end }}
+  {{- with .Lastmod }}"dateModified": "{{ .Format $iso8601 }}",{{ end }}
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+  {{- else }}
+  "description": "{{ .Site.Params.description }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Params.author }}",
+    "url": "https://rustdesk.com"
+  },
+  {{- end }}
+  "url": "{{ .Permalink }}",
+  {{- with .Site.Params.images }}
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ index . 0 | absURL }}"
+  },
+  {{- end }}
+  "inLanguage": "{{ .Site.Language.Lang }}",
+  "keywords": [
+    {{- if .Params.keywords -}}
+      {{- range $i, $keyword := .Params.keywords -}}
+        {{- if $i }}, {{ end }}"{{ $keyword }}"
+      {{- end -}}
+    {{- else if .Site.Language.Params.keywords -}}
+      {{- range $i, $keyword := .Site.Language.Params.keywords -}}
+        {{- if $i }}, {{ end }}"{{ $keyword }}"
+      {{- end -}}
+    {{- else if .Site.Params.keywords -}}
+      {{- range $i, $keyword := .Site.Params.keywords -}}
+        {{- if $i }}, {{ end }}"{{ $keyword }}"
+      {{- end -}}
+    {{- end }}
+  ],
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "RustDesk",
+    "description": "Open source remote desktop software",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Windows, macOS, Linux, iOS, Android",
+    "softwareVersion": "latest",
+    "url": "https://rustdesk.com"
+  }
+}
+</script>

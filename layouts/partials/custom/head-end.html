@@ -1,3 +1,48 @@
+<!-- Enhanced Meta Tags for SEO -->
+{{- if .Site.Language.Params.keywords }}
+<meta name="keywords" content="{{ delimit .Site.Language.Params.keywords ", " }}" />
+{{- else if .Site.Params.keywords }}
+<meta name="keywords" content="{{ delimit .Site.Params.keywords ", " }}" />
+{{- end }}
+<meta name="author" content="{{ .Site.Params.author }}" />
+<meta name="language" content="{{ .Site.Language.Lang }}" />
+<meta name="theme-color" content="#2563eb" />
+
+<!-- Alternate language versions for better SEO -->
+{{- if .IsTranslated }}
+  {{- range .AllTranslations }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+  {{- end }}
+{{- end }}
+
+<!-- JSON-LD for better indexing -->
+{{- if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "RustDesk",
+  "description": "{{ .Site.Params.description }}",
+  "url": "https://rustdesk.com",
+  "logo": "{{ (index .Site.Params.images 0) | absURL }}",
+  "sameAs": [
+    "https://github.com/rustdesk",
+    "https://twitter.com/rustdesk",
+    "https://discord.com/invite/nDceKgxnkV",
+    "https://www.reddit.com/r/rustdesk/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Support",
+    "email": "support@rustdesk.com"
+  }
+}
+</script>
+{{- end }}
+
+<!-- Enhanced breadcrumb structured data -->
+{{- partial "breadcrumb-seo.html" . -}}
+
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WCJMDEZ618"></script>
 <script>

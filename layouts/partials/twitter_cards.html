@@ -1,0 +1,24 @@
+{{/* Twitter Card meta tags */}}
+<meta name="twitter:card" content="summary_large_image" />
+{{- with site.Params.social.twitter -}}
+<meta name="twitter:site" content="@{{ . }}" />
+<meta name="twitter:creator" content="@{{ . }}" />
+{{- end -}}
+<meta name="twitter:title" content="{{ .Title }}" />
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+
+{{- with $.Params.images -}}
+{{- range first 1 . }}<meta name="twitter:image" content="{{ . | absURL }}" />{{ end -}}
+{{- else -}}
+{{- $featured := "" }}
+{{- with $featured -}}
+<meta name="twitter:image" content="{{ $featured.Permalink }}"/>
+{{- else -}}
+{{- with $.Site.Params.images }}<meta name="twitter:image" content="{{ index . 0 | absURL }}"/>{{ end -}}
+{{- end -}}
+{{- end -}}
+
+{{- with .Params.audio }}<meta name="twitter:player" content="{{ . }}" />{{ end }}
+{{- with .Params.videos }}
+{{- range first 1 . }}<meta name="twitter:player" content="{{ . | absURL }}" />{{ end }}
+{{- end }}

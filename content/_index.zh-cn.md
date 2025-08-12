@@ -1,5 +1,7 @@
 ---
-title: "RustDesk 文档"
+title: "RustDesk 文档 - 开源远程桌面软件"
+description: "RustDesk完整文档 - 开源远程桌面软件。学习如何自托管、配置客户端并在您的基础设施中部署RustDesk。"
+keywords: ["rustdesk", "远程桌面", "开源", "自托管", "文档", "远程访问", "VNC替代", "teamviewer替代"]
 type: docs
 weight: 1
 ---

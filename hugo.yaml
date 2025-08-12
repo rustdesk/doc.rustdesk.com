@@ -23,6 +23,12 @@ markup:
 enableEmoji: true
 enableRobotsTXT: true
 
+# Sitemap configuration
+sitemap:
+  changefreq: "weekly"
+  priority: 0.8
+  filename: "sitemap.xml"
+
 # Configure static file handling for absolute paths
 staticDir: ["static"]
 
@@ -33,13 +39,17 @@ imaging:
 
 # Output formats
 outputs:
-  home: ["HTML", "RSS"]
+  home: ["HTML", "RSS", "JSON"]
+  page: ["HTML"]
+  section: ["HTML", "RSS"]
 
 # Parameters
 params:
   disable_cookie: true
-  description: "Documentation for RustDesk"
+  description: "Complete documentation for RustDesk - the open source remote desktop software. Learn how to self-host, configure clients, and deploy RustDesk across your infrastructure."
   author: "RustDesk"
+  keywords: ["rustdesk", "remote desktop", "open source", "self-host", "documentation", "remote access", "VNC alternative", "teamviewer alternative"]
+  images: ["images/logo.svg"]
   showVisitedLinks: false
   disableSearch: false
   disableBreadcrumb: false
@@ -49,6 +59,17 @@ params:
   titleSeparator: "::"
   themeVariant: "blue"
   custom_css: ["css/theme-mine.css", "css/custom-enhancements.css"]
+  
+  # SEO Settings
+  social:
+    twitter: "rustdesk"
+    github: "rustdesk"
+  
+  # OpenGraph settings
+  opengraph:
+    site_name: "RustDesk Documentation"
+    type: "website"
+    locale: "en_US"
   
   navbar:
     displayTitle: true
@@ -107,6 +128,8 @@ languages:
     params:
       landingPageName: "🏠 Home"
       disable_cookie: true
+      description: "Complete documentation for RustDesk - the open source remote desktop software. Learn how to self-host, configure clients, and deploy RustDesk across your infrastructure."
+      keywords: ["rustdesk", "remote desktop", "open source", "self-host", "documentation", "remote access", "VNC alternative", "teamviewer alternative"]
 
   es:
     title: "Documentación para RustDesk"
@@ -114,6 +137,8 @@ languages:
     languageName: "Español"
     params:
       landingPageName: "🏠 Principal"
+      description: "Documentación completa para RustDesk - el software de escritorio remoto de código abierto. Aprende a auto-hospedar, configurar clientes y desplegar RustDesk en tu infraestructura."
+      keywords: ["rustdesk", "escritorio remoto", "código abierto", "auto-hospedaje", "documentación", "acceso remoto", "alternativa VNC", "alternativa teamviewer"]
 
   fr:
     title: "Documentation du RustDesk"
@@ -121,6 +146,8 @@ languages:
     languageName: "Français"
     params:
       landingPageName: "🏠 Page d'accueil"
+      description: "Documentation complète pour RustDesk - le logiciel de bureau à distance open source. Apprenez à auto-héberger, configurer les clients et déployer RustDesk sur votre infrastructure."
+      keywords: ["rustdesk", "bureau à distance", "open source", "auto-hébergement", "documentation", "accès distant", "alternative VNC", "alternative teamviewer"]
 
   # ru:
   #  title: "Документация для RustDesk"
@@ -135,6 +162,8 @@ languages:
     languageName: "Polski"
     params:
       landingPageName: "Strona główna"
+      description: "Kompletna dokumentacja dla RustDesk - oprogramowania pulpitu zdalnego o otwartym kodzie źródłowym. Naucz się self-hostingu, konfiguracji klientów i wdrażania RustDesk w swojej infrastrukturze."
+      keywords: ["rustdesk", "pulpit zdalny", "open source", "self-hosting", "dokumentacja", "dostęp zdalny", "alternatywa VNC", "alternatywa teamviewer"]
 
   pt:
     title: "Documentação para RustDesk"
@@ -142,6 +171,8 @@ languages:
     languageName: "Português"
     params:
       landingPageName: "🏠 Pagina inicial"
+      description: "Documentação completa para RustDesk - o software de desktop remoto de código aberto. Aprenda a auto-hospedar, configurar clientes e implantar RustDesk em sua infraestrutura."
+      keywords: ["rustdesk", "desktop remoto", "código aberto", "auto-hospedagem", "documentação", "acesso remoto", "alternativa VNC", "alternativa teamviewer"]
 
   it:
     title: "Documentazione per RustDesk"
@@ -149,6 +180,8 @@ languages:
     languageName: "Italiano"
     params:
       landingPageName: "🏠 Pagina iniziale"
+      description: "Documentazione completa per RustDesk - il software desktop remoto open source. Impara a self-hostare, configurare i client e distribuire RustDesk sulla tua infrastruttura."
+      keywords: ["rustdesk", "desktop remoto", "open source", "self-hosting", "documentazione", "accesso remoto", "alternativa VNC", "alternativa teamviewer"]
 
   de:
     title: "Dokumentation für RustDesk"
@@ -156,6 +189,8 @@ languages:
     languageName: "Deutsch"
     params:
       landingPageName: "🏠 Startseite"
+      description: "Vollständige Dokumentation für RustDesk - die Open-Source-Remote-Desktop-Software. Lernen Sie Self-Hosting, Client-Konfiguration und RustDesk-Bereitstellung in Ihrer Infrastruktur."
+      keywords: ["rustdesk", "remote desktop", "open source", "self-hosting", "dokumentation", "fernzugriff", "VNC alternative", "teamviewer alternative"]
 
   #nl:
   #  title: "Documentatie voor RustDesk"
@@ -177,6 +212,8 @@ languages:
     languageName: "日本語"
     params:
       landingPageName: "🏠 ホームページ"
+      description: "RustDeskの完全なドキュメント - オープンソースのリモートデスクトップソフトウェア。セルフホスティング、クライアント設定、インフラストラクチャでのRustDeskの展開方法を学びます。"
+      keywords: ["rustdesk", "リモートデスクトップ", "オープンソース", "セルフホスティング", "ドキュメント", "リモートアクセス", "VNC代替", "teamviewer代替"]
 
   zh-cn:
     title: "RustDesk文档"
@@ -185,6 +222,8 @@ languages:
     params:
       landingPageName: "🏠 首页"
       disable_cookie: true
+      description: "RustDesk完整文档 - 开源远程桌面软件。学习如何自托管、配置客户端并在您的基础设施中部署RustDesk。"
+      keywords: ["rustdesk", "远程桌面", "开源", "自托管", "文档", "远程访问", "VNC替代", "teamviewer替代"]
 
   zh-tw:
     title: "RustDesk文檔"
@@ -192,3 +231,5 @@ languages:
     languageName: "繁體中文"
     params:
       landingPageName: "🏠 首頁"
+      description: "RustDesk完整文檔 - 開源遠端桌面軟體。學習如何自主託管、配置客戶端並在您的基礎架構中部署RustDesk。"
+      keywords: ["rustdesk", "遠端桌面", "開源", "自主託管", "文檔", "遠端存取", "VNC替代", "teamviewer替代"]

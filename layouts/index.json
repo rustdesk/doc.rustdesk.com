@@ -1,0 +1,19 @@
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
+{
+  "title": "{{ site.Title }}",
+  "description": "{{ site.Params.description }}",
+  "url": "{{ site.BaseURL }}",
+  "language": "{{ site.Language.Lang }}",
+  "pages": [
+    {{- range $index, $page := $pages -}}
+    {{- if $index }},{{ end }}
+    {
+      "title": "{{ $page.Title }}",
+      "url": "{{ $page.Permalink }}",
+      "description": "{{ with $page.Description }}{{ . }}{{ else }}{{ $page.Summary }}{{ end }}",
+      "date": "{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}",
+      "section": "{{ $page.Section }}"
+    }
+    {{- end -}}
+  ]
+}
