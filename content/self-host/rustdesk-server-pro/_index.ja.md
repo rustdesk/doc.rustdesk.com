@@ -1,5 +1,7 @@
 ---
 title: RustDesk Server Pro
+description: "RustDesk Server Proの完全ガイド - プレミアムなセルフホストリモートデスクトップソリューション。エンタープライズ認証（OIDC、LDAP、2FA）、Webコンソール、APIアクセス、高度なセキュリティコントロールを提供。"
+keywords: ["rustdesk server pro", "rustdesk プロサーバー", "リモートデスクトップサーバー", "エンタープライズリモートアクセス", "rustdesk プロフェッショナル", "セルフホストrdp", "rustdesk エンタープライズ", "リモートデスクトップソリューション", "rustdesk ライセンス", "rustdesk webコンソール"]
 weight: 200
 pre: "<b>2.2. </b>"
 ---

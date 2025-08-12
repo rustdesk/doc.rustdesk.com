@@ -1,5 +1,7 @@
 ---
 title: FAQ
+description: "RustDesk Server Proのインストール、設定、ライセンス、トラブルシューティング、移行に関するよくある質問。一般的なセットアップの問題、SSL設定、データベース管理、アップグレード手順の回答を得る。"
+keywords: ["rustdesk server pro faq", "rustdesk pro ヘルプ", "rustdesk インストールヘルプ", "rustdesk トラブルシューティング", "rustdesk サーバー設定", "rustdesk ライセンス問題", "rustdesk ssl設定", "rustdesk 移行ガイド", "rustdesk pro サポート", "rustdesk サーバー質問"]
 weight: 600
 ---
 

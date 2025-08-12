@@ -1,5 +1,7 @@
 ---
 title: Configurazione Client
+description: "Configura i client RustDesk per server self-hosted. Funzionalità: generatore di client personalizzato (Pro) per app con marchio con il tuo logo, configurazione manuale, impostazioni import/export e strategie di distribuzione aziendale."
+keywords: ["configurazione client rustdesk", "generatore client personalizzato", "client rustdesk con marchio", "rustdesk white label", "distribuzione aziendale rustdesk", "configurazione client rustdesk", "app rustdesk personalizzata", "client rustdesk pro", "gestione configurazione rustdesk", "branding aziendale rustdesk"]
 weight: 300
 pre: "<b>2.3. </b>"
 ---

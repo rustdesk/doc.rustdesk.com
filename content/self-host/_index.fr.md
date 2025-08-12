@@ -1,5 +1,7 @@
 ---
 title: Auto-hébergement
+description: "Apprenez à auto-héberger votre propre serveur RustDesk. Guide complet couvrant l'installation, la configuration et le déploiement de l'infrastructure serveur RustDesk pour un accès sécurisé au bureau à distance."
+keywords: ["rustdesk auto-hébergement", "serveur rustdesk", "serveur bureau à distance", "guide auto-hébergement", "installation rustdesk", "hbbs hbbr", "serveur rustdesk pro"]
 weight: 5
 pre: "<b>2. </b>"
 ---

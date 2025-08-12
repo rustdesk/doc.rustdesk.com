@@ -1,5 +1,7 @@
 ---
 title: Configuration du Client
+description: "Configurez les clients RustDesk pour les serveurs auto-hébergés. Fonctionnalités: générateur de client personnalisé (Pro) pour des applications de marque avec votre logo, configuration manuelle, paramètres d'import/export et stratégies de déploiement d'entreprise."
+keywords: ["configuration client rustdesk", "générateur client personnalisé", "client rustdesk de marque", "rustdesk marque blanche", "déploiement entreprise rustdesk", "configuration client rustdesk", "application rustdesk personnalisée", "client rustdesk pro", "gestion configuration rustdesk", "image de marque entreprise rustdesk"]
 weight: 300
 pre: "<b>2.3. </b>"
 ---

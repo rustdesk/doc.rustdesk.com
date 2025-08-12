@@ -1,5 +1,7 @@
 ---
 title: クライアント設定
+description: "セルフホストサーバー用にRustDeskクライアントを設定。機能：カスタムクライアントジェネレーター（Pro）であなたのロゴを使ったブランドアプリ、手動設定、インポート/エクスポート設定、エンタープライズデプロイメント戦略。"
+keywords: ["rustdesk クライアント設定", "カスタムクライアントジェネレーター", "rustdesk ブランドクライアント", "rustdesk ホワイトラベル", "rustdesk エンタープライズデプロイメント", "rustdesk クライアントセットアップ", "カスタムrustdeskアプリ", "rustdesk proクライアント", "rustdesk 設定管理", "rustdesk 企業ブランディング"]
 weight: 300
 pre: "<b>2.3. </b>"
 ---

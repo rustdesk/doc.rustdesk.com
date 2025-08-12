@@ -1,5 +1,7 @@
 ---
 title: FAQ
+description: "Frequently asked questions about RustDesk Server Pro installation, configuration, licensing, troubleshooting, and migration. Get answers to common setup issues, SSL configuration, database management, and upgrade procedures."
+keywords: ["rustdesk server pro faq", "rustdesk pro help", "rustdesk installation help", "rustdesk troubleshooting", "rustdesk server setup", "rustdesk license issues", "rustdesk ssl configuration", "rustdesk migration guide", "rustdesk pro support", "rustdesk server questions"]
 weight: 600
 ---
 

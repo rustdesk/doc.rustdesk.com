@@ -1,5 +1,7 @@
 ---
 title: 自架伺服器
+description: "學習如何自架您自己的 RustDesk 伺服器。完整指南涵蓋 RustDesk 伺服器基礎設施的安裝、配置和部署，實現安全的遠端桌面存取。"
+keywords: ["rustdesk 自架", "rustdesk 伺服器", "遠端桌面伺服器", "自架指南", "rustdesk 安裝", "hbbs hbbr", "rustdesk 專業版伺服器"]
 weight: 5
 pre: "<b>2. </b>"
 ---

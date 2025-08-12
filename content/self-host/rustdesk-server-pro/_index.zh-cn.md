@@ -1,5 +1,7 @@
 ---
 title: 自建服务器专业版
+description: "RustDesk Server Pro 完整指南 - 高级自托管远程桌面解决方案。提供企业级身份验证（OIDC、LDAP、2FA）、Web控制台、API访问和高级安全控制，适用于专业部署。"
+keywords: ["rustdesk server pro", "rustdesk 专业版服务器", "远程桌面服务器", "企业远程访问", "rustdesk 专业版", "自托管rdp", "rustdesk 企业版", "远程桌面解决方案", "rustdesk 许可证", "rustdesk web控制台"]
 weight: 200
 pre: "<b>2.2. </b>"
 ---

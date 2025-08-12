@@ -1,5 +1,7 @@
 ---
 title: 自托管
+description: "学习如何自托管您自己的 RustDesk 服务器。完整指南涵盖 RustDesk 服务器基础设施的安装、配置和部署，实现安全的远程桌面访问。"
+keywords: ["rustdesk 自托管", "rustdesk 服务器", "远程桌面服务器", "自托管指南", "rustdesk 安装", "hbbs hbbr", "rustdesk 专业版服务器"]
 weight: 5
 pre: "<b>2. </b>"
 ---

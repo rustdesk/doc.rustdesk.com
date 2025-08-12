@@ -1,5 +1,7 @@
 ---
 title: Auto-hospedagem
+description: "Aprenda como auto-hospedar seu próprio servidor RustDesk. Guia completo cobrindo instalação, configuração e implantação da infraestrutura do servidor RustDesk para acesso seguro à área de trabalho remota."
+keywords: ["rustdesk auto-hospedagem", "servidor rustdesk", "servidor desktop remoto", "guia auto-hospedagem", "instalação rustdesk", "hbbs hbbr", "servidor rustdesk pro"]
 weight: 5
 pre: "<b>2. </b>"
 ---

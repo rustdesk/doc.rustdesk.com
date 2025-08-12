@@ -1,5 +1,7 @@
 ---
 title: Konfiguracja klienta
+description: "Skonfiguruj klientów RustDesk dla samodzielnie hostowanych serwerów. Funkcje: generator niestandardowego klienta (Pro) dla aplikacji z marką z Twoim logo, konfiguracja ręczna, ustawienia importu/eksportu i strategie wdrożenia korporacyjnego."
+keywords: ["konfiguracja klienta rustdesk", "generator niestandardowego klienta", "klient rustdesk z marką", "rustdesk white label", "wdrożenie korporacyjne rustdesk", "konfiguracja klienta rustdesk", "niestandardowa aplikacja rustdesk", "klient rustdesk pro", "zarządzanie konfiguracją rustdesk", "branding korporacyjny rustdesk"]
 weight: 300
 pre: "<b>2.3. </b>"
 ---

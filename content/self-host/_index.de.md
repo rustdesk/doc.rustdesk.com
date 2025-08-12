@@ -1,5 +1,7 @@
 ---
 title: Selbst-Host
+description: "Lernen Sie, wie Sie Ihren eigenen RustDesk-Server selbst hosten. Vollständige Anleitung zur Installation, Konfiguration und Bereitstellung der RustDesk-Server-Infrastruktur für sicheren Remote-Desktop-Zugriff."
+keywords: ["rustdesk selbst-host", "rustdesk server", "remote desktop server", "selbst-hosting anleitung", "rustdesk installation", "hbbs hbbr", "rustdesk pro server"]
 weight: 5
 pre: "<b>2. </b>"
 ---

@@ -1,5 +1,7 @@
 ---
 title: 客户端配置
+description: "为自托管服务器配置 RustDesk 客户端。功能包括自定义客户端生成器（专业版）用于带有您的标志的品牌应用、手动配置、导入/导出设置和企业部署策略。"
+keywords: ["rustdesk 客户端配置", "自定义客户端生成器", "rustdesk 品牌客户端", "rustdesk 白标签", "rustdesk 企业部署", "rustdesk 客户端设置", "自定义rustdesk应用", "rustdesk 专业版客户端", "rustdesk 配置管理", "rustdesk 企业品牌"]
 weight: 300
 pre: "<b>2.3. </b>"
 ---

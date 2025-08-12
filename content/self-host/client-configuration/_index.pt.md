@@ -1,5 +1,7 @@
 ---
 title: Configuração do Cliente
+description: "Configure clientes RustDesk para servidores auto-hospedados. Recursos: gerador de cliente personalizado (Pro) para aplicativos com marca com seu logo, configuração manual, configurações de importação/exportação e estratégias de implantação empresarial."
+keywords: ["configuração cliente rustdesk", "gerador cliente personalizado", "cliente rustdesk com marca", "rustdesk marca branca", "implantação empresarial rustdesk", "configuração cliente rustdesk", "aplicativo rustdesk personalizado", "cliente rustdesk pro", "gerenciamento configuração rustdesk", "marcação corporativa rustdesk"]
 weight: 300
 pre: "<b>2.3. </b>"
 ---

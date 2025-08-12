@@ -1,5 +1,7 @@
 ---
 title: RustDesk Server Pro
+description: "Vollständige Anleitung zu RustDesk Server Pro - die Premium selbst-gehostete Remote-Desktop-Lösung. Funktionen: Unternehmens-Authentifizierung (OIDC, LDAP, 2FA), Web-Konsole, API-Zugang und erweiterte Sicherheitskontrollen für professionelle Bereitstellung."
+keywords: ["rustdesk server pro", "rustdesk pro server", "remote desktop server", "enterprise remote zugriff", "rustdesk professionell", "selbst-gehostet rdp", "rustdesk enterprise", "remote desktop lösung", "rustdesk lizenz", "rustdesk web konsole"]
 weight: 200
 pre: "<b>2.2. </b>"
 ---

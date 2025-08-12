@@ -1,5 +1,7 @@
 ---
 title: 常見問題
+description: "RustDesk Server Pro 安裝、配置、授權、故障排除和移轉的常見問題。取得常見設定問題、SSL配置、資料庫管理和升級程序的答案。"
+keywords: ["rustdesk server pro 常見問題", "rustdesk pro 幫助", "rustdesk 安裝幫助", "rustdesk 故障排除", "rustdesk 伺服器設定", "rustdesk 授權問題", "rustdesk ssl配置", "rustdesk 移轉指南", "rustdesk pro 支援", "rustdesk 伺服器問題"]
 weight: 600
 ---
 

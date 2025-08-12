@@ -1,5 +1,7 @@
 ---
 title: Client-Konfiguration
+description: "Konfigurieren Sie RustDesk-Clients für selbst-gehostete Server. Funktionen: Benutzerdefinierter Client-Generator (Pro) für gebrandete Apps mit Ihrem Logo, manuelle Konfiguration, Import/Export-Einstellungen und Unternehmens-Deployment-Strategien."
+keywords: ["rustdesk client konfiguration", "benutzerdefinierter client generator", "rustdesk gebrandeter client", "rustdesk white label", "rustdesk enterprise deployment", "rustdesk client setup", "benutzerdefinierte rustdesk app", "rustdesk pro client", "rustdesk konfigurations management", "rustdesk unternehmens branding"]
 weight: 300
 pre: "<b>2.3. </b>"
 ---

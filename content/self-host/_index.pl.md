@@ -1,5 +1,7 @@
 ---
 title: Samodzielne hostowanie
+description: "Naucz się jak samodzielnie hostować własny serwer RustDesk. Kompletny przewodnik obejmujący instalację, konfigurację i wdrożenie infrastruktury serwera RustDesk dla bezpiecznego dostępu do zdalnego pulpitu."
+keywords: ["rustdesk samodzielne hostowanie", "serwer rustdesk", "serwer zdalnego pulpitu", "przewodnik samodzielnego hostowania", "instalacja rustdesk", "hbbs hbbr", "serwer rustdesk pro"]
 weight: 5
 pre: "<b>2. </b>"
 ---

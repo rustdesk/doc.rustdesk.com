@@ -1,5 +1,7 @@
 ---
 title: セルフホスト
+description: "独自の RustDesk サーバーをセルフホストする方法を学びましょう。安全なリモートデスクトップアクセスのための RustDesk サーバーインフラストラクチャのインストール、設定、デプロイメントを網羅した完全ガイド。"
+keywords: ["rustdesk セルフホスト", "rustdesk サーバー", "リモートデスクトップサーバー", "セルフホストガイド", "rustdesk インストール", "hbbs hbbr", "rustdesk プロサーバー"]
 weight: 5
 pre: "<b>2. </b>"
 ---

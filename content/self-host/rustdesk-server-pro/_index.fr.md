@@ -1,5 +1,7 @@
 ---
 title: RustDesk Server Pro
+description: "Guide complet de RustDesk Server Pro - la solution premium auto-hébergée de bureau à distance. Fonctionnalités d'authentification d'entreprise (OIDC, LDAP, 2FA), console web, accès API et contrôles de sécurité avancés pour déploiement professionnel."
+keywords: ["rustdesk server pro", "serveur rustdesk pro", "serveur bureau à distance", "accès distant entreprise", "rustdesk professionnel", "rdp auto-hébergé", "rustdesk entreprise", "solution bureau à distance", "licence rustdesk", "console web rustdesk"]
 weight: 200
 pre: "<b>2.2. </b>"
 ---

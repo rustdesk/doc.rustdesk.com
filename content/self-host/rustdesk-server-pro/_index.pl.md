@@ -1,5 +1,7 @@
 ---
 title: Serwer RustDeska Pro
+description: "Kompletny przewodnik po RustDesk Server Pro - rozwiązanie premium do samodzielnego hostowania zdalnego pulpitu. Funkcje uwierzytelniania korporacyjnego (OIDC, LDAP, 2FA), konsola internetowa, dostęp do API i zaawansowane kontrole bezpieczeństwa do wdrożenia profesjonalnego."
+keywords: ["rustdesk server pro", "serwer rustdesk pro", "serwer zdalnego pulpitu", "dostęp zdalny enterprise", "rustdesk profesjonalny", "samodzielnie hostowany rdp", "rustdesk enterprise", "rozwiązanie zdalnego pulpitu", "licencja rustdesk", "konsola web rustdesk"]
 weight: 200
 pre: "<b>2.2. </b>"
 ---
