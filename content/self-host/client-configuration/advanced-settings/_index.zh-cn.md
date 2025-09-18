@@ -1321,3 +1321,16 @@ D3D渲染可以获得高帧率并减少CPU使用率，但在某些设备上远�
 | 值 | 默认值 | 示例 |
 | :------: | :------: | :------: |
 | Y, N | Y | `register-device=N` |
+
+### main-window-always-on-top
+
+始终将主窗口放在最顶部。
+
+**讨论**: https://github.com/rustdesk/rustdesk-server-pro/issues/761
+
+仅 RustDesk 客户端 >= 1.4.2 可用。
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `main-window-always-on-top=N` |
+
