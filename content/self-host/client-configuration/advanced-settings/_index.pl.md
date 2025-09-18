@@ -1331,3 +1331,26 @@ Jeśli `register-device=N`, poniższe nie będzie działać dla tego urządzenia
 | :------: | :------: | :------: |
 | Y, N | Y | `register-device=N` |
 
+### main-window-always-on-top
+
+Zawsze trzymaj główne okno na wierzchu.
+
+**Dyskusja**: https://github.com/rustdesk/rustdesk-server-pro/issues/761
+
+Dostępne tylko w kliencie RustDesk 1.4.2.
+
+| Wymagana instalacja | Wartości | Domyślne | Przykład |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `main-window-always-on-top=N` |
+
+### relay-server
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/776#issuecomment-3306524913
+
+### disable-discovery-panel
+
+Wyłącz panel "Odkryte" (obok panelu "Ulubione") w kliencie RustDesk.
+
+| Opcja | Wymagana instalacja | Wartości | Domyślne | Przykład |
+| :------: | :------: | :------: | :------: | :------: |
+| disable-discovery-panel | N | Y, N | N | `disable-discovery-panel=Y` |

@@ -1318,3 +1318,27 @@ Se `register-device=N`, quanto segue non funzionerà per questo dispositivo.
 | Valori | Predefinito | Esempio |
 | :------: | :------: | :------: |
 | Y, N | Y | `register-device=N` |
+
+### main-window-always-on-top
+
+Mantieni sempre la finestra principale in primo piano.
+
+**Discussione**: https://github.com/rustdesk/rustdesk-server-pro/issues/761
+
+Disponibile solo nel client RustDesk 1.4.2.
+
+| Installazione richiesta | Valori | Predefinito | Esempio |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `main-window-always-on-top=N` |
+
+### relay-server
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/776#issuecomment-3306524913
+
+### disable-discovery-panel
+
+Disabilita il pannello "Rilevato" (accanto al pannello "Preferiti") sul client RustDesk.
+
+| Opzione | Installazione richiesta | Valori | Predefinito | Esempio |
+| :------: | :------: | :------: | :------: |
+| disable-discovery-panel | N | Y, N | N | `disable-discovery-panel=Y` |

@@ -1329,3 +1329,26 @@ RustDeskクライアント>=1.4.1およびProサーバー>= 1.5.9でのみ利用
 | 値 | デフォルト | 例 |
 | :------: | :------: | :------: |
 | Y, N | Y | `register-device=N` |
+### main-window-always-on-top
+
+メインウィンドウを常に最前面に表示します。
+
+**ディスカッション**: https://github.com/rustdesk/rustdesk-server-pro/issues/761
+
+RustDeskクライアント1.4.2でのみ利用可能です。
+
+| インストール必要 | 値 | デフォルト | 例 |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `main-window-always-on-top=N` |
+
+### relay-server
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/776#issuecomment-3306524913
+
+### disable-discovery-panel
+
+RustDeskクライアントの「お気に入り」パネルの隣にある「発見済み」パネルを無効にします。
+
+| オプション | インストール必要 | 値 | デフォルト | 例 |
+| :------: | :------: | :------: | :------: | :------: |
+| disable-discovery-panel | N | Y, N | N | `disable-discovery-panel=Y` |

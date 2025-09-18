@@ -1764,3 +1764,27 @@ D3D渲染可以獲得高幀率並減少CPU使用率，但在某些設備上遠�
 | 值 | 預設值 | 範例 |
 | :------: | :------: | :------: |
 | Y, N | Y | `register-device=N` |
+
+### main-window-always-on-top
+
+始終將主視窗保持在最上層。
+
+**討論**: https://github.com/rustdesk/rustdesk-server-pro/issues/761
+
+僅在 RustDesk 客戶端 1.4.2 中可用。
+
+| 需要安裝 | 值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `main-window-always-on-top=N` |
+
+### relay-server
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/776#issuecomment-3306524913
+
+### disable-discovery-panel
+
+在 RustDesk 客戶端上停用「已發現」面板（在「我的最愛」面板旁邊）。
+
+| 選項 | 需要安裝 | 值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: |
+| disable-discovery-panel | N | Y, N | N | `disable-discovery-panel=Y` |

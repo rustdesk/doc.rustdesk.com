@@ -1321,3 +1321,27 @@ D3D渲染可以获得高帧率并减少CPU使用率，但在某些设备上远�
 | 值 | 默认值 | 示例 |
 | :------: | :------: | :------: |
 | Y, N | Y | `register-device=N` |
+
+### main-window-always-on-top
+
+始终将主窗口保持在最顶层。
+
+**讨论**: https://github.com/rustdesk/rustdesk-server-pro/issues/761
+
+仅在 RustDesk 客户端 1.4.2 中可用。
+
+| 需要安装 | 值 | 默认值 | 示例 |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `main-window-always-on-top=N` |
+
+### relay-server
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/776#issuecomment-3306524913
+
+### disable-discovery-panel
+
+在 RustDesk 客户端上禁用“已发现”面板（在“收藏夹”面板旁边）。
+
+| 选项 | 需要安装 | 值 | 默认值 | 示例 |
+| :------: | :------: | :------: | :------: | :------: |
+| disable-discovery-panel | N | Y, N | N | `disable-discovery-panel=Y` |
