@@ -1027,9 +1027,9 @@ Opcja "trackpad-speed" w ustawieniach każdego partnera będzie wtedy kontrolowa
 
 ## Inne
 
-### preset-address-book-name & preset-address-book-tag
+### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-password & preset-address-book-note
 
-Nazwa i tag wstępnie ustawionej książki adresowej, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
+Nazwa książki adresowej, tag urządzenia, alias urządzenia, hasło urządzenia, notatka urządzenia wstępnie ustawione, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
 Wartość preset-address-book-name można ustawić tylko wtedy, gdy nie chcesz ustawiać tagu.
 Użyj prawidłowej nazwy książki adresowej i tagu na stronie książki adresowej konsoli webowej.
 
@@ -1037,6 +1037,11 @@ Użyj prawidłowej nazwy książki adresowej i tagu na stronie książki adresow
 | :------: | :------: | :------: | :------: | :------: |
 | preset-address-book-name | N | | | `preset-address-book-name=<nazwa książki adresowej>` |
 | preset-address-book-tag | N | | | `preset-address-book-tag=<nazwa tagu książki adresowej>` |
+| preset-address-book-alias | N | | | `preset-address-book-alias=<alias urządzenia>` |
+| preset-address-book-password | N | | | `preset-address-book-password=<hasło urządzenia>` |
+| preset-address-book-note | N | | | `preset-address-book-note=<notatka urządzenia>` |
+
+preset-address-book-alias, preset-address-book-password, preset-address-book-note są dostępne w kliencie RustDesk >=1.4.3, pro >= 1.6.6.
 
 ### disable-group-panel
 
@@ -1187,13 +1192,15 @@ Kontroluje, czy używać wyłącznie protokołu TCP. Nie będzie już używać p
 | :------: | :------: | :------: |
 | Y, N | N | `disable-udp=Y` |
 
-### preset-user-name / preset-strategy-name / preset-device-group-name
+### preset-user-name / preset-strategy-name / preset-device-group-name / preset-device-username / preset-device-name / preset-note
 
-Przypisz użytkownika / strategię / grupę urządzeń do urządzenia. Możesz to również zrobić za pomocą [wiersza poleceń](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
+Przypisz użytkownika / strategię / grupę urządzeń / nazwę użytkownika urządzenia / nazwę urządzenia(hostname) / notatkę do urządzenia. Możesz to również zrobić za pomocą [wiersza poleceń](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
 
 funkcja grup urządzeń jest dostępna w klientach RustDeska >=1.3.8, pro >= 1.5.0
+
+preset-device-username, preset-device-name, preset-note są dostępne w kliencie RustDesk >=1.4.3, pro >= 1.6.6.
 
 ### default-connect-password
 
@@ -1321,7 +1328,7 @@ Nie rejestruj urządzenia, nie będzie ono widoczne na stronie urządzeń w kons
 Jeśli `register-device=N`, poniższe nie będzie działać dla tego urządzenia.
 - Logowanie się
 - Polecenie `--assign`
-- `preset-address-book-name`, `--preset-address-book-tag`, `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`
+- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
 - Dzienniki audytowe
 - Strategie
 
