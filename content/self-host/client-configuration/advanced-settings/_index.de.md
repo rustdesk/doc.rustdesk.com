@@ -808,21 +808,6 @@ Die "Datenschutzmodus"-Option in den Einstellungen jedes Peers steuert dann, ob 
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `privacy-mode=Y` |
 
-### touch-mode
-
-Diese Option setzt die "Touch-Modus"-Option für jeden Peer nach der ersten Verbindung.
-
-Die "Touch-Modus"-Option in den Einstellungen jedes Peers steuert dann, ob Touch-Modus oder Maus-Modus verwendet wird.
-
-**Ort**:
-
-1. **Desktop**
-2. **Mobil** Einstellungen → Anzeigeeinstellungen → Andere Standardoptionen → Touch-Modus
-
-| Installation erforderlich | Werte | Standard | Beispiel |
-| :------: | :------: | :------: | :------: |
-| N | Y, N | N | `touch-mode=Y` |
-
 ### i444
 
 Diese Option setzt die "i444"-Option für jeden Peer nach der ersten Verbindung.
@@ -1342,3 +1327,66 @@ Deaktivieren Sie das Panel "Entdeckt" (neben dem Panel "Favoriten") im RustDesk-
 | Option | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: | :------: |
 | disable-discovery-panel | N | Y, N | N | `disable-discovery-panel=Y` |
+
+### touch-mode
+
+Steuert, ob während Fernsteuerungssitzungen der Touch‑Modus oder der Maus‑Modus verwendet wird.
+
+#### Unterschiede im Verhalten nach Version
+
+##### RustDesk (steuernde Seite) < 1.4.3
+
+Nach der ersten Verbindung setzt diese Option die Einstellung "touch-mode" für jeden Peer. Danach bestimmen die individuellen Einstellungen jedes Peers, ob Touch‑ oder Maus‑Modus verwendet wird.
+
+**Ort**:
+
+1. **Desktop**
+2. **Mobile** Einstellungen → Anzeige → Weitere Standard‑Optionen → Touch‑Modus
+
+##### RustDesk (steuernde Seite) >= 1.4.3
+
+Diese Option steuert einheitlich, ob alle Peer‑Geräte den Touch‑Modus oder den Maus‑Modus verwenden und überschreibt damit die individuellen Geräteeinstellungen.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `touch-mode=Y` |
+
+### show-virtual-mouse
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+Steuert die Anzeige der virtuellen Maus beim Modus mobil → Desktop.
+
+**Ort**:
+
+1. **Desktop**
+2. **Mobile** Fernsitzung → untere Navigationsleiste → Gesten‑Hilfe
+
+Verfügbar seit RustDesk 1.4.3
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-mouse=Y` |
+
+**Hinweis**: Diese Option sollte in **Default settings** und nicht in **Override settings** konfiguriert werden.
+
+### show-virtual-joystick
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+Steuert die Anzeige des virtuellen Joysticks beim Modus mobil → Desktop.
+
+Diese Option erfordert, dass **show-virtual-mouse** aktiviert ist.
+
+**Ort**:
+
+1. **Desktop**
+2. **Mobile** Fernsitzung → untere Navigationsleiste → Gesten‑Hilfe
+
+Verfügbar seit RustDesk 1.4.3
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-joystick=Y` |
+
+**Hinweis**: Diese Option sollte in **Default settings** und nicht in **Override settings** konfiguriert werden.

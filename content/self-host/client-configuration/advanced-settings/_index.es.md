@@ -808,21 +808,6 @@ La opción "modo privacidad" en las configuraciones de cada par controlará lueg
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `privacy-mode=Y` |
 
-### touch-mode
-
-Esta opción establecerá la opción "modo táctil" para cada par después de la primera conexión.
-
-La opción "modo táctil" en las configuraciones de cada par controlará luego si usar modo táctil o modo ratón.
-
-**Ubicación**:
-
-1. **Escritorio**
-2. **Móvil** Configuración → Configuración de pantalla → Otras opciones predeterminadas → Modo táctil
-
-| Instalación requerida | Valores | Predeterminado | Ejemplo |
-| :------: | :------: | :------: | :------: |
-| N | Y, N | N | `touch-mode=Y` |
-
 ### i444
 
 Esta opción establecerá la opción "i444" para cada par después de la primera conexión.
@@ -1342,3 +1327,66 @@ Desactivar el panel "Descubierto" (junto al panel "Favoritos") en el cliente Rus
 | Opción | Instalación requerida | Valores | Predeterminado | Ejemplo |
 | :------: | :------: | :------: | :------: | :------: |
 | disable-discovery-panel | N | Y, N | N | `disable-discovery-panel=Y` |
+
+### touch-mode
+
+Controla si se debe usar el modo táctil o el modo ratón durante las sesiones de control remoto.
+
+#### Diferencias de comportamiento según la versión
+
+##### RustDesk (lado controlador) < 1.4.3
+
+Tras la primera conexión, esta opción establece la configuración "touch-mode" para cada peer. A partir de entonces, las configuraciones individuales de cada peer determinan si se usa el modo táctil o el modo ratón.
+
+**Ubicación**:
+
+1. **Escritorio**
+2. **Móvil** Configuración → Pantalla → Otras opciones predeterminadas → Modo táctil
+
+##### RustDesk (lado controlador) >= 1.4.3
+
+Esta opción controla de forma uniforme si todos los dispositivos peer usan el modo táctil o el modo ratón, sobrescribiendo las configuraciones individuales de cada dispositivo.
+
+| Valores | Predeterminado | Ejemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `touch-mode=Y` |
+
+### show-virtual-mouse
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+Controla la visualización del ratón virtual cuando móvil → escritorio.
+
+**Ubicación**:
+
+1. **Escritorio**
+2. **Móvil** Sesión remota → barra de navegación inferior → ayuda de gestos
+
+Disponible desde RustDesk 1.4.3
+
+| Valores | Predeterminado | Ejemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-mouse=Y` |
+
+**Nota**: Esta opción debe configurarse en **Default settings** en lugar de en **Override settings**.
+
+### show-virtual-joystick
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+Controla la visualización del joystick virtual cuando móvil → escritorio.
+
+Esta opción requiere que **show-virtual-mouse** esté habilitado.
+
+**Ubicación**:
+
+1. **Escritorio**
+2. **Móvil** Sesión remota → barra de navegación inferior → ayuda de gestos
+
+Disponible desde RustDesk 1.4.3
+
+| Valores | Predeterminado | Ejemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-joystick=Y` |
+
+**Nota**: Esta opción debe configurarse en **Default settings** en lugar de en **Override settings**.

@@ -808,21 +808,6 @@ L'option "mode privé" dans les paramètres de chaque pair contrôlera ensuite s
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `privacy-mode=Y` |
 
-### touch-mode
-
-Cette option définira l'option "mode tactile" pour chaque pair après la première connexion.
-
-L'option "mode tactile" dans les paramètres de chaque pair contrôlera ensuite s'il faut utiliser le mode tactile ou le mode souris.
-
-**Emplacement** :
-
-1. **Bureau**
-2. **Mobile** Paramètres → Paramètres d'affichage → Autres options par défaut → Mode tactile
-
-| Installation requise | Valeurs | Défaut | Exemple |
-| :------: | :------: | :------: | :------: |
-| N | Y, N | N | `touch-mode=Y` |
-
 ### i444
 
 Cette option définira l'option "i444" pour chaque pair après la première connexion.
@@ -1342,3 +1327,66 @@ Désactiver le panneau "Découvert" (à côté du panneau "Favoris") sur le clie
 | Option | Installation requise | Valeurs | Par défaut | Exemple |
 | :------: | :------: | :------: | :------: |
 | disable-discovery-panel | N | Y, N | N | `disable-discovery-panel=Y` |
+
+### touch-mode
+
+Contrôle l'utilisation du mode tactile ou du mode souris pendant les sessions de contrôle à distance.
+
+#### Différences de comportement selon la version
+
+##### RustDesk (côté contrôleur) < 1.4.3
+
+Après la première connexion, cette option définit le paramètre "touch-mode" pour chaque pair. Par la suite, les paramètres individuels de chaque pair déterminent l'utilisation du mode tactile ou du mode souris.
+
+**Emplacement** :
+
+1. **Bureau**
+2. **Mobile** Paramètres → Affichage → Autres options par défaut → Mode tactile
+
+##### RustDesk (côté contrôleur) >= 1.4.3
+
+Cette option contrôle de manière uniforme si tous les appareils pairs utilisent le mode tactile ou le mode souris, en remplaçant les paramètres individuels des appareils.
+
+| Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | N | `touch-mode=Y` |
+
+### show-virtual-mouse
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+Contrôle l'affichage de la souris virtuelle en cas de mobile → bureau.
+
+**Emplacement** :
+
+1. **Bureau**
+2. **Mobile** Session à distance → barre de navigation inférieure → aide aux gestes
+
+Disponible depuis RustDesk 1.4.3
+
+| Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-mouse=Y` |
+
+**Remarque** : Cette option doit être configurée dans **Default settings** plutôt que dans **Override settings**.
+
+### show-virtual-joystick
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+Contrôle l'affichage du joystick virtuel en cas de mobile → bureau.
+
+Cette option exige que **show-virtual-mouse** soit activé.
+
+**Emplacement** :
+
+1. **Bureau**
+2. **Mobile** Session à distance → barre de navigation inférieure → aide aux gestes
+
+Disponible depuis RustDesk 1.4.3
+
+| Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-joystick=Y` |
+
+**Remarque** : Cette option doit être configurée dans **Default settings** plutôt que dans **Override settings**.
