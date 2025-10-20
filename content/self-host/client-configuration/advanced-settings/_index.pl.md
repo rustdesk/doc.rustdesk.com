@@ -809,21 +809,6 @@ Opcja "privacy-mode" w ustawieniach każdego z partnerów będzie wtedy decydowa
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `privacy-mode=Y` |
 
-### touch-mode
-
-Ta opcja ustawi opcję "touch-mode" dla każdego peer po pierwszym połączeniu.
-
-Opcja "touch-mode" w ustawieniach każdego partnera będzie wtedy kontrolować, czy używać trybu dotykowego, czy trybu myszy.
-
-**Lokalizacja**:
-
-1. **K. stacjonarny**
-2. **Smartfon** Ustawienia → Ustawienia wyświetlania → Inne domyślne opcje → Tryb dotykowy
-
-| Wymagana instalacja | Wartości | Domyślne | Przykład |
-| :------: | :------: | :------: | :------: |
-| N | Y, N | N | `touch-mode=Y` |
-
 ### i444
 
 Ta opcja ustawi opcję "i444" dla każdego partnera po pierwszym połączeniu.
@@ -1361,3 +1346,66 @@ Wyłącz panel "Odkryte" (obok panelu "Ulubione") w kliencie RustDesk.
 | Opcja | Wymagana instalacja | Wartości | Domyślne | Przykład |
 | :------: | :------: | :------: | :------: | :------: |
 | disable-discovery-panel | N | Y, N | N | `disable-discovery-panel=Y` |
+
+### touch-mode
+
+Kontroluje, czy podczas sesji zdalnego sterowania używany jest tryb dotykowy czy tryb myszy.
+
+#### Różnice w zachowaniu w zależności od wersji
+
+##### RustDesk (strona kontrolująca) < 1.4.3
+
+Po pierwszym połączeniu ta opcja ustawia parametr "touch-mode" dla każdego peer. Następnie indywidualne ustawienia każdego peer decydują o użyciu trybu dotykowego lub trybu myszy.
+
+**Lokalizacja**:
+
+1. **Desktop**
+2. **Mobile** Ustawienia → Ekran → Inne domyślne opcje → Tryb dotyku
+
+##### RustDesk (strona kontrolująca) >= 1.4.3
+
+Opcja ta jednolicie kontroluje, czy wszystkie urządzenia peer używają trybu dotykowego czy trybu myszy, nadpisując indywidualne ustawienia urządzeń.
+
+| Wartości | Domyślnie | Przykład |
+| :------: | :------: | :------: |
+| Y, N | N | `touch-mode=Y` |
+
+### show-virtual-mouse
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+Kontroluje wyświetlanie wirtualnego kursora przy trybie mobile → desktop.
+
+**Lokalizacja**:
+
+1. **Desktop**
+2. **Mobile** Sesja zdalna → dolny pasek nawigacji → pomocnik gestów
+
+Dostępne od RustDesk 1.4.3
+
+| Wartości | Domyślnie | Przykład |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-mouse=Y` |
+
+**Uwaga**: Opcja ta powinna być skonfigurowana w **Default settings**, a nie w **Override settings**.
+
+### show-virtual-joystick
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+Kontroluje wyświetlanie wirtualnego joysticka przy trybie mobile → desktop.
+
+Opcja ta wymaga, aby **show-virtual-mouse** był włączony.
+
+**Lokalizacja**:
+
+1. **Desktop**
+2. **Mobile** Sesja zdalna → dolny pasek nawigacji → pomocnik gestów
+
+Dostępne od RustDesk 1.4.3
+
+| Wartości | Domyślnie | Przykład |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-joystick=Y` |
+
+**Uwaga**: Opcja ta powinna być skonfigurowana w **Default settings**, a nie w **Override settings**.

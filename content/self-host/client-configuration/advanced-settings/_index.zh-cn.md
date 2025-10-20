@@ -809,21 +809,6 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | 否 | Y, N | N | `privacy-mode=Y` |
 
-### touch-mode
-
-此选项将为每个对等端在首次连接后设置"触控模式"选项。
-
-每个对等端设置中的"触控模式"选项将控制是否使用触控模式或鼠标模式。
-
-**位置**：
-
-1. **桌面**
-2. **移动端** 设置 → 显示设置 → 其他默认选项 → 触控模式
-
-| 安装需要 | 值 | 默认值 | 示例 |
-| :------: | :------: | :------: | :------: |
-| 否 | Y, N | N | `touch-mode=Y` |
-
 ### i444
 
 此选项将为每个对等端在首次连接后设置"i444"选项。
@@ -1352,3 +1337,66 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/776#issuecomment-33065249
 | 选项 | 需要安装 | 值 | 默认值 | 示例 |
 | :------: | :------: | :------: | :------: | :------: |
 | disable-discovery-panel | N | Y, N | N | `disable-discovery-panel=Y` |
+
+### touch-mode
+
+控制远程会话时，使用 触控模式 或 鼠标模式。
+
+#### 版本行为差异
+
+##### RustDesk (控制端) < 1.4.3
+
+首次连接后，此选项会为每个被控设备设置 "touch-mode" 选项。之后各被控设备的独立设置将决定使用 触控模式 还是 鼠标模式 。
+
+**位置**：
+
+1. **桌面**
+2. **移动端** 设置 → 显示设置 → 其他默认选项 → 触控模式
+
+##### RustDesk (控制端) >= 1.4.3
+
+此选项将统一控制所有被控设备使用 触控模式 或 鼠标模式 ，覆盖各设备的独立设置。
+
+| 值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `touch-mode=Y` |
+
+### show-virtual-mouse
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+控制 移动端 -> 桌面端 时，是否显示虚拟鼠标。
+
+**位置**：
+
+1. **桌面**
+2. **移动端** 远程会话 → 底部导航栏 → 手势助手
+
+自 RustDesk 1.4.3 版本起可用。
+
+| 值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-mouse=Y` |
+
+**注意**: 此选项应在 **Default settings** 中配置，而非 **Override settings** 中。
+
+### show-virtual-joystick
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+控制 移动端 -> 桌面端 时，是否显示虚拟摇杆。
+
+此选项需要 **show-virtual-mouse** 选项处于启用状态。
+
+**位置**：
+
+1. **桌面**
+2. **移动端** 远程会话 → 底部导航栏 → 手势助手
+
+自 RustDesk 1.4.3 版本起可用。
+
+| 值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-joystick=Y` |
+
+**注意**: 此选项应在 **Default settings** 中配置，而非 **Override settings** 中。
