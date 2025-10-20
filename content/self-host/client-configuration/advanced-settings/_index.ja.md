@@ -1026,9 +1026,9 @@ RustDesk 1.4.1, RustDesk Server Pro 1.6.2から利用可能
 
 ## その他
 
-### preset-address-book-name & preset-address-book-tag
+### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-password & preset-address-book-note
 
-プリセットアドレスブック名とタグ、https://github.com/rustdesk/rustdesk-server-pro/issues/257。
+プリセットアドレスブック名、デバイスタグ、デバイスエイリアス、デバイスパスワード、デバイスノート、https://github.com/rustdesk/rustdesk-server-pro/issues/257。
 タグを設定したくない場合は、preset-address-book-nameのみを設定できます。
 Web コンソールのアドレスブックページで有効なアドレスブック名とタグを使用してください。
 
@@ -1036,6 +1036,11 @@ Web コンソールのアドレスブックページで有効なアドレスブ�
 | :------: | :------: | :------: | :------: | :------: |
 | preset-address-book-name | N | | | `preset-address-book-name=<アドレスブック名>` |
 | preset-address-book-tag | N | | | `preset-address-book-tag=<アドレスブックタグ名>` |
+| preset-address-book-alias | N | | | `preset-address-book-alias=<デバイスエイリアス>` |
+| preset-address-book-password | N | | | `preset-address-book-password=<デバイスパスワード>` |
+| preset-address-book-note | N | | | `preset-address-book-note=<デバイスノート>` |
+
+preset-address-book-alias、preset-address-book-password、preset-address-book-noteはRustDeskクライアント>=1.4.3、pro >= 1.6.6で利用可能。
 
 ### disable-group-panel
 
@@ -1186,13 +1191,15 @@ TCPのみを使用するかどうかを制御します。UDP 21116は使用さ�
 | :------: | :------: | :------: |
 | Y, N | N | `disable-udp=Y` |
 
-### preset-user-name / preset-strategy-name / preset-device-group-name
+### preset-user-name / preset-strategy-name / preset-device-group-name / preset-device-username / preset-device-name / preset-note
 
-ユーザー/ストラテジー/デバイスグループをデバイスに割り当てます。これは[コマンドライン](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices)でも行うことができます。
+ユーザー/ストラテジー/デバイスグループ/デバイスユーザー名/デバイス名(ホスト名)/ノートをデバイスに割り当てます。これは[コマンドライン](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices)でも行うことができます。
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
 
 デバイスグループはRustDeskクライアント>=1.3.8、pro >= 1.5.0で利用可能
+
+preset-device-username、preset-device-name、preset-noteはRustDeskクライアント>=1.4.3、pro >= 1.6.6で利用可能。
 
 ### default-connect-password
 
@@ -1320,7 +1327,7 @@ RustDeskクライアント>=1.4.1およびProサーバー>= 1.5.9でのみ利用
 `register-device=N`の場合、このデバイスでは以下が動作しません。
 - ログイン
 - `--assign`コマンド
-- `preset-address-book-name`, `--preset-address-book-tag`, `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`
+- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
 - 監査ログ
 - ストラテジー
 

@@ -1027,9 +1027,9 @@ The "trackpad-speed" option in each peer's settings will then control the fps if
 
 ## Others
 
-### preset-address-book-name & preset-address-book-tag
+### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-password & preset-address-book-note
 
-Preset address book name and tag, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
+Preset address book name, device tag, device alias, device password, device note, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
 You can set preset-address-book-name only if you do not want to set tag.
 Please use valid address book name and tag on your address book page of web console.
 
@@ -1037,6 +1037,11 @@ Please use valid address book name and tag on your address book page of web cons
 | :------: | :------: | :------: | :------: | :------: |
 | preset-address-book-name | N | | | `preset-address-book-name=<address book name>` |
 | preset-address-book-tag | N | | | `preset-address-book-tag=<address book tag name>` |
+| preset-address-book-alias | N | | | `preset-address-book-alias=<device alias>` |
+| preset-address-book-password | N | | | `preset-address-book-password=<device password>` |
+| preset-address-book-note | N | | | `preset-address-book-note=<device note>` |
+
+preset-address-book-alias, preset-address-book-password, preset-address-book-note are available in RustDesk client >=1.4.3, pro >= 1.6.6.
 
 ### disable-group-panel
 
@@ -1187,13 +1192,15 @@ Controls whether to use TCP only. It will not use UDP 21116 any more, TCP 21116 
 | :------: | :------: | :------: |
 | Y, N | N | `disable-udp=Y` |
 
-### preset-user-name / preset-strategy-name / preset-device-group-name
+### preset-user-name / preset-strategy-name / preset-device-group-name / preset-device-username / preset-device-name / preset-note
 
-Assign user / strategy / device group to device. You can also do this via [command line](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
+Assign user / strategy / device group / device username / device-name(hostname) / note to device. You can also do this via [command line](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
 
 device group is available in RustDesk client >=1.3.8, pro >= 1.5.0
+
+preset-device-username, preset-device-name, preset-note are available in RustDesk client >=1.4.3, pro >= 1.6.6. 
 
 ### default-connect-password
 
@@ -1322,7 +1329,7 @@ Do not register the device, you will not see it in the devices page on web conso
 If `register-device=N`, below will not work for this device.
 - Log in
 - `--assign` command
-- `preset-address-book-name`, `--preset-address-book-tag`, `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`
+- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
 - Audit Logs
 - Strategy
 

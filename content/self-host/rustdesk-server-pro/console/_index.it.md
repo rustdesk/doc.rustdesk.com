@@ -88,18 +88,207 @@ Gmail in questo esempio
 7. Inserisci il tuo account Gmail cioè `myrustdeskserver@gmail.com` in `Da`.
 8. Clicca `Controlla` per salvare.
 
-## Assegnare Utenti/Gruppi/Strategie/GruppoDispositivo Dispositivo ai Dispositivi
-L'Utente è l'Utente RustDesk connesso al dispositivo o assegnato al dispositivo cliccando `Modifica` accanto al dispositivo, clicca nella casella `Utente` e seleziona dal menu a tendina per selezionare il tuo utente, questo assegnerà automaticamente il gruppo basato sul gruppo a cui è stato assegnato l'utente.
+## Assegnazione di Utenti/Strategie/Gruppi di Dispositivi ai Dispositivi tramite Console Web
 
-Questo può anche essere fatto tramite API a riga di comando durante la distribuzione o successivamente chiamando l'eseguibile RustDesk seguito da `--assign --token <token generato> --user_name <nome utente>`. Devi andare su `Impostazioni → Token → Crea` e creare un token con permessi Dispositivo prima di farlo. Un esempio di questo su Windows sarebbe `"C:\Program Files\RustDesk\rustdesk.exe" --assign --token <token generato> --user_name <nuovo utente>`.
+L’Utente è l’utente RustDesk connesso al dispositivo o assegnato al dispositivo cliccando su **Modifica** accanto al dispositivo, cliccando nella casella **Utente** e selezionando il proprio utente dal menu a discesa.  
+È anche possibile assegnare dispositivi in blocco a un utente cliccando su **Altro → Assegna Dispositivi** nella **Lista Utenti**.
 
-Puoi anche assegnare strategia in questo modo, ad esempio `--assign --token <token generato> --strategy_name <nome strategia>`.
+Per aggiungere un dispositivo a un gruppo di dispositivi, è possibile cliccare su **Modifica** accanto al dispositivo nella **Lista Dispositivi** e cambiare il **Gruppo**, oppure andare nella lista dei **Gruppi di Dispositivi**, cliccare sul nome di un gruppo e regolare i dispositivi in quel gruppo.
 
-Puoi anche assegnare rubrica in questo modo, ad esempio `--assign --token <token generato> --address_book_name <nome rubrica>` o `--assign --token <token generato> --address_book_name <nome rubrica> --address_book_tag <tag rubrica> --address_book_alias <alias>`. `--address_book_alias` richiede RustDesk Server Pro ≥1.5.8 e client ≥1.4.1.
+Per assegnare una strategia a un dispositivo, passare il mouse sul lato destro della lista **Strategia** e cliccare su **Modifica Dispositivi**, **Modifica Utenti** o **Modifica Gruppi di Dispositivi** nel menu per aggiungere i dispositivi corrispondenti, i dispositivi degli utenti o i dispositivi del gruppo alla strategia selezionata.
 
-Puoi anche assegnare nome gruppo dispositivo in questo modo, ad esempio `--assign --token <token generato> --device_group_name <nome gruppo dispositivo>`.
+---
 
-La riga di comando su Windows non ha output per impostazione predefinita. Per ottenere output, esegui così, `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | more` o `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | Out-String`, vedi [qui](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomment-8094952).
+## Token API
+
+È necessario prima andare su **Impostazioni → Token → Crea** e creare un token con le autorizzazioni richieste: **Dispositivo, Registro Audit, Utente, Gruppo, Strategia, Rubrica**.
+
+Una volta creato, è possibile utilizzare questi token tramite **linea di comando** o **Python CLI** per eseguire azioni con le autorizzazioni corrispondenti.
+
+### Assegnazione tramite Token dalla Linea di Comando
+
+È anche possibile eseguire assegnazioni utilizzando l’eseguibile RustDesk con il parametro `--assign`.  
+Questo permette di assegnare utenti, strategie, rubriche o gruppi di dispositivi a un dispositivo direttamente dalla linea di comando.
+
+**Esempio:**
+
+    "C:\Program Files\RustDesk\rustdesk.exe" --assign --token <generatedtoken> --user_name <username>
+
+Parametri supportati
+
+| Parametro                               | Descrizione                               | RustDesk Server Pro | RustDesk Client | 
+| --------------------------------------- | ----------------------------------------- | ----------------- | --------------- | 
+| `--user_name <username>`                | Assegna un utente al dispositivo          |                   |                 | 
+| `--strategy_name <strategyname>`        | Assegna una strategia al dispositivo      |                   |                 | 
+| `--address_book_name <addressbookname>` | Assegna il dispositivo a una rubrica      |                   |                 | 
+| `--address_book_tag <addressbooktag>`   | Assegna con tag della rubrica             |                   |                 | 
+| `--address_book_alias <alias>`          | Assegna con alias della rubrica           | 1.5.8             | 1.4.1           | 
+| `--address_book_password <password>`    | Imposta la password per la voce           | 1.6.6             | 1.4.3           | 
+| `--address_book_note <note>`            | Imposta una nota per la voce              | 1.6.6             | 1.4.3           | 
+| `--device_group_name <devicegroupname>` | Assegna il dispositivo a un gruppo        |                   |                 | 
+| `--note <note>`                         | Aggiunge una nota al dispositivo          | 1.6.6             | 1.4.3           | 
+| `--device_username <device_username>`   | Imposta il nome utente del dispositivo    | 1.6.6             | 1.4.3           | 
+| `--device_name <device_name>`           | Imposta il nome del dispositivo           | 1.6.6             | 1.4.3           | 
+
+La linea di comando su Windows non produce output per default. Per ottenere output, eseguire:
+
+    "C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | more
+    "C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | Out-String
+
+vedi [qui](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomment-8094952).
+
+### Strumenti di Gestione Python CLI
+
+#### Gestione Utenti (`users.py`)
+
+**Mostra aiuto:**
+
+    ./users.py -h
+
+**Visualizza utenti:**
+
+    ./users.py --url <url> --token <token> view [--name <username>] [--group_name <group_name>]
+
+**Filtri:**
+
+    --name : nome utente
+    --group_name : gruppo utenti
+
+**Esempio:**
+
+    ./users.py --url https://example.com --token <token> view --group_name admins
+
+**Operazioni:**
+
+`view` può essere sostituito con `enable`, `disable`, o `delete`.
+
+**Esempio (disabilitare utente):**
+
+    ./users.py --url https://example.com --token <token> disable --name testuser
+
+---
+
+#### Gestione Dispositivi (`devices.py`)
+
+**Mostra aiuto:**
+
+    ./devices.py -h
+
+**Visualizza dispositivi:**
+
+    ./devices.py --url <url> --token <token> view [--id <device_id>] [--device_name <device_name>] [--user_name <user_name>] [--group_name <group_name>] [--device_group_name <device_group_name>] [--offline_days <days>]
+
+**Filtri:**
+
+    --id : ID dispositivo
+    --device_name : nome dispositivo
+    --user_name : utente assegnato
+    --group_name : gruppo utenti
+    --device_group_name : gruppo dispositivi
+    --offline_days : giorni offline
+
+**Esempio:**
+
+    ./devices.py --url https://example.com --token <token> view --user_name mike
+
+**Operazioni:**
+
+`view` può essere sostituito con `enable`, `disable`, `delete`, o `assign`.
+
+**Esempio (assegnare dispositivo):**
+
+    ./devices.py --url https://example.com --token <token> assign --device_name PC01 --assign_to user_name=mike
+
+---
+
+#### Gestione Rubrica (`ab.py`)
+
+**Mostra aiuto:**
+
+    ./ab.py -h
+
+**Visualizza rubriche condivise:**
+
+    ./ab.py --url <url> --token <token> view-ab [--ab-name <address_book_name>]
+
+**Ottieni GUID rubrica personale:**
+
+    ./ab.py --url <url> --token <token> get-personal-ab
+
+**Aggiungi rubrica condivisa:**
+
+    ./ab.py --url <url> --token <token> add-ab --ab-name <name> [--note <note>] [--password <password>]
+
+**Aggiorna o elimina rubrica condivisa:**
+
+    ./ab.py --url <url> --token <token> update-ab --ab-guid <guid> [--ab-update-name <new_name>] [--note <note>]
+    ./ab.py --url <url> --token <token> delete-ab --ab-guid <guid>
+
+**Visualizza peer in una rubrica:**
+
+    ./ab.py --url <url> --token <token> view-peer --ab-guid <guid> [--peer-id <peer_id>] [--alias <alias>]
+
+**Aggiungi, aggiorna o elimina un peer:**
+
+    ./ab.py --url <url> --token <token> add-peer --ab-guid <guid> --peer-id <peer_id> [--alias <alias>] [--note <note>] [--tags tag1,tag2]
+    ./ab.py --url <url> --token <token> update-peer --ab-guid <guid> --peer-id <peer_id> [--alias <alias>] [--note <note>] [--tags tag1,tag2]
+    ./ab.py --url <url> --token <token> delete-peer --ab-guid <guid> --peer-id <peer_id>
+
+**Gestione tag:**
+
+    ./ab.py --url <url> --token <token> view-tag --ab-guid <guid>
+    ./ab.py --url <url> --token <token> add-tag --ab-guid <guid> --tag-name <name> [--tag-color 0xFF00FF00]
+    ./ab.py --url <url> --token <token> update-tag --ab-guid <guid> --tag-name <name> --tag-color 0xFFFF0000
+    ./ab.py --url <url> --token <token> delete-tag --ab-guid <guid> --tag-name <name>
+
+**Gestione regole di accesso:**
+
+    ./ab.py --url <url> --token <token> view-rule --ab-guid <guid>
+    ./ab.py --url <url> --token <token> add-rule --ab-guid <guid> [--rule-type user|group|everyone] [--rule-user <user>] [--rule-group <group>] --rule-permission ro|rw|full
+    ./ab.py --url <url> --token <token> update-rule --rule-guid <rule_guid> --rule-permission rw
+    ./ab.py --url <url> --token <token> delete-rule --rule-guid <rule_guid>
+
+**Esempio (aggiungi regola sola lettura per l’utente "mike"):**
+
+    ./ab.py --url https://example.com --token <token> add-rule --ab-guid <guid> --rule-user mike --rule-permission ro
+
+---
+
+#### Audit (`audits.py`)
+
+**Mostra aiuto:**
+
+    ./audits.py -h
+
+**Visualizza audit di connessione:**
+
+    ./audits.py --url <url> --token <token> view-conn [--remote <peer_id>] [--conn-type <type>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]
+
+**Visualizza audit file:**
+
+    ./audits.py --url <url> --token <token> view-file [--remote <peer_id>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]
+
+**Visualizza audit allarmi:**
+
+    ./audits.py --url <url> --token <token> view-alarm [--device <device_id>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]
+
+**Visualizza audit console:**
+
+    ./audits.py --url <url> --token <token> view-console [--operator <username>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]
+
+**Filtri:**
+
+    --remote : ID peer (per audit di connessione o file)
+    --conn-type : 0=Desktop Remoto, 1=Trasferimento File, 2=Trasferimento Porte, 3=Visualizza Telecamera, 4=Terminale
+    --device : ID dispositivo (per audit allarmi)
+    --operator : nome operatore (per audit console)
+    --created-at : filtro orario locale, es. "2025-09-16 14:15:57"
+    --days-ago : filtra record più recenti di n giorni
+    --page-size / --current : paginazione
+
+**Esempio:**
+
+    ./audits.py --url https://example.com --token <token> view-conn --remote 123456789 --days-ago 7
 
 ## Cercare un dispositivo
 1. Vai su Dispositivi.

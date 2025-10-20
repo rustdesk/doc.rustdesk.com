@@ -88,18 +88,207 @@ Gmail dans cet exemple
 7. Entrez votre compte Gmail c'est-à-dire `myrustdeskserver@gmail.com` dans `De`.
 8. Cliquez `Vérifier` pour sauvegarder.
 
-## Assigner des Utilisateurs/Groupes/Stratégies/GroupeAppareil aux Appareils
-L'Utilisateur est l'Utilisateur RustDesk connecté sur l'appareil ou assigné à l'appareil en cliquant `Modifier` à côté de l'appareil, cliquez dans la boîte `Utilisateur` et déroulez pour sélectionner votre utilisateur, cela assignera automatiquement le groupe basé sur le groupe auquel l'utilisateur a été assigné.
+## Attribution des utilisateurs/stratégies/groupes de périphériques aux périphériques via la Console Web
 
-Ceci peut également être fait via l'API en ligne de commande lors du déploiement ou plus tard en appelant l'exécutable RustDesk suivi de `--assign --token <token généré> --user_name <nom d'utilisateur>`. Vous devez aller dans `Paramètres → Tokens → Créer` et créer un token avec les permissions Appareil d'abord pour faire ceci. Un exemple de ceci sur windows serait `"C:\Program Files\RustDesk\rustdesk.exe" --assign --token <token généré> --user_name <nouvel utilisateur>`.
+L’Utilisateur est l’utilisateur RustDesk connecté sur le périphérique ou attribué au périphérique en cliquant sur **Modifier** à côté du périphérique, en cliquant dans la case **Utilisateur** et en sélectionnant votre utilisateur dans le menu déroulant.  
+Vous pouvez également attribuer des périphériques en masse à un utilisateur en cliquant sur **Plus → Attribuer des périphériques** dans la **Liste des utilisateurs**.
 
-Vous pouvez également assigner une stratégie de cette façon, par exemple `--assign --token <token généré> --strategy_name <nom de stratégie>`.
+Pour ajouter un périphérique à un groupe de périphériques, vous pouvez cliquer sur **Modifier** à côté du périphérique dans la **Liste des périphériques** et changer le **Groupe**, ou aller dans la liste des **Groupes de périphériques**, cliquer sur le nom d’un groupe de périphériques et ajuster les périphériques dans ce groupe.
 
-Vous pouvez également assigner un carnet d'adresses de cette façon, par exemple `--assign --token <token généré> --address_book_name <nom du carnet d'adresses>` ou `--assign --token <token généré> --address_book_name <nom du carnet d'adresses> --address_book_tag <tag du carnet d'adresses> --address_book_alias <alias>`. `--address_book_alias` nécessite RustDesk server Pro ≥1.5.8 et client ≥1.4.1.
+Pour attribuer une stratégie à un périphérique, survolez le côté droit de la liste **Stratégie** et cliquez sur **Modifier les périphériques**, **Modifier les utilisateurs** ou **Modifier les groupes de périphériques** dans le menu pour ajouter les périphériques correspondants, les périphériques des utilisateurs ou les périphériques du groupe de périphériques à la stratégie sélectionnée.
 
-Vous pouvez également assigner un nom de groupe d'appareils de cette façon, par exemple `--assign --token <token généré> --device_group_name <nom du groupe d'appareils>`.
+---
 
-La ligne de commande sur Windows n'a pas de sortie par défaut. Pour obtenir une sortie, veuillez exécuter comme ceci, `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | more` ou `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | Out-String`, voir [ici](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomment-8094952).
+## Jeton API
+
+Vous devez d’abord aller dans **Paramètres → Jetons → Créer** et créer un jeton avec les permissions requises : **Périphérique, Journal d’Audit, Utilisateur, Groupe, Stratégie, Carnet d’Adresses**.
+
+Une fois créé, vous pouvez utiliser ces jetons via **ligne de commande** ou **Python CLI** pour effectuer des actions avec les permissions correspondantes.
+
+### Attribution via Jeton depuis la Ligne de Commande
+
+Vous pouvez également effectuer des attributions en utilisant l’exécutable RustDesk avec le paramètre `--assign`.  
+Cela permet d’assigner des utilisateurs, des stratégies, des carnets d’adresses ou des groupes de périphériques à un périphérique directement depuis la ligne de commande.
+
+**Exemple :**
+
+    "C:\Program Files\RustDesk\rustdesk.exe" --assign --token <generatedtoken> --user_name <username>
+
+Paramètres pris en charge
+
+| Paramètre                               | Description                              | RustDesk Server Pro | RustDesk Client | 
+| --------------------------------------- | ---------------------------------------- | ----------------- | --------------- | 
+| `--user_name <username>`                | Assigner un utilisateur au périphérique |                   |                 | 
+| `--strategy_name <strategyname>`        | Assigner une stratégie au périphérique  |                   |                 | 
+| `--address_book_name <addressbookname>` | Assigner le périphérique à un carnet    |                   |                 | 
+| `--address_book_tag <addressbooktag>`   | Assigner avec un tag du carnet          |                   |                 | 
+| `--address_book_alias <alias>`          | Assigner avec un alias de carnet        | 1.5.8             | 1.4.1           | 
+| `--address_book_password <password>`    | Définir le mot de passe de l’entrée     | 1.6.6             | 1.4.3           | 
+| `--address_book_note <note>`            | Définir une note pour l’entrée          | 1.6.6             | 1.4.3           | 
+| `--device_group_name <devicegroupname>` | Assigner le périphérique à un groupe    |                   |                 | 
+| `--note <note>`                         | Ajouter une note au périphérique        | 1.6.6             | 1.4.3           | 
+| `--device_username <device_username>`   | Définir le nom d’utilisateur du périphérique | 1.6.6 | 1.4.3 | 
+| `--device_name <device_name>`           | Définir le nom du périphérique          | 1.6.6             | 1.4.3           | 
+
+La ligne de commande sous Windows ne produit pas de sortie par défaut. Pour obtenir une sortie, exécutez :
+
+    "C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | more
+    "C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | Out-String
+
+voir [ici](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomment-8094952).
+
+### Outils de Gestion Python CLI
+
+#### Gestion des Utilisateurs (`users.py`)
+
+**Afficher l’aide :**
+
+    ./users.py -h
+
+**Voir les utilisateurs :**
+
+    ./users.py --url <url> --token <token> view [--name <username>] [--group_name <group_name>]
+
+**Filtres :**
+
+    --name : nom d’utilisateur
+    --group_name : groupe d’utilisateurs
+
+**Exemple :**
+
+    ./users.py --url https://example.com --token <token> view --group_name admins
+
+**Opérations :**
+
+`view` peut être remplacé par `enable`, `disable`, ou `delete`.
+
+**Exemple (désactiver un utilisateur) :**
+
+    ./users.py --url https://example.com --token <token> disable --name testuser
+
+---
+
+#### Gestion des Périphériques (`devices.py`)
+
+**Afficher l’aide :**
+
+    ./devices.py -h
+
+**Voir les périphériques :**
+
+    ./devices.py --url <url> --token <token> view [--id <device_id>] [--device_name <device_name>] [--user_name <user_name>] [--group_name <group_name>] [--device_group_name <device_group_name>] [--offline_days <days>]
+
+**Filtres :**
+
+    --id : ID du périphérique
+    --device_name : nom du périphérique
+    --user_name : utilisateur assigné
+    --group_name : groupe d’utilisateurs
+    --device_group_name : groupe de périphériques
+    --offline_days : jours hors ligne
+
+**Exemple :**
+
+    ./devices.py --url https://example.com --token <token> view --user_name mike
+
+**Opérations :**
+
+`view` peut être remplacé par `enable`, `disable`, `delete`, ou `assign`.
+
+**Exemple (assigner un périphérique) :**
+
+    ./devices.py --url https://example.com --token <token> assign --device_name PC01 --assign_to user_name=mike
+
+---
+
+#### Gestion du Carnet d’Adresses (`ab.py`)
+
+**Afficher l’aide :**
+
+    ./ab.py -h
+
+**Voir les carnets partagés :**
+
+    ./ab.py --url <url> --token <token> view-ab [--ab-name <address_book_name>]
+
+**Obtenir le GUID du carnet personnel :**
+
+    ./ab.py --url <url> --token <token> get-personal-ab
+
+**Ajouter un carnet partagé :**
+
+    ./ab.py --url <url> --token <token> add-ab --ab-name <name> [--note <note>] [--password <password>]
+
+**Mettre à jour ou supprimer un carnet partagé :**
+
+    ./ab.py --url <url> --token <token> update-ab --ab-guid <guid> [--ab-update-name <new_name>] [--note <note>]
+    ./ab.py --url <url> --token <token> delete-ab --ab-guid <guid>
+
+**Voir les pairs dans un carnet :**
+
+    ./ab.py --url <url> --token <token> view-peer --ab-guid <guid> [--peer-id <peer_id>] [--alias <alias>]
+
+**Ajouter, mettre à jour ou supprimer un pair :**
+
+    ./ab.py --url <url> --token <token> add-peer --ab-guid <guid> --peer-id <peer_id> [--alias <alias>] [--note <note>] [--tags tag1,tag2]
+    ./ab.py --url <url> --token <token> update-peer --ab-guid <guid> --peer-id <peer_id> [--alias <alias>] [--note <note>] [--tags tag1,tag2]
+    ./ab.py --url <url> --token <token> delete-peer --ab-guid <guid> --peer-id <peer_id>
+
+**Gestion des étiquettes :**
+
+    ./ab.py --url <url> --token <token> view-tag --ab-guid <guid>
+    ./ab.py --url <url> --token <token> add-tag --ab-guid <guid> --tag-name <name> [--tag-color 0xFF00FF00]
+    ./ab.py --url <url> --token <token> update-tag --ab-guid <guid> --tag-name <name> --tag-color 0xFFFF0000
+    ./ab.py --url <url> --token <token> delete-tag --ab-guid <guid> --tag-name <name>
+
+**Gestion des règles d’accès :**
+
+    ./ab.py --url <url> --token <token> view-rule --ab-guid <guid>
+    ./ab.py --url <url> --token <token> add-rule --ab-guid <guid> [--rule-type user|group|everyone] [--rule-user <user>] [--rule-group <group>] --rule-permission ro|rw|full
+    ./ab.py --url <url> --token <token> update-rule --rule-guid <rule_guid> --rule-permission rw
+    ./ab.py --url <url> --token <token> delete-rule --rule-guid <rule_guid>
+
+**Exemple (ajouter une règle en lecture seule pour l’utilisateur "mike") :**
+
+    ./ab.py --url https://example.com --token <token> add-rule --ab-guid <guid> --rule-user mike --rule-permission ro
+
+---
+
+#### Audits (`audits.py`)
+
+**Afficher l’aide :**
+
+    ./audits.py -h
+
+**Voir les audits de connexion :**
+
+    ./audits.py --url <url> --token <token> view-conn [--remote <peer_id>] [--conn-type <type>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]
+
+**Voir les audits de fichiers :**
+
+    ./audits.py --url <url> --token <token> view-file [--remote <peer_id>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]
+
+**Voir les audits d’alarme :**
+
+    ./audits.py --url <url> --token <token> view-alarm [--device <device_id>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]
+
+**Voir les audits de console :**
+
+    ./audits.py --url <url> --token <token> view-console [--operator <username>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]
+
+**Filtres :**
+
+    --remote : ID du peer (pour audits de connexion ou fichiers)
+    --conn-type : 0=Bureau à distance, 1=Transfert de fichiers, 2=Transfert de ports, 3=Vision caméra, 4=Terminal
+    --device : ID du périphérique (pour audits d’alarme)
+    --operator : nom de l’opérateur (pour audits de console)
+    --created-at : filtre de temps local, ex. "2025-09-16 14:15:57"
+    --days-ago : filtrer les enregistrements plus récents que le nombre de jours indiqué
+    --page-size / --current : pagination
+
+**Exemple :**
+
+    ./audits.py --url https://example.com --token <token> view-conn --remote 123456789 --days-ago 7
 
 ## Rechercher un appareil
 1. Allez dans Appareils.
