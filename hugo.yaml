@@ -233,3 +233,13 @@ languages:
       landingPageName: "🏠 首頁"
       description: "RustDesk完整文檔 - 開源遠端桌面軟體。學習如何自主託管、配置客戶端並在您的基礎架構中部署RustDesk。"
       keywords: ["rustdesk", "遠端桌面", "開源", "自主託管", "文檔", "遠端存取", "VNC替代", "teamviewer替代"]
+  
+  ro:
+    title: "Documentația RustDesk"
+    weight: 1
+    languageName: "Română"
+    params:
+      landingPageName: "🏠 Acasă"
+      disable_cookie: true
+      description: "Documentație completă pentru RustDesk - software-ul open source pentru desktop remote. Aflați cum să găzduiți singur, să configurați clienți și să implementați RustDesk în infrastructura dvs."
+      keywords: ["rustdesk", "desktop remote", "open source", "self-host", "documentație", "acces remote", "alternativă VNC", "alternativă TeamViewer"]
