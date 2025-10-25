@@ -37,7 +37,22 @@ const metadata = {
           cancelButtonText: '否',
         }).then((result) => {
           if (result.isConfirmed) {
-            window.open(redirectUrl + '&currency=cny', '_blank');
+            try {
+              const url = new URL(redirectUrl);
+              // Ensure currency=cny for zh-cn
+              if (!url.searchParams.has('currency')) url.searchParams.set('currency', 'cny');
+              const pageParams = new URLSearchParams(window.location.search);
+              pageParams.forEach((value, key) => {
+                if (!url.searchParams.has(key)) url.searchParams.append(key, value);
+              });
+              window.open(url.toString(), '_blank');
+            } catch (e) {
+              const qs = window.location.search
+                ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
+                : '';
+              const sep = (redirectUrl + qs).includes('?') ? '&' : '?';
+              window.open(redirectUrl + qs + sep + 'currency=cny', '_blank');
+            }
           }
         });
       }
