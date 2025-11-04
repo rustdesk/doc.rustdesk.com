@@ -1278,6 +1278,11 @@ D3D渲染可以获得高帧率并减少CPU使用率，但在某些设备上远�
 
 要使WebSocket工作，您需要正确配置反向代理， https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
 
+**位置**:
+
+**桌面** 设置 → 网络 → 使用 Websocket
+**移动端** 设置 → 使用 Websocket
+
 | 值 | 默认值 | 示例 |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-websocket=Y` |
@@ -1400,3 +1405,20 @@ https://github.com/rustdesk/rustdesk/pull/12911
 | Y, N | N | `show-virtual-joystick=Y` |
 
 **注意**: 此选项应在 **Default settings** 中配置，而非 **Override settings** 中。
+
+### allow-insecure-tls-fallback
+
+默认情况下，对于使用 TLS 的协议，RustDesk 会验证服务器证书。
+
+启用此选项后，在验证失败时，RustDesk 将转为跳过验证步骤并继续连接。
+
+**位置**:
+
+**桌面** 设置 → 网络 → 允许回退到不安全的 TLS 连接
+**移动端** 设置 → 允许回退到不安全的 TLS 连接
+
+自 RustDesk 1.4.4 版本起可用。
+
+| 值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-insecure-tls-fallback=Y` |

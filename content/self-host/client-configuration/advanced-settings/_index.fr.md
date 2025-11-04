@@ -1275,6 +1275,11 @@ Utilise le protocole WebSocket pour connecter le serveur et le client. Uniquemen
 
 Pour faire fonctionner WebSocket, vous devez configurer votre proxy inverse correctement, https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
 
+**Emplacement** :
+
+**Bureau** Paramètres → Réseau → Utiliser Websocket
+**Mobile** Paramètres → Utiliser Websocket
+
 | Valeurs | Défaut | Exemple |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-websocket=Y` |
@@ -1397,3 +1402,20 @@ Disponible depuis RustDesk 1.4.3
 | Y, N | N | `show-virtual-joystick=Y` |
 
 **Remarque** : Cette option doit être configurée dans **Default settings** plutôt que dans **Override settings**.
+
+### allow-insecure-tls-fallback
+
+Par défaut, RustDesk vérifie le certificat du serveur pour les protocoles utilisant TLS.
+
+Avec cette option activée, RustDesk reviendra à ignorer l'étape de vérification et continuera en cas d'échec de vérification.
+
+**Emplacement** :
+
+**Bureau** Paramètres → Réseau → Autoriser le repli TLS non sécurisé
+**Mobile** Paramètres → Autoriser le repli TLS non sécurisé
+
+Disponible depuis RustDesk 1.4.4
+
+| Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-insecure-tls-fallback=Y` |
