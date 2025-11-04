@@ -1286,6 +1286,11 @@ WebSocketプロトコルを使用してサーバーとクライアントを接�
 
 WebSocketを動作させるには、リバースプロキシを正しく設定する必要があります、https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
 
+**場所**:
+
+**デスクトップ** 設定 → ネットワーク → WebSocket を使用する
+**モバイル** 設定 → WebSocket を使用する
+
 | 値 | デフォルト | 例 |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-websocket=Y` |
@@ -1407,3 +1412,20 @@ RustDesk 1.4.3 以降で利用可能
 | Y, N | N | `show-virtual-joystick=Y` |
 
 **注意**: このオプションは **Default settings** に設定し、**Override settings** では設定しないでください。
+
+### allow-insecure-tls-fallback
+
+デフォルトでは、RustDeskはTLSを使用するプロトコルのサーバー証明書を検証します。
+
+このオプションを有効にすると、検証に失敗した場合、RustDeskは検証ステップをスキップして続行するようにフォールバックします。
+
+**場所**:
+
+**デスクトップ** 設定 → ネットワーク → 安全でないTLSフォールバックを許可
+**モバイル** 設定 → 安全でないTLSフォールバックを許可
+
+RustDesk 1.4.4 以降で利用可能
+
+| 値 | デフォルト | 例 |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-insecure-tls-fallback=Y` |
