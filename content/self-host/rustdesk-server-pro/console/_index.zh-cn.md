@@ -147,34 +147,204 @@ Windows 命令行默认无输出，如需查看输出，可使用如下方式运
 
 ### Python CLI 管理工具
 
-#### 用户管理 （users.py）
+#### 用户管理 (`users.py`)
 
-**查看帮助：**
+**查看帮助：**  
+`./users.py -h`
 
-    ./users.py -h
+**查看用户：**  
+`./users.py --url <url> --token <token> view [--name <username>] [--group_name <group_name>]`
 
-**查看用户：**
+**过滤条件：**
+- `--name`：用户名（模糊搜索）
+- `--group_name`：用户组名（精确匹配）
 
-    ./users.py --url <url> --token <token> view [--name <username>] [--group_name <group_name>]
+**示例：**  
+`./users.py --url https://example.com --token <token> view --group_name Default`
 
-**过滤条件：**  
-`--name`：用户名  
-`--group_name`：用户组名
+**基本操作：**
 
-**示例：**
+- **禁用用户：**  
+  `./users.py --url <url> --token <token> disable --name testuser`
 
-    ./users.py --url https://example.com --token <token> view --group_name admins
+- **启用用户：**  
+  `./users.py --url <url> --token <token> enable --name testuser`
 
-**操作命令：**  
-`view` 可替换为 `enable`（启用）、`disable`（禁用）或 `delete`（删除）。
+- **删除用户：**  
+  `./users.py --url <url> --token <token> delete --name testuser`
 
-**示例（禁用用户）：**
+**用户创建和邀请：**
 
-    ./users.py --url https://example.com --token <token> disable --name testuser
+- **创建新用户：**  
+  `./users.py --url <url> --token <token> new --name username --password 'password123' --group_name Default [--email user@example.com] [--note "备注"]`
+  
+  必需参数：`--name`、`--password`、`--group_name`  
+  可选参数：`--email`、`--note`
+
+- **通过邮箱邀请用户：**  
+  `./users.py --url <url> --token <token> invite --email user@example.com --name username --group_name Default [--note "备注"]`
+  
+  必需参数：`--email`、`--name`、`--group_name`  
+  可选参数：`--note`
+
+**2FA 和安全操作：**
+
+- **启用 2FA 强制要求：**  
+  `./users.py --url <url> --token <token> enable-2fa-enforce --name username --web-console-url <console_url>`
+  
+  必需参数：`--web-console-url`
+
+- **禁用 2FA 强制要求：**  
+  `./users.py --url <url> --token <token> disable-2fa-enforce --name username [--web-console-url <console_url>]`
+  
+  可选参数：`--web-console-url`
+
+- **重置 2FA：**  
+  `./users.py --url <url> --token <token> reset-2fa --name username`
+
+- **禁用邮箱验证：**  
+  `./users.py --url <url> --token <token> disable-email-verification --name username`
+
+- **强制登出：**  
+  `./users.py --url <url> --token <token> force-logout --name username`
+
+**注意事项：**
+- 当操作多个用户时（通过过滤器匹配），系统会提示确认
+- 如果没有匹配的用户，将显示 "Found 0 users"
 
 ---
 
-#### 设备管理 （devices.py）
+#### 用户组管理 (`user_group.py`)
+
+**查看帮助：**  
+`./user_group.py -h`
+
+**查看用户组：**  
+`./user_group.py --url <url> --token <token> view [--name <group_name>]`
+
+**示例：**  
+`./user_group.py --url https://example.com --token <token> view --name "销售团队"`
+
+**组操作：**
+
+- **创建用户组：**  
+  `./user_group.py --url <url> --token <token> add --name "组名" [--note "描述"] [--accessed-from '<json>'] [--access-to '<json>']`
+  
+  带访问控制的示例：  
+  `./user_group.py --url <url> --token <token> add --name "工程部" --accessed-from '[{"type":0,"name":"管理层"}]' --access-to '[{"type":1,"name":"开发服务器"}]'`
+
+- **更新用户组：**  
+  `./user_group.py --url <url> --token <token> update --name "组名" [--new-name "新名称"] [--note "新备注"] [--accessed-from '<json>'] [--access-to '<json>']`
+
+- **删除用户组：**  
+  `./user_group.py --url <url> --token <token> delete --name "组名"`
+  
+  支持逗号分隔的多个组名：`--name "组1,组2,组3"`
+
+**组内用户管理：**
+
+- **查看组内用户：**  
+  `./user_group.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
+  
+  过滤条件：
+  - `--name`：组名（精确匹配，可选）
+  - `--user-name`：用户名（模糊搜索，可选）
+  
+  示例：  
+  `./user_group.py --url <url> --token <token> view-users --name Default --user-name john`
+
+- **添加用户到组：**  
+  `./user_group.py --url <url> --token <token> add-users --name "组名" --users "user1,user2,user3"`
+
+**访问控制参数：**
+
+- `--accessed-from`：定义谁可以访问此用户组的 JSON 数组
+  - Type 0 = 用户组（例如：`[{"type":0,"name":"管理员"}]`）
+  - Type 2 = 用户（例如：`[{"type":2,"name":"john"}]`）
+
+- `--access-to`：定义此用户组可以访问什么的 JSON 数组
+  - Type 0 = 用户组（例如：`[{"type":0,"name":"支持"}]`）
+  - Type 1 = 设备组（例如：`[{"type":1,"name":"服务器"}]`）
+
+**注意：** 使用单引号包围 JSON 数组以避免 shell 解析问题。
+
+**权限要求：**
+- `view/add/update/delete/add-users` 命令需要 **用户组权限**
+- `view-users` 命令需要 **用户权限**
+
+---
+
+#### 设备组管理 (`device_group.py`)
+
+**查看帮助：**  
+`./device_group.py -h`
+
+**查看设备组：**  
+`./device_group.py --url <url> --token <token> view [--name <group_name>]`
+
+**示例：**  
+`./device_group.py --url https://example.com --token <token> view`
+
+**组操作：**
+
+- **创建设备组：**  
+  `./device_group.py --url <url> --token <token> add --name "组名" [--note "描述"] [--accessed-from '<json>']`
+  
+  示例：  
+  `./device_group.py --url <url> --token <token> add --name "生产环境" --accessed-from '[{"type":0,"name":"管理员"}]'`
+
+- **更新设备组：**  
+  `./device_group.py --url <url> --token <token> update --name "组名" [--new-name "新名称"] [--note "新备注"] [--accessed-from '<json>']`
+
+- **删除设备组：**  
+  `./device_group.py --url <url> --token <token> delete --name "组名"`
+  
+  支持逗号分隔的多个组名：`--name "组1,组2,组3"`
+
+**组内设备管理：**
+
+- **查看组内设备：**  
+  `./device_group.py --url <url> --token <token> view-devices [过滤条件]`
+  
+  可用的过滤条件：
+  - `--name`：设备组名（精确匹配）
+  - `--id`：设备 ID（模糊搜索）
+  - `--device-name`：设备名称（模糊搜索）
+  - `--user-name`：用户名/所有者（模糊搜索）
+  - `--device-username`：设备上登录的用户名（模糊搜索）
+  
+  示例：  
+  ```bash
+  # 查看组内所有设备
+  ./device_group.py --url <url> --token <token> view-devices --name 生产环境
+  
+  # 按设备名搜索
+  ./device_group.py --url <url> --token <token> view-devices --device-name server
+  
+  # 组合过滤条件
+  ./device_group.py --url <url> --token <token> view-devices --name 生产环境 --user-name john
+  ```
+
+
+- **添加设备到组：**  
+  `./device_group.py --url <url> --token <token> add-devices --name "组名" --ids "deviceid1,deviceid2"`
+
+- **从组中移除设备：**  
+  `./device_group.py --url <url> --token <token> remove-devices --name "组名" --ids "deviceid1,deviceid2"`
+
+**访问控制参数：**
+
+- `--accessed-from`：定义谁可以访问此设备组的 JSON 数组
+  - Type 0 = 用户组（例如：`[{"type":0,"name":"工程师"}]`）
+  - Type 2 = 用户（例如：`[{"type":2,"name":"admin"}]`）
+
+**权限要求：**
+- `view/add/update/delete/add-devices/remove-devices` 命令需要 **设备组权限**
+- `view-devices` 命令需要 **设备权限**
+
+---
+
+#### 设备管理 (`devices.py`)
 
 **查看帮助：**
 
@@ -255,6 +425,73 @@ Windows 命令行默认无输出，如需查看输出，可使用如下方式运
 **示例（为用户 mike 添加只读权限）：**
 
     ./ab.py --url https://example.com --token <token> add-rule --ab-guid <guid> --rule-user mike --rule-permission ro
+
+---
+
+#### 策略管理 (`strategies.py`)
+
+**查看帮助：**  
+`./strategies.py -h`
+
+**列出所有策略：**  
+`./strategies.py --url <url> --token <token> list`
+
+**查看指定策略：**  
+```bash
+# 通过名称
+./strategies.py --url <url> --token <token> view --name "Default"
+
+# 通过 GUID
+./strategies.py --url <url> --token <token> view --guid "01983006-fcca-7c12-9a91-b1df483c6073"
+```
+
+**启用或禁用策略：**  
+```bash
+./strategies.py --url <url> --token <token> enable --name "策略名称"
+./strategies.py --url <url> --token <token> disable --name "策略名称"
+```
+
+**分配策略到设备、用户或设备组：**  
+```bash
+# 分配到设备（使用设备 ID）
+./strategies.py --url <url> --token <token> assign --name "Default" --peers "1849118658,1337348840"
+
+# 分配到用户（使用用户名）
+./strategies.py --url <url> --token <token> assign --name "Default" --users "admin,user1"
+
+# 分配到设备组（使用组名）
+./strategies.py --url <url> --token <token> assign --name "Default" --device-groups "device_group1,Production"
+
+# 混合分配
+./strategies.py --url <url> --token <token> assign \
+  --name "Default" \
+  --peers "1849118658" \
+  --users "admin" \
+  --device-groups "device_group1"
+```
+
+**取消分配策略：**  
+```bash
+# 取消设备的策略
+./strategies.py --url <url> --token <token> unassign --peers "1849118658,1337348840"
+
+# 取消用户的策略
+./strategies.py --url <url> --token <token> unassign --users "admin"
+
+# 取消设备组的策略
+./strategies.py --url <url> --token <token> unassign --device-groups "device_group1"
+```
+
+**注意事项：**
+- 脚本支持用户和设备组的名称或 GUID
+- 设备 ID 会自动转换为 GUID
+- 所有 assign/unassign 操作都支持同时操作多个目标
+
+**权限要求：**
+- `list/view/enable/disable/assign/unassign` 命令需要 **策略权限**
+- `--peers` 需要 **设备权限:r**（用于 ID 到 GUID 的查找）
+- `--users` 需要 **用户权限:r**（用于用户名到 GUID 的查找）
+- `--device-groups` 需要 **设备组权限:r**（用于组名到 GUID 的查找）
 
 ---
 

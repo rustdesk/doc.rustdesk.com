@@ -877,7 +877,25 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | インストール必要 | 値 | デフォルト | 例 |
 | :------: | :------: | :------: | :------: |
-| N | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
+| N | scrollauto, scrollbar, scrolledge | scrollauto | `scroll-style=scrollauto` |
+
+**注意**：`scrolledge` オプションは RustDesk 1.4.4 以降で利用可能です。
+
+### edge-scroll-edge-thickness
+
+このオプションは、`scroll-style` が `scrolledge` に設定されている場合のエッジの厚さを制御します。エッジの厚さは、画面の端でのスクロール可能な領域のサイズを決定します。
+
+このオプションは、`scroll-style=scrolledge` の場合にのみ有効です。
+
+**場所**：
+
+1. **デスクトップ** 設定 → ディスプレイ → エッジスクロールの厚さ
+
+| インストール必要 | 値 | デフォルト | 例 |
+| :------: | :------: | :------: | :------: |
+| N | 20-150 | 100 | `edge-scroll-edge-thickness=100` |
+
+**注意**：このオプションは RustDesk 1.4.4 以降で利用可能です。
 
 ### image-quality
 

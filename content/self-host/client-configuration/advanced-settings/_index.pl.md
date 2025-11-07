@@ -916,7 +916,25 @@ Opcja "scroll-style" w ustawieniach każdego partnera będzie wtedy kontrolować
 
 | Wymagana instalacja | Wartości | Domyślne | Przykład |
 | :------: | :------: | :------: | :------: |
-| N | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
+| N | scrollauto, scrollbar, scrolledge | scrollauto | `scroll-style=scrollauto` |
+
+**Uwaga**: Opcja `scrolledge` jest dostępna od RustDesk 1.4.4.
+
+### edge-scroll-edge-thickness
+
+Ta opcja kontroluje grubość krawędzi, gdy `scroll-style` jest ustawiony na `scrolledge`. Grubość krawędzi określa rozmiar obszaru przewijanego na krawędziach ekranu.
+
+Ta opcja jest skuteczna tylko wtedy, gdy `scroll-style=scrolledge`.
+
+**Lokalizacja**:
+
+1. **K. stacjonarny** Ustawienia → Wyświetlanie → Grubość krawędzi przewijania
+
+| Wymagana instalacja | Wartości | Domyślne | Przykład |
+| :------: | :------: | :------: | :------: |
+| N | 20-150 | 100 | `edge-scroll-edge-thickness=100` |
+
+**Uwaga**: Ta opcja jest dostępna od RustDesk 1.4.4.
 
 ### image-quality
 

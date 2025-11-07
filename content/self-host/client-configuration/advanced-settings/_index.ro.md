@@ -916,7 +916,25 @@ Setarea din fiecare peer va controla stilul de derulare.
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
+| N | scrollauto, scrollbar, scrolledge | scrollauto | `scroll-style=scrollauto` |
+
+**Notă**: Opțiunea `scrolledge` este disponibilă începând cu RustDesk 1.4.4.
+
+### edge-scroll-edge-thickness
+
+Această opțiune controlează grosimea marginii când `scroll-style` este setat pe `scrolledge`. Grosimea marginii determină dimensiunea zonei derulabile la marginile ecranului.
+
+Această opțiune este efectivă doar când `scroll-style=scrolledge`.
+
+**Locație**:
+
+1. **Desktop** Settings → Display → Edge scroll edge thickness
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | 20-150 | 100 | `edge-scroll-edge-thickness=100` |
+
+**Notă**: Această opțiune este disponibilă începând cu RustDesk 1.4.4.
 
 ### image-quality
 
