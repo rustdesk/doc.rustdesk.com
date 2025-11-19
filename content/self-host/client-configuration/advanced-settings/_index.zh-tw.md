@@ -916,7 +916,25 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 安裝需要 | 值 | 預設值 | 範例 |
 | :------: | :------: | :------: | :------: |
-| 否 | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
+| 否 | scrollauto, scrollbar, scrolledge | scrollauto | `scroll-style=scrollauto` |
+
+**注意**：`scrolledge` 選項從 RustDesk 1.4.4 開始可用。
+
+### edge-scroll-edge-thickness
+
+此選項控制當 `scroll-style` 設定為 `scrolledge` 時的邊緣厚度。邊緣厚度決定了螢幕邊緣可滾動區域的大小。
+
+此選項僅在 `scroll-style=scrolledge` 時有效。
+
+**位置**：
+
+1. **桌面** 設定 → 顯示 → 邊緣滾動邊緣厚度
+
+| 安裝需要 | 值 | 預設值 | 範例 |
+| :------: | :------: | :------: | :------: |
+| 否 | 20-150 | 100 | `edge-scroll-edge-thickness=100` |
+
+**注意**：此選項從 RustDesk 1.4.4 開始可用。
 
 ### image-quality
 

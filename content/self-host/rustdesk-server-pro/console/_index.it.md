@@ -141,30 +141,202 @@ vedi [qui](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomme
 
 #### Gestione Utenti (`users.py`)
 
-**Mostra aiuto:**
+**Mostra aiuto:**  
+`./users.py -h`
 
-    ./users.py -h
-
-**Visualizza utenti:**
-
-    ./users.py --url <url> --token <token> view [--name <username>] [--group_name <group_name>]
+**Visualizza utenti:**  
+`./users.py --url <url> --token <token> view [--name <username>] [--group_name <group_name>]`
 
 **Filtri:**
+- `--name`: nome utente (ricerca fuzzy)
+- `--group_name`: gruppo utenti (corrispondenza esatta)
 
-    --name : nome utente
-    --group_name : gruppo utenti
+**Esempio:**  
+`./users.py --url https://example.com --token <token> view --group_name Default`
 
-**Esempio:**
+**Operazioni di base:**
 
-    ./users.py --url https://example.com --token <token> view --group_name admins
+- **Disabilitare utente:**  
+  `./users.py --url <url> --token <token> disable --name testuser`
 
-**Operazioni:**
+- **Abilitare utente:**  
+  `./users.py --url <url> --token <token> enable --name testuser`
 
-`view` può essere sostituito con `enable`, `disable`, o `delete`.
+- **Eliminare utente:**  
+  `./users.py --url <url> --token <token> delete --name testuser`
 
-**Esempio (disabilitare utente):**
+**Creazione e invito utenti:**
 
-    ./users.py --url https://example.com --token <token> disable --name testuser
+- **Creare nuovo utente:**  
+  `./users.py --url <url> --token <token> new --name username --password 'password123' --group_name Default [--email user@example.com] [--note "nota"]`
+  
+  Richiesto: `--name`, `--password`, `--group_name`  
+  Opzionale: `--email`, `--note`
+
+- **Invitare utente via email:**  
+  `./users.py --url <url> --token <token> invite --email user@example.com --name username --group_name Default [--note "nota"]`
+  
+  Richiesto: `--email`, `--name`, `--group_name`  
+  Opzionale: `--note`
+
+**Operazioni 2FA e sicurezza:**
+
+- **Abilitare imposizione 2FA:**  
+  `./users.py --url <url> --token <token> enable-2fa-enforce --name username --web-console-url <console_url>`
+  
+  Richiesto: `--web-console-url`
+
+- **Disabilitare imposizione 2FA:**  
+  `./users.py --url <url> --token <token> disable-2fa-enforce --name username [--web-console-url <console_url>]`
+  
+  Opzionale: `--web-console-url`
+
+- **Reimpostare 2FA:**  
+  `./users.py --url <url> --token <token> reset-2fa --name username`
+
+- **Disabilitare verifica email:**  
+  `./users.py --url <url> --token <token> disable-email-verification --name username`
+
+- **Disconnessione forzata:**  
+  `./users.py --url <url> --token <token> force-logout --name username`
+
+**Note:**
+- Quando si opera su più utenti (corrispondenti ai filtri), verrà richiesta conferma
+- Se non ci sono utenti corrispondenti, verrà mostrato "Found 0 users"
+
+---
+
+#### Gestione Gruppi Utenti (`user_group.py`)
+
+**Mostra aiuto:**  
+`./user_group.py -h`
+
+**Visualizza gruppi utenti:**  
+`./user_group.py --url <url> --token <token> view [--name <group_name>]`
+
+**Esempio:**  
+`./user_group.py --url https://example.com --token <token> view --name "Team Vendite"`
+
+**Operazioni sui gruppi:**
+
+- **Creare gruppo utenti:**  
+  `./user_group.py --url <url> --token <token> add --name "NomeGruppo" [--note "descrizione"] [--accessed-from '<json>'] [--access-to '<json>']`
+  
+  Esempio con controllo accesso:  
+  `./user_group.py --url <url> --token <token> add --name "Ingegneria" --accessed-from '[{"type":0,"name":"Manager"}]' --access-to '[{"type":1,"name":"Server Dev"}]'`
+
+- **Aggiornare gruppo utenti:**  
+  `./user_group.py --url <url> --token <token> update --name "NomeGruppo" [--new-name "Nuovo Nome"] [--note "nuova nota"] [--accessed-from '<json>'] [--access-to '<json>']`
+
+- **Eliminare gruppo utenti:**  
+  `./user_group.py --url <url> --token <token> delete --name "NomeGruppo"`
+  
+  Supporta nomi separati da virgola: `--name "Gruppo1,Gruppo2,Gruppo3"`
+
+**Gestione utenti nei gruppi:**
+
+- **Visualizzare utenti nel gruppo:**  
+  `./user_group.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
+  
+  Filtri:
+  - `--name`: nome del gruppo (corrispondenza esatta, opzionale)
+  - `--user-name`: nome utente (ricerca fuzzy, opzionale)
+  
+  Esempio:  
+  `./user_group.py --url <url> --token <token> view-users --name Default --user-name john`
+
+- **Aggiungere utenti al gruppo:**  
+  `./user_group.py --url <url> --token <token> add-users --name "NomeGruppo" --users "user1,user2,user3"`
+
+**Parametri controllo accesso:**
+
+- `--accessed-from`: array JSON che definisce chi può accedere a questo gruppo utenti
+  - Type 0 = Gruppo utenti (es. `[{"type":0,"name":"Admins"}]`)
+  - Type 2 = Utente (es. `[{"type":2,"name":"john"}]`)
+
+- `--access-to`: array JSON che definisce a cosa può accedere questo gruppo utenti
+  - Type 0 = Gruppo utenti (es. `[{"type":0,"name":"Supporto"}]`)
+  - Type 1 = Gruppo dispositivi (es. `[{"type":1,"name":"Server"}]`)
+
+**Nota:** Utilizzare virgolette singole attorno agli array JSON per evitare problemi di parsing della shell.
+
+**Requisiti di permessi:**
+- I comandi `view/add/update/delete/add-users` richiedono **Permesso Gruppo Utenti**
+- Il comando `view-users` richiede **Permesso Utente**
+
+---
+
+#### Gestione Gruppi Dispositivi (`device_group.py`)
+
+**Mostra aiuto:**  
+`./device_group.py -h`
+
+**Visualizza gruppi dispositivi:**  
+`./device_group.py --url <url> --token <token> view [--name <group_name>]`
+
+**Esempio:**  
+`./device_group.py --url https://example.com --token <token> view`
+
+**Operazioni sui gruppi:**
+
+- **Creare gruppo dispositivi:**  
+  `./device_group.py --url <url> --token <token> add --name "NomeGruppo" [--note "descrizione"] [--accessed-from '<json>']`
+  
+  Esempio:  
+  `./device_group.py --url <url> --token <token> add --name "Produzione" --accessed-from '[{"type":0,"name":"Admins"}]'`
+
+- **Aggiornare gruppo dispositivi:**  
+  `./device_group.py --url <url> --token <token> update --name "NomeGruppo" [--new-name "Nuovo Nome"] [--note "nuova nota"] [--accessed-from '<json>']`
+
+- **Eliminare gruppo dispositivi:**  
+  `./device_group.py --url <url> --token <token> delete --name "NomeGruppo"`
+  
+  Supporta nomi separati da virgola: `--name "Gruppo1,Gruppo2,Gruppo3"`
+
+**Gestione dispositivi nei gruppi:**
+
+- **Visualizzare dispositivi nel gruppo:**  
+  `./device_group.py --url <url> --token <token> view-devices [filtri]`
+  
+  Filtri disponibili:
+  - `--name`: nome del gruppo dispositivi (corrispondenza esatta)
+  - `--id`: ID dispositivo (ricerca fuzzy)
+  - `--device-name`: nome dispositivo (ricerca fuzzy)
+  - `--user-name`: nome utente/proprietario (ricerca fuzzy)
+  - `--device-username`: nome utente connesso al dispositivo (ricerca fuzzy)
+  
+  Esempi:  
+  ```bash
+  # Visualizzare tutti i dispositivi in un gruppo
+  ./device_group.py --url <url> --token <token> view-devices --name Produzione
+  
+  # Cercare per nome dispositivo
+  ./device_group.py --url <url> --token <token> view-devices --device-name server
+  
+  # Combinare filtri
+  ./device_group.py --url <url> --token <token> view-devices --name Produzione --user-name john
+  ```
+
+- **Visualizzare gruppi dispositivi accessibili:**  
+  `./device_group.py --url <url> --token <token> accessible`
+  
+  Mostra tutti i gruppi dispositivi accessibili all'utente corrente.
+
+- **Aggiungere dispositivi al gruppo:**  
+  `./device_group.py --url <url> --token <token> add-devices --name "NomeGruppo" --ids "deviceid1,deviceid2"`
+
+- **Rimuovere dispositivi dal gruppo:**  
+  `./device_group.py --url <url> --token <token> remove-devices --name "NomeGruppo" --ids "deviceid1,deviceid2"`
+
+**Parametro controllo accesso:**
+
+- `--accessed-from`: array JSON che definisce chi può accedere a questo gruppo dispositivi
+  - Type 0 = Gruppo utenti (es. `[{"type":0,"name":"Ingegneri"}]`)
+  - Type 2 = Utente (es. `[{"type":2,"name":"admin"}]`)
+
+**Requisiti permessi:**
+- I comandi `view/add/update/delete/add-devices/remove-devices` richiedono **Permesso Gruppo Dispositivi**
+- Il comando `view-devices` richiede **Permesso Dispositivo**
 
 ---
 
@@ -253,6 +425,74 @@ vedi [qui](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomme
     ./ab.py --url https://example.com --token <token> add-rule --ab-guid <guid> --rule-user mike --rule-permission ro
 
 ---
+
+#### Gestione delle Strategie (`strategies.py`)
+
+**Mostra aiuto:**  
+`./strategies.py -h`
+
+**Elenca tutte le strategie:**  
+`./strategies.py --url <url> --token <token> list`
+
+**Visualizza una strategia specifica:**  
+```bash
+# Per nome
+./strategies.py --url <url> --token <token> view --name "Default"
+
+# Per GUID
+./strategies.py --url <url> --token <token> view --guid "01983006-fcca-7c12-9a91-b1df483c6073"
+```
+
+**Abilita o disabilita una strategia:**  
+```bash
+./strategies.py --url <url> --token <token> enable --name "NomeStrategia"
+./strategies.py --url <url> --token <token> disable --name "NomeStrategia"
+```
+
+**Assegna strategia a dispositivi, utenti o gruppi dispositivi:**  
+```bash
+# Assegna a dispositivi (per ID dispositivo)
+./strategies.py --url <url> --token <token> assign --name "Default" --peers "1849118658,1337348840"
+
+# Assegna a utenti (per nome utente)
+./strategies.py --url <url> --token <token> assign --name "Default" --users "admin,user1"
+
+# Assegna a gruppi dispositivi (per nome gruppo)
+./strategies.py --url <url> --token <token> assign --name "Default" --device-groups "device_group1,Production"
+
+# Assegnazione mista
+./strategies.py --url <url> --token <token> assign \
+  --name "Default" \
+  --peers "1849118658" \
+  --users "admin" \
+  --device-groups "device_group1"
+```
+
+**Rimuovi assegnazione strategia:**  
+```bash
+# Rimuovi da dispositivi
+./strategies.py --url <url> --token <token> unassign --peers "1849118658,1337348840"
+
+# Rimuovi da utenti
+./strategies.py --url <url> --token <token> unassign --users "admin"
+
+# Rimuovi da gruppi dispositivi
+./strategies.py --url <url> --token <token> unassign --device-groups "device_group1"
+```
+
+**Note:**
+- Lo script supporta sia nomi che GUID per utenti e gruppi dispositivi
+- Gli ID dispositivi vengono automaticamente convertiti in GUID
+- Tutte le operazioni assign/unassign possono gestire più target contemporaneamente
+
+**Requisiti di permessi:**
+- I comandi `list/view/enable/disable/assign/unassign` richiedono **Permesso Strategia**
+- `--peers` richiede **Permesso Dispositivo:r** (per ricerca da ID a GUID)
+- `--users` richiede **Permesso Utente:r** (per ricerca da nome utente a GUID)
+- `--device-groups` richiede **Permesso Gruppo Dispositivi:r** (per ricerca da nome gruppo a GUID)
+
+---
+
 
 #### Audit (`audits.py`)
 

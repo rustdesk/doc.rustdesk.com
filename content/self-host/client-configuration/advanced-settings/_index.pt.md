@@ -915,7 +915,25 @@ A opção "estilo de rolagem" nas configurações de cada par controlará então
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
-| N | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
+| N | scrollauto, scrollbar, scrolledge | scrollauto | `scroll-style=scrollauto` |
+
+**Nota**: A opção `scrolledge` está disponível a partir do RustDesk 1.4.4.
+
+### edge-scroll-edge-thickness
+
+Esta opção controla a espessura da borda quando `scroll-style` está definido como `scrolledge`. A espessura da borda determina o tamanho da área rolável nas bordas da tela.
+
+Esta opção só é efetiva quando `scroll-style=scrolledge`.
+
+**Localização**:
+
+1. **Desktop** Configurações → Display → Espessura da borda de rolagem
+
+| Instalação necessária | Valores | Padrão | Exemplo |
+| :------: | :------: | :------: | :------: |
+| N | 20-150 | 100 | `edge-scroll-edge-thickness=100` |
+
+**Nota**: Esta opção está disponível a partir do RustDesk 1.4.4.
 
 ### image-quality
 

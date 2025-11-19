@@ -141,30 +141,198 @@ Windowsのコマンドラインはデフォルトでは出力を表示しませ�
 
 #### ユーザー管理 (`users.py`)
 
-**ヘルプ表示：**
+**ヘルプ表示：**  
+`./users.py -h`
 
-    ./users.py -h
-
-**ユーザー表示：**
-
-    ./users.py --url <url> --token <token> view [--name <username>] [--group_name <group_name>]
+**ユーザー表示：**  
+`./users.py --url <url> --token <token> view [--name <username>] [--group_name <group_name>]`
 
 **フィルター：**
+- `--name`：ユーザー名（あいまい検索）
+- `--group_name`：ユーザーグループ名（完全一致）
 
-    --name : ユーザー名
-    --group_name : ユーザーグループ
+**例：**  
+`./users.py --url https://example.com --token <token> view --group_name Default`
 
-**例：**
+**基本操作：**
 
-    ./users.py --url https://example.com --token <token> view --group_name admins
+- **ユーザーを無効化：**  
+  `./users.py --url <url> --token <token> disable --name testuser`
 
-**操作：**
+- **ユーザーを有効化：**  
+  `./users.py --url <url> --token <token> enable --name testuser`
 
-`view`は`enable`、`disable`、`delete`に置き換え可能です。
+- **ユーザーを削除：**  
+  `./users.py --url <url> --token <token> delete --name testuser`
 
-**例（ユーザーを無効化）：**
+**ユーザーの作成と招待：**
 
-    ./users.py --url https://example.com --token <token> disable --name testuser
+- **新規ユーザーの作成：**  
+  `./users.py --url <url> --token <token> new --name username --password 'password123' --group_name Default [--email user@example.com] [--note "メモ"]`
+  
+  必須パラメータ：`--name`、`--password`、`--group_name`  
+  オプションパラメータ：`--email`、`--note`
+
+- **メールでユーザーを招待：**  
+  `./users.py --url <url> --token <token> invite --email user@example.com --name username --group_name Default [--note "メモ"]`
+  
+  必須パラメータ：`--email`、`--name`、`--group_name`  
+  オプションパラメータ：`--note`
+
+**2FAとセキュリティ操作：**
+
+- **2FA強制を有効化：**  
+  `./users.py --url <url> --token <token> enable-2fa-enforce --name username --web-console-url <console_url>`
+  
+  必須パラメータ：`--web-console-url`
+
+- **2FA強制を無効化：**  
+  `./users.py --url <url> --token <token> disable-2fa-enforce --name username [--web-console-url <console_url>]`
+  
+  オプションパラメータ：`--web-console-url`
+
+- **2FAをリセット：**  
+  `./users.py --url <url> --token <token> reset-2fa --name username`
+
+- **メール認証を無効化：**  
+  `./users.py --url <url> --token <token> disable-email-verification --name username`
+
+- **強制ログアウト：**  
+  `./users.py --url <url> --token <token> force-logout --name username`
+
+**注意事項：**
+- 複数のユーザーに対して操作を行う場合（フィルターでマッチ）、確認プロンプトが表示されます
+- 一致するユーザーがいない場合は「Found 0 users」と表示されます
+
+---
+
+#### ユーザーグループ管理 (`user_group.py`)
+
+**ヘルプ表示：**  
+`./user_group.py -h`
+
+**ユーザーグループ表示：**  
+`./user_group.py --url <url> --token <token> view [--name <group_name>]`
+
+**例：**  
+`./user_group.py --url https://example.com --token <token> view --name "営業チーム"`
+
+**グループ操作：**
+
+- **ユーザーグループの作成：**  
+  `./user_group.py --url <url> --token <token> add --name "グループ名" [--note "説明"] [--accessed-from '<json>'] [--access-to '<json>']`
+  
+  アクセス制御付きの例：  
+  `./user_group.py --url <url> --token <token> add --name "エンジニアリング" --accessed-from '[{"type":0,"name":"マネージャー"}]' --access-to '[{"type":1,"name":"開発サーバー"}]'`
+
+- **ユーザーグループの更新：**  
+  `./user_group.py --url <url> --token <token> update --name "グループ名" [--new-name "新しい名前"] [--note "新しいメモ"] [--accessed-from '<json>'] [--access-to '<json>']`
+
+- **ユーザーグループの削除：**  
+  `./user_group.py --url <url> --token <token> delete --name "グループ名"`
+  
+  カンマ区切りで複数指定可能：`--name "グループ1,グループ2,グループ3"`
+
+**グループ内ユーザー管理：**
+
+- **グループ内のユーザーを表示：**  
+  `./user_group.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
+  
+  フィルター：
+  - `--name`：グループ名（完全一致、オプション）
+  - `--user-name`：ユーザー名（あいまい検索、オプション）
+  
+  例：  
+  `./user_group.py --url <url> --token <token> view-users --name Default --user-name john`
+
+- **グループにユーザーを追加：**  
+  `./user_group.py --url <url> --token <token> add-users --name "グループ名" --users "user1,user2,user3"`
+
+**アクセス制御パラメータ：**
+
+- `--accessed-from`：このユーザーグループにアクセスできるユーザー/グループを定義するJSON配列
+  - Type 0 = ユーザーグループ（例：`[{"type":0,"name":"管理者"}]`）
+  - Type 2 = ユーザー（例：`[{"type":2,"name":"john"}]`）
+
+- `--access-to`：このユーザーグループがアクセスできる対象を定義するJSON配列
+  - Type 0 = ユーザーグループ（例：`[{"type":0,"name":"サポート"}]`）
+  - Type 1 = デバイスグループ（例：`[{"type":1,"name":"サーバー"}]`）
+
+**注意：** シェルの解析問題を避けるため、JSON配列は単一引用符で囲んでください。
+
+**権限要件:**
+- `view/add/update/delete/add-users` コマンドには **ユーザーグループ権限** が必要
+- `view-users` コマンドには **ユーザー権限** が必要
+
+---
+
+#### デバイスグループ管理 (`device_group.py`)
+
+**ヘルプ表示：**  
+`./device_group.py -h`
+
+**デバイスグループ表示：**  
+`./device_group.py --url <url> --token <token> view [--name <group_name>]`
+
+**例：**  
+`./device_group.py --url https://example.com --token <token> view`
+
+**グループ操作：**
+
+- **デバイスグループの作成：**  
+  `./device_group.py --url <url> --token <token> add --name "グループ名" [--note "説明"] [--accessed-from '<json>']`
+  
+  例：  
+  `./device_group.py --url <url> --token <token> add --name "本番環境" --accessed-from '[{"type":0,"name":"管理者"}]'`
+
+- **デバイスグループの更新：**  
+  `./device_group.py --url <url> --token <token> update --name "グループ名" [--new-name "新しい名前"] [--note "新しいメモ"] [--accessed-from '<json>']`
+
+- **デバイスグループの削除：**  
+  `./device_group.py --url <url> --token <token> delete --name "グループ名"`
+  
+  カンマ区切りで複数指定可能：`--name "グループ1,グループ2,グループ3"`
+
+**グループ内デバイス管理：**
+
+- **グループ内のデバイスを表示：**  
+  `./device_group.py --url <url> --token <token> view-devices [フィルター]`
+  
+  利用可能なフィルター：
+  - `--name`：デバイスグループ名（完全一致）
+  - `--id`：デバイスID（あいまい検索）
+  - `--device-name`：デバイス名（あいまい検索）
+  - `--user-name`：ユーザー名/所有者（あいまい検索）
+  - `--device-username`：デバイスにログインしているユーザー名（あいまい検索）
+  
+  例：  
+  ```bash
+  # グループ内のすべてのデバイスを表示
+  ./device_group.py --url <url> --token <token> view-devices --name 本番環境
+  
+  # デバイス名で検索
+  ./device_group.py --url <url> --token <token> view-devices --device-name server
+  
+  # フィルターを組み合わせ
+  ./device_group.py --url <url> --token <token> view-devices --name 本番環境 --user-name john
+  ```
+
+
+- **グループにデバイスを追加：**  
+  `./device_group.py --url <url> --token <token> add-devices --name "グループ名" --ids "deviceid1,deviceid2"`
+
+- **グループからデバイスを削除：**  
+  `./device_group.py --url <url> --token <token> remove-devices --name "グループ名" --ids "deviceid1,deviceid2"`
+
+**アクセス制御パラメータ：**
+
+- `--accessed-from`：このデバイスグループにアクセスできるユーザー/グループを定義するJSON配列
+  - Type 0 = ユーザーグループ（例：`[{"type":0,"name":"エンジニア"}]`）
+  - Type 2 = ユーザー（例：`[{"type":2,"name":"admin"}]`）
+
+**権限要件：**
+- `view/add/update/delete/add-devices/remove-devices` コマンドには **デバイスグループ権限** が必要
+- `view-devices` コマンドには **デバイス権限** が必要
 
 ---
 
@@ -253,6 +421,74 @@ Windowsのコマンドラインはデフォルトでは出力を表示しませ�
     ./ab.py --url https://example.com --token <token> add-rule --ab-guid <guid> --rule-user mike --rule-permission ro
 
 ---
+
+#### ストラテジー管理 (`strategies.py`)
+
+**ヘルプを表示:**  
+`./strategies.py -h`
+
+**すべてのストラテジーを一覧表示:**  
+`./strategies.py --url <url> --token <token> list`
+
+**特定のストラテジーを表示:**  
+```bash
+# 名前で
+./strategies.py --url <url> --token <token> view --name "Default"
+
+# GUIDで
+./strategies.py --url <url> --token <token> view --guid "01983006-fcca-7c12-9a91-b1df483c6073"
+```
+
+**ストラテジーを有効化または無効化:**  
+```bash
+./strategies.py --url <url> --token <token> enable --name "ストラテジー名"
+./strategies.py --url <url> --token <token> disable --name "ストラテジー名"
+```
+
+**デバイス、ユーザー、またはデバイスグループにストラテジーを割り当て:**  
+```bash
+# デバイスに割り当て（デバイスIDで）
+./strategies.py --url <url> --token <token> assign --name "Default" --peers "1849118658,1337348840"
+
+# ユーザーに割り当て（ユーザー名で）
+./strategies.py --url <url> --token <token> assign --name "Default" --users "admin,user1"
+
+# デバイスグループに割り当て（グループ名で）
+./strategies.py --url <url> --token <token> assign --name "Default" --device-groups "device_group1,Production"
+
+# 混合割り当て
+./strategies.py --url <url> --token <token> assign \
+  --name "Default" \
+  --peers "1849118658" \
+  --users "admin" \
+  --device-groups "device_group1"
+```
+
+**ストラテジーの割り当てを解除:**  
+```bash
+# デバイスから解除
+./strategies.py --url <url> --token <token> unassign --peers "1849118658,1337348840"
+
+# ユーザーから解除
+./strategies.py --url <url> --token <token> unassign --users "admin"
+
+# デバイスグループから解除
+./strategies.py --url <url> --token <token> unassign --device-groups "device_group1"
+```
+
+**注意:**
+- スクリプトはユーザーとデバイスグループの名前とGUIDの両方をサポートします
+- デバイスIDは自動的にGUIDに変換されます
+- すべてのassign/unassign操作は一度に複数のターゲットを処理できます
+
+**権限要件:**
+- `list/view/enable/disable/assign/unassign` コマンドには **ストラテジー権限** が必要
+- `--peers` には **デバイス権限:r** が必要（IDからGUIDへの検索用）
+- `--users` には **ユーザー権限:r** が必要（ユーザー名からGUIDへの検索用）
+- `--device-groups` には **デバイスグループ権限:r** が必要（グループ名からGUIDへの検索用）
+
+---
+
 
 #### 監査 (`audits.py`)
 

@@ -913,7 +913,25 @@ L'option "style de défilement" dans les paramètres de chaque pair contrôlera 
 
 | Installation requise | Valeurs | Défaut | Exemple |
 | :------: | :------: | :------: | :------: |
-| N | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
+| N | scrollauto, scrollbar, scrolledge | scrollauto | `scroll-style=scrollauto` |
+
+**Note** : L'option `scrolledge` est disponible à partir de RustDesk 1.4.4.
+
+### edge-scroll-edge-thickness
+
+Cette option contrôle l'épaisseur du bord lorsque `scroll-style` est défini sur `scrolledge`. L'épaisseur du bord détermine la taille de la zone défilable aux bords de l'écran.
+
+Cette option n'est effective que lorsque `scroll-style=scrolledge`.
+
+**Emplacement** :
+
+1. **Bureau** Paramètres → Affichage → Épaisseur du bord de défilement
+
+| Installation requise | Valeurs | Défaut | Exemple |
+| :------: | :------: | :------: | :------: |
+| N | 20-150 | 100 | `edge-scroll-edge-thickness=100` |
+
+**Note** : Cette option est disponible à partir de RustDesk 1.4.4.
 
 ### image-quality
 

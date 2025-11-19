@@ -916,7 +916,25 @@ The "scroll-style" option in each peer's settings will then control the scroll s
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
+| N | scrollauto, scrollbar, scrolledge | scrollauto | `scroll-style=scrollauto` |
+
+**Note**: The `scrolledge` option is available starting from RustDesk 1.4.4.
+
+### edge-scroll-edge-thickness
+
+This option controls the edge thickness when `scroll-style` is set to `scrolledge`. The edge thickness determines the size of the scrollable area at the screen edges.
+
+This option is only effective when `scroll-style=scrolledge`.
+
+**Location**:
+
+1. **Desktop** Settings → Display → Edge scroll edge thickness
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | 20-150 | 100 | `edge-scroll-edge-thickness=100` |
+
+**Note**: This option is available starting from RustDesk 1.4.4.
 
 ### image-quality
 

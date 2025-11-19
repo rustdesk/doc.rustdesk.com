@@ -913,7 +913,25 @@ L'opzione "stile scorrimento" nelle impostazioni di ogni peer controllerà quind
 
 | Installazione richiesta | Valori | Predefinito | Esempio |
 | :------: | :------: | :------: | :------: |
-| N | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
+| N | scrollauto, scrollbar, scrolledge | scrollauto | `scroll-style=scrollauto` |
+
+**Nota**: L'opzione `scrolledge` è disponibile a partire da RustDesk 1.4.4.
+
+### edge-scroll-edge-thickness
+
+Questa opzione controlla lo spessore del bordo quando `scroll-style` è impostato su `scrolledge`. Lo spessore del bordo determina la dimensione dell'area scorrevole ai bordi dello schermo.
+
+Questa opzione è efficace solo quando `scroll-style=scrolledge`.
+
+**Posizione**:
+
+1. **Desktop** Impostazioni → Display → Spessore bordo scorrimento
+
+| Installazione richiesta | Valori | Predefinito | Esempio |
+| :------: | :------: | :------: | :------: |
+| N | 20-150 | 100 | `edge-scroll-edge-thickness=100` |
+
+**Nota**: Questa opzione è disponibile a partire da RustDesk 1.4.4.
 
 ### image-quality
 

@@ -141,30 +141,201 @@ Windows 命令列預設不會輸出結果。若要查看輸出，可使用：
 
 #### 使用者管理 (`users.py`)
 
-**顯示幫助：**
+**顯示幫助：**  
+`./users.py -h`
 
-    ./users.py -h
-
-**查看使用者：**
-
-    ./users.py --url <url> --token <token> view [--name <username>] [--group_name <group_name>]
+**查看使用者：**  
+`./users.py --url <url> --token <token> view [--name <username>] [--group_name <group_name>]`
 
 **篩選條件：**
+- `--name`：使用者名稱（模糊搜尋）
+- `--group_name`：使用者群組名稱（精確匹配）
 
-    --name : 使用者名稱
-    --group_name : 使用者群組
+**範例：**  
+`./users.py --url https://example.com --token <token> view --group_name Default`
 
-**範例：**
+**基本操作：**
 
-    ./users.py --url https://example.com --token <token> view --group_name admins
+- **停用使用者：**  
+  `./users.py --url <url> --token <token> disable --name testuser`
 
-**操作：**
+- **啟用使用者：**  
+  `./users.py --url <url> --token <token> enable --name testuser`
 
-`view` 可替換為 `enable`、`disable` 或 `delete`。
+- **刪除使用者：**  
+  `./users.py --url <url> --token <token> delete --name testuser`
 
-**範例（停用使用者）：**
+**使用者建立和邀請：**
 
-    ./users.py --url https://example.com --token <token> disable --name testuser
+- **建立新使用者：**  
+  `./users.py --url <url> --token <token> new --name username --password 'password123' --group_name Default [--email user@example.com] [--note "備註"]`
+  
+  必要參數：`--name`、`--password`、`--group_name`  
+  選用參數：`--email`、`--note`
+
+- **透過電子郵件邀請使用者：**  
+  `./users.py --url <url> --token <token> invite --email user@example.com --name username --group_name Default [--note "備註"]`
+  
+  必要參數：`--email`、`--name`、`--group_name`  
+  選用參數：`--note`
+
+**2FA 和安全操作：**
+
+- **啟用 2FA 強制要求：**  
+  `./users.py --url <url> --token <token> enable-2fa-enforce --name username --web-console-url <console_url>`
+  
+  必要參數：`--web-console-url`
+
+- **停用 2FA 強制要求：**  
+  `./users.py --url <url> --token <token> disable-2fa-enforce --name username [--web-console-url <console_url>]`
+  
+  選用參數：`--web-console-url`
+
+- **重設 2FA：**  
+  `./users.py --url <url> --token <token> reset-2fa --name username`
+
+- **停用電子郵件驗證：**  
+  `./users.py --url <url> --token <token> disable-email-verification --name username`
+
+- **強制登出：**  
+  `./users.py --url <url> --token <token> force-logout --name username`
+
+**注意事項：**
+- 當操作多個使用者時（透過篩選器匹配），系統會提示確認
+- 如果沒有匹配的使用者，將顯示 "Found 0 users"
+
+---
+
+#### 使用者群組管理 (`user_group.py`)
+
+**顯示幫助：**  
+`./user_group.py -h`
+
+**查看使用者群組：**  
+`./user_group.py --url <url> --token <token> view [--name <group_name>]`
+
+**範例：**  
+`./user_group.py --url https://example.com --token <token> view --name "銷售團隊"`
+
+**群組操作：**
+
+- **建立使用者群組：**  
+  `./user_group.py --url <url> --token <token> add --name "群組名稱" [--note "描述"] [--accessed-from '<json>'] [--access-to '<json>']`
+  
+  帶存取控制的範例：  
+  `./user_group.py --url <url> --token <token> add --name "工程部" --accessed-from '[{"type":0,"name":"管理層"}]' --access-to '[{"type":1,"name":"開發伺服器"}]'`
+
+- **更新使用者群組：**  
+  `./user_group.py --url <url> --token <token> update --name "群組名稱" [--new-name "新名稱"] [--note "新備註"] [--accessed-from '<json>'] [--access-to '<json>']`
+
+- **刪除使用者群組：**  
+  `./user_group.py --url <url> --token <token> delete --name "群組名稱"`
+  
+  支援逗號分隔的多個群組名稱：`--name "群組1,群組2,群組3"`
+
+**群組內使用者管理：**
+
+- **查看群組內使用者：**  
+  `./user_group.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
+  
+  篩選條件：
+  - `--name`：群組名稱（精確匹配，選用）
+  - `--user-name`：使用者名稱（模糊搜尋，選用）
+  
+  範例：  
+  `./user_group.py --url <url> --token <token> view-users --name Default --user-name john`
+
+- **新增使用者到群組：**  
+  `./user_group.py --url <url> --token <token> add-users --name "群組名稱" --users "user1,user2,user3"`
+
+**存取控制參數：**
+
+- `--accessed-from`：定義誰可以存取此使用者群組的 JSON 陣列
+  - Type 0 = 使用者群組（例如：`[{"type":0,"name":"管理員"}]`）
+  - Type 2 = 使用者（例如：`[{"type":2,"name":"john"}]`）
+
+- `--access-to`：定義此使用者群組可以存取什麼的 JSON 陣列
+  - Type 0 = 使用者群組（例如：`[{"type":0,"name":"支援"}]`）
+  - Type 1 = 設備群組（例如：`[{"type":1,"name":"伺服器"}]`）
+
+**注意：** 使用單引號包圍 JSON 陣列以避免 shell 解析問題。
+
+**權限要求：**
+- `view/add/update/delete/add-users` 命令需要 **使用者群組權限**
+- `view-users` 命令需要 **使用者權限**
+
+---
+
+#### 設備群組管理 (`device_group.py`)
+
+**顯示幫助：**  
+`./device_group.py -h`
+
+**查看設備群組：**  
+`./device_group.py --url <url> --token <token> view [--name <group_name>]`
+
+**範例：**  
+`./device_group.py --url https://example.com --token <token> view`
+
+**群組操作：**
+
+- **建立設備群組：**  
+  `./device_group.py --url <url> --token <token> add --name "群組名稱" [--note "描述"] [--accessed-from '<json>']`
+  
+  範例：  
+  `./device_group.py --url <url> --token <token> add --name "生產環境" --accessed-from '[{"type":0,"name":"管理員"}]'`
+
+- **更新設備群組：**  
+  `./device_group.py --url <url> --token <token> update --name "群組名稱" [--new-name "新名稱"] [--note "新備註"] [--accessed-from '<json>']`
+
+- **刪除設備群組：**  
+  `./device_group.py --url <url> --token <token> delete --name "群組名稱"`
+  
+  支援逗號分隔的多個群組名稱：`--name "群組1,群組2,群組3"`
+
+**群組內設備管理：**
+
+- **查看群組內設備：**  
+  `./device_group.py --url <url> --token <token> view-devices [篩選條件]`
+  
+  可用的篩選條件：
+  - `--name`：設備群組名稱（精確匹配）
+  - `--id`：設備 ID（模糊搜尋）
+  - `--device-name`：設備名稱（模糊搜尋）
+  - `--user-name`：使用者名稱/擁有者（模糊搜尋）
+  - `--device-username`：設備上登入的使用者名稱（模糊搜尋）
+  
+  範例：  
+  ```bash
+  # 查看群組內所有設備
+  ./device_group.py --url <url> --token <token> view-devices --name 生產環境
+  
+  # 按設備名稱搜尋
+  ./device_group.py --url <url> --token <token> view-devices --device-name server
+  
+  # 組合篩選條件
+  ./device_group.py --url <url> --token <token> view-devices --name 生產環境 --user-name john
+  ```
+
+- **查看可存取的設備群組：**  
+  
+  顯示目前使用者可存取的所有設備群組。
+
+- **新增設備到群組：**  
+  `./device_group.py --url <url> --token <token> add-devices --name "群組名稱" --ids "deviceid1,deviceid2"`
+
+- **從群組中移除設備：**  
+  `./device_group.py --url <url> --token <token> remove-devices --name "群組名稱" --ids "deviceid1,deviceid2"`
+
+**存取控制參數：**
+
+- `--accessed-from`：定義誰可以存取此設備群組的 JSON 陣列
+  - Type 0 = 使用者群組（例如：`[{"type":0,"name":"工程師"}]`）
+  - Type 2 = 使用者（例如：`[{"type":2,"name":"admin"}]`）
+
+**權限要求：**
+- `view/add/update/delete/add-devices/remove-devices` 命令需要 **設備群組權限**
+- `view-devices` 命令需要 **設備權限**
 
 ---
 
@@ -251,6 +422,73 @@ Windows 命令列預設不會輸出結果。若要查看輸出，可使用：
 **範例（為使用者 "mike" 新增唯讀規則）：**
 
     ./ab.py --url https://example.com --token <token> add-rule --ab-guid <guid> --rule-user mike --rule-permission ro
+
+---
+
+#### 策略管理 (`strategies.py`)
+
+**顯示幫助：**  
+`./strategies.py -h`
+
+**列出所有策略：**  
+`./strategies.py --url <url> --token <token> list`
+
+**查看指定策略：**  
+```bash
+# 通過名稱
+./strategies.py --url <url> --token <token> view --name "Default"
+
+# 通過 GUID
+./strategies.py --url <url> --token <token> view --guid "01983006-fcca-7c12-9a91-b1df483c6073"
+```
+
+**啟用或禁用策略：**  
+```bash
+./strategies.py --url <url> --token <token> enable --name "策略名稱"
+./strategies.py --url <url> --token <token> disable --name "策略名稱"
+```
+
+**分配策略到設備、使用者或設備群組：**  
+```bash
+# 分配到設備（使用設備 ID）
+./strategies.py --url <url> --token <token> assign --name "Default" --peers "1849118658,1337348840"
+
+# 分配到使用者（使用使用者名稱）
+./strategies.py --url <url> --token <token> assign --name "Default" --users "admin,user1"
+
+# 分配到設備群組（使用群組名稱）
+./strategies.py --url <url> --token <token> assign --name "Default" --device-groups "device_group1,Production"
+
+# 混合分配
+./strategies.py --url <url> --token <token> assign \
+  --name "Default" \
+  --peers "1849118658" \
+  --users "admin" \
+  --device-groups "device_group1"
+```
+
+**取消分配策略：**  
+```bash
+# 取消設備的策略
+./strategies.py --url <url> --token <token> unassign --peers "1849118658,1337348840"
+
+# 取消使用者的策略
+./strategies.py --url <url> --token <token> unassign --users "admin"
+
+# 取消設備群組的策略
+./strategies.py --url <url> --token <token> unassign --device-groups "device_group1"
+```
+
+**注意事項：**
+- 腳本支援使用者和設備群組的名稱或 GUID
+- 設備 ID 會自動轉換為 GUID
+- 所有 assign/unassign 操作都支援同時操作多個目標
+
+**權限要求：**
+- `list/view/enable/disable/assign/unassign` 命令需要 **策略權限**
+- `--peers` 需要 **設備權限:r**（用於 ID 到 GUID 的查找）
+- `--users` 需要 **使用者權限:r**（用於使用者名稱到 GUID 的查找）
+- `--device-groups` 需要 **設備群組權限:r**（用於群組名稱到 GUID 的查找）
 
 ---
 

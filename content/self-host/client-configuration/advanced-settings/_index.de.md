@@ -913,7 +913,25 @@ Die "Scroll-Stil"-Option in den Einstellungen jedes Peers steuert dann den Scrol
 
 | Installation erforderlich | Werte | Standard | Beispiel |
 | :------: | :------: | :------: | :------: |
-| N | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
+| N | scrollauto, scrollbar, scrolledge | scrollauto | `scroll-style=scrollauto` |
+
+**Hinweis**: Die `scrolledge`-Option ist ab RustDesk 1.4.4 verfügbar.
+
+### edge-scroll-edge-thickness
+
+Diese Option steuert die Randdicke, wenn `scroll-style` auf `scrolledge` gesetzt ist. Die Randdicke bestimmt die Größe des scrollbaren Bereichs an den Bildschirmrändern.
+
+Diese Option ist nur wirksam, wenn `scroll-style=scrolledge`.
+
+**Ort**:
+
+1. **Desktop** Einstellungen → Anzeige → Randscroll-Randdicke
+
+| Installation erforderlich | Werte | Standard | Beispiel |
+| :------: | :------: | :------: | :------: |
+| N | 20-150 | 100 | `edge-scroll-edge-thickness=100` |
+
+**Hinweis**: Diese Option ist ab RustDesk 1.4.4 verfügbar.
 
 ### image-quality
 

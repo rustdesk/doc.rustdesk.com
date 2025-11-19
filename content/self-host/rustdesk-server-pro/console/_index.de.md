@@ -143,23 +143,197 @@ oder
 #### Benutzerverwaltung (`users.py`)
 
 **Hilfe anzeigen:**  
-    ./users.py -h
+`./users.py -h`
 
 **Benutzer anzeigen:**  
-    ./users.py --url <url> --token <token> view [--name <username>] [--group_name <group_name>]
+`./users.py --url <url> --token <token> view [--name <username>] [--group_name <group_name>]`
 
-**Filter:**  
-`--name`: Benutzername  
-`--group_name`: Benutzergruppe
+**Filter:**
+- `--name`: Benutzername (unscharfe Suche)
+- `--group_name`: Benutzergruppe (exakte Übereinstimmung)
 
 **Beispiel:**  
-    ./users.py --url https://example.com --token <token> view --group_name admins
+`./users.py --url https://example.com --token <token> view --group_name Default`
 
-**Operationen:**  
-`view` kann durch `enable`, `disable` oder `delete` ersetzt werden.
+**Grundlegende Operationen:**
 
-**Beispiel (Benutzer deaktivieren):**  
-    ./users.py --url https://example.com --token <token> disable --name testuser
+- **Benutzer deaktivieren:**  
+  `./users.py --url <url> --token <token> disable --name testuser`
+
+- **Benutzer aktivieren:**  
+  `./users.py --url <url> --token <token> enable --name testuser`
+
+- **Benutzer löschen:**  
+  `./users.py --url <url> --token <token> delete --name testuser`
+
+**Benutzererstellung und Einladung:**
+
+- **Neuen Benutzer erstellen:**  
+  `./users.py --url <url> --token <token> new --name username --password 'password123' --group_name Default [--email user@example.com] [--note "Notiz"]`
+  
+  Erforderlich: `--name`, `--password`, `--group_name`  
+  Optional: `--email`, `--note`
+
+- **Benutzer per E-Mail einladen:**  
+  `./users.py --url <url> --token <token> invite --email user@example.com --name username --group_name Default [--note "Notiz"]`
+  
+  Erforderlich: `--email`, `--name`, `--group_name`  
+  Optional: `--note`
+
+**2FA und Sicherheitsoperationen:**
+
+- **2FA-Erzwingung aktivieren:**  
+  `./users.py --url <url> --token <token> enable-2fa-enforce --name username --web-console-url <console_url>`
+  
+  Erforderlich: `--web-console-url`
+
+- **2FA-Erzwingung deaktivieren:**  
+  `./users.py --url <url> --token <token> disable-2fa-enforce --name username [--web-console-url <console_url>]`
+  
+  Optional: `--web-console-url`
+
+- **2FA zurücksetzen:**  
+  `./users.py --url <url> --token <token> reset-2fa --name username`
+
+- **E-Mail-Verifizierung deaktivieren:**  
+  `./users.py --url <url> --token <token> disable-email-verification --name username`
+
+- **Erzwungenes Abmelden:**  
+  `./users.py --url <url> --token <token> force-logout --name username`
+
+**Hinweise:**
+- Bei Operationen auf mehrere Benutzer (durch Filter übereinstimmend) wird eine Bestätigung angefordert
+- Wenn keine Benutzer übereinstimmen, wird "Found 0 users" angezeigt
+
+---
+
+#### Benutzergruppenverwaltung (`user_group.py`)
+
+**Hilfe anzeigen:**  
+`./user_group.py -h`
+
+**Benutzergruppen anzeigen:**  
+`./user_group.py --url <url> --token <token> view [--name <group_name>]`
+
+**Beispiel:**  
+`./user_group.py --url https://example.com --token <token> view --name "Vertriebsteam"`
+
+**Gruppenoperationen:**
+
+- **Benutzergruppe erstellen:**  
+  `./user_group.py --url <url> --token <token> add --name "Gruppenname" [--note "Beschreibung"] [--accessed-from '<json>'] [--access-to '<json>']`
+  
+  Beispiel mit Zugriffskontrolle:  
+  `./user_group.py --url <url> --token <token> add --name "Engineering" --accessed-from '[{"type":0,"name":"Manager"}]' --access-to '[{"type":1,"name":"Dev-Server"}]'`
+
+- **Benutzergruppe aktualisieren:**  
+  `./user_group.py --url <url> --token <token> update --name "Gruppenname" [--new-name "Neuer Name"] [--note "Neue Notiz"] [--accessed-from '<json>'] [--access-to '<json>']`
+
+- **Benutzergruppe löschen:**  
+  `./user_group.py --url <url> --token <token> delete --name "Gruppenname"`
+  
+  Unterstützt kommagetrennte Namen: `--name "Gruppe1,Gruppe2,Gruppe3"`
+
+**Benutzerverwaltung in Gruppen:**
+
+- **Benutzer in Gruppe anzeigen:**  
+  `./user_group.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
+  
+  Filter:
+  - `--name`: Gruppenname (exakte Übereinstimmung, optional)
+  - `--user-name`: Benutzername (unscharfe Suche, optional)
+  
+  Beispiel:  
+  `./user_group.py --url <url> --token <token> view-users --name Default --user-name john`
+
+- **Benutzer zur Gruppe hinzufügen:**  
+  `./user_group.py --url <url> --token <token> add-users --name "Gruppenname" --users "user1,user2,user3"`
+
+**Zugriffskontrollparameter:**
+
+- `--accessed-from`: JSON-Array, das definiert, wer auf diese Benutzergruppe zugreifen kann
+  - Type 0 = Benutzergruppe (z.B. `[{"type":0,"name":"Admins"}]`)
+  - Type 2 = Benutzer (z.B. `[{"type":2,"name":"john"}]`)
+
+- `--access-to`: JSON-Array, das definiert, worauf diese Benutzergruppe zugreifen kann
+  - Type 0 = Benutzergruppe (z.B. `[{"type":0,"name":"Support"}]`)
+  - Type 1 = Gerätegruppe (z.B. `[{"type":1,"name":"Server"}]`)
+
+**Hinweis:** Verwenden Sie einfache Anführungszeichen um JSON-Arrays, um Shell-Parsing-Probleme zu vermeiden.
+
+**Berechtigungsanforderungen:**
+- `view/add/update/delete/add-users` Befehle benötigen **Benutzergruppen-Berechtigung**
+- `view-users` Befehl benötigt **Benutzerberechtigung**
+
+---
+
+#### Gerätegruppenverwaltung (`device_group.py`)
+
+**Hilfe anzeigen:**  
+`./device_group.py -h`
+
+**Gerätegruppen anzeigen:**  
+`./device_group.py --url <url> --token <token> view [--name <group_name>]`
+
+**Beispiel:**  
+`./device_group.py --url https://example.com --token <token> view`
+
+**Gruppenoperationen:**
+
+- **Gerätegruppe erstellen:**  
+  `./device_group.py --url <url> --token <token> add --name "Gruppenname" [--note "Beschreibung"] [--accessed-from '<json>']`
+  
+  Beispiel:  
+  `./device_group.py --url <url> --token <token> add --name "Produktion" --accessed-from '[{"type":0,"name":"Admins"}]'`
+
+- **Gerätegruppe aktualisieren:**  
+  `./device_group.py --url <url> --token <token> update --name "Gruppenname" [--new-name "Neuer Name"] [--note "Neue Notiz"] [--accessed-from '<json>']`
+
+- **Gerätegruppe löschen:**  
+  `./device_group.py --url <url> --token <token> delete --name "Gruppenname"`
+  
+  Unterstützt kommagetrennte Namen: `--name "Gruppe1,Gruppe2,Gruppe3"`
+
+**Geräteverwaltung in Gruppen:**
+
+- **Geräte in Gruppe anzeigen:**  
+  `./device_group.py --url <url> --token <token> view-devices [Filter]`
+  
+  Verfügbare Filter:
+  - `--name`: Gerätegruppenname (exakte Übereinstimmung)
+  - `--id`: Geräte-ID (unscharfe Suche)
+  - `--device-name`: Gerätename (unscharfe Suche)
+  - `--user-name`: Benutzername/Besitzer (unscharfe Suche)
+  - `--device-username`: Am Gerät angemeldeter Benutzername (unscharfe Suche)
+  
+  Beispiele:  
+  ```bash
+  # Alle Geräte in einer Gruppe anzeigen
+  ./device_group.py --url <url> --token <token> view-devices --name Produktion
+  
+  # Nach Gerätename suchen
+  ./device_group.py --url <url> --token <token> view-devices --device-name server
+  
+  # Filter kombinieren
+  ./device_group.py --url <url> --token <token> view-devices --name Produktion --user-name john
+  ```
+
+
+- **Geräte zur Gruppe hinzufügen:**  
+  `./device_group.py --url <url> --token <token> add-devices --name "Gruppenname" --ids "deviceid1,deviceid2"`
+
+- **Geräte aus Gruppe entfernen:**  
+  `./device_group.py --url <url> --token <token> remove-devices --name "Gruppenname" --ids "deviceid1,deviceid2"`
+
+**Zugriffskontrollparameter:**
+
+- `--accessed-from`: JSON-Array, das definiert, wer auf diese Gerätegruppe zugreifen kann
+  - Type 0 = Benutzergruppe (z.B. `[{"type":0,"name":"Engineers"}]`)
+  - Type 2 = Benutzer (z.B. `[{"type":2,"name":"admin"}]`)
+
+**Berechtigungsanforderungen:**
+- `view/add/update/delete/add-devices/remove-devices` Befehle benötigen **Gerätegruppen-Berechtigung**
+- `view-devices` Befehl benötigt **Geräteberechtigung**
 
 ---
 
@@ -232,6 +406,74 @@ oder
     ./ab.py --url https://example.com --token <token> add-rule --ab-guid <guid> --rule-user mike --rule-permission ro
 
 ---
+
+#### Strategieverwaltung (`strategies.py`)
+
+**Hilfe anzeigen:**  
+`./strategies.py -h`
+
+**Alle Strategien auflisten:**  
+`./strategies.py --url <url> --token <token> list`
+
+**Spezifische Strategie anzeigen:**  
+```bash
+# Nach Name
+./strategies.py --url <url> --token <token> view --name "Default"
+
+# Nach GUID
+./strategies.py --url <url> --token <token> view --guid "01983006-fcca-7c12-9a91-b1df483c6073"
+```
+
+**Strategie aktivieren oder deaktivieren:**  
+```bash
+./strategies.py --url <url> --token <token> enable --name "StrategieName"
+./strategies.py --url <url> --token <token> disable --name "StrategieName"
+```
+
+**Strategie Geräten, Benutzern oder Gerätegruppen zuweisen:**  
+```bash
+# Geräten zuweisen (nach Geräte-ID)
+./strategies.py --url <url> --token <token> assign --name "Default" --peers "1849118658,1337348840"
+
+# Benutzern zuweisen (nach Benutzername)
+./strategies.py --url <url> --token <token> assign --name "Default" --users "admin,user1"
+
+# Gerätegruppen zuweisen (nach Gruppenname)
+./strategies.py --url <url> --token <token> assign --name "Default" --device-groups "device_group1,Production"
+
+# Gemischte Zuweisung
+./strategies.py --url <url> --token <token> assign \
+  --name "Default" \
+  --peers "1849118658" \
+  --users "admin" \
+  --device-groups "device_group1"
+```
+
+**Strategie-Zuweisung aufheben:**  
+```bash
+# Von Geräten aufheben
+./strategies.py --url <url> --token <token> unassign --peers "1849118658,1337348840"
+
+# Von Benutzern aufheben
+./strategies.py --url <url> --token <token> unassign --users "admin"
+
+# Von Gerätegruppen aufheben
+./strategies.py --url <url> --token <token> unassign --device-groups "device_group1"
+```
+
+**Hinweise:**
+- Das Skript unterstützt sowohl Namen als auch GUIDs für Benutzer und Gerätegruppen
+- Geräte-IDs werden automatisch in GUIDs konvertiert
+- Alle assign/unassign-Operationen können mehrere Ziele gleichzeitig bearbeiten
+
+**Berechtigungsanforderungen:**
+- `list/view/enable/disable/assign/unassign` Befehle benötigen **Strategie-Berechtigung**
+- `--peers` benötigt **Geräte-Berechtigung:r** (für ID zu GUID Lookup)
+- `--users` benötigt **Benutzer-Berechtigung:r** (für Benutzername zu GUID Lookup)
+- `--device-groups` benötigt **Gerätegruppen-Berechtigung:r** (für Gruppenname zu GUID Lookup)
+
+---
+
 
 #### Prüfprotokolle (`audits.py`)
 

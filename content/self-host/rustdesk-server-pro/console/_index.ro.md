@@ -142,18 +142,196 @@ Linia de comandă pe Windows nu afișează output implicit. Pentru a obține out
 **Vezi utilizatori:**  
 `./users.py --url <url> --token <token> view [--name <username>] [--group_name <group_name>]`
 
-**Filtre:**  
-`--name`: username  
-`--group_name`: grup utilizatori
+**Filtre:**
+- `--name`: username (căutare aproximativă)
+- `--group_name`: grup utilizatori (potrivire exactă)
 
 **Exemplu:**  
-`./users.py --url https://example.com --token <token> view --group_name admins`
+`./users.py --url https://example.com --token <token> view --group_name Default`
 
-**Operații:**  
-`view` poate fi înlocuit cu `enable`, `disable`, sau `delete`.
+**Operații de bază:**
 
-**Exemplu (dezactivează utilizator):**  
-`./users.py --url https://example.com --token <token> disable --name testuser`
+- **Dezactivează utilizator:**  
+  `./users.py --url <url> --token <token> disable --name testuser`
+
+- **Activează utilizator:**  
+  `./users.py --url <url> --token <token> enable --name testuser`
+
+- **Șterge utilizator:**  
+  `./users.py --url <url> --token <token> delete --name testuser`
+
+**Creare și invitare utilizatori:**
+
+- **Creează utilizator nou:**  
+  `./users.py --url <url> --token <token> new --name username --password 'password123' --group_name Default [--email user@example.com] [--note "notă"]`
+  
+  Necesar: `--name`, `--password`, `--group_name`  
+  Opțional: `--email`, `--note`
+
+- **Invită utilizator prin email:**  
+  `./users.py --url <url> --token <token> invite --email user@example.com --name username --group_name Default [--note "notă"]`
+  
+  Necesar: `--email`, `--name`, `--group_name`  
+  Opțional: `--note`
+
+**Operații 2FA și securitate:**
+
+- **Activează impunere 2FA:**  
+  `./users.py --url <url> --token <token> enable-2fa-enforce --name username --web-console-url <console_url>`
+  
+  Necesar: `--web-console-url`
+
+- **Dezactivează impunere 2FA:**  
+  `./users.py --url <url> --token <token> disable-2fa-enforce --name username [--web-console-url <console_url>]`
+  
+  Opțional: `--web-console-url`
+
+- **Resetează 2FA:**  
+  `./users.py --url <url> --token <token> reset-2fa --name username`
+
+- **Dezactivează verificare email:**  
+  `./users.py --url <url> --token <token> disable-email-verification --name username`
+
+- **Deconectare forțată:**  
+  `./users.py --url <url> --token <token> force-logout --name username`
+
+**Notă:**
+- La operații pe mai mulți utilizatori (potriviți prin filtre), se va solicita confirmare
+- Dacă nu există utilizatori potriviți, se va afișa "Found 0 users"
+
+---
+
+#### Management grupuri utilizatori (`user_group.py`)
+
+**Afișează help:**  
+`./user_group.py -h`
+
+**Vezi grupuri utilizatori:**  
+`./user_group.py --url <url> --token <token> view [--name <group_name>]`
+
+**Exemplu:**  
+`./user_group.py --url https://example.com --token <token> view --name "Echipa Vânzări"`
+
+**Operații pe grupuri:**
+
+- **Creează grup utilizatori:**  
+  `./user_group.py --url <url> --token <token> add --name "NumeGrup" [--note "descriere"] [--accessed-from '<json>'] [--access-to '<json>']`
+  
+  Exemplu cu control acces:  
+  `./user_group.py --url <url> --token <token> add --name "Inginerie" --accessed-from '[{"type":0,"name":"Manageri"}]' --access-to '[{"type":1,"name":"Servere Dev"}]'`
+
+- **Actualizează grup utilizatori:**  
+  `./user_group.py --url <url> --token <token> update --name "NumeGrup" [--new-name "Nume Nou"] [--note "notă nouă"] [--accessed-from '<json>'] [--access-to '<json>']`
+
+- **Șterge grup utilizatori:**  
+  `./user_group.py --url <url> --token <token> delete --name "NumeGrup"`
+  
+  Suportă nume separate prin virgulă: `--name "Grup1,Grup2,Grup3"`
+
+**Management utilizatori în grupuri:**
+
+- **Vezi utilizatori în grup:**  
+  `./user_group.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
+  
+  Filtre:
+  - `--name`: nume grup (potrivire exactă, opțional)
+  - `--user-name`: username (căutare aproximativă, opțional)
+  
+  Exemplu:  
+  `./user_group.py --url <url> --token <token> view-users --name Default --user-name john`
+
+- **Adaugă utilizatori în grup:**  
+  `./user_group.py --url <url> --token <token> add-users --name "NumeGrup" --users "user1,user2,user3"`
+
+**Parametri control acces:**
+
+- `--accessed-from`: array JSON ce definește cine poate accesa acest grup de utilizatori
+  - Type 0 = Grup utilizatori (ex. `[{"type":0,"name":"Admins"}]`)
+  - Type 2 = Utilizator (ex. `[{"type":2,"name":"john"}]`)
+
+- `--access-to`: array JSON ce definește la ce poate accesa acest grup de utilizatori
+  - Type 0 = Grup utilizatori (ex. `[{"type":0,"name":"Suport"}]`)
+  - Type 1 = Grup dispozitive (ex. `[{"type":1,"name":"Servere"}]`)
+
+**Notă:** Folosiți ghilimele simple în jurul array-urilor JSON pentru a evita probleme de parsare shell.
+
+**Cerințe de permisiuni:**
+- Comenzile `view/add/update/delete/add-users` necesită **Permisiune Grup Utilizatori**
+- Comanda `view-users` necesită **Permisiune Utilizator**
+
+---
+
+#### Management grupuri dispozitive (`device_group.py`)
+
+**Afișează help:**  
+`./device_group.py -h`
+
+**Vezi grupuri dispozitive:**  
+`./device_group.py --url <url> --token <token> view [--name <group_name>]`
+
+**Exemplu:**  
+`./device_group.py --url https://example.com --token <token> view`
+
+**Operații pe grupuri:**
+
+- **Creează grup dispozitive:**  
+  `./device_group.py --url <url> --token <token> add --name "NumeGrup" [--note "descriere"] [--accessed-from '<json>']`
+  
+  Exemplu:  
+  `./device_group.py --url <url> --token <token> add --name "Producție" --accessed-from '[{"type":0,"name":"Admins"}]'`
+
+- **Actualizează grup dispozitive:**  
+  `./device_group.py --url <url> --token <token> update --name "NumeGrup" [--new-name "Nume Nou"] [--note "notă nouă"] [--accessed-from '<json>']`
+
+- **Șterge grup dispozitive:**  
+  `./device_group.py --url <url> --token <token> delete --name "NumeGrup"`
+  
+  Suportă nume separate prin virgulă: `--name "Grup1,Grup2,Grup3"`
+
+**Management dispozitive în grupuri:**
+
+- **Vezi dispozitive în grup:**  
+  `./device_group.py --url <url> --token <token> view-devices [filtre]`
+  
+  Filtre disponibile:
+  - `--name`: nume grup dispozitive (potrivire exactă)
+  - `--id`: ID dispozitiv (căutare aproximativă)
+  - `--device-name`: nume dispozitiv (căutare aproximativă)
+  - `--user-name`: username/proprietar (căutare aproximativă)
+  - `--device-username`: username conectat pe dispozitiv (căutare aproximativă)
+  
+  Exemple:  
+  ```bash
+  # Vezi toate dispozitivele dintr-un grup
+  ./device_group.py --url <url> --token <token> view-devices --name Producție
+  
+  # Caută după nume dispozitiv
+  ./device_group.py --url <url> --token <token> view-devices --device-name server
+  
+  # Combină filtre
+  ./device_group.py --url <url> --token <token> view-devices --name Producție --user-name john
+  ```
+
+- **Vezi grupuri dispozitive accesibile:**  
+  `./device_group.py --url <url> --token <token> accessible`
+  
+  Afișează toate grupurile de dispozitive accesibile utilizatorului curent.
+
+- **Adaugă dispozitive în grup:**  
+  `./device_group.py --url <url> --token <token> add-devices --name "NumeGrup" --ids "deviceid1,deviceid2"`
+
+- **Elimină dispozitive din grup:**  
+  `./device_group.py --url <url> --token <token> remove-devices --name "NumeGrup" --ids "deviceid1,deviceid2"`
+
+**Parametru control acces:**
+
+- `--accessed-from`: array JSON ce definește cine poate accesa acest grup de dispozitive
+  - Type 0 = Grup utilizatori (ex. `[{"type":0,"name":"Ingineri"}]`)
+  - Type 2 = Utilizator (ex. `[{"type":2,"name":"admin"}]`)
+
+**Cerințe permisiuni:**
+- Comenzile `view/add/update/delete/add-devices/remove-devices` necesită **Permisiune Grup Dispozitive**
+- Comanda `view-devices` necesită **Permisiune Dispozitiv**
 
 ---
 
@@ -226,6 +404,74 @@ Linia de comandă pe Windows nu afișează output implicit. Pentru a obține out
 `./ab.py --url https://example.com --token <token> add-rule --ab-guid <guid> --rule-user mike --rule-permission ro`
 
 ---
+
+#### Gestionarea Strategiilor (`strategies.py`)
+
+**Afișați ajutor:**  
+`./strategies.py -h`
+
+**Listați toate strategiile:**  
+`./strategies.py --url <url> --token <token> list`
+
+**Vezi o strategie specifică:**  
+```bash
+# După nume
+./strategies.py --url <url> --token <token> view --name "Default"
+
+# După GUID
+./strategies.py --url <url> --token <token> view --guid "01983006-fcca-7c12-9a91-b1df483c6073"
+```
+
+**Activați sau dezactivați o strategie:**  
+```bash
+./strategies.py --url <url> --token <token> enable --name "NumeStrategie"
+./strategies.py --url <url> --token <token> disable --name "NumeStrategie"
+```
+
+**Atribuiți strategia dispozitivelor, utilizatorilor sau grupurilor de dispozitive:**  
+```bash
+# Atribuiți dispozitivelor (după ID dispozitiv)
+./strategies.py --url <url> --token <token> assign --name "Default" --peers "1849118658,1337348840"
+
+# Atribuiți utilizatorilor (după nume utilizator)
+./strategies.py --url <url> --token <token> assign --name "Default" --users "admin,user1"
+
+# Atribuiți grupurilor de dispozitive (după nume grup)
+./strategies.py --url <url> --token <token> assign --name "Default" --device-groups "device_group1,Production"
+
+# Atribuire mixtă
+./strategies.py --url <url> --token <token> assign \
+  --name "Default" \
+  --peers "1849118658" \
+  --users "admin" \
+  --device-groups "device_group1"
+```
+
+**Anulați atribuirea strategiei:**  
+```bash
+# Anulați de la dispozitive
+./strategies.py --url <url> --token <token> unassign --peers "1849118658,1337348840"
+
+# Anulați de la utilizatori
+./strategies.py --url <url> --token <token> unassign --users "admin"
+
+# Anulați de la grupuri de dispozitive
+./strategies.py --url <url> --token <token> unassign --device-groups "device_group1"
+```
+
+**Note:**
+- Scriptul acceptă atât nume cât și GUID-uri pentru utilizatori și grupuri de dispozitive
+- ID-urile dispozitivelor sunt convertite automat în GUID-uri
+- Toate operațiunile assign/unassign pot lucra cu mai multe ținte simultan
+
+**Cerințe de permisiuni:**
+- Comenzile `list/view/enable/disable/assign/unassign` necesită **Permisiune Strategie**
+- `--peers` necesită **Permisiune Dispozitiv:r** (pentru căutarea ID la GUID)
+- `--users` necesită **Permisiune Utilizator:r** (pentru căutarea nume utilizator la GUID)
+- `--device-groups` necesită **Permisiune Grup Dispozitive:r** (pentru căutarea nume grup la GUID)
+
+---
+
 
 #### Audits (`audits.py`)
 

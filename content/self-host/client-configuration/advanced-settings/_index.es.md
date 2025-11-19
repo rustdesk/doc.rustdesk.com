@@ -913,7 +913,25 @@ La opción "estilo de scroll" en las configuraciones de cada par controlará lue
 
 | Instalación requerida | Valores | Predeterminado | Ejemplo |
 | :------: | :------: | :------: | :------: |
-| N | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
+| N | scrollauto, scrollbar, scrolledge | scrollauto | `scroll-style=scrollauto` |
+
+**Nota**: La opción `scrolledge` está disponible a partir de RustDesk 1.4.4.
+
+### edge-scroll-edge-thickness
+
+Esta opción controla el grosor del borde cuando `scroll-style` está configurado en `scrolledge`. El grosor del borde determina el tamaño del área desplazable en los bordes de la pantalla.
+
+Esta opción solo es efectiva cuando `scroll-style=scrolledge`.
+
+**Ubicación**:
+
+1. **Escritorio** Configuración → Pantalla → Grosor del borde de scroll
+
+| Instalación requerida | Valores | Predeterminado | Ejemplo |
+| :------: | :------: | :------: | :------: |
+| N | 20-150 | 100 | `edge-scroll-edge-thickness=100` |
+
+**Nota**: Esta opción está disponible a partir de RustDesk 1.4.4.
 
 ### image-quality
 
