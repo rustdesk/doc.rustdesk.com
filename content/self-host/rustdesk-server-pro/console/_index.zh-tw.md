@@ -206,47 +206,47 @@ Windows 命令列預設不會輸出結果。若要查看輸出，可使用：
 
 ---
 
-#### 使用者群組管理 (`user_group.py`)
+#### 使用者群組管理 (`user-groups.py`)
 
 **顯示幫助：**  
-`./user_group.py -h`
+`./user-groups.py -h`
 
 **查看使用者群組：**  
-`./user_group.py --url <url> --token <token> view [--name <group_name>]`
+`./user-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **範例：**  
-`./user_group.py --url https://example.com --token <token> view --name "銷售團隊"`
+`./user-groups.py --url https://example.com --token <token> view --name "銷售團隊"`
 
 **群組操作：**
 
 - **建立使用者群組：**  
-  `./user_group.py --url <url> --token <token> add --name "群組名稱" [--note "描述"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> add --name "群組名稱" [--note "描述"] [--accessed-from '<json>'] [--access-to '<json>']`
   
   帶存取控制的範例：  
-  `./user_group.py --url <url> --token <token> add --name "工程部" --accessed-from '[{"type":0,"name":"管理層"}]' --access-to '[{"type":1,"name":"開發伺服器"}]'`
+  `./user-groups.py --url <url> --token <token> add --name "工程部" --accessed-from '[{"type":0,"name":"管理層"}]' --access-to '[{"type":1,"name":"開發伺服器"}]'`
 
 - **更新使用者群組：**  
-  `./user_group.py --url <url> --token <token> update --name "群組名稱" [--new-name "新名稱"] [--note "新備註"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> update --name "群組名稱" [--new-name "新名稱"] [--note "新備註"] [--accessed-from '<json>'] [--access-to '<json>']`
 
 - **刪除使用者群組：**  
-  `./user_group.py --url <url> --token <token> delete --name "群組名稱"`
+  `./user-groups.py --url <url> --token <token> delete --name "群組名稱"`
   
   支援逗號分隔的多個群組名稱：`--name "群組1,群組2,群組3"`
 
 **群組內使用者管理：**
 
 - **查看群組內使用者：**  
-  `./user_group.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
+  `./user-groups.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
   
   篩選條件：
   - `--name`：群組名稱（精確匹配，選用）
   - `--user-name`：使用者名稱（模糊搜尋，選用）
   
   範例：  
-  `./user_group.py --url <url> --token <token> view-users --name Default --user-name john`
+  `./user-groups.py --url <url> --token <token> view-users --name Default --user-name john`
 
 - **新增使用者到群組：**  
-  `./user_group.py --url <url> --token <token> add-users --name "群組名稱" --users "user1,user2,user3"`
+  `./user-groups.py --url <url> --token <token> add-users --name "群組名稱" --users "user1,user2,user3"`
 
 **存取控制參數：**
 
@@ -266,37 +266,37 @@ Windows 命令列預設不會輸出結果。若要查看輸出，可使用：
 
 ---
 
-#### 設備群組管理 (`device_group.py`)
+#### 設備群組管理 (`device-groups.py`)
 
 **顯示幫助：**  
-`./device_group.py -h`
+`./device-groups.py -h`
 
 **查看設備群組：**  
-`./device_group.py --url <url> --token <token> view [--name <group_name>]`
+`./device-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **範例：**  
-`./device_group.py --url https://example.com --token <token> view`
+`./device-groups.py --url https://example.com --token <token> view`
 
 **群組操作：**
 
 - **建立設備群組：**  
-  `./device_group.py --url <url> --token <token> add --name "群組名稱" [--note "描述"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> add --name "群組名稱" [--note "描述"] [--accessed-from '<json>']`
   
   範例：  
-  `./device_group.py --url <url> --token <token> add --name "生產環境" --accessed-from '[{"type":0,"name":"管理員"}]'`
+  `./device-groups.py --url <url> --token <token> add --name "生產環境" --accessed-from '[{"type":0,"name":"管理員"}]'`
 
 - **更新設備群組：**  
-  `./device_group.py --url <url> --token <token> update --name "群組名稱" [--new-name "新名稱"] [--note "新備註"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> update --name "群組名稱" [--new-name "新名稱"] [--note "新備註"] [--accessed-from '<json>']`
 
 - **刪除設備群組：**  
-  `./device_group.py --url <url> --token <token> delete --name "群組名稱"`
+  `./device-groups.py --url <url> --token <token> delete --name "群組名稱"`
   
   支援逗號分隔的多個群組名稱：`--name "群組1,群組2,群組3"`
 
 **群組內設備管理：**
 
 - **查看群組內設備：**  
-  `./device_group.py --url <url> --token <token> view-devices [篩選條件]`
+  `./device-groups.py --url <url> --token <token> view-devices [篩選條件]`
   
   可用的篩選條件：
   - `--name`：設備群組名稱（精確匹配）
@@ -308,13 +308,13 @@ Windows 命令列預設不會輸出結果。若要查看輸出，可使用：
   範例：  
   ```bash
   # 查看群組內所有設備
-  ./device_group.py --url <url> --token <token> view-devices --name 生產環境
+  ./device-groups.py --url <url> --token <token> view-devices --name 生產環境
   
   # 按設備名稱搜尋
-  ./device_group.py --url <url> --token <token> view-devices --device-name server
+  ./device-groups.py --url <url> --token <token> view-devices --device-name server
   
   # 組合篩選條件
-  ./device_group.py --url <url> --token <token> view-devices --name 生產環境 --user-name john
+  ./device-groups.py --url <url> --token <token> view-devices --name 生產環境 --user-name john
   ```
 
 - **查看可存取的設備群組：**  
@@ -322,10 +322,10 @@ Windows 命令列預設不會輸出結果。若要查看輸出，可使用：
   顯示目前使用者可存取的所有設備群組。
 
 - **新增設備到群組：**  
-  `./device_group.py --url <url> --token <token> add-devices --name "群組名稱" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> add-devices --name "群組名稱" --ids "deviceid1,deviceid2"`
 
 - **從群組中移除設備：**  
-  `./device_group.py --url <url> --token <token> remove-devices --name "群組名稱" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> remove-devices --name "群組名稱" --ids "deviceid1,deviceid2"`
 
 **存取控制參數：**
 

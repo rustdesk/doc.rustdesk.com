@@ -206,47 +206,47 @@ voir [ici](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomme
 
 ---
 
-#### Gestion des Groupes d'Utilisateurs (`user_group.py`)
+#### Gestion des Groupes d'Utilisateurs (`user-groups.py`)
 
 **Afficher l'aide :**  
-`./user_group.py -h`
+`./user-groups.py -h`
 
 **Voir les groupes d'utilisateurs :**  
-`./user_group.py --url <url> --token <token> view [--name <group_name>]`
+`./user-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **Exemple :**  
-`./user_group.py --url https://example.com --token <token> view --name "Équipe Ventes"`
+`./user-groups.py --url https://example.com --token <token> view --name "Équipe Ventes"`
 
 **Opérations sur les groupes :**
 
 - **Créer un groupe d'utilisateurs :**  
-  `./user_group.py --url <url> --token <token> add --name "NomGroupe" [--note "description"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> add --name "NomGroupe" [--note "description"] [--accessed-from '<json>'] [--access-to '<json>']`
   
   Exemple avec contrôle d'accès :  
-  `./user_group.py --url <url> --token <token> add --name "Ingénierie" --accessed-from '[{"type":0,"name":"Managers"}]' --access-to '[{"type":1,"name":"Serveurs Dev"}]'`
+  `./user-groups.py --url <url> --token <token> add --name "Ingénierie" --accessed-from '[{"type":0,"name":"Managers"}]' --access-to '[{"type":1,"name":"Serveurs Dev"}]'`
 
 - **Mettre à jour un groupe d'utilisateurs :**  
-  `./user_group.py --url <url> --token <token> update --name "NomGroupe" [--new-name "Nouveau Nom"] [--note "nouvelle note"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> update --name "NomGroupe" [--new-name "Nouveau Nom"] [--note "nouvelle note"] [--accessed-from '<json>'] [--access-to '<json>']`
 
 - **Supprimer un groupe d'utilisateurs :**  
-  `./user_group.py --url <url> --token <token> delete --name "NomGroupe"`
+  `./user-groups.py --url <url> --token <token> delete --name "NomGroupe"`
   
   Prend en charge les noms séparés par des virgules : `--name "Groupe1,Groupe2,Groupe3"`
 
 **Gestion des utilisateurs dans les groupes :**
 
 - **Voir les utilisateurs dans un groupe :**  
-  `./user_group.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
+  `./user-groups.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
   
   Filtres :
   - `--name` : nom du groupe (correspondance exacte, optionnel)
   - `--user-name` : nom d'utilisateur (recherche floue, optionnel)
   
   Exemple :  
-  `./user_group.py --url <url> --token <token> view-users --name Default --user-name john`
+  `./user-groups.py --url <url> --token <token> view-users --name Default --user-name john`
 
 - **Ajouter des utilisateurs à un groupe :**  
-  `./user_group.py --url <url> --token <token> add-users --name "NomGroupe" --users "user1,user2,user3"`
+  `./user-groups.py --url <url> --token <token> add-users --name "NomGroupe" --users "user1,user2,user3"`
 
 **Paramètres de contrôle d'accès :**
 
@@ -266,37 +266,37 @@ voir [ici](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomme
 
 ---
 
-#### Gestion des Groupes de Périphériques (`device_group.py`)
+#### Gestion des Groupes de Périphériques (`device-groups.py`)
 
 **Afficher l'aide :**  
-`./device_group.py -h`
+`./device-groups.py -h`
 
 **Voir les groupes de périphériques :**  
-`./device_group.py --url <url> --token <token> view [--name <group_name>]`
+`./device-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **Exemple :**  
-`./device_group.py --url https://example.com --token <token> view`
+`./device-groups.py --url https://example.com --token <token> view`
 
 **Opérations sur les groupes :**
 
 - **Créer un groupe de périphériques :**  
-  `./device_group.py --url <url> --token <token> add --name "NomGroupe" [--note "description"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> add --name "NomGroupe" [--note "description"] [--accessed-from '<json>']`
   
   Exemple :  
-  `./device_group.py --url <url> --token <token> add --name "Production" --accessed-from '[{"type":0,"name":"Admins"}]'`
+  `./device-groups.py --url <url> --token <token> add --name "Production" --accessed-from '[{"type":0,"name":"Admins"}]'`
 
 - **Mettre à jour un groupe de périphériques :**  
-  `./device_group.py --url <url> --token <token> update --name "NomGroupe" [--new-name "Nouveau Nom"] [--note "nouvelle note"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> update --name "NomGroupe" [--new-name "Nouveau Nom"] [--note "nouvelle note"] [--accessed-from '<json>']`
 
 - **Supprimer un groupe de périphériques :**  
-  `./device_group.py --url <url> --token <token> delete --name "NomGroupe"`
+  `./device-groups.py --url <url> --token <token> delete --name "NomGroupe"`
   
   Prend en charge les noms séparés par des virgules : `--name "Groupe1,Groupe2,Groupe3"`
 
 **Gestion des périphériques dans les groupes :**
 
 - **Voir les périphériques dans un groupe :**  
-  `./device_group.py --url <url> --token <token> view-devices [filtres]`
+  `./device-groups.py --url <url> --token <token> view-devices [filtres]`
   
   Filtres disponibles :
   - `--name` : nom du groupe de périphériques (correspondance exacte)
@@ -308,21 +308,21 @@ voir [ici](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomme
   Exemples :  
   ```bash
   # Voir tous les périphériques dans un groupe
-  ./device_group.py --url <url> --token <token> view-devices --name Production
+  ./device-groups.py --url <url> --token <token> view-devices --name Production
   
   # Rechercher par nom de périphérique
-  ./device_group.py --url <url> --token <token> view-devices --device-name server
+  ./device-groups.py --url <url> --token <token> view-devices --device-name server
   
   # Combiner les filtres
-  ./device_group.py --url <url> --token <token> view-devices --name Production --user-name john
+  ./device-groups.py --url <url> --token <token> view-devices --name Production --user-name john
   ```
 
 
 - **Ajouter des périphériques à un groupe :**  
-  `./device_group.py --url <url> --token <token> add-devices --name "NomGroupe" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> add-devices --name "NomGroupe" --ids "deviceid1,deviceid2"`
 
 - **Retirer des périphériques d'un groupe :**  
-  `./device_group.py --url <url> --token <token> remove-devices --name "NomGroupe" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> remove-devices --name "NomGroupe" --ids "deviceid1,deviceid2"`
 
 **Paramètre de contrôle d'accès :**
 

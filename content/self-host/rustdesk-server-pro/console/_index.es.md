@@ -206,47 +206,47 @@ ver [aquí](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomm
 
 ---
 
-#### Gestión de Grupos de Usuarios (`user_group.py`)
+#### Gestión de Grupos de Usuarios (`user-groups.py`)
 
 **Mostrar ayuda:**  
-`./user_group.py -h`
+`./user-groups.py -h`
 
 **Ver grupos de usuarios:**  
-`./user_group.py --url <url> --token <token> view [--name <group_name>]`
+`./user-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **Ejemplo:**  
-`./user_group.py --url https://example.com --token <token> view --name "Equipo Ventas"`
+`./user-groups.py --url https://example.com --token <token> view --name "Equipo Ventas"`
 
 **Operaciones de grupo:**
 
 - **Crear grupo de usuarios:**  
-  `./user_group.py --url <url> --token <token> add --name "NombreGrupo" [--note "descripción"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> add --name "NombreGrupo" [--note "descripción"] [--accessed-from '<json>'] [--access-to '<json>']`
   
   Ejemplo con control de acceso:  
-  `./user_group.py --url <url> --token <token> add --name "Ingeniería" --accessed-from '[{"type":0,"name":"Gerentes"}]' --access-to '[{"type":1,"name":"Servidores Dev"}]'`
+  `./user-groups.py --url <url> --token <token> add --name "Ingeniería" --accessed-from '[{"type":0,"name":"Gerentes"}]' --access-to '[{"type":1,"name":"Servidores Dev"}]'`
 
 - **Actualizar grupo de usuarios:**  
-  `./user_group.py --url <url> --token <token> update --name "NombreGrupo" [--new-name "Nuevo Nombre"] [--note "nueva nota"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> update --name "NombreGrupo" [--new-name "Nuevo Nombre"] [--note "nueva nota"] [--accessed-from '<json>'] [--access-to '<json>']`
 
 - **Eliminar grupo de usuarios:**  
-  `./user_group.py --url <url> --token <token> delete --name "NombreGrupo"`
+  `./user-groups.py --url <url> --token <token> delete --name "NombreGrupo"`
   
   Admite nombres separados por comas: `--name "Grupo1,Grupo2,Grupo3"`
 
 **Gestión de usuarios en grupos:**
 
 - **Ver usuarios en grupo:**  
-  `./user_group.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
+  `./user-groups.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
   
   Filtros:
   - `--name`: nombre del grupo (coincidencia exacta, opcional)
   - `--user-name`: nombre de usuario (búsqueda difusa, opcional)
   
   Ejemplo:  
-  `./user_group.py --url <url> --token <token> view-users --name Default --user-name john`
+  `./user-groups.py --url <url> --token <token> view-users --name Default --user-name john`
 
 - **Agregar usuarios al grupo:**  
-  `./user_group.py --url <url> --token <token> add-users --name "NombreGrupo" --users "user1,user2,user3"`
+  `./user-groups.py --url <url> --token <token> add-users --name "NombreGrupo" --users "user1,user2,user3"`
 
 **Parámetros de control de acceso:**
 
@@ -266,37 +266,37 @@ ver [aquí](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomm
 
 ---
 
-#### Gestión de Grupos de Dispositivos (`device_group.py`)
+#### Gestión de Grupos de Dispositivos (`device-groups.py`)
 
 **Mostrar ayuda:**  
-`./device_group.py -h`
+`./device-groups.py -h`
 
 **Ver grupos de dispositivos:**  
-`./device_group.py --url <url> --token <token> view [--name <group_name>]`
+`./device-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **Ejemplo:**  
-`./device_group.py --url https://example.com --token <token> view`
+`./device-groups.py --url https://example.com --token <token> view`
 
 **Operaciones de grupo:**
 
 - **Crear grupo de dispositivos:**  
-  `./device_group.py --url <url> --token <token> add --name "NombreGrupo" [--note "descripción"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> add --name "NombreGrupo" [--note "descripción"] [--accessed-from '<json>']`
   
   Ejemplo:  
-  `./device_group.py --url <url> --token <token> add --name "Producción" --accessed-from '[{"type":0,"name":"Admins"}]'`
+  `./device-groups.py --url <url> --token <token> add --name "Producción" --accessed-from '[{"type":0,"name":"Admins"}]'`
 
 - **Actualizar grupo de dispositivos:**  
-  `./device_group.py --url <url> --token <token> update --name "NombreGrupo" [--new-name "Nuevo Nombre"] [--note "nueva nota"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> update --name "NombreGrupo" [--new-name "Nuevo Nombre"] [--note "nueva nota"] [--accessed-from '<json>']`
 
 - **Eliminar grupo de dispositivos:**  
-  `./device_group.py --url <url> --token <token> delete --name "NombreGrupo"`
+  `./device-groups.py --url <url> --token <token> delete --name "NombreGrupo"`
   
   Admite nombres separados por comas: `--name "Grupo1,Grupo2,Grupo3"`
 
 **Gestión de dispositivos en grupos:**
 
 - **Ver dispositivos en grupo:**  
-  `./device_group.py --url <url> --token <token> view-devices [filtros]`
+  `./device-groups.py --url <url> --token <token> view-devices [filtros]`
   
   Filtros disponibles:
   - `--name`: nombre del grupo de dispositivos (coincidencia exacta)
@@ -308,21 +308,21 @@ ver [aquí](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomm
   Ejemplos:  
   ```bash
   # Ver todos los dispositivos en un grupo
-  ./device_group.py --url <url> --token <token> view-devices --name Producción
+  ./device-groups.py --url <url> --token <token> view-devices --name Producción
   
   # Buscar por nombre de dispositivo
-  ./device_group.py --url <url> --token <token> view-devices --device-name server
+  ./device-groups.py --url <url> --token <token> view-devices --device-name server
   
   # Combinar filtros
-  ./device_group.py --url <url> --token <token> view-devices --name Producción --user-name john
+  ./device-groups.py --url <url> --token <token> view-devices --name Producción --user-name john
   ```
 
 
 - **Agregar dispositivos al grupo:**  
-  `./device_group.py --url <url> --token <token> add-devices --name "NombreGrupo" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> add-devices --name "NombreGrupo" --ids "deviceid1,deviceid2"`
 
 - **Quitar dispositivos del grupo:**  
-  `./device_group.py --url <url> --token <token> remove-devices --name "NombreGrupo" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> remove-devices --name "NombreGrupo" --ids "deviceid1,deviceid2"`
 
 **Parámetro de control de acceso:**
 
