@@ -206,47 +206,47 @@ Windowsのコマンドラインはデフォルトでは出力を表示しませ�
 
 ---
 
-#### ユーザーグループ管理 (`user_group.py`)
+#### ユーザーグループ管理 (`user-groups.py`)
 
 **ヘルプ表示：**  
-`./user_group.py -h`
+`./user-groups.py -h`
 
 **ユーザーグループ表示：**  
-`./user_group.py --url <url> --token <token> view [--name <group_name>]`
+`./user-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **例：**  
-`./user_group.py --url https://example.com --token <token> view --name "営業チーム"`
+`./user-groups.py --url https://example.com --token <token> view --name "営業チーム"`
 
 **グループ操作：**
 
 - **ユーザーグループの作成：**  
-  `./user_group.py --url <url> --token <token> add --name "グループ名" [--note "説明"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> add --name "グループ名" [--note "説明"] [--accessed-from '<json>'] [--access-to '<json>']`
   
   アクセス制御付きの例：  
-  `./user_group.py --url <url> --token <token> add --name "エンジニアリング" --accessed-from '[{"type":0,"name":"マネージャー"}]' --access-to '[{"type":1,"name":"開発サーバー"}]'`
+  `./user-groups.py --url <url> --token <token> add --name "エンジニアリング" --accessed-from '[{"type":0,"name":"マネージャー"}]' --access-to '[{"type":1,"name":"開発サーバー"}]'`
 
 - **ユーザーグループの更新：**  
-  `./user_group.py --url <url> --token <token> update --name "グループ名" [--new-name "新しい名前"] [--note "新しいメモ"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> update --name "グループ名" [--new-name "新しい名前"] [--note "新しいメモ"] [--accessed-from '<json>'] [--access-to '<json>']`
 
 - **ユーザーグループの削除：**  
-  `./user_group.py --url <url> --token <token> delete --name "グループ名"`
+  `./user-groups.py --url <url> --token <token> delete --name "グループ名"`
   
   カンマ区切りで複数指定可能：`--name "グループ1,グループ2,グループ3"`
 
 **グループ内ユーザー管理：**
 
 - **グループ内のユーザーを表示：**  
-  `./user_group.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
+  `./user-groups.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
   
   フィルター：
   - `--name`：グループ名（完全一致、オプション）
   - `--user-name`：ユーザー名（あいまい検索、オプション）
   
   例：  
-  `./user_group.py --url <url> --token <token> view-users --name Default --user-name john`
+  `./user-groups.py --url <url> --token <token> view-users --name Default --user-name john`
 
 - **グループにユーザーを追加：**  
-  `./user_group.py --url <url> --token <token> add-users --name "グループ名" --users "user1,user2,user3"`
+  `./user-groups.py --url <url> --token <token> add-users --name "グループ名" --users "user1,user2,user3"`
 
 **アクセス制御パラメータ：**
 
@@ -266,37 +266,37 @@ Windowsのコマンドラインはデフォルトでは出力を表示しませ�
 
 ---
 
-#### デバイスグループ管理 (`device_group.py`)
+#### デバイスグループ管理 (`device-groups.py`)
 
 **ヘルプ表示：**  
-`./device_group.py -h`
+`./device-groups.py -h`
 
 **デバイスグループ表示：**  
-`./device_group.py --url <url> --token <token> view [--name <group_name>]`
+`./device-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **例：**  
-`./device_group.py --url https://example.com --token <token> view`
+`./device-groups.py --url https://example.com --token <token> view`
 
 **グループ操作：**
 
 - **デバイスグループの作成：**  
-  `./device_group.py --url <url> --token <token> add --name "グループ名" [--note "説明"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> add --name "グループ名" [--note "説明"] [--accessed-from '<json>']`
   
   例：  
-  `./device_group.py --url <url> --token <token> add --name "本番環境" --accessed-from '[{"type":0,"name":"管理者"}]'`
+  `./device-groups.py --url <url> --token <token> add --name "本番環境" --accessed-from '[{"type":0,"name":"管理者"}]'`
 
 - **デバイスグループの更新：**  
-  `./device_group.py --url <url> --token <token> update --name "グループ名" [--new-name "新しい名前"] [--note "新しいメモ"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> update --name "グループ名" [--new-name "新しい名前"] [--note "新しいメモ"] [--accessed-from '<json>']`
 
 - **デバイスグループの削除：**  
-  `./device_group.py --url <url> --token <token> delete --name "グループ名"`
+  `./device-groups.py --url <url> --token <token> delete --name "グループ名"`
   
   カンマ区切りで複数指定可能：`--name "グループ1,グループ2,グループ3"`
 
 **グループ内デバイス管理：**
 
 - **グループ内のデバイスを表示：**  
-  `./device_group.py --url <url> --token <token> view-devices [フィルター]`
+  `./device-groups.py --url <url> --token <token> view-devices [フィルター]`
   
   利用可能なフィルター：
   - `--name`：デバイスグループ名（完全一致）
@@ -308,21 +308,21 @@ Windowsのコマンドラインはデフォルトでは出力を表示しませ�
   例：  
   ```bash
   # グループ内のすべてのデバイスを表示
-  ./device_group.py --url <url> --token <token> view-devices --name 本番環境
+  ./device-groups.py --url <url> --token <token> view-devices --name 本番環境
   
   # デバイス名で検索
-  ./device_group.py --url <url> --token <token> view-devices --device-name server
+  ./device-groups.py --url <url> --token <token> view-devices --device-name server
   
   # フィルターを組み合わせ
-  ./device_group.py --url <url> --token <token> view-devices --name 本番環境 --user-name john
+  ./device-groups.py --url <url> --token <token> view-devices --name 本番環境 --user-name john
   ```
 
 
 - **グループにデバイスを追加：**  
-  `./device_group.py --url <url> --token <token> add-devices --name "グループ名" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> add-devices --name "グループ名" --ids "deviceid1,deviceid2"`
 
 - **グループからデバイスを削除：**  
-  `./device_group.py --url <url> --token <token> remove-devices --name "グループ名" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> remove-devices --name "グループ名" --ids "deviceid1,deviceid2"`
 
 **アクセス制御パラメータ：**
 
