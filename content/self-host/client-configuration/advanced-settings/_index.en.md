@@ -809,21 +809,6 @@ The "privacy-mode" option in each peer's settings will then control whether to u
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `privacy-mode=Y` |
 
-### touch-mode
-
-This option will set the "touch-mode" option for every peer after the first connection.
-
-The "touch-mode" option in each peer's settings will then control whether to use touch mode or mouse mode.
-
-**Location**:
-
-1. **Desktop**
-2. **Mobile** Settings → Display settings → Other default options → Touch mode
-
-| Install required | Values | Default | Example |
-| :------: | :------: | :------: | :------: |
-| N | Y, N | N | `touch-mode=Y` |
-
 ### i444
 
 This option will set the "i444" option for every peer after the first connection.
@@ -931,7 +916,25 @@ The "scroll-style" option in each peer's settings will then control the scroll s
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
-| N | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
+| N | scrollauto, scrollbar, scrolledge | scrollauto | `scroll-style=scrollauto` |
+
+**Note**: The `scrolledge` option is available starting from RustDesk 1.4.4.
+
+### edge-scroll-edge-thickness
+
+This option controls the edge thickness when `scroll-style` is set to `scrolledge`. The edge thickness determines the size of the scrollable area at the screen edges.
+
+This option is only effective when `scroll-style=scrolledge`.
+
+**Location**:
+
+1. **Desktop** Settings → Display → Edge scroll edge thickness
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | 20-150 | 100 | `edge-scroll-edge-thickness=100` |
+
+**Note**: This option is available starting from RustDesk 1.4.4.
 
 ### image-quality
 
@@ -1027,9 +1030,9 @@ The "trackpad-speed" option in each peer's settings will then control the fps if
 
 ## Others
 
-### preset-address-book-name & preset-address-book-tag
+### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-password & preset-address-book-note
 
-Preset address book name and tag, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
+Preset address book name, device tag, device alias, device password, device note, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
 You can set preset-address-book-name only if you do not want to set tag.
 Please use valid address book name and tag on your address book page of web console.
 
@@ -1037,6 +1040,11 @@ Please use valid address book name and tag on your address book page of web cons
 | :------: | :------: | :------: | :------: | :------: |
 | preset-address-book-name | N | | | `preset-address-book-name=<address book name>` |
 | preset-address-book-tag | N | | | `preset-address-book-tag=<address book tag name>` |
+| preset-address-book-alias | N | | | `preset-address-book-alias=<device alias>` |
+| preset-address-book-password | N | | | `preset-address-book-password=<device password>` |
+| preset-address-book-note | N | | | `preset-address-book-note=<device note>` |
+
+preset-address-book-alias, preset-address-book-password, preset-address-book-note are available in RustDesk client >=1.4.3, pro >= 1.6.6.
 
 ### disable-group-panel
 
@@ -1187,13 +1195,15 @@ Controls whether to use TCP only. It will not use UDP 21116 any more, TCP 21116 
 | :------: | :------: | :------: |
 | Y, N | N | `disable-udp=Y` |
 
-### preset-user-name / preset-strategy-name / preset-device-group-name
+### preset-user-name / preset-strategy-name / preset-device-group-name / preset-device-username / preset-device-name / preset-note
 
-Assign user / strategy / device group to device. You can also do this via [command line](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
+Assign user / strategy / device group / device username / device-name(hostname) / note to device. You can also do this via [command line](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
 
 device group is available in RustDesk client >=1.3.8, pro >= 1.5.0
+
+preset-device-username, preset-device-name, preset-note are available in RustDesk client >=1.4.3, pro >= 1.6.6. 
 
 ### default-connect-password
 
@@ -1296,6 +1306,11 @@ Use WebSocket protocol to connect server and client. Only available in RustDesk 
 
 To make WebSocket work, you need to configure your reverse proxy correctly, https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
 
+**Location**:
+
+**Desktop** Settings → Network → Use Websocket
+**Mobile** Settings → Use Websocket
+
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-websocket=Y` |
@@ -1322,7 +1337,7 @@ Do not register the device, you will not see it in the devices page on web conso
 If `register-device=N`, below will not work for this device.
 - Log in
 - `--assign` command
-- `preset-address-book-name`, `--preset-address-book-tag`, `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`
+- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
 - Audit Logs
 - Strategy
 
@@ -1332,3 +1347,106 @@ If `register-device=N`, below will not work for this device.
 | :------: | :------: | :------: |
 | Y, N | Y | `register-device=N` |
 
+### main-window-always-on-top
+
+Always keep the main window on top.
+
+**Discussion**: https://github.com/rustdesk/rustdesk-server-pro/issues/761
+
+Only available in RustDesk client 1.4.2.
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `main-window-always-on-top=N` |
+
+### relay-server
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/776#issuecomment-3306524913
+
+### disable-discovery-panel
+
+Disable `Discovered` panel (next to `Favorites` panel) on RustDesk client
+
+| Option | Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: | :------: |
+| disable-discovery-panel | N | Y, N | N | `disable-discovery-panel=Y` |
+
+### touch-mode
+
+Controls whether to use touch mode or mouse mode during remote control sessions.
+
+#### Version Behavior Differences
+
+##### RustDesk (Controlling Side) < 1.4.3
+
+After the first connection, this option sets the "touch-mode" setting for each peer. Thereafter, the individual settings of each peer determine whether to use touch mode or mouse mode.
+
+**Location**:
+
+1. **Desktop**
+2. **Mobile** Settings → Display settings → Other default options → Touch mode
+
+##### RustDesk (Controlling Side) >= 1.4.3
+
+This option uniformly controls whether all peer devices use touch mode or mouse mode, overriding individual device settings.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `touch-mode=Y` |
+
+### show-virtual-mouse
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+Controls the display of the virtual mouse when mobile -> desktop.
+
+**Location**:
+
+1. **Desktop**
+2. **Mobile** Remote session -> bottom navigation bar -> gesture helper
+
+Available since RustDesk 1.4.3
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-mouse=Y` |
+
+**Note**: This option should be configured in **Default settings** rather than **Override settings**.
+
+### show-virtual-joystick
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+Controls the display of the virtual joystick when mobile -> desktop.
+
+This option requires the **show-virtual-mouse** to be enabled.
+
+**Location**:
+
+1. **Desktop**
+2. **Mobile** Remote session -> bottom navigation bar -> gesture helper
+
+Available since RustDesk 1.4.3
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-joystick=Y` |
+
+**Note**: This option should be configured in **Default settings** rather than **Override settings**.
+
+### allow-insecure-tls-fallback
+
+By default, RustDesk verifies the server certificate for protocols using TLS.
+
+With this option enabled, RustDesk will fall back to skipping the verification step and proceed in case of verification failure.
+
+**Location**:
+
+**Desktop** Settings → Network → Allow insecure TLS fallback
+**Mobile** Settings → Allow insecure TLS fallback
+
+Available since RustDesk 1.4.4
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-insecure-tls-fallback=Y` |

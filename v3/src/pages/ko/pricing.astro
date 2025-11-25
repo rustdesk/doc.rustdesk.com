@@ -35,7 +35,17 @@ const metadata = {
           cancelButtonText: '아니오',
         }).then((result) => {
           if (result.isConfirmed) {
-            window.open(redirectUrl, '_blank');
+            try {
+              const url = new URL(redirectUrl);
+              const pageParams = new URLSearchParams(window.location.search);
+              pageParams.forEach((value, key) => {
+                if (!url.searchParams.has(key)) url.searchParams.append(key, value);
+              });
+              window.open(url.toString(), '_blank');
+            } catch (e) {
+              const qs = window.location.search ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1) : '';
+              window.open(redirectUrl + qs, '_blank');
+            }
           }
         });
       }

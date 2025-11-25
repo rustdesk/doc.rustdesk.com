@@ -245,3 +245,13 @@ languages:
       description: "RustDesk এর সম্পূর্ণ ডকুমেন্টেশন - ওপেন সোর্স রিমোট ডেস্কটপ সফটওয়্যার। শিখুন কিভাবে সেলফ-হোস্ট করতে হয়, ক্লায়েন্ট কনফিগার করতে হয় এবং আপনার ইনফ্রাস্ট্রাকচারে RustDesk ডিপ্লয় করতে হয়।"
       keywords: ["rustdesk", "রিমোট ডেস্কটপ", "ওপেনসোর্স", "সেলফ হোস্ট", "ডকুমেন্টেশন", "রিমোট এক্সেস", "VNC এর বিকল্প", "TeamViewer এর বিকল্প"]
       
+  
+  ro:
+    title: "Documentația RustDesk"
+    weight: 1
+    languageName: "Română"
+    params:
+      landingPageName: "🏠 Acasă"
+      disable_cookie: true
+      description: "Documentație completă pentru RustDesk - software-ul open source pentru desktop remote. Aflați cum să găzduiți singur, să configurați clienți și să implementați RustDesk în infrastructura dvs."
+      keywords: ["rustdesk", "desktop remote", "open source", "self-host", "documentație", "acces remote", "alternativă VNC", "alternativă TeamViewer"]

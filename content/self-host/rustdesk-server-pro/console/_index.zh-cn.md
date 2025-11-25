@@ -88,18 +88,448 @@ weight: 10
 7. 在 `发件人` 中输入您的 Gmail 账户，例如 `myrustdeskserver@gmail.com`。
 8. 点击 `检查` 保存。
 
-## 将设备用户/组/策略/设备组分配给设备
-用户是登录在设备上的 RustDesk 用户，或通过点击设备旁边的 `编辑` 分配给设备的用户，点击 `用户` 框并从下拉菜单中选择您的用户，这将根据用户被分配到的组自动分配组。
+## 通过 Web Console 分配设备用户 / 策略 / 设备组
 
-这也可以通过 API 在部署时或之后在命令行中完成，调用 RustDesk 可执行文件后跟 `--assign --token <生成的令牌> --user_name <用户名>`。您需要先进入 `设置 → 令牌 → 创建` 并创建具有设备权限的令牌。在 Windows 上的示例为 `"C:\Program Files\RustDesk\rustdesk.exe" --assign --token <生成的令牌> --user_name <新用户>`。
+**用户 (User)** 指的是在设备上登录的 RustDesk 用户，或在 **设备列表** 中点击设备旁边的 **Edit（编辑）**，然后在 **User（用户）** 框中下拉选择要分配的用户。  
+你也可以在 **用户列表 (User List)** 中点击 **More → Assign Devices** 来批量分配设备给某个用户。
 
-您也可以通过这种方式分配策略，例如 `--assign --token <生成的令牌> --strategy_name <策略名称>`。
+要将设备添加到某个设备组，可以在 **设备列表 (Device List)** 中点击设备旁的 **Edit（编辑）** 并更改 **Group（组）**，  
+或者进入 **设备组列表 (Device Groups)**，点击某个设备组名称，在该组中调整包含的设备。
 
-您也可以通过这种方式分配通讯录，例如 `--assign --token <生成的令牌> --address_book_name <通讯录名称>` 或 `--assign --token <生成的令牌> --address_book_name <通讯录名称> --address_book_tag <通讯录标签> --address_book_alias <别名>`。`--address_book_alias` 需要 RustDesk 服务器专业版 >=1.5.8 和客户端 >=1.4.1。
+要为设备分配策略，可以将鼠标悬停在 **策略列表 (Strategy List)** 的右侧，点击菜单中的 **Edit Devices（编辑设备）**、**Edit Users（编辑用户）** 或 **Edit Device Groups（编辑设备组）**，  
+以添加对应的设备、用户设备或设备组设备到所选策略中。
 
-您也可以通过这种方式分配设备组名称，例如 `--assign --token <生成的令牌> --device_group_name <设备组名称>`。
+---
 
-Windows 上的命令行默认没有输出。要获得输出，请这样运行：`"C:\Program Files\RustDesk\rustdesk.exe" <参数1> <参数2> ... | more` 或 `"C:\Program Files\RustDesk\rustdesk.exe" <参数1> <参数2> ... | Out-String`，参见[这里](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomment-8094952)。
+## API 令牌（Token）
+
+首先，请前往 **Settings → Tokens → Create** 创建一个具有所需权限的令牌，所需权限包括：  
+**Device, Audit Log, User, Group, Strategy, Address Book**。
+
+创建完成后，可以通过 **命令行 (Command Line)** 或 **Python CLI** 使用这些令牌执行相应权限的操作。
+
+### 使用命令行令牌分配
+
+你也可以使用 RustDesk 可执行文件并带上 `--assign` 参数来执行分配操作。  
+这可以让你在命令行中直接将用户、策略、地址簿或设备组分配给设备。
+
+**示例：**
+
+    "C:\Program Files\RustDesk\rustdesk.exe" --assign --token <generatedtoken> --user_name <username>
+
+**支持的参数：**
+
+| 参数名 | 说明 | RustDesk Server Pro | RustDesk Client |
+| ------- | ---- | ------------------- | ---------------- |
+| `--user_name <username>` | 为设备分配用户 |  |  |
+| `--strategy_name <strategyname>` | 为设备分配策略 |  |  |
+| `--address_book_name <addressbookname>` | 将设备分配到地址簿 |  |  |
+| `--address_book_tag <addressbooktag>` | 按标签分配地址簿 |  |  |
+| `--address_book_alias <alias>` | 设置地址簿别名 | 1.5.8 | 1.4.1 |
+| `--address_book_password <password>` | 为地址簿条目设置密码 | 1.6.6 | 1.4.3 |
+| `--address_book_note <note>` | 为地址簿条目添加备注 | 1.6.6 | 1.4.3 |
+| `--device_group_name <devicegroupname>` | 将设备分配到设备组 |  |  |
+| `--note <note>` | 为设备添加备注 | 1.6.6 | 1.4.3 |
+| `--device_username <device_username>` | 设置设备用户名 | 1.6.6 | 1.4.3 |
+| `--device_name <device_name>` | 设置设备名称 | 1.6.6 | 1.4.3 |
+
+Windows 命令行默认无输出，如需查看输出，可使用如下方式运行：
+
+    "C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | more
+
+或
+
+    "C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | Out-String
+
+详情参考：RustDesk 讨论区相关评论链接（原文处有链接）。
+
+---
+
+### Python CLI 管理工具
+
+#### 用户管理 (`users.py`)
+
+**查看帮助：**  
+`./users.py -h`
+
+**查看用户：**  
+`./users.py --url <url> --token <token> view [--name <username>] [--group_name <group_name>]`
+
+**过滤条件：**
+- `--name`：用户名（模糊搜索）
+- `--group_name`：用户组名（精确匹配）
+
+**示例：**  
+`./users.py --url https://example.com --token <token> view --group_name Default`
+
+**基本操作：**
+
+- **禁用用户：**  
+  `./users.py --url <url> --token <token> disable --name testuser`
+
+- **启用用户：**  
+  `./users.py --url <url> --token <token> enable --name testuser`
+
+- **删除用户：**  
+  `./users.py --url <url> --token <token> delete --name testuser`
+
+**用户创建和邀请：**
+
+- **创建新用户：**  
+  `./users.py --url <url> --token <token> new --name username --password 'password123' --group_name Default [--email user@example.com] [--note "备注"]`
+  
+  必需参数：`--name`、`--password`、`--group_name`  
+  可选参数：`--email`、`--note`
+
+- **通过邮箱邀请用户：**  
+  `./users.py --url <url> --token <token> invite --email user@example.com --name username --group_name Default [--note "备注"]`
+  
+  必需参数：`--email`、`--name`、`--group_name`  
+  可选参数：`--note`
+
+**2FA 和安全操作：**
+
+- **启用 2FA 强制要求：**  
+  `./users.py --url <url> --token <token> enable-2fa-enforce --name username --web-console-url <console_url>`
+  
+  必需参数：`--web-console-url`
+
+- **禁用 2FA 强制要求：**  
+  `./users.py --url <url> --token <token> disable-2fa-enforce --name username [--web-console-url <console_url>]`
+  
+  可选参数：`--web-console-url`
+
+- **重置 2FA：**  
+  `./users.py --url <url> --token <token> reset-2fa --name username`
+
+- **禁用邮箱验证：**  
+  `./users.py --url <url> --token <token> disable-email-verification --name username`
+
+- **强制登出：**  
+  `./users.py --url <url> --token <token> force-logout --name username`
+
+**注意事项：**
+- 当操作多个用户时（通过过滤器匹配），系统会提示确认
+- 如果没有匹配的用户，将显示 "Found 0 users"
+
+---
+
+#### 用户组管理 (`user_group.py`)
+
+**查看帮助：**  
+`./user_group.py -h`
+
+**查看用户组：**  
+`./user_group.py --url <url> --token <token> view [--name <group_name>]`
+
+**示例：**  
+`./user_group.py --url https://example.com --token <token> view --name "销售团队"`
+
+**组操作：**
+
+- **创建用户组：**  
+  `./user_group.py --url <url> --token <token> add --name "组名" [--note "描述"] [--accessed-from '<json>'] [--access-to '<json>']`
+  
+  带访问控制的示例：  
+  `./user_group.py --url <url> --token <token> add --name "工程部" --accessed-from '[{"type":0,"name":"管理层"}]' --access-to '[{"type":1,"name":"开发服务器"}]'`
+
+- **更新用户组：**  
+  `./user_group.py --url <url> --token <token> update --name "组名" [--new-name "新名称"] [--note "新备注"] [--accessed-from '<json>'] [--access-to '<json>']`
+
+- **删除用户组：**  
+  `./user_group.py --url <url> --token <token> delete --name "组名"`
+  
+  支持逗号分隔的多个组名：`--name "组1,组2,组3"`
+
+**组内用户管理：**
+
+- **查看组内用户：**  
+  `./user_group.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
+  
+  过滤条件：
+  - `--name`：组名（精确匹配，可选）
+  - `--user-name`：用户名（模糊搜索，可选）
+  
+  示例：  
+  `./user_group.py --url <url> --token <token> view-users --name Default --user-name john`
+
+- **添加用户到组：**  
+  `./user_group.py --url <url> --token <token> add-users --name "组名" --users "user1,user2,user3"`
+
+**访问控制参数：**
+
+- `--accessed-from`：定义谁可以访问此用户组的 JSON 数组
+  - Type 0 = 用户组（例如：`[{"type":0,"name":"管理员"}]`）
+  - Type 2 = 用户（例如：`[{"type":2,"name":"john"}]`）
+
+- `--access-to`：定义此用户组可以访问什么的 JSON 数组
+  - Type 0 = 用户组（例如：`[{"type":0,"name":"支持"}]`）
+  - Type 1 = 设备组（例如：`[{"type":1,"name":"服务器"}]`）
+
+**注意：** 使用单引号包围 JSON 数组以避免 shell 解析问题。
+
+**权限要求：**
+- `view/add/update/delete/add-users` 命令需要 **用户组权限**
+- `view-users` 命令需要 **用户权限**
+
+---
+
+#### 设备组管理 (`device_group.py`)
+
+**查看帮助：**  
+`./device_group.py -h`
+
+**查看设备组：**  
+`./device_group.py --url <url> --token <token> view [--name <group_name>]`
+
+**示例：**  
+`./device_group.py --url https://example.com --token <token> view`
+
+**组操作：**
+
+- **创建设备组：**  
+  `./device_group.py --url <url> --token <token> add --name "组名" [--note "描述"] [--accessed-from '<json>']`
+  
+  示例：  
+  `./device_group.py --url <url> --token <token> add --name "生产环境" --accessed-from '[{"type":0,"name":"管理员"}]'`
+
+- **更新设备组：**  
+  `./device_group.py --url <url> --token <token> update --name "组名" [--new-name "新名称"] [--note "新备注"] [--accessed-from '<json>']`
+
+- **删除设备组：**  
+  `./device_group.py --url <url> --token <token> delete --name "组名"`
+  
+  支持逗号分隔的多个组名：`--name "组1,组2,组3"`
+
+**组内设备管理：**
+
+- **查看组内设备：**  
+  `./device_group.py --url <url> --token <token> view-devices [过滤条件]`
+  
+  可用的过滤条件：
+  - `--name`：设备组名（精确匹配）
+  - `--id`：设备 ID（模糊搜索）
+  - `--device-name`：设备名称（模糊搜索）
+  - `--user-name`：用户名/所有者（模糊搜索）
+  - `--device-username`：设备上登录的用户名（模糊搜索）
+  
+  示例：  
+  ```bash
+  # 查看组内所有设备
+  ./device_group.py --url <url> --token <token> view-devices --name 生产环境
+  
+  # 按设备名搜索
+  ./device_group.py --url <url> --token <token> view-devices --device-name server
+  
+  # 组合过滤条件
+  ./device_group.py --url <url> --token <token> view-devices --name 生产环境 --user-name john
+  ```
+
+
+- **添加设备到组：**  
+  `./device_group.py --url <url> --token <token> add-devices --name "组名" --ids "deviceid1,deviceid2"`
+
+- **从组中移除设备：**  
+  `./device_group.py --url <url> --token <token> remove-devices --name "组名" --ids "deviceid1,deviceid2"`
+
+**访问控制参数：**
+
+- `--accessed-from`：定义谁可以访问此设备组的 JSON 数组
+  - Type 0 = 用户组（例如：`[{"type":0,"name":"工程师"}]`）
+  - Type 2 = 用户（例如：`[{"type":2,"name":"admin"}]`）
+
+**权限要求：**
+- `view/add/update/delete/add-devices/remove-devices` 命令需要 **设备组权限**
+- `view-devices` 命令需要 **设备权限**
+
+---
+
+#### 设备管理 (`devices.py`)
+
+**查看帮助：**
+
+    ./devices.py -h
+
+**查看设备：**
+
+    ./devices.py --url <url> --token <token> view [--id <device_id>] [--device_name <device_name>] [--user_name <user_name>] [--group_name <group_name>] [--device_group_name <device_group_name>] [--offline_days <days>]
+
+**过滤条件：**  
+`--id`：设备 ID  
+`--device_name`：设备名称  
+`--user_name`：分配的用户  
+`--group_name`：用户组  
+`--device_group_name`：设备组  
+`--offline_days`：离线天数
+
+**示例：**
+
+    ./devices.py --url https://example.com --token <token> view --user_name mike
+
+**操作命令：**  
+`view` 可替换为 `enable`（启用）、`disable`（禁用）、`delete`（删除）或 `assign`（分配）。
+
+**示例（分配设备）：**
+
+    ./devices.py --url https://example.com --token <token> assign --device_name PC01 --assign_to user_name=mike
+
+---
+
+#### 地址簿管理 （ab.py）
+
+**查看帮助：**
+
+    ./ab.py -h
+
+**查看共享地址簿：**
+
+    ./ab.py --url <url> --token <token> view-ab [--ab-name <address_book_name>]
+
+**获取个人地址簿 GUID：**
+
+    ./ab.py --url <url> --token <token> get-personal-ab
+
+**添加共享地址簿：**
+
+    ./ab.py --url <url> --token <token> add-ab --ab-name <name> [--note <note>] [--password <password>]
+
+**更新或删除共享地址簿：**
+
+    ./ab.py --url <url> --token <token> update-ab --ab-guid <guid> [--ab-update-name <new_name>] [--note <note>]
+    ./ab.py --url <url> --token <token> delete-ab --ab-guid <guid>
+
+**查看地址簿中的设备（peer）：**
+
+    ./ab.py --url <url> --token <token> view-peer --ab-guid <guid> [--peer-id <peer_id>] [--alias <alias>]
+
+**添加、更新或删除设备（peer）：**
+
+    ./ab.py --url <url> --token <token> add-peer --ab-guid <guid> --peer-id <peer_id> [--alias <alias>] [--note <note>] [--tags tag1,tag2]
+    ./ab.py --url <url> --token <token> update-peer --ab-guid <guid> --peer-id <peer_id> [--alias <alias>] [--note <note>] [--tags tag1,tag2]
+    ./ab.py --url <url> --token <token> delete-peer --ab-guid <guid> --peer-id <peer_id>
+
+**标签管理：**
+
+    ./ab.py --url <url> --token <token> view-tag --ab-guid <guid>
+    ./ab.py --url <url> --token <token> add-tag --ab-guid <guid> --tag-name <name> [--tag-color 0xFF00FF00]
+    ./ab.py --url <url> --token <token> update-tag --ab-guid <guid> --tag-name <name> --tag-color 0xFFFF0000
+    ./ab.py --url <url> --token <token> delete-tag --ab-guid <guid> --tag-name <name>
+
+**访问规则管理：**
+
+    ./ab.py --url <url> --token <token> view-rule --ab-guid <guid>
+    ./ab.py --url <url> --token <token> add-rule --ab-guid <guid> [--rule-type user|group|everyone] [--rule-user <user>] [--rule-group <group>] --rule-permission ro|rw|full
+    ./ab.py --url <url> --token <token> update-rule --rule-guid <rule_guid> --rule-permission rw
+    ./ab.py --url <url> --token <token> delete-rule --rule-guid <rule_guid>
+
+**示例（为用户 mike 添加只读权限）：**
+
+    ./ab.py --url https://example.com --token <token> add-rule --ab-guid <guid> --rule-user mike --rule-permission ro
+
+---
+
+#### 策略管理 (`strategies.py`)
+
+**查看帮助：**  
+`./strategies.py -h`
+
+**列出所有策略：**  
+`./strategies.py --url <url> --token <token> list`
+
+**查看指定策略：**  
+```bash
+# 通过名称
+./strategies.py --url <url> --token <token> view --name "Default"
+
+# 通过 GUID
+./strategies.py --url <url> --token <token> view --guid "01983006-fcca-7c12-9a91-b1df483c6073"
+```
+
+**启用或禁用策略：**  
+```bash
+./strategies.py --url <url> --token <token> enable --name "策略名称"
+./strategies.py --url <url> --token <token> disable --name "策略名称"
+```
+
+**分配策略到设备、用户或设备组：**  
+```bash
+# 分配到设备（使用设备 ID）
+./strategies.py --url <url> --token <token> assign --name "Default" --peers "1849118658,1337348840"
+
+# 分配到用户（使用用户名）
+./strategies.py --url <url> --token <token> assign --name "Default" --users "admin,user1"
+
+# 分配到设备组（使用组名）
+./strategies.py --url <url> --token <token> assign --name "Default" --device-groups "device_group1,Production"
+
+# 混合分配
+./strategies.py --url <url> --token <token> assign \
+  --name "Default" \
+  --peers "1849118658" \
+  --users "admin" \
+  --device-groups "device_group1"
+```
+
+**取消分配策略：**  
+```bash
+# 取消设备的策略
+./strategies.py --url <url> --token <token> unassign --peers "1849118658,1337348840"
+
+# 取消用户的策略
+./strategies.py --url <url> --token <token> unassign --users "admin"
+
+# 取消设备组的策略
+./strategies.py --url <url> --token <token> unassign --device-groups "device_group1"
+```
+
+**注意事项：**
+- 脚本支持用户和设备组的名称或 GUID
+- 设备 ID 会自动转换为 GUID
+- 所有 assign/unassign 操作都支持同时操作多个目标
+
+**权限要求：**
+- `list/view/enable/disable/assign/unassign` 命令需要 **策略权限**
+- `--peers` 需要 **设备权限:r**（用于 ID 到 GUID 的查找）
+- `--users` 需要 **用户权限:r**（用于用户名到 GUID 的查找）
+- `--device-groups` 需要 **设备组权限:r**（用于组名到 GUID 的查找）
+
+---
+
+#### 审计日志 （audits.py）
+
+**查看帮助：**
+
+    ./audits.py -h
+
+**查看连接审计：**
+
+    ./audits.py --url <url> --token <token> view-conn [--remote <peer_id>] [--conn-type <type>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]
+
+**查看文件审计：**
+
+    ./audits.py --url <url> --token <token> view-file [--remote <peer_id>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]
+
+**查看告警审计：**
+
+    ./audits.py --url <url> --token <token> view-alarm [--device <device_id>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]
+
+**查看控制台操作审计：**
+
+    ./audits.py --url <url> --token <token> view-console [--operator <username>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]
+
+**过滤条件：**  
+`--remote`：对端 ID（用于连接或文件审计）  
+`--conn-type`：连接类型（0=远程桌面，1=文件传输，2=端口转发，3=查看摄像头，4=终端）  
+`--device`：设备 ID（用于告警审计）  
+`--operator`：操作员用户名（用于控制台审计）  
+`--created-at`：本地时间过滤，如 `"2025-09-16 14:15:57"`  
+`--days-ago`：筛选指定天数内的记录  
+`--page-size` / `--current`：分页参数
+
+**示例：**
+
+    ./audits.py --url https://example.com --token <token> view-conn --remote 123456789 --days-ago 7
+
 
 ## 搜索设备
 1. 进入设备页面。

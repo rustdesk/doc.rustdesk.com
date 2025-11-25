@@ -808,21 +808,6 @@ L'option "mode privé" dans les paramètres de chaque pair contrôlera ensuite s
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `privacy-mode=Y` |
 
-### touch-mode
-
-Cette option définira l'option "mode tactile" pour chaque pair après la première connexion.
-
-L'option "mode tactile" dans les paramètres de chaque pair contrôlera ensuite s'il faut utiliser le mode tactile ou le mode souris.
-
-**Emplacement** :
-
-1. **Bureau**
-2. **Mobile** Paramètres → Paramètres d'affichage → Autres options par défaut → Mode tactile
-
-| Installation requise | Valeurs | Défaut | Exemple |
-| :------: | :------: | :------: | :------: |
-| N | Y, N | N | `touch-mode=Y` |
-
 ### i444
 
 Cette option définira l'option "i444" pour chaque pair après la première connexion.
@@ -928,7 +913,25 @@ L'option "style de défilement" dans les paramètres de chaque pair contrôlera 
 
 | Installation requise | Valeurs | Défaut | Exemple |
 | :------: | :------: | :------: | :------: |
-| N | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
+| N | scrollauto, scrollbar, scrolledge | scrollauto | `scroll-style=scrollauto` |
+
+**Note** : L'option `scrolledge` est disponible à partir de RustDesk 1.4.4.
+
+### edge-scroll-edge-thickness
+
+Cette option contrôle l'épaisseur du bord lorsque `scroll-style` est défini sur `scrolledge`. L'épaisseur du bord détermine la taille de la zone défilable aux bords de l'écran.
+
+Cette option n'est effective que lorsque `scroll-style=scrolledge`.
+
+**Emplacement** :
+
+1. **Bureau** Paramètres → Affichage → Épaisseur du bord de défilement
+
+| Installation requise | Valeurs | Défaut | Exemple |
+| :------: | :------: | :------: | :------: |
+| N | 20-150 | 100 | `edge-scroll-edge-thickness=100` |
+
+**Note** : Cette option est disponible à partir de RustDesk 1.4.4.
 
 ### image-quality
 
@@ -1015,9 +1018,9 @@ L'option "trackpad-speed" dans les paramètres de chaque pair contrôlera alors 
 
 ## Autres
 
-### preset-address-book-name & preset-address-book-tag
+### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-password & preset-address-book-note
 
-Nom et tag de carnet d'adresses prédéfinis, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
+Nom de carnet d'adresses, tag d'appareil, alias d'appareil, mot de passe d'appareil, note d'appareil prédéfinis, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
 Vous pouvez définir preset-address-book-name uniquement si vous ne voulez pas définir de tag.
 Veuillez utiliser un nom et un tag de carnet d'adresses valides sur votre page de carnet d'adresses de la console web.
 
@@ -1025,6 +1028,11 @@ Veuillez utiliser un nom et un tag de carnet d'adresses valides sur votre page d
 | :------: | :------: | :------: | :------: | :------: |
 | preset-address-book-name | N | | | `preset-address-book-name=<nom du carnet d'adresses>` |
 | preset-address-book-tag | N | | | `preset-address-book-tag=<nom du tag du carnet d'adresses>` |
+| preset-address-book-alias | N | | | `preset-address-book-alias=<alias d'appareil>` |
+| preset-address-book-password | N | | | `preset-address-book-password=<mot de passe d'appareil>` |
+| preset-address-book-note | N | | | `preset-address-book-note=<note d'appareil>` |
+
+preset-address-book-alias, preset-address-book-password, preset-address-book-note sont disponibles dans le client RustDesk >=1.4.3, pro >= 1.6.6.
 
 ### disable-group-panel
 
@@ -1175,13 +1183,15 @@ Contrôle s'il faut utiliser TCP uniquement. Il n'utilisera plus UDP 21116, TCP 
 | :------: | :------: | :------: |
 | Y, N | N | `disable-udp=Y` |
 
-### preset-user-name / preset-strategy-name / preset-device-group-name
+### preset-user-name / preset-strategy-name / preset-device-group-name / preset-device-username / preset-device-name / preset-note
 
-Assigne utilisateur / stratégie / groupe d'appareils à l'appareil. Vous pouvez aussi faire cela via [ligne de commande](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
+Assigne utilisateur / stratégie / groupe d'appareils / nom d'utilisateur d'appareil / nom d'appareil(hostname) / note à l'appareil. Vous pouvez aussi faire cela via [ligne de commande](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
 
 le groupe d'appareils est disponible dans le client RustDesk >=1.3.8, pro >= 1.5.0
+
+preset-device-username, preset-device-name, preset-note sont disponibles dans le client RustDesk >=1.4.3, pro >= 1.6.6.
 
 ### default-connect-password
 
@@ -1283,6 +1293,11 @@ Utilise le protocole WebSocket pour connecter le serveur et le client. Uniquemen
 
 Pour faire fonctionner WebSocket, vous devez configurer votre proxy inverse correctement, https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
 
+**Emplacement** :
+
+**Bureau** Paramètres → Réseau → Utiliser Websocket
+**Mobile** Paramètres → Utiliser Websocket
+
 | Valeurs | Défaut | Exemple |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-websocket=Y` |
@@ -1309,7 +1324,7 @@ Ne pas enregistrer l'appareil, vous ne le verrez pas dans la page des appareils 
 Si `register-device=N`, les éléments suivants ne fonctionneront pas pour cet appareil.
 - Connexion
 - Commande `--assign`
-- `preset-address-book-name`, `--preset-address-book-tag`, `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`
+- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
 - Journaux d'audit
 - Stratégie
 
@@ -1318,3 +1333,107 @@ Si `register-device=N`, les éléments suivants ne fonctionneront pas pour cet a
 | Valeurs | Défaut | Exemple |
 | :------: | :------: | :------: |
 | Y, N | Y | `register-device=N` |
+
+### main-window-always-on-top
+
+Toujours garder la fenêtre principale au premier plan.
+
+**Discussion**: https://github.com/rustdesk/rustdesk-server-pro/issues/761
+
+Uniquement disponible dans le client RustDesk 1.4.2.
+
+| Installation requise | Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `main-window-always-on-top=N` |
+
+### relay-server
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/776#issuecomment-3306524913
+
+### disable-discovery-panel
+
+Désactiver le panneau "Découvert" (à côté du panneau "Favoris") sur le client RustDesk.
+
+| Option | Installation requise | Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: | :------: |
+| disable-discovery-panel | N | Y, N | N | `disable-discovery-panel=Y` |
+
+### touch-mode
+
+Contrôle l'utilisation du mode tactile ou du mode souris pendant les sessions de contrôle à distance.
+
+#### Différences de comportement selon la version
+
+##### RustDesk (côté contrôleur) < 1.4.3
+
+Après la première connexion, cette option définit le paramètre "touch-mode" pour chaque pair. Par la suite, les paramètres individuels de chaque pair déterminent l'utilisation du mode tactile ou du mode souris.
+
+**Emplacement** :
+
+1. **Bureau**
+2. **Mobile** Paramètres → Affichage → Autres options par défaut → Mode tactile
+
+##### RustDesk (côté contrôleur) >= 1.4.3
+
+Cette option contrôle de manière uniforme si tous les appareils pairs utilisent le mode tactile ou le mode souris, en remplaçant les paramètres individuels des appareils.
+
+| Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | N | `touch-mode=Y` |
+
+### show-virtual-mouse
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+Contrôle l'affichage de la souris virtuelle en cas de mobile → bureau.
+
+**Emplacement** :
+
+1. **Bureau**
+2. **Mobile** Session à distance → barre de navigation inférieure → aide aux gestes
+
+Disponible depuis RustDesk 1.4.3
+
+| Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-mouse=Y` |
+
+**Remarque** : Cette option doit être configurée dans **Default settings** plutôt que dans **Override settings**.
+
+### show-virtual-joystick
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+Contrôle l'affichage du joystick virtuel en cas de mobile → bureau.
+
+Cette option exige que **show-virtual-mouse** soit activé.
+
+**Emplacement** :
+
+1. **Bureau**
+2. **Mobile** Session à distance → barre de navigation inférieure → aide aux gestes
+
+Disponible depuis RustDesk 1.4.3
+
+| Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-joystick=Y` |
+
+**Remarque** : Cette option doit être configurée dans **Default settings** plutôt que dans **Override settings**.
+
+### allow-insecure-tls-fallback
+
+Par défaut, RustDesk vérifie le certificat du serveur pour les protocoles utilisant TLS.
+
+Avec cette option activée, RustDesk reviendra à ignorer l'étape de vérification et continuera en cas d'échec de vérification.
+
+**Emplacement** :
+
+**Bureau** Paramètres → Réseau → Autoriser le repli TLS non sécurisé
+**Mobile** Paramètres → Autoriser le repli TLS non sécurisé
+
+Disponible depuis RustDesk 1.4.4
+
+| Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-insecure-tls-fallback=Y` |

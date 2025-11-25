@@ -19,7 +19,7 @@ There are technically two executables (servers):
 
 When you install via installation script / docker compose / deb, the two services will be both installed.
 
-Here is [illustrations](https://github.com/rustdesk/rustdesk/wiki/How-does-RustDesk-work%3F) of how RustDesk client communicates with `hbbr` / `hbbs`.
+Here are [illustrations](https://github.com/rustdesk/rustdesk/wiki/How-does-RustDesk-work%3F) of how RustDesk client communicates with `hbbr` / `hbbs`.
 
 As long as RustDesk is running on a machine, the machine constantly pings the ID server (`hbbs`) to make its current IP address and port known.
 

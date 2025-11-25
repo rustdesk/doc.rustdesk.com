@@ -770,21 +770,6 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: | :------: |
 | N | Y, N | N | `privacy-mode=Y` |
 
-### touch-mode
-
-このオプションは、最初の接続後に各ピアの「タッチモード」オプションを設定します。
-
-各ピアの設定の「タッチモード」オプションは、タッチモードまたはマウスモードを使用するかどうかを制御します。
-
-**場所**：
-
-1. **デスクトップ**
-2. **モバイル** 設定 → ディスプレイ設定 → その他のデフォルトオプション → タッチモード
-
-| インストール必要 | 値 | デフォルト | 例 |
-| :------: | :------: | :------: | :------: |
-| N | Y, N | N | `touch-mode=Y` |
-
 ### i444
 
 このオプションは、最初の接続後に各ピアの「i444」オプションを設定します。
@@ -892,7 +877,25 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | インストール必要 | 値 | デフォルト | 例 |
 | :------: | :------: | :------: | :------: |
-| N | scrollauto, scrollbar | scrollauto | `scroll-style=scrollauto` |
+| N | scrollauto, scrollbar, scrolledge | scrollauto | `scroll-style=scrollauto` |
+
+**注意**：`scrolledge` オプションは RustDesk 1.4.4 以降で利用可能です。
+
+### edge-scroll-edge-thickness
+
+このオプションは、`scroll-style` が `scrolledge` に設定されている場合のエッジの厚さを制御します。エッジの厚さは、画面の端でのスクロール可能な領域のサイズを決定します。
+
+このオプションは、`scroll-style=scrolledge` の場合にのみ有効です。
+
+**場所**：
+
+1. **デスクトップ** 設定 → ディスプレイ → エッジスクロールの厚さ
+
+| インストール必要 | 値 | デフォルト | 例 |
+| :------: | :------: | :------: | :------: |
+| N | 20-150 | 100 | `edge-scroll-edge-thickness=100` |
+
+**注意**：このオプションは RustDesk 1.4.4 以降で利用可能です。
 
 ### image-quality
 
@@ -1026,9 +1029,9 @@ RustDesk 1.4.1, RustDesk Server Pro 1.6.2から利用可能
 
 ## その他
 
-### preset-address-book-name & preset-address-book-tag
+### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-password & preset-address-book-note
 
-プリセットアドレスブック名とタグ、https://github.com/rustdesk/rustdesk-server-pro/issues/257。
+プリセットアドレスブック名、デバイスタグ、デバイスエイリアス、デバイスパスワード、デバイスノート、https://github.com/rustdesk/rustdesk-server-pro/issues/257。
 タグを設定したくない場合は、preset-address-book-nameのみを設定できます。
 Web コンソールのアドレスブックページで有効なアドレスブック名とタグを使用してください。
 
@@ -1036,6 +1039,11 @@ Web コンソールのアドレスブックページで有効なアドレスブ�
 | :------: | :------: | :------: | :------: | :------: |
 | preset-address-book-name | N | | | `preset-address-book-name=<アドレスブック名>` |
 | preset-address-book-tag | N | | | `preset-address-book-tag=<アドレスブックタグ名>` |
+| preset-address-book-alias | N | | | `preset-address-book-alias=<デバイスエイリアス>` |
+| preset-address-book-password | N | | | `preset-address-book-password=<デバイスパスワード>` |
+| preset-address-book-note | N | | | `preset-address-book-note=<デバイスノート>` |
+
+preset-address-book-alias、preset-address-book-password、preset-address-book-noteはRustDeskクライアント>=1.4.3、pro >= 1.6.6で利用可能。
 
 ### disable-group-panel
 
@@ -1186,13 +1194,15 @@ TCPのみを使用するかどうかを制御します。UDP 21116は使用さ�
 | :------: | :------: | :------: |
 | Y, N | N | `disable-udp=Y` |
 
-### preset-user-name / preset-strategy-name / preset-device-group-name
+### preset-user-name / preset-strategy-name / preset-device-group-name / preset-device-username / preset-device-name / preset-note
 
-ユーザー/ストラテジー/デバイスグループをデバイスに割り当てます。これは[コマンドライン](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices)でも行うことができます。
+ユーザー/ストラテジー/デバイスグループ/デバイスユーザー名/デバイス名(ホスト名)/ノートをデバイスに割り当てます。これは[コマンドライン](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices)でも行うことができます。
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
 
 デバイスグループはRustDeskクライアント>=1.3.8、pro >= 1.5.0で利用可能
+
+preset-device-username、preset-device-name、preset-noteはRustDeskクライアント>=1.4.3、pro >= 1.6.6で利用可能。
 
 ### default-connect-password
 
@@ -1294,6 +1304,11 @@ WebSocketプロトコルを使用してサーバーとクライアントを接�
 
 WebSocketを動作させるには、リバースプロキシを正しく設定する必要があります、https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
 
+**場所**:
+
+**デスクトップ** 設定 → ネットワーク → WebSocket を使用する
+**モバイル** 設定 → WebSocket を使用する
+
 | 値 | デフォルト | 例 |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-websocket=Y` |
@@ -1320,7 +1335,7 @@ RustDeskクライアント>=1.4.1およびProサーバー>= 1.5.9でのみ利用
 `register-device=N`の場合、このデバイスでは以下が動作しません。
 - ログイン
 - `--assign`コマンド
-- `preset-address-book-name`, `--preset-address-book-tag`, `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`
+- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
 - 監査ログ
 - ストラテジー
 
@@ -1329,3 +1344,106 @@ RustDeskクライアント>=1.4.1およびProサーバー>= 1.5.9でのみ利用
 | 値 | デフォルト | 例 |
 | :------: | :------: | :------: |
 | Y, N | Y | `register-device=N` |
+### main-window-always-on-top
+
+メインウィンドウを常に最前面に表示します。
+
+**ディスカッション**: https://github.com/rustdesk/rustdesk-server-pro/issues/761
+
+RustDeskクライアント1.4.2でのみ利用可能です。
+
+| インストール必要 | 値 | デフォルト | 例 |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `main-window-always-on-top=N` |
+
+### relay-server
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/776#issuecomment-3306524913
+
+### disable-discovery-panel
+
+RustDeskクライアントの「お気に入り」パネルの隣にある「発見済み」パネルを無効にします。
+
+| オプション | インストール必要 | 値 | デフォルト | 例 |
+| :------: | :------: | :------: | :------: | :------: |
+| disable-discovery-panel | N | Y, N | N | `disable-discovery-panel=Y` |
+
+### touch-mode
+
+リモート操作セッション中にタッチモードまたはマウスモードを使用するかを制御します。
+
+#### バージョンによる挙動の違い
+
+##### RustDesk（操作側） < 1.4.3
+
+最初の接続後、このオプションは各ピアの "touch-mode" 設定を適用します。その後は各ピアの個別設定がタッチモードまたはマウスモードの使用を決定します。
+
+**場所**:
+
+1. **デスクトップ**
+2. **モバイル** 設定 → 表示 → その他のデフォルトオプション → タッチモード
+
+##### RustDesk（操作側） >= 1.4.3
+
+このオプションはすべてのピアデバイスがタッチモードまたはマウスモードを使用するかを一律に制御し、個別デバイスの設定を上書きします。
+
+| 値 | デフォルト | 例 |
+| :------: | :------: | :------: |
+| Y, N | N | `touch-mode=Y` |
+
+### show-virtual-mouse
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+モバイル→デスクトップ時の仮想マウスの表示を制御します。
+
+**場所**:
+
+1. **デスクトップ**
+2. **モバイル** リモートセッション → 下部ナビゲーションバー → ジェスチャーヘルパー
+
+RustDesk 1.4.3 以降で利用可能
+
+| 値 | デフォルト | 例 |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-mouse=Y` |
+
+**注意**: このオプションは **Default settings** に設定し、**Override settings** では設定しないでください。
+
+### show-virtual-joystick
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+モバイル→デスクトップ時の仮想ジョイスティックの表示を制御します。
+
+このオプションは **show-virtual-mouse** が有効であることを前提とします。
+
+**場所**:
+
+1. **デスクトップ**
+2. **モバイル** リモートセッション → 下部ナビゲーションバー → ジェスチャーヘルパー
+
+RustDesk 1.4.3 以降で利用可能
+
+| 値 | デフォルト | 例 |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-joystick=Y` |
+
+**注意**: このオプションは **Default settings** に設定し、**Override settings** では設定しないでください。
+
+### allow-insecure-tls-fallback
+
+デフォルトでは、RustDeskはTLSを使用するプロトコルのサーバー証明書を検証します。
+
+このオプションを有効にすると、検証に失敗した場合、RustDeskは検証ステップをスキップして続行するようにフォールバックします。
+
+**場所**:
+
+**デスクトップ** 設定 → ネットワーク → 安全でないTLSフォールバックを許可
+**モバイル** 設定 → 安全でないTLSフォールバックを許可
+
+RustDesk 1.4.4 以降で利用可能
+
+| 値 | デフォルト | 例 |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-insecure-tls-fallback=Y` |
