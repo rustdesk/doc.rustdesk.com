@@ -104,7 +104,7 @@ systemd サービスとして Podman でコンテナを実行したい場合は�
 ```ini
 [Container]
 AutoUpdate=registry
-Image=ghcr.io/rustdesk/rustdesk-server:latest
+Image=rustdesk/rustdesk-server:latest
 Exec=hbbs
 Volume=/path/to/rustdesk-server/data:/root
 Network=host
@@ -121,7 +121,7 @@ WantedBy=default.target
 ```ini
 [Container]
 AutoUpdate=registry
-Image=ghcr.io/rustdesk/rustdesk-server:latest
+Image=rustdesk/rustdesk-server:latest
 Exec=hbbr
 Volume=/path/to/rustdesk-server/data:/root
 Network=host

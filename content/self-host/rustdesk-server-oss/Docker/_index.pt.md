@@ -104,7 +104,7 @@ Se você quiser executar os contêineres com Podman como um serviço systemd, po
 ```ini
 [Container]
 AutoUpdate=registry
-Image=ghcr.io/rustdesk/rustdesk-server:latest
+Image=rustdesk/rustdesk-server:latest
 Exec=hbbs
 Volume=/path/to/rustdesk-server/data:/root
 Network=host
@@ -121,7 +121,7 @@ ou
 ```ini
 [Container]
 AutoUpdate=registry
-Image=ghcr.io/rustdesk/rustdesk-server:latest
+Image=rustdesk/rustdesk-server:latest
 Exec=hbbr
 Volume=/path/to/rustdesk-server/data:/root
 Network=host
