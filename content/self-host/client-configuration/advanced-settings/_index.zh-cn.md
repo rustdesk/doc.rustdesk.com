@@ -1440,3 +1440,33 @@ https://github.com/rustdesk/rustdesk/pull/12911
 | 值 | 默认值 | 示例 |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-insecure-tls-fallback=Y` |
+
+### disable-change-permanent-password
+
+禁止更改永久密码。启用后，用户无法通过界面或命令行设置或修改永久密码。
+
+自 RustDesk 1.4.5 版本起可用。
+
+| 值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-change-permanent-password=Y` |
+
+### disable-change-id
+
+禁止更改设备 ID。启用后，用户无法通过界面或命令行更改 ID。
+
+自 RustDesk 1.4.5 版本起可用。
+
+| 值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-change-id=Y` |
+
+### disable-unlock-pin
+
+禁止使用 PIN 解锁设置。启用后，即使已设置 PIN，用户也必须使用系统管理员权限来解锁设置。
+
+自 RustDesk 1.4.5 版本起可用。
+
+| 值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-unlock-pin=Y` |
