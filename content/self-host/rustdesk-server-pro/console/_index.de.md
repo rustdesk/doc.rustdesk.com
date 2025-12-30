@@ -207,47 +207,47 @@ oder
 
 ---
 
-#### Benutzergruppenverwaltung (`user_group.py`)
+#### Benutzergruppenverwaltung (`user-groups.py`)
 
 **Hilfe anzeigen:**  
-`./user_group.py -h`
+`./user-groups.py -h`
 
 **Benutzergruppen anzeigen:**  
-`./user_group.py --url <url> --token <token> view [--name <group_name>]`
+`./user-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **Beispiel:**  
-`./user_group.py --url https://example.com --token <token> view --name "Vertriebsteam"`
+`./user-groups.py --url https://example.com --token <token> view --name "Vertriebsteam"`
 
 **Gruppenoperationen:**
 
 - **Benutzergruppe erstellen:**  
-  `./user_group.py --url <url> --token <token> add --name "Gruppenname" [--note "Beschreibung"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> add --name "Gruppenname" [--note "Beschreibung"] [--accessed-from '<json>'] [--access-to '<json>']`
   
   Beispiel mit Zugriffskontrolle:  
-  `./user_group.py --url <url> --token <token> add --name "Engineering" --accessed-from '[{"type":0,"name":"Manager"}]' --access-to '[{"type":1,"name":"Dev-Server"}]'`
+  `./user-groups.py --url <url> --token <token> add --name "Engineering" --accessed-from '[{"type":0,"name":"Manager"}]' --access-to '[{"type":1,"name":"Dev-Server"}]'`
 
 - **Benutzergruppe aktualisieren:**  
-  `./user_group.py --url <url> --token <token> update --name "Gruppenname" [--new-name "Neuer Name"] [--note "Neue Notiz"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> update --name "Gruppenname" [--new-name "Neuer Name"] [--note "Neue Notiz"] [--accessed-from '<json>'] [--access-to '<json>']`
 
 - **Benutzergruppe löschen:**  
-  `./user_group.py --url <url> --token <token> delete --name "Gruppenname"`
+  `./user-groups.py --url <url> --token <token> delete --name "Gruppenname"`
   
   Unterstützt kommagetrennte Namen: `--name "Gruppe1,Gruppe2,Gruppe3"`
 
 **Benutzerverwaltung in Gruppen:**
 
 - **Benutzer in Gruppe anzeigen:**  
-  `./user_group.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
+  `./user-groups.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
   
   Filter:
   - `--name`: Gruppenname (exakte Übereinstimmung, optional)
   - `--user-name`: Benutzername (unscharfe Suche, optional)
   
   Beispiel:  
-  `./user_group.py --url <url> --token <token> view-users --name Default --user-name john`
+  `./user-groups.py --url <url> --token <token> view-users --name Default --user-name john`
 
 - **Benutzer zur Gruppe hinzufügen:**  
-  `./user_group.py --url <url> --token <token> add-users --name "Gruppenname" --users "user1,user2,user3"`
+  `./user-groups.py --url <url> --token <token> add-users --name "Gruppenname" --users "user1,user2,user3"`
 
 **Zugriffskontrollparameter:**
 
@@ -267,37 +267,37 @@ oder
 
 ---
 
-#### Gerätegruppenverwaltung (`device_group.py`)
+#### Gerätegruppenverwaltung (`device-groups.py`)
 
 **Hilfe anzeigen:**  
-`./device_group.py -h`
+`./device-groups.py -h`
 
 **Gerätegruppen anzeigen:**  
-`./device_group.py --url <url> --token <token> view [--name <group_name>]`
+`./device-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **Beispiel:**  
-`./device_group.py --url https://example.com --token <token> view`
+`./device-groups.py --url https://example.com --token <token> view`
 
 **Gruppenoperationen:**
 
 - **Gerätegruppe erstellen:**  
-  `./device_group.py --url <url> --token <token> add --name "Gruppenname" [--note "Beschreibung"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> add --name "Gruppenname" [--note "Beschreibung"] [--accessed-from '<json>']`
   
   Beispiel:  
-  `./device_group.py --url <url> --token <token> add --name "Produktion" --accessed-from '[{"type":0,"name":"Admins"}]'`
+  `./device-groups.py --url <url> --token <token> add --name "Produktion" --accessed-from '[{"type":0,"name":"Admins"}]'`
 
 - **Gerätegruppe aktualisieren:**  
-  `./device_group.py --url <url> --token <token> update --name "Gruppenname" [--new-name "Neuer Name"] [--note "Neue Notiz"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> update --name "Gruppenname" [--new-name "Neuer Name"] [--note "Neue Notiz"] [--accessed-from '<json>']`
 
 - **Gerätegruppe löschen:**  
-  `./device_group.py --url <url> --token <token> delete --name "Gruppenname"`
+  `./device-groups.py --url <url> --token <token> delete --name "Gruppenname"`
   
   Unterstützt kommagetrennte Namen: `--name "Gruppe1,Gruppe2,Gruppe3"`
 
 **Geräteverwaltung in Gruppen:**
 
 - **Geräte in Gruppe anzeigen:**  
-  `./device_group.py --url <url> --token <token> view-devices [Filter]`
+  `./device-groups.py --url <url> --token <token> view-devices [Filter]`
   
   Verfügbare Filter:
   - `--name`: Gerätegruppenname (exakte Übereinstimmung)
@@ -309,21 +309,21 @@ oder
   Beispiele:  
   ```bash
   # Alle Geräte in einer Gruppe anzeigen
-  ./device_group.py --url <url> --token <token> view-devices --name Produktion
+  ./device-groups.py --url <url> --token <token> view-devices --name Produktion
   
   # Nach Gerätename suchen
-  ./device_group.py --url <url> --token <token> view-devices --device-name server
+  ./device-groups.py --url <url> --token <token> view-devices --device-name server
   
   # Filter kombinieren
-  ./device_group.py --url <url> --token <token> view-devices --name Produktion --user-name john
+  ./device-groups.py --url <url> --token <token> view-devices --name Produktion --user-name john
   ```
 
 
 - **Geräte zur Gruppe hinzufügen:**  
-  `./device_group.py --url <url> --token <token> add-devices --name "Gruppenname" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> add-devices --name "Gruppenname" --ids "deviceid1,deviceid2"`
 
 - **Geräte aus Gruppe entfernen:**  
-  `./device_group.py --url <url> --token <token> remove-devices --name "Gruppenname" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> remove-devices --name "Gruppenname" --ids "deviceid1,deviceid2"`
 
 **Zugriffskontrollparameter:**
 

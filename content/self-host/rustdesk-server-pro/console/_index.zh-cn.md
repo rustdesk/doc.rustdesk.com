@@ -214,47 +214,47 @@ Windows 命令行默认无输出，如需查看输出，可使用如下方式运
 
 ---
 
-#### 用户组管理 (`user_group.py`)
+#### 用户组管理 (`user-groups.py`)
 
 **查看帮助：**  
-`./user_group.py -h`
+`./user-groups.py -h`
 
 **查看用户组：**  
-`./user_group.py --url <url> --token <token> view [--name <group_name>]`
+`./user-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **示例：**  
-`./user_group.py --url https://example.com --token <token> view --name "销售团队"`
+`./user-groups.py --url https://example.com --token <token> view --name "销售团队"`
 
 **组操作：**
 
 - **创建用户组：**  
-  `./user_group.py --url <url> --token <token> add --name "组名" [--note "描述"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> add --name "组名" [--note "描述"] [--accessed-from '<json>'] [--access-to '<json>']`
   
   带访问控制的示例：  
-  `./user_group.py --url <url> --token <token> add --name "工程部" --accessed-from '[{"type":0,"name":"管理层"}]' --access-to '[{"type":1,"name":"开发服务器"}]'`
+  `./user-groups.py --url <url> --token <token> add --name "工程部" --accessed-from '[{"type":0,"name":"管理层"}]' --access-to '[{"type":1,"name":"开发服务器"}]'`
 
 - **更新用户组：**  
-  `./user_group.py --url <url> --token <token> update --name "组名" [--new-name "新名称"] [--note "新备注"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> update --name "组名" [--new-name "新名称"] [--note "新备注"] [--accessed-from '<json>'] [--access-to '<json>']`
 
 - **删除用户组：**  
-  `./user_group.py --url <url> --token <token> delete --name "组名"`
+  `./user-groups.py --url <url> --token <token> delete --name "组名"`
   
   支持逗号分隔的多个组名：`--name "组1,组2,组3"`
 
 **组内用户管理：**
 
 - **查看组内用户：**  
-  `./user_group.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
+  `./user-groups.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
   
   过滤条件：
   - `--name`：组名（精确匹配，可选）
   - `--user-name`：用户名（模糊搜索，可选）
   
   示例：  
-  `./user_group.py --url <url> --token <token> view-users --name Default --user-name john`
+  `./user-groups.py --url <url> --token <token> view-users --name Default --user-name john`
 
 - **添加用户到组：**  
-  `./user_group.py --url <url> --token <token> add-users --name "组名" --users "user1,user2,user3"`
+  `./user-groups.py --url <url> --token <token> add-users --name "组名" --users "user1,user2,user3"`
 
 **访问控制参数：**
 
@@ -274,37 +274,37 @@ Windows 命令行默认无输出，如需查看输出，可使用如下方式运
 
 ---
 
-#### 设备组管理 (`device_group.py`)
+#### 设备组管理 (`device-groups.py`)
 
 **查看帮助：**  
-`./device_group.py -h`
+`./device-groups.py -h`
 
 **查看设备组：**  
-`./device_group.py --url <url> --token <token> view [--name <group_name>]`
+`./device-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **示例：**  
-`./device_group.py --url https://example.com --token <token> view`
+`./device-groups.py --url https://example.com --token <token> view`
 
 **组操作：**
 
 - **创建设备组：**  
-  `./device_group.py --url <url> --token <token> add --name "组名" [--note "描述"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> add --name "组名" [--note "描述"] [--accessed-from '<json>']`
   
   示例：  
-  `./device_group.py --url <url> --token <token> add --name "生产环境" --accessed-from '[{"type":0,"name":"管理员"}]'`
+  `./device-groups.py --url <url> --token <token> add --name "生产环境" --accessed-from '[{"type":0,"name":"管理员"}]'`
 
 - **更新设备组：**  
-  `./device_group.py --url <url> --token <token> update --name "组名" [--new-name "新名称"] [--note "新备注"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> update --name "组名" [--new-name "新名称"] [--note "新备注"] [--accessed-from '<json>']`
 
 - **删除设备组：**  
-  `./device_group.py --url <url> --token <token> delete --name "组名"`
+  `./device-groups.py --url <url> --token <token> delete --name "组名"`
   
   支持逗号分隔的多个组名：`--name "组1,组2,组3"`
 
 **组内设备管理：**
 
 - **查看组内设备：**  
-  `./device_group.py --url <url> --token <token> view-devices [过滤条件]`
+  `./device-groups.py --url <url> --token <token> view-devices [过滤条件]`
   
   可用的过滤条件：
   - `--name`：设备组名（精确匹配）
@@ -316,21 +316,21 @@ Windows 命令行默认无输出，如需查看输出，可使用如下方式运
   示例：  
   ```bash
   # 查看组内所有设备
-  ./device_group.py --url <url> --token <token> view-devices --name 生产环境
+  ./device-groups.py --url <url> --token <token> view-devices --name 生产环境
   
   # 按设备名搜索
-  ./device_group.py --url <url> --token <token> view-devices --device-name server
+  ./device-groups.py --url <url> --token <token> view-devices --device-name server
   
   # 组合过滤条件
-  ./device_group.py --url <url> --token <token> view-devices --name 生产环境 --user-name john
+  ./device-groups.py --url <url> --token <token> view-devices --name 生产环境 --user-name john
   ```
 
 
 - **添加设备到组：**  
-  `./device_group.py --url <url> --token <token> add-devices --name "组名" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> add-devices --name "组名" --ids "deviceid1,deviceid2"`
 
 - **从组中移除设备：**  
-  `./device_group.py --url <url> --token <token> remove-devices --name "组名" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> remove-devices --name "组名" --ids "deviceid1,deviceid2"`
 
 **访问控制参数：**
 
