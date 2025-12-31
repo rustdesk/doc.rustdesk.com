@@ -1450,3 +1450,33 @@ Disponibil din RustDesk 1.4.4
 | Valori | Implicit | Exemplu |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-insecure-tls-fallback=Y` |
+
+### disable-change-permanent-password
+
+Dezactivează posibilitatea de a schimba parola permanentă. Când este activat, utilizatorii nu pot seta sau modifica parola permanentă prin interfața utilizator sau linia de comandă.
+
+Disponibil din RustDesk 1.4.5
+
+| Valori | Implicit | Exemplu |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-change-permanent-password=Y` |
+
+### disable-change-id
+
+Dezactivează posibilitatea de a schimba ID-ul dispozitivului. Când este activat, utilizatorii nu pot schimba ID-ul prin interfața utilizator sau linia de comandă.
+
+Disponibil din RustDesk 1.4.5
+
+| Valori | Implicit | Exemplu |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-change-id=Y` |
+
+### disable-unlock-pin
+
+Dezactivează utilizarea PIN-ului pentru deblocarea setărilor. Când este activat, utilizatorii trebuie să utilizeze privilegii de administrator de sistem pentru a debloca setările, chiar dacă a fost setat un PIN.
+
+Disponibil din RustDesk 1.4.5
+
+| Valori | Implicit | Exemplu |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-unlock-pin=Y` |
