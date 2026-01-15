@@ -1,5 +1,5 @@
 ---
-title: 权限控制
+title: 访问控制
 weight: 16
 ---
 
