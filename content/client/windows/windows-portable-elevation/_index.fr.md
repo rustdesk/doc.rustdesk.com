@@ -14,7 +14,7 @@ En élevant les privilèges, RustDesk peut créer un processus avec des privilè
 
 De cette façon, les utilisateurs distants n'ont pas besoin de demander l'élévation lors de la connexion. Il y a deux méthodes :
 
-* Méthode 1 : Changer le nom du programme portable pour inclure `-qs-` (les versions 1.2.0, 1.2.1, 1.2.2, 1.2.3 se terminent par `qs.exe`). Cliquez avec le bouton gauche de la souris pour exécuter, cliquez sur `Accepter` dans la fenêtre UAC.
+* Méthode 1 : Changer le nom du programme portable pour inclure `-qs-` ou `-qs.exe` ou `_qs.exe` (>= 1.4.6), ou se terminant par `qs.exe` (1.2.0 ~ 1.4.5). Cliquez avec le bouton gauche de la souris pour exécuter, cliquez sur `Accepter` dans la fenêtre UAC.
 
 * Méthode 2 : Faites un clic droit et exécutez en tant qu'administrateur.
 

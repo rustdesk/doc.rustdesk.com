@@ -14,7 +14,7 @@ Elevando i privilegi, RustDesk può creare un processo con privilegi di amminist
 
 In questo modo, gli utenti remoti non hanno bisogno di richiedere l'elevazione durante la connessione. Ci sono due metodi:
 
-* Metodo 1: Cambiare il nome del programma portatile per includere `-qs-` (le versioni 1.2.0, 1.2.1, 1.2.2, 1.2.3 terminano con `qs.exe`). Fare clic con il tasto sinistro del mouse per eseguire, fare clic su `Accetta` nella finestra UAC.
+* Metodo 1: Cambiare il nome del programma portatile per includere `-qs-` o `-qs.exe` o `_qs.exe` (>= 1.4.6), o terminare con `qs.exe` (1.2.0 ~ 1.4.5). Fare clic con il tasto sinistro del mouse per eseguire, fare clic su `Accetta` nella finestra UAC.
 
 * Metodo 2: Fare clic destro ed eseguire come amministratore.
 

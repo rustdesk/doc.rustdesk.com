@@ -16,7 +16,7 @@ Poprzez podwyższenie uprawnień RustDesk może utworzyć proces z uprawnieniami
 
 W ten sposób użytkownicy zdalni nie muszą prosić o podwyższenie uprawnień podczas łączenia się. Istnieją dwie metody:
 
-* Metoda 1: Zmień nazwę programu przenośnego, dodając do niej `-qs-` (wersje 1.2.0, 1.2.1, 1.2.2, 1.2.3 kończą się na `qs.exe`). Kliknij lewym przyciskiem myszy, aby uruchomić program, a następnie kliknij `Akceptuj` w oknie UAC.
+* Metoda 1: Zmień nazwę programu przenośnego, dodając do niej `-qs-` lub `-qs.exe` lub `_qs.exe` (>= 1.4.6), lub kończącą się na `qs.exe` (1.2.0 ~ 1.4.5). Kliknij lewym przyciskiem myszy, aby uruchomić program, a następnie kliknij `Akceptuj` w oknie UAC.
 
 * Metoda 2: Kliknij prawym przyciskiem myszy i uruchom jako administrator.
 
