@@ -14,7 +14,7 @@ By elevating privileges, RustDesk can create a process with administrator privil
 
 This way, remote users don't need to request elevation when connecting. There are two methods:
 
-* Method 1: Change the name of the portable program to include `-qs-` (1.2.0, 1.2.1, 1.2.2, 1.2.3 versions end with `qs.exe`). Click the left mouse button to run, click `Accept` in the UAC window.
+* Method 1: Change the name of the portable program to include `-qs-` or `-qs.exe` or `_qs.exe` (>= 1.4.6), or end with `qs.exe` (1.2.0 ~ 1.4.5). Click the left mouse button to run, click `Accept` in the UAC window.
 
 * Method 2: Right-click and run as administrator.
 

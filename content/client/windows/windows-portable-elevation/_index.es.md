@@ -14,7 +14,7 @@ Mediante la elevación de privilegios, RustDesk puede crear un proceso con privi
 
 Mediante estos métodos, los usuarios remotos no necesitan pedir la elevación de permisos cuando se conectan
 
-* Método 1: Agrega esta linea `-qs-` al nombre del ejecutable portable (las versiones 1.2.0, 1.2.1, 1.2.2 terminan con `qs.exe`). Ejecuta el archivo y da en `Aceptar` en la ventana de UAC
+* Método 1: Agrega `-qs-` o `-qs.exe` o `_qs.exe` al nombre del ejecutable portable (>= 1.4.6), o termina con `qs.exe` (1.2.0 ~ 1.4.5). Ejecuta el archivo y da en `Aceptar` en la ventana de UAC
 
 * Método 2: Click secundario y ejecutar como administrador
 

@@ -14,7 +14,7 @@ Prin ridicarea privilegiilor, RustDesk poate crea un proces cu privilegii de adm
 
 Astfel, utilizatorii de la distanță nu trebuie să solicite elevare când se conectează. Există două metode:
 
-* Metoda 1: Schimbați numele programului portabil pentru a include `-qs-` (versiunile 1.2.0, 1.2.1, 1.2.2, 1.2.3 se termină cu `qs.exe`). Faceți clic stânga pentru a rula, apoi apăsați `Accept` în fereastra UAC.
+* Metoda 1: Schimbați numele programului portabil pentru a include `-qs-` sau `-qs.exe` sau `_qs.exe` (>= 1.4.6), sau terminând cu `qs.exe` (1.2.0 ~ 1.4.5). Faceți clic stânga pentru a rula, apoi apăsați `Accept` în fereastra UAC.
 
 * Metoda 2: Faceți clic dreapta și rulați ca administrator.
 
