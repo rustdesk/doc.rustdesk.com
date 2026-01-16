@@ -1439,3 +1439,33 @@ Disponível desde RustDesk 1.4.4
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-insecure-tls-fallback=Y` |
+
+### disable-change-permanent-password
+
+Desabilita a capacidade de alterar a senha permanente. Quando habilitado, os usuários não podem definir ou modificar a senha permanente através da interface do usuário ou linha de comando.
+
+Disponível desde RustDesk 1.4.5
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-change-permanent-password=Y` |
+
+### disable-change-id
+
+Desabilita a capacidade de alterar o ID do dispositivo. Quando habilitado, os usuários não podem alterar o ID através da interface do usuário ou linha de comando.
+
+Disponível desde RustDesk 1.4.5
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-change-id=Y` |
+
+### disable-unlock-pin
+
+Desabilita o uso do PIN para desbloquear as configurações. Quando habilitado, os usuários devem usar privilégios de administrador do sistema para desbloquear as configurações, mesmo que um PIN tenha sido definido.
+
+Disponível desde RustDesk 1.4.5
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-unlock-pin=Y` |
