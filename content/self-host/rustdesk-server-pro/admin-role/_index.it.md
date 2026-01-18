@@ -30,6 +30,8 @@ I Ruoli Amministratore sono di tre tipi, ciascuno con ambito e permessi diversi.
 | **Permessi Utente** | Si applicano agli utenti nei gruppi utenti selezionati |
 | **Permessi Dispositivo** | Si applicano ai dispositivi da: <ul><li>Gruppi dispositivi selezionati</li><li>Dispositivi assegnati a utenti nei gruppi selezionati</li><li>Dispositivi non assegnati (se abilitato)</li></ul> |
 
+È possibile selezionare solo i Permessi Utente o solo i Permessi Dispositivo in un ruolo con Ambito Gruppo per rendere più chiari i permessi e l'ambito. Ad esempio, selezionando solo i Permessi Utente è possibile gestire gli utenti senza accesso ai dispositivi, mentre selezionando solo i Permessi Dispositivo è possibile gestire i dispositivi selezionando gruppi utenti, gruppi dispositivi o dispositivi non assegnati come ambito.
+
 ## Regole dei Permessi
 
 ### Qualsiasi Permesso di Modifica Include il Permesso di Visualizzazione Corrispondente

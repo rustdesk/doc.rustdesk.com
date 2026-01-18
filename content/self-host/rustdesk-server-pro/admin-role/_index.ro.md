@@ -30,6 +30,8 @@ Rolurile de Administrator vin în trei tipuri, fiecare cu domeniu și permisiuni
 | **Permisiuni Utilizator** | Se aplică utilizatorilor din grupurile selectate |
 | **Permisiuni Dispozitiv** | Se aplică dispozitivelor din: <ul><li>Grupuri de dispozitive selectate</li><li>Dispozitive atribuite utilizatorilor din grupurile selectate</li><li>Dispozitive neatribuite (dacă este activat)</li></ul> |
 
+Puteți selecta doar Permisiuni Utilizator sau doar Permisiuni Dispozitiv într-un rol cu Domeniu de Grup pentru a face permisiunile și domeniul mai clare. De exemplu, selectarea doar a Permisiunilor Utilizator permite gestionarea utilizatorilor fără acces la dispozitive, în timp ce selectarea doar a Permisiunilor Dispozitiv permite gestionarea dispozitivelor prin selectarea grupurilor de utilizatori, grupurilor de dispozitive sau dispozitivelor neatribuite ca domeniu.
+
 ## Reguli de Permisiuni
 
 ### Orice Permisiune de Editare Include Permisiunea de Vizualizare Corespunzătoare
