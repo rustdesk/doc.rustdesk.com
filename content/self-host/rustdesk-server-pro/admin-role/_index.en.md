@@ -30,6 +30,8 @@ Admin Roles come in three types, each with different scope and available permiss
 | **User Permissions** | Apply to users within the selected user groups |
 | **Device Permissions** | Apply to devices from: <ul><li>Selected device groups</li><li>Devices assigned to users within selected user groups</li><li>Unassigned devices (if enabled)</li></ul> |
 
+You can select only User Permissions or only Device Permissions in a Group Scoped role to make permissions and scope clearer. For example, selecting only User Permissions allows managing users without any device access, while selecting only Device Permissions allows managing devices by selecting user groups, device groups, or unassigned devices as the scope.
+
 ## Permission Rules
 
 ### Any Edit Permission Includes the Corresponding View Permission

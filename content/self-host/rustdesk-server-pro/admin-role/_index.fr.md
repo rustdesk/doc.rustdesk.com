@@ -30,6 +30,8 @@ Les Rôles Administrateur existent en trois types, chacun avec une portée et de
 | **Permissions Utilisateur** | S'appliquent aux utilisateurs dans les groupes d'utilisateurs sélectionnés |
 | **Permissions Appareil** | S'appliquent aux appareils de : <ul><li>Groupes d'appareils sélectionnés</li><li>Appareils assignés aux utilisateurs dans les groupes d'utilisateurs sélectionnés</li><li>Appareils non assignés (si activé)</li></ul> |
 
+Vous pouvez sélectionner uniquement les Permissions Utilisateur ou uniquement les Permissions Appareil dans un rôle de Portée de Groupe pour rendre les permissions et la portée plus claires. Par exemple, sélectionner uniquement les Permissions Utilisateur permet de gérer les utilisateurs sans accès aux appareils, tandis que sélectionner uniquement les Permissions Appareil permet de gérer les appareils en sélectionnant des groupes d'utilisateurs, des groupes d'appareils ou des appareils non assignés comme portée.
+
 ## Règles de Permissions
 
 ### Toute Permission de Modification Inclut la Permission de Visualisation Correspondante

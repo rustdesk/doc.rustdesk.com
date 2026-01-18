@@ -30,6 +30,8 @@ As Funções de Administrador vêm em três tipos, cada um com escopo e permiss�
 | **Permissões de Usuário** | Aplicam-se a usuários nos grupos selecionados |
 | **Permissões de Dispositivo** | Aplicam-se a dispositivos de: <ul><li>Grupos de dispositivos selecionados</li><li>Dispositivos atribuídos a usuários nos grupos selecionados</li><li>Dispositivos não atribuídos (se habilitado)</li></ul> |
 
+Você pode selecionar apenas Permissões de Usuário ou apenas Permissões de Dispositivo em uma função de Escopo de Grupo para tornar as permissões e o escopo mais claros. Por exemplo, selecionar apenas Permissões de Usuário permite gerenciar usuários sem acesso a dispositivos, enquanto selecionar apenas Permissões de Dispositivo permite gerenciar dispositivos selecionando grupos de usuários, grupos de dispositivos ou dispositivos não atribuídos como escopo.
+
 ## Regras de Permissões
 
 ### Qualquer Permissão de Edição Inclui a Permissão de Visualização Correspondente

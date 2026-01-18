@@ -30,6 +30,8 @@ Los Roles de Administrador vienen en tres tipos, cada uno con diferente ámbito 
 | **Permisos de Usuario** | Se aplican a usuarios dentro de los grupos de usuarios seleccionados |
 | **Permisos de Dispositivo** | Se aplican a dispositivos de: <ul><li>Grupos de dispositivos seleccionados</li><li>Dispositivos asignados a usuarios dentro de los grupos de usuarios seleccionados</li><li>Dispositivos no asignados (si está habilitado)</li></ul> |
 
+Puede seleccionar solo Permisos de Usuario o solo Permisos de Dispositivo en un rol de Ámbito de Grupo para hacer más claros los permisos y el ámbito. Por ejemplo, seleccionar solo Permisos de Usuario permite gestionar usuarios sin acceso a dispositivos, mientras que seleccionar solo Permisos de Dispositivo permite gestionar dispositivos seleccionando grupos de usuarios, grupos de dispositivos o dispositivos no asignados como ámbito.
+
 ## Reglas de Permisos
 
 ### Cualquier Permiso de Edición Incluye el Permiso de Visualización Correspondiente

@@ -30,6 +30,8 @@ Role Administratora występują w trzech typach, każdy z innym zakresem i dost�
 | **Uprawnienia Użytkownika** | Stosowane do użytkowników w wybranych grupach użytkowników |
 | **Uprawnienia Urządzenia** | Stosowane do urządzeń z: <ul><li>Wybranych grup urządzeń</li><li>Urządzeń przypisanych do użytkowników w wybranych grupach</li><li>Nieprzypisanych urządzeń (jeśli włączone)</li></ul> |
 
+Możesz wybrać tylko Uprawnienia Użytkownika lub tylko Uprawnienia Urządzenia w roli Zakresu Grupy, aby uprawnienia i zakres były bardziej przejrzyste. Na przykład wybranie tylko Uprawnień Użytkownika pozwala zarządzać użytkownikami bez dostępu do urządzeń, natomiast wybranie tylko Uprawnień Urządzenia pozwala zarządzać urządzeniami poprzez wybór grup użytkowników, grup urządzeń lub nieprzypisanych urządzeń jako zakresu.
+
 ## Reguły Uprawnień
 
 ### Każde Uprawnienie Edycji Zawiera Odpowiednie Uprawnienie Podglądu

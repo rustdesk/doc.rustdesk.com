@@ -30,6 +30,8 @@ Admin-Rollen gibt es in drei Typen, jeweils mit unterschiedlichem Geltungsbereic
 | **Benutzerberechtigungen** | Gelten für Benutzer innerhalb der ausgewählten Benutzergruppen |
 | **Geräteberechtigungen** | Gelten für Geräte aus: <ul><li>Ausgewählten Gerätegruppen</li><li>Geräten, die Benutzern innerhalb der ausgewählten Benutzergruppen zugewiesen sind</li><li>Nicht zugewiesenen Geräten (falls aktiviert)</li></ul> |
 
+Sie können in einer gruppenbezogenen Rolle nur Benutzerberechtigungen oder nur Geräteberechtigungen auswählen, um Berechtigungen und Geltungsbereich klarer zu gestalten. Beispielsweise ermöglicht die Auswahl nur von Benutzerberechtigungen die Verwaltung von Benutzern ohne Gerätezugriff, während die Auswahl nur von Geräteberechtigungen die Verwaltung von Geräten durch Auswahl von Benutzergruppen, Gerätegruppen oder nicht zugewiesenen Geräten als Geltungsbereich ermöglicht.
+
 ## Berechtigungsregeln
 
 ### Jede Bearbeitungsberechtigung beinhaltet die entsprechende Anzeigeberechtigung
