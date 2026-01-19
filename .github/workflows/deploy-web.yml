@@ -33,5 +33,6 @@ jobs:
 
       - name: Build
         run: |
+          cd v3
           npm install
           npm run build
