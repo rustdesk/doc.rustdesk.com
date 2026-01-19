@@ -257,6 +257,6 @@ export const footerData = (locale?: Lang) => {
       { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
       { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/rustdesk/rustdesk' },
     ],
-    footNote: '© 2025 Purslane Limited',
+    footNote: '© 2026 Purslane Limited',
   };
 }
