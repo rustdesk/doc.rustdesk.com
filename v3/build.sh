@@ -14,7 +14,4 @@
  ln -s ../v2/web
  cp -rf ../zh ./
  tar czf x *
- scp x ot:/tmp/
- ssh ot "sudo tar xzf /tmp/x -C /var/www/html/v3 && /bin/rm /tmp/x && sudo chown www-data:www-data /var/www/html/v3 -R"
- /bin/rm x
- cd -
+ mv x ..
