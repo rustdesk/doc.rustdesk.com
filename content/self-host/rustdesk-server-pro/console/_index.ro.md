@@ -201,47 +201,47 @@ Linia de comandă pe Windows nu afișează output implicit. Pentru a obține out
 
 ---
 
-#### Management grupuri utilizatori (`user_group.py`)
+#### Management grupuri utilizatori (`user-groups.py`)
 
 **Afișează help:**  
-`./user_group.py -h`
+`./user-groups.py -h`
 
 **Vezi grupuri utilizatori:**  
-`./user_group.py --url <url> --token <token> view [--name <group_name>]`
+`./user-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **Exemplu:**  
-`./user_group.py --url https://example.com --token <token> view --name "Echipa Vânzări"`
+`./user-groups.py --url https://example.com --token <token> view --name "Echipa Vânzări"`
 
 **Operații pe grupuri:**
 
 - **Creează grup utilizatori:**  
-  `./user_group.py --url <url> --token <token> add --name "NumeGrup" [--note "descriere"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> add --name "NumeGrup" [--note "descriere"] [--accessed-from '<json>'] [--access-to '<json>']`
   
   Exemplu cu control acces:  
-  `./user_group.py --url <url> --token <token> add --name "Inginerie" --accessed-from '[{"type":0,"name":"Manageri"}]' --access-to '[{"type":1,"name":"Servere Dev"}]'`
+  `./user-groups.py --url <url> --token <token> add --name "Inginerie" --accessed-from '[{"type":0,"name":"Manageri"}]' --access-to '[{"type":1,"name":"Servere Dev"}]'`
 
 - **Actualizează grup utilizatori:**  
-  `./user_group.py --url <url> --token <token> update --name "NumeGrup" [--new-name "Nume Nou"] [--note "notă nouă"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> update --name "NumeGrup" [--new-name "Nume Nou"] [--note "notă nouă"] [--accessed-from '<json>'] [--access-to '<json>']`
 
 - **Șterge grup utilizatori:**  
-  `./user_group.py --url <url> --token <token> delete --name "NumeGrup"`
+  `./user-groups.py --url <url> --token <token> delete --name "NumeGrup"`
   
   Suportă nume separate prin virgulă: `--name "Grup1,Grup2,Grup3"`
 
 **Management utilizatori în grupuri:**
 
 - **Vezi utilizatori în grup:**  
-  `./user_group.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
+  `./user-groups.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
   
   Filtre:
   - `--name`: nume grup (potrivire exactă, opțional)
   - `--user-name`: username (căutare aproximativă, opțional)
   
   Exemplu:  
-  `./user_group.py --url <url> --token <token> view-users --name Default --user-name john`
+  `./user-groups.py --url <url> --token <token> view-users --name Default --user-name john`
 
 - **Adaugă utilizatori în grup:**  
-  `./user_group.py --url <url> --token <token> add-users --name "NumeGrup" --users "user1,user2,user3"`
+  `./user-groups.py --url <url> --token <token> add-users --name "NumeGrup" --users "user1,user2,user3"`
 
 **Parametri control acces:**
 
@@ -261,37 +261,37 @@ Linia de comandă pe Windows nu afișează output implicit. Pentru a obține out
 
 ---
 
-#### Management grupuri dispozitive (`device_group.py`)
+#### Management grupuri dispozitive (`device-groups.py`)
 
 **Afișează help:**  
-`./device_group.py -h`
+`./device-groups.py -h`
 
 **Vezi grupuri dispozitive:**  
-`./device_group.py --url <url> --token <token> view [--name <group_name>]`
+`./device-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **Exemplu:**  
-`./device_group.py --url https://example.com --token <token> view`
+`./device-groups.py --url https://example.com --token <token> view`
 
 **Operații pe grupuri:**
 
 - **Creează grup dispozitive:**  
-  `./device_group.py --url <url> --token <token> add --name "NumeGrup" [--note "descriere"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> add --name "NumeGrup" [--note "descriere"] [--accessed-from '<json>']`
   
   Exemplu:  
-  `./device_group.py --url <url> --token <token> add --name "Producție" --accessed-from '[{"type":0,"name":"Admins"}]'`
+  `./device-groups.py --url <url> --token <token> add --name "Producție" --accessed-from '[{"type":0,"name":"Admins"}]'`
 
 - **Actualizează grup dispozitive:**  
-  `./device_group.py --url <url> --token <token> update --name "NumeGrup" [--new-name "Nume Nou"] [--note "notă nouă"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> update --name "NumeGrup" [--new-name "Nume Nou"] [--note "notă nouă"] [--accessed-from '<json>']`
 
 - **Șterge grup dispozitive:**  
-  `./device_group.py --url <url> --token <token> delete --name "NumeGrup"`
+  `./device-groups.py --url <url> --token <token> delete --name "NumeGrup"`
   
   Suportă nume separate prin virgulă: `--name "Grup1,Grup2,Grup3"`
 
 **Management dispozitive în grupuri:**
 
 - **Vezi dispozitive în grup:**  
-  `./device_group.py --url <url> --token <token> view-devices [filtre]`
+  `./device-groups.py --url <url> --token <token> view-devices [filtre]`
   
   Filtre disponibile:
   - `--name`: nume grup dispozitive (potrivire exactă)
@@ -303,25 +303,25 @@ Linia de comandă pe Windows nu afișează output implicit. Pentru a obține out
   Exemple:  
   ```bash
   # Vezi toate dispozitivele dintr-un grup
-  ./device_group.py --url <url> --token <token> view-devices --name Producție
+  ./device-groups.py --url <url> --token <token> view-devices --name Producție
   
   # Caută după nume dispozitiv
-  ./device_group.py --url <url> --token <token> view-devices --device-name server
+  ./device-groups.py --url <url> --token <token> view-devices --device-name server
   
   # Combină filtre
-  ./device_group.py --url <url> --token <token> view-devices --name Producție --user-name john
+  ./device-groups.py --url <url> --token <token> view-devices --name Producție --user-name john
   ```
 
 - **Vezi grupuri dispozitive accesibile:**  
-  `./device_group.py --url <url> --token <token> accessible`
+  `./device-groups.py --url <url> --token <token> accessible`
   
   Afișează toate grupurile de dispozitive accesibile utilizatorului curent.
 
 - **Adaugă dispozitive în grup:**  
-  `./device_group.py --url <url> --token <token> add-devices --name "NumeGrup" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> add-devices --name "NumeGrup" --ids "deviceid1,deviceid2"`
 
 - **Elimină dispozitive din grup:**  
-  `./device_group.py --url <url> --token <token> remove-devices --name "NumeGrup" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> remove-devices --name "NumeGrup" --ids "deviceid1,deviceid2"`
 
 **Parametru control acces:**
 
