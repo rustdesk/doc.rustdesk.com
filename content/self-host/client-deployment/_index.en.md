@@ -202,17 +202,45 @@ winget install --id=RustDesk.RustDesk  -e
 
 ```sh
 #!/bin/bash
+# Written by Jordan Eunson - 2026-01-24 - jordaneunson.com
+# v0.1 basic code added
+# v0.2 embedded script to write to /usr/local/bin for user facing configuration
+# v0.3 added login hook and server/headless option
+# v0.4 made the config and plist self destruct
+
+
+# Requires a user to be logged into the console, will try to adapt with a launchagent but YMMV
 
 # Assign the value random password to the password variable
 rustdesk_pw=$(openssl rand -hex 4)
 
-# Get your config string from your Web portal and Fill Below
-rustdesk_cfg="configstring"
+## Relay server configuration
+RELAY_SERVER="PUT YOUR RELAY SERVER HERE"
+RELAY_KEY="PUT YOUR RELAY KEY HERE="
+MSP="NAME OF YOUR COMPANY OR DEPARTMENT HERE, NO WHITE SPACE"
 
-################################## Please Do Not Edit Below This Line #########################################
+## Server/Headless mode - set to "y" to launch RustDesk in headless mode on login
+SERVER="n"
+
+
+######################################################################
+############# Please Do Not Edit Below This Line #####################
+######################################################################
 
 # Root password request for privilege escalation
 [ "$UID" -eq 0 ] || exec sudo bash "$0" "$@"
+
+# Helper functions
+console_user() {
+    /usr/sbin/scutil <<< 'show State:/Users/ConsoleUser' | awk '/Name :/ {print $3}'
+}
+
+run_as_user() {
+    local u
+    u="$(console_user || true)"
+    [[ -n "$u" && "$u" != "loginwindow" && "$u" != "_mbsetupuser" ]] || return 1
+    /bin/launchctl asuser "$(/usr/bin/id -u "$u")" /usr/bin/sudo -u "$u" "$@"
+}
 
 # Specify the mount point for the DMG (temporary directory)
 mount_point="/Volumes/RustDesk"
@@ -230,6 +258,24 @@ else
     curl -L "$rd_link" --output "$dmg_file"
 fi
 
+# Verify download link was found
+if [ -z "$rd_link" ]; then
+    echo "Failed to find RustDesk download link. Installation aborted."
+    exit 1
+fi
+
+# Download the DMG
+if ! curl -fL "$rd_link" --output "$dmg_file"; then
+    echo "Failed to download RustDesk. Installation aborted."
+    exit 1
+fi
+
+# Verify file was downloaded and is not empty
+if [ ! -s "$dmg_file" ]; then
+    echo "Downloaded file is empty or missing. Installation aborted."
+    exit 1
+fi
+
 # Mount the DMG file to the specified mount point
 hdiutil attach "$dmg_file" -mountpoint "$mount_point" &> /dev/null
 
@@ -245,34 +291,185 @@ else
     exit 1
 fi
 
-# Run the rustdesk command with --get-id and store the output in the rustdesk_id variable
-cd /Applications/RustDesk.app/Contents/MacOS/
-rustdesk_id=$(./RustDesk --get-id)
-
-# Apply new password to RustDesk
-./RustDesk --server &
-/Applications/RustDesk.app/Contents/MacOS/RustDesk --password $rustdesk_pw &> /dev/null
-
-/Applications/RustDesk.app/Contents/MacOS/RustDesk --config $rustdesk_cfg
-
-# Kill all processes named RustDesk
-rdpid=$(pgrep RustDesk)
-kill $rdpid &> /dev/null
+# Initialize the config directory
+CONSOLE_USER=`/usr/sbin/scutil <<< 'show State:/Users/ConsoleUser' | awk '/Name :/ {print $3}'`
+sudo -u $CONSOLE_USER /Applications/RustDesk.app/Contents/MacOS/RustDesk --server &
+sleep 3
+# Install the password
+/Applications/RustDesk.app/Contents/MacOS/RustDesk --password $rustdesk_pw
+# Get RustDesk ID 
+rustdesk_id=`/Applications/RustDesk.app/Contents/MacOS/RustDesk --get-id`
+# Kill RustDesk
+pkill -x RustDesk &>/dev/null || true
 
 echo "..............................................."
-# Check if the rustdesk_id is not empty
-if [ -n "$rustdesk_id" ]; then
-    echo "RustDesk ID: $rustdesk_id"
-else
-    echo "Failed to get RustDesk ID."
+echo "Install complete!"
+echo "RustDesk ID: $rustdesk_id"
+echo "RustDesk Password: $rustdesk_pw"
+echo "..............................................."
+
+# Configuration paths
+CONFIG_SCRIPT_DIR="/usr/local/bin"
+CONFIG_SCRIPT="$CONFIG_SCRIPT_DIR/configure_rustdesk.sh"
+LAUNCHAGENT_PLIST="/Library/LaunchAgents/com.${MSP}.rustdesk-config.plist"
+
+# Create directory for config script
+[[ ! -d "$CONFIG_SCRIPT_DIR" ]] && mkdir -p "$CONFIG_SCRIPT_DIR"
+
+# Write the configure script
+cat > "$CONFIG_SCRIPT" <<SCRIPT_EOF
+#!/bin/bash
+
+# RustDesk Client Configuration Script
+# Runs as the logged-in user to configure relay server
+
+LOG="/tmp/rustdesk-config.log"
+exec > >(tee -a "\$LOG") 2>&1
+
+echo "=== RustDesk Config Script Started: \$(date) ==="
+
+RELAY_SERVER="$RELAY_SERVER"
+RELAY_KEY="$RELAY_KEY"
+SERVER_MODE="$SERVER"
+CONSOLE_USER=\$(/usr/sbin/scutil <<< 'show State:/Users/ConsoleUser' | awk '/Name :/ {print \$3}')
+
+echo "Console user: \$CONSOLE_USER"
+
+if [[ -z "\$CONSOLE_USER" || "\$CONSOLE_USER" == "loginwindow" ]]; then
+    echo "ERROR: No valid user logged in"
+    exit 1
 fi
 
-# Echo the value of the password variable
-echo "Password: $rustdesk_pw"
+CONFIG_DIR="/Users/\$CONSOLE_USER/Library/Preferences/com.carriez.RustDesk"
+BINARY="/Applications/RustDesk.app/Contents/MacOS/RustDesk"
+
+echo "Config dir: \$CONFIG_DIR"
+echo "Binary: \$BINARY"
+
+# Verify binary exists
+if [[ ! -x "\$BINARY" ]]; then
+    echo "ERROR: RustDesk binary not found or not executable"
+    exit 1
+fi
+
+# Verify config directory exists
+if [[ ! -d "\$CONFIG_DIR" ]]; then
+    echo "ERROR: Config directory does not exist: \$CONFIG_DIR"
+    exit 1
+fi
+
+echo "=== Writing RustDesk Configuration ==="
+
+# Write config file
+if ! cat > "/tmp/RustDesk2.toml" <<TOML_EOF
+rendezvous_server = '\$RELAY_SERVER'
+nat_type = 1
+serial = 0
+unlock_pin = ''
+trusted_devices = ''
+
+[options]
+custom-rendezvous-server = '\$RELAY_SERVER'
+relay-server = '\$RELAY_SERVER'
+api-server = ''
+key = '\$RELAY_KEY'
+TOML_EOF
+then
+    echo "ERROR: Failed to write config file"
+    exit 1
+fi
+
+rm -f "\$CONFIG_DIR/RustDesk2.toml"
+cp /tmp/RustDesk2.toml "\$CONFIG_DIR/"
+
+echo "..............................................."
+echo "Configuration complete!"
+echo "Relay Server: \$RELAY_SERVER"
+echo "Relay Key: \$RELAY_KEY"
 echo "..............................................."
 
-echo "Please complete install on GUI, launching RustDesk now."
+# Cleanup - remove LaunchAgent and this script
+rm -f "$LAUNCHAGENT_PLIST"
+
+# Start RustDesk in server/headless mode if configured
+if [[ "\$SERVER_MODE" == "y" || "\$SERVER_MODE" == "Y" ]]; then
+    /Applications/RustDesk.app/Contents/MacOS/RustDesk --server &
+fi
+
+# Launch RustDesk
 open -n /Applications/RustDesk.app
+
+SCRIPT_EOF
+
+chmod +x "$CONFIG_SCRIPT"
+
+# Try to run as currently logged-in user
+if run_as_user /bin/bash "$CONFIG_SCRIPT"; then
+    echo "Configuration completed for logged-in user"
+	
+    # Create server mode LaunchAgent if enabled
+    if [[ "$SERVER" == "y" || "$SERVER" == "Y" ]]; then
+        echo "Creating RustDesk server mode LaunchAgent..."
+
+        SERVER_PLIST="/Library/LaunchAgents/com.copiousit.rustdesk-server.plist"
+
+        cat > "$SERVER_PLIST" <<SERVER_PLIST_EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.copiousit.rustdesk-server</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Applications/RustDesk.app/Contents/MacOS/RustDesk</string>
+        <string>--server</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+</dict>
+</plist>
+SERVER_PLIST_EOF
+
+        chmod 644 "$SERVER_PLIST"
+        echo "Server mode LaunchAgent created at $SERVER_PLIST"
+    fi
+	
+    rm -f "$dmg_file"
+    exit 0
+fi
+
+# No user logged in - create LaunchAgent for next login
+echo "No user logged in. Creating LaunchAgent for next login..."
+
+cat > "$LAUNCHAGENT_PLIST" <<PLIST_EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.${MSP}.rustdesk-config</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>$CONFIG_SCRIPT</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
+PLIST_EOF
+
+chmod 644 "$LAUNCHAGENT_PLIST"
+
+echo "..............................................."
+echo "Install Complete (configuration pending login)"
+echo "..............................................."
+
+# Cleanup downloaded DMG
+rm -f "$dmg_file"
 ```
 
 ## Linux
