@@ -417,7 +417,7 @@ Automatische Updates zulassen. Wenn aktiviert, lädt der Client automatisch die 
 
 | Installation erforderlich | Werte | Standard | Beispiel | Version |
 | :------: | :------: | :------: | :------: | :------: |
-| J | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+| Y | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
 
 ### enable-confirm-closing-tabs
 

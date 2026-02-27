@@ -417,7 +417,7 @@ Permitir actualizaciones automáticas. Cuando está habilitado, el cliente desca
 
 | Instalación requerida | Valores | Predeterminado | Ejemplo | Versión |
 | :------: | :------: | :------: | :------: | :------: |
-| S | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+| Y | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
 
 ### enable-confirm-closing-tabs
 

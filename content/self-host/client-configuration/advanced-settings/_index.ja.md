@@ -417,7 +417,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | インストール必要 | 値 | デフォルト | 例 | バージョン |
 | :------: | :------: | :------: | :------: | :------: |
-| はい | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+| Y | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
 
 ### enable-confirm-closing-tabs
 

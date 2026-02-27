@@ -417,7 +417,7 @@ Consenti aggiornamenti automatici. Quando abilitato, il client scaricherà e ins
 
 | Installazione richiesta | Valori | Predefinito | Esempio | Versione |
 | :------: | :------: | :------: | :------: | :------: |
-| S | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+| Y | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
 
 ### enable-confirm-closing-tabs
 

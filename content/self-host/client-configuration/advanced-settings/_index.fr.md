@@ -417,7 +417,7 @@ Autoriser les mises à jour automatiques. Lorsque cette option est activée, le 
 
 | Installation requise | Valeurs | Par défaut | Exemple | Version |
 | :------: | :------: | :------: | :------: | :------: |
-| O | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+| Y | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
 
 ### enable-confirm-closing-tabs
 

@@ -417,7 +417,7 @@ Permitir atualizações automáticas. Quando ativado, o cliente baixará e insta
 
 | Instalação necessária | Valores | Padrão | Exemplo | Versão |
 | :------: | :------: | :------: | :------: | :------: |
-| S | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+| Y | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
 
 ### enable-confirm-closing-tabs
 
