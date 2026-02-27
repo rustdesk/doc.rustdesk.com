@@ -407,6 +407,18 @@ Valores predeterminados:
 
 **Nota**: Reemplaza **app_name** con el nombre actual de la aplicación.
 
+### allow-auto-update
+
+Permitir actualizaciones automáticas. Cuando está habilitado, el cliente descargará e instalará automáticamente la última versión de las versiones oficiales de GitHub cuando haya una nueva versión disponible.
+
+**Ubicación**:
+
+1. **Windows** Configuración → General → Otro → Actualización automática
+
+| Instalación requerida | Valores | Predeterminado | Ejemplo | Versión |
+| :------: | :------: | :------: | :------: | :------: |
+| S | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+
 ### enable-confirm-closing-tabs
 
 Controla si mostrar un diálogo de confirmación antes de cerrar todas las pestañas remotas.

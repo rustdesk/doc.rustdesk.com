@@ -407,6 +407,18 @@ Valeurs par défaut :
 
 **Note** : Remplacez **app_name** par le nom actuel de l'application.
 
+### allow-auto-update
+
+Autoriser les mises à jour automatiques. Lorsque cette option est activée, le client téléchargera et installera automatiquement la dernière version à partir des versions officielles de GitHub lorsqu'une nouvelle version est disponible.
+
+**Emplacement** :
+
+1. **Windows** Paramètres → Général → Autre → Mise à jour automatique
+
+| Installation requise | Valeurs | Par défaut | Exemple | Version |
+| :------: | :------: | :------: | :------: | :------: |
+| O | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+
 ### enable-confirm-closing-tabs
 
 Contrôle s'il faut afficher une boîte de dialogue de confirmation avant de fermer tous les onglets distants.

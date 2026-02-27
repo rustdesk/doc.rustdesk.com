@@ -408,6 +408,18 @@ Default values:
 
 **Note**: Replace **app_name** means current app name.
 
+### allow-auto-update
+
+Allow automatic updates. When enabled, the client will automatically download and install the latest version from GitHub official releases when a new version is available.
+
+**Location**:
+
+1. **Windows** Settings → General → Other → Auto update
+
+| Install required | Values | Default | Example | Version |
+| :------: | :------: | :------: | :------: | :------: |
+| Y | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+
 ### enable-confirm-closing-tabs
 
 Controls whether to show a confirm dialog before closing all remote tabs.

@@ -408,6 +408,18 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 **注意**：替换**app_name**表示当前应用名称。
 
+### allow-auto-update
+
+允许自动更新。启用后，当有新版本发布时，客户端会自动从 GitHub 官方发布页面下载并安装最新版本。
+
+**位置**：
+
+1. **Windows** 设置 → 常规 → 其他 → 自动更新
+
+| 安装需要 | 值 | 默认值 | 示例 | 版本 |
+| :------: | :------: | :------: | :------: | :------: |
+| 是 | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+
 ### enable-confirm-closing-tabs
 
 控制是否在关闭所有远程标签之前显示确认对话框。

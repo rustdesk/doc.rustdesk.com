@@ -407,6 +407,18 @@ Standardwerte:
 
 **Hinweis**: Ersetzen Sie **app_name** durch den aktuellen App-Namen.
 
+### allow-auto-update
+
+Automatische Updates zulassen. Wenn aktiviert, lädt der Client automatisch die neueste Version von den offiziellen GitHub-Releases herunter und installiert sie, wenn eine neue Version verfügbar ist.
+
+**Ort**:
+
+1. **Windows** Einstellungen → Allgemein → Sonstiges → Automatische Updates
+
+| Installation erforderlich | Werte | Standard | Beispiel | Version |
+| :------: | :------: | :------: | :------: | :------: |
+| J | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+
 ### enable-confirm-closing-tabs
 
 Steuert, ob ein Bestätigungsdialog vor dem Schließen aller Remote-Tabs angezeigt wird.

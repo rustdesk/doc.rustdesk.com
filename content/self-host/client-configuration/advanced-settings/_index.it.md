@@ -407,6 +407,18 @@ Valori predefiniti:
 
 **Nota**: Sostituisci **app_name** con il nome dell'app corrente.
 
+### allow-auto-update
+
+Consenti aggiornamenti automatici. Quando abilitato, il client scaricherà e installerà automaticamente l'ultima versione dalle release ufficiali di GitHub quando è disponibile una nuova versione.
+
+**Posizione**:
+
+1. **Windows** Impostazioni → Generale → Altro → Aggiornamento automatico
+
+| Installazione richiesta | Valori | Predefinito | Esempio | Versione |
+| :------: | :------: | :------: | :------: | :------: |
+| S | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+
 ### enable-confirm-closing-tabs
 
 Controlla se mostrare un dialogo di conferma prima di chiudere tutte le schede remote.
