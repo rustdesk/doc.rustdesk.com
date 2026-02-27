@@ -408,6 +408,18 @@ Valori implicite:
 
 **Notă**: Înlocuiți **app_name** cu numele aplicației curente.
 
+### allow-auto-update
+
+Permite actualizări automate. Când este activat, clientul va descărca și instala automat cea mai recentă versiune din versiunile oficiale GitHub când este disponibilă o nouă versiune.
+
+**Locație**:
+
+1. **Windows** Settings → General → Other → Auto update
+
+| Instalare necesară | Valori | Implicit | Exemplu | Versiune |
+| :------: | :------: | :------: | :------: | :------: |
+| Y | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+
 ### enable-confirm-closing-tabs
 
 Controlează afișarea unui dialog de confirmare înainte de a închide toate tab-urile remote.

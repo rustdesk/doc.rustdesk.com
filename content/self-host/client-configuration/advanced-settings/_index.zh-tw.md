@@ -408,6 +408,18 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 **注意**：替換**app_name**表示目前應用程式名稱。
 
+### allow-auto-update
+
+允許自動更新。啟用後，當有新版本發布時，用戶端會自動從 GitHub 官方發布頁面下載並安裝最新版本。
+
+**位置**：
+
+1. **Windows** 設定 → 一般 → 其他 → 自動更新
+
+| 安裝需要 | 值 | 預設值 | 範例 | 版本 |
+| :------: | :------: | :------: | :------: | :------: |
+| 是 | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+
 ### enable-confirm-closing-tabs
 
 控制是否在關閉所有遠端標籤之前顯示確認對話框。

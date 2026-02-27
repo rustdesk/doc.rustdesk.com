@@ -407,6 +407,18 @@ Valores padrão:
 
 **Nota**: Substitua **app_name** pelo nome atual do aplicativo.
 
+### allow-auto-update
+
+Permitir atualizações automáticas. Quando ativado, o cliente baixará e instalará automaticamente a versão mais recente das versões oficiais do GitHub quando uma nova versão estiver disponível.
+
+**Localização**:
+
+1. **Windows** Configurações → Geral → Outro → Atualização automática
+
+| Instalação necessária | Valores | Padrão | Exemplo | Versão |
+| :------: | :------: | :------: | :------: | :------: |
+| Y | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+
 ### enable-confirm-closing-tabs
 
 Controla se deve mostrar um diálogo de confirmação antes de fechar todas as abas remotas.

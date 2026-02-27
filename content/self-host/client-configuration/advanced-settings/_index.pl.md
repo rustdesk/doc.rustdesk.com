@@ -408,6 +408,18 @@ Domyślne wartości:
 
 **Notka**: **app_name** oznacza aktualną nazwę aplikacji.
 
+### allow-auto-update
+
+Zezwalaj na automatyczne aktualizacje. Po włączeniu klient automatycznie pobierze i zainstaluje najnowszą wersję z oficjalnych wydań GitHub, gdy będzie dostępna nowa wersja.
+
+**Lokalizacja**:
+
+1. **Windows** Ustawienia → Ogólne → Inne → Automatyczna aktualizacja
+
+| Wymagana instalacja | Wartości | Domyślnie | Przykład | Wersja |
+| :------: | :------: | :------: | :------: | :------: |
+| Y | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+
 ### enable-confirm-closing-tabs
 
 Kontroluje, czy przed zamknięciem wszystkich zdalnych kart ma być wyświetlane okno dialogowe z potwierdzeniem.
