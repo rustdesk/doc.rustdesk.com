@@ -203,47 +203,47 @@ The command line on Windows does not have output by default. To get output, plea
 
 ---
 
-#### User Groups Management (`user_group.py`)
+#### User Groups Management (`user-groups.py`)
 
 **Show help:**  
-`./user_group.py -h`
+`./user-groups.py -h`
 
 **View user groups:**  
-`./user_group.py --url <url> --token <token> view [--name <group_name>]`
+`./user-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **Example:**  
-`./user_group.py --url https://example.com --token <token> view --name "Sales Team"`
+`./user-groups.py --url https://example.com --token <token> view --name "Sales Team"`
 
 **Group operations:**
 
 - **Create user group:**  
-  `./user_group.py --url <url> --token <token> add --name "GroupName" [--note "description"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> add --name "GroupName" [--note "description"] [--accessed-from '<json>'] [--access-to '<json>']`
   
   Example with access control:  
-  `./user_group.py --url <url> --token <token> add --name "Engineering" --accessed-from '[{"type":0,"name":"Managers"}]' --access-to '[{"type":1,"name":"DevServers"}]'`
+  `./user-groups.py --url <url> --token <token> add --name "Engineering" --accessed-from '[{"type":0,"name":"Managers"}]' --access-to '[{"type":1,"name":"DevServers"}]'`
 
 - **Update user group:**  
-  `./user_group.py --url <url> --token <token> update --name "GroupName" [--new-name "NewName"] [--note "new note"] [--accessed-from '<json>'] [--access-to '<json>']`
+  `./user-groups.py --url <url> --token <token> update --name "GroupName" [--new-name "NewName"] [--note "new note"] [--accessed-from '<json>'] [--access-to '<json>']`
 
 - **Delete user group:**  
-  `./user_group.py --url <url> --token <token> delete --name "GroupName"`
+  `./user-groups.py --url <url> --token <token> delete --name "GroupName"`
   
   Supports comma-separated names: `--name "Group1,Group2,Group3"`
 
 **User management in groups:**
 
 - **View users in group:**  
-  `./user_group.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
+  `./user-groups.py --url <url> --token <token> view-users [--name <group_name>] [--user-name <username>]`
   
   Filters:
   - `--name`: group name (exact match, optional)
   - `--user-name`: username (fuzzy search, optional)
   
   Example:  
-  `./user_group.py --url <url> --token <token> view-users --name Default --user-name john`
+  `./user-groups.py --url <url> --token <token> view-users --name Default --user-name john`
 
 - **Add users to group:**  
-  `./user_group.py --url <url> --token <token> add-users --name "GroupName" --users "user1,user2,user3"`
+  `./user-groups.py --url <url> --token <token> add-users --name "GroupName" --users "user1,user2,user3"`
 
 **Access control parameters:**
 
@@ -261,37 +261,37 @@ The command line on Windows does not have output by default. To get output, plea
 
 ---
 
-#### Device Groups Management (`device_group.py`)
+#### Device Groups Management (`device-groups.py`)
 
 **Show help:**  
-`./device_group.py -h`
+`./device-groups.py -h`
 
 **View device groups:**  
-`./device_group.py --url <url> --token <token> view [--name <group_name>]`
+`./device-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **Example:**  
-`./device_group.py --url https://example.com --token <token> view`
+`./device-groups.py --url https://example.com --token <token> view`
 
 **Group operations:**
 
 - **Create device group:**  
-  `./device_group.py --url <url> --token <token> add --name "GroupName" [--note "description"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> add --name "GroupName" [--note "description"] [--accessed-from '<json>']`
   
   Example:  
-  `./device_group.py --url <url> --token <token> add --name "Production" --accessed-from '[{"type":0,"name":"Admins"}]'`
+  `./device-groups.py --url <url> --token <token> add --name "Production" --accessed-from '[{"type":0,"name":"Admins"}]'`
 
 - **Update device group:**  
-  `./device_group.py --url <url> --token <token> update --name "GroupName" [--new-name "NewName"] [--note "new note"] [--accessed-from '<json>']`
+  `./device-groups.py --url <url> --token <token> update --name "GroupName" [--new-name "NewName"] [--note "new note"] [--accessed-from '<json>']`
 
 - **Delete device group:**  
-  `./device_group.py --url <url> --token <token> delete --name "GroupName"`
+  `./device-groups.py --url <url> --token <token> delete --name "GroupName"`
   
   Supports comma-separated names: `--name "Group1,Group2,Group3"`
 
 **Device management in groups:**
 
 - **View devices in group:**  
-  `./device_group.py --url <url> --token <token> view-devices [filters]`
+  `./device-groups.py --url <url> --token <token> view-devices [filters]`
   
   Available filters:
   - `--name`: device group name (exact match)
@@ -303,20 +303,20 @@ The command line on Windows does not have output by default. To get output, plea
   Examples:  
   ```bash
   # View all devices in a group
-  ./device_group.py --url <url> --token <token> view-devices --name Production
+  ./device-groups.py --url <url> --token <token> view-devices --name Production
   
   # Search by device name
-  ./device_group.py --url <url> --token <token> view-devices --device-name server
+  ./device-groups.py --url <url> --token <token> view-devices --device-name server
   
   # Combine filters
-  ./device_group.py --url <url> --token <token> view-devices --name Production --user-name john
+  ./device-groups.py --url <url> --token <token> view-devices --name Production --user-name john
   ```
 
 - **Add devices to group:**  
-  `./device_group.py --url <url> --token <token> add-devices --name "GroupName" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> add-devices --name "GroupName" --ids "deviceid1,deviceid2"`
 
 - **Remove devices from group:**  
-  `./device_group.py --url <url> --token <token> remove-devices --name "GroupName" --ids "deviceid1,deviceid2"`
+  `./device-groups.py --url <url> --token <token> remove-devices --name "GroupName" --ids "deviceid1,deviceid2"`
 
 **Access control parameter:**
 
