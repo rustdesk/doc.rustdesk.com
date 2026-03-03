@@ -8,8 +8,10 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'RustDesk Preise - Selbst gehostete Remote-Desktop-Server-Pläne',
-  description: 'Wählen Sie den richtigen RustDesk Self-Hosting-Plan für Ihr Unternehmen. Kostenloser Open-Source-Plan verfügbar. Pro-Pläne mit erweiterten Funktionen für Unternehmen.',
-  keywords: 'rustdesk preise, selbst gehostete fernzugriff preise, remote desktop server kosten, open source fernzugriff preise, unternehmen fernzugriff pläne',
+  description:
+    'Wählen Sie den richtigen RustDesk Self-Hosting-Plan für Ihr Unternehmen. Kostenloser Open-Source-Plan verfügbar. Pro-Pläne mit erweiterten Funktionen für Unternehmen.',
+  keywords:
+    'rustdesk preise, selbst gehostete fernzugriff preise, remote desktop server kosten, open source fernzugriff preise, unternehmen fernzugriff pläne',
   author: 'RustDesk Team',
 };
 ---
@@ -43,7 +45,9 @@ const metadata = {
               });
               window.open(url.toString(), '_blank');
             } catch (e) {
-              const qs = window.location.search ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1) : '';
+              const qs = window.location.search
+                ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
+                : '';
               window.open(redirectUrl + qs, '_blank');
             }
           }
@@ -89,16 +93,16 @@ const metadata = {
         period: 'jährlich abgerechnet',
         items: [
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">1 Anmeldebenutzer <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">1 Anmeldebenutzer <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
           },
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">20 verwaltete Geräte <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">20 verwaltete Geräte <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
           },
           {
-          description:
-            '<a class="underline text-red-500 font-bold" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#concurrent-connections">Unbegrenzte gleichzeitige Verbindungen</a>',
+            description:
+              '<a class="underline text-red-500 font-bold" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#concurrent-connections">Unbegrenzte gleichzeitige Verbindungen</a>',
           },
           {
             description:
@@ -147,12 +151,12 @@ const metadata = {
             icon: 'tabler:checks',
           },
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">10 login users</a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">10 login users</a>',
           },
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">100 verwaltete Geräte</a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">100 verwaltete Geräte</a>',
           },
           {
             description:
@@ -229,7 +233,8 @@ const metadata = {
             icon: 'tabler:checks',
           },
           {
-            description: 'Unbegrenzte gleichzeitige Sitzungen (in Tabs oder separaten Fenstern) pro gleichzeitiger Verbindung',
+            description:
+              'Unbegrenzte gleichzeitige Sitzungen (in Tabs oder separaten Fenstern) pro gleichzeitiger Verbindung',
           },
           {
             description: '1 $ für jeden zusätzlichen Benutzer',
@@ -358,15 +363,21 @@ const metadata = {
         description: 'Nein, wir haben das noch nicht. Wir empfehlen Ihnen, den kostenlosen Plan zu nutzen.',
       },
       {
-        title: "Was sind Ihre Geschäftsbedingungen?",
+        title: 'Was sind Ihre Geschäftsbedingungen?',
         description:
           'Bitte überprüfen Sie diese <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">Bedingungen</a>',
       },
       {
-        title: 'Wie sieht es mit gelegentlichen Support-Fällen aus? Wir haben einige Geräte, die gelegentlich unterstützt werden müssen, ohne unbeaufsichtigten Zugriff.',
+        title: 'Ist der web client in RustDesk Server Pro integriert?',
+        description:
+          'Ja, er ist integriert, aber er erfordert den Plan für $39.90/Monat oder höher. Bitte lesen Sie diesen <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro">FAQ-Eintrag</a> für Details. Zur Klarstellung bedeutet <b>web client</b>, RustDesk direkt in einem Browser-Tab zu verwenden, um Remote-Sitzungen zu starten, während <b>web console</b> die RustDesk Server Pro-Admin-Website zur Verwaltung von Benutzern, Geräten, Berechtigungen, Strategien und Lizenzen bedeutet.',
+      },
+      {
+        title:
+          'Wie sieht es mit gelegentlichen Support-Fällen aus? Wir haben einige Geräte, die gelegentlich unterstützt werden müssen, ohne unbeaufsichtigten Zugriff.',
         description:
           'Wir bieten diese <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">Lösung</a> an',
-      }
+      },
     ]}
   />
 </Layout>

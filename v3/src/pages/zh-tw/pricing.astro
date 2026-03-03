@@ -43,7 +43,9 @@ const metadata = {
               });
               window.open(url.toString(), '_blank');
             } catch (e) {
-              const qs = window.location.search ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1) : '';
+              const qs = window.location.search
+                ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
+                : '';
               window.open(redirectUrl + qs, '_blank');
             }
           }
@@ -324,8 +326,7 @@ const metadata = {
     items={[
       {
         title: '這些計劃是否包含客戶支持？',
-        description:
-          '當然，所有付費計劃都包括訪問我們專門的客戶支持，以協助您解決任何疑問或問題。',
+        description: '當然，所有付費計劃都包括訪問我們專門的客戶支持，以協助您解決任何疑問或問題。',
       },
       {
         title: '是否有試用許可證？',
@@ -343,8 +344,7 @@ const metadata = {
       },
       {
         title: '除了顯示的費用外，還有其他隱藏費用嗎？',
-        description:
-          '沒有，費用涵蓋了每個計劃下列出的所有功能。沒有隱藏費用或額外收費。',
+        description: '沒有，費用涵蓋了每個計劃下列出的所有功能。沒有隱藏費用或額外收費。',
       },
       {
         title: '您有月付選項嗎？',
@@ -361,8 +361,12 @@ const metadata = {
           '請查看這個<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">條款</a>',
       },
       {
-        title:
-          '對於臨時支持案例怎麼辦？我們有一些設備需要偶爾支持，但不需要無人值守訪問。',
+        title: 'web client 是否已整合到 RustDesk Server Pro？',
+        description:
+          '是的，已整合，但需要 $39.90/月 或更高方案。詳情請查看此<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro">FAQ 條目</a>。為避免混淆，<b>web client</b> 指在瀏覽器分頁中直接使用 RustDesk 發起遠端工作階段，<b>web console</b> 指 RustDesk Server Pro 的管理後台網站，用於管理使用者、裝置、權限、策略與授權。',
+      },
+      {
+        title: '對於臨時支持案例怎麼辦？我們有一些設備需要偶爾支持，但不需要無人值守訪問。',
         description:
           '我們提供這個<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">解決方案</a>',
       },

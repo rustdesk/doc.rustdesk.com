@@ -8,8 +8,10 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Tarification RustDesk - Plans de Serveur de Bureau à Distance Auto-hébergé',
-  description: 'Choisissez le bon plan d\'auto-hébergement RustDesk pour votre organisation. Plan open source gratuit disponible. Plans Pro avec fonctionnalités avancées pour usage d\'entreprise.',
-  keywords: 'tarification rustdesk, prix bureau à distance auto-hébergé, coût serveur bureau à distance, prix accès distant open source, plans bureau à distance entreprise',
+  description:
+    "Choisissez le bon plan d'auto-hébergement RustDesk pour votre organisation. Plan open source gratuit disponible. Plans Pro avec fonctionnalités avancées pour usage d'entreprise.",
+  keywords:
+    'tarification rustdesk, prix bureau à distance auto-hébergé, coût serveur bureau à distance, prix accès distant open source, plans bureau à distance entreprise',
   author: 'RustDesk Team',
 };
 ---
@@ -43,7 +45,9 @@ const metadata = {
               });
               window.open(url.toString(), '_blank');
             } catch (e) {
-              const qs = window.location.search ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1) : '';
+              const qs = window.location.search
+                ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
+                : '';
               window.open(redirectUrl + qs, '_blank');
             }
           }
@@ -89,16 +93,16 @@ const metadata = {
         period: 'facturé annuellement',
         items: [
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">1 utilisateur de connexion <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">1 utilisateur de connexion <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
           },
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">20 appareils gérés <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">20 appareils gérés <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
           },
           {
-          description:
-            '<a class="underline text-red-500 font-bold" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#concurrent-connections">Connexions simultanées illimitées</a>',
+            description:
+              '<a class="underline text-red-500 font-bold" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#concurrent-connections">Connexions simultanées illimitées</a>',
           },
           {
             description:
@@ -109,13 +113,13 @@ const metadata = {
               '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/">Console Web</a>',
           },
           {
-            description: 'Carnet d\'adresses',
+            description: "Carnet d'adresses",
           },
           {
-            description: 'Journal d\'audit',
+            description: "Journal d'audit",
           },
           {
-            description: 'Changer l\'ID',
+            description: "Changer l'ID",
           },
           {
             description:
@@ -147,12 +151,12 @@ const metadata = {
             icon: 'tabler:checks',
           },
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">10 utilisateur de connexion</a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">10 utilisateur de connexion</a>',
           },
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">100 appareils gérés</a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">100 appareils gérés</a>',
           },
           {
             description:
@@ -229,7 +233,8 @@ const metadata = {
             icon: 'tabler:checks',
           },
           {
-            description: 'Sessions simultanées illimitées (dans des onglets ou des fenêtres séparées) par connexion simultanée',
+            description:
+              'Sessions simultanées illimitées (dans des onglets ou des fenêtres séparées) par connexion simultanée',
           },
           {
             description: '1 $ pour chaque utilisateur supplémentaire',
@@ -294,11 +299,11 @@ const metadata = {
         icon: 'tabler:number-2',
       },
       {
-        title: 'Entrer l\'email et les détails de paiement',
+        title: "Entrer l'email et les détails de paiement",
         icon: 'tabler:number-3',
       },
       {
-        title: 'Obtenir la clé de licence via l\'email que vous avez entré',
+        title: "Obtenir la clé de licence via l'email que vous avez entré",
         icon: 'tabler:number-4',
       },
       {
@@ -326,10 +331,10 @@ const metadata = {
       {
         title: 'Les plans incluent-ils un support client ?',
         description:
-          'Absolument, tous les plans payants incluent l\'accès à notre support client dédié pour vous aider avec toutes vos questions ou préoccupations.',
+          "Absolument, tous les plans payants incluent l'accès à notre support client dédié pour vous aider avec toutes vos questions ou préoccupations.",
       },
       {
-        title: 'Y a-t-il une licence d\'essai ?',
+        title: "Y a-t-il une licence d'essai ?",
         description: 'Veuillez <a class="underline" href="mailto:sales@rustdesk.com">nous contacter</a>',
       },
       {
@@ -345,27 +350,33 @@ const metadata = {
       {
         title: 'Y a-t-il des frais cachés au-delà du coût affiché ?',
         description:
-          'Non, le coût couvre toutes les fonctionnalités et éléments listés sous chaque plan. Il n\'y a pas de frais cachés ou de charges supplémentaires.',
+          "Non, le coût couvre toutes les fonctionnalités et éléments listés sous chaque plan. Il n'y a pas de frais cachés ou de charges supplémentaires.",
       },
       {
         title: 'Proposez-vous un paiement mensuel ?',
         description:
-          'Non, nous proposons uniquement des plans de paiement annuels. Nous ne renouvelons pas automatiquement ; vous recevrez un e-mail pour vous rappeler de renouveler votre licence 14 jours avant la date d\'expiration.',
+          "Non, nous proposons uniquement des plans de paiement annuels. Nous ne renouvelons pas automatiquement ; vous recevrez un e-mail pour vous rappeler de renouveler votre licence 14 jours avant la date d'expiration.",
       },
       {
         title: 'Offrez-vous une réduction pour les organisations à but non lucratif ou éducatives ?',
-        description: 'Non, nous ne l\'avons pas encore. Vous êtes encouragé à utiliser le plan gratuit.',
+        description: "Non, nous ne l'avons pas encore. Vous êtes encouragé à utiliser le plan gratuit.",
       },
       {
-        title: "Quelles sont vos conditions ?",
+        title: 'Quelles sont vos conditions ?',
         description:
           'Veuillez consulter ces <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">conditions</a>',
       },
       {
-        title: 'Qu\'en est-il des cas de support occasionnel ? Nous avons des appareils qui doivent être supportés occasionnellement sans accès sans surveillance.',
+        title: 'Le web client est-il intégré à RustDesk Server Pro ?',
+        description:
+          'Oui, il est intégré, mais il nécessite le plan à $39.90/mois ou supérieur. Veuillez consulter cette <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro">entrée de FAQ</a> pour plus de détails. Pour clarifier, <b>web client</b> signifie utiliser RustDesk directement dans un onglet du navigateur pour démarrer des sessions à distance, tandis que <b>web console</b> signifie le site d\'administration de RustDesk Server Pro pour gérer les utilisateurs, les appareils, les autorisations, les stratégies et les licences.',
+      },
+      {
+        title:
+          "Qu'en est-il des cas de support occasionnel ? Nous avons des appareils qui doivent être supportés occasionnellement sans accès sans surveillance.",
         description:
           'Nous fournissons cette <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">solution</a>',
-      }
+      },
     ]}
   />
 </Layout>

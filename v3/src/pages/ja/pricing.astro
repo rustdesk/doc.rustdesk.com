@@ -8,8 +8,10 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'RustDesk 料金 - セルフホスティングリモートデスクトップサーバープラン',
-  description: '組織に適した RustDesk セルフホスティングプランを選択してください。無料のオープンソースプランを利用できます。企業用の高度な機能を持つ Pro プラン。',
-  keywords: 'rustdesk料金, セルフホスティングリモートデスクトップ料金, リモートデスクトップサーバーコスト, オープンソースリモートアクセス料金, 企業リモートデスクトッププラン',
+  description:
+    '組織に適した RustDesk セルフホスティングプランを選択してください。無料のオープンソースプランを利用できます。企業用の高度な機能を持つ Pro プラン。',
+  keywords:
+    'rustdesk料金, セルフホスティングリモートデスクトップ料金, リモートデスクトップサーバーコスト, オープンソースリモートアクセス料金, 企業リモートデスクトッププラン',
   author: 'RustDesk Team',
 };
 ---
@@ -43,7 +45,9 @@ const metadata = {
               });
               window.open(url.toString(), '_blank');
             } catch (e) {
-              const qs = window.location.search ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1) : '';
+              const qs = window.location.search
+                ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
+                : '';
               window.open(redirectUrl + qs, '_blank');
             }
           }
@@ -89,16 +93,16 @@ const metadata = {
         period: '年間請求',
         items: [
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">1ログインユーザー <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">1ログインユーザー <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
           },
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">20管理デバイス <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">20管理デバイス <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
           },
           {
-          description:
-            '<a class="underline text-red-500 font-bold" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#concurrent-connections">無制限の同時接続</a>',
+            description:
+              '<a class="underline text-red-500 font-bold" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#concurrent-connections">無制限の同時接続</a>',
           },
           {
             description:
@@ -147,12 +151,12 @@ const metadata = {
             icon: 'tabler:checks',
           },
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">10ログインユーザー</a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">10ログインユーザー</a>',
           },
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">100管理デバイス</a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">100管理デバイス</a>',
           },
           {
             description:
@@ -361,8 +365,12 @@ const metadata = {
           'この<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">利用規約</a>をご確認ください',
       },
       {
-        title:
-          '臨時のサポートケースについてはどうですか？無人アクセスなしで時々サポートが必要なデバイスがあります。',
+        title: 'web client は RustDesk Server Pro に統合されていますか？',
+        description:
+          'はい、統合されていますが、$39.90/月以上のプランが必要です。詳細はこの<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro">FAQエントリ</a>をご確認ください。わかりやすく言うと、<b>web client</b> はブラウザタブで RustDesk を直接使ってリモートセッションを開始する機能で、<b>web console</b> はユーザー、デバイス、権限、戦略、ライセンスを管理する RustDesk Server Pro の管理サイトです。',
+      },
+      {
+        title: '臨時のサポートケースについてはどうですか？無人アクセスなしで時々サポートが必要なデバイスがあります。',
         description:
           'この<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">解決策</a>を提供しています',
       },

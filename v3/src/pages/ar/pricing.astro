@@ -8,8 +8,10 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'تسعير رست ديسك - خطط الخادم المستضاف ذاتيًا',
-  description: 'اختر خطة رست ديسك المناسبة لمؤسستك. خطة مفتوحة المصدر مجانية متوفرة. خطط احترافية مع ميزات متقدمة للاستخدام التجاري.',
-  keywords: 'تسعير رست ديسك, تسعير سطح المكتب البعيد المستضاف ذاتيًا, تكلفة خادم الوصول عن بعد, خطط سطح المكتب البعيد المتقدمة',
+  description:
+    'اختر خطة رست ديسك المناسبة لمؤسستك. خطة مفتوحة المصدر مجانية متوفرة. خطط احترافية مع ميزات متقدمة للاستخدام التجاري.',
+  keywords:
+    'تسعير رست ديسك, تسعير سطح المكتب البعيد المستضاف ذاتيًا, تكلفة خادم الوصول عن بعد, خطط سطح المكتب البعيد المتقدمة',
   author: 'RustDesk Team',
 };
 ---
@@ -43,7 +45,9 @@ const metadata = {
               });
               window.open(url.toString(), '_blank');
             } catch (e) {
-              const qs = window.location.search ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1) : '';
+              const qs = window.location.search
+                ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
+                : '';
               window.open(redirectUrl + qs, '_blank');
             }
           }
@@ -89,16 +93,16 @@ const metadata = {
         period: 'تُدفع سنويًا',
         items: [
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users"><span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span>مستخدم تسجيل دخول واحد</a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users"><span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span>مستخدم تسجيل دخول واحد</a>',
           },
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices"><span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span>20 جهاز مُدار</a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices"><span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span>20 جهاز مُدار</a>',
           },
           {
-          description:
-            '<a class="underline text-red-500 font-bold" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#concurrent-connections">اتصالات متزامنة غير محدودة</a>',
+            description:
+              '<a class="underline text-red-500 font-bold" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#concurrent-connections">اتصالات متزامنة غير محدودة</a>',
           },
           {
             description:
@@ -146,14 +150,14 @@ const metadata = {
             description: '<span class="font-bold text-red-500">كل ما في الخطة الفردية</span>',
             icon: 'tabler:checks',
           },
-            {
+          {
             description:
               '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">10 مستخدمين لتسجيل الدخول</a>',
-            },
-            {
+          },
+          {
             description:
               '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">100 جهاز مُدار</a>',
-            },
+          },
           {
             description:
               '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/">OIDC (تسجيل دخول موحد)</a>',
@@ -343,8 +347,7 @@ const metadata = {
       },
       {
         title: 'هل هناك أي رسوم خفية بخلاف التكلفة المعروضة؟',
-        description:
-          'لا، التكلفة تغطي جميع الميزات والخدمات المدرجة تحت كل خطة. لا توجد رسوم خفية أو تكاليف إضافية.',
+        description: 'لا، التكلفة تغطي جميع الميزات والخدمات المدرجة تحت كل خطة. لا توجد رسوم خفية أو تكاليف إضافية.',
       },
       {
         title: 'هل لديكم دفع شهري؟',
@@ -361,8 +364,12 @@ const metadata = {
           'يرجى التحقق من هذه <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">الشروط</a>',
       },
       {
-        title:
-          'ماذا عن حالات الدعم العرضية؟ لدينا بعض الأجهزة التي تحتاج إلى دعم من حين لآخر دون الوصول غير المراقب.',
+        title: 'هل تم دمج web client في RustDesk Server Pro؟',
+        description:
+          'نعم، هو مدمج، لكنه يتطلب خطة بقيمة $39.90/شهريًا أو أعلى. يُرجى مراجعة <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro">إدخال الأسئلة الشائعة هذا</a> للتفاصيل. للتوضيح، يشير <b>web client</b> إلى استخدام RustDesk مباشرةً داخل تبويب المتصفح لبدء جلسات اتصال عن بُعد، بينما يشير <b>web console</b> إلى موقع إدارة RustDesk Server Pro لإدارة المستخدمين والأجهزة والأذونات والسياسات والتراخيص.',
+      },
+      {
+        title: 'ماذا عن حالات الدعم العرضية؟ لدينا بعض الأجهزة التي تحتاج إلى دعم من حين لآخر دون الوصول غير المراقب.',
         description:
           'نحن نقدم هذا <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">الحل</a>',
       },

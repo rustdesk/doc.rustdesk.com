@@ -8,8 +8,10 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Precios de RustDesk - Planes de Servidor de Escritorio Remoto Autoalojado',
-  description: 'Elija el plan de autoalojamiento de RustDesk adecuado para su organización. Plan de código abierto gratuito disponible. Planes Pro con características avanzadas para uso empresarial.',
-  keywords: 'precios rustdesk, precios escritorio remoto autoalojado, costo servidor remoto, precios acceso remoto código abierto, planes escritorio remoto empresarial',
+  description:
+    'Elija el plan de autoalojamiento de RustDesk adecuado para su organización. Plan de código abierto gratuito disponible. Planes Pro con características avanzadas para uso empresarial.',
+  keywords:
+    'precios rustdesk, precios escritorio remoto autoalojado, costo servidor remoto, precios acceso remoto código abierto, planes escritorio remoto empresarial',
   author: 'RustDesk Team',
 };
 ---
@@ -43,7 +45,9 @@ const metadata = {
               });
               window.open(url.toString(), '_blank');
             } catch (e) {
-              const qs = window.location.search ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1) : '';
+              const qs = window.location.search
+                ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
+                : '';
               window.open(redirectUrl + qs, '_blank');
             }
           }
@@ -89,16 +93,16 @@ const metadata = {
         period: 'facturado anualmente',
         items: [
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">1 usuario de inicio de sesión <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">1 usuario de inicio de sesión <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
           },
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">20 dispositivos gestionados <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">20 dispositivos gestionados <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
           },
           {
-          description:
-            '<a class="underline text-red-500 font-bold" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#concurrent-connections">Conexiones concurrentes ilimitadas</a>',
+            description:
+              '<a class="underline text-red-500 font-bold" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#concurrent-connections">Conexiones concurrentes ilimitadas</a>',
           },
           {
             description:
@@ -147,12 +151,12 @@ const metadata = {
             icon: 'tabler:checks',
           },
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">10 usuario de inicio de sesión</a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">10 usuario de inicio de sesión</a>',
           },
           {
-          description:
-            '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">100 dispositivos gestionados</a>',
+            description:
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#managed-devices">100 dispositivos gestionados</a>',
           },
           {
             description:
@@ -357,15 +361,21 @@ const metadata = {
         description: 'No, aún no lo tenemos. Se le anima a usar el plan gratuito.',
       },
       {
-        title: "¿Cuáles son sus términos?",
+        title: '¿Cuáles son sus términos?',
         description:
           'Por favor, revise estos <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">términos</a>',
       },
       {
-        title: '¿Qué hay de los casos de soporte ocasional? Tenemos algunos dispositivos que necesitan ser soportados ocasionalmente sin acceso desatendido.',
+        title: '¿Está integrado el web client en RustDesk Server Pro?',
+        description:
+          'Sí, está integrado, pero requiere el plan de $39.90/mes o superior. Consulte esta <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro">entrada de FAQ</a> para más detalles. Para mayor claridad, <b>web client</b> significa usar RustDesk directamente en una pestaña del navegador para iniciar sesiones remotas, mientras que <b>web console</b> significa el sitio de administración de RustDesk Server Pro para gestionar usuarios, dispositivos, permisos, estrategias y licencias.',
+      },
+      {
+        title:
+          '¿Qué hay de los casos de soporte ocasional? Tenemos algunos dispositivos que necesitan ser soportados ocasionalmente sin acceso desatendido.',
         description:
           'Proporcionamos esta <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">solución</a>',
-      }
+      },
     ]}
   />
 </Layout>
