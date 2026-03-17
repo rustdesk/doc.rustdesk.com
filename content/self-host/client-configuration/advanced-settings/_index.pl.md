@@ -1123,6 +1123,22 @@ Dotyczy to kontrolowanego Androida. Należy pamiętać, że utrzymanie ekranu w 
 | :------: | :------: | :------: |
 | never, during-controlled, service-on | during-controlled | `keep-screen-on=never` |
 
+### keep-awake-during-incoming-sessions
+
+Utrzymuje ekran aktywny podczas przychodzących sesji pulpitu zdalnego. Pomaga to zapobiec przechodzeniu urządzenia w stan uśpienia, gdy aplikacja jest aktywnie używana do połączeń zdalnych.
+
+| Wartości | Domyślnie | Przykład |
+| :------: | :------: | :------: |
+| Y, N | Y | `keep-awake-during-incoming-sessions=N` |
+
+### keep-awake-during-outgoing-sessions
+
+Utrzymuje ekran aktywny podczas wychodzących sesji pulpitu zdalnego. Pomaga to zapobiec przechodzeniu urządzenia w stan uśpienia, gdy aplikacja jest aktywnie używana do połączeń zdalnych.
+
+| Wartości | Domyślnie | Przykład |
+| :------: | :------: | :------: |
+| Y, N | Y | `keep-awake-during-outgoing-sessions=N` |
+
 ### enable-directx-capture
 
 Dotyczy to kontrolowanego Windowsa. Jeśli nie napotkasz żadnych problemów, zaleca się korzystanie z ustawień domyślnych, które priorytetowo traktują użycie DirectX do tworzenia zrzutów ekranu zamiast bezpośredniego użycia GDI.
@@ -1241,6 +1257,16 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/332
 | Wartości | Domyślnie | Przykład |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-tray=Y` |
+
+### hide-stop-service
+
+Ukrywa kontrolki zatrzymywania/przełączania usługi, gdy usługa jest uruchomiona. Jest to przeznaczone głównie dla niestandardowych klientów, aby uniemożliwić użytkownikom zatrzymanie usługi z interfejsu użytkownika (ustawienia pulpitu, menu zasobnika, strona serwera Androida i menu pływającego okna Androida).
+
+Gdy usługa jest zatrzymana, wpis uruchomienia/włączenia pozostaje widoczny.
+
+| Wartości | Domyślnie | Przykład |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-stop-service=Y` |
 
 ### one-way-clipboard-redirection
 

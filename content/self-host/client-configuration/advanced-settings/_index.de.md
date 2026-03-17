@@ -1111,6 +1111,22 @@ Dies ist für die Android-gesteuerte Seite. Beachten Sie, dass das Bildschirm-Ei
 | :------: | :------: | :------: |
 | never, during-controlled, service-on | during-controlled | `keep-screen-on=never` |
 
+### keep-awake-during-incoming-sessions
+
+Hält den Bildschirm während eingehender Remote-Desktop-Sitzungen wach. Dies hilft zu verhindern, dass das Gerät in den Ruhezustand wechselt, während die Anwendung aktiv für Remote-Verbindungen genutzt wird.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | Y | `keep-awake-during-incoming-sessions=N` |
+
+### keep-awake-during-outgoing-sessions
+
+Hält den Bildschirm während ausgehender Remote-Desktop-Sitzungen wach. Dies hilft zu verhindern, dass das Gerät in den Ruhezustand wechselt, während die Anwendung aktiv für Remote-Verbindungen genutzt wird.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | Y | `keep-awake-during-outgoing-sessions=N` |
+
 ### enable-directx-capture
 
 Dies ist für die Windows-gesteuerte Seite. Wenn Sie keine Probleme haben, wird empfohlen, die Standardeinstellungen zu verwenden, die DirectX für Screenshots priorisieren, anstatt GDI direkt zu verwenden.
@@ -1230,6 +1246,16 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/332
 | Werte | Standard | Beispiel |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-tray=Y` |
+
+### hide-stop-service
+
+Blendet die Steuerelemente zum Stoppen/Umschalten des Dienstes aus, solange der Dienst läuft. Dies ist hauptsächlich für angepasste Clients gedacht, um zu verhindern, dass Benutzer den Dienst über die UI stoppen (Desktop-Einstellungen, Tray-Menü, Android-Server-Seite und Android-Menü des schwebenden Fensters).
+
+Wenn der Dienst gestoppt ist, bleibt der Eintrag zum Starten/Aktivieren sichtbar.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-stop-service=Y` |
 
 ### one-way-clipboard-redirection
 

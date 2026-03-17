@@ -1111,6 +1111,22 @@ Ceci est pour le côté contrôlé Android. Notez que garder l'écran allumé d�
 | :------: | :------: | :------: |
 | never, during-controlled, service-on | during-controlled | `keep-screen-on=never` |
 
+### keep-awake-during-incoming-sessions
+
+Maintient l'écran allumé pendant les sessions entrantes de bureau à distance. Cela aide à empêcher l'appareil de se mettre en veille pendant que l'application est activement utilisée pour des connexions distantes.
+
+| Valeurs | Défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | Y | `keep-awake-during-incoming-sessions=N` |
+
+### keep-awake-during-outgoing-sessions
+
+Maintient l'écran allumé pendant les sessions sortantes de bureau à distance. Cela aide à empêcher l'appareil de se mettre en veille pendant que l'application est activement utilisée pour des connexions distantes.
+
+| Valeurs | Défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | Y | `keep-awake-during-outgoing-sessions=N` |
+
 ### enable-directx-capture
 
 Ceci est pour le côté contrôlé Windows. Si vous ne rencontrez aucun problème, il est recommandé d'utiliser les paramètres par défaut, qui priorisent l'utilisation de DirectX pour les captures d'écran au lieu d'utiliser GDI directement.
@@ -1230,6 +1246,16 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/332
 | Valeurs | Défaut | Exemple |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-tray=Y` |
+
+### hide-stop-service
+
+Masque les commandes d'arrêt/basculement du service lorsque le service est en cours d'exécution. Ceci est principalement destiné aux clients personnalisés afin d'empêcher les utilisateurs d'arrêter le service depuis l'interface (paramètres du bureau, menu de la zone de notification, page du serveur Android et menu de la fenêtre flottante Android).
+
+Lorsque le service est arrêté, l'entrée de démarrage/activation reste visible.
+
+| Valeurs | Défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-stop-service=Y` |
 
 ### one-way-clipboard-redirection
 

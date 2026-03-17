@@ -592,7 +592,7 @@ Filtrează agenda după intersecția tag-urilor.
 
 Folosiți redarea pe texturi pentru imagini mai line. Dacă întâmpinați probleme de redare, încercați dezactivarea acestei opțiuni. Disponibil doar pe desktop.
 
-| Values | Default | Example |
+| Valori | Implicit | Exemplu |
 | :------: | :------: | :------: |
 | Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
 
@@ -605,7 +605,7 @@ Folosiți redarea pe texturi pentru imagini mai line. Dacă întâmpinați probl
 
 Disponibil din RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 
-| Values | Default | Example |
+| Valori | Implicit | Exemplu |
 | :------: | :------: | :------: |
 | Y, N | Y | `enable-udp-punch=N` |
 
@@ -1123,6 +1123,22 @@ Aceasta este pentru partea controlată Android. Rețineți că menținerea ecran
 | :------: | :------: | :------: |
 | never, during-controlled, service-on | during-controlled | `keep-screen-on=never` |
 
+### keep-awake-during-incoming-sessions
+
+Menține ecranul activ în timpul sesiunilor de desktop la distanță de intrare. Acest lucru ajută la împiedicarea dispozitivului să intre în repaus în timp ce aplicația este utilizată activ pentru conexiuni la distanță.
+
+| Valori | Implicit | Exemplu |
+| :------: | :------: | :------: |
+| Y, N | Y | `keep-awake-during-incoming-sessions=N` |
+
+### keep-awake-during-outgoing-sessions
+
+Menține ecranul activ în timpul sesiunilor de desktop la distanță de ieșire. Acest lucru ajută la împiedicarea dispozitivului să intre în repaus în timp ce aplicația este utilizată activ pentru conexiuni la distanță.
+
+| Valori | Implicit | Exemplu |
+| :------: | :------: | :------: |
+| Y, N | Y | `keep-awake-during-outgoing-sessions=N` |
+
 ### enable-directx-capture
 
 Aceasta este pentru partea controlată Windows. Dacă nu întâmpinați probleme, se recomandă utilizarea setărilor implicite, care prioritizează utilizarea DirectX pentru capturi de ecran în loc de utilizarea directă a GDI.
@@ -1242,6 +1258,16 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/332
 | Valori | Implicit | Exemplu |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-tray=Y` |
+
+### hide-stop-service
+
+Ascunde controalele de oprire/comutare a serviciului cât timp serviciul rulează. Acest lucru este destinat în principal clienților personalizați, pentru a împiedica utilizatorii să oprească serviciul din interfață (setări desktop, meniu din zona de notificare, pagina serverului Android și meniul ferestrei flotante Android).
+
+Când serviciul este oprit, intrarea de pornire/activare rămâne vizibilă.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-stop-service=Y` |
 
 ### one-way-clipboard-redirection
 

@@ -1113,6 +1113,22 @@ Isto é para o lado controlado Android. Note que manter a tela ligada depende da
 | :------: | :------: | :------: |
 | never, during-controlled, service-on | during-controlled | `keep-screen-on=never` |
 
+### keep-awake-during-incoming-sessions
+
+Mantém a tela ativa durante as sessões de área de trabalho remota de entrada. Isso ajuda a impedir que o dispositivo entre em suspensão enquanto o aplicativo estiver sendo usado ativamente para conexões remotas.
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | Y | `keep-awake-during-incoming-sessions=N` |
+
+### keep-awake-during-outgoing-sessions
+
+Mantém a tela ativa durante as sessões de área de trabalho remota de saída. Isso ajuda a impedir que o dispositivo entre em suspensão enquanto o aplicativo estiver sendo usado ativamente para conexões remotas.
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | Y | `keep-awake-during-outgoing-sessions=N` |
+
 ### enable-directx-capture
 
 Isto é para o lado controlado Windows. Se você não encontrar problemas, é recomendado usar as configurações padrão, que priorizam usar DirectX para capturas de tela em vez de usar GDI diretamente.
@@ -1232,6 +1248,16 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/332
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-tray=Y` |
+
+### hide-stop-service
+
+Oculta os controles para parar/alternar o serviço enquanto ele estiver em execução. Isto destina-se principalmente a clientes personalizados para impedir que os usuários parem o serviço pela interface (configurações da área de trabalho, menu da bandeja, página do servidor Android e menu da janela flutuante do Android).
+
+Quando o serviço estiver parado, a opção de iniciar/habilitar continuará visível.
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-stop-service=Y` |
 
 ### one-way-clipboard-redirection
 
