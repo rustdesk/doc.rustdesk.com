@@ -1,6 +1,8 @@
 ---
 title: Instalacja na Windowsie (przestarzałe)
 weight: 5
+description: "Dokumentacja RustDesk dotycząca Instalacja na Windowsie (przestarzałe). Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["rustdesk server pro windows", "rustdesk pro windows install", "rustdesk self-host pro windows", "rustdesk windows install deprecated", "rustdesk pro license windows"]
 ---
 
 {{% notice note %}}

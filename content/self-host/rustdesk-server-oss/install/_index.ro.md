@@ -1,6 +1,8 @@
 ---
 title: Instalare
 weight: 1
+description: "Documentație RustDesk pentru Instalare. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk server install", "install rustdesk server oss", "rustdesk docker install", "rustdesk server firewall ports", "rustdesk hbbs hbbr install", "rustdesk self-host install"]
 ---
 
 ## Tutoriale video

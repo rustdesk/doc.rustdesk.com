@@ -1,6 +1,8 @@
 ---
 title: Instalación
 weight: 2
+description: "Documentación de RustDesk sobre Instalación. Consulta guías de instalación, configuración, despliegue y solución de problemas."
+keywords: ["rustdesk server pro install", "rustdesk self-host pro", "rustdesk pro docker", "rustdesk pro linux install", "rustdesk pro windows install"]
 ---
 
 ## Método 1: Docker (Recomendado)

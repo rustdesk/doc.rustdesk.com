@@ -1,6 +1,8 @@
 ---
 title: Windows Portable-Erhöhung
 weight: 49
+description: "RustDesk-Dokumentation zu Windows Portable-Erhöhung. Hier finden Sie Anleitungen zur Installation, Konfiguration, Bereitstellung und Fehlerbehebung."
+keywords: ["rustdesk portable elevation", "rustdesk uac", "rustdesk windows admin rights", "rustdesk task manager mouse issue", "rustdesk request elevation"]
 ---
 
 Portable Windows-Programme haben keine Administratorrechte, was zu den folgenden Problemen führen kann:

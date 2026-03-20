@@ -1,6 +1,8 @@
 ---
 title: リレーサーバーの設定
 weight: 17
+description: "RustDesk のリレーサーバーの設定に関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk relay server", "rustdesk hbbr", "rustdesk geolocation relay", "rustdesk additional relay", "rustdesk server pro relay"]
 ---
 
 ## RustDesk Pro - dockerを使用してジオロケーション付きの追加リレーサーバーをインストール

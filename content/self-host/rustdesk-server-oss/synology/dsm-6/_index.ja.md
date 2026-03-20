@@ -1,6 +1,8 @@
 ---
 title: Synology DSM 6
 weight: 22
+description: "RustDesk のSynology DSM 6に関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk synology dsm 6", "rustdesk synology docker", "rustdesk nas dsm 6", "rustdesk self-host synology"]
 ---
 
 > サードパーティによる代替の最新チュートリアルは[こちら](https://mariushosting.com/how-to-install-rustdesk-on-your-synology-nas/)にあります。

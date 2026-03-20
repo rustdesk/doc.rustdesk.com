@@ -1,6 +1,8 @@
 ---
 title: Synology
 weight: 22
+description: "RustDesk のSynologyに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk synology", "rustdesk nas", "rustdesk synology docker", "rustdesk dsm 7.2", "rustdesk synology container manager"]
 ---
 SynologyにはDockerの種類が2つあります。「Docker」と「Container Manager」です。DSM 7.2以降を使用している場合は、DSM 7.2のガイドに従ってください。古いシステムを使用している場合は、DSM 6のガイドに従ってください。
 

@@ -2,6 +2,8 @@
 title: クライアントデプロイメント
 weight: 400
 pre: "<b>2.4. </b>"
+description: "RustDesk のクライアントデプロイメントに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 最も簡単な方法はカスタムクライアントを使用することです、https://twitter.com/rustdesk/status/1788905463678951787。

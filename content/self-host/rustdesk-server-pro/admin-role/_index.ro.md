@@ -1,6 +1,8 @@
 ---
 title: Rol de Administrator
 weight: 17
+description: "Documentație RustDesk pentru Rol de Administrator. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
 Rolul de Administrator permite administratorilor să delege permisiuni parțiale de gestionare utilizatorilor non-administratori. Puteți defini permisiuni pentru resurse globale (precum strategii, roluri de control și clienți personalizați) precum și pentru utilizatori și dispozitive în diferite domenii.

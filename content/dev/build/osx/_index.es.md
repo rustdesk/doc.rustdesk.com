@@ -1,6 +1,8 @@
 ---
 title: macOS
 weight: 21
+description: "Documentación de RustDesk sobre macOS. Consulta guías de instalación, configuración, despliegue y solución de problemas."
+keywords: ["build rustdesk macos", "rustdesk mac build", "rustdesk sciter mac", "rustdesk flutter macos build", "rustdesk vcpkg macos"]
 ---
 
 Hay múltiples formas de hacer esto, esta guía asume que `Xcode`, `Git` y `Homebrew` ya están instalados.

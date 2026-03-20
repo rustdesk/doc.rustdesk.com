@@ -2,6 +2,8 @@
 title: Deployare client
 weight: 400
 pre: "<b>2.4. </b>"
+description: "Documentație RustDesk pentru Deployare client. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 Cea mai simplă metodă este să folosiți clientul personalizat, https://twitter.com/rustdesk/status/1788905463678951787.

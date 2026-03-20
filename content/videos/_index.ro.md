@@ -1,6 +1,8 @@
 ---
 title: Tutoriale video
 weight: 50
+description: "Documentație RustDesk pentru Tutoriale video. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk videos", "rustdesk tutorial", "rustdesk installation video", "rustdesk self-hosting video", "rustdesk security video"]
 ---
 
 ## OSS

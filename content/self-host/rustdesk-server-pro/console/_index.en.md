@@ -1,7 +1,11 @@
 ---
 title: Web Console
 weight: 10
+description: "Use the RustDesk Server Pro web console to manage devices, users, permissions, logs, and other administrative settings from port 21114."
+keywords: ["rustdesk web console", "rustdesk server pro console", "rustdesk port 21114", "rustdesk device management", "rustdesk admin console"]
 ---
+
+The RustDesk Server Pro web console is the main administrative interface for managing devices, users, permissions, and logs.
 
 The web console is integrated in the RustDesk server Pro, serviced by the `21114` port.
 

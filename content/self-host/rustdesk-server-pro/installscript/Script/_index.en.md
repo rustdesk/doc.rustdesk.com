@@ -1,7 +1,11 @@
 ---
 title: install.sh
 weight: 4
+description: "Install RustDesk Server Pro on Linux with the install.sh script after obtaining a license. Use this method for a simple scripted setup of the Pro server components."
+keywords: ["rustdesk server pro install.sh", "rustdesk pro linux install", "rustdesk pro script install", "rustdesk self-host pro linux", "rustdesk server pro setup"]
 ---
+
+Use the `install.sh` method when you want a simple Linux-based RustDesk Server Pro installation without writing your own service setup from scratch.
 
 {{% notice note %}}
 Don't forget to get your license from [https://rustdesk.com/pricing/](https://rustdesk.com/pricing/), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.

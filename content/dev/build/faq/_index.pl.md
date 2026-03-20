@@ -1,6 +1,8 @@
 ---
 title: Często zadawane pytania (Windows)
 weight: 40
+description: "Dokumentacja RustDesk dotycząca Często zadawane pytania (Windows). Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["rustdesk build faq windows", "rustdesk vcpkg error", "rustdesk cargo lock error", "rustdesk libclang path", "rustdesk windows build troubleshooting"]
 ---
 
 ## Błąd przy pobieraniu pakietu vcpkg

@@ -1,6 +1,8 @@
 ---
 title: アクセス制御
 weight: 16
+description: "RustDesk のアクセス制御に関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk access control", "rustdesk device permissions", "rustdesk user group access", "rustdesk server pro permissions", "rustdesk device assignment"]
 ---
 
 ## デバイスアクセス権限

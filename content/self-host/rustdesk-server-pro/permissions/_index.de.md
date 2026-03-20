@@ -1,6 +1,8 @@
 ---
 title: Zugriffskontrolle
 weight: 16
+description: "RustDesk-Dokumentation zu Zugriffskontrolle. Hier finden Sie Anleitungen zur Installation, Konfiguration, Bereitstellung und Fehlerbehebung."
+keywords: ["rustdesk access control", "rustdesk device permissions", "rustdesk user group access", "rustdesk server pro permissions", "rustdesk device assignment"]
 ---
 
 ## Zugriffsberechtigungen für Geräte

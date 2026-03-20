@@ -1,6 +1,8 @@
 ---
 title: Synology DSM 7.2
 weight: 20
+description: "Documentație RustDesk pentru Synology DSM 7.2. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk synology dsm 7.2", "rustdesk container manager", "rustdesk synology nas", "rustdesk synology docker", "rustdesk self-host synology"]
 ---
 <!-- Pentru traducători: Când traduceți elemente din interfață (de ex. "butone"), nu doar traduceți literal, consultați denumirile reale din interfața Synology. -->
 

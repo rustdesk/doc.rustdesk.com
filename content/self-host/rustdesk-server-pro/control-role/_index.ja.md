@@ -1,6 +1,8 @@
 ---
 title: コントロールロール
 weight: 18
+description: "RustDesk のコントロールロールに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
 
 コントロールロールを使用すると、異なるユーザーのリモートコントロール権限を設定できます。ユーザーが別のデバイスをリモートコントロールする場合、コントロールロールは接続が確立された後にコントロール側のユーザーが実行できる操作を定義します。

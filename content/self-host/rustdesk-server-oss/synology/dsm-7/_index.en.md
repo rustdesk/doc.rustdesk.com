@@ -1,8 +1,12 @@
 ---
 title: Synology DSM 7.2
 weight: 20
+description: "Install RustDesk Server OSS on Synology DSM 7.2 with Container Manager. Follow the updated Synology Docker workflow, supported model notes, and container setup steps."
+keywords: ["rustdesk synology dsm 7.2", "rustdesk container manager", "rustdesk synology nas", "rustdesk synology docker", "rustdesk self-host synology"]
 ---
 <!-- For translators: When translating elements like "buttons", don't just translate, please refer actual naming in their interface. -->
+Use this guide to install RustDesk Server OSS on Synology DSM 7.2 with Container Manager.
+
 After DSM 7.2 update, Synology renamed their "Docker" package to "Container Manager". It brings a new GUI, and comes with "docker-compose" within its GUI, which make you create Docker more easily.
 
 ## Supported models and requirements

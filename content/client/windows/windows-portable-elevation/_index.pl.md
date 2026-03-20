@@ -1,6 +1,8 @@
 ---
 title: Podnoszenie uprawnień w wersji portable
 weight: 49
+description: "Dokumentacja RustDesk dotycząca Podnoszenie uprawnień w wersji portable. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["rustdesk portable elevation", "rustdesk uac", "rustdesk windows admin rights", "rustdesk task manager mouse issue", "rustdesk request elevation"]
 ---
 
 Windows portable programs do not have administrator privileges, which can lead to the following issues:

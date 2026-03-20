@@ -1,6 +1,8 @@
 ---
 title: Windows
 weight: 20
+description: "RustDesk のWindowsに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["build rustdesk windows", "rustdesk windows build", "rustdesk vcpkg windows", "rustdesk sciter dll", "rustdesk llvm libclang"]
 ---
 
 {{% notice note %}}

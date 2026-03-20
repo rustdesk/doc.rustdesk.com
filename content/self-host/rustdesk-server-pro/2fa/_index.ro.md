@@ -1,6 +1,8 @@
 ---
 title: 2FA
 weight: 16
+description: "Documentație RustDesk pentru 2FA. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk 2fa", "rustdesk totp", "rustdesk email verification", "rustdesk authenticator", "rustdesk server pro 2fa"]
 ---
 
 La autentificarea în contul tău, activarea verificării cu două factori (2FA) poate îmbunătăți securitatea contului.

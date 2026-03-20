@@ -1,7 +1,11 @@
 ---
 title: macOS
 weight: 21
+description: "Build RustDesk on macOS with Homebrew, vcpkg, Rust, and either Sciter or Flutter. This guide covers the toolchain setup, dependencies, and packaging flow for desktop builds."
+keywords: ["build rustdesk macos", "rustdesk mac build", "rustdesk sciter mac", "rustdesk flutter macos build", "rustdesk vcpkg macos"]
 ---
+
+Use this guide to build RustDesk on macOS with `Xcode`, `Homebrew`, `vcpkg`, Rust, and either the Sciter or Flutter desktop stack.
 
 There are multiple ways to do this, this guide assumes that `Xcode`, `Git` and `Homebrew` are already installed.
 

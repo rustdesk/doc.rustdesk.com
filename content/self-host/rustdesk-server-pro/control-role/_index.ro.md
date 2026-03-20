@@ -1,6 +1,8 @@
 ---
 title: Rol de Control
 weight: 18
+description: "Documentație RustDesk pentru Rol de Control. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
 
 Rolul de Control vă permite să configurați permisiunile de control la distanță pentru diferiți utilizatori. Când un utilizator controlează de la distanță un alt dispozitiv, Rolul de Control definește ce operațiuni poate efectua utilizatorul care controlează după ce o conexiune este stabilită.

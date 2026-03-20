@@ -1,6 +1,8 @@
 ---
 title: Windows & PM2 o NSSM
 weight: 20
+description: "Documentazione RustDesk su Windows & PM2 o NSSM. Consulta le guide per installazione, configurazione, distribuzione e risoluzione dei problemi."
+keywords: ["rustdesk server windows", "rustdesk pm2", "rustdesk nssm", "rustdesk hbbs windows", "rustdesk hbbr windows", "rustdesk self-host windows"]
 ---
 
 {{% notice note %}}

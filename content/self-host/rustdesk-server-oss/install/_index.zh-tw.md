@@ -1,6 +1,8 @@
 ---
 title: 安裝
 weight: 1
+description: "RustDesk 的安裝文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["rustdesk server install", "install rustdesk server oss", "rustdesk docker install", "rustdesk server firewall ports", "rustdesk hbbs hbbr install", "rustdesk self-host install"]
 ---
 
 ## 影片教學

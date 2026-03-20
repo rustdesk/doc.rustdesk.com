@@ -1,6 +1,8 @@
 ---
 title: ウェブコンソール
 weight: 10
+description: "RustDesk のウェブコンソールに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk web console", "rustdesk server pro console", "rustdesk port 21114", "rustdesk device management", "rustdesk admin console"]
 ---
 
 ウェブコンソールはRustDesk Server Proに統合されており、`21114`ポートで提供されます。

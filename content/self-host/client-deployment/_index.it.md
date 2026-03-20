@@ -2,6 +2,8 @@
 title: Distribuzione Client
 weight: 400
 pre: "<b>2.4. </b>"
+description: "Documentazione RustDesk su Distribuzione Client. Consulta le guide per installazione, configurazione, distribuzione e risoluzione dei problemi."
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 Il modo più semplice è utilizzare un client personalizzato, https://twitter.com/rustdesk/status/1788905463678951787.

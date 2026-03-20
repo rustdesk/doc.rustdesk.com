@@ -1,6 +1,8 @@
 ---
 title: Licenza
 weight: 15
+description: "Documentazione RustDesk su Licenza. Consulta le guide per installazione, configurazione, distribuzione e risoluzione dei problemi."
+keywords: ["rustdesk pro license", "rustdesk server pro activate", "rustdesk pricing license", "rustdesk change license", "rustdesk web console license"]
 ---
 
 ## Acquistare licenza

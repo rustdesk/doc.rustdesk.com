@@ -1,6 +1,8 @@
 ---
 title: Docker
 weight: 3
+description: "RustDesk 的Docker文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk server pro docker", "rustdesk pro docker compose", "rustdesk pro host network", "rustdesk hbbs hbbr docker", "rustdesk self-host pro docker"]
 ---
 
 ## Docker Compose（推荐）

@@ -2,6 +2,8 @@
 title: RustDesk Server OSS
 weight: 100
 pre: "<b>2.1. </b>"
+description: "RustDesk 的RustDesk Server OSS文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["rustdesk server oss", "rustdesk open source server", "self-hosted rustdesk server", "rustdesk hbbs", "rustdesk hbbr", "rustdesk docker", "rustdesk server install", "rustdesk relay server", "rustdesk id server", "rustdesk community self-hosting"]
 ---
 
 如果您想要和我們聊聊關於自架您自己的[開源 RustDesk 伺服器](https://github.com/rustdesk/rustdesk-server)，請加入我們的 [Discord](https://discord.com/invite/nDceKgxnkV)。

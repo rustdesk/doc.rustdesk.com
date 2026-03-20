@@ -1,6 +1,8 @@
 ---
 title: OIDC
 weight: 16
+description: "RustDesk-Dokumentation zu OIDC. Hier finden Sie Anleitungen zur Installation, Konfiguration, Bereitstellung und Fehlerbehebung."
+keywords: ["rustdesk oidc", "rustdesk openid connect", "rustdesk sso", "rustdesk azure login", "rustdesk okta login", "rustdesk github login"]
 ---
 
 - Verwenden Sie Ihre bestehenden Konten bei `Google`, `Okta`, `Facebook`, `Azure`, `GitHub`, `GitLab` usw., um Ihr `RustDesk Pro`-Konto einfach zu erstellen und sich dort anzumelden.

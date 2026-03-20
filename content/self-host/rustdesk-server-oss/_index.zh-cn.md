@@ -2,6 +2,8 @@
 title: 自建服务器开源版
 weight: 100
 pre: "<b>2.1. </b>"
+description: "RustDesk 的自建服务器开源版文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk server oss", "rustdesk open source server", "self-hosted rustdesk server", "rustdesk hbbs", "rustdesk hbbr", "rustdesk docker", "rustdesk server install", "rustdesk relay server", "rustdesk id server", "rustdesk community self-hosting"]
 ---
 
 请加入我们的 [Discord](https://discord.com/invite/nDceKgxnkV) ，如果您想讨论如何自托管自己的 [开源 RustDesk Server](https://github.com/rustdesk/rustdesk-server)。

@@ -2,6 +2,8 @@
 title: Client RustDesk
 weight: 2
 pre: "<b>1. </b>"
+description: "Documentazione RustDesk su Client RustDesk. Consulta le guide per installazione, configurazione, distribuzione e risoluzione dei problemi."
+keywords: ["rustdesk client", "rustdesk download", "rustdesk installation", "rustdesk windows", "rustdesk mac", "rustdesk linux", "rustdesk android", "rustdesk ios", "rustdesk web client", "rustdesk client configuration"]
 ---
 
 ## Introduzione

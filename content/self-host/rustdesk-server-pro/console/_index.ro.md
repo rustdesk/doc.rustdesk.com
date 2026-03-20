@@ -1,6 +1,8 @@
 ---
 title: Consolă web
 weight: 10
+description: "Documentație RustDesk pentru Consolă web. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk web console", "rustdesk server pro console", "rustdesk port 21114", "rustdesk device management", "rustdesk admin console"]
 ---
 
 Consola web este integrată în RustDesk Server Pro și rulează pe portul `21114`.

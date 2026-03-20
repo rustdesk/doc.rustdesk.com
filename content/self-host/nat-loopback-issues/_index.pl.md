@@ -2,6 +2,8 @@
 title: Problemy z pętlą zwrotną NAT
 weight: 500
 pre: "<b>2.5. </b>"
+description: "Dokumentacja RustDesk dotycząca Problemy z pętlą zwrotną NAT. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["rustdesk nat loopback", "rustdesk hairpin nat", "rustdesk local dns", "rustdesk hosts file", "rustdesk self-hosted domain issue", "rustdesk lan public ip problem"]
 ---
 
 {{% notice note %}}

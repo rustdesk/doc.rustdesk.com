@@ -1,6 +1,8 @@
 ---
 title: Configurare servere Relay
 weight: 17
+description: "Documentație RustDesk pentru Configurare servere Relay. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk relay server", "rustdesk hbbr", "rustdesk geolocation relay", "rustdesk additional relay", "rustdesk server pro relay"]
 ---
 
 ## RustDesk Pro - Instalare servere relay adiționale cu Geo Location folosind Docker

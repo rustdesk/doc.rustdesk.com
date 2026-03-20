@@ -1,7 +1,11 @@
 ---
 title: Installation
 weight: 2
+description: "Install RustDesk Server Pro with Docker, Linux install scripts, or the legacy Windows method. Start here to choose the right deployment path for your environment."
+keywords: ["rustdesk server pro install", "rustdesk self-host pro", "rustdesk pro docker", "rustdesk pro linux install", "rustdesk pro windows install"]
 ---
+
+Start here to choose the best RustDesk Server Pro installation method for your environment, with Docker as the recommended option.
 
 ## Method 1: Docker (Recommended)
 

@@ -1,6 +1,8 @@
 ---
 title: Kontrollrolle
 weight: 18
+description: "RustDesk-Dokumentation zu Kontrollrolle. Hier finden Sie Anleitungen zur Installation, Konfiguration, Bereitstellung und Fehlerbehebung."
+keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
 
 Die Kontrollrolle ermöglicht es Ihnen, Fernsteuerungsberechtigungen für verschiedene Benutzer zu konfigurieren. Wenn ein Benutzer ein anderes Gerät fernsteuert, definiert die Kontrollrolle, welche Operationen der steuernde Benutzer nach dem Verbindungsaufbau ausführen darf.

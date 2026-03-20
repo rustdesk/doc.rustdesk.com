@@ -1,7 +1,11 @@
 ---
 title: License
 weight: 15
+description: "Buy, enter, and manage your RustDesk Server Pro license in the web console. Learn where to obtain the license and how to activate or change it after purchase."
+keywords: ["rustdesk pro license", "rustdesk server pro activate", "rustdesk pricing license", "rustdesk change license", "rustdesk web console license"]
 ---
+
+Use this page to understand how to buy, activate, and update a RustDesk Server Pro license.
 
 ## Buy license
 

@@ -2,6 +2,8 @@
 title: 客戶端部署
 weight: 400
 pre: "<b>2.4. </b>"
+description: "RustDesk 的客戶端部署文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 最簡單的方法是使用自訂客戶端，https://twitter.com/rustdesk/status/1788905463678951787。

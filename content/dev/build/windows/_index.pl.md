@@ -1,6 +1,8 @@
 ---
 title: Windows
 weight: 20
+description: "Dokumentacja RustDesk dotycząca Windows. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["build rustdesk windows", "rustdesk windows build", "rustdesk vcpkg windows", "rustdesk sciter dll", "rustdesk llvm libclang"]
 ---
 
 {{% notice note %}}

@@ -1,6 +1,8 @@
 ---
 title: Windows 安装 (deprecated)
 weight: 5
+description: "RustDesk 的Windows 安装 (deprecated)文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk server pro windows", "rustdesk pro windows install", "rustdesk self-host pro windows", "rustdesk windows install deprecated", "rustdesk pro license windows"]
 ---
 
 {{% notice note %}}

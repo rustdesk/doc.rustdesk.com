@@ -2,6 +2,8 @@
 title: Despliegue de Cliente
 weight: 400
 pre: "<b>2.4. </b>"
+description: "Documentación de RustDesk sobre Despliegue de Cliente. Consulta guías de instalación, configuración, despliegue y solución de problemas."
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 La forma más simple es usar un cliente personalizado, https://twitter.com/rustdesk/status/1788905463678951787.

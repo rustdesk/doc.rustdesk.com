@@ -1,6 +1,8 @@
 ---
 title: Windows & PM2 sau NSSM
 weight: 20
+description: "Documentație RustDesk pentru Windows & PM2 sau NSSM. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk server windows", "rustdesk pm2", "rustdesk nssm", "rustdesk hbbs windows", "rustdesk hbbr windows", "rustdesk self-host windows"]
 ---
 
 {{% notice note %}}

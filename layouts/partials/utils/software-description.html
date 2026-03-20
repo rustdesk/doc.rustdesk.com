@@ -1,0 +1,14 @@
+{{- $descriptions := dict
+  "en" "Open source remote desktop software and self-hosted remote access platform"
+  "de" "Open-Source-Remote-Desktop-Software und selbst gehostete Plattform für Fernzugriff"
+  "es" "Software de escritorio remoto de código abierto y plataforma de acceso remoto autoalojada"
+  "fr" "Logiciel de bureau à distance open source et plateforme d'accès à distance auto-hébergée"
+  "it" "Software desktop remoto open source e piattaforma di accesso remoto self-hosted"
+  "ja" "オープンソースのリモートデスクトップソフトウェアとセルフホスト型リモートアクセスプラットフォーム"
+  "pl" "Oprogramowanie pulpitu zdalnego open source oraz samodzielnie hostowana platforma zdalnego dostępu"
+  "pt" "Software de desktop remoto de código aberto e plataforma de acesso remoto auto-hospedada"
+  "ro" "Software open source pentru desktop la distanță și platformă self-hosted pentru acces remote"
+  "zh-cn" "开源远程桌面软件和自托管远程访问平台"
+  "zh-tw" "開源遠端桌面軟體與自主託管遠端存取平台"
+-}}
+{{- or (index $descriptions .Site.Language.Lang) (index $descriptions "en") -}}

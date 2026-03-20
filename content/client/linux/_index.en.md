@@ -1,7 +1,11 @@
 ---
 title: Linux
+description: "Install RustDesk on Linux distributions including Ubuntu, Fedora, CentOS, Arch, openSUSE, and NixOS. Review Wayland notes, AppImage and Flatpak options, and SELinux troubleshooting."
+keywords: ["rustdesk linux", "rustdesk ubuntu", "rustdesk fedora", "rustdesk arch", "rustdesk appimage", "rustdesk flatpak", "rustdesk wayland", "rustdesk selinux"]
 weight: 4
 ---
+
+Use this Linux guide to install RustDesk on major distributions, review Wayland and login-screen limitations, and troubleshoot common permission issues such as SELinux policy blocks.
 
 ## Installation
 

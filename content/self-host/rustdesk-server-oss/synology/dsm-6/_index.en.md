@@ -1,7 +1,11 @@
 ---
 title: Synology DSM 6
 weight: 22
+description: "Install RustDesk Server OSS on Synology DSM 6 with Docker. Follow the DSM 6 workflow for container setup, port mapping, and persistent data on older Synology systems."
+keywords: ["rustdesk synology dsm 6", "rustdesk synology docker", "rustdesk nas dsm 6", "rustdesk self-host synology"]
 ---
+
+Use this guide to install RustDesk Server OSS on Synology DSM 6 with Docker on older NAS systems.
 
 > An alternative up-to-date tutorial from third-party is [here](https://mariushosting.com/how-to-install-rustdesk-on-your-synology-nas/).
 

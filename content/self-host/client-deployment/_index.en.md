@@ -2,9 +2,11 @@
 title: Client Deployment
 weight: 400
 pre: "<b>2.4. </b>"
+description: "Deploy RustDesk clients at scale with PowerShell, batch, winget, or macOS bash scripts. Use these deployment examples to install RustDesk, apply config strings, and set passwords automatically."
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
-The simplest way is to use custom client, https://twitter.com/rustdesk/status/1788905463678951787.
+This guide covers large-scale RustDesk client deployment with scripts and automation tools such as PowerShell, batch, winget, and macOS bash. If you need the simplest experience and have RustDesk Server Pro, start with the custom client generator: https://twitter.com/rustdesk/status/1788905463678951787.
 
 You can deploy using a number of methods, some are covered in [Client Configuration](https://rustdesk.com/docs/en/self-host/client-configuration/).
 

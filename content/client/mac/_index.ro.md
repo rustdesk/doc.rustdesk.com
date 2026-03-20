@@ -1,6 +1,8 @@
 ---
 title: Mac
 weight: 3
+description: "Documentație RustDesk pentru Mac. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk mac", "rustdesk macos", "rustdesk mac install", "rustdesk screen recording permission", "rustdesk accessibility permission", "rustdesk mac remote control"]
 ---
 
 ## Instalare

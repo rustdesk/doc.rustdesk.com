@@ -1,6 +1,8 @@
 ---
 title: Synology
 weight: 22
+description: "Dokumentacja RustDesk dotycząca Synology. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["rustdesk synology", "rustdesk nas", "rustdesk synology docker", "rustdesk dsm 7.2", "rustdesk synology container manager"]
 ---
 
 Synology oferuje dwa rodzaje Dockerów: "Docker" i "Container Manager". Jeśli korzystasz z DSM 7.2 lub nowszej wersji, postępuj zgodnie z instrukcją dla DSM 7.2. Jeśli korzystasz ze starszej wersji systemu, postępuj zgodnie z instrukcją dla DSM 6.

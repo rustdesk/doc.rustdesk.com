@@ -1,6 +1,8 @@
 ---
 title: Configurar servidores de retransmissão
 weight: 17
+description: "Documentação do RustDesk sobre Configurar servidores de retransmissão. Consulte guias de instalação, configuração, implantação e solução de problemas."
+keywords: ["rustdesk relay server", "rustdesk hbbr", "rustdesk geolocation relay", "rustdesk additional relay", "rustdesk server pro relay"]
 ---
 
 ## RustDesk Pro - Instalar servidores de retransmissão adicionais com geolocalização usando docker

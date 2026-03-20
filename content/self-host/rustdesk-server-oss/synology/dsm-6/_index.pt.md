@@ -1,6 +1,8 @@
 ---
 title: Synology DSM 6
 weight: 22
+description: "Documentação do RustDesk sobre Synology DSM 6. Consulte guias de instalação, configuração, implantação e solução de problemas."
+keywords: ["rustdesk synology dsm 6", "rustdesk synology docker", "rustdesk nas dsm 6", "rustdesk self-host synology"]
 ---
 
 > Um tutorial alternativo atualizado de terceiros está [aqui](https://mariushosting.com/how-to-install-rustdesk-on-your-synology-nas/).

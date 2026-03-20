@@ -1,6 +1,8 @@
 ---
 title: Windows FAQ
 weight: 40
+description: "RustDesk のWindows FAQに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk build faq windows", "rustdesk vcpkg error", "rustdesk cargo lock error", "rustdesk libclang path", "rustdesk windows build troubleshooting"]
 ---
 
 ## vcpkg パッケージダウンロード失敗

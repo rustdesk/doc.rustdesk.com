@@ -1,6 +1,8 @@
 ---
 title: Windows
 weight: 20
+description: "Documentație RustDesk pentru Windows. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["build rustdesk windows", "rustdesk windows build", "rustdesk vcpkg windows", "rustdesk sciter dll", "rustdesk llvm libclang"]
 ---
 
 {{% notice note %}}

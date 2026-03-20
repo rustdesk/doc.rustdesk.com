@@ -2,6 +2,8 @@
 title: "RustDesk ドキュメント"
 type: docs
 weight: 1
+description: "RustDesk のRustDesk ドキュメントに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk", "remote desktop", "open source", "self-host", "documentation", "remote access", "VNC alternative", "teamviewer alternative"]
 ---
 
 RustDesk は、最小限の設定でセルフホスティングとセキュリティを提供する、フル機能のオープンソースリモートコントロール代替手段です。データを完全に制御でき、セキュリティに関する心配はありません。クライアントはオープンソースで、当社の[ウェブサイト](https://rustdesk.com)で購入可能なフル機能の**プロフェッショナルサーバー**と、当社の**プロフェッショナルサーバー**をベースにした基本的な無料OSSサーバーの選択肢があります。

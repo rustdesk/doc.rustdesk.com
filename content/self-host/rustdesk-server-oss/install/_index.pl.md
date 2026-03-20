@@ -1,6 +1,8 @@
 ---
 title: Instalacja
 weight: 1
+description: "Dokumentacja RustDesk dotycząca Instalacja. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["rustdesk server install", "install rustdesk server oss", "rustdesk docker install", "rustdesk server firewall ports", "rustdesk hbbs hbbr install", "rustdesk self-host install"]
 ---
 
 ## Poradniki wideo

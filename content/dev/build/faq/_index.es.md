@@ -1,6 +1,8 @@
 ---
 title: FAQ para Windows
 weight: 40
+description: "Documentación de RustDesk sobre FAQ para Windows. Consulta guías de instalación, configuración, despliegue y solución de problemas."
+keywords: ["rustdesk build faq windows", "rustdesk vcpkg error", "rustdesk cargo lock error", "rustdesk libclang path", "rustdesk windows build troubleshooting"]
 ---
 
 ## vcpkg el paquete de descarga falló

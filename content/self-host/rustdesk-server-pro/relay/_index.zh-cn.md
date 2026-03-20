@@ -1,6 +1,8 @@
 ---
 title: 配置中继服务器
 weight: 17
+description: "RustDesk 的配置中继服务器文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk relay server", "rustdesk hbbr", "rustdesk geolocation relay", "rustdesk additional relay", "rustdesk server pro relay"]
 ---
 
 ## RustDesk Pro - 使用docker安装具有地理位置的附加中继服务器

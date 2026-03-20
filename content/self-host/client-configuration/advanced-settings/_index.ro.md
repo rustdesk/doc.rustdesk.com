@@ -1,6 +1,8 @@
 ---
 title: Setări avansate
 weight: 49
+description: "Documentație RustDesk pentru Setări avansate. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
 
 Toate setările avansate pentru clienții personalizați sunt descrise aici.

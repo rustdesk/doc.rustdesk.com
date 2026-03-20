@@ -1,6 +1,8 @@
 ---
 title: Linux
 weight: 10
+description: "Documentație RustDesk pentru Linux. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["build rustdesk linux", "rustdesk linux build", "rustdesk vcpkg linux", "rustdesk cargo run linux", "rustdesk ubuntu build"]
 ---
 
 ## Cum se construiește pe Linux

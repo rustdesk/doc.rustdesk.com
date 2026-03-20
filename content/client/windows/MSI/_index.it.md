@@ -1,6 +1,8 @@
 ---
 title: MSI
 weight: 49
+description: "Documentazione RustDesk su MSI. Consulta le guide per installazione, configurazione, distribuzione e risoluzione dei problemi."
+keywords: ["rustdesk msi", "rustdesk silent install", "rustdesk msiexec", "rustdesk windows msi", "rustdesk installfolder", "rustdesk printer install"]
 ---
 
 Il pacchetto MSI supporta parametri della riga di comando per l'installazione silenziosa.

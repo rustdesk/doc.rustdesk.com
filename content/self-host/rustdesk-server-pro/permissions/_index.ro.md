@@ -1,6 +1,8 @@
 ---
 title: Controlul accesului
 weight: 16
+description: "Documentație RustDesk pentru Controlul accesului. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk access control", "rustdesk device permissions", "rustdesk user group access", "rustdesk server pro permissions", "rustdesk device assignment"]
 ---
 
 ## Permisiuni de acces ale dispozitivului

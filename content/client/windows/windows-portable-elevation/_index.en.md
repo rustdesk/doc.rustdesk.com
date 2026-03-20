@@ -1,7 +1,11 @@
 ---
 title: Windows Portable Elevation
 weight: 49
+description: "Elevate the RustDesk portable app on Windows so remote sessions can handle UAC prompts, Task Manager, and other administrator-level windows. Compare startup elevation, controlled-end elevation, and requested elevation."
+keywords: ["rustdesk portable elevation", "rustdesk uac", "rustdesk windows admin rights", "rustdesk task manager mouse issue", "rustdesk request elevation"]
 ---
+
+Use portable elevation on Windows when the RustDesk portable client needs administrator privileges to handle UAC prompts, elevated apps, and full input control.
 
 Windows portable programs do not have administrator privileges, which can lead to the following issues:
 

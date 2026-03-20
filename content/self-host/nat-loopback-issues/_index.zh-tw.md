@@ -2,6 +2,8 @@
 title: NAT Loopback 問題
 weight: 500
 pre: "<b>2.5. </b>"
+description: "RustDesk 的NAT Loopback 問題文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["rustdesk nat loopback", "rustdesk hairpin nat", "rustdesk local dns", "rustdesk hosts file", "rustdesk self-hosted domain issue", "rustdesk lan public ip problem"]
 ---
 
 {{% notice note %}}

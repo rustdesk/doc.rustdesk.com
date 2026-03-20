@@ -1,6 +1,8 @@
 ---
 title: ストラテジー
 weight: 200
+description: "RustDesk のストラテジーに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk strategy", "rustdesk policy management", "rustdesk bulk settings", "rustdesk device strategy", "rustdesk server pro strategy"]
 ---
 
 ストラテジーは、RustDesk管理者がクライアント設定ページのセキュリティオプションを一括更新するためのツールです。管理者は異なるストラテジーを作成し、異なるデバイスに適用できます。

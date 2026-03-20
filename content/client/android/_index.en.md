@@ -1,7 +1,11 @@
 ---
 title: Android
+description: "Use RustDesk on Android for remote control, file transfer, ID and relay server settings, and screen sharing. Learn which permissions are required and how to start the Android service."
+keywords: ["rustdesk android", "rustdesk android remote control", "rustdesk android file transfer", "rustdesk android screen share", "rustdesk android id relay server", "rustdesk android permissions"]
 weight: 4
 ---
+
+Use this Android guide to control remote devices, transfer files, configure your ID and relay server, and share the screen or file system of an Android phone.
 
 ## Remote Control
 

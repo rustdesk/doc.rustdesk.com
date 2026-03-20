@@ -1,7 +1,11 @@
 ---
 title: Access Control
 weight: 16
+description: "Configure device access control in RustDesk Server Pro by assigning devices to users or groups and defining who can reach which managed devices."
+keywords: ["rustdesk access control", "rustdesk device permissions", "rustdesk user group access", "rustdesk server pro permissions", "rustdesk device assignment"]
 ---
+
+Use Access Control to decide which users or groups can connect to which devices in RustDesk Server Pro.
 
 ## Device access permissions
 

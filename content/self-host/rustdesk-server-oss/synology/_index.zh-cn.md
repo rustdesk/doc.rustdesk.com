@@ -1,6 +1,8 @@
 ---
 title: 群晖
 weight: 22
+description: "RustDesk 的群晖文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk synology", "rustdesk nas", "rustdesk synology docker", "rustdesk dsm 7.2", "rustdesk synology container manager"]
 ---
 Synology 有两种 Docker， "Docker" 和 "Container Manager"， 如果您使用 DSM 7.2 和更新版本， 请参阅 DSM 7.2 的说明，或如果您使用较旧的系统，请参阅 DSM 6 的说明。
 

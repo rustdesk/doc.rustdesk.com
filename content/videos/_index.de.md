@@ -1,6 +1,8 @@
 ---
 title: Video-Tutorials
 weight: 50
+description: "RustDesk-Dokumentation zu Video-Tutorials. Hier finden Sie Anleitungen zur Installation, Konfiguration, Bereitstellung und Fehlerbehebung."
+keywords: ["rustdesk videos", "rustdesk tutorial", "rustdesk installation video", "rustdesk self-hosting video", "rustdesk security video"]
 ---
 
 ## OSS

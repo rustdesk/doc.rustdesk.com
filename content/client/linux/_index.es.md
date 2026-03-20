@@ -1,6 +1,8 @@
 ---
 title: Linux 
 weight: 4
+description: "Documentación de RustDesk sobre Linux. Consulta guías de instalación, configuración, despliegue y solución de problemas."
+keywords: ["rustdesk linux", "rustdesk ubuntu", "rustdesk fedora", "rustdesk arch", "rustdesk appimage", "rustdesk flatpak", "rustdesk wayland", "rustdesk selinux"]
 ---
 
 ## Instalación

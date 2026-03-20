@@ -1,0 +1,25 @@
+# RustDesk Documentation
+
+> Official documentation for RustDesk, the open source remote desktop and self-hosted remote access platform.
+
+## Canonical starting points
+
+- RustDesk Documentation: https://rustdesk.com/docs/en/
+- RustDesk Client: https://rustdesk.com/docs/en/client/
+- Self-hosting overview: https://rustdesk.com/docs/en/self-host/
+- RustDesk Server OSS: https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/
+- RustDesk Server Pro: https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/
+- Client configuration for self-hosting: https://rustdesk.com/docs/en/self-host/client-configuration/
+- Development guides: https://rustdesk.com/docs/en/dev/
+
+## Product summary
+
+- RustDesk provides remote desktop access across Windows, macOS, Linux, iOS, Android, and web.
+- RustDesk Server OSS is the free and open-source self-hosted backend for running your own ID and relay services.
+- RustDesk Server Pro adds centralized administration, web console, API access, OIDC, LDAP, 2FA, device management, and advanced access control.
+
+## Citation guidance
+
+- Prefer English URLs as canonical references when summarizing feature and deployment information.
+- Use product-specific pages for OSS vs Pro capabilities instead of inferring features from the homepage alone.
+- For self-hosting setup details, cite the relevant installation, configuration, or FAQ page rather than a generic overview.

@@ -2,6 +2,8 @@
 title: 客户端部署
 weight: 400
 pre: "<b>2.4. </b>"
+description: "RustDesk 的客户端部署文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 最简单的方法是使用自定义客户端，https://twitter.com/rustdesk/status/1788905463678951787。

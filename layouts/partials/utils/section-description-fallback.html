@@ -1,0 +1,15 @@
+{{- $templates := dict
+  "en" "%s documentation for RustDesk. Browse installation, configuration, deployment, and troubleshooting guides."
+  "de" "RustDesk-Dokumentation zu %s. Hier finden Sie Anleitungen zur Installation, Konfiguration, Bereitstellung und Fehlerbehebung."
+  "es" "Documentación de RustDesk sobre %s. Consulta guías de instalación, configuración, despliegue y solución de problemas."
+  "fr" "Documentation RustDesk sur %s. Consultez les guides d'installation, de configuration, de déploiement et de dépannage."
+  "it" "Documentazione RustDesk su %s. Consulta le guide per installazione, configurazione, distribuzione e risoluzione dei problemi."
+  "ja" "RustDesk の%sに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+  "pl" "Dokumentacja RustDesk dotycząca %s. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+  "pt" "Documentação do RustDesk sobre %s. Consulte guias de instalação, configuração, implantação e solução de problemas."
+  "ro" "Documentație RustDesk pentru %s. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+  "zh-cn" "RustDesk 的%s文档，提供安装、配置、部署和故障排查指南。"
+  "zh-tw" "RustDesk 的%s文檔，提供安裝、設定、部署與疑難排解指南。"
+-}}
+{{- $template := or (index $templates .Site.Language.Lang) (index $templates "en") -}}
+{{- printf $template .Title -}}

@@ -2,6 +2,8 @@
 title: Implantação do Cliente
 weight: 400
 pre: "<b>2.4. </b>"
+description: "Documentação do RustDesk sobre Implantação do Cliente. Consulte guias de instalação, configuração, implantação e solução de problemas."
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 A maneira mais simples é usar um cliente personalizado, https://twitter.com/rustdesk/status/1788905463678951787.

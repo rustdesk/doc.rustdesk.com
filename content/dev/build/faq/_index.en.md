@@ -1,7 +1,11 @@
 ---
 title: FAQ for Windows
 weight: 40
+description: "Troubleshoot common RustDesk build issues on Windows, including vcpkg download failures, missing Cargo.lock packages, VCPKG_ROOT configuration, and LIBCLANG_PATH setup."
+keywords: ["rustdesk build faq windows", "rustdesk vcpkg error", "rustdesk cargo lock error", "rustdesk libclang path", "rustdesk windows build troubleshooting"]
 ---
+
+Use this FAQ to fix common Windows build errors for RustDesk, especially around `vcpkg`, Rust dependencies, and `clang` configuration.
 
 ## vcpkg download package failed
 

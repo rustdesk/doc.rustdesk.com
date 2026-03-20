@@ -1,6 +1,8 @@
 ---
 title: install.sh
 weight: 4
+description: "Documentație RustDesk pentru install.sh. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk server pro install.sh", "rustdesk pro linux install", "rustdesk pro script install", "rustdesk self-host pro linux", "rustdesk server pro setup"]
 ---
 
 {{% notice note %}}

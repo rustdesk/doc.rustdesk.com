@@ -1,6 +1,8 @@
 ---
 title: Synology DSM 7.2
 weight: 20
+description: "Dokumentacja RustDesk dotycząca Synology DSM 7.2. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["rustdesk synology dsm 7.2", "rustdesk container manager", "rustdesk synology nas", "rustdesk synology docker", "rustdesk self-host synology"]
 ---
 <!-- Dla tłumaczy: Tłumacząc elementy takie jak "przyciski", nie tłumaczcie ich po prostu, ale odwołajcie się do rzeczywistych nazw w interfejsie. -->
 Po aktualizacji DSM 7.2 firma Synology zmieniła nazwę pakietu "Docker" na "Container Manager". Pakiet ten posiada nowy interfejs graficzny i zawiera narzędzie "docker-compose", które ułatwia tworzenie kontenerów Docker.

@@ -1,6 +1,8 @@
 ---
 title: 授权
 weight: 15
+description: "RustDesk 的授权文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk pro license", "rustdesk server pro activate", "rustdesk pricing license", "rustdesk change license", "rustdesk web console license"]
 ---
 
 ## 购买授权

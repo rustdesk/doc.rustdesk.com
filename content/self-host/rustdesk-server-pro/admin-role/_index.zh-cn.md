@@ -1,6 +1,8 @@
 ---
 title: 管理员角色
 weight: 17
+description: "RustDesk 的管理员角色文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
 管理员角色允许管理员将部分管理权限委派给非管理员用户。您可以为全局资源（如策略、控制角色和自定义客户端）以及不同范围内的用户和设备定义权限。

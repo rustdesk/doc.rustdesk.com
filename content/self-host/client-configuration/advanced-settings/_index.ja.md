@@ -1,6 +1,8 @@
 ---
 title: 高度な設定
 weight: 49
+description: "RustDesk の高度な設定に関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
 
 カスタムクライアントのすべての高度な設定をここで取り扱います。

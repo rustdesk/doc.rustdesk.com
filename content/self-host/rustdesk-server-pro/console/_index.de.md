@@ -1,6 +1,8 @@
 ---
 title: Webkonsole
 weight: 10
+description: "RustDesk-Dokumentation zu Webkonsole. Hier finden Sie Anleitungen zur Installation, Konfiguration, Bereitstellung und Fehlerbehebung."
+keywords: ["rustdesk web console", "rustdesk server pro console", "rustdesk port 21114", "rustdesk device management", "rustdesk admin console"]
 ---
 
 Funktionen:

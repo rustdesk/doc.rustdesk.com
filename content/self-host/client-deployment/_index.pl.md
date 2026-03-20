@@ -2,6 +2,8 @@
 title: Wdrażanie klientów
 weight: 400
 pre: "<b>2.4. </b>"
+description: "Dokumentacja RustDesk dotycząca Wdrażanie klientów. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 Najprostszym sposobem jest użycie niestandardowego klienta, https://twitter.com/rustdesk/status/1788905463678951787.

@@ -1,6 +1,8 @@
 ---
 title: Console Web
 weight: 10
+description: "Documentação do RustDesk sobre Console Web. Consulte guias de instalação, configuração, implantação e solução de problemas."
+keywords: ["rustdesk web console", "rustdesk server pro console", "rustdesk port 21114", "rustdesk device management", "rustdesk admin console"]
 ---
 
 O console web está integrado no RustDesk Server Pro, servido pela porta `21114`.

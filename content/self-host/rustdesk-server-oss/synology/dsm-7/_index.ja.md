@@ -1,6 +1,8 @@
 ---
 title: Synology DSM 7.2
 weight: 20
+description: "RustDesk のSynology DSM 7.2に関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk synology dsm 7.2", "rustdesk container manager", "rustdesk synology nas", "rustdesk synology docker", "rustdesk self-host synology"]
 ---
 <!-- For translators: When translating elements like "buttons", don't just translate, please refer actual naming in their interface. -->
 DSM 7.2 アップデート後、Synology は「Docker」パッケージを「Container Manager」に名前変更しました。新しい GUI を提供し、GUI 内に「docker-compose」が含まれており、Docker をより簡単に作成できます。

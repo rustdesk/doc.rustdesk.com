@@ -1,6 +1,8 @@
 ---
 title: Configurações Avançadas
 weight: 49
+description: "Documentação do RustDesk sobre Configurações Avançadas. Consulte guias de instalação, configuração, implantação e solução de problemas."
+keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
 
 Todas as configurações avançadas em clientes personalizados são abordadas aqui.

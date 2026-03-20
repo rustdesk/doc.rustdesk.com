@@ -1,7 +1,11 @@
 ---
 title: Control Role
 weight: 18
+description: "Configure Control Roles in RustDesk Server Pro to define what remote operators can do after a connection is established. Compare Control Roles with Access Control and Strategy."
+keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
+
+Use Control Roles to define what a user is allowed to do during a remote session in RustDesk Server Pro.
 
 Control Role allows you to configure remote control permissions for different users. When a user remotely controls another device, the Control Role defines what operations the controlling user is allowed to perform after a connection is established.
 

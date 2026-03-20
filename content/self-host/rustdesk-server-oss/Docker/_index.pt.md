@@ -1,6 +1,8 @@
 ---
 title: Docker
 weight: 7
+description: "Documentação do RustDesk sobre Docker. Consulte guias de instalação, configuração, implantação e solução de problemas."
+keywords: ["rustdesk docker", "rustdesk docker compose", "rustdesk server docker", "rustdesk hbbs hbbr docker", "rustdesk podman", "rustdesk self-host docker"]
 ---
 
 > Aqui está outro bom tutorial: [Building Your Own Remote Desktop Solution: RustDesk Self-Hosted on Cloud with Docker (Hetzner)](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f)

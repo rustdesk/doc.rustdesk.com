@@ -1,6 +1,8 @@
 ---
 title: install.sh
 weight: 4
+description: "Documentation RustDesk sur install.sh. Consultez les guides d'installation, de configuration, de déploiement et de dépannage."
+keywords: ["rustdesk server pro install.sh", "rustdesk pro linux install", "rustdesk pro script install", "rustdesk self-host pro linux", "rustdesk server pro setup"]
 ---
 
 {{% notice note %}}

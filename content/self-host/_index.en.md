@@ -6,9 +6,16 @@ weight: 5
 pre: "<b>2. </b>"
 ---
 
-If you are using RustDesk you should have your own RustDesk Server, these docs will help you on your RustDesk journey.
+Self-hosting RustDesk lets you control your own ID and relay infrastructure, keep deployment data on systems you manage, and optimize remote access for your network and compliance requirements.
 
 Support is available via our [Discord](https://discord.com/invite/nDceKgxnkV) for OSS and [email](mailto:support@rustdesk.com) for Pro.
+
+## Which RustDesk server should you choose?
+
+| Option | Best for | What you get |
+| --- | --- | --- |
+| [RustDesk Server OSS](/docs/en/self-host/rustdesk-server-oss/) | Individuals and teams that want a free, open-source self-hosted backend | `hbbs` and `hbbr`, community support, manual deployment and configuration |
+| [RustDesk Server Pro](/docs/en/self-host/rustdesk-server-pro/) | Businesses that need centralized administration and enterprise features | Web console, API, OIDC, LDAP, 2FA, device management, access control, and multi-relay management |
 
 ## How does self-hosted server work?
 

@@ -1,6 +1,8 @@
 ---
 title: Elevazione Windows Portable
 weight: 49
+description: "Documentazione RustDesk su Elevazione Windows Portable. Consulta le guide per installazione, configurazione, distribuzione e risoluzione dei problemi."
+keywords: ["rustdesk portable elevation", "rustdesk uac", "rustdesk windows admin rights", "rustdesk task manager mouse issue", "rustdesk request elevation"]
 ---
 
 I programmi portatili di Windows non hanno privilegi di amministratore, il che può portare ai seguenti problemi:

@@ -1,6 +1,8 @@
 ---
 title: Instalare Windows (învechit)
 weight: 5
+description: "Documentație RustDesk pentru Instalare Windows (învechit). Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk server pro windows", "rustdesk pro windows install", "rustdesk self-host pro windows", "rustdesk windows install deprecated", "rustdesk pro license windows"]
 ---
 
 {{% notice note %}}

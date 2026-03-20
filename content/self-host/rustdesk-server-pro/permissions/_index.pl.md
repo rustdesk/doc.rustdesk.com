@@ -1,6 +1,8 @@
 ---
 title: Kontrola dostępu
 weight: 16
+description: "Dokumentacja RustDesk dotycząca Kontrola dostępu. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["rustdesk access control", "rustdesk device permissions", "rustdesk user group access", "rustdesk server pro permissions", "rustdesk device assignment"]
 ---
 
 ## Uprawnienia dostępu do urządzeń

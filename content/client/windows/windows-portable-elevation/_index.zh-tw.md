@@ -1,6 +1,8 @@
 ---
 title: Windows 便攜式提權
 weight: 49
+description: "RustDesk 的Windows 便攜式提權文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["rustdesk portable elevation", "rustdesk uac", "rustdesk windows admin rights", "rustdesk task manager mouse issue", "rustdesk request elevation"]
 ---
 
 Windows 便攜式程式沒有管理員權限，這可能導致以下問題：

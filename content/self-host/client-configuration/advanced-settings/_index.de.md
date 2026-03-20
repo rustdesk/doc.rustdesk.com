@@ -1,6 +1,8 @@
 ---
 title: Erweiterte Einstellungen
 weight: 49
+description: "RustDesk-Dokumentation zu Erweiterte Einstellungen. Hier finden Sie Anleitungen zur Installation, Konfiguration, Bereitstellung und Fehlerbehebung."
+keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
 
 Alle erweiterten Einstellungen in benutzerdefinierten Clients werden hier behandelt.

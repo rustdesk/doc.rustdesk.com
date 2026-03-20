@@ -1,7 +1,8 @@
-
 ---
 title: Licență
 weight: 15
+description: "Documentație RustDesk pentru Licență. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk pro license", "rustdesk server pro activate", "rustdesk pricing license", "rustdesk change license", "rustdesk web console license"]
 ---
 
 ## Cumpărați o licență

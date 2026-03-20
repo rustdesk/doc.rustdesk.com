@@ -1,6 +1,8 @@
 ---
 title: Întrebări frecvente pentru Windows
 weight: 40
+description: "Documentație RustDesk pentru Întrebări frecvente pentru Windows. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk build faq windows", "rustdesk vcpkg error", "rustdesk cargo lock error", "rustdesk libclang path", "rustdesk windows build troubleshooting"]
 ---
 
 ## Descărcarea pachetului vcpkg a eșuat

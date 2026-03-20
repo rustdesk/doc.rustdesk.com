@@ -1,6 +1,8 @@
 ---
 title: 高级设置
 weight: 49
+description: "RustDesk 的高级设置文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
 
 所有自定义客户端中的高级设置都在这里涵盖。

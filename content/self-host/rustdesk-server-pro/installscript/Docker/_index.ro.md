@@ -1,6 +1,8 @@
 ---
 title: Docker
 weight: 3
+description: "Documentație RustDesk pentru Docker. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk server pro docker", "rustdesk pro docker compose", "rustdesk pro host network", "rustdesk hbbs hbbr docker", "rustdesk self-host pro docker"]
 ---
 
 ## Docker Compose (Recomandat)

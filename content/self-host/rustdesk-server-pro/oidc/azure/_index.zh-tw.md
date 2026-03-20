@@ -1,6 +1,8 @@
 ---
 title: Azure
 weight: 16
+description: "RustDesk 的Azure文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "rustdesk oidc azure", "rustdesk server pro azure"]
 ---
 
 ## 視頻教程

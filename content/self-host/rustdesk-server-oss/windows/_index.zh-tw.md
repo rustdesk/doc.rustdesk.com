@@ -1,6 +1,8 @@
 ---
 title: Windows & PM2 或 NSSM
 weight: 20
+description: "RustDesk 的Windows & PM2 或 NSSM文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["rustdesk server windows", "rustdesk pm2", "rustdesk nssm", "rustdesk hbbs windows", "rustdesk hbbr windows", "rustdesk self-host windows"]
 ---
 
 {{% notice note %}}

@@ -1,6 +1,8 @@
 ---
 title: Mac
 weight: 3
+description: "RustDesk 的Mac文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["rustdesk mac", "rustdesk macos", "rustdesk mac install", "rustdesk screen recording permission", "rustdesk accessibility permission", "rustdesk mac remote control"]
 ---
 
 ## 安裝

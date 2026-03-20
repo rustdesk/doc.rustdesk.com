@@ -1,11 +1,13 @@
 ---
 title: RustDesk Client
+description: "Install and configure the RustDesk Client on Windows, macOS, Linux, Android, iOS, and web. Learn how to connect devices, use public or self-hosted servers, and manage client settings."
+keywords: ["rustdesk client", "rustdesk download", "rustdesk installation", "rustdesk windows", "rustdesk mac", "rustdesk linux", "rustdesk android", "rustdesk ios", "rustdesk web client", "rustdesk client configuration"]
 weight: 2
 pre: "<b>1. </b>"
 ---
 
-## Introduction
-The RustDesk Client is used on devices to connect via our RustDesk Server either open source or Pro, it is available to download from [GitHub](https://github.com/rustdesk/rustdesk/releases/latest).
+## What is the RustDesk Client?
+The RustDesk Client is the application you install on devices to start or receive remote desktop sessions through RustDesk public servers or your own self-hosted RustDesk Server. Use this guide to download the correct build, install it on each platform, connect to another device, and point the client to RustDesk Server OSS or RustDesk Server Pro.
 
 ## Supported Platforms
 - Microsoft Windows
@@ -112,7 +114,7 @@ Under Settings you will find:
 - About - Shows information about the software.
 
 ## Configuring RustDesk
-There is number of ways to configure RustDesk.
+There are a number of ways to configure RustDesk.
 
 The easiest way is using RustDesk Server Pro you can obtain an encrypted config string, this can be used in conjunction with `--config` to import settings. To do this:
 1. Open command line on whichever OS you use, to the folder where RustDesk is installed i.e. `C:\Program Files\RustDesk` on Windows, `/usr/bin` on Linux.

@@ -2,6 +2,8 @@
 title: RustDesk クライアント
 weight: 2
 pre: "<b>1. </b>"
+description: "RustDesk のRustDesk クライアントに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk client", "rustdesk download", "rustdesk installation", "rustdesk windows", "rustdesk mac", "rustdesk linux", "rustdesk android", "rustdesk ios", "rustdesk web client", "rustdesk client configuration"]
 ---
 
 ## 紹介

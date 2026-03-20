@@ -1,6 +1,8 @@
 ---
 title: Android
 weight: 4
+description: "RustDesk 的Android文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["rustdesk android", "rustdesk android remote control", "rustdesk android file transfer", "rustdesk android screen share", "rustdesk android id relay server", "rustdesk android permissions"]
 ---
 
 ## 遠端控制

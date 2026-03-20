@@ -1,6 +1,8 @@
 ---
 title: Função de Controle
 weight: 18
+description: "Documentação do RustDesk sobre Função de Controle. Consulte guias de instalação, configuração, implantação e solução de problemas."
+keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
 
 A Função de Controle permite configurar permissões de controle remoto para diferentes usuários. Quando um usuário controla remotamente outro dispositivo, a Função de Controle define quais operações o usuário controlador pode executar após uma conexão ser estabelecida.

@@ -1,6 +1,8 @@
 ---
 title: Konsola webowa
 weight: 10
+description: "Dokumentacja RustDesk dotycząca Konsola webowa. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["rustdesk web console", "rustdesk server pro console", "rustdesk port 21114", "rustdesk device management", "rustdesk admin console"]
 ---
 
 Konsola webowa jest zintegrowana z serwerem RustDeska Pro i obsługiwana przez port `21114`.

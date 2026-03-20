@@ -1,7 +1,11 @@
 ---
 title: Admin Role
 weight: 17
+description: "Use Admin Roles in RustDesk Server Pro to delegate scoped management permissions across users, devices, strategies, control roles, and other console resources."
+keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
+
+Use Admin Roles when you need to delegate partial management access in RustDesk Server Pro without granting full administrator privileges.
 
 Admin Role allows administrators to delegate partial management permissions to non-administrator users. You can define permissions for global resources (such as strategies, control roles, and custom clients) as well as users and devices within different scopes.
 

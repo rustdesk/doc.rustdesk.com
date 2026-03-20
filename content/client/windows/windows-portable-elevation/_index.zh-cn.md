@@ -1,6 +1,8 @@
 ---
 title: Windows Portable 提权
 weight: 49
+description: "RustDesk 的Windows Portable 提权文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk portable elevation", "rustdesk uac", "rustdesk windows admin rights", "rustdesk task manager mouse issue", "rustdesk request elevation"]
 ---
 
 在Windows下，Portable程序没有管理员权限，这会导致以下问题：

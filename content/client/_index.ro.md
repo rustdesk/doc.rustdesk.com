@@ -2,6 +2,8 @@
 title: Client RustDesk
 weight: 2
 pre: "<b>1. </b>"
+description: "Documentație RustDesk pentru Client RustDesk. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk client", "rustdesk download", "rustdesk installation", "rustdesk windows", "rustdesk mac", "rustdesk linux", "rustdesk android", "rustdesk ios", "rustdesk web client", "rustdesk client configuration"]
 ---
 
 ## Introducere

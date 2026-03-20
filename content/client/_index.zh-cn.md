@@ -2,6 +2,8 @@
 title: RustDesk 客户端
 weight: 2
 pre: "<b>1. </b>"
+description: "RustDesk 的RustDesk 客户端文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk client", "rustdesk download", "rustdesk installation", "rustdesk windows", "rustdesk mac", "rustdesk linux", "rustdesk android", "rustdesk ios", "rustdesk web client", "rustdesk client configuration"]
 ---
 
 ## 介绍

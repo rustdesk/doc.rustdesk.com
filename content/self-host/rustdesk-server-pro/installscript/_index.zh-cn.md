@@ -1,6 +1,8 @@
 ---
 title:  安装
 weight: 2
+description: "RustDesk 的安装文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk server pro install", "rustdesk self-host pro", "rustdesk pro docker", "rustdesk pro linux install", "rustdesk pro windows install"]
 ---
 
 ## 方法1：Docker (推荐)

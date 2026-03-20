@@ -1,7 +1,11 @@
 ---
 title: 2FA
 weight: 16
+description: "Enable two-factor authentication in RustDesk Server Pro with email verification or TOTP apps such as Authy, Microsoft Authenticator, or Google Authenticator."
+keywords: ["rustdesk 2fa", "rustdesk totp", "rustdesk email verification", "rustdesk authenticator", "rustdesk server pro 2fa"]
 ---
+
+Use this guide to enable two-factor authentication in RustDesk Server Pro for stronger account security.
 
 When logging in to your account, turning on Two-Factor Authentication (2FA) verification can improve account security.
 

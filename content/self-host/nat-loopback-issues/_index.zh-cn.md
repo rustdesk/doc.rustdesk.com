@@ -2,6 +2,8 @@
 title: NAT 环回问题
 weight: 500
 pre: "<b>2.5. </b>"
+description: "RustDesk 的NAT 环回问题文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk nat loopback", "rustdesk hairpin nat", "rustdesk local dns", "rustdesk hosts file", "rustdesk self-hosted domain issue", "rustdesk lan public ip problem"]
 ---
 
 {{% notice note %}}

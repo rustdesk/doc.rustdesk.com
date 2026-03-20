@@ -1,7 +1,11 @@
 ---
 title: Linux
 weight: 10
+description: "Build RustDesk on Linux with the required system packages, vcpkg dependencies, and Rust toolchain. Follow the Ubuntu, Fedora, or Arch-based setup steps before running cargo."
+keywords: ["build rustdesk linux", "rustdesk linux build", "rustdesk vcpkg linux", "rustdesk cargo run linux", "rustdesk ubuntu build"]
 ---
+
+Use this guide to build RustDesk on Linux, install the required packages, prepare `vcpkg`, and compile the desktop app from source.
 
 ## How to build on Linux
 
@@ -61,5 +65,4 @@ mv libsciter-gtk.so target/debug
 # Note: VCPKG_ROOT still set
 cargo run
 ```
-
 

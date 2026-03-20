@@ -1,6 +1,8 @@
 ---
 title: Windows
 weight: 20
+description: "RustDesk 的Windows文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["build rustdesk windows", "rustdesk windows build", "rustdesk vcpkg windows", "rustdesk sciter dll", "rustdesk llvm libclang"]
 ---
 
 {{% notice note %}}

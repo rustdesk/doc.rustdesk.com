@@ -1,6 +1,8 @@
 ---
 title: LDAP
 weight: 17
+description: "RustDesk 的LDAP文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk ldap", "rustdesk server pro ldap", "rustdesk ldap authentication", "rustdesk base dn", "rustdesk ldaps"]
 ---
 
 ## 配置

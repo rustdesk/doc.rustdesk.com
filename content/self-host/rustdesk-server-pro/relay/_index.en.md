@@ -1,7 +1,11 @@
 ---
 title: Configure Relay Servers
 weight: 17
+description: "Add extra RustDesk relay servers to a Server Pro deployment and use geolocation to route connections through the closest available hbbr instance."
+keywords: ["rustdesk relay server", "rustdesk hbbr", "rustdesk geolocation relay", "rustdesk additional relay", "rustdesk server pro relay"]
 ---
+
+Use this guide to add extra relay servers to RustDesk Server Pro and improve regional performance with geolocation-aware routing.
 
 ## RustDesk Pro - Install Additional Relay Servers with Geo Location using docker
 

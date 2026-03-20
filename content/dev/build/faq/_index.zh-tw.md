@@ -1,6 +1,8 @@
 ---
 title: Windows 常見問題
 weight: 40
+description: "RustDesk 的Windows 常見問題文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["rustdesk build faq windows", "rustdesk vcpkg error", "rustdesk cargo lock error", "rustdesk libclang path", "rustdesk windows build troubleshooting"]
 ---
 
 ## vcpkg 下載包失敗

@@ -1,7 +1,11 @@
 ---
 title: Strategy
 weight: 200
+description: "Use Strategies in RustDesk Server Pro to apply client security and settings policies in bulk across devices, users, and device groups."
+keywords: ["rustdesk strategy", "rustdesk policy management", "rustdesk bulk settings", "rustdesk device strategy", "rustdesk server pro strategy"]
 ---
+
+Use Strategies to roll out client policy and security setting changes across many RustDesk devices at once.
 
 Strategy is a tool for RustDesk administrators to update the security options of client settings pages in bulk. Administrators can create different strategies and apply them to different devices.
 
@@ -66,4 +70,3 @@ Each device can only be managed by one strategy, and if that strategy is disable
 ## Edit Strategies
 
 At the bottom of the strategy, click `Edit`, make modifications and click `Submit`. The strategy will be synchronized to devices within 30 seconds.
-

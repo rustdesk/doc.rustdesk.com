@@ -1,6 +1,8 @@
 ---
 title: Windowsインストール (deprecated)
 weight: 5
+description: "RustDesk のWindowsインストール (deprecated)に関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk server pro windows", "rustdesk pro windows install", "rustdesk self-host pro windows", "rustdesk windows install deprecated", "rustdesk pro license windows"]
 ---
 
 {{% notice note %}}

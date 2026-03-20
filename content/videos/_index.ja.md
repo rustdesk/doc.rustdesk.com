@@ -1,6 +1,8 @@
 ---
 title: ビデオチュートリアル
 weight: 50
+description: "RustDesk のビデオチュートリアルに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk videos", "rustdesk tutorial", "rustdesk installation video", "rustdesk self-hosting video", "rustdesk security video"]
 ---
 
 ## OSS

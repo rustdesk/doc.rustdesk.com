@@ -2,6 +2,8 @@
 title: RustDesk Server OSS
 weight: 100
 pre: "<b>2.1. </b>"
+description: "Documentation RustDesk sur RustDesk Server OSS. Consultez les guides d'installation, de configuration, de déploiement et de dépannage."
+keywords: ["rustdesk server oss", "rustdesk open source server", "self-hosted rustdesk server", "rustdesk hbbs", "rustdesk hbbr", "rustdesk docker", "rustdesk server install", "rustdesk relay server", "rustdesk id server", "rustdesk community self-hosting"]
 ---
 
 Veuillez rejoindre notre [Discord](https://discord.com/invite/nDceKgxnkV) si vous souhaitez discuter avec nous de l'auto-hébergement de votre propre [serveur RustDesk open source](https://github.com/rustdesk/rustdesk-server).

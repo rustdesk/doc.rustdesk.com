@@ -1,7 +1,11 @@
 ---
 title: Docker
 weight: 7
+description: "Self-host RustDesk Server OSS with Docker, Docker Compose, or Podman. Review the required ports, host networking notes, and sample container definitions for hbbs and hbbr."
+keywords: ["rustdesk docker", "rustdesk docker compose", "rustdesk server docker", "rustdesk hbbs hbbr docker", "rustdesk podman", "rustdesk self-host docker"]
 ---
+
+Use this guide to self-host RustDesk Server OSS with Docker, Docker Compose, or Podman and to open the correct ports for `hbbs` and `hbbr`.
 
 > Here is another good tutorial: [Building Your Own Remote Desktop Solution: RustDesk Self-Hosted on Cloud with Docker (Hetzner)](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f)
 

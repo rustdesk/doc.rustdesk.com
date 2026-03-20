@@ -1,6 +1,8 @@
 ---
 title: Konfiguracja serwerów przekaźnikowych
 weight: 17
+description: "Dokumentacja RustDesk dotycząca Konfiguracja serwerów przekaźnikowych. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["rustdesk relay server", "rustdesk hbbr", "rustdesk geolocation relay", "rustdesk additional relay", "rustdesk server pro relay"]
 ---
 
 ## RustDesk Pro - Instalacja dodatkowych serwerów relay z geolokalizacją przy użyciu Dockera

@@ -1,6 +1,8 @@
 ---
 title: Relay-Server konfigurieren
 weight: 17
+description: "RustDesk-Dokumentation zu Relay-Server konfigurieren. Hier finden Sie Anleitungen zur Installation, Konfiguration, Bereitstellung und Fehlerbehebung."
+keywords: ["rustdesk relay server", "rustdesk hbbr", "rustdesk geolocation relay", "rustdesk additional relay", "rustdesk server pro relay"]
 ---
 
 ## RustDesk Pro - Zusätzliche Relais-Server mit Geo-Standort mit Docker installieren

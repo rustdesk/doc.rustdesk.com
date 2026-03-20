@@ -1,6 +1,8 @@
 ---
 title: Android
 weight: 4
+description: "Documentazione RustDesk su Android. Consulta le guide per installazione, configurazione, distribuzione e risoluzione dei problemi."
+keywords: ["rustdesk android", "rustdesk android remote control", "rustdesk android file transfer", "rustdesk android screen share", "rustdesk android id relay server", "rustdesk android permissions"]
 ---
 
 ## Controllo remoto

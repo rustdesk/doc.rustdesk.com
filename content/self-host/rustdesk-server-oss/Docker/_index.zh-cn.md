@@ -1,6 +1,8 @@
 ---
 title: Docker
 weight: 7
+description: "RustDesk 的Docker文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk docker", "rustdesk docker compose", "rustdesk server docker", "rustdesk hbbs hbbr docker", "rustdesk podman", "rustdesk self-host docker"]
 ---
 
 > 这里有另一个很好的教程：[Building Your Own Remote Desktop Solution: RustDesk Self-Hosted on Cloud with Docker (Hetzner)](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f)

@@ -2,6 +2,8 @@
 title: Problemas de NAT Loopback
 weight: 500
 pre: "<b>2.5. </b>"
+description: "Documentação do RustDesk sobre Problemas de NAT Loopback. Consulte guias de instalação, configuração, implantação e solução de problemas."
+keywords: ["rustdesk nat loopback", "rustdesk hairpin nat", "rustdesk local dns", "rustdesk hosts file", "rustdesk self-hosted domain issue", "rustdesk lan public ip problem"]
 ---
 
 {{% notice note %}}

@@ -1,6 +1,8 @@
 ---
 title: Windows ポータブル昇格
 weight: 49
+description: "RustDesk のWindows ポータブル昇格に関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk portable elevation", "rustdesk uac", "rustdesk windows admin rights", "rustdesk task manager mouse issue", "rustdesk request elevation"]
 ---
 
 Windowsポータブルプログラムには管理者権限がないため、以下の問題が発生する可能性があります：

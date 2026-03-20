@@ -1,6 +1,8 @@
 ---
 title: Linux
 weight: 10
+description: "RustDesk のLinuxに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["build rustdesk linux", "rustdesk linux build", "rustdesk vcpkg linux", "rustdesk cargo run linux", "rustdesk ubuntu build"]
 ---
 
 # Linuxでのビルド手順

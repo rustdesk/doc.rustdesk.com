@@ -1,6 +1,8 @@
 ---
 title: Android
 weight: 4
+description: "RustDesk のAndroidに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk android", "rustdesk android remote control", "rustdesk android file transfer", "rustdesk android screen share", "rustdesk android id relay server", "rustdesk android permissions"]
 ---
 
 ## リモートコントロール

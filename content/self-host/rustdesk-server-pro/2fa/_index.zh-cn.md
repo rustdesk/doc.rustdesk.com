@@ -1,6 +1,8 @@
 ---
 title: 2FA
 weight: 16
+description: "RustDesk 的2FA文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk 2fa", "rustdesk totp", "rustdesk email verification", "rustdesk authenticator", "rustdesk server pro 2fa"]
 ---
 
 登录账户时，开启 Two-Factor Authentication(2FA) 验证，能够提高账户安全性。

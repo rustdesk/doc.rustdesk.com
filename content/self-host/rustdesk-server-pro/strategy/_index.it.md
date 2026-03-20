@@ -1,6 +1,8 @@
 ---
 title: Strategia
 weight: 200
+description: "Documentazione RustDesk su Strategia. Consulta le guide per installazione, configurazione, distribuzione e risoluzione dei problemi."
+keywords: ["rustdesk strategy", "rustdesk policy management", "rustdesk bulk settings", "rustdesk device strategy", "rustdesk server pro strategy"]
 ---
 
 La strategia è uno strumento per gli amministratori RustDesk per aggiornare in blocco le opzioni di sicurezza delle pagine di impostazione del client. Gli amministratori possono creare diverse strategie e applicarle a diversi dispositivi.

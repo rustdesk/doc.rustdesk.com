@@ -1,7 +1,11 @@
 ---
 title: Docker
 weight: 3
+description: "Install RustDesk Server Pro with Docker Compose using host networking for licensing. Use this guide to deploy hbbs, hbbr, and the Pro web console with the provided compose file."
+keywords: ["rustdesk server pro docker", "rustdesk pro docker compose", "rustdesk pro host network", "rustdesk hbbs hbbr docker", "rustdesk self-host pro docker"]
 ---
+
+Use this guide to install RustDesk Server Pro with Docker Compose and the required host networking configuration.
 
 ## Docker Compose (Recommended)
 

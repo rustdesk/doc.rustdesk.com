@@ -1,6 +1,8 @@
 ---
 title: Ruolo Amministratore
 weight: 17
+description: "Documentazione RustDesk su Ruolo Amministratore. Consulta le guide per installazione, configurazione, distribuzione e risoluzione dei problemi."
+keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
 Il Ruolo Amministratore consente agli amministratori di delegare permessi di gestione parziali a utenti non amministratori. È possibile definire permessi per risorse globali (come strategie, ruoli di controllo e client personalizzati) nonché per utenti e dispositivi in diversi ambiti.

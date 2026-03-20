@@ -1,7 +1,11 @@
 ---
 title: LDAP
 weight: 17
+description: "Configure LDAP authentication in RustDesk Server Pro by setting the server host, port, base DN, scope, and related directory mapping options."
+keywords: ["rustdesk ldap", "rustdesk server pro ldap", "rustdesk ldap authentication", "rustdesk base dn", "rustdesk ldaps"]
 ---
+
+Use this guide to connect RustDesk Server Pro to your LDAP directory for centralized authentication and user lookup.
 
 ## Configuration
 Please go to `LDAP` settings page as below.

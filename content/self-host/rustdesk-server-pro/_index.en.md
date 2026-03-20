@@ -2,11 +2,18 @@
 title: RustDesk Server Pro
 description: "Complete guide to RustDesk Server Pro - the premium self-hosted remote desktop solution. Features enterprise authentication (OIDC, LDAP, 2FA), web console, API access, and advanced security controls for professional deployment."
 keywords: ["rustdesk server pro", "rustdesk pro server", "remote desktop server", "enterprise remote access", "rustdesk professional", "self-hosted rdp", "rustdesk enterprise", "remote desktop solution", "rustdesk licensing", "rustdesk web console"]
+aliases:
+  - /en/self-host/pro/
+  - /self-host/pro/
 weight: 200
 pre: "<b>2.2. </b>"
 ---
 
-RustDesk Server Pro has more features compared to the open source version.
+RustDesk Server Pro is the commercial self-hosted deployment option for teams that need centralized administration, identity integrations, and advanced controls on top of the RustDesk Server core.
+
+## When to choose RustDesk Server Pro
+
+Choose RustDesk Server Pro when RustDesk Server OSS is not enough and you need:
 
 - Account
 - [Web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)

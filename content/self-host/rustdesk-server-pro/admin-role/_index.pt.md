@@ -1,6 +1,8 @@
 ---
 title: Função de Administrador
 weight: 17
+description: "Documentação do RustDesk sobre Função de Administrador. Consulte guias de instalação, configuração, implantação e solução de problemas."
+keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
 A Função de Administrador permite que administradores deleguem permissões de gestão parcial a usuários não administradores. Você pode definir permissões para recursos globais (como estratégias, funções de controle e clientes personalizados) bem como para usuários e dispositivos em diferentes escopos.

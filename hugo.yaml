@@ -1,5 +1,8 @@
 # Hugo configuration file
 title: RustDesk Documentation
+author:
+  name: "RustDesk"
+  email: "support@rustdesk.com"
 baseURL: "https://rustdesk.com/docs"
 languageCode: "en-US"
 defaultContentLanguage: "en"
@@ -22,6 +25,7 @@ markup:
 # Enable page bundles and resource processing
 enableEmoji: true
 enableRobotsTXT: true
+enableGitInfo: true
 
 # Sitemap configuration
 sitemap:
@@ -48,8 +52,9 @@ params:
   disable_cookie: true
   description: "Complete documentation for RustDesk - the open source remote desktop software. Learn how to self-host, configure clients, and deploy RustDesk across your infrastructure."
   author: "RustDesk"
+  authorEmail: "support@rustdesk.com"
   keywords: ["rustdesk", "remote desktop", "open source", "self-host", "documentation", "remote access", "VNC alternative", "teamviewer alternative"]
-  images: ["images/logo.svg"]
+  images: ["android-chrome-512x512.png"]
   showVisitedLinks: false
   disableSearch: false
   disableBreadcrumb: false
@@ -122,7 +127,7 @@ menu:
 # Multi-language configuration
 languages:
   en:
-    title: "Documentation for RustDesk"
+    title: "RustDesk Documentation"
     weight: 1
     languageName: "English"
     params:

@@ -1,6 +1,8 @@
 ---
 title: 宝塔面板
 weight: 40
+description: "RustDesk 的宝塔面板文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk", "远程桌面", "开源", "自托管", "文档", "远程访问", "VNC替代", "teamviewer替代"]
 ---
 本手册基于宝塔面板正式版 9.2.0
 ## 前提

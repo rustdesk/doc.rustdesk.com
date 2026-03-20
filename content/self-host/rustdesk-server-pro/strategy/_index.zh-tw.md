@@ -1,6 +1,8 @@
 ---
 title: 策略
 weight: 200
+description: "RustDesk 的策略文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["rustdesk strategy", "rustdesk policy management", "rustdesk bulk settings", "rustdesk device strategy", "rustdesk server pro strategy"]
 ---
 
 策略是 RustDesk 管理員批量更新客戶端設定頁面安全選項的工具。管理員可以建立不同的策略並將其應用於不同的設備。

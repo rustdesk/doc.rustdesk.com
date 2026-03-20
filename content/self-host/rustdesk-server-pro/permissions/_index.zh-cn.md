@@ -1,6 +1,8 @@
 ---
 title: 访问控制
 weight: 16
+description: "RustDesk 的访问控制文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk access control", "rustdesk device permissions", "rustdesk user group access", "rustdesk server pro permissions", "rustdesk device assignment"]
 ---
 
 ## 设备访问权限

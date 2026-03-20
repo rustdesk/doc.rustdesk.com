@@ -1,6 +1,8 @@
 ---
 title: ライセンス
 weight: 15
+description: "RustDesk のライセンスに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk pro license", "rustdesk server pro activate", "rustdesk pricing license", "rustdesk change license", "rustdesk web console license"]
 ---
 
 ## ライセンスの購入

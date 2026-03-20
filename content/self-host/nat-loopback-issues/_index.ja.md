@@ -2,6 +2,8 @@
 title: NAT ループバックの問題
 weight: 500
 pre: "<b>2.5. </b>"
+description: "RustDesk のNAT ループバックの問題に関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk nat loopback", "rustdesk hairpin nat", "rustdesk local dns", "rustdesk hosts file", "rustdesk self-hosted domain issue", "rustdesk lan public ip problem"]
 ---
 
 {{% notice note %}}

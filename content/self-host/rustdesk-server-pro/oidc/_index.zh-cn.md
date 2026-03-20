@@ -1,6 +1,8 @@
 ---
 title: OIDC
 weight: 16
+description: "RustDesk 的OIDC文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk oidc", "rustdesk openid connect", "rustdesk sso", "rustdesk azure login", "rustdesk okta login", "rustdesk github login"]
 ---
 
 - 使用您现有的 `Google`、`Okta`、`Facebook`、`Azure`、`GitHub`、`GitLab` 等账号，轻松创建和登录您的 `RustDesk Pro` 账户。

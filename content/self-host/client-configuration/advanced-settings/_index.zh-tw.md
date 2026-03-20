@@ -1,6 +1,8 @@
 ---
 title: 進階設定
 weight: 49
+description: "RustDesk 的進階設定文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
 
 所有自訂用戶端中的進階設定都在這裡涵蓋。

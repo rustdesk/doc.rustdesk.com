@@ -1,0 +1,17 @@
+{{- $description := "" -}}
+{{- with .Description | plainify | htmlUnescape -}}
+  {{- $description = . | chomp -}}
+{{- end -}}
+{{- if $description -}}
+  {{- $description -}}
+{{- else -}}
+  {{- if .IsHome -}}
+    {{- with .Site.Params.description | plainify | htmlUnescape -}}
+      {{ . | chomp -}}
+    {{- end -}}
+  {{- else if .IsSection -}}
+    {{- partial "utils/section-description-fallback.html" . -}}
+  {{- else -}}
+    {{- .Summary | plainify | htmlUnescape | chomp -}}
+  {{- end -}}
+{{- end -}}

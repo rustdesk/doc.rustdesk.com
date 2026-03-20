@@ -1,6 +1,8 @@
 ---
 title: Rol de Administrador
 weight: 17
+description: "Documentación de RustDesk sobre Rol de Administrador. Consulta guías de instalación, configuración, despliegue y solución de problemas."
+keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
 El Rol de Administrador permite a los administradores delegar permisos de gestión parcial a usuarios no administradores. Puede definir permisos para recursos globales (como estrategias, roles de control y clientes personalizados), así como para usuarios y dispositivos dentro de diferentes ámbitos.

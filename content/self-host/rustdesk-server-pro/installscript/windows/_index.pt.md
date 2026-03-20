@@ -1,6 +1,8 @@
 ---
 title: Instalação no Windows (deprecated)
 weight: 5
+description: "Documentação do RustDesk sobre Instalação no Windows (deprecated). Consulte guias de instalação, configuração, implantação e solução de problemas."
+keywords: ["rustdesk server pro windows", "rustdesk pro windows install", "rustdesk self-host pro windows", "rustdesk windows install deprecated", "rustdesk pro license windows"]
 ---
 
 {{% notice note %}}

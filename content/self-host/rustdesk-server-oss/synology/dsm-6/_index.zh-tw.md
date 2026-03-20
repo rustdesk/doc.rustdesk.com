@@ -1,6 +1,8 @@
 ---
 title: Synology DSM 6
 weight: 22
+description: "RustDesk 的Synology DSM 6文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["rustdesk synology dsm 6", "rustdesk synology docker", "rustdesk nas dsm 6", "rustdesk self-host synology"]
 ---
 
 > 第三方的另一個最新教學在[這裡](https://mariushosting.com/how-to-install-rustdesk-on-your-synology-nas/)。

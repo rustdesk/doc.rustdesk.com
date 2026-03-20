@@ -1,6 +1,8 @@
 ---
 title: Admin-Rolle
 weight: 17
+description: "RustDesk-Dokumentation zu Admin-Rolle. Hier finden Sie Anleitungen zur Installation, Konfiguration, Bereitstellung und Fehlerbehebung."
+keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
 Die Admin-Rolle ermöglicht es Administratoren, Teilverwaltungsrechte an Nicht-Administratoren zu delegieren. Sie können Berechtigungen für globale Ressourcen (wie Strategien, Kontrollrollen und benutzerdefinierte Clients) sowie für Benutzer und Geräte innerhalb unterschiedlicher Geltungsbereiche definieren.

@@ -1,7 +1,11 @@
 ---
 title: Windows & PM2 or NSSM
 weight: 20
+description: "Run RustDesk Server OSS on Windows with PM2 or NSSM. This guide explains the tradeoffs, service setup steps, and log commands for hosting hbbs and hbbr on Windows."
+keywords: ["rustdesk server windows", "rustdesk pm2", "rustdesk nssm", "rustdesk hbbs windows", "rustdesk hbbr windows", "rustdesk self-host windows"]
 ---
+
+Use this guide to run RustDesk Server OSS on Windows with either PM2 or NSSM, depending on whether you want a simpler user-level setup or Windows service management.
 
 {{% notice note %}}
 Windows security policy is tricky, if this tutorial does not work for you, or you encounter unstable connection, please migrate to a Linux server.

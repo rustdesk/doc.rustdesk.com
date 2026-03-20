@@ -1,6 +1,8 @@
 ---
 title: Samouczki wideo
 weight: 50
+description: "Dokumentacja RustDesk dotycząca Samouczki wideo. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["rustdesk videos", "rustdesk tutorial", "rustdesk installation video", "rustdesk self-hosting video", "rustdesk security video"]
 ---
 
 ## OSS

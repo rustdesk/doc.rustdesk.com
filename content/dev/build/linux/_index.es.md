@@ -1,6 +1,8 @@
 ---
 title: Linux
 weight: 10
+description: "Documentación de RustDesk sobre Linux. Consulta guías de instalación, configuración, despliegue y solución de problemas."
+keywords: ["build rustdesk linux", "rustdesk linux build", "rustdesk vcpkg linux", "rustdesk cargo run linux", "rustdesk ubuntu build"]
 ---
 
 # Cómo construir en Linux

@@ -1,6 +1,8 @@
 ---
 title: Rola Kontroli
 weight: 18
+description: "Dokumentacja RustDesk dotycząca Rola Kontroli. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
 
 Rola Kontroli umożliwia konfigurację uprawnień zdalnego sterowania dla różnych użytkowników. Gdy użytkownik zdalnie steruje innym urządzeniem, Rola Kontroli określa, jakie operacje może wykonywać użytkownik kontrolujący po nawiązaniu połączenia.

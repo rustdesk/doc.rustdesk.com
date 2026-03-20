@@ -2,6 +2,8 @@
 title: Client-Bereitstellung
 weight: 400
 pre: "<b>2.4. </b>"
+description: "RustDesk-Dokumentation zu Client-Bereitstellung. Hier finden Sie Anleitungen zur Installation, Konfiguration, Bereitstellung und Fehlerbehebung."
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 Sie können eine Reihe von Methoden für die Bereitstellung verwenden, von denen einige in [Client-Konfiguration](https://rustdesk.com/docs/de/self-host/client-configuration/) beschrieben sind.

@@ -3,6 +3,8 @@ title: RustDesk Client
 weight: 2
 pre: "<b>1. </b>"
 chapter: true
+description: "RustDesk 的RustDesk Client文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["rustdesk client", "rustdesk download", "rustdesk installation", "rustdesk windows", "rustdesk mac", "rustdesk linux", "rustdesk android", "rustdesk ios", "rustdesk web client", "rustdesk client configuration"]
 ---
 
 ## 簡介

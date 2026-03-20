@@ -1,7 +1,11 @@
 ---
 title: Azure
 weight: 16
+description: "Configure Microsoft Entra ID (Azure) as an OpenID Connect provider for RustDesk Server Pro. Follow the app registration and OIDC setup steps in Azure Portal."
+keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "rustdesk oidc azure", "rustdesk server pro azure"]
 ---
+
+Use this guide to connect RustDesk Server Pro to Microsoft Entra ID with OpenID Connect.
 
 ## Video tutorial
 

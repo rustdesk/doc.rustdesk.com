@@ -1,6 +1,8 @@
 ---
 title: Rola Administratora
 weight: 17
+description: "Dokumentacja RustDesk dotycząca Rola Administratora. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
 Rola Administratora pozwala administratorom delegować częściowe uprawnienia zarządzania użytkownikom niebędącym administratorami. Można definiować uprawnienia dla zasobów globalnych (takich jak strategie, role kontroli i niestandardowi klienci) oraz dla użytkowników i urządzeń w różnych zakresach.

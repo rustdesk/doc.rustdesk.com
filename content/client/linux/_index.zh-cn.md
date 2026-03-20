@@ -1,6 +1,8 @@
 ---
 title: Linux
 weight: 4
+description: "RustDesk 的Linux文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk linux", "rustdesk ubuntu", "rustdesk fedora", "rustdesk arch", "rustdesk appimage", "rustdesk flatpak", "rustdesk wayland", "rustdesk selinux"]
 ---
 
 ## 安装

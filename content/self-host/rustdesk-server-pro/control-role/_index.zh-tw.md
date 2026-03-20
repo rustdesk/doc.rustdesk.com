@@ -1,6 +1,8 @@
 ---
 title: 控制角色
 weight: 18
+description: "RustDesk 的控制角色文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
 
 控制角色允許您為不同使用者配置遠端控制權限。當使用者遠端控制另一台裝置時，控制角色定義了控制方使用者在建立連線後可以執行的操作。

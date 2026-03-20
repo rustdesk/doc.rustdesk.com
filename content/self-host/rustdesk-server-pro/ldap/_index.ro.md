@@ -1,6 +1,8 @@
 ---
 title: LDAP
 weight: 17
+description: "Documentație RustDesk pentru LDAP. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk ldap", "rustdesk server pro ldap", "rustdesk ldap authentication", "rustdesk base dn", "rustdesk ldaps"]
 ---
 
 ## Configurare

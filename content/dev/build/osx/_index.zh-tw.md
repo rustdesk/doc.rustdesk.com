@@ -1,6 +1,8 @@
 ---
 title: macOS
 weight: 21
+description: "RustDesk 的macOS文檔，提供安裝、設定、部署與疑難排解指南。"
+keywords: ["build rustdesk macos", "rustdesk mac build", "rustdesk sciter mac", "rustdesk flutter macos build", "rustdesk vcpkg macos"]
 ---
 
 有多種方法可以做到這一點，本指南假設 `Xcode`、`Git` 和 `Homebrew` 已經安裝。

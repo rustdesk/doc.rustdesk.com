@@ -1,7 +1,11 @@
 ---
 title: Advanced Settings
 weight: 49
+description: "Reference the advanced settings available in RustDesk custom clients, including privilege levels and option behavior across override, default, user, and hardcoded settings."
+keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
+
+Use this reference to understand advanced custom client settings in RustDesk and how each setting behaves at different privilege levels.
 
 All advanced settings in custom clients are covered here.
 

@@ -1,6 +1,8 @@
 ---
 title: Azure
 weight: 16
+description: "Dokumentacja RustDesk dotycząca Azure. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
+keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "rustdesk oidc azure", "rustdesk server pro azure"]
 ---
 
 ## Instrukcja wideo

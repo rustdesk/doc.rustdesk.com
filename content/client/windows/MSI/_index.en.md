@@ -1,7 +1,11 @@
 ---
 title: MSI
 weight: 49
+description: "Install RustDesk on Windows with the MSI package and command-line parameters for silent deployment. Learn how to set the install folder, shortcuts, printer support, and upgrade options with msiexec."
+keywords: ["rustdesk msi", "rustdesk silent install", "rustdesk msiexec", "rustdesk windows msi", "rustdesk installfolder", "rustdesk printer install"]
 ---
+
+Use the RustDesk MSI package when you need silent Windows deployment with `msiexec` and installation parameters.
 
 The MSI package supports command line parameters for silent installation.
 

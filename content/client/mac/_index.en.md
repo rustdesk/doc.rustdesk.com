@@ -1,7 +1,11 @@
 ---
 title: Mac
+description: "Install RustDesk on macOS and configure the permissions required for remote control. Learn how to allow the app, enable accessibility, and grant screen recording access."
+keywords: ["rustdesk mac", "rustdesk macos", "rustdesk mac install", "rustdesk screen recording permission", "rustdesk accessibility permission", "rustdesk mac remote control"]
 weight: 3
 ---
+
+Use this macOS guide to install RustDesk, allow the app to run, and grant the permissions needed for screen capture and input control.
 
 ## Installation
 

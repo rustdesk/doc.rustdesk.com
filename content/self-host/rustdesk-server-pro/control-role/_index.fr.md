@@ -1,6 +1,8 @@
 ---
 title: Rôle de Contrôle
 weight: 18
+description: "Documentation RustDesk sur Rôle de Contrôle. Consultez les guides d'installation, de configuration, de déploiement et de dépannage."
+keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
 
 Le Rôle de Contrôle vous permet de configurer les permissions de contrôle à distance pour différents utilisateurs. Lorsqu'un utilisateur contrôle à distance un autre appareil, le Rôle de Contrôle définit les opérations que l'utilisateur contrôleur est autorisé à effectuer après l'établissement d'une connexion.

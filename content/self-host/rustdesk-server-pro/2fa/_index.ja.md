@@ -1,6 +1,8 @@
 ---
 title: 2FA
 weight: 16
+description: "RustDesk の2FAに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk 2fa", "rustdesk totp", "rustdesk email verification", "rustdesk authenticator", "rustdesk server pro 2fa"]
 ---
 
 アカウントにログインする際に、二要素認証（2FA）検証を有効にすることでアカウントのセキュリティを向上させることができます。

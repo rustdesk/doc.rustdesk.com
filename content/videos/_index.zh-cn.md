@@ -1,6 +1,8 @@
 ---
 title: 视频教程
 weight: 50
+description: "RustDesk 的视频教程文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk videos", "rustdesk tutorial", "rustdesk installation video", "rustdesk self-hosting video", "rustdesk security video"]
 ---
 
 ## 开源版本

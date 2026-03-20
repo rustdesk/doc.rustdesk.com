@@ -1,6 +1,8 @@
 ---
 title: MSI
 weight: 49
+description: "RustDesk のMSIに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk msi", "rustdesk silent install", "rustdesk msiexec", "rustdesk windows msi", "rustdesk installfolder", "rustdesk printer install"]
 ---
 
 MSIパッケージは、サイレントインストール用のコマンドラインパラメータをサポートしています。

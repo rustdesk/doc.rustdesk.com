@@ -1,6 +1,8 @@
 ---
 title: 网页控制台
 weight: 10
+description: "RustDesk 的网页控制台文档，提供安装、配置、部署和故障排查指南。"
+keywords: ["rustdesk web console", "rustdesk server pro console", "rustdesk port 21114", "rustdesk device management", "rustdesk admin console"]
 ---
 
 网页控制台集成在 RustDesk 服务器专业版中，由 `21114` 端口提供服务。

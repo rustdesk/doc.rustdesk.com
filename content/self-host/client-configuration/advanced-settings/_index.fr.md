@@ -1,6 +1,8 @@
 ---
 title: Paramètres Avancés
 weight: 49
+description: "Documentation RustDesk sur Paramètres Avancés. Consultez les guides d'installation, de configuration, de déploiement et de dépannage."
+keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
 
 Tous les paramètres avancés des clients personnalisés sont couverts ici.

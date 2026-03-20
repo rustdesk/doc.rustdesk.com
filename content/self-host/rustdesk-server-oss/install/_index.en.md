@@ -1,7 +1,11 @@
 ---
 title: Installation
 weight: 1
+description: "Install RustDesk Server OSS with Docker, systemd scripts, or Debian packages. Review server requirements, firewall rules, and the client configuration steps required after deployment."
+keywords: ["rustdesk server install", "install rustdesk server oss", "rustdesk docker install", "rustdesk server firewall ports", "rustdesk hbbs hbbr install", "rustdesk self-host install"]
 ---
+
+Use this guide to install RustDesk Server OSS, open the required firewall ports, and connect clients to the new self-hosted server.
 
 ## Video tutorials
 There are many video tutorials on YouTube, https://github.com/rustdesk/rustdesk/wiki/FAQ#video-tutorials.

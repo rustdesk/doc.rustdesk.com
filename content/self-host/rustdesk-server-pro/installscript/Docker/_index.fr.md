@@ -1,6 +1,8 @@
 ---
 title: Docker
 weight: 3
+description: "Documentation RustDesk sur Docker. Consultez les guides d'installation, de configuration, de déploiement et de dépannage."
+keywords: ["rustdesk server pro docker", "rustdesk pro docker compose", "rustdesk pro host network", "rustdesk hbbs hbbr docker", "rustdesk self-host pro docker"]
 ---
 
 ## Docker Compose (Recommandé)

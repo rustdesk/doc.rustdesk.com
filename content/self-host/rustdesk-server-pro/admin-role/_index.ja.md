@@ -1,6 +1,8 @@
 ---
 title: 管理者ロール
 weight: 17
+description: "RustDesk の管理者ロールに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
 管理者ロールにより、管理者は非管理者ユーザーに部分的な管理権限を委任できます。グローバルリソース（戦略、コントロールロール、カスタムクライアントなど）およびさまざまなスコープ内のユーザーとデバイスに対する権限を定義できます。

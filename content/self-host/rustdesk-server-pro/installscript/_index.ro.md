@@ -1,6 +1,8 @@
 ---
 title: Instalare
 weight: 2
+description: "Documentație RustDesk pentru Instalare. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+keywords: ["rustdesk server pro install", "rustdesk self-host pro", "rustdesk pro docker", "rustdesk pro linux install", "rustdesk pro windows install"]
 ---
 
 ## Metoda 1: Docker (Recomandat)
