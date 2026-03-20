@@ -14,6 +14,63 @@ const metadata = {
     'rustdesk料金, セルフホスティングリモートデスクトップ料金, リモートデスクトップサーバーコスト, オープンソースリモートアクセス料金, 企業リモートデスクトッププラン',
   author: 'RustDesk Team',
 };
+
+const faqRawItems = [
+      {
+        title: 'プランにはカスタマーサポートが含まれていますか？',
+        description:
+          'はい、すべての有料プランには、質問や懸念事項に対応する専任のカスタマーサポートへのアクセスが含まれています。',
+      },
+      {
+        title: '試用ライセンスはありますか？',
+        description: '<a class="underline" href="mailto:sales@rustdesk.com">お問い合わせください</a>',
+      },
+      {
+        title: 'プランをアップグレードするにはどうすればいいですか？',
+        description:
+          'もちろんです！進化するニーズに最適なプランを見つけるために、いつでも簡単に<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license">プランをアップグレード</a>できます。',
+      },
+      {
+        title: 'どの支払い方法を受け付けていますか？',
+        description:
+          '主要なクレジットカードやオンライン決済方法を受け付けており、便利で安全な取引プロセスを確保しています。銀行振込で支払いたい場合は、<a class="underline" href="mailto:sales@rustdesk.com">お問い合わせください</a>。追加の銀行手数料がかかり、オフライン支払いが銀行に到着次第ライセンスキーをお送りします。これには3〜5営業日かかります。',
+      },
+      {
+        title: '表示されている費用以外に隠れた料金はありますか？',
+        description:
+          'いいえ、費用には各プランに記載されているすべての機能が含まれています。隠れた料金や追加料金はありません。',
+      },
+      {
+        title: '月払いはありますか？',
+        description:
+          'いいえ、年間支払いプランのみを提供しています。自動更新はしません。有効期限の14日前にライセンスを更新するためのリマインダーメールが送信されます。',
+      },
+      {
+        title: '非営利団体や教育機関向けの割引はありますか？',
+        description: 'いいえ、まだありません。無料プランをご利用いただくことをお勧めします。',
+      },
+      {
+        title: '利用規約はどのようなものですか？',
+        description:
+          'この<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">利用規約</a>をご確認ください',
+      },
+      {
+        title: 'web client は RustDesk Server Pro に統合されていますか？',
+        description:
+          'はい、統合されていますが、$39.90/月以上のプランが必要です。詳細はこの<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro">FAQエントリ</a>をご確認ください。わかりやすく言うと、<b>web client</b> はブラウザタブで RustDesk を直接使ってリモートセッションを開始する機能で、<b>web console</b> はユーザー、デバイス、権限、戦略、ライセンスを管理する RustDesk Server Pro の管理サイトです。',
+      },
+      {
+        title: '臨時のサポートケースについてはどうですか？無人アクセスなしで時々サポートが必要なデバイスがあります。',
+        description:
+          'この<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">解決策</a>を提供しています',
+      },
+    ];
+
+const faqItems = faqRawItems.map((item) => ({
+  question: item.title,
+  answer: item.description.replace(/<[^>]*>/g, ''),
+}));
+
 ---
 
 <script>
@@ -57,7 +114,7 @@ const metadata = {
   };
 </script>
 
-<Layout metadata={metadata} i18n>
+<Layout metadata={metadata} i18n structuredDataType="faq" faqItems={faqItems}>
   <Note
     title="注意"
     subtitle='この料金は<span class="text-xl text-blue-500">セルフホスティング</span>ソリューション用です。<span class="text-3xl font-extrabold">決して</span> <span class="line-through text-xl text-blue-500">SaaS</span>サブスクリプションではありません。'
@@ -325,55 +382,6 @@ const metadata = {
     title="料金に関するよくある質問"
     subtitle="適切なプランを選ぶことは重要です。私たちはあなたの質問に答える準備ができています。料金オプションについて質問がある場合は、ここが適切な場所です。"
     columns={1}
-    items={[
-      {
-        title: 'プランにはカスタマーサポートが含まれていますか？',
-        description:
-          'はい、すべての有料プランには、質問や懸念事項に対応する専任のカスタマーサポートへのアクセスが含まれています。',
-      },
-      {
-        title: '試用ライセンスはありますか？',
-        description: '<a class="underline" href="mailto:sales@rustdesk.com">お問い合わせください</a>',
-      },
-      {
-        title: 'プランをアップグレードするにはどうすればいいですか？',
-        description:
-          'もちろんです！進化するニーズに最適なプランを見つけるために、いつでも簡単に<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license">プランをアップグレード</a>できます。',
-      },
-      {
-        title: 'どの支払い方法を受け付けていますか？',
-        description:
-          '主要なクレジットカードやオンライン決済方法を受け付けており、便利で安全な取引プロセスを確保しています。銀行振込で支払いたい場合は、<a class="underline" href="mailto:sales@rustdesk.com">お問い合わせください</a>。追加の銀行手数料がかかり、オフライン支払いが銀行に到着次第ライセンスキーをお送りします。これには3〜5営業日かかります。',
-      },
-      {
-        title: '表示されている費用以外に隠れた料金はありますか？',
-        description:
-          'いいえ、費用には各プランに記載されているすべての機能が含まれています。隠れた料金や追加料金はありません。',
-      },
-      {
-        title: '月払いはありますか？',
-        description:
-          'いいえ、年間支払いプランのみを提供しています。自動更新はしません。有効期限の14日前にライセンスを更新するためのリマインダーメールが送信されます。',
-      },
-      {
-        title: '非営利団体や教育機関向けの割引はありますか？',
-        description: 'いいえ、まだありません。無料プランをご利用いただくことをお勧めします。',
-      },
-      {
-        title: '利用規約はどのようなものですか？',
-        description:
-          'この<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">利用規約</a>をご確認ください',
-      },
-      {
-        title: 'web client は RustDesk Server Pro に統合されていますか？',
-        description:
-          'はい、統合されていますが、$39.90/月以上のプランが必要です。詳細はこの<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro">FAQエントリ</a>をご確認ください。わかりやすく言うと、<b>web client</b> はブラウザタブで RustDesk を直接使ってリモートセッションを開始する機能で、<b>web console</b> はユーザー、デバイス、権限、戦略、ライセンスを管理する RustDesk Server Pro の管理サイトです。',
-      },
-      {
-        title: '臨時のサポートケースについてはどうですか？無人アクセスなしで時々サポートが必要なデバイスがあります。',
-        description:
-          'この<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">解決策</a>を提供しています',
-      },
-    ]}
+    items={faqRawItems}
   />
 </Layout>

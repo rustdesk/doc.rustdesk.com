@@ -1,0 +1,190 @@
+---
+export interface Props {
+  type?: 'website' | 'article' | 'software' | 'faq';
+  article?: {
+    title: string;
+    description?: string;
+    image?: string;
+    publishDate?: Date;
+    updateDate?: Date;
+    author?: string;
+    category?: string;
+  };
+  faqItems?: Array<{ question: string; answer: string }>;
+}
+
+const { type = 'website', article, faqItems } = Astro.props;
+
+const siteUrl = 'https://rustdesk.com';
+const currentUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const organizationSchema = {
+  '@type': 'Organization',
+  '@id': `${siteUrl}/#organization`,
+  name: 'RustDesk',
+  url: siteUrl,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${siteUrl}/icon.png`,
+  },
+  sameAs: [
+    'https://github.com/rustdesk/rustdesk',
+    'https://twitter.com/rustdesk',
+    'https://discord.gg/nDceKgxnkV',
+    'https://www.reddit.com/r/rustdesk/',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    url: `${siteUrl}/support`,
+  },
+};
+
+const websiteSchema = {
+  '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
+  url: siteUrl,
+  name: 'RustDesk',
+  description: 'Open-source remote desktop software with self-hosted server solutions.',
+  publisher: { '@id': `${siteUrl}/#organization` },
+  inLanguage: ['en', 'de', 'es', 'fr', 'it', 'ja', 'pt', 'zh-CN', 'zh-TW', 'ko', 'ar'],
+};
+
+const softwareSchema = {
+  '@type': 'SoftwareApplication',
+  '@id': `${siteUrl}/#software`,
+  name: 'RustDesk',
+  applicationCategory: 'BusinessApplication',
+  applicationSubCategory: 'Remote Desktop Software',
+  operatingSystem: 'Windows, macOS, Linux, Android, iOS',
+  description: 'Open-source remote desktop software with self-hosted server options. A secure alternative to TeamViewer and AnyDesk.',
+  url: siteUrl,
+  downloadUrl: `${siteUrl}/download`,
+  softwareVersion: 'Latest',
+  author: { '@id': `${siteUrl}/#organization` },
+  offers: [
+    {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      name: 'Open Source (Free)',
+      description: 'Free and open-source remote desktop software',
+    },
+    {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      name: 'RustDesk Server Pro',
+      description: 'Professional self-hosted remote desktop server with advanced features',
+      url: `${siteUrl}/pricing`,
+    },
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.8',
+    ratingCount: '106000',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  featureList: [
+    'Self-hosted server',
+    'End-to-end encryption',
+    'Cross-platform support',
+    'Custom branding',
+    'Web client',
+    'File transfer',
+    'TCP tunneling',
+    'Address book',
+    'Access control',
+  ],
+};
+
+let graphItems: object[] = [organizationSchema, websiteSchema];
+
+if (type === 'website' || type === 'software') {
+  graphItems.push(softwareSchema);
+}
+
+if (type === 'article' && article) {
+  const articleSchema = {
+    '@type': 'Article',
+    '@id': `${currentUrl}#article`,
+    headline: article.title,
+    description: article.description || '',
+    url: currentUrl,
+    datePublished: article.publishDate?.toISOString(),
+    ...(article.updateDate && { dateModified: article.updateDate.toISOString() }),
+    author: {
+      '@type': 'Person',
+      name: article.author || 'RustDesk Team',
+    },
+    publisher: { '@id': `${siteUrl}/#organization` },
+    ...(article.image && {
+      image: {
+        '@type': 'ImageObject',
+        url: article.image.startsWith('http') ? article.image : `${siteUrl}${article.image}`,
+      },
+    }),
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': currentUrl,
+    },
+    inLanguage: 'en',
+  };
+  graphItems.push(articleSchema);
+}
+
+if (type === 'faq' && faqItems && faqItems.length > 0) {
+  const faqSchema = {
+    '@type': 'FAQPage',
+    '@id': `${currentUrl}#faq`,
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+  graphItems.push(faqSchema);
+}
+
+const breadcrumbSchema = {
+  '@type': 'BreadcrumbList',
+  itemListElement: (() => {
+    const path = Astro.url.pathname.replace(/^\/+|\/+$/g, '');
+    const segments = path.split('/').filter(Boolean);
+    const items = [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteUrl,
+      },
+    ];
+    let currentPath = '';
+    segments.forEach((segment, index) => {
+      currentPath += `/${segment}`;
+      items.push({
+        '@type': 'ListItem',
+        position: index + 2,
+        name: segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),
+        item: `${siteUrl}${currentPath}`,
+      });
+    });
+    return items;
+  })(),
+};
+
+if (Astro.url.pathname !== '/' && Astro.url.pathname !== '/en') {
+  graphItems.push(breadcrumbSchema);
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': graphItems,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

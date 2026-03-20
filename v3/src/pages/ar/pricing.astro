@@ -14,6 +14,62 @@ const metadata = {
     'تسعير رست ديسك, تسعير سطح المكتب البعيد المستضاف ذاتيًا, تكلفة خادم الوصول عن بعد, خطط سطح المكتب البعيد المتقدمة',
   author: 'RustDesk Team',
 };
+
+const faqRawItems = [
+      {
+        title: 'هل تأتي الخطط مع دعم العملاء؟',
+        description:
+          'بالتأكيد، جميع الخطط المدفوعة تتضمن الوصول إلى دعم العملاء المخصص لدينا لمساعدتك في أي استفسارات أو مخاوف.',
+      },
+      {
+        title: 'هل هناك ترخيص تجريبي؟',
+        description: 'يرجى <a class="underline" href="mailto:sales@rustdesk.com">الاتصال بنا</a>',
+      },
+      {
+        title: 'كيف يمكنني ترقية خطتي؟',
+        description:
+          'بالتأكيد! يمكنك بسهولة <a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license">ترقية خطتك</a>، في أي وقت، للعثور على الخطة التي تناسب احتياجاتك المتطورة بشكل أفضل.',
+      },
+      {
+        title: 'ما هي طرق الدفع التي تقبلونها؟',
+        description:
+          'نحن نقبل بطاقات الائتمان الرئيسية وطرق الدفع عبر الإنترنت لضمان عملية معاملة مريحة وآمنة. إذا كنت ترغب في الدفع عن طريق التحويل المصرفي، يرجى <a class="underline" href="mailto:sales@rustdesk.com">الاتصال بنا</a>؛ سيتم فرض رسوم إضافية لمعالجة البنك، وسنرسل لك مفتاح الترخيص بمجرد استلامنا للدفع الفعلي في البنك؛ يستغرق ذلك 3-5 أيام عمل.',
+      },
+      {
+        title: 'هل هناك أي رسوم خفية بخلاف التكلفة المعروضة؟',
+        description: 'لا، التكلفة تغطي جميع الميزات والخدمات المدرجة تحت كل خطة. لا توجد رسوم خفية أو تكاليف إضافية.',
+      },
+      {
+        title: 'هل لديكم دفع شهري؟',
+        description:
+          'لا، نحن نقدم فقط خطط دفع سنوية. نحن لا نجدد تلقائيًا؛ ستتلقى رسالة بريد إلكتروني لتذكيرك بتجديد ترخيصك قبل 14 يومًا من تاريخ انتهاء الصلاحية.',
+      },
+      {
+        title: 'هل لديكم خصم للمنظمات غير الربحية أو التعليمية؟',
+        description: 'لا، ليس لدينا ذلك بعد. نشجعك على استخدام الخطة المجانية.',
+      },
+      {
+        title: 'ما هي شروطكم؟',
+        description:
+          'يرجى التحقق من هذه <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">الشروط</a>',
+      },
+      {
+        title: 'هل تم دمج web client في RustDesk Server Pro؟',
+        description:
+          'نعم، هو مدمج، لكنه يتطلب خطة بقيمة $39.90/شهريًا أو أعلى. يُرجى مراجعة <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro">إدخال الأسئلة الشائعة هذا</a> للتفاصيل. للتوضيح، يشير <b>web client</b> إلى استخدام RustDesk مباشرةً داخل تبويب المتصفح لبدء جلسات اتصال عن بُعد، بينما يشير <b>web console</b> إلى موقع إدارة RustDesk Server Pro لإدارة المستخدمين والأجهزة والأذونات والسياسات والتراخيص.',
+      },
+      {
+        title: 'ماذا عن حالات الدعم العرضية؟ لدينا بعض الأجهزة التي تحتاج إلى دعم من حين لآخر دون الوصول غير المراقب.',
+        description:
+          'نحن نقدم هذا <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">الحل</a>',
+      },
+    ];
+
+const faqItems = faqRawItems.map((item) => ({
+  question: item.title,
+  answer: item.description.replace(/<[^>]*>/g, ''),
+}));
+
 ---
 
 <script>
@@ -57,7 +113,7 @@ const metadata = {
   };
 </script>
 
-<Layout metadata={metadata} i18n>
+<Layout metadata={metadata} i18n structuredDataType="faq" faqItems={faqItems}>
   <Note
     title="ملاحظة"
     subtitle='هذا التسعير هو لحل <span class="text-xl text-blue-500">الاستضافة الذاتية</span>، وهو <span class="text-3xl font-extrabold">ليس</span> اشتراكًا في <span class="line-through text-xl text-blue-500">خدمة البرمجيات كخدمة</span>.'
@@ -325,54 +381,6 @@ const metadata = {
     title="الأسئلة الشائعة حول التسعير"
     subtitle="اختيار الخطة المناسبة أمر مهم، ونحن هنا للإجابة على أسئلتك. إذا كانت لديك استفسارات حول خيارات التسعير لدينا، فأنت في المكان الصحيح."
     columns={1}
-    items={[
-      {
-        title: 'هل تأتي الخطط مع دعم العملاء؟',
-        description:
-          'بالتأكيد، جميع الخطط المدفوعة تتضمن الوصول إلى دعم العملاء المخصص لدينا لمساعدتك في أي استفسارات أو مخاوف.',
-      },
-      {
-        title: 'هل هناك ترخيص تجريبي؟',
-        description: 'يرجى <a class="underline" href="mailto:sales@rustdesk.com">الاتصال بنا</a>',
-      },
-      {
-        title: 'كيف يمكنني ترقية خطتي؟',
-        description:
-          'بالتأكيد! يمكنك بسهولة <a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license">ترقية خطتك</a>، في أي وقت، للعثور على الخطة التي تناسب احتياجاتك المتطورة بشكل أفضل.',
-      },
-      {
-        title: 'ما هي طرق الدفع التي تقبلونها؟',
-        description:
-          'نحن نقبل بطاقات الائتمان الرئيسية وطرق الدفع عبر الإنترنت لضمان عملية معاملة مريحة وآمنة. إذا كنت ترغب في الدفع عن طريق التحويل المصرفي، يرجى <a class="underline" href="mailto:sales@rustdesk.com">الاتصال بنا</a>؛ سيتم فرض رسوم إضافية لمعالجة البنك، وسنرسل لك مفتاح الترخيص بمجرد استلامنا للدفع الفعلي في البنك؛ يستغرق ذلك 3-5 أيام عمل.',
-      },
-      {
-        title: 'هل هناك أي رسوم خفية بخلاف التكلفة المعروضة؟',
-        description: 'لا، التكلفة تغطي جميع الميزات والخدمات المدرجة تحت كل خطة. لا توجد رسوم خفية أو تكاليف إضافية.',
-      },
-      {
-        title: 'هل لديكم دفع شهري؟',
-        description:
-          'لا، نحن نقدم فقط خطط دفع سنوية. نحن لا نجدد تلقائيًا؛ ستتلقى رسالة بريد إلكتروني لتذكيرك بتجديد ترخيصك قبل 14 يومًا من تاريخ انتهاء الصلاحية.',
-      },
-      {
-        title: 'هل لديكم خصم للمنظمات غير الربحية أو التعليمية؟',
-        description: 'لا، ليس لدينا ذلك بعد. نشجعك على استخدام الخطة المجانية.',
-      },
-      {
-        title: 'ما هي شروطكم؟',
-        description:
-          'يرجى التحقق من هذه <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">الشروط</a>',
-      },
-      {
-        title: 'هل تم دمج web client في RustDesk Server Pro؟',
-        description:
-          'نعم، هو مدمج، لكنه يتطلب خطة بقيمة $39.90/شهريًا أو أعلى. يُرجى مراجعة <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro">إدخال الأسئلة الشائعة هذا</a> للتفاصيل. للتوضيح، يشير <b>web client</b> إلى استخدام RustDesk مباشرةً داخل تبويب المتصفح لبدء جلسات اتصال عن بُعد، بينما يشير <b>web console</b> إلى موقع إدارة RustDesk Server Pro لإدارة المستخدمين والأجهزة والأذونات والسياسات والتراخيص.',
-      },
-      {
-        title: 'ماذا عن حالات الدعم العرضية؟ لدينا بعض الأجهزة التي تحتاج إلى دعم من حين لآخر دون الوصول غير المراقب.',
-        description:
-          'نحن نقدم هذا <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">الحل</a>',
-      },
-    ]}
+    items={faqRawItems}
   />
 </Layout>

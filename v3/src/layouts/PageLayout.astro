@@ -11,12 +11,23 @@ import type { MetaData } from '~/types';
 export interface Props {
   metadata?: MetaData;
   i18n?: boolean;
+  structuredDataType?: 'website' | 'article' | 'software' | 'faq';
+  articleData?: {
+    title: string;
+    description?: string;
+    image?: string;
+    publishDate?: Date;
+    updateDate?: Date;
+    author?: string;
+    category?: string;
+  };
+  faqItems?: Array<{ question: string; answer: string }>;
 }
 
-const { metadata, i18n } = Astro.props;
+const { metadata, i18n, structuredDataType, articleData, faqItems } = Astro.props;
 ---
 
-<Layout metadata={metadata} i18n={i18n}>
+<Layout metadata={metadata} i18n={i18n} structuredDataType={structuredDataType} articleData={articleData} faqItems={faqItems}>
   <slot name="announcement">
     <Announcement />
   </slot>

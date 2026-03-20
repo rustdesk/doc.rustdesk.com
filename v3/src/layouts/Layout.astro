@@ -13,6 +13,7 @@ import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import Scamming from '../components/common/Scamming.jsx';
+import StructuredData from '~/components/common/StructuredData.astro';
 
 // Comment the line below to disable View Transitions
 import { ViewTransitions } from 'astro:transitions';
@@ -24,9 +25,20 @@ import type { MetaData as MetaDataType } from '~/types';
 export interface Props {
   metadata?: MetaDataType;
   i18n?: boolean;
+  structuredDataType?: 'website' | 'article' | 'software' | 'faq';
+  articleData?: {
+    title: string;
+    description?: string;
+    image?: string;
+    publishDate?: Date;
+    updateDate?: Date;
+    author?: string;
+    category?: string;
+  };
+  faqItems?: Array<{ question: string; answer: string }>;
 }
 
-const { metadata = {}, i18n } = Astro.props;
+const { metadata = {}, i18n, structuredDataType = 'website', articleData, faqItems } = Astro.props;
 const { language, textDirection } = I18N;
 const t = useTranslations(Astro.currentLocale as Lang);
 const langs = Object.keys(LOCALES);
@@ -58,6 +70,7 @@ metadata.description = t({
     <ApplyColorMode />
     <Metadata {...metadata} />
     <SiteVerification />
+    <StructuredData type={structuredDataType} article={articleData} faqItems={faqItems} />
 
     <!-- Comment the line below to disable View Transitions -->
     <ViewTransitions fallback="swap" />
@@ -70,6 +83,15 @@ metadata.description = t({
             href={Astro.site?.origin + path.replace('/' + defaultLocale, '').replace(/\/$/, '')}
           />
         ))
+    }
+    {
+      i18n && (
+        <link
+          rel="alternate"
+          hreflang="x-default"
+          href={Astro.site?.origin + Astro.url.pathname.replace('/' + defaultLocale, '').replace(/\/$/, '')}
+        />
+      )
     }
     { i18n && Astro.currentLocale == defaultLocale && <script is:inline define:vars={{ langs, baseUrl, defaultLocale }}>
       let lang;

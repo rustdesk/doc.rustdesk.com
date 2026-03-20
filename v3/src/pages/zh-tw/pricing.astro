@@ -12,6 +12,61 @@ const metadata = {
   keywords: 'rustdesk價格, 自託管遠端桌面價格, 遠端桌面伺服器成本, 開源遠端存取價格, 企業遠端桌面方案',
   author: 'RustDesk Team',
 };
+
+const faqRawItems = [
+      {
+        title: '這些計劃是否包含客戶支持？',
+        description: '當然，所有付費計劃都包括訪問我們專門的客戶支持，以協助您解決任何疑問或問題。',
+      },
+      {
+        title: '是否有試用許可證？',
+        description: '請<a class="underline" href="mailto:sales@rustdesk.com">聯繫我們</a>',
+      },
+      {
+        title: '如何升級我的計劃？',
+        description:
+          '當然可以！您可以隨時輕鬆地<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license">升級您的計劃</a>，以找到最適合您不斷變化需求的計劃。',
+      },
+      {
+        title: '您接受哪些付款方式？',
+        description:
+          '我們接受主要信用卡和在線支付方式，以確保便捷和安全的交易過程。如果您想通過銀行轉賬付款，請<a class="underline" href="mailto:sales@rustdesk.com">聯繫我們</a>；您將被收取額外的銀行處理費，我們會在收到銀行的離線付款後發送許可證密鑰給您；這需要3~5個工作日。',
+      },
+      {
+        title: '除了顯示的費用外，還有其他隱藏費用嗎？',
+        description: '沒有，費用涵蓋了每個計劃下列出的所有功能。沒有隱藏費用或額外收費。',
+      },
+      {
+        title: '您有月付選項嗎？',
+        description:
+          '沒有，我們只提供年付計劃。我們不會自動續訂；您將在許可證到期前14天收到一封電子郵件，提醒您續訂許可證。',
+      },
+      {
+        title: '您對非營利組織或教育機構有折扣嗎？',
+        description: '目前還沒有。我們鼓勵您使用免費計劃。',
+      },
+      {
+        title: '您的條款是什麼？',
+        description:
+          '請查看這個<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">條款</a>',
+      },
+      {
+        title: 'web client 是否已整合到 RustDesk Server Pro？',
+        description:
+          '是的，已整合，但需要 $39.90/月 或更高方案。詳情請查看此<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro">FAQ 條目</a>。為避免混淆，<b>web client</b> 指在瀏覽器分頁中直接使用 RustDesk 發起遠端工作階段，<b>web console</b> 指 RustDesk Server Pro 的管理後台網站，用於管理使用者、裝置、權限、策略與授權。',
+      },
+      {
+        title: '對於臨時支持案例怎麼辦？我們有一些設備需要偶爾支持，但不需要無人值守訪問。',
+        description:
+          '我們提供這個<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">解決方案</a>',
+      },
+    ];
+
+const faqItems = faqRawItems.map((item) => ({
+  question: item.title,
+  answer: item.description.replace(/<[^>]*>/g, ''),
+}));
+
 ---
 
 <script>
@@ -55,7 +110,7 @@ const metadata = {
   };
 </script>
 
-<Layout metadata={metadata} i18n>
+<Layout metadata={metadata} i18n structuredDataType="faq" faqItems={faqItems}>
   <Note
     title="注意"
     subtitle='此定價適用於<span class="text-xl text-blue-500">自託管</span>解決方案，<span class="text-3xl font-extrabold">不是</span><span class="line-through text-xl text-blue-500">SaaS</span>訂閱。'
@@ -323,53 +378,6 @@ const metadata = {
     title="價格常見問題"
     subtitle="選擇正確的計劃很重要，我們在這裡回答您的問題。如果您對我們的價格選項有疑問，您來對地方了。"
     columns={1}
-    items={[
-      {
-        title: '這些計劃是否包含客戶支持？',
-        description: '當然，所有付費計劃都包括訪問我們專門的客戶支持，以協助您解決任何疑問或問題。',
-      },
-      {
-        title: '是否有試用許可證？',
-        description: '請<a class="underline" href="mailto:sales@rustdesk.com">聯繫我們</a>',
-      },
-      {
-        title: '如何升級我的計劃？',
-        description:
-          '當然可以！您可以隨時輕鬆地<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license">升級您的計劃</a>，以找到最適合您不斷變化需求的計劃。',
-      },
-      {
-        title: '您接受哪些付款方式？',
-        description:
-          '我們接受主要信用卡和在線支付方式，以確保便捷和安全的交易過程。如果您想通過銀行轉賬付款，請<a class="underline" href="mailto:sales@rustdesk.com">聯繫我們</a>；您將被收取額外的銀行處理費，我們會在收到銀行的離線付款後發送許可證密鑰給您；這需要3~5個工作日。',
-      },
-      {
-        title: '除了顯示的費用外，還有其他隱藏費用嗎？',
-        description: '沒有，費用涵蓋了每個計劃下列出的所有功能。沒有隱藏費用或額外收費。',
-      },
-      {
-        title: '您有月付選項嗎？',
-        description:
-          '沒有，我們只提供年付計劃。我們不會自動續訂；您將在許可證到期前14天收到一封電子郵件，提醒您續訂許可證。',
-      },
-      {
-        title: '您對非營利組織或教育機構有折扣嗎？',
-        description: '目前還沒有。我們鼓勵您使用免費計劃。',
-      },
-      {
-        title: '您的條款是什麼？',
-        description:
-          '請查看這個<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">條款</a>',
-      },
-      {
-        title: 'web client 是否已整合到 RustDesk Server Pro？',
-        description:
-          '是的，已整合，但需要 $39.90/月 或更高方案。詳情請查看此<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro">FAQ 條目</a>。為避免混淆，<b>web client</b> 指在瀏覽器分頁中直接使用 RustDesk 發起遠端工作階段，<b>web console</b> 指 RustDesk Server Pro 的管理後台網站，用於管理使用者、裝置、權限、策略與授權。',
-      },
-      {
-        title: '對於臨時支持案例怎麼辦？我們有一些設備需要偶爾支持，但不需要無人值守訪問。',
-        description:
-          '我們提供這個<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">解決方案</a>',
-      },
-    ]}
+    items={faqRawItems}
   />
 </Layout>

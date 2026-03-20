@@ -14,6 +14,64 @@ const metadata = {
     'preços rustdesk, preços área de trabalho remota auto-hospedada, custo servidor área de trabalho remota, preços acesso remoto código aberto, planos área de trabalho remota empresariais',
   author: 'RustDesk Team',
 };
+
+const faqRawItems = [
+      {
+        title: 'Os planos incluem suporte ao cliente?',
+        description:
+          'Absolutamente, todos os planos pagos incluem acesso ao nosso suporte ao cliente dedicado para ajudá-lo com quaisquer dúvidas ou preocupações.',
+      },
+      {
+        title: 'Existe uma licença de teste?',
+        description: 'Por favor, <a class="underline" href="mailto:sales@rustdesk.com">entre em contato conosco</a>',
+      },
+      {
+        title: 'Como faço para atualizar meu plano?',
+        description:
+          'Certamente! Você pode facilmente <a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license">atualizar seu plano</a>, a qualquer momento, para encontrar o que melhor atende às suas necessidades em evolução.',
+      },
+      {
+        title: 'Quais métodos de pagamento vocês aceitam?',
+        description:
+          'Aceitamos os principais cartões de crédito e métodos de pagamento online para garantir um processo de transação conveniente e seguro. Se você deseja pagar via transferência bancária, por favor <a class="underline" href="mailto:sales@rustdesk.com">entre em contato conosco</a>; você será cobrado uma taxa extra de processamento bancário, e enviaremos a chave de licença assim que recebermos o pagamento offline no banco; isso leva de 3 a 5 dias úteis.',
+      },
+      {
+        title: 'Existem taxas ocultas além do custo exibido?',
+        description:
+          'Não, o custo cobre todas as características e recursos listados em cada plano. Não há taxas ocultas ou cobranças extras.',
+      },
+      {
+        title: 'Vocês têm pagamento mensal?',
+        description:
+          'Não, oferecemos apenas planos de pagamento anual. Não renovamos automaticamente; você receberá um e-mail lembrando-o de renovar sua licença 14 dias antes da data de expiração.',
+      },
+      {
+        title: 'Vocês têm desconto para organizações sem fins lucrativos ou educacionais?',
+        description: 'Não, ainda não temos. Você é encorajado a usar o plano gratuito.',
+      },
+      {
+        title: 'Quais são os seus termos?',
+        description:
+          'Por favor, verifique estes <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">termos</a>',
+      },
+      {
+        title: 'O web client está integrado ao RustDesk Server Pro?',
+        description:
+          'Sim, ele é integrado, mas requer o plano de $39.90/mês ou superior. Consulte esta <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro">entrada de FAQ</a> para mais detalhes. Para maior clareza, <b>web client</b> significa usar o RustDesk diretamente em uma aba do navegador para iniciar sessões remotas, enquanto <b>web console</b> significa o site administrativo do RustDesk Server Pro para gerenciar usuários, dispositivos, permissões, estratégias e licenças.',
+      },
+      {
+        title:
+          'E quanto a casos de suporte casual? Temos alguns dispositivos que precisam de suporte ocasionalmente sem acesso não assistido.',
+        description:
+          'Fornecemos esta <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">solução</a>',
+      },
+    ];
+
+const faqItems = faqRawItems.map((item) => ({
+  question: item.title,
+  answer: item.description.replace(/<[^>]*>/g, ''),
+}));
+
 ---
 
 <script>
@@ -57,7 +115,7 @@ const metadata = {
   };
 </script>
 
-<Layout metadata={metadata} i18n>
+<Layout metadata={metadata} i18n structuredDataType="faq" faqItems={faqItems}>
   <Note
     title="Nota"
     subtitle='Este preço é para uma solução de <span class="text-xl text-blue-500">auto-hospedagem</span>, <span class="text-3xl font-extrabold">NÃO</span> é uma assinatura de <span class="line-through text-xl text-blue-500">SaaS</span>.'
@@ -325,56 +383,6 @@ const metadata = {
     title="Perguntas Frequentes sobre Preços"
     subtitle="Escolher o plano certo é importante, e estamos aqui para responder suas perguntas. Se você tem dúvidas sobre nossas opções de preços, você está no lugar certo."
     columns={1}
-    items={[
-      {
-        title: 'Os planos incluem suporte ao cliente?',
-        description:
-          'Absolutamente, todos os planos pagos incluem acesso ao nosso suporte ao cliente dedicado para ajudá-lo com quaisquer dúvidas ou preocupações.',
-      },
-      {
-        title: 'Existe uma licença de teste?',
-        description: 'Por favor, <a class="underline" href="mailto:sales@rustdesk.com">entre em contato conosco</a>',
-      },
-      {
-        title: 'Como faço para atualizar meu plano?',
-        description:
-          'Certamente! Você pode facilmente <a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#renewupgrade-license">atualizar seu plano</a>, a qualquer momento, para encontrar o que melhor atende às suas necessidades em evolução.',
-      },
-      {
-        title: 'Quais métodos de pagamento vocês aceitam?',
-        description:
-          'Aceitamos os principais cartões de crédito e métodos de pagamento online para garantir um processo de transação conveniente e seguro. Se você deseja pagar via transferência bancária, por favor <a class="underline" href="mailto:sales@rustdesk.com">entre em contato conosco</a>; você será cobrado uma taxa extra de processamento bancário, e enviaremos a chave de licença assim que recebermos o pagamento offline no banco; isso leva de 3 a 5 dias úteis.',
-      },
-      {
-        title: 'Existem taxas ocultas além do custo exibido?',
-        description:
-          'Não, o custo cobre todas as características e recursos listados em cada plano. Não há taxas ocultas ou cobranças extras.',
-      },
-      {
-        title: 'Vocês têm pagamento mensal?',
-        description:
-          'Não, oferecemos apenas planos de pagamento anual. Não renovamos automaticamente; você receberá um e-mail lembrando-o de renovar sua licença 14 dias antes da data de expiração.',
-      },
-      {
-        title: 'Vocês têm desconto para organizações sem fins lucrativos ou educacionais?',
-        description: 'Não, ainda não temos. Você é encorajado a usar o plano gratuito.',
-      },
-      {
-        title: 'Quais são os seus termos?',
-        description:
-          'Por favor, verifique estes <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/blob/main/terms">termos</a>',
-      },
-      {
-        title: 'O web client está integrado ao RustDesk Server Pro?',
-        description:
-          'Sim, ele é integrado, mas requer o plano de $39.90/mês ou superior. Consulte esta <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro">entrada de FAQ</a> para mais detalhes. Para maior clareza, <b>web client</b> significa usar o RustDesk diretamente em uma aba do navegador para iniciar sessões remotas, enquanto <b>web console</b> significa o site administrativo do RustDesk Server Pro para gerenciar usuários, dispositivos, permissões, estratégias e licenças.',
-      },
-      {
-        title:
-          'E quanto a casos de suporte casual? Temos alguns dispositivos que precisam de suporte ocasionalmente sem acesso não assistido.',
-        description:
-          'Fornecemos esta <a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">solução</a>',
-      },
-    ]}
+    items={faqRawItems}
   />
 </Layout>

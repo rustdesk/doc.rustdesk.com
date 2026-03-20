@@ -43,9 +43,21 @@ const metadata = merge(
   },
   { ...(post?.metadata ? { ...post.metadata, canonical: post.metadata?.canonical || url } : {}) }
 ) as MetaData;
+
+const imageUrl = typeof image === 'string' ? image : (image as ImageMetadata)?.src || '';
+
+const articleData = {
+  title: post.title,
+  description: post.excerpt,
+  image: imageUrl,
+  publishDate: post.publishDate,
+  updateDate: post.updateDate,
+  author: post.author,
+  category: post.category?.title,
+};
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} structuredDataType="article" articleData={articleData}>
   <SinglePost post={{ ...post, image: image }} url={url}>
     {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
   </SinglePost>

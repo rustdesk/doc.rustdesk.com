@@ -26,6 +26,15 @@ const { post, url } = Astro.props;
           <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
           {
+            post.updateDate && (
+              <>
+                {' '}
+                · <Icon name="tabler:refresh" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
+                <span class="inline-block text-sm text-gray-500">Updated: <time datetime={String(post.updateDate)}>{getFormattedDate(post.updateDate)}</time></span>
+              </>
+            )
+          }
+          {
             post.author && (
               <>
                 {' '}
@@ -68,7 +77,7 @@ const { post, url } = Astro.props;
             class="mt-8 max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
             widths={[400, 900]}
             sizes="(max-width: 900px) 400px, 900px"
-            alt={post?.excerpt || ''}
+            alt={post?.title || post?.excerpt || ''}
             width={900}
             height={506}
             loading="eager"
