@@ -14,6 +14,7 @@ import BasicScripts from '~/components/common/BasicScripts.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import Scamming from '../components/common/Scamming.jsx';
 import StructuredData from '~/components/common/StructuredData.astro';
+import { DEFAULT_SITE_DESCRIPTION } from '~/utils/seo';
 
 // Comment the line below to disable View Transitions
 import { ViewTransitions } from 'astro:transitions';
@@ -46,7 +47,7 @@ const baseUrl = import.meta.env.PROD ? Astro.site : '/';
 const defaultLocale = DEFAULT_LOCALE;
 const locale = Astro.currentLocale as Lang;
 
-metadata.description = t({
+metadata.description ||= (t({
   en: "RustDesk offers an open-source remote desktop solution with self-hosted server options. Perfect TeamViewer alternative for secure, private, and customizable remote access. Explore our professional on-premise licenses.",
   es: "RustDesk ofrece una solución de escritorio remoto de código abierto con opciones de servidor autohospedado. La alternativa perfecta a TeamViewer para un acceso remoto seguro, privado y personalizable. Explore nuestras licencias profesionales locales.",
   pt: "RustDesk oferece uma solução de desktop remoto de código aberto com opções de servidor auto-hospedado. Alternativa perfeita ao TeamViewer para acesso remoto seguro, privado e personalizável. Explore nossas licenças profissionais locais.",
@@ -58,7 +59,7 @@ metadata.description = t({
   "zh-tw": "RustDesk 提供了一個開源的遠程桌面解決方案，具有自托管伺服器選項。是安全、私密和可定制的遠程訪問的完美 TeamViewer 替代品。探索我們的專業本地許可證。",
   ar: "تقدم RustDesk حلاً لسطح المكتب عن بعد مفتوح المصدر مع خيارات خادم مضيف ذاتيًا. بديل مثالي لـ TeamViewer للوصول عن بُعد الآمن والخاص والقابل للتخصيص. استكشف تراخيصنا المهنية على الأرض.",
   ko: "RustDesk는 자체 호스팅 서버 옵션을 갖춘 오픈 소스 원격 데스크톱 솔루션을 제공합니다. 안전하고 개인 정보 보호되며 사용자 정의 가능한 원격 액세스를 위한 완벽한 TeamViewer 대체품입니다. 전문 온프레미스 라이선스를 살펴보세요.",
-  }) as string;
+  }) as string) || DEFAULT_SITE_DESCRIPTION;
 ---
 
 <!doctype html>
@@ -70,7 +71,7 @@ metadata.description = t({
     <ApplyColorMode />
     <Metadata {...metadata} />
     <SiteVerification />
-    <StructuredData type={structuredDataType} article={articleData} faqItems={faqItems} />
+    <StructuredData type={structuredDataType} metadata={metadata} article={articleData} faqItems={faqItems} />
 
     <!-- Comment the line below to disable View Transitions -->
     <ViewTransitions fallback="swap" />

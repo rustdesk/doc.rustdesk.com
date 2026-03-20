@@ -21,6 +21,10 @@ const currentPage = page.currentPage ?? 1;
 
 const metadata = {
   title: `Category '${category.title}' ${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  description:
+    currentPage > 1
+      ? `Browse page ${currentPage} of RustDesk blog posts filed under ${category.title}.`
+      : `Browse RustDesk blog posts and release notes filed under the ${category.title} category.`,
   robots: {
     index: blogCategoryRobots?.index,
     follow: blogCategoryRobots?.follow,

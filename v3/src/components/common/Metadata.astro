@@ -65,6 +65,14 @@ const seoProps: AstroSeoProps = merge(
     twitter: twitter,
   }
 );
+
+const crawlerDirectives = [
+  seoProps.noindex ? 'noindex' : 'index',
+  seoProps.nofollow ? 'nofollow' : 'follow',
+  'max-image-preview:large',
+  'max-snippet:-1',
+  'max-video-preview:-1',
+].join(', ');
 ---
 
 <AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site) }} />
@@ -72,3 +80,5 @@ const seoProps: AstroSeoProps = merge(
 <!-- Additional SEO meta tags -->
 {keywords && <meta name="keywords" content={keywords} />}
 {author && <meta name="author" content={author} />}
+<meta name="googlebot" content={crawlerDirectives} />
+<meta name="bingbot" content={crawlerDirectives} />

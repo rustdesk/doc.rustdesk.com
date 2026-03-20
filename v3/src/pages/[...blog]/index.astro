@@ -30,6 +30,8 @@ const metadata = merge(
   {
     title: post.title,
     description: post.excerpt,
+    keywords: post.tags?.map((tag) => tag.title).join(', '),
+    author: post.author || 'RustDesk Team',
     robots: {
       index: blogPostRobots?.index,
       follow: blogPostRobots?.follow,

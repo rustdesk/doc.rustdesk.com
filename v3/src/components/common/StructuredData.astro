@@ -1,6 +1,22 @@
 ---
+import appleTouchIcon from '~/assets/favicons/apple-touch-icon.png';
+
+import type { MetaData } from '~/types';
+import {
+  getKeywordList,
+  getLocaleLanguageTag,
+  getPageDescription,
+  getPageKind,
+  getPageName,
+  getPageTitle,
+  getSiteOrigin,
+  stripLocalePrefix,
+  SITE_NAME,
+} from '~/utils/seo';
+
 export interface Props {
   type?: 'website' | 'article' | 'software' | 'faq';
+  metadata?: MetaData;
   article?: {
     title: string;
     description?: string;
@@ -13,19 +29,30 @@ export interface Props {
   faqItems?: Array<{ question: string; answer: string }>;
 }
 
-const { type = 'website', article, faqItems } = Astro.props;
+const { type = 'website', metadata, article, faqItems = [] } = Astro.props;
 
-const siteUrl = 'https://rustdesk.com';
-const currentUrl = new URL(Astro.url.pathname, siteUrl).href;
+const siteOrigin = getSiteOrigin(Astro.site);
+const currentUrl = metadata?.canonical || new URL(Astro.url.pathname, siteOrigin).toString();
+const localeTag = getLocaleLanguageTag(Astro.currentLocale);
+const pageKind = getPageKind(Astro.url.pathname);
+const pageTitle = getPageTitle(metadata);
+const pageName = getPageName(Astro.url.pathname, metadata);
+const pageDescription = getPageDescription(metadata);
+const keywordList = getKeywordList(metadata?.keywords);
+
+const toAbsoluteUrl = (value?: string) => {
+  if (!value) return undefined;
+  return value.startsWith('http') ? value : new URL(value, siteOrigin).toString();
+};
 
 const organizationSchema = {
   '@type': 'Organization',
-  '@id': `${siteUrl}/#organization`,
-  name: 'RustDesk',
-  url: siteUrl,
+  '@id': `${siteOrigin}/#organization`,
+  name: SITE_NAME,
+  url: siteOrigin,
   logo: {
     '@type': 'ImageObject',
-    url: `${siteUrl}/icon.png`,
+    url: new URL(appleTouchIcon.src, siteOrigin).toString(),
   },
   sameAs: [
     'https://github.com/rustdesk/rustdesk',
@@ -36,108 +63,116 @@ const organizationSchema = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
-    url: `${siteUrl}/support`,
+    url: `${siteOrigin}/support`,
+    availableLanguage: ['en', 'de', 'es', 'fr', 'it', 'ja', 'pt', 'zh-CN', 'zh-TW', 'ko', 'ar'],
   },
 };
 
 const websiteSchema = {
   '@type': 'WebSite',
-  '@id': `${siteUrl}/#website`,
-  url: siteUrl,
-  name: 'RustDesk',
-  description: 'Open-source remote desktop software with self-hosted server solutions.',
-  publisher: { '@id': `${siteUrl}/#organization` },
+  '@id': `${siteOrigin}/#website`,
+  url: siteOrigin,
+  name: SITE_NAME,
+  description: pageDescription,
+  publisher: { '@id': `${siteOrigin}/#organization` },
   inLanguage: ['en', 'de', 'es', 'fr', 'it', 'ja', 'pt', 'zh-CN', 'zh-TW', 'ko', 'ar'],
+};
+
+const webPageSchemaType = (() => {
+  if (pageKind === 'support') return 'ContactPage';
+  if (pageKind === 'team') return 'AboutPage';
+  if (['blog', 'blog-category', 'blog-tag'].includes(pageKind)) return 'CollectionPage';
+  return 'WebPage';
+})();
+
+const webPageSchema = {
+  '@type': webPageSchemaType,
+  '@id': `${currentUrl}#webpage`,
+  url: currentUrl,
+  name: pageName,
+  headline: pageTitle,
+  description: pageDescription,
+  isPartOf: { '@id': `${siteOrigin}/#website` },
+  inLanguage: localeTag,
+  about:
+    type === 'software' || pageKind === 'pricing'
+      ? { '@id': `${siteOrigin}/#software` }
+      : { '@id': `${siteOrigin}/#organization` },
+  ...(keywordList.length > 0 ? { keywords: keywordList } : {}),
 };
 
 const softwareSchema = {
   '@type': 'SoftwareApplication',
-  '@id': `${siteUrl}/#software`,
-  name: 'RustDesk',
+  '@id': `${siteOrigin}/#software`,
+  name: SITE_NAME,
   applicationCategory: 'BusinessApplication',
   applicationSubCategory: 'Remote Desktop Software',
-  operatingSystem: 'Windows, macOS, Linux, Android, iOS',
-  description: 'Open-source remote desktop software with self-hosted server options. A secure alternative to TeamViewer and AnyDesk.',
-  url: siteUrl,
-  downloadUrl: `${siteUrl}/download`,
-  softwareVersion: 'Latest',
-  author: { '@id': `${siteUrl}/#organization` },
-  offers: [
-    {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-      name: 'Open Source (Free)',
-      description: 'Free and open-source remote desktop software',
-    },
-    {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-      name: 'RustDesk Server Pro',
-      description: 'Professional self-hosted remote desktop server with advanced features',
-      url: `${siteUrl}/pricing`,
-    },
-  ],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.8',
-    ratingCount: '106000',
-    bestRating: '5',
-    worstRating: '1',
-  },
+  operatingSystem: ['Windows', 'macOS', 'Linux', 'Android', 'iOS'],
+  description:
+    'Open-source remote desktop software with self-hosted server options, centralized management, and cross-platform remote access.',
+  url: siteOrigin,
+  downloadUrl: `${siteOrigin}/download`,
+  softwareHelp: `${siteOrigin}/support`,
+  isAccessibleForFree: true,
+  author: { '@id': `${siteOrigin}/#organization` },
+  publisher: { '@id': `${siteOrigin}/#organization` },
   featureList: [
     'Self-hosted server',
-    'End-to-end encryption',
-    'Cross-platform support',
-    'Custom branding',
-    'Web client',
+    'Remote access and remote support',
+    'Cross-platform desktop and mobile support',
+    'Web console',
     'File transfer',
-    'TCP tunneling',
     'Address book',
     'Access control',
+    'Audit logs',
+    'SSO and LDAP support in Server Pro',
   ],
 };
 
-let graphItems: object[] = [organizationSchema, websiteSchema];
+const graphItems: object[] = [organizationSchema, websiteSchema, webPageSchema];
 
-if (type === 'website' || type === 'software') {
+if (type === 'software' || pageKind === 'pricing') {
   graphItems.push(softwareSchema);
 }
 
 if (type === 'article' && article) {
-  const articleSchema = {
-    '@type': 'Article',
+  graphItems.push({
+    '@type': 'BlogPosting',
     '@id': `${currentUrl}#article`,
     headline: article.title,
-    description: article.description || '',
+    description: article.description || pageDescription,
     url: currentUrl,
     datePublished: article.publishDate?.toISOString(),
-    ...(article.updateDate && { dateModified: article.updateDate.toISOString() }),
+    dateModified: (article.updateDate || article.publishDate)?.toISOString(),
     author: {
       '@type': 'Person',
       name: article.author || 'RustDesk Team',
     },
-    publisher: { '@id': `${siteUrl}/#organization` },
-    ...(article.image && {
-      image: {
-        '@type': 'ImageObject',
-        url: article.image.startsWith('http') ? article.image : `${siteUrl}${article.image}`,
-      },
-    }),
+    publisher: { '@id': `${siteOrigin}/#organization` },
+    ...(article.image
+      ? {
+          image: {
+            '@type': 'ImageObject',
+            url: toAbsoluteUrl(article.image),
+          },
+        }
+      : {}),
+    ...(article.category ? { articleSection: article.category } : {}),
+    ...(keywordList.length > 0 ? { keywords: keywordList } : {}),
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': currentUrl,
+      '@id': `${currentUrl}#webpage`,
     },
-    inLanguage: 'en',
-  };
-  graphItems.push(articleSchema);
+    inLanguage: localeTag,
+  });
 }
 
-if (type === 'faq' && faqItems && faqItems.length > 0) {
-  const faqSchema = {
+if (faqItems.length > 0) {
+  graphItems.push({
     '@type': 'FAQPage',
     '@id': `${currentUrl}#faq`,
+    url: currentUrl,
+    inLanguage: localeTag,
     mainEntity: faqItems.map((item) => ({
       '@type': 'Question',
       name: item.question,
@@ -146,39 +181,106 @@ if (type === 'faq' && faqItems && faqItems.length > 0) {
         text: item.answer,
       },
     })),
-  };
-  graphItems.push(faqSchema);
+  });
 }
 
-const breadcrumbSchema = {
-  '@type': 'BreadcrumbList',
-  itemListElement: (() => {
-    const path = Astro.url.pathname.replace(/^\/+|\/+$/g, '');
-    const segments = path.split('/').filter(Boolean);
-    const items = [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: siteUrl,
-      },
-    ];
-    let currentPath = '';
-    segments.forEach((segment, index) => {
-      currentPath += `/${segment}`;
-      items.push({
-        '@type': 'ListItem',
-        position: index + 2,
-        name: segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),
-        item: `${siteUrl}${currentPath}`,
-      });
+const breadcrumbItems = (() => {
+  const localizedPath = Astro.url.pathname.replace(/^\/+|\/+$/g, '');
+  if (!localizedPath) return [];
+
+  const contentPath = stripLocalePrefix(Astro.url.pathname).replace(/^\/+|\/+$/g, '');
+  const localizedSegments = localizedPath.split('/').filter(Boolean);
+  const contentSegments = contentPath.split('/').filter(Boolean);
+  const localePrefix =
+    localizedSegments.length > contentSegments.length && localizedSegments[0] ? `/${localizedSegments[0]}` : '';
+
+  const items = [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: localePrefix ? `${siteOrigin}${localePrefix}` : siteOrigin,
+    },
+  ];
+
+  if (pageKind === 'blog') {
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: currentUrl,
     });
     return items;
-  })(),
-};
+  }
 
-if (Astro.url.pathname !== '/' && Astro.url.pathname !== '/en') {
-  graphItems.push(breadcrumbSchema);
+  if (pageKind === 'blog-post') {
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: `${siteOrigin}/blog`,
+    });
+    items.push({
+      '@type': 'ListItem',
+      position: 3,
+      name: pageTitle,
+      item: currentUrl,
+    });
+    return items;
+  }
+
+  if (pageKind === 'blog-category') {
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: `${siteOrigin}${localePrefix}/blog`,
+    });
+    items.push({
+      '@type': 'ListItem',
+      position: 3,
+      name: pageTitle,
+      item: currentUrl,
+    });
+    return items;
+  }
+
+  if (pageKind === 'blog-tag') {
+    items.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: `${siteOrigin}${localePrefix}/blog`,
+    });
+    items.push({
+      '@type': 'ListItem',
+      position: 3,
+      name: pageTitle,
+      item: currentUrl,
+    });
+    return items;
+  }
+
+  let currentPath = '';
+  contentSegments.forEach((segment, index) => {
+    currentPath += `/${segment}`;
+    items.push({
+      '@type': 'ListItem',
+      position: index + 2,
+      name: index === contentSegments.length - 1 ? pageName : segment.replace(/-/g, ' '),
+      item: `${siteOrigin}${localePrefix}${currentPath}`,
+    });
+  });
+
+  return items;
+})();
+
+if (breadcrumbItems.length > 1) {
+  graphItems.push({
+    '@type': 'BreadcrumbList',
+    '@id': `${currentUrl}#breadcrumb`,
+    itemListElement: breadcrumbItems,
+  });
 }
 
 const jsonLd = {

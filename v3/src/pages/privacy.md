@@ -1,5 +1,6 @@
 ---
 title: 'Privacy Policy'
+description: 'Read the RustDesk privacy policy covering website usage, cookies, support, and the processing of personal data related to RustDesk services.'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 

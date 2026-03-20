@@ -1,5 +1,6 @@
 ---
 import { getAsset } from '~/utils/permalinks';
+import { TECHNICAL_FAQ_URL } from '~/utils/seo';
 ---
 
 <meta charset="UTF-8" />
@@ -9,3 +10,5 @@ import { getAsset } from '~/utils/permalinks';
 
 <link rel="sitemap" href={getAsset('/sitemap-index.xml')} />
 <link rel="alternate" type="application/rss+xml" title="RustDesk Blog" href={getAsset('/rss.xml')} />
+<link rel="alternate" type="text/plain" title="RustDesk llms.txt" href={getAsset('/llms.txt')} />
+<link rel="help" title="RustDesk Technical FAQ" href={TECHNICAL_FAQ_URL} />

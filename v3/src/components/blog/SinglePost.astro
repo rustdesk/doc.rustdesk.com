@@ -16,6 +16,7 @@ export interface Props {
 }
 
 const { post, url } = Astro.props;
+const authorName = post.author || 'RustDesk Team';
 ---
 
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
@@ -34,15 +35,9 @@ const { post, url } = Astro.props;
               </>
             )
           }
-          {
-            post.author && (
-              <>
-                {' '}
-                · <Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-                <span class="inline-block">{post.author}</span>
-              </>
-            )
-          }
+          {' '}
+          · <Icon name="tabler:user" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
+          <span class="inline-block">{authorName}</span>
           {
             post.category && (
               <>
@@ -69,6 +64,11 @@ const { post, url } = Astro.props;
       >
         {post.title}
       </h1>
+      {
+        post.excerpt && (
+          <p class="px-4 sm:px-6 max-w-4xl mx-auto mt-4 text-lg text-muted dark:text-slate-300">{post.excerpt}</p>
+        )
+      }
 
       {
         post.image ? (

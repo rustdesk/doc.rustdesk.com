@@ -1,5 +1,6 @@
 ---
 title: 'Terms and Conditions'
+description: 'Review the RustDesk software terms and conditions, including license rights, restrictions, warranties, liability, and acceptable use.'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
