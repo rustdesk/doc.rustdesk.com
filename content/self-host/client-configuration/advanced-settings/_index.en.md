@@ -1123,6 +1123,22 @@ This is for the Android controlled side. Note that keeping the screen on depends
 | :------: | :------: | :------: |
 | never, during-controlled, service-on | during-controlled | `keep-screen-on=never` |
 
+### keep-awake-during-incoming-sessions
+
+Keep the screen awake during incoming remote desktop sessions. This helps prevent the device from sleeping while the application is actively being used for remote connections.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `keep-awake-during-incoming-sessions=N` |
+
+### keep-awake-during-outgoing-sessions
+
+Keep the screen awake during outgoing remote desktop sessions. This helps prevent the device from sleeping while the application is actively being used for remote connections.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `keep-awake-during-outgoing-sessions=N` |
+
 ### enable-directx-capture
 
 This is for the Windows controlled side. If you don't encounter any problems, it is recommended to use the default settings, which prioritize using DirectX for screenshots instead of using GDI directly.
@@ -1242,6 +1258,16 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/332
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-tray=Y` |
+
+### hide-stop-service
+
+Hide stop/toggle service controls while the service is running. This is mainly for custom clients to prevent users from stopping the service from the UI (desktop settings, tray menu, Android server page, and Android floating window menu).
+
+When the service is stopped, the start/enable entry remains visible.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-stop-service=Y` |
 
 ### one-way-clipboard-redirection
 
