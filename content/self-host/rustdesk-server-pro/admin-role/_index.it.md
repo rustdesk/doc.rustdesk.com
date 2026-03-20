@@ -5,6 +5,20 @@ description: "Documentazione RustDesk su Ruolo Amministratore. Consulta le guide
 keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Risposta rapida
+
+Usa un ruolo amministratore quando più amministratori hanno bisogno dello stesso insieme limitato di permessi nella console web. Mantenere e assegnare un solo ruolo è più semplice che modificare ogni account separatamente.
+
+## Punti chiave
+
+- Raggruppa i permessi amministrativi ripetuti in un unico ruolo
+- Concedi accesso amministrativo completo solo dove è davvero necessario
+- Verifica l’ambito del ruolo con un account di test che non sia owner
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Il Ruolo Amministratore consente agli amministratori di delegare permessi di gestione parziali a utenti non amministratori. È possibile definire permessi per risorse globali (come strategie, ruoli di controllo e client personalizzati) nonché per utenti e dispositivi in diversi ambiti.
 
 Una volta assegnato un Ruolo Amministratore a un utente, vedrà le pagine e i menu corrispondenti nella console web in base ai permessi concessi.

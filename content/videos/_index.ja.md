@@ -5,6 +5,10 @@ description: "RustDesk のビデオチュートリアルに関するドキュメ
 keywords: ["rustdesk videos", "rustdesk tutorial", "rustdesk installation video", "rustdesk self-hosting video", "rustdesk security video"]
 ---
 
+## まずどの動画を見るべきですか？
+
+RustDesk を評価中、または基本的なセルフホスト導入を進めるなら、まず OSS のインストール動画またはユーザーガイド動画から始めてください。RustDesk Server Pro の継続的なチュートリアルや製品更新は RustDesk の YouTube チャンネルを確認してください。
+
 ## OSS
 [NetworkChuck: あなたのリモートデスクトップは最悪です！代わりにこれを試してください（無料 + オープンソース）
 ](https://www.youtube.com/watch?v=EXL8mMUXs88)

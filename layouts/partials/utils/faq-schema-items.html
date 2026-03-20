@@ -1,0 +1,32 @@
+{{- $items := slice -}}
+{{- $raw := .RawContent | default "" -}}
+{{- if $raw -}}
+  {{- $sections := after 1 (split (printf "\n%s" $raw) "\n## ") -}}
+  {{- range $sections -}}
+    {{- if lt (len $items) 8 -}}
+      {{- $section := printf "## %s" . -}}
+      {{- $lines := split $section "\n" -}}
+      {{- $question := replaceRE `^##\s+` "" (index $lines 0) | markdownify | plainify | htmlUnescape | replaceRE "\\s+" " " | chomp -}}
+      {{- if and $question (or (hasSuffix $question "?") (hasSuffix $question "？")) -}}
+        {{- $answerRaw := delimit (after 1 $lines) "\n" -}}
+        {{- $answerRaw = replaceRE "(?ms)```.*?```" " " $answerRaw -}}
+        {{- $answerRaw = replaceRE `(?m)^!\[[^\n]*$` " " $answerRaw -}}
+        {{- $answerRaw = replaceRE `(?m)^\{\{%[^\n]*$` " " $answerRaw -}}
+        {{- $answerRaw = replaceRE `(?m)^\{\{<[^\n]*$` " " $answerRaw -}}
+        {{- $answerRaw = replaceRE `(?m)^-{3,}$` " " $answerRaw -}}
+        {{- $answer := $answerRaw | markdownify | plainify | htmlUnescape | replaceRE "\\s+" " " | chomp -}}
+        {{- if gt (len $answer) 40 -}}
+          {{- $items = $items | append (dict
+            "@type" "Question"
+            "name" $question
+            "acceptedAnswer" (dict
+              "@type" "Answer"
+              "text" (truncate 320 $answer)
+            )
+          ) -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $items -}}

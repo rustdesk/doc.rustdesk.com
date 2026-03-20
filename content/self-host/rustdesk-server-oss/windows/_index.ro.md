@@ -13,6 +13,20 @@ Politicile de securitate Windows pot fi complicate; dacă acest tutorial nu func
 Versiunea GUI, `RustDeskServer.setup.exe`, nu mai este întreținută și nu este recomandată.
 {{% /notice %}}
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Răspuns rapid
+
+Rularea RustDesk Server OSS pe Windows este posibilă, dar de obicei este un compromis față de Linux sau Docker. Alege această variantă doar când Windows este o cerință fermă și înțelegi compromisurile legate de administrarea serviciilor.
+
+## Puncte cheie
+
+- Alege între NSSM și PM2 înainte de instalare
+- Tratează supravegherea serviciului și comportamentul la restart ca cerințe centrale
+- Verifică porturile, logurile și pornirea automată după fiecare reboot
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## La o răscruce
 Acum ai două opțiuni: poți folosi PM2 (mai ușor) sau NSSM (puțin mai dificil) pentru a porni RustDesk Server.
 Există câteva avantaje în folosirea NSSM:

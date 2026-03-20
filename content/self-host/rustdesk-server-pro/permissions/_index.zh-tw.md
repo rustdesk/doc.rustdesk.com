@@ -5,6 +5,21 @@ description: "RustDesk 的存取控制文檔，提供安裝、設定、部署與
 keywords: ["rustdesk access control", "rustdesk device permissions", "rustdesk user group access", "rustdesk server pro permissions", "rustdesk device assignment"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+RustDesk Server Pro 中的存取控制用來定義哪些使用者或使用者群組可以連線到哪些裝置或裝置群組。建議先從最小可行權限集開始，測試通過後再逐步放寬。
+
+## 關鍵重點
+
+- 先整理好使用者群組與裝置群組
+- 有意識地設定裝置存取規則
+- 預設採用最小權限原則
+- 用真實測試帳號驗證基於群組的存取效果
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## 設備存取權限
 
 設備可以分配給單一使用者、單一設備群組或兩者皆有。

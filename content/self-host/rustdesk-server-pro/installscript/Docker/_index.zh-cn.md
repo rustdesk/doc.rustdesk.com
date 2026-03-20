@@ -5,6 +5,21 @@ description: "RustDesk 的Docker文档，提供安装、配置、部署和故障
 keywords: ["rustdesk server pro docker", "rustdesk pro docker compose", "rustdesk pro host network", "rustdesk hbbs hbbr docker", "rustdesk self-host pro docker"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+对于大多数团队，Docker Compose 是推荐的 RustDesk Server Pro Docker 方案，因为它比直接写 docker run 命令更容易阅读、更新和复现。
+
+## 关键要点
+
+- 为数据使用持久化卷
+- 正确映射所需端口
+- 多容器维护时优先使用 Compose
+- 首次部署时就把授权和控制台访问考虑进去
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Docker Compose（推荐）
 
 使用 Docker Compose 时，必须使用 `network_mode: "host"` 来确保许可证正常工作。请使用此[指南](https://docs.docker.com/engine/install)安装 Docker，以确保它是最新版本！

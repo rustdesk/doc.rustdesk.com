@@ -5,6 +5,20 @@ description: "Documentație RustDesk pentru Setări avansate. Găsiți ghiduri d
 keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Răspuns rapid
+
+Setările avansate din clienții RustDesk personalizați le permit administratorilor să predefinească, să recomande sau să blocheze opțiuni înainte de implementare. Folosește-le pentru a păstra un comportament coerent al securității și al interfeței pe toate dispozitivele administrate.
+
+## Puncte cheie
+
+- Setările cu prioritate mai mare suprascriu valorile cu prioritate mai mică
+- Setările forțate îi împiedică pe utilizatorii finali să schimbe opțiunile critice
+- Testează mai întâi pe un client de probă înainte de a distribui același profil pe scară largă
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Toate setările avansate pentru clienții personalizați sunt descrise aici.
 
 ## Niveluri de privilegii pentru setări

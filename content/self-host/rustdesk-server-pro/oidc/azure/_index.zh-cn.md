@@ -7,6 +7,28 @@ keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "ru
 
 # 配置
 
+## Azure OIDC 设置是做什么的？
+
+本配置让用户通过 Microsoft Entra ID 账户使用 OpenID Connect 登录 RustDesk Server Pro。实际操作是：在 Azure 中注册 RustDesk 应用，把客户端凭据填入 RustDesk Pro，并把 RustDesk Pro 指向你的 Entra 租户 issuer URL。
+
+## Azure OIDC 检查清单
+
+- 通过最终回调 origin 打开 RustDesk Pro Web 控制台。
+- 在 Microsoft Entra ID 中创建应用注册。
+- 将 Azure 的 `Client ID` 复制到 RustDesk Pro。
+- 创建 client secret 并立即保存 secret value。
+- 用 `Directory (tenant) ID` 生成 issuer URL。
+- 在 Azure 身份验证设置里启用 `ID tokens`。
+
+## Azure 中哪些值要填到 RustDesk Pro？
+
+| RustDesk Pro 字段 | Azure 来源 |
+| --- | --- |
+| Callback URL | 从 RustDesk Pro 的 OIDC 设置页复制 |
+| Client ID | Azure 应用概览中的 `Application (client) ID` |
+| Client secret | `Certificates & secrets` 中创建的 secret `Value` |
+| Issuer | `https://login.microsoftonline.com/<Directory (tenant) ID>/v2.0` |
+
 1. 登录 [Azure 门户](portal.azure.com)。
 2. 查找并选择 **Microsoft Entra ID**。
 3. 选择左侧菜单的 [**应用注册**](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps)，点击 **新注册**。

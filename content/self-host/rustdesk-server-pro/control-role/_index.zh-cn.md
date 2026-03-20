@@ -5,6 +5,20 @@ description: "RustDesk 的控制角色文档，提供安装、配置、部署和
 keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+当您想定义某个用户或用户组在设备上可以执行哪些远程控制动作时，应使用控制角色。它适合精确限制文件传输、剪贴板、重启等会话能力。
+
+## 关键要点
+
+- 先从最小会话权限集开始
+- 用真实用户组和设备组测试权限计算结果
+- 把日常操作员角色与高权限角色分开
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 控制角色允许您为不同用户配置远程控制权限。当用户远程控制另一台设备时，控制角色定义了控制方用户在建立连接后可以执行的操作。
 
 {{% notice note %}}

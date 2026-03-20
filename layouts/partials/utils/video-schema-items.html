@@ -1,0 +1,46 @@
+{{- $page := . -}}
+{{- $items := slice -}}
+{{- $seenIDs := slice -}}
+{{- $raw := $page.RawContent | default "" -}}
+{{- if $raw -}}
+  {{- $raw = replaceRE `\r?\n\]\(` `](` $raw -}}
+  {{- $currentHeading := $page.Title -}}
+  {{- range split $raw "\n" -}}
+    {{- $line := . -}}
+    {{- $headingMatch := findRESubmatch `^#{2,3}\s+(.+)$` $line -}}
+    {{- with $headingMatch -}}
+      {{- $currentHeading = index (index . 0) 1 | partial "utils/clean-structured-label.html" -}}
+    {{- end -}}
+    {{- $matches := findRESubmatch `\[(.*?)\]\((https?://(?:www\.)?(?:youtube\.com/watch\?v=[^)#\s]+|youtu\.be/[^)#\s]+)[^)]*)\)` $line -}}
+    {{- range $matches -}}
+      {{- if lt (len $items) 8 -}}
+        {{- $title := index . 1 | partial "utils/clean-structured-label.html" -}}
+        {{- $url := index . 2 | chomp -}}
+        {{- $videoID := "" -}}
+        {{- if in $url "youtu.be/" -}}
+          {{- $videoID = replaceRE `^.*youtu\.be/([^?&#/]+).*$` `$1` $url -}}
+        {{- else -}}
+          {{- $videoID = replaceRE `^.*[?&]v=([^?&#/]+).*$` `$1` $url -}}
+        {{- end -}}
+        {{- if or (not $title) (eq $title $url) (hasPrefix $title "http://") (hasPrefix $title "https://") -}}
+          {{- $title = $currentHeading | default $page.Title -}}
+        {{- end -}}
+        {{- if and $title $videoID (not (in $seenIDs $videoID)) -}}
+          {{- $seenIDs = $seenIDs | append $videoID -}}
+          {{- $items = $items | append (dict
+            "@type" "VideoObject"
+            "@id" (printf "%s#video-%s" $page.Permalink $videoID)
+            "name" $title
+            "url" $url
+            "embedUrl" (printf "https://www.youtube.com/embed/%s" $videoID)
+            "thumbnailUrl" (printf "https://i.ytimg.com/vi/%s/hqdefault.jpg" $videoID)
+            "inLanguage" $page.Site.Language.Lang
+            "isPartOf" (dict "@id" (printf "%s#webpage" $page.Permalink))
+            "publisher" (dict "@id" "https://rustdesk.com/#organization")
+          ) -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $items -}}

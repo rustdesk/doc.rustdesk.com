@@ -5,6 +5,10 @@ description: "RustDesk-Dokumentation zu FAQ für Windows. Hier finden Sie Anleit
 keywords: ["rustdesk build faq windows", "rustdesk vcpkg error", "rustdesk cargo lock error", "rustdesk libclang path", "rustdesk windows build troubleshooting"]
 ---
 
+## Wann sollten Sie diese Windows-Build-FAQ verwenden?
+
+Verwenden Sie diese Seite, wenn Ihre Windows-Build-Umgebung im Prinzip steht, aber `cargo run`, `vcpkg` oder `bindgen` weiterhin fehlschlagen. Sie deckt die haufigsten Abhangigkeits- und Umgebungsvariablenprobleme beim RustDesk-Build unter Windows ab.
+
 ## Herunterladen des Pakets vcpkg fehlgeschlagen
 
 ### Fehler

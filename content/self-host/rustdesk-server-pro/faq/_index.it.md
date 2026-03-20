@@ -5,6 +5,22 @@ keywords: ["rustdesk server pro faq", "aiuto rustdesk pro", "aiuto installazione
 weight: 600
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Risposta rapida
+
+Usa questa FAQ quando ti servono risposte rapide su installazione, aggiornamenti, licenza, email e altri compiti amministrativi comuni di RustDesk Server Pro. Per modifiche in produzione, passa poi alla guida dedicata dopo aver identificato il tema corretto.
+
+## Punti chiave
+
+- Installazione o conversione: usa la guida di installazione
+- Deployment Docker: usa la pagina Docker
+- Domande sulla licenza: usa la pagina della licenza
+- SSO o identità: usa la pagina OIDC
+- Rollout dei client: usa la pagina di deployment client
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Come posso installare con il script di installazione semplice?
 1. Ottieni la tua licenza da [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), controlla la pagina [licenza](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) per maggiori dettagli.
 2. Avvia un VPS, bare metal o VM Linux.

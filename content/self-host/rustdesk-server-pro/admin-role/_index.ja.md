@@ -5,6 +5,20 @@ description: "RustDesk の管理者ロールに関するドキュメントです
 keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## クイックアンサー
+
+複数の管理者に同じ限定権限セットを Web コンソールで与えたい場合は Admin Role を使います。各管理者アカウントを個別に編集するより、1 つの役割を保守して割り当てる方が簡単です。
+
+## 重要なポイント
+
+- 繰り返し使う管理権限は 1 つのロールにまとめます
+- フル管理者権限は本当に必要な箇所だけに付与します
+- owner ではないテストアカウントで適用範囲を確認します
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 管理者ロールにより、管理者は非管理者ユーザーに部分的な管理権限を委任できます。グローバルリソース（戦略、コントロールロール、カスタムクライアントなど）およびさまざまなスコープ内のユーザーとデバイスに対する権限を定義できます。
 
 管理者ロールがユーザーに割り当てられると、付与された権限に基づいてWebコンソールに対応するページとメニューが表示されます。

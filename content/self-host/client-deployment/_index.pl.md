@@ -6,6 +6,21 @@ description: "Dokumentacja RustDesk dotycząca Wdrażanie klientów. Zawiera ins
 keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Szybka odpowiedź
+
+Przy większych wdrożeniach najlepiej używać skryptów, pakietów MSI albo narzędzi RMM/MDM, tak aby RustDesk instalował się automatycznie z poprawną konfiguracją serwera. Najlepsza metoda zależy głównie od systemu operacyjnego i używanego stosu administracyjnego.
+
+## Najważniejsze punkty
+
+- Host serwera lub adres `ID Server`
+- Klucz publiczny serwera self-hosted
+- Opcjonalny `API Server` dla logowania Pro
+- Ciąg konfiguracyjny lub metoda pakietowania zgodna z używanymi narzędziami
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Najprostszym sposobem jest użycie niestandardowego klienta, https://twitter.com/rustdesk/status/1788905463678951787.
 
 Możesz wdrożyć to na kilka sposobów, niektóre z nich opisano w sekcji [Konfiguracja klienta](https://rustdesk.com/docs/pl/self-host/client-configuration/).

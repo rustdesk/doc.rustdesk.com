@@ -3,10 +3,20 @@ title: "RustDesk 文档 - 开源远程桌面软件"
 description: "RustDesk完整文档 - 开源远程桌面软件。学习如何自托管、配置客户端并在您的基础设施中部署RustDesk。"
 keywords: ["rustdesk", "远程桌面", "开源", "自托管", "文档", "远程访问", "VNC替代", "teamviewer替代"]
 type: docs
+breadcrumbs: false
 weight: 1
 ---
 
 RustDesk 是一个功能完整的开源远程控制替代方案，支持自托管和安全性，配置简单。您完全控制自己的数据，无需担心安全问题。客户端是开源的，您可以选择在我们的[网站](https://rustdesk.com)上购买功能完整的**专业服务器**，或使用基于我们**专业服务器**的基础免费开源服务器。
+
+## 应该选择哪条 RustDesk 路径？
+
+| 需求 | 最佳起点 |
+| --- | --- |
+| 作为终端用户或管理员使用 RustDesk | [客户端](/docs/zh-cn/client/) |
+| 自建免费的开源服务器 | [RustDesk Server OSS](/docs/zh-cn/self-host/rustdesk-server-oss/) |
+| 需要 Web 控制台、SSO 和企业级控制的自建部署 | [RustDesk Server Pro](/docs/zh-cn/self-host/rustdesk-server-pro/) |
+| 从源码构建或打包 RustDesk | [开发](/docs/zh-cn/dev/) |
 
 ## 功能特性
 - 支持 Windows、macOS、Linux、iOS、Android、Web。

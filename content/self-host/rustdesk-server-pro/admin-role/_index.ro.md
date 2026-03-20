@@ -5,6 +5,20 @@ description: "Documentație RustDesk pentru Rol de Administrator. Găsiți ghidu
 keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Răspuns rapid
+
+Folosește un rol de administrator atunci când mai mulți administratori au nevoie de același set limitat de permisiuni în consola web. Este mai simplu să întreții și să atribui un singur rol decât să modifici fiecare cont separat.
+
+## Puncte cheie
+
+- Grupează permisiunile administrative repetitive într-un singur rol
+- Oferă acces complet de administrator doar unde este cu adevărat necesar
+- Verifică aria rolului cu un cont de test care nu este owner
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Rolul de Administrator permite administratorilor să delege permisiuni parțiale de gestionare utilizatorilor non-administratori. Puteți defini permisiuni pentru resurse globale (precum strategii, roluri de control și clienți personalizați) precum și pentru utilizatori și dispozitive în diferite domenii.
 
 Odată ce un Rol de Administrator este atribuit unui utilizator, acesta va vedea paginile și meniurile corespunzătoare în consola web conform permisiunilor acordate.

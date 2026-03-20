@@ -1,0 +1,46 @@
+{{- $page := . -}}
+{{- $items := slice -}}
+{{- $raw := $page.RawContent | default "" -}}
+{{- if and $raw (not (in $page.RelPermalink "/faq/")) (not (in $page.RelPermalink "/strategy/")) -}}
+  {{- $sections := after 1 (split (printf "\n%s" $raw) "\n## ") -}}
+  {{- range $i, $sectionText := $sections -}}
+    {{- if lt (len $items) 3 -}}
+      {{- $section := printf "## %s" $sectionText -}}
+      {{- $lines := split $section "\n" -}}
+      {{- $name := replaceRE `^##\s+` "" (index $lines 0) | partial "utils/clean-structured-label.html" -}}
+      {{- if and $name (not (or (hasSuffix $name "?") (hasSuffix $name "？") (in $name ","))) -}}
+        {{- $body := delimit (after 1 $lines) "\n" -}}
+        {{- $body = replaceRE "(?ms)```.*?```" " " $body -}}
+        {{- $body = replaceRE `(?m)^!\[[^\n]*$` " " $body -}}
+        {{- $body = replaceRE `(?m)^\{\{%[^\n]*$` " " $body -}}
+        {{- $body = replaceRE `(?m)^\{\{<[^\n]*$` " " $body -}}
+        {{- $stepsRaw := findRE `(?m)^\d+\.\s+.+$` $body -}}
+        {{- if ge (len $stepsRaw) 3 -}}
+          {{- $steps := slice -}}
+          {{- range $stepIndex, $stepRaw := first 8 $stepsRaw -}}
+            {{- $stepText := replaceRE `^\d+\.\s+` "" $stepRaw | markdownify | plainify | htmlUnescape | replaceRE "\\s+" " " | chomp -}}
+            {{- if gt (len $stepText) 10 -}}
+              {{- $steps = $steps | append (dict
+                "@type" "HowToStep"
+                "position" (add $stepIndex 1)
+                "name" (truncate 120 $stepText)
+                "text" $stepText
+              ) -}}
+            {{- end -}}
+          {{- end -}}
+          {{- if ge (len $steps) 3 -}}
+            {{- $items = $items | append (dict
+              "@type" "HowTo"
+              "@id" (printf "%s#howto-%d" $page.Permalink (add (len $items) 1))
+              "name" $name
+              "url" $page.Permalink
+              "inLanguage" $page.Site.Language.Lang
+              "step" $steps
+            ) -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $items -}}

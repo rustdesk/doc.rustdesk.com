@@ -5,6 +5,20 @@ description: "Documentation RustDesk sur MSI. Consultez les guides d'installatio
 keywords: ["rustdesk msi", "rustdesk silent install", "rustdesk msiexec", "rustdesk windows msi", "rustdesk installfolder", "rustdesk printer install"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Réponse rapide
+
+Utilisez le package MSI si vous avez besoin d’un déploiement logiciel Windows standardisé avec paramètres d’installation, installation silencieuse et outils d’entreprise comme Intune ou les stratégies de groupe.
+
+## Points clés
+
+- Le MSI convient bien aux déploiements Windows administrés
+- Vérifiez les paramètres avant le premier déploiement
+- Testez le comportement de mise à jour avec et sans changement d’options
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Le package MSI prend en charge les paramètres de ligne de commande pour l'installation silencieuse.
 
 ## Paramètres

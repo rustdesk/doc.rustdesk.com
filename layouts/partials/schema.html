@@ -1,6 +1,11 @@
 {{- $siteDescription := .Site.Params.description | plainify | htmlUnescape | chomp -}}
 {{- $description := partial "utils/page-description.html" . | plainify | htmlUnescape | chomp -}}
 {{- $softwareDescription := partial "utils/software-description.html" . | plainify | htmlUnescape | chomp -}}
+{{- $faqItems := partial "utils/faq-schema-items.html" . -}}
+{{- $howToItems := partial "utils/howto-schema-items.html" . -}}
+{{- $breadcrumb := partial "utils/breadcrumb-schema-object.html" . -}}
+{{- $tocItems := partial "utils/toc-schema-items.html" . -}}
+{{- $videoItems := partial "utils/video-schema-items.html" . -}}
 
 {{- $keywords := .Params.keywords | default .Site.Language.Params.keywords | default .Site.Params.keywords -}}
 {{- $imageURL := "" -}}
@@ -15,19 +20,26 @@
 {{- $orgID := "https://rustdesk.com/#organization" -}}
 {{- $websiteID := printf "%s#website" .Site.Home.Permalink -}}
 {{- $pageID := printf "%s#webpage" .Permalink -}}
+{{- $faqID := printf "%s#faq" .Permalink -}}
+{{- $tocID := printf "%s#toc" .Permalink -}}
 {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+
+{{- $orgSameAs := slice
+  "https://github.com/rustdesk"
+  "https://twitter.com/rustdesk"
+  "https://discord.com/invite/nDceKgxnkV"
+  "https://www.reddit.com/r/rustdesk/"
+-}}
+{{- with .Site.Params.social.youtube -}}
+  {{- $orgSameAs = $orgSameAs | append (printf "https://youtube.com/@%s" .) -}}
+{{- end -}}
 
 {{- $org := dict
   "@type" "Organization"
   "@id" $orgID
   "name" "RustDesk"
   "url" "https://rustdesk.com"
-  "sameAs" (slice
-    "https://github.com/rustdesk"
-    "https://twitter.com/rustdesk"
-    "https://discord.com/invite/nDceKgxnkV"
-    "https://www.reddit.com/r/rustdesk/"
-  )
+  "sameAs" $orgSameAs
   "contactPoint" (dict
     "@type" "ContactPoint"
     "contactType" "Support"
@@ -47,6 +59,18 @@
   "publisher" (dict "@id" $orgID)
   "inLanguage" .Site.Language.Lang
 -}}
+{{- if (site.Params.search.enable | default true) -}}
+  {{- $website = merge $website (dict
+    "potentialAction" (dict
+      "@type" "SearchAction"
+      "target" (dict
+        "@type" "EntryPoint"
+        "urlTemplate" (printf "%s?q={search_term_string}" .Site.Home.Permalink)
+      )
+      "query-input" "required name=search_term_string"
+    )
+  ) -}}
+{{- end -}}
 
 {{- $software := dict
   "@type" "SoftwareApplication"
@@ -62,6 +86,19 @@
   {{- $pageType = "CollectionPage" -}}
 {{- else if .IsPage -}}
   {{- $pageType = "TechArticle" -}}
+{{- end -}}
+
+{{- $itemListItems := slice -}}
+{{- $itemListID := printf "%s#itemlist" .Permalink -}}
+{{- if .IsSection -}}
+  {{- range $index, $child := first 20 .Pages.ByWeight -}}
+    {{- $itemListItems = $itemListItems | append (dict
+      "@type" "ListItem"
+      "position" (add $index 1)
+      "name" $child.Title
+      "url" $child.Permalink
+    ) -}}
+  {{- end -}}
 {{- end -}}
 
 {{- $page := dict
@@ -87,16 +124,77 @@
     "author" (dict "@id" $orgID)
     "mainEntityOfPage" (dict "@type" "WebPage" "@id" $pageID)
   ) -}}
-  {{- with .PublishDate -}}
-    {{- $page = merge $page (dict "datePublished" (.Format $iso8601)) -}}
+{{- end -}}
+{{- with .PublishDate -}}
+  {{- $page = merge $page (dict "datePublished" (.Format $iso8601)) -}}
+{{- end -}}
+{{- with .Lastmod -}}
+  {{- $page = merge $page (dict "dateModified" (.Format $iso8601)) -}}
+{{- end -}}
+{{- if and .IsSection (gt (len $itemListItems) 0) -}}
+  {{- $page = merge $page (dict "mainEntity" (dict "@id" $itemListID)) -}}
+{{- end -}}
+{{- $pageParts := slice -}}
+{{- if ge (len $tocItems) 2 -}}
+  {{- $pageParts = $pageParts | append (dict "@id" $tocID) -}}
+{{- end -}}
+{{- if gt (len $videoItems) 0 -}}
+  {{- range $videoItems -}}
+    {{- $pageParts = $pageParts | append (dict "@id" (index . "@id")) -}}
   {{- end -}}
-  {{- with .Lastmod -}}
-    {{- $page = merge $page (dict "dateModified" (.Format $iso8601)) -}}
-  {{- end -}}
+{{- end -}}
+{{- if gt (len $pageParts) 0 -}}
+  {{- $page = merge $page (dict "hasPart" $pageParts) -}}
+{{- end -}}
+{{- with $breadcrumb -}}
+  {{- $page = merge $page (dict "breadcrumb" (dict "@id" (index . "@id"))) -}}
+{{- end -}}
+
+{{- $graph := slice $org $website $page -}}
+{{- with $breadcrumb -}}
+  {{- $graph = $graph | append . -}}
+{{- end -}}
+{{- if and .IsSection (gt (len $itemListItems) 0) -}}
+  {{- $graph = $graph | append (dict
+    "@type" "ItemList"
+    "@id" $itemListID
+    "url" .Permalink
+    "numberOfItems" (len $itemListItems)
+    "itemListOrder" "https://schema.org/ItemListOrderAscending"
+    "itemListElement" $itemListItems
+  ) -}}
+{{- end -}}
+{{- if ge (len $tocItems) 2 -}}
+  {{- $graph = $graph | append (dict
+    "@type" "ItemList"
+    "@id" $tocID
+    "name" ((T "onThisPage") | default "On this page")
+    "url" .Permalink
+    "numberOfItems" (len $tocItems)
+    "itemListOrder" "https://schema.org/ItemListOrderAscending"
+    "itemListElement" $tocItems
+  ) -}}
+{{- end -}}
+{{- if gt (len $videoItems) 0 -}}
+  {{- $graph = $graph | append $videoItems -}}
+{{- end -}}
+{{- if ge (len $faqItems) 2 -}}
+  {{- $faq := dict
+    "@type" "FAQPage"
+    "@id" $faqID
+    "url" .Permalink
+    "inLanguage" .Site.Language.Lang
+    "isPartOf" (dict "@id" $websiteID)
+    "mainEntity" $faqItems
+  -}}
+  {{- $graph = $graph | append $faq -}}
+{{- end -}}
+{{- if gt (len $howToItems) 0 -}}
+  {{- $graph = $graph | append $howToItems -}}
 {{- end -}}
 
 {{- $schema := dict
   "@context" "https://schema.org"
-  "@graph" (slice $org $website $page)
+  "@graph" $graph
 -}}
 <script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>

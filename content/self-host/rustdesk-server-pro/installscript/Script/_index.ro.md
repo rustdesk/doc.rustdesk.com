@@ -5,6 +5,18 @@ description: "Documentație RustDesk pentru install.sh. Găsiți ghiduri de inst
 keywords: ["rustdesk server pro install.sh", "rustdesk pro linux install", "rustdesk pro script install", "rustdesk self-host pro linux", "rustdesk server pro setup"]
 ---
 
+## Când ar trebui să folosești install.sh?
+
+Folosește `install.sh` când vrei să implementezi rapid RustDesk Server Pro pe un host Linux cu `systemd`. Este potrivit pentru o instalare directă și scriptată pe un singur server: scriptul instalează dependențe, așază binarele, creează serviciile și poate pregăti și HTTPS pentru consola web.
+
+## Răspunsuri rapide despre install.sh
+
+- Este potrivit pentru o implementare Linux simplă.
+- Dacă vrei să simplifici upgrade-urile, rollback-urile și operarea în containere, folosește [Docker](/docs/ro/self-host/rustdesk-server-pro/installscript/docker/).
+- Ține pregătită licența Pro înainte să începi.
+- Dacă folosești un domeniu, scriptul poate configura și `nginx` și `certbot`.
+- Pentru actualizare după instalarea inițială, folosește `update.sh`.
+
 {{% notice note %}}
 Nu uita să obții licența de la [https://rustdesk.com/pricing/](https://rustdesk.com/pricing/), vezi pagina de [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) pentru detalii.
 

@@ -5,6 +5,20 @@ description: "RustDesk-Dokumentation zu Installation. Hier finden Sie Anleitunge
 keywords: ["rustdesk server install", "install rustdesk server oss", "rustdesk docker install", "rustdesk server firewall ports", "rustdesk hbbs hbbr install", "rustdesk self-host install"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Kurze Antwort
+
+Für die meisten neuen RustDesk-Server-OSS-Bereitstellungen ist Docker der schnellste Einstieg. Eine native Linux-Installation lohnt sich vor allem dann, wenn Sie bewusst Systemdienste oder ein manuell gepflegtes Host-Setup möchten.
+
+## Wichtige Punkte
+
+- Clients benötigen den Wert für `ID Server`
+- Clients benötigen den öffentlichen Server-`Key`
+- Ein `API Server` ist nur nötig, wenn Sie Pro-Funktionen verwenden
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Video-Tutorials
 Es gibt viele Video-Tutorials auf YouTube, https://github.com/rustdesk/rustdesk/wiki/FAQ#video-tutorials.
 

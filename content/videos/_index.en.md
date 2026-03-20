@@ -7,6 +7,10 @@ weight: 50
 
 Use these video tutorials for visual walkthroughs of RustDesk OSS, RustDesk Server Pro, installation, and security topics.
 
+## Which video should you start with?
+
+Start with the OSS installation or user guide videos if you are evaluating RustDesk or setting up a basic self-hosted deployment. Use the RustDesk YouTube channel if you need ongoing product and RustDesk Server Pro walkthroughs.
+
 ## OSS
 [NetworkChuck: Your Remote Desktop SUCKS!! Try this instead (FREE + Open Source)
 ](https://www.youtube.com/watch?v=EXL8mMUXs88)

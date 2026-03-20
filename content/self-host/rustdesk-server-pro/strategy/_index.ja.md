@@ -5,6 +5,20 @@ description: "RustDesk のストラテジーに関するドキュメントです
 keywords: ["rustdesk strategy", "rustdesk policy management", "rustdesk bulk settings", "rustdesk device strategy", "rustdesk server pro strategy"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## クイックアンサー
+
+Strategy を使うと、RustDesk Server Pro はコンソールから共有クライアント設定をデバイス、ユーザー、デバイスグループへ適用できます。クライアントを 1 台ずつ編集する代わりに、ポリシーと設定を一貫して保つために使います。
+
+## 重要なポイント
+
+- よく使うポリシーセット向けに再利用可能な Strategy を作成します
+- デバイス、ユーザー、デバイスグループ割り当ての優先順位を理解します
+- 広く展開する前に小さな範囲でテストします
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ストラテジーは、RustDesk管理者がクライアント設定ページのセキュリティオプションを一括更新するためのツールです。管理者は異なるストラテジーを作成し、異なるデバイスに適用できます。
 
 ## ストラテジーの作成

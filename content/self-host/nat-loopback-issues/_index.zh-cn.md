@@ -10,6 +10,20 @@ keywords: ["rustdesk nat loopback", "rustdesk hairpin nat", "rustdesk local dns"
 此解释涉及复杂的网络知识，我们需要您的帮助来改进其可读性。
 {{% /notice %}}
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+如果 RustDesk 在外网可以正常使用，但在同一局域网内通过公网 IP 或域名访问时失败，通常就是 NAT 环回问题。最佳修复方式是先在路由器上启用 hairpin NAT，其次使用本地 DNS，最后才是 hosts 文件覆盖。
+
+## 关键要点
+
+- 如果路由器支持，优先启用 NAT 环回或 hairpin NAT
+- 当您需要管理同一局域网中的多台设备时，优先使用本地 DNS
+- 只有在设备数量很少时，才建议使用 hosts 文件条目
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 有关 NAT 环回的更多详细信息，请查看 [维基百科](https://en.m.wikipedia.org/wiki/Network_address_translation#NAT_hairpinning) 页面。
 
 当您在家庭网络或 NAT 防火墙后面的任何其他网络环境中部署 RustDesk 服务器时，RustDesk 服务器和您的客户端**必须**：

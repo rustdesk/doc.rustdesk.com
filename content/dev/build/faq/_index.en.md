@@ -7,6 +7,10 @@ keywords: ["rustdesk build faq windows", "rustdesk vcpkg error", "rustdesk cargo
 
 Use this FAQ to fix common Windows build errors for RustDesk, especially around `vcpkg`, Rust dependencies, and `clang` configuration.
 
+## When should you use this Windows build FAQ?
+
+Use this page after your Windows build environment is already set up but `cargo run`, `vcpkg`, or `bindgen` still fails. It covers the most common Windows-side dependency and environment-variable errors in the RustDesk build process.
+
 ## vcpkg download package failed
 
 ### Error

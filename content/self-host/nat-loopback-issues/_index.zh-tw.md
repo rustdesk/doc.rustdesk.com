@@ -9,6 +9,21 @@ keywords: ["rustdesk nat loopback", "rustdesk hairpin nat", "rustdesk local dns"
 {{% notice note %}}
 此說明牽涉到複雜的網路知識，我們需要您的指導來增加它的可讀性。
 {{% /notice %}}
+
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+如果 RustDesk 在外網可以正常使用，但在同一區域網路內透過公網 IP 或網域名稱存取時失敗，通常就是 NAT Loopback 問題。最佳修復方式是先在路由器上啟用 hairpin NAT，其次使用本機 DNS，最後才是 hosts 檔案覆寫。
+
+## 關鍵重點
+
+- 如果路由器支援，優先啟用 NAT Loopback 或 hairpin NAT
+- 當您需要管理同一區域網路中的多台裝置時，優先使用本機 DNS
+- 只有在裝置數量很少時，才建議使用 hosts 檔案條目
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
  
 當您將您的伺服器部署在您的家中，或任何其他會將您的伺服器和客戶端放在**同一區網或同一路由器之後**的環境，您可能會發現您無法透過 **``公共 IP``** or **``網域``** (在理論上也是指向同一個公共IP)連結至您的伺服器。
 

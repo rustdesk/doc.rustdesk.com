@@ -5,6 +5,18 @@ description: "Documentação do RustDesk sobre Instalação no Windows (deprecat
 keywords: ["rustdesk server pro windows", "rustdesk pro windows install", "rustdesk self-host pro windows", "rustdesk windows install deprecated", "rustdesk pro license windows"]
 ---
 
+## Você deve usar o caminho de instalação do Windows?
+
+Use este guia apenas se o host do RustDesk Server Pro precisar permanecer no Windows. Para novas implantações, Linux ou [Docker](/docs/pt/self-host/rustdesk-server-pro/installscript/docker/) continuam sendo a melhor escolha padrão, porque são mais fáceis de automatizar, atualizar e operar com estabilidade.
+
+## Respostas rápidas sobre a instalação no Windows
+
+- Este é um caminho legado, não o método de implantação preferido.
+- Instale primeiro o Microsoft Visual C++ Redistributable.
+- O antigo instalador GUI não recebe mais manutenção.
+- Para uma operação estável no longo prazo, migre para Linux ou Docker quando possível.
+- Se continuar no Windows, planeje antecipadamente a execução dos serviços e o proxy do console web.
+
 {{% notice note %}}
 A política de segurança do Windows é complicada, se este tutorial não funcionar para você, ou você encontrar conexão instável, migre para um servidor Linux.
 {{% /notice %}}

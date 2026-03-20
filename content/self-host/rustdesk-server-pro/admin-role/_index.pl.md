@@ -5,6 +5,20 @@ description: "Dokumentacja RustDesk dotycząca Rola Administratora. Zawiera inst
 keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Szybka odpowiedź
+
+Użyj roli administratora, gdy kilku administratorów potrzebuje tego samego ograniczonego zestawu uprawnień w konsoli webowej. Utrzymywanie i przypisywanie jednej roli jest prostsze niż edytowanie każdego konta osobno.
+
+## Najważniejsze punkty
+
+- Zbierz powtarzalne uprawnienia administracyjne w jednej roli
+- Pełny dostęp administratora dawaj tylko tam, gdzie naprawdę jest potrzebny
+- Sprawdź zakres roli na koncie testowym bez uprawnień właściciela
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Rola Administratora pozwala administratorom delegować częściowe uprawnienia zarządzania użytkownikom niebędącym administratorami. Można definiować uprawnienia dla zasobów globalnych (takich jak strategie, role kontroli i niestandardowi klienci) oraz dla użytkowników i urządzeń w różnych zakresach.
 
 Po przypisaniu Roli Administratora użytkownikowi, zobaczy on odpowiednie strony i menu w konsoli web zgodnie z przyznanymi uprawnieniami.

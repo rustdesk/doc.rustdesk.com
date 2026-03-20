@@ -8,6 +8,14 @@ pre: "<b>2.2. </b>"
 
 RustDesk Server Pro はオープンソース版と比較してより多くの機能を持っています。
 
+## RustDesk Server Pro のクイック回答
+
+- 集中管理、ID 連携、ポリシー制御が必要なら Pro を選びます。
+- 最速で始めるなら [Docker](/docs/ja/self-host/rustdesk-server-pro/installscript/docker/) から入ってください。
+- Linux で `systemd` を使ったスクリプト導入をしたい場合は [install.sh](/docs/ja/self-host/rustdesk-server-pro/installscript/script/) を使います。
+- [Windows インストール経路](/docs/ja/self-host/rustdesk-server-pro/installscript/windows/) は旧方式として扱ってください。
+- サーバー起動後は早めに HTTPS、ライセンス、クライアント設定を整えてください。
+
 - アカウント
 - [Webコンソール](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
 - [API](https://github.com/rustdesk/rustdesk/wiki/FAQ#api-of-rustdesk-server-pro)

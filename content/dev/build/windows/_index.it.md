@@ -5,6 +5,19 @@ description: "Documentazione RustDesk su Windows. Consulta le guide per installa
 keywords: ["build rustdesk windows", "rustdesk windows build", "rustdesk vcpkg windows", "rustdesk sciter dll", "rustdesk llvm libclang"]
 ---
 
+## Di cosa hai bisogno prima di compilare su Windows?
+
+Per compilare RustDesk su Windows servono la toolchain C++ di Visual Studio, Rust, `vcpkg`, `sciter.dll` e LLVM con `LIBCLANG_PATH` configurato correttamente. Esegui i comandi in Git Bash, così sintassi e variabili d'ambiente funzionano come da documentazione.
+
+## Checklist build Windows
+
+- Installa Visual Studio con il workload C++.
+- Installa Rust tramite `rustup-init.exe`.
+- Clona e inizializza `vcpkg`, poi imposta `VCPKG_ROOT`.
+- Scarica `sciter.dll` per l'interfaccia desktop.
+- Installa LLVM e punta `LIBCLANG_PATH` alla directory `bin`.
+- Clona RustDesk ed esegui i passaggi di build standard in Git Bash.
+
 {{% notice note %}}
 I comandi da riga di comando qui mostrati devono essere eseguiti in Git Bash e non nel prompt dei comandi, altrimenti si verificheranno errori di sintassi.
 {{% /notice %}}

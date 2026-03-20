@@ -5,6 +5,20 @@ description: "RustDesk のリレーサーバーの設定に関するドキュメ
 keywords: ["rustdesk relay server", "rustdesk hbbr", "rustdesk geolocation relay", "rustdesk additional relay", "rustdesk server pro relay"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## クイックアンサー
+
+1 つの拠点や 1 台の Relay だけでは遅延、地域分散、トラフィック分配に足りない場合、追加 Relay が必要になります。主コンソールと基本展開が安定してから設定してください。
+
+## 重要なポイント
+
+- 重要な地域やユーザー群の近くに追加 Relay を配置します
+- Web コンソールで Relay 設定を登録し確認します
+- 本番トラフィックを切り替える前にルーティングを検証します
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## RustDesk Pro - dockerを使用してジオロケーション付きの追加リレーサーバーをインストール
 
 {{% notice note %}}

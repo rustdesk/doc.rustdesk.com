@@ -5,6 +5,20 @@ description: "RustDesk のコントロールロールに関するドキュメン
 keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## クイックアンサー
+
+ユーザーやグループがデバイスに対してどの遠隔操作を実行できるかを定義したい場合は Control Role を使います。ファイル転送、クリップボード、再起動などのセッション機能を細かく制限するのに適した仕組みです。
+
+## 重要なポイント
+
+- 最小限のセッション権限から始めます
+- 実際のユーザーグループとデバイスグループで権限計算を確認します
+- 日常オペレーター向けロールと高権限ロールを分けます
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 コントロールロールを使用すると、異なるユーザーのリモートコントロール権限を設定できます。ユーザーが別のデバイスをリモートコントロールする場合、コントロールロールは接続が確立された後にコントロール側のユーザーが実行できる操作を定義します。
 
 {{% notice note %}}

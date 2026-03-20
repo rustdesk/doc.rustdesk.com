@@ -5,6 +5,21 @@ description: "Documentación de RustDesk sobre Docker. Consulta guías de instal
 keywords: ["rustdesk docker", "rustdesk docker compose", "rustdesk server docker", "rustdesk hbbs hbbr docker", "rustdesk podman", "rustdesk self-host docker"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Respuesta rápida
+
+Docker es la forma más sencilla de ejecutar RustDesk Server OSS cuando busca un despliegue repetible y actualizaciones más simples. Asegúrese de montar los datos persistentes y de configurar correctamente tanto `hbbs` como `hbbr`.
+
+## Puntos clave
+
+- Mantenga persistente el directorio de datos antes de actualizar o recrear contenedores
+- Publique los puertos requeridos por RustDesk
+- Ejecute tanto `hbbs` como `hbbr`
+- Prefiera Compose si quiere simplificar la operación diaria
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 > Aquí hay otro buen tutorial: [Building Your Own Remote Desktop Solution: RustDesk Self-Hosted on Cloud with Docker (Hetzner)](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f)
 
 ## Instale su propio servidor con Docker

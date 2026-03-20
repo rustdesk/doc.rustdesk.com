@@ -8,6 +8,14 @@ pre: "<b>2.2. </b>"
 
 RustDesk Server Pro oferă mai multe funcționalități comparativ cu versiunea open source.
 
+## Răspunsuri rapide despre RustDesk Server Pro
+
+- Alege Pro când ai nevoie de administrare centralizată, integrări de identitate sau control al politicilor.
+- Pentru cel mai rapid start, începe cu [Docker](/docs/ro/self-host/rustdesk-server-pro/installscript/docker/).
+- Dacă vrei o implementare scriptată pe Linux cu `systemd`, folosește [install.sh](/docs/ro/self-host/rustdesk-server-pro/installscript/script/).
+- [Calea de instalare pe Windows](/docs/ro/self-host/rustdesk-server-pro/installscript/windows/) trebuie tratată ca legacy.
+- După pornirea serverului, planifică rapid HTTPS, licența și configurarea clienților.
+
 - Conturi
 - [Consolă web](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
 - [API](https://github.com/rustdesk/rustdesk/wiki/FAQ#api-of-rustdesk-server-pro)

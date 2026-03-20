@@ -5,6 +5,20 @@ description: "Dokumentacja RustDesk dotycząca Konfiguracja serwerów przekaźni
 keywords: ["rustdesk relay server", "rustdesk hbbr", "rustdesk geolocation relay", "rustdesk additional relay", "rustdesk server pro relay"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Szybka odpowiedź
+
+Dodatkowe relaye są potrzebne wtedy, gdy jedna lokalizacja lub jeden relay nie wystarcza już pod względem opóźnień, zasięgu geograficznego albo rozkładu ruchu. Konfiguruj je dopiero po ustabilizowaniu głównej konsoli i bazowego wdrożenia.
+
+## Najważniejsze punkty
+
+- Instaluj dodatkowe relaye blisko ważnych regionów lub grup użytkowników
+- Zarejestruj i zweryfikuj ustawienia relayów w konsoli webowej
+- Przetestuj routing przed przeniesieniem ruchu produkcyjnego
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## RustDesk Pro - Instalacja dodatkowych serwerów relay z geolokalizacją przy użyciu Dockera
 
 {{% notice note %}}

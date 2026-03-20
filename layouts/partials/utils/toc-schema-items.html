@@ -1,0 +1,21 @@
+{{- $page := . -}}
+{{- $items := slice -}}
+{{- $raw := $page.RawContent | default "" -}}
+{{- if and (or $page.IsPage $page.IsSection) $raw -}}
+  {{- $raw = replaceRE "(?ms)```.*?```" "\n" $raw -}}
+  {{- range findRE `(?m)^#{2,3}\s+.+$` $raw -}}
+    {{- if lt (len $items) 12 -}}
+      {{- $rawLine := replaceRE `^#{2,3}\s+` "" . | markdownify | plainify | htmlUnescape | replaceRE "\\s+" " " | chomp -}}
+      {{- $line := partial "utils/clean-structured-label.html" $rawLine -}}
+      {{- if gt (len $line) 2 -}}
+        {{- $items = $items | append (dict
+          "@type" "ListItem"
+          "position" (add (len $items) 1)
+          "name" $line
+          "url" (printf "%s#%s" $page.Permalink ($rawLine | anchorize))
+        ) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $items -}}

@@ -9,6 +9,27 @@ Use this reference to understand advanced custom client settings in RustDesk and
 
 All advanced settings in custom clients are covered here.
 
+## What are advanced settings in RustDesk custom clients?
+
+Advanced settings are the low-level client options you can control through RustDesk custom clients, user settings, and server-side policy. They are useful when you need repeatable behavior across many clients or want tighter control over security, permissions, and UX defaults.
+
+## How do setting priorities work?
+
+| Source | Priority |
+| --- | --- |
+| Override | Highest |
+| Strategy | High |
+| User | Medium |
+| Default | Lowest |
+
+## Advanced settings quick answers
+
+- Override settings take precedence over every other source
+- Strategy settings can override user and default settings
+- User settings only apply when no higher-priority source overrides them
+- Default settings are the fallback layer
+- This page is a reference for exact setting keys, values, defaults, and examples
+
 ## Privilege Levels for Settings
 
 There are four types of settings:

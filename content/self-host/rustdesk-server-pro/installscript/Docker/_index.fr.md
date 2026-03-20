@@ -5,6 +5,21 @@ description: "Documentation RustDesk sur Docker. Consultez les guides d'installa
 keywords: ["rustdesk server pro docker", "rustdesk pro docker compose", "rustdesk pro host network", "rustdesk hbbs hbbr docker", "rustdesk self-host pro docker"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Réponse rapide
+
+Pour la plupart des équipes, Docker Compose est la configuration recommandée pour RustDesk Server Pro, car elle est plus facile à lire, mettre à jour et reproduire que des commandes docker run brutes.
+
+## Points clés
+
+- Utilisez des volumes persistants pour les données
+- Mappez correctement les ports nécessaires
+- Préférez Compose pour l’exploitation multi-conteneurs
+- Pensez à la licence et à l’accès console dès la première mise en place
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Docker Compose (Recommandé)
 
 Avec Docker Compose, vous DEVEZ utiliser `network_mode: "host"` pour garantir que les licences fonctionnent. Installez Docker en utilisant ce [guide](https://docs.docker.com/engine/install) pour vous assurer qu'il est à jour !

@@ -5,6 +5,20 @@ description: "RustDesk-Dokumentation zu MSI. Hier finden Sie Anleitungen zur Ins
 keywords: ["rustdesk msi", "rustdesk silent install", "rustdesk msiexec", "rustdesk windows msi", "rustdesk installfolder", "rustdesk printer install"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Kurze Antwort
+
+Verwenden Sie das MSI-Paket, wenn Sie eine standardisierte Windows-Softwareverteilung mit Installationsparametern, Silent-Install und Enterprise-Werkzeugen wie Intune oder Gruppenrichtlinien benötigen.
+
+## Wichtige Punkte
+
+- MSI passt zu verwalteten Windows-Rollouts
+- Installationsparameter vor dem ersten Rollout prüfen
+- Upgrade-Verhalten mit und ohne geänderte Optionen testen
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Das MSI-Paket unterstützt Befehlszeilenparameter für die stille Installation.
 
 ## Parameter

@@ -7,6 +7,24 @@ weight: 4
 
 Use this Linux guide to install RustDesk on major distributions, review Wayland and login-screen limitations, and troubleshoot common permission issues such as SELinux policy blocks.
 
+## Which Linux package should you use?
+
+| Situation | Best package |
+| --- | --- |
+| Ubuntu or Debian-based systems | `.deb` |
+| Fedora or CentOS-based systems | `.rpm` |
+| Arch Linux or Manjaro | `.pkg.tar.zst` |
+| openSUSE | SUSE-specific `.rpm` |
+| Portable single-file usage | `AppImage` |
+| Sandboxed desktop install | `Flatpak` |
+
+## Linux quick answers
+
+- Use the native package for your distribution when possible.
+- Wayland support is experimental since RustDesk `1.2.0`.
+- Remote access to the login screen still requires X11.
+- If SELinux is enforced and you see `avc: denied`, apply the RustDesk SELinux policy guidance.
+
 ## Installation
 
 ### Ubuntu (≥ 18)

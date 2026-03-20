@@ -7,6 +7,18 @@ keywords: ["rustdesk server install", "install rustdesk server oss", "rustdesk d
 
 Use this guide to install RustDesk Server OSS, open the required firewall ports, and connect clients to the new self-hosted server.
 
+## What is the recommended way to install RustDesk Server OSS?
+
+For most deployments, Docker is the recommended installation method because it is the easiest to reproduce, upgrade, and move between servers. If you prefer native services on Linux, a systemd install script or Debian packages can also work well.
+
+## Which installation method should you choose?
+
+| Method | Best for | Why you would use it |
+| --- | --- | --- |
+| Docker | Most self-hosted deployments | Simplest upgrades, predictable setup, and easy rollback |
+| install script | Linux admins who want systemd services quickly | Sets up `hbbs`, `hbbr`, and a client config flow with less manual work |
+| Debian package | Debian-based systems using package tooling | Keeps installation closer to native package management |
+
 ## Video tutorials
 There are many video tutorials on YouTube, https://github.com/rustdesk/rustdesk/wiki/FAQ#video-tutorials.
 
@@ -52,5 +64,6 @@ From there, note down the IP/DNS and Key shown at the end of the install and ins
 
 Please [Download](https://github.com/rustdesk/rustdesk-server/releases/latest) deb files yourself and install with `apt-get -f install <filename>.deb` or `dpkg -i <filename>.deb`.
 
-## Configure client
-Please check [this](/docs/en/self-host/client-configuration/#2-manual-config).
+## What do clients need after server installation?
+
+After the server is running, clients usually need the `ID Server` address and the server public `Key`. If you are configuring RustDesk Server Pro clients, you may also need the `API Server`. Please check [this](/docs/en/self-host/client-configuration/#2-manual-config).

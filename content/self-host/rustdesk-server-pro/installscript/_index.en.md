@@ -7,6 +7,25 @@ keywords: ["rustdesk server pro install", "rustdesk self-host pro", "rustdesk pr
 
 Start here to choose the best RustDesk Server Pro installation method for your environment, with Docker as the recommended option.
 
+## What is the best way to install RustDesk Server Pro?
+
+For most teams, Docker is the best way to install RustDesk Server Pro because updates are simpler and the deployment is easier to reproduce. The `install.sh` path is useful when you want native systemd services on Linux. Converting from OSS is the right path when you already run RustDesk Server and want to keep moving to Pro.
+
+## What do you need before you start?
+
+- A RustDesk Server Pro license
+- A Linux server or VM, or a host where Docker is already available
+- Required RustDesk ports open in your firewall, plus `21114` or `443` if you need the web console and API
+- An optional DNS name if you want HTTPS on a domain
+
+## Which installation method should you choose?
+
+| Method | Best for | Why you would use it |
+| --- | --- | --- |
+| Docker | Most new Pro deployments | Easiest upgrades, simpler rollback, and consistent setup |
+| `install.sh` | Linux admins who want native services | Creates systemd services and can optionally set up Nginx and Certbot |
+| Convert from open source | Existing OSS deployments | Moves an existing RustDesk Server install to Pro without starting from zero |
+
 ## Method 1: Docker (Recommended)
 
 ```

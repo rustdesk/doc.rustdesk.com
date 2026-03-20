@@ -5,6 +5,10 @@ description: "Documentație RustDesk pentru Întrebări frecvente pentru Windows
 keywords: ["rustdesk build faq windows", "rustdesk vcpkg error", "rustdesk cargo lock error", "rustdesk libclang path", "rustdesk windows build troubleshooting"]
 ---
 
+## Când ar trebui să folosești acest FAQ de build pentru Windows?
+
+Folosește această pagină când mediul de build pe Windows este deja pregătit în mare parte, dar `cargo run`, `vcpkg` sau `bindgen` încă eșuează. Ea acoperă cele mai frecvente probleme de dependențe și variabile de mediu din build-ul RustDesk pe Windows.
+
 ## Descărcarea pachetului vcpkg a eșuat
 
 ### Eroare

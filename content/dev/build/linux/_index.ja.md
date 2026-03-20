@@ -7,6 +7,19 @@ keywords: ["build rustdesk linux", "rustdesk linux build", "rustdesk vcpkg linux
 
 # Linuxでのビルド手順
 
+## Linux でビルドする前に何が必要ですか？
+
+Linux で RustDesk をビルドするには、ディストリビューション向けの開発依存関係、動作する `vcpkg`、`rustup` で入れた Rust、そして `cargo` 実行前に出力先へ配置した Sciter 共有ライブラリが必要です。
+
+## Linux ビルドのチェックリスト
+
+- ディストリビューションに合うコンパイラとデスクトップ依存関係を入れます。
+- `vcpkg` をクローンして初期化し、`VCPKG_ROOT` を export します。
+- `rustup` で Rust を入れ、cargo 環境を読み込みます。
+- RustDesk リポジトリを submodule 付きで clone します。
+- `libsciter-gtk.so` を `target/debug` に配置します。
+- プロジェクトルートで `cargo run` を実行します。
+
 ## Ubuntu 18 (Debian 10)
 
 ```sh

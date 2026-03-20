@@ -5,6 +5,21 @@ description: "Documentação do RustDesk sobre Controle de acesso. Consulte guia
 keywords: ["rustdesk access control", "rustdesk device permissions", "rustdesk user group access", "rustdesk server pro permissions", "rustdesk device assignment"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Resposta rápida
+
+O controle de acesso no RustDesk Server Pro define quais usuários ou grupos podem se conectar a quais dispositivos ou grupos de dispositivos. Comece com o menor conjunto prático de permissões e só amplie depois de testar.
+
+## Pontos principais
+
+- Organize primeiro os grupos de usuários e os grupos de dispositivos
+- Defina conscientemente as regras de acesso a dispositivos
+- Use privilégio mínimo como padrão
+- Valide o acesso baseado em grupos com contas reais de teste
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Permissões de acesso a dispositivos
 
 O dispositivo pode ser atribuído a um único usuário, a um único grupo de dispositivos, ou a ambos.

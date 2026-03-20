@@ -5,6 +5,22 @@ keywords: ["rustdesk server pro faq", "rustdesk pro ヘルプ", "rustdesk イン
 weight: 600
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## クイックアンサー
+
+この FAQ は、インストール、アップグレード、ライセンス、メール設定、その他の RustDesk Server Pro 管理作業について、すばやく答えを確認したいときに使います。本番環境で変更する前に、該当トピックが分かったら専用ガイドへ移動してください。
+
+## 重要なポイント
+
+- インストールや移行: インストールガイドを使います
+- Docker 展開: Docker ページを使います
+- ライセンス関連: ライセンスページを使います
+- SSO や ID 連携: OIDC ページを使います
+- クライアント展開: クライアント展開ページを使います
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## シンプルインストールスクリプトでインストールするには？
 1. [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html)からライセンスを取得し、詳細については[ライセンス](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/)ページを確認してください。
 2. VPS、ベアメタル、またはLinux VMを起動します。

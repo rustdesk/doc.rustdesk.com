@@ -5,6 +5,20 @@ description: "Documentação do RustDesk sobre Função de Administrador. Consul
 keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Resposta rápida
+
+Use uma função de administrador quando vários administradores precisarem do mesmo conjunto limitado de permissões no console web. Manter e atribuir uma única função é mais simples do que editar cada conta separadamente.
+
+## Pontos principais
+
+- Agrupe permissões administrativas repetidas em uma única função
+- Conceda acesso total de administrador apenas onde isso for realmente necessário
+- Valide o escopo da função com uma conta de teste que não seja owner
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 A Função de Administrador permite que administradores deleguem permissões de gestão parcial a usuários não administradores. Você pode definir permissões para recursos globais (como estratégias, funções de controle e clientes personalizados) bem como para usuários e dispositivos em diferentes escopos.
 
 Uma vez atribuída uma Função de Administrador a um usuário, ele verá as páginas e menus correspondentes no console web com base nas permissões concedidas.

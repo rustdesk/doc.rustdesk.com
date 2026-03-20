@@ -5,6 +5,21 @@ description: "RustDesk のDockerに関するドキュメントです。インス
 keywords: ["rustdesk server pro docker", "rustdesk pro docker compose", "rustdesk pro host network", "rustdesk hbbs hbbr docker", "rustdesk self-host pro docker"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## クイックアンサー
+
+ほとんどのチームでは、RustDesk Server Pro の Docker 構成は Docker Compose が推奨です。単発の docker run よりも読みやすく、更新しやすく、再現もしやすいためです。
+
+## 重要なポイント
+
+- データには永続ボリュームを使います
+- 必要なポートを正しくマッピングします
+- 複数コンテナ運用では Compose を優先します
+- 最初のセットアップ時からライセンスとコンソールアクセスを考慮します
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Docker Compose（推奨）
 
 Docker Composeでは、ライセンスが正常に動作するように `network_mode: "host"` を使用する必要があります。最新版であることを確実にするために、この[ガイド](https://docs.docker.com/engine/install)を使用してDockerをインストールしてください！

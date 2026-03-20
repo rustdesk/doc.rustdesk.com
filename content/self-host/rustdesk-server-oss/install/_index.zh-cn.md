@@ -5,6 +5,20 @@ description: "RustDesk 的安装文档，提供安装、配置、部署和故障
 keywords: ["rustdesk server install", "install rustdesk server oss", "rustdesk docker install", "rustdesk server firewall ports", "rustdesk hbbs hbbr install", "rustdesk self-host install"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+对于大多数新的 RustDesk Server OSS 部署，Docker 是最快的路径。只有在您明确需要系统服务或手动维护主机配置时，才建议选择原生 Linux 安装。
+
+## 关键要点
+
+- 客户端需要填写 `ID Server`
+- 客户端需要服务器的公钥 `Key`
+- 只有使用 Pro 功能时才需要 `API Server`
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## 视频教程
 YouTube上有许多视频教程，https://github.com/rustdesk/rustdesk/wiki/FAQ#video-tutorials。
 

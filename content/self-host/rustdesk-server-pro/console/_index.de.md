@@ -5,6 +5,20 @@ description: "RustDesk-Dokumentation zu Webkonsole. Hier finden Sie Anleitungen 
 keywords: ["rustdesk web console", "rustdesk server pro console", "rustdesk port 21114", "rustdesk device management", "rustdesk admin console"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Kurze Antwort
+
+Die RustDesk-Server-Pro-Webkonsole ist der zentrale Ort für Benutzer, Geräte, Gruppen, Lizenzen, Konfigurationen, Relay-Server, Logs und API-Tokens. Neue Admins sollten mit Login, Lizenz, E-Mail und Zugriffseinstellungen beginnen, bevor sie größere Änderungen ausrollen.
+
+## Wichtige Punkte
+
+- Zuerst Login und Lizenz prüfen
+- Danach Benutzer, Geräte, Gruppen und Strategien sichten
+- E-Mail, Relays und API-Tokens erst aufsetzen, wenn der Basiszugriff funktioniert
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Funktionen:
 
 - Hinzufügen/Ändern von Benutzern und Benutzergruppen

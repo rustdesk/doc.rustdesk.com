@@ -9,6 +9,21 @@ Use this guide to enable two-factor authentication in RustDesk Server Pro for st
 
 When logging in to your account, turning on Two-Factor Authentication (2FA) verification can improve account security.
 
+## Which 2FA method should you choose?
+
+| Method | Best for | Why you would use it |
+| --- | --- | --- |
+| Email verification | Simpler deployments that already rely on SMTP | Easiest to roll out when users do not already use an authenticator app |
+| TOTP | Stronger day-to-day account security | More secure and more standard for long-term admin and operator accounts |
+
+## 2FA quick answers
+
+- RustDesk Server Pro supports email verification and TOTP
+- When TOTP is enabled, email login verification is no longer used
+- TOTP setup generates 6 backup codes
+- Backup codes can only be used once
+- Expired 2FA can still work, but re-enabling it refreshes the secret for better security
+
 Our web console currently supports two kinds of 2FA:
 
 1. Email verification

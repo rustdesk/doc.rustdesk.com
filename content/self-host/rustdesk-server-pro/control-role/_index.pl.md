@@ -5,6 +5,20 @@ description: "Dokumentacja RustDesk dotycząca Rola Kontroli. Zawiera instrukcje
 keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Szybka odpowiedź
+
+Użyj roli kontroli, gdy chcesz zdefiniować, jakie działania zdalnego sterowania może wykonać użytkownik lub grupa na urządzeniach. To właściwe narzędzie do ograniczania transferu plików, schowka, restartu i innych możliwości sesji.
+
+## Najważniejsze punkty
+
+- Zacznij od minimalnego zestawu uprawnień sesji
+- Przetestuj wyliczanie uprawnień na prawdziwych grupach użytkowników i urządzeń
+- Oddziel role codziennej obsługi od ról o wysokich uprawnieniach
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Rola Kontroli umożliwia konfigurację uprawnień zdalnego sterowania dla różnych użytkowników. Gdy użytkownik zdalnie steruje innym urządzeniem, Rola Kontroli określa, jakie operacje może wykonywać użytkownik kontrolujący po nawiązaniu połączenia.
 
 {{% notice note %}}

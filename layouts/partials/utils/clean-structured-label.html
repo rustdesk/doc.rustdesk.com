@@ -1,0 +1,5 @@
+{{- $label := . | default "" -}}
+{{- $label = $label | markdownify | plainify | htmlUnescape | replaceRE "\\s+" " " | chomp -}}
+{{- $label = replaceRE `^[0-9]+(?:\s*[.,:：、)）-]\s*|\s+)` "" $label -}}
+{{- $label = replaceRE `^[A-Za-z](?:\s*[.)]\s*|\s+)` "" $label -}}
+{{- return $label -}}

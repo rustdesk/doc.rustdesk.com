@@ -5,6 +5,21 @@ description: "RustDesk 的访问控制文档，提供安装、配置、部署和
 keywords: ["rustdesk access control", "rustdesk device permissions", "rustdesk user group access", "rustdesk server pro permissions", "rustdesk device assignment"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+RustDesk Server Pro 中的访问控制用于定义哪些用户或用户组可以连接哪些设备或设备组。建议先从最小可行权限集开始，测试通过后再逐步放开。
+
+## 关键要点
+
+- 先整理好用户组和设备组
+- 有意识地设置设备访问规则
+- 默认采用最小权限原则
+- 用真实测试账号验证基于组的访问效果
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## 设备访问权限
 设备可以分配给单个用户、单个设备组或两者。
 

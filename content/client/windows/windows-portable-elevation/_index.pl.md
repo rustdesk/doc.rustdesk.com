@@ -5,6 +5,20 @@ description: "Dokumentacja RustDesk dotycząca Podnoszenie uprawnień w wersji p
 keywords: ["rustdesk portable elevation", "rustdesk uac", "rustdesk windows admin rights", "rustdesk task manager mouse issue", "rustdesk request elevation"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Szybka odpowiedź
+
+Użyj portable elevation, gdy korzystasz z przenośnego klienta RustDesk, ale nadal potrzebujesz uprawnień administratora do określonych zadań albo działań po stronie urządzenia zdalnego. To przydaje się, gdy pełny klient nie jest instalowany, a mimo to potrzebne jest zdalne wsparcie z podwyższonymi uprawnieniami.
+
+## Najważniejsze punkty
+
+- Zdecyduj, czy podniesienie uprawnień jest potrzebne przy starcie, czy tylko w trakcie sesji
+- Przetestuj komunikaty po stronie urządzenia kontrolowanego i sterującego
+- Przed rolloutem wyjaśnij zespołowi wsparcia przebieg podnoszenia uprawnień
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Windows portable programs do not have administrator privileges, which can lead to the following issues:
 
 Programy przenośne nie mają uprawnień administratora w systemie Windows, co może prowadzić do następujących problemów:

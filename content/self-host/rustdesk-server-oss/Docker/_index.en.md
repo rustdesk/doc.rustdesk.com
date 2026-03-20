@@ -7,6 +7,26 @@ keywords: ["rustdesk docker", "rustdesk docker compose", "rustdesk server docker
 
 Use this guide to self-host RustDesk Server OSS with Docker, Docker Compose, or Podman and to open the correct ports for `hbbs` and `hbbr`.
 
+## What is the best way to run RustDesk Server OSS in Docker?
+
+For most Linux deployments, Docker Compose with `network_mode: "host"` is the simplest and most reliable option. It keeps the setup repeatable, makes upgrades easier, and avoids extra port-mapping complexity when host networking is available.
+
+## Docker deployment checklist
+
+1. Install Docker or Podman.
+2. Create a persistent data directory or volume for `hbbs` and `hbbr`.
+3. Open the required RustDesk ports in your firewall.
+4. Start `hbbs` and `hbbr` with Docker Compose, `docker run`, or Podman Quadlet.
+5. Point clients to the new self-hosted server and verify registration and relay traffic.
+
+## Which container setup should you choose?
+
+| Method | Best for | Why you would use it |
+| --- | --- | --- |
+| Docker Compose | Most Linux servers | Repeatable setup and easier ongoing maintenance |
+| `docker run` | Quick manual testing | Fastest way to start a simple pair of containers |
+| Podman Quadlet | Podman plus systemd environments | Native systemd-style service management |
+
 > Here is another good tutorial: [Building Your Own Remote Desktop Solution: RustDesk Self-Hosted on Cloud with Docker (Hetzner)](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f)
 
 ## Install your own server with Docker

@@ -3,10 +3,20 @@ title: "Documentația RustDesk - Desktop Remote Open Source"
 description: "Documentație completă pentru RustDesk - software-ul open source pentru desktop remote. Aflați cum să găzduiți singur, să configurați clienți și să implementați RustDesk în infrastructura dvs."
 keywords: ["rustdesk", "desktop remote", "open source", "self-host", "documentație", "acces remote", "alternativă VNC", "alternativă TeamViewer"]
 type: docs
+breadcrumbs: false
 weight: 1
 ---
 
 RustDesk este o alternativă completă open source pentru control remote, ideală pentru auto-găzduire și securitate cu configurație minimă. Aveți control complet asupra datelor dvs., fără griji legate de securitate. Clientul este open source și există posibilitatea de a alege între **Professional Server** complet, disponibil pentru achiziție pe [website-ul nostru](https://rustdesk.com), și Serverul de bază gratuit și open source, bazat pe **Professional Server**.
+
+## Ce parcurs RustDesk ar trebui să alegi?
+
+| Necesitate | Cel mai bun punct de pornire |
+| --- | --- |
+| Să folosești RustDesk ca utilizator final sau administrator | [Client](/docs/ro/client/) |
+| Să găzduiești singur serverul open source gratuit | [RustDesk Server OSS](/docs/ro/self-host/rustdesk-server-oss/) |
+| Să găzduiești singur cu consolă web, SSO și controale enterprise | [RustDesk Server Pro](/docs/ro/self-host/rustdesk-server-pro/) |
+| Să construiești sau să împachetezi RustDesk din codul sursă | [Dezvoltare](/docs/ro/dev/) |
 
 ## Funcționalități
 - Funcționează pe Windows, macOS, Linux, iOS, Android, Web.  

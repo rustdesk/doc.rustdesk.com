@@ -5,6 +5,20 @@ description: "RustDesk 的進階設定文檔，提供安裝、設定、部署與
 keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+RustDesk 自訂客戶端中的進階設定允許管理員在發佈前預先定義、建議或鎖定選項。它適合用來讓受管裝置上的安全策略與介面行為保持一致。
+
+## 關鍵重點
+
+- 較高優先順序的設定會覆蓋較低優先順序的值
+- 強制設定會阻止終端使用者修改關鍵選項
+- 在大規模推送相同設定前，先用一台範例客戶端測試
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 所有自訂用戶端中的進階設定都在這裡涵蓋。
 
 ## 設定的權限層級

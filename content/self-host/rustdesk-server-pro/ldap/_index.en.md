@@ -7,6 +7,25 @@ keywords: ["rustdesk ldap", "rustdesk server pro ldap", "rustdesk ldap authentic
 
 Use this guide to connect RustDesk Server Pro to your LDAP directory for centralized authentication and user lookup.
 
+## What does LDAP do in RustDesk Server Pro?
+
+LDAP lets RustDesk Server Pro authenticate users against your directory service instead of managing separate local credentials for every account. On first successful login, RustDesk creates the user automatically based on the LDAP identity.
+
+## LDAP setup checklist
+
+1. Identify your LDAP host, port, and encryption mode (`389`, `636`, or StartTLS).
+2. Choose a service account with a valid Bind DN and password.
+3. Set the correct Base DN, scope, and user filter.
+4. Set the correct username attribute, such as `uid` or `sAMAccountName`.
+5. Test the configuration in the RustDesk web console before rolling it out.
+
+## LDAP quick answers
+
+- RustDesk creates the user on first successful LDAP login
+- The console validates the LDAP connection when you submit the configuration
+- Converting local users to LDAP users is not supported yet
+- LDAP groups are not supported yet
+
 ## Configuration
 Please go to `LDAP` settings page as below.
 

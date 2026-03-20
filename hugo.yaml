@@ -69,6 +69,7 @@ params:
   social:
     twitter: "rustdesk"
     github: "rustdesk"
+    youtube: "rustdesk"
   
   # OpenGraph settings
   opengraph:

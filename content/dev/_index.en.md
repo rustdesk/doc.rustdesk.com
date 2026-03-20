@@ -9,4 +9,14 @@ chapter: true
 
 Use these development guides when you want to build RustDesk from source, understand the contributor workflow, or troubleshoot platform-specific build issues.
 
+## Which development guide should you choose?
+
+| Need | Best guide |
+| --- | --- |
+| Start from the overall contributor build docs | [Build](/docs/en/dev/build/) |
+| Build the desktop app on Linux | [Linux build](/docs/en/dev/build/linux/) |
+| Build the desktop app on Windows | [Windows build](/docs/en/dev/build/windows/) |
+| Build the desktop app on macOS | [macOS build](/docs/en/dev/build/osx/) |
+| Fix common Windows build problems | [FAQ for Windows](/docs/en/dev/build/faq/) |
+
 {{% children depth="3" showhidden="true" %}}

@@ -5,6 +5,22 @@ keywords: ["rustdesk server pro faq", "rustdesk pro help", "rustdesk installatio
 weight: 600
 ---
 
+## RustDesk Server Pro quick answers
+
+This FAQ covers the most common RustDesk Server Pro tasks: installation, conversion from OSS, upgrades, license migration, logging, SMTP issues, and device-management problems. If you are starting from scratch, begin with the [installation guide](/docs/en/self-host/rustdesk-server-pro/installscript/). If you already have a running server, the most common follow-up pages are [License](/docs/en/self-host/rustdesk-server-pro/license/), [SMTP](/docs/en/self-host/rustdesk-server-pro/smtp/), and [Client Deployment](/docs/en/self-host/client-deployment/).
+
+## Which page should you use for each common task?
+
+| Task | Best page |
+| --- | --- |
+| Install a new Pro server | [Installation](/docs/en/self-host/rustdesk-server-pro/installscript/) |
+| Install Pro with Docker | [Docker install](/docs/en/self-host/rustdesk-server-pro/installscript/docker/) |
+| Convert from OSS to Pro | [Installation](/docs/en/self-host/rustdesk-server-pro/installscript/#convert-from-open-source) |
+| Buy or move a license | [License](/docs/en/self-host/rustdesk-server-pro/license/) |
+| Set up email notifications | [SMTP](/docs/en/self-host/rustdesk-server-pro/smtp/) |
+| Configure SSO or identity login | [OIDC](/docs/en/self-host/rustdesk-server-pro/oidc/) or [LDAP](/docs/en/self-host/rustdesk-server-pro/ldap/) |
+| Deploy clients at scale | [Client Deployment](/docs/en/self-host/client-deployment/) |
+
 ## How can I install with the Simple Install Script?
 1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 2. Spin up a VPS, bare metal or Linux VM.

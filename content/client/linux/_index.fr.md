@@ -5,6 +5,24 @@ description: "Documentation RustDesk sur Linux. Consultez les guides d'installat
 keywords: ["rustdesk linux", "rustdesk ubuntu", "rustdesk fedora", "rustdesk arch", "rustdesk appimage", "rustdesk flatpak", "rustdesk wayland", "rustdesk selinux"]
 ---
 
+## Quel paquet Linux utiliser ?
+
+| Situation | Meilleur paquet |
+| --- | --- |
+| Distributions basees sur Ubuntu ou Debian | `.deb` |
+| Distributions basees sur Fedora ou CentOS | `.rpm` |
+| Arch Linux ou Manjaro | `.pkg.tar.zst` |
+| openSUSE | `.rpm` specifique a SUSE |
+| Usage portable en fichier unique | `AppImage` |
+| Installation desktop en sandbox | `Flatpak` |
+
+## Reponses rapides pour Linux
+
+- Utilisez de preference le paquet natif de votre distribution.
+- Le support Wayland reste experimental depuis RustDesk `1.2.0`.
+- Pour l'acces distant a l'ecran de connexion, utilisez toujours X11.
+- Si SELinux est en mode enforcing et que vous voyez `avc: denied`, suivez le guide SELinux de RustDesk.
+
 ## Installation
 
 ### Ubuntu (≥ 18)

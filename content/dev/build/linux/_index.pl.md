@@ -5,6 +5,19 @@ description: "Dokumentacja RustDesk dotycząca Linux. Zawiera instrukcje instala
 keywords: ["build rustdesk linux", "rustdesk linux build", "rustdesk vcpkg linux", "rustdesk cargo run linux", "rustdesk ubuntu build"]
 ---
 
+## Czego potrzebujesz przed buildem na Linuksie?
+
+Aby zbudować RustDesk na Linuksie, potrzebujesz zależności deweloperskich swojej dystrybucji, działającego `vcpkg`, Rusta zainstalowanego przez `rustup` oraz biblioteki współdzielonej Sciter w katalogu wyjściowym przed uruchomieniem `cargo`.
+
+## Lista kontrolna builda na Linuksie
+
+- Zainstaluj kompilator i zależności desktopowe swojej dystrybucji.
+- Sklonuj i zainicjalizuj `vcpkg`, a następnie wyeksportuj `VCPKG_ROOT`.
+- Zainstaluj Rusta przez `rustup` i załaduj środowisko cargo.
+- Sklonuj repozytorium RustDesk z submodułami.
+- Pobierz `libsciter-gtk.so` do `target/debug`.
+- Uruchom `cargo run` z katalogu głównego projektu.
+
 ## Jak zbudować na Linuxie
 
 ### Ubuntu 18 (Debian 10)

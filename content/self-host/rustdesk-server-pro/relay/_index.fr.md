@@ -5,6 +5,20 @@ description: "Documentation RustDesk sur Configurer les serveurs de relais. Cons
 keywords: ["rustdesk relay server", "rustdesk hbbr", "rustdesk geolocation relay", "rustdesk additional relay", "rustdesk server pro relay"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Réponse rapide
+
+Vous avez besoin de relais supplémentaires lorsqu’un seul site ou un seul relais ne suffit plus pour la latence, la géographie ou la répartition du trafic. Configurez-les une fois la console principale et le déploiement de base stabilisés.
+
+## Points clés
+
+- Installez des relais supplémentaires près des régions ou groupes utilisateurs importants
+- Enregistrez et vérifiez la configuration des relais dans la console web
+- Testez le routage avant de basculer le trafic de production
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## RustDesk Pro - Installer des serveurs de relais supplémentaires avec géolocalisation en utilisant docker
 
 {{% notice note %}}

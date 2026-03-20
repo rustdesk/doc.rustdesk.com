@@ -5,6 +5,10 @@ description: "RustDesk-Dokumentation zu Video-Tutorials. Hier finden Sie Anleitu
 keywords: ["rustdesk videos", "rustdesk tutorial", "rustdesk installation video", "rustdesk self-hosting video", "rustdesk security video"]
 ---
 
+## Mit welchem Video sollten Sie beginnen?
+
+Wenn Sie RustDesk evaluieren oder ein grundlegendes Self-Hosting aufsetzen, beginnen Sie mit den OSS-Installations- oder Benutzerleitfaden-Videos. Fur laufende RustDesk Server Pro-Anleitungen und Produktupdates nutzen Sie den RustDesk-YouTube-Kanal.
+
 ## OSS
 [NetworkChuck: Ihr Remote Desktop ist SCHRECKLICH!! Probieren Sie stattdessen das hier (KOSTENLOS + Open Source)
 ](https://www.youtube.com/watch?v=EXL8mMUXs88)

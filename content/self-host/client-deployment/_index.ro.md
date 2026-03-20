@@ -6,6 +6,21 @@ description: "Documentație RustDesk pentru Deployare client. Găsiți ghiduri d
 keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Răspuns rapid
+
+Pentru implementări la scară mare, folosește scripturi, pachete MSI sau instrumente RMM/MDM, astfel încât RustDesk să fie instalat automat cu setările corecte de server. Cea mai bună metodă depinde în principal de sistemul de operare și de platforma ta de administrare.
+
+## Puncte cheie
+
+- Gazda serverului sau adresa de `ID Server`
+- Cheia publică a serverului self-hosted
+- `API Server` opțional pentru autentificare Pro
+- Un șir de configurare sau o metodă de pachetizare potrivită pentru instrumentele tale
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Cea mai simplă metodă este să folosiți clientul personalizat, https://twitter.com/rustdesk/status/1788905463678951787.
 
 Puteți implementa prin mai multe metode; unele sunt acoperite în [Client Configuration](https://rustdesk.com/docs/en/self-host/client-configuration/).

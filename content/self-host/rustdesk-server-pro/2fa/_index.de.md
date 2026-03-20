@@ -5,6 +5,20 @@ description: "RustDesk-Dokumentation zu 2FA. Hier finden Sie Anleitungen zur Ins
 keywords: ["rustdesk 2fa", "rustdesk totp", "rustdesk email verification", "rustdesk authenticator", "rustdesk server pro 2fa"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Kurze Antwort
+
+Wählen Sie die E-Mail-Verifizierung, wenn Sie den einfachsten Rollout möchten und Benutzer ohnehin mit E-Mail arbeiten. TOTP ist die bessere Wahl, wenn Sie stärkere app-basierte zweite Faktoren und weniger Abhängigkeit von der Mailzustellung wollen.
+
+## Wichtige Punkte
+
+- E-Mail-Verifizierung lässt sich am schnellsten aktivieren
+- TOTP eignet sich besser für Admins oder sicherheitskritische Konten
+- Testen Sie Wiederherstellungs- und Login-Flows, bevor Sie 2FA für alle erzwingen
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Wenn Sie sich bei Ihrem Konto anmelden, können Sie die Verifizierung durch die Zwei-Faktor-Authentifizierung (2FA) aktivieren, um die Sicherheit Ihres Kontos zu erhöhen.
 
 Unsere Webkonsole unterstützt derzeit zwei Arten von 2FA:

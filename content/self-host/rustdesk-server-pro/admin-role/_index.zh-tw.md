@@ -5,6 +5,20 @@ description: "RustDesk 的管理員角色文檔，提供安裝、設定、部署
 keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+當多個管理員需要在 Web 主控台中擁有同一組受限權限時，應使用管理員角色。維護並指派一個統一角色，比逐一編輯管理員帳號更容易。
+
+## 關鍵重點
+
+- 把重複出現的管理員權限整理成一個角色
+- 只有在確實必要的地方才授予完整管理員權限
+- 用一個非 owner 的測試帳號驗證角色範圍
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 管理員角色允許管理員將部分管理權限委派給非管理員使用者。您可以為全域資源（如策略、控制角色和自訂用戶端）以及不同範圍內的使用者和裝置定義權限。
 
 一旦為使用者分配了管理員角色，他們將根據授予的權限在 Web 控制台中看到相應的頁面和選單。

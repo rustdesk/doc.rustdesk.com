@@ -5,6 +5,21 @@ description: "RustDesk-Dokumentation zu Installation. Hier finden Sie Anleitunge
 keywords: ["rustdesk server pro install", "rustdesk self-host pro", "rustdesk pro docker", "rustdesk pro linux install", "rustdesk pro windows install"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Kurze Antwort
+
+Für die meisten Teams ist Docker der beste Weg, RustDesk Server Pro zu installieren, weil Upgrades und Rollbacks einfacher werden. Nutzen Sie `install.sh`, wenn Sie native Linux-Dienste möchten, oder den Migrationspfad, wenn bereits OSS im Einsatz ist.
+
+## Wichtige Punkte
+
+- Eine RustDesk-Server-Pro-Lizenz
+- Einen Linux-Server, eine VM oder einen Host mit verfügbarem Docker
+- Die erforderlichen Ports, plus `21114` oder `443` für Webkonsole und API
+- Optional DNS, wenn Sie HTTPS über eine Domain möchten
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Verfahren 1: Docker (Recommended)
 
 ```

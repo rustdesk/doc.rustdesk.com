@@ -6,6 +6,21 @@ weight: 300
 pre: "<b>2.3. </b>"
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Szybka odpowiedź
+
+W większości wdrożeń RustDesk Server Pro najlepszym wyborem jest generator niestandardowego klienta, ponieważ przygotowuje klienty z poprawną konfiguracją serwera i brandingiem już na starcie. W mniejszych wdrożeniach OSS lub w środowiskach testowych szybsze są zwykle konfiguracja ręczna, import/eksport albo skrypty wdrożeniowe.
+
+## Najważniejsze punkty
+
+- `ID Server`: host lub adres IP serwera `hbbs`
+- `Key`: klucz publiczny używany do szyfrowanych połączeń
+- `API Server`: wymagany do logowania Pro i funkcji konsoli webowej
+- `Relay Server`: zwykle opcjonalny, chyba że chcesz ustawić go jawnie
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Zarys
 
 Istnieje kilka sposobów na konfigurację klientów RustDeska tak, żeby używały twojego samodzielnie hostowanego serwera. Kilka z nich opisujemy poniżej.

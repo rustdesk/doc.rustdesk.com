@@ -5,6 +5,20 @@ description: "RustDesk 的控制角色文檔，提供安裝、設定、部署與
 keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+當您想定義某個使用者或使用者群組在裝置上可以執行哪些遠端控制動作時，應使用控制角色。它適合精確限制檔案傳輸、剪貼簿、重新啟動等工作階段能力。
+
+## 關鍵重點
+
+- 先從最小工作階段權限集開始
+- 用真實使用者群組與裝置群組測試權限計算結果
+- 把日常操作員角色與高權限角色分開
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 控制角色允許您為不同使用者配置遠端控制權限。當使用者遠端控制另一台裝置時，控制角色定義了控制方使用者在建立連線後可以執行的操作。
 
 {{% notice note %}}

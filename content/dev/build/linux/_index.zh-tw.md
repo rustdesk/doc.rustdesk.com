@@ -7,6 +7,19 @@ keywords: ["build rustdesk linux", "rustdesk linux build", "rustdesk vcpkg linux
 
 # 在 Linux 上編譯
 
+## 在 Linux 上建置前需要準備什麼？
+
+在 Linux 上建置 RustDesk 需要先安裝對應發行版的開發依賴、設定可用的 `vcpkg`、透過 `rustup` 安裝 Rust，並在執行 `cargo` 前把 Sciter 共用函式庫放到輸出目錄中。
+
+## Linux 建置檢查清單
+
+- 安裝與發行版相符的編譯器與桌面依賴。
+- 複製並初始化 `vcpkg`，然後匯出 `VCPKG_ROOT`。
+- 透過 `rustup` 安裝 Rust，並載入 cargo 環境。
+- 遞迴複製 RustDesk 倉庫。
+- 將 `libsciter-gtk.so` 下載到 `target/debug`。
+- 在專案根目錄執行 `cargo run`。
+
 ## Ubuntu 18 (Debian 10)
 
 ```sh

@@ -5,6 +5,20 @@ description: "Documentazione RustDesk su LDAP. Consulta le guide per installazio
 keywords: ["rustdesk ldap", "rustdesk server pro ldap", "rustdesk ldap authentication", "rustdesk base dn", "rustdesk ldaps"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Risposta rapida
+
+LDAP consente a RustDesk Server Pro di autenticare gli utenti tramite il servizio di directory invece di gestire ogni account localmente. Usalo quando esiste già una directory interna e vuoi controllo di accesso centralizzato.
+
+## Punti chiave
+
+- Prepara URL del server, account bind, search base e filtri
+- Testa ricerca utenti e mapping dei gruppi prima del rollout ampio
+- Mantieni un account amministratore locale per le emergenze
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Configurazione
 Si prega di andare alla pagina delle impostazioni `LDAP` come mostrato di seguito.
 

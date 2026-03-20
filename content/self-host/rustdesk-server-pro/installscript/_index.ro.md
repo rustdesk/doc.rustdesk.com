@@ -5,6 +5,21 @@ description: "Documentație RustDesk pentru Instalare. Găsiți ghiduri de insta
 keywords: ["rustdesk server pro install", "rustdesk self-host pro", "rustdesk pro docker", "rustdesk pro linux install", "rustdesk pro windows install"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Răspuns rapid
+
+Pentru majoritatea echipelor, Docker este cea mai bună metodă de a instala RustDesk Server Pro, deoarece face upgrade-urile și rollback-ul mai simple. Folosește `install.sh` dacă vrei servicii Linux native sau calea de conversie dacă rulezi deja OSS.
+
+## Puncte cheie
+
+- O licență RustDesk Server Pro
+- Un server Linux, o mașină virtuală sau un host cu Docker disponibil
+- Porturile necesare, plus `21114` sau `443` pentru consola web și API
+- DNS opțional dacă vrei HTTPS pe un domeniu
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Metoda 1: Docker (Recomandat)
 
 ```

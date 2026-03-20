@@ -15,6 +15,18 @@ Windows security policy is tricky, if this tutorial does not work for you, or yo
 The GUI version, `RustDeskServer.setup.exe` has not been maintained any more, not recommended.
 {{% /notice %}}
 
+## Should you use the Windows install path?
+
+Use this guide only when your RustDesk Server Pro host must stay on Windows. For new self-hosted deployments, Linux or Docker is the better default because it is easier to automate, update, and operate reliably.
+
+## Windows install quick answers
+
+- Treat this as a legacy path, not the preferred deployment method.
+- Install the Microsoft Visual C++ Redistributable before starting.
+- The old GUI installer is no longer maintained.
+- If you need a long-term stable deployment, move to Linux or Docker.
+- If you stay on Windows, plan how you will run the services and proxy the web console.
+
 ## Install
 
 The Microsoft Visual C++ Redistributable is required to run rustdesk on Windows. You can download it [here](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)

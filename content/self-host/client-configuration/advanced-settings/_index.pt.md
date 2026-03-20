@@ -5,6 +5,20 @@ description: "Documentação do RustDesk sobre Configurações Avançadas. Consu
 keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Resposta rápida
+
+As configurações avançadas nos clientes personalizados do RustDesk permitem que os administradores predefinam, recomendem ou bloqueiem opções antes da implantação. Use esse recurso para manter comportamento de segurança e interface consistente em todos os dispositivos gerenciados.
+
+## Pontos principais
+
+- Configurações com prioridade maior substituem valores de prioridade menor
+- Configurações forçadas impedem que o usuário final altere opções críticas
+- Teste primeiro em um cliente de exemplo antes de aplicar o mesmo perfil em larga escala
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Todas as configurações avançadas em clientes personalizados são abordadas aqui.
 
 ## Níveis de Privilégio para Configurações

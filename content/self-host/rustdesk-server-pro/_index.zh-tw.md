@@ -8,6 +8,14 @@ pre: "<b>2.2. </b>"
 
 自建伺服器專業版與開源版本相比具有更多功能。
 
+## RustDesk Server Pro 快速答案
+
+- 當你需要集中管理、身分整合或策略控制時，選擇 Pro。
+- 想最快上手，先從 [Docker](/docs/zh-tw/self-host/rustdesk-server-pro/installscript/docker/) 開始。
+- 如果你想在 Linux 上用 `systemd` 做腳本化部署，使用 [install.sh](/docs/zh-tw/self-host/rustdesk-server-pro/installscript/script/)。
+- [Windows 安裝路徑](/docs/zh-tw/self-host/rustdesk-server-pro/installscript/windows/) 應視為舊方案。
+- 伺服器啟動後，應盡快設定 HTTPS、授權與客戶端設定。
+
 - 帳戶
 - [網頁控制台](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
 - [API](https://github.com/rustdesk/rustdesk/wiki/FAQ#api-of-rustdesk-server-pro)

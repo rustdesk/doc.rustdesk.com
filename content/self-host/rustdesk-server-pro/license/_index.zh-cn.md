@@ -5,6 +5,21 @@ description: "RustDesk 的授权文档，提供安装、配置、部署和故障
 keywords: ["rustdesk pro license", "rustdesk server pro activate", "rustdesk pricing license", "rustdesk change license", "rustdesk web console license"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+RustDesk Server Pro 授权用于在您的自托管服务器上启用 Pro 功能。对大多数管理员来说，通常只需要购买合适的授权，在 Web 控制台中设置它，并保留检索或迁移信息以便续费或更换服务器。
+
+## 关键要点
+
+- 购买与您的部署规模相匹配的授权
+- 在 Web 控制台中设置授权
+- 在当前周期结束前完成续费或升级
+- 保留发票和检索信息，以便迁移或恢复
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## 购买授权
 
 请从 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 获取您的许可证，在Stripe结账页面输入有效的电子邮件地址。付款成功完成后，许可证（以及单独邮件中的发票）将发送到您的电子邮件。

@@ -6,9 +6,28 @@ weight: 300
 pre: "<b>2.3. </b>"
 ---
 
-## Overview
+## What is the best way to configure RustDesk clients for a self-hosted server?
 
-There are a number of ways to configure RustDesk Clients to use your own self-hosted server, we will cover some below.
+The best configuration method depends on how many devices you manage and whether you use RustDesk Server Pro. For Pro deployments, the Custom Client Generator is usually the best option because it preloads server settings and branding. For smaller or OSS deployments, manual configuration, import/export, or scripted deployment are usually faster.
+
+## Which client configuration method should you choose?
+
+| Method | Best for | Why you would use it |
+| --- | --- | --- |
+| Custom client generator | RustDesk Server Pro teams | Creates preconfigured clients with your server settings, branding, and signing workflow |
+| Manual config | Testing and small deployments | Fastest way to connect a few clients to a self-hosted server |
+| Import or export | Reusing a known-good setup | Copies the same server settings from one client to another |
+| Deployment scripts | RMM, Intune, or large rollouts | Installs RustDesk and applies config automatically at scale |
+| `--config` command line | Managed installs and automation | Applies a config string non-interactively during scripted setup |
+
+## What values do most clients need?
+
+Most self-hosted RustDesk clients only need a few values:
+
+- `ID Server`: required, usually your `hbbs` host or IP
+- `Key`: required for encrypted connections to your self-hosted server
+- `API Server`: needed for Pro account login and web console features
+- `Relay Server`: often optional because RustDesk can infer it unless you want to set it explicitly
 
 ## 1. Custom client generator (Pro only, basic plan or custom plan)
 

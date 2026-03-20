@@ -5,6 +5,20 @@ description: "RustDesk 的高级设置文档，提供安装、配置、部署和
 keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+RustDesk 自定义客户端中的高级设置允许管理员在发布前预定义、建议或锁定选项。它适合用来让受管设备上的安全策略和界面行为保持一致。
+
+## 关键要点
+
+- 更高优先级的设置会覆盖更低优先级的值
+- 强制设置会阻止终端用户修改关键选项
+- 在大规模推送同一配置前，先用一个示例客户端测试
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 所有自定义客户端中的高级设置都在这里涵盖。
 
 ## 设置的权限级别

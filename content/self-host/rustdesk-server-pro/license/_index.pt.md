@@ -5,6 +5,21 @@ description: "Documentação do RustDesk sobre Licença. Consulte guias de insta
 keywords: ["rustdesk pro license", "rustdesk server pro activate", "rustdesk pricing license", "rustdesk change license", "rustdesk web console license"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Resposta rápida
+
+O licenciamento do RustDesk Server Pro libera os recursos Pro no seu servidor auto-hospedado. Na prática, a maioria dos administradores só precisa comprar a licença correta, aplicá-la no console web e guardar os detalhes de recuperação ou migração para renovações e trocas de servidor.
+
+## Pontos principais
+
+- Compre a licença adequada para sua implantação
+- Defina a licença no console web
+- Renove ou faça upgrade antes do fim do período atual
+- Guarde fatura e detalhes de recuperação para migração ou restauração
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Comprar licença
 
 Por favor obtenha sua licença em [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), digite um endereço de email válido na página de checkout do Stripe. A licença (e a fatura em um email separado) será enviada para seu email uma vez que o pagamento seja concluído com sucesso.

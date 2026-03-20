@@ -6,6 +6,21 @@ description: "Documentazione RustDesk su Distribuzione Client. Consulta le guide
 keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Risposta rapida
+
+Per distribuzioni su larga scala, usa script, pacchetti MSI o strumenti RMM/MDM in modo che RustDesk venga installato automaticamente con la configurazione corretta del server. Il metodo migliore dipende soprattutto dal sistema operativo e dallo stack di gestione che utilizzi già.
+
+## Punti chiave
+
+- Host del server o indirizzo `ID Server`
+- Chiave pubblica del server self-hosted
+- `API Server` opzionale per il login Pro
+- Una stringa di configurazione o un metodo di packaging adatto ai tuoi strumenti
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Il modo più semplice è utilizzare un client personalizzato, https://twitter.com/rustdesk/status/1788905463678951787.
 
 Puoi distribuire utilizzando diversi metodi, alcuni sono coperti in [Configurazione Client](https://rustdesk.com/docs/en/self-host/client-configuration/).

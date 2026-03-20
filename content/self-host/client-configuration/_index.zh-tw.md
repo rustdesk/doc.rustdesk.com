@@ -6,6 +6,21 @@ weight: 300
 pre: "<b>2.3. </b>"
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+對大多數 RustDesk Server Pro 部署來說，最佳做法是使用自訂客戶端產生器，因為它可以直接產生已寫入正確伺服器設定與品牌資訊的客戶端。對較小規模的 OSS 部署或測試環境而言，手動設定、匯入/匯出或部署腳本通常更快。
+
+## 關鍵重點
+
+- `ID Server`：您的 `hbbs` 主機名稱或 IP 位址
+- `Key`：用於加密連線的公開金鑰
+- `API Server`：Pro 登入與 Web 主控台功能所需
+- `Relay Server`：通常是選填，除非您想明確指定它
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## 概述
 
 有多種方式可以配置 RustDesk 客戶端使用您自己的自託管伺服器，我們將在下面介紹一些方法。

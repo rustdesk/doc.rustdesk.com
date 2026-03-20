@@ -8,6 +8,14 @@ pre: "<b>2.2. </b>"
 
 RustDesk Server Pro a plus de fonctionnalités par rapport à la version open source.
 
+## Reponses rapides sur RustDesk Server Pro
+
+- Choisissez Pro si vous avez besoin d'administration centralisee, d'integrations d'identite ou de controle de politiques.
+- Pour aller le plus vite possible, commencez par [Docker](/docs/fr/self-host/rustdesk-server-pro/installscript/docker/).
+- Pour un deploiement Linux scriptable avec `systemd`, utilisez [install.sh](/docs/fr/self-host/rustdesk-server-pro/installscript/script/).
+- Le [chemin d'installation Windows](/docs/fr/self-host/rustdesk-server-pro/installscript/windows/) doit etre considere comme ancien.
+- Des que le serveur demarre, prevoyez HTTPS, la licence et la configuration client.
+
 - Compte
 - [Console web](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
 - [API](https://github.com/rustdesk/rustdesk/wiki/FAQ#api-of-rustdesk-server-pro)

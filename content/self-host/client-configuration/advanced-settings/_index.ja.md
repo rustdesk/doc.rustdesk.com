@@ -5,6 +5,20 @@ description: "RustDesk の高度な設定に関するドキュメントです。
 keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## クイックアンサー
+
+RustDesk のカスタムクライアントにある高度な設定では、管理者が配布前に各種オプションを事前定義したり、推奨値にしたり、固定したりできます。管理対象デバイス全体でセキュリティと UI の挙動をそろえたいときに使います。
+
+## 重要なポイント
+
+- 優先度の高い設定が、優先度の低い値を上書きします
+- 強制設定にすると、エンドユーザーは重要な項目を変更できません
+- 同じプロファイルを全体展開する前に、まず 1 台で検証してください
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 カスタムクライアントのすべての高度な設定をここで取り扱います。
 
 ## 設定の権限レベル

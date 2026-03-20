@@ -5,6 +5,20 @@ description: "RustDesk のウェブコンソールに関するドキュメント
 keywords: ["rustdesk web console", "rustdesk server pro console", "rustdesk port 21114", "rustdesk device management", "rustdesk admin console"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## クイックアンサー
+
+RustDesk Server Pro の Web コンソールは、ユーザー、デバイス、グループ、ライセンス、設定、Relay、ログ、API トークンを管理する中心です。新しい管理者は、大きな変更を加える前に、まずログイン、ライセンス、メール、アクセス設定から確認するべきです。
+
+## 重要なポイント
+
+- 最初にログインとライセンスを確認します
+- 次にユーザー、デバイス、グループ、Strategy を見直します
+- 基本アクセスが安定してからメール、Relay、API トークンを設定します
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ウェブコンソールはRustDesk Server Proに統合されており、`21114`ポートで提供されます。
 
 機能：

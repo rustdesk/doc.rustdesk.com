@@ -9,6 +9,18 @@ Use Control Roles to define what a user is allowed to do during a remote session
 
 Control Role allows you to configure remote control permissions for different users. When a user remotely controls another device, the Control Role defines what operations the controlling user is allowed to perform after a connection is established.
 
+## When should you use a Control Role?
+
+Use a Control Role when you want to limit what an operator can do after connecting to a remote device. This is the right feature for decisions such as whether the operator can transfer files, use the clipboard, open a terminal, restart the remote device, or modify remote configuration.
+
+## Control Role quick answers
+
+- Control Roles affect in-session actions after a connection is established
+- They do not decide whether the connection is allowed in the first place
+- Each user can have only one Control Role
+- Control Role permissions can override local permission settings on the controlled device
+- The built-in `Not Logged` and `Default` roles cover users without an assigned custom role
+
 {{% notice note %}}
 **Control Role vs Access Control vs Strategy**
 

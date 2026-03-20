@@ -6,6 +6,21 @@ description: "RustDesk-Dokumentation zu Client-Bereitstellung. Hier finden Sie A
 keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Kurze Antwort
+
+Für größere Rollouts sollten Sie Skripte, MSI-Pakete oder RMM/MDM-Werkzeuge verwenden, damit RustDesk automatisch mit der richtigen Serverkonfiguration installiert wird. Welche Methode am besten passt, hängt vor allem von Betriebssystem und Verwaltungs-Stack ab.
+
+## Wichtige Punkte
+
+- Server-Host oder `ID Server`-Adresse
+- Öffentlicher Schlüssel des selbst gehosteten Servers
+- Optionaler `API Server` für Pro-Login
+- Eine Konfigurationszeichenfolge oder Paketmethode, die zu Ihrem Tooling passt
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Sie können eine Reihe von Methoden für die Bereitstellung verwenden, von denen einige in [Client-Konfiguration](https://rustdesk.com/docs/de/self-host/client-configuration/) beschrieben sind.
 
 Alternativ können Sie Skripte für die Massenbereitstellung mit Ihrem RMM, Intune usw. verwenden. Die ID und das Passwort werden vom Skript ausgegeben. Sie sollten sie ermitteln oder sie in verschiedene Skripte aufteilen, um die ID und das Passwort zu ermitteln.

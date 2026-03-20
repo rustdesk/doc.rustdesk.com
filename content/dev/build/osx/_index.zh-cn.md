@@ -7,6 +7,23 @@ keywords: ["build rustdesk macos", "rustdesk mac build", "rustdesk sciter mac", 
 
 有多种方式可以完成这项工作，本指南假设您已经安装了 `Xcode`、`Git` 和 `Homebrew`。
 
+## 应该选择哪条 macOS 构建路径？
+
+| 需求 | 最佳路径 |
+| --- | --- |
+| 构建传统桌面 UI | Sciter |
+| 构建较新的桌面栈 | Flutter |
+| 准备共享原生依赖 | Homebrew + `vcpkg` + Rust |
+
+## macOS 构建检查清单
+
+- 确认已经安装 `Xcode`、`Git` 和 `Homebrew`。
+- 通过 Homebrew 安装所需工具。
+- 克隆并初始化 `vcpkg`，然后导出 `VCPKG_ROOT`。
+- 通过 `rustup` 安装并配置 Rust。
+- 克隆 RustDesk 源码仓库及其子模块。
+- 在开始构建前补齐 Sciter 或 Flutter 所需组件。
+
 最大的挑战可能是找到所有能够协同工作的工具版本，特别是因为工具链的某些部分（如 Xcode 和 LLVM）由您的 macOS 版本决定。本指南中使用的版本可能不是您应该使用的版本。确定使用什么版本的起点是查看您想要构建的 RustDesk 版本的 [GitHub 构建工作流](https://github.com/rustdesk/rustdesk/blob/master/.github/workflows/flutter-build.yml)。在页面左上角选择要查看文件的标签。但这可能不一定有效，因为 GitHub 运行器附带的 macOS 工具可能与您本地系统上的版本不同。
 
 ### Export

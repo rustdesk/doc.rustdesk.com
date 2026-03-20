@@ -5,6 +5,20 @@ description: "RustDesk-Dokumentation zu Kontrollrolle. Hier finden Sie Anleitung
 keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Kurze Antwort
+
+Verwenden Sie eine Control Role, wenn Sie festlegen möchten, welche Fernsteuerungsaktionen ein Benutzer oder eine Gruppe auf Geräten ausführen darf. Sie ist das richtige Werkzeug, um Dateiübertragung, Zwischenablage, Neustart und andere Sitzungsfunktionen gezielt zu begrenzen.
+
+## Wichtige Punkte
+
+- Beginnen Sie mit den minimal nötigen Sitzungsrechten
+- Testen Sie die Berechnungslogik mit echten Benutzer- und Gerätegruppen
+- Trennen Sie tägliche Operator-Rollen von hoch privilegierten Rollen
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Die Kontrollrolle ermöglicht es Ihnen, Fernsteuerungsberechtigungen für verschiedene Benutzer zu konfigurieren. Wenn ein Benutzer ein anderes Gerät fernsteuert, definiert die Kontrollrolle, welche Operationen der steuernde Benutzer nach dem Verbindungsaufbau ausführen darf.
 
 {{% notice note %}}

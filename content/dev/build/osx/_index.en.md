@@ -9,6 +9,23 @@ Use this guide to build RustDesk on macOS with `Xcode`, `Homebrew`, `vcpkg`, Rus
 
 There are multiple ways to do this, this guide assumes that `Xcode`, `Git` and `Homebrew` are already installed.
 
+## Which macOS build path should you use?
+
+| Need | Best path |
+| --- | --- |
+| Build the traditional desktop UI | Sciter |
+| Build the newer desktop stack | Flutter |
+| Prepare shared native dependencies | Homebrew + `vcpkg` + Rust |
+
+## macOS build checklist
+
+- Confirm `Xcode`, `Git`, and `Homebrew` are already installed.
+- Install the required packages from Homebrew.
+- Clone and bootstrap `vcpkg`, then export `VCPKG_ROOT`.
+- Install and configure Rust with `rustup`.
+- Clone the RustDesk source repository and its submodules.
+- Add either the Sciter runtime or the Flutter toolchain before building.
+
 The biggest challenge is probably to find versions of all the tools that work together, especially since parts of the toolchain like Xcode and LLVM are dictated by your macOS version. The versions used in this guide probably aren't what you should use. As a start to figure what versions to use is to look in the [GitHub build workflow](https://github.com/rustdesk/rustdesk/blob/master/.github/workflows/flutter-build.yml) for the RustDesk version you want to build. Choose the tag for which to see the file in the upper left of the page. But that won't necessarily work because the macOS tools that comes with the GitHub runner might not be the same versions as those on your local system.
 
 ### Export

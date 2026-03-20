@@ -5,6 +5,22 @@ keywords: ["rustdesk server pro faq", "rustdesk pro help", "rustdesk installatio
 weight: 600
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Răspuns rapid
+
+Folosește acest FAQ atunci când ai nevoie de răspunsuri rapide despre instalare, upgrade-uri, licențiere, email și alte sarcini administrative comune pentru RustDesk Server Pro. Pentru schimbări de producție, mergi apoi la ghidul specializat potrivit după ce identifici subiectul corect.
+
+## Puncte cheie
+
+- Instalare sau conversie: folosește ghidul de instalare
+- Implementare Docker: folosește pagina Docker
+- Întrebări despre licență: folosește pagina de licență
+- SSO sau identitate: folosește pagina OIDC
+- Distribuirea clienților: folosește pagina de deployare a clienților
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Cum instalez folosind Simple Install Script?
 1. Obține o licență de la https://rustdesk.com/pricing.html — vezi pagina de [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) pentru detalii.
 2. Pornește un VPS, un server fizic sau o mașină virtuală Linux.

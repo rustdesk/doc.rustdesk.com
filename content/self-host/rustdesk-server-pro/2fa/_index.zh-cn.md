@@ -5,6 +5,20 @@ description: "RustDesk 的2FA文档，提供安装、配置、部署和故障排
 keywords: ["rustdesk 2fa", "rustdesk totp", "rustdesk email verification", "rustdesk authenticator", "rustdesk server pro 2fa"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+如果您想要最简单的上线方式，而且用户本来就依赖邮箱，那么应选择邮件验证。如果您希望第二因素更强、并减少对邮件送达的依赖，那么 TOTP 更合适。
+
+## 关键要点
+
+- 邮件验证最容易快速启用
+- TOTP 更适合管理员或安全敏感账户
+- 在对所有人强制启用 2FA 之前，先测试恢复和登录流程
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 登录账户时，开启 Two-Factor Authentication(2FA) 验证，能够提高账户安全性。
 
 我们的 web console 目前支持两种 2FA:

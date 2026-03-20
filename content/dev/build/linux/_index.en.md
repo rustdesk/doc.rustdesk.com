@@ -7,6 +7,19 @@ keywords: ["build rustdesk linux", "rustdesk linux build", "rustdesk vcpkg linux
 
 Use this guide to build RustDesk on Linux, install the required packages, prepare `vcpkg`, and compile the desktop app from source.
 
+## What do you need before building on Linux?
+
+Building RustDesk on Linux requires the system development packages for your distribution, a working `vcpkg` setup, Rust installed through `rustup`, and the Sciter shared library placed in the build output directory before you run `cargo`.
+
+## Linux build checklist
+
+- Install the compiler and desktop dependencies for your distribution.
+- Clone and bootstrap `vcpkg`, then export `VCPKG_ROOT`.
+- Install Rust with `rustup` and load the cargo environment.
+- Clone the RustDesk repository with submodules.
+- Download `libsciter-gtk.so` into `target/debug`.
+- Run `cargo run` from the project root.
+
 ## How to build on Linux
 
 ### Ubuntu 18 (Debian 10)
@@ -65,4 +78,3 @@ mv libsciter-gtk.so target/debug
 # Note: VCPKG_ROOT still set
 cargo run
 ```
-

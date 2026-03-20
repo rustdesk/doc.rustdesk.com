@@ -5,6 +5,21 @@ description: "Documentație RustDesk pentru Controlul accesului. Găsiți ghidur
 keywords: ["rustdesk access control", "rustdesk device permissions", "rustdesk user group access", "rustdesk server pro permissions", "rustdesk device assignment"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Răspuns rapid
+
+Controlul accesului în RustDesk Server Pro definește ce utilizatori sau grupuri se pot conecta la anumite dispozitive sau grupuri de dispozitive. Începe cu cel mai mic set practic de permisiuni și extinde-l doar după testare.
+
+## Puncte cheie
+
+- Organizează mai întâi grupurile de utilizatori și grupurile de dispozitive
+- Setează în mod deliberat regulile de acces la dispozitive
+- Folosește privilegiul minim ca implicit
+- Verifică accesul pe bază de grup cu conturi reale de test
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Permisiuni de acces ale dispozitivului
 
 Un dispozitiv poate fi atribuit fie unui singur utilizator, fie unui singur grup de dispozitive, fie ambelor.

@@ -1,12 +1,22 @@
 ---
 title: "Documentação do RustDesk"
 type: docs
+breadcrumbs: false
 weight: 1
 description: "Documentação do RustDesk sobre Documentação do RustDesk. Consulte guias de instalação, configuração, implantação e solução de problemas."
 keywords: ["rustdesk", "remote desktop", "open source", "self-host", "documentation", "remote access", "VNC alternative", "teamviewer alternative"]
 ---
 
 RustDesk é uma alternativa completa de controle remoto de código aberto para auto-hospedagem e segurança com configuração mínima. Você tem controle total sobre seus dados, sem preocupações sobre segurança. O cliente é de código aberto e há uma escolha entre o **Servidor Profissional** completo disponível para compra em nosso [site](https://rustdesk.com) e o servidor OSS gratuito básico baseado em nosso **Servidor Profissional**.
+
+## Qual caminho do RustDesk você deve escolher?
+
+| Necessidade | Melhor ponto de partida |
+| --- | --- |
+| Usar o RustDesk como usuário final ou administrador | [Cliente](/docs/pt/client/) |
+| Hospedar por conta própria o servidor open source gratuito | [RustDesk Server OSS](/docs/pt/self-host/rustdesk-server-oss/) |
+| Hospedar por conta própria com console web, SSO e controles empresariais | [RustDesk Server Pro](/docs/pt/self-host/rustdesk-server-pro/) |
+| Compilar ou empacotar o RustDesk a partir do código-fonte | [Desenvolvimento](/docs/pt/dev/) |
 
 ## Recursos
 - Funciona no Windows, macOS, Linux, iOS, Android, Web.

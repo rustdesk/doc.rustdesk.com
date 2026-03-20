@@ -5,6 +5,20 @@ description: "Documentation RustDesk sur Rôle de Contrôle. Consultez les guide
 keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Réponse rapide
+
+Utilisez un rôle de contrôle si vous voulez définir quelles actions de prise en main à distance un utilisateur ou un groupe peut effectuer sur les appareils. C’est l’outil adapté pour limiter transfert de fichiers, presse-papiers, redémarrage et autres capacités de session.
+
+## Points clés
+
+- Commencez avec le minimum de permissions de session
+- Testez le calcul des permissions avec de vrais groupes utilisateurs et appareils
+- Séparez les rôles opérateurs du quotidien des rôles à privilèges élevés
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Le Rôle de Contrôle vous permet de configurer les permissions de contrôle à distance pour différents utilisateurs. Lorsqu'un utilisateur contrôle à distance un autre appareil, le Rôle de Contrôle définit les opérations que l'utilisateur contrôleur est autorisé à effectuer après l'établissement d'une connexion.
 
 {{% notice note %}}

@@ -5,6 +5,20 @@ description: "Documentation RustDesk sur Élévation Windows Portable. Consultez
 keywords: ["rustdesk portable elevation", "rustdesk uac", "rustdesk windows admin rights", "rustdesk task manager mouse issue", "rustdesk request elevation"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Réponse rapide
+
+Utilisez l’élévation portable si vous exécutez le client portable RustDesk mais avez quand même besoin de droits administrateur pour certaines tâches ou actions côté machine contrôlée. C’est utile quand le client complet n’est pas installé mais qu’un support distant élevé reste nécessaire.
+
+## Points clés
+
+- Déterminez si l’élévation est requise au démarrage ou seulement pendant la session
+- Testez les invites côté machine contrôlée et côté machine contrôlante
+- Expliquez le flux d’élévation aux équipes support avant le déploiement
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Les programmes portables Windows n'ont pas les privilèges d'administrateur, ce qui peut conduire aux problèmes suivants :
 
 - L'écran ne peut pas être transmis lorsque la fenêtre UAC (Contrôle de compte d'utilisateur) apparaît.

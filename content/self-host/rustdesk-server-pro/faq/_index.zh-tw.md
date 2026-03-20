@@ -5,6 +5,22 @@ keywords: ["rustdesk server pro 常見問題", "rustdesk pro 幫助", "rustdesk 
 weight: 600
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+當您需要快速找到 RustDesk Server Pro 在安裝、升級、授權、郵件與其他常見管理問題上的答案時，請先看這個 FAQ。對於正式環境變更，在確認問題類別後，應繼續跳轉到對應的專門頁面。
+
+## 關鍵重點
+
+- 安裝或轉換：使用安裝指南
+- Docker 部署：使用 Docker 頁面
+- 授權問題：使用授權頁面
+- SSO 或身分整合：使用 OIDC 頁面
+- 客戶端部署：使用客戶端部署頁面
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## 如何使用簡單安裝腳本安裝？
 1. 從 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 獲取您的許可證，請查看[許可證](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/)頁面了解更多詳情。
 2. 啟動 VPS、裸機或 Linux VM。

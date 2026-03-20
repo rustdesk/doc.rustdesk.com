@@ -6,6 +6,21 @@ weight: 300
 pre: "<b>2.3. </b>"
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Resposta rápida
+
+Para a maioria das implementações do RustDesk Server Pro, a melhor opção é o gerador de cliente personalizado, porque ele entrega clientes já configurados com as definições corretas do servidor e com a identidade visual desejada. Para ambientes OSS menores ou de teste, a configuração manual, a importação/exportação ou os scripts de implantação costumam ser mais rápidos.
+
+## Pontos principais
+
+- `ID Server`: o host ou IP do seu `hbbs`
+- `Key`: a chave pública usada para conexões criptografadas
+- `API Server`: necessário para login Pro e recursos do console web
+- `Relay Server`: normalmente é opcional, a menos que você queira defini-lo explicitamente
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Visão geral
 
 Existem várias maneiras de configurar os clientes RustDesk para usar seu próprio servidor auto-hospedado, cobriremos algumas abaixo.

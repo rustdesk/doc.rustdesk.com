@@ -5,6 +5,18 @@ description: "RustDesk 的Windows 安装 (deprecated)文档，提供安装、配
 keywords: ["rustdesk server pro windows", "rustdesk pro windows install", "rustdesk self-host pro windows", "rustdesk windows install deprecated", "rustdesk pro license windows"]
 ---
 
+## 是否应该使用 Windows 安装路径？
+
+只有当 RustDesk Server Pro 主机必须保持在 Windows 上时才使用本指南。对新部署来说，Linux 或 [Docker](/docs/zh-cn/self-host/rustdesk-server-pro/installscript/docker/) 仍是更优默认选择，因为更容易自动化、更新和稳定运维。
+
+## Windows 安装快速答案
+
+- 这是旧路径，不是首选部署方式。
+- 开始前先安装 Microsoft Visual C++ Redistributable。
+- 旧的 GUI 安装器已不再维护。
+- 如果要长期稳定运行，尽量迁移到 Linux 或 Docker。
+- 如果继续使用 Windows，请提前规划服务运行方式和 Web 控制台代理。
+
 {{% notice note %}}
 Windows 安全策略比较复杂，如果此教程对您不适用，或者您遇到不稳定的连接，请迁移到 Linux 服务器。
 {{% /notice %}}

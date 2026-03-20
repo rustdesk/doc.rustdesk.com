@@ -5,6 +5,20 @@ description: "Documentação do RustDesk sobre Função de Controle. Consulte gu
 keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Resposta rápida
+
+Use uma função de controle quando quiser definir quais ações de controle remoto um usuário ou grupo pode executar nos dispositivos. É a ferramenta certa para limitar transferência de arquivos, área de transferência, reinicialização e outras capacidades da sessão.
+
+## Pontos principais
+
+- Comece com o conjunto mínimo de permissões de sessão
+- Teste o cálculo de permissões com grupos reais de usuários e dispositivos
+- Separe funções operacionais do dia a dia de funções altamente privilegiadas
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 A Função de Controle permite configurar permissões de controle remoto para diferentes usuários. Quando um usuário controla remotamente outro dispositivo, a Função de Controle define quais operações o usuário controlador pode executar após uma conexão ser estabelecida.
 
 {{% notice note %}}

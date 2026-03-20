@@ -5,6 +5,20 @@ description: "RustDesk 的網頁控制台文檔，提供安裝、設定、部署
 keywords: ["rustdesk web console", "rustdesk server pro console", "rustdesk port 21114", "rustdesk device management", "rustdesk admin console"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+RustDesk Server Pro Web 主控台是管理使用者、裝置、群組、授權、設定、Relay、日誌與 API Token 的核心位置。新管理員應先處理登入、授權、郵件與存取設定，再做更大範圍的變更。
+
+## 關鍵重點
+
+- 先確認登入與授權正常
+- 然後檢查使用者、裝置、群組與策略
+- 只有在基礎存取正常後，再設定郵件、Relay 與 API Token
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 網頁控制台整合在 RustDesk 伺服器專業版中，由 `21114` 連接埠提供服務。
 
 功能：

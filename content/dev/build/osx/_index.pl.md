@@ -7,6 +7,23 @@ keywords: ["build rustdesk macos", "rustdesk mac build", "rustdesk sciter mac", 
 
 Jest wiele sposobów żeby to zrobić, ten przewodnik zakłada, że `Xcode`, `Git` i `Homebrew` są już zainstalowane.
 
+## Którą ścieżkę builda macOS wybrać?
+
+| Potrzeba | Najlepsza ścieżka |
+| --- | --- |
+| Zbudować tradycyjny interfejs desktopowy | Sciter |
+| Zbudować nowszy stos desktopowy | Flutter |
+| Przygotować współdzielone zależności natywne | Homebrew + `vcpkg` + Rust |
+
+## Lista kontrolna builda na macOS
+
+- Upewnij się, że `Xcode`, `Git` i `Homebrew` są już zainstalowane.
+- Zainstaluj potrzebne narzędzia przez Homebrew.
+- Sklonuj i zainicjalizuj `vcpkg`, a następnie wyeksportuj `VCPKG_ROOT`.
+- Zainstaluj i skonfiguruj Rusta przez `rustup`.
+- Sklonuj repozytorium RustDesk z submodułami.
+- Przygotuj wymagane komponenty Sciter lub Flutter przed kompilacją.
+
 Prawdopodobnie największym wyzwaniem jest znalezenie wersji wszystkich narzędzi, które działają ze sobą, zwłaszcza części toolchainu takie jak Xcode i LLVM ze względu na to, że są dyktowane przez wersję twojego macOSa. Wersje w tym przewodniku pewnie nie są tymi, których powinieneś używać. Za początek w szukaniu jakich wersji należy użyć można uznać [Workflow budowania na GitHubie](https://github.com/rustdesk/rustdesk/blob/master/.github/workflows/flutter-build.yml) dla danej wersji RustDeska jaką chcesz zbudować. Wybierz tag, dla którego chcesz wyświetlić plik, w lewym górnym rogu strony. Ale to niekoniecznie zadziała, ponieważ narzędzia macOS dostarczane wraz z programem GitHub Runner mogą nie być w tej samej wersji, co narzędzia zainstalowane w twoim systemie lokalnym.
 
 ### Eksport

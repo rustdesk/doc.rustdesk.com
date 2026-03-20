@@ -11,6 +11,18 @@ Admin Role allows administrators to delegate partial management permissions to n
 
 Once an Admin Role is assigned to a user, they will see the corresponding pages and menus in the web console based on their granted permissions.
 
+## When should you use an Admin Role?
+
+Use an Admin Role when someone needs to manage part of your RustDesk environment without becoming a full administrator. This is the right model for help desk leads, regional IT teams, device owners, or group-scoped operators who should only manage part of the fleet.
+
+## Admin Role quick answers
+
+- Admin Roles delegate console management permissions
+- They do not replace full administrator accounts
+- A user can have multiple Admin Roles at the same time
+- The effective permission set is the union of all assigned Admin Roles
+- Group Scoped roles are the right option when management must stay limited to selected groups
+
 ## Administrators vs Admin Roles
 
 - Only administrators can edit Admin Roles and assign Admin Roles to users.

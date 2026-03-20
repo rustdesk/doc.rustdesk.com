@@ -5,6 +5,20 @@ description: "RustDesk 的配置中繼伺服器文檔，提供安裝、設定、
 keywords: ["rustdesk relay server", "rustdesk hbbr", "rustdesk geolocation relay", "rustdesk additional relay", "rustdesk server pro relay"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+當單一機房或單一 Relay 無法滿足延遲、地域覆蓋或流量分擔需求時，您就需要額外的 Relay 伺服器。應在主控台與基礎部署穩定後再設定它們。
+
+## 關鍵重點
+
+- 把額外 Relay 部署在關鍵地區或使用者附近
+- 在 Web 主控台中註冊並驗證 Relay 設定
+- 在切換正式流量前先測試路由效果
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## RustDesk Pro - 使用docker安裝具有地理位置的附加中繼伺服器
 
 {{% notice note %}}

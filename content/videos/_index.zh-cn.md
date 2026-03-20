@@ -5,6 +5,10 @@ description: "RustDesk 的视频教程文档，提供安装、配置、部署和
 keywords: ["rustdesk videos", "rustdesk tutorial", "rustdesk installation video", "rustdesk self-hosting video", "rustdesk security video"]
 ---
 
+## 应该先看哪个视频？
+
+如果你正在评估 RustDesk 或准备做基础自建部署，先看 OSS 安装或用户指南视频。若你需要持续关注 RustDesk Server Pro 教程和产品更新，请查看 RustDesk 的 YouTube 频道。
+
 ## 开源版本
 [NetworkChuck: 你的远程桌面太糟糕了！试试这个替代方案（免费 + 开源）
 ](https://www.youtube.com/watch?v=EXL8mMUXs88)

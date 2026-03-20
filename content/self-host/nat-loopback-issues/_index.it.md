@@ -11,6 +11,20 @@ Questa spiegazione coinvolge conoscenze complesse di networking, abbiamo bisogno
 {{% /notice %}}
 
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Risposta rapida
+
+Se RustDesk funziona dall’esterno della rete ma non all’interno della stessa LAN quando i client usano l’IP pubblico o il dominio, il problema è di solito il NAT loopback. La soluzione migliore è l’hairpin NAT sul router, poi il DNS locale e, come ultima opzione, le voci nel file hosts.
+
+## Punti chiave
+
+- Abilitare NAT loopback o hairpin NAT sul router, se disponibile
+- Usare DNS locale quando si gestiscono più dispositivi nella stessa LAN
+- Usare il file hosts solo per un numero ridotto di dispositivi
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Per maggiori dettagli sul NAT Loopback, controlla la pagina di [Wikipedia](https://en.m.wikipedia.org/wiki/Network_address_translation#NAT_hairpinning).
 
 Quando stai distribuendo il server RustDesk sulla tua rete domestica o qualsiasi altro ambiente di rete che sia dietro un firewall NAT, il server RustDesk e i tuoi client **DEVONO** sia:

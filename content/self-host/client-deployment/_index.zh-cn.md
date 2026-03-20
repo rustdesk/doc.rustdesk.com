@@ -6,6 +6,21 @@ description: "RustDesk 的客户端部署文档，提供安装、配置、部署
 keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+在大规模部署中，最好使用脚本、MSI 包或 RMM/MDM 工具，让 RustDesk 自动以正确的服务器配置完成安装。最适合的方法主要取决于您的操作系统和现有管理工具链。
+
+## 关键要点
+
+- 服务器主机名或 `ID Server` 地址
+- 自托管服务器的公钥
+- 用于 Pro 登录的可选 `API Server`
+- 适合您现有工具的配置字符串或打包方式
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 最简单的方法是使用自定义客户端，https://twitter.com/rustdesk/status/1788905463678951787。
 
 您可以使用多种方法进行部署，其中一些在[客户端配置](https://rustdesk.com/docs/en/self-host/client-configuration/)中有介绍。

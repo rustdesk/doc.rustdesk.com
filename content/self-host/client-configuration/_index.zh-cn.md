@@ -6,6 +6,21 @@ weight: 300
 pre: "<b>2.3. </b>"
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+对于大多数 RustDesk Server Pro 部署，最佳做法是使用自定义客户端生成器，因为它可以直接生成已经写入正确服务器设置和品牌信息的客户端。对于较小规模的 OSS 部署或测试环境，手动配置、导入/导出或部署脚本通常更快。
+
+## 关键要点
+
+- `ID Server`：您的 `hbbs` 主机名或 IP 地址
+- `Key`：用于加密连接的公钥
+- `API Server`：Pro 登录和 Web 控制台功能所必需
+- `Relay Server`：通常是可选的，除非您想显式指定它
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## 概述
 
 有多种方式可以配置 RustDesk 客户端使用您自己的自托管服务器，我们将在下面介绍一些方法。

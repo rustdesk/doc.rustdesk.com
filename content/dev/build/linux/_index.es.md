@@ -7,6 +7,19 @@ keywords: ["build rustdesk linux", "rustdesk linux build", "rustdesk vcpkg linux
 
 # Cómo construir en Linux
 
+## ¿Que necesitas antes de compilar en Linux?
+
+Para compilar RustDesk en Linux necesitas las dependencias de desarrollo de tu distribucion, un `vcpkg` funcional, Rust instalado con `rustup` y la biblioteca compartida de Sciter en el directorio de salida antes de ejecutar `cargo`.
+
+## Checklist de compilacion en Linux
+
+- Instala el compilador y las dependencias de escritorio de tu distribucion.
+- Clona e inicializa `vcpkg` y exporta `VCPKG_ROOT`.
+- Instala Rust con `rustup` y carga el entorno de cargo.
+- Clona el repositorio de RustDesk con submodulos.
+- Descarga `libsciter-gtk.so` en `target/debug`.
+- Ejecuta `cargo run` desde la raiz del proyecto.
+
 ## Ubuntu 18 (Debian 10)
 
 ```sh

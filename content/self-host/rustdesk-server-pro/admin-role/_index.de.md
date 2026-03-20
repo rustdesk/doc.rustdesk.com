@@ -5,6 +5,20 @@ description: "RustDesk-Dokumentation zu Admin-Rolle. Hier finden Sie Anleitungen
 keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Kurze Antwort
+
+Verwenden Sie eine Admin Role, wenn mehrere Administratoren dieselben begrenzten Berechtigungen in der Webkonsole benötigen. Es ist einfacher, eine Rolle zu pflegen und zuzuweisen, als jedes Admin-Konto einzeln zu bearbeiten.
+
+## Wichtige Punkte
+
+- Bündeln Sie wiederkehrende Admin-Berechtigungen in einer Rolle
+- Vollen Admin-Zugriff nur dort vergeben, wo er wirklich nötig ist
+- Prüfen Sie den Geltungsbereich mit einem Testkonto ohne Eigentümerrechte
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Die Admin-Rolle ermöglicht es Administratoren, Teilverwaltungsrechte an Nicht-Administratoren zu delegieren. Sie können Berechtigungen für globale Ressourcen (wie Strategien, Kontrollrollen und benutzerdefinierte Clients) sowie für Benutzer und Geräte innerhalb unterschiedlicher Geltungsbereiche definieren.
 
 Sobald einem Benutzer eine Admin-Rolle zugewiesen wird, sieht er im Web-Console die entsprechenden Seiten und Menüs basierend auf den gewährten Berechtigungen.

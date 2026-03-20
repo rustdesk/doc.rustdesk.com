@@ -9,6 +9,18 @@ Use the RustDesk MSI package when you need silent Windows deployment with `msiex
 
 The MSI package supports command line parameters for silent installation.
 
+## When should you use the MSI package?
+
+Use the MSI package when you need standard Windows software deployment through `msiexec`, managed packaging tools, or silent installation workflows. It is the best fit for enterprise environments that already use MSI-based rollout and upgrade processes.
+
+## MSI quick answers
+
+- MSI is best for silent Windows deployment
+- You can set install path, shortcut behavior, and printer installation through parameters
+- Upgrades can reuse previous installation settings
+- Versions before `2024-08-05` may have silent install and repair issues
+- Use `/l*v install.log` when you need a detailed installation log
+
 ## Parameters
 
 ## INSTALLFOLDER

@@ -5,6 +5,20 @@ description: "RustDesk-Dokumentation zu Erweiterte Einstellungen. Hier finden Si
 keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Kurze Antwort
+
+Erweiterte Einstellungen in benutzerdefinierten RustDesk-Clients erlauben Admins, Optionen vor dem Rollout vorzudefinieren, zu empfehlen oder zu sperren. Nutzen Sie sie, um Sicherheits- und UI-Verhalten über verwaltete Geräte hinweg konsistent zu halten.
+
+## Wichtige Punkte
+
+- Werte mit höherer Priorität überschreiben Einstellungen mit niedrigerer Priorität
+- Erzwungene Einstellungen verhindern Änderungen durch Endbenutzer
+- Testen Sie ein Beispielgerät, bevor Sie dasselbe Profil breit ausrollen
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Alle erweiterten Einstellungen in benutzerdefinierten Clients werden hier behandelt.
 
 ## Berechtigungsebenen für Einstellungen

@@ -5,6 +5,20 @@ description: "Documentație RustDesk pentru Windows Portable Elevation. Găsiți
 keywords: ["rustdesk portable elevation", "rustdesk uac", "rustdesk windows admin rights", "rustdesk task manager mouse issue", "rustdesk request elevation"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Răspuns rapid
+
+Folosește portable elevation atunci când rulezi clientul portabil RustDesk, dar ai totuși nevoie de privilegii de administrator pentru anumite sarcini sau acțiuni pe dispozitivul controlat. Este util când clientul complet nu este instalat, dar suportul remote cu privilegii ridicate rămâne necesar.
+
+## Puncte cheie
+
+- Decide dacă elevarea este necesară la pornire sau doar în timpul sesiunii
+- Testează prompturile atât pe partea controlată, cât și pe partea de control
+- Explică echipei de suport fluxul de elevare înainte de rollout
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Programele portabile pentru Windows nu au privilegii de administrator, ceea ce poate cauza următoarele probleme:
 
 - Ecranul nu poate fi transmis atunci când fereastra UAC (User Account Control) apare.

@@ -5,6 +5,26 @@ description: "RustDesk-Dokumentation zu Mac. Hier finden Sie Anleitungen zur Ins
 keywords: ["rustdesk mac", "rustdesk macos", "rustdesk mac install", "rustdesk screen recording permission", "rustdesk accessibility permission", "rustdesk mac remote control"]
 ---
 
+## Was benotigt RustDesk unter macOS?
+
+Unter macOS reicht es nicht, RustDesk nur zu installieren. Fur die vollstandige Fernsteuerung eines anderen Macs mussen Sie die App in `Applications` verschieben, ihre Ausfuhrung erlauben und `Accessibility`, `Screen Recording` und in manchen Fallen auch `Input Monitoring` freigeben.
+
+## macOS-Kurzantworten
+
+- Installieren Sie RustDesk aus der `.dmg` in `Applications`.
+- Wenn Gatekeeper die App blockiert, erlauben Sie sie in den macOS-Sicherheitseinstellungen.
+- Gewahren Sie `Accessibility` und `Screen Recording` fur die Fernsteuerung.
+- Wenn Tastatur- oder Maussteuerung weiterhin nicht funktioniert, gewahren Sie zusatzlich `Input Monitoring`.
+- Wenn Berechtigungs-Resets nicht greifen, starten Sie den Mac neu.
+
+## Welche macOS-Berechtigungen sind wichtig?
+
+| Berechtigung | Zweck |
+| --- | --- |
+| Accessibility | Erlaubt RustDesk, Tastatur- und Mauseingaben zu steuern |
+| Screen Recording | Erlaubt RustDesk, den lokalen Bildschirm aufzuzeichnen |
+| Input Monitoring | Wird auf neueren macOS-Versionen benotigt, wenn lokale Eingaben sonst nicht erfasst werden |
+
 ## Installation
 
 Öffnen Sie die DMG-Datei und ziehen Sie `RustDesk` zu `Applications`, wie unten dargestellt.

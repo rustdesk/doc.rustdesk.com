@@ -5,6 +5,20 @@ description: "Documentation RustDesk sur Paramètres Avancés. Consultez les gui
 keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Réponse rapide
+
+Les paramètres avancés des clients RustDesk personnalisés permettent aux administrateurs de prédéfinir, recommander ou verrouiller des options avant le déploiement. Utilisez-les pour garder un comportement de sécurité et d’interface cohérent sur les appareils gérés.
+
+## Points clés
+
+- Les paramètres à priorité plus élevée remplacent les valeurs à priorité plus faible
+- Les paramètres forcés empêchent les utilisateurs finaux de modifier les options critiques
+- Testez d’abord sur un client pilote avant de diffuser le même profil partout
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Tous les paramètres avancés des clients personnalisés sont couverts ici.
 
 ## Niveaux de Privilège pour les Paramètres

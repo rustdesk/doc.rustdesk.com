@@ -6,6 +6,21 @@ weight: 300
 pre: "<b>2.3. </b>"
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Răspuns rapid
+
+Pentru majoritatea implementărilor RustDesk Server Pro, generatorul de client personalizat este cea mai bună opțiune, deoarece livrează clienți deja configurați cu setările corecte de server și cu brandingul dorit. Pentru implementări OSS mai mici sau medii de test, configurarea manuală, importul/exportul sau scripturile de implementare sunt de obicei mai rapide.
+
+## Puncte cheie
+
+- `ID Server`: gazda sau IP-ul pentru `hbbs`
+- `Key`: cheia publică folosită pentru conexiuni criptate
+- `API Server`: necesar pentru autentificarea Pro și funcțiile consolei web
+- `Relay Server`: de obicei opțional, dacă nu vrei să-l setezi explicit
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Prezentare generală
 
 Există mai multe modalități de a configura clienții RustDesk pentru a folosi propriul server self-hosted; mai jos sunt prezentate câteva dintre ele.

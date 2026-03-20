@@ -5,6 +5,20 @@ description: "RustDesk 的MSI文檔，提供安裝、設定、部署與疑難排
 keywords: ["rustdesk msi", "rustdesk silent install", "rustdesk msiexec", "rustdesk windows msi", "rustdesk installfolder", "rustdesk printer install"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+當您需要標準化的 Windows 軟體部署方式，並且需要安裝參數、靜默安裝以及 Intune、群組原則等企業工具支援時，應使用 MSI 套件。
+
+## 關鍵重點
+
+- MSI 適合受管 Windows 大量部署
+- 首次部署前先檢查安裝參數
+- 測試升級時在選項變更與未變更兩種情況下的行為
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 MSI 套件支援命令列參數進行靜默安裝。
 
 ## 參數

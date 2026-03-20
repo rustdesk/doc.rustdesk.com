@@ -5,6 +5,18 @@ description: "Documentazione RustDesk su Synology DSM 6. Consulta le guide per i
 keywords: ["rustdesk synology dsm 6", "rustdesk synology docker", "rustdesk nas dsm 6", "rustdesk self-host synology"]
 ---
 
+## Quando dovresti usare la guida DSM 6?
+
+Usa questa guida solo se il tuo NAS Synology esegue ancora DSM 6 e stai distribuendo RustDesk Server OSS tramite il vecchio pacchetto Docker. Se il dispositivo è già passato a DSM 7.2, usa invece la [guida Container Manager](/docs/it/self-host/rustdesk-server-oss/synology/dsm-7/).
+
+## Checklist deployment DSM 6
+
+- Conferma che il NAS esegua ancora DSM 6.
+- Installa `Docker` dal Package Center.
+- Crea una directory host persistente per dati e chiavi RustDesk.
+- Esegui `hbbs` e `hbbr` con host network e auto-restart attivo.
+- Recupera `id_ed25519.pub` dopo l'avvio dei container.
+
 > Un tutorial alternativo aggiornato di terze parti è [qui](https://mariushosting.com/how-to-install-rustdesk-on-your-synology-nas/).
 
 Questo tutorial è basato sulle ultime versioni DSM v6 e v7.

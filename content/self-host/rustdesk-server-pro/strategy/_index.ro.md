@@ -5,6 +5,20 @@ description: "Documentație RustDesk pentru Strategie. Găsiți ghiduri de insta
 keywords: ["rustdesk strategy", "rustdesk policy management", "rustdesk bulk settings", "rustdesk device strategy", "rustdesk server pro strategy"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Răspuns rapid
+
+O Strategy permite RustDesk Server Pro să aplice din consolă setări comune de client pentru dispozitive, utilizatori sau grupuri de dispozitive. Folosește-l pentru a păstra politica și configurația coerente, în loc să editezi fiecare client separat.
+
+## Puncte cheie
+
+- Creează strategii reutilizabile pentru seturi frecvente de politici
+- Înțelege prioritatea dintre alocarea pe dispozitiv, utilizator și grup de dispozitive
+- Testează pe un grup restrâns înainte de rollout larg
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 Strategia este un instrument pentru administratorii RustDesk care le permite să actualizeze în masă opțiunile de securitate din paginile de setări ale clientului. Administratorii pot crea strategii diferite și le pot aplica dispozitivelor dorite.
 
 ## Crearea strategiilor

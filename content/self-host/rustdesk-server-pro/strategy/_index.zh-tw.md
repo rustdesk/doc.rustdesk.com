@@ -5,6 +5,20 @@ description: "RustDesk 的策略文檔，提供安裝、設定、部署與疑難
 keywords: ["rustdesk strategy", "rustdesk policy management", "rustdesk bulk settings", "rustdesk device strategy", "rustdesk server pro strategy"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+Strategy 允許 RustDesk Server Pro 從主控台把共用客戶端設定套用到裝置、使用者或裝置群組。它適合用來保持策略與設定一致，而不是逐台編輯客戶端。
+
+## 關鍵重點
+
+- 為常見策略組合建立可重複使用的 Strategy
+- 理解裝置、使用者與裝置群組指派之間的優先順序
+- 先在小範圍內測試，再大規模下發
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 策略是 RustDesk 管理員批量更新客戶端設定頁面安全選項的工具。管理員可以建立不同的策略並將其應用於不同的設備。
 
 ## 建立策略

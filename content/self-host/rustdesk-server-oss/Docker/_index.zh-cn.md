@@ -5,6 +5,21 @@ description: "RustDesk 的Docker文档，提供安装、配置、部署和故障
 keywords: ["rustdesk docker", "rustdesk docker compose", "rustdesk server docker", "rustdesk hbbs hbbr docker", "rustdesk podman", "rustdesk self-host docker"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+如果您希望部署可重复、更新更简单，那么用 Docker 运行 RustDesk Server OSS 是最容易的方式。请确保已经挂载持久化数据，并且正确配置 `hbbs` 和 `hbbr`。
+
+## 关键要点
+
+- 在升级或重建容器前，先持久化数据目录
+- 发布 RustDesk 所需端口
+- 同时运行 `hbbs` 和 `hbbr`
+- 如果您想简化后续运维，优先使用 Compose
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 > 这里有另一个很好的教程：[Building Your Own Remote Desktop Solution: RustDesk Self-Hosted on Cloud with Docker (Hetzner)](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f)
 
 ## 使用 Docker 安装您自己的服务器

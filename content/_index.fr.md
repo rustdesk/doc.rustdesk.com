@@ -3,10 +3,20 @@ title: "Documentation RustDesk - Bureau à Distance Open Source"
 description: "Documentation complète pour RustDesk - le logiciel de bureau à distance open source. Apprenez à auto-héberger, configurer les clients et déployer RustDesk sur votre infrastructure."
 keywords: ["rustdesk", "bureau à distance", "open source", "auto-hébergement", "documentation", "accès distant", "alternative VNC", "alternative teamviewer"]
 type: docs
+breadcrumbs: false
 weight: 1
 ---
 
 RustDesk est une alternative de contrôle à distance open source complète pour l'auto-hébergement et la sécurité avec une configuration minimale. Vous avez un contrôle total sur vos données, sans préoccupations de sécurité. Le client est open source et vous avez le choix entre le **Serveur Professionnel** complet disponible à l'achat sur notre [site web](https://rustdesk.com) et le serveur OSS gratuit de base basé sur notre **Serveur Professionnel**.
+
+## Quelle voie RustDesk choisir ?
+
+| Besoin | Meilleur point de départ |
+| --- | --- |
+| Utiliser RustDesk comme utilisateur final ou administrateur | [Client](/docs/fr/client/) |
+| Auto-heberger le serveur open source gratuit | [RustDesk Server OSS](/docs/fr/self-host/rustdesk-server-oss/) |
+| Auto-heberger avec console web, SSO et controles avances | [RustDesk Server Pro](/docs/fr/self-host/rustdesk-server-pro/) |
+| Compiler ou packager RustDesk depuis le code source | [Developpement](/docs/fr/dev/) |
 
 ## Fonctionnalités
 - Fonctionne sur Windows, macOS, Linux, iOS, Android, Web.

@@ -7,6 +7,25 @@ keywords: ["rustdesk server windows", "rustdesk pm2", "rustdesk nssm", "rustdesk
 
 Use this guide to run RustDesk Server OSS on Windows with either PM2 or NSSM, depending on whether you want a simpler user-level setup or Windows service management.
 
+## Should you run RustDesk Server OSS on Windows?
+
+You can run RustDesk Server OSS on Windows, but Linux is still the safer default for most production deployments. Windows can work for teams that already operate Windows Server and understand the service model, but it tends to be more fragile for long-term self-hosting.
+
+## PM2 vs NSSM
+
+| Method | Best for | Why you would use it |
+| --- | --- | --- |
+| NSSM | Dedicated Windows Server deployments | Runs as Windows services and starts without user login |
+| PM2 | Mixed-use Windows machines or simpler operator workflows | Easier to manage if you already use Node.js and log into the host regularly |
+
+## Windows self-hosting checklist
+
+1. Download the RustDesk Server Windows binaries.
+2. Decide whether NSSM or PM2 is the better fit.
+3. Install the chosen process manager.
+4. Register and start both `hbbs` and `hbbr`.
+5. Open the required firewall ports and verify both processes stay online.
+
 {{% notice note %}}
 Windows security policy is tricky, if this tutorial does not work for you, or you encounter unstable connection, please migrate to a Linux server.
 {{% /notice %}}

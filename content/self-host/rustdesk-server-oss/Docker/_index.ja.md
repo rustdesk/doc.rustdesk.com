@@ -5,6 +5,21 @@ description: "RustDesk のDockerに関するドキュメントです。インス
 keywords: ["rustdesk docker", "rustdesk docker compose", "rustdesk server docker", "rustdesk hbbs hbbr docker", "rustdesk podman", "rustdesk self-host docker"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## クイックアンサー
+
+再現しやすい構成と簡単な更新を重視するなら、RustDesk Server OSS は Docker で動かすのが最も簡単です。永続データを正しくマウントし、`hbbs` と `hbbr` の両方を適切に設定してください。
+
+## 重要なポイント
+
+- コンテナを更新または作り直す前に、データディレクトリを永続化します
+- 必要な RustDesk ポートを公開します
+- `hbbs` と `hbbr` の両方を実行します
+- 日常運用を簡単にしたいなら Compose を優先します
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 > こちらもう一つの良いチュートリアルです：[Building Your Own Remote Desktop Solution: RustDesk Self-Hosted on Cloud with Docker (Hetzner)](https://www.linkedin.com/pulse/building-your-own-remote-desktop-solution-rustdesk-cloud-montinaro-bv94f)
 
 ## Docker で独自のサーバーをインストール

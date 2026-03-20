@@ -5,6 +5,28 @@ description: "Documentação do RustDesk sobre Azure. Consulte guias de instala�
 keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "rustdesk oidc azure", "rustdesk server pro azure"]
 ---
 
+## Para que serve a configuração Azure OIDC?
+
+Essa configuração permite que os usuários entrem no RustDesk Server Pro com contas do Microsoft Entra ID via OpenID Connect. Na prática, você registra o RustDesk como aplicativo no Azure, copia as credenciais do cliente para o RustDesk Pro e aponta o RustDesk Pro para o issuer URL do seu tenant Entra.
+
+## Checklist do Azure OIDC
+
+- Abra o console web do RustDesk Pro pela origin final do callback.
+- Crie um registro de aplicativo no Microsoft Entra ID.
+- Copie o `Client ID` do Azure para o RustDesk Pro.
+- Crie um client secret e salve imediatamente o secret value.
+- Gere o issuer URL com o `Directory (tenant) ID`.
+- Habilite `ID tokens` nas configurações de autenticação do Azure.
+
+## Quais valores do Azure entram no RustDesk Pro?
+
+| Campo do RustDesk Pro | Origem no Azure |
+| --- | --- |
+| Callback URL | Copiar da página de configurações OIDC do RustDesk Pro |
+| Client ID | `Application (client) ID` no resumo do app do Azure |
+| Client secret | `Value` do secret criado em `Certificates & secrets` |
+| Issuer | `https://login.microsoftonline.com/<Directory (tenant) ID>/v2.0` |
+
 ## Tutorial em vídeo
 
 [https://www.youtube.com/watch?v=izGxSmifURI](https://www.youtube.com/watch?v=izGxSmifURI)

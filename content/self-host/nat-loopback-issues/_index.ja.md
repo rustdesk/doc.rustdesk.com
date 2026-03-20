@@ -11,6 +11,20 @@ keywords: ["rustdesk nat loopback", "rustdesk hairpin nat", "rustdesk local dns"
 {{% /notice %}}
 
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## クイックアンサー
+
+RustDesk が外部ネットワークからは動作するのに、同じ LAN 内では公開 IP やドメイン名を使うと失敗する場合、原因は NAT ループバックであることがほとんどです。最善策はルーター側で hairpin NAT を有効にすること、その次がローカル DNS、最後の回避策が hosts ファイルです。
+
+## 重要なポイント
+
+- ルーターで NAT ループバックまたは hairpin NAT を有効にできるなら、それが最優先です
+- 同じ LAN 上の複数端末を管理するならローカル DNS を使います
+- hosts ファイルの追記は、少数の端末だけを直したい場合に限定してください
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 NAT ループバックの詳細については、[Wikipedia](https://en.m.wikipedia.org/wiki/Network_address_translation#NAT_hairpinning)ページを確認してください。
 
 ホームネットワークやNATファイアウォールの背後にあるその他のネットワーク環境にRustDeskサーバーをデプロイする場合、RustDeskサーバーとクライアントは**必ず**次のいずれかである必要があります：

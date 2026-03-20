@@ -5,6 +5,21 @@ description: "RustDesk-Dokumentation zu Zugriffskontrolle. Hier finden Sie Anlei
 keywords: ["rustdesk access control", "rustdesk device permissions", "rustdesk user group access", "rustdesk server pro permissions", "rustdesk device assignment"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Kurze Antwort
+
+Die Zugriffskontrolle in RustDesk Server Pro legt fest, welche Benutzer oder Gruppen auf welche Geräte oder Gerätegruppen zugreifen dürfen. Starten Sie mit dem kleinstmöglichen Rechteumfang und erweitern Sie erst nach Tests.
+
+## Wichtige Punkte
+
+- Zuerst Benutzergruppen und Gerätegruppen sauber organisieren
+- Gerätezugriffsregeln bewusst setzen
+- Least Privilege als Standard verwenden
+- Gruppenbasierte Zugriffe mit echten Testkonten prüfen
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## Zugriffsberechtigungen für Geräte
 
 Das Gerät kann entweder einem einzelnen Benutzer, einer einzelnen Gerätegruppe oder beiden zugewiesen werden.

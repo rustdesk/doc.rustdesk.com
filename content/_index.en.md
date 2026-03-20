@@ -3,10 +3,20 @@ title: "RustDesk Documentation - Open Source Remote Desktop"
 description: "Complete documentation for RustDesk - the open source remote desktop software. Learn how to self-host, configure clients, and deploy RustDesk across your infrastructure."
 keywords: ["rustdesk", "remote desktop", "open source", "self-host", "documentation", "remote access", "VNC alternative", "teamviewer alternative"]
 type: docs
+breadcrumbs: false
 weight: 1
 ---
 
 RustDesk is a full-featured open source remote control alternative for self-hosting and security with minimal configuration. You have full control of your data, with no concerns about security. The Client is open source and there's a choice between the fully featured **Professional Server** available to purchase on our [website](https://rustdesk.com) and the basic free and OSS Server based on our **Professional Server**.
+
+## Which RustDesk path should you choose?
+
+| Need | Best starting point |
+| --- | --- |
+| Use RustDesk as an end user or administrator | [Client](/docs/en/client/) |
+| Self-host the free open source server | [RustDesk Server OSS](/docs/en/self-host/rustdesk-server-oss/) |
+| Self-host with web console, SSO, and enterprise controls | [RustDesk Server Pro](/docs/en/self-host/rustdesk-server-pro/) |
+| Build or package RustDesk from source | [Development](/docs/en/dev/) |
 
 ## Features
 - Works on Windows, macOS, Linux, iOS, Android, Web.

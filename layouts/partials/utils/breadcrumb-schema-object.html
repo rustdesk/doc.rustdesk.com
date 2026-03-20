@@ -1,0 +1,26 @@
+{{- $breadcrumb := false -}}
+{{- $items := slice -}}
+{{- if not .Params.disableBreadcrumb -}}
+  {{- range $index, $ancestor := .Ancestors.Reverse -}}
+    {{- $items = $items | append (dict
+      "@type" "ListItem"
+      "position" (add $index 1)
+      "name" $ancestor.Title
+      "item" $ancestor.Permalink
+    ) -}}
+  {{- end -}}
+  {{- $items = $items | append (dict
+    "@type" "ListItem"
+    "position" (add (len $items) 1)
+    "name" .Title
+    "item" .Permalink
+  ) -}}
+  {{- if gt (len $items) 1 -}}
+    {{- $breadcrumb = dict
+      "@type" "BreadcrumbList"
+      "@id" (printf "%s#breadcrumb" .Permalink)
+      "itemListElement" $items
+    -}}
+  {{- end -}}
+{{- end -}}
+{{- return $breadcrumb -}}

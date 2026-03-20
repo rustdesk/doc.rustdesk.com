@@ -7,6 +7,22 @@ keywords: ["rustdesk server pro docker", "rustdesk pro docker compose", "rustdes
 
 Use this guide to install RustDesk Server Pro with Docker Compose and the required host networking configuration.
 
+## What is the recommended Docker setup for RustDesk Server Pro?
+
+Docker Compose with `network_mode: "host"` is the recommended setup for most Linux-based RustDesk Server Pro deployments. It keeps `hbbs` and `hbbr` together in one reproducible configuration and avoids licensing issues that can appear when host networking is not used.
+
+## RustDesk Server Pro Docker checklist
+
+1. Install Docker.
+2. Create a persistent `data` directory for RustDesk files such as keys and the database.
+3. Start `hbbs` and `hbbr` with Docker Compose.
+4. Open the required RustDesk ports, especially `21114` if you use the web console directly.
+5. Add HTTPS separately if you want the web console behind a domain.
+
+## When should you use Compose instead of raw `docker run`?
+
+Use Docker Compose for long-lived production deployments and upgrades. Use raw `docker run` commands mainly for testing, debugging, or environments where you want fully manual control over each container.
+
 ## Docker Compose (Recommended)
 
 With Docker Compose you HAVE to use `network_mode: "host"` to ensure licensing works. Install Docker using this [guide](https://docs.docker.com/engine/install) to ensure its the most up to date!

@@ -5,6 +5,21 @@ description: "RustDesk 的安装文档，提供安装、配置、部署和故障
 keywords: ["rustdesk server pro install", "rustdesk self-host pro", "rustdesk pro docker", "rustdesk pro linux install", "rustdesk pro windows install"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## 快速回答
+
+对于大多数团队，安装 RustDesk Server Pro 的最佳方式是 Docker，因为升级和回滚都更简单。如果您想要原生 Linux 服务，请使用 `install.sh`；如果已经在运行 OSS，请使用转换路径。
+
+## 关键要点
+
+- RustDesk Server Pro 许可证
+- Linux 服务器、虚拟机或可用 Docker 的主机
+- 所需端口，以及 Web 控制台和 API 需要的 `21114` 或 `443`
+- 如果您想在域名上启用 HTTPS，可选配置 DNS
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 ## 方法1：Docker (推荐)
 
 ```

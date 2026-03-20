@@ -5,6 +5,20 @@ description: "Documentație RustDesk pentru 2FA. Găsiți ghiduri de instalare, 
 keywords: ["rustdesk 2fa", "rustdesk totp", "rustdesk email verification", "rustdesk authenticator", "rustdesk server pro 2fa"]
 ---
 
+<!-- GEO-LOCALIZED-INTRO:START -->
+
+## Răspuns rapid
+
+Alege verificarea prin email dacă vrei rollout-ul cel mai simplu și utilizatorii se bazează deja pe email. TOTP este alegerea mai bună când vrei un al doilea factor mai puternic, bazat pe aplicație, și mai puțină dependență de livrarea mesajelor.
+
+## Puncte cheie
+
+- Verificarea prin email este cea mai rapidă de activat
+- TOTP este mai potrivit pentru administratori sau conturi sensibile
+- Testează recuperarea și autentificarea înainte să impui 2FA tuturor
+
+<!-- GEO-LOCALIZED-INTRO:END -->
+
 La autentificarea în contul tău, activarea verificării cu două factori (2FA) poate îmbunătăți securitatea contului.
 
 Consola web suportă în prezent două tipuri de 2FA:
