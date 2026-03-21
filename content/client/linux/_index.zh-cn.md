@@ -102,19 +102,3 @@ RustDesk从版本1.2.0开始具有实验性Wayland支持。
 请**重启**以使上述更改生效。
 {{% /notice %}}
 
-### 权限问题
-
-如果启用了SELinux，RustDesk在X11或Wayland环境中都无法正常工作，相关[问题](https://github.com/search?q=repo%3Arustdesk%2Frustdesk+SElinux&type=issues)。
-
-您可以运行：
-
-```sh
-$ sudo grep 'comm="rustdesk"' /var/log/audit/audit.log | tail -1
-type=AVC msg=audit(1697902459.165:707): avc:  denied  { name_connect } for  pid=31346 comm="rustdesk" dest=53330 scontext=system_u:system_r:init_t:s0 tcontext=system_u:object_r:ephemeral_port_t:s0 tclass=tcp_socket permissive=0
-```
-
-{{% notice note %}}
-`audit`后括号中的数字是时间戳。
-{{% /notice %}}
-
-如果输出包含`avc: denied`，您需要添加SELinux策略，请参阅[SELinux](https://rustdesk.com/docs/en/client/linux/selinux/)。

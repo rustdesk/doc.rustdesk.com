@@ -102,19 +102,3 @@ Obsługa ekranów logowania przy użyciu Waylanda nie jest jeszcze wspierana. Je
 **Uruchom ponownie** system aby powyższe zmiany weszły w życie.
 {{% /notice %}}
 
-### Problemy z uprawnieniami
-
-Jeżeli SELinux jest włączony, RustDesk nie będzie poprawnie działał ani w środowiskach X11, ani Waylandowych. Powiązane zgłoszenia znajdziesz [tutaj](https://github.com/search?q=repo%3Arustdesk%2Frustdesk+SElinux&type=issues).
-
-Możesz wykonać:
-
-```sh
-$ sudo grep 'comm="rustdesk"' /var/log/audit/audit.log | tail -1
-type=AVC msg=audit(1697902459.165:707): avc:  denied  { name_connect } for  pid=31346 comm="rustdesk" dest=53330 scontext=system_u:system_r:init_t:s0 tcontext=system_u:object_r:ephemeral_port_t:s0 tclass=tcp_socket permissive=0
-```
-
-{{% notice note %}}
-Numer w nawiasach po `audit` to znacznik czasu.
-{{% /notice %}}
-
-Jeżeli wyjście zawiera `avc: denied`, konieczne jest utworzenie odpowiednich polityk SELinux. Zobacz [SELinux](https://rustdesk.com/docs/en/client/linux/selinux/).

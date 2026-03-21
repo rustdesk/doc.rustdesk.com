@@ -102,19 +102,3 @@ Ecranul de autentificare folosind Wayland nu este încă acceptat. Dacă doriți
 Vă rugăm **reporniți** sistemul pentru ca modificările de mai sus să aibă efect.
 {{% /notice %}}
 
-### Probleme de permisiuni
-
-Dacă SELinux este activat, RustDesk nu va funcționa corect nici în medii X11, nici în Wayland; vedeți problemele relevante în repo.
-
-Puteți rula:
-
-```sh
-$ sudo grep 'comm="rustdesk"' /var/log/audit/audit.log | tail -1
-type=AVC msg=audit(1697902459.165:707): avc:  denied  { name_connect } for  pid=31346 comm="rustdesk" dest=53330 scontext=system_u:system_r:init_t:s0 tcontext=system_u:object_r:ephemeral_port_t:s0 tclass=tcp_socket permissive=0
-```
-
-{{% notice note %}}
-Numărul între paranteze după `audit` este un timestamp.
-{{% /notice %}}
-
-Dacă ieșirea conține `avc: denied`, trebuie să adăugați politici SELinux; consultați pagina [SELinux](https://rustdesk.com/docs/en/client/linux/selinux/).
