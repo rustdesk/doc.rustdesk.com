@@ -1495,6 +1495,25 @@ https://github.com/rustdesk/rustdesk/pull/12911
 | :------: | :------: | :------: |
 | Y, N | N | `allow-insecure-tls-fallback=Y` |
 
+### allow-ask-for-note
+
+在连接结束时，要求控制端填写备注。
+
+如果你在客户端界面中启用此选项但尚未登录，RustDesk 会先要求你登录。
+
+**位置**:
+
+1. **桌面** 设置 → 其他 → 在连接结束时请求备注
+2. **移动端** 设置 → 在连接结束时请求备注
+
+自 RustDesk 1.4.4 版本起可用。
+
+**讨论**: https://github.com/rustdesk/rustdesk/discussions/14606
+
+| 值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-ask-for-note=Y` |
+
 ### disable-change-permanent-password
 
 禁止更改永久密码。启用后，用户无法通过界面或命令行设置或修改永久密码。

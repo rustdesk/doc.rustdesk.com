@@ -1492,6 +1492,25 @@ Verfügbar seit RustDesk 1.4.4
 | :------: | :------: | :------: |
 | Y, N | N | `allow-insecure-tls-fallback=Y` |
 
+### allow-ask-for-note
+
+Fordert die steuernde Seite auf, am Ende einer Verbindung eine Notiz einzugeben.
+
+Wenn Sie diese Option in der Client-Oberfläche aktivieren und noch nicht angemeldet sind, fordert RustDesk Sie zuerst zur Anmeldung auf.
+
+**Standort**:
+
+1. **Desktop** Einstellungen → Sonstiges → Am Ende der Verbindung um Notiz bitten
+2. **Mobil** Einstellungen → Am Ende der Verbindung um Notiz bitten
+
+Verfügbar seit RustDesk 1.4.4.
+
+**Diskussion**: https://github.com/rustdesk/rustdesk/discussions/14606
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-ask-for-note=Y` |
+
 ### disable-change-permanent-password
 
 Deaktiviert die Möglichkeit, das permanente Passwort zu ändern. Wenn aktiviert, können Benutzer das permanente Passwort weder über die Benutzeroberfläche noch über die Befehlszeile festlegen oder ändern.

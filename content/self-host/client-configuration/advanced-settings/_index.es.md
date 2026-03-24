@@ -1492,6 +1492,25 @@ Disponible desde RustDesk 1.4.4
 | :------: | :------: | :------: |
 | Y, N | N | `allow-insecure-tls-fallback=Y` |
 
+### allow-ask-for-note
+
+Solicita al lado controlador que introduzca una nota al finalizar la conexión.
+
+Si habilita esta opción desde la interfaz del cliente y aún no ha iniciado sesión, RustDesk le pedirá primero que inicie sesión.
+
+**Ubicación**:
+
+1. **Escritorio** Configuración → Otros → Solicitar una nota al final de la conexión
+2. **Móvil** Configuración → Solicitar una nota al final de la conexión
+
+Disponible desde RustDesk 1.4.4.
+
+**Discusión**: https://github.com/rustdesk/rustdesk/discussions/14606
+
+| Valores | Predeterminado | Ejemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-ask-for-note=Y` |
+
 ### disable-change-permanent-password
 
 Deshabilita la capacidad de cambiar la contraseña permanente. Cuando está habilitado, los usuarios no pueden establecer ni modificar la contraseña permanente a través de la interfaz de usuario o la línea de comandos.

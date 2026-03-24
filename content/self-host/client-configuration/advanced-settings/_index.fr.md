@@ -1492,6 +1492,25 @@ Disponible depuis RustDesk 1.4.4
 | :------: | :------: | :------: |
 | Y, N | N | `allow-insecure-tls-fallback=Y` |
 
+### allow-ask-for-note
+
+Demande au côté contrôlant de saisir une note à la fin de la connexion.
+
+Si vous activez cette option depuis l'interface du client et que vous n'êtes pas encore connecté, RustDesk vous demandera d'abord de vous connecter.
+
+**Emplacement** :
+
+1. **Bureau** Paramètres → Autres → Demander une note à la fin de la connexion
+2. **Mobile** Paramètres → Demander une note à la fin de la connexion
+
+Disponible depuis RustDesk 1.4.4.
+
+**Discussion** : https://github.com/rustdesk/rustdesk/discussions/14606
+
+| Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-ask-for-note=Y` |
+
 ### disable-change-permanent-password
 
 Désactive la possibilité de modifier le mot de passe permanent. Lorsque cette option est activée, les utilisateurs ne peuvent pas définir ou modifier le mot de passe permanent via l'interface utilisateur ou la ligne de commande.

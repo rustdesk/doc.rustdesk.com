@@ -1504,6 +1504,25 @@ Dostępne od RustDesk 1.4.4
 | :------: | :------: | :------: |
 | Y, N | N | `allow-insecure-tls-fallback=Y` |
 
+### allow-ask-for-note
+
+Prosi stronę kontrolującą o wpisanie notatki po zakończeniu połączenia.
+
+Jeśli włączysz tę opcję w interfejsie klienta i nie jesteś jeszcze zalogowany, RustDesk najpierw poprosi Cię o zalogowanie.
+
+**Lokalizacja**:
+
+1. **Komputer** Ustawienia → Inne → Poproś o notatkę po zakończeniu połączenia
+2. **Mobilny** Ustawienia → Poproś o notatkę po zakończeniu połączenia
+
+Dostępne od RustDesk 1.4.4.
+
+**Dyskusja**: https://github.com/rustdesk/rustdesk/discussions/14606
+
+| Wartości | Domyślnie | Przykład |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-ask-for-note=Y` |
+
 ### disable-change-permanent-password
 
 Wyłącza możliwość zmiany hasła stałego. Po włączeniu użytkownicy nie mogą ustawiać ani modyfikować hasła stałego przez interfejs użytkownika lub wiersz poleceń.
