@@ -1307,6 +1307,8 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 Si permitir entrada de contraseña en pantalla de inicio de sesión cuando se usa [modo de aprobación solo clic](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode), disponible en cliente RustDesk >=1.3.1 (lado controlado)
 
+Cuando está habilitado, también se permite la contraseña permanente cuando la sesión actual de Windows está en un estado de inicio de sesión o de pantalla bloqueada. RustDesk client >=1.4.7 (controlled side)
+
 https://github.com/rustdesk/rustdesk/discussions/9269
 
 | Valores | Predeterminado | Ejemplo |

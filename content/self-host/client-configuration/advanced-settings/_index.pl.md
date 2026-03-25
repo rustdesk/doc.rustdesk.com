@@ -1319,6 +1319,8 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 Jeśli zezwolisz na wprowadzanie hasła na ekranie logowania podczas korzystania z trybu zatwierdzania wyłącznie kliknięciem (https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode), dostępnego w kliencie RustDeska >=1.3.1 (strona kontrolowana).
 
+Po włączeniu stałe hasło jest również dozwolone, gdy bieżąca sesja Windows znajduje się na ekranie logowania lub blokady. RustDesk client >=1.4.7 (controlled side)
+
 https://github.com/rustdesk/rustdesk/discussions/9269
 
 | Wartości | Domyślnie | Przykład |

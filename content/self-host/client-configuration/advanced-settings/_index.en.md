@@ -1329,6 +1329,8 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 If allow password input on logon screen when [click-only approve mode](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode) is used, available in RustDesk client >=1.3.1 (controlled side)
 
+When enabled, permanent password is also allowed when the current Windows session is in a logon or lock-screen state. RustDesk client >=1.4.7 (controlled side)
+
 https://github.com/rustdesk/rustdesk/discussions/9269
 
 | Values | Default | Example |
