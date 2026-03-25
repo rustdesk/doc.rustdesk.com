@@ -1318,6 +1318,8 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 [クリックのみ承認モード](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode)が使用されている場合にログオン画面でのパスワード入力を許可するかどうか、RustDeskクライアント>=1.3.1（被制御側）で利用可能
 
+有効にすると、現在の Windows セッションがログオン画面またはロック画面の状態にある場合にも、固定パスワードを使用できます。 RustDesk client >=1.4.7 (controlled side)
+
 https://github.com/rustdesk/rustdesk/discussions/9269
 
 | 値 | デフォルト | 例 |

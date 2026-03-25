@@ -1307,6 +1307,8 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 Se permettere input password sulla schermata di accesso quando si usa [modalità approvazione solo clic](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode), disponibile nel client RustDesk >=1.3.1 (lato controllato)
 
+Quando è abilitata, la password permanente è consentita anche quando la sessione Windows corrente si trova nella schermata di accesso o di blocco. RustDesk client >=1.4.7 (controlled side)
+
 https://github.com/rustdesk/rustdesk/discussions/9269
 
 | Valori | Predefinito | Esempio |
