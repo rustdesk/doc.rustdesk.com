@@ -7,7 +7,7 @@ import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Carousel from '~/components/widgets/Carousel.jsx';
+import Carousel from '~/components/widgets/Carousel.astro';
 import Note from '~/components/widgets/Note.astro';
 
 const metadata = {
@@ -44,7 +44,6 @@ const metadata = {
     <Fragment slot="content">
       <br /><br />
       <Carousel
-        client:load
         list={[
           { src: '/remote.jpg', className: 'rounded-[15px] border border-gray-700' },
           { src: '/main.png', className: 'rounded-[15px] border border-gray-700' },

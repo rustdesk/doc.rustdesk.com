@@ -1,0 +1,43 @@
+---
+import { Swiper, SwiperWrapper, SwiperSlide, SwiperPagination, SwiperLazyPreloader} from 'astro-swiper';
+interface Props {
+  list: {
+    src: string;
+    alt?: string;
+    class: string;
+  }[];
+}
+const { list } = Astro.props;
+
+---
+<Swiper
+  style={{
+    '--swiper-pagination-bullet-inactive-color': '#fff',
+    '--swiper-pagination-bullet-inactive-opacity': 0.5,
+    '--swiper-pagination-bullet-size': '12px',
+  }}
+  options={{
+    spaceBetween: 0,
+    slidesPerView: 1,
+    pagination:{
+      clickable: true,
+      el: ".swiper-pagination",
+    },
+    mousewheel:{ forceToAxis: true, sensitivity: 0.1, releaseOnEdges: true },
+    autoplay:{
+      delay: 2500,
+      disableOnInteraction: true,
+    },
+    scrollbar: true
+  }}
+>
+  <SwiperWrapper>
+    {list.map((item) => (
+      <SwiperSlide>
+        <img src={item.src} class={item.class} loading="lazy" alt={item.alt} />
+        <SwiperLazyPreloader class="swiper-lazy-preloader-white"></SwiperLazyPreloader>
+      </SwiperSlide>
+    ))}
+  </SwiperWrapper>
+  <SwiperPagination/>
+</Swiper>
