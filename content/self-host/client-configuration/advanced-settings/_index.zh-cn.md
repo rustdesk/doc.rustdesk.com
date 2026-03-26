@@ -1309,7 +1309,7 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 在使用[仅点击批准模式](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode)时是否允许在登录屏幕上输入密码，在RustDesk客户端>=1.3.1（受控端）中可用
 
-启用后，当当前 Windows 会话处于登录界面或锁屏状态时，也允许使用固定密码。 RustDesk client >=1.4.7 (controlled side)
+启用后，当当前会话处于登录界面或锁屏状态时，也允许使用固定密码。这适用于 Click、Password 和 Both 批准模式。 RustDesk client >=1.4.7 (controlled side)
 
 https://github.com/rustdesk/rustdesk/discussions/9269
 

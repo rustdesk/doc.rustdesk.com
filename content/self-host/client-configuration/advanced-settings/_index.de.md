@@ -1307,7 +1307,7 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 Ob Passworteingabe auf dem Anmeldebildschirm erlaubt ist, wenn [Nur-Klick-Genehmigungsmodus](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode) verwendet wird, verfügbar in RustDesk-Client >=1.3.1 (gesteuerte Seite)
 
-Wenn aktiviert, ist das permanente Passwort auch zulässig, wenn sich die aktuelle Windows-Sitzung im Anmelde- oder Sperrbildschirmstatus befindet. RustDesk client >=1.4.7 (controlled side)
+Wenn aktiviert, ist das permanente Passwort auch zulässig, wenn sich die aktuelle Sitzung im Anmelde- oder Sperrbildschirmstatus befindet. Dies gilt für die Genehmigungsmodi Click, Password und Both. RustDesk client >=1.4.7 (controlled side)
 
 https://github.com/rustdesk/rustdesk/discussions/9269
 
