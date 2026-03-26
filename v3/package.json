@@ -35,6 +35,7 @@
     "astro": "^4.15.5",
     "astro-embed": "^0.7.2",
     "astro-icon": "^1.1.1",
+    "astro-swiper": "^2.4.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.3.0",
@@ -44,7 +45,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sweetalert2": "^11.14.2",
-    "swiper": "^11.1.14",
     "tailwindcss-animate": "^1.0.7",
     "unpic": "^3.18.0",
     "vanilla-cookieconsent": "^3.0.1"
