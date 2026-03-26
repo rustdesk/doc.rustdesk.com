@@ -1307,7 +1307,7 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 Si permettre la saisie de mot de passe sur l'écran de connexion quand le [mode d'approbation par clic uniquement](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode) est utilisé, disponible dans le client RustDesk >=1.3.1 (côté contrôlé)
 
-Lorsqu'elle est activée, le mot de passe permanent est également autorisé lorsque la session Windows actuelle est sur un écran de connexion ou de verrouillage. RustDesk client >=1.4.7 (controlled side)
+Lorsqu'elle est activée, le mot de passe permanent est également autorisé lorsque la session actuelle est sur un écran de connexion ou de verrouillage. Cela s'applique aux modes d'approbation Click, Password et Both. Disponible dans le client RustDesk >=1.4.7 (côté contrôlé)
 
 https://github.com/rustdesk/rustdesk/discussions/9269
 

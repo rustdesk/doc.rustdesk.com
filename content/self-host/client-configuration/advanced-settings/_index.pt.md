@@ -1309,7 +1309,7 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 Se permitir entrada de senha na tela de logon quando [modo de aprovação apenas clique](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode) for usado, disponível no cliente RustDesk >=1.3.1 (lado controlado)
 
-Quando habilitado, a senha permanente também é permitida quando a sessão atual do Windows está em estado de logon ou tela de bloqueio. RustDesk client >=1.4.7 (controlled side)
+Quando habilitado, a senha permanente também é permitida quando a sessão atual está em estado de logon ou tela de bloqueio. Isso se aplica aos modos de aprovação Click, Password e Both. Disponível no cliente RustDesk >=1.4.7 (lado controlado)
 
 https://github.com/rustdesk/rustdesk/discussions/9269
 

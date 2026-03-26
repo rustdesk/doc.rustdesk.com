@@ -1320,7 +1320,7 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 在使用[僅點擊批准模式](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode)時是否允許在登入畫面上輸入密碼，在RustDesk用戶端>=1.3.1（受控端）中可用
 
-啟用後，當目前的 Windows 工作階段處於登入畫面或鎖定畫面狀態時，也允許使用固定密碼。 RustDesk client >=1.4.7 (controlled side)
+啟用後，當目前的工作階段處於登入畫面或鎖定畫面狀態時，也允許使用固定密碼。這適用於 Click、Password 和 Both 批准模式。在RustDesk用戶端>=1.4.7（受控端）中可用
 
 https://github.com/rustdesk/rustdesk/discussions/9269
 
