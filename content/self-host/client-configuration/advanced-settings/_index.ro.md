@@ -1320,7 +1320,7 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 Dacă se permite introducerea parolei pe ecranul de logare când se folosește [modul de aprobare doar prin clic](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode), disponibil în clientul RustDesk >=1.3.1 (partea controlată)
 
-Când este activată, parola permanentă este permisă și atunci când sesiunea curentă este într-o stare de autentificare sau ecran blocat. Acest lucru se aplică modurilor de aprobare Click, Password și Both. RustDesk client >=1.4.7 (controlled side)
+Când este activată, parola permanentă este permisă și atunci când sesiunea curentă este într-o stare de autentificare sau ecran blocat. Acest lucru se aplică modurilor de aprobare Click, Password și Both. Disponibil în clientul RustDesk >=1.4.7 (partea controlată)
 
 https://github.com/rustdesk/rustdesk/discussions/9269
 
