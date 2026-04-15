@@ -21,4 +21,6 @@ SMTP は RustDesk Server Pro の送信メールに使われ、確認コード、
 
 SMTP設定により、サーバーはユーザー招待、ログイン認証、接続アラームなどのメール通知を送信できるようになります。
 
+Microsoft 365 を OAuth2 で設定する場合は、[Microsoft 365](Microsoft 365/) を参照してください。
+
 [ビデオチュートリアル](https://youtu.be/0LyQY1JS4Uc)
