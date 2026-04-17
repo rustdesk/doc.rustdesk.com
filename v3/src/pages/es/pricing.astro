@@ -72,17 +72,28 @@ const faqItems = faqRawItems.map((item) => ({
   answer: item.description.replace(/<[^>]*>/g, ''),
 }));
 
+const currencyCopy = {
+  title: 'Elige la moneda de pago',
+  label: 'Moneda de pago',
+  tip: 'La moneda que elijas también se usará en tu factura.',
+  emailTip: 'Tras completar el pago con éxito, recibirás la factura y la licencia por correo electrónico. Introduce la dirección de correo correcta en la siguiente página de pago.',
+  businessTip: 'Si necesitas una factura de empresa con el nombre de la empresa y el número fiscal, marca la casilla "Estoy comprando como empresa" en la siguiente página de pago.',
+  confirm: 'Continuar al pago',
+  cancel: 'Cancelar',
+};
+
 ---
 
 <script>
   import Swal from 'sweetalert2';
   import 'sweetalert2/dist/sweetalert2.min.css';
+  (window.__pricing = window.__pricing || {}).swal = Swal;
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: 'Por favor, confirme',
       html: '<p style="text-align:left">¿Desea proceder a la página de compra? <br><br>Tenga en cuenta que lo que está comprando <b style="font-size: 2em">NO</b> es una suscripción <span style="text-decoration:line-through">SaaS (Software como Servicio)</span>. <br><br>En su lugar, es una licencia para una solución de <b style="font-size: 2em">alojamiento propio</b>, que requiere que la implemente en su propio servidor (servidor en la nube, por ejemplo, AWS EC2, Azure VM, Vultr VPS, etc., o su servidor local). <br><br>Por favor, <b style="font-size: 2em">no</b> compre si no sabe qué es el alojamiento propio',
       icon: 'question',
-      showCancelButton: true,
+      showCancelButton: true, reverseButtons: true,
       confirmButtonText: 'Sí',
       cancelButtonText: 'No',
     }).then((result) => {
@@ -90,7 +101,7 @@ const faqItems = faqRawItems.map((item) => ({
         Swal.fire({
           title: 'Por favor, confirme',
           html: 'Tenga en cuenta que <span class="text-3xl font-bold">no</span> ofrecemos <span class="text-3xl font-bold">reembolsos</span>. Recomendamos encarecidamente <span class="underline font-bold">probar nuestro plan gratuito de alojamiento propio</span> antes de considerar la compra de nuestro plan Pro. ¿Aún está interesado en continuar?',
-          showCancelButton: true,
+          showCancelButton: true, reverseButtons: true,
           confirmButtonText: 'Sí',
           cancelButtonText: 'No',
         }).then((result) => {
@@ -122,6 +133,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     title='Precios de nuestras soluciones de <span class="text-5xl text-blue-500">alojamiento propio</span>'
     subtitle="Solo pague por lo que necesita"
     prices={[
@@ -278,6 +290,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     prices={[
       {
         title: 'Personalizado V2',

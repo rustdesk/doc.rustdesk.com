@@ -840,7 +840,7 @@ window.addEventListener("load", function() {
             title: '请确认',
             text: '你是否要继续前往购买页面？请注意，你所购买的不是SaaS（软件即服务）订阅，而是一项自助托管解决方案的许可证。你需要将其部署在自己的服务器上。',
             icon: 'question',
-            showCancelButton: true,
+            showCancelButton: true, reverseButtons: true,
             confirmButtonText: '是',
             cancelButtonText: '否',
         }).then((result) => {
@@ -849,7 +849,7 @@ window.addEventListener("load", function() {
                     title: '请确认',
                     text: '请注意，我们不提供退款。 我们强烈建议您在考虑购买专业版计划之前先测试我们的免费版本。 您还有兴趣继续吗？',
                     icon: 'question',
-                    showCancelButton: true,
+                    showCancelButton: true, reverseButtons: true,
                     confirmButtonText: '是',
                     cancelButtonText: '否',
                 }).then((result) => {

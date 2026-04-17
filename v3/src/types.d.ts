@@ -233,8 +233,19 @@ export interface Stats extends Omit<Headline, 'classes'>, Widget {
   stats?: Array<Stat>;
 }
 
+export interface PricingCurrencyCopy {
+  title: string;
+  label: string;
+  tip: string;
+  emailTip: string;
+  businessTip: string;
+  confirm: string;
+  cancel: string;
+}
+
 export interface Pricing extends Omit<Headline, 'classes'>, Widget {
   prices?: Array<Price>;
+  currencyCopy?: PricingCurrencyCopy;
 }
 
 export interface Testimonials extends Omit<Headline, 'classes'>, Widget {

@@ -69,17 +69,28 @@ const faqItems = faqRawItems.map((item) => ({
   answer: item.description.replace(/<[^>]*>/g, ''),
 }));
 
+const currencyCopy = {
+  title: '결제 통화 선택',
+  label: '결제 통화',
+  tip: '선택한 통화는 인보이스에도 사용됩니다.',
+  emailTip: '결제가 완료되면 인보이스와 라이선스가 이메일로 발송됩니다. 다음 결제 페이지에서 올바른 이메일 주소를 입력해 주세요.',
+  businessTip: '회사명과 세금 번호가 포함된 사업자용 인보이스가 필요하면 다음 결제 페이지에서 "사업자로 구매합니다" 체크박스를 선택해 주세요.',
+  confirm: '결제로 계속',
+  cancel: '취소',
+};
+
 ---
 
 <script>
   import Swal from 'sweetalert2';
   import 'sweetalert2/dist/sweetalert2.min.css';
+  (window.__pricing = window.__pricing || {}).swal = Swal;
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: '확인해 주세요',
       html: `<p style="text-align:left">구매 페이지로 진행하시겠습니까? <br><br>구매하시는 것은 <b style="font-size: 2em">SaaS(서비스형 소프트웨어)</b> 구독이 아닌 <b style="font-size: 2em">자체 호스팅</b> 솔루션의 라이센스입니다. 이 솔루션은 귀하의 서버(클라우드 서버, 예: AWS EC2, Azure VM, Vultr VPS 등)에서 배포해야 합니다. <br><br>자체 호스팅이 무엇인지 모른다면 <b style="font-size: 2em">구매하지 마세요</b>`,
       icon: 'question',
-      showCancelButton: true,
+      showCancelButton: true, reverseButtons: true,
       confirmButtonText: '예',
       cancelButtonText: '아니오',
     }).then((result) => {
@@ -87,7 +98,7 @@ const faqItems = faqRawItems.map((item) => ({
         Swal.fire({
           title: '확인해 주세요',
           html: `환불을 <span class="text-3xl font-bold">제공하지 않습니다</span>. 구매하기 전에 <span class="underline font-bold">무료 자체 호스팅 계획을 테스트</span>하는 것을 강력히 권장합니다. 계속 진행하시겠습니까?`,
-          showCancelButton: true,
+          showCancelButton: true, reverseButtons: true,
           confirmButtonText: '예',
           cancelButtonText: '아니오',
         }).then((result) => {
@@ -119,6 +130,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     title='우리의 <span class="text-5xl text-blue-500">자체 호스팅</span> 솔루션 가격'
     subtitle="필요한 만큼만 지불하세요"
     prices={[
@@ -275,6 +287,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     prices={[
       {
         title: '맞춤형 V2',

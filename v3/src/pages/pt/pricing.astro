@@ -72,17 +72,28 @@ const faqItems = faqRawItems.map((item) => ({
   answer: item.description.replace(/<[^>]*>/g, ''),
 }));
 
+const currencyCopy = {
+  title: 'Escolha a moeda de pagamento',
+  label: 'Moeda de pagamento',
+  tip: 'A moeda escolhida também será usada na sua fatura.',
+  emailTip: 'Após a confirmação do pagamento, você receberá a fatura e a licença por e-mail. Informe o endereço de e-mail correto na próxima página de pagamento.',
+  businessTip: 'Se você precisa de uma fatura empresarial com o nome da empresa e o número fiscal, marque a caixa "Estou comprando como empresa" na próxima página de pagamento.',
+  confirm: 'Continuar para o checkout',
+  cancel: 'Cancelar',
+};
+
 ---
 
 <script>
   import Swal from 'sweetalert2';
   import 'sweetalert2/dist/sweetalert2.min.css';
+  (window.__pricing = window.__pricing || {}).swal = Swal;
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: 'Por favor, confirme',
       html: `<p style="text-align:left">Deseja prosseguir para a página de compra? <br><br>Por favor, note que o que você está comprando <b style="font-size: 2em">NÃO</b> é uma assinatura de <span style="text-decoration:line-through">SaaS (Software como Serviço)</span>. <br><br>Em vez disso, é uma licença para uma solução de <b style="font-size: 2em">auto-hospedagem</b>, que requer que você a implante em seu próprio servidor (servidor na nuvem, por exemplo, AWS EC2, Azure VM, Vultr VPS etc., ou seu servidor local). <br><br>Por favor, <b style="font-size: 2em">não</b> compre se você não sabe o que é auto-hospedagem`,
       icon: 'question',
-      showCancelButton: true,
+      showCancelButton: true, reverseButtons: true,
       confirmButtonText: 'Sim',
       cancelButtonText: 'Não',
     }).then((result) => {
@@ -90,7 +101,7 @@ const faqItems = faqRawItems.map((item) => ({
         Swal.fire({
           title: 'Por favor, confirme',
           html: `Por favor, note que <span class="text-3xl font-bold">não</span> oferecemos <span class="text-3xl font-bold">reembolsos</span>. Recomendamos fortemente <span class="underline font-bold">testar nosso plano gratuito de auto-hospedagem</span> antes de considerar a compra do nosso plano Pro. Você ainda está interessado em prosseguir?`,
-          showCancelButton: true,
+          showCancelButton: true, reverseButtons: true,
           confirmButtonText: 'Sim',
           cancelButtonText: 'Não',
         }).then((result) => {
@@ -122,6 +133,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     title='Preços de nossas soluções de <span class="text-5xl text-blue-500">auto-hospedagem</span>'
     subtitle="Pague apenas pelo que você precisa"
     prices={[
@@ -278,6 +290,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     prices={[
       {
         title: 'Personalizado V2',

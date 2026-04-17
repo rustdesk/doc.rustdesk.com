@@ -5,17 +5,29 @@ import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Pricing as Props } from '~/types';
 
+const defaultCurrencyCopy = {
+  title: 'Select payment currency',
+  label: 'Payment currency',
+  tip: 'The currency you choose will also be used on your invoice.',
+  emailTip: 'After successful payment, you will receive your invoice and license by email. Please enter the correct email address on the next payment page.',
+  businessTip: 'If you need a business invoice with your business name and tax number, please check the "I\'m purchasing as a business" checkbox on the next payment page.',
+  confirm: 'Continue to checkout',
+  cancel: 'Cancel',
+} as const;
+
 const {
   title = '',
   subtitle = '',
   tagline = '',
   prices = [],
+  currencyCopy = defaultCurrencyCopy,
 
   id,
   isDark = false,
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+const defaultCurrency = 'USD';
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
@@ -29,8 +41,8 @@ const {
     >
       {
         prices &&
-          prices.map(
-            ({
+          prices.map((priceItem, index) => {
+            const {
               title,
               subtitle,
               price,
@@ -42,7 +54,9 @@ const {
               content,
               id,
               ribbonTitle,
-            }) => (
+            } = priceItem;
+
+            return (
               <div
                 class="col-span-3 mx-auto flex w-full sm:col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1"
                 id={id || ''}
@@ -69,11 +83,16 @@ const {
                         </p>
                       )}
                       <div class="my-6">
-                        <div class="flex items-center justify-center text-center mb-1">
-                          <span class="text-5xl">$</span>
-                          <span class="text-5xl font-extrabold">
-                            <Fragment set:html={price} />
-                          </span>
+                        <div class="mb-1 flex justify-center text-center">
+                          <div class="relative inline-flex items-end justify-center gap-1.5">
+                            <span class="text-5xl">$</span>
+                            <span class="text-5xl font-extrabold">
+                              <Fragment set:html={price} />
+                            </span>
+                            <span class="pointer-events-none absolute -right-7 top-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500">
+                              USD
+                            </span>
+                          </div>
                         </div>
                         <span class="text-base leading-6 lowercase text-gray-600 dark:text-slate-400">{period}</span>
                       </div>
@@ -96,36 +115,236 @@ const {
                       )}
                     </div>
                     {content && <Fragment set:html={content} />}
-                    {callToAction && (
-                      <div class={`flex justify-center`}>
-                        {typeof callToAction === 'string' ? (
-                          <Fragment set:html={callToAction} />
-                        ) : (
-                          callToAction &&
-                          (callToAction.href || callToAction.onclick) && (
-                            <Button {...(hasRibbon ? { variant: 'primary' } : {})} {...callToAction} />
-                          )
+                    {(callToAction || callToAction2) && (
+                      <div class="mt-4 space-y-3">
+                        {callToAction && (
+                          <div class={`flex justify-center`}>
+                            {typeof callToAction === 'string' ? (
+                              <Fragment set:html={callToAction} />
+                            ) : (
+                              callToAction &&
+                              (callToAction.href || callToAction.onclick) && (
+                                <Button {...(hasRibbon ? { variant: 'primary' } : {})} {...callToAction} />
+                              )
+                            )}
+                          </div>
                         )}
-                      </div>
-                    )}
-                    {callToAction2 && (
-                      <div class={`flex justify-center`}>
-                        {typeof callToAction2 === 'string' ? (
-                          <Fragment set:html={callToAction2} />
-                        ) : (
-                          callToAction2 &&
-                          (callToAction2.href || callToAction2.onclick) && (
-                            <Button {...(hasRibbon ? { variant: 'primary' } : {})} {...callToAction2} />
-                          )
+                        {callToAction2 && (
+                          <div class={`flex justify-center`}>
+                            {typeof callToAction2 === 'string' ? (
+                              <Fragment set:html={callToAction2} />
+                            ) : (
+                              callToAction2 &&
+                              (callToAction2.href || callToAction2.onclick) && (
+                                <Button {...(hasRibbon ? { variant: 'primary' } : {})} {...callToAction2} />
+                              )
+                            )}
+                          </div>
                         )}
                       </div>
                     )}
                   </div>
                 )}
               </div>
-            )
-          )
+            );
+          })
       }
     </div>
   </div>
 </WidgetWrapper>
+
+<script is:inline define:vars={{ defaultCurrency, currencyCopy }}>
+  (() => {
+    const ns = (window.__pricing = window.__pricing || {});
+    ns.defaultCurrency = defaultCurrency;
+    ns.currencyCopy = currencyCopy;
+
+    if (ns.initialized) {
+      ns.loadCurrencies?.();
+      return;
+    }
+    ns.initialized = true;
+
+    const CHECKOUT_PATH = '/api/lic/stripe/checkout';
+    const CURRENCIES_URL = '/currencies.json';
+    const CURRENCY_RE = /^[A-Z]{3}$/;
+
+    const normalize = (v) => {
+      const s = String(v || '').trim().toUpperCase();
+      return CURRENCY_RE.test(s) ? s : '';
+    };
+
+    const getPageCurrency = () => normalize(new URLSearchParams(location.search).get('currency'));
+
+    const getLoadedCurrencies = () => (Array.isArray(ns.currencies) ? ns.currencies : []);
+
+    const currencyByRegion = {
+      AT: 'EUR', AU: 'AUD', BE: 'EUR', BR: 'BRL', CA: 'CAD', CH: 'CHF',
+      CN: 'CNY', CY: 'EUR', CZ: 'CZK', DE: 'EUR', DK: 'DKK', EE: 'EUR',
+      ES: 'EUR', FI: 'EUR', FR: 'EUR', GB: 'GBP', GR: 'EUR', HK: 'HKD',
+      HR: 'EUR', HU: 'HUF', ID: 'IDR', IE: 'EUR', IL: 'ILS', IN: 'INR',
+      IS: 'ISK', IT: 'EUR', JP: 'JPY', KR: 'KRW', LT: 'EUR', LU: 'EUR',
+      LV: 'EUR', MT: 'EUR', MX: 'MXN', MY: 'MYR', NL: 'EUR', NO: 'NOK',
+      NZ: 'NZD', PH: 'PHP', PL: 'PLN', PT: 'EUR', RO: 'RON', SE: 'SEK',
+      SG: 'SGD', SI: 'EUR', SK: 'EUR', TH: 'THB', TR: 'TRY', US: 'USD',
+      ZA: 'ZAR',
+    };
+
+    const getRegionFromLocale = (v) => {
+      const s = String(v || '').trim();
+      if (!s) return '';
+      try {
+        if (typeof Intl?.Locale === 'function') {
+          const loc = new Intl.Locale(s);
+          return loc.region || loc.maximize().region || '';
+        }
+      } catch { /* ignore */ }
+      const m = s.match(/-([a-z]{2}|\d{3})(?:-|$)/i);
+      return m?.[1]?.toUpperCase() ?? '';
+    };
+
+    const getBrowserLocaleCurrency = () => {
+      const currencies = getLoadedCurrencies();
+      if (!currencies.length) return '';
+      const locales = Array.isArray(navigator.languages) && navigator.languages.length
+        ? navigator.languages : [navigator.language];
+      for (const locale of locales) {
+        const region = getRegionFromLocale(locale);
+        const inferred = normalize(currencyByRegion[region]);
+        if (inferred && currencies.includes(inferred)) return inferred;
+      }
+      return '';
+    };
+
+    const getFallbackCurrency = (requested) => {
+      const direct = normalize(requested);
+      const currencies = getLoadedCurrencies();
+      if (direct && (!currencies.length || currencies.includes(direct))) return direct;
+      const page = getPageCurrency();
+      if (page && (!currencies.length || currencies.includes(page))) return page;
+      const browser = getBrowserLocaleCurrency();
+      if (browser) return browser;
+      return normalize(ns.defaultCurrency) || 'USD';
+    };
+
+    window.getSelectedCurrency = () => normalize(ns.selectedCurrency) || getFallbackCurrency();
+
+    ns.loadCurrencies = () => {
+      if (getLoadedCurrencies().length) return ns.currenciesPromise ?? Promise.resolve(ns.currencies);
+      if (!ns.currenciesPromise) {
+        ns.currenciesPromise = fetch(CURRENCIES_URL, { cache: 'no-store' })
+          .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+          .then((data) => {
+            ns.currencies = Array.isArray(data)
+              ? data.map((c) => normalize(c)).filter(Boolean).sort()
+              : [];
+            return ns.currencies;
+          })
+          .catch(() => { ns.currencies = undefined; return undefined; })
+          .finally(() => { ns.currenciesPromise = undefined; });
+      }
+      return ns.currenciesPromise;
+    };
+
+    const buildCheckoutUrl = (rawUrl, currency) => {
+      const url = new URL(String(rawUrl), location.origin);
+      new URLSearchParams(location.search).forEach((v, k) => {
+        if (k !== 'currency' && !url.searchParams.has(k)) url.searchParams.append(k, v);
+      });
+      if (currency === 'USD') url.searchParams.delete('currency');
+      else url.searchParams.set('currency', currency.toLowerCase());
+      return url.toString();
+    };
+
+    const openCurrencyDialog = async (pending) => {
+      const Swal = ns.swal;
+      const currencies = getLoadedCurrencies();
+      if (!Swal?.fire || !currencies.length) {
+        return ns.nativeOpen?.(
+          buildCheckoutUrl(pending.url, getFallbackCurrency(pending.preferredCurrency)),
+          pending.target, pending.features
+        );
+      }
+
+      const copy = ns.currencyCopy || currencyCopy;
+      const fallback = currencies.find((c) => c === getFallbackCurrency(pending.preferredCurrency)) || currencies[0];
+      const selectId = 'pricing-currency-swal-select';
+      const options = currencies
+        .map((c) => `<option value="${c}"${c === fallback ? ' selected' : ''}>${c}</option>`)
+        .join('');
+      const infoIcon = '<svg style="margin-top:0.1rem;width:0.85rem;height:0.85rem;flex-shrink:0;color:#94a3b8;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" /></svg>';
+
+      const result = await Swal.fire({
+        title: copy.title,
+        html:
+          '<div style="margin-top:0.25rem;text-align:left;">' +
+            '<div style="position:relative;">' +
+              '<select id="' + selectId + '" aria-label="' + copy.label + '"' +
+                ' style="width:100%;appearance:none;-webkit-appearance:none;border:1px solid rgba(148,163,184,0.4);border-radius:0.75rem;background:#fff;padding:0.75rem 2.5rem 0.75rem 0.95rem;font-size:0.95rem;line-height:1.4;color:#0f172a;box-shadow:0 1px 3px rgba(15,23,42,0.06);outline:none;transition:border-color 0.15s,box-shadow 0.15s;cursor:pointer;"' +
+                " onfocus=\"this.style.borderColor='#6366f1';this.style.boxShadow='0 0 0 3px rgba(99,102,241,0.12)'\"" +
+                " onblur=\"this.style.borderColor='rgba(148,163,184,0.4)';this.style.boxShadow='0 1px 3px rgba(15,23,42,0.06)'\"" +
+              '>' + options + '</select>' +
+              '<svg style="pointer-events:none;position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);width:1rem;height:1rem;color:#94a3b8;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg>' +
+            '</div>' +
+            '<p style="margin:0.75rem 0 0;display:flex;align-items:flex-start;gap:0.35rem;font-size:0.78rem;line-height:1.55;color:#64748b;">' + infoIcon + '<span>' + copy.emailTip + '</span></p>' +
+            '<p style="margin:0.45rem 0 0;display:flex;align-items:flex-start;gap:0.35rem;font-size:0.78rem;line-height:1.55;color:#64748b;">' + infoIcon + '<span>' + copy.tip + '</span></p>' +
+            '<p style="margin:0.45rem 0 0;display:flex;align-items:flex-start;gap:0.35rem;font-size:0.78rem;line-height:1.55;color:#64748b;">' + infoIcon + '<span>' + copy.businessTip + '</span></p>' +
+          '</div>',
+        showCancelButton: true,
+        reverseButtons: true,
+        confirmButtonText: copy.confirm,
+        cancelButtonText: copy.cancel,
+        focusConfirm: true,
+        preConfirm: () => {
+          const select = document.getElementById(selectId);
+          if (!(select instanceof HTMLSelectElement)) return fallback;
+          return normalize(select.value) || fallback;
+        },
+      });
+
+      if (!result.isConfirmed) return null;
+      const selected = normalize(result.value) || fallback;
+      ns.selectedCurrency = selected;
+      return ns.nativeOpen?.(buildCheckoutUrl(pending.url, selected), pending.target, pending.features);
+    };
+
+    if (!ns.openPatched) {
+      ns.openPatched = true;
+      var nativeOpen = window.open.bind(window);
+      ns.nativeOpen = nativeOpen;
+
+      window.open = function (url, target, features) {
+        try {
+          var parsed = new URL(String(url), location.origin);
+          if (parsed.pathname.startsWith(CHECKOUT_PATH)) {
+            var pending = {
+              url: parsed.toString(),
+              target: target,
+              features: features,
+              preferredCurrency: normalize(parsed.searchParams.get('currency')),
+            };
+            var load = ns.loadCurrencies?.();
+            if (load?.finally) {
+              load.finally(function () { openCurrencyDialog(pending); });
+              return null;
+            }
+            openCurrencyDialog(pending);
+            return null;
+          }
+        } catch (e) {
+          console.warn('pricing: failed to intercept checkout URL', e);
+        }
+        return nativeOpen(url, target, features);
+      };
+    }
+
+    ns.selectedCurrency = getPageCurrency() || undefined;
+    ns.loadCurrencies();
+
+    document.addEventListener('astro:after-swap', () => {
+      ns.defaultCurrency = defaultCurrency;
+      ns.currencyCopy = currencyCopy;
+      ns.loadCurrencies?.();
+    });
+  })();
+</script>

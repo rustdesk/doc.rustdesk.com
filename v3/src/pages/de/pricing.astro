@@ -72,17 +72,28 @@ const faqItems = faqRawItems.map((item) => ({
   answer: item.description.replace(/<[^>]*>/g, ''),
 }));
 
+const currencyCopy = {
+  title: 'Zahlungswährung auswählen',
+  label: 'Zahlungswährung',
+  tip: 'Die von Ihnen gewählte Währung wird auch auf Ihrer Rechnung verwendet.',
+  emailTip: 'Bitte geben Sie auf der folgenden Zahlungsseite die richtige E-Mail-Adresse an, da Sie Ihre Rechnung und Lizenz nach erfolgreicher Zahlung per E-Mail erhalten.',
+  businessTip: 'Wenn Sie eine Geschäftsrechnung mit Firmenname und Steuernummer benötigen, aktivieren Sie bitte auf der folgenden Zahlungsseite das Kontrollkästchen "Ich kaufe als Unternehmen".',
+  confirm: 'Zur Kasse',
+  cancel: 'Abbrechen',
+};
+
 ---
 
 <script>
   import Swal from 'sweetalert2';
   import 'sweetalert2/dist/sweetalert2.min.css';
+  (window.__pricing = window.__pricing || {}).swal = Swal;
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: 'Bitte bestätigen',
       html: '<p style="text-align:left">Möchten Sie zur Kaufseite weitergeleitet werden? <br><br>Bitte beachten Sie, dass Sie <b style="font-size: 2em">KEIN</b> <span style="text-decoration:line-through">SaaS (Software as a Service) Abonnement</span> erwerben. <br><br>Stattdessen handelt es sich um eine Lizenz für eine <b style="font-size: 2em">Self-Hosting</b> Lösung, die Sie auf Ihrem eigenen Server bereitstellen müssen (Cloud-Server, z.B. AWS EC2, Azure VM, Vultr VPS etc. oder Ihr eigener On-Premise-Server). <br><br>Bitte <b style="font-size: 2em">kaufen Sie nicht</b>, wenn Sie nicht wissen, was Self-Hosting bedeutet.',
       icon: 'question',
-      showCancelButton: true,
+      showCancelButton: true, reverseButtons: true,
       confirmButtonText: 'Ja',
       cancelButtonText: 'Nein',
     }).then((result) => {
@@ -90,7 +101,7 @@ const faqItems = faqRawItems.map((item) => ({
         Swal.fire({
           title: 'Bitte bestätigen',
           html: 'Bitte beachten Sie, dass wir <span class="text-3xl font-bold">keine</span> <span class="text-3xl font-bold">Rückerstattungen</span> anbieten. Wir empfehlen dringend, <span class="underline font-bold">unseren kostenlosen Self-Hosting-Plan zu testen</span>, bevor Sie den Kauf unseres Pro-Plans in Erwägung ziehen. Möchten Sie trotzdem fortfahren?',
-          showCancelButton: true,
+          showCancelButton: true, reverseButtons: true,
           confirmButtonText: 'Ja',
           cancelButtonText: 'Nein',
         }).then((result) => {
@@ -122,6 +133,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     title='Preise für unsere <span class="text-5xl text-blue-500">Self-Hosting</span> Lösungen'
     subtitle="Zahlen Sie nur für das, was Sie benötigen"
     prices={[
@@ -278,6 +290,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     prices={[
       {
         title: 'Angepasst V2',

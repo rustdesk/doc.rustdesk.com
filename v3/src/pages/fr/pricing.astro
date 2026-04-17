@@ -72,17 +72,28 @@ const faqItems = faqRawItems.map((item) => ({
   answer: item.description.replace(/<[^>]*>/g, ''),
 }));
 
+const currencyCopy = {
+  title: 'Choisissez votre devise de paiement',
+  label: 'Devise de paiement',
+  tip: 'La devise choisie sera également utilisée sur votre facture.',
+  emailTip: 'Une fois le paiement effectué, vous recevrez votre facture et votre licence par e-mail. Veuillez saisir la bonne adresse e-mail sur la page de paiement suivante.',
+  businessTip: 'Si vous avez besoin d\'une facture professionnelle avec le nom de l\'entreprise et le numéro fiscal, cochez la case "J\'achète au nom d\'une entreprise" sur la page de paiement suivante.',
+  confirm: 'Continuer vers le paiement',
+  cancel: 'Annuler',
+};
+
 ---
 
 <script>
   import Swal from 'sweetalert2';
   import 'sweetalert2/dist/sweetalert2.min.css';
+  (window.__pricing = window.__pricing || {}).swal = Swal;
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: 'Veuillez confirmer',
       html: '<p style="text-align:left">Voulez-vous procéder à la page d\'achat ? <br><br>Veuillez noter que ce que vous achetez <b style="font-size: 2em">N\'EST PAS</b> un abonnement <span style="text-decoration:line-through">SaaS (Logiciel en tant que Service)</span>. <br><br>Il s\'agit plutôt d\'une licence pour une solution <b style="font-size: 2em">auto-hébergée</b>, qui nécessite que vous la déployiez sur votre propre serveur (serveur cloud, par exemple AWS EC2, Azure VM, Vultr VPS, etc., ou votre serveur sur site). <br><br>Veuillez <b style="font-size: 2em">ne pas</b> acheter si vous ne savez pas ce qu\'est l\'auto-hébergement',
       icon: 'question',
-      showCancelButton: true,
+      showCancelButton: true, reverseButtons: true,
       confirmButtonText: 'Oui',
       cancelButtonText: 'Non',
     }).then((result) => {
@@ -90,7 +101,7 @@ const faqItems = faqRawItems.map((item) => ({
         Swal.fire({
           title: 'Veuillez confirmer',
           html: 'Veuillez noter que nous <span class="text-3xl font-bold">n\'offrons pas</span> de <span class="text-3xl font-bold">remboursements</span>. Nous vous recommandons fortement de <span class="underline font-bold">tester notre plan auto-hébergé gratuit</span> avant d\'envisager l\'achat de notre plan Pro. Êtes-vous toujours intéressé pour continuer ?',
-          showCancelButton: true,
+          showCancelButton: true, reverseButtons: true,
           confirmButtonText: 'Oui',
           cancelButtonText: 'Non',
         }).then((result) => {
@@ -122,6 +133,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     title='Tarification de nos solutions <span class="text-5xl text-blue-500">auto-hébergées</span>'
     subtitle="Ne payez que pour ce dont vous avez besoin"
     prices={[
@@ -278,6 +290,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     prices={[
       {
         title: 'Personnalisé V2',

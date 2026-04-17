@@ -71,17 +71,28 @@ const faqItems = faqRawItems.map((item) => ({
   answer: item.description.replace(/<[^>]*>/g, ''),
 }));
 
+const currencyCopy = {
+  title: '支払い通貨を選択',
+  label: '支払い通貨',
+  tip: '選択した通貨は、請求書でも使用されます。',
+  emailTip: 'お支払い完了後、請求書とライセンスがメールで届きます。次の決済ページでは正しいメールアドレスを入力してください。',
+  businessTip: '会社名と税番号入りの請求書が必要な場合は、次の決済ページで "事業者として購入する" のチェックボックスをオンにしてください。',
+  confirm: '購入手続きへ進む',
+  cancel: 'キャンセル',
+};
+
 ---
 
 <script>
   import Swal from 'sweetalert2';
   import 'sweetalert2/dist/sweetalert2.min.css';
+  (window.__pricing = window.__pricing || {}).swal = Swal;
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: '確認してください',
       html: `<p style="text-align:left">購入ページに進みますか？ <br><br>購入するものは<b style="font-size: 2em">決して</b> <span style="text-decoration:line-through">SaaS（サービスとしてのソフトウェア）</span>サブスクリプションではないことにご注意ください。 <br><br>代わりに、これは<b style="font-size: 2em">セルフホスティング</b>ソリューションのライセンスであり、自身のサーバー（クラウドサーバー、例えばAWS EC2、Azure VM、Vultr VPSなど、または自社のオンプレミスサーバー）にデプロイする必要があります。 <br><br>セルフホスティングが何かわからない場合は、<b style="font-size: 2em">購入しないでください</b>`,
       icon: 'question',
-      showCancelButton: true,
+      showCancelButton: true, reverseButtons: true,
       confirmButtonText: 'はい',
       cancelButtonText: 'いいえ',
     }).then((result) => {
@@ -89,7 +100,7 @@ const faqItems = faqRawItems.map((item) => ({
         Swal.fire({
           title: '確認してください',
           html: `当社は<span class="text-3xl font-bold">返金を行っていません</span>のでご注意ください。Proプランの購入を検討される前に、<span class="underline font-bold">無料のセルフホスティングプランをテスト</span>することを強くお勧めします。それでも進めますか？`,
-          showCancelButton: true,
+          showCancelButton: true, reverseButtons: true,
           confirmButtonText: 'はい',
           cancelButtonText: 'いいえ',
         }).then((result) => {
@@ -121,6 +132,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     title='当社の<span class="text-5xl text-blue-500">セルフホスティング</span>ソリューションの料金'
     subtitle="必要なものにのみ支払う"
     prices={[
@@ -277,6 +289,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     prices={[
       {
         title: 'カスタマイズV2',

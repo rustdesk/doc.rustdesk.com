@@ -70,17 +70,28 @@ const faqItems = faqRawItems.map((item) => ({
   answer: item.description.replace(/<[^>]*>/g, ''),
 }));
 
+const currencyCopy = {
+  title: 'اختر عملة الدفع',
+  label: 'عملة الدفع',
+  tip: 'العملة التي تختارها ستُستخدم أيضًا في فاتورتك.',
+  emailTip: 'بعد إتمام الدفع بنجاح، ستتلقى الفاتورة والترخيص عبر البريد الإلكتروني. يرجى إدخال عنوان البريد الإلكتروني الصحيح في صفحة الدفع التالية.',
+  businessTip: 'إذا كنت بحاجة إلى فاتورة عمل تتضمن اسم الشركة ورقمها الضريبي، فيرجى تحديد مربع الاختيار "أقوم بالشراء بصفتي شركة" في صفحة الدفع التالية.',
+  confirm: 'متابعة إلى الدفع',
+  cancel: 'إلغاء',
+};
+
 ---
 
 <script>
   import Swal from 'sweetalert2';
   import 'sweetalert2/dist/sweetalert2.min.css';
+  (window.__pricing = window.__pricing || {}).swal = Swal;
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: 'يرجى التأكيد',
       html: `<p style="text-align:right">هل تريد المتابعة إلى صفحة الشراء؟ <br><br>يرجى ملاحظة أن ما تشتريه <b style="font-size: 2em">ليس</b> اشتراكًا في <span style="text-decoration:line-through">خدمة البرمجيات كخدمة (SaaS)</span>. <br><br>بدلاً من ذلك، إنه ترخيص لحل <b style="font-size: 2em">استضافة ذاتية</b>، والذي يتطلب منك نشره على خادمك الخاص (خادم سحابي، مثل AWS EC2 أو Azure VM أو Vultr VPS إلخ، أو خادمك المحلي). <br><br>يرجى <b style="font-size: 2em">عدم</b> الشراء إذا كنت لا تعرف ما هي الاستضافة الذاتية`,
       icon: 'question',
-      showCancelButton: true,
+      showCancelButton: true, reverseButtons: true,
       confirmButtonText: 'نعم',
       cancelButtonText: 'لا',
     }).then((result) => {
@@ -88,7 +99,7 @@ const faqItems = faqRawItems.map((item) => ({
         Swal.fire({
           title: 'يرجى التأكيد',
           html: `يرجى ملاحظة أننا <span class="text-3xl font-bold">لا</span> نقدم <span class="text-3xl font-bold">استردادًا للأموال</span>. نوصي بشدة <span class="underline font-bold">باختبار خطتنا المجانية للاستضافة الذاتية</span> قبل التفكير في شراء خطتنا الاحترافية. هل ما زلت مهتمًا بالمتابعة؟`,
-          showCancelButton: true,
+          showCancelButton: true, reverseButtons: true,
           confirmButtonText: 'نعم',
           cancelButtonText: 'لا',
         }).then((result) => {
@@ -120,6 +131,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     title='تسعير حلول <span class="text-5xl text-blue-500">الاستضافة الذاتية</span> لدينا'
     subtitle="ادفع فقط مقابل ما تحتاجه"
     prices={[
@@ -276,6 +288,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     prices={[
       {
         title: 'مخصص V2',

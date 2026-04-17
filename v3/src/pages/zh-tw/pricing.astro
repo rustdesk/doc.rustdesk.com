@@ -67,17 +67,28 @@ const faqItems = faqRawItems.map((item) => ({
   answer: item.description.replace(/<[^>]*>/g, ''),
 }));
 
+const currencyCopy = {
+  title: '選擇付款貨幣',
+  label: '付款貨幣',
+  tip: '你選擇的貨幣也會用於發票。',
+  emailTip: '付款成功後，你將透過電子郵件收到發票和授權。請在接下來的付款頁面填寫正確的電子郵件地址。',
+  businessTip: '如果你需要包含公司名稱和稅號的企業發票，請在接下來的付款頁面勾選 "我正以企業身分購買" 核取方塊。',
+  confirm: '繼續購買',
+  cancel: '取消',
+};
+
 ---
 
 <script>
   import Swal from 'sweetalert2';
   import 'sweetalert2/dist/sweetalert2.min.css';
+  (window.__pricing = window.__pricing || {}).swal = Swal;
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: '請確認',
       html: `<p style="text-align:left">您確定要前往購買頁面嗎？<br><br>請注意，您購買的<b style="font-size: 2em">不是</b><span style="text-decoration:line-through">SaaS（軟體即服務）</span>訂閱。<br><br>相反，這是一個<b style="font-size: 2em">自託管</b>解決方案的授權，需要您在自己的伺服器上部署（雲端伺服器，如AWS EC2、Azure VM、Vultr VPS等，或您的本地伺服器）。<br><br>如果您不了解什麼是自託管，請<b style="font-size: 2em">不要</b>購買。`,
       icon: 'question',
-      showCancelButton: true,
+      showCancelButton: true, reverseButtons: true,
       confirmButtonText: '是',
       cancelButtonText: '否',
     }).then((result) => {
@@ -85,7 +96,7 @@ const faqItems = faqRawItems.map((item) => ({
         Swal.fire({
           title: '請確認',
           html: `請注意，我們<span class="text-3xl font-bold">不提供</span><span class="text-3xl font-bold">退款</span>。我們強烈建議您在考慮購買我們的Pro計劃之前，<span class="underline font-bold">先試用我們的免費自託管計劃</span>。您仍然想要繼續嗎？`,
-          showCancelButton: true,
+          showCancelButton: true, reverseButtons: true,
           confirmButtonText: '是',
           cancelButtonText: '否',
         }).then((result) => {
@@ -117,6 +128,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     title='我們的<span class="text-5xl text-blue-500">自託管</span>解決方案價格'
     subtitle="只為您所需付費"
     prices={[
@@ -273,6 +285,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     prices={[
       {
         title: '自定義 V2',

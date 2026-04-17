@@ -71,17 +71,28 @@ const faqItems = faqRawItems.map((item) => ({
   question: item.title,
   answer: item.description.replace(/<[^>]*>/g, ''),
 }));
+
+const currencyCopy = {
+  title: 'Select payment currency',
+  label: 'Payment currency',
+  tip: 'The currency you choose will also be used on your invoice.',
+  emailTip: 'After successful payment, you will receive your invoice and license by email. Please enter the correct email address on the next payment page.',
+  businessTip: 'If you need a business invoice with your business name and tax number, please check the "I\'m purchasing as a business" checkbox on the next payment page.',
+  confirm: 'Continue to checkout',
+  cancel: 'Cancel',
+};
 ---
 
 <script>
   import Swal from 'sweetalert2';
   import 'sweetalert2/dist/sweetalert2.min.css';
+  (window.__pricing = window.__pricing || {}).swal = Swal;
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: 'Please Confirm',
       html: `<p style="text-align:left">Do you want to proceed to the purchase page? <br><br>Please note that what you are purchasing is <b style="font-size: 2em">NOT</b> a <span style="text-decoration:line-through">SaaS(Software as a Service)</span> subscription. <br><br>Instead, it is a license for a <b style="font-size: 2em">self-hosting</b> solution, which requires you to deploy it on your own server (cloud server, e.g. AWS EC2, Azure VM, Vultr VPS etc, or your on-premise server). <br><br>Please <b style="font-size: 2em">don't</b> buy if you don't know what is self-hosting`,
       icon: 'question',
-      showCancelButton: true,
+      showCancelButton: true, reverseButtons: true,
       confirmButtonText: 'Yes',
       cancelButtonText: 'No',
     }).then((result) => {
@@ -89,7 +100,7 @@ const faqItems = faqRawItems.map((item) => ({
         Swal.fire({
           title: 'Please Confirm',
           html: `Please note that we <span class="text-3xl font-bold">don't</span> offer <span class="text-3xl font-bold">refunds</span>. We strongly recommend <span class="underline font-bold">testing our free self-hosting plan</span> before considering the purchase of our Pro plan. Are you still interested in proceeding?`,
-          showCancelButton: true,
+          showCancelButton: true, reverseButtons: true,
           confirmButtonText: 'Yes',
           cancelButtonText: 'No',
         }).then((result) => {
@@ -122,6 +133,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     title='Pricing of our <span class="text-5xl text-blue-500">self-hosting</span> solutions'
     subtitle="Only pay for what you need"
     prices={[
@@ -278,6 +290,7 @@ const faqItems = faqRawItems.map((item) => ({
   />
 
   <Prices
+    currencyCopy={currencyCopy}
     prices={[
       {
         title: 'Customized V2',
