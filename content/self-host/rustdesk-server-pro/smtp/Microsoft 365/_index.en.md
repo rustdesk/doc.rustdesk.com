@@ -22,7 +22,7 @@ For general SMTP setup, see [SMTP](../).
 | OAuth2 Client secret | The secret `Value` created under `Certificates & secrets` |
 
 This screenshot shows where these values are entered in RustDesk:
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/21-RustDesk-SMTP-OAuth2-2.png)
+![](images/21-RustDesk-SMTP-OAuth2-2.png)
 
 ## Configuration
 
@@ -43,33 +43,33 @@ This configuration has three parts:
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Search for and select **App registrations**.
 1. In the left menu, select [**App registrations**](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps), then click **New registration**.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/1-Azure-AppRegistrations.png)
+![](images/1-Azure-AppRegistrations.png)
 1. Create the app registration.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/2-Azure-NewRegistration.png)
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/3-Azure-RegisterAnApp.png)
+![](images/2-Azure-NewRegistration.png)
+![](images/3-Azure-RegisterAnApp.png)
 1. Record the `Directory (tenant) ID` and `Application (client) ID`. You will enter these later in RustDesk.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/4-Azure-NewApp-Overview.png)
+![](images/4-Azure-NewApp-Overview.png)
 1. Open **Certificates & secrets**, then create a new client secret.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/5-Azure-NewClientSecret.png)
+![](images/5-Azure-NewClientSecret.png)
 1. Copy the client secret `Value` immediately. Microsoft shows this value only once.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/6-Azure-Secret.png)
+![](images/6-Azure-Secret.png)
 1. Open **API permissions** and add the Microsoft 365 Exchange Online SMTP application permission.
 1. Select **Add a permission**.
 1. Select **APIs my organization uses** and search for **Office 365 Exchange Online**.
 1. Select **Application permissions**.
 1. Select **SMTP.SendAsApp** and save the change.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/7-Azure-AddPerms.png)
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/8-Azure-Office365ExchangeOnline.png)
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/9-Azure-SMTP-Send.png)
+![](images/7-Azure-AddPerms.png)
+![](images/8-Azure-Office365ExchangeOnline.png)
+![](images/9-Azure-SMTP-Send.png)
 1. Grant admin consent for the permission you just added.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/10-Azure-Grant-Admin-Constant.png)
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/11-Azure-ApiPermissions.png)
+![](images/10-Azure-Grant-Admin-Constant.png)
+![](images/11-Azure-ApiPermissions.png)
 ### 2. Configure in PowerShell
 
 In this part, connect to Exchange Online, create the service principal, prepare the mailbox, and grant permissions.
 
 1. Open PowerShell as a local administrator.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/12-Powershell-RunAsAdmin.png)
+![](images/12-Powershell-RunAsAdmin.png)
 1. Install the Exchange Online module and connect with your tenant administrator account.
 
 ```powershell
@@ -90,7 +90,7 @@ Connect-ExchangeOnline -UserPrincipalName admin@contoso.com
 The `OBJECT_ID` here must be the app's object ID in **Enterprise applications**, not the object ID shown on the **App registrations** overview page.
 {{% /notice %}}
 
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/15-Powershell-Get-ObjectId.png)
+![](images/15-Powershell-Get-ObjectId.png)
 
 1. Run this command to create the Exchange Online service principal for the app registration. Microsoft describes this step as the registration of a Microsoft Entra application's service principal in Exchange Online.
 
@@ -99,7 +99,7 @@ New-ServicePrincipal -AppId <APPLICATION_ID> -ObjectId <OBJECT_ID>
 ```
 
 If this command fails even though the Exchange connection succeeded, verify that the administrator account has permission to manage Exchange Online service principals.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/16-Powershell-New-ServicePrincipal.png)
+![](images/16-Powershell-New-ServicePrincipal.png)
 
 1. Confirm that Exchange created the service principal and record its `Identity` value for the next steps.
 
@@ -116,7 +116,7 @@ New-Mailbox -Shared -Name "No Reply" -Alias no-reply -DisplayName "No Reply" -Pr
 ```
 
 If you already have a mailbox for sending mail, you can skip this step.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/17-Powershell-New-Mailbox.png)
+![](images/17-Powershell-New-Mailbox.png)
 
 1. Check whether `Authenticated SMTP` is enabled for the tenant and the sending mailbox.
 
@@ -176,7 +176,7 @@ New-Mailbox -Shared -Name "No Reply" -Alias no-reply -DisplayName "No Reply" -Pr
 ```
 
 If the mailbox already exists, make sure the value you use in `Add-MailboxPermission -Identity ...` is the mailbox's actual address, alias, or another resolvable mailbox identity.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/18-Powershell-Add-MailboxPermission.png)
+![](images/18-Powershell-Add-MailboxPermission.png)
 
 1. Grant the same service principal the `SendAs` permission.
 
@@ -210,8 +210,8 @@ RustDesk does not ask for the Exchange service principal `Identity`, but the per
    - `OAuth2 Client secret`
 
 1. Click **Check** to save the configuration and send a test email.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/20-RustDesk-SMTP-OAuth2-1.png)
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/21-RustDesk-SMTP-OAuth2-2.png)
+![](images/20-RustDesk-SMTP-OAuth2-1.png)
+![](images/21-RustDesk-SMTP-OAuth2-2.png)
 
 If the test email still fails, go back to the PowerShell section and re-check the Exchange Online service principal, `Authenticated SMTP`, and mailbox permissions for the mailbox used in `Mail Account`.
 
