@@ -27,6 +27,6 @@ SMTP is used for outgoing email from your RustDesk Server Pro deployment. In pra
 - Whether the `From` address is allowed by your mail provider
 - Whether TLS and the selected SMTP port match your mail provider requirements
 
-For Microsoft 365 OAuth2 setup, see [Microsoft365](microsoft365/).
+For Microsoft 365 OAuth2 setup, see [Microsoft 365](microsoft-365/).
 
 [Video Tutorial](https://youtu.be/0LyQY1JS4Uc)
