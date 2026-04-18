@@ -22,7 +22,7 @@ Per la configurazione SMTP generale, vedi [SMTP](../).
 | OAuth2 Client secret | Il `Value` del secret creato in `Certificates & secrets` |
 
 Questa schermata mostra dove inserire questi valori in RustDesk:
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/21-RustDesk-SMTP-OAuth2-2.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/21-RustDesk-SMTP-OAuth2-2.png)
 
 ## Configurazione
 
@@ -43,34 +43,34 @@ Questa configurazione ha tre parti:
 1. Accedi al [portale di Azure](https://portal.azure.com).
 1. Cerca e seleziona **App registrations**.
 1. Nel menu a sinistra, seleziona [**App registrations**](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps), quindi fai clic su **New registration**.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/1-Azure-AppRegistrations.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/1-Azure-AppRegistrations.png)
 1. Crea la registrazione dell'app.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/2-Azure-NewRegistration.png)
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/3-Azure-RegisterAnApp.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/2-Azure-NewRegistration.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/3-Azure-RegisterAnApp.png)
 1. Annota `Directory (tenant) ID` e `Application (client) ID`. Li inserirai piu tardi in RustDesk.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/4-Azure-NewApp-Overview.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/4-Azure-NewApp-Overview.png)
 1. Apri **Certificates & secrets** e crea un nuovo client secret.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/5-Azure-NewClientSecret.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/5-Azure-NewClientSecret.png)
 1. Copia subito il `Value` del secret. Microsoft mostra questo valore una sola volta.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/6-Azure-Secret.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/6-Azure-Secret.png)
 1. Apri **API permissions** e aggiungi il permesso applicativo SMTP di Microsoft 365 Exchange Online.
 1. Seleziona **Add a permission**.
 1. Seleziona **APIs my organization uses** e cerca **Office 365 Exchange Online**.
 1. Seleziona **Application permissions**.
 1. Seleziona **SMTP.SendAsApp** e salva la modifica.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/7-Azure-AddPerms.png)
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/8-Azure-Office365ExchangeOnline.png)
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/9-Azure-SMTP-Send.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/7-Azure-AddPerms.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/8-Azure-Office365ExchangeOnline.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/9-Azure-SMTP-Send.png)
 1. Concedi l'admin consent per il permesso appena aggiunto.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/10-Azure-Grant-Admin-Constant.png)
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/11-Azure-ApiPermissions.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/10-Azure-Grant-Admin-Constant.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/11-Azure-ApiPermissions.png)
 
 ### 2. Configurare in PowerShell
 
 In questa parte ti connetti a Exchange Online, crei il service principal, prepari la mailbox e concedi i permessi.
 
 1. Apri PowerShell come amministratore locale.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/12-Powershell-RunAsAdmin.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/12-Powershell-RunAsAdmin.png)
 1. Installa il modulo Exchange Online e connettiti con l'account amministratore del tenant.
 
 ```powershell
@@ -91,7 +91,7 @@ Connect-ExchangeOnline -UserPrincipalName admin@contoso.com
 L'`OBJECT_ID` qui deve essere l'object ID dell'app in **Enterprise applications**, non l'object ID mostrato nella panoramica di **App registrations**.
 {{% /notice %}}
 
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/15-Powershell-Get-ObjectId.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/15-Powershell-Get-ObjectId.png)
 
 1. Esegui questo comando per creare il service principal di Exchange Online per la registrazione dell'app. La documentazione Microsoft descrive questo passaggio come la registrazione del service principal di un'applicazione Microsoft Entra in Exchange Online.
 
@@ -100,7 +100,7 @@ New-ServicePrincipal -AppId <APPLICATION_ID> -ObjectId <OBJECT_ID>
 ```
 
 Se questo comando fallisce anche se la connessione a Exchange e riuscita, verifica che l'account amministratore abbia il permesso di gestire i service principal di Exchange Online.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/16-Powershell-New-ServicePrincipal.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/16-Powershell-New-ServicePrincipal.png)
 
 1. Conferma che Exchange abbia creato il service principal e annota il suo valore `Identity` per i passaggi successivi.
 
@@ -117,7 +117,7 @@ New-Mailbox -Shared -Name "No Reply" -Alias no-reply -DisplayName "No Reply" -Pr
 ```
 
 Se hai gia una mailbox per l'invio, puoi saltare questo passaggio.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/17-Powershell-New-Mailbox.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/17-Powershell-New-Mailbox.png)
 
 1. Controlla se `Authenticated SMTP` e abilitato per il tenant e per la mailbox di invio.
 
@@ -177,7 +177,7 @@ New-Mailbox -Shared -Name "No Reply" -Alias no-reply -DisplayName "No Reply" -Pr
 ```
 
 Se la mailbox esiste gia, assicurati che il valore usato in `Add-MailboxPermission -Identity ...` sia l'indirizzo reale della mailbox, il suo alias oppure un'altra mailbox identity che Exchange possa risolvere.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/18-Powershell-Add-MailboxPermission.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/18-Powershell-Add-MailboxPermission.png)
 
 1. Concedi allo stesso service principal anche il permesso `SendAs`.
 
@@ -211,8 +211,8 @@ RustDesk non richiede l'`Identity` del service principal di Exchange, ma i passa
    - `OAuth2 Client secret`
 
 1. Fai clic su **Check** per salvare la configurazione e inviare una e-mail di test.
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/20-RustDesk-SMTP-OAuth2-1.png)
-![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft 365/images/21-RustDesk-SMTP-OAuth2-2.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/20-RustDesk-SMTP-OAuth2-1.png)
+![](/docs/en/self-host/rustdesk-server-pro/smtp/Microsoft365/images/21-RustDesk-SMTP-OAuth2-2.png)
 
 Se la e-mail di test continua a fallire, torna alla sezione PowerShell e ricontrolla il service principal di Exchange Online, `Authenticated SMTP` e i permessi della mailbox usata in `Mail Account`.
 
