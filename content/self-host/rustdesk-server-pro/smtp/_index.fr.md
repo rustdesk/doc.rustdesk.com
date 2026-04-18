@@ -21,6 +21,6 @@ SMTP sert dans RustDesk Server Pro pour les e-mails sortants, notamment les code
 
 La configuration SMTP permet à votre serveur d'envoyer des notifications par email, telles que les invitations d'utilisateurs, les vérifications de connexion et les alarmes de connexion.
 
-Pour configurer Microsoft 365 avec OAuth2, consultez [Microsoft 365](Microsoft 365/).
+Pour configurer Microsoft 365 avec OAuth2, consultez [Microsoft365](Microsoft365/).
 
 [Tutoriel Vidéo](https://youtu.be/0LyQY1JS4Uc)
