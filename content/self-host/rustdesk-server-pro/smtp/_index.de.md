@@ -21,6 +21,6 @@ SMTP wird in RustDesk Server Pro für ausgehende E-Mails verwendet, etwa für Ve
 
 Die SMTP-Einrichtung ermöglicht es Ihrem Server, E-Mail-Benachrichtigungen zu senden, wie z.B. Benutzereinladungen, Anmeldeverifizierungen und Verbindungsalarme.
 
-Für die Microsoft-365-OAuth2-Einrichtung siehe [Microsoft365](Microsoft365/).
+Für die Microsoft-365-OAuth2-Einrichtung siehe [Microsoft 365](microsoft-365/).
 
 [Video Tutorial](https://youtu.be/0LyQY1JS4Uc)
