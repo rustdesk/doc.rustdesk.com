@@ -225,79 +225,306 @@ winget install --id=RustDesk.RustDesk  -e
 
 ## macOS Bash
 
+This script handles the full macOS deployment lifecycle: downloading the latest release (auto-detecting Apple Silicon vs Intel), installing to `/Applications`, initializing the config directory as the logged-in user, setting the password and relay server configuration, and optionally launching in headless server mode. It includes proper error handling, timestamped logging to `/tmp/rustdesk-install.log`, and a LaunchAgent fallback for machines where no user is logged in at install time (e.g., DEP/MDM enrollments).
+
 ```sh
 #!/bin/bash
 
 # Assign the value random password to the password variable
 rustdesk_pw=$(openssl rand -hex 4)
 
-# Get your config string from your Web portal and Fill Below
-rustdesk_cfg="configstring"
+## Relay server configuration
+## Set these to your own RustDesk relay server details
+RELAY_SERVER="your.relay.server.com"
+RELAY_KEY="YOUR_RELAY_KEY_HERE"
+MSP="yourorg"
+## Server mode - set to "y" to launch RustDesk in headless mode on login
+SERVER="Y"
 
-################################## Please Do Not Edit Below This Line #########################################
+LOG="/tmp/rustdesk-install.log"
+rm -f "$LOG"
+# Create log file with world-writable permissions so the user-context subscript can write to it
+touch "$LOG"
+chmod 666 "$LOG"
+echo "Version 1.4.6.85800" >> ${LOG}
+
+# Trap unexpected exits and log them
+_on_exit() {
+    local code=$?
+    [[ $code -ne 0 ]] && echo "$(date '+%Y-%m-%d %H:%M:%S') | FATAL: Script terminated unexpectedly (exit code $code)" | tee -a "$LOG"
+}
+trap _on_exit EXIT
+
+
+
+######################################################################
+############# Please Do Not Edit Below This Line #####################
+######################################################################
 
 # Root password request for privilege escalation
 [ "$UID" -eq 0 ] || exec sudo bash "$0" "$@"
+
+# Helper functions
+console_user() {
+    /usr/bin/who | grep console | cut -d ' ' -f1 | head -1
+}
+
+run_as_user() {
+    local u
+    u="$(console_user || true)"
+    [[ -n "$u" && "$u" != "loginwindow" && "$u" != "_mbsetupuser" ]] || return 1
+    /bin/launchctl asuser "$(/usr/bin/id -u "$u")" /usr/bin/sudo -u "$u" "$@"
+}
 
 # Specify the mount point for the DMG (temporary directory)
 mount_point="/Volumes/RustDesk"
 
 # Download the rustdesk.dmg file
-echo "Downloading RustDesk Now"
+echo "$(date '+%Y-%m-%d %H:%M:%S') | Downloading RustDesk Now" | tee -a "$LOG"
 
 if [[ $(arch) == 'arm64' ]]; then
     rd_link=$(curl -sL https://github.com/rustdesk/rustdesk/releases/latest | grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*/\d{1}.\d{1,2}.\d{1,2}/rustdesk.\d{1}.\d{1,2}.\d{1,2}.aarch64.dmg")
-    dmg_file=$(echo $rd_link | grep -Eo "rustdesk.\d{1}.\d{1,2}.\d{1,2}.aarch64.dmg")
-    curl -L "$rd_link" --output "$dmg_file"
+    dmg_file="/tmp/$(echo $rd_link | grep -Eo "rustdesk.\d{1}.\d{1,2}.\d{1,2}.aarch64.dmg")"
 else
     rd_link=$(curl -sL https://github.com/rustdesk/rustdesk/releases/latest | grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*/\d{1}.\d{1,2}.\d{1,2}/rustdesk.\d{1}.\d{1,2}.\d{1,2}.x86_64.dmg")
-    dmg_file=$(echo $rd_link | grep -Eo "rustdesk.\d{1}.\d{1,2}.\d{1,2}.x86_64.dmg")
-    curl -L "$rd_link" --output "$dmg_file"
+    dmg_file="/tmp/$(echo $rd_link | grep -Eo "rustdesk.\d{1}.\d{1,2}.\d{1,2}.x86_64.dmg")"
+fi
+
+# Verify download link was found
+if [ -z "$rd_link" ]; then
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | ERROR: Failed to find RustDesk download link. Installation aborted." | tee -a "$LOG"
+    exit 1
+fi
+
+# Download the DMG
+echo "$(date '+%Y-%m-%d %H:%M:%S') | Download URL: $rd_link" | tee -a "$LOG"
+echo "$(date '+%Y-%m-%d %H:%M:%S') | Architecture: $(arch)" | tee -a "$LOG"
+if ! curl -fL "$rd_link" --output "$dmg_file"; then
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | ERROR: Failed to download RustDesk. Installation aborted." | tee -a "$LOG"
+    exit 1
+fi
+
+# Verify file was downloaded and is not empty
+if [ ! -s "$dmg_file" ]; then
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | ERROR: Downloaded file is empty or missing. Installation aborted." | tee -a "$LOG"
+    exit 1
 fi
 
 # Mount the DMG file to the specified mount point
+echo "$(date '+%Y-%m-%d %H:%M:%S') | Mounting DMG: $dmg_file" | tee -a "$LOG"
 hdiutil attach "$dmg_file" -mountpoint "$mount_point" &> /dev/null
 
 # Check if the mounting was successful
 if [ $? -eq 0 ]; then
     # Move the contents of the mounted DMG to the /Applications folder
     cp -R "$mount_point/RustDesk.app" "/Applications/" &> /dev/null
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | RustDesk.app copied to /Applications/" | tee -a "$LOG"
 
     # Unmount the DMG file
     hdiutil detach "$mount_point" &> /dev/null
 else
-    echo "Failed to mount the RustDesk DMG. Installation aborted."
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | ERROR: Failed to mount the RustDesk DMG. Installation aborted." | tee -a "$LOG"
     exit 1
 fi
 
-# Run the rustdesk command with --get-id and store the output in the rustdesk_id variable
-cd /Applications/RustDesk.app/Contents/MacOS/
-rustdesk_id=$(./RustDesk --get-id)
+# Initialize the config directory via Launch Services (RustDesk becomes responsible process for TCC)
+CONSOLE_USER=$(/usr/bin/who | grep console | cut -d ' ' -f1 | head -1)
+echo "$(date '+%Y-%m-%d %H:%M:%S') | Console user detected: '${CONSOLE_USER:-<empty>}'" | tee -a "$LOG"
 
-# Apply new password to RustDesk
-./RustDesk --server &
-/Applications/RustDesk.app/Contents/MacOS/RustDesk --password $rustdesk_pw &> /dev/null
-
-/Applications/RustDesk.app/Contents/MacOS/RustDesk --config $rustdesk_cfg
-
-# Kill all processes named RustDesk
-rdpid=$(pgrep RustDesk)
-kill $rdpid &> /dev/null
-
-echo "..............................................."
-# Check if the rustdesk_id is not empty
-if [ -n "$rustdesk_id" ]; then
-    echo "RustDesk ID: $rustdesk_id"
-else
-    echo "Failed to get RustDesk ID."
+if [[ -z "$CONSOLE_USER" || "$CONSOLE_USER" == "loginwindow" || "$CONSOLE_USER" == "_mbsetupuser" ]]; then
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | ERROR: No valid console user found. Cannot initialize RustDesk config directory." | tee -a "$LOG"
+    exit 1
 fi
 
-# Echo the value of the password variable
-echo "Password: $rustdesk_pw"
+echo "$(date '+%Y-%m-%d %H:%M:%S') | Launching RustDesk as '$CONSOLE_USER' to initialize config directory..." | tee -a "$LOG"
+if ! run_as_user open /Applications/RustDesk.app --args --server >> "$LOG" 2>&1; then
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | ERROR: Failed to launch RustDesk as '$CONSOLE_USER'. Check if RustDesk.app is installed." | tee -a "$LOG"
+    exit 1
+fi
+echo "$(date '+%Y-%m-%d %H:%M:%S') | RustDesk launched successfully." | tee -a "$LOG"
+
+# Wait for RustDesk to initialize its config directory rather than using a fixed sleep.
+# Also confirm the directory is owned by the console user, not root.
+RDCONFIG_DIR="/Users/$CONSOLE_USER/Library/Preferences/com.carriez.RustDesk"
+MAX_WAIT=30
+WAITED=0
+echo "$(date '+%Y-%m-%d %H:%M:%S') | Waiting up to ${MAX_WAIT}s for config directory to appear and be user-owned..." | tee -a "$LOG"
+echo "$(date '+%Y-%m-%d %H:%M:%S') | Expected path: $RDCONFIG_DIR" | tee -a "$LOG"
+
+while [[ $WAITED -lt $MAX_WAIT ]]; do
+    if [[ -d "$RDCONFIG_DIR" && "$(stat -f '%Su' "$RDCONFIG_DIR")" == "$CONSOLE_USER" ]]; then
+        echo "$(date '+%Y-%m-%d %H:%M:%S') | Config directory ready and user-owned after ${WAITED}s." | tee -a "$LOG"
+        break
+    fi
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | Still waiting... (${WAITED}s elapsed)" | tee -a "$LOG"
+    sleep 1
+    WAITED=$((WAITED + 1))
+done
+
+if [[ ! -d "$RDCONFIG_DIR" || "$(stat -f '%Su' "$RDCONFIG_DIR")" != "$CONSOLE_USER" ]]; then
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | ERROR: RustDesk config directory never appeared or is not owned by '$CONSOLE_USER' after ${MAX_WAIT}s. Aborting." | tee -a "$LOG"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | Diagnostic — directory exists: $([[ -d "$RDCONFIG_DIR" ]] && echo yes || echo no)" | tee -a "$LOG"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | Diagnostic — directory owner: $(stat -f '%Su' "$RDCONFIG_DIR" 2>/dev/null || echo 'N/A')" | tee -a "$LOG"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | Diagnostic — RustDesk processes: $(pgrep -la RustDesk 2>/dev/null || echo none)" | tee -a "$LOG"
+    exit 1
+fi
+
+# Install the password (config operation, no TCC involvement)
+echo "$(date '+%Y-%m-%d %H:%M:%S') | Setting RustDesk password..." | tee -a "$LOG"
+/Applications/RustDesk.app/Contents/MacOS/RustDesk --password $rustdesk_pw
+sleep 1
+# Get RustDesk ID
+rustdesk_id=$(/Applications/RustDesk.app/Contents/MacOS/RustDesk --get-id)
+sleep 1
+
+# Kill RustDesk
+pkill -x RustDesk &>/dev/null || true
+
+echo "$(date '+%Y-%m-%d %H:%M:%S') | ..............................................." | tee -a "$LOG"
+echo "$(date '+%Y-%m-%d %H:%M:%S') | Install complete!" | tee -a "$LOG"
+echo "$(date '+%Y-%m-%d %H:%M:%S') | RustDesk ID: $rustdesk_id" | tee -a "$LOG"
+echo "$(date '+%Y-%m-%d %H:%M:%S') | RustDesk Password: $rustdesk_pw" | tee -a "$LOG"
+echo "$(date '+%Y-%m-%d %H:%M:%S') | ..............................................." | tee -a "$LOG"
+
+# Configuration paths
+CONFIG_SCRIPT_DIR="/usr/local/bin"
+CONFIG_SCRIPT="$CONFIG_SCRIPT_DIR/configure_rustdesk.sh"
+LAUNCHAGENT_PLIST="/Library/LaunchAgents/com.${MSP}.rustdesk-config.plist"
+
+# Create directory for config script
+[[ ! -d "$CONFIG_SCRIPT_DIR" ]] && mkdir -p "$CONFIG_SCRIPT_DIR"
+
+
+# Write the configure script
+cat > "$CONFIG_SCRIPT" <<SCRIPT_EOF
+#!/bin/bash
+
+# RustDesk Client Configuration Script
+# Runs as the logged-in user to configure relay server
+
+LOG="$LOG"
+exec > >(tee -a "\$LOG") 2>&1
+
+echo "=== RustDesk Config Script Started: \$(date) ==="
+
+RELAY_SERVER="$RELAY_SERVER"
+RELAY_KEY="$RELAY_KEY"
+SERVER_MODE="$SERVER"
+CONSOLE_USER=\$(/usr/bin/who | grep console | cut -d ' ' -f1 | head -1)
+
+echo "Console user: \$CONSOLE_USER"
+
+if [[ -z "\$CONSOLE_USER" || "\$CONSOLE_USER" == "loginwindow" ]]; then
+    echo "ERROR: No valid user logged in"
+    exit 1
+fi
+
+CONFIG_DIR="/Users/\$CONSOLE_USER/Library/Preferences/com.carriez.RustDesk"
+BINARY="/Applications/RustDesk.app/Contents/MacOS/RustDesk"
+
+echo "Config dir: \$CONFIG_DIR"
+echo "Binary: \$BINARY"
+
+# Verify binary exists
+if [[ ! -x "\$BINARY" ]]; then
+    echo "ERROR: RustDesk binary not found or not executable"
+    exit 1
+fi
+
+# Verify config directory exists
+if [[ ! -d "\$CONFIG_DIR" ]]; then
+    echo "ERROR: Config directory does not exist: \$CONFIG_DIR"
+    exit 1
+fi
+
+echo "=== Writing RustDesk Configuration ==="
+
+# Write config file
+if ! cat > "/tmp/RustDesk2.toml" <<TOML_EOF
+rendezvous_server = '\$RELAY_SERVER'
+nat_type = 1
+serial = 0
+unlock_pin = ''
+trusted_devices = ''
+
+[options]
+custom-rendezvous-server = '\$RELAY_SERVER'
+relay-server = '\$RELAY_SERVER'
+api-server = ''
+key = '\$RELAY_KEY'
+TOML_EOF
+then
+    echo "ERROR: Failed to write config file"
+    exit 1
+fi
+
+rm -f "\$CONFIG_DIR/RustDesk2.toml"
+cp /tmp/RustDesk2.toml "\$CONFIG_DIR/"
+
+echo "..............................................."
+echo "Configuration complete!"
+echo "Relay Server: \$RELAY_SERVER"
+echo "Relay Key: \$RELAY_KEY"
 echo "..............................................."
 
-echo "Please complete install on GUI, launching RustDesk now."
-open -n /Applications/RustDesk.app
+# Cleanup - remove LaunchAgent and this script
+rm -f "$LAUNCHAGENT_PLIST"
+
+# Start RustDesk based on configured mode
+if [[ "\$SERVER_MODE" == "y" || "\$SERVER_MODE" == "Y" ]]; then
+    echo "\$(date '+%Y-%m-%d %H:%M:%S') | SERVER MODE: Launching RustDesk in headless/server mode" | tee -a "\$LOG"
+    open /Applications/RustDesk.app --args --server
+    echo "\$(date '+%Y-%m-%d %H:%M:%S') | SERVER MODE: RustDesk server launched (exit code: \$?)" | tee -a "\$LOG"
+elif [[ "\$SERVER_MODE" == "n" || "\$SERVER_MODE" == "N" ]]; then
+    echo "\$(date '+%Y-%m-%d %H:%M:%S') | CLIENT MODE: Launching RustDesk in GUI mode" | tee -a "\$LOG"
+    open -n /Applications/RustDesk.app
+    echo "\$(date '+%Y-%m-%d %H:%M:%S') | CLIENT MODE: RustDesk launched (exit code: \$?)" | tee -a "\$LOG"
+fi
+SCRIPT_EOF
+
+chmod +x "$CONFIG_SCRIPT"
+
+# Try to run as currently logged-in user
+if run_as_user /bin/bash "$CONFIG_SCRIPT"; then
+	echo "$(date '+%Y-%m-%d %H:%M:%S') | ..............................................." | tee -a "$LOG"
+	echo "$(date '+%Y-%m-%d %H:%M:%S') | Configuration completed for logged-in user" | tee -a "$LOG"
+	echo "$(date '+%Y-%m-%d %H:%M:%S') | Server mode: $SERVER" | tee -a "$LOG"
+	echo "$(date '+%Y-%m-%d %H:%M:%S') | ..............................................." | tee -a "$LOG"
+    rm -f "$dmg_file"
+    exit 0
+fi
+
+# No user logged in - create LaunchAgent for next login
+echo "$(date '+%Y-%m-%d %H:%M:%S') | No user logged in. Creating LaunchAgent for next login..." | tee -a "$LOG"
+
+cat > "$LAUNCHAGENT_PLIST" <<PLIST_EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.${MSP}.rustdesk-config</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>$CONFIG_SCRIPT</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
+PLIST_EOF
+
+chmod 644 "$LAUNCHAGENT_PLIST"
+
+echo "$(date '+%Y-%m-%d %H:%M:%S') | ..............................................." | tee -a "$LOG"
+echo "$(date '+%Y-%m-%d %H:%M:%S') | Install Complete (configuration pending login)" | tee -a "$LOG"
+echo "$(date '+%Y-%m-%d %H:%M:%S') | Server mode: $SERVER" | tee -a "$LOG"
+echo "$(date '+%Y-%m-%d %H:%M:%S') | ..............................................." | tee -a "$LOG"
+# Cleanup downloaded DMG
+rm -f "$dmg_file"
+
+exit 0
 ```
 
 ## Linux
