@@ -19,7 +19,7 @@ The RustDesk Client is the application you install on devices to start or receiv
 - NixOS
 - AppImage / Flatpak
 - Android
-- iOS (not support being controlled)
+- iOS (cannot be controlled remotely)
 - Web
 
 ## Installation
