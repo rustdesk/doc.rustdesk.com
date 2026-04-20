@@ -46,7 +46,8 @@ const metadata = {
         titleFragment.innerHTML = 'License ' + action + ' successfully!';
         contentFragment.innerHTML = `
           <p class="text-center leading-10 text-lg">
-            Your license has been successfully ${action}. Please follow <a class="underline text-secondary" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#refresh-license">this link</a> to activate it.
+            Your license will be ${action} shortly. Card payments are usually processed within a minute. Bank debits (e.g. SEPA) are not real-time &mdash; it can take 1&ndash;3 business days for your bank to clear the payment, and the license will be ${action} only after that. Once the payment is cleared, you will also receive an email with the invoice attached.<br>
+            Once processed, please follow <a class="underline text-secondary" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#refresh-license">this link</a> to activate it.
           </p>
         `;
       }
