@@ -249,3 +249,14 @@ languages:
       disable_cookie: true
       description: "Documentație completă pentru RustDesk - software-ul open source pentru desktop remote. Aflați cum să găzduiți singur, să configurați clienți și să implementați RustDesk în infrastructura dvs."
       keywords: ["rustdesk", "desktop remote", "open source", "self-host", "documentație", "acces remote", "alternativă VNC", "alternativă TeamViewer"]
+
+
+  vi:
+    title: "Tài liệu RustDesk"
+    weight: 1
+    languageName: "Tiếng Việt"
+    params:
+      landingPageName: "🏠 Trang chủ"
+      disable_cookie: true
+      description: "Tài liệu hướng dẫn đầy đủ cho RustDesk - phần mềm điều khiển máy tính từ xa mã nguồn mở. Tìm hiểu cách tự cài đặt máy chủ (self-host), cấu hình máy khách và triển khai RustDesk trong hạ tầng của bạn."
+      keywords: ["rustdesk", "điều khiển máy tính từ xa", "mã nguồn mở", "tự cài đặt máy chủ", "tài liệu", "truy cập từ xa", "thay thế VNC", "thay thế teamviewer"]
