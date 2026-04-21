@@ -29,7 +29,7 @@ export const GET: APIRoute = ({ site }) => {
     '',
     '## Key capabilities',
     '- Secure remote desktop access and remote support',
-    '- Self-hosted server deployment for data sovereignty and compliance',
+    '- Self-hosted server deployment for full data control and compliance',
     '- Cross-platform support for Windows, macOS, Linux, Android, and iOS',
     '- Web console, permissions, audit logs, SSO, LDAP, and centralized policy controls in Server Pro',
     '',

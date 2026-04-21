@@ -78,6 +78,7 @@ const currencyCopy = {
   tip: 'La devise choisie sera également utilisée sur votre facture.',
   emailTip: 'Une fois le paiement effectué, vous recevrez votre facture et votre licence par e-mail. Veuillez saisir la bonne adresse e-mail sur la page de paiement suivante.',
   businessTip: 'Si vous avez besoin d\'une facture professionnelle avec le nom de l\'entreprise et le numéro fiscal, cochez la case "J\'achète au nom d\'une entreprise" sur la page de paiement suivante.',
+  sepaTip: 'Les paiements en EUR prennent en charge le prélèvement bancaire SEPA. Veuillez noter que, si vous choisissez SEPA, votre banque peut prendre jusqu\'à 5 jours ouvrés pour confirmer le paiement, et la licence ne vous sera envoyée par e-mail qu\'ensuite. Si vous souhaitez recevoir votre licence plus rapidement, nous vous recommandons de choisir un autre moyen de paiement en temps réel.',
   confirm: 'Continuer vers le paiement',
   cancel: 'Annuler',
 };
@@ -91,36 +92,32 @@ const currencyCopy = {
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: 'Veuillez confirmer',
-      html: '<p style="text-align:left">Voulez-vous procéder à la page d\'achat ? <br><br>Veuillez noter que ce que vous achetez <b style="font-size: 2em">N\'EST PAS</b> un abonnement <span style="text-decoration:line-through">SaaS (Logiciel en tant que Service)</span>. <br><br>Il s\'agit plutôt d\'une licence pour une solution <b style="font-size: 2em">auto-hébergée</b>, qui nécessite que vous la déployiez sur votre propre serveur (serveur cloud, par exemple AWS EC2, Azure VM, Vultr VPS, etc., ou votre serveur sur site). <br><br>Veuillez <b style="font-size: 2em">ne pas</b> acheter si vous ne savez pas ce qu\'est l\'auto-hébergement',
+      html: `<div style="text-align:left">
+        <p>Ce que vous achetez <b style="font-size: 1.5em">N'EST PAS</b> un abonnement <span style="text-decoration:line-through">SaaS</span> — il s'agit d'une licence pour une solution <b style="font-size: 1.5em">auto-hébergée</b> qui nécessite que vous la déployiez sur votre propre serveur (par exemple AWS EC2, Azure VM, Vultr VPS ou votre serveur sur site).</p>
+        <p style="margin-top:0.75rem">Nous <span class="font-bold text-red-500">n'offrons pas de remboursements</span>. Nous vous recommandons fortement de tester d'abord notre <span class="underline font-bold">plan auto-hébergé gratuit</span> avant d'acheter le plan Pro.</p>
+        <p style="margin-top:0.75rem"><b>Veuillez ne pas acheter si vous ne savez pas ce qu'est l'auto-hébergement.</b></p>
+        <p style="margin-top:0.75rem">Voulez-vous procéder à la page d'achat ?</p>
+      </div>`,
       icon: 'question',
+      customClass: { icon: 'pricing-purchase-dialog-icon' },
       showCancelButton: true, reverseButtons: true,
-      confirmButtonText: 'Oui',
+      confirmButtonText: 'Oui, continuer',
       cancelButtonText: 'Non',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: 'Veuillez confirmer',
-          html: 'Veuillez noter que nous <span class="text-3xl font-bold">n\'offrons pas</span> de <span class="text-3xl font-bold">remboursements</span>. Nous vous recommandons fortement de <span class="underline font-bold">tester notre plan auto-hébergé gratuit</span> avant d\'envisager l\'achat de notre plan Pro. Êtes-vous toujours intéressé pour continuer ?',
-          showCancelButton: true, reverseButtons: true,
-          confirmButtonText: 'Oui',
-          cancelButtonText: 'Non',
-        }).then((result) => {
-          if (result.isConfirmed) {
-            try {
-              const url = new URL(redirectUrl);
-              const pageParams = new URLSearchParams(window.location.search);
-              pageParams.forEach((value, key) => {
-                if (!url.searchParams.has(key)) url.searchParams.append(key, value);
-              });
-              window.open(url.toString(), '_blank');
-            } catch (e) {
-              const qs = window.location.search
-                ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
-                : '';
-              window.open(redirectUrl + qs, '_blank');
-            }
-          }
-        });
+        try {
+          const url = new URL(redirectUrl);
+          const pageParams = new URLSearchParams(window.location.search);
+          pageParams.forEach((value, key) => {
+            if (!url.searchParams.has(key)) url.searchParams.append(key, value);
+          });
+          window.open(url.toString(), '_blank');
+        } catch (e) {
+          const qs = window.location.search
+            ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
+            : '';
+          window.open(redirectUrl + qs, '_blank');
+        }
       }
     });
   };

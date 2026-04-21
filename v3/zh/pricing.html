@@ -834,29 +834,36 @@ window.addEventListener("load", function() {
   gtag('config', 'UA-178912857-1');
 </script>
 <script src="sweetalert2@11.7.27.js"></script>
+<style>
+    .pricing-purchase-dialog-icon.swal2-icon {
+        width: 2.75rem;
+        height: 2.75rem;
+        margin: 1rem auto 0.4rem;
+        border-width: 0.18rem;
+    }
+
+    .pricing-purchase-dialog-icon.swal2-icon .swal2-icon-content {
+        font-size: 1.75rem;
+    }
+</style>
 <script>
     function gotoBuy(redirectUrl) {
         Swal.fire({
             title: '请确认',
-            text: '你是否要继续前往购买页面？请注意，你所购买的不是SaaS（软件即服务）订阅，而是一项自助托管解决方案的许可证。你需要将其部署在自己的服务器上。',
+            html: '<div style="text-align:left">' +
+                '<p>您购买的<b style="font-size:1.5em">不是</b> <span style="text-decoration:line-through">SaaS</span>（软件即服务）订阅，而是<b style="font-size:1.5em">自托管</b>解决方案的许可证，需要您将其部署在自己的服务器上。</p>' +
+                '<p style="margin-top:0.75rem">我们<span style="font-weight:700;color:#ef4444">不提供退款</span>。强烈建议您在购买专业版计划之前，先<span style="text-decoration:underline;font-weight:700">测试我们的免费自托管计划</span>。</p>' +
+                '<p style="margin-top:0.75rem"><b>如果您不知道什么是自托管，请不要购买。</b></p>' +
+                '<p style="margin-top:0.75rem">是否继续前往购买页面？</p>' +
+            '</div>',
             icon: 'question',
+            customClass: { icon: 'pricing-purchase-dialog-icon' },
             showCancelButton: true, reverseButtons: true,
-            confirmButtonText: '是',
+            confirmButtonText: '是，继续',
             cancelButtonText: '否',
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire({
-                    title: '请确认',
-                    text: '请注意，我们不提供退款。 我们强烈建议您在考虑购买专业版计划之前先测试我们的免费版本。 您还有兴趣继续吗？',
-                    icon: 'question',
-                    showCancelButton: true, reverseButtons: true,
-                    confirmButtonText: '是',
-                    cancelButtonText: '否',
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.open(redirectUrl, '_blank');
-                    }
-                });
+                window.open(redirectUrl, '_blank');
             }
         });
     }

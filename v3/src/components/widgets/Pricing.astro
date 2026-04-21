@@ -11,6 +11,7 @@ const defaultCurrencyCopy = {
   tip: 'The currency you choose will also be used on your invoice.',
   emailTip: 'After successful payment, you will receive your invoice and license by email. Please enter the correct email address on the next payment page.',
   businessTip: 'If you need a business invoice with your business name and tax number, please check the "I\'m purchasing as a business" checkbox on the next payment page.',
+  sepaTip: 'EUR payments support SEPA bank debit. Please note: if you choose SEPA, your bank may take up to 5 business days to confirm the payment, and your license will be emailed only after that. If you want to receive your license sooner, we recommend choosing another real-time payment method.',
   confirm: 'Continue to checkout',
   cancel: 'Cancel',
 } as const;
@@ -20,13 +21,14 @@ const {
   subtitle = '',
   tagline = '',
   prices = [],
-  currencyCopy = defaultCurrencyCopy,
+  currencyCopy: rawCurrencyCopy,
 
   id,
   isDark = false,
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+const currencyCopy = { ...defaultCurrencyCopy, ...(rawCurrencyCopy || {}) };
 const defaultCurrency = 'USD';
 ---
 
@@ -153,6 +155,19 @@ const defaultCurrency = 'USD';
   </div>
 </WidgetWrapper>
 
+<style is:global>
+  .pricing-purchase-dialog-icon.swal2-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    margin: 1rem auto 0.4rem;
+    border-width: 0.18rem;
+  }
+
+  .pricing-purchase-dialog-icon.swal2-icon .swal2-icon-content {
+    font-size: 1.75rem;
+  }
+</style>
+
 <script is:inline define:vars={{ defaultCurrency, currencyCopy }}>
   (() => {
     const ns = (window.__pricing = window.__pricing || {});
@@ -168,6 +183,7 @@ const defaultCurrency = 'USD';
     const CHECKOUT_PATH = '/api/lic/stripe/checkout';
     const CURRENCIES_URL = '/currencies.json';
     const CURRENCY_RE = /^[A-Z]{3}$/;
+    const TRIAL_PAID_EQUIVALENT = { trial: 'Individual', Trial: 'Individual', BasicTrial: 'Basic' };
 
     const normalize = (v) => {
       const s = String(v || '').trim().toUpperCase();
@@ -175,6 +191,11 @@ const defaultCurrency = 'USD';
     };
 
     const getPageCurrency = () => normalize(new URLSearchParams(location.search).get('currency'));
+
+    const getPageCheckoutType = () => {
+      const value = String(new URLSearchParams(location.search).get('type') || '').trim();
+      return Object.prototype.hasOwnProperty.call(TRIAL_PAID_EQUIVALENT, value) ? value : '';
+    };
 
     const getLoadedCurrencies = () => (Array.isArray(ns.currencies) ? ns.currencies : []);
 
@@ -227,6 +248,36 @@ const defaultCurrency = 'USD';
       return normalize(ns.defaultCurrency) || 'USD';
     };
 
+    const maybeAutoOpenTrialCheckout = () => {
+      const pageType = getPageCheckoutType();
+      if (!pageType) return;
+
+      const pageKey = location.pathname + location.search;
+      if (ns.autoOpenedTrialKey === pageKey || ns.pendingAutoOpenedTrialKey === pageKey) return;
+      ns.pendingAutoOpenedTrialKey = pageKey;
+      const url = 'https://rustdesk.com' + CHECKOUT_PATH + '?type=' + encodeURIComponent(pageType);
+
+      const tryOpen = (attempt = 0) => {
+        if (location.pathname + location.search !== pageKey) {
+          if (ns.pendingAutoOpenedTrialKey === pageKey) ns.pendingAutoOpenedTrialKey = undefined;
+          return;
+        }
+        if (typeof window.gotoBuy === 'function') {
+          ns.pendingAutoOpenedTrialKey = undefined;
+          ns.autoOpenedTrialKey = pageKey;
+          return window.gotoBuy(url);
+        }
+        if (attempt < 120) return setTimeout(() => tryOpen(attempt + 1), 250);
+        if (ns.pendingAutoOpenedTrialKey === pageKey) ns.pendingAutoOpenedTrialKey = undefined;
+        console.warn('pricing: gotoBuy not available, skipping auto-open');
+      };
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => tryOpen(), { once: true });
+      } else {
+        tryOpen();
+      }
+    };
+
     window.getSelectedCurrency = () => normalize(ns.selectedCurrency) || getFallbackCurrency();
 
     ns.loadCurrencies = () => {
@@ -251,6 +302,10 @@ const defaultCurrency = 'USD';
       new URLSearchParams(location.search).forEach((v, k) => {
         if (k !== 'currency' && !url.searchParams.has(k)) url.searchParams.append(k, v);
       });
+      const pageType = getPageCheckoutType();
+      if (pageType && url.searchParams.get('type') === TRIAL_PAID_EQUIVALENT[pageType]) {
+        url.searchParams.set('type', pageType);
+      }
       if (currency === 'USD') url.searchParams.delete('currency');
       else url.searchParams.set('currency', currency.toLowerCase());
       return url.toString();
@@ -269,10 +324,20 @@ const defaultCurrency = 'USD';
       const copy = ns.currencyCopy || currencyCopy;
       const fallback = currencies.find((c) => c === getFallbackCurrency(pending.preferredCurrency)) || currencies[0];
       const selectId = 'pricing-currency-swal-select';
+      const sepaTipId = 'pricing-currency-swal-sepa-tip';
       const options = currencies
         .map((c) => `<option value="${c}"${c === fallback ? ' selected' : ''}>${c}</option>`)
         .join('');
-      const infoIcon = '<svg style="margin-top:0.1rem;width:0.85rem;height:0.85rem;flex-shrink:0;color:#94a3b8;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" /></svg>';
+      const infoIcon = '<svg style="margin-top:0.1rem;width:0.85rem;height:0.85rem;flex-shrink:0;color:#94a3b8;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" /></svg>';
+      const sepaIcon = '<svg style="margin-top:0.1rem;width:0.9rem;height:0.9rem;flex-shrink:0;color:#2563eb;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" /></svg>';
+      const updateSepaTipVisibility = () => {
+        const select = document.getElementById(selectId);
+        const sepaTip = document.getElementById(sepaTipId);
+        if (!(select instanceof HTMLSelectElement) || !(sepaTip instanceof HTMLElement)) return;
+        const isEur = select.value === 'EUR';
+        sepaTip.style.display = isEur ? 'flex' : 'none';
+        sepaTip.setAttribute('aria-hidden', isEur ? 'false' : 'true');
+      };
 
       const result = await Swal.fire({
         title: copy.title,
@@ -284,17 +349,27 @@ const defaultCurrency = 'USD';
                 " onfocus=\"this.style.borderColor='#6366f1';this.style.boxShadow='0 0 0 3px rgba(99,102,241,0.12)'\"" +
                 " onblur=\"this.style.borderColor='rgba(148,163,184,0.4)';this.style.boxShadow='0 1px 3px rgba(15,23,42,0.06)'\"" +
               '>' + options + '</select>' +
-              '<svg style="pointer-events:none;position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);width:1rem;height:1rem;color:#94a3b8;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg>' +
+              '<svg style="pointer-events:none;position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);width:1rem;height:1rem;color:#94a3b8;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg>' +
             '</div>' +
             '<p style="margin:0.75rem 0 0;display:flex;align-items:flex-start;gap:0.35rem;font-size:0.78rem;line-height:1.55;color:#64748b;">' + infoIcon + '<span>' + copy.emailTip + '</span></p>' +
             '<p style="margin:0.45rem 0 0;display:flex;align-items:flex-start;gap:0.35rem;font-size:0.78rem;line-height:1.55;color:#64748b;">' + infoIcon + '<span>' + copy.tip + '</span></p>' +
             '<p style="margin:0.45rem 0 0;display:flex;align-items:flex-start;gap:0.35rem;font-size:0.78rem;line-height:1.55;color:#64748b;">' + infoIcon + '<span>' + copy.businessTip + '</span></p>' +
+            (copy.sepaTip
+              ? '<p id="' + sepaTipId + '" aria-hidden="true" style="margin:0.75rem 0 0;display:none;align-items:flex-start;gap:0.45rem;font-size:0.78rem;line-height:1.55;color:#1d4ed8;background:#eff6ff;border:1px solid #bfdbfe;border-radius:0.75rem;padding:0.7rem 0.8rem;">' + sepaIcon + '<span>' + copy.sepaTip + '</span></p>'
+              : '') +
           '</div>',
         showCancelButton: true,
         reverseButtons: true,
         confirmButtonText: copy.confirm,
         cancelButtonText: copy.cancel,
         focusConfirm: true,
+        didOpen: () => {
+          const select = document.getElementById(selectId);
+          if (select instanceof HTMLSelectElement) {
+            select.addEventListener('change', updateSepaTipVisibility);
+          }
+          updateSepaTipVisibility();
+        },
         preConfirm: () => {
           const select = document.getElementById(selectId);
           if (!(select instanceof HTMLSelectElement)) return fallback;
@@ -340,11 +415,13 @@ const defaultCurrency = 'USD';
 
     ns.selectedCurrency = getPageCurrency() || undefined;
     ns.loadCurrencies();
+    maybeAutoOpenTrialCheckout();
 
     document.addEventListener('astro:after-swap', () => {
       ns.defaultCurrency = defaultCurrency;
       ns.currencyCopy = currencyCopy;
       ns.loadCurrencies?.();
+      maybeAutoOpenTrialCheckout();
     });
   })();
 </script>

@@ -76,6 +76,7 @@ const currencyCopy = {
   tip: 'العملة التي تختارها ستُستخدم أيضًا في فاتورتك.',
   emailTip: 'بعد إتمام الدفع بنجاح، ستتلقى الفاتورة والترخيص عبر البريد الإلكتروني. يرجى إدخال عنوان البريد الإلكتروني الصحيح في صفحة الدفع التالية.',
   businessTip: 'إذا كنت بحاجة إلى فاتورة عمل تتضمن اسم الشركة ورقمها الضريبي، فيرجى تحديد مربع الاختيار "أقوم بالشراء بصفتي شركة" في صفحة الدفع التالية.',
+  sepaTip: 'مدفوعات اليورو تدعم خصم SEPA البنكي. يرجى ملاحظة أنه إذا اخترت SEPA، فقد يستغرق البنك ما يصل إلى 5 أيام عمل لتأكيد الدفع، ولن نرسل الترخيص إلى بريدك الإلكتروني إلا بعد ذلك. إذا كنت ترغب في استلام الترخيص بشكل أسرع، فننصح باختيار وسيلة دفع فورية أخرى.',
   confirm: 'متابعة إلى الدفع',
   cancel: 'إلغاء',
 };
@@ -89,36 +90,32 @@ const currencyCopy = {
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: 'يرجى التأكيد',
-      html: `<p style="text-align:right">هل تريد المتابعة إلى صفحة الشراء؟ <br><br>يرجى ملاحظة أن ما تشتريه <b style="font-size: 2em">ليس</b> اشتراكًا في <span style="text-decoration:line-through">خدمة البرمجيات كخدمة (SaaS)</span>. <br><br>بدلاً من ذلك، إنه ترخيص لحل <b style="font-size: 2em">استضافة ذاتية</b>، والذي يتطلب منك نشره على خادمك الخاص (خادم سحابي، مثل AWS EC2 أو Azure VM أو Vultr VPS إلخ، أو خادمك المحلي). <br><br>يرجى <b style="font-size: 2em">عدم</b> الشراء إذا كنت لا تعرف ما هي الاستضافة الذاتية`,
+      html: `<div style="text-align:right">
+        <p>ما تشتريه <b style="font-size: 1.5em">ليس</b> اشتراكًا في <span style="text-decoration:line-through">SaaS</span> — إنه ترخيص لحل <b style="font-size: 1.5em">استضافة ذاتية</b> يتطلب منك نشره على خادمك الخاص (مثل AWS EC2 أو Azure VM أو Vultr VPS أو خادمك المحلي).</p>
+        <p style="margin-top:0.75rem">نحن <span class="font-bold text-red-500">لا نقدم استردادًا للأموال</span>. نوصي بشدة باختبار <span class="underline font-bold">خطتنا المجانية للاستضافة الذاتية</span> قبل شراء خطة Pro.</p>
+        <p style="margin-top:0.75rem"><b>يرجى عدم الشراء إذا كنت لا تعرف ما هي الاستضافة الذاتية.</b></p>
+        <p style="margin-top:0.75rem">هل تريد المتابعة إلى صفحة الشراء؟</p>
+      </div>`,
       icon: 'question',
+      customClass: { icon: 'pricing-purchase-dialog-icon' },
       showCancelButton: true, reverseButtons: true,
-      confirmButtonText: 'نعم',
+      confirmButtonText: 'نعم، متابعة',
       cancelButtonText: 'لا',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: 'يرجى التأكيد',
-          html: `يرجى ملاحظة أننا <span class="text-3xl font-bold">لا</span> نقدم <span class="text-3xl font-bold">استردادًا للأموال</span>. نوصي بشدة <span class="underline font-bold">باختبار خطتنا المجانية للاستضافة الذاتية</span> قبل التفكير في شراء خطتنا الاحترافية. هل ما زلت مهتمًا بالمتابعة؟`,
-          showCancelButton: true, reverseButtons: true,
-          confirmButtonText: 'نعم',
-          cancelButtonText: 'لا',
-        }).then((result) => {
-          if (result.isConfirmed) {
-            try {
-              const url = new URL(redirectUrl);
-              const pageParams = new URLSearchParams(window.location.search);
-              pageParams.forEach((value, key) => {
-                if (!url.searchParams.has(key)) url.searchParams.append(key, value);
-              });
-              window.open(url.toString(), '_blank');
-            } catch (e) {
-              const qs = window.location.search
-                ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
-                : '';
-              window.open(redirectUrl + qs, '_blank');
-            }
-          }
-        });
+        try {
+          const url = new URL(redirectUrl);
+          const pageParams = new URLSearchParams(window.location.search);
+          pageParams.forEach((value, key) => {
+            if (!url.searchParams.has(key)) url.searchParams.append(key, value);
+          });
+          window.open(url.toString(), '_blank');
+        } catch (e) {
+          const qs = window.location.search
+            ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
+            : '';
+          window.open(redirectUrl + qs, '_blank');
+        }
       }
     });
   };

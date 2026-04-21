@@ -77,6 +77,7 @@ const currencyCopy = {
   tip: '選択した通貨は、請求書でも使用されます。',
   emailTip: 'お支払い完了後、請求書とライセンスがメールで届きます。次の決済ページでは正しいメールアドレスを入力してください。',
   businessTip: '会社名と税番号入りの請求書が必要な場合は、次の決済ページで "事業者として購入する" のチェックボックスをオンにしてください。',
+  sepaTip: 'EUR 決済では SEPA の銀行引き落としに対応しています。SEPA を選択した場合、銀行での着金確認に最大 5 営業日かかることがあり、ライセンスは確認後にのみメールで送信されます。より早くライセンスを受け取りたい場合は、他の即時決済手段をおすすめします。',
   confirm: '購入手続きへ進む',
   cancel: 'キャンセル',
 };
@@ -90,36 +91,32 @@ const currencyCopy = {
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: '確認してください',
-      html: `<p style="text-align:left">購入ページに進みますか？ <br><br>購入するものは<b style="font-size: 2em">決して</b> <span style="text-decoration:line-through">SaaS（サービスとしてのソフトウェア）</span>サブスクリプションではないことにご注意ください。 <br><br>代わりに、これは<b style="font-size: 2em">セルフホスティング</b>ソリューションのライセンスであり、自身のサーバー（クラウドサーバー、例えばAWS EC2、Azure VM、Vultr VPSなど、または自社のオンプレミスサーバー）にデプロイする必要があります。 <br><br>セルフホスティングが何かわからない場合は、<b style="font-size: 2em">購入しないでください</b>`,
+      html: `<div style="text-align:left">
+        <p>購入するものは<b style="font-size: 1.5em">SaaS</b><span style="text-decoration:line-through">（サービスとしてのソフトウェア）</span>サブスクリプションでは<b style="font-size: 1.5em">ありません</b>。<b style="font-size: 1.5em">セルフホスティング</b>ソリューションのライセンスであり、自身のサーバー（AWS EC2、Azure VM、Vultr VPS、または自社のオンプレミスサーバーなど）にデプロイする必要があります。</p>
+        <p style="margin-top:0.75rem">当社は<span class="font-bold text-red-500">返金を行っておりません</span>。Proプランを購入する前に、まず<span class="underline font-bold">無料のセルフホスティングプランをテスト</span>することを強くお勧めします。</p>
+        <p style="margin-top:0.75rem"><b>セルフホスティングが何かわからない場合は、購入しないでください。</b></p>
+        <p style="margin-top:0.75rem">購入ページに進みますか？</p>
+      </div>`,
       icon: 'question',
+      customClass: { icon: 'pricing-purchase-dialog-icon' },
       showCancelButton: true, reverseButtons: true,
-      confirmButtonText: 'はい',
+      confirmButtonText: 'はい、続行',
       cancelButtonText: 'いいえ',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: '確認してください',
-          html: `当社は<span class="text-3xl font-bold">返金を行っていません</span>のでご注意ください。Proプランの購入を検討される前に、<span class="underline font-bold">無料のセルフホスティングプランをテスト</span>することを強くお勧めします。それでも進めますか？`,
-          showCancelButton: true, reverseButtons: true,
-          confirmButtonText: 'はい',
-          cancelButtonText: 'いいえ',
-        }).then((result) => {
-          if (result.isConfirmed) {
-            try {
-              const url = new URL(redirectUrl);
-              const pageParams = new URLSearchParams(window.location.search);
-              pageParams.forEach((value, key) => {
-                if (!url.searchParams.has(key)) url.searchParams.append(key, value);
-              });
-              window.open(url.toString(), '_blank');
-            } catch (e) {
-              const qs = window.location.search
-                ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
-                : '';
-              window.open(redirectUrl + qs, '_blank');
-            }
-          }
-        });
+        try {
+          const url = new URL(redirectUrl);
+          const pageParams = new URLSearchParams(window.location.search);
+          pageParams.forEach((value, key) => {
+            if (!url.searchParams.has(key)) url.searchParams.append(key, value);
+          });
+          window.open(url.toString(), '_blank');
+        } catch (e) {
+          const qs = window.location.search
+            ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
+            : '';
+          window.open(redirectUrl + qs, '_blank');
+        }
       }
     });
   };

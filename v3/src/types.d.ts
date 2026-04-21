@@ -239,6 +239,7 @@ export interface PricingCurrencyCopy {
   tip: string;
   emailTip: string;
   businessTip: string;
+  sepaTip?: string;
   confirm: string;
   cancel: string;
 }

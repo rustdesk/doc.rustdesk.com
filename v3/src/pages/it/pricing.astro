@@ -78,6 +78,7 @@ const currencyCopy = {
   tip: 'La valuta scelta verrà utilizzata anche nella fattura.',
   emailTip: "Dopo il pagamento andato a buon fine, riceverai fattura e licenza via e-mail. Inserisci l'indirizzo e-mail corretto nella pagina di pagamento successiva.",
   businessTip: 'Se hai bisogno di una fattura aziendale con ragione sociale e partita IVA, seleziona la casella "Sto acquistando come azienda" nella pagina di pagamento successiva.',
+  sepaTip: "I pagamenti in EUR supportano l'addebito bancario SEPA. Tieni presente che, se scegli SEPA, la tua banca potrebbe impiegare fino a 5 giorni lavorativi per confermare il pagamento e la licenza ti sarà inviata via e-mail solo dopo. Se vuoi ricevere la licenza prima, ti consigliamo di scegliere un altro metodo di pagamento in tempo reale.",
   confirm: 'Continua al pagamento',
   cancel: 'Annulla',
 };
@@ -91,36 +92,32 @@ const currencyCopy = {
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: 'Conferma per favore',
-      html: `<p style="text-align:left">Vuoi procedere alla pagina di acquisto? <br><br>Si prega di notare che ciò che stai acquistando <b style="font-size: 2em">NON</b> è un abbonamento <span style="text-decoration:line-through">SaaS (Software as a Service)</span>. <br><br>Invece, è una licenza per una soluzione <b style="font-size: 2em">self-hosting</b>, che richiede di essere distribuita sul tuo server (server cloud, ad esempio AWS EC2, Azure VM, Vultr VPS ecc., o il tuo server on-premise). <br><br>Per favore <b style="font-size: 2em">non</b> acquistare se non sai cosa sia il self-hosting`,
+      html: `<div style="text-align:left">
+        <p>Ciò che stai acquistando <b style="font-size: 1.5em">NON</b> è un abbonamento <span style="text-decoration:line-through">SaaS</span> — è una licenza per una soluzione <b style="font-size: 1.5em">self-hosting</b> che richiede il deployment sul tuo server (ad esempio AWS EC2, Azure VM, Vultr VPS o il tuo server on-premise).</p>
+        <p style="margin-top:0.75rem"><span class="font-bold text-red-500">Non offriamo rimborsi</span>. Ti consigliamo vivamente di testare prima il nostro <span class="underline font-bold">piano gratuito self-hosting</span> prima di acquistare il piano Pro.</p>
+        <p style="margin-top:0.75rem"><b>Per favore, non acquistare se non sai cosa sia il self-hosting.</b></p>
+        <p style="margin-top:0.75rem">Vuoi procedere alla pagina di acquisto?</p>
+      </div>`,
       icon: 'question',
+      customClass: { icon: 'pricing-purchase-dialog-icon' },
       showCancelButton: true, reverseButtons: true,
-      confirmButtonText: 'Sì',
+      confirmButtonText: 'Sì, procedi',
       cancelButtonText: 'No',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: 'Conferma per favore',
-          html: `Si prega di notare che <span class="text-3xl font-bold">non</span> offriamo <span class="text-3xl font-bold">rimborsi</span>. Ti consigliamo vivamente di <span class="underline font-bold">testare il nostro piano gratuito di self-hosting</span> prima di considerare l'acquisto del nostro piano Pro. Sei ancora interessato a procedere?`,
-          showCancelButton: true, reverseButtons: true,
-          confirmButtonText: 'Sì',
-          cancelButtonText: 'No',
-        }).then((result) => {
-          if (result.isConfirmed) {
-            try {
-              const url = new URL(redirectUrl);
-              const pageParams = new URLSearchParams(window.location.search);
-              pageParams.forEach((value, key) => {
-                if (!url.searchParams.has(key)) url.searchParams.append(key, value);
-              });
-              window.open(url.toString(), '_blank');
-            } catch (e) {
-              const qs = window.location.search
-                ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
-                : '';
-              window.open(redirectUrl + qs, '_blank');
-            }
-          }
-        });
+        try {
+          const url = new URL(redirectUrl);
+          const pageParams = new URLSearchParams(window.location.search);
+          pageParams.forEach((value, key) => {
+            if (!url.searchParams.has(key)) url.searchParams.append(key, value);
+          });
+          window.open(url.toString(), '_blank');
+        } catch (e) {
+          const qs = window.location.search
+            ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
+            : '';
+          window.open(redirectUrl + qs, '_blank');
+        }
       }
     });
   };

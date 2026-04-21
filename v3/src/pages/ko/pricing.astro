@@ -75,6 +75,7 @@ const currencyCopy = {
   tip: '선택한 통화는 인보이스에도 사용됩니다.',
   emailTip: '결제가 완료되면 인보이스와 라이선스가 이메일로 발송됩니다. 다음 결제 페이지에서 올바른 이메일 주소를 입력해 주세요.',
   businessTip: '회사명과 세금 번호가 포함된 사업자용 인보이스가 필요하면 다음 결제 페이지에서 "사업자로 구매합니다" 체크박스를 선택해 주세요.',
+  sepaTip: 'EUR 결제는 SEPA 은행 자동이체를 지원합니다. SEPA를 선택하면 은행에서 결제를 확인하는 데 최대 5영업일이 걸릴 수 있으며, 라이선스는 그 이후에만 이메일로 발송됩니다. 라이선스를 더 빨리 받고 싶다면 다른 실시간 결제 수단을 권장합니다.',
   confirm: '결제로 계속',
   cancel: '취소',
 };
@@ -88,36 +89,32 @@ const currencyCopy = {
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: '확인해 주세요',
-      html: `<p style="text-align:left">구매 페이지로 진행하시겠습니까? <br><br>구매하시는 것은 <b style="font-size: 2em">SaaS(서비스형 소프트웨어)</b> 구독이 아닌 <b style="font-size: 2em">자체 호스팅</b> 솔루션의 라이센스입니다. 이 솔루션은 귀하의 서버(클라우드 서버, 예: AWS EC2, Azure VM, Vultr VPS 등)에서 배포해야 합니다. <br><br>자체 호스팅이 무엇인지 모른다면 <b style="font-size: 2em">구매하지 마세요</b>`,
+      html: `<div style="text-align:left">
+        <p>구매하시는 것은 <b style="font-size: 1.5em">SaaS</b><span style="text-decoration:line-through">(서비스형 소프트웨어)</span> 구독이 <b style="font-size: 1.5em">아니라</b> <b style="font-size: 1.5em">자체 호스팅</b> 솔루션의 라이센스이며, 귀하의 서버(예: AWS EC2, Azure VM, Vultr VPS 또는 온프레미스 서버)에 직접 배포해야 합니다.</p>
+        <p style="margin-top:0.75rem"><span class="font-bold text-red-500">환불을 제공하지 않습니다</span>. Pro 플랜을 구매하기 전에 먼저 <span class="underline font-bold">무료 자체 호스팅 플랜을 테스트</span>하시는 것을 강력히 권장합니다.</p>
+        <p style="margin-top:0.75rem"><b>자체 호스팅이 무엇인지 모른다면 구매하지 마세요.</b></p>
+        <p style="margin-top:0.75rem">구매 페이지로 진행하시겠습니까?</p>
+      </div>`,
       icon: 'question',
+      customClass: { icon: 'pricing-purchase-dialog-icon' },
       showCancelButton: true, reverseButtons: true,
-      confirmButtonText: '예',
+      confirmButtonText: '예, 진행',
       cancelButtonText: '아니오',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: '확인해 주세요',
-          html: `환불을 <span class="text-3xl font-bold">제공하지 않습니다</span>. 구매하기 전에 <span class="underline font-bold">무료 자체 호스팅 계획을 테스트</span>하는 것을 강력히 권장합니다. 계속 진행하시겠습니까?`,
-          showCancelButton: true, reverseButtons: true,
-          confirmButtonText: '예',
-          cancelButtonText: '아니오',
-        }).then((result) => {
-          if (result.isConfirmed) {
-            try {
-              const url = new URL(redirectUrl);
-              const pageParams = new URLSearchParams(window.location.search);
-              pageParams.forEach((value, key) => {
-                if (!url.searchParams.has(key)) url.searchParams.append(key, value);
-              });
-              window.open(url.toString(), '_blank');
-            } catch (e) {
-              const qs = window.location.search
-                ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
-                : '';
-              window.open(redirectUrl + qs, '_blank');
-            }
-          }
-        });
+        try {
+          const url = new URL(redirectUrl);
+          const pageParams = new URLSearchParams(window.location.search);
+          pageParams.forEach((value, key) => {
+            if (!url.searchParams.has(key)) url.searchParams.append(key, value);
+          });
+          window.open(url.toString(), '_blank');
+        } catch (e) {
+          const qs = window.location.search
+            ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
+            : '';
+          window.open(redirectUrl + qs, '_blank');
+        }
       }
     });
   };

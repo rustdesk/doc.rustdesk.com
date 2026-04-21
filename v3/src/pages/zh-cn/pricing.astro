@@ -75,6 +75,7 @@ const currencyCopy = {
   tip: '你选择的货币也会用于发票。',
   emailTip: '付款成功后，你将通过邮箱收到发票和许可证。请在接下来的付款页面填写正确的邮箱地址。',
   businessTip: '如果你需要包含公司名称和税号的企业发票，请在接下来的付款页面勾选 "我正在以企业身份购买" 复选框。',
+  sepaTip: '欧元支付支持 SEPA 银行扣款。请注意：若选择 SEPA，银行最多可能需要 5 个工作日确认收款；款项确认后，我们才会通过邮件发送许可证。若希望更快收到许可证，建议选择其他实时支付方式。',
   confirm: '继续购买',
   cancel: '取消',
 };
@@ -88,36 +89,32 @@ const currencyCopy = {
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: '请确认',
-      html: '<p style="text-align:left">您是否要继续前往购买页面？<br><br>请注意，您购买的<b style="font-size: 2em">不是</b> <span style="text-decoration:line-through">SaaS（软件即服务）</span> 订阅。<br><br>相反，这是一个 <b style="font-size: 2em">自托管</b> 解决方案的许可证，您需要将其部署在您自己的服务器上（云服务器，例如 AWS EC2、Azure VM、Vultr VPS 等，或您的本地服务器）。<br><br>如果您不知道什么是自托管，请<b style="font-size: 2em">不要</b>购买。',
+      html: `<div style="text-align:left">
+        <p>您购买的<b style="font-size: 1.5em">不是</b> <span style="text-decoration:line-through">SaaS</span>（软件即服务）订阅——而是<b style="font-size: 1.5em">自托管</b>解决方案的许可证，需要您将其部署在自己的服务器上（例如 AWS EC2、Azure VM、Vultr VPS 或您的本地服务器）。</p>
+        <p style="margin-top:0.75rem">我们<span class="font-bold text-red-500">不提供退款</span>。强烈建议您在购买 Pro 版之前，先<span class="underline font-bold">测试我们的免费自托管计划</span>。</p>
+        <p style="margin-top:0.75rem"><b>如果您不知道什么是自托管，请不要购买。</b></p>
+        <p style="margin-top:0.75rem">是否继续前往购买页面？</p>
+      </div>`,
       icon: 'question',
+      customClass: { icon: 'pricing-purchase-dialog-icon' },
       showCancelButton: true, reverseButtons: true,
-      confirmButtonText: '是',
+      confirmButtonText: '是，继续',
       cancelButtonText: '否',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: '请确认',
-          html: '请注意，我们 <span class="text-3xl font-bold">不</span> 提供 <span class="text-3xl font-bold">退款</span>。我们强烈建议在考虑购买我们的专业版计划之前，<span class="underline font-bold">测试我们的免费自托管计划</span>。您是否仍然有兴趣继续？',
-          showCancelButton: true, reverseButtons: true,
-          confirmButtonText: '是',
-          cancelButtonText: '否',
-        }).then((result) => {
-          if (result.isConfirmed) {
-            try {
-              const url = new URL(redirectUrl);
-              const pageParams = new URLSearchParams(window.location.search);
-              pageParams.forEach((value, key) => {
-                if (!url.searchParams.has(key)) url.searchParams.append(key, value);
-              });
-              window.open(url.toString(), '_blank');
-            } catch (e) {
-              const qs = window.location.search
-                ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
-                : '';
-              window.open(redirectUrl + qs, '_blank');
-            }
-          }
-        });
+        try {
+          const url = new URL(redirectUrl);
+          const pageParams = new URLSearchParams(window.location.search);
+          pageParams.forEach((value, key) => {
+            if (!url.searchParams.has(key)) url.searchParams.append(key, value);
+          });
+          window.open(url.toString(), '_blank');
+        } catch (e) {
+          const qs = window.location.search
+            ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
+            : '';
+          window.open(redirectUrl + qs, '_blank');
+        }
       }
     });
   };

@@ -73,6 +73,7 @@ const currencyCopy = {
   tip: '你選擇的貨幣也會用於發票。',
   emailTip: '付款成功後，你將透過電子郵件收到發票和授權。請在接下來的付款頁面填寫正確的電子郵件地址。',
   businessTip: '如果你需要包含公司名稱和稅號的企業發票，請在接下來的付款頁面勾選 "我正以企業身分購買" 核取方塊。',
+  sepaTip: '歐元支付支援 SEPA 銀行扣款。請注意：若選擇 SEPA，銀行最多可能需要 5 個工作天確認收款；款項確認後，我們才會透過電子郵件發送授權。若希望更快收到授權，建議選擇其他即時支付方式。',
   confirm: '繼續購買',
   cancel: '取消',
 };
@@ -86,36 +87,32 @@ const currencyCopy = {
   window['gotoBuy'] = function (redirectUrl) {
     Swal.fire({
       title: '請確認',
-      html: `<p style="text-align:left">您確定要前往購買頁面嗎？<br><br>請注意，您購買的<b style="font-size: 2em">不是</b><span style="text-decoration:line-through">SaaS（軟體即服務）</span>訂閱。<br><br>相反，這是一個<b style="font-size: 2em">自託管</b>解決方案的授權，需要您在自己的伺服器上部署（雲端伺服器，如AWS EC2、Azure VM、Vultr VPS等，或您的本地伺服器）。<br><br>如果您不了解什麼是自託管，請<b style="font-size: 2em">不要</b>購買。`,
+      html: `<div style="text-align:left">
+        <p>您購買的<b style="font-size: 1.5em">不是</b><span style="text-decoration:line-through">SaaS</span>（軟體即服務）訂閱——而是<b style="font-size: 1.5em">自託管</b>解決方案的授權，需要您在自己的伺服器上部署（例如 AWS EC2、Azure VM、Vultr VPS 或您的本地伺服器）。</p>
+        <p style="margin-top:0.75rem">我們<span class="font-bold text-red-500">不提供退款</span>。強烈建議您在購買 Pro 計劃之前，先<span class="underline font-bold">試用我們的免費自託管計劃</span>。</p>
+        <p style="margin-top:0.75rem"><b>如果您不了解什麼是自託管，請不要購買。</b></p>
+        <p style="margin-top:0.75rem">是否繼續前往購買頁面？</p>
+      </div>`,
       icon: 'question',
+      customClass: { icon: 'pricing-purchase-dialog-icon' },
       showCancelButton: true, reverseButtons: true,
-      confirmButtonText: '是',
+      confirmButtonText: '是，繼續',
       cancelButtonText: '否',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: '請確認',
-          html: `請注意，我們<span class="text-3xl font-bold">不提供</span><span class="text-3xl font-bold">退款</span>。我們強烈建議您在考慮購買我們的Pro計劃之前，<span class="underline font-bold">先試用我們的免費自託管計劃</span>。您仍然想要繼續嗎？`,
-          showCancelButton: true, reverseButtons: true,
-          confirmButtonText: '是',
-          cancelButtonText: '否',
-        }).then((result) => {
-          if (result.isConfirmed) {
-            try {
-              const url = new URL(redirectUrl);
-              const pageParams = new URLSearchParams(window.location.search);
-              pageParams.forEach((value, key) => {
-                if (!url.searchParams.has(key)) url.searchParams.append(key, value);
-              });
-              window.open(url.toString(), '_blank');
-            } catch (e) {
-              const qs = window.location.search
-                ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
-                : '';
-              window.open(redirectUrl + qs, '_blank');
-            }
-          }
-        });
+        try {
+          const url = new URL(redirectUrl);
+          const pageParams = new URLSearchParams(window.location.search);
+          pageParams.forEach((value, key) => {
+            if (!url.searchParams.has(key)) url.searchParams.append(key, value);
+          });
+          window.open(url.toString(), '_blank');
+        } catch (e) {
+          const qs = window.location.search
+            ? (redirectUrl.includes('?') ? '&' : '?') + window.location.search.slice(1)
+            : '';
+          window.open(redirectUrl + qs, '_blank');
+        }
       }
     });
   };
