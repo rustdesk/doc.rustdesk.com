@@ -23,7 +23,7 @@ const metadata = {
     <Fragment slot="content">
     <p class="text-center leading-10 text-lg" id="content-fragment">
       Thank you for your order! Your license will be sent to the email you entered on the payment page.<br>
-      Card payments are usually processed within a minute. Bank debits (e.g. SEPA) are not real-time — it can take up to 5 business days for your bank to clear the payment, and the license will be emailed to you only after that.<br>
+      Card payments are usually processed within a minute. Bank debits (e.g. SEPA) are not real-time — they typically take <strong><u>about 6 business days</u></strong> to clear, and in some cases <strong><u>up to 10 days</u></strong>. The license will be emailed to you only after the bank confirms the payment.<br>
       Please contact us at <a class="underline text-secondary" href="mailto:support@rustdesk.com">support@rustdesk.com</a> if you haven't received the email by then.<br>
       Getting Started? Read our <a class="underline text-secondary" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/">docs</a>.
     </p>
@@ -46,7 +46,7 @@ const metadata = {
         titleFragment.innerHTML = 'License ' + action + ' successfully!';
         contentFragment.innerHTML = `
           <p class="text-center leading-10 text-lg">
-            Your license will be ${action} shortly. Card payments are usually processed within a minute. Bank debits (e.g. SEPA) are not real-time &mdash; it can take up to 5 business days for your bank to clear the payment, and the license will be ${action} only after that. Once the payment is cleared, you will also receive an email with the invoice attached.<br>
+            Your license will be ${action} shortly. Card payments are usually processed within a minute. Bank debits (e.g. SEPA) are not real-time &mdash; they typically take <strong><u>about 6 business days</u></strong> to clear, and in some cases <strong><u>up to 10 days</u></strong>. The license will be ${action} only after the bank confirms the payment. Once the payment is cleared, you will also receive an email with the invoice attached.<br>
             Once processed, please follow <a class="underline text-secondary" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#refresh-license">this link</a> to activate it.
           </p>
         `;

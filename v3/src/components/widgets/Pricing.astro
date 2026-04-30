@@ -11,7 +11,7 @@ const defaultCurrencyCopy = {
   tip: 'The currency you choose will also be used on your invoice.',
   emailTip: 'After successful payment, you will receive your invoice and license by email. Please enter the correct email address on the next payment page.',
   businessTip: 'If you need a business invoice with your business name and tax number, please check the "I\'m purchasing as a business" checkbox on the next payment page.',
-  sepaTip: 'EUR payments support SEPA bank debit. Please note: if you choose SEPA, your bank may take up to 5 business days to confirm the payment, and your license will be emailed only after that. If you want to receive your license sooner, we recommend choosing another real-time payment method.',
+  sepaTip: 'Heads up: SEPA bank debit typically takes about <strong><u>6 business days</u></strong> to clear, and in some cases can take <strong><u>up to 10 days</u></strong>. Your license will only be emailed after the bank confirms the payment. If you need it sooner, please choose a real-time payment method instead.',
   confirm: 'Continue to checkout',
   cancel: 'Cancel',
 } as const;
@@ -329,7 +329,7 @@ const defaultCurrency = 'USD';
         .map((c) => `<option value="${c}"${c === fallback ? ' selected' : ''}>${c}</option>`)
         .join('');
       const infoIcon = '<svg style="margin-top:0.1rem;width:0.85rem;height:0.85rem;flex-shrink:0;color:#94a3b8;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" /></svg>';
-      const sepaIcon = '<svg style="margin-top:0.1rem;width:0.9rem;height:0.9rem;flex-shrink:0;color:#2563eb;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" /></svg>';
+      const sepaIcon = '<svg style="margin-top:0.2rem;width:1.2rem;height:1.2rem;flex-shrink:0;color:#d97706;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" clip-rule="evenodd" /></svg>';
       const updateSepaTipVisibility = () => {
         const select = document.getElementById(selectId);
         const sepaTip = document.getElementById(sepaTipId);
@@ -355,7 +355,7 @@ const defaultCurrency = 'USD';
             '<p style="margin:0.45rem 0 0;display:flex;align-items:flex-start;gap:0.35rem;font-size:0.78rem;line-height:1.55;color:#64748b;">' + infoIcon + '<span>' + copy.tip + '</span></p>' +
             '<p style="margin:0.45rem 0 0;display:flex;align-items:flex-start;gap:0.35rem;font-size:0.78rem;line-height:1.55;color:#64748b;">' + infoIcon + '<span>' + copy.businessTip + '</span></p>' +
             (copy.sepaTip
-              ? '<p id="' + sepaTipId + '" aria-hidden="true" style="margin:0.75rem 0 0;display:none;align-items:flex-start;gap:0.45rem;font-size:0.78rem;line-height:1.55;color:#1d4ed8;background:#eff6ff;border:1px solid #bfdbfe;border-radius:0.75rem;padding:0.7rem 0.8rem;">' + sepaIcon + '<span>' + copy.sepaTip + '</span></p>'
+              ? '<p id="' + sepaTipId + '" aria-hidden="true" style="margin:0.9rem 0 0;display:none;align-items:flex-start;gap:0.55rem;font-size:0.95rem;line-height:1.6;color:#92400e;background:#fffbeb;border:1px solid #fcd34d;border-radius:0.75rem;padding:0.9rem 1rem;font-weight:500;">' + sepaIcon + '<span>' + copy.sepaTip + '</span></p>'
               : '') +
           '</div>',
         showCancelButton: true,
