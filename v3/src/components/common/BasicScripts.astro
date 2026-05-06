@@ -182,6 +182,22 @@ import { UI } from 'astrowind:config';
 
   function loadPrice() {
     if (!document.getElementById('users')) return;
+    // Migrate params from hash (e.g. #custom2?years=3) into the real query string
+    // so gotoBuy/buildCheckoutUrl can forward them to checkout.
+    if (window.location.hash.indexOf('?') >= 0) {
+      const hash = window.location.hash;
+      const qIdx = hash.indexOf('?');
+      const hashAnchor = hash.slice(0, qIdx);
+      const hashQuery = hash.slice(qIdx + 1);
+      if (hashQuery) {
+        const existing = new URLSearchParams(window.location.search);
+        new URLSearchParams(hashQuery).forEach((v, k) => {
+          if (!existing.has(k)) existing.append(k, v);
+        });
+        const qs = existing.toString();
+        history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '') + hashAnchor);
+      }
+    }
     let users = 10;
     let devices = 100;
     window.submit = function () {
