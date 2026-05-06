@@ -392,6 +392,9 @@ const defaultCurrency = 'USD';
         try {
           var parsed = new URL(String(url), location.origin);
           if (parsed.pathname.startsWith(CHECKOUT_PATH)) {
+            new URLSearchParams(location.search).forEach(function (v, k) {
+              if (!parsed.searchParams.has(k)) parsed.searchParams.append(k, v);
+            });
             var pending = {
               url: parsed.toString(),
               target: target,
