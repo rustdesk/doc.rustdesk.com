@@ -3,7 +3,7 @@ title: Deployare client
 weight: 400
 pre: "<b>2.4. </b>"
 description: "Documentație RustDesk pentru Deployare client. Găsiți ghiduri de instalare, configurare, implementare și depanare."
-keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 <!-- GEO-LOCALIZED-INTRO:START -->
@@ -204,16 +204,6 @@ Puteți folosi MSI în loc de `rustdesk.exe --silent-install`.
 
 https://rustdesk.com/docs/en/client/windows/msi/
 
-
-## Winget
-
-puteți implementa prin powershell cu winget de asemenea (instalează via managerul Microsoft - parte din cele mai recente instalări Windows)
-
-dintr-o fereastră powershell sau via script (de exemplu prin GPO)
-
-```
-winget install --id=RustDesk.RustDesk  -e
-```
 
 ## macOS Bash
 

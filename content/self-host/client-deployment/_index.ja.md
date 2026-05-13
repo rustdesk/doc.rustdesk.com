@@ -3,7 +3,7 @@ title: クライアントデプロイメント
 weight: 400
 pre: "<b>2.4. </b>"
 description: "RustDesk のクライアントデプロイメントに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
-keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 <!-- GEO-LOCALIZED-INTRO:START -->
@@ -204,16 +204,6 @@ echo ...............................................
 
 https://rustdesk.com/docs/en/client/windows/msi/
 
-
-## Winget
-
-wingetを使ってpowershell経由でデプロイすることもできます（これは最近のWindowsインストールの一部であるMicrosoft版apt経由でインストールします）
-
-powershellウィンドウから、またはスクリプト経由で（例えばGPO経由）
-
-```
-winget install --id=RustDesk.RustDesk  -e
-```
 
 ## macOS Bash
 

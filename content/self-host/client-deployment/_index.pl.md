@@ -3,7 +3,7 @@ title: Wdrażanie klientów
 weight: 400
 pre: "<b>2.4. </b>"
 description: "Dokumentacja RustDesk dotycząca Wdrażanie klientów. Zawiera instrukcje instalacji, konfiguracji, wdrażania i rozwiązywania problemów."
-keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 <!-- GEO-LOCALIZED-INTRO:START -->
@@ -204,16 +204,6 @@ Można również użyć msi zamiast `rustdesk.exe --silent-install`.
 
 https://rustdesk.com/docs/pl/client/windows/msi/
 
-
-## Winget
-
-można również wdrożyć za pomocą powershella z winget (instaluje się to za pomocą wersji apt firmy Microsoft — części najnowszych instalacji systemu Windows)
-
-z okna powershella lub za pomocą skryptu (na przykład za pomocą GPO)
-
-```
-winget install --id=RustDesk.RustDesk  -e
-```
 
 ## macOS Bash
 

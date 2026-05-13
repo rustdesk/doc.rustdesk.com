@@ -3,7 +3,7 @@ title: Distribuzione Client
 weight: 400
 pre: "<b>2.4. </b>"
 description: "Documentazione RustDesk su Distribuzione Client. Consulta le guide per installazione, configurazione, distribuzione e risoluzione dei problemi."
-keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 <!-- GEO-LOCALIZED-INTRO:START -->
@@ -204,16 +204,6 @@ Puoi anche usare msi invece di `rustdesk.exe --silent-install`.
 
 https://rustdesk.com/docs/en/client/windows/msi/
 
-
-## Winget
-
-puoi distribuire tramite powershell con winget anche (questo installa tramite la versione Microsoft di apt - parte delle installazioni Windows più recenti)
-
-da una finestra powershell o tramite script (ad esempio tramite GPO)
-
-```
-winget install --id=RustDesk.RustDesk  -e
-```
 
 ## macOS Bash
 

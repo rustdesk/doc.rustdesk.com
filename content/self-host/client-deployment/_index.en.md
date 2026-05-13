@@ -2,15 +2,15 @@
 title: Client Deployment
 weight: 400
 pre: "<b>2.4. </b>"
-description: "Deploy RustDesk clients at scale with PowerShell, batch, winget, or macOS bash scripts. Use these deployment examples to install RustDesk, apply config strings, and set passwords automatically."
-keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
+description: "Deploy RustDesk clients at scale with PowerShell, batch, or macOS bash scripts. Use these deployment examples to install RustDesk, apply config strings, and set passwords automatically."
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
-This guide covers large-scale RustDesk client deployment with scripts and automation tools such as PowerShell, batch, winget, and macOS bash. If you need the simplest experience and have RustDesk Server Pro, start with the custom client generator: https://twitter.com/rustdesk/status/1788905463678951787.
+This guide covers large-scale RustDesk client deployment with scripts and automation tools such as PowerShell, batch, and macOS bash. If you need the simplest experience and have RustDesk Server Pro, start with the custom client generator: https://twitter.com/rustdesk/status/1788905463678951787.
 
 ## What is the best way to deploy RustDesk clients at scale?
 
-For RustDesk Server Pro, the easiest large-scale deployment path is usually the custom client generator because it packages your server settings into the client build. For environments managed through RMM, Intune, GPO, or custom automation, PowerShell, batch, winget, and shell scripts are more flexible.
+For RustDesk Server Pro, the easiest large-scale deployment path is usually the custom client generator because it packages your server settings into the client build. For environments managed through RMM, Intune, GPO, or custom automation, PowerShell, batch, and shell scripts are more flexible.
 
 ## Which deployment method should you choose?
 
@@ -20,7 +20,6 @@ For RustDesk Server Pro, the easiest large-scale deployment path is usually the 
 | PowerShell | Windows fleet automation | Good fit for RMM, Intune, and scripted installs |
 | Batch or cmd | Basic Windows scripting | Works in simpler Windows environments without PowerShell-heavy tooling |
 | MSI | Managed Windows software deployment | Better fit when you already use MSI-based packaging workflows |
-| Winget | Modern Windows package automation | Simple install path on newer Windows systems |
 | macOS bash | Mac fleet deployment | Scriptable installation and config for macOS hosts |
 
 ## What inputs do deployment scripts need?
@@ -212,16 +211,6 @@ You can also use msi instead of `rustdesk.exe --silent-install`.
 
 https://rustdesk.com/docs/en/client/windows/msi/
 
-
-## Winget
-
-you can deploy via powershell with winget as well (this installs via microsofts version of apt - part of most recent windows installs)
-
-from a powershell window or via script (for example via GPO)
-
-```
-winget install --id=RustDesk.RustDesk  -e
-```
 
 ## macOS Bash
 
