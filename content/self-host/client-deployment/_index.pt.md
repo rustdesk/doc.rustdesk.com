@@ -3,7 +3,7 @@ title: Implantação do Cliente
 weight: 400
 pre: "<b>2.4. </b>"
 description: "Documentação do RustDesk sobre Implantação do Cliente. Consulte guias de instalação, configuração, implantação e solução de problemas."
-keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 <!-- GEO-LOCALIZED-INTRO:START -->
@@ -204,16 +204,6 @@ Você também pode usar msi em vez de `rustdesk.exe --silent-install`.
 
 https://rustdesk.com/docs/en/client/windows/msi/
 
-
-## Winget
-
-você pode implantar via powershell com winget também (isso instala via a versão da Microsoft do apt - parte das instalações mais recentes do Windows)
-
-de uma janela do powershell ou via script (por exemplo via GPO)
-
-```
-winget install --id=RustDesk.RustDesk  -e
-```
 
 ## macOS Bash
 

@@ -3,7 +3,7 @@ title: 客戶端部署
 weight: 400
 pre: "<b>2.4. </b>"
 description: "RustDesk 的客戶端部署文檔，提供安裝、設定、部署與疑難排解指南。"
-keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 <!-- GEO-LOCALIZED-INTRO:START -->
@@ -204,16 +204,6 @@ echo ...............................................
 
 https://rustdesk.com/docs/en/client/windows/msi/
 
-
-## Winget
-
-您也可以透過帶有 winget 的 powershell 進行部署（這會透過 Microsoft 版本的 apt 進行安裝 - 大多數最新 Windows 安裝的一部分）
-
-從 powershell 視窗或透過腳本（例如透過 GPO）
-
-```
-winget install --id=RustDesk.RustDesk  -e
-```
 
 ## macOS Bash
 

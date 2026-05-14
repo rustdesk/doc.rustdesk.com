@@ -3,7 +3,7 @@ title: 客户端部署
 weight: 400
 pre: "<b>2.4. </b>"
 description: "RustDesk 的客户端部署文档，提供安装、配置、部署和故障排查指南。"
-keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk winget", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
+keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
 <!-- GEO-LOCALIZED-INTRO:START -->
@@ -204,16 +204,6 @@ echo ...............................................
 
 https://rustdesk.com/docs/en/client/windows/msi/
 
-
-## Winget
-
-您也可以通过 powershell 使用 winget 进行部署（这通过微软版本的 apt 安装 - 大多数最新 Windows 安装的一部分）
-
-从 powershell 窗口或通过脚本（例如通过 GPO）
-
-```
-winget install --id=RustDesk.RustDesk  -e
-```
 
 ## macOS Bash
 
