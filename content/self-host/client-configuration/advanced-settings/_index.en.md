@@ -653,7 +653,7 @@ Available since RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 
 This option will set the "view-only" option for every peer after the first connection.
 
-Then the "view-only" option in each peer's settings will controls whether the connection is view-only.
+Then the "view-only" option in each peer's settings will control whether the connection is view-only.
 
 **Location**:
 
@@ -696,7 +696,7 @@ Controls whether the remote toolbar is collapsed after connecting.
 
 This option will set the "show-remote-cursor" option for every peer after the first connection.
 
-Then the "show-remote-cursor" option in each peer's settings will controls whether the remote cursor is displayed in the remote control page.
+Then the "show-remote-cursor" option in each peer's settings will control whether the remote cursor is displayed in the remote control page.
 
 **Location**:
 
@@ -711,7 +711,7 @@ Then the "show-remote-cursor" option in each peer's settings will controls wheth
 
 This option will set the "follow-remote-cursor" option for every peer after the first connection.
 
-Then the "follow-remote-cursor" option in each peer's settings will controls whether to follow the remote cursor.
+Then the "follow-remote-cursor" option in each peer's settings will control whether to follow the remote cursor.
 
 **Preview**: [PR 7717](https://github.com/rustdesk/rustdesk/pull/7717)
 
@@ -728,7 +728,7 @@ Then the "follow-remote-cursor" option in each peer's settings will controls whe
 
 This option will set the "follow-remote-window" option for every peer after the first connection.
 
-Then the "follow-remote-window" option in each peer's settings will controls whether to follow the remote window.
+Then the "follow-remote-window" option in each peer's settings will control whether to follow the remote window.
 
 **Preview**: [PR 7717](https://github.com/rustdesk/rustdesk/pull/7717)
 
