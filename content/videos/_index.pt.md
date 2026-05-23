@@ -17,7 +17,7 @@ Se você está avaliando o RustDesk ou preparando uma implantação self-hosted 
 
 [Segurança do RustDesk](https://www.youtube.com/watch?v=EeFqj23jxMk)
 
-[This has 30 million downloads and you're still using TeamViewer: Português](https://www.youtube.com/watch?v=XLQ0El6V5kE)
+[Lucas Moreira: Seu acesso remoto é um LIXO!! Testa isso aqui no lugar (Código Aberto + Tutorial Completo)](https://www.youtube.com/watch?v=XLQ0El6V5kE)
 
 ## Pro
 [Canal do Youtube](https://youtube.com/@rustdesk)
