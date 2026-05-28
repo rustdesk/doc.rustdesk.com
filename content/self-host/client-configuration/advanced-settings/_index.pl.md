@@ -1554,3 +1554,13 @@ Dostępne od RustDesk 1.4.5
 | Wartości | Domyślnie | Przykład |
 | :------: | :------: | :------: |
 | Y, N | N | `disable-unlock-pin=Y` |
+
+### allow-command-line-settings-when-settings-disabled
+
+Umożliwia konfigurację za pomocą ustawień wiersza poleceń, gdy `Wyłącz ustawienia` jest włączone w niestandardowym kliencie. Po ustawieniu na Y, tylko ustawienia interfejsu użytkownika są wyłączone, ale ustawienia wiersza poleceń nadal mogą być używane do konfiguracji klienta.
+
+Dostępne od RustDesk 1.4.7
+
+| Wartości | Domyślnie | Przykład |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-command-line-settings-when-settings-disabled=Y` |

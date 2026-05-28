@@ -1542,3 +1542,13 @@ Disponibile da RustDesk 1.4.5
 | Valori | Predefinito | Esempio |
 | :------: | :------: | :------: |
 | Y, N | N | `disable-unlock-pin=Y` |
+
+### allow-command-line-settings-when-settings-disabled
+
+Consente la configurazione tramite impostazioni da riga di comando quando `Disabilita impostazioni` è abilitato nel client personalizzato. Quando impostato su Y, solo le impostazioni dell'interfaccia utente sono disabilitate, ma le impostazioni da riga di comando possono ancora essere utilizzate per configurare il client.
+
+Disponibile da RustDesk 1.4.7
+
+| Valori | Predefinito | Esempio |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-command-line-settings-when-settings-disabled=Y` |
