@@ -1555,3 +1555,13 @@ https://github.com/rustdesk/rustdesk/pull/12911
 | 值 | 預設值 | 範例 |
 | :------: | :------: | :------: |
 | Y, N | N | `disable-unlock-pin=Y` |
+
+### allow-command-line-settings-when-settings-disabled
+
+當自訂客戶端中啟用了「禁用設定」時，允許透過命令列參數進行配置。設定為 Y 後，僅禁用 UI 設定介面，但仍可使用命令列參數配置客戶端。
+
+自 RustDesk 1.4.7 起可用
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-command-line-settings-when-settings-disabled=Y` |

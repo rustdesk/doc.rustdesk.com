@@ -1552,3 +1552,13 @@ RustDesk 1.4.5 以降で利用可能
 | 値 | デフォルト | 例 |
 | :------: | :------: | :------: |
 | Y, N | N | `disable-unlock-pin=Y` |
+
+### allow-command-line-settings-when-settings-disabled
+
+カスタムクライアントで`設定を無効にする`が有効になっている場合に、コマンドライン設定による構成を許可します。Yに設定すると、UI設定のみが無効になりますが、コマンドライン設定を使用してクライアントを構成することができます。
+
+RustDesk 1.4.7 以降で利用可能
+
+| 値 | デフォルト | 例 |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-command-line-settings-when-settings-disabled=Y` |
