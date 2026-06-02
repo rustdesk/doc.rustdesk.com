@@ -66,7 +66,7 @@ Abilita copia e incolla per le connessioni in ingresso.
 
 **Posizione**:
 
-1. **Desktop** Impostazioni → Sicurezza → Permessi → Abilita clipboard
+1. **Desktop** Impostazioni → Sicurezza → Permessi → Abilita appunti
 2. **Mobile**
 
 | Installazione richiesta | Valori | Predefinito | Esempio |
@@ -187,6 +187,20 @@ Abilita il lato di controllo per bloccare l'input di altri utenti.
 | Installazione richiesta | Valori | Predefinito | Esempio |
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-block-input=Y` |
+
+### enable-privacy-mode
+
+Controlla se il lato controllato consente al lato di controllo di usare la modalità privacy.
+
+Questo è diverso da [`privacy-mode`](#privacy-mode): questa impostazione definisce il comportamento predefinito della modalità privacy per ogni peer dopo la prima connessione, mentre `enable-privacy-mode` controlla se la modalità privacy è consentita.
+
+**Posizione**:
+
+1. **Desktop** Impostazioni → Sicurezza → Permessi → Abilita modalità privacy
+
+| Installazione richiesta | Valori | Predefinito | Esempio |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-privacy-mode=Y` |
 
 ### allow-remote-config-modification
 
@@ -1161,13 +1175,25 @@ Questo è per il lato controllato Android. Per impostazione predefinita, quando 
 
 ### allow-remote-cm-modification
 
-Controlla se permettere al lato di controllo di cliccare sulla finestra di gestione connessione per accettare connessioni, cambiare permessi, ecc.
+Controlla se permettere al lato di controllo di cliccare sulla finestra di accettazione (finestra di gestione delle connessioni) per accettare connessioni, cambiare permessi, ecc.
 
 https://github.com/rustdesk/rustdesk/issues/7425
 
 | Valori | Predefinito | Esempio |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-remote-cm-modification=Y` |
+
+### enable-perm-change-in-accept-window
+
+Controlla se gli utenti possono modificare i permessi nella finestra di accettazione (finestra di gestione delle connessioni) prima di accettare una sessione in entrata.
+
+Su desktop, questo influisce su tutti i permessi nella finestra di accettazione (finestra di gestione delle connessioni). Su Android, influisce sui seguenti permessi: Trasferisci file, Acquisizione audio e Abilita appunti. Cattura schermo e Controllo input non sono interessati.
+
+**Anteprima**: https://github.com/rustdesk/rustdesk/pull/14875
+
+| Valori | Predefinito | Esempio |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-perm-change-in-accept-window=Y` |
 
 ### remove-preset-password-warning
 

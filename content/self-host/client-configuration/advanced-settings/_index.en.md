@@ -198,6 +198,20 @@ Enable the control side to block other users' input.
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-block-input=Y` |
 
+### enable-privacy-mode
+
+Controls whether the controlled side allows the control side to use privacy mode.
+
+This is different from [`privacy-mode`](#privacy-mode): that setting controls the default privacy mode behavior for each peer after the first connection, while `enable-privacy-mode` controls whether privacy mode is allowed.
+
+**Location**:
+
+1. **Desktop** Settings → Security → Permissions → Enable privacy mode
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-privacy-mode=Y` |
+
 ### allow-remote-config-modification
 
 Allow the control side to change the settings in controlled RustDesk UI.
@@ -1182,13 +1196,25 @@ This is for the Android controlled side. By default, when the resolution is grea
 
 ### allow-remote-cm-modification
 
-Controls whether to allow the control side to click on the connection management window to accept connections, change permissions, etc.
+Controls whether to allow the control side to click on the accept window (connection management window) to accept connections, change permissions, etc.
 
 https://github.com/rustdesk/rustdesk/issues/7425
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-remote-cm-modification=Y` |
+
+### enable-perm-change-in-accept-window
+
+Controls whether users can change permissions in the accept window (connection management window) before accepting an incoming session.
+
+On desktop, this affects all permissions in the accept window (connection management window). On Android, it affects the following permissions: Transfer file, Audio capture, and Enable clipboard. Screen capture and Input control are not affected.
+
+**Preview**: https://github.com/rustdesk/rustdesk/pull/14875
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-perm-change-in-accept-window=Y` |
 
 ### remove-preset-password-warning
 

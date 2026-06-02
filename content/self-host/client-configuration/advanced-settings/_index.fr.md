@@ -66,7 +66,7 @@ Active le copier-coller pour les connexions entrantes.
 
 **Emplacement** :
 
-1. **Bureau** Paramètres → Sécurité → Permissions → Activer le presse-papiers
+1. **Bureau** Paramètres → Sécurité → Permissions → Activer la synchronisation du presse-papier
 2. **Mobile**
 
 | Installation requise | Valeurs | Défaut | Exemple |
@@ -129,7 +129,7 @@ Active l'enregistrement audio et le transfert vers le pair.
 
 **Emplacement** :
 
-1. **Bureau** Paramètres → Sécurité → Permissions → Activer l'audio
+1. **Bureau** Paramètres → Sécurité → Permissions → Activer l’audio
 2. **Mobile**
 
 | Installation requise | Valeurs | Défaut | Exemple |
@@ -187,6 +187,20 @@ Active le côté contrôleur pour bloquer les entrées d'autres utilisateurs.
 | Installation requise | Valeurs | Défaut | Exemple |
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-block-input=Y` |
+
+### enable-privacy-mode
+
+Contrôle si le côté contrôlé autorise le côté contrôleur à utiliser le mode de confidentialité.
+
+Ceci est différent de [`privacy-mode`](#privacy-mode) : ce paramètre définit le comportement par défaut du mode de confidentialité pour chaque pair après la première connexion, tandis que `enable-privacy-mode` contrôle si le mode de confidentialité est autorisé.
+
+**Emplacement** :
+
+1. **Bureau** Paramètres → Sécurité → Permissions → Activer le mode de confidentialité
+
+| Installation requise | Valeurs | Défaut | Exemple |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-privacy-mode=Y` |
 
 ### allow-remote-config-modification
 
@@ -823,14 +837,14 @@ L'option "verrouiller après la fin de session" dans les paramètres de chaque p
 
 ### privacy-mode
 
-Cette option définira l'option "mode privé" pour chaque pair après la première connexion.
+Cette option définira l'option "mode de confidentialité" pour chaque pair après la première connexion.
 
-L'option "mode privé" dans les paramètres de chaque pair contrôlera ensuite s'il faut utiliser le mode privé après la connexion.
+L'option "mode de confidentialité" dans les paramètres de chaque pair contrôlera ensuite s'il faut utiliser le mode de confidentialité après la connexion.
 
 **Emplacement** :
 
-1. **Bureau** Paramètres → Affichage → Autres options par défaut → Mode privé
-2. **Mobile** Paramètres → Paramètres d'affichage → Autres options par défaut → Mode privé
+1. **Bureau** Paramètres → Affichage → Autres options par défaut → Mode de confidentialité
+2. **Mobile** Paramètres → Paramètres d'affichage → Autres options par défaut → Mode de confidentialité
 
 | Installation requise | Valeurs | Défaut | Exemple |
 | :------: | :------: | :------: | :------: |
@@ -1161,13 +1175,25 @@ Ceci est pour le côté contrôlé Android. Par défaut, quand la résolution es
 
 ### allow-remote-cm-modification
 
-Contrôle s'il faut permettre au côté contrôleur de cliquer sur la fenêtre de gestion de connexion pour accepter les connexions, changer les permissions, etc.
+Contrôle s'il faut permettre au côté contrôleur de cliquer sur la fenêtre d'acceptation (fenêtre de gestion de la connexion) pour accepter les connexions, changer les permissions, etc.
 
 https://github.com/rustdesk/rustdesk/issues/7425
 
 | Valeurs | Défaut | Exemple |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-remote-cm-modification=Y` |
+
+### enable-perm-change-in-accept-window
+
+Contrôle si les utilisateurs peuvent modifier les permissions dans la fenêtre d'acceptation (fenêtre de gestion de la connexion) avant d'accepter une session entrante.
+
+Sur le bureau, cela affecte toutes les permissions dans la fenêtre d'acceptation (fenêtre de gestion de la connexion). Sur Android, cela affecte les permissions suivantes : Transférer des fichiers, Capture de l’audio et Activer la synchronisation du presse-papier. Capture de l’écran et Contrôle de la saisie ne sont pas affectés.
+
+**Aperçu**: https://github.com/rustdesk/rustdesk/pull/14875
+
+| Valeurs | Défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-perm-change-in-accept-window=Y` |
 
 ### remove-preset-password-warning
 

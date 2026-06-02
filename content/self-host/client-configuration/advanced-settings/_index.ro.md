@@ -66,7 +66,7 @@ Activează copierea și lipirea (clipboard) pentru conexiunile primite.
 
 **Locație**:
 
-1. **Desktop** Settings → Security → Permissions → Enable clipboard
+1. **Desktop** Settings → Security → Permissions → Activează clipboard
 2. **Mobile**
 
 | Install required | Values | Default | Example |
@@ -79,7 +79,7 @@ Activează copierea/lipirea de fișiere sau transferul de fișiere (în sesiune)
 
 **Locație**:
 
-1. **Desktop** Settings → Security → Permissions → Enable file transfer
+1. **Desktop** Settings → Security → Permissions → Activează transferul de fișiere
 2. **Mobile**
 
 | Install required | Values | Default | Example |
@@ -130,7 +130,7 @@ Activează înregistrarea audio și transmiterea către peer.
 
 **Locație**:
 
-1. **Desktop** Settings → Security → Permissions → Enable audio
+1. **Desktop** Settings → Security → Permissions → Activează audio
 2. **Mobile**
 
 | Install required | Values | Default | Example |
@@ -188,6 +188,20 @@ Permite părții care controlează blocarea input-ului altor utilizatori.
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-block-input=Y` |
+
+### enable-privacy-mode
+
+Controlează dacă partea controlată permite părții de control să folosească modul privat.
+
+Aceasta este diferită de [`privacy-mode`](#privacy-mode): acea setare configurează comportamentul implicit al modului privat pentru fiecare peer după prima conexiune, în timp ce `enable-privacy-mode` controlează dacă modul privat este permis.
+
+**Locație**:
+
+1. **Desktop** Settings → Security → Permissions → Activează mod privat
+
+| Install required | Values | Default | Example |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-privacy-mode=Y` |
 
 ### allow-remote-config-modification
 
@@ -826,12 +840,12 @@ Setarea din fiecare peer va controla dacă mașina peer este blocată după term
 
 Această opțiune va seta opțiunea "privacy-mode" pentru fiecare peer după prima conexiune.
 
-Setarea din fiecare peer va controla utilizarea modului de confidențialitate după conectare.
+Setarea din fiecare peer va controla utilizarea modului privat după conectare.
 
 **Locație**:
 
-1. **Desktop** Settings → Display → Other default options → Privacy mode
-2. **Mobile** Settings → Display settings → Other default options → Privacy mode
+1. **Desktop** Settings → Display → Other default options → Mod privat
+2. **Mobile** Settings → Display settings → Other default options → Mod privat
 
 | Install required | Values | Default | Example |
 | :------: | :------: | :------: | :------: |
@@ -1173,13 +1187,25 @@ Aceasta este pentru partea controlată Android. În mod implicit, când rezoluț
 
 ### allow-remote-cm-modification
 
-Controlează dacă se permite părții de control să facă clic pe fereastra de gestionare a conexiunii pentru a accepta conexiuni, schimba permisiuni, etc.
+Controlează dacă se permite părții de control să facă clic pe fereastra de acceptare (fereastra de gestionare a conexiunilor) pentru a accepta conexiuni, schimba permisiuni etc.
 
 https://github.com/rustdesk/rustdesk/issues/7425
 
 | Valori | Implicit | Exemplu |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-remote-cm-modification=Y` |
+
+### enable-perm-change-in-accept-window
+
+Controlează dacă utilizatorii pot schimba permisiunile în fereastra de acceptare (fereastra de gestionare a conexiunilor) înainte de a accepta o sesiune de intrare.
+
+Pe desktop, aceasta afectează toate permisiunile din fereastra de acceptare (fereastra de gestionare a conexiunilor). Pe Android, afectează permisiunile: Transferă fișiere, Capturare audio și Activează clipboard. Nu afectează: Capturare ecran și Control intrări.
+
+**Previzualizare**: https://github.com/rustdesk/rustdesk/pull/14875
+
+| Valori | Implicit | Exemplu |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-perm-change-in-accept-window=Y` |
 
 ### remove-preset-password-warning
 

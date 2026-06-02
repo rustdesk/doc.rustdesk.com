@@ -129,7 +129,7 @@ Habilita grabación de audio y transferencia al par.
 
 **Ubicación**:
 
-1. **Escritorio** Configuración → Seguridad → Permisos → Habilitar audio
+1. **Escritorio** Configuración → Seguridad → Permisos → Habilitar Audio
 2. **Móvil**
 
 | Instalación requerida | Valores | Predeterminado | Ejemplo |
@@ -187,6 +187,20 @@ Habilita el lado de control para bloquear entrada de otros usuarios.
 | Instalación requerida | Valores | Predeterminado | Ejemplo |
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-block-input=Y` |
+
+### enable-privacy-mode
+
+Controla si el lado controlado permite que el lado de control use el modo privado.
+
+Esto es diferente de [`privacy-mode`](#privacy-mode): esa configuración establece el comportamiento predeterminado del modo privado para cada par después de la primera conexión, mientras que `enable-privacy-mode` controla si el modo privado está permitido.
+
+**Ubicación**:
+
+1. **Escritorio** Configuración → Seguridad → Permisos → Habilitar modo privado
+
+| Instalación requerida | Valores | Predeterminado | Ejemplo |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-privacy-mode=Y` |
 
 ### allow-remote-config-modification
 
@@ -823,14 +837,14 @@ La opción "bloquear después del fin de sesión" en las configuraciones de cada
 
 ### privacy-mode
 
-Esta opción establecerá la opción "modo privacidad" para cada par después de la primera conexión.
+Esta opción establecerá la opción "modo privado" para cada par después de la primera conexión.
 
-La opción "modo privacidad" en las configuraciones de cada par controlará luego si usar modo privacidad después de conectar.
+La opción "modo privado" en las configuraciones de cada par controlará luego si usar modo privado después de conectar.
 
 **Ubicación**:
 
-1. **Escritorio** Configuración → Pantalla → Otras opciones predeterminadas → Modo privacidad
-2. **Móvil** Configuración → Configuración de pantalla → Otras opciones predeterminadas → Modo privacidad
+1. **Escritorio** Configuración → Pantalla → Otras opciones predeterminadas → Modo privado
+2. **Móvil** Configuración → Configuración de pantalla → Otras opciones predeterminadas → Modo privado
 
 | Instalación requerida | Valores | Predeterminado | Ejemplo |
 | :------: | :------: | :------: | :------: |
@@ -1161,13 +1175,25 @@ Esto es para el lado controlado Android. Por defecto, cuando la resolución es m
 
 ### allow-remote-cm-modification
 
-Controla si permitir al lado de control hacer clic en la ventana de gestión de conexión para aceptar conexiones, cambiar permisos, etc.
+Controla si permitir al lado de control hacer clic en la ventana de aceptación (ventana de gestión de conexión) para aceptar conexiones, cambiar permisos, etc.
 
 https://github.com/rustdesk/rustdesk/issues/7425
 
 | Valores | Predeterminado | Ejemplo |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-remote-cm-modification=Y` |
+
+### enable-perm-change-in-accept-window
+
+Controla si los usuarios pueden cambiar permisos en la ventana de aceptación (ventana de gestión de conexión) antes de aceptar una sesión entrante.
+
+En escritorio, esto afecta a todos los permisos en la ventana de aceptación (ventana de gestión de conexión). En Android, afecta a los siguientes permisos: Transferir archivo, Captura de audio y Habilitar portapapeles. Captura de pantalla y Control de entrada no se ven afectados.
+
+**Vista previa**: https://github.com/rustdesk/rustdesk/pull/14875
+
+| Valores | Predeterminado | Ejemplo |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-perm-change-in-accept-window=Y` |
 
 ### remove-preset-password-warning
 
