@@ -129,7 +129,7 @@ Habilita grabación de audio y transferencia al par.
 
 **Ubicación**:
 
-1. **Escritorio** Configuración → Seguridad → Permisos → Habilitar audio
+1. **Escritorio** Configuración → Seguridad → Permisos → Habilitar Audio
 2. **Móvil**
 
 | Instalación requerida | Valores | Predeterminado | Ejemplo |
@@ -1187,7 +1187,7 @@ https://github.com/rustdesk/rustdesk/issues/7425
 
 Controla si los usuarios pueden cambiar permisos en la ventana de aceptación (ventana de gestión de conexión) antes de aceptar una sesión entrante.
 
-En escritorio, esto afecta a todos los permisos en la ventana de aceptación (ventana de gestión de conexión). En Android, afecta a Transferencia de archivos, Captura de audio y Habilitar portapapeles. Captura de pantalla y Control de entrada no se ven afectados.
+En escritorio, esto afecta a todos los permisos en la ventana de aceptación (ventana de gestión de conexión). En Android, afecta a los siguientes permisos: Transferir archivo, Captura de audio y Habilitar portapapeles. Captura de pantalla y Control de entrada no se ven afectados.
 
 **Vista previa**: https://github.com/rustdesk/rustdesk/pull/14875
 

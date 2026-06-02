@@ -1208,7 +1208,7 @@ https://github.com/rustdesk/rustdesk/issues/7425
 
 Controls whether users can change permissions in the accept window (connection management window) before accepting an incoming session.
 
-On desktop, this affects all permissions in the accept window (connection management window). On Android, it affects File transfer, Audio capture, and Enable clipboard. Screen capture and Input control are not affected.
+On desktop, this affects all permissions in the accept window (connection management window). On Android, it affects the following permissions: Transfer file, Audio capture, and Enable clipboard. Screen capture and Input control are not affected.
 
 **Preview**: https://github.com/rustdesk/rustdesk/pull/14875
 

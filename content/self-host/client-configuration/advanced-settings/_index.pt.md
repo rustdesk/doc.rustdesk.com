@@ -66,7 +66,7 @@ Habilita copiar e colar para conexões de entrada.
 
 **Localização**:
 
-1. **Desktop** Configurações → Segurança → Permissões → Habilitar área de transferência
+1. **Desktop** Configurações → Segurança → Permissões → Habilitar Área de Transferência
 2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
@@ -79,7 +79,7 @@ Habilita cópia e colagem de arquivos ou transferência de arquivos (sessão) pa
 
 **Localização**:
 
-1. **Desktop** Configurações → Segurança → Permissões → Habilitar transferência de arquivos
+1. **Desktop** Configurações → Segurança → Permissões → Habilitar Transferência de Arquivos
 2. **Móvel**
 
 | Instalação necessária | Valores | Padrão | Exemplo |
@@ -1189,7 +1189,7 @@ https://github.com/rustdesk/rustdesk/issues/7425
 
 Controla se os usuários podem alterar permissões na janela de aceitação (janela de gerenciamento de conexão) antes de aceitar uma sessão de entrada.
 
-No desktop, isso afeta todas as permissões na janela de aceitação (janela de gerenciamento de conexão). No Android, afeta as permissões: Habilitar Transferência de Arquivos, Captura de Áudio e Habilitar Área de Transferência. Não afeta: Captura de Tela e Controle de Entrada.
+No desktop, isso afeta todas as permissões na janela de aceitação (janela de gerenciamento de conexão). No Android, afeta as permissões: Transferir arquivos, Captura de Áudio e Habilitar Área de Transferência. Não afeta: Captura de Tela e Controle de Entrada.
 
 **Pré-visualização**: https://github.com/rustdesk/rustdesk/pull/14875
 

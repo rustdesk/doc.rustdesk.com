@@ -66,7 +66,7 @@ Active le copier-coller pour les connexions entrantes.
 
 **Emplacement** :
 
-1. **Bureau** Paramètres → Sécurité → Permissions → Activer le presse-papiers
+1. **Bureau** Paramètres → Sécurité → Permissions → Activer la synchronisation du presse-papier
 2. **Mobile**
 
 | Installation requise | Valeurs | Défaut | Exemple |
@@ -129,7 +129,7 @@ Active l'enregistrement audio et le transfert vers le pair.
 
 **Emplacement** :
 
-1. **Bureau** Paramètres → Sécurité → Permissions → Activer l'audio
+1. **Bureau** Paramètres → Sécurité → Permissions → Activer l’audio
 2. **Mobile**
 
 | Installation requise | Valeurs | Défaut | Exemple |
@@ -1187,7 +1187,7 @@ https://github.com/rustdesk/rustdesk/issues/7425
 
 Contrôle si les utilisateurs peuvent modifier les permissions dans la fenêtre d'acceptation (fenêtre de gestion de la connexion) avant d'accepter une session entrante.
 
-Sur le bureau, cela affecte toutes les permissions dans la fenêtre d'acceptation (fenêtre de gestion de la connexion). Sur Android, cela affecte Transfert de fichiers, Capture de l’audio et Activer la synchronisation du presse-papier. Capture de l’écran et Contrôle de la saisie ne sont pas affectés.
+Sur le bureau, cela affecte toutes les permissions dans la fenêtre d'acceptation (fenêtre de gestion de la connexion). Sur Android, cela affecte les permissions suivantes : Transférer des fichiers, Capture de l’audio et Activer la synchronisation du presse-papier. Capture de l’écran et Contrôle de la saisie ne sont pas affectés.
 
 **Aperçu**: https://github.com/rustdesk/rustdesk/pull/14875
 

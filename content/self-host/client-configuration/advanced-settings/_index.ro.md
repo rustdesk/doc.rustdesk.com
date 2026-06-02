@@ -66,7 +66,7 @@ Activează copierea și lipirea (clipboard) pentru conexiunile primite.
 
 **Locație**:
 
-1. **Desktop** Settings → Security → Permissions → Enable clipboard
+1. **Desktop** Settings → Security → Permissions → Activează clipboard
 2. **Mobile**
 
 | Install required | Values | Default | Example |
@@ -79,7 +79,7 @@ Activează copierea/lipirea de fișiere sau transferul de fișiere (în sesiune)
 
 **Locație**:
 
-1. **Desktop** Settings → Security → Permissions → Enable file transfer
+1. **Desktop** Settings → Security → Permissions → Activează transferul de fișiere
 2. **Mobile**
 
 | Install required | Values | Default | Example |
@@ -130,7 +130,7 @@ Activează înregistrarea audio și transmiterea către peer.
 
 **Locație**:
 
-1. **Desktop** Settings → Security → Permissions → Enable audio
+1. **Desktop** Settings → Security → Permissions → Activează audio
 2. **Mobile**
 
 | Install required | Values | Default | Example |
@@ -1187,7 +1187,7 @@ Aceasta este pentru partea controlată Android. În mod implicit, când rezoluț
 
 ### allow-remote-cm-modification
 
-Controlează dacă se permite părții de control să facă clic pe fereastra de acceptare (fereastra de gestionare a conexiunilor) pentru a accepta conexiuni, schimba permisiuni, etc.
+Controlează dacă se permite părții de control să facă clic pe fereastra de acceptare (fereastra de gestionare a conexiunilor) pentru a accepta conexiuni, schimba permisiuni etc.
 
 https://github.com/rustdesk/rustdesk/issues/7425
 
@@ -1199,7 +1199,7 @@ https://github.com/rustdesk/rustdesk/issues/7425
 
 Controlează dacă utilizatorii pot schimba permisiunile în fereastra de acceptare (fereastra de gestionare a conexiunilor) înainte de a accepta o sesiune de intrare.
 
-Pe desktop, aceasta afectează toate permisiunile din fereastra de acceptare (fereastra de gestionare a conexiunilor). Pe Android, afectează permisiunile: Activează transferul de fișiere, Capturare audio și Activează clipboard. Nu afectează: Capturare ecran și Control intrări.
+Pe desktop, aceasta afectează toate permisiunile din fereastra de acceptare (fereastra de gestionare a conexiunilor). Pe Android, afectează permisiunile: Transferă fișiere, Capturare audio și Activează clipboard. Nu afectează: Capturare ecran și Control intrări.
 
 **Previzualizare**: https://github.com/rustdesk/rustdesk/pull/14875
 

@@ -66,7 +66,7 @@ Abilita copia e incolla per le connessioni in ingresso.
 
 **Posizione**:
 
-1. **Desktop** Impostazioni → Sicurezza → Permessi → Abilita clipboard
+1. **Desktop** Impostazioni → Sicurezza → Permessi → Abilita appunti
 2. **Mobile**
 
 | Installazione richiesta | Valori | Predefinito | Esempio |
@@ -1187,7 +1187,7 @@ https://github.com/rustdesk/rustdesk/issues/7425
 
 Controlla se gli utenti possono modificare i permessi nella finestra di accettazione (finestra di gestione delle connessioni) prima di accettare una sessione in entrata.
 
-Su desktop, questo influisce su tutti i permessi nella finestra di accettazione (finestra di gestione delle connessioni). Su Android, influisce su Trasferimento file, Acquisizione audio e Abilita appunti. Cattura schermo e Controllo input non sono interessati.
+Su desktop, questo influisce su tutti i permessi nella finestra di accettazione (finestra di gestione delle connessioni). Su Android, influisce sui seguenti permessi: Trasferisci file, Acquisizione audio e Abilita appunti. Cattura schermo e Controllo input non sono interessati.
 
 **Anteprima**: https://github.com/rustdesk/rustdesk/pull/14875
 

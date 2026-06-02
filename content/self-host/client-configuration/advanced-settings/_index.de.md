@@ -1187,7 +1187,7 @@ https://github.com/rustdesk/rustdesk/issues/7425
 
 Steuert, ob Benutzer vor dem Akzeptieren einer eingehenden Sitzung Berechtigungen im Annahmefenster (Fenster zur Verwaltung der Verbindung) ändern können.
 
-Auf dem Desktop betrifft dies alle Berechtigungen im Annahmefenster (Fenster zur Verwaltung der Verbindung). Auf Android betrifft dies Dateiübertragung, Audioaufnahme und Zwischenablage aktivieren. Bildschirmaufnahme und Eingabesteuerung sind nicht betroffen.
+Auf dem Desktop betrifft dies alle Berechtigungen im Annahmefenster (Fenster zur Verwaltung der Verbindung). Auf Android betrifft dies die folgenden Berechtigungen: Datei übertragen, Audioaufnahme und Zwischenablage aktivieren. Bildschirmaufnahme und Eingabesteuerung sind nicht betroffen.
 
 **Vorschau**: https://github.com/rustdesk/rustdesk/pull/14875
 

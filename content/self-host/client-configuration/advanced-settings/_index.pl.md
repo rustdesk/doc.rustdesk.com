@@ -79,7 +79,7 @@ Włącz kopiowanie i wklejanie plików lub transfer plików (sesja) dla połącz
 
 **Lokalizacja**:
 
-1. **K. stacjonarny** Ustawienia → Zabezpieczenia → Uprawnienia → Włącz transfer plików
+1. **K. stacjonarny** Ustawienia → Zabezpieczenia → Uprawnienia → Włącz transfer pliku
 2. **Smartfon**
 
 | Wymagana instalacja | Wartości | Domyślne | Przykład |
