@@ -188,6 +188,20 @@ Habilita o lado de controle para bloquear entrada de outros usuários.
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-block-input=Y` |
 
+### enable-privacy-mode
+
+Controla se o lado controlado permite que o lado de controle use o modo privado.
+
+Isto é diferente de [`privacy-mode`](#privacy-mode): essa configuração define o comportamento padrão do modo privado para cada par após a primeira conexão, enquanto `enable-privacy-mode` controla se o modo privado é permitido.
+
+**Localização**:
+
+1. **Desktop** Configurações → Segurança → Permissões → Habilitar modo de privacidade
+
+| Instalação necessária | Valores | Padrão | Exemplo |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-privacy-mode=Y` |
+
 ### allow-remote-config-modification
 
 Permite ao lado de controle alterar configurações na UI RustDesk controlada.
@@ -823,14 +837,14 @@ A opção "bloquear após fim da sessão" nas configurações de cada par contro
 
 ### privacy-mode
 
-Esta opção definirá a opção "modo privacidade" para cada par após a primeira conexão.
+Esta opção definirá a opção "modo privado" para cada par após a primeira conexão.
 
-A opção "modo privacidade" nas configurações de cada par controlará então se deve usar modo privacidade após conectar.
+A opção "modo privado" nas configurações de cada par controlará então se deve usar modo privado após conectar.
 
 **Localização**:
 
-1. **Desktop** Configurações → Display → Outras opções padrão → Modo privacidade
-2. **Móvel** Configurações → Configurações de display → Outras opções padrão → Modo privacidade
+1. **Desktop** Configurações → Display → Outras opções padrão → Modo privado
+2. **Móvel** Configurações → Configurações de display → Outras opções padrão → Modo privado
 
 | Instalação necessária | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: | :------: |
@@ -1163,13 +1177,25 @@ Isto é para o lado controlado Android. Por padrão, quando a resolução é mai
 
 ### allow-remote-cm-modification
 
-Controla se deve permitir que o lado de controle clique na janela de gerenciamento de conexão para aceitar conexões, alterar permissões, etc.
+Controla se deve permitir que o lado de controle clique na janela de aceitação (janela de gerenciamento de conexão) para aceitar conexões, alterar permissões, etc.
 
 https://github.com/rustdesk/rustdesk/issues/7425
 
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-remote-cm-modification=Y` |
+
+### enable-perm-change-in-accept-window
+
+Controla se os usuários podem alterar permissões na janela de aceitação (janela de gerenciamento de conexão) antes de aceitar uma sessão de entrada.
+
+No desktop, isso afeta todas as permissões na janela de aceitação (janela de gerenciamento de conexão). No Android, afeta as permissões: Habilitar Transferência de Arquivos, Captura de Áudio e Habilitar Área de Transferência. Não afeta: Captura de Tela e Controle de Entrada.
+
+**Pré-visualização**: https://github.com/rustdesk/rustdesk/pull/14875
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-perm-change-in-accept-window=Y` |
 
 ### remove-preset-password-warning
 

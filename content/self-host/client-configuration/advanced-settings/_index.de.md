@@ -188,6 +188,20 @@ Ermöglicht der Steuerungsseite, die Eingabe anderer Benutzer zu blockieren.
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-block-input=Y` |
 
+### enable-privacy-mode
+
+Steuert, ob die gesteuerte Seite der Steuerungsseite erlaubt, den Datenschutzmodus zu verwenden.
+
+Dies unterscheidet sich von [`privacy-mode`](#privacy-mode): Diese Einstellung legt das Standardverhalten des Datenschutzmodus für jeden Peer nach der ersten Verbindung fest, während `enable-privacy-mode` steuert, ob der Datenschutzmodus erlaubt ist.
+
+**Ort**:
+
+1. **Desktop** Einstellungen → Sicherheit → Berechtigungen → Datenschutzmodus aktivieren
+
+| Installation erforderlich | Werte | Standard | Beispiel |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-privacy-mode=Y` |
+
 ### allow-remote-config-modification
 
 Erlaubt der Steuerungsseite, die Einstellungen in der gesteuerten RustDesk-Benutzeroberfläche zu ändern.
@@ -1161,13 +1175,25 @@ Dies ist für die Android-gesteuerte Seite. Standardmäßig, wenn die Auflösung
 
 ### allow-remote-cm-modification
 
-Steuert, ob die Steuerungsseite auf das Verbindungsverwaltungsfenster klicken darf, um Verbindungen zu akzeptieren, Berechtigungen zu ändern usw.
+Steuert, ob die Steuerungsseite auf das Annahmefenster (Fenster zur Verwaltung der Verbindung) klicken darf, um Verbindungen zu akzeptieren, Berechtigungen zu ändern usw.
 
 https://github.com/rustdesk/rustdesk/issues/7425
 
 | Werte | Standard | Beispiel |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-remote-cm-modification=Y` |
+
+### enable-perm-change-in-accept-window
+
+Steuert, ob Benutzer vor dem Akzeptieren einer eingehenden Sitzung Berechtigungen im Annahmefenster (Fenster zur Verwaltung der Verbindung) ändern können.
+
+Auf dem Desktop betrifft dies alle Berechtigungen im Annahmefenster (Fenster zur Verwaltung der Verbindung). Auf Android betrifft dies Dateiübertragung, Audioaufnahme und Zwischenablage aktivieren. Bildschirmaufnahme und Eingabesteuerung sind nicht betroffen.
+
+**Vorschau**: https://github.com/rustdesk/rustdesk/pull/14875
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-perm-change-in-accept-window=Y` |
 
 ### remove-preset-password-warning
 

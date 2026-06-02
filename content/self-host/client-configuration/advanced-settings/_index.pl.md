@@ -189,6 +189,20 @@ Zezwól stronie kontrolowanej na blokowanie wejścia innych użytkowników.
 | :------: | :------: | :------: | :------: |
 | N | Y, N | Y | `enable-block-input=Y` |
 
+### enable-privacy-mode
+
+Kontroluje, czy strona kontrolowana pozwala stronie kontrolującej używać trybu prywatnego.
+
+Różni się to od [`privacy-mode`](#privacy-mode): to ustawienie określa domyślne zachowanie trybu prywatnego dla każdego partnera po pierwszym połączeniu, natomiast `enable-privacy-mode` kontroluje, czy tryb prywatny jest dozwolony.
+
+**Lokalizacja**:
+
+1. **K. stacjonarny** Ustawienia → Zabezpieczenia → Uprawnienia → Włącz tryb prywatny
+
+| Wymagana instalacja | Wartości | Domyślne | Przykład |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-privacy-mode=Y` |
+
 ### allow-remote-config-modification
 
 Zezwól stronie kontrolującej na zmianę ustawień w kontrolowanym interfejsie RustDeska.
@@ -826,12 +840,12 @@ Opcja "lock-after-session-end" w ustawieniach każdego partnera będzie wtedy ko
 
 Ta opcja ustawi opcję "privacy-mode" dla każdego peer po pierwszym połączeniu.
 
-Opcja "privacy-mode" w ustawieniach każdego z partnerów będzie wtedy decydować o tym, czy po nawiązaniu połączenia zostanie włączony tryb prywatności.
+Opcja "privacy-mode" w ustawieniach każdego z partnerów będzie wtedy decydować o tym, czy po nawiązaniu połączenia zostanie włączony tryb prywatny.
 
 **Lokalizacja**:
 
-1. **K. stacjonarny** Ustawienia → Wyświetlanie → Inne domyślne opcje → Tryb prywatności
-2. **Smartfon** Ustawienia → Ustawienia wyświetlania → Inne domyślne opcje → Tryb prywatności
+1. **K. stacjonarny** Ustawienia → Wyświetlanie → Inne domyślne opcje → Tryb prywatny
+2. **Smartfon** Ustawienia → Ustawienia wyświetlania → Inne domyślne opcje → Tryb prywatny
 
 | Wymagana instalacja | Wartości | Domyślne | Przykład |
 | :------: | :------: | :------: | :------: |
@@ -1173,13 +1187,25 @@ Dotyczy to kontrolowanego Androida. Domyślnie, gdy rozdzielczość jest większ
 
 ### allow-remote-cm-modification
 
-Kontroluje, czy strona kontrolująca może klikać okno zarządzania połączeniami w celu akceptowania połączeń, zmiany uprawnień itp.
+Kontroluje, czy strona kontrolująca może klikać okno akceptacji (okno zarządzania połączeniem) w celu akceptowania połączeń, zmiany uprawnień itp.
 
 https://github.com/rustdesk/rustdesk/issues/7425
 
 | Wartości | Domyślnie | Przykład |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-remote-cm-modification=Y` |
+
+### enable-perm-change-in-accept-window
+
+Kontroluje, czy użytkownicy mogą zmieniać uprawnienia w oknie akceptacji (oknie zarządzania połączeniem) przed zaakceptowaniem sesji przychodzącej.
+
+Na komputerze stacjonarnym dotyczy to wszystkich uprawnień w oknie akceptacji (oknie zarządzania połączeniem). W Androidzie dotyczy uprawnień: Transfer plików, Przechwytywanie dźwięku i Włącz schowek. Nie dotyczy: Przechwytywanie ekranu i Kontrola wejścia.
+
+**Podgląd**: https://github.com/rustdesk/rustdesk/pull/14875
+
+| Wartości | Domyślnie | Przykład |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-perm-change-in-accept-window=Y` |
 
 ### remove-preset-password-warning
 
