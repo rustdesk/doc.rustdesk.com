@@ -381,3 +381,41 @@ fi
 echo "Password: $rustdesk_pw"
 echo "..............................................."
 ```
+
+## Implementare explicită pentru dispozitive noi
+
+În mod implicit, un client RustDesk este înregistrat pe serverul self-hosted atunci când se conectează la server pentru prima dată. În modul normal nu este necesar niciun pas suplimentar de implementare.
+
+Dacă activați **Setări → Altele → Necesită implementare pentru dispozitive noi** în consola web a serverului, dispozitivele noi trebuie implementate explicit înainte de a se putea înregistra pe acest server.
+
+Creați un token API din consola web a serverului folosind un cont de administrator, apoi rulați comanda de implementare pe fiecare dispozitiv desktop nou după ce RustDesk a fost instalat și configurat să folosească serverul self-hosted.
+
+### Windows, macOS și Linux
+
+Pe Windows, rulați Command Prompt sau PowerShell ca administrator:
+
+```bat
+rustdesk --deploy --token <api_token>
+```
+
+Pe macOS și Linux, rulați comanda cu `sudo`:
+
+```sh
+sudo rustdesk --deploy --token <api_token>
+```
+
+### ID personalizat opțional
+
+Pentru a implementa dispozitivul cu un ID RustDesk specific, adăugați `--id <custom_id>`:
+
+```sh
+rustdesk --deploy --token <api_token> --id <custom_id>
+```
+
+Dacă ID-ul este deja folosit de o altă mașină, implementarea eșuează și RustDesk raportează că ID-ul este deja ocupat.
+
+### Android
+
+Android nu folosește fluxul de implementare din linia de comandă. Când serverul necesită implementare și clientul Android nu a fost încă implementat, RustDesk afișează o solicitare **Deploy**. Atingeți **OK**, introduceți tokenul API în dialogul de implementare și, opțional, introduceți un ID personalizat. Puteți deschide același dialog manual și din **Setări → Deploy**.
+
+După ce implementarea reușește, dispozitivul este adăugat în lista de dispozitive a serverului, iar clientul se poate înregistra normal.

@@ -381,3 +381,41 @@ fi
 echo "Contraseña: $rustdesk_pw"
 echo "..............................................."
 ```
+
+## Despliegue explícito para nuevos dispositivos
+
+De forma predeterminada, un cliente RustDesk se registra en el servidor autoalojado cuando se conecta al servidor por primera vez. En el modo normal no se requiere ningún paso adicional de despliegue.
+
+Si habilita **Configuración → Otros → Requerir despliegue para nuevos dispositivos** en la consola web del servidor, los nuevos dispositivos deben desplegarse explícitamente antes de poder registrarse en este servidor.
+
+Cree un token de API desde la consola web del servidor con una cuenta de administrador y, a continuación, ejecute el comando de despliegue en cada nuevo dispositivo de escritorio después de instalar RustDesk y configurarlo para usar su servidor autoalojado.
+
+### Windows, macOS y Linux
+
+En Windows, ejecute Símbolo del sistema o PowerShell como administrador:
+
+```bat
+rustdesk --deploy --token <api_token>
+```
+
+En macOS y Linux, ejecute el comando con `sudo`:
+
+```sh
+sudo rustdesk --deploy --token <api_token>
+```
+
+### ID personalizada opcional
+
+Para desplegar el dispositivo con un ID de RustDesk específico, agregue `--id <custom_id>`:
+
+```sh
+rustdesk --deploy --token <api_token> --id <custom_id>
+```
+
+Si el ID ya lo usa otra máquina, el despliegue falla y RustDesk informa que el ID ya está en uso.
+
+### Android
+
+Android no usa el flujo de despliegue por línea de comandos. Cuando el servidor requiere despliegue y el cliente Android aún no se ha desplegado, RustDesk muestra una solicitud **Deploy**. Toque **OK**, introduzca el token de API en el diálogo de despliegue y, opcionalmente, introduzca una ID personalizada. También puede abrir el mismo diálogo manualmente desde **Configuración → Deploy**.
+
+Después de que el despliegue se realice correctamente, el dispositivo se añade a la lista de dispositivos del servidor y el cliente puede registrarse normalmente.

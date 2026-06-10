@@ -381,3 +381,41 @@ fi
 echo "Mot de passe : $rustdesk_pw"
 echo "..............................................."
 ```
+
+## Déploiement explicite des nouveaux appareils
+
+Par défaut, un client RustDesk est enregistré sur le serveur auto-hébergé lorsqu'il se connecte au serveur pour la première fois. En mode normal, aucune étape de déploiement supplémentaire n'est requise.
+
+Si vous activez **Paramètres → Autres → Exiger le déploiement pour les nouveaux appareils** dans la console web du serveur, les nouveaux appareils doivent être déployés explicitement avant de pouvoir s'enregistrer sur ce serveur.
+
+Créez un jeton d'API depuis la console web du serveur avec un compte administrateur, puis exécutez la commande de déploiement sur chaque nouvel appareil de bureau après avoir installé RustDesk et l'avoir configuré pour utiliser votre serveur auto-hébergé.
+
+### Windows, macOS et Linux
+
+Sous Windows, exécutez l'invite de commandes ou PowerShell en tant qu'administrateur :
+
+```bat
+rustdesk --deploy --token <api_token>
+```
+
+Sous macOS et Linux, exécutez la commande avec `sudo` :
+
+```sh
+sudo rustdesk --deploy --token <api_token>
+```
+
+### ID personnalisée facultative
+
+Pour déployer l'appareil avec un ID RustDesk spécifique, ajoutez `--id <custom_id>` :
+
+```sh
+rustdesk --deploy --token <api_token> --id <custom_id>
+```
+
+Si l'ID est déjà utilisé par une autre machine, le déploiement échoue et RustDesk indique que l'ID est déjà pris.
+
+### Android
+
+Android n'utilise pas le flux de déploiement en ligne de commande. Lorsque le serveur exige un déploiement et que le client Android n'est pas encore déployé, RustDesk affiche une invite **Deploy**. Appuyez sur **OK**, saisissez le jeton d'API dans la boîte de dialogue de déploiement et, si nécessaire, saisissez un ID personnalisé. Vous pouvez également ouvrir la même boîte de dialogue manuellement depuis **Paramètres → Deploy**.
+
+Une fois le déploiement réussi, l'appareil est ajouté à la liste des appareils du serveur et le client peut s'enregistrer normalement.

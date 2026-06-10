@@ -381,3 +381,41 @@ fi
 echo "Hasło: $rustdesk_pw"
 echo "..............................................."
 ```
+
+## Jawne wdrażanie nowych urządzeń
+
+Domyślnie klient RustDesk jest rejestrowany na serwerze self-hosted przy pierwszym połączeniu z serwerem. W trybie normalnym nie jest wymagany żaden dodatkowy krok wdrożenia.
+
+Jeśli w konsoli web serwera włączysz **Ustawienia → Inne → Wymagaj wdrożenia dla nowych urządzeń**, nowe urządzenia muszą zostać jawnie wdrożone, zanim będą mogły zarejestrować się na tym serwerze.
+
+Utwórz token API w konsoli web serwera przy użyciu konta administratora, a następnie uruchom polecenie wdrożenia na każdym nowym urządzeniu desktopowym po zainstalowaniu RustDeska i skonfigurowaniu go do używania Twojego serwera self-hosted.
+
+### Windows, macOS i Linux
+
+W systemie Windows uruchom Wiersz polecenia lub PowerShell jako administrator:
+
+```bat
+rustdesk --deploy --token <api_token>
+```
+
+W systemach macOS i Linux uruchom polecenie z `sudo`:
+
+```sh
+sudo rustdesk --deploy --token <api_token>
+```
+
+### Opcjonalny niestandardowy ID
+
+Aby wdrożyć urządzenie z określonym ID RustDeska, dodaj `--id <custom_id>`:
+
+```sh
+rustdesk --deploy --token <api_token> --id <custom_id>
+```
+
+Jeśli ID jest już używany przez inną maszynę, wdrożenie nie powiedzie się, a RustDesk poinformuje, że ID jest już zajęty.
+
+### Android
+
+Android nie używa przepływu wdrażania z wiersza poleceń. Gdy serwer wymaga wdrożenia, a klient Android nie został jeszcze wdrożony, RustDesk wyświetla monit **Deploy**. Stuknij **OK**, wpisz token API w oknie dialogowym wdrożenia i opcjonalnie podaj niestandardowy ID. To samo okno dialogowe możesz też otworzyć ręcznie z **Ustawienia → Deploy**.
+
+Po pomyślnym wdrożeniu urządzenie zostanie dodane do listy urządzeń serwera, a klient będzie mógł zarejestrować się normalnie.
