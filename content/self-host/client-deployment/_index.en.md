@@ -388,3 +388,41 @@ fi
 echo "Password: $rustdesk_pw"
 echo "..............................................."
 ```
+
+## Explicit deployment for new devices
+
+By default, a RustDesk client is registered on the self-hosted server when it connects to the server for the first time. No extra deployment step is required in the normal mode.
+
+If you enable **Settings → Others → Require deployment for new devices** in the server web console, new devices must be explicitly deployed before they can register on this server.
+
+Create an [API token](/docs/en/self-host/rustdesk-server-pro/console/#api-token) from the server web console with an admin account. The token must have **Devices** permission set to **Read and write**. Then run the deployment command on each new desktop device after RustDesk has been installed and configured to use your self-hosted server.
+
+### Windows, macOS and Linux
+
+On Windows, run Command Prompt or PowerShell as Administrator:
+
+```bat
+rustdesk --deploy --token <api_token>
+```
+
+On macOS and Linux, run the command with `sudo`:
+
+```sh
+sudo rustdesk --deploy --token <api_token>
+```
+
+### Optional custom ID
+
+To deploy the device with a specific RustDesk ID, add `--id <custom_id>`:
+
+```sh
+rustdesk --deploy --token <api_token> --id <custom_id>
+```
+
+If the ID is already used by another machine, the deployment fails and RustDesk reports that the ID is already taken.
+
+### Android
+
+Android does not use the command line deployment flow. When the server requires deployment and the Android client is not yet deployed, RustDesk shows a **Deploy** prompt. Tap **OK**, enter the API token in the deployment dialog, and optionally enter a custom ID. You can also open the same dialog manually from **Settings → Deploy**.
+
+After deployment succeeds, the device is added to the server device list and the client can register normally.

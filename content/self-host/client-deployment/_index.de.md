@@ -376,3 +376,41 @@ fi
 echo "Passwort: $rustdesk_pw"
 echo "..............................................."
 ```
+
+## Explizite Bereitstellung für neue Geräte
+
+Standardmäßig wird ein RustDesk-Client auf dem selbst gehosteten Server registriert, wenn er sich zum ersten Mal mit dem Server verbindet. Im normalen Modus ist kein zusätzlicher Bereitstellungsschritt erforderlich.
+
+Wenn Sie in der Webkonsole des Servers **Einstellungen → Sonstiges → Bereitstellung für neue Geräte erforderlich** aktivieren, müssen neue Geräte explizit bereitgestellt werden, bevor sie sich auf diesem Server registrieren können.
+
+Erstellen Sie in der Webkonsole des Servers mit einem Administratorkonto ein [API-Token](/docs/en/self-host/rustdesk-server-pro/console/#api-token). Das Token muss für **Geräte** die Berechtigung **Lesen und schreiben** haben. Führen Sie anschließend den Bereitstellungsbefehl auf jedem neuen Desktop-Gerät aus, nachdem RustDesk installiert und für die Nutzung Ihres selbst gehosteten Servers konfiguriert wurde.
+
+### Windows, macOS und Linux
+
+Führen Sie unter Windows die Eingabeaufforderung oder PowerShell als Administrator aus:
+
+```bat
+rustdesk --deploy --token <api_token>
+```
+
+Führen Sie unter macOS und Linux den Befehl mit `sudo` aus:
+
+```sh
+sudo rustdesk --deploy --token <api_token>
+```
+
+### Optionale benutzerdefinierte ID
+
+Um das Gerät mit einer bestimmten RustDesk-ID bereitzustellen, fügen Sie `--id <custom_id>` hinzu:
+
+```sh
+rustdesk --deploy --token <api_token> --id <custom_id>
+```
+
+Wenn die ID bereits von einem anderen Gerät verwendet wird, schlägt die Bereitstellung fehl und RustDesk meldet, dass die ID bereits vergeben ist.
+
+### Android
+
+Android verwendet nicht den Bereitstellungsablauf über die Befehlszeile. Wenn der Server eine Bereitstellung erfordert und der Android-Client noch nicht bereitgestellt wurde, zeigt RustDesk eine Aufforderung **Bereitstellen** an. Tippen Sie auf **OK**, geben Sie im Bereitstellungsdialog das API-Token ein und geben Sie optional eine benutzerdefinierte ID ein. Sie können denselben Dialog auch manuell über **Einstellungen → Bereitstellen** öffnen.
+
+Nach erfolgreicher Bereitstellung wird das Gerät zur Geräteliste des Servers hinzugefügt und der Client kann sich normal registrieren.

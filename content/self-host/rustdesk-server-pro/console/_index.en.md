@@ -145,7 +145,7 @@ This allows assigning users, strategies, address books, or device groups to a de
 Supported Parameters
 
 | Parameter                               | Description                             | RustDesk Server Pro | RustDesk Client |
-| --------------------------------------- | --------------------------------------- | ------------------- | --------------- | ------------------- |
+| --------------------------------------- | --------------------------------------- | ------------------- | --------------- |
 | `--user_name <username>`                | Assign a user to the device             |                     |                 |
 | `--strategy_name <strategyname>`        | Assign a strategy to the device         |                     |                 |
 | `--address_book_name <addressbookname>` | Assign device to an address book        |                     |                 |
@@ -157,6 +157,7 @@ Supported Parameters
 | `--note <note>`                         | Add note to the device                  | 1.6.6               | 1.4.3           |
 | `--device_username <device_username>`   | Set the device username                 | 1.6.6               | 1.4.3           |
 | `--device_name <device_name>`           | Set the device name                     | 1.6.6               | 1.4.3           |
+| [`--deploy`](/docs/en/self-host/client-deployment/#explicit-deployment-for-new-devices) | Register a new device when **Require deployment for new devices** is enabled. Requires an API token with **Devices** permission set to **Read and write**. | 1.8.3 | 1.4.7 |
 
 The command line on Windows does not have output by default. To get output, please run like this, `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | more` or `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | Out-String`, see [here](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomment-8094952).
 

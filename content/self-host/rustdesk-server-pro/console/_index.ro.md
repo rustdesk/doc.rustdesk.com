@@ -145,6 +145,7 @@ Parametri suportati
 | `--note <note>`                         | Adaugă o notă dispozitivului           | 1.6.6               | 1.4.3           |
 | `--device_username <device_username>`   | Setează username pentru dispozitiv     | 1.6.6               | 1.4.3           |
 | `--device_name <device_name>`           | Setează numele dispozitivului          | 1.6.6               | 1.4.3           |
+| [`--deploy`](/docs/en/self-host/client-deployment/#explicit-deployment-for-new-devices) | Înregistrează un dispozitiv nou când **Necesită implementare pentru dispozitive noi** este activat. Necesită un token API cu permisiunea **Dispozitive** setată la **Citire și scriere**. | 1.8.3 | 1.4.7 |
 
 Linia de comandă pe Windows nu afișează output implicit. Pentru a obține output rulează comanda astfel: `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | more` sau `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | Out-String` (vezi discuție referință în repo).
 

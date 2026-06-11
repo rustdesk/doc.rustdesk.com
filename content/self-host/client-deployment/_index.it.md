@@ -381,3 +381,41 @@ fi
 echo "Password: $rustdesk_pw"
 echo "..............................................."
 ```
+
+## Distribuzione esplicita per nuovi dispositivi
+
+Per impostazione predefinita, un client RustDesk viene registrato sul server self-hosted quando si connette al server per la prima volta. In modalità normale non è richiesto alcun passaggio di distribuzione aggiuntivo.
+
+Se abiliti **Impostazioni → Altro → Richiedi distribuzione per i nuovi dispositivi** nella console web del server, i nuovi dispositivi devono essere distribuiti esplicitamente prima di potersi registrare su questo server.
+
+Crea un [token API](/docs/en/self-host/rustdesk-server-pro/console/#api-token) dalla console web del server con un account amministratore. Il token deve avere l'autorizzazione **Dispositivi** impostata su **Lettura e scrittura**. Quindi esegui il comando di distribuzione su ogni nuovo dispositivo desktop dopo aver installato RustDesk e averlo configurato per usare il tuo server self-hosted.
+
+### Windows, macOS e Linux
+
+Su Windows, esegui Prompt dei comandi o PowerShell come amministratore:
+
+```bat
+rustdesk --deploy --token <api_token>
+```
+
+Su macOS e Linux, esegui il comando con `sudo`:
+
+```sh
+sudo rustdesk --deploy --token <api_token>
+```
+
+### ID personalizzato opzionale
+
+Per distribuire il dispositivo con un ID RustDesk specifico, aggiungi `--id <custom_id>`:
+
+```sh
+rustdesk --deploy --token <api_token> --id <custom_id>
+```
+
+Se l'ID è già usato da un'altra macchina, la distribuzione non riesce e RustDesk segnala che l'ID è già in uso.
+
+### Android
+
+Android non usa il flusso di distribuzione da riga di comando. Quando il server richiede la distribuzione e il client Android non è ancora stato distribuito, RustDesk mostra un prompt **Deploy**. Tocca **OK**, inserisci il token API nella finestra di dialogo di distribuzione e, facoltativamente, inserisci un ID personalizzato. Puoi anche aprire manualmente la stessa finestra da **Impostazioni → Deploy**.
+
+Dopo il completamento della distribuzione, il dispositivo viene aggiunto all'elenco dei dispositivi del server e il client può registrarsi normalmente.

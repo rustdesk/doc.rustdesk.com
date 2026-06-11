@@ -145,6 +145,7 @@ Parâmetros suportados
 | `--note <note>`                         | Adiciona nota ao dispositivo             | 1.6.6             | 1.4.3           | 
 | `--device_username <device_username>`   | Define o nome de usuário do dispositivo  | 1.6.6             | 1.4.3           | 
 | `--device_name <device_name>`           | Define o nome do dispositivo             | 1.6.6             | 1.4.3           | 
+| [`--deploy`](/docs/en/self-host/client-deployment/#explicit-deployment-for-new-devices) | Registra um novo dispositivo quando **Exigir implantação para novos dispositivos** está habilitado. Requer um token de API com a permissão **Dispositivos** definida como **Leitura e gravação**. | 1.8.3 | 1.4.7 |
 
 A linha de comando no Windows não produz saída por padrão. Para obter saída, execute:
 

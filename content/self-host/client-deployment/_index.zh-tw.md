@@ -381,3 +381,41 @@ fi
 echo "密碼：$rustdesk_pw"
 echo "..............................................."
 ```
+
+## 新裝置的明確部署
+
+預設情況下，RustDesk 用戶端第一次連線到自架伺服器時，會註冊到該伺服器。一般模式下不需要額外的部署步驟。
+
+如果在伺服器 Web 控制台中啟用 **設定 → 其他 → 新裝置必須部署後註冊**，新裝置必須先明確部署，才能註冊到此伺服器。
+
+使用管理員帳號在伺服器 Web 控制台中建立 [API token](/docs/en/self-host/rustdesk-server-pro/console/#api-token)。該 token 必須具有 **裝置** 的 **讀寫** 權限。然後在每台新的桌面裝置上安裝 RustDesk，並設定為使用你的自架伺服器後，執行部署命令。
+
+### Windows、macOS 和 Linux
+
+在 Windows 上，以系統管理員身分執行命令提示字元或 PowerShell：
+
+```bat
+rustdesk --deploy --token <api_token>
+```
+
+在 macOS 和 Linux 上，使用 `sudo` 執行命令：
+
+```sh
+sudo rustdesk --deploy --token <api_token>
+```
+
+### 可選的自訂 ID
+
+如需使用指定的 RustDesk ID 部署裝置，請加入 `--id <custom_id>`：
+
+```sh
+rustdesk --deploy --token <api_token> --id <custom_id>
+```
+
+如果該 ID 已被另一台裝置使用，部署會失敗，RustDesk 會提示該 ID 已被佔用。
+
+### Android
+
+Android 不使用命令列部署流程。當伺服器要求部署且 Android 用戶端尚未部署時，RustDesk 會顯示 **部署** 提示。點選 **確定**，在部署對話框中輸入 API token，並可選擇輸入自訂 ID。也可以從 **設定 → 部署** 手動開啟同一個對話框。
+
+部署成功後，裝置會加入伺服器裝置清單中，用戶端即可正常註冊。

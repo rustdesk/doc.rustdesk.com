@@ -381,3 +381,41 @@ fi
 echo "Senha: $rustdesk_pw"
 echo "..............................................."
 ```
+
+## Implantação explícita para novos dispositivos
+
+Por padrão, um cliente RustDesk é registrado no servidor auto-hospedado quando se conecta ao servidor pela primeira vez. No modo normal, nenhuma etapa extra de implantação é necessária.
+
+Se você habilitar **Configurações → Outros → Exigir implantação para novos dispositivos** no console web do servidor, os novos dispositivos deverão ser implantados explicitamente antes de poderem se registrar neste servidor.
+
+Crie um [token de API](/docs/en/self-host/rustdesk-server-pro/console/#api-token) no console web do servidor com uma conta de administrador. O token deve ter a permissão **Dispositivos** definida como **Leitura e gravação**. Em seguida, execute o comando de implantação em cada novo dispositivo desktop depois que o RustDesk tiver sido instalado e configurado para usar seu servidor auto-hospedado.
+
+### Windows, macOS e Linux
+
+No Windows, execute o Prompt de Comando ou o PowerShell como administrador:
+
+```bat
+rustdesk --deploy --token <api_token>
+```
+
+No macOS e Linux, execute o comando com `sudo`:
+
+```sh
+sudo rustdesk --deploy --token <api_token>
+```
+
+### ID personalizado opcional
+
+Para implantar o dispositivo com um ID RustDesk específico, adicione `--id <custom_id>`:
+
+```sh
+rustdesk --deploy --token <api_token> --id <custom_id>
+```
+
+Se o ID já estiver sendo usado por outra máquina, a implantação falhará e o RustDesk informará que o ID já está em uso.
+
+### Android
+
+O Android não usa o fluxo de implantação por linha de comando. Quando o servidor exige implantação e o cliente Android ainda não foi implantado, o RustDesk mostra um prompt **Deploy**. Toque em **OK**, insira o token de API na caixa de diálogo de implantação e, opcionalmente, insira um ID personalizado. Você também pode abrir a mesma caixa de diálogo manualmente em **Configurações → Deploy**.
+
+Depois que a implantação for bem-sucedida, o dispositivo será adicionado à lista de dispositivos do servidor e o cliente poderá se registrar normalmente.
