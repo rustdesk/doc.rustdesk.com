@@ -383,7 +383,7 @@ Standardmäßig wird ein RustDesk-Client auf dem selbst gehosteten Server regist
 
 Wenn Sie in der Webkonsole des Servers **Einstellungen → Sonstiges → Bereitstellung für neue Geräte erforderlich** aktivieren, müssen neue Geräte explizit bereitgestellt werden, bevor sie sich auf diesem Server registrieren können.
 
-Erstellen Sie in der Webkonsole des Servers mit einem Administratorkonto ein API-Token. Führen Sie anschließend den Bereitstellungsbefehl auf jedem neuen Desktop-Gerät aus, nachdem RustDesk installiert und für die Nutzung Ihres selbst gehosteten Servers konfiguriert wurde.
+Erstellen Sie in der Webkonsole des Servers mit einem Administratorkonto ein [API-Token](/docs/en/self-host/rustdesk-server-pro/console/#api-token). Das Token muss für **Geräte** die Berechtigung **Lesen und schreiben** haben. Führen Sie anschließend den Bereitstellungsbefehl auf jedem neuen Desktop-Gerät aus, nachdem RustDesk installiert und für die Nutzung Ihres selbst gehosteten Servers konfiguriert wurde.
 
 ### Windows, macOS und Linux
 

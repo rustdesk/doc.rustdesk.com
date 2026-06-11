@@ -388,7 +388,7 @@ Domyślnie klient RustDesk jest rejestrowany na serwerze self-hosted przy pierws
 
 Jeśli w konsoli web serwera włączysz **Ustawienia → Inne → Wymagaj wdrożenia dla nowych urządzeń**, nowe urządzenia muszą zostać jawnie wdrożone, zanim będą mogły zarejestrować się na tym serwerze.
 
-Utwórz token API w konsoli web serwera przy użyciu konta administratora, a następnie uruchom polecenie wdrożenia na każdym nowym urządzeniu desktopowym po zainstalowaniu RustDeska i skonfigurowaniu go do używania Twojego serwera self-hosted.
+Utwórz [token API](/docs/en/self-host/rustdesk-server-pro/console/#api-token) w konsoli web serwera przy użyciu konta administratora. Token musi mieć uprawnienie **Urządzenia** ustawione na **Odczyt i zapis**. Następnie uruchom polecenie wdrożenia na każdym nowym urządzeniu desktopowym po zainstalowaniu RustDeska i skonfigurowaniu go do używania Twojego serwera self-hosted.
 
 ### Windows, macOS i Linux
 

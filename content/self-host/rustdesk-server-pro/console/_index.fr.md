@@ -145,6 +145,7 @@ Paramètres pris en charge
 | `--note <note>`                         | Ajouter une note au périphérique        | 1.6.6             | 1.4.3           | 
 | `--device_username <device_username>`   | Définir le nom d’utilisateur du périphérique | 1.6.6 | 1.4.3 | 
 | `--device_name <device_name>`           | Définir le nom du périphérique          | 1.6.6             | 1.4.3           | 
+| [`--deploy`](/docs/en/self-host/client-deployment/#explicit-deployment-for-new-devices) | Enregistrer un nouvel appareil lorsque **Exiger le déploiement pour les nouveaux appareils** est activé. Nécessite un jeton d'API avec l'autorisation **Appareils** définie sur **Lecture et écriture**. | 1.8.3 | 1.4.7 |
 
 La ligne de commande sous Windows ne produit pas de sortie par défaut. Pour obtenir une sortie, exécutez :
 

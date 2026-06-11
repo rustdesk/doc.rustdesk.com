@@ -388,7 +388,7 @@ De forma predeterminada, un cliente RustDesk se registra en el servidor autoaloj
 
 Si habilita **Configuración → Otros → Requerir despliegue para nuevos dispositivos** en la consola web del servidor, los nuevos dispositivos deben desplegarse explícitamente antes de poder registrarse en este servidor.
 
-Cree un token de API desde la consola web del servidor con una cuenta de administrador y, a continuación, ejecute el comando de despliegue en cada nuevo dispositivo de escritorio después de instalar RustDesk y configurarlo para usar su servidor autoalojado.
+Cree un [token de API](/docs/en/self-host/rustdesk-server-pro/console/#api-token) desde la consola web del servidor con una cuenta de administrador. El token debe tener el permiso **Dispositivos** configurado como **Lectura y escritura**. A continuación, ejecute el comando de despliegue en cada nuevo dispositivo de escritorio después de instalar RustDesk y configurarlo para usar su servidor autoalojado.
 
 ### Windows, macOS y Linux
 

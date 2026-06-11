@@ -388,7 +388,7 @@ Par défaut, un client RustDesk est enregistré sur le serveur auto-hébergé lo
 
 Si vous activez **Paramètres → Autres → Exiger le déploiement pour les nouveaux appareils** dans la console web du serveur, les nouveaux appareils doivent être déployés explicitement avant de pouvoir s'enregistrer sur ce serveur.
 
-Créez un jeton d'API depuis la console web du serveur avec un compte administrateur, puis exécutez la commande de déploiement sur chaque nouvel appareil de bureau après avoir installé RustDesk et l'avoir configuré pour utiliser votre serveur auto-hébergé.
+Créez un [jeton d'API](/docs/en/self-host/rustdesk-server-pro/console/#api-token) depuis la console web du serveur avec un compte administrateur. Le jeton doit avoir l'autorisation **Appareils** définie sur **Lecture et écriture**. Exécutez ensuite la commande de déploiement sur chaque nouvel appareil de bureau après avoir installé RustDesk et l'avoir configuré pour utiliser votre serveur auto-hébergé.
 
 ### Windows, macOS et Linux
 

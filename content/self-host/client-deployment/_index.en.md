@@ -395,7 +395,7 @@ By default, a RustDesk client is registered on the self-hosted server when it co
 
 If you enable **Settings → Others → Require deployment for new devices** in the server web console, new devices must be explicitly deployed before they can register on this server.
 
-Create an API token from the server web console with an admin account, then run the deployment command on each new desktop device after RustDesk has been installed and configured to use your self-hosted server.
+Create an [API token](/docs/en/self-host/rustdesk-server-pro/console/#api-token) from the server web console with an admin account. The token must have **Devices** permission set to **Read and write**. Then run the deployment command on each new desktop device after RustDesk has been installed and configured to use your self-hosted server.
 
 ### Windows, macOS and Linux
 

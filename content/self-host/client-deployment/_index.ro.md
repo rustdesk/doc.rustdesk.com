@@ -388,7 +388,7 @@ echo "..............................................."
 
 Dacă activați **Setări → Altele → Necesită implementare pentru dispozitive noi** în consola web a serverului, dispozitivele noi trebuie implementate explicit înainte de a se putea înregistra pe acest server.
 
-Creați un token API din consola web a serverului folosind un cont de administrator, apoi rulați comanda de implementare pe fiecare dispozitiv desktop nou după ce RustDesk a fost instalat și configurat să folosească serverul self-hosted.
+Creați un [token API](/docs/en/self-host/rustdesk-server-pro/console/#api-token) din consola web a serverului folosind un cont de administrator. Tokenul trebuie să aibă permisiunea **Dispozitive** setată la **Citire și scriere**. Apoi rulați comanda de implementare pe fiecare dispozitiv desktop nou după ce RustDesk a fost instalat și configurat să folosească serverul self-hosted.
 
 ### Windows, macOS și Linux
 

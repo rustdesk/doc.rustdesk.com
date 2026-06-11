@@ -388,7 +388,7 @@ Por padrão, um cliente RustDesk é registrado no servidor auto-hospedado quando
 
 Se você habilitar **Configurações → Outros → Exigir implantação para novos dispositivos** no console web do servidor, os novos dispositivos deverão ser implantados explicitamente antes de poderem se registrar neste servidor.
 
-Crie um token de API no console web do servidor com uma conta de administrador e, em seguida, execute o comando de implantação em cada novo dispositivo desktop depois que o RustDesk tiver sido instalado e configurado para usar seu servidor auto-hospedado.
+Crie um [token de API](/docs/en/self-host/rustdesk-server-pro/console/#api-token) no console web do servidor com uma conta de administrador. O token deve ter a permissão **Dispositivos** definida como **Leitura e gravação**. Em seguida, execute o comando de implantação em cada novo dispositivo desktop depois que o RustDesk tiver sido instalado e configurado para usar seu servidor auto-hospedado.
 
 ### Windows, macOS e Linux
 

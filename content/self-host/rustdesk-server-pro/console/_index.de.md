@@ -144,6 +144,7 @@ Unterstützte Parameter
 | `--note <note>`                         | Fügt dem Gerät eine Notiz hinzu                    | 1.6.6               | 1.4.3           |
 | `--device_username <device_username>`   | Legt den Gerätenutzernamen fest                    | 1.6.6               | 1.4.3           |
 | `--device_name <device_name>`           | Legt den Gerätenamen fest                          | 1.6.6               | 1.4.3           |
+| [`--deploy`](/docs/en/self-host/client-deployment/#explicit-deployment-for-new-devices) | Registriert ein neues Gerät, wenn **Bereitstellung für neue Geräte erforderlich** aktiviert ist. Erfordert ein API-Token mit der Berechtigung **Geräte** auf **Lesen und schreiben**. | 1.8.3 | 1.4.7 |
 
 In der Windows-Befehlszeile wird standardmäßig keine Ausgabe angezeigt.  
 Um eine Ausgabe zu erhalten, führe den Befehl wie folgt aus:  

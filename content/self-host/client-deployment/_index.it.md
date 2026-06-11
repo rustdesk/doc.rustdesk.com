@@ -388,7 +388,7 @@ Per impostazione predefinita, un client RustDesk viene registrato sul server sel
 
 Se abiliti **Impostazioni → Altro → Richiedi distribuzione per i nuovi dispositivi** nella console web del server, i nuovi dispositivi devono essere distribuiti esplicitamente prima di potersi registrare su questo server.
 
-Crea un token API dalla console web del server con un account amministratore, quindi esegui il comando di distribuzione su ogni nuovo dispositivo desktop dopo aver installato RustDesk e averlo configurato per usare il tuo server self-hosted.
+Crea un [token API](/docs/en/self-host/rustdesk-server-pro/console/#api-token) dalla console web del server con un account amministratore. Il token deve avere l'autorizzazione **Dispositivi** impostata su **Lettura e scrittura**. Quindi esegui il comando di distribuzione su ogni nuovo dispositivo desktop dopo aver installato RustDesk e averlo configurato per usare il tuo server self-hosted.
 
 ### Windows, macOS e Linux
 

@@ -146,6 +146,7 @@ Obsługiwane parametry
 | `--note <note>`                         | Dodaj notatkę do urządzenia              | 1.6.6             | 1.4.3           | 
 | `--device_username <device_username>`   | Ustaw nazwę użytkownika urządzenia       | 1.6.6             | 1.4.3           | 
 | `--device_name <device_name>`           | Ustaw nazwę urządzenia                    | 1.6.6             | 1.4.3           | 
+| [`--deploy`](/docs/en/self-host/client-deployment/#explicit-deployment-for-new-devices) | Rejestruje nowe urządzenie, gdy włączono **Wymagaj wdrożenia dla nowych urządzeń**. Wymaga tokenu API z uprawnieniem **Urządzenia** ustawionym na **Odczyt i zapis**. | 1.8.3 | 1.4.7 |
 
 Wiersz poleceń w systemie Windows nie wyświetla domyślnie żadnego outputu. Aby go otrzymać, użyj:
 
@@ -586,6 +587,7 @@ Obsługiwane parametry
 | `--note <note>`                         | Dodaj notatkę do urządzenia              | 1.6.6             | 1.4.3           | 
 | `--device_username <device_username>`   | Ustaw nazwę użytkownika urządzenia       | 1.6.6             | 1.4.3           | 
 | `--device_name <device_name>`           | Ustaw nazwę urządzenia                    | 1.6.6             | 1.4.3           | 
+| [`--deploy`](/docs/en/self-host/client-deployment/#explicit-deployment-for-new-devices) | Rejestruje nowe urządzenie, gdy włączono **Wymagaj wdrożenia dla nowych urządzeń**. Wymaga tokenu API z uprawnieniem **Urządzenia** ustawionym na **Odczyt i zapis**. | 1.8.3 | 1.4.7 |
 
 Wiersz poleceń w systemie Windows nie wyświetla domyślnie żadnego outputu. Aby go otrzymać, użyj:
 
