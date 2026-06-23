@@ -441,6 +441,8 @@ Standardwerte:
 
 Automatische Updates zulassen. Wenn aktiviert, lädt der Client automatisch die neueste Version von den offiziellen GitHub-Releases herunter und installiert sie, wenn eine neue Version verfügbar ist.
 
+Diese Einstellung gilt nur unter Windows, wenn Verbindungstyp auf Bidirektional oder Eingehend gesetzt ist. Sie gilt nicht für Ausgehend.
+
 **Ort**:
 
 1. **Windows** Einstellungen → Allgemein → Sonstiges → Automatische Updates

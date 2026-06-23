@@ -451,6 +451,8 @@ Default values:
 
 Allow automatic updates. When enabled, the client will automatically download and install the latest version from GitHub official releases when a new version is available.
 
+This setting only applies on Windows when Connection type is set to Bidirectional or Incoming. It does not apply to Outgoing.
+
 **Location**:
 
 1. **Windows** Settings → General → Other → Auto update

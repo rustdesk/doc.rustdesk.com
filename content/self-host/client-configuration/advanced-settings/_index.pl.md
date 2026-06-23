@@ -442,6 +442,8 @@ Domyślne wartości:
 
 Zezwalaj na automatyczne aktualizacje. Po włączeniu klient automatycznie pobierze i zainstaluje najnowszą wersję z oficjalnych wydań GitHub, gdy będzie dostępna nowa wersja.
 
+To ustawienie działa tylko w systemie Windows, gdy typ połączenia jest ustawiony na dwukierunkowe lub przychodzące. Nie działa dla połączeń wychodzących.
+
 **Lokalizacja**:
 
 1. **Windows** Ustawienia → Ogólne → Inne → Automatyczna aktualizacja

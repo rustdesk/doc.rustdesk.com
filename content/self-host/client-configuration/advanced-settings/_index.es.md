@@ -441,6 +441,8 @@ Valores predeterminados:
 
 Permitir actualizaciones automáticas. Cuando está habilitado, el cliente descargará e instalará automáticamente la última versión de las versiones oficiales de GitHub cuando haya una nueva versión disponible.
 
+Esta configuración solo se aplica en Windows cuando Tipo de conexión está establecido en Bidireccional o Entrante. No se aplica a Saliente.
+
 **Ubicación**:
 
 1. **Windows** Configuración → General → Otro → Actualización automática

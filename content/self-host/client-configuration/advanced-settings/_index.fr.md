@@ -441,6 +441,8 @@ Valeurs par défaut :
 
 Autoriser les mises à jour automatiques. Lorsque cette option est activée, le client téléchargera et installera automatiquement la dernière version à partir des versions officielles de GitHub lorsqu'une nouvelle version est disponible.
 
+Ce paramètre s'applique uniquement sous Windows lorsque Type de connexion est défini sur Bidirectionnel ou Entrant. Il ne s'applique pas à Sortant.
+
 **Emplacement** :
 
 1. **Windows** Paramètres → Général → Autre → Mise à jour automatique
