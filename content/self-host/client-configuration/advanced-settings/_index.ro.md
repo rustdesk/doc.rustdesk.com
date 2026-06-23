@@ -442,6 +442,8 @@ Valori implicite:
 
 Permite actualizări automate. Când este activat, clientul va descărca și instala automat cea mai recentă versiune din versiunile oficiale GitHub când este disponibilă o nouă versiune.
 
+Această setare se aplică numai pe Windows când tipul de conexiune este setat la bidirecțional sau de intrare. Nu se aplică pentru ieșire.
+
 **Locație**:
 
 1. **Windows** Settings → General → Other → Auto update

@@ -441,6 +441,8 @@ Valori predefiniti:
 
 Consenti aggiornamenti automatici. Quando abilitato, il client scaricherà e installerà automaticamente l'ultima versione dalle release ufficiali di GitHub quando è disponibile una nuova versione.
 
+Questa impostazione si applica solo su Windows quando Tipo di connessione è impostato su Bidirezionale o In entrata. Non si applica a In uscita.
+
 **Posizione**:
 
 1. **Windows** Impostazioni → Generale → Altro → Aggiornamento automatico

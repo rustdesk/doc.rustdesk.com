@@ -442,6 +442,8 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 允許自動更新。啟用後，當有新版本發布時，用戶端會自動從 GitHub 官方發布頁面下載並安裝最新版本。
 
+此設定僅在 Windows 下，且連線類型設為雙向 (Bidirectional) 或入站 (Incoming) 時生效，對出站 (Outgoing) 不生效。
+
 **位置**：
 
 1. **Windows** 設定 → 一般 → 其他 → 自動更新
