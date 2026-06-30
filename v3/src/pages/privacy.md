@@ -4,7 +4,7 @@ description: 'Read the RustDesk privacy policy covering website usage, cookies, 
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-This Privacy Policy (hereinafter the “**Policy**”) governs the terms and conditions under which Purslane Ltd. (hereinafter “**us**” or “**we**”), processes personal data in connection with the activities and services concerning the operation of the website rustdesk.com and other websites or social media profiles run and managed by us (hereinafter the “**Websites**”).
+This Privacy Policy (hereinafter the “**Policy**”) governs the terms and conditions under which Purslane Tech Pte. Ltd. (hereinafter “**us**” or “**we**”), processes personal data in connection with the activities and services concerning the operation of the website rustdesk.com and other websites or social media profiles run and managed by us (hereinafter the “**Websites**”).
 
 We are serious about protecting your personal data and want you to feel safe and comfortable while browsing our Websites. We therefore respect the confidentiality of your personal data and always proceed in accordance with the provisions of data protection legislation, in particular, Regulation (EU) 2016/679 of the European Parliament and of the Council (General Data Protection Regulation, hereinafter the “**GDPR**”), and follow this Policy.
 
