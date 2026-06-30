@@ -4,7 +4,7 @@ description: 'Review the RustDesk software terms and conditions, including licen
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-This Agreement (“Agreement”) is a legal agreement between you (either an individual or an entity) and PURSLANE LTD. (“Company”) and applies to your use of the Software (“Software”) provided by Company. By accessing or using the Software, you agree to be bound by the terms and conditions of this Agreement. If you do not agree to the terms and conditions of this Agreement, do not use the Software.
+This Agreement (“Agreement”) is a legal agreement between you (either an individual or an entity) and Purslane Tech Pte. Ltd. (“Company”) and applies to your use of the Software (“Software”) provided by Company. By accessing or using the Software, you agree to be bound by the terms and conditions of this Agreement. If you do not agree to the terms and conditions of this Agreement, do not use the Software.
 
 ## 1. License
 Company grants you a limited, non-exclusive, non-transferable, revocable license to use the Software for your personal or internal business use, subject to the terms and conditions of this Agreement. You are not allowed to rent, lease, lend, sell, redistribute, or sublicense the Software or any part of it.
