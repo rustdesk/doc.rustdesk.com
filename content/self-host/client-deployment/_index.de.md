@@ -342,10 +342,10 @@ fi
 echo "Installieren von RustDesk"
 if [ "${ID}" = "debian" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Debian" ] || [ "${UPSTREAM_ID}" = "ubuntu" ] || [ "${UPSTREAM_ID}" = "debian" ]; then
     wget https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.deb
-    apt-get install -fy ./rustdesk-1.2.3-x86_64.deb > null
+    apt-get install -fy ./rustdesk-1.2.3-x86_64.deb > /dev/null
 elif [ "$OS" = "CentOS" ] || [ "$OS" = "RedHat" ] || [ "$OS" = "Fedora Linux" ] || [ "${UPSTREAM_ID}" = "rhel" ] || [ "$OS" = "Almalinux" ] || [ "$OS" = "Rocky*" ] ; then
     wget https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-0.x86_64.rpm
-    yum localinstall ./rustdesk-1.2.3-0.x86_64.rpm -y > null
+    yum localinstall ./rustdesk-1.2.3-0.x86_64.rpm -y > /dev/null
 else
     echo "Nicht unterstütztes OS"
     # Hier könnten Sie den Benutzer um Erlaubnis bitten, die Installation trotzdem zu versuchen
