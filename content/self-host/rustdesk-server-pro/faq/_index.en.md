@@ -192,7 +192,7 @@ sudo systemctl stop rustdesk-hbbr.service
 sudo systemctl disable rustdesk-hbbr.service
 sudo systemctl daemon-reload
 sudo rm /etc/systemd/system/rustdesk-hbbs.service
-sudo rm etc/systemd/system/rustdesk-hbbr.service
+sudo rm /etc/systemd/system/rustdesk-hbbr.service
 sudo rm /usr/bin/hbbs
 sudo rm /usr/bin/hbbr
 sudo rm -rf /var/lib/rustdesk-server/
