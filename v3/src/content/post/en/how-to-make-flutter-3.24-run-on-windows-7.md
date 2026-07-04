@@ -1,5 +1,7 @@
 ---
 publishDate: 2024-12-02T00:00:00Z
+lang: en
+translationKey: how-to-make-flutter-3-24-run-on-windows-7
 title: How to make Flutter 3.24 run on Windows 7?
 excerpt: Since Flutter 3.22 starts to drop support for Windows 7 / 8, we need to modify Flutter engine to restore support for Windows 7.
 image: ~/assets/images/blog/flutter-win7.png
@@ -40,4 +42,3 @@ To make Flutter 3.24.5 run on Windows 7, we need to revert some key modification
 For full implementation, please check [our CI](https://github.com/rustdesk/engine/blob/main/.github/workflows/flutter-engine-windows-x64-release-build.yml).
 
 [Here](https://github.com/rustdesk/rustdesk/blob/dea99ffb3ab34fee562090d214af419b557debdf/.github/workflows/flutter-build.yml#L109) is how we apply the modified engine to our project.
-

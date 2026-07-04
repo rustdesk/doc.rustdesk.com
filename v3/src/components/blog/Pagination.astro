@@ -2,15 +2,20 @@
 import { Icon } from 'astro-icon/components';
 import { getPermalink } from '~/utils/permalinks';
 import Button from '~/components/ui/Button.astro';
+import { getBlogCopy } from '@/i18n/blog';
+import type { Lang } from '@/i18n';
 
 export interface Props {
   prevUrl?: string;
   nextUrl?: string;
   prevText?: string;
   nextText?: string;
+  lang?: Lang;
 }
 
-const { prevUrl, nextUrl, prevText = 'Newer posts', nextText = 'Older posts' } = Astro.props;
+const { lang = Astro.currentLocale as Lang } = Astro.props;
+const copy = getBlogCopy(lang);
+const { prevUrl, nextUrl, prevText = copy.newerPosts, nextText = copy.olderPosts } = Astro.props;
 ---
 
 {

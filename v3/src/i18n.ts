@@ -69,7 +69,7 @@ export function getLocalePaths(url: URL): LocalePath[] {
     };
   });
 }
-type LocalePath = {
+export type LocalePath = {
   lang: Lang;
   path: string;
 };

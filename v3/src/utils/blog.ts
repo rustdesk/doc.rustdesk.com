@@ -4,17 +4,21 @@ import type { CollectionEntry } from 'astro:content';
 import type { Post } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
+import { LOCALES, type Lang } from '@/i18n';
+import { buildPostAlternates, localizedPath, validatePostTranslations } from './blog-i18n.mjs';
 
 const generatePermalink = async ({
   id,
   slug,
   publishDate,
   category,
+  lang,
 }: {
   id: string;
   slug: string;
   publishDate: Date;
   category: string | undefined;
+  lang: Lang;
 }) => {
   const year = String(publishDate.getFullYear()).padStart(4, '0');
   const month = String(publishDate.getMonth() + 1).padStart(2, '0');
@@ -33,11 +37,13 @@ const generatePermalink = async ({
     .replace('%minute%', minute)
     .replace('%second%', second);
 
-  return permalink
+  const path = permalink
     .split('/')
     .map((el) => trimSlash(el))
     .filter((el) => !!el)
     .join('/');
+
+  return trimSlash(localizedPath(lang, path));
 };
 
 const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
@@ -55,9 +61,11 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
     author,
     draft = false,
     metadata = {},
+    lang,
+    translationKey,
   } = data;
 
-  const slug = cleanSlug(rawSlug); // cleanSlug(rawSlug.split('/').pop());
+  const slug = cleanSlug(rawSlug.split('/').pop());
   const publishDate = new Date(rawPublishDate);
   const updateDate = rawUpdateDate ? new Date(rawUpdateDate) : undefined;
 
@@ -75,8 +83,10 @@ const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> =
 
   return {
     id: id,
+    lang,
+    translationKey,
     slug: slug,
-    permalink: await generatePermalink({ id, slug, publishDate, category: category?.slug }),
+    permalink: await generatePermalink({ id, slug, publishDate, category: category?.slug, lang }),
 
     publishDate: publishDate,
     updateDate: updateDate,
@@ -108,6 +118,8 @@ const load = async function (): Promise<Array<Post>> {
     .sort((a, b) => b.publishDate.valueOf() - a.publishDate.valueOf())
     .filter((post) => !post.draft);
 
+  validatePostTranslations(results, Object.keys(LOCALES));
+
   return results;
 };
 
@@ -129,12 +141,12 @@ export const blogTagRobots = APP_BLOG.tag.robots;
 export const blogPostsPerPage = APP_BLOG?.postsPerPage;
 
 /** */
-export const fetchPosts = async (): Promise<Array<Post>> => {
+export const fetchPosts = async (lang?: Lang): Promise<Array<Post>> => {
   if (!_posts) {
     _posts = await load();
   }
 
-  return _posts;
+  return lang ? _posts.filter((post) => post.lang === lang) : _posts;
 };
 
 /** */
@@ -166,9 +178,9 @@ export const findPostsByIds = async (ids: Array<string>): Promise<Array<Post>> =
 };
 
 /** */
-export const findLatestPosts = async ({ count }: { count?: number }): Promise<Array<Post>> => {
+export const findLatestPosts = async ({ count, lang }: { count?: number; lang?: Lang }): Promise<Array<Post>> => {
   const _count = count || 4;
-  const posts = await fetchPosts();
+  const posts = await fetchPosts(lang);
 
   return posts ? posts.slice(0, _count) : [];
 };
@@ -176,10 +188,17 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
 /** */
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
-  return paginate(await fetchPosts(), {
-    params: { blog: BLOG_BASE || undefined },
-    pageSize: blogPostsPerPage,
-  });
+  const posts = await fetchPosts();
+  return (Object.keys(LOCALES) as Lang[]).flatMap((lang) =>
+    paginate(
+      posts.filter((post) => post.lang === lang),
+      {
+        params: { blog: trimSlash(localizedPath(lang, BLOG_BASE)) || undefined },
+        pageSize: blogPostsPerPage,
+        props: { lang },
+      }
+    )
+  );
 };
 
 /** */
@@ -201,20 +220,25 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
   const categories = {};
   posts.map((post) => {
     if (post.category?.slug) {
-      categories[post.category?.slug] = post.category;
+      categories[`${post.lang}:${post.category.slug}`] = post.category;
     }
   });
 
-  return Array.from(Object.keys(categories)).flatMap((categorySlug) =>
-    paginate(
-      posts.filter((post) => post.category?.slug && categorySlug === post.category?.slug),
+  return Array.from(Object.keys(categories)).flatMap((categoryKey) => {
+    const separator = categoryKey.indexOf(':');
+    const lang = categoryKey.slice(0, separator) as Lang;
+    const categorySlug = categoryKey.slice(separator + 1);
+    return paginate(
+      posts.filter(
+        (post) => post.lang === lang && post.category?.slug && categorySlug === post.category.slug
+      ),
       {
-        params: { category: categorySlug, blog: CATEGORY_BASE || undefined },
+        params: { category: categorySlug, blog: trimSlash(localizedPath(lang, CATEGORY_BASE)) || undefined },
         pageSize: blogPostsPerPage,
-        props: { category: categories[categorySlug] },
+        props: { category: categories[categoryKey], lang },
       }
-    )
-  );
+    );
+  });
 };
 
 /** */
@@ -226,30 +250,35 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
   posts.map((post) => {
     if (Array.isArray(post.tags)) {
       post.tags.map((tag) => {
-        tags[tag?.slug] = tag;
+        tags[`${post.lang}:${tag?.slug}`] = tag;
       });
     }
   });
 
-  return Array.from(Object.keys(tags)).flatMap((tagSlug) =>
-    paginate(
-      posts.filter((post) => Array.isArray(post.tags) && post.tags.find((elem) => elem.slug === tagSlug)),
+  return Array.from(Object.keys(tags)).flatMap((tagKey) => {
+    const separator = tagKey.indexOf(':');
+    const lang = tagKey.slice(0, separator) as Lang;
+    const tagSlug = tagKey.slice(separator + 1);
+    return paginate(
+      posts.filter(
+        (post) => post.lang === lang && Array.isArray(post.tags) && post.tags.find((tag) => tag.slug === tagSlug)
+      ),
       {
-        params: { tag: tagSlug, blog: TAG_BASE || undefined },
+        params: { tag: tagSlug, blog: trimSlash(localizedPath(lang, TAG_BASE)) || undefined },
         pageSize: blogPostsPerPage,
-        props: { tag: tags[tagSlug] },
+        props: { tag: tags[tagKey], lang },
       }
-    )
-  );
+    );
+  });
 };
 
 /** */
 export async function getRelatedPosts(originalPost: Post, maxResults: number = 4): Promise<Post[]> {
-  const allPosts = await fetchPosts();
+  const allPosts = (await fetchPosts()).filter((post) => post.lang === originalPost.lang);
   const originalTagsSet = new Set(originalPost.tags ? originalPost.tags.map((tag) => tag.slug) : []);
 
   const postsWithScores = allPosts.reduce((acc: { post: Post; score: number }[], iteratedPost: Post) => {
-    if (iteratedPost.slug === originalPost.slug) return acc;
+    if (iteratedPost.translationKey === originalPost.translationKey) return acc;
 
     let score = 0;
     if (iteratedPost.category && originalPost.category && iteratedPost.category.slug === originalPost.category.slug) {
@@ -279,3 +308,6 @@ export async function getRelatedPosts(originalPost: Post, maxResults: number = 4
 
   return selectedPosts;
 }
+
+export const getPostAlternates = async (post: Post) =>
+  buildPostAlternates(post, await fetchPosts(), Object.keys(LOCALES) as Lang[]);

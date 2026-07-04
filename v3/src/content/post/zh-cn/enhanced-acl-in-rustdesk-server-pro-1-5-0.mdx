@@ -1,0 +1,29 @@
+---
+publishDate: 2025-02-19T00:00:00Z
+lang: zh-cn
+translationKey: enhanced-acl-in-rustdesk-server-pro-1-5-0
+title: RustDesk Server Pro 1.5.0 增强 ACL
+excerpt: RustDesk Server Pro 现已在用户组之外支持用户级 ACL 和设备组。
+image: ~/assets/images/blog/device-group.png
+category: 发布
+slug: rustdesk-server-pro-1-5-0-zeng-qiang-acl
+tags:
+  - RustDesk Server Pro
+  - 发布
+---
+
+RustDesk Server Pro 1.5.0 现已发布。
+
+## 更新日志
+
+* 新增设备组及其 ACL
+* 新增用户级细粒度 ACL
+* 新增设备组策略
+* 新增可排序表格
+* 当电子邮件冲突时，OIDC 会关联旧账户
+* ID 中允许使用 `-`（连字符）
+* 修复 OIDC 名称为空时的失败问题
+
+设备组是 RustDesk Server Pro 1.5.0 的一项新功能。此前，RustDesk 注重简洁，没有引入设备组，而是仅依靠用户组管理 ACL（访问控制列表）。但在大型组织中，这种方式会让访问权限配置变得繁琐。因此，我们在 1.5.0 中加入了设备组和用户级 ACL。现在可以对设备进行分组并向组应用策略，从而显著改善大规模环境中的设备管理。
+
+RustDesk Server Pro 原先只支持用户组，本次更新后也支持设备组。每台设备除了关联一个用户外，还可以分配到一个设备组。这样便可根据设备组实施额外策略，例如限制或允许访问特定设备。此外，本版本加入了用户级 ACL，可在用户组之外为单个用户设置权限，让访问管理更加灵活、可控。

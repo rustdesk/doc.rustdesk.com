@@ -1,0 +1,27 @@
+---
+publishDate: 2025-02-19T00:00:00Z
+lang: de
+translationKey: enhanced-acl-in-rustdesk-server-pro-1-5-0
+title: Erweiterte ACL in RustDesk Server Pro 1.5.0
+excerpt: RustDesk Server Pro unterstützt jetzt zusätzlich zu Benutzergruppen benutzerspezifische ACLs und Gerätegruppen.
+image: ~/assets/images/blog/device-group.png
+category: Veröffentlichung
+slug: erweiterte-acl-in-rustdesk-server-pro-1-5-0
+tags: [RustDesk Server Pro, Veröffentlichung]
+---
+
+RustDesk Server Pro 1.5.0 ist jetzt verfügbar.
+
+## Änderungsprotokoll
+
+* Gerätegruppen und deren ACL hinzugefügt
+* Feingranulare ACLs auf Benutzerebene hinzugefügt
+* Strategien für Gerätegruppen hinzugefügt
+* Sortierbare Tabellen hinzugefügt
+* OIDC verknüpft bei einem E-Mail-Konflikt das alte Konto
+* `-` (Bindestrich) in IDs erlaubt
+* Fehler bei einem leeren OIDC-Namen behoben
+
+Gerätegruppen sind eine neue Funktion in RustDesk Server Pro 1.5.0. Bisher setzte RustDesk zugunsten der Einfachheit ausschließlich auf Benutzergruppen zur Verwaltung von ACLs (Access Control Lists). In großen Organisationen wurde die Konfiguration von Zugriffsrechten dadurch jedoch umständlich. Deshalb führen wir in Version 1.5.0 Gerätegruppen und ACLs auf Benutzerebene ein. Geräte lassen sich nun gruppieren und Richtlinien auf diese Gruppen anwenden, was die Verwaltung großer Umgebungen deutlich verbessert.
+
+Zuvor unterstützte RustDesk Server Pro nur Benutzergruppen; nun werden auch Gerätegruppen unterstützt. Jedes Gerät kann zusätzlich zu seinem Benutzer genau einer Gerätegruppe zugeordnet werden. Damit lassen sich weitere Richtlinien umsetzen, etwa der Zugriff auf bestimmte Geräte einschränken oder erlauben. ACLs auf Benutzerebene ermöglichen außerdem individuelle Berechtigungen zusätzlich zu Benutzergruppen und bieten so mehr Flexibilität und Kontrolle.

@@ -7,10 +7,14 @@ import Announcement from '~/components/widgets/Announcement.astro';
 import { headerData, footerData } from '~/navigation';
 
 import type { MetaData } from '~/types';
+import type { Lang, LocalePath } from '@/i18n';
 
 export interface Props {
   metadata?: MetaData;
   i18n?: boolean;
+  lang?: Lang;
+  localePaths?: LocalePath[];
+  alternateLinks?: LocalePath[];
   structuredDataType?: 'website' | 'article' | 'software' | 'faq';
   articleData?: {
     title: string;
@@ -24,20 +28,38 @@ export interface Props {
   faqItems?: Array<{ question: string; answer: string }>;
 }
 
-const { metadata, i18n, structuredDataType, articleData, faqItems } = Astro.props;
+const { metadata, i18n, lang, localePaths, alternateLinks, structuredDataType, articleData, faqItems } = Astro.props;
+const locale = lang || (Astro.currentLocale as Lang);
 ---
 
-<Layout metadata={metadata} i18n={i18n} structuredDataType={structuredDataType} articleData={articleData} faqItems={faqItems}>
+<Layout
+  metadata={metadata}
+  i18n={i18n}
+  lang={locale}
+  localePaths={localePaths}
+  alternateLinks={alternateLinks}
+  structuredDataType={structuredDataType}
+  articleData={articleData}
+  faqItems={faqItems}
+>
   <slot name="announcement">
-    <Announcement />
+    <Announcement lang={locale} />
   </slot>
   <slot name="header">
-    <Header {...headerData(Astro.currentLocale)} isSticky showGithubStar showToggleTheme i18n={i18n} />
+    <Header
+      {...headerData(locale)}
+      isSticky
+      showGithubStar
+      showToggleTheme
+      i18n={i18n}
+      lang={locale}
+      localePaths={localePaths}
+    />
   </slot>
   <main>
     <slot />
   </main>
   <slot name="footer">
-    <Footer {...footerData(Astro.currentLocale) as FD} />
+    <Footer {...footerData(locale) as FD} />
   </slot>
 </Layout>

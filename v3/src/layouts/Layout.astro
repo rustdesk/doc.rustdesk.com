@@ -19,13 +19,16 @@ import { DEFAULT_SITE_DESCRIPTION } from '~/utils/seo';
 // Comment the line below to disable View Transitions
 import { ViewTransitions } from 'astro:transitions';
 
-import { useTranslations, getLocalePaths, LOCALES, DEFAULT_LOCALE, type Lang } from '@/i18n';
+import { useTranslations, getLocalePaths, LOCALES, DEFAULT_LOCALE, type Lang, type LocalePath } from '@/i18n';
 
 import type { MetaData as MetaDataType } from '~/types';
 
 export interface Props {
   metadata?: MetaDataType;
   i18n?: boolean;
+  lang?: Lang;
+  localePaths?: LocalePath[];
+  alternateLinks?: LocalePath[];
   structuredDataType?: 'website' | 'article' | 'software' | 'faq';
   articleData?: {
     title: string;
@@ -39,13 +42,25 @@ export interface Props {
   faqItems?: Array<{ question: string; answer: string }>;
 }
 
-const { metadata = {}, i18n, structuredDataType = 'website', articleData, faqItems } = Astro.props;
+const {
+  metadata = {},
+  i18n,
+  lang: pageLocale,
+  localePaths,
+  alternateLinks,
+  structuredDataType = 'website',
+  articleData,
+  faqItems,
+} = Astro.props;
 const { language, textDirection } = I18N;
-const t = useTranslations(Astro.currentLocale as Lang);
 const langs = Object.keys(LOCALES);
 const baseUrl = import.meta.env.PROD ? Astro.site : '/';
 const defaultLocale = DEFAULT_LOCALE;
-const locale = Astro.currentLocale as Lang;
+const locale = pageLocale || (Astro.currentLocale as Lang) || defaultLocale;
+const t = useTranslations(locale);
+const resolvedAlternateLinks = alternateLinks ?? localePaths ?? getLocalePaths(Astro.url);
+const defaultAlternate = resolvedAlternateLinks.find(({ lang }) => lang === defaultLocale);
+const stripDefaultLocalePrefix = (path: string) => path.replace(new RegExp(`^/${defaultLocale}(?=/|$)`), '');
 
 metadata.description ||= (t({
   en: "RustDesk offers an open-source remote desktop solution with self-hosted server options. Perfect TeamViewer alternative for secure, private, and customizable remote access. Explore our professional on-premise licenses.",
@@ -77,24 +92,24 @@ metadata.description ||= (t({
     <ViewTransitions fallback="swap" />
     {
       i18n &&
-        getLocalePaths(Astro.url).map(({ path, lang }) => (
+        resolvedAlternateLinks.map(({ path, lang }) => (
           <link
             rel="alternate"
             hreflang={LOCALES[lang].lang || lang}
-            href={Astro.site?.origin + path.replace('/' + defaultLocale, '').replace(/\/$/, '')}
+            href={Astro.site?.origin + stripDefaultLocalePrefix(path).replace(/\/$/, '')}
           />
         ))
     }
     {
-      i18n && (
+      i18n && defaultAlternate && (
         <link
           rel="alternate"
           hreflang="x-default"
-          href={Astro.site?.origin + Astro.url.pathname.replace('/' + defaultLocale, '').replace(/\/$/, '')}
+          href={Astro.site?.origin + stripDefaultLocalePrefix(defaultAlternate.path).replace(/\/$/, '')}
         />
       )
     }
-    { i18n && Astro.currentLocale == defaultLocale && <script is:inline define:vars={{ langs, baseUrl, defaultLocale }}>
+    { i18n && locale == defaultLocale && <script is:inline define:vars={{ langs, baseUrl, defaultLocale }}>
       let lang;
       try {
         const urlParams = new URLSearchParams(window.location.search);
@@ -122,7 +137,7 @@ metadata.description ||= (t({
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
-    <Scamming lang={Astro.currentLocale as Lang} client:load />
+    <Scamming lang={locale} client:load />
     <slot />
 
     <BasicScripts />

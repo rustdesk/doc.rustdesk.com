@@ -1,0 +1,27 @@
+---
+publishDate: 2025-02-19T00:00:00Z
+lang: ko
+translationKey: enhanced-acl-in-rustdesk-server-pro-1-5-0
+title: RustDesk Server Pro 1.5.0의 향상된 ACL
+excerpt: 사용자 그룹뿐 아니라 사용자별 ACL과 장치 그룹도 지원합니다.
+image: ~/assets/images/blog/device-group.png
+category: 릴리스
+slug: rustdesk-server-pro-1-5-0-hyangsangdoen-acl
+tags: [RustDesk Server Pro, 릴리스]
+---
+
+RustDesk Server Pro 1.5.0이 출시되었습니다.
+
+## 변경 사항
+
+* 장치 그룹 및 ACL 추가
+* 사용자별 세분화 ACL 추가
+* 장치 그룹 전략 추가
+* 정렬 가능한 표 추가
+* 이메일 충돌 시 OIDC가 기존 계정에 연결
+* ID에 `-` 허용
+* OIDC 이름이 null일 때 발생하던 오류 수정
+
+장치 그룹은 RustDesk Server Pro 1.5.0의 새로운 기능입니다. 이전에는 단순성을 위해 ACL(액세스 제어 목록)을 사용자 그룹만으로 관리했습니다. 하지만 대규모 조직에서는 권한 설정이 번거로웠습니다. 이에 1.5.0부터 장치 그룹과 사용자별 ACL을 도입했습니다. 장치를 그룹화하고 정책을 적용할 수 있어 대규모 환경의 장치 관리가 크게 개선됩니다.
+
+각 장치는 사용자와 연결되는 동시에 하나의 장치 그룹에 할당될 수 있습니다. 특정 장치에 대한 접근을 제한하거나 허용하는 추가 정책을 적용할 수 있습니다. 사용자별 ACL로 개별 권한도 설정할 수 있어 더 유연하고 정밀한 접근 관리가 가능합니다.

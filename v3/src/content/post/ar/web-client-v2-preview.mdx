@@ -1,0 +1,42 @@
+---
+publishDate: 2024-10-12T00:00:00Z
+lang: ar
+translationKey: rustdesk-web-client-v2-preview
+title: معاينة عميل RustDesk Web V2
+excerpt: يقدم V2 ترميزات أفضل ودعم لوحة المفاتيح الدولية والحافظة ونقل الملفات.
+image: ~/assets/images/blog/web-client.jpg
+category: إصدار
+slug: muayinat-rustdesk-web-client-v2
+tags: [عميل الويب, إصدار]
+---
+
+لم يتلق عميل RustDesk Web V1 تحديثًا منذ أكثر من عامين وكان يفتقد ميزات عديدة. أمضى فريقنا ثلاثة أشهر في تطوير V2. تحسّن المعاينة فك الترميز ودعم لوحات المفاتيح الدولية، وتدعم حافظة النصوص والصور ونقل الملفات. ورغم قيود المتصفح، نسعى إلى تجربة متسقة مع إصدار سطح المكتب.
+
+جرّبه على https://rustdesk.com/web. للوصول إلى خادمك، اضبط WebSocket Secure ‏(WSS) على المنفذين 21118/21119 وفق [الوثائق](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client).
+
+```nginx
+    location /ws/id {
+        proxy_pass http://localhost:21118;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+    location /ws/relay {
+        proxy_pass http://localhost:21119;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+```
+
+بعد استقرار V2 سندمج عميل الويب في إصدار Pro أيضًا، وسيكون متاحًا عبر `https://rustdesk.yourcompany.com/web`.
+
+يسعدنا تقديم هذه التحسينات، ونرحب بملاحظاتكم بينما نواصل تطوير RustDesk Web Client V2.

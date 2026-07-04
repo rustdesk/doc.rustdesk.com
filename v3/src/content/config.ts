@@ -49,6 +49,8 @@ const metadataDefinition = () =>
 
 const postCollection = defineCollection({
   schema: z.object({
+    lang: z.enum(['en', 'de', 'es', 'fr', 'it', 'ja', 'ko', 'pt', 'zh-cn', 'zh-tw', 'ar']),
+    translationKey: z.string(),
     publishDate: z.date().optional(),
     updateDate: z.date().optional(),
     draft: z.boolean().optional(),

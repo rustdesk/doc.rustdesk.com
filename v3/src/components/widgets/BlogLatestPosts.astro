@@ -8,6 +8,8 @@ import { findLatestPosts } from '~/utils/blog';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Widget } from '~/types';
 import Button from '../ui/Button.astro';
+import { getBlogCopy } from '@/i18n/blog';
+import type { Lang } from '@/i18n';
 
 export interface Props extends Widget {
   title?: string;
@@ -17,10 +19,12 @@ export interface Props extends Widget {
   count?: number;
 }
 
+const lang = Astro.currentLocale as Lang;
+const copy = getBlogCopy(lang);
 const {
   title = await Astro.slots.render('title'),
-  linkText = 'View all posts',
-  linkUrl = getBlogPermalink(),
+  linkText = copy.viewAllPosts,
+  linkUrl = getBlogPermalink(lang),
   information = await Astro.slots.render('information'),
   count = 4,
 
@@ -30,7 +34,7 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count }) : [];
+const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count, lang }) : [];
 ---
 
 {

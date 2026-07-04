@@ -9,6 +9,7 @@ import { getPermalink } from '~/utils/permalinks';
 import { getFormattedDate } from '~/utils/utils';
 
 import type { Post } from '~/types';
+import { getBlogCopy } from '@/i18n/blog';
 
 export interface Props {
   post: Post;
@@ -17,6 +18,7 @@ export interface Props {
 
 const { post, url } = Astro.props;
 const authorName = post.author || 'RustDesk Team';
+const copy = getBlogCopy(post.lang);
 ---
 
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
@@ -25,13 +27,18 @@ const authorName = post.author || 'RustDesk Team';
       <div class="flex justify-between flex-col sm:flex-row max-w-4xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
         <p>
           <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-          <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
+          <time datetime={String(post.publishDate)} class="inline-block"
+            >{getFormattedDate(post.publishDate, post.lang)}</time
+          >
           {
             post.updateDate && (
               <>
                 {' '}
                 · <Icon name="tabler:refresh" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-                <span class="inline-block text-sm text-gray-500">Updated: <time datetime={String(post.updateDate)}>{getFormattedDate(post.updateDate)}</time></span>
+                <span class="inline-block text-sm text-gray-500">
+                  {copy.updated}:{' '}
+                  <time datetime={String(post.updateDate)}>{getFormattedDate(post.updateDate, post.lang)}</time>
+                </span>
               </>
             )
           }
@@ -43,7 +50,7 @@ const authorName = post.author || 'RustDesk Team';
               <>
                 {' '}
                 ·{' '}
-                <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category')}>
+                <a class="hover:underline inline-block" href={getPermalink(post.category.slug, 'category', post.lang)}>
                   {post.category.title}
                 </a>
               </>
@@ -52,7 +59,7 @@ const authorName = post.author || 'RustDesk Team';
           {
             post.readingTime && (
               <>
-                &nbsp;· <span>{post.readingTime}</span> min read
+                &nbsp;· <span>{post.readingTime}</span> {copy.minRead}
               </>
             )
           }
@@ -96,8 +103,13 @@ const authorName = post.author || 'RustDesk Team';
       <slot />
     </div>
     <div class="mx-auto px-6 sm:px-6 max-w-4xl mt-8 flex justify-between flex-col sm:flex-row">
-      <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
-      <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600" />
+      <PostTags tags={post.tags} lang={post.lang} class="mr-5 rtl:mr-0 rtl:ml-5" />
+      <SocialShare
+        url={url}
+        text={post.title}
+        label={copy.share}
+        class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600"
+      />
     </div>
   </article>
 </section>

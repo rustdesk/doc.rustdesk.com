@@ -1,7 +1,14 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import type { HTMLAttributes, ImageMetadata } from 'astro/types';
+import type { Lang } from './i18n';
 
 export interface Post {
+  /** Locale used by this translated post. */
+  lang: Lang;
+
+  /** Stable identifier shared by every translation of the same article. */
+  translationKey: string;
+
   /** A unique ID number that identifies a post. */
   id: string;
 

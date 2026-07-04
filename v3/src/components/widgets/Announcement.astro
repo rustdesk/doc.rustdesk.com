@@ -1,14 +1,28 @@
 ---
+import type { Lang } from '@/i18n';
+import { getBlogCopy } from '@/i18n/blog';
+import { findLatestPosts } from '~/utils/blog';
+import { getPermalink } from '~/utils/permalinks';
 
+export interface Props {
+  lang?: Lang;
+}
+
+const { lang = Astro.currentLocale as Lang } = Astro.props;
+const [post] = await findLatestPosts({ count: 1, lang });
+const copy = getBlogCopy(lang);
+const href = post ? getPermalink(post.permalink, 'post') : '';
 ---
 
-<div
-  class="dark text-muted text-sm bg-black dark:bg-transparent dark:border-b dark:border-slate-800 dark:text-slate-400 hidden md:flex gap-1 overflow-hidden px-3 py-2 relative text-ellipsis whitespace-nowrap justify-center items-center"
->
-  <span class="bg-secondary text-slate-300 font-semibold px-1 py-0.5 text-xs mr-0.5 rtl:mr-0 rtl:ml-0.5 inline-block"
-    >NEW</span
-  >
-  <a href="/blog/2025/02/enhanced-acl-in-rustdesk-server-pro-1-5-0" class="text-muted hover:underline dark:text-slate-400 font-medium"
-    >Enhanced ACL in RustDesk Server Pro 1.5.0! »</a
-  >
-</div>
+{
+  post && (
+    <div class="dark text-muted text-sm bg-black dark:bg-transparent dark:border-b dark:border-slate-800 dark:text-slate-400 hidden md:flex gap-1 overflow-hidden px-3 py-2 relative text-ellipsis whitespace-nowrap justify-center items-center">
+      <span class="bg-secondary text-slate-300 font-semibold px-1 py-0.5 text-xs mr-0.5 rtl:mr-0 rtl:ml-0.5 inline-block">
+        {copy.newPost}
+      </span>
+      <a href={href} class="text-muted hover:underline dark:text-slate-400 font-medium">
+        {post.title} »
+      </a>
+    </div>
+  )
+}

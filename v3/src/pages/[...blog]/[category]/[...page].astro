@@ -6,6 +6,9 @@ import Layout from '~/layouts/PageLayout.astro';
 import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
+import { getBlogCopy } from '@/i18n/blog';
+import { LOCALES, type Lang } from '@/i18n';
+import { getBlogPermalink } from '~/utils/permalinks';
 
 export const prerender = true;
 
@@ -15,16 +18,18 @@ export const getStaticPaths = (async ({ paginate }) => {
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths> & { category: Record<string, string> };
 
-const { page, category } = Astro.props as Props;
+const { page, category, lang } = Astro.props as Props & { lang: Lang };
 
 const currentPage = page.currentPage ?? 1;
+const copy = getBlogCopy(lang);
+const localePaths = (Object.keys(LOCALES) as Lang[]).map((targetLang) => ({
+  lang: targetLang,
+  path: getBlogPermalink(targetLang),
+}));
 
 const metadata = {
-  title: `Category '${category.title}' ${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
-  description:
-    currentPage > 1
-      ? `Browse page ${currentPage} of RustDesk blog posts filed under ${category.title}.`
-      : `Browse RustDesk blog posts and release notes filed under the ${category.title} category.`,
+  title: `${copy.category}: ${category.title}${currentPage > 1 ? ` — ${copy.page} ${currentPage}` : ''}`,
+  description: `${copy.subtitle} ${copy.category}: ${category.title}.`,
   robots: {
     index: blogCategoryRobots?.index,
     follow: blogCategoryRobots?.follow,
@@ -32,10 +37,10 @@ const metadata = {
 };
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} i18n lang={lang} localePaths={localePaths} alternateLinks={[]}>
   <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <Headline>{category.title}</Headline>
     <BlogList posts={page.data} />
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} lang={lang} />
   </section>
 </Layout>

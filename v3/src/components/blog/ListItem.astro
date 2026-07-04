@@ -65,7 +65,9 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
       <div class="mb-1">
         <span class="text-sm">
           <Icon name="tabler:clock" class="w-3.5 h-3.5 inline-block -mt-0.5 dark:text-gray-400" />
-          <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
+          <time datetime={String(post.publishDate)} class="inline-block"
+            >{getFormattedDate(post.publishDate, post.lang)}</time
+          >
           {
             post.author && (
               <>
@@ -80,7 +82,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
               <>
                 {' '}
                 ·{' '}
-                <a class="hover:underline" href={getPermalink(post.category.slug, 'category')}>
+                <a class="hover:underline" href={getPermalink(post.category.slug, 'category', post.lang)}>
                   {post.category.title}
                 </a>
               </>
@@ -108,7 +110,7 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
     {
       post.tags && Array.isArray(post.tags) ? (
         <footer class="mt-5">
-          <PostTags tags={post.tags} />
+          <PostTags tags={post.tags} lang={post.lang} />
         </footer>
       ) : (
         <Fragment />

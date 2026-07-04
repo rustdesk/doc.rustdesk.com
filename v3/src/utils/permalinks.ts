@@ -3,6 +3,7 @@ import slugify from 'limax';
 import { SITE, APP_BLOG } from 'astrowind:config';
 
 import { trim } from '~/utils/utils';
+import type { Lang } from '@/i18n';
 
 export const trimSlash = (s: string) => trim(trim(s, '/'));
 const createPath = (...params: string[]) => {
@@ -18,7 +19,7 @@ const BASE_PATHNAME = SITE.base || '/';
 export const cleanSlug = (text = '') =>
   trimSlash(text)
     .split('/')
-    .map((slug) => slugify(slug))
+    .map((slug) => slugify(slug) || slug.trim().toLowerCase().replace(/\s+/g, '-'))
     .join('/');
 
 export const BLOG_BASE = cleanSlug(APP_BLOG?.list?.pathname);
@@ -39,7 +40,9 @@ export const getCanonical = (path = ''): string | URL => {
 };
 
 /** */
-export const getPermalink = (slug = '', type = 'page'): string => {
+const getLocalePrefix = (locale?: Lang): string => (locale && locale !== 'en' ? locale : '');
+
+export const getPermalink = (slug = '', type = 'page', locale?: Lang): string => {
   let permalink: string;
 
   if (
@@ -58,7 +61,7 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       break;
 
     case 'blog':
-      permalink = getBlogPermalink();
+      permalink = createPath(getLocalePrefix(locale), BLOG_BASE);
       break;
 
     case 'asset':
@@ -66,11 +69,11 @@ export const getPermalink = (slug = '', type = 'page'): string => {
       break;
 
     case 'category':
-      permalink = createPath(CATEGORY_BASE, trimSlash(slug));
+      permalink = createPath(getLocalePrefix(locale), CATEGORY_BASE, trimSlash(slug));
       break;
 
     case 'tag':
-      permalink = createPath(TAG_BASE, trimSlash(slug));
+      permalink = createPath(getLocalePrefix(locale), TAG_BASE, trimSlash(slug));
       break;
 
     case 'post':
@@ -90,7 +93,8 @@ export const getPermalink = (slug = '', type = 'page'): string => {
 export const getHomePermalink = (path?: string): string => getPermalink(path || '/');
 
 /** */
-export const getBlogPermalink = (): string => getPermalink(BLOG_BASE);
+export const getBlogPermalink = (locale?: Lang): string =>
+  definitivePermalink(createPath(getLocalePrefix(locale), BLOG_BASE));
 
 /** */
 export const getAsset = (path: string): string =>

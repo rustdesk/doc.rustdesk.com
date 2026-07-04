@@ -1,0 +1,42 @@
+---
+publishDate: 2024-10-12T00:00:00Z
+lang: ja
+translationKey: rustdesk-web-client-v2-preview
+title: RustDesk Web クライアント V2 プレビュー
+excerpt: V2 はコーデック、国際キーボード、クリップボード、ファイル転送を強化します。
+image: ~/assets/images/blog/web-client.jpg
+category: リリース
+slug: rustdesk-web-client-v2-preview-ja
+tags: [Web クライアント, リリース]
+---
+
+RustDesk Web クライアント V1 は 2 年以上更新されず、多くの機能が不足していました。チームは 3 か月かけて V2 を開発しました。このプレビューではデコード性能と国際キーボード対応を改善し、テキストだけでなく画像のクリップボードとファイル転送にも対応します。ブラウザーの制約がある中でも、デスクトップ版と一貫した機能と操作性を目指しています。
+
+https://rustdesk.com/web からお試しください。独自サーバーへ接続する場合は、[ドキュメント](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client)に従い、ポート 21118/21119 で WebSocket Secure（WSS）を設定してください。
+
+```nginx
+    location /ws/id {
+        proxy_pass http://localhost:21118;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+    location /ws/relay {
+        proxy_pass http://localhost:21119;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+```
+
+V2 の安定後は Web クライアントを Pro 版にも統合し、`https://rustdesk.yourcompany.com/web` から利用できるようにします。
+
+これらの改善を皆様にお届けできることを嬉しく思います。RustDesk Web Client V2 の改良に向けたフィードバックをお待ちしています。

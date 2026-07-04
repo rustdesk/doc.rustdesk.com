@@ -5,6 +5,7 @@ import { getRelatedPosts } from '~/utils/blog';
 import BlogHighlightedPosts from '../widgets/BlogHighlightedPosts.astro';
 import type { Post } from '~/types';
 import { getBlogPermalink } from '~/utils/permalinks';
+import { getBlogCopy } from '@/i18n/blog';
 
 export interface Props {
   post: Post;
@@ -13,15 +14,16 @@ export interface Props {
 const { post } = Astro.props;
 
 const relatedPosts = post.tags ? await getRelatedPosts(post, 4) : [];
+const copy = getBlogCopy(post.lang);
 ---
 
 {
   APP_BLOG.isRelatedPostsEnabled ? (
     <BlogHighlightedPosts
       classes={{ container: 'pt-0 lg:pt-0 md:pt-0' }}
-      title="Related Posts"
-      linkText="View All Posts"
-      linkUrl={getBlogPermalink()}
+      title={copy.relatedPosts}
+      linkText={copy.viewAllPosts}
+      linkUrl={getBlogPermalink(post.lang)}
       postIds={relatedPosts.map((post) => post.id)}
     />
   ) : null

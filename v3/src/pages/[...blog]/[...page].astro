@@ -8,6 +8,8 @@ import Pagination from '~/components/blog/Pagination.astro';
 // import PostTags from "~/components/blog/Tags.astro";
 
 import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
+import { getBlogCopy } from '@/i18n/blog';
+import type { Lang } from '@/i18n';
 
 export const prerender = true;
 
@@ -17,18 +19,16 @@ export const getStaticPaths = (async ({ paginate }) => {
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const { page } = Astro.props as Props;
+const { page, lang } = Astro.props as Props & { lang: Lang };
 const currentPage = page.currentPage ?? 1;
+const copy = getBlogCopy(lang);
 
 // const allCategories = await findCategories();
 // const allTags = await findTags();
 
 const metadata = {
-  title: `Blog${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
-  description:
-    currentPage > 1
-      ? `Browse page ${currentPage} of the RustDesk blog for release notes, product updates, self-hosting guides, and remote access best practices.`
-      : 'Read the RustDesk blog for release notes, self-hosting tutorials, remote support guidance, and product updates.',
+  title: `${copy.title}${currentPage > 1 ? ` — ${copy.page} ${currentPage}` : ''}`,
+  description: copy.subtitle,
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,
@@ -39,15 +39,11 @@ const metadata = {
 };
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} i18n lang={lang}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline
-      subtitle="A statically generated blog example with news, tutorials, resources and other interesting content related to RustDesk"
-    >
-      The Blog
-    </Headline>
+    <Headline subtitle={copy.subtitle}>{copy.title}</Headline>
     <BlogList posts={page.data} />
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} lang={lang} />
     <!--
       <PostTags tags={allCategories} class="mb-2" title="Search by Categories:" isCategory />
       <PostTags tags={allTags}  title="Search by Tags:" />

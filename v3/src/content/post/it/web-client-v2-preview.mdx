@@ -1,0 +1,42 @@
+---
+publishDate: 2024-10-12T00:00:00Z
+lang: it
+translationKey: rustdesk-web-client-v2-preview
+title: Anteprima del client Web RustDesk V2
+excerpt: V2 offre codec migliori, tastiere internazionali, appunti e trasferimento di file.
+image: ~/assets/images/blog/web-client.jpg
+category: Rilascio
+slug: anteprima-client-web-rustdesk-v2
+tags: [client Web, rilascio]
+---
+
+RustDesk Web Client V1 non veniva aggiornato da oltre due anni e mancava di molte funzioni. Il team ha lavorato tre mesi su V2. L’anteprima migliora la decodifica e le tastiere internazionali, supporta appunti di testo e immagini e il trasferimento di file. Nonostante i limiti del browser, puntiamo a un’esperienza coerente con la versione desktop.
+
+Provalo su https://rustdesk.com/web. Per accedere al tuo server, configura WebSocket Secure (WSS) sulle porte 21118/21119 seguendo la [documentazione](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client).
+
+```nginx
+    location /ws/id {
+        proxy_pass http://localhost:21118;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+    location /ws/relay {
+        proxy_pass http://localhost:21119;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+```
+
+Quando V2 sarà stabile, integreremo il client Web nella versione Pro, accessibile da `https://rustdesk.yourcompany.com/web`.
+
+Siamo lieti di offrire questi miglioramenti e attendiamo il tuo feedback mentre continuiamo a perfezionare RustDesk Web Client V2.

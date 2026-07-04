@@ -1,0 +1,42 @@
+---
+publishDate: 2024-10-12T00:00:00Z
+lang: pt
+translationKey: rustdesk-web-client-v2-preview
+title: Prévia do cliente Web RustDesk V2
+excerpt: A V2 oferece codecs melhores, teclado internacional, área de transferência e transferência de arquivos.
+image: ~/assets/images/blog/web-client.jpg
+category: Lançamento
+slug: previa-cliente-web-rustdesk-v2
+tags: [cliente Web, lançamento]
+---
+
+O RustDesk Web Client V1 não recebia atualizações havia mais de dois anos e não tinha vários recursos. Nossa equipe trabalhou três meses na V2. A prévia melhora a decodificação e os teclados internacionais, aceita áreas de transferência de texto e imagem e transfere arquivos. Apesar dos limites do navegador, buscamos uma experiência consistente com a versão desktop.
+
+Acesse https://rustdesk.com/web. Para usar seu próprio servidor, configure WebSocket Secure (WSS) nas portas 21118/21119 conforme a [documentação](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client).
+
+```nginx
+    location /ws/id {
+        proxy_pass http://localhost:21118;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+    location /ws/relay {
+        proxy_pass http://localhost:21119;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+```
+
+Quando a V2 estiver estável, integraremos o cliente Web à versão Pro, acessível em `https://rustdesk.yourcompany.com/web`.
+
+Esperamos que essas melhorias sejam úteis e contamos com seu feedback enquanto aperfeiçoamos o RustDesk Web Client V2.

@@ -125,13 +125,18 @@ export const headerData = (locale?: Lang) => {
       {
         text: t({
           en: 'Blog',
+          de: 'Blog',
+          es: 'Blog',
+          fr: 'Blog',
+          it: 'Blog',
           ja: 'ブログ',
+          pt: 'Blog',
           'zh-cn': '博客',
-          'zh-tw': '博客',
+          'zh-tw': '部落格',
           ar: 'مدونة',
           ko: '블로그',
         }),
-        href: getPermalink('/blog'),
+        href: getPermalink(getLocalPath(locale || '', '/blog')),
       },
     ],
     actions: [{

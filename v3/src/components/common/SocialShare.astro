@@ -4,14 +4,15 @@ import { Icon } from 'astro-icon/components';
 export interface Props {
   text: string;
   url: string | URL;
+  label?: string;
   class?: string;
 }
 
-const { text, url, class: className = 'inline-block' } = Astro.props;
+const { text, url, label = 'Share', class: className = 'inline-block' } = Astro.props;
 ---
 
 <div class={className}>
-  <span class="align-super font-bold text-slate-500 dark:text-slate-400">Share:</span>
+  <span class="align-super font-bold text-slate-500 dark:text-slate-400">{label}:</span>
   <button
     class="ml-2 rtl:ml-0 rtl:mr-2"
     title="Twitter Share"

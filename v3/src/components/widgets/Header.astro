@@ -4,12 +4,12 @@ import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
-import { getLocalPath } from '@/i18n';
+import { getLocalPath, type Lang } from '@/i18n';
 
 import { getHomePermalink } from '~/utils/permalinks';
 import { trimSlash, getAsset } from '~/utils/permalinks';
 import type { CallToAction } from '~/types';
-import { getLocalePaths, LOCALES, DEFAULT_LOCALE } from '@/i18n';
+import { getLocalePaths, LOCALES, DEFAULT_LOCALE, type LocalePath } from '@/i18n';
 
 interface Link {
   text?: string;
@@ -34,6 +34,8 @@ export interface Props {
   position?: string;
   showGithubStar?: boolean;
   i18n?: boolean;
+  lang?: Lang;
+  localePaths?: LocalePath[];
 }
 
 const {
@@ -48,9 +50,13 @@ const {
   showGithubStar = false,
   position = 'center',
   i18n = false,
+  lang: pageLocale,
+  localePaths,
 } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
+const languagePaths = localePaths ?? getLocalePaths(Astro.url);
+const locale = pageLocale || (Astro.currentLocale as Lang);
 ---
 
 <header
@@ -77,7 +83,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     ]}
   >
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
-      <a class="flex items-center" href={getHomePermalink(getLocalPath(Astro.currentLocale || '', '/'))}>
+      <a class="flex items-center" href={getHomePermalink(getLocalPath(locale || '', '/'))}>
         <Logo />
       </a>
       <div class="flex items-center md:hidden">
@@ -156,23 +162,25 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                   id="languages"
                   class="md:mt-12 hidden bg-white dark:bg-dark dropdown-menu md:backdrop-blur-md dark:md:bg-dark rounded absolute pl-4 md:pl-0 font-medium md:bg-white/90 md:min-w-[200px] drop-shadow-xl"
                 >
-                  {getLocalePaths(Astro.url).map(({ path, lang }) => {
+                  {languagePaths.map(({ path, lang }) => {
                     let path2 = path.replace(/\/$/, '');
                     if (path2.indexOf('/' + DEFAULT_LOCALE) === 0) {
-                      path2 = path2 + '?lang=en';
+                      path2 = path2.replace('/' + DEFAULT_LOCALE, '');
                     }
-                    path2 = path2.replace('/' + DEFAULT_LOCALE, '');
                     if (!path2) {
                       path2 = '/';
                     } else if (path2[0] != '/') {
                       path2 = '/' + path2;
+                    }
+                    if (lang === DEFAULT_LOCALE) {
+                      path2 += `${path2.includes('?') ? '&' : '?'}lang=en`;
                     }
                     return (
                       <li>
                         <a
                           class:list={[
                             'first:rounded-t last:rounded-b md:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap',
-                            { 'text-primary': lang === Astro.currentLocale },
+                            { 'text-primary': lang === locale },
                           ]}
                           href={path2}
                         >

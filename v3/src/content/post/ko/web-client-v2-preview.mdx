@@ -1,0 +1,42 @@
+---
+publishDate: 2024-10-12T00:00:00Z
+lang: ko
+translationKey: rustdesk-web-client-v2-preview
+title: RustDesk 웹 클라이언트 V2 미리보기
+excerpt: V2는 코덱, 국제 키보드, 클립보드 및 파일 전송 기능을 개선합니다.
+image: ~/assets/images/blog/web-client.jpg
+category: 릴리스
+slug: rustdesk-web-client-v2-miribogi
+tags: [웹 클라이언트, 릴리스]
+---
+
+RustDesk 웹 클라이언트 V1은 2년 넘게 업데이트되지 않았고 많은 기능이 부족했습니다. 팀은 3개월 동안 V2를 개발했습니다. 이번 미리보기는 디코딩과 국제 키보드 지원을 개선하고 텍스트와 이미지 클립보드, 파일 전송을 지원합니다. 브라우저의 제약 속에서도 데스크톱 버전과 일관된 기능과 사용 경험을 제공하는 것이 목표입니다.
+
+https://rustdesk.com/web 에서 이용할 수 있습니다. 자체 서버에 접속하려면 [문서](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client)에 따라 포트 21118/21119에서 WebSocket Secure(WSS)를 설정하세요.
+
+```nginx
+    location /ws/id {
+        proxy_pass http://localhost:21118;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+    location /ws/relay {
+        proxy_pass http://localhost:21119;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+```
+
+V2가 안정화되면 웹 클라이언트를 Pro 버전에도 통합하여 `https://rustdesk.yourcompany.com/web`에서 이용할 수 있게 할 예정입니다.
+
+이러한 개선을 제공하게 되어 기쁘며 RustDesk Web Client V2를 계속 다듬기 위한 의견을 기다립니다.
