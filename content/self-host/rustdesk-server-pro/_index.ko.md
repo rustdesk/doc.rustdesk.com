@@ -2,9 +2,6 @@
 title: RustDesk 서버 프로
 description: "RustDesk Server Pro의 완벽한 가이드 - 프리미엄 자체 호스팅 원격 데스크톱 솔루션입니다. 엔터프라이즈 인증(OIDC, LDAP, 2FA), 웹 콘솔, API 액세스 및 전문적인 배포를 위한 고급 보안 제어 기능을 제공합니다."
 keywords: ["rustdesk server pro", "rustdesk pro server", "remote desktop server", "enterprise remote access", "rustdesk professional", "self-hosted rdp", "rustdesk enterprise", "remote desktop solution", "rustdesk licensing", "rustdesk web console"]
-aliases:
-  - /en/self-host/pro/
-  - /self-host/pro/
 weight: 200
 pre: "<b>2.2. </b>"
 ---
