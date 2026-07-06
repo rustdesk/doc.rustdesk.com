@@ -221,6 +221,15 @@ languages:
       description: "RustDeskの完全なドキュメント - オープンソースのリモートデスクトップソフトウェア。セルフホスティング、クライアント設定、インフラストラクチャでのRustDeskの展開方法を学びます。"
       keywords: ["rustdesk", "リモートデスクトップ", "オープンソース", "セルフホスティング", "ドキュメント", "リモートアクセス", "VNC代替", "teamviewer代替"]
 
+  ko:
+    title: "RustDesk 문서"
+    weight: 2
+    languageName: "한국어"
+    params:
+      landingPageName: "🏠 홈"
+      description: "RustDesk 완전 문서 - 오픈 소스 원격 데스크톱 소프트웨어. 셀프호스팅, 클라이언트 구성, 인프라 전반에 RustDesk를 배포하는 방법을 알아보세요."
+      keywords: ["rustdesk", "원격 데스크톱", "오픈 소스", "셀프호스팅", "문서", "원격 액세스", "VNC 대안", "teamviewer 대안"]
+
   zh-cn:
     title: "RustDesk文档"
     weight: 3
