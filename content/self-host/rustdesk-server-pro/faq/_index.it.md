@@ -25,7 +25,7 @@ Usa questa FAQ quando ti servono risposte rapide su installazione, aggiornamenti
 1. Ottieni la tua licenza da [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), controlla la pagina [licenza](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) per maggiori dettagli.
 2. Avvia un VPS, bare metal o VM Linux.
 3. Se vuoi usare DNS e SSL, crea un nome DNS come `rustdesk.yourdomain.com`.
-4. [Questa pagina](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#install).
+4. [Questa pagina](https://rustdesk.com/docs/it/self-host/rustdesk-server-pro/installscript/#metodo-2-installsh).
 5. Copia e incolla il comando nel tuo terminale Linux.
 6. Segui i prompt che ti guidano attraverso l'installazione.
 7. Una volta completata l'installazione vai su `https://rustdesk.yourdomain.com` o `http://youripaddress:21114`.

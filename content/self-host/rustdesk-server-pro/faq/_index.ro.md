@@ -25,7 +25,7 @@ Folosește acest FAQ atunci când ai nevoie de răspunsuri rapide despre instala
 1. Obține o licență de la https://rustdesk.com/pricing.html — vezi pagina de [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) pentru detalii.
 2. Pornește un VPS, un server fizic sau o mașină virtuală Linux.
 3. Dacă vrei să folosești DNS și SSL, creează un nume DNS, ex. `rustdesk.domeniultau.com`.
-4. Urmează instrucțiunile de pe această pagină: https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#install.
+4. Urmează instrucțiunile de pe această pagină: https://rustdesk.com/docs/ro/self-host/rustdesk-server-pro/installscript/#metoda-2-installsh.
 5. Copiază și lipește comanda în terminalul Linux.
 6. Urmează pașii interactivi din script.
 7. După instalare poți accesa `https://rustdesk.domeniultau.com` sau `http://adresa-ip:21114`.
