@@ -177,13 +177,6 @@ Get-EXOMailbox -Identity "no-reply@xxx.com" | Format-List DisplayName,PrimarySmt
 New-Mailbox -Shared -Name "No Reply" -Alias no-reply -DisplayName "No Reply" -PrimarySmtpAddress no-reply@xxx.com
 ```
 
-이미 존재합니다
-서비스
-서버
-별명
-
-  
-
 사서함이 이미 존재하는 경우, `Add-MailboxPermission -Identity ...`에서 사용하는 값이 사서함의 실제 주소, 별명 또는 다른 해결 가능한 사서함 식별자인지 확인하십시오.
 ![](/docs/en/self-host/rustdesk-server-pro/smtp/microsoft-365/images/18-Powershell-Add-MailboxPermission.png)
 
