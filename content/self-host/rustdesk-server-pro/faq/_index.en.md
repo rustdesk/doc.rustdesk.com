@@ -25,7 +25,7 @@ This FAQ covers the most common RustDesk Server Pro tasks: installation, convers
 1. Get your license from [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html), check [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) page for more details.
 2. Spin up a VPS, bare metal or Linux VM.
 3. If you want to use DNS and SSL create a DNS name i.e. `rustdesk.yourdomain.com`.
-4. [This page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#install).
+4. [This page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#method-2-installsh).
 5. Copy and paste the command into your Linux terminal.
 6. Follow the prompts as they guide you through the install.
 7. Once the install is complete `https://rustdesk.yourdomain.com` or `http://youripaddress:21114`.

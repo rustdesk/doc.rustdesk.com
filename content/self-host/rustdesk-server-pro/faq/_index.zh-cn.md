@@ -25,7 +25,7 @@ weight: 600
 1. 从 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 获取许可证，查看 [license](/docs/zh-cn/self-host/rustdesk-server-pro/license) 页面了解更多详细信息。
 2. 启动 VPS、裸机或 Linux VM。
 3. 如果您想使用 DNS 和 SSL，请创建一个 DNS 名称，即`rustdesk.yourdomain.com`。
-4. 转到[此页面](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-pro/installscript/#install)。
+4. 转到[此页面](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-pro/installscript/#方法-2installsh)。
 5. 将命令复制并粘贴到 Linux 终端中。
 6. 按照提示完成安装。
 7. 安装完成后，转到`https://rustdesk.yourdomain.com`或`http://youripaddress:21114`。

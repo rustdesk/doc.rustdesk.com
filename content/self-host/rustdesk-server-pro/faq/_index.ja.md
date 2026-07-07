@@ -25,7 +25,7 @@ weight: 600
 1. [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html)からライセンスを取得し、詳細については[ライセンス](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/)ページを確認してください。
 2. VPS、ベアメタル、またはLinux VMを起動します。
 3. DNSとSSLを使用したい場合は、`rustdesk.yourdomain.com`のようなDNS名を作成します。
-4. [このページ](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#install)。
+4. [このページ](https://rustdesk.com/docs/ja/self-host/rustdesk-server-pro/installscript/#方法2-installsh)。
 5. Linuxターミナルにコマンドをコピー＆ペーストします。
 6. インストールを案内するプロンプトに従います。
 7. インストールが完了したら`https://rustdesk.yourdomain.com`または`http://youripaddress:21114`にアクセスします。

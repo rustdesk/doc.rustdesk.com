@@ -25,7 +25,7 @@ weight: 600
 1. [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html)로부터 라이선스를 받고, 자세한 내용은 [license](/docs/ko/self-host/rustdesk-server-pro/license/) 페이지를 확인하세요.
 2. VPS, 베어 메탈 또는 Linux VM을 생성하세요.
 3. DNS와 SSL을 사용하려면 DNS 이름, 예를 들어 `rustdesk.yourdomain.com`를 생성하세요.
-4. [This page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#install)를 실행하세요.
+4. [This page](https://rustdesk.com/docs/ko/self-host/rustdesk-server-pro/installscript/#방법-2-installsh)를 실행하세요.
 5. 명령어를 복사하여 Linux 터미널에 붙여넣으세요.
 6. 안내에 따라 설치를 진행하세요.
 7. 설치가 완료되면 `https://rustdesk.yourdomain.com` 또는 `http://youripaddress:21114`를 실행하세요.
