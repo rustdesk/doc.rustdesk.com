@@ -30,7 +30,7 @@ RustDesk Server Pro의 경우, 서버 설정을 클라이언트 빌드에 포함
 - 관리자 또는 root 권한으로 실행할 수 있는 배포 방법
 - 무작위 또는 배포 시 명시적으로 설정된 비밀번호 정책
 
-여러 방법을 사용해 배포할 수 있으며, 일부 방법은 [Client Configuration](https://rustdesk.com/docs/en/self-host/client-configuration/)에 설명되어 있습니다.
+여러 방법을 사용해 배포할 수 있으며, 일부 방법은 [Client Configuration](/docs/ko/self-host/client-configuration/)에 설명되어 있습니다.
 
 또는 RMM, Intune 등과 함께 대량 배포 스크립트를 사용할 수도 있습니다. ID와 비밀번호는 스크립트에서 출력됩니다. 이를 수집하거나 ID와 비밀번호를 각각 다른 스크립트로 분리하여 수집해야 합니다.
 
@@ -208,7 +208,7 @@ echo ...............................................
 
 `rustdesk.exe --silent-install` 대신 msi를 사용할 수도 있습니다.
 
-https://rustdesk.com/docs/en/client/windows/msi/
+https://rustdesk.com/docs/ko/client/windows/msi/
 
 ## macOS Bash
 
@@ -393,7 +393,7 @@ echo "..............................................."
 
 서버 웹 콘솔에서 **설정 → 기타 → 새 장치에 대한 배포 요구**를 활성화하면, 새 장치는 이 서버에 등록되기 전에 반드시 명시적으로 배포되어야 합니다.
 
-관리자 계정으로 서버 웹 콘솔에서 [API token](/docs/ko/self-host/rustdesk-server-pro/console/#api-token)를 생성하세요. 해당 토큰은 **장치** 권한이 **읽기 및 쓰기**로 설정되어 있어야 합니다. 그런 다음 RustDesk를 설치하고 자체 호스팅된 서버를 사용하도록 구성한 후 각 새 데스크톱 장치에서 배포 명령을 실행하세요.
+관리자 계정으로 서버 웹 콘솔에서 [API token](/docs/ko/self-host/rustdesk-server-pro/console/#api-토큰)를 생성하세요. 해당 토큰은 **장치** 권한이 **읽기 및 쓰기**로 설정되어 있어야 합니다. 그런 다음 RustDesk를 설치하고 자체 호스팅된 서버를 사용하도록 구성한 후 각 새 데스크톱 장치에서 배포 명령을 실행하세요.
 
 ### Windows, macOS 및 Linux
 

@@ -50,7 +50,7 @@ UDP `21116`
 
 위의 `21115-21117`는 RustDesk가 작동하는 데 필요한 최소한의 포트이며, 이들은 신호 및 릴레이 포트와 NAT 트래버스를 처리합니다.
 
-TCP 포트 `21118` 및 `21119`는 [RustDesk Web Client](https://rustdesk.com/web/)의 웹소켓 포트이며, HTTPS를 지원하려면 역방향 프록시가 필요합니다. 이 [sample Nginx configuration](/docs/ko/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client)를 참조하십시오.
+TCP 포트 `21118` 및 `21119`는 [RustDesk Web Client](https://rustdesk.com/web/)의 웹소켓 포트이며, HTTPS를 지원하려면 역방향 프록시가 필요합니다. 이 [sample Nginx configuration](/docs/ko/self-host/rustdesk-server-pro/faq/#8-id-서버와-릴레이-서버에-websocket-secure-wss-지원을-추가하여-모든-플랫폼에서-안전한-통신을-가능하게-하십시오)를 참조하십시오.
 
 SSL 프록시가 없는 Pro 사용자의 경우 API가 작동하려면 TCP 포트 `21114`를 열어야 하며, 대신 SSL 프록시를 사용하여 TCP 포트 `443`를 열어야 합니다.
 

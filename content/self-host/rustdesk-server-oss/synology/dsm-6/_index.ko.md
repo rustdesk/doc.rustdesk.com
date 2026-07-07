@@ -49,7 +49,7 @@ Synology NAS가 여전히 DSM 6에 있고, 이전 버전의 Docker 패키지를 
 - `Enable auto-restart`를 활성화하세요.
 ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/auto-restart.png)
 
-- `Use the same network as Docker Host`를 활성화하세요. 호스트 네트에 대한 자세한 내용은 [check](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/#net-host)를 참조하십시오.
+- `Use the same network as Docker Host`를 활성화하세요. 호스트 네트에 대한 자세한 내용은 [check](/docs/ko/self-host/rustdesk-server-oss/docker/#net-host)를 참조하십시오.
 ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/host-net.png)
 
 - 호스트 디렉터리를 `/root`에 마운트하고(예: `/home/rustdesk/`), hbbs는 이 디렉터리에 일부 파일(데이터베이스 및 `key` 파일)을 생성하며, 이 파일들은 재부팅 후에도 지속되어야 합니다.

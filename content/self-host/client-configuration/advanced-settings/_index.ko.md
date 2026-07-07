@@ -1277,7 +1277,7 @@ TCP만 사용할지 여부를 제어합니다. 더 이상 UDP 21116를 사용하
 
 ### 사전 설정된 사용자 이름 / 사전 설정된 전략 이름 / 사전 설정된 장치 그룹 이름 / 사전 설정된 장치 사용자 이름 / 사전 설정된 장치 이름 / 사전 설정된 노트
 
-사용자 / 전략 / 장치 그룹 / 장치 사용자 이름 / 장치 이름(호스트명) / 노트를 장치에 할당하십시오. [command line](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices)를 통해 이 작업을 수행할 수도 있습니다.
+사용자 / 전략 / 장치 그룹 / 장치 사용자 이름 / 장치 이름(호스트명) / 노트를 장치에 할당하십시오. [command line](/docs/ko/self-host/rustdesk-server-pro/console/#웹-콘솔을-통해-장치-사용자전략장치-그룹을-장치에-할당하기)를 통해 이 작업을 수행할 수도 있습니다.
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
 
@@ -1353,7 +1353,7 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 ### 로그온 화면 비밀번호 허용
 
-[click-only approve mode](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode)를 사용할 때 로그온 화면에서 비밀번호 입력을 허용하는 경우, RustDesk 클라이언트 >=1.3.1(제어 측)에서 사용 가능합니다.
+[click-only approve mode](/docs/ko/self-host/client-configuration/advanced-settings/#승인-모드)를 사용할 때 로그온 화면에서 비밀번호 입력을 허용하는 경우, RustDesk 클라이언트 >=1.3.1(제어 측)에서 사용 가능합니다.
 
 활성화 시 현재 세션이 로그온 또는 잠금 화면 상태일 때 영구 비밀번호도 허용됩니다. 이는 클릭, 비밀번호, 그리고 둘 다 승인 모드에 적용됩니다. RustDesk 클라이언트 >=1.4.7(제어 측)
 
@@ -1395,7 +1395,7 @@ RustDesk 클라이언트 버전 1.4.0 이상에서 사용 가능합니다.
 
 서버와 클라이언트를 연결하려면 웹소켓 프로토콜을 사용하세요. 이 기능은 RustDesk 클라이언트 버전 1.4.0 이상 및 Pro 서버 버전 1.5.7 이상에서만 사용 가능합니다. 웹소켓은 릴레이 연결만 지원한다는 점에 유의해 주세요.
 
-웹소켓이 작동하도록 하려면 역프록시를 올바르게 구성해야 합니다. 자세한 내용은 https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms를 참조하세요.
+웹소켓이 작동하도록 하려면 역프록시를 올바르게 구성해야 합니다. 자세한 내용은 [여기](/docs/ko/self-host/rustdesk-server-pro/faq/#8-id-서버와-릴레이-서버에-websocket-secure-wss-지원을-추가하여-모든-플랫폼에서-안전한-통신을-가능하게-하십시오)를 참조하세요.
 
 **위치**:
 

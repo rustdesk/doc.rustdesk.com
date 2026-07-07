@@ -23,9 +23,9 @@ keywords: ["rustdesk relay server", "rustdesk hbbr", "rustdesk geolocation relay
 ## Docker를 사용한 추가 릴레이 서버 설치 방법
 
 {{% notice note %}}
-[The simple install](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/)는 동일한 머신에서 암묵적으로 릴레이 서버(`hbbr` 프로세스)를 생성하므로, 릴레이 서버를 명시적으로 지정할 필요가 없습니다.
+[The simple install](/docs/ko/self-host/rustdesk-server-pro/installscript/)는 동일한 머신에서 암묵적으로 릴레이 서버(`hbbr` 프로세스)를 생성하므로, 릴레이 서버를 명시적으로 지정할 필요가 없습니다.
 
-다른 컴퓨터에 추가 릴레이 서버를 명시적으로 생성하려면 [OSS installation](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/)를 따라 `hbbr`를 실행하세요. `hbbr`는 `rustdesk-server-linux-amd64.tar.gz`, `rustdesk-server-hbbr_<version>-<arch>.deb`, `rustdesk-server-windows-x86_64.tar.gz` 또는 `docker`(`sudo docker run ... rustdesk/rustdesk-server-pro hbbr`)에서 찾을 수 있습니다.
+다른 컴퓨터에 추가 릴레이 서버를 명시적으로 생성하려면 [OSS installation](/docs/ko/self-host/rustdesk-server-oss/install/)를 따라 `hbbr`를 실행하세요. `hbbr`는 `rustdesk-server-linux-amd64.tar.gz`, `rustdesk-server-hbbr_<version>-<arch>.deb`, `rustdesk-server-windows-x86_64.tar.gz` 또는 `docker`(`sudo docker run ... rustdesk/rustdesk-server-pro hbbr`)에서 찾을 수 있습니다.
 
 `hbbr`는 라이선스가 필요하지 않으며 오픈소스 버전과 동일합니다.
 {{% /notice %}}

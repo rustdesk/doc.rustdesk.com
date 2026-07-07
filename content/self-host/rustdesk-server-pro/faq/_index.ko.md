@@ -15,14 +15,14 @@ weight: 600
 | --- | --- |
 | 새 Pro 서버 설치하기 | [Installation](/docs/ko/self-host/rustdesk-server-pro/installscript/) |
 | Docker로 Pro 설치하기 | [Docker install](/docs/ko/self-host/rustdesk-server-pro/installscript/docker/) |
-| OSS에서 Pro로 변환하기 | [Installation](/docs/ko/self-host/rustdesk-server-pro/installscript/#convert-from-open-source) |
+| OSS에서 Pro로 변환하기 | [Installation](/docs/ko/self-host/rustdesk-server-pro/installscript/#오픈소스에서-변환하기) |
 | 라이선스 구매 또는 이전하기 | [License](/docs/ko/self-host/rustdesk-server-pro/license/) |
 | 이메일 알림 설정하기 | [SMTP](/docs/ko/self-host/rustdesk-server-pro/smtp/) |
 | SSO 또는 ID 로그인 구성하기 | [OIDC](/docs/ko/self-host/rustdesk-server-pro/oidc/) 또는 [LDAP](/docs/ko/self-host/rustdesk-server-pro/ldap/) |
 | 대규모 클라이언트 배포하기 | [Client Deployment](/docs/ko/self-host/client-deployment/) |
 
 ## 간편 설치 스크립트로 설치하려면 어떻게 해야 하나요?
-1. [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html)로부터 라이선스를 받고, 자세한 내용은 [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) 페이지를 확인하세요.
+1. [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html)로부터 라이선스를 받고, 자세한 내용은 [license](/docs/ko/self-host/rustdesk-server-pro/license/) 페이지를 확인하세요.
 2. VPS, 베어 메탈 또는 Linux VM을 생성하세요.
 3. DNS와 SSL을 사용하려면 DNS 이름, 예를 들어 `rustdesk.yourdomain.com`를 생성하세요.
 4. [This page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#install)를 실행하세요.
@@ -33,11 +33,11 @@ weight: 600
 9. 1단계에서 구매한 라이선스 코드를 입력하세요.
 
 ## RustDesk 서버 오픈소스에서 RustDesk 서버 프로로 어떻게 변환할 수 있나요?
-1. [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html)로부터 라이선스를 받고, 자세한 내용은 [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) 페이지를 확인하세요.
+1. [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html)로부터 라이선스를 받고, 자세한 내용은 [license](/docs/ko/self-host/rustdesk-server-pro/license/) 페이지를 확인하세요.
 2. TCP 포트 21114를 열어주세요.
 3. 귀하의 RustDesk 서버에 로그인하세요.
 4. 이미 DNS를 사용하지 않았고 SSL을 사용하고 싶다면 DNS 이름을 생성하세요. 예: `rustdesk.yourdomain.com`.
-5. [This page](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#convert-from-open-source).
+5. [This page](/docs/ko/self-host/rustdesk-server-pro/installscript/#오픈소스에서-변환하기).
 6. 명령어를 복사하여 Linux 터미널에 붙여넣으세요.
 7. 설치 과정 중 안내에 따라 진행하세요.
 8. 설치가 완료되면 `https://rustdesk.yourdomain.com` 또는 `http://youripaddress:21114`로 이동하세요.
@@ -47,7 +47,7 @@ weight: 600
 ## RustDesk Server Pro의 새 버전이 출시되었습니다. 어떻게 업그레이드할 수 있나요?
 먼저 데이터 파일(sqlite3 파일 등)을 백업하는 것이 좋습니다. https://github.com/rustdesk/rustdesk-server-pro/discussions/184#discussioncomment-8013375.
 - ### 스크립트(`install.sh`)로 설치한 경우
-[update.sh](/docs/ko/self-host/rustdesk-server-pro/installscript/script/#upgrade)를 실행해주세요.
+[update.sh](/docs/ko/self-host/rustdesk-server-pro/installscript/script/#업그레이드)를 실행해주세요.
 - ### Docker Compose
 
 ```
@@ -143,7 +143,7 @@ rustdesk/makepkg               latest    86a981e2e18f   2 months ago   2.23GB
 5. 제공된 상자에 새 비밀번호를 입력하세요.
 
 ## 라이선스를 새 서버로 이전하려면 어떻게 해야 하나요?
-[here](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#invoices-and-migration)를 참조하세요.
+[here](/docs/ko/self-host/rustdesk-server-pro/license/#청구서-라이선스-검색-및-마이그레이션)를 참조하세요.
 
 ## 내 VPS에서 이메일이 작동하지 않습니다
 많은 VPS 제공업체가 포트 465와 25를 차단합니다.
@@ -153,7 +153,7 @@ rustdesk/makepkg               latest    86a981e2e18f   2 months ago   2.23GB
 귀하의 메일 서버가 포트 25를 사용하지 않을 수 있습니다. 올바른 포트를 사용하고 있는지 확인해 주세요.
 
 ## PowerShell이나 유사한 도구를 사용해 RustDesk를 배포할 수 있나요?
-네, 배포를 돕는 스크립트를 찾을 수 있습니다 [here](https://rustdesk.com/docs/en/self-host/client-deployment/).
+네, 배포를 돕는 스크립트를 찾을 수 있습니다 [here](/docs/ko/self-host/client-deployment/).
 
 ## 버그 보고서를 어떻게 제출할 수 있나요?
 [GitHub](https://github.com/rustdesk/rustdesk-server-pro/issues)를 통해 제출해 주세요.
@@ -237,11 +237,11 @@ Start-Process .\rustdesk.exe --silent-install -wait
 ```
 
 ## `Key mismatch` 오류
-클라이언트를 [correct key](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/)로 구성해 주세요.
+클라이언트를 [correct key](/docs/ko/self-host/rustdesk-server-pro/relay/)로 구성해 주세요.
 
 ## `Failed to connect to relay server` 오류
-`hbbr`가 실행되고 있는지 확인해 주세요. `hbbr`에 대한 자세한 정보는 [here](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/)에서 확인할 수 있습니다.
-귀하의 `hbbr`가 `hbbs`와 동일한 머신에서 실행되지 않거나, 여러 릴레이 서버를 사용하거나, 기본 포트인 `21117`에서 실행되지 않는 경우, 이를 `hbbs`에 명시적으로 알려야 합니다. [here](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/)를 확인해 주세요.
+`hbbr`가 실행되고 있는지 확인해 주세요. `hbbr`에 대한 자세한 정보는 [here](/docs/ko/self-host/rustdesk-server-oss/install/)에서 확인할 수 있습니다.
+귀하의 `hbbr`가 `hbbs`와 동일한 머신에서 실행되지 않거나, 여러 릴레이 서버를 사용하거나, 기본 포트인 `21117`에서 실행되지 않는 경우, 이를 `hbbs`에 명시적으로 알려야 합니다. [here](/docs/ko/self-host/rustdesk-server-pro/relay/)를 확인해 주세요.
 
 ## 관리자 계정의 MFA 재설정
 https://github.com/rustdesk/rustdesk/discussions/6576
@@ -382,7 +382,7 @@ location / {
 
 * `Error getting validation data`
 
-해결 방법: 방화벽이 원인일 수 있습니다. 자세한 내용은 https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#firewall을 참조하세요.
+해결 방법: 방화벽이 원인일 수 있습니다. 자세한 내용은 [방화벽](/docs/ko/self-host/rustdesk-server-pro/faq/#방화벽) 섹션을 참조하세요.
 
 알림: `rustdesk.conf`를 수동으로 변경한 경우 `sudo service nginx restart`를 실행하십시오.
 

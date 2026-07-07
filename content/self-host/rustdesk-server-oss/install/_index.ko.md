@@ -68,4 +68,4 @@ chmod +x install.sh
 
 ## 서버 설치 후 클라이언트는 무엇이 필요합니까?
 
-서버가 실행된 후, 클라이언트는 보통 `ID Server` 주소와 서버 공개 `Key`를 필요로 합니다. RustDesk Server Pro 클라이언트를 구성하는 경우, `API Server`도 필요할 수 있습니다. [this](/docs/ko/self-host/client-configuration/#2-manual-config)를 확인해 주세요.
+서버가 실행된 후, 클라이언트는 보통 `ID Server` 주소와 서버 공개 `Key`를 필요로 합니다. RustDesk Server Pro 클라이언트를 구성하는 경우, `API Server`도 필요할 수 있습니다. [this](/docs/ko/self-host/client-configuration/#2-수동-구성)를 확인해 주세요.

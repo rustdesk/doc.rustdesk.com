@@ -62,7 +62,7 @@ HTTPS 지원이 필요하다면 `Nginx`와 같은 웹 서버를 설치하거나 
 
 Windows 클라이언트의 경우 사용자 지정 서버 구성은 생략하고 대신 `rustdesk.exe` 파일명에 구성 정보를 입력할 수 있습니다. 위와 같이 콘솔 환영 페이지로 이동한 후 `Windows EXE`를 클릭하십시오. **클라이언트 ≥ 1.1.9 필요합니다.**
 
-이 기능은 [client config](https://rustdesk.com/docs/en/self-host/client-configuration/) 및 [deployment scripts](https://rustdesk.com/docs/en/self-host/client-deployment/)와 함께 사용하여 클라이언트를 설정하는 데 활용할 수 있습니다.
+이 기능은 [client config](/docs/ko/self-host/client-configuration/) 및 [deployment scripts](/docs/ko/self-host/client-deployment/)와 함께 사용하여 클라이언트를 설정하는 데 활용할 수 있습니다.
 
 ## 기본 `admin` 사용자 외에 새 사용자 생성하기
 
@@ -157,7 +157,7 @@ RustDesk 실행 파일을 `--assign` 매개변수와 함께 사용해 할당 작
 | `--note <note>`                         | 장치에 노트 추가                  | 1.6.6               | 1.4.3           |
 | `--device_username <device_username>`   | 장치의 사용자 이름 설정           | 1.6.6               | 1.4.3           |
 | `--device_name <device_name>`           | 장치의 이름 설정                   | 1.6.6               | 1.4.3           |
-| [`--deploy`](/docs/ko/self-host/client-deployment/#explicit-deployment-for-new-devices) | **새 장치 배포 필요**가 활성화된 경우 새 장치를 등록합니다. **장치** 권한이 **읽기 및 쓰기**로 설정된 API 토큰이 필요합니다. | 1.8.3 | 1.4.7 |
+| [`--deploy`](/docs/ko/self-host/client-deployment/#새-장치에-대한-명시적-배포) | **새 장치 배포 필요**가 활성화된 경우 새 장치를 등록합니다. **장치** 권한이 **읽기 및 쓰기**로 설정된 API 토큰이 필요합니다. | 1.8.3 | 1.4.7 |
 
 Windows의 명령줄은 기본적으로 출력이 없습니다. 출력을 얻으려면 다음과 같이 실행하세요: `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | more` 또는 `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | Out-String`, [here](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomment-8094952)를 참조하세요.
 

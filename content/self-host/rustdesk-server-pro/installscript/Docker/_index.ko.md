@@ -58,7 +58,7 @@ services:
 > `podman-compose` 설치용 `sudo apt install podman-compose`
 
 {{% notice note %}}
-[Set up HTTPS for web console manually](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually)를 사용하는 방법.
+[Set up HTTPS for web console manually](/docs/ko/self-host/rustdesk-server-pro/faq/#웹-콘솔용-https-수동-설정)를 사용하는 방법.
 {{% /notice %}}
 
 ## Docker 명령어
@@ -90,7 +90,7 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v ./data:/root -td --
 ```
 
 {{% notice note %}}
-[Set up HTTPS for web console manually](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually) 사용 방법.
+[Set up HTTPS for web console manually](/docs/ko/self-host/rustdesk-server-pro/faq/#웹-콘솔용-https-수동-설정) 사용 방법.
 {{% /notice %}}
 
 > Fedora에서 SELinux로 문제가 발생하면 이 [issue](https://github.com/rustdesk/rustdesk-server/issues/230)를 확인해 보세요.

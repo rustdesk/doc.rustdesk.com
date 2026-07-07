@@ -32,7 +32,7 @@ GitHub에서 exe 파일을 다운로드하여 설치하세요.
 
 ### macOS
 
-GitHub에서 dmg 파일을 다운로드하세요. 더 자세한 정보는 [macOS page](https://rustdesk.com/docs/en/client/mac/)에서 확인하실 수 있습니다.
+GitHub에서 dmg 파일을 다운로드하세요. 더 자세한 정보는 [macOS page](/docs/ko/client/mac/)에서 확인하실 수 있습니다.
 
 dmg 파일을 열고 `RustDesk`를 `Applications`로 드래그하세요.
 
@@ -93,7 +93,7 @@ NixOS에서 시스템 전체를 설치하려면 `configuration.nix`를 편집한
 ```
 
 ### Android
-GitHub에서 apk를 설치하세요. 자세한 정보는 [Android page](https://rustdesk.com/docs/en/client/android/)에서 확인할 수 있습니다.
+GitHub에서 apk를 설치하세요. 자세한 정보는 [Android page](/docs/ko/client/android/)에서 확인할 수 있습니다.
 
 ### iOS(iPhone, iPad)
 [App Store](https://apps.apple.com/us/app/rustdesk-remote-desktop/id1581225015)에서 앱을 다운로드하세요.

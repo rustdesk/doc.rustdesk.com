@@ -41,7 +41,7 @@ RustDesk Server Pro 라이선스는 모든 릴레이 노드가 아닌 `hbbs` 서
 | --- | --- |
 | ![](/docs/en/self-host/rustdesk-server-pro/license/images/renew.jpg?v2) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/upgrade.png) |
 
-결제 후, 라이선스 [as below](/docs/ko/self-host/rustdesk-server-pro/license/#refresh-license)를 새로 고침하여 활성화해 주세요.
+결제 후, 라이선스 [as below](/docs/ko/self-host/rustdesk-server-pro/license/#라이선스-새로-고침)를 새로 고침하여 활성화해 주세요.
 
 ### 라이선스 새로 고침
 결제 후, 아래와 같이 웹 콘솔로 이동하여 수동으로 활성화해야 합니다. `Edit`를 클릭한 다음 `OK`를 클릭하면 되며, 아무것도 수정할 필요가 없습니다. 라이선스 키는 그대로 유지되기 때문입니다.

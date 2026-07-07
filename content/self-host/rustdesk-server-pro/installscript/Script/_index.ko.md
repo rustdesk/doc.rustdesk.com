@@ -8,9 +8,9 @@ keywords: ["rustdesk server pro install.sh", "rustdesk pro linux install", "rust
 자신만의 서비스 설정을 처음부터 작성하지 않고 간단한 Linux 기반 RustDesk Server Pro 설치를 원할 때는 `install.sh` 방법을 사용하세요.
 
 {{% notice note %}}
-[https://rustdesk.com/pricing/](https://rustdesk.com/pricing/)에서 라이선스를 받는 것을 잊지 마세요. 더 자세한 내용은 [license](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/) 페이지를 확인해 주세요.
+[https://rustdesk.com/pricing/](https://rustdesk.com/pricing/)에서 라이선스를 받는 것을 잊지 마세요. 더 자세한 내용은 [license](/docs/ko/self-host/rustdesk-server-pro/license/) 페이지를 확인해 주세요.
 
-이 간단한 설치를 하기 전에 먼저 [OSS installation](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/)를 읽어보시기 바랍니다. 여기서 더 깊이 있는 세부 정보를 알 수 있습니다.
+이 간단한 설치를 하기 전에 먼저 [OSS installation](/docs/ko/self-host/rustdesk-server-oss/install/)를 읽어보시기 바랍니다. 여기서 더 깊이 있는 세부 정보를 알 수 있습니다.
 {{% /notice %}}
 
 ## install.sh는 언제 사용해야 하나요?
@@ -20,7 +20,7 @@ keywords: ["rustdesk server pro install.sh", "rustdesk pro linux install", "rust
 ## install.sh 빠른 답변
 
 - `systemd`를 사용한 간단한 Linux 배포에는 이 방법을 사용하십시오.
-- 더 쉬운 업그레이드, 롤백 및 컨테이너 기반 운영을 원하시면 대신 [Docker](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/#docker-compose)를 사용하십시오.
+- 더 쉬운 업그레이드, 롤백 및 컨테이너 기반 운영을 원하시면 대신 [Docker](/docs/ko/self-host/rustdesk-server-pro/installscript/docker/#docker-compose권장)를 사용하십시오.
 - 시작하기 전에 Pro 라이선스를 준비해 두십시오.
 - 도메인을 사용하는 경우 스크립트가 HTTPS를 위해 `nginx`와 `certbot`도 설정할 수 있습니다.
 - 첫 번째 설치 후 업그레이드에는 `update.sh`를 사용하십시오.
@@ -32,7 +32,7 @@ keywords: ["rustdesk server pro install.sh", "rustdesk pro linux install", "rust
 `wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh | bash`
 
 {{% notice note %}}
-[the Docker image](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/docker/#docker-compose) 사용을 권장합니다. 솔루션 배포와 업데이트 과정이 크게 간소화됩니다. 리소스 소비량도 매우 낮습니다.
+[the Docker image](/docs/ko/self-host/rustdesk-server-pro/installscript/docker/#docker-compose권장) 사용을 권장합니다. 솔루션 배포와 업데이트 과정이 크게 간소화됩니다. 리소스 소비량도 매우 낮습니다.
 
 또한, 위의 명령어는 쓰기 권한이 없는 디렉터리가 아닌 홈 디렉터리에서 실행해 주세요.
 {{% /notice %}}
@@ -48,15 +48,15 @@ keywords: ["rustdesk server pro install.sh", "rustdesk pro linux install", "rust
 - 도메인을 선택하면 Nginx와 Certbot이 설치되어 API가 포트 `443`(HTTP)에서 이용 가능하며, 포트 `80`를 통해 SSL 인증서를 받게 됩니다. 이 인증서는 자동으로 갱신됩니다. HTTPS가 준비되면, `https://yourdomain.com:21114` 대신 `https://yourdomain.com`로 접속해 주세요.
 
 {{% notice note %}}
-[Set up HTTPS for web console manually](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually)를 사용하는 방법.
+[Set up HTTPS for web console manually](/docs/ko/self-host/rustdesk-server-pro/faq/#웹-콘솔용-https-수동-설정)를 사용하는 방법.
 {{% /notice %}}
 
 {{% notice note %}}
-systemd 서비스가 시작되지 않으면, 아마도 SELinux와 관련이 있을 수 있으니 [this](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#selinux)를 확인해 보세요.
+systemd 서비스가 시작되지 않으면, 아마도 SELinux와 관련이 있을 수 있으니 [this](/docs/ko/self-host/rustdesk-server-pro/faq/#selinux)를 확인해 보세요.
 {{% /notice %}}
 
 {{% notice note %}}
-클라이언트가 서버에 연결되지 않거나 웹 콘솔에 접근할 수 없는 경우, [this](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#firewall)를 확인해 보세요.
+클라이언트가 서버에 연결되지 않거나 웹 콘솔에 접근할 수 없는 경우, [this](/docs/ko/self-host/rustdesk-server-pro/faq/#방화벽)를 확인해 보세요.
 {{% /notice %}}
 
 ## 업그레이드
