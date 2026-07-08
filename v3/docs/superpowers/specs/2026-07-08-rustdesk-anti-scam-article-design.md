@@ -35,7 +35,7 @@ This structure lets readers infer responsibility from evidence instead of asking
 4. Public-server login: explain the login requirement introduced in response to ongoing scam and botnet abuse, including the disruption reported by legitimate users.
 5. Community feedback: use GitHub Discussions and Reddit to show both demand for safeguards and the practical cost of added friction. Community posts provide reaction and context, not proof of RustDesk's technical claims.
 6. Limits: warnings, store withdrawal, and login requirements reduce opportunities for abuse but cannot stop deception, malicious self-hosting, or users granting access to strangers.
-7. User guidance: verify downloads, distrust unsolicited support, do not share connection credentials, enable connection 2FA on the controlled device, and use the existing vendor-neutral scam guide for recovery steps.
+7. User guidance: verify downloads, distrust unsolicited support, do not share connection credentials, set a strong unique controlled-device password, enable connection 2FA, add an IP allowlist where appropriate, and use the existing vendor-neutral scam guide for recovery steps.
 8. FAQ: answer `Is RustDesk a scam?`, `Why is RustDesk not on Google Play?`, `Why does the RustDesk public server require login?`, and `Can self-hosting prevent remote-access scams?`.
 
 ## Required Sources
@@ -49,6 +49,8 @@ Use first-party sources for RustDesk actions:
 - RustDesk support warning: <https://rustdesk.com/support>
 - RustDesk client commit introducing 2FA for unattended access: <https://github.com/rustdesk/rustdesk/commit/44e6b7dbb0125dc0c288c19a16a944b5d605852b>
 - Current RustDesk client 2FA implementation: <https://github.com/rustdesk/rustdesk/blob/master/src/auth_2fa.rs>
+- RustDesk client configuration reference for the `whitelist` setting: <https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#whitelist>
+- Current RustDesk controlled-side IP allowlist enforcement: <https://github.com/rustdesk/rustdesk/blob/master/src/server/connection.rs>
 - Existing vendor-neutral prevention guide: `/blog/avoid-remote-desktop-scams`
 
 Verify the release-page and mobile controlled-device warnings against current first-party pages or source code before describing their exact wording. Do not present search snippets or third-party paraphrases as primary evidence.
@@ -73,6 +75,24 @@ The article must recommend the RustDesk client's connection 2FA without confusin
 - The optional trusted-device setting can skip later 2FA challenges. Users who enable it should review and remove devices they no longer trust; users seeking the strictest behavior should leave bypass disabled.
 - This protects unattended access when a password is exposed or guessed. It cannot protect someone who deliberately approves a connection or gives both the password and current TOTP code to a scammer.
 - Do not discuss Server Pro web-console login 2FA in this article.
+
+## Controlled-Device Password Guidance
+
+The article must establish a strong connection password as the first layer of unattended-access protection:
+
+- Use a long, unique permanent password on the controlled device for unattended access; do not reuse an operating-system, email, or other service password.
+- Keep attended support separate: use the temporary one-time password or explicit click approval when practical instead of exposing the permanent credential.
+- Never send a permanent password through an untrusted chat, email, or unsolicited support call. Change it immediately if it may have been disclosed.
+- A strong password reduces guessing, credential-stuffing, and reuse risk. It cannot protect a user who gives the credential to a scammer, so combine it with controlled-device 2FA and, where operationally suitable, an IP allowlist.
+
+## Controlled-Device IP Allowlist Guidance
+
+The article must also recommend the client feature labeled `IP Whitelisting` in the RustDesk interface, while referring to it as an IP allowlist in explanatory prose:
+
+- On desktop, configure it under `Settings → Security → Security → Use IP Whitelisting`; on a mobile controlled device, use `Settings → Share screen → Use IP Whitelisting`.
+- Add only the controller IP addresses or CIDR ranges that should be permitted. The controlled device rejects incoming connections from addresses outside the list before password and 2FA authorization.
+- Treat it as a strong option for organizations with fixed egress addresses or known network ranges, not a universal default. Dynamic residential addresses, roaming controllers, and incorrect CIDR entries can lock out legitimate support staff.
+- Use the IP allowlist together with a strong connection password and controlled-device 2FA. It narrows where a connection may originate; it does not replace authentication and cannot stop a scammer operating from an allowed network.
 
 ## Verification
 
