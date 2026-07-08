@@ -90,7 +90,10 @@ The article must establish a strong connection password as the first layer of un
 The article must also recommend the client feature labeled `IP Whitelisting` in the RustDesk interface, while referring to it as an IP allowlist in explanatory prose:
 
 - On desktop, configure it under `Settings → Security → Security → Use IP Whitelisting`; on a mobile controlled device, use `Settings → Share screen → Use IP Whitelisting`.
-- Add only the controller IP addresses or CIDR ranges that should be permitted. The controlled device rejects incoming connections from addresses outside the list before password and 2FA authorization.
+- Add only the controller IPv4/IPv6 addresses or CIDR ranges that should be permitted, using examples such as `203.0.113.10` for one address and `203.0.113.0/24` for a network. The controlled device rejects incoming connections from addresses outside the list before password and 2FA authorization.
+- Include a short CIDR usage block: the prefix is the number of fixed network bits, so a larger prefix permits a smaller range; `/32` permits one IPv4 address, `/24` permits the 256 addresses in that IPv4 subnet, `/128` permits one IPv6 address, and `/64` permits an IPv6 subnet. Use documentation-only example ranges and label them as examples rather than values to copy unchanged.
+- Explain that multiple addresses and ranges may be separated by commas, semicolons, spaces, or new lines. Recommend the smallest practical range and warn against broad entries.
+- Tell readers to identify the controller network address that the controlled device will see, account for dynamic addresses and roaming networks, and test a new allowlist from another session before closing the current working session to avoid accidental lockout.
 - Treat it as a strong option for organizations with fixed egress addresses or known network ranges, not a universal default. Dynamic residential addresses, roaming controllers, and incorrect CIDR entries can lock out legitimate support staff.
 - Use the IP allowlist together with a strong connection password and controlled-device 2FA. It narrows where a connection may originate; it does not replace authentication and cannot stop a scammer operating from an allowed network.
 
