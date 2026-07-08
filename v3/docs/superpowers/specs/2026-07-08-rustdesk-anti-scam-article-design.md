@@ -35,7 +35,7 @@ This structure lets readers infer responsibility from evidence instead of asking
 4. Public-server login: explain the login requirement introduced in response to ongoing scam and botnet abuse, including the disruption reported by legitimate users.
 5. Community feedback: use GitHub Discussions and Reddit to show both demand for safeguards and the practical cost of added friction. Community posts provide reaction and context, not proof of RustDesk's technical claims.
 6. Limits: warnings, store withdrawal, and login requirements reduce opportunities for abuse but cannot stop deception, malicious self-hosting, or users granting access to strangers.
-7. User guidance: verify downloads, distrust unsolicited support, do not share connection credentials, enable two-factor authentication, and use the existing vendor-neutral scam guide for recovery steps.
+7. User guidance: verify downloads, distrust unsolicited support, do not share connection credentials, enable connection 2FA on the controlled device, and use the existing vendor-neutral scam guide for recovery steps.
 8. FAQ: answer `Is RustDesk a scam?`, `Why is RustDesk not on Google Play?`, `Why does the RustDesk public server require login?`, and `Can self-hosting prevent remote-access scams?`.
 
 ## Required Sources
@@ -47,7 +47,8 @@ Use first-party sources for RustDesk actions:
 - RustDesk FAQ confirming removal from Google Play because of scamming: <https://github.com/rustdesk/rustdesk/wiki/FAQ#apple--google-store>
 - Public-server login explanation: <https://github.com/rustdesk/rustdesk/wiki/Login-required-for-public-server>
 - RustDesk support warning: <https://rustdesk.com/support>
-- RustDesk Server Pro 2FA documentation: <https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/>
+- RustDesk client commit introducing 2FA for unattended access: <https://github.com/rustdesk/rustdesk/commit/44e6b7dbb0125dc0c288c19a16a944b5d605852b>
+- Current RustDesk client 2FA implementation: <https://github.com/rustdesk/rustdesk/blob/master/src/auth_2fa.rs>
 - Existing vendor-neutral prevention guide: `/blog/avoid-remote-desktop-scams`
 
 Verify the release-page and mobile controlled-device warnings against current first-party pages or source code before describing their exact wording. Do not present search snippets or third-party paraphrases as primary evidence.
@@ -63,13 +64,15 @@ Replace the Google Play claims in the FAQ, introductory availability paragraph, 
 
 Do not imply that sideloading is risk-free. Direct readers to official RustDesk-controlled or established distribution pages and retain the current Apple App Store statement for iOS.
 
-## 2FA Guidance
+## Controlled-Device 2FA Guidance
 
-The article must recommend 2FA without overstating what it prevents:
+The article must recommend the RustDesk client's connection 2FA without confusing it with RustDesk Server Pro account 2FA:
 
-- Public-server users authenticate through Google, GitHub, or another supported identity provider, so they should enable 2FA on that provider account.
-- RustDesk Server Pro users should enable email login verification or, preferably for administrators and sensitive accounts, TOTP in the web console and store the generated backup codes safely.
-- 2FA reduces account-takeover risk. It does not protect a user who knowingly approves a session or shares access with a scammer.
+- Configure 2FA in the security settings of the device that will be controlled, then scan its QR code with a TOTP authenticator and confirm setup with the generated six-digit code.
+- After the normal connection credential is accepted, a controller must also supply the current TOTP code before the controlled device authorizes the session.
+- The optional trusted-device setting can skip later 2FA challenges. Users who enable it should review and remove devices they no longer trust; users seeking the strictest behavior should leave bypass disabled.
+- This protects unattended access when a password is exposed or guessed. It cannot protect someone who deliberately approves a connection or gives both the password and current TOTP code to a scammer.
+- Do not discuss Server Pro web-console login 2FA in this article.
 
 ## Verification
 
