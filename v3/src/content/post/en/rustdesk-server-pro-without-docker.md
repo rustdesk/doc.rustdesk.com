@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-06-30T13:50:00Z
 lang: en
 translationKey: rustdesk-server-pro-without-docker
 draft: false
@@ -15,6 +15,12 @@ author: RustDesk Team
 faq:
   - question: 'Can I run RustDesk Server Pro without Docker?'
     answer: 'No, you are not forced to use Docker. RustDesk Server Pro ships as plain binaries you can install directly on a VM or bare-metal server (for example a Debian box) using install.sh, and you can even install offline by downloading the release files first. The one hard requirement: the server must be able to reach https://rustdesk.com to activate its license — the license cannot be activated fully offline, though a proxy is supported.'
+  - question: 'How do I install RustDesk Server Pro on Debian or Ubuntu without Docker?'
+    answer: 'Download the Server Pro release for your architecture and run the bundled install.sh on the host to set up the hbbs (ID/rendezvous) and hbbr (relay) services directly under systemd — no container runtime needed. Open only the ports you use (native clients need TCP 21115-21117 and UDP 21116; the Pro API/console is on 21114 and web/WebSocket on 21118-21119) and front the console with an HTTPS reverse proxy on 443.'
+  - question: 'Can I activate the license behind a proxy or without direct internet access?'
+    answer: 'The server must reach https://rustdesk.com to activate and keep its license, but you do not need to expose it directly: an outbound HTTP/HTTPS proxy is supported for the license check. A fully air-gapped, offline-forever activation is not available.'
+  - question: 'How do I move a non-Docker Server Pro license to a new VM?'
+    answer: 'A Server Pro license binds to one server (the hbbs component; the relay hbbr needs no license). Log in to the self-service portal at rustdesk.com/self-host/account/ with the email you used on the payment page, unbind the old machine, then set the license on the new server and let it re-register. If you no longer know which email you used, contact support@rustdesk.com.'
 
 metadata:
   description: "No, Docker isn't required for RustDesk Server Pro. Install on a plain VM or bare metal, even offline — but the license must reach rustdesk.com to activate."

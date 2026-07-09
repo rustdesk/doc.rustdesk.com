@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-07T00:00:00Z
+publishDate: 2026-07-07T17:09:00Z
 lang: en
 translationKey: rustdesk-remote-control-android-ios
 draft: false
@@ -15,7 +15,7 @@ faq:
   - question: 'Can I remotely control an Android phone with RustDesk?'
     answer: "Yes. On the Android device you start RustDesk's screen-capture service (which requires an on-screen consent prompt) and enable the RustDesk Input accessibility service so remote taps and swipes are injected. Screen sharing needs Android 6 or newer; sharing internal system audio needs Android 10 or newer. Some manufacturers restrict accessibility for sideloaded apps, so you may have to allow restricted settings first."
   - question: 'Can RustDesk control an iPhone or iPad?'
-    answer: "No. As of 2026 RustDesk on iOS is controller-only: you can use an iPhone or iPad to control a remote computer, but you cannot view or control an iOS device from elsewhere. Apple's restrictive screen-recording and background APIs are the reason, and iOS host support remains a long-standing, unimplemented feature request. Do not expect to remote into an iPhone with RustDesk today."
+    answer: "Not from any remote-desktop app — that's an iOS platform limit, not a RustDesk one. Apple's screen-recording and background restrictions don't let a third-party app be remotely controlled as a host, so no vendor offers true remote control into an iPhone or iPad. What RustDesk's iOS/iPadOS app does well is work as a controller: use an iPhone or iPad to control your Windows, macOS, Linux, and Android machines."
   - question: 'Can I use my phone to control my computer?'
     answer: 'Yes. The Android and iOS RustDesk apps work as full controller clients. You can connect from either to a Windows, macOS or Linux machine and control it with an on-screen touchpad or mouse mode. This is the most reliable mobile use case and works the same as the desktop client.'
   - question: 'Are the RustDesk mobile apps open source?'
@@ -29,7 +29,7 @@ metadata:
 
 "Can I remote into a phone?" is one of the most common questions RustDesk gets, and it deserves an honest answer rather than a marketing one. The short version: RustDesk can genuinely control an Android device, both mobile apps make excellent _controllers_ for your computers, and — the part people don't want to hear — you cannot currently remote into an iPhone or iPad. This guide explains exactly what works, what doesn't, and why, so you can plan around real capabilities instead of assumptions.
 
-Both mobile apps are, like the rest of RustDesk, [open source](/blog/open-source-remote-desktop-software) under the AGPL. Android builds are available from the [official RustDesk GitHub releases](https://github.com/rustdesk/rustdesk/releases) and [F-Droid](https://f-droid.org/packages/com.carriez.flutter_hbb/) as `com.carriez.flutter_hbb`; the iOS controller is on the App Store. RustDesk is [not currently distributed through Google Play](/blog/rustdesk-and-remote-access-scams): it voluntarily unpublished the Android app in response to scam abuse. Same codebase, same auditable core.
+Both mobile apps are, like the rest of RustDesk, [open source](/blog/open-source-remote-desktop-software) under the AGPL. Android builds are available from the [official RustDesk GitHub releases](https://github.com/rustdesk/rustdesk/releases) and [F-Droid](https://f-droid.org/packages/com.carriez.flutter_hbb/) as `com.carriez.flutter_hbb`, with wide device coverage — arm64, arm32, and x86_64 builds, plus a universal APK; the iOS controller is on the App Store. RustDesk is [not currently distributed through Google Play](/blog/rustdesk-and-remote-access-scams): it voluntarily unpublished the Android app in response to scam abuse. Same codebase, same auditable core.
 
 ## The one-table summary
 
@@ -66,21 +66,21 @@ Now the honest limitations, because Android's security model imposes real ones:
 - **Reboots need a manual unlock.** After a restart the device usually has to be unlocked in person before control resumes.
 - **OEM restrictions.** On some manufacturers' builds, the **RustDesk Input** accessibility toggle is greyed out for sideloaded apps until you grant "restricted settings" (long-press the app icon → App info → allow restricted settings). Aggressive battery managers on certain OEMs can also kill the background service.
 
-The practical takeaway: Android control is excellent for **attended support** — helping someone who is holding their phone — but it is not a reliable **set-and-forget unattended** solution the way a desktop is. Be honest with yourself about which one you need. (For desktops, the [unattended access setup guide](/blog/rustdesk-unattended-access-setup) covers the real thing.)
+The practical takeaway: Android control is excellent for **attended support** — helping someone who is holding their phone — while **set-and-forget unattended** access is a job the desktop host does best, because mobile operating systems restrict persistent background access. Match the platform to the job. (For desktops, the [unattended access setup guide](/blog/rustdesk-unattended-access-setup) covers the real thing.)
 
 ## Controlling an iOS device: the honest answer
 
-Here's the part that gets asked constantly and answered vaguely elsewhere, so we'll be direct: **you cannot remotely view or control an iPhone or iPad with RustDesk.** The iOS app is a controller only — it connects _out_ to control your computers, but it cannot act as a host, share its screen, or be controlled from another device.
+Here's the part that gets asked constantly and answered vaguely elsewhere, so we'll be direct: **no remote-desktop app can remotely control an iPhone or iPad — RustDesk included.** On iOS the RustDesk app is a capable controller — it connects _out_ to control your computers — but Apple does not let any third-party app act as a remotely-controlled host on iOS.
 
 The reason is Apple. iOS heavily restricts background execution, screen recording, and any form of synthetic input injection, which is why no third-party app offers true remote _control_ of an iPhone. This isn't a RustDesk oversight so much as a platform wall — iOS host support has been a repeatedly [requested feature on GitHub](https://github.com/rustdesk/rustdesk/discussions/4839) that remains unimplemented. Apple's broadcast APIs (ReplayKit) can in principle stream a screen, but full remote control of iOS from another device isn't something the OS permits to third parties.
 
-So if your requirement is "remote into an iPhone," RustDesk is not the tool today, and we'd rather tell you that up front than let you discover it after setup. This limitation is not unique to RustDesk — it's the same wall every remote-desktop vendor hits on iOS, as noted in our [RustDesk vs AnyDesk](/blog/rustdesk-vs-anydesk) comparison.
+So if your requirement is specifically "remote into an iPhone," no current remote-desktop tool can do it — it's an iOS platform wall every vendor hits, not a RustDesk gap, as noted in our [RustDesk vs AnyDesk](/blog/rustdesk-vs-anydesk) comparison. We'd rather tell you that up front than let you discover it after setup.
 
 ## A note on privacy and self-hosting
 
 Because the mobile apps are open source and speak the same protocol as the desktop client, you can point them at your own [self-hosted RustDesk server](/blog/why-self-host-remote-desktop-software) instead of the public network — so mobile sessions are brokered by infrastructure you control, ID and all. For remote-support workflows that touch personal devices, that data-sovereignty angle matters more than usual.
 
-The honest caveat is the same as always: self-hosting means you run and secure that server yourself. It's the price of keeping session data on your own turf, and for many teams it's well worth it.
+The trade-off is the same as always: you run and secure that server yourself — a modest task given the low requirements — and for many teams, keeping session data on your own turf is well worth it.
 
 ## Getting started
 

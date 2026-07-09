@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-07T00:00:00Z
+publishDate: 2026-06-30T17:26:00Z
 lang: en
 translationKey: is-anydesk-safe
 draft: false

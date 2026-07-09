@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-07T00:00:00Z
+publishDate: 2026-06-30T19:07:00Z
 lang: en
 translationKey: rustdesk-for-mac
 draft: false
@@ -69,7 +69,7 @@ Unattended access lets you connect to a Mac when nobody's there to click "accept
 
 For deploying across many Macs, RustDesk provides a scriptable path. Per the [macOS auto-start service setup wiki](<https://github.com/rustdesk/rustdesk/wiki/macOS-Auto%E2%80%90Start-Service-Setup-(for-Remote---MDM-Deployment)>), an `install_service.sh` script installs RustDesk (or your custom-branded client) as a service without needing the GUI **Install** button, creating a LaunchDaemon at `/Library/LaunchDaemons/com.carriez.RustDesk_service.plist` and a LaunchAgent at `/Library/LaunchAgents/com.carriez.RustDesk_server.plist`. The daemon starts at boot; the agent starts at the login-window session and persists through login.
 
-The honest catch for fleet admins: **that script does not grant the privacy permissions.** Screen Recording, Accessibility and Input Monitoring must still be provisioned separately — in a managed environment, that means shipping an MDM **PPPC** (Privacy Preferences Policy Control) profile so the permissions are pre-approved. Skip that step and the service will be running but remote control won't work. For the full walk-through beyond macOS specifics, see the [unattended access setup guide](/blog/rustdesk-unattended-access-setup).
+One thing to plan for: **that script does not grant the privacy permissions.** Screen Recording, Accessibility and Input Monitoring must still be provisioned separately — in a managed environment, that means shipping an MDM **PPPC** (Privacy Preferences Policy Control) profile so the permissions are pre-approved. Skip that step and the service will be running but remote control won't work. For the full walk-through beyond macOS specifics, see the [unattended access setup guide](/blog/rustdesk-unattended-access-setup).
 
 ## Connecting to your own server
 
@@ -77,7 +77,7 @@ The reason many people choose RustDesk on macOS over a proprietary tool is the s
 
 If your workflow crosses desktop and mobile devices, check the separate [Android and iOS control matrix](/blog/rustdesk-remote-control-android-ios), because mobile hosting and control capabilities are not symmetric.
 
-That's also the honest trade-off worth naming: self-hosting means _you_ run and secure that server. There's no managed uptime SLA unless you build one. For a lot of teams — particularly anyone with data-residency requirements — that control is exactly the point; for others, a managed option is a more comfortable fit. Both are legitimate.
+The trade worth naming: self-hosting means _you_ run and secure that server — a modest task, given the low hardware requirements and light upkeep. For teams with data-residency requirements especially, that control is exactly the point, and RustDesk support is there if you need it.
 
 ## Getting started
 

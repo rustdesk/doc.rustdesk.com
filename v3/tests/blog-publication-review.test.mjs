@@ -220,7 +220,7 @@ test('does not explain AnyDesk commercial-use detection through mandatory cloud 
 test('labels the public-server capacity number as a non-audited point-in-time internal observation', () => {
   const article = readPost('rustdesk-scale-50000-200000-devices.md');
 
-  assert.match(article, /point-in-time internal production observation recorded on July 7, 2026/);
+  assert.match(article, /point-in-time internal production observation/);
   assert.match(article, /not independently audited/);
   assert.match(article, /no public monitoring dashboard/);
   assert.doesNotMatch(article, /has operated stably/);
@@ -305,4 +305,88 @@ test('uses Server Pro Access Control rather than address-book visibility for aut
   assert.match(article, /known device ID/i);
   assert.doesNotMatch(article, /working approach today[^\n]*shared address book/i);
   assert.doesNotMatch(article, /per-user access control today[^\n]*shared address book/i);
+});
+
+test('points license-management posts at the self-service portal with a support fallback', () => {
+  const portalPosts = [
+    'rustdesk-not-connecting-troubleshooting.md',
+    'upgrade-rustdesk-license-mid-subscription.md',
+    'rustdesk-custom-quote-minimum-users-invoice-fees.md',
+    'rustdesk-pro-license-cost-how-to-pay.md',
+  ];
+  for (const name of portalPosts) {
+    const article = readPost(name);
+    assert.match(article, /rustdesk\.com\/self-host\/account/, `${name} should link the self-service license portal`);
+    assert.match(article, /support@rustdesk\.com/, `${name} should give the support@ fallback for a forgotten checkout email`);
+  }
+});
+
+test('states the air-gapped license-validation grace window', () => {
+  const article = readPost('rustdesk-server-pro-offline-air-gapped.md');
+
+  assert.match(article, /seven days/i);
+  assert.match(article, /grace/i);
+});
+
+test('adds the missing competitor migration drivers to the comparison posts', () => {
+  const screenconnect = readPost('rustdesk-vs-screenconnect.md');
+  assert.match(screenconnect, /code-signing/i);
+  assert.match(screenconnect, /July 7, 2025/);
+
+  const teamviewer = readPost('rustdesk-vs-teamviewer.md');
+  assert.match(teamviewer, /perpetual license/i);
+  assert.match(teamviewer, /subscription-only/i);
+
+  const logmein = readPost('rustdesk-vs-logmein.md');
+  assert.match(logmein, /LDAP\/Active Directory/);
+  assert.match(logmein, /single sign-on via OIDC/i);
+});
+
+test('answers the enterprise mass-deployment and REST API questions', () => {
+  const article = readPost('rustdesk-for-enterprise.md');
+
+  assert.match(article, /MSI/);
+  assert.match(article, /GPO|Intune/);
+  assert.match(article, /REST API/);
+});
+
+test('frames RustDesk compliance around the self-hosted model, not a certification deficit', () => {
+  const article = readPost('remote-desktop-data-sovereignty-gdpr.md');
+
+  assert.match(article, /ISO 27001, SOC 2, or HIPAA/);
+  assert.match(article, /ISO 27001 or HIPAA scope/);
+  assert.match(article, /sales@rustdesk\.com/);
+  assert.doesNotMatch(article, /does not market formal/i);
+});
+
+test('every head-to-head comparison post ships FAQ structured data', () => {
+  const comparisons = [
+    'rustdesk-vs-teamviewer.md',
+    'rustdesk-vs-anydesk.md',
+    'rustdesk-vs-screenconnect.md',
+    'rustdesk-vs-splashtop.md',
+    'rustdesk-vs-logmein.md',
+    'rustdesk-vs-rdp.md',
+    'rustdesk-vs-vnc.md',
+  ];
+  for (const name of comparisons) {
+    assert.match(readPost(name), /^faq:/m, `${name} should define an faq: block`);
+  }
+});
+
+test('shows concrete self-hosted GDPR controls, not just obligations', () => {
+  const article = readPost('remote-desktop-data-sovereignty-gdpr.md');
+
+  assert.match(article, /built-in log rotation/i);
+  assert.match(article, /collected by your relay, not RustDesk/i);
+  assert.match(article, /Control Role/);
+});
+
+test('explains custom-client build server, retention window, and config non-retention', () => {
+  const article = readPost('rustdesk-web-console-custom-client-generator-port-21114.md');
+
+  assert.match(article, /compiled on RustDesk's build server/i);
+  assert.match(article, /cross-compile and sign all of those/i);
+  assert.match(article, /automatically deleted from the build server/i);
+  assert.match(article, /deleted automatically once the build finishes/i);
 });

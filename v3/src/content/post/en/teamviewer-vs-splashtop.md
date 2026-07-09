@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-07-02T12:27:00Z
 lang: en
 translationKey: teamviewer-vs-splashtop
 draft: false
@@ -93,7 +93,7 @@ The decision changes when infrastructure control, source visibility, or a differ
 
 This is where we make RustDesk's case plainly, so read it as that.
 
-**A published licensing model.** RustDesk Server Pro standard plans license **login users plus managed devices** and include unlimited concurrent connections. Customized V2 has a defined concurrency allowance, so confirm the current [pricing matrix](https://rustdesk.com/pricing) for the plan you are evaluating.
+**A published licensing model.** RustDesk Server Pro standard plans license **login users plus managed devices** and include unlimited concurrent connections. [Customized V2](https://rustdesk.com/pricing#custom2) has a defined concurrency allowance, so confirm the current [pricing matrix](https://rustdesk.com/pricing) for the plan you are evaluating.
 
 **Self-hosted server-side services.** RustDesk Server Pro runs the ID/rendezvous, relay, console, and stored deployment data on infrastructure you control. When customer-operated infrastructure is mandatory, compare it with Splashtop On-Prem rather than with Splashtop's SaaS plans.
 
@@ -101,9 +101,9 @@ This is where we make RustDesk's case plainly, so read it as that.
 
 **A third option for the MSP workflow.** A self-hosted web console, custom client generator, device groups, and a shared address book cover the "one console, many technicians" requirement. RustDesk still licenses login users and managed devices, and Customized V2 has a concurrency allowance. See [RustDesk for MSPs](/blog/rustdesk-for-msps), [RustDesk vs TeamViewer](/blog/rustdesk-vs-teamviewer), and [Self-Hosted Splashtop Alternative: What IT Teams Should Evaluate Before Switching](/blog/rustdesk-vs-splashtop).
 
-## The honest caveat
+## Or skip the cloud altogether
 
-Self-hosting does not remove operational cost. Running RustDesk Server Pro or Splashtop On-Prem means **your team** operates server infrastructure. TeamViewer and Splashtop SaaS shift more of that work to the vendor. If your team does not want to own TLS, monitoring, backup, upgrades, and availability, a managed product may be the better fit.
+Between two SaaS products sits the option neither sells: run the coordination yourself and keep data and cost on infrastructure you control. For teams weighing more than monthly price, that question is worth putting on the table.
 
 ## Try it
 

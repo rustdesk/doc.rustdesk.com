@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-08T00:00:00Z
+publishDate: 2026-07-06T12:36:00Z
 lang: en
 translationKey: rustdesk-and-remote-access-scams
 draft: false

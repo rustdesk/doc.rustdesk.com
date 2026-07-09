@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-06-29T19:30:00Z
 lang: en
 translationKey: rustdesk-server-pro-free-trial
 draft: false
@@ -51,6 +51,6 @@ This question comes overwhelmingly from IT admins, MSPs, and businesses evaluati
 - [How much does RustDesk Server Pro cost, and how does per-user vs. per-device licensing work?](/blog/rustdesk-pro-license-cost-how-to-pay)
 - [What features are included in the Basic plan versus higher tiers?](/blog/rustdesk-custom-quote-minimum-users-invoice-fees)
 - [What is a custom client, and which licenses include it?](/blog/rustdesk-web-console-custom-client-generator-port-21114)
-- [Can I self-host RustDesk Server for free using the open-source version?](/blog/see-rustdesk-in-action)
+- [Can I self-host RustDesk Server for free using the open-source version?](/blog/open-source-remote-desktop-software)
 
 Ready to evaluate it? Email [sales@rustdesk.com](mailto:sales@rustdesk.com) and ask for the current evaluation terms that match your setup.

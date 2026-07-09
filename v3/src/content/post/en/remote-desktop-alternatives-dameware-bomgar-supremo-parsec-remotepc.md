@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-07-09T16:08:00Z
 lang: en
 translationKey: remote-desktop-alternatives-dameware-bomgar-supremo-parsec-remotepc
 draft: false
@@ -52,23 +52,23 @@ RustDesk's [per login-user and per managed-device](/blog/rustdesk-pro-license-co
 
 ## Replacing Supremo
 
-Supremo comparisons tend to focus on performance and price. Benchmark both products on the same network and compare current concurrency terms: RustDesk standard plans are unlimited, while Customized V2 is limited.
+Supremo comparisons tend to focus on performance and price. Benchmark both products on the same network and compare current concurrency terms: RustDesk standard plans are unlimited, while [Customized V2](https://rustdesk.com/pricing#custom2) is limited.
 
 ## Replacing Parsec
 
 Parsec comparisons often involve VDI, CAD, or creative workloads. Performance-sensitive buyers should run a proof of concept on their own hardware rather than infer results from someone else's benchmarks.
 
-For this group, the self-hosted web client is usually the first thing they want to test — RustDesk lets you validate real-world performance on your own infrastructure before committing at scale, rather than taking a vendor's word for it.
+For this group, the native client on their own hardware is usually the first thing they benchmark — RustDesk lets you validate real-world latency and performance before committing at scale, rather than taking a vendor's word for it.
 
 ## Replacing RemotePC
 
-RemotePC and RealVNC comparisons typically cover price, reliability, and self-hosting. Test the exact workflows you depend on before committing.
+RemotePC comparisons typically cover price, reliability, and self-hosting. Test the exact workflows you depend on before committing.
 
 ## Use a weighted replacement scorecard
 
 Assign each requirement a weight and score only after a hands-on test. At minimum include attended support, unattended access, elevation, file transfer, multi-monitor, platform coverage, client deployment, identity, per-device authorization, audit events, relay performance, recovery, and operating effort. Price the configuration that passes the scorecard—not the cheapest tier from each vendor.
 
-RustDesk standard plans include unlimited concurrent connections, while Customized V2 has a defined allowance. All commercial plans must also fit both login-user and managed-device counts. Features such as custom client generation and identity controls vary by plan, so verify the current [pricing matrix](https://rustdesk.com/pricing).
+RustDesk standard plans include unlimited concurrent connections, while Customized V2 has a defined allowance. All commercial plans must also fit both login-user and managed-device counts. Custom client generation and identity controls are available from the Basic plan and up, so verify the current [pricing matrix](https://rustdesk.com/pricing).
 
 ## More focused comparisons
 
@@ -78,9 +78,9 @@ RustDesk standard plans include unlimited concurrent connections, while Customiz
 - For protocol-level trade-offs, compare [RustDesk vs RDP](/blog/rustdesk-vs-rdp) and [RustDesk vs VNC](/blog/rustdesk-vs-vnc).
 - For MSP support operations, use [RustDesk vs ScreenConnect](/blog/rustdesk-vs-screenconnect).
 
-## The honest caveat
+## The self-hosted separator
 
-Self-hosting means someone on your side runs the server: provisioning, ports, TLS, and patching. If your team wants a fully managed cloud with nothing to maintain, that's a real trade-off to weigh — RustDesk Server Pro is [self-hosted by design](/blog/why-self-host-remote-desktop-software).
+Against a field of cloud products, RustDesk's difference is plain: you host the coordination and keep the data, instead of routing both through a vendor. For teams that weight control heavily, that is the deciding line.
 
 ## Try it without a sales call
 

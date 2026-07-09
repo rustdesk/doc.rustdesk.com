@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-07T00:00:00Z
+publishDate: 2026-07-08T15:45:00Z
 lang: en
 translationKey: gotomypc-alternative-self-hosted
 draft: false
@@ -20,8 +20,8 @@ faq:
     answer: 'GoToMyPC is priced per computer per month as a cloud subscription across its Personal, Pro, and Corporate plans. RustDesk Server Pro is licensed per login-user plus per managed-device, hosted on your own server, with unlimited concurrent connections on standard plans. There is no per-computer cloud subscription. For current rates, see rustdesk.com/pricing.'
   - question: 'Can RustDesk do unattended access to my own computers like GoToMyPC?'
     answer: "Yes. RustDesk supports permanent-password unattended access so you can reach your own machines without someone sitting at the far end, which is GoToMyPC's core use case. The difference is that with RustDesk you own the server brokering those connections instead of renting cloud access per computer."
-  - question: 'What is the downside of switching from GoToMyPC to a self-hosted tool?'
-    answer: 'GoToMyPC is fully managed with zero server upkeep — you just log in. With RustDesk you or your IT team run the server: provisioning a host, opening ports, setting up TLS, and patching it. For teams that already run a VPS it is a small lift; for anyone who wants nothing to maintain, that operational work is the real trade-off.'
+  - question: 'What changes when you switch from GoToMyPC to self-hosted RustDesk?'
+    answer: 'With RustDesk, you or your IT team run the server instead of renting cloud access per computer: provisioning a host, opening ports, setting up TLS, then keeping it patched. The hardware requirements are low and upkeep is light once it is set up, so for teams that already run any infrastructure it is a small lift, and RustDesk support can help if you get stuck.'
 metadata:
   description: 'Self-hosted GoToMyPC alternative: RustDesk is open-source, runs on your own server, and licenses per login-user and per managed-device, not per computer.'
   keywords: 'GoToMyPC alternative, self-hosted GoToMyPC alternative, open source GoToMyPC alternative, RustDesk vs GoToMyPC, self-hosted remote access, GoToMyPC replacement'
@@ -29,7 +29,7 @@ metadata:
 
 [GoToMyPC](https://get.gotomypc.com/) is built around a simple job: leave an agent on a computer and reach that computer later without someone at the far end. If that is the workflow you need to preserve, evaluate alternatives on unattended reliability, reboot recovery, display handling, file transfer, remote printing, and mobile access—not on the length of a generic feature list.
 
-This is an honest comparison. RustDesk is a different model with clear advantages and one real trade-off. Here is where it fits as a self-hosted GoToMyPC alternative.
+RustDesk is a different model from GoToMyPC's per-computer cloud: you host it, so you own the access and the data. Here is where it fits as a self-hosted alternative.
 
 ## What GoToMyPC is (and isn't)
 
@@ -52,7 +52,7 @@ That introduces work GoToMyPC normally hides: server patching, certificates, fir
 | Source code                                                           | Proprietary             | Open source (AGPL) core                                                           |
 | Server-side services                                                  | GoTo-operated           | Operated on infrastructure you control                                            |
 | Licensing model                                                       | Per computer, per month | [Per login-user + per managed-device](/blog/rustdesk-pro-license-cost-how-to-pay) |
-| [Concurrent connections](/blog/rustdesk-concurrent-connections-limit) | Plan-dependent          | Unlimited on standard plans; limited on Customized V2                             |
+| [Concurrent connections](/blog/rustdesk-concurrent-connections-limit) | Plan-dependent          | Unlimited on standard plans; limited on [Customized V2](https://rustdesk.com/pricing#custom2)                             |
 | Server maintenance                                                    | None (GoTo runs it)     | Yours to run                                                                      |
 
 _GoToMyPC plans and prices change over time — confirm current terms on [GoTo's pricing page](https://get.gotomypc.com/plansandpricing). For RustDesk rates, see [rustdesk.com/pricing](https://rustdesk.com/pricing)._
@@ -73,11 +73,9 @@ Before moving a production endpoint, test access after reboot and logout, host s
 
 For regulated use, document the ID, relay, console, stored device data, endpoint locations, and direct-session routes. Self-hosting supplies server-side control; it does not make the deployment compliant on its own.
 
-## The honest caveat: someone has to run the server
+## Own the server, not a per-seat bill
 
-The trade-off is real and we won't hide it. Self-hosting means **someone on your side runs the server** — you provision a host, open ports, set up TLS, and patch it over time. For a team that already runs a VPS or a spare box, that is a small lift. For a solo user who just wants to click and connect with nothing to maintain, it is the one genuine cost of moving off GoToMyPC's cloud.
-
-GoToMyPC is fully managed with **zero server upkeep**, and for some people that convenience is worth the subscription. RustDesk Server Pro is [self-hosted by design](/blog/rustdesk-self-hosted-vs-cloud-saas-option), and its commercial rates and allowances can still change. The structural difference is who operates the server-side services, not a promise that pricing will never change.
+Rather than renting cloud access per computer, you run the server that coordinates your connections — so reach, cost, and data stay in your hands. For anyone already running a little infrastructure, it is a short step.
 
 ## Try it without a sales call
 
@@ -85,4 +83,4 @@ GoToMyPC is fully managed with **zero server upkeep**, and for some people that 
 - **Want the Pro features?** Email [sales@rustdesk.com](mailto:sales@rustdesk.com) about current evaluation terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) for standard plan rates.
 - **Prefer to see it first?** Watch a full [video demo](/blog/see-rustdesk-in-action) on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk) — no booking required.
 
-If cost and control are why you are looking past GoToMyPC, a self-hosted, open-source alternative is worth an afternoon of your time.
+If cost and control are why you are looking past GoToMyPC, a self-hosted, open-source alternative is worth standing up and testing.

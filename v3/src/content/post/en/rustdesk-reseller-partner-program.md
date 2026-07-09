@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-06-26T08:29:00Z
 lang: en
 translationKey: rustdesk-reseller-partner-program
 draft: false
@@ -51,8 +51,8 @@ This question comes mostly from MSPs, IT service providers, and regional distrib
 
 - [Can I self-host RustDesk Server Pro for multiple clients on one server?](/blog/rustdesk-for-msps)
 - [How does RustDesk per-user vs. per-device licensing work?](/blog/rustdesk-pro-license-cost-how-to-pay)
-- What account ownership and renewal workflow should I confirm before buying for a client?
-- Do you offer volume or bulk discounts for large deployments?
+- [What account ownership and renewal workflow should I confirm before buying for a client?](/blog/upgrade-rustdesk-license-mid-subscription)
+- [Do you offer volume or bulk discounts for large deployments?](/blog/rustdesk-custom-quote-minimum-users-invoice-fees)
 - [Is there a RustDesk white-label or co-branding option?](/blog/rustdesk-web-console-custom-client-generator-port-21114)
 
 Setting clients up on RustDesk? Review the current plans, then confirm the right billing and account workflow for your client setup at [rustdesk.com/pricing](https://rustdesk.com/pricing).

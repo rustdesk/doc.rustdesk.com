@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-07T00:00:00Z
+publishDate: 2026-07-05T18:49:00Z
 lang: en
 translationKey: is-chrome-remote-desktop-safe
 draft: false
@@ -61,7 +61,7 @@ You can't self-host it. Every CRD connection is brokered through Google's cloud 
 
 This is where an open-source, self-hosted model offers a different _kind_ of assurance rather than just more features. With RustDesk, the client is [open source under the AGPL](/blog/case-for-open-source-remote-access), so the code is auditable and buildable — you don't take the vendor's word for what it does. And self-hosting means the ID/rendezvous and relay servers run on your own machine or VPS, so brokering and access policy stay on infrastructure you control instead of Google's cloud — which maps directly onto [data-sovereignty and GDPR](/blog/remote-desktop-data-sovereignty-gdpr) concerns.
 
-In fairness, that assurance comes with strings. Open source means RustDesk's own bugs are public too; track the [latest releases](https://github.com/rustdesk/rustdesk/releases) and current vulnerability records. Self-hosting does not automatically make a deployment compliant or secure—direct sessions still flow between endpoints, and you own server patching.
+That openness cuts both ways, to be clear: because the code is public, so are RustDesk's own vulnerabilities, so keep an eye on the [latest releases](https://github.com/rustdesk/rustdesk/releases) and disclosure records. And self-hosting is a foundation, not an automatic compliance win — traffic still travels directly between endpoints, and the server is yours to patch.
 
 ## The verdict
 

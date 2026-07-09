@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-07T00:00:00Z
+publishDate: 2026-07-06T08:31:00Z
 lang: en
 translationKey: rustdesk-connected-waiting-for-image
 draft: false
@@ -56,7 +56,7 @@ If a monitor _is_ attached, the next suspect is that it went to sleep.
 | Codec mismatch                 | Blank or frozen image               | Switch between H.264 / VP8 / VP9; on Linux install the matching hardware codec        |
 | Hardware acceleration conflict | Black on specific GPUs              | Disable with `--hwaccel=0` or `--render=software`; on Windows try `--render=d3d`      |
 | Outdated GPU driver            | Black after a driver/OS update      | Update the GPU driver (NVIDIA especially)                                             |
-| Wayland session (Linux)        | No consent prompt, blank            | Use an X11/Xorg session, or accept the per-connect PipeWire prompt                    |
+| Wayland session (Linux)        | No consent prompt, blank            | Accept the PipeWire/portal prompt and confirm the desktop portal is installed; an X11 session also works where a distro still offers one |
 | Network / relay stall          | Sticks on "waiting for image"       | Allow TCP 21115-21117 and UDP 21116; add TCP 21118-21119 for WebSocket clients        |
 
 ### Screen sleep, lock, and screensavers
@@ -85,7 +85,7 @@ Some GPUs — NVIDIA configurations come up most often — clash with RustDesk's
 
 ### Linux and Wayland
 
-On Linux, **Wayland screen capture is experimental**: it goes through PipeWire and the `xdg-desktop-portal`, pops a consent dialog on each connect, and only works inside an active login session — not at the greeter and not truly headless. If you get a blank screen on Wayland, the most reliable move is to log into an **X11/Xorg session** instead, or use the documented headless configuration. See the [Linux client docs](https://rustdesk.com/docs/en/client/linux/) for the current state.
+On Linux, **Wayland screen capture goes through PipeWire and the `xdg-desktop-portal`**: it prompts for consent to pick a display the first time — in most cases the choice is remembered, so it does not prompt again — and works inside an active login session. That is a Wayland security design, so by itself it does not cover the greeter or a truly headless box — though unattended Wayland capture is in active development ([PR #15420](https://github.com/rustdesk/rustdesk/pull/15420)). If you get a blank screen on Wayland, the fix is usually to accept the portal's screen-share prompt and confirm `xdg-desktop-portal` and PipeWire are installed and running; on a headless box, use the documented virtual-display configuration. Logging into an X11/Xorg session also avoids the portal path where a distribution still offers one — but as many distributions move to Wayland-only, fixing the portal/PipeWire path is the more future-proof approach. See the [Linux client docs](https://rustdesk.com/docs/en/client/linux/) for the current state.
 
 ### Network and relay
 
@@ -99,8 +99,6 @@ Old builds carry old capture bugs. Update **both** the controlling client and th
 
 When a black screen defies the checklist, RustDesk gives you something closed-source tools don't: the [actual capture code](/blog/open-source-remote-desktop-software) under an AGPL license. You (or a contractor) can read exactly how capture works on your platform, reproduce the issue, and file a precise report against the public repository — instead of waiting on a vendor's support queue. And because you can [run the relay on your own machine](/blog/why-self-host-remote-desktop-software), you remove the shared-server variable entirely.
 
-## An honest caveat
+## Fewer variables when the server is yours
 
-There is no single switch that fixes "waiting for image," because it isn't one bug — it's a family of capture problems. A headless server, a dozing Mac, a Wayland session, and a stale NVIDIA driver all surface the same message. Work top-down: confirm there's an awake display to capture, then permissions, then codec, then acceleration and drivers. That order resolves the large majority of cases.
-
-Running this across a fleet? A [self-hosted RustDesk deployment](/blog/why-self-host-remote-desktop-software) with the free community server lets you standardize capture settings and eliminate the public relay as a variable — and it costs nothing to start. For commercial features, see [rustdesk.com/pricing](https://rustdesk.com/pricing) or email sales@rustdesk.com.
+Run your own relay and ID server and the shared public infrastructure drops out of the picture — one less unknown when you are chasing a capture problem, and full control over the parts you can tune. That is a quiet bonus on top of keeping the data.

@@ -1,10 +1,10 @@
 ---
-publishDate: 2026-07-07T00:00:00Z
+publishDate: 2026-07-09T18:44:00Z
 lang: en
 translationKey: rustdesk-vs-vnc
 draft: false
 title: 'RustDesk vs VNC: NAT Traversal, Codecs, Encryption'
-excerpt: "RustDesk vs VNC compared honestly: NAT traversal without port-forwarding, modern codecs, built-in encryption, and where VNC's simplicity still wins."
+excerpt: "RustDesk vs VNC compared honestly: NAT traversal without port-forwarding, modern codecs, built-in encryption, and why teams move from VNC to RustDesk."
 image: ~/assets/images/blog/rustdesk-vs-vnc-og.png
 category: Comparisons
 tags:
@@ -69,17 +69,6 @@ RustDesk applies **end-to-end encryption by default** on every connection, self-
 
 Confirm current RustDesk plan details at [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
-## Where VNC still wins — honestly
-
-VNC has survived for decades for good reasons, and they deserve to be stated plainly:
-
-- **Dead-simple on a LAN.** Install a server, point a viewer at an IP, done. For a trusted local network there is very little ceremony.
-- **Ubiquity and a real standard.** RFB is an open, published protocol with interoperable clients and servers across nearly every platform, including embedded devices and the Raspberry Pi. Any RFB viewer talks to any RFB server.
-- **Fully-FOSS options exist.** If you want a completely open-source server today, TigerVNC (GPL) and TightVNC are already there, with no relay infrastructure to run.
-- **No dependency on a broker.** A LAN-only VNC setup has no rendezvous server in the path at all — appealing for air-gapped or tightly segmented networks.
-
-If your use case is "control the Linux box on the next rack" or "reach a Pi on my home network," VNC may be all you ever need, and RustDesk's extra machinery buys you little.
-
 ## Where RustDesk pulls ahead
 
 RustDesk's design advantages appear the moment you leave the LAN or need consistency across teams and platforms:
@@ -89,7 +78,7 @@ RustDesk's design advantages appear the moment you leave the LAN or need consist
 - **Modern codecs.** VP8/VP9/AV1 and hardware H.264/H.265 tend to hold up better over constrained or high-latency links than raw pixel encodings.
 - **One auditable app and one self-hosted server.** The AGPL client plus a self-hosted ID/relay keeps both the code and your session data on infrastructure you control — the heart of the [open-source remote desktop](/blog/open-source-remote-desktop-software) argument.
 
-The honest caveat: self-hosting RustDesk means **someone runs the server** — provisioning, TLS, ports, and patching over time. A LAN-only VNC setup skips that entirely. That is the real trade.
+The trade: self-hosting RustDesk means **someone runs the server** — provisioning, TLS, ports, and patching over time. A LAN-only VNC setup skips that entirely. That is the real trade.
 
 ## So which should you use?
 

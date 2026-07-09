@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-07-03T13:07:00Z
 lang: en
 translationKey: rustdesk-concurrent-connections-limit
 draft: false
@@ -27,7 +27,7 @@ metadata:
   keywords: 'RustDesk concurrent connections, RustDesk concurrent connection limit, RustDesk user vs device licensing, RustDesk concurrent sessions, remote desktop concurrent channels, RustDesk licensing for MSPs'
 ---
 
-Standard RustDesk plans include unlimited concurrent connections. **Customized V2 is the exception:** it limits concurrent connections and prices additional connections separately. All paid plans also enforce their licensed login-user and managed-device allowances.
+Standard RustDesk plans include unlimited concurrent connections. **[Customized V2](https://rustdesk.com/pricing#custom2) is the exception:** it limits concurrent connections and prices additional connections separately. All paid plans also enforce their licensed login-user and managed-device allowances.
 
 ## The short answer
 
@@ -52,7 +52,7 @@ This question comes up most from IT admins and [MSPs](/blog/rustdesk-for-msps) e
 - [What is the difference between a user and a device in RustDesk licensing?](/blog/what-counts-as-a-managed-device)
 - [Do I need a separate license for every technician on my team?](/blog/rustdesk-pro-license-cost-how-to-pay)
 - [Can multiple people control the same device at the same time?](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book)
-- [How do I count devices for unattended access?](/blog/what-counts-as-a-managed-device)
+- [How do I count devices for unattended access?](/blog/rustdesk-unattended-access-setup)
 - [Does RustDesk charge extra for peak-hour usage or overages?](/blog/rustdesk-custom-quote-minimum-users-invoice-fees)
 
 Sizing a plan for your team? Count login users and managed devices, then include concurrent connections if you are considering Customized V2.

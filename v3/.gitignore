@@ -22,3 +22,10 @@ pnpm-debug.log*
 pnpm-lock.yaml
 
 .astro
+
+# local agent tooling
+.agent/
+.agents/
+.claude/
+.omx/
+docs/superpowers/

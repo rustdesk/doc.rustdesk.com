@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-07-07T16:55:00Z
 lang: en
 translationKey: open-source-remote-desktop-software
 draft: false
@@ -12,12 +12,24 @@ tags:
   - open-source
   - comparison
 author: RustDesk Team
+faq:
+  - question: 'What open-source remote desktop software is available?'
+    answer: 'Options range from protocol-level building blocks like VNC (TigerVNC, TightVNC) and the Apache Guacamole browser gateway to full support platforms. RustDesk aims to give you an auditable, self-hostable core plus support-team features like device groups, a shared address book, and a custom client generator.'
+  - question: 'Is RustDesk open source?'
+    answer: "Yes. RustDesk's core is open source under the AGPL, so you can read the code, audit exactly what the client does, build it yourself, and run the free community server indefinitely."
+  - question: "Can I self-host RustDesk's server?"
+    answer: 'Yes. RustDesk Server Pro is self-hosted by design: the ID/rendezvous and relay servers run on your own machine, on-prem or a VPS you rent, and you control those services and managed-device data.'
+  - question: 'How does RustDesk handle concurrent connections and licensing?'
+    answer: 'Standard plans include unlimited concurrent connections and are sized by login users plus managed devices, so several technicians can run sessions at once without paying per channel. Customized V2 limits and prices concurrent connections separately; see rustdesk.com/pricing.'
+  - question: 'What platforms does RustDesk support?'
+    answer: 'RustDesk offers Windows, macOS, Linux, and Android host/controller clients, plus iOS and web-client controller options. Supported host platforms can be managed from a self-hosted web console for permanent-password unattended access to your fleet and ad-hoc attended sessions for one-off support; iOS and the web client can control other devices but cannot act as unattended hosts.'
+
 metadata:
   description: 'Comparing open source remote desktop software? See why teams pick auditable, self-hosted tools over TeamViewer and AnyDesk — and where RustDesk fits.'
   keywords: 'open source remote desktop software, self-hosted remote desktop software, open source remote desktop comparison, AGPL remote desktop'
 ---
 
-## Open-Source Remote Desktop Software: The Options
+## What to look for in an open-source remote desktop tool
 
 Teams shopping for **open source remote desktop software** typically want to inspect the code, control infrastructure, and reduce dependence on a vendor's pricing and hosting decisions.
 
@@ -58,7 +70,7 @@ When you move to Server Pro, it's **[self-hosted by design](/blog/why-self-host-
 
 ### Plan-specific concurrency and licensing
 
-A recurring frustration with closed tools is the pricing model itself. RustDesk standard plans include unlimited concurrent connections and are sized by login users plus managed devices. **Customized V2 is different:** it limits and prices concurrent connections separately. For current allowances and rates, [see rustdesk.com/pricing](https://rustdesk.com/pricing).
+A recurring frustration with closed tools is the pricing model itself. RustDesk standard plans include unlimited concurrent connections and are sized by login users plus managed devices. **[Customized V2](https://rustdesk.com/pricing#custom2) is different:** it limits and prices concurrent connections separately. For current allowances and rates, [see rustdesk.com/pricing](https://rustdesk.com/pricing).
 
 It also scales past the "small shop" ceiling: RustDesk publishes [large-fleet planning guidance](/blog/rustdesk-scale-50000-200000-devices) for teams evaluating much larger estates.
 
@@ -74,11 +86,11 @@ Open source doesn't have to mean "bring your own everything." RustDesk ships a s
 - **Custom, branded clients.** Generate your own preconfigured, logo-branded installer for the platforms you deploy to.
 - **Access control that fits teams.** [Device groups and a shared address book](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book) decide who can reach which machines; [LDAP/SSO](/blog/rustdesk-active-directory-ldap-sso) (OIDC) is available from the Basic plan and up.
 - **Unattended and attended access.** Permanent-password unattended access for your fleet, plus ad-hoc sessions for one-off support.
-- **Every major platform.** Windows, macOS, Linux, Android, and iOS clients, managed from a [self-hosted web console](/blog/rustdesk-web-console-custom-client-generator-port-21114).
+- **Every major platform.** Windows, macOS, Linux, and Android host/controller clients, plus iOS and [web-client](/blog/rustdesk-web-client-v2-preview) controller options, managed from a [self-hosted web console](/blog/rustdesk-web-console-custom-client-generator-port-21114).
 
-### The honest caveat
+### Self-hosted, and unmistakably yours
 
-Self-hosting is the whole point — and it's also the trade-off. **Someone on your side has to run the server**: provision a host, open the right ports, set up TLS, and patch it over time. That's real, ongoing operational work. If what you actually want is a [zero-maintenance managed SaaS](/blog/rustdesk-self-hosted-vs-cloud-saas-option) with no server to run, be clear-eyed: RustDesk Server Pro is self-hosted by design and is _not_ that. The upside is control and auditability; the cost is that you own the box. Only you can decide if that trade is worth it for your team.
+Self-hosting is the point: you run the ID and relay, so the data, the access policy, and the cost all stay on hardware you control and can audit. Standing up one more server is a modest step for most IT teams — the hardware requirements are low and upkeep is light once it is set up.
 
 ### Try it without a sales call
 

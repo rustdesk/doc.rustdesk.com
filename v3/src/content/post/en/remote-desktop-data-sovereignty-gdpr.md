@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-07-04T17:05:00Z
 lang: en
 translationKey: remote-desktop-data-sovereignty-gdpr
 draft: false
@@ -13,6 +13,17 @@ tags:
   - GDPR
   - self-hosting
 author: RustDesk Team
+faq:
+  - question: 'Is RustDesk ISO 27001, SOC 2, or HIPAA compliant?'
+    answer: 'RustDesk is self-hosted, so compliance centers on your environment: you run remote access inside your own ISO 27001 or HIPAA scope and existing controls, and the open-source client can be audited directly rather than taken on trust. If you specifically need a vendor SOC 2 report, a signed BAA, a DPA, or completed security questionnaires, ask sales@rustdesk.com what is available for your scenario.'
+  - question: 'Does self-hosting RustDesk help with GDPR compliance?'
+    answer: 'Yes — it gives you the control GDPR is usually about: you choose where the ID/rendezvous, relay, console, and device data live and can keep them in-region on infrastructure you operate. That is a strong foundation rather than an automatic guarantee, since GDPR is a program — lawful basis, controller/processor roles, retention, access control, endpoint locations, and incident response are still yours to define, with the controller remaining responsible.'
+  - question: 'Where does RustDesk session data actually go?'
+    answer: 'RustDesk first tries a direct peer-to-peer connection; if that fails, traffic uses your configured relay. Self-hosting removes a vendor-operated rendezvous and relay from the path, but a session between endpoints in different countries still crosses those networks — server placement alone does not confine all traffic to one jurisdiction.'
+  - question: 'Can I keep remote desktop data inside the EU with RustDesk?'
+    answer: 'You can place the ID/rendezvous, relay, console, and stored device data in an EU data center. To constrain session traffic too, both endpoints must be within the boundary and policy must force traffic through your approved relay; document endpoint locations and routing alongside server placement.'
+  - question: 'What RustDesk features help meet GDPR?'
+    answer: 'Self-hosting keeps data on infrastructure you control: because usage telemetry is collected by the relay server, running your own relay keeps that data on your relay rather than RustDesk, and beyond the Server Pro license check little else needs to reach rustdesk.com. Server Pro adds built-in audit logs with log rotation, granular access control and a Control Role, SSO/LDAP and controlled-device 2FA, privacy mode and per-connection consent, and direct deletion of users, devices, and records (including via the REST API) for erasure and retention requests.'
 metadata:
   description: 'Remote desktop data sovereignty & GDPR: what self-hosting controls, how direct and relayed sessions differ, and why compliance needs more than server location.'
   keywords: 'remote desktop data sovereignty, GDPR remote access, remote desktop data residency, self-hosted remote access compliance'
@@ -56,13 +67,39 @@ Data sovereignty isn't only about location — it's about knowing what the softw
 
 ## Benefit 3: Sovereignty without a licensing tax
 
-RustDesk standard plans are licensed **per login-user plus per managed-device** and include unlimited concurrent connections; Customized V2 instead limits and prices concurrent connections. You can [upgrade a license](/blog/upgrade-rustdesk-license-mid-subscription) as requirements change. Check the current plan matrix before purchasing.
+RustDesk standard plans are licensed **per login-user plus per managed-device** and include unlimited concurrent connections; [Customized V2](https://rustdesk.com/pricing#custom2) instead limits and prices concurrent connections. You can [upgrade a license](/blog/upgrade-rustdesk-license-mid-subscription) as requirements change. Check the current plan matrix before purchasing.
 
 The architecture also scales with your estate: RustDesk publishes [large-fleet planning guidance](/blog/rustdesk-scale-50000-200000-devices) for teams evaluating bigger deployments. For [per-user access control](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book), self-hosted deployments include a [web console](/blog/rustdesk-web-console-custom-client-generator-port-21114), a custom-branded client generator, device groups with a shared address book, and [LDAP/SSO](/blog/rustdesk-active-directory-ldap-sso) (OIDC) available from the Basic plan and up.
 
-## The honest caveat: someone has to run the server
+## How RustDesk fits ISO 27001, SOC 2, or HIPAA requirements
 
-Self-hosting has a real cost: **someone on your side runs and secures the server.** You provision a host, restrict ports, configure TLS, manage access, retain logs, patch components, and document data flows. Self-hosting can support a GDPR program, but it does not by itself make a deployment GDPR-compliant; lawful basis, processor/controller roles, retention, access controls, endpoint locations, incident response, and other obligations still apply.
+Enterprise procurement and healthcare teams almost always ask how a remote-access tool maps to ISO 27001, SOC 2, or HIPAA. With a cloud product, you inherit — and depend on — the vendor's certification of _their_ infrastructure. RustDesk's model is different, and for regulated teams the difference usually works in your favor: because you **self-host**, remote access runs inside the environment you already control and audit, so it falls under _your_ ISO 27001 or HIPAA scope and _your_ existing controls rather than a third party's. You place the ID, relay, and console on infrastructure your program already covers, and — because the core client is [open source](/blog/case-for-open-source-remote-access) — your security team can read and verify exactly what it does as part of an assessment, instead of trusting a closed binary.
+
+A few practical notes:
+
+- Self-hosting keeps the sensitive systems — rendezvous, relay, console, and device data — on hardware you own, which is exactly what a data-residency or HIPAA control is usually trying to guarantee. The deployment checklist further down turns that into documented controls.
+- If your procurement specifically requires a vendor-side SOC 2 report, a signed Business Associate Agreement (BAA), a DPA, or completed security questionnaires, ask the RustDesk team at [sales@rustdesk.com](mailto:sales@rustdesk.com) what is currently available for your scenario.
+- Because the client is open source, "how do we know what it does?" is answered by inspection, not by a certificate you have to take on faith.
+
+In short, self-hosting lets you fold remote access into the compliance program you already run — often a stronger position for a regulated team than renting a certified black box.
+
+## Controls that support a self-hosted GDPR program
+
+Self-hosting is the foundation, and on top of it RustDesk provides concrete controls self-hosted teams rely on to meet GDPR in practice:
+
+- **Telemetry goes to your relay, not RustDesk.** The usage data described in RustDesk's privacy policy — app start, IP address, basic machine stats, session times, and RustDesk IDs — is collected by the _relay_ server, so when clients use your own self-hosted relay it is **collected by your relay, not RustDesk**. Beyond the Server Pro license check, little else needs to reach rustdesk.com — confirm the exact outbound connections for the client build and settings you deploy. That keeps session and usage data on infrastructure you control by default, a strong data-minimization posture.
+- **Built-in audit-log rotation and retention.** Server Pro's audit logs come in four categories — connection, file-transfer, alarm, and console-operation — with **built-in log rotation** so audit data is not retained indefinitely (storage limitation), and you can export them from the web console or the REST API for your records of processing.
+- **Granular, scoped access.** Per-user assignments, device groups, cross-group rules, and a Control Role (what a technician may do in-session — input, clipboard, file transfer, camera, terminal) enforce least privilege and purpose limitation, backed by SSO/LDAP and controlled-device 2FA.
+- **Privacy mode and per-connection consent.** The controlled side can require confirmation for an incoming connection and can blacken its screen (privacy mode) during a session, limiting incidental exposure of personal data on-screen.
+- **Deletion on your terms.** Because the data lives on your server, you can disable or remove users, delete devices and records — including via the REST API — and service erasure and retention requests directly.
+- **In-region, self-operated infrastructure.** The ID/rendezvous, relay, console, and stored data run where you place them, on hardware you control.
+- **Even custom-client builds leave no data behind.** Generating a branded client is the one step that uses RustDesk's build service, and it is deliberately transient: the build configuration you submit is not retained on RustDesk's build server (it is deleted once the build completes), and the generated installer is auto-removed after about a day, so you download and keep it yourself.
+
+These are levers a GDPR program can actually pull: you still document and operate them, but you are not waiting on a vendor to act on a data-subject request.
+
+## Sovereignty you can point to
+
+Hosting the rendezvous, relay, console, and stored data yourself gives a compliance program something concrete: infrastructure you place, operate, and audit. It is a foundation rather than a finish line, but it is the part everything else rests on.
 
 ## GDPR and sovereignty deployment checklist
 

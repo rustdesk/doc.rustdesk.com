@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-07T00:00:00Z
+publishDate: 2026-06-29T17:38:00Z
 lang: en
 translationKey: rustdesk-vs-rdp
 draft: false
@@ -67,17 +67,6 @@ The safer way to publish RDP is through a properly configured VPN or RD Gateway 
 
 Confirm current RustDesk plan details at [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
-## Where RDP still wins — honestly
-
-RDP earns its default status, and pretending otherwise would be dishonest:
-
-- **It is free and native on Windows.** If your endpoints are already Windows Pro or better, RDP is built in — nothing to install, deploy, or license.
-- **LAN performance is excellent.** As a native protocol tuned into the OS, RDP is hard to beat for latency and responsiveness on a fast local network, especially for RemoteApp and full-session desktop work.
-- **Active Directory and Group Policy integration is deep.** For domain-joined fleets, RDP's tie-in to AD authentication, GPO controls, and RD Gateway/RemoteApp infrastructure is more mature than any third-party tool's.
-- **It is a known quantity.** Windows admins already understand RDP's tooling, licensing, and behavior.
-
-If your world is a single Windows domain on a controlled network — or behind a VPN you already run — RDP may simply be the right tool, and adding RustDesk buys you little there.
-
 ## Where RustDesk pulls ahead
 
 RustDesk's advantages show up the moment you leave that tidy single-domain LAN:
@@ -87,7 +76,7 @@ RustDesk's advantages show up the moment you leave that tidy single-domain LAN:
 - **Open source and self-hostable.** You can read the code, build it yourself, and keep the ID/relay servers — and your device list — on infrastructure you control. That auditability and data-residency story is the crux of the [case for self-hosting](/blog/why-self-host-remote-desktop-software).
 - **Consumer Windows and BYOD.** RustDesk works on Windows Home and unmanaged devices that RDP can't host.
 
-The honest caveat cuts the other way too: self-hosting means **someone on your side runs the server** — you provision a host, restrict ports, set up TLS, and patch it over time. That is the trade for control. If you want a native feature with nothing new to operate on a Windows-only LAN, RDP is hard to argue with.
+The trade cuts the other way too: self-hosting means **someone on your side runs the server** — you provision a host, restrict ports, set up TLS, and patch it over time. That is the trade for control. If you want a native feature with nothing new to operate on a Windows-only LAN, RDP is hard to argue with.
 
 ## So which should you use?
 

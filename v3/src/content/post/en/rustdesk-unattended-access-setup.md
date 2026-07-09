@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-07T00:00:00Z
+publishDate: 2026-07-08T11:04:00Z
 lang: en
 translationKey: rustdesk-unattended-access-setup
 draft: false
@@ -60,7 +60,7 @@ Once RustDesk runs as a service, it loads before anyone logs in, which is what l
 | -------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | Windows  | Install, enable Service + Start on boot            | Portable exe drops on logout/UAC; use the installer                                                 |
 | macOS    | Install, set permanent password, grant permissions | Screen Recording and Accessibility must be granted; login-screen capture needs the helper installed |
-| Linux    | Install the service package; prefer X11/Xorg       | Wayland capture is experimental and needs an active session                                         |
+| Linux    | Install the service package                        | Wayland needs an active session; for pre-login use the headless virtual-display setup, or X11 where a distro still offers one |
 | Android  | Set permanent password; enable capture             | Screen must be awake; enable Developer-options screen-share settings                                |
 
 ### Windows
@@ -73,7 +73,7 @@ macOS gates screen capture and input behind permissions. After installing, open 
 
 ### Linux
 
-Install RustDesk so its service component runs at boot. For unattended reliability, prefer an **X11/Xorg** session: Wayland capture is experimental, prompts for consent on each connect, and only works inside an active session — awkward for a machine that may sit at the greeter. See [RustDesk for Linux](/blog/rustdesk-for-linux) for the details.
+Install RustDesk so its service component runs at boot. For a machine that sits at the login greeter, Wayland can't capture the greeter yet — a Wayland design (not a RustDesk limit) that RustDesk is actively working to close ([PR #15420](https://github.com/rustdesk/rustdesk/pull/15420)). On a headless box, use the virtual-display configuration; on a desktop, an X11/Xorg session still handles it where a distribution provides one, though several are moving to Wayland-only. See [RustDesk for Linux](/blog/rustdesk-for-linux) for the details.
 
 ## Step 3: Deploy at scale with a pre-configured client
 
@@ -89,8 +89,6 @@ Unattended access is a standing door into a machine, so treat the credentials se
 - **Two-factor authentication** and, on Pro, **access controls** so only authorized accounts can connect. Our write-up on [per-user access control and device groups](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book) covers scoping who reaches what.
 - **Self-host the server-side services** when you need control of rendezvous, relay, console, and stored deployment data. Endpoint credentials remain an endpoint-security responsibility. Because the [client is open source under AGPL](/blog/open-source-remote-desktop-software), its authentication implementation can be reviewed.
 
-## An honest caveat
+## Unattended access you actually control
 
-Unattended access trades convenience for exposure: a machine that answers any time is a machine an attacker would love to answer to. That's a reason to insist on a strong, unique password and 2FA, not the OS login, and to prefer a **server you control** over the shared public one. Self-hosting also means the service's uptime is now yours to maintain — but in exchange, no third party can silently change the rules on who reaches your fleet. For most admins that ownership is the whole point.
-
-Getting started costs nothing: run the **free community server**, set a permanent password, install the service, and you have unattended access on infrastructure you own. For the Custom Client Generator, access controls, and other commercial features, see [rustdesk.com/pricing](https://rustdesk.com/pricing) or email sales@rustdesk.com — and if you'd like to see the workflow first, browse [RustDesk in action](/blog/see-rustdesk-in-action).
+Point an always-on fleet at a server you run and the standing access to those machines stays brokered by hardware you own, not a cloud you rent. For permanent access, keeping that path in your own hands is worth the short setup.

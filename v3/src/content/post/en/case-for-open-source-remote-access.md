@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-07-09T14:40:00Z
 lang: en
 translationKey: case-for-open-source-remote-access
 draft: false
@@ -11,12 +11,24 @@ tags:
   - RustDesk
   - open-source
 author: RustDesk Team
+faq:
+  - question: 'Why does open source matter for remote access?'
+    answer: "Remote-access software is designed to have total control of a remote machine, so the ability to read exactly what the client does — rather than believe the marketing — matters more than in most software categories. With RustDesk's AGPL core you can audit the code, build it yourself, and confirm what the client sends and where."
+  - question: "Can I audit RustDesk's source code?"
+    answer: "Yes. RustDesk's core is open source under the AGPL, so you or a security team you hire can read the code, produce a software bill of materials, build it in a controlled pipeline, and compare the resulting artifacts with what you distribute."
+  - question: 'Does open source avoid vendor lock-in?'
+    answer: "It reduces it. You can run the community server under its open-source license without a Server Pro subscription, so you are not dependent on a vendor's subscription and service to keep running."
+  - question: "Does open-source remote access mean I can't get support features or scale?"
+    answer: 'No. RustDesk documents large-deployment guidance and offers a web console, device groups, shared address books, and plan-dependent client generation and identity features; validate capacity against your own workload.'
+  - question: 'Does self-hosting open-source remote access help with compliance?'
+    answer: 'Yes — self-hosting gives you control over the rendezvous, relay, and management services, a strong foundation for privacy and residency. It is not a compliance checkbox by itself, though: endpoint location, routing, access controls, retention, and legal obligations still need to be assessed as part of your own program.'
+
 metadata:
   description: 'Why open source matters in remote access: auditability, lower lock-in, infrastructure control, and the trade-offs of self-hosting.'
   keywords: 'why open source remote access, auditable remote support software, remote desktop source audit, open source trust model'
 ---
 
-## Why open source matters for remote access
+## What open source actually changes for remote access
 
 Remote-access buyers often prioritize source auditability, infrastructure control, and predictable licensing.
 
@@ -38,13 +50,13 @@ Most software you can treat as a black box. Remote-access software you cannot, b
 | Where does session traffic go? | Through the vendor's cloud      | Through servers you run                                                |
 | Where does your data live?     | Vendor infrastructure/region    | Infrastructure you control; routing and endpoint location still matter |
 | Lock-in                        | Vendor subscription and service | Community server under an open-source license; Pro optional            |
-| Who runs the server?           | Vendor (nothing to run)         | You (see the honest caveat below)                                      |
+| Who runs the server?           | Vendor (nothing to run)         | You, on infrastructure you control                                      |
 
 ## No lock-in, and a cost model that doesn't punish growth
 
 Vendor-controlled subscription pricing can change at renewal. Compare current public terms or written quotes.
 
-Open source is the structural answer to that treadmill. You can run the community server under its open-source license without a Server Pro subscription. Server Pro is licensed **per login-user plus per managed-device**, and mid-term upgrades may be prorated under current terms. **Standard plans include unlimited [concurrent connections](/blog/rustdesk-concurrent-connections-limit); Customized V2 has a defined allowance.** Use the current [pricing page](https://rustdesk.com/pricing) for all rates and limits.
+Open source is the structural answer to that treadmill. You can run the community server under its open-source license without a Server Pro subscription. Server Pro is licensed **per login-user plus per managed-device**, and mid-term upgrades may be prorated under current terms. **Standard plans include unlimited [concurrent connections](/blog/rustdesk-concurrent-connections-limit); [Customized V2](https://rustdesk.com/pricing#custom2) has a defined allowance.** Use the current [pricing page](https://rustdesk.com/pricing) for all rates and limits.
 
 ## Your data stays where your rules say it must
 
@@ -56,9 +68,9 @@ Self-hosting gives an organization control over its rendezvous, relay, and manag
 
 A fair worry is whether a self-hostable option handles real load. RustDesk documents large-deployment guidance and offers a web console, device groups, shared address books, and plan-dependent client generation and identity features. Validate capacity against your own workload.
 
-## The honest caveat: someone has to run the server
+## The open-source payoff
 
-Open source and self-hosting are not free of trade-offs, and we'd rather you hear this from us. **Self-hosting means someone on your side runs the server**: you provision a host, open ports, set up TLS, and keep it patched. That's a real, ongoing responsibility. If what your team actually wants is a [zero-maintenance managed SaaS](/blog/rustdesk-self-hosted-vs-cloud-saas-option) with no server to run and no ops burden, be clear-eyed about it — **RustDesk Server Pro is [self-hosted by design](/blog/why-self-host-remote-desktop-software), and it is not that.** The control and auditability you gain are inseparable from the fact that you own the box. For many teams that's the trade they want; for some it isn't, and that's fine.
+Open source plus self-hosting means you can read the code, run the server, and keep both for as long as you like with no vendor in the loop. That independence is the argument in a sentence.
 
 ## How to turn source access into assurance
 

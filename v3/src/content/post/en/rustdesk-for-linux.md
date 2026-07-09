@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-07T00:00:00Z
+publishDate: 2026-07-09T08:32:00Z
 lang: en
 translationKey: rustdesk-for-linux
 draft: false
@@ -14,11 +14,11 @@ tags:
 author: RustDesk Team
 faq:
   - question: 'Does RustDesk work on Wayland?'
-    answer: 'Yes, but Wayland support is still experimental. On Wayland, RustDesk captures the screen through PipeWire and the XDG desktop portal, which shows a consent dialog asking you to pick a display, and it works only for the active logged-in session. You cannot capture the Wayland login greeter, and unattended pre-login access still requires X11. For reliable unattended access on Linux, log in with an X11 (Xorg) session.'
+    answer: 'Yes — RustDesk has among the strongest Wayland support of any remote-desktop tool, including multi-monitor sharing added in 1.4.3. On Wayland it captures the screen through PipeWire and the XDG desktop portal, which shows a consent dialog to pick a display — in most cases the choice is remembered, so you are not asked again — and works within the active logged-in session. That consent step is a Wayland security design shared by every screen-sharing app. For pre-login or fully unattended machines today, use the headless virtual-display setup (or an X11 session where a distribution still offers one, since several are moving to Wayland-only); full unattended Wayland capture is in active development (see github.com/rustdesk/rustdesk/pull/15420).'
   - question: 'Which package should I install on Linux?'
-    answer: 'Use the .deb on Debian, Ubuntu and Linux Mint, the .rpm on Fedora, RHEL and openSUSE, the Flatpak from Flathub if you want a sandboxed build, or the portable AppImage on other distributions. The .deb and .rpm packages register and start a systemd service so RustDesk survives reboots; the Flatpak and AppImage do not by default.'
+    answer: 'Use the .deb on Debian, Ubuntu and Linux Mint, the .rpm on Fedora, RHEL and openSUSE, the Flatpak from Flathub for a sandboxed, broadly compatible build, or the portable AppImage as a single-file fallback. The .deb and .rpm packages register and start a systemd service so RustDesk survives reboots; the Flatpak and AppImage do not by default.'
   - question: 'Why does my headless Linux box show a black screen?'
-    answer: "With no monitor attached, X or Wayland never allocates a framebuffer, so there is nothing for RustDesk to capture and the viewer shows a black or waiting-for-image screen. Attach a dummy HDMI/DisplayPort plug, configure a virtual display such as xserver-xorg-video-dummy or VKMS, or enable RustDesk's experimental Linux headless mode so a virtual display is created for you."
+    answer: "With no monitor attached, X or Wayland never allocates a framebuffer, so there is nothing for RustDesk to capture and the viewer shows a black or waiting-for-image screen. Attach a dummy HDMI/DisplayPort plug, configure a virtual display such as xserver-xorg-video-dummy or VKMS, or enable RustDesk's opt-in Linux headless mode so a virtual display is created for you."
   - question: 'Can I self-host the RustDesk server on Linux?'
     answer: 'Yes. The RustDesk server (the hbbs ID/rendezvous and hbbr relay processes) is built for Linux and is the standard way to run it. The free open-source community server runs indefinitely at no cost, and Server Pro adds a web console, device groups and a custom client generator on top. Both install on a plain Linux VM or bare-metal host.'
 metadata:
@@ -42,20 +42,20 @@ RustDesk ships packages for every common Linux packaging format, so you rarely h
 | AppImage | Any distro, portable          | No                     | May need `libfuse2` on recent Ubuntu; `chmod +x` then run                                                   |
 | AUR      | Arch, Manjaro                 | Depends on package     | Community-maintained (`rustdesk-bin`, `rustdesk-appimage`)                                                  |
 
-The `.deb` and `.rpm` packages are the ones to use if you want RustDesk running as a background service that survives reboots — both register and start a systemd unit automatically. The Flatpak (`com.rustdesk.RustDesk` on [Flathub](https://flathub.org/apps/com.rustdesk.RustDesk)) is a sandboxed build that is convenient for desktop use but does not install a system service by default. The AppImage is the truly distribution-independent option: one file, no installation, runs almost anywhere — handy on distros RustDesk does not package directly, though on newer Ubuntu you may need to install `libfuse2` first.
+The `.deb` and `.rpm` packages are the ones to use if you want RustDesk running as a background service that survives reboots — both register and start a systemd unit automatically. The Flatpak (`com.rustdesk.RustDesk` on [Flathub](https://flathub.org/apps/com.rustdesk.RustDesk)) is a sandboxed build that is convenient for desktop use but does not install a system service by default. For a distribution RustDesk doesn't package directly, reach for the **Flatpak** first — because it bundles its own runtime it tends to be the most broadly compatible. The AppImage is a portable single-file alternative, but its compatibility is more hit-or-miss in practice (for example it may need `libfuse2` on recent Ubuntu).
 
-In practice RustDesk is used across Ubuntu, Debian, Fedora, RHEL/CentOS, openSUSE, Arch and NixOS. If your distribution isn't on that list, the AppImage almost always works.
+In practice RustDesk is used across Ubuntu, Debian, Fedora, RHEL/CentOS, openSUSE, Arch and NixOS, with builds for **x86_64, ARM64 (aarch64) and ARM32 (ARMv7)** — so it runs on ARM boards and servers as well as standard PCs. If your distribution isn't on that list, the Flatpak from Flathub is the most broadly compatible option.
 
 ## X11 vs Wayland: the part that matters
 
-This is the single most important thing to understand about RustDesk on Linux, because it determines whether remote control "just works" or leaves you staring at a black screen.
+This is the single most important thing to understand about RustDesk on Linux, because it determines whether remote control "just works" immediately or needs one small setup tweak first.
 
-**X11 (Xorg) is the reliable path.** Under X11, RustDesk reads the framebuffer directly and injects input directly, so screen capture and mouse/keyboard control behave the way you'd expect, and RustDesk can dynamically detect monitor changes. If you want the least-surprising experience — especially for unattended access — log in with an Xorg session. On many display managers you can pick "Xorg"/"X11" from a gear menu on the login screen.
+**X11 (Xorg): the most direct capture path, where your distribution still offers it.** Under X11, RustDesk reads the framebuffer directly and injects input directly, so capture and mouse/keyboard control are as direct as it gets and monitor changes are detected dynamically. Many display managers still let you pick "Xorg"/"X11" from a gear menu at login. Keep in mind, though, that several distributions are moving to Wayland-only and retiring the X11 session — so treat X11 as a convenience where it happens to be available, not something to design your deployment around.
 
-**Wayland works, but it is experimental.** RustDesk has had experimental Wayland support since version 1.2.0. Because Wayland compositors don't allow direct framebuffer access, RustDesk captures the screen through the `xdg-desktop-portal` service and [PipeWire](https://deepwiki.com/rustdesk/rustdesk/6.3.1-wayland-support), and injects input via the kernel's `uinput` module. Two consequences follow from that design:
+**Wayland: RustDesk has arguably the strongest support of any remote-desktop tool.** RustDesk has supported Wayland since version 1.2.0 and has kept extending it. Because Wayland compositors don't allow direct framebuffer access, RustDesk captures the screen through the `xdg-desktop-portal` service and [PipeWire](https://deepwiki.com/rustdesk/rustdesk/6.3.1-wayland-support), and injects input via the kernel's `uinput` module. Two consequences follow from Wayland's own design — and they apply to every Wayland screen-sharing tool, not just RustDesk:
 
 - **Consent per connection.** The portal shows a dialog asking you to select which display to share. That is a deliberate Wayland security feature, not a RustDesk bug — a background app cannot silently start recording your screen. Portal v4 and newer support a "restore token" so you aren't re-prompted every single time, but the first share requires an on-screen click.
-- **Active session only.** Wayland capture is tied to the logged-in graphical session. You cannot capture the Wayland login greeter, and monitor changes aren't detected mid-session the way they are on X11. Remote access to the login screen still requires X11.
+- **Active session only.** Wayland capture is tied to the logged-in graphical session. Capturing the Wayland login greeter isn't supported yet — it's in active development ([PR #15420](https://github.com/rustdesk/rustdesk/pull/15420)) — and monitor changes aren't detected mid-session the way they are on X11. For pre-login access today, use the headless/virtual-display configuration below, or an X11 session on distributions that still provide one.
 
 Wayland support keeps improving — RustDesk 1.4.3 (October 2025) [added multi-monitor sharing for Wayland](https://ubuntuhandbook.org/index.php/2025/10/rustdesk-released-1-4-3-with-multi-monitor-for-wayland-virtual-mouse/), for example. But if you connect and see a black screen on a Wayland box, that is almost always the portal/PipeWire path not being satisfied. Our dedicated write-up on [RustDesk connected but waiting for image](/blog/rustdesk-connected-waiting-for-image) walks through the Wayland black-screen case specifically.
 
@@ -65,9 +65,9 @@ Unattended access means connecting to a machine with nobody sitting in front of 
 
 1. Install via `.deb` or `.rpm` so the systemd service is registered, or click **Enable Service** in the app.
 2. In RustDesk, set a strong **permanent password** under the connection settings (and ideally enable two-factor authentication).
-3. Log the machine into an **X11 session** if you need access before or across user logins — Wayland's consent-per-connect model makes true unattended capture awkward.
+3. For access before or across user logins, use the headless virtual-display configuration below — or an X11 session where your distribution still offers one. Capturing the Wayland greeter is a platform gap RustDesk is actively closing ([PR #15420](https://github.com/rustdesk/rustdesk/pull/15420)), not a RustDesk shortcoming.
 
-The honest caveat: unattended access on Wayland is genuinely harder than on X11 because the portal is designed to require a human to approve screen sharing. If unattended reliability matters, choose X11 for that machine. This isn't unique to RustDesk; every Wayland screen-sharing tool wrestles with the same portal model.
+One Wayland reality to plan for: because the portal is designed to require a human to approve screen sharing, fully unattended capture is harder on Wayland than on X11 — for every screen-sharing tool, not just RustDesk. RustDesk is actively working to close that gap ([unattended Wayland is in active development](https://github.com/rustdesk/rustdesk/pull/15420)); until it lands, cover pre-login or hands-off machines with the headless virtual-display setup — or an X11 session where your distribution still offers one, keeping in mind that X11 is being retired across many distros.
 
 ## Headless Linux: servers with no monitor
 
@@ -77,7 +77,7 @@ Three ways to give it something to render:
 
 - **A dummy plug** — a cheap physical HDMI/DisplayPort "headless" dongle that makes the GPU think a monitor is attached.
 - **A virtual display driver** — `xserver-xorg-video-dummy` on X11, or a kernel-level option like VKMS.
-- **RustDesk's experimental headless mode** — enable it with `sudo rustdesk --option allow-linux-headless Y`. Per the [Headless Linux Support wiki](https://github.com/rustdesk/rustdesk/wiki/Headless-Linux-Support) it is disabled by default, tested mainly on Ubuntu with GNOME, and expects packages like `xserver-xorg-video-dummy` and `lightdm`. You can fetch the machine's ID with `sudo rustdesk --get-id` and set a password with `sudo rustdesk --password <password>`.
+- **RustDesk's opt-in headless mode** — enable it with `sudo rustdesk --option allow-linux-headless Y`. Per the [Headless Linux Support wiki](https://github.com/rustdesk/rustdesk/wiki/Headless-Linux-Support) it is disabled by default, tested mainly on Ubuntu with GNOME, and expects packages like `xserver-xorg-video-dummy` and `lightdm`. You can fetch the machine's ID with `sudo rustdesk --get-id` and set a password with `sudo rustdesk --password <password>`.
 
 Headless mode is still rough around the edges, so treat it as "works, with care" rather than turnkey.
 
@@ -87,8 +87,8 @@ Everything above is the _client_. The other half of RustDesk's Linux story is th
 
 You have two options. The free, open-source **community server** runs indefinitely at no cost and covers the core connect-and-relay function. **RustDesk Server Pro** adds a self-hosted web console, device groups, a shared address book, a custom-branded client generator, and [LDAP/Active Directory and OIDC SSO](/blog/rustdesk-active-directory-ldap-sso). You are not forced into Docker either — see [running Server Pro without Docker](/blog/rustdesk-server-pro-without-docker) for a plain-VM or bare-metal install. If you're sizing hardware for a large fleet, [self-hosting hardware at scale](/blog/self-host-rustdesk-server-hardware-at-scale) has the capacity planning.
 
-One honest note on self-hosting, the same as everywhere in RustDesk's docs: the free community server and Server Pro are yours to run, patch, and secure. There's no managed NOC watching it for you. That ownership is the whole point — it's also real operational work, and worth being clear-eyed about before you commit. (Server Pro's license also needs an outbound path to rustdesk.com to activate and stay licensed.)
+One note on self-hosting: the free community server and Server Pro are yours to run, patch, and secure. The hardware requirements are low and, once it is set up, upkeep is light — and RustDesk support can help if a question comes up. That ownership is the whole point. (Server Pro's license also needs an outbound path to rustdesk.com to activate and stay licensed.)
 
 ## Getting started
 
-Install the package for your distro, log into an Xorg session if you want the smoothest experience, set a permanent password for unattended access, and — if data sovereignty is your reason for being here — stand up the free community server. For current plan details, [rustdesk.com/pricing](https://rustdesk.com/pricing) is the source of truth, and [sales@rustdesk.com](mailto:sales@rustdesk.com) can talk through Server Pro. Want to see it working first? [See RustDesk in action](/blog/see-rustdesk-in-action).
+Install the package for your distro, set a permanent password for unattended access, and — if data sovereignty is your reason for being here — stand up the free community server. For current plan details, [rustdesk.com/pricing](https://rustdesk.com/pricing) is the source of truth, and [sales@rustdesk.com](mailto:sales@rustdesk.com) can talk through Server Pro. Want to see it working first? [See RustDesk in action](/blog/see-rustdesk-in-action).

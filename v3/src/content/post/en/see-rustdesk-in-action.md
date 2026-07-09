@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-06-30T17:15:00Z
 lang: en
 translationKey: see-rustdesk-in-action
 draft: false
@@ -10,6 +10,16 @@ category: Guides
 tags:
   - RustDesk
 author: RustDesk Team
+faq:
+  - question: 'How can I see a RustDesk demo?'
+    answer: 'The RustDesk YouTube channel has videos covering the product and the Pro feature set — the web console, custom client generator, address book, and access control — so you can watch it running before you install anything.'
+  - question: 'Can I try RustDesk for free?'
+    answer: "Yes. RustDesk's core is open source, so you can stand up the free community server today and connect your own machines with no license, no time limit, and no cost. You can audit the code while you're at it."
+  - question: 'How do I evaluate the RustDesk Pro features?'
+    answer: 'Check the current evaluation terms on rustdesk.com/pricing or email sales@rustdesk.com, then spin up the server, point a few devices at it, and decide for yourself.'
+  - question: 'Do I need a sales call to try RustDesk?'
+    answer: 'No. You can watch the demo video for a tour, self-host the free server to test hands-on, and confirm the current Pro evaluation path when you need the full feature set.'
+
 metadata:
   description: 'Three ways to see RustDesk in action: watch the demo video, self-host the free open-source server, and confirm the current Server Pro evaluation path.'
   keywords: 'RustDesk demo, see RustDesk in action, evaluate RustDesk, RustDesk Pro demo, try RustDesk, RustDesk evaluation'
@@ -33,6 +43,6 @@ When you're ready to evaluate the paid features — the self-hosted web console,
 
 ## Have questions? Talk to the team directly
 
-If you still have questions about pricing, licensing, deployment, or feature fit, use the current pricing page, docs, and contact channels to confirm the details that matter to your evaluation.
+If you still have questions about pricing, licensing, deployment, or feature fit, email [sales@rustdesk.com](mailto:sales@rustdesk.com) for pricing and licensing, [support@rustdesk.com](mailto:support@rustdesk.com) for deployment help, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) and the [docs](https://rustdesk.com/docs/en/) to confirm the details that matter to your evaluation.
 
 So the evaluation path is simple: **watch the video for the tour, self-host the free server to test hands-on, and confirm the current Pro evaluation path when you need the full feature set.**

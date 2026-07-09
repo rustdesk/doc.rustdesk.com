@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-07-09T10:47:00Z
 lang: en
 translationKey: rustdesk-scale-50000-200000-devices
 draft: false
@@ -27,7 +27,7 @@ metadata:
   keywords: 'rustdesk scale 200000 devices, rustdesk 50000 devices, rustdesk self-hosted server scalability, rustdesk enterprise deployment, rustdesk server pro capacity, remote desktop for large fleets'
 ---
 
-RustDesk internal telemetry recorded **more than two million online endpoints** on one public-server host with a **12-core CPU and 32 GB of RAM** on July 7, 2026. This is a point-in-time internal production observation recorded on July 7, 2026, not a multi-day stability measurement.
+RustDesk internal telemetry recorded **more than two million online endpoints** on one public-server host with a **12-core CPU and 32 GB of RAM** on July 7, 2026. This is a point-in-time internal production observation, not a multi-day stability measurement.
 
 The scope matters: this is a production observation, not a reproducible Server Pro benchmark. It was not independently audited and has no public monitoring dashboard or downloadable dataset. “Online endpoints” means devices reported online at that point in time, not two million simultaneous remote-control sessions. RustDesk is intentionally publishing this limited topology summary without host identifiers or network details. A Server Pro deployment may also have different database writes, audit activity, console use, policy processing, and relay traffic.
 
@@ -39,7 +39,7 @@ Yes, 200,000 online devices is a credible planning target: RustDesk's point-in-t
 
 Scale questions like this are among the most common we hear from IT teams migrating off TeamViewer or AnyDesk, especially those planning fleets in the tens or hundreds of thousands. The answer depends on how many devices stay online, how frequently their state changes, how many remote sessions run at once, and how much traffic uses the relay.
 
-The public-server observation provides a RustDesk-reported reference point: more than two million online endpoints on a single 12-core, 32 GB machine at the recorded moment. It is useful first-party operational context, but readers cannot independently reproduce it from a public report and should not treat it as proof of a monitoring period or service-level target.
+The public-server observation is a RustDesk-reported reference point: more than two million online endpoints on a single 12-core, 32 GB machine at the recorded moment — useful first-party context for sizing, not a service-level guarantee.
 
 For a Server Pro rollout, validate the parts that do not follow from that public-server figure. Caching and database write performance matter as devices come and go. Relay bandwidth and CPU depend on the number, duration, resolution, and codec of simultaneous relayed sessions. Console queries, audit retention, device groups, policies, and integrations can add load that endpoint presence alone does not measure.
 
@@ -57,8 +57,7 @@ This question typically comes from enterprises, [MSPs](/blog/rustdesk-for-msps),
 
 - [How many concurrent sessions can a self-hosted RustDesk server handle?](/blog/rustdesk-concurrent-connections-limit)
 - What [server hardware](/blog/self-host-rustdesk-server-hardware-at-scale) do I need for a large RustDesk deployment?
-- Does RustDesk Server Pro support high availability or load balancing?
 - [How does RustDesk licensing work for tens of thousands of devices?](/blog/rustdesk-pro-license-cost-how-to-pay)
-- Can I migrate an existing TeamViewer or AnyDesk fleet to RustDesk?
+- [Can I migrate an existing TeamViewer or AnyDesk fleet to RustDesk?](/blog/self-hosted-teamviewer-alternative)
 
 Planning a large-scale rollout? Reach out to the [RustDesk team](mailto:sales@rustdesk.com) to size a self-hosted deployment for your device count, performance requirements, and growth timeline.

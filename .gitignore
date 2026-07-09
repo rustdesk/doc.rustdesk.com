@@ -22,3 +22,14 @@ yarn-error.log*
 public/
 .DS_Store
 hugo.toml
+
+# local agent tooling
+.agent/
+.agents/
+.claude/
+.omx/
+v3/.agent/
+v3/.agents/
+v3/.claude/
+v3/.omx/
+v3/docs/superpowers/

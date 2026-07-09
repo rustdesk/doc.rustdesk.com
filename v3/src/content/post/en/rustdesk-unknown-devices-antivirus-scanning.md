@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-06-30T13:46:00Z
 lang: en
 translationKey: rustdesk-unknown-devices-antivirus-scanning
 draft: false

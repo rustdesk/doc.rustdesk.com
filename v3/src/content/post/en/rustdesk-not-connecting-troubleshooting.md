@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-07T00:00:00Z
+publishDate: 2026-07-07T16:17:00Z
 lang: en
 translationKey: rustdesk-not-connecting-troubleshooting
 draft: false
@@ -22,6 +22,8 @@ faq:
     answer: 'RustDesk first tries a direct peer-to-peer link by punching through NAT. If that fails, traffic falls back through the relay server so the session still works, just with more latency. You can force relay mode to sidestep flaky NAT traversal, but relay throughput matters, which is a reason to self-host rather than lean on the public server.'
   - question: 'Should I stop using the public RustDesk server?'
     answer: 'The public rendezvous and relay servers are shared and offered without a performance guarantee, so under load they can be slow or refuse new sessions. If connections are unreliable, self-hosting your own server on a VPS or local machine gives you dedicated capacity, a stable key, and full control. The community server is free to run indefinitely.'
+  - question: 'RustDesk Server Pro says the license is "already in use by another machine" — how do I move it?'
+    answer: 'A Server Pro license binds to one server (the hbbs component; the relay hbbr needs no license). After a reinstall, migration, or hardware change, log in to the self-service license portal at rustdesk.com/self-host/account/ with the email you used on the payment page when you bought the license — if you no longer know which email that was, contact support@rustdesk.com — then unbind the old machine and set the license in the new server web console, where it re-registers automatically. If you run Pro in Docker and hit this on every restart, give the containers a stable hostname or use host network mode so the license is not tied to a random container ID.'
 
 metadata:
   description: 'RustDesk not connecting? Fix ID/relay server settings, firewall and NAT, key mismatch after a reinstall, direct vs relay, and public server overload.'
@@ -105,8 +107,6 @@ The durable fix is to **self-host**. Running your own server on a small VPS or a
 
 Version drift causes connection failures on its own. Older clients and servers can disagree on protocol and key formats, so update **both clients and the server** to current releases before deeper debugging. Several "won't connect" reports resolve at this step alone.
 
-## An honest caveat
+## A server you control is one you can fix
 
-Not every connection problem is on RustDesk's side. Symmetric NAT, deep-packet-inspection firewalls, and captive-portal networks can block peer-to-peer traffic in ways no client setting overrides — in those environments, forcing relay through a server _you_ control is the realistic answer, not direct P2P. And self-hosting means you own the uptime: a misconfigured reverse proxy or a lapsed certificate becomes your problem to fix, not a vendor's. For most teams that trade is worth it for the control and privacy; go in clear-eyed about it.
-
-Ready to get off the shared server? Spin up the free community server, point your clients at it, and you're independent — see [why self-hosting is worth it](/blog/why-self-host-remote-desktop-software), or for commercial capabilities check [rustdesk.com/pricing](https://rustdesk.com/pricing) or email sales@rustdesk.com.
+When the coordination runs on your own host, a connection failure is yours to diagnose and yours to resolve — no shared public server to wait on, no black box between endpoints. That is the durable fix behind the steps above.

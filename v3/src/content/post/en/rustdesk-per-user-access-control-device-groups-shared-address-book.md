@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-06-26T15:16:00Z
 lang: en
 translationKey: rustdesk-per-user-access-control-device-groups-shared-address-book
 draft: false

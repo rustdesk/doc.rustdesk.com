@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-06-26T19:43:00Z
 lang: en
 translationKey: rustdesk-active-directory-ldap-sso
 draft: false
@@ -52,7 +52,7 @@ This comes up most from IT admins, [MSPs](/blog/rustdesk-for-msps), and business
 - [Does RustDesk support SSO or SAML in addition to LDAP / Active Directory?](https://rustdesk.com/docs)
 - [Which RustDesk plan do I need for a custom-branded client?](/blog/rustdesk-web-console-custom-client-generator-port-21114)
 - [How does per-user versus per-device licensing work in Server Pro?](/blog/rustdesk-pro-license-cost-how-to-pay)
-- [Can I self-host the RustDesk web client, and which plan includes it?](/blog/rustdesk-web-console-custom-client-generator-port-21114)
+- [Can I self-host the RustDesk web client, and which plan includes it?](/blog/rustdesk-web-client-v2-preview)
 - [Is LDAPS (LDAP over TLS) supported with an internal certificate authority?](https://rustdesk.com/docs)
 
 Evaluating RustDesk for your directory-backed environment? Check the current plan and LDAP details at rustdesk.com, and reach out to the team if you need LDAPS with a custom PKI certificate so they can weigh your requirement.

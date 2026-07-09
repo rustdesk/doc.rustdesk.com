@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-06-28T16:50:00Z
 lang: en
 translationKey: rustdesk-server-pro-offline-air-gapped
 draft: false
@@ -16,7 +16,7 @@ faq:
   - question: 'Can RustDesk Server Pro run offline or air-gapped?'
     answer: 'No. The licensed Server Pro must keep an outbound connection to rustdesk.com to validate its license while it runs, so a fully air-gapped, never-phones-home deployment is not supported. You can still lock egress down tightly and route it through a proxy.'
   - question: 'Does RustDesk Server Pro need a permanent internet connection?'
-    answer: 'It needs ongoing outbound access to rustdesk.com for license validation. Remote sessions themselves are brokered by your own self-hosted relay and ID (rendezvous) servers, but the Pro license will not stay valid without that outbound path.'
+    answer: 'It needs ongoing outbound access to rustdesk.com for license validation, but not a literally uninterrupted one. The server checks in over port 443 about once a day and, if a check fails, keeps retrying until it succeeds or roughly seven days pass — so a brief outage is tolerated, but a server cut off from rustdesk.com for longer than that grace window stops validating. Remote sessions themselves are brokered by your own self-hosted relay and ID (rendezvous) servers.'
   - question: 'Which outbound access does an isolated RustDesk Server Pro deployment need?'
     answer: 'Allow outbound HTTPS from the server to rustdesk.com for license validation (and for custom-client provisioning if you use it). A proxy is supported, so the rest of the network can stay locked down. Confirm the exact domains and ports in the RustDesk docs.'
   - question: 'Is there a fully air-gapped RustDesk licensing option?'
@@ -30,7 +30,7 @@ No — a self-hosted RustDesk Server Pro deployment is not designed to run fully
 
 ## The short answer
 
-Server Pro needs an outbound path to rustdesk.com for license validation, and that requirement does not go away once the server is running. Your ID and relay services remain self-hosted; direct sessions flow between endpoints and relayed sessions use your relay. The license itself will not remain valid on a server that can never reach rustdesk.com. You can keep the network tightly restricted: a proxy is supported, so in practice you allow the required outbound HTTPS path and lock down the rest.
+Server Pro needs an outbound path to rustdesk.com for license validation, and that requirement does not go away once the server is running. In practice the check is periodic rather than constant: the server contacts rustdesk.com over port 443 roughly once a day, and if a check fails it retries until it either succeeds or about seven days elapse — after which the license stops validating. That built-in grace window means a short internet outage will not immediately break your deployment, but a permanently offline server will. Your ID and relay services remain self-hosted; direct sessions flow between endpoints and relayed sessions use your relay. You can keep the network tightly restricted: a proxy is supported, so in practice you allow the required outbound HTTPS path and lock down the rest.
 
 ## In detail
 

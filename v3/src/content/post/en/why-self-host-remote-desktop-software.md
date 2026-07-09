@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-07-07T18:21:00Z
 lang: en
 translationKey: why-self-host-remote-desktop-software
 draft: false
@@ -11,6 +11,18 @@ tags:
   - RustDesk
   - self-hosting
 author: RustDesk Team
+faq:
+  - question: 'What does it mean to self-host remote desktop software?'
+    answer: "It means running the server that coordinates connections and relays traffic when direct connectivity fails on infrastructure you control, instead of routing sessions through a vendor's cloud. With RustDesk Server Pro, the ID/rendezvous server, relay, console, and stored deployment data run on your own infrastructure."
+  - question: 'Why self-host instead of using a cloud remote-desktop tool?'
+    answer: "Self-hosting gives you control over where the server-side data and relay run, more predictable cost, and no dependence on a vendor's cloud uptime or roadmap. RustDesk licensing is per login-user plus per managed-device, with unlimited concurrent connections on standard plans."
+  - question: 'What does running a self-hosted RustDesk server actually involve?'
+    answer: 'The hardware requirements are low and most of the work is one-time: you provision a small Linux host, open only the ports you use (native clients require TCP 21115-21117 and UDP 21116), set up TLS at a reverse proxy, and schedule backups; after that it is routine patching and monitoring, with RustDesk support available if you hit a snag.'
+  - question: 'Does self-hosting help with data residency and GDPR compliance?'
+    answer: 'Yes — it gives you real control here: you choose where the rendezvous, relay, console, and device data run. It is a foundation rather than an absolute guarantee, though, because direct connections still travel between endpoints — so keeping traffic in-country and meeting GDPR obligations also depends on how you route and operate the deployment.'
+  - question: 'Is self-hosting right for every team?'
+    answer: "Self-hosting suits teams that want control of their data and infrastructure. It does involve running a server — modest, and mostly one-time to set up — so if you would rather not run any server at all, a managed SaaS is the alternative model. But RustDesk Server Pro is self-hosted by design precisely so your data stays on your own infrastructure with no vendor cloud in the middle — and for teams that already run infrastructure, that ownership is the whole point."
+
 metadata:
   description: 'The case for self-hosting remote desktop software: data control, predictable cost, no vendor lock-in, no cloud outage. RustDesk as the concrete example.'
   keywords: 'why self-host remote desktop, self-hosted remote desktop benefits, on-premise remote access, remote desktop without vendor cloud'
@@ -36,7 +48,7 @@ Self-hosting lets you choose where rendezvous, relay, console, and device data r
 
 A common pattern is that one renewal hike pushes a team off a cloud tool, and the next vendor increase makes them re-evaluate the model itself rather than just the brand.
 
-RustDesk licensing is **per login-user plus per managed-device**. Standard plans include unlimited [concurrent connections](/blog/rustdesk-concurrent-connections-limit); Customized V2 limits and prices them separately. For current numbers, [see rustdesk.com/pricing](https://rustdesk.com/pricing).
+RustDesk licensing is **per login-user plus per managed-device**. Standard plans include unlimited [concurrent connections](/blog/rustdesk-concurrent-connections-limit); [Customized V2](https://rustdesk.com/pricing#custom2) limits and prices them separately. For current numbers, [see rustdesk.com/pricing](https://rustdesk.com/pricing).
 
 ### 3. No vendor lock-in, no cloud outage dependency
 
@@ -44,7 +56,7 @@ Self-hosting moves the coordinating-service failure domain into your own operati
 
 ### 4. It scales, and it's built for IT teams
 
-Self-hosting doesn't mean settling for a toy. RustDesk publishes [large-fleet planning guidance](/blog/rustdesk-scale-50000-200000-devices) for teams that need to support bigger estates. For [MSPs](/blog/rustdesk-for-msps) and internal IT, there's a [self-hosted web console](/blog/rustdesk-web-console-custom-client-generator-port-21114), a custom-branded client generator, and [device groups plus a shared address book](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book) for per-user access control. [LDAP/SSO](/blog/rustdesk-active-directory-ldap-sso) (OIDC) is available from the Basic plan and up.
+Self-hosting doesn't mean giving up scale or capability. RustDesk publishes [large-fleet planning guidance](/blog/rustdesk-scale-50000-200000-devices) for teams that need to support bigger estates. For [MSPs](/blog/rustdesk-for-msps) and internal IT, there's a [self-hosted web console](/blog/rustdesk-web-console-custom-client-generator-port-21114), a custom-branded client generator, and [device groups plus a shared address book](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book) for per-user access control. [LDAP/SSO](/blog/rustdesk-active-directory-ldap-sso) (OIDC) is available from the Basic plan and up.
 
 ## Cloud-only vs. self-hosted, at a glance
 
@@ -58,22 +70,22 @@ Self-hosting doesn't mean settling for a toy. RustDesk publishes [large-fleet pl
 | Outage dependency            | Vendor uptime                           | Your own ops                                                                                                                |
 | Who runs the server          | Vendor                                  | You                                                                                                                         |
 
-## The honest caveat
+## Own the server, own the outcome
 
-Self-hosting is a trade, not a free lunch. Someone on your side has to **run the server**: provision a host, open the right ports, set up TLS, and keep it patched. That's real, ongoing work. If what you actually want is a [zero-maintenance managed SaaS](/blog/rustdesk-self-hosted-vs-cloud-saas-option) with no server to run, be clear-eyed — RustDesk Server Pro is self-hosted by design, and it is not that. The upside of doing the ops is exactly the control described above; if your team can't own a server, this model isn't for you, and that's fine.
-
-The good news is the bar to find out is low. You don't need a sales call to evaluate.
+That is the thesis in a line: run the server and the data, the cost, and the failure domain become yours to control rather than yours to rent. For an IT team already running infrastructure, it is a next step, not a leap.
 
 ## What running the server actually involves
 
-The control described above is inseparable from the operational work that buys it. Before you commit, here's the concrete reality — not a feature list:
+The control comes with some operational work — less than most teams expect, and most of it one-time. Here's the concrete reality:
 
-- **Provision a host.** A modest Linux VM — on-prem or a VPS you rent — runs the ID/rendezvous and relay services. Size it for your device count and how much traffic ends up relayed rather than peer-to-peer.
+- **Provision a host.** RustDesk's hardware requirements are low, so a modest Linux VM — on-prem or an inexpensive VPS — runs the ID/rendezvous and relay services. Size it for your device count and how much traffic ends up relayed rather than peer-to-peer.
 - **Open only the ports you use.** Native RustDesk clients require **TCP 21115-21117 and UDP 21116** for NAT testing, connection services, registration, heartbeat, and relay. Do not expose the whole 21114-21119 range. TCP 21118-21119 are WebSocket backends, and TCP 21114 is the Pro HTTP API/console backend. When an HTTPS/WSS reverse proxy fronts the Pro API and WebSocket services, expose only TCP 443 publicly for that traffic and keep 21114 and 21118-21119 internal. Public 443 does not replace the native-client core ports when native clients also connect. See the [official port reference](https://rustdesk.com/docs/en/self-host/).
 - **Set up TLS.** Terminate HTTPS and WSS at the reverse proxy so credentials, API calls, and browser-client traffic use public TCP 443 rather than exposing the plain-HTTP console/API or raw WebSocket backends.
 - **Back up.** The server holds your device inventory, user accounts, address book, and access rules. Schedule backups — and actually test that you can restore from them.
 - **Keep a patch cadence.** New server builds ship over time, and you own the OS underneath. Decide who applies updates and how often.
-- **Monitor it.** The coordinating service is now yours, so you watch uptime, disk, and relay throughput. When it goes down, nobody else is paged.
+- **Monitor it.** The coordinating service is now yours, so you watch uptime, disk, and relay throughput, and you own the alerting and recovery.
+
+None of this is exotic, and most of it is one-time setup. If a question comes up at any point, [RustDesk support](mailto:support@rustdesk.com) can help you through it.
 
 ## How to evaluate self-hosting
 

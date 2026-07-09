@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-07T00:00:00Z
+publishDate: 2026-07-02T12:27:00Z
 lang: en
 translationKey: anydesk-commercial-use-detected
 draft: false
@@ -61,7 +61,7 @@ AnyDesk's free tier is licensed for personal use only, and [its terms allow enfo
 
 The same licensing distinction exists in other remote-access products, including [TeamViewer's commercial-use classification](/blog/teamviewer-commercial-use-detected). For genuinely commercial support work, the warning is not a technical bug to work around; compare current paid plans or alternatives rather than relying on unofficial resets or private renewal anecdotes.
 
-So if the appeal does not apply to you — because your use genuinely is commercial — the real question becomes: pay up, or move to something without a commercial-use tripwire at all?
+So if the appeal does not apply — your use genuinely is commercial — you are left with two paths: pay for a commercial license, or switch to a tool that has no commercial-use tripwire in the first place.
 
 ## The core difference: own the server, skip the nagging
 
@@ -79,7 +79,7 @@ On top of that, RustDesk's core client is open source under the [AGPL](/blog/cas
 | Session path                                                          | Direct when available; AnyDesk network relay otherwise            | Direct when available; your relay otherwise                                       |
 | Device allowance                                                      | Check current free-use terms                                      | Commercial plans count managed devices                                            |
 | Source code                                                           | Closed                                                            | Open source (AGPL), auditable                                                     |
-| [Concurrent connections](/blog/rustdesk-concurrent-connections-limit) | Gated on free tier                                                | Standard plans unlimited; Customized V2 limited                                   |
+| [Concurrent connections](/blog/rustdesk-concurrent-connections-limit) | Gated on free tier                                                | Standard plans unlimited; [Customized V2](https://rustdesk.com/pricing#custom2) limited                                   |
 | Pricing model                                                         | Per-seat cloud subscription                                       | [Per login-user + per managed-device](/blog/rustdesk-pro-license-cost-how-to-pay) |
 | Data boundary                                                         | Vendor services coordinate access; media can be direct or relayed | Server-side services on infrastructure you control; endpoint routes still matter  |
 
@@ -99,9 +99,9 @@ If you are supporting clients — the exact use AnyDesk's flag exists to catch �
 
 For specific access-control, SSO, and client-generation availability by plan, [see rustdesk.com/pricing](https://rustdesk.com/pricing).
 
-## The honest caveat
+## No usage flags on hardware you run
 
-Self-hosting is the fix for commercial-use nagging, but it means _someone on your side runs the server_. You provision a host, open ports, set up TLS, and patch it over time. It is not a heavy lift for an IT team — but it is real work. If what you actually want is a [zero-maintenance managed SaaS](/blog/rustdesk-self-hosted-vs-cloud-saas-option) with no server to run, RustDesk Server Pro is [self-hosted by design](/blog/why-self-host-remote-desktop-software) and won't be that. Go in clear-eyed: you are trading a monthly bill and a commercial-use tripwire for a server you own and maintain.
+Self-host RustDesk and nothing is scanning your sessions for "commercial use" to bill or block — the community core is free and open source, and Server Pro is licensed on terms you agree to up front. You run the tool instead of negotiating with it.
 
 ## Choose the fix that matches your use
 

@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-07-03T18:08:00Z
 lang: en
 translationKey: self-host-rustdesk-server-hardware-at-scale
 draft: false

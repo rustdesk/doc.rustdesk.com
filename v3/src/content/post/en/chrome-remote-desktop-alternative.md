@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-07T00:00:00Z
+publishDate: 2026-07-01T08:14:00Z
 lang: en
 translationKey: chrome-remote-desktop-alternative
 draft: false
@@ -17,7 +17,7 @@ faq:
   - question: 'Is there a Chrome Remote Desktop alternative that does not require a Google account?'
     answer: 'Yes. RustDesk uses its own ID/rendezvous and relay servers instead of a Google account, and you can self-host those servers so no third-party cloud sits in the middle. Chrome Remote Desktop, by contrast, requires a Google account on both the host and the client.'
   - question: 'Does Chrome Remote Desktop support file transfer?'
-    answer: 'Chrome Remote Desktop offers only a basic upload/download file mechanism and no drag-and-drop; reviewers commonly list file transfer among its missing conveniences. RustDesk includes built-in file transfer alongside remote control.'
+    answer: 'Chrome Remote Desktop provides basic file upload/download but not drag-and-drop transfer. RustDesk includes built-in file transfer alongside remote control.'
   - question: 'Can Chrome Remote Desktop provide unattended access?'
     answer: 'It can, but the target machine must be powered on and signed into the same Google account, and Chrome Remote Desktop cannot wake a sleeping computer. RustDesk supports permanent-password unattended access to a fleet you manage from your own console.'
   - question: 'Is RustDesk free like Chrome Remote Desktop?'
@@ -33,7 +33,7 @@ metadata:
 
 But the moment your needs grow past "help my own laptop from the couch," the seams show. You're tied to Google identity and signaling, some support-team features are missing, and the control plane is not self-hostable. Google's [network guide](https://support.google.com/chrome/a/answer/16364503) explains the boundary: connections are initially negotiated through Google services, while live WebRTC traffic uses Direct, STUN, or TURN/relay paths. Only TURN/relay session packets are relayed through Google data centers. If you've bumped into those trade-offs, this page lays out what a self-hosted, open-source alternative looks like.
 
-We'll be even-handed about it: CRD is a legitimately good free tool for what it's designed to do, and RustDesk asks more of you up front. Here's the honest comparison.
+To be even-handed: CRD is a genuinely good free tool for what it's designed to do. Where you need control, auditability, or team features, an open-source, self-hosted model is the step up — here's how the two compare.
 
 ## What Chrome Remote Desktop does well
 
@@ -77,11 +77,9 @@ RustDesk's client core is open source under the **[AGPL](/blog/case-for-open-sou
 
 On top of that self-hosted core, RustDesk adds the team features CRD lacks: a [self-hosted web console](/blog/rustdesk-web-console-custom-client-generator-port-21114), a custom-branded client generator, [device groups and a shared address book](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book) for scoped access, and [LDAP/AD and OIDC SSO](/blog/rustdesk-active-directory-ldap-sso) from the Basic plan up. Real file transfer and permanent-password [unattended access](/blog/rustdesk-unattended-access-setup) come standard on Windows, macOS, Linux, and Android hosts; the iOS app is controller-only.
 
-## The honest caveat
+## Off Google's cloud, onto yours
 
-Here's the trade-off we won't hide: **Chrome Remote Desktop is zero-setup and genuinely free**, and RustDesk self-hosting is real work. Someone on your side has to provision a host, open the right ports, set up TLS, and patch the server over time. That's ongoing operational effort CRD simply doesn't ask of you.
-
-If all you need is casual, occasional access to your own personal machine, CRD may be the right answer, and there's no shame in using it. RustDesk earns its keep when you need control, auditability, central management, and features CRD doesn't have — and you're willing to own a server to get them. If you'd rather not run anything, be clear-eyed: RustDesk Server Pro is self-hosted, not a zero-maintenance managed cloud.
+The step up from Chrome Remote Desktop is control: brokering, access policy, and session data move from Google's servers to one you operate and can audit. For anyone who wants remote access that answers to them, that is the payoff.
 
 ## Try it without a sales call
 

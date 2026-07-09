@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-07-03T09:34:00Z
 lang: en
 translationKey: teamviewer-commercial-use-detected
 draft: false
@@ -12,6 +12,18 @@ tags:
   - troubleshooting
   - licensing
 author: RustDesk Team
+faq:
+  - question: 'How do I fix "commercial use detected" on TeamViewer?'
+    answer: 'TeamViewer publishes an official reset/appeal process: go to teamviewer.com/reset, enter your name and the email on your account, briefly describe your actual usage, list every TeamViewer ID involved, then accept the privacy policy and submit. TeamViewer states a review-time target (about a week at the time of writing); confirm the current figure on its reset page.'
+  - question: 'What counts as commercial use in TeamViewer?'
+    answer: "Per TeamViewer's own definitions, commercial use includes providing support to clients or customers, working from home (even just checking work email), any inbound or outbound connection in a commercial setting, server administration or monitoring, and salaried work at a non-profit. Personal use means helping family and friends or connecting to your own non-server devices."
+  - question: 'Will the reset request work if my use is genuinely commercial?'
+    answer: 'No. The appeal only helps when the flag was a false positive; if your actual usage is commercial, TeamViewer will correctly identify it, and the real fix is choosing a tool licensed for how you actually use it.'
+  - question: 'Does RustDesk have a commercial-use detector?'
+    answer: "No. RustDesk's community server can be self-hosted without a commercial-use classifier, while Server Pro is licensed by login users and managed devices, with unlimited concurrent connections on standard plans and a defined allowance on Customized V2."
+  - question: 'Can I avoid the flag with ID-reset scripts or by deleting config files?'
+    answer: 'No. Do not use unofficial ID-reset scripts or delete configuration files to evade the classification; they do not change the license terms and can create additional security or support problems.'
+
 metadata:
   description: "Flagged for 'commercial use detected' on TeamViewer? Here's the official reset process, what counts as commercial use, and how self-hosted RustDesk avoids it."
   keywords: 'TeamViewer commercial use detected, TeamViewer reset commercial use, TeamViewer commercial use appeal, TeamViewer personal use flagged'
@@ -28,10 +40,10 @@ TeamViewer publishes an official [reset/appeal process](https://www.teamviewer.c
 1. **Go to [teamviewer.com/reset](https://teamviewer.com/reset)** and click the start button.
 2. **Enter your name and the email address on your TeamViewer account.**
 3. **Briefly describe your actual usage pattern** — e.g. "I only use this to help my elderly parent with their PC," or whatever genuinely describes what you're doing.
-4. **List every TeamViewer ID involved**, both the device you connect _from_ and any you connect _to_ (the form currently accepts up to 10 IDs per submission).
+4. **List every TeamViewer ID involved**, both the device you connect _from_ and any you connect _to_ (the form accepts a limited number of IDs per submission).
 5. **Accept the privacy policy and submit.**
 
-TeamViewer states they aim to review requests within **seven business days** at the time of writing, though it can take longer during high-volume periods — check your spam folder if you don't hear back within a week. One of two things happens next: either they reset your ID because personal use is confirmed, or they decline the reset and offer you a "declaration of private use" to sign instead. If your actual usage is commercial, neither outcome changes that — the appeal only helps when the flag was a false positive.
+TeamViewer states a review-time target of roughly a week at the time of writing, though it can take longer during high-volume periods — check your spam folder if you don't hear back. One of two things happens next: either they reset your ID because personal use is confirmed, or they decline the reset and offer you a "declaration of private use" to sign instead. If your actual usage is commercial, neither outcome changes that — the appeal only helps when the flag was a false positive.
 
 ### What actually counts as "commercial use" here
 
@@ -63,7 +75,7 @@ When the usage is genuinely commercial, there is no legitimate reset workaround.
 | Choose another managed SaaS | You want no server operations but a different commercial offer  | Sessions and administration remain vendor-operated                       |
 | Pilot a self-hosted tool    | You want to operate the ID, relay, console, and deployment data | Your team owns hosting, patching, certificates, monitoring, and recovery |
 
-RustDesk belongs in the third row. Its community server can be self-hosted without a commercial-use classifier, while Server Pro is licensed by login users and managed devices. Standard plans include unlimited concurrent connections; Customized V2 has a defined allowance. Direct sessions still flow between endpoints, and Server Pro's commercial license terms still apply.
+RustDesk belongs in the third row. Its community server can be self-hosted without a commercial-use classifier, while Server Pro is licensed by login users and managed devices. Standard plans include unlimited concurrent connections; [Customized V2](https://rustdesk.com/pricing#custom2) has a defined allowance. Direct sessions still flow between endpoints, and Server Pro's commercial license terms still apply.
 
 ## A safe migration path
 

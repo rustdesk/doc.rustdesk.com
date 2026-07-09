@@ -100,7 +100,9 @@ The `Individual` plan does not have this feature.
 4. Click `OK`.
 
 ## Viewing Logs
-On the left hand side click on `Logs`.
+On the left hand side click on `Logs`. The console lists the connection, file-transfer, alarm, and console-operation (audit) logs; you can also query and export them through the `audits.py` API.
+
+Server Pro includes **built-in audit-log rotation**, so these audit logs are bounded rather than growing indefinitely — helpful for storage-limitation and data-retention requirements.
 
 ## Setup Emails
 Gmail in this example

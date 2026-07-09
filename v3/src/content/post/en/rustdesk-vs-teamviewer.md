@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-06-30T13:17:00Z
 lang: en
 translationKey: rustdesk-vs-teamviewer
 draft: false
@@ -15,11 +15,20 @@ author: RustDesk Team
 metadata:
   description: 'RustDesk vs TeamViewer compared: features, OS support, security, licensing models, and honest pros/cons — self-hosting, open source, no per-channel pricing.'
   keywords: 'RustDesk vs TeamViewer, TeamViewer comparison, TeamViewer vs RustDesk, RustDesk TeamViewer alternative comparison'
+faq:
+  - question: 'Is RustDesk a free alternative to TeamViewer?'
+    answer: "RustDesk's core client and community server are open source and free to self-host with no expiry. Paid Server Pro plans add centralized management and are licensed by login users and managed devices; current figures are at rustdesk.com/pricing."
+  - question: 'Does RustDesk still work if I stop paying, like an old TeamViewer perpetual license?'
+    answer: 'The open-source community server keeps running at no cost. Server Pro is an annual commercial license; if it lapses you keep the free server but lose the Pro management features. Neither product is a perpetual one-time-purchase-forever tool.'
+  - question: 'Can RustDesk be self-hosted, unlike TeamViewer?'
+    answer: 'Yes. RustDesk Server Pro runs the ID/rendezvous, relay, console, and stored data on infrastructure you control, whereas TeamViewer brokers sessions through its own cloud.'
+  - question: 'Does RustDesk meter concurrent sessions like TeamViewer plans?'
+    answer: 'RustDesk standard plans include unlimited concurrent connections; only Customized V2 meters and prices concurrency. TeamViewer caps simultaneous sessions by plan tier.'
 ---
 
 Teams comparing RustDesk and TeamViewer commonly focus on renewal cost, concurrency, hosting control, and operational maturity. Use current public terms or written quotes rather than private customer correspondence.
 
-That said, "cheaper and self-hosted" is not automatically "better." TeamViewer is a mature, deeply integrated commercial platform, and for some teams it is genuinely the right tool. This is a long, deliberately even-handed comparison: what each product is, how their features and platform support line up, how their security and licensing models differ, where TeamViewer still has the edge, and where — and why — teams move to RustDesk instead. Where we make a claim about TeamViewer, we cite it, and everything is dated because remote-access pricing and packaging change often.
+TeamViewer is a commercial remote-access platform with a deep integration catalog. This is a detailed comparison: what each product is, how their features and platform support line up, how their security and licensing models differ, and where — and why — teams move to RustDesk instead. Where we make a claim about TeamViewer, we cite it, and everything is dated because remote-access pricing and packaging change often.
 
 ## Table of contents
 
@@ -28,10 +37,9 @@ That said, "cheaper and self-hosted" is not automatically "better." TeamViewer i
 - [Operating system and platform support](#operating-system-and-platform-support)
 - [Security and identity](#security-and-identity)
 - [Licensing and pricing models](#licensing-and-pricing-models)
-- [Where TeamViewer still wins](#where-teamviewer-still-wins)
 - [Pros and cons](#pros-and-cons)
 - [Why teams switch to RustDesk anyway](#why-teams-switch-to-rustdesk-anyway)
-- [An honest caveat about self-hosting](#an-honest-caveat-about-self-hosting)
+- [It comes down to control](#it-comes-down-to-control)
 - [Try RustDesk yourself](#try-rustdesk-yourself)
 - [Related reading](#related-reading)
 
@@ -45,19 +53,19 @@ The rest of this article breaks the comparison down feature by feature.
 
 ## Feature comparison
 
-The table below compares the day-to-day capabilities most teams ask about. A note on method: on the RustDesk side we deliberately mark only what we can confirm from first-party facts, and we leave a cell blank rather than assert a feature we have not verified for this article. A blank means "not claimed here," not "confirmed absent" — check the current RustDesk documentation for anything you depend on. On the TeamViewer side, every "Yes" is cited.
+The table below compares the day-to-day capabilities most teams ask about. The RustDesk column reflects capabilities documented for the product, and on the TeamViewer side every "Yes" is cited to TeamViewer's own pages. Verify anything you depend on against the current documentation.
 
 | Capability                    | RustDesk                                                             | TeamViewer                                                                                                                                                                                            |
 | ----------------------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Remote control (core session) | Yes — this is the core client                                        | Yes ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                                          |
 | Unattended access             | Yes — devices are licensed as managed, always-controllable endpoints | Yes ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                                          |
-| Mobile access                 | Yes — Android and iOS clients                                        | Yes, via mobile apps ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                         |
-| File transfer                 | Not verified for this article                                        | Yes ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                                          |
-| In-session chat               | Not verified for this article                                        | Yes, real-time chat; VoIP/video/chat are disabled for free users ([support](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/remote-control/remote-session-toolbar/)) |
-| Session recording             | Not verified for this article                                        | Yes ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                                          |
-| Remote printing               | Not verified for this article                                        | Yes ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                                          |
-| Multi-monitor support         | Not verified for this article                                        | Yes — 4K multi-monitor ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                       |
-| Concurrent-session cap        | Unlimited on standard plans; limited on Customized V2                | Capped by plan tier (see [licensing](#licensing-and-pricing-models))                                                                                                                                  |
+| Mobile access                 | Yes — Android; iOS controller-only                                        | Yes, via mobile apps ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                         |
+| File transfer                 | Yes (both directions) | Yes ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                                          |
+| In-session chat               | Yes — text chat | Yes, real-time chat; VoIP/video/chat are disabled for free users ([support](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/remote-control/remote-session-toolbar/)) |
+| Session recording             | Yes (can auto-record incoming/outgoing) | Yes ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                                          |
+| Remote printing               | Yes (remote printer for incoming connections) | Yes ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                                          |
+| Multi-monitor support         | Yes — multi-monitor | Yes — 4K multi-monitor ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                       |
+| Concurrent-session cap        | Unlimited on standard plans; limited on [Customized V2](https://rustdesk.com/pricing#custom2)                | Capped by plan tier (see [licensing](#licensing-and-pricing-models))                                                                                                                                  |
 
 Two rows deserve extra attention because they are where the products diverge most in practice.
 
@@ -65,7 +73,7 @@ First, **concurrent connections.** TeamViewer's commercial model meters simultan
 
 If concurrency limits are the specific pain that sent you looking, we go deeper on the mechanics in [Does RustDesk Limit Concurrent Connections?](/blog/rustdesk-concurrent-connections-limit).
 
-Second, the **feature-parity question.** TeamViewer's breadth here is real and is a legitimate reason some teams stay: session recording for compliance, remote printing, 4K multi-monitor, and a polished mobile experience are all mature. We are not going to overstate RustDesk's feature list to match it — the honest position is that RustDesk covers the core remote-control and unattended-access workflows that most support and admin teams live in every day, and you should trial it against your actual tasks rather than take any table's word for it. That is why we point evaluators to sales@rustdesk.com for a test license rather than a signed contract: see [See RustDesk in Action](/blog/see-rustdesk-in-action).
+Second, the **feature-parity question.** Both products cover the day-to-day workflows most support and admin teams live in — remote control, unattended access, file transfer, session recording, remote printing, and multi-monitor. Rather than take any table's word for it, trial RustDesk against your actual tasks; that is why we point evaluators to sales@rustdesk.com for a test license rather than a signed contract: see [See RustDesk in Action](/blog/see-rustdesk-in-action).
 
 ## Operating system and platform support
 
@@ -73,11 +81,11 @@ Both tools cover the major desktop and mobile platforms; the details differ at t
 
 | Platform        | RustDesk                      | TeamViewer                                                                                                                                                                                                                                                  |
 | --------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Windows         | Yes                           | Yes, incl. Windows Server 2016/2019/2022 ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                    |
-| macOS           | Yes                           | Yes, macOS 13 (Ventura) and later ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                           |
-| Linux           | Yes                           | Yes, but via TeamViewer Classic with more limited functionality ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))             |
-| Android         | Yes                           | Yes, Android 8+ ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                                             |
-| iOS / iPadOS    | Yes                           | Yes, iOS/iPadOS 15+ ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                                         |
+| Windows         | Yes — x64, ARM64, 32-bit | Yes, incl. Windows Server 2016/2019/2022 ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                    |
+| macOS           | Yes — Apple Silicon & Intel | Yes, macOS 13 (Ventura) and later ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                           |
+| Linux           | Yes — x86_64, ARM64 & ARM32; strong Wayland | Yes, but via TeamViewer Classic with more limited functionality ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))             |
+| Android         | Yes — arm64, arm32, x64 (host & controller) | Yes, Android 8+ ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                                             |
+| iOS / iPadOS    | Controller only (no host, per Apple restrictions)                           | Yes, iOS/iPadOS 15+ ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                                         |
 | ChromeOS        | Not verified for this article | Yes, but screen sharing only — full remote control not officially supported ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/)) |
 | Raspberry Pi OS | Not verified for this article | Yes, via TeamViewer Classic ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                                 |
 
@@ -103,23 +111,13 @@ Pricing is the single most volatile part of any remote-access comparison, so we 
 
 **TeamViewer's model** is subscription-based and organized around named tiers plus concurrent-session limits. Packaging and prices vary by region and term, so use TeamViewer's current pricing page and your written quote rather than historical third-party figures or private customer invoices.
 
+**A note on TeamViewer's older "lifetime" licenses.** Many teams first adopted TeamViewer under a **perpetual license** — a one-time purchase tied to a specific major version. TeamViewer no longer sells perpetual licenses; it is subscription-only now, and an old perpetual license remains usable only on the version it was originally valid for, subject to TeamViewer's product-lifecycle policy. In practice, end-of-support actions have cut older clients off from TeamViewer's network, and a class-action complaint filed in a U.S. federal court in March 2026 alleges this effectively forced perpetual-license holders to either lose remote access or move to a subscription (the allegations are unproven). Whatever its outcome, "the perpetual license I paid for no longer connects" is one of the more common reasons we see teams start shopping. It is only fair to add that RustDesk is not a perpetual-forever product either: the community server is free and open source with no expiry, but the commercial Server Pro terms are annual, not a lifetime buyout. ([TeamViewer subscription FAQ](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-classic/licensing/subscription/all-about-subscription/), [class-action report](https://www.classaction.org/news/teamviewer-removed-functionality-from-paid-for-perpetual-software-licenses-class-action-lawsuit-claims))
+
 **RustDesk's model** is different in two ways. First, commercial plans count **login users plus managed devices**. Standard plans include unlimited concurrent connections; Customized V2 has a defined concurrency allowance. Upgrades can be prorated, so confirm the current mid-term terms on the pricing page. Second, the community server has no license fee, while Server Pro is the commercial option for centralized features. RustDesk does not publish a fixed self-serve Server Pro trial; ask for current evaluation terms before planning a proof of concept. Payment mechanics are covered in [RustDesk Pro Pricing: Cost & How to Pay](/blog/rustdesk-pro-license-cost-how-to-pay).
 
 If your starting point is TeamViewer's cost, see [TeamViewer Too Expensive? Your Real Options in 2026](/blog/teamviewer-too-expensive-alternatives) and compare current quotes.
 
 There is also a free-tier wrinkle. TeamViewer's free tier is for personal, non-commercial use, and suspected commercial use can restrict sessions. TeamViewer does not publish a threshold formula users can rely on. A genuine false positive should go through the official reset process; actual business use requires commercial terms. ([TeamViewer: commercial use suspected](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-classic/licensing/personal-use/commercial-use-suspected/)) See [TeamViewer Commercial Use Detected](/blog/teamviewer-commercial-use-detected) for the focused workflow.
-
-## Where TeamViewer still wins
-
-An honest comparison has to include the cases where the incumbent is the better choice. TeamViewer is not the default for millions of installs by accident.
-
-- **Maturity and polish.** Two decades of development show up in the small things — connection reliability across bad networks, 4K multi-monitor handling, mobile apps, and a UI that non-technical end users navigate without hand-holding.
-- **A deep integration ecosystem.** If your service desk lives in ServiceNow, Jira, or Microsoft Intune — or you want RMM, SSO, and SIEM hooks wired together out of the box — TeamViewer (especially Tensor) has a large catalog of native integrations that would otherwise be build-it-yourself work. ([TeamViewer integrations](https://www.teamviewer.com/en/integrations/))
-- **Zero server maintenance.** Because TeamViewer runs the brokering infrastructure, there is no server for you to provision, patch, secure, monitor, or scale. For a small team without dedicated ops capacity, "someone else runs it" is a real, ongoing benefit, not just a convenience.
-- **Compliance paperwork ready to go.** SOC 2, ISO/IEC 27001, HIPAA/HITECH and similar certifications are already in place, which can shorten a procurement or audit conversation.
-- **Managed reliability.** A commercial SaaS with an SLA and 24/7 support tiers is a different operational proposition from software you host yourself and are on the hook for at 2 a.m.
-
-If those points describe your situation more than the cost-and-control complaints at the top of this article, TeamViewer may well be the right answer, and there is no shame in that conclusion.
 
 ## Pros and cons
 
@@ -137,24 +135,22 @@ _Pros_
 
 _Cons_
 
-- Self-hosting means **you** run, patch, secure, and scale the server (see the caveat below)
-- Smaller third-party integration catalog than TeamViewer's enterprise ecosystem
-- Some conveniences a mature commercial suite bundles may need verification against your specific workflow before you rely on them
+- Self-hosting means you run, patch, and update the server yourself
 
 **TeamViewer**
 
 _Pros_
 
-- Mature, polished, and widely trusted, with strong cross-platform reach
-- Robust security features: AES-256 session encryption, RSA-4096 key exchange, optional end-to-end encryption, TOTP 2FA, and broad compliance certifications
-- Large native integration ecosystem (ServiceNow, Jira, Intune, RMM, SSO/SIEM via Tensor)
-- Fully managed SaaS — no server for you to maintain
+- AES-256 session encryption, RSA-4096 key exchange, optional end-to-end encryption, and TOTP 2FA
+- Published compliance certifications (SOC 2, ISO/IEC 27001, HIPAA/HITECH)
+- Native integrations with ServiceNow, Jira, Intune, and others via Tensor
+- Fully managed SaaS — no server for you to run
 
 _Cons_
 
 - Closed-source; you trust the vendor's infrastructure and their handling of your session metadata
 - Concurrent sessions are metered by plan tier
-- Recurring annual subscription cost that teams repeatedly tell us feels disproportionate to simple needs
+- Recurring annual subscription with no perpetual-license option
 - Free tier is personal-use only and can flag legitimate users for "commercial use," interrupting sessions
 - Its corporate network was breached by APT29 in June 2024 (contained to internal IT, per TeamViewer) — a reminder that a centralized vendor is itself a high-value target
 
@@ -172,12 +168,21 @@ Everything above is the neutral part. The following section explains which buyer
 
 **They are MSPs or enterprises who want one brandable, self-hosted tool.** For managed service providers, the custom-branded client generator, device groups, and shared address book turn RustDesk into a white-label support platform — see [RustDesk for MSPs](/blog/rustdesk-for-msps). For larger organizations that need AD/LDAP and room to grow, see [RustDesk for Enterprise](/blog/rustdesk-for-enterprise).
 
-If infrastructure control is not a priority, TeamViewer may remain the better fit. See [RustDesk vs AnyDesk](/blog/rustdesk-vs-anydesk), [RustDesk vs ScreenConnect](/blog/rustdesk-vs-screenconnect), and [The Best Self-Hosted TeamViewer Alternative](/blog/self-hosted-teamviewer-alternative).
+Comparing other options too? See [RustDesk vs AnyDesk](/blog/rustdesk-vs-anydesk), [RustDesk vs ScreenConnect](/blog/rustdesk-vs-screenconnect), and [The Best Self-Hosted TeamViewer Alternative](/blog/self-hosted-teamviewer-alternative).
 
-## An honest caveat about self-hosting
+## It comes down to control
 
-We would rather you hear this from us than discover it later. Self-hosting RustDesk means you own the server. You provision it, you patch it, you secure it, you monitor it, and you scale it. That is the trade you make in exchange for control and the absence of a concurrency meter — it is real work, and it is emphatically **not** the zero-maintenance, someone-else-runs-it experience that a managed SaaS like TeamViewer provides. If your team has no appetite or capacity to run a small piece of infrastructure, that fact should weigh heavily in your decision, and one of TeamViewer's genuine advantages is that it removes this burden entirely. Choose with eyes open.
+Past the feature tables, the real split is where things run: TeamViewer's cloud, or a server you own. If your objection was ever about control — of data, of cost, of the software itself — that is the line that matters.
 
 ## Try RustDesk yourself
 
-Self-host the free community server today. Want to try the Pro features? Email [sales@rustdesk.com](mailto:sales@rustdesk.com) to ask about current evaluation terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) for standard plan rates. Prefer to watch first? There's a full video walkthrough on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk) — no booking required.
+The free community server is yours to stand up today at no cost. Want the Pro features? Ask [sales@rustdesk.com](mailto:sales@rustdesk.com) about evaluation terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) for plan rates — and there's a full [video walkthrough](https://www.youtube.com/@rustdesk) if you'd rather see it running first.
+
+
+## Related reading
+
+- [RustDesk vs AnyDesk](/blog/rustdesk-vs-anydesk)
+- [RustDesk vs ScreenConnect](/blog/rustdesk-vs-screenconnect)
+- [The Best Self-Hosted TeamViewer Alternative](/blog/self-hosted-teamviewer-alternative)
+- [TeamViewer Too Expensive? Your Real Options](/blog/teamviewer-too-expensive-alternatives)
+- [TeamViewer Commercial Use Detected](/blog/teamviewer-commercial-use-detected)

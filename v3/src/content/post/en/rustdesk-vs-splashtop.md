@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-07-06T10:09:00Z
 lang: en
 translationKey: rustdesk-vs-splashtop
 draft: false
@@ -17,8 +17,8 @@ faq:
     answer: 'Yes, but through different product models. RustDesk provides a free open-source server and commercial Server Pro plans built around self-hosting. Splashtop offers a separately licensed proprietary On-Prem product in addition to its mainstream SaaS plans.'
   - question: 'What infrastructure does Splashtop On-Prem require?'
     answer: 'Splashtop On-Prem uses a customer-operated Splashtop Gateway. The organization must plan server capacity, networking, TLS, monitoring, backup, upgrades, and availability according to its deployment requirements.'
-  - question: 'When is Splashtop SaaS a better fit than RustDesk?'
-    answer: 'Splashtop SaaS may be a better fit when a team wants the vendor to operate the service and does not require an open-source client or customer-controlled server-side services. Test required workflows and compare current written terms before migrating.'
+  - question: 'Should I self-host or use a vendor-operated service?'
+    answer: 'Self-host when you want control of the server-side services, an open-source client, or licensing based on your own users and devices; a vendor-operated SaaS is the alternative when you specifically want someone else to run the service. Test required workflows and compare current written terms before deciding.'
   - question: 'How should an IT team test a Splashtop replacement?'
     answer: 'Run a parallel pilot with representative users, endpoints, networks, and support workflows. Define acceptance criteria for connection reliability, remote audio, monitor mapping, mobile access, administration, and security controls, and keep a documented rollback path until the replacement passes them.'
 metadata:
@@ -36,13 +36,13 @@ Splashtop sells managed SaaS plans and a **separately licensed On-Prem** product
 | ------------------- | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | Server operation    | Customer-operated community server or Server Pro                                                                      | Vendor-operated                                             | Customer-operated Splashtop On-Prem Gateway                                                                     |
 | Source model        | Core client and community server are open source under AGPL                                                           | Proprietary                                                 | Proprietary                                                                                                     |
-| Licensing           | Standard Server Pro plans use login users plus managed devices; Customized V2 also meters concurrency                 | Varies by Remote Access, Remote Support, or Enterprise plan | Separately licensed and sales-led; confirm the written quote                                                    |
+| Licensing           | Standard Server Pro plans use login users plus managed devices; [Customized V2](https://rustdesk.com/pricing#custom2) also meters concurrency                 | Varies by Remote Access, Remote Support, or Enterprise plan | Separately licensed and sales-led; confirm the written quote                                                    |
 | Concurrent sessions | Unlimited on standard plans; a defined allowance on Customized V2                                                     | Plan-dependent                                              | License-dependent                                                                                               |
 | Governance          | Server Pro features are plan-dependent; compare SSO, 2FA, audit, access control, address books, and device management | Enterprise controls are plan-dependent                      | User/group permissions, Active Directory integration, IP restrictions, and other features are edition-dependent |
 | Infrastructure work | Your team owns deployment, TLS, network exposure, monitoring, backup, upgrades, and availability                      | Vendor owns the service infrastructure                      | Your team owns Gateway sizing, network placement, TLS, monitoring, backup, upgrades, and availability           |
 | Best starting point | Free community server for basic evaluation; Server Pro trial for management features                                  | SaaS trial for teams that want a managed service            | Direct sales and a scoped infrastructure evaluation                                                             |
 
-Choose the operating model before comparing individual features. If your team wants a vendor to run the service, compare RustDesk's operational burden with Splashtop SaaS. If infrastructure control is mandatory, compare RustDesk Server Pro with Splashtop On-Prem.
+Choose the operating model before comparing individual features. If your team wants a vendor to run the service, compare the effort of running RustDesk yourself with Splashtop SaaS. If infrastructure control is mandatory, compare RustDesk Server Pro with Splashtop On-Prem.
 
 ## Why IT teams evaluate alternatives to Splashtop
 
@@ -118,7 +118,7 @@ RustDesk and Splashtop On-Prem both place operational work on the customer. The 
 - high availability and disaster recovery;
 - administrator access and change control.
 
-If the organization does not want to own those tasks, Splashtop SaaS may be a better fit than either self-hosted option. Infrastructure control is valuable only when the team is prepared to operate it.
+Infrastructure control is valuable when the team is prepared to operate it; if you would rather not run any server, a vendor-operated service is the alternative model.
 
 ## Governance and workflow fit
 
@@ -174,12 +174,6 @@ Do not replace the incumbent across the whole fleet after one successful session
 6. Document the **rollback** trigger, responsible person, and recovery procedure before expanding rollout.
 
 This approach costs more during the overlap, but it reduces the risk of discovering a missing workflow after the original tool has been removed.
-
-## When staying with Splashtop makes sense
-
-Splashtop SaaS may be the better choice when the team wants a vendor-operated service and its required workflows fit the selected plan. Splashtop On-Prem may remain the better choice for an existing customer that needs local server components and values continuity with Splashtop clients, administration, or support.
-
-Migration is not automatically cheaper or lower risk. Account for rollout effort, retraining, policy recreation, parallel operation, and rollback. Splashtop may also retain an advantage for a particular workflow or under an existing contract. A feature checklist cannot reveal those differences; only a representative pilot can.
 
 ## When RustDesk is the stronger candidate
 

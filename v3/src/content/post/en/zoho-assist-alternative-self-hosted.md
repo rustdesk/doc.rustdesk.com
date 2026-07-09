@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-07T00:00:00Z
+publishDate: 2026-06-30T10:01:00Z
 lang: en
 translationKey: zoho-assist-alternative-self-hosted
 draft: false
@@ -29,7 +29,7 @@ metadata:
 
 [Zoho Assist](https://www.zoho.com/assist/) is a capable, cloud-based remote support and remote access product, and part of the broader Zoho suite. If you have landed here, you are probably not unhappy with what it does — you are asking a different question: **can I run something like this on my own infrastructure, and stop routing every session through a vendor's cloud?**
 
-This page is an honest comparison. RustDesk is a genuinely different model, with real advantages and one real trade-off. Here is where it fits as a self-hosted Zoho Assist alternative, and where it doesn't.
+RustDesk is a genuinely different model from Zoho Assist's cloud: you run the server, so brokering and data stay yours. Here is where it fits as a self-hosted alternative.
 
 ## What Zoho Assist does well
 
@@ -53,7 +53,7 @@ And **RustDesk's core client is [open source under the AGPL](/blog/case-for-open
 | Source code                                                           | Proprietary                                      | Open source (AGPL) core                                                                            |
 | Where sessions are brokered                                           | Zoho's infrastructure                            | Infrastructure you control                                                                         |
 | Licensing model                                                       | Per-technician / per-computer cloud subscription | [Per login-user + per managed-device](/blog/rustdesk-pro-license-cost-how-to-pay)                  |
-| [Concurrent connections](/blog/rustdesk-concurrent-connections-limit) | Plan-dependent                                   | Unlimited on standard plans; limited on Customized V2                                              |
+| [Concurrent connections](/blog/rustdesk-concurrent-connections-limit) | Plan-dependent                                   | Unlimited on standard plans; limited on [Customized V2](https://rustdesk.com/pricing#custom2)                                              |
 | Custom branding                                                       | Yes, on cloud plans                              | Yes, [self-hosted client generator](/blog/rustdesk-web-console-custom-client-generator-port-21114) |
 | Server maintenance                                                    | None (Zoho runs it)                              | Yours to run                                                                                       |
 
@@ -69,11 +69,9 @@ RustDesk licenses **login users plus managed devices** and runs on a server you 
 
 Self-hosting does not mean going without the tooling a support desk expects. RustDesk Pro includes a [self-hosted web console](/blog/rustdesk-web-console-custom-client-generator-port-21114), a **custom-branded client generator**, and **device groups with a [shared address book](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book)** for per-user access control. [LDAP/AD and OIDC single sign-on](/blog/rustdesk-active-directory-ldap-sso) are available from the Basic plan and up. For teams supporting many clients, that rebuilds the "one console, many technicians, many managed devices" workflow Zoho Assist users expect — on infrastructure you own. If you run a managed-services practice, our [guide for MSPs](/blog/rustdesk-for-msps) goes deeper.
 
-## The honest caveat: someone has to run the server
+## Off Zoho's cloud, onto your server
 
-Here is the trade-off, stated plainly. Self-hosting means **someone on your side runs the server** — you provision a host, open ports, set up TLS, and keep it patched over time. For most IT teams and MSPs that is a modest lift, but it is real work.
-
-Zoho Assist, by contrast, is a mature managed SaaS with a large ecosystem, mobile apps, deep Zoho integrations, and **nothing for you to maintain**. If what you actually want is a zero-maintenance cloud product and you are comfortable with sessions brokered through a vendor, Zoho Assist may be the better fit — and we would rather say so than oversell. RustDesk Server Pro is [self-hosted by design](/blog/rustdesk-self-hosted-vs-cloud-saas-option) and is not a managed cloud service. The upside of owning your infrastructure is inseparable from the responsibility of operating it.
+Rather than logging into Zoho's infrastructure, you run the ID and relay yourself — so brokering and your device list stay on hardware you control, behind an open-source client you can inspect. That is the trade a SaaS cannot make.
 
 ## Evaluate it on your own infrastructure
 
@@ -83,4 +81,4 @@ You don't need a sales call to find out whether this fits:
 - **Want the Pro features?** Email [sales@rustdesk.com](mailto:sales@rustdesk.com) about current evaluation terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) for standard plan rates.
 - **Prefer to see it first?** Watch a full [video demo](/blog/see-rustdesk-in-action) on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk) — no booking required.
 
-If control and open source are why you are looking past Zoho Assist, a self-hosted alternative is worth an afternoon of evaluation.
+If control and open source are why you are looking past Zoho Assist, a self-hosted alternative is worth a short pilot before you renew.

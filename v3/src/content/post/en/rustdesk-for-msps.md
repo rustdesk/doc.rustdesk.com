@@ -1,5 +1,5 @@
 ---
-publishDate: 2026-07-06T00:00:00Z
+publishDate: 2026-07-05T19:40:00Z
 lang: en
 translationKey: rustdesk-for-msps
 draft: false
@@ -12,6 +12,18 @@ tags:
   - MSP
   - self-hosting
 author: RustDesk Team
+faq:
+  - question: 'Can RustDesk consolidate multiple MSP remote-support tools?'
+    answer: 'Yes. RustDesk aims to replace a pile of separate tools with one self-hosted, open-source, brandable platform, giving you a single console, a custom-branded client generator, and per-user access control instead of separate consoles and contracts.'
+  - question: 'How does RustDesk license for MSPs?'
+    answer: 'You pay per login-user (your technicians) and per managed-device (the machines you support), and standard plans include unlimited concurrent connections so several techs can run sessions at once without buying channels. Customized V2 limits and prices concurrency separately; see rustdesk.com/pricing.'
+  - question: 'Can I white-label or brand the RustDesk client?'
+    answer: 'Yes. RustDesk includes a custom-branded client generator so clients install a tool configured for your service. Custom client generation and identity features are available from the Basic plan and up, so verify the current matrix before relying on them.'
+  - question: 'Is RustDesk self-hosted, and who runs the server?'
+    answer: 'RustDesk Server Pro is self-hosted: the ID/rendezvous server, relay, console, and stored deployment data run on infrastructure you control. Someone on your side provisions the host, opens ports, sets up TLS, and patches it — routine infrastructure work for an MSP, and light once it is set up.'
+  - question: 'How should an MSP start evaluating RustDesk?'
+    answer: 'A common path is to start with the free community server on a test VM or small internal host, validate a representative client workflow, then decide whether the Pro features are worth adding. You can also email sales@rustdesk.com to ask about current evaluation terms.'
+
 metadata:
   description: 'RustDesk for MSPs: a self-hosted ScreenConnect/TeamViewer alternative — consolidate remote support with branding, access control, and plan-based concurrency.'
   keywords: 'RustDesk for MSPs, self-hosted remote support for MSPs, white label remote desktop, ScreenConnect alternative, TeamViewer alternative for MSPs, open source remote support tool, AnyDesk alternative, per-technician remote desktop licensing'
@@ -43,7 +55,7 @@ Here is how that maps against the tools MSPs commonly consolidate away from:
 | ------------------- | ----------------------------- | --------------------------------------------------------------------------------- |
 | Hosting             | Vendor cloud                  | Self-hosted (on-prem or your VPS)                                                 |
 | Source              | Closed                        | Open source (AGPL) core                                                           |
-| Concurrent sessions | Often capped / per-channel    | Unlimited on standard plans; limited on Customized V2                             |
+| Concurrent sessions | Often capped / per-channel    | Unlimited on standard plans; limited on [Customized V2](https://rustdesk.com/pricing#custom2)                             |
 | Licensing basis     | Per seat / per channel        | [Per login-user + per managed-device](/blog/rustdesk-pro-license-cost-how-to-pay) |
 | Session data path   | Through vendor infrastructure | Server-side services on infrastructure you control                                |
 | Branding            | Add-on or unavailable         | Custom-branded client generator                                                   |
@@ -60,7 +72,7 @@ You pay per login-user (your technicians) and per managed-device (the machines y
 
 RustDesk ships the pieces an MSP actually needs to operate at scale: a self-hosted **[web console](/blog/rustdesk-web-console-custom-client-generator-port-21114)**, a **custom-branded client generator**, and **[device groups plus a shared address book](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book)** for per-user access control. **[LDAP/SSO](/blog/rustdesk-active-directory-ldap-sso) (OIDC) is available from the Basic plan and up.**
 
-The branded client matters because clients install a tool configured for your service. Access control can scope technicians to assigned device groups. Custom client generation and identity features are plan-dependent, so verify the current matrix before relying on them.
+The branded client matters because clients install a tool configured for your service. Access control can scope technicians to assigned device groups. Custom client generation and identity features are available from the Basic plan and up, so verify the current matrix before relying on them.
 
 ## Control over server-side data location
 
@@ -68,11 +80,9 @@ Self-hosting gives an MSP control over rendezvous, relay, console, and stored de
 
 It also scales beyond proof-of-concept. RustDesk publishes large-fleet planning guidance for teams that need to support bigger estates; validate the rollout against your concurrency, relay, and operating model before treating any sizing figure as universal.
 
-## The honest caveat: someone has to run the server
+## Build the practice on your own infrastructure
 
-Self-hosting is the whole point — and it is also the trade-off. **Someone on your side runs the server.** You provision a host, open the right ports, set up TLS, and patch it over time. That is normal infrastructure work for an MSP (arguably you do this for clients every day), but it is real work.
-
-If what you actually want is a [zero-maintenance managed SaaS](/blog/rustdesk-self-hosted-vs-cloud-saas-option) with no server to run and no patching to own, be clear-eyed: **RustDesk Server Pro is [self-hosted by design](/blog/why-self-host-remote-desktop-software), and it is not that.** The upside — control, no concurrent cap, no vendor cloud, no per-channel bill — comes _because_ you host it, not in spite of it. A common evaluation path is simple: start with the free community server on a test VM or small internal host, validate a representative client workflow, then decide whether the Pro features are worth adding.
+Self-hosting lets an MSP keep every client's coordination, branding, and device data on servers it operates — one tool, no per-technician cloud rental, no outsider in the session path. That is control you can build a business on.
 
 ## Try it without a sales call
 
