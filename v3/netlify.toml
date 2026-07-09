@@ -7,3 +7,207 @@
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/blog/teamviewer-vs-anydesk-vs-splashtop"
+  to = "/blog/teamviewer-vs-splashtop"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ar/blog/2024/10/muayinat-rustdesk-web-client-v2"
+  to = "/ar/blog/muayinat-rustdesk-web-client-v2"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ar/blog/2024/12/tashghil-flutter-3-24-ala-windows-7"
+  to = "/ar/blog/tashghil-flutter-3-24-ala-windows-7"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ar/blog/2025/02/tahsin-acl-fi-rustdesk-server-pro-1-5-0"
+  to = "/ar/blog/tahsin-acl-fi-rustdesk-server-pro-1-5-0"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/2024/10/rustdesk-web-client-v2-preview"
+  to = "/blog/rustdesk-web-client-v2-preview"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/2024/12/how-to-make-flutter-3-24-run-on-windows-7"
+  to = "/blog/how-to-make-flutter-3-24-run-on-windows-7"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/2025/02/enhanced-acl-in-rustdesk-server-pro-1-5-0"
+  to = "/blog/enhanced-acl-in-rustdesk-server-pro-1-5-0"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/de/blog/2024/10/vorschau-rustdesk-web-client-v2"
+  to = "/de/blog/vorschau-rustdesk-web-client-v2"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/de/blog/2024/12/flutter-3-24-unter-windows-7-ausfuehren"
+  to = "/de/blog/flutter-3-24-unter-windows-7-ausfuehren"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/de/blog/2025/02/erweiterte-acl-in-rustdesk-server-pro-1-5-0"
+  to = "/de/blog/erweiterte-acl-in-rustdesk-server-pro-1-5-0"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/blog/2024/10/vista-previa-cliente-web-rustdesk-v2"
+  to = "/es/blog/vista-previa-cliente-web-rustdesk-v2"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/blog/2024/12/ejecutar-flutter-3-24-en-windows-7"
+  to = "/es/blog/ejecutar-flutter-3-24-en-windows-7"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/blog/2025/02/acl-mejoradas-rustdesk-server-pro-1-5-0"
+  to = "/es/blog/acl-mejoradas-rustdesk-server-pro-1-5-0"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fr/blog/2024/10/apercu-client-web-rustdesk-v2"
+  to = "/fr/blog/apercu-client-web-rustdesk-v2"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fr/blog/2024/12/executer-flutter-3-24-sous-windows-7"
+  to = "/fr/blog/executer-flutter-3-24-sous-windows-7"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fr/blog/2025/02/acl-ameliorees-rustdesk-server-pro-1-5-0"
+  to = "/fr/blog/acl-ameliorees-rustdesk-server-pro-1-5-0"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/it/blog/2024/10/anteprima-client-web-rustdesk-v2"
+  to = "/it/blog/anteprima-client-web-rustdesk-v2"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/it/blog/2024/12/eseguire-flutter-3-24-su-windows-7"
+  to = "/it/blog/eseguire-flutter-3-24-su-windows-7"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/it/blog/2025/02/acl-migliorate-rustdesk-server-pro-1-5-0"
+  to = "/it/blog/acl-migliorate-rustdesk-server-pro-1-5-0"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ja/blog/2024/10/rustdesk-web-client-v2-preview-ja"
+  to = "/ja/blog/rustdesk-web-client-v2-preview-ja"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ja/blog/2024/12/flutter-3-24-windows-7-de-ugokasu-houhou"
+  to = "/ja/blog/flutter-3-24-windows-7-de-ugokasu-houhou"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ja/blog/2025/02/rustdesk-server-pro-1-5-0-acl-kyouka"
+  to = "/ja/blog/rustdesk-server-pro-1-5-0-acl-kyouka"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ko/blog/2024/10/rustdesk-web-client-v2-miribogi"
+  to = "/ko/blog/rustdesk-web-client-v2-miribogi"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ko/blog/2024/12/windows-7-flutter-3-24-silhaeng-haneun-bangbeop"
+  to = "/ko/blog/windows-7-flutter-3-24-silhaeng-haneun-bangbeop"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ko/blog/2025/02/rustdesk-server-pro-1-5-0-hyangsangdoen-acl"
+  to = "/ko/blog/rustdesk-server-pro-1-5-0-hyangsangdoen-acl"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pt/blog/2024/10/previa-cliente-web-rustdesk-v2"
+  to = "/pt/blog/previa-cliente-web-rustdesk-v2"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pt/blog/2024/12/executar-flutter-3-24-no-windows-7"
+  to = "/pt/blog/executar-flutter-3-24-no-windows-7"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pt/blog/2025/02/acl-aprimorada-rustdesk-server-pro-1-5-0"
+  to = "/pt/blog/acl-aprimorada-rustdesk-server-pro-1-5-0"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zh-cn/blog/2024/10/rustdesk-web-ke-hu-duan-v2-yu-lan"
+  to = "/zh-cn/blog/rustdesk-web-ke-hu-duan-v2-yu-lan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zh-cn/blog/2024/12/ru-he-rang-flutter-3-24-yun-xing-yu-windows-7"
+  to = "/zh-cn/blog/ru-he-rang-flutter-3-24-yun-xing-yu-windows-7"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zh-cn/blog/2025/02/rustdesk-server-pro-1-5-0-zeng-qiang-acl"
+  to = "/zh-cn/blog/rustdesk-server-pro-1-5-0-zeng-qiang-acl"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zh-tw/blog/2024/10/rustdesk-web-yong-hu-duan-v2-yu-lan"
+  to = "/zh-tw/blog/rustdesk-web-yong-hu-duan-v2-yu-lan"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zh-tw/blog/2024/12/ru-he-rang-flutter-3-24-zai-windows-7-shang-zhi-xing"
+  to = "/zh-tw/blog/ru-he-rang-flutter-3-24-zai-windows-7-shang-zhi-xing"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zh-tw/blog/2025/02/rustdesk-server-pro-1-5-0-qiang-hua-acl"
+  to = "/zh-tw/blog/rustdesk-server-pro-1-5-0-qiang-hua-acl"
+  status = 301
+  force = true

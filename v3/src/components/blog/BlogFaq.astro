@@ -1,0 +1,23 @@
+---
+export interface Props {
+  items?: Array<{ question: string; answer: string }>;
+}
+
+const { items = [] } = Astro.props;
+---
+
+{
+  items.length > 0 && (
+    <section aria-labelledby="post-faq-heading">
+      <h2 id="post-faq-heading">Frequently asked questions</h2>
+      <div>
+        {items.map((item) => (
+          <details>
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  )
+}

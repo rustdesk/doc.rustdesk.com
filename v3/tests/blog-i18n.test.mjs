@@ -43,6 +43,10 @@ test('reports missing locales and duplicate locale entries', () => {
   );
 });
 
+test('allows a post to publish in one locale before translations exist', () => {
+  assert.doesNotThrow(() => validatePostTranslations([posts[0]], ['en', 'zh-cn', 'de']));
+});
+
 test('rejects unsupported locales and duplicate slugs in one locale', () => {
   assert.throws(() => validatePostTranslations([{ ...posts[0], lang: 'xx' }], ['en']), /unsupported locale xx/i);
   assert.throws(

@@ -12,6 +12,7 @@ import { getPostAlternates, getStaticPathsBlogPost, blogPostRobots } from '~/uti
 import { findImage } from '~/utils/images';
 import type { MetaData } from '~/types';
 import RelatedPosts from '~/components/blog/RelatedPosts.astro';
+import BlogFaq from '~/components/blog/BlogFaq.astro';
 
 export const prerender = true;
 
@@ -68,9 +69,11 @@ const articleData = {
   alternateLinks={localePaths}
   structuredDataType="article"
   articleData={articleData}
+  faqItems={post.faq}
 >
   <SinglePost post={{ ...post, image: image }} url={url}>
     {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
+    <BlogFaq items={post.faq} />
   </SinglePost>
   <ToBlogLink lang={post.lang} />
   <RelatedPosts post={post} />

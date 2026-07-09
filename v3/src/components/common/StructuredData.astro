@@ -136,6 +136,11 @@ if (type === 'software' || pageKind === 'pricing') {
 }
 
 if (type === 'article' && article) {
+  const articleAuthorSchema =
+    !article.author || article.author === 'RustDesk Team'
+      ? { '@id': `${siteOrigin}/#organization` }
+      : { '@type': 'Person', name: article.author };
+
   graphItems.push({
     '@type': 'BlogPosting',
     '@id': `${currentUrl}#article`,
@@ -144,10 +149,7 @@ if (type === 'article' && article) {
     url: currentUrl,
     datePublished: article.publishDate?.toISOString(),
     dateModified: (article.updateDate || article.publishDate)?.toISOString(),
-    author: {
-      '@type': 'Person',
-      name: article.author || 'RustDesk Team',
-    },
+    author: articleAuthorSchema,
     publisher: { '@id': `${siteOrigin}/#organization` },
     ...(article.image
       ? {

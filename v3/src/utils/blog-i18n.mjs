@@ -42,6 +42,8 @@ export function validatePostTranslations(posts, locales) {
   }
 
   for (const [translationKey, group] of groupPostsByTranslationKey(posts)) {
+    if (group.length === 1) continue;
+
     for (const locale of locales) {
       const count = group.filter((post) => post.lang === locale).length;
       if (count === 0) {

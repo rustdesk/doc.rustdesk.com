@@ -11,5 +11,177 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/blog/teamviewer-vs-anydesk-vs-splashtop",
+      "destination": "/blog/teamviewer-vs-splashtop",
+      "permanent": true
+    },
+    {
+      "source": "/ar/blog/2024/10/muayinat-rustdesk-web-client-v2",
+      "destination": "/ar/blog/muayinat-rustdesk-web-client-v2",
+      "permanent": true
+    },
+    {
+      "source": "/ar/blog/2024/12/tashghil-flutter-3-24-ala-windows-7",
+      "destination": "/ar/blog/tashghil-flutter-3-24-ala-windows-7",
+      "permanent": true
+    },
+    {
+      "source": "/ar/blog/2025/02/tahsin-acl-fi-rustdesk-server-pro-1-5-0",
+      "destination": "/ar/blog/tahsin-acl-fi-rustdesk-server-pro-1-5-0",
+      "permanent": true
+    },
+    {
+      "source": "/blog/2024/10/rustdesk-web-client-v2-preview",
+      "destination": "/blog/rustdesk-web-client-v2-preview",
+      "permanent": true
+    },
+    {
+      "source": "/blog/2024/12/how-to-make-flutter-3-24-run-on-windows-7",
+      "destination": "/blog/how-to-make-flutter-3-24-run-on-windows-7",
+      "permanent": true
+    },
+    {
+      "source": "/blog/2025/02/enhanced-acl-in-rustdesk-server-pro-1-5-0",
+      "destination": "/blog/enhanced-acl-in-rustdesk-server-pro-1-5-0",
+      "permanent": true
+    },
+    {
+      "source": "/de/blog/2024/10/vorschau-rustdesk-web-client-v2",
+      "destination": "/de/blog/vorschau-rustdesk-web-client-v2",
+      "permanent": true
+    },
+    {
+      "source": "/de/blog/2024/12/flutter-3-24-unter-windows-7-ausfuehren",
+      "destination": "/de/blog/flutter-3-24-unter-windows-7-ausfuehren",
+      "permanent": true
+    },
+    {
+      "source": "/de/blog/2025/02/erweiterte-acl-in-rustdesk-server-pro-1-5-0",
+      "destination": "/de/blog/erweiterte-acl-in-rustdesk-server-pro-1-5-0",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/2024/10/vista-previa-cliente-web-rustdesk-v2",
+      "destination": "/es/blog/vista-previa-cliente-web-rustdesk-v2",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/2024/12/ejecutar-flutter-3-24-en-windows-7",
+      "destination": "/es/blog/ejecutar-flutter-3-24-en-windows-7",
+      "permanent": true
+    },
+    {
+      "source": "/es/blog/2025/02/acl-mejoradas-rustdesk-server-pro-1-5-0",
+      "destination": "/es/blog/acl-mejoradas-rustdesk-server-pro-1-5-0",
+      "permanent": true
+    },
+    {
+      "source": "/fr/blog/2024/10/apercu-client-web-rustdesk-v2",
+      "destination": "/fr/blog/apercu-client-web-rustdesk-v2",
+      "permanent": true
+    },
+    {
+      "source": "/fr/blog/2024/12/executer-flutter-3-24-sous-windows-7",
+      "destination": "/fr/blog/executer-flutter-3-24-sous-windows-7",
+      "permanent": true
+    },
+    {
+      "source": "/fr/blog/2025/02/acl-ameliorees-rustdesk-server-pro-1-5-0",
+      "destination": "/fr/blog/acl-ameliorees-rustdesk-server-pro-1-5-0",
+      "permanent": true
+    },
+    {
+      "source": "/it/blog/2024/10/anteprima-client-web-rustdesk-v2",
+      "destination": "/it/blog/anteprima-client-web-rustdesk-v2",
+      "permanent": true
+    },
+    {
+      "source": "/it/blog/2024/12/eseguire-flutter-3-24-su-windows-7",
+      "destination": "/it/blog/eseguire-flutter-3-24-su-windows-7",
+      "permanent": true
+    },
+    {
+      "source": "/it/blog/2025/02/acl-migliorate-rustdesk-server-pro-1-5-0",
+      "destination": "/it/blog/acl-migliorate-rustdesk-server-pro-1-5-0",
+      "permanent": true
+    },
+    {
+      "source": "/ja/blog/2024/10/rustdesk-web-client-v2-preview-ja",
+      "destination": "/ja/blog/rustdesk-web-client-v2-preview-ja",
+      "permanent": true
+    },
+    {
+      "source": "/ja/blog/2024/12/flutter-3-24-windows-7-de-ugokasu-houhou",
+      "destination": "/ja/blog/flutter-3-24-windows-7-de-ugokasu-houhou",
+      "permanent": true
+    },
+    {
+      "source": "/ja/blog/2025/02/rustdesk-server-pro-1-5-0-acl-kyouka",
+      "destination": "/ja/blog/rustdesk-server-pro-1-5-0-acl-kyouka",
+      "permanent": true
+    },
+    {
+      "source": "/ko/blog/2024/10/rustdesk-web-client-v2-miribogi",
+      "destination": "/ko/blog/rustdesk-web-client-v2-miribogi",
+      "permanent": true
+    },
+    {
+      "source": "/ko/blog/2024/12/windows-7-flutter-3-24-silhaeng-haneun-bangbeop",
+      "destination": "/ko/blog/windows-7-flutter-3-24-silhaeng-haneun-bangbeop",
+      "permanent": true
+    },
+    {
+      "source": "/ko/blog/2025/02/rustdesk-server-pro-1-5-0-hyangsangdoen-acl",
+      "destination": "/ko/blog/rustdesk-server-pro-1-5-0-hyangsangdoen-acl",
+      "permanent": true
+    },
+    {
+      "source": "/pt/blog/2024/10/previa-cliente-web-rustdesk-v2",
+      "destination": "/pt/blog/previa-cliente-web-rustdesk-v2",
+      "permanent": true
+    },
+    {
+      "source": "/pt/blog/2024/12/executar-flutter-3-24-no-windows-7",
+      "destination": "/pt/blog/executar-flutter-3-24-no-windows-7",
+      "permanent": true
+    },
+    {
+      "source": "/pt/blog/2025/02/acl-aprimorada-rustdesk-server-pro-1-5-0",
+      "destination": "/pt/blog/acl-aprimorada-rustdesk-server-pro-1-5-0",
+      "permanent": true
+    },
+    {
+      "source": "/zh-cn/blog/2024/10/rustdesk-web-ke-hu-duan-v2-yu-lan",
+      "destination": "/zh-cn/blog/rustdesk-web-ke-hu-duan-v2-yu-lan",
+      "permanent": true
+    },
+    {
+      "source": "/zh-cn/blog/2024/12/ru-he-rang-flutter-3-24-yun-xing-yu-windows-7",
+      "destination": "/zh-cn/blog/ru-he-rang-flutter-3-24-yun-xing-yu-windows-7",
+      "permanent": true
+    },
+    {
+      "source": "/zh-cn/blog/2025/02/rustdesk-server-pro-1-5-0-zeng-qiang-acl",
+      "destination": "/zh-cn/blog/rustdesk-server-pro-1-5-0-zeng-qiang-acl",
+      "permanent": true
+    },
+    {
+      "source": "/zh-tw/blog/2024/10/rustdesk-web-yong-hu-duan-v2-yu-lan",
+      "destination": "/zh-tw/blog/rustdesk-web-yong-hu-duan-v2-yu-lan",
+      "permanent": true
+    },
+    {
+      "source": "/zh-tw/blog/2024/12/ru-he-rang-flutter-3-24-zai-windows-7-shang-zhi-xing",
+      "destination": "/zh-tw/blog/ru-he-rang-flutter-3-24-zai-windows-7-shang-zhi-xing",
+      "permanent": true
+    },
+    {
+      "source": "/zh-tw/blog/2025/02/rustdesk-server-pro-1-5-0-qiang-hua-acl",
+      "destination": "/zh-tw/blog/rustdesk-server-pro-1-5-0-qiang-hua-acl",
+      "permanent": true
+    }
   ]
 }

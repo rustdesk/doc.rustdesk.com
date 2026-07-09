@@ -37,6 +37,9 @@ export interface Post {
   /**  */
   author?: string;
 
+  /** Optional Q&A pairs rendered as FAQPage structured data. */
+  faq?: Array<{ question: string; answer: string }>;
+
   /**  */
   metadata?: MetaData;
 

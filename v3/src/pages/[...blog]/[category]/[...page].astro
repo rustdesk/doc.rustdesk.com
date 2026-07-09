@@ -22,6 +22,164 @@ const { page, category, lang } = Astro.props as Props & { lang: Lang };
 
 const currentPage = page.currentPage ?? 1;
 const copy = getBlogCopy(lang);
+const categorySlug = String(category.slug ?? '').toLowerCase();
+const localizedCategoryDescriptions: Record<Lang, Record<string, string>> = {
+  en: {
+    alternatives:
+      'Evaluate self-hosted and open-source alternatives by deployment model, licensing, security, workflow fit, and migration effort.',
+    comparisons:
+      'Compare RustDesk with remote-access products and protocols using current requirements, explicit trade-offs, and proof-of-concept criteria.',
+    deployment:
+      'Plan and operate RustDesk deployments, from server sizing and networking to identity, access control, client rollout, and recovery.',
+    guides:
+      'Practical guides for evaluating, configuring, and operating RustDesk across platforms, teams, and deployment models.',
+    pricing:
+      'Understand RustDesk licensing, users, managed devices, concurrency, purchase terms, upgrades, and evaluation options.',
+    security:
+      'Assess remote-access security, data flows, scams, vulnerabilities, access controls, and deployment hardening without absolute compliance claims.',
+    troubleshooting:
+      'Diagnose connection, display, configuration, and licensing symptoms with targeted checks and safe escalation paths.',
+  },
+  de: {
+    alternatives:
+      'Bewerte selbst gehostete und Open-Source-Alternativen nach Bereitstellungsmodell, Lizenzierung, Sicherheit, Workflow-Fit und Migrationsaufwand.',
+    comparisons:
+      'Vergleiche RustDesk mit Remote-Access-Produkten und -Protokollen anhand aktueller Anforderungen, klarer Abwägungen und Proof-of-Concept-Kriterien.',
+    deployment:
+      'Plane und betreibe RustDesk-Bereitstellungen, von Server-Größe und Netzwerk bis zu Identität, Zugriffskontrolle, Client-Rollout und Wiederherstellung.',
+    guides:
+      'Praktische Anleitungen zum Bewerten, Konfigurieren und Betreiben von RustDesk auf verschiedenen Plattformen, in Teams und in unterschiedlichen Bereitstellungsmodellen.',
+    pricing:
+      'Verstehe RustDesk-Lizenzierung, Nutzer, verwaltete Geräte, Gleichzeitigkeit, Kaufbedingungen, Upgrades und Testoptionen.',
+    security:
+      'Beurteile Sicherheit, Datenflüsse, Betrugsversuche, Schwachstellen, Zugriffskontrollen und Härtung für Remote-Zugriffe ohne pauschale Compliance-Behauptungen.',
+    troubleshooting:
+      'Diagnostiziere Verbindungs-, Anzeige-, Konfigurations- und Lizenzsymptome mit gezielten Prüfungen und sicheren Eskalationspfaden.',
+  },
+  es: {
+    alternatives:
+      'Evalúa alternativas autoalojadas y de código abierto por modelo de despliegue, licencias, seguridad, ajuste al flujo de trabajo y esfuerzo de migración.',
+    comparisons:
+      'Compara RustDesk con productos y protocolos de acceso remoto usando requisitos actuales, compensaciones explícitas y criterios de prueba de concepto.',
+    deployment:
+      'Planifica y opera implementaciones de RustDesk, desde el tamaño del servidor y la red hasta la identidad, el control de acceso, el despliegue de clientes y la recuperación.',
+    guides:
+      'Guías prácticas para evaluar, configurar y operar RustDesk en distintas plataformas, equipos y modelos de despliegue.',
+    pricing:
+      'Entiende la licencia de RustDesk, usuarios, dispositivos gestionados, concurrencia, condiciones de compra, actualizaciones y opciones de evaluación.',
+    security:
+      'Evalúa la seguridad del acceso remoto, los flujos de datos, las estafas, las vulnerabilidades, los controles de acceso y el endurecimiento del despliegue sin afirmaciones absolutas de cumplimiento.',
+    troubleshooting:
+      'Diagnostica síntomas de conexión, pantalla, configuración y licencias con comprobaciones dirigidas y rutas seguras de escalado.',
+  },
+  fr: {
+    alternatives:
+      'Évaluez les alternatives auto-hébergées et open source selon le modèle de déploiement, la licence, la sécurité, l’adéquation au flux de travail et l’effort de migration.',
+    comparisons:
+      'Comparez RustDesk avec des produits et protocoles d’accès à distance à l’aide d’exigences actuelles, de compromis explicites et de critères de preuve de concept.',
+    deployment:
+      'Planifiez et exploitez des déploiements RustDesk, du dimensionnement des serveurs et du réseau à l’identité, au contrôle d’accès, au déploiement client et à la reprise.',
+    guides:
+      'Guides pratiques pour évaluer, configurer et exploiter RustDesk sur différentes plateformes, pour diverses équipes et selon plusieurs modèles de déploiement.',
+    pricing:
+      'Comprenez la licence RustDesk, les utilisateurs, les appareils gérés, la concurrence, les conditions d’achat, les mises à niveau et les options d’évaluation.',
+    security:
+      'Évaluez la sécurité de l’accès à distance, les flux de données, les arnaques, les vulnérabilités, les contrôles d’accès et le durcissement du déploiement sans affirmation de conformité absolue.',
+    troubleshooting:
+      'Diagnostiquez les symptômes de connexion, d’affichage, de configuration et de licence avec des vérifications ciblées et des voies d’escalade sûres.',
+  },
+  it: {
+    alternatives:
+      'Valuta alternative self-hosted e open source per modello di distribuzione, licenze, sicurezza, aderenza al flusso di lavoro e sforzo di migrazione.',
+    comparisons:
+      'Confronta RustDesk con prodotti e protocolli di accesso remoto usando requisiti attuali, compromessi espliciti e criteri di prova di concetto.',
+    deployment:
+      'Pianifica e gestisci distribuzioni RustDesk, dal dimensionamento del server e della rete fino a identità, controllo accessi, rollout dei client e ripristino.',
+    guides:
+      'Guide pratiche per valutare, configurare e gestire RustDesk su piattaforme, team e modelli di distribuzione diversi.',
+    pricing:
+      'Comprendi la licenza RustDesk, gli utenti, i dispositivi gestiti, la concorrenza, i termini di acquisto, gli upgrade e le opzioni di valutazione.',
+    security:
+      'Valuta sicurezza, flussi di dati, truffe, vulnerabilità, controlli di accesso e hardening del deployment senza affermazioni assolute di conformità.',
+    troubleshooting:
+      'Diagnostica sintomi di connessione, schermo, configurazione e licenza con controlli mirati e percorsi di escalation sicuri.',
+  },
+  ja: {
+    alternatives:
+      'デプロイ形態、ライセンス、セキュリティ、業務フローとの適合性、移行コストでセルフホスト型とオープンソースの代替案を評価します。',
+    comparisons:
+      '最新の要件、明確なトレードオフ、PoC の基準を使って、RustDesk をリモートアクセス製品やプロトコルと比較します。',
+    deployment:
+      'サーバーの規模設計やネットワークから、ID 管理、アクセス制御、クライアント展開、復旧まで RustDesk の導入と運用を計画します。',
+    guides: 'RustDesk をさまざまなプラットフォーム、チーム、導入形態で評価・設定・運用するための実践ガイドです。',
+    pricing:
+      'RustDesk のライセンス、ユーザー数、管理デバイス、同時接続、購入条件、アップグレード、評価方法を理解します。',
+    security:
+      'リモートアクセスのセキュリティ、データフロー、詐欺、脆弱性、アクセス制御、導入時の強化策を、断定的な適合性主張なしで評価します。',
+    troubleshooting: '接続、表示、設定、ライセンスの症状を、的を絞った確認と安全なエスカレーション手順で切り分けます。',
+  },
+  ko: {
+    alternatives:
+      '배포 방식, 라이선스, 보안, 업무 흐름 적합성, 마이그레이션 노력 기준으로 자체 호스팅 및 오픈소스 대안을 평가합니다.',
+    comparisons:
+      '최신 요구사항, 명확한 트레이드오프, PoC 기준을 사용해 RustDesk를 원격 액세스 제품과 프로토콜과 비교합니다.',
+    deployment: '서버 규모와 네트워크부터 ID, 접근 제어, 클라이언트 배포, 복구까지 RustDesk 배포와 운영을 계획합니다.',
+    guides: '다양한 플랫폼, 팀, 배포 모델에서 RustDesk를 평가·구성·운영하는 실용 가이드입니다.',
+    pricing: 'RustDesk 라이선스, 사용자, 관리 장치, 동시성, 구매 조건, 업그레이드, 평가 옵션을 이해합니다.',
+    security:
+      '원격 액세스 보안, 데이터 흐름, 사기, 취약점, 접근 제어, 배포 강화 방안을 절대적인 준수 주장 없이 평가합니다.',
+    troubleshooting: '연결, 화면, 설정, 라이선스 증상을 집중 점검과 안전한 에스컬레이션 경로로 진단합니다.',
+  },
+  pt: {
+    alternatives:
+      'Avalie alternativas auto-hospedadas e de código aberto por modelo de implantação, licenciamento, segurança, aderência ao fluxo de trabalho e esforço de migração.',
+    comparisons:
+      'Compare o RustDesk com produtos e protocolos de acesso remoto usando requisitos atuais, trocas explícitas e critérios de prova de conceito.',
+    deployment:
+      'Planeje e opere implantações do RustDesk, do dimensionamento do servidor e da rede até identidade, controle de acesso, implantação de clientes e recuperação.',
+    guides:
+      'Guias práticos para avaliar, configurar e operar o RustDesk em diferentes plataformas, equipes e modelos de implantação.',
+    pricing:
+      'Entenda o licenciamento do RustDesk, usuários, dispositivos gerenciados, concorrência, termos de compra, upgrades e opções de avaliação.',
+    security:
+      'Avalie a segurança de acesso remoto, fluxos de dados, golpes, vulnerabilidades, controles de acesso e endurecimento da implantação sem alegações absolutas de conformidade.',
+    troubleshooting:
+      'Diagnostique sintomas de conexão, tela, configuração e licenciamento com verificações direcionadas e caminhos seguros de escalonamento.',
+  },
+  'zh-cn': {
+    alternatives: '按部署模式、许可、安全性、工作流匹配度和迁移成本评估自托管与开源替代方案。',
+    comparisons: '使用当前需求、明确取舍和概念验证标准，将 RustDesk 与远程访问产品和协议进行比较。',
+    deployment: '规划和运行 RustDesk 部署，从服务器规格和网络，到身份、访问控制、客户端推广和恢复。',
+    guides: '用于在不同平台、团队和部署模式下评估、配置和运行 RustDesk 的实用指南。',
+    pricing: '了解 RustDesk 的许可、用户、受管设备、并发、购买条款、升级和评估选项。',
+    security: '在不做绝对合规断言的前提下，评估远程访问安全、数据流、诈骗、漏洞、访问控制和部署加固。',
+    troubleshooting: '通过有针对性的检查和安全的升级路径，诊断连接、显示、配置和许可问题。',
+  },
+  'zh-tw': {
+    alternatives: '依部署模式、授權、安全性、工作流程契合度與遷移成本，評估自架與開源替代方案。',
+    comparisons: '使用當前需求、明確取捨與概念驗證標準，將 RustDesk 與遠端存取產品和協定進行比較。',
+    deployment: '規劃並營運 RustDesk 部署，從伺服器規模與網路，到身分、存取控制、用戶端推廣與復原。',
+    guides: '協助在不同平台、團隊與部署模式下評估、設定與營運 RustDesk 的實用指南。',
+    pricing: '了解 RustDesk 的授權、使用者、受管裝置、同時連線、購買條款、升級與評估選項。',
+    security: '在不做絕對合規宣稱的前提下，評估遠端存取安全、資料流、詐騙、漏洞、存取控制與部署強化。',
+    troubleshooting: '透過有針對性的檢查與安全的升級路徑，診斷連線、顯示、設定與授權症狀。',
+  },
+  ar: {
+    alternatives:
+      'قيّم البدائل ذاتية الاستضافة ومفتوحة المصدر حسب نموذج النشر والترخيص والأمان وملاءمة سير العمل وجهد الانتقال.',
+    comparisons:
+      'قارن RustDesk بمنتجات وبروتوكولات الوصول عن بُعد باستخدام المتطلبات الحالية والمفاضلات الواضحة ومعايير إثبات المفهوم.',
+    deployment:
+      'خطّط وشغّل عمليات نشر RustDesk، من تحديد حجم الخادم والشبكة إلى الهوية والتحكم في الوصول وتوزيع العملاء والاستعادة.',
+    guides: 'أدلة عملية لتقييم RustDesk وتهيئته وتشغيله عبر منصات وفرق ونماذج نشر مختلفة.',
+    pricing: 'افهم ترخيص RustDesk والمستخدمين والأجهزة المُدارة والتزامن وشروط الشراء والترقيات وخيارات التقييم.',
+    security:
+      'قيّم أمان الوصول عن بُعد وتدفقات البيانات وعمليات الاحتيال والثغرات وضوابط الوصول وتقوية النشر دون ادعاءات امتثال مطلقة.',
+    troubleshooting: 'شخّص أعراض الاتصال والعرض والتهيئة والترخيص عبر فحوصات محددة ومسارات تصعيد آمنة.',
+  },
+};
+const categoryDescription =
+  localizedCategoryDescriptions[lang]?.[categorySlug] ?? localizedCategoryDescriptions.en[categorySlug];
 const localePaths = (Object.keys(LOCALES) as Lang[]).map((targetLang) => ({
   lang: targetLang,
   path: getBlogPermalink(targetLang),
@@ -29,7 +187,7 @@ const localePaths = (Object.keys(LOCALES) as Lang[]).map((targetLang) => ({
 
 const metadata = {
   title: `${copy.category}: ${category.title}${currentPage > 1 ? ` — ${copy.page} ${currentPage}` : ''}`,
-  description: `${copy.subtitle} ${copy.category}: ${category.title}.`,
+  description: categoryDescription ?? `${copy.subtitle} ${copy.category}: ${category.title}.`,
   robots: {
     index: blogCategoryRobots?.index,
     follow: blogCategoryRobots?.follow,
@@ -40,6 +198,11 @@ const metadata = {
 <Layout metadata={metadata} i18n lang={lang} localePaths={localePaths} alternateLinks={[]}>
   <section class="px-4 md:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <Headline>{category.title}</Headline>
+    {
+      categoryDescription && currentPage === 1 && (
+        <p class="mx-auto mb-10 max-w-3xl text-center text-lg text-muted dark:text-slate-400">{categoryDescription}</p>
+      )
+    }
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} lang={lang} />
   </section>
