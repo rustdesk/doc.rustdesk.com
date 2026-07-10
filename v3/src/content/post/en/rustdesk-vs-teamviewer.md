@@ -4,7 +4,7 @@ lang: en
 translationKey: rustdesk-vs-teamviewer
 draft: false
 title: 'RustDesk vs TeamViewer: The Self-Hosted Alternative'
-excerpt: 'RustDesk vs TeamViewer compared: features, OS support, security, licensing models, and honest trade-offs — self-hosting, open source, no per-channel pricing.'
+excerpt: 'RustDesk vs TeamViewer compared: features, OS support, security, licensing models, and the real trade-offs — self-hosting, open source, no per-channel pricing.'
 image: ~/assets/images/blog/rustdesk-vs-teamviewer-og.png
 category: Comparisons
 tags:
@@ -13,7 +13,7 @@ tags:
   - comparison
 author: RustDesk Team
 metadata:
-  description: 'RustDesk vs TeamViewer compared: features, OS support, security, licensing models, and honest pros/cons — self-hosting, open source, no per-channel pricing.'
+  description: 'RustDesk vs TeamViewer compared: features, OS support, security, licensing models, and clear pros and cons — self-hosting, open source, no per-channel pricing.'
   keywords: 'RustDesk vs TeamViewer, TeamViewer comparison, TeamViewer vs RustDesk, RustDesk TeamViewer alternative comparison'
 faq:
   - question: 'Is RustDesk a free alternative to TeamViewer?'
@@ -26,7 +26,7 @@ faq:
     answer: 'RustDesk standard plans include unlimited concurrent connections; only Customized V2 meters and prices concurrency. TeamViewer caps simultaneous sessions by plan tier.'
 ---
 
-Teams comparing RustDesk and TeamViewer commonly focus on renewal cost, concurrency, hosting control, and operational maturity. Use current public terms or written quotes rather than private customer correspondence.
+RustDesk and TeamViewer solve the same remote-access problem on opposite models: an open-source stack you host yourself versus a managed cloud service you subscribe to.
 
 TeamViewer is a commercial remote-access platform with a deep integration catalog. This is a detailed comparison: what each product is, how their features and platform support line up, how their security and licensing models differ, and where — and why — teams move to RustDesk instead. Where we make a claim about TeamViewer, we cite it, and everything is dated because remote-access pricing and packaging change often.
 
@@ -47,7 +47,7 @@ TeamViewer is a commercial remote-access platform with a deep integration catalo
 
 **TeamViewer** is a commercial remote-access and remote-support platform from TeamViewer SE, in the market since 2005 and one of the most widely deployed tools of its kind. It is delivered as a managed, cloud-brokered SaaS: TeamViewer runs the connection infrastructure, you install a client, and sessions are brokered through TeamViewer's own routing network. It is closed-source, sold on annual subscriptions, and its higher tiers (branded **TeamViewer Tensor**) add enterprise features such as single sign-on, conditional access, mass deployment, and a broad catalog of integrations with tools like ServiceNow, Jira, and Microsoft Intune. ([TeamViewer Tensor / integrations](https://www.teamviewer.com/en/integrations/))
 
-**RustDesk** is an open-source remote desktop tool built around a different premise: you can run the whole thing yourself. The core client is open source under the AGPL, so it can be audited, built from source, and used with a free community server that runs indefinitely. The commercial offering, **RustDesk Server Pro**, is self-hosted — the ID/rendezvous server and the relay server run on your own machine or VPS, which means session metadata and connection brokering stay on infrastructure you control. RustDesk is licensed by login-user and by managed-device rather than by concurrent session, and it is designed to scale from a single technician up to large fleets. If your objection to TeamViewer is fundamentally about _control_ — over data, over cost, over the software itself — that is the axis on which these two products differ most.
+**RustDesk** is an open-source remote desktop tool built around a different premise: you can run the whole thing yourself. RustDesk is open source under the AGPL, so it can be audited, built from source, and used with a free community server that runs indefinitely. The commercial offering, **RustDesk Server Pro**, is self-hosted — the ID/rendezvous server and the relay server run on your own machine or VPS, which means session metadata and connection brokering stay on infrastructure you control. RustDesk is licensed by login-user and by managed-device rather than by concurrent session, and it is designed to scale from a single technician up to large fleets. If your objection to TeamViewer is fundamentally about _control_ — over data, over cost, over the software itself — that is the axis on which these two products differ most.
 
 The rest of this article breaks the comparison down feature by feature.
 
@@ -63,7 +63,7 @@ The table below compares the day-to-day capabilities most teams ask about. The R
 | File transfer                 | Yes (both directions) | Yes ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                                          |
 | In-session chat               | Yes — text chat | Yes, real-time chat; VoIP/video/chat are disabled for free users ([support](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/remote-control/remote-session-toolbar/)) |
 | Session recording             | Yes (can auto-record incoming/outgoing) | Yes ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                                          |
-| Remote printing               | Yes (remote printer for incoming connections) | Yes ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                                          |
+| Remote printing               | Yes — remote printer for incoming connections (Windows) | Yes ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                                          |
 | Multi-monitor support         | Yes — multi-monitor | Yes — 4K multi-monitor ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                       |
 | Concurrent-session cap        | Unlimited on standard plans; limited on [Customized V2](https://rustdesk.com/pricing#custom2)                | Capped by plan tier (see [licensing](#licensing-and-pricing-models))                                                                                                                                  |
 
@@ -85,11 +85,11 @@ Both tools cover the major desktop and mobile platforms; the details differ at t
 | macOS           | Yes — Apple Silicon & Intel | Yes, macOS 13 (Ventura) and later ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                           |
 | Linux           | Yes — x86_64, ARM64 & ARM32; strong Wayland | Yes, but via TeamViewer Classic with more limited functionality ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))             |
 | Android         | Yes — arm64, arm32, x64 (host & controller) | Yes, Android 8+ ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                                             |
-| iOS / iPadOS    | Controller only (no host, per Apple restrictions)                           | Yes, iOS/iPadOS 15+ ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                                         |
+| iOS / iPadOS    | Controller only (no host, per Apple restrictions)                           | Controller app, iOS/iPadOS 15+ (cannot be fully controlled, per Apple restrictions) ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                                         |
 | ChromeOS        | Not verified for this article | Yes, but screen sharing only — full remote control not officially supported ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/)) |
-| Raspberry Pi OS | Not verified for this article | Yes, via TeamViewer Classic ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                                 |
+| Raspberry Pi OS | Yes — official ARM64/ARM32 Linux builds | Yes, via TeamViewer Classic ([supported OS](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                                 |
 
-The headline is that both products run on Windows, macOS, Linux, Android, and iOS, so for the overwhelming majority of mixed-fleet support work either tool will reach the endpoints you need. TeamViewer casts a slightly wider net on the fringes (ChromeOS screen sharing, Raspberry Pi via its Classic build), with the caveat that some of that support is limited-functionality or restricted to the older Classic client. If exotic endpoints matter to you, verify the specific device against each vendor's current list before committing.
+The headline is that both products run on Windows, macOS, Linux, Android, and iOS, so for the overwhelming majority of mixed-fleet support work either tool will reach the endpoints you need. TeamViewer covers a couple of extra fringes (ChromeOS screen sharing, and Raspberry Pi via its older Classic client), while RustDesk covers Pi with its standard ARM64/ARM32 Linux builds. If exotic endpoints matter to you, verify the specific device against each vendor's current list before committing.
 
 ## Security and identity
 
@@ -99,9 +99,9 @@ This is where the two products embody genuinely different philosophies, so it is
 
 It is only fair to note the counter-example on the incident side. In June 2024, TeamViewer disclosed that its **corporate IT network** was breached; the intrusion was attributed to APT29 (also tracked as Midnight Blizzard), the group linked to Russia's foreign intelligence service, using compromised employee credentials. TeamViewer stated the incident was contained to its internal corporate environment, that employee directory data and encrypted passwords were exposed, and that there was no evidence the attacker reached the product environment or customer data. ([BleepingComputer](https://www.bleepingcomputer.com/news/security/teamviewers-corporate-network-was-breached-in-alleged-apt-hack/), [TeamViewer bulletin TV-2024-1005](https://www.teamviewer.com/en-us/resources/trust-center/security-bulletins/tv-2024-1005/)) No vendor is immune to this class of attack; we mention it because "the vendor's own network is a target" is precisely the risk profile that a self-hosted model changes.
 
-**RustDesk's security model** starts from a different place. The core client is open source under the AGPL, so the code can be independently audited and built from source. RustDesk Server Pro is self-hosted: you operate the ID/rendezvous, relay, console, and stored deployment data. Direct sessions still flow between endpoints. Open source also makes defects public, so review the [latest releases](https://github.com/rustdesk/rustdesk/releases) and current vulnerability records rather than assuming self-hosting eliminates software risk.
+**RustDesk's security model** starts from a different place. RustDesk is open source under the AGPL, so the code can be independently audited and built from source. RustDesk Server Pro is self-hosted: you operate the ID/rendezvous, relay, console, and stored deployment data. Direct sessions still flow between endpoints. Open source also makes defects public, so review the [latest releases](https://github.com/rustdesk/rustdesk/releases) and current vulnerability records rather than assuming self-hosting eliminates software risk.
 
-On **identity**, one clarification that matters for planning. RustDesk supports LDAP/Active Directory and SSO via OIDC, and this is available **from the Basic plan and up** — it is not gated to only the top tiers, and it is not present on every paid arrangement below Basic either, so map it to the specific plan you intend to buy. Full setup details are in [RustDesk LDAP & Active Directory: Setup Guide](/blog/rustdesk-active-directory-ldap-sso). For per-user access control, RustDesk provides a self-hosted web console, device groups, and a shared address book, plus a custom-branded client generator so the app your users install carries your name rather than the vendor's.
+On **identity**, one clarification that matters for planning. RustDesk supports LDAP/Active Directory and SSO via OIDC, and this is available **from the Basic plan and up**: it is not top-tier-only, but plans below Basic do not include it — map it to the specific plan you intend to buy. Full setup details are in [RustDesk LDAP & Active Directory: Setup Guide](/blog/rustdesk-active-directory-ldap-sso). For per-user access control, RustDesk provides a self-hosted web console, device groups, and a shared address book, plus a custom-branded client generator so the app your users install carries your name rather than the vendor's.
 
 If keeping session data on infrastructure you control is the whole point of the exercise, the dedicated discussion is in [Remote Desktop & Data Sovereignty](/blog/remote-desktop-data-sovereignty-gdpr) and [Why Self-Host Your Remote Desktop Software](/blog/why-self-host-remote-desktop-software).
 
@@ -125,7 +125,7 @@ There is also a free-tier wrinkle. TeamViewer's free tier is for personal, non-c
 
 _Pros_
 
-- Open-source (AGPL) core client — auditable, buildable from source, free community server that runs indefinitely
+- Open source (AGPL) — auditable, buildable from source, free community server that runs indefinitely
 - Self-hosted Server Pro: ID/rendezvous and relay servers run on your own machine or VPS, keeping session brokering inside your perimeter
 - Unlimited concurrent connections on standard plans; limited on Customized V2
 - Licensed by login-user + managed-device, with prorated upgrades any time
@@ -158,13 +158,11 @@ _Cons_
 
 Everything above is the neutral part. The following section explains which buyer requirements align with RustDesk's model.
 
-**They want a different concurrency model.** RustDesk standard plans include unlimited concurrent connections, while Customized V2 licenses a defined allowance. All plans also require sufficient login-user and managed-device capacity. See the [concurrency FAQ](/blog/rustdesk-concurrent-connections-limit).
+**They want a different licensing and scaling model.** RustDesk sizes commercial plans by login users and managed devices; standard plans include unlimited concurrent connections, while Customized V2 licenses a defined allowance. Rates and allowances can change, so model growth against the current pricing matrix — see the [concurrency FAQ](/blog/rustdesk-concurrent-connections-limit) and the [large-fleet planning guidance](/blog/rustdesk-scale-50000-200000-devices).
 
 **They want control over the server-side data path.** Running the ID/rendezvous and relay services lets a team choose where those services and stored metadata reside. Direct session traffic still flows between endpoints, and self-hosting alone does not establish GDPR compliance. See [Why Self-Host](/blog/why-self-host-remote-desktop-software), [Self-Hosted vs Cloud](/blog/rustdesk-self-hosted-vs-cloud-saas-option), and [Remote Desktop & Data Sovereignty](/blog/remote-desktop-data-sovereignty-gdpr).
 
 **They want to read the code.** Open source under the AGPL means the client can be audited and built from source rather than trusted blindly. For security-conscious buyers, "we can inspect it" is a different assurance level from "the vendor says it's fine."
-
-**They need a different scaling model.** RustDesk sizes commercial plans by login users and managed devices, with plan-specific concurrency terms, and publishes [large-fleet planning guidance](/blog/rustdesk-scale-50000-200000-devices). Rates and allowances can change, so model growth against the current pricing matrix.
 
 **They are MSPs or enterprises who want one brandable, self-hosted tool.** For managed service providers, the custom-branded client generator, device groups, and shared address book turn RustDesk into a white-label support platform — see [RustDesk for MSPs](/blog/rustdesk-for-msps). For larger organizations that need AD/LDAP and room to grow, see [RustDesk for Enterprise](/blog/rustdesk-for-enterprise).
 

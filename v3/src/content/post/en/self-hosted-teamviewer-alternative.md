@@ -15,11 +15,11 @@ tags:
 author: RustDesk Team
 faq:
   - question: 'Is RustDesk a good self-hosted TeamViewer alternative?'
-    answer: "RustDesk Server Pro is self-hosted by design — the ID/rendezvous server, relay, console, and stored data run on infrastructure you control — and its core client is open source under the AGPL. It answers the two reasons teams leave TeamViewer: cost and control."
+    answer: "RustDesk Server Pro is self-hosted by design — the ID/rendezvous server, relay, console, and stored data run on infrastructure you control — and RustDesk is open source under the AGPL. It answers the two reasons teams leave TeamViewer: cost and control."
   - question: 'Can I self-host a TeamViewer alternative on my own servers?'
     answer: 'Yes. With RustDesk Server Pro you host the servers yourself, on-prem or on a VPS, and you can run the free open-source community server indefinitely. Someone on your side provisions the host, opens ports, sets up TLS, and keeps it patched.'
   - question: "How does RustDesk licensing compare to TeamViewer's per-seat subscription?"
-    answer: 'RustDesk licenses per login-user plus per managed-device, with unlimited concurrent connections on standard plans and a defined allowance on Customized V2; mid-term upgrades may be prorated under current terms. Model all three counts against the current pricing page.'
+    answer: 'RustDesk licenses per login-user plus per managed-device, with unlimited concurrent connections on standard plans and a defined allowance on Customized V2; mid-term upgrades are prorated. Model all three counts against the current pricing page.'
   - question: 'Does RustDesk work for MSPs and larger IT operations?'
     answer: 'Yes. It includes a self-hosted web console, a custom-branded client generator, and device groups with a shared address book for per-user access control, plus LDAP/SSO (OIDC) from the Basic plan and up. Large-fleet planning starts around 50,000 managed devices, with larger estates requiring validation.'
   - question: 'Does self-hosting help keep my data in-country and support GDPR?'
@@ -30,7 +30,7 @@ metadata:
   keywords: 'self-hosted TeamViewer alternative, TeamViewer replacement, open source TeamViewer alternative'
 ---
 
-The search for a **self-hosted TeamViewer alternative** usually starts the same way: a renewal quote no longer matches the workflows you use, and the product still routes your sessions through infrastructure you do not control. Cost and control are the two reasons teams start looking in the first place.
+The search for a **self-hosted TeamViewer alternative** usually starts the same way: a renewal quote no longer matches the workflows you use, and the product still routes your sessions through infrastructure you do not control.
 
 If you're one of them, this page is for you: why teams leave TeamViewer, how a self-hosted, open-source model changes the equation, and where RustDesk fits.
 
@@ -38,7 +38,7 @@ If you're one of them, this page is for you: why teams leave TeamViewer, how a s
 
 Two decision factors show up repeatedly.
 
-**Cost.** Compare the current renewal quote with alternatives using the same user, device, concurrency, feature, and support requirements.
+**Cost.** Renewal totals can grow independent of usage — tier packaging, add-ons, and rate changes all move the number. Compare the current quote with alternatives against identical requirements.
 
 **Control.** With a cloud-only tool, your session traffic and your device list live on a vendor's infrastructure. For a growing number of teams — especially in healthcare, the public sector, and anywhere [GDPR](/blog/remote-desktop-data-sovereignty-gdpr) applies — choosing where the server-side data and relay layer run is a hard requirement, not a preference.
 
@@ -48,7 +48,7 @@ A **self-hosted TeamViewer alternative** answers both: you own the infrastructur
 
 RustDesk Server Pro is [self-hosted by design](/blog/why-self-host-remote-desktop-software). The ID/rendezvous server, relay, console, and stored deployment data run on infrastructure you control. Direct sessions still flow between endpoints; relayed sessions use your configured relay.
 
-Underneath, RustDesk's core client is open source under the [AGPL](/blog/case-for-open-source-remote-access). You can read the code, audit exactly what the client does on your machines, build it yourself, and run the free community server indefinitely. That's a different trust model than a closed cloud product: you don't have to take our word for what the software does, because you can look.
+Underneath, RustDesk is open source under the [AGPL](/blog/case-for-open-source-remote-access). You can read the code, audit exactly what the client does on your machines, build it yourself, and run the free community server indefinitely. That's a different trust model than a closed cloud product: you don't have to take our word for what the software does, because you can look.
 
 It's also the reason security incidents in this category — such as [AnyDesk's 2024 security incident](https://www.infosecurity-magazine.com/news/anydesk-hit-cyberattack-customer/), or the [2024 ConnectWise ScreenConnect vulnerability](https://www.cisa.gov/news-events/alerts/2024/02/22/cisa-adds-one-known-exploited-connectwise-vulnerability-cve-2024-1709-catalog) — land differently when the software is auditable and the servers are yours.
 
@@ -61,19 +61,19 @@ It's also the reason security incidents in this category — such as [AnyDesk's 
 | Licensing model                                                       | Per-seat cloud subscription | [Per login-user + per managed-device](/blog/rustdesk-pro-license-cost-how-to-pay) |
 | [Concurrent connections](/blog/rustdesk-concurrent-connections-limit) | Plan-dependent              | Unlimited on standard plans; limited on [Customized V2](https://rustdesk.com/pricing#custom2)                             |
 | Server-side data location                                             | Vendor-controlled           | Chosen and operated by you; endpoint routes still matter                          |
-| Try before you buy                                                    | Sales-led                   | Free server today, or Pro trial on request                                        |
+| Try before you buy                                                    | Vendor trial (see vendor page) | Free server today, or Pro evaluation via sales@rustdesk.com                     |
 
 _Competitor details vary by plan — confirm current TeamViewer terms with the vendor. [See RustDesk pricing](https://rustdesk.com/pricing)._
 
 ## Predictable licensing, no per-channel tax
 
-RustDesk licenses per login-user plus per managed-device. **Standard plans include unlimited concurrent connections; Customized V2 has a defined allowance.** Mid-term upgrades may be prorated under current terms. Model all three counts against the current pricing page.
+RustDesk licenses per login-user plus per managed-device. **Standard plans include unlimited concurrent connections; Customized V2 has a defined allowance.** Mid-term upgrades are prorated. Model all three counts against the current pricing page.
 
-That maps cleanly onto login-users and managed-devices whether you are a small support team or a larger IT operation. It also scales well beyond a starter deployment: [large-fleet planning](/blog/rustdesk-scale-50000-200000-devices) starts around 50,000 managed devices today, with larger estates requiring validation around caching, database tuning, and rollout design.
+That maps cleanly onto how support teams actually grow. It also scales well beyond a starter deployment: [large-fleet planning](/blog/rustdesk-scale-50000-200000-devices) starts around 50,000 managed devices today, with larger estates requiring validation around caching, database tuning, and rollout design.
 
 ## Your data stays where you put it
 
-Because you host the servers, you control the rendezvous, relay, console, and stored device data. Direct connections still flow between endpoints, so self-hosting alone does not guarantee in-country traffic or GDPR compliance.
+Because you host the servers, the server-side services and everything they store are genuinely yours: rendezvous, relay, console, and the device list all run where you decide, under access rules you set. The caveat is endpoint routing — direct connections still flow between endpoints, so self-hosting alone does not guarantee in-country traffic or GDPR compliance.
 
 ## Built for MSPs and IT teams
 
@@ -100,10 +100,6 @@ This sequence prevents a licensing decision from turning into an untested infras
 
 ## Evaluate the switch on your own infrastructure
 
-You don't need to talk to anyone to evaluate RustDesk:
+You don't need to talk to anyone to get started: the free, open-source community server installs on your own hardware and runs indefinitely. To trial the Pro features against the migration plan above, ask [sales@rustdesk.com](mailto:sales@rustdesk.com) for the evaluation terms currently on offer; standard plan rates live at [rustdesk.com/pricing](https://rustdesk.com/pricing). And if you want to watch it work before installing anything, the [video demo](/blog/see-rustdesk-in-action) covers a full session end to end.
 
-- **Self-host the free, open-source community server today** and see how it runs on your own hardware.
-- **Want to try the Pro features?** Email [sales@rustdesk.com](mailto:sales@rustdesk.com) to ask about current evaluation terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) for standard plan rates.
-- **Prefer to see it first?** Watch a full [video demo](/blog/see-rustdesk-in-action) on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk) — no booking required.
-
-If cost and control are why you're leaving TeamViewer, a self-hosted, open-source alternative is worth a proof of concept on your own hardware.
+Leaving TeamViewer usually comes down to cost and control; the quickest way to know whether self-hosting delivers both is a short proof of concept on your own hardware.

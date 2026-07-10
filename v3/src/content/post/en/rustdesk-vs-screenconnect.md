@@ -4,7 +4,7 @@ lang: en
 translationKey: rustdesk-vs-screenconnect
 draft: false
 title: 'RustDesk vs ScreenConnect: Open-Source, Self-Hosted Remote Support'
-excerpt: 'A full comparison of RustDesk vs ScreenConnect: features, OS support, security (including CVE-2024-1709), pricing models, and the honest self-hosting trade-off.'
+excerpt: 'A full comparison of RustDesk vs ScreenConnect: features, OS support, security (including CVE-2024-1709), pricing models, and the self-hosting trade-off.'
 image: ~/assets/images/blog/rustdesk-vs-screenconnect-og.png
 category: Comparisons
 tags:
@@ -14,7 +14,7 @@ tags:
 author: RustDesk Team
 faq:
   - question: 'Is RustDesk a self-hosted alternative to ScreenConnect?'
-    answer: 'Yes. RustDesk Server Pro runs the ID/rendezvous and relay services on infrastructure you control, and its core client is open source under the AGPL. ScreenConnect offers a managed cloud service and a self-hosted on-premise edition, both proprietary.'
+    answer: 'Yes. RustDesk Server Pro runs the ID/rendezvous and relay services on infrastructure you control, and RustDesk is open source under the AGPL. ScreenConnect offers a managed cloud service and a self-hosted on-premise edition, both proprietary.'
   - question: 'How does RustDesk pricing compare to ScreenConnect?'
     answer: 'ScreenConnect licenses per concurrent technician/session; RustDesk licenses by login users and managed devices, with unlimited concurrency on standard plans (only Customized V2 meters it). Compare current written quotes for the same technicians, endpoints, and features.'
   - question: 'Does RustDesk support SSO and LDAP like ScreenConnect?'
@@ -22,11 +22,11 @@ faq:
   - question: 'Is RustDesk affected by the ScreenConnect CVE-2024-1709 vulnerability?'
     answer: 'No — CVE-2024-1709 was a ScreenConnect flaw. But the underlying lesson applies to any self-hosted tool, RustDesk included: when you host it yourself, you own patching, so keep your server updated promptly.'
 metadata:
-  description: 'RustDesk vs ScreenConnect compared in depth: features, OS support, security (incl. CVE-2024-1709), pricing models, and honest pros/cons for MSPs.'
+  description: 'RustDesk vs ScreenConnect compared in depth: features, OS support, security (incl. CVE-2024-1709), pricing models, and clear pros and cons for MSPs.'
   keywords: 'RustDesk vs ScreenConnect, RustDesk vs ConnectWise Control, ScreenConnect self-hosted alternative, ScreenConnect comparison'
 ---
 
-ScreenConnect comparisons often start with security, compliance, cost, or self-hosting requirements. This article relies on public incident disclosures and product documentation rather than reproducing private customer emails, contract dates, or deployment details.
+RustDesk and ScreenConnect both target the MSP remote-support workflow; the split is ownership — ScreenConnect is proprietary software licensed per concurrent technician, while RustDesk is open source and built to be self-hosted. This article relies on public incident disclosures and product documentation rather than reproducing private customer emails, contract dates, or deployment details.
 
 ScreenConnect (formerly ConnectWise Control) is a commercial remote-access platform with a large installed base in the MSP market. RustDesk is an open-source, self-hostable alternative built on a different philosophy — software you run and own yourself rather than a vendor-hosted service. Below is a section-by-section comparison of how they line up, and why MSPs move to RustDesk.
 
@@ -64,7 +64,7 @@ The table below covers the everyday remote-support feature set. A note on method
 | Session recording                    | Yes (can auto-record incoming/outgoing) | Yes — included from the Standard tier up                                                 |
 | File transfer                        | Yes (both directions) | Yes — included across tiers                                                              |
 | In-session chat                      | Yes — text chat | Yes — in-session chat                                                                    |
-| Remote printing                      | Yes (remote printer for incoming connections) | Yes — print from the remote machine to a local printer                                   |
+| Remote printing                      | Yes — remote printer for incoming connections (Windows) | Yes — print from the remote machine to a local printer                                   |
 | Concurrent-connection limit          | Unlimited on standard plans; limited on Customized V2                                                     | Licensed per concurrent technician; see current tiers                                    |
 
 Concurrency drives both cost models. ScreenConnect licenses simultaneous technician capacity, while RustDesk standard plans are unlimited and Customized V2 licenses a defined concurrency allowance. See the [RustDesk concurrency FAQ](/blog/rustdesk-concurrent-connections-limit).
@@ -79,8 +79,8 @@ Both tools are cross-platform, with one structural difference worth understandin
 | macOS              | Yes — Apple Silicon & Intel | Yes — host and guest (current and previous two versions) |
 | Linux              | Yes — x86_64, ARM64 & ARM32; strong Wayland | Yes — host and guest (x86_64, glibc 2.17+)               |
 | Android            | Yes — arm64, arm32, x64 (host & controller) | Guest support; Android technician app                    |
-| iOS                | Controller only     | Guest support; iOS technician app                        |
-| Browser-based host | Browser-based web client for controlling (Server Pro, plan-gated); hosting uses the native client | Yes — host via Chrome, Firefox, Safari, Edge             |
+| iOS                | Controller only     | View-only guest screen sharing; iOS technician app       |
+| Control from a browser | Browser client for controlling (public web client, or self-hosted at a plan size); being controlled needs the native client | Yes — host via Chrome, Firefox, Safari, Edge             |
 
 A couple of clarifications so nobody is misled. ConnectWise's own compatibility page, as of our research, lists Windows/macOS/Linux for host and guest plus iOS and Android mobile apps; some third-party write-ups also mention ChromeOS and Raspberry Pi clients, but we could not verify those on ConnectWise's official page, so we've left them out. Separately, when teams talk about Raspberry Pi in a RustDesk evaluation, they usually mean self-hosting the _RustDesk server_ on small hardware — that's a server-side deployment story, not a client platform claim.
 
@@ -90,15 +90,13 @@ This section covers the security and compliance questions that usually drive the
 
 **ScreenConnect's security model.** ConnectWise's current pricing page lists AES-256 encryption, two-factor authentication, brute-force prevention, granular access management, and integrations with LDAP, SAML, OAuth, and other SSO providers. Its on-premise product page lists multi-factor authentication and role-based access controls and describes configurations intended to support SOC 2, PCI, CJIS, and HIPAA requirements. These are vendor claims rather than a conclusion that any deployment is automatically compliant; the first-party pages are linked in [Sources](#sources).
 
-**The 2024 incident.** One reason teams evaluating alternatives point to ScreenConnect's 2024 history is a specific, well-documented event. In February 2024, a critical authentication-bypass vulnerability in ScreenConnect, **CVE-2024-1709**, was disclosed. It carried a CVSS score of 10.0 — the maximum — and worked by appending a trailing slash to the `SetupWizard.aspx` URL to bypass a request filter, letting an unauthenticated attacker create a new administrator account and take full control of the server. It was paired with a path-traversal flaw, CVE-2024-1708. Affected versions were 23.9.7 and earlier; the fix shipped in 23.9.8. The bug was trivially exploitable, proof-of-concept exploits appeared almost immediately, and it was quickly tied to active exploitation, including ransomware activity.
-
-[A widely reported ScreenConnect vulnerability](https://www.cisa.gov/news-events/alerts/2024/02/22/cisa-adds-one-known-exploited-connectwise-vulnerability-cve-2024-1709-catalog) triggered emergency patching and public scrutiny across the MSP market. CISA added CVE-2024-1709 to its Known Exploited Vulnerabilities catalog on February 22, 2024 — the formal signal that a flaw is being exploited in the wild and must be remediated on a deadline.
+**The 2024 incident.** One reason teams evaluating alternatives point to ScreenConnect's 2024 history is a specific, well-documented event. In February 2024, a critical authentication-bypass vulnerability in ScreenConnect, **CVE-2024-1709**, was disclosed. It carried a CVSS score of 10.0 — the maximum — and worked by appending a trailing slash to the `SetupWizard.aspx` URL to bypass a request filter, letting an unauthenticated attacker create a new administrator account and take full control of the server. It was paired with a path-traversal flaw, CVE-2024-1708. Affected versions were 23.9.7 and earlier; the fix shipped in 23.9.8. The bug was trivially exploitable, proof-of-concept exploits appeared almost immediately, and it was quickly tied to active exploitation, including ransomware activity. [CISA added CVE-2024-1709 to its Known Exploited Vulnerabilities catalog](https://www.cisa.gov/news-events/alerts/2024/02/22/cisa-adds-one-known-exploited-connectwise-vulnerability-cve-2024-1709-catalog) on February 22, 2024 — the formal signal that a flaw is being exploited in the wild and must be remediated on a deadline — and emergency patching and public scrutiny swept the MSP market.
 
 One nuance for how you read this: ConnectWise's **cloud-hosted** customers (on screenconnect.com and hostedrmm.com) were patched automatically, while **self-hosted / on-premise** operators updated their own servers. That is inherent to self-hosting anything — you control the patch timeline, the same ownership that keeps your data on your infrastructure.
 
 **The 2025 code-signing change.** A second, more recent episode is worth knowing about, because it landed specifically on on-premise operators. In June 2025 ConnectWise announced it would rotate ScreenConnect's code-signing certificates after a third-party researcher raised that configuration data was stored in an unsigned area of the installer, and the older on-premise certificate was revoked on July 7, 2025. On-premise operators had to update their server (the 2025.4 release / build 25.4.16) and re-deploy updated agents before the cutoff to avoid their clients being flagged or failing to install; ConnectWise also re-architected the installer so on-premise partners now sign their own clients. Read charitably, this is ConnectWise tightening supply-chain security — a good thing. But the operational lesson is the same one the 2024 CVE taught: when you self-host, certificate and security events land on _your_ change calendar, on a deadline, not the vendor's. RustDesk is no different in that respect; it is simply honest to say so up front.
 
-**RustDesk's security model.** RustDesk's approach is structurally different. The core client is open source under the AGPL, which means it can be independently audited and built from source rather than taken on trust — a property no closed-source competitor can offer. Server Pro is self-hosted, so the rendezvous/relay servers run on your own machine or VPS and session brokering stays within infrastructure you control; for teams whose driving concern is data residency and GDPR, that on-premise posture is the whole point. On identity, RustDesk supports LDAP and SSO via OIDC — and here's a point worth stating plainly: **LDAP/SSO is available from the Basic plan and up, not on every paid plan below it.** Administration runs through a self-hosted web console, and access control is handled with device groups and a shared address book so you can scope which users reach which machines. Setup specifics are in our [RustDesk LDAP and Active Directory guide](/blog/rustdesk-active-directory-ldap-sso).
+**RustDesk's security model.** RustDesk's approach is structurally different. RustDesk is open source under the AGPL, which means it can be independently audited and built from source rather than taken on trust — a property no closed-source competitor can offer. Server Pro is self-hosted, so the rendezvous/relay servers run on your own machine or VPS and session brokering stays within infrastructure you control; for teams whose driving concern is data residency and GDPR, that on-premise posture is the whole point. On identity, RustDesk supports LDAP and SSO via OIDC — and here's a point worth stating plainly: **LDAP/SSO is available from the Basic plan and up; plans below Basic do not include it.** Administration runs through a self-hosted web console, and access control is handled with device groups and a shared address book so you can scope which users reach which machines. Setup specifics are in our [RustDesk LDAP and Active Directory guide](/blog/rustdesk-active-directory-ldap-sso).
 
 Being open source does not make software invulnerable. Review RustDesk's [latest releases](https://github.com/rustdesk/rustdesk/releases) and public vulnerability records. ScreenConnect cloud mode provides a vendor-operated service; RustDesk provides auditable code and self-hosted server-side services, along with operating responsibility. For the routing and residency boundaries, see [Remote Desktop and Data Sovereignty](/blog/remote-desktop-data-sovereignty-gdpr).
 
@@ -116,7 +114,7 @@ Pricing changes often, so rather than treat any number as permanent fact, we'll 
 
 _Pros_
 
-- Open-source (AGPL) core client — auditable and buildable from source
+- Open source (AGPL) — auditable and buildable from source
 - Self-hosted Server Pro keeps brokering/relay on infrastructure you own (data sovereignty, GDPR)
 - Unlimited concurrent connections on standard plans; limited on Customized V2
 - Custom-branded client generator
@@ -152,9 +150,7 @@ Everything above is the neutral comparison. Here's the part where we're openly m
 
 **Data sovereignty and self-hosting.** Server Pro lets you choose where ID, relay, console, and device data run. Direct endpoint traffic still crosses the networks between those endpoints, and compliance requires more than server placement. See [Self-Hosted vs Cloud](/blog/rustdesk-self-hosted-vs-cloud-saas-option) and [Remote Desktop and Data Sovereignty](/blog/remote-desktop-data-sovereignty-gdpr).
 
-**Open source you can actually verify.** The AGPL client can be audited and built from source. After a maximum-severity CVE in a closed competitor forces operators to scramble to patch or block it, "we can read the code ourselves" stops sounding academic.
-
-**Plan-dependent concurrency.** Standard plans are unlimited; Customized V2 licenses a defined number of concurrent connections. Details are in the [concurrency FAQ](/blog/rustdesk-concurrent-connections-limit).
+**Open source you can actually verify.** The AGPL code can be audited and built from source. After a maximum-severity CVE in a closed competitor forces operators to scramble to patch or block it, "we can read the code ourselves" stops sounding academic.
 
 **A client with your name on it.** RustDesk's custom-branded client generator lets you ship a tool that carries your brand to end users rather than a vendor's — meaningful for MSPs whose clients should see _their_ provider, not a third party.
 
@@ -168,9 +164,7 @@ You can run the entire coordination layer yourself and keep session data inside 
 
 ## Try RustDesk yourself
 
-The no-pressure way to evaluate RustDesk is a representative proof of concept:
-
-Self-host the free community server today. Want to try the Pro features? Email [sales@rustdesk.com](mailto:sales@rustdesk.com) to ask about current evaluation terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) for standard plan rates. Prefer to watch first? There's a full video walkthrough on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk) — no booking required.
+The no-pressure way to evaluate RustDesk is a representative proof of concept. Stand up the free community server and point a few endpoints at it — no cost, no sales call. For the Pro features, ask [sales@rustdesk.com](mailto:sales@rustdesk.com) about current evaluation terms or see [rustdesk.com/pricing](https://rustdesk.com/pricing), and there's a [video walkthrough](https://www.youtube.com/@rustdesk) if you'd rather watch first.
 
 You can also just [See RustDesk in Action](/blog/see-rustdesk-in-action) first if you'd like a guided tour before you deploy anything.
 

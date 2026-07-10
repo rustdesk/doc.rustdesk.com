@@ -18,7 +18,7 @@ faq:
   - question: 'What counts as commercial use in TeamViewer?'
     answer: "Per TeamViewer's own definitions, commercial use includes providing support to clients or customers, working from home (even just checking work email), any inbound or outbound connection in a commercial setting, server administration or monitoring, and salaried work at a non-profit. Personal use means helping family and friends or connecting to your own non-server devices."
   - question: 'Will the reset request work if my use is genuinely commercial?'
-    answer: 'No. The appeal only helps when the flag was a false positive; if your actual usage is commercial, TeamViewer will correctly identify it, and the real fix is choosing a tool licensed for how you actually use it.'
+    answer: 'No. A reset clears the flag only when it was raised in error; if your actual usage is commercial, TeamViewer will correctly identify it, and the lasting fix is software whose license covers that work.'
   - question: 'Does RustDesk have a commercial-use detector?'
     answer: "No. RustDesk's community server can be self-hosted without a commercial-use classifier, while Server Pro is licensed by login users and managed devices, with unlimited concurrent connections on standard plans and a defined allowance on Customized V2."
   - question: 'Can I avoid the flag with ID-reset scripts or by deleting config files?'
@@ -39,11 +39,11 @@ TeamViewer publishes an official [reset/appeal process](https://www.teamviewer.c
 
 1. **Go to [teamviewer.com/reset](https://teamviewer.com/reset)** and click the start button.
 2. **Enter your name and the email address on your TeamViewer account.**
-3. **Briefly describe your actual usage pattern** — e.g. "I only use this to help my elderly parent with their PC," or whatever genuinely describes what you're doing.
+3. **Briefly describe your actual usage pattern** — e.g. "I only use this to help my elderly parent with their PC." Write it in your own words and keep it truthful.
 4. **List every TeamViewer ID involved**, both the device you connect _from_ and any you connect _to_ (the form accepts a limited number of IDs per submission).
 5. **Accept the privacy policy and submit.**
 
-TeamViewer states a review-time target of roughly a week at the time of writing, though it can take longer during high-volume periods — check your spam folder if you don't hear back. One of two things happens next: either they reset your ID because personal use is confirmed, or they decline the reset and offer you a "declaration of private use" to sign instead. If your actual usage is commercial, neither outcome changes that — the appeal only helps when the flag was a false positive.
+TeamViewer states a review-time target of roughly a week at the time of writing, though it can take longer during high-volume periods — check your spam folder if you don't hear back. From there, the review ends one of two ways: TeamViewer resets your ID because personal use is confirmed, or it declines the reset and offers you a "declaration of private use" to sign instead. If your actual usage is commercial, neither outcome changes that — a reset request can only clear a flag that was raised in error.
 
 ### What actually counts as "commercial use" here
 
@@ -55,7 +55,7 @@ Per TeamViewer's own definitions, **personal use** means helping family and frie
 - Server administration or monitoring
 - Salaried work at a non-profit organization
 
-If you're doing any of that, the appeal process will correctly identify you as commercial, and the real fix is choosing a tool licensed for how you actually use it — which is where the rest of this guide picks up.
+If you're doing any of that, the appeal process will correctly identify you as commercial, and the lasting solution is software whose license actually covers your work — which is where the rest of this guide picks up.
 
 ## Why TeamViewer flags "commercial use" in the first place
 
@@ -81,7 +81,7 @@ RustDesk belongs in the third row. Its community server can be self-hosted witho
 
 Do not uninstall TeamViewer as the first step. Stand up a test RustDesk server and validate the workflows behind your commercial usage: attended and unattended access, elevation, file transfer, multi-monitor, client deployment, access restrictions, and relay performance. Then compare the operating cost with the current TeamViewer quote.
 
-The [self-hosted TeamViewer alternative guide](/blog/self-hosted-teamviewer-alternative) covers the full migration and feature comparison. If you only need personal access and TeamViewer approves the reset, keeping the free tier may be simpler than running a server.
+The [self-hosted TeamViewer alternative guide](/blog/self-hosted-teamviewer-alternative) covers the full migration and feature comparison. If the reset is approved, your free personal-use access continues. If any of your use is commercial, licensing is the durable fix — either TeamViewer's paid tier or a tool licensed for how you work.
 
 ## What to do next
 

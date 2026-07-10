@@ -16,16 +16,16 @@ faq:
   - question: 'How much does RustDesk Pro cost?'
     answer: 'A RustDesk Pro license is priced by the number of users and devices you need, so there is no single flat number — check rustdesk.com/pricing. Use the current pricing page for plan details, checkout options, and evaluation terms.'
   - question: 'Is the RustDesk client free, and what does Pro add?'
-    answer: 'Yes. The RustDesk client is open source and free, and you can self-host the basic relay and signal server at no license cost. A Pro license unlocks the Server Pro feature set — the management, control, and scale features aimed at businesses.'
+    answer: 'Yes. RustDesk is open source and free, and you can self-host the basic relay and signal server at no license cost. A Pro license unlocks the Server Pro feature set — the management, control, and scale features aimed at businesses.'
   - question: 'Does RustDesk license per user or per device?'
     answer: 'Both. Pricing is tied to how many login users need seats and how many managed devices you connect to, so your total reflects your own configuration. See rustdesk.com/pricing for current figures.'
   - question: 'Do you offer volume or annual pricing for MSPs and larger teams?'
-    answer: 'Because pricing scales with your user and device counts, larger deployments are quoted per configuration rather than a fixed sticker. For volume or annual terms, check rustdesk.com/pricing or email sales@rustdesk.com.'
+    answer: 'Because pricing scales with your user and device counts, larger deployments are quoted per configuration rather than a fixed sticker. For larger deployments or annual terms, check rustdesk.com/pricing or email sales@rustdesk.com.'
   - question: 'What are the current evaluation terms for RustDesk Server Pro?'
-    answer: 'Evaluation terms are not fixed in this article. Check the current evaluation path on rustdesk.com/pricing, or email sales@rustdesk.com to confirm what is available for your setup.'
+    answer: 'Evaluation terms are set by the RustDesk team and can change. Check the current path on rustdesk.com/pricing, or email sales@rustdesk.com to confirm what is available for your setup.'
 
 metadata:
-  description: 'How much does RustDesk Pro cost? Pricing scales with users and devices, with current plans and checkout options listed on rustdesk.com/pricing.'
+  description: 'RustDesk Pro pricing explained: per-user and per-device licensing, what the license covers, and where to buy — with evaluation and billing pointers.'
   keywords: 'RustDesk Pro cost, RustDesk Pro price, RustDesk license cost, how to buy RustDesk license, RustDesk pricing per user and device, RustDesk Server Pro pricing'
 ---
 
@@ -43,11 +43,11 @@ If you want to evaluate the paid features before committing, check the current e
 
 Payment is straightforward: use the current checkout flow shown on the pricing page. If your procurement process has billing or payment constraints, confirm the current options before you purchase. After you buy, you can retrieve invoices and manage renewals, upgrades, or a license move in the [self-service license portal](https://rustdesk.com/self-host/account/) — log in with the email you used on the payment page, or contact [support@rustdesk.com](mailto:support@rustdesk.com) if you no longer know which one.
 
-It is also worth remembering the free/paid split. The RustDesk **client is open source and free**, and you can even self-host the basic relay/signal server at no license cost. The Pro license unlocks the Server Pro feature set (the management, control, and scale features aimed at businesses). So the cost question is really about Server Pro, not about using RustDesk at all.
+It is also worth remembering the free/paid split. RustDesk is **open source and free**, and you can even self-host the basic relay/signal server at no license cost. The Pro license unlocks the Server Pro feature set (the management, control, and scale features aimed at businesses). So the cost question is really about Server Pro, not about using RustDesk at all.
 
 ## Who asks this
 
-This question comes up most often from **IT admins, MSPs, and businesses** comparing RustDesk against tools like TeamViewer and AnyDesk after widely reported renewal price increases. Many are running a proof of concept and want a concrete number and a clear buying path before they take it to a manager.
+Budget owners — and the admins preparing numbers for them — land on this question when an evaluation turns into a purchase request. Many are running a proof of concept and want a concrete number and a clear buying path before they take it to a manager.
 
 ## Related questions
 

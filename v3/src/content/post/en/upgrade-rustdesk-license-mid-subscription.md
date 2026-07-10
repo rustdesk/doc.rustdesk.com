@@ -27,7 +27,7 @@ faq:
     answer: 'This article covers upgrades, which you can make at any time. For reducing seats or downgrading mid-term, confirm the current handling with the RustDesk team at sales@rustdesk.com.'
 
 metadata:
-  description: 'Upgrade your RustDesk license anytime to add users or devices, prorated against your term. Refresh in the web console for immediate effect, or it applies automatically within about 24 hours.'
+  description: 'Upgrade your RustDesk license anytime to add users or devices, prorated. Refresh in the web console for instant effect, or it applies within about 24 hours.'
   keywords: 'upgrade RustDesk license mid-subscription, add more devices RustDesk license, RustDesk license proration, increase managed devices RustDesk, refresh license web console RustDesk, RustDesk per-user per-device licensing'
 ---
 
@@ -41,7 +41,7 @@ You do not have to wait for renewal to scale up. RustDesk lets you upgrade your 
 
 RustDesk licensing is structured around per-user and per-device seats, and a growing IT team or [MSP](/blog/rustdesk-for-msps) will naturally hit the point where more devices or users need coverage. Rather than forcing you to buy a whole new subscription or wait for the annual renewal date, RustDesk treats the upgrade as an in-place change to your existing license.
 
-Because you have already paid for part of the year, the upgrade is prorated. In practice that means the system calculates the additional cost based on the time remaining on your subscription, so you are charged the difference for the new capacity rather than a full new price. If the amount ever looks higher than you expect, you can check the math against your remaining term and confirm you have not been overcharged.
+Because you have already paid for part of the year, the upgrade is prorated. In practice that means the system calculates the additional cost based on the time remaining on your subscription, so you are charged the difference for the new capacity rather than a full new price. The prorated charge is easy to verify against your remaining term.
 
 You make the upgrade itself in the [self-service license portal](https://rustdesk.com/self-host/account/) — log in with the email you used on the payment page when you first bought the license. If you no longer know which email that was, email [support@rustdesk.com](mailto:support@rustdesk.com). The same portal is where you renew and download invoices.
 
@@ -51,12 +51,12 @@ For teams migrating from TeamViewer or AnyDesk, this flexibility is a meaningful
 
 ## Who asks this
 
-This question comes up most often from IT admins and MSPs who bought a license sized for their current fleet and are now onboarding new endpoints, staff, or client sites partway through the year. The concern behind it is usually twofold: whether scaling up is even possible mid-term, and whether they will be fairly charged for it.
+Growth is the usual trigger: an admin who sized the license for the fleet as it stood is now onboarding new endpoints, staff, or client sites partway through the year. The concern behind it is usually twofold: whether scaling up is even possible mid-term, and whether they will be fairly charged for it.
 
 ## Related questions
 
-- [How is the upgrade cost prorated for the remaining time on my subscription?](/blog/rustdesk-pro-license-cost-how-to-pay)
+- [How does RustDesk count users and managed devices for a license?](/blog/what-counts-as-a-managed-device)
 - [How do I manually refresh my license in the web console?](/blog/rustdesk-web-console-custom-client-generator-port-21114)
 - [What is the difference between per-user and per-device licensing in RustDesk?](/blog/what-counts-as-a-managed-device)
 
-Growing your deployment? Upgrade your license whenever you need more capacity, then refresh it in the web console—and double-check the prorated amount against your remaining term if you want to confirm the numbers.
+Growing your deployment? Upgrade your license whenever you need more capacity, then refresh it in the web console to put the new limits to work right away.

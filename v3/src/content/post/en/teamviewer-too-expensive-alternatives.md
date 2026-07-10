@@ -30,21 +30,17 @@ metadata:
   keywords: 'TeamViewer too expensive, TeamViewer renewal cost, TeamViewer three-year TCO, TeamViewer cost alternatives'
 ---
 
-## "TeamViewer Too Expensive?" You're Not Alone
+## You're not alone
 
 The short answer: your real options are to renew, negotiate, or move to a model you control — and if predictable cost is the goal, self-hosting RustDesk (licensed by users and devices, not seats) is the structural fix.
 
-If the renewal invoice triggered your search, compare current written quotes using the same users, devices, concurrency, features, and support requirements.
-
-The real problem is paying for functions you do not use. If **TeamViewer feels too expensive**, it usually isn't because you're using more. It's because the pricing model keeps climbing whether you grow or not. This guide explains _why_ that happens, and lays out the real options for teams shopping to leave, including where RustDesk fits and what running it involves.
+If **TeamViewer feels too expensive**, it usually isn't because you're using more — tier-and-seat pricing can climb whether or not you grow. This guide explains _why_ that happens, and lays out the real options for teams shopping to leave, including where RustDesk fits and what running it involves.
 
 ## Why the bill keeps going up
 
-Cloud-subscription remote-desktop tools are priced around tiers, seats, and add-on modules. A renewal may change when your requirements, plan packaging, discounts, or vendor rates change. You're renting access to a vendor's cloud, so compare the dated renewal quote with current alternatives rather than assuming a universal increase.
+Cloud-subscription remote-desktop tools are priced around tiers, seats, and add-on modules, and each of those is a lever that can move at renewal. Tier boundaries do the most damage: outgrow a single allowance and the whole plan re-prices, not just the feature that pushed you over. Add-on modules and expiring introductory discounts move the total the rest of the way, one line item at a time.
 
-Renewal changes can motivate a comparison, but the correct plan depends on your current workload. Model the decision from official pricing and feature matrices.
-
-The frustration isn't the software. It's the model. So the real question isn't "what's a cheaper cloud tool" — it's "what pricing model stops surprising me."
+None of that requires you to use the product more — which is why the frustration isn't the software, it's the model. The real question isn't "what's a cheaper cloud tool" — it's "what pricing model stops surprising me." (How to decompose your own renewal quote is covered below.)
 
 ## The core fix: own the infrastructure, pay per user + per device
 
@@ -65,9 +61,7 @@ You can also [upgrade any time](/blog/upgrade-rustdesk-license-mid-subscription)
 | Concurrent sessions           | Often capped by plan           | Unlimited on standard plans; limited on Customized V2                      |
 | Server-side services and data | Vendor-operated                | Operated on infrastructure you control                                     |
 | Source code                   | Closed                         | [Open source (AGPL)](/blog/case-for-open-source-remote-access) — auditable |
-| Try before you buy            | Often needs a sales call       | Free community server, or Pro trial on request                             |
-
-For exact competitor pricing and current plan details, check each vendor's own page — we don't quote numbers we can't stand behind.
+| Try before you buy            | Often needs a sales call       | Free community server; ask sales about evaluation terms                             |
 
 ## What to extract from the renewal quote
 
@@ -92,11 +86,11 @@ Sticker price is a poor way to compare these two models, because they put the mo
 **Self-hosted RustDesk (mixed):**
 
 - A [RustDesk Server Pro license](/blog/rustdesk-pro-license-cost-how-to-pay), sized to login-users + managed-devices (current figures at [rustdesk.com/pricing](https://rustdesk.com/pricing))
-- A VPS or on-prem host to run the ID/rendezvous and relay servers — hardware requirements are low, so this is a small, predictable line item
+- A VPS or on-prem host to run the ID/rendezvous and relay servers
 - Ops time: mostly the one-time setup (host, ports, TLS); once configured, routine patching and monitoring take little ongoing effort — and if any question comes up along the way, [RustDesk support](mailto:support@rustdesk.com) can help you through it
 - Concurrency is not a cost lever on standard plans, so growth in simultaneous sessions doesn't re-price the deal
 
-Self-hosting has a cost too, but a small one: an inexpensive host (hardware requirements are low) and mostly one-time setup, with little ongoing upkeep. The difference is _where_ the money goes: into infrastructure and time you control, rather than a recurring rate someone else resets each year.
+Self-hosting has a cost too — the host and the setup time above — but the difference is _where_ the money goes: into infrastructure and time you control, rather than a recurring rate someone else resets each year.
 
 ## What you stop paying for
 
@@ -107,27 +101,18 @@ Moving to a self-hosted model removes several recurring line items outright:
 - **Feature-tier tolls** — capabilities often gated behind higher cloud tiers ([device groups and a shared address book](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book), [LDAP/SSO](/blog/rustdesk-active-directory-ldap-sso) from the Basic plan and up) come with the plan you host.
 - **Some usage-based add-ons** — standard RustDesk plans do not meter concurrency, while Customized V2 does. RustDesk licenses still renew annually and current rates can change, so budget from the current terms rather than assuming a permanent price.
 
-What you take on instead is running the server yourself — more on that below.
-
-## You can prove the savings before you pay
-
-One reason renewal sticker-shock stings is that switching feels risky. RustDesk removes the leap of faith: you can **self-host the free, open-source community server today**, or email [sales@rustdesk.com](mailto:sales@rustdesk.com) for current evaluation terms for the Pro features. Prefer to watch first? There's a full [video walkthrough](/blog/see-rustdesk-in-action) on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk).
-
-Use a trial or proof of concept to validate the cost model and operational fit on your own hardware before purchasing an annual license.
+What you take on instead is running the server yourself — the ops line items in the TCO breakdown above are the whole list.
 
 ## It scales, and it consolidates
 
-Cost includes overlapping tools, migration, infrastructure, and operations. Consolidation may help, but validate access-control and SSO requirements against the current plan matrix.
-
-For large deployments, validate current capacity guidance against your workload. Pro provides a web console, while custom client generation and identity features are available from the Basic plan and up. Self-hosting controls server-side components but does not by itself guarantee in-country traffic or GDPR compliance.
+Part of a TeamViewer bill is often a second tool doing overlapping work — a separate unattended-access product, a support add-on, an extra console. Consolidating onto one self-hosted deployment can retire those line items, provided you validate access-control and SSO requirements against the current plan matrix (custom client generation and identity features are available from the Basic plan and up). And the model does not top out early: RustDesk publishes [large-fleet planning guidance](/blog/rustdesk-scale-50000-200000-devices) for sizing well beyond a starter deployment.
 
 ## The cost lands where you control it
 
 Self-hosting puts remote-access cost onto infrastructure and a license you control, instead of a renewal a vendor resets each year — predictable, and yours to plan. For a shop already running servers, that predictability is the win.
 
-## Try it
+## Prove the savings before you pay
 
-- Stand up the **free, open-source community server** and connect your first devices — no cost, no sales call.
-- **Want to try the Pro features?** Email [sales@rustdesk.com](mailto:sales@rustdesk.com) to ask about current evaluation terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) for standard plan rates.
+Renewal sticker-shock stings partly because switching feels risky, so remove the leap of faith: stand up the free, open-source community server, connect your first devices, and validate the cost model and the operational fit on your own hardware before any money moves. When you are ready to test the Pro features, [sales@rustdesk.com](mailto:sales@rustdesk.com) can quote the current evaluation terms — standard plan rates are at [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
 Prove the cost model on your own infrastructure, then decide.

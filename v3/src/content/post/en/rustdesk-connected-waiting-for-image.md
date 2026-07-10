@@ -15,9 +15,9 @@ faq:
   - question: 'Why does RustDesk say "Connected, waiting for image"?'
     answer: "The session established successfully, but the remote machine is not producing a screen image to send. The most common reason is that there is no active display to capture — a headless server with no monitor, a screen that has gone to sleep or locked, or a display the OS won't let RustDesk record. Fix the capture source and the image appears."
   - question: 'How do I fix RustDesk waiting for image on a headless computer?'
-    answer: 'A machine with no monitor has no framebuffer to capture, so RustDesk has nothing to send. Attach a real monitor, plug in an inexpensive HDMI dummy plug that makes the GPU think a display is connected, or on Linux use the documented headless support path. Waking or keeping the display awake resolves most cases.'
+    answer: 'A machine with no monitor has no framebuffer to capture, so RustDesk has nothing to send. Attach a real monitor, plug in an inexpensive HDMI dummy plug that makes the GPU think a display is connected, or on Linux use the documented headless setup (github.com/rustdesk/rustdesk/wiki/Headless-Linux-Support). Waking or keeping the display awake resolves most cases.'
   - question: 'Does changing the video codec fix the black screen?'
-    answer: 'Often, yes. In the remote session toolbar or settings you can switch between H.264, VP8, and VP9. A codec the remote hardware cannot encode will show a blank or frozen image. On Linux the matching hardware codec library must be present for your CPU or GPU, because it is not always installed automatically.'
+    answer: 'Often, yes. In the remote session toolbar or settings you can switch codecs — VP8, VP9, AV1, or H.264/H.265 where hardware supports them. A codec the remote hardware cannot encode will show a blank or frozen image, and falling back to a software codec such as VP9 usually restores the picture.'
   - question: 'RustDesk shows the image on one PC but not another. Why?'
     answer: "That points to something local on the failing machine — an asleep or absent display, missing screen-recording permission on macOS, an outdated GPU driver, a hardware-acceleration conflict, or a codec the hardware can't handle. Work through the per-cause fixes in this guide on the machine that fails, not the one that works."
   - question: 'Could my self-hosted server cause "waiting for image"?'
@@ -42,7 +42,7 @@ Three ways to give it something to capture:
 
 - **Attach a monitor** and make sure it's powered on and awake.
 - **Use an HDMI (or DisplayPort) dummy plug.** These inexpensive adapters make the GPU believe a display is connected, so it keeps rendering a framebuffer for RustDesk to grab. This is the standard fix for headless desktops and home servers.
-- **On Linux, use the documented headless path.** RustDesk supports headless Linux setups, but the configuration differs from a normal desktop session — see the [Linux client documentation](https://rustdesk.com/docs/en/client/linux/).
+- **On Linux, use the documented headless path.** RustDesk supports headless Linux setups, but the configuration differs from a normal desktop session — see the [Headless Linux Support wiki](https://github.com/rustdesk/rustdesk/wiki/Headless-Linux-Support).
 
 If a monitor _is_ attached, the next suspect is that it went to sleep.
 
@@ -51,10 +51,10 @@ If a monitor _is_ attached, the next suspect is that it went to sleep.
 | Cause                          | Signal                              | Fix                                                                                   |
 | ------------------------------ | ----------------------------------- | ------------------------------------------------------------------------------------- |
 | Headless / no display          | Black screen on a server or mini-PC | Attach a monitor, add an HDMI dummy plug, or use the Linux headless path              |
-| Screen asleep / locked         | Worked earlier, black after idle    | Wake the screen; disable sleep/screensaver; on macOS keep it awake with `caffeinate`  |
+| Screen asleep / locked         | Worked earlier, black after idle    | Wake the screen; disable sleep/screensaver; on macOS stop the display sleeping in Settings |
 | Missing permission (macOS)     | Connects, permanent black           | Grant Screen Recording in Privacy & Security; install the helper for the login screen |
-| Codec mismatch                 | Blank or frozen image               | Switch between H.264 / VP8 / VP9; on Linux install the matching hardware codec        |
-| Hardware acceleration conflict | Black on specific GPUs              | Disable with `--hwaccel=0` or `--render=software`; on Windows try `--render=d3d`      |
+| Codec mismatch                 | Blank or frozen image               | Switch codec (VP8 / VP9 / AV1 / H.264 / H.265); fall back to a software codec         |
+| Hardware acceleration conflict | Black on specific GPUs              | Turn off hardware codec in the session toolbar or Settings, or switch codec      |
 | Outdated GPU driver            | Black after a driver/OS update      | Update the GPU driver (NVIDIA especially)                                             |
 | Wayland session (Linux)        | No consent prompt, blank            | Accept the PipeWire/portal prompt and confirm the desktop portal is installed; an X11 session also works where a distro still offers one |
 | Network / relay stall          | Sticks on "waiting for image"       | Allow TCP 21115-21117 and UDP 21116; add TCP 21118-21119 for WebSocket clients        |
@@ -64,8 +64,8 @@ If a monitor _is_ attached, the next suspect is that it went to sleep.
 If it worked earlier and went black after the machine sat idle, the display went to sleep.
 
 - **Windows:** set the power plan so the display and the machine never sleep during the hours you need remote access, and disable the screensaver (or set it not to require a password mid-session).
-- **macOS:** keep the display awake with the built-in `caffeinate` command over SSH, e.g. `caffeinate -u -t 3600` to simulate user activity for an hour. Community threads note this reliably wakes a dozing Mac so RustDesk can capture again ([discussion #12574](https://github.com/rustdesk/rustdesk/discussions/12574)).
-- **Android:** the screen must be on to be shared. Touch the display to wake it, and on Android 9+ enable **"Disable permission monitoring"/screen-share protections in Developer options** so the OS doesn't block capture. iOS-to-Android connections to a dozing device with the screen off are a [known "waiting for image" case](https://github.com/rustdesk/rustdesk/issues/11479).
+- **macOS:** stop the display from sleeping during the hours you need remote access — set it in **System Settings → Displays** (or Lock Screen / Energy settings), and keep the Mac on a power adapter, since sleep behaves differently on battery.
+- **Android:** the screen must be on to be shared, so touch the display to wake it before connecting. Connecting from iOS to a dozing Android device with the screen off is a [known "waiting for image" case](https://github.com/rustdesk/rustdesk/issues/11479) — wake the target first.
 
 ### macOS permissions
 
@@ -73,19 +73,18 @@ macOS refuses to let any app record the screen without explicit consent. If Rust
 
 ### Video codec mismatch
 
-RustDesk can encode the stream several ways, and the default doesn't always suit the remote hardware. In the session toolbar (or Settings), switch the codec between **H.264, VP8, and VP9** and watch for the image to appear ([discussion #12574](https://github.com/rustdesk/rustdesk/discussions/12574)). On Linux there's an extra wrinkle: hardware codecs rely on a library matched to your CPU/GPU, and it is **not always installed automatically**, so a hardware codec can silently produce nothing until the right package is present ([Linux docs](https://rustdesk.com/docs/en/client/linux/)).
+RustDesk can encode the stream several ways, and the default doesn't always suit the remote hardware. In the session toolbar (or Settings), switch the codec — **VP8, VP9, AV1, or H.264/H.265 where hardware supports them** — and watch for the image to appear. If a hardware codec produces a blank image on a particular GPU, dropping back to a software codec such as VP9 is the reliable move.
 
 ### Hardware acceleration and GPU drivers
 
 Some GPUs — NVIDIA configurations come up most often — clash with RustDesk's hardware-accelerated capture and render paths. Two levers help:
 
-- **Disable hardware acceleration** by launching with `--hwaccel=0`, or force software rendering with `--render=software`.
-- **On Windows, try the DirectX path** with `--render=d3d`, which lets the OS grab the screen more dependably on some setups.
-- **Update the GPU driver.** A black screen that started after a driver or OS update is frequently fixed by moving to a current driver, particularly on NVIDIA hardware ([discussion #12574](https://github.com/rustdesk/rustdesk/discussions/12574)).
+- **Turn off the hardware codec.** In the session toolbar (or Settings), disable **Use hardware codec** so encoding falls back to a software path — this clears the black screen on many problem GPUs.
+- **Update the GPU driver.** A black screen that started after a driver or OS update is frequently fixed by moving to a current driver, particularly on NVIDIA hardware.
 
 ### Linux and Wayland
 
-On Linux, **Wayland screen capture goes through PipeWire and the `xdg-desktop-portal`**: it prompts for consent to pick a display the first time — in most cases the choice is remembered, so it does not prompt again — and works inside an active login session. That is a Wayland security design, so by itself it does not cover the greeter or a truly headless box — though unattended Wayland capture is in active development ([PR #15420](https://github.com/rustdesk/rustdesk/pull/15420)). If you get a blank screen on Wayland, the fix is usually to accept the portal's screen-share prompt and confirm `xdg-desktop-portal` and PipeWire are installed and running; on a headless box, use the documented virtual-display configuration. Logging into an X11/Xorg session also avoids the portal path where a distribution still offers one — but as many distributions move to Wayland-only, fixing the portal/PipeWire path is the more future-proof approach. See the [Linux client docs](https://rustdesk.com/docs/en/client/linux/) for the current state.
+On Linux, **Wayland screen capture goes through PipeWire and the `xdg-desktop-portal`**: it prompts for consent to pick a display the first time — in most cases the choice is remembered, so it does not prompt again — and works inside an active login session. That is a Wayland security design, so by itself it does not cover the greeter or a truly headless box — though unattended Wayland capture is in active development ([PR #15420](https://github.com/rustdesk/rustdesk/pull/15420)). If you get a blank screen on Wayland, the fix is usually to accept the portal's screen-share prompt and confirm `xdg-desktop-portal` and PipeWire are installed and running; on a headless box, use the documented [headless configuration](https://github.com/rustdesk/rustdesk/wiki/Headless-Linux-Support). Logging into an X11/Xorg session also avoids the portal path where a distribution still offers one — but as many distributions move to Wayland-only, fixing the portal/PipeWire path is the more future-proof approach.
 
 ### Network and relay
 
@@ -97,8 +96,8 @@ Old builds carry old capture bugs. Update **both** the controlling client and th
 
 ## The open-source advantage
 
-When a black screen defies the checklist, RustDesk gives you something closed-source tools don't: the [actual capture code](/blog/open-source-remote-desktop-software) under an AGPL license. You (or a contractor) can read exactly how capture works on your platform, reproduce the issue, and file a precise report against the public repository — instead of waiting on a vendor's support queue. And because you can [run the relay on your own machine](/blog/why-self-host-remote-desktop-software), you remove the shared-server variable entirely.
+When a black screen defies the checklist, RustDesk gives you something closed-source tools don't: the [actual capture code](/blog/open-source-remote-desktop-software) under an AGPL license. You (or a contractor) can read exactly how capture works on your platform, reproduce the issue, and file a precise report against the public repository — instead of waiting on a vendor's support queue.
 
 ## Fewer variables when the server is yours
 
-Run your own relay and ID server and the shared public infrastructure drops out of the picture — one less unknown when you are chasing a capture problem, and full control over the parts you can tune. That is a quiet bonus on top of keeping the data.
+Run [your own relay and ID server](/blog/why-self-host-remote-desktop-software), and the shared public infrastructure drops out of the picture — one less unknown when you are chasing a capture problem, and full control over the parts you can tune. That is a quiet bonus on top of keeping the data.

@@ -22,7 +22,7 @@ faq:
   - question: 'How does RustDesk handle concurrent connections and licensing?'
     answer: 'Standard plans include unlimited concurrent connections and are sized by login users plus managed devices, so several technicians can run sessions at once without paying per channel. Customized V2 limits and prices concurrent connections separately; see rustdesk.com/pricing.'
   - question: 'What platforms does RustDesk support?'
-    answer: 'RustDesk offers Windows, macOS, Linux, and Android host/controller clients, plus iOS and web-client controller options. Supported host platforms can be managed from a self-hosted web console for permanent-password unattended access to your fleet and ad-hoc attended sessions for one-off support; iOS and the web client can control other devices but cannot act as unattended hosts.'
+    answer: 'RustDesk offers Windows, macOS, Linux, and Android host/controller clients, plus iOS and web-client controller options. Desktop hosts (Windows, macOS, Linux) support permanent-password unattended access managed from a self-hosted web console, alongside ad-hoc attended sessions; Android control is best treated as attended support, and iOS and the web client control other devices but cannot act as unattended hosts.'
 
 metadata:
   description: 'Comparing open source remote desktop software? See why teams pick auditable, self-hosted tools over TeamViewer and AnyDesk — and where RustDesk fits.'
@@ -58,7 +58,7 @@ Those concerns are structural: closed tools can change price, packaging, and hos
 | Apache Guacamole               | Yes             | Yes                                      | Clientless gateway; needs setup                              |
 | RustDesk                       | Yes (AGPL core) | Yes (Server Pro / free community server) | Yes — device groups, address book, custom client             |
 | TeamViewer                     | No              | No                                       | Yes (vendor cloud)                                           |
-| AnyDesk                        | No              | On-premises offering available           | Yes                                                          |
+| AnyDesk                        | No              | On-premises appliance on top tier only   | Yes                                                          |
 
 VNC variants are proven and genuinely open, but you're building the connection, NAT traversal, and access control around them. Guacamole is a great browser-based gateway if you want clientless access, though it's an infrastructure project in its own right. RustDesk aims to give you the auditable, self-hostable core _plus_ the support-team features that closed tools sell — without the closed part.
 
@@ -82,7 +82,7 @@ Open source doesn't have to mean "bring your own everything." RustDesk ships a s
 
 - **Unlimited [concurrent connections](/blog/rustdesk-concurrent-connections-limit) on standard plans; limited on Customized V2.** Several technicians can run sessions at the same time — you pay [per login-user and per managed-device](/blog/rustdesk-pro-license-cost-how-to-pay), not per channel.
 - **Server-side services you host and control.** Run the ID/relay and management services on your infrastructure; direct sessions still flow between endpoints.
-- **Open source.** The client core is [AGPL](/blog/case-for-open-source-remote-access) — audit it, build it yourself, and run the free community server for as long as you like.
+- **Open source.** RustDesk is [AGPL](/blog/case-for-open-source-remote-access)-licensed — audit it, build it yourself, and run the free community server for as long as you like.
 - **Custom, branded clients.** Generate your own preconfigured, logo-branded installer for the platforms you deploy to.
 - **Access control that fits teams.** [Device groups and a shared address book](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book) decide who can reach which machines; [LDAP/SSO](/blog/rustdesk-active-directory-ldap-sso) (OIDC) is available from the Basic plan and up.
 - **Unattended and attended access.** Permanent-password unattended access for your fleet, plus ad-hoc sessions for one-off support.
@@ -92,7 +92,7 @@ Open source doesn't have to mean "bring your own everything." RustDesk ships a s
 
 Self-hosting is the point: you run the ID and relay, so the data, the access policy, and the cost all stay on hardware you control and can audit. Standing up one more server is a modest step for most IT teams — the hardware requirements are low and upkeep is light once it is set up.
 
-### Try it without a sales call
+### Prove it on a spare VM today
 
 You can evaluate on your own terms. Self-host the free, open-source community server today, or email [sales@rustdesk.com](mailto:sales@rustdesk.com) for current evaluation terms for the Pro features — or compare plans at [rustdesk.com/pricing](https://rustdesk.com/pricing). Stand it up, point a couple of devices at it, and see whether the trade-offs fit before you commit a cent of real budget. Prefer to watch first? There's a full [video walkthrough](/blog/see-rustdesk-in-action) on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk).
 

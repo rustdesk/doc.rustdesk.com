@@ -15,7 +15,7 @@ tags:
 author: RustDesk Team
 faq:
   - question: 'Is RustDesk a good alternative to AnyDesk?'
-    answer: "RustDesk is open-source and self-hosted: the ID/rendezvous server, relay, console, and stored data run on your own infrastructure, and the core client is AGPL so you can audit what it does. It's a genuinely different model than AnyDesk's cloud service, and whether it fits depends on whether your team can run a server."
+    answer: "RustDesk is open-source and self-hosted: the ID/rendezvous server, relay, console, and stored data run on your own infrastructure, and it's AGPL-licensed, so you can audit what it does. It's a genuinely different model than AnyDesk's cloud service, and whether it fits depends on whether your team can run a server."
   - question: 'Can I self-host an AnyDesk alternative?'
     answer: 'Yes. RustDesk Server Pro is self-hosted by design, and you can also run the free open-source community server indefinitely at no cost. Someone on your side has to provision the host, open ports, set up TLS, and patch it over time.'
   - question: 'Is RustDesk cheaper than AnyDesk?'
@@ -30,17 +30,15 @@ metadata:
   keywords: 'AnyDesk alternative, self-hosted AnyDesk alternative, open source AnyDesk alternative, AnyDesk replacement'
 ---
 
-## Why people are searching for an AnyDesk alternative
+## Why people leave AnyDesk: rising bills and lost control
 
-Most people who look for an AnyDesk alternative aren't chasing a shinier feature list. They're reacting to two things: the bill going up, and the feeling that they no longer control their own remote-access setup.
+Most people who look for an AnyDesk alternative aren't chasing a shinier feature list. They're reacting to two things: the bill going up, and the feeling that they no longer control their own remote-access setup — sharpened, for security-conscious buyers, by the fact that AnyDesk publicly disclosed a security incident in early 2024 (evaluate that event through public reporting and AnyDesk's own disclosure).
 
-Buyers typically start this search after reviewing renewal costs, vendor dependence, or security requirements. AnyDesk publicly disclosed a security incident in early 2024; evaluate that event through public reporting and AnyDesk's own disclosure.
-
-If that's roughly where you are, this page is for you. RustDesk takes a genuinely different approach from AnyDesk's cloud — you host it, so the data and the access stay yours — and this lays out exactly how, and where it fits best.
+If that's roughly where you are, you're in the right place. RustDesk takes a genuinely different approach from AnyDesk's cloud — you host it, so the data and the access stay yours — and this page lays out exactly how, and where it fits best.
 
 ## The core difference: rent access, or own it
 
-AnyDesk is a cloud service. Your sessions route through infrastructure the vendor owns, and you pay a subscription to keep the lights on. When they change the price or the terms, you adapt.
+AnyDesk is a cloud service. Sessions are brokered through vendor infrastructure by default (media can be direct or relayed), and you pay a subscription to keep the lights on. When they change the price or the terms, you adapt.
 
 RustDesk flips that. **RustDesk Server Pro is self-hosted** — the ID/rendezvous server, relay, console, and stored deployment data run on _your_ infrastructure. Direct sessions still flow between endpoints; relayed traffic uses the relay you configure.
 
@@ -55,7 +53,7 @@ And **RustDesk's core is [open source (AGPL)](/blog/case-for-open-source-remote-
 | Where your data lives                                                 | Vendor infrastructure       | Infrastructure you control                                                        |
 | [Concurrent connections](/blog/rustdesk-concurrent-connections-limit) | Plan-dependent              | Unlimited on standard plans; limited on [Customized V2](https://rustdesk.com/pricing#custom2)                             |
 | Licensing model                                                       | Per-seat cloud subscription | [Per login-user + per managed-device](/blog/rustdesk-pro-license-cost-how-to-pay) |
-| Try without sales call                                                | Varies                      | Free server today, or Pro trial on request                                        |
+| Try without sales call                                                | Varies                      | Free server today; ask sales about evaluation terms                                        |
 
 For exact AnyDesk pricing and plan tiers, check their current pricing page — we don't quote competitor numbers we can't verify.
 
@@ -63,7 +61,7 @@ For exact AnyDesk pricing and plan tiers, check their current pricing page — w
 
 You choose where the rendezvous, relay, console, and device data run. Direct connections still travel between endpoints, and relayed traffic uses your configured relay, so self-hosting alone does not guarantee in-country traffic or GDPR compliance. See the [data-sovereignty guide](/blog/remote-desktop-data-sovereignty-gdpr).
 
-## Benefit 2: Choose the concurrency model
+## Benefit 2: A different concurrency model
 
 A common licensing question is how simultaneous work is counted. RustDesk standard plans include unlimited concurrent connections, while Customized V2 has a defined concurrency allowance and charges for additional connections. All paid plans must also fit login-user and managed-device counts.
 
@@ -92,12 +90,8 @@ Do not start by removing AnyDesk. Run both tools during a controlled pilot and v
 
 That pilot tells you whether the control gained through self-hosting is worth the operating work. It also exposes feature or platform dependencies before they become a migration outage.
 
-## Try it without a sales call
+## Prove it on your own hardware first
 
-You don't have to book a demo to find out if this fits.
-
-- **Self-host the free open-source community server today** — no cost, no expiry.
-- **Want to try the Pro features?** Email [sales@rustdesk.com](mailto:sales@rustdesk.com) to ask about current evaluation terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) for standard plan rates.
-- **Prefer to see it first?** Watch a full [video demo](/blog/see-rustdesk-in-action) on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk) — no booking required.
+Stand up the free, open-source community server and point a few test devices at it — it costs nothing and never expires. When you want to evaluate the Pro console, branding, and access controls, email [sales@rustdesk.com](mailto:sales@rustdesk.com) about current evaluation terms and compare standard plan rates at [rustdesk.com/pricing](https://rustdesk.com/pricing). If you'd rather watch before you install, there's a [video demo](/blog/see-rustdesk-in-action) on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk).
 
 Start at [rustdesk.com](https://rustdesk.com) and see the code for yourself on [GitHub](https://github.com/rustdesk/rustdesk).

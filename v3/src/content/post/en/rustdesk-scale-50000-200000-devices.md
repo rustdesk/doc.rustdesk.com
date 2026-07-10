@@ -18,7 +18,7 @@ faq:
   - question: 'What has to be tuned to reach 200,000 devices?'
     answer: 'Validate online-device churn, simultaneous remote sessions, relay bandwidth, caching, database write performance, and management-console activity against your own workload. The public-server result demonstrates endpoint-presence scale; it does not reproduce every Server Pro workload.'
   - question: 'Does RustDesk Server Pro support high availability or load balancing?'
-    answer: 'For very large fleets, high availability and load balancing are worth designing in, but the specifics such as relay redundancy, database failover, and how sessions are distributed should be validated with RustDesk against your workload rather than assumed as out-of-the-box defaults.'
+    answer: 'The architecture supports scaling out — deployments can run multiple relays and place them regionally — but high availability is a design exercise rather than an out-of-the-box default: validate relay redundancy, database failover, and session distribution with RustDesk against your workload.'
   - question: 'Is public RustDesk infrastructure sized the same as a self-hosted deployment?'
     answer: 'Not necessarily. The public-server figure measures online endpoints, not two million simultaneous remote-control sessions. A self-hosted Server Pro deployment can add different database, console, policy, audit, and relay loads, so reproduce your expected concurrency and traffic profile before final sizing.'
 
@@ -51,7 +51,7 @@ For planning purposes, use the public server's more than two million online endp
 
 ## Who asks this
 
-This question typically comes from enterprises, [MSPs](/blog/rustdesk-for-msps), and public-sector IT teams planning multi-year rollouts. These buyers are usually leaving a commercial tool for cost or data-sovereignty reasons and need confidence that a self-hosted platform will grow with them rather than hit a wall mid-contract.
+Fleet architects planning multi-year rollouts — at enterprises, large [MSPs](/blog/rustdesk-for-msps), and public-sector IT programs — put this near the top of their diligence list. These buyers are usually leaving a commercial tool for cost or data-sovereignty reasons and need confidence that a self-hosted platform will grow with them rather than hit a wall mid-contract.
 
 ## Related questions
 

@@ -15,12 +15,12 @@ author: RustDesk Team
 faq:
   - question: 'How do I get a custom RustDesk Pro quote?'
     answer: 'RustDesk publishes Basic, Customized, and Customized V2 self-hosting plans. Size a quote by login users and managed devices, plus concurrent connections for Customized V2. For invoice, bank transfer, taxes, or billing workflow, confirm the current terms on the pricing page or with sales.'
-  - question: 'Does RustDesk license per user or per device?'
+  - question: 'Which counts does a custom quote size on — users, devices, or both?'
     answer: 'Both. A Customized quote scales along login-user and managed-device counts, and Customized V2 adds a defined number of concurrent connections as a third input. See rustdesk.com/pricing for current allowances.'
   - question: 'What is the difference between the Basic and Customized self-hosted Pro plans?'
     answer: 'Basic includes fixed login-user and managed-device allowances. Customized starts from the Basic feature set and adds separately priced users and devices, while Customized V2 also lets you select a limited number of concurrent connections.'
   - question: 'Is there a minimum number of users required for RustDesk Pro?'
-    answer: 'No fixed public minimum is quoted here. If your team is small, confirm the current entry-level allowances and any minimum with the RustDesk team at sales@rustdesk.com before you buy.'
+    answer: 'RustDesk does not publish a fixed minimum on the pricing page. If your team is small, confirm the current entry-level allowances and any minimum with the RustDesk team at sales@rustdesk.com before you buy.'
   - question: 'Can I pay for RustDesk by bank transfer or invoice?'
     answer: 'Yes. RustDesk accepts major credit cards and online payment methods at checkout, and bank transfer on request — email sales@rustdesk.com. Bank transfer carries an extra bank processing fee, and the license is issued once the funds arrive, typically in about 3–5 working days (SEPA bank debit can take around 6 business days, sometimes up to 10).'
   - question: 'Can I get a business invoice with my company name and tax number (VAT)?'
@@ -43,20 +43,24 @@ Choose capacity for both login users and managed devices. If you use Customized 
 
 Because Customized licensing scales along login-user and managed-device counts, there is no single total for every organization. Customized V2 adds a third input: concurrent connections.
 
-Basic currently includes fixed login-user and managed-device allowances. Customized starts from the Basic feature set and adds separately priced users and devices. Use the live calculator rather than relying on historical quote rules.
+Basic currently includes fixed login-user and managed-device allowances. Customized starts from the Basic feature set and adds separately priced users and devices. Use the live calculator for current figures.
 
-The payment method affects timing and total cost. Online checkout accepts major credit cards and common online payment methods, and you receive your invoice and license by email once payment clears. If you need a **business invoice** with your company name and **tax number (VAT)**, tick the "I am purchasing as a business" box on the payment page; the currency you choose there is the currency printed on the invoice. **Bank transfer** is available on request through [sales@rustdesk.com](mailto:sales@rustdesk.com) — it carries an extra bank processing fee, and the license is issued after the funds arrive, typically in about 3–5 working days (SEPA bank debit can take roughly 6 business days, occasionally up to 10). Billing is **annual only**: there is no monthly option and no auto-renewal, though RustDesk emails a renewal reminder 14 days before expiry. One thing buyers often ask about: there are no hidden fees beyond the displayed plan cost. You can validate your whole deployment on the free self-hosted plan before you buy. After purchase, you can retrieve invoices and manage renewals, upgrades, or a license migration anytime in the [self-service license portal](https://rustdesk.com/self-host/account/) — log in with the email you used on the payment page, or email [support@rustdesk.com](mailto:support@rustdesk.com) if you no longer know which one. Always confirm the latest terms on [rustdesk.com/pricing](https://rustdesk.com/pricing).
+The payment method affects timing and total cost. Online checkout accepts major credit cards and common online payment methods, and you receive your invoice and license by email once payment clears. If you need a **business invoice** with your company name and **tax number (VAT)**, tick the "I am purchasing as a business" box on the payment page; the currency you choose there is the currency printed on the invoice. **Bank transfer** is available on request through [sales@rustdesk.com](mailto:sales@rustdesk.com) — it carries an extra bank processing fee, and the license is issued after the funds arrive, typically in about 3–5 working days (SEPA bank debit can take roughly 6 business days, occasionally up to 10). One thing buyers often ask about: aside from the bank-transfer processing fee noted above, there are no hidden fees beyond the displayed plan cost.
+
+Billing is **annual** — there is no monthly option and no auto-renewal, though RustDesk emails a renewal reminder 14 days before expiry, and multi-year terms can be arranged through [sales@rustdesk.com](mailto:sales@rustdesk.com). You can validate your whole deployment on the free self-hosted plan before you buy.
+
+After purchase, you can retrieve invoices and manage renewals, upgrades, or a license migration anytime in the [self-service license portal](https://rustdesk.com/self-host/account/) — log in with the email you used on the payment page, or email [support@rustdesk.com](mailto:support@rustdesk.com) if you no longer know which one. Always confirm the latest terms on [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
 To keep the process quick, gather your user count, device count, and any billing constraints before you request a quote. That reduces back-and-forth and helps you compare options against the current plan matrix.
 
 ## Who asks this
 
-This comes up most often with IT admins, MSPs, and businesses evaluating RustDesk against tools like TeamViewer or AnyDesk, where per-seat pricing can climb quickly at scale. These buyers typically know their headcount and endpoint counts and want a concrete, volume-based number they can take to finance — which is exactly what the custom-quote process is built to deliver.
+Procurement-minded buyers drive this question: an MSP pricing a multi-client rollout, or an internal IT lead sizing capacity beyond the fixed Basic allowances. These buyers typically know their headcount and endpoint counts and want a concrete number they can take to finance — which is exactly what the custom-quote process is built to deliver.
 
 ## Related questions
 
 - [How does RustDesk's per-user and per-device licensing work?](/blog/what-counts-as-a-managed-device)
-- [What is the difference between the Basic and Custom self-hosted Pro plans?](/blog/rustdesk-pro-license-cost-how-to-pay)
+- [How does concurrency work across the different plans?](/blog/rustdesk-concurrent-connections-limit)
 - [Can I upgrade my plan mid-term as I grow?](/blog/upgrade-rustdesk-license-mid-subscription)
 - [Does RustDesk offer a lifetime or perpetual license?](/blog/rustdesk-lifetime-perpetual-license)
 

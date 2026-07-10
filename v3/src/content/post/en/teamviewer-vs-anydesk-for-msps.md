@@ -38,13 +38,11 @@ MSPs sometimes inherit a mix of TeamViewer, AnyDesk, and RDP across clients. Thi
 | Best fit                    | Service desks needing policy controls, reporting, and integrations      | Teams prioritizing a compact client, connection performance, and branding                                                             |
 | Hosting                     | Managed cloud plans                                                     | Managed cloud on standard tiers; Ultimate advertises cloud or on-premises deployment                                                  |
 
-Treat the pricing rows as dated, since both vendors reprice often.
-
 ## Licensing: the real difference is what you're metered on
 
-TeamViewer packages named users and concurrent-session capacity into tiers. Buyers should compare the complete written quote, including add-ons, with their actual workload.
+TeamViewer packages named users and concurrent-session capacity into tiers, with add-ons layered on top.
 
-AnyDesk plan packaging and renewal terms can change. Its [official pricing page](https://anydesk.com/en/pricing), checked July 7, 2026, lists Solo with one user and one connection, Standard with up to 20 users and one included connection, and Advanced with up to 100 users and two included connections; managed-device and connection add-on limits vary by plan. Compare that page and a dated written quote against the exact users, concurrent sessions, managed endpoints, and features your MSP requires. Do not base a purchase on another customer's legacy contract. Security review should be separate from price review; the [2024 incident](https://anydesk.com/en/public-statement) belongs in the vendor-risk assessment, not as proof that one licensing model is better.
+AnyDesk plan packaging and renewal terms can change. Its [official pricing page](https://anydesk.com/en/pricing), checked July 7, 2026, lists Solo with one user and one connection, Standard with up to 20 users and one included connection, and Advanced with up to 100 users and two included connections; managed-device and connection add-on limits vary by plan. Compare that page and a dated written quote against the exact users, concurrent sessions, managed endpoints, and features your MSP requires. Do not base a purchase on another customer's legacy contract. AnyDesk's [2024 incident](https://anydesk.com/en/public-statement) belongs in the vendor-risk assessment alongside this licensing review.
 
 ## Where each one actually fits
 
@@ -56,13 +54,13 @@ Neither vendor is going to solve the thing a lot of MSPs actually want, though: 
 
 ## Why some MSPs look past both
 
-This is the part where RustDesk makes its case, so read it as vendor-authored commentary.
+From here down you are reading the maker's case — we build RustDesk — so weigh these points accordingly.
 
 **A different unit of pricing.** RustDesk licenses by **login-user plus managed-device**. Standard plans include unlimited concurrent connections; [Customized V2](https://rustdesk.com/pricing#custom2) limits and prices them separately.
 
 **Self-hosted server-side services.** RustDesk Server Pro runs the ID/rendezvous, relay, console, and stored deployment data on infrastructure you control. Direct sessions still flow between endpoints. For regulated clients, this supplies architectural control, but it does not by itself satisfy data-residency or compliance requirements.
 
-**Open source you can audit.** The client is AGPL-licensed — inspect it, build it yourself, run the free community server indefinitely. That's a structurally different trust model than a closed-source client whose licensing terms you don't control.
+**Open source you can audit.** RustDesk is AGPL-licensed — inspect it, build it yourself, run the free community server indefinitely. That's a structurally different trust model than a closed-source client whose licensing terms you don't control.
 
 **Built for the MSP workflow.** A self-hosted web console, a custom-branded client generator, device groups, and a shared address book cover the "one console, many technicians, many client devices" requirement. Feature availability varies by RustDesk plan, and Customized V2 has a concurrency allowance, so verify the current matrix. See [RustDesk for MSPs](/blog/rustdesk-for-msps) for the full picture, and our deeper head-to-heads: [RustDesk vs TeamViewer](/blog/rustdesk-vs-teamviewer) and [RustDesk vs AnyDesk](/blog/rustdesk-vs-anydesk). If TeamViewer is the incumbent you're actually trying to replace, [the self-hosted TeamViewer alternative](/blog/self-hosted-teamviewer-alternative) covers that migration specifically.
 
@@ -72,4 +70,4 @@ Both of these live in someone else's cloud. Self-hosting RustDesk is the other m
 
 ## Try it
 
-Self-host the free community server today. Email [sales@rustdesk.com](mailto:sales@rustdesk.com) to ask about current evaluation terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) for standard plan rates. Prefer to watch first? There's a full video walkthrough on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk).
+Testing the claim costs nothing: self-host the free community server against one real client site and see how it holds up. When you are ready to look at the Pro features, [sales@rustdesk.com](mailto:sales@rustdesk.com) can share current evaluation terms, and plan rates are published at [rustdesk.com/pricing](https://rustdesk.com/pricing).

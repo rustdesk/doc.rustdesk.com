@@ -4,7 +4,7 @@ lang: en
 translationKey: rustdesk-vs-logmein
 draft: false
 title: 'RustDesk vs LogMeIn: Self-Hosted, AD-Ready Remote Access'
-excerpt: "Replacing LogMeIn Central or Pro? Here's how RustDesk compares on cost, self-hosting, and data control — plus an honest look at the trade-offs."
+excerpt: "Replacing LogMeIn Central or Pro? Here's how RustDesk compares on cost, self-hosting, and data control — trade-offs included."
 image: ~/assets/images/blog/rustdesk-vs-logmein-og.png
 category: Comparisons
 tags:
@@ -26,9 +26,7 @@ faq:
     answer: 'RustDesk is self-hosted: you run the ID/rendezvous, relay, and management services on infrastructure you control, whereas LogMeIn is vendor-operated SaaS. That gives you data control but transfers server operation, patching, and backups to your team.'
 ---
 
-Teams comparing LogMeIn and RustDesk usually focus on total cost and whether the service is vendor-hosted or self-hosted. This article does not reproduce private sales emails.
-
-If you're comparing RustDesk and LogMeIn, here's an honest look at how they differ.
+LogMeIn and RustDesk sit at opposite ends of the same job: one is a vendor-hosted subscription, the other an open-source platform you run on your own server. This comparison covers what that split means for cost, data control, identity integration, and the work of migrating.
 
 ## The short version
 
@@ -37,13 +35,13 @@ If you're comparing RustDesk and LogMeIn, here's an honest look at how they diff
 | **Hosting**                                                               | Vendor cloud (SaaS)   | Self-hosted on your own server                        |
 | **Server-side services and data**                                         | Vendor-operated       | Operated on infrastructure you control                |
 | **Source code**                                                           | Closed                | Open source                                           |
-| **Licensing model**                                                       | Per-seat subscription | Per login-user **+** per managed-device               |
+| **Licensing model**                                                       | Subscription; unit varies by product (per computer for Pro/Central, per technician for Rescue) | Per login-user **+** per managed-device |
 | **[Concurrent connections](/blog/rustdesk-concurrent-connections-limit)** | Plan-dependent        | Unlimited on standard plans; limited on [Customized V2](https://rustdesk.com/pricing#custom2) |
-| **How you evaluate**                                                      | Vendor trial          | Self-host free, or email for a Pro trial              |
+| **How you evaluate**                                                      | Vendor trial          | Self-host free, or ask sales about evaluation terms   |
 
 ## Why teams start looking
 
-Cost comparisons should use current written quotes for the same technician, device, concurrency, and feature requirements. Do not infer current pricing from another organization's private deployment details.
+The first trigger is cost — a renewal total that no longer matches what the team actually uses.
 
 The second trigger is control. LogMeIn is a pure cloud product — your sessions and device list live on LogMeIn's servers, on LogMeIn's terms. Some of the teams evaluating RustDesk specifically wanted a self-hosted option instead, so the server (and their data) sits on infrastructure they manage.
 
@@ -83,10 +81,10 @@ Before removing the incumbent agent, verify external direct and relay connection
 
 LogMeIn keeps the brokering and account data in its cloud; RustDesk puts them on a server you run, wired to your own directory. If control over data and cost drove the search, that is where these two part ways.
 
-## Try it without a sales call
+## See it running before you decide
 
 - **Self-host the free community server today** — open source, no cost, no expiry.
-- **Want to try the Pro features?** Email [sales@rustdesk.com](mailto:sales@rustdesk.com) to ask about current evaluation terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) for standard plan rates.
+- **Want to try the Pro features?** Email [sales@rustdesk.com](mailto:sales@rustdesk.com) to ask about current evaluation terms.
 - **Prefer to see it first?** Watch a full [video demo](/blog/see-rustdesk-in-action) on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk) — no booking required.
 
 Licensing is per login-user + per managed-device, and you can [upgrade any time](/blog/upgrade-rustdesk-license-mid-subscription). Start at [rustdesk.com/pricing](https://rustdesk.com/pricing).

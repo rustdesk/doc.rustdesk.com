@@ -15,7 +15,7 @@ tags:
 author: RustDesk Team
 faq:
   - question: 'Is RustDesk a good ScreenConnect alternative for MSPs?'
-    answer: 'RustDesk is an open-source, self-hosted platform where the ID/rendezvous server, relay, console, and stored data run on infrastructure you control, with a custom-branded client generator and per-user access control built for MSP operations. Whether it fits depends on your team being comfortable running a server.'
+    answer: 'RustDesk is an open-source, self-hosted platform where the ID/rendezvous server, relay, console, and stored data run on infrastructure you control, with a custom-branded client generator (Basic plan and up) and per-user access control built for MSP operations. Whether it fits depends on your team being comfortable running a server.'
   - question: 'Does RustDesk charge per channel like ScreenConnect?'
     answer: 'No. RustDesk licensing is per login-user plus per managed-device, and standard plans include unlimited concurrent connections; Customized V2 limits and prices them separately. See rustdesk.com/pricing.'
   - question: 'Can I self-host a ScreenConnect alternative?'
@@ -30,21 +30,19 @@ metadata:
   keywords: 'ScreenConnect alternative, ConnectWise Control alternative for MSPs, self-hosted ScreenConnect replacement, MSP remote support alternative'
 ---
 
-## Why MSPs are evaluating ScreenConnect alternatives
+## The short answer for MSPs weighing ScreenConnect alternatives
 
 The short version: for an MSP that wants to own its remote-access stack, RustDesk is the strongest self-hosted, open-source ScreenConnect alternative — you run the server, brand the client, and license by users and devices rather than per technician.
 
-[The 2024 ScreenConnect vulnerability](https://www.cisa.gov/news-events/alerts/2024/02/22/cisa-adds-one-known-exploited-connectwise-vulnerability-cve-2024-1709-catalog) and product packaging changes prompted renewed evaluation of alternatives. The documented event was exploitation of CVE-2024-1709 in affected ScreenConnect servers, not a compromise of ConnectWise itself. Security conclusions here rely on public disclosures.
+[The 2024 ScreenConnect vulnerability](https://www.cisa.gov/news-events/alerts/2024/02/22/cisa-adds-one-known-exploited-connectwise-vulnerability-cve-2024-1709-catalog) prompted renewed evaluation of alternatives. The documented event was exploitation of CVE-2024-1709 in affected ScreenConnect servers, not a compromise of ConnectWise itself. Security conclusions here rely on public disclosures.
 
 If you run a managed services shop, this is a business-continuity question, not just a licensing one. When a critical remote-access server vulnerability is actively exploited, clients may block affected versions or instances until remediation is verified. This article makes the case for RustDesk: an open-source, self-hosted remote desktop platform built for an "our infrastructure, our rules" posture.
 
 ## The core difference: you host it, so you control it
 
-The biggest structural difference between RustDesk and ScreenConnect's cloud offering is who operates the server-side services. RustDesk Server Pro is **self-hosted**: the ID/rendezvous server, relay, console, and stored deployment data run on infrastructure you control. Direct sessions still flow between endpoints; sessions use your relay only when direct connectivity fails or relay is forced.
+The biggest structural difference between RustDesk and ScreenConnect's cloud offering is who operates the server-side services. RustDesk Server Pro is **self-hosted**: the ID/rendezvous server, relay, console, and stored deployment data run on infrastructure you control. Direct sessions still flow between endpoints; sessions use your relay only when direct connectivity fails or relay is forced — and you can prove the concept on the free community server first.
 
-The free community server supports a self-hosted proof of concept before a buyer evaluates paid Server Pro features.
-
-On top of that, RustDesk's core client is **[open source (AGPL)](/blog/case-for-open-source-remote-access)**. You can read the code, audit exactly what the client does on a customer's machine, build it yourself, and run the free community server indefinitely. For an MSP that has to answer a hospital's or a bank's security questionnaire, "here's the source, and it runs on our servers" is a much stronger answer than "trust our cloud."
+On top of that, RustDesk is **[open source (AGPL)](/blog/case-for-open-source-remote-access)**. You can read the code, audit exactly what the client does on a customer's machine, build it yourself, and run the free community server indefinitely. For an MSP that has to answer a hospital's or a bank's security questionnaire, "here's the source, and it runs on our servers" is a much stronger answer than "trust our cloud."
 
 ## RustDesk vs ScreenConnect at a glance
 
@@ -54,15 +52,13 @@ On top of that, RustDesk's core client is **[open source (AGPL)](/blog/case-for-
 | Source code                                                  | Proprietary                         | Open source (AGPL), auditable                                                             |
 | Pricing model                                                | Per-channel / seat (see vendor)     | [Per login-user + per managed-device](/blog/rustdesk-pro-license-cost-how-to-pay)         |
 | Concurrent sessions                                          | Tied to channels/licensing          | Standard plans unlimited; [Customized V2](https://rustdesk.com/pricing#custom2) limited                                           |
-| Custom-branded client                                        | Available (see vendor)              | Custom-branded client generator                                                           |
+| Custom-branded client                                        | Available (see vendor)              | Custom-branded client generator (Basic plan and up)                                       |
 | [Data residency](/blog/remote-desktop-data-sovereignty-gdpr) | Vendor-dependent                    | Server-side services on infrastructure you control; endpoint routes still matter          |
-| Evaluate without sales call                                  | Varies                              | Free server today, or Pro trial on request                                                |
+| Evaluate without sales call                                  | Varies                              | Free server today; ask sales about evaluation terms                                                |
 
 For exact RustDesk prices and plan-by-plan feature availability, [see rustdesk.com/pricing](https://rustdesk.com/pricing).
 
 ## No per-channel tax, no concurrency ceiling on standard plans
-
-Compare the products through a proof of concept that covers features, cost, usability, migration, and operating effort.
 
 RustDesk licensing is **per login-user plus per managed-device**. Standard plans include unlimited [concurrent connections](/blog/rustdesk-concurrent-connections-limit); Customized V2 limits and prices them separately. Upgrades can be prorated.
 
@@ -96,8 +92,4 @@ Keep ScreenConnect available during the pilot. A passing scorecard and a tested 
 
 ## Run an MSP proof of concept
 
-You do not need a full migration to test the model.
-
-- **Self-host the free open-source community server today** — open source, no cost, no expiry.
-- **Want to try the Pro features?** Email [sales@rustdesk.com](mailto:sales@rustdesk.com) to ask about current evaluation terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) for standard plan rates.
-- **Prefer to see it first?** Watch a full [video walkthrough](/blog/see-rustdesk-in-action).
+You do not need a full migration to test the model. Work the scorecard above against the free, open-source community server, which costs nothing and has no expiry date. When branded clients, scoped technician access, and SSO enter the picture, ask [sales@rustdesk.com](mailto:sales@rustdesk.com) what evaluation terms are currently offered, and size the plans at [rustdesk.com/pricing](https://rustdesk.com/pricing).

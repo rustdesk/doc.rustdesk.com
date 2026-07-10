@@ -21,7 +21,7 @@ faq:
   - question: 'Can RustDesk transfer files to and from a Mac?'
     answer: 'Yes. RustDesk supports two-way file transfer between the local and remote machine, including to and from macOS, alongside remote view and control. Granting Full Disk Access can help RustDesk reach protected locations.'
 metadata:
-  description: 'Install RustDesk on Apple Silicon or Intel Macs, grant the right macOS permissions, set up unattended access and file transfer, and connect to your own server.'
+  description: 'RustDesk on macOS: pick the right build for your chip, fix the black-screen permission quirk, enable unattended access, and point it at your own server.'
   keywords: 'RustDesk for Mac, RustDesk macOS, RustDesk Apple Silicon, RustDesk mac permissions, RustDesk screen recording accessibility, RustDesk mac unattended access, RustDesk mac install'
 ---
 
@@ -65,7 +65,7 @@ Unattended access lets you connect to a Mac when nobody's there to click "accept
 
 1. Open RustDesk and click **Install** to register it as a background service (this is what lets it accept connections without a logged-in user clicking through).
 2. Set a strong **permanent password** in the connection settings, and enable **two-factor authentication** if you want the extra layer.
-3. Confirm RustDesk is set to **start at boot**, and that Screen Recording plus Accessibility are granted — without them the service runs but control silently fails.
+3. Confirm the RustDesk **service is installed and running** — once installed it starts at boot via its LaunchDaemon — and that Screen Recording plus Accessibility are granted; without them the service runs but control silently fails.
 
 For deploying across many Macs, RustDesk provides a scriptable path. Per the [macOS auto-start service setup wiki](<https://github.com/rustdesk/rustdesk/wiki/macOS-Auto%E2%80%90Start-Service-Setup-(for-Remote---MDM-Deployment)>), an `install_service.sh` script installs RustDesk (or your custom-branded client) as a service without needing the GUI **Install** button, creating a LaunchDaemon at `/Library/LaunchDaemons/com.carriez.RustDesk_service.plist` and a LaunchAgent at `/Library/LaunchAgents/com.carriez.RustDesk_server.plist`. The daemon starts at boot; the agent starts at the login-window session and persists through login.
 

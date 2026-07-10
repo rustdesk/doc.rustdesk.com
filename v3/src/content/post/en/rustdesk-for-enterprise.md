@@ -14,7 +14,7 @@ tags:
 author: RustDesk Team
 faq:
   - question: 'Can RustDesk be mass-deployed across an enterprise fleet?'
-    answer: 'Yes. RustDesk provides a Windows MSI for silent, unattended installation via msiexec, deployable through Group Policy (GPO), Microsoft Intune, an RMM, or packaging tools, and the custom client generator ships a client pre-configured to your own server.'
+    answer: 'Yes. RustDesk provides a Windows MSI for silent, unattended installation via msiexec, deployable through Group Policy (GPO), Microsoft Intune, an RMM, or packaging tools, and the custom client generator (Basic plan and up) ships a client pre-configured to your own server.'
   - question: 'Does RustDesk have a REST API?'
     answer: 'Yes. RustDesk Server Pro exposes a REST API for bulk device management and scripting, so you can onboard, enumerate, and remove devices programmatically instead of only through the web console. Confirm current endpoints in the RustDesk documentation.'
   - question: 'Does RustDesk support Active Directory and SSO for enterprise identity?'
@@ -28,7 +28,7 @@ metadata:
   keywords: 'RustDesk for enterprise, RustDesk enterprise deployment, AD-integrated remote support, enterprise RustDesk architecture'
 ---
 
-## RustDesk for enterprise: keep your remote access on your own infrastructure
+## Keep remote access on infrastructure you control
 
 Enterprise evaluations usually focus on infrastructure control, identity, access policy, auditability, scale, and licensing predictability. Those requirements can be compared directly against public product capabilities and documentation.
 
@@ -68,7 +68,7 @@ Operational monitoring must include unexpected registrations. If a new device ap
 | Identity integration                | LDAP/SSO (OIDC), available from the Basic plan and up ([see rustdesk.com/pricing](https://rustdesk.com/pricing))                                    |
 | Scale planning                      | Large-fleet guidance is available; validate capacity against your rollout design and operating model.                                               |
 | Source availability                 | Core is open source (AGPL) — auditable and self-buildable.                                                                                          |
-| Evaluation                          | Free community server today, or email sales@rustdesk.com for a Pro trial (or watch a [video walkthrough](https://www.youtube.com/@rustdesk) first). |
+| Evaluation                          | Free community server today, or email sales@rustdesk.com to ask about current evaluation terms (or watch a [video walkthrough](https://www.youtube.com/@rustdesk) first). |
 
 ## Data control and compliance
 
@@ -106,7 +106,7 @@ At scale the case sharpens: the ID/relay, console, and stored data live inside y
 
 You can evaluate **[without a sales call](/blog/see-rustdesk-in-action)**. Two paths:
 
-- **Self-host the free, open-source community server today.** It's yours to run indefinitely — good for validating the architecture on your own network.
-- **Want to try the Pro features?** Email [sales@rustdesk.com](mailto:sales@rustdesk.com) to ask about current evaluation terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) for standard plan rates.
+- **Validate the architecture with the free, open-source community server.** It runs indefinitely on your own network — a low-stakes way to prove the self-hosted model to your security team.
+- **For the Pro capabilities — identity, access control, client generation —** review current plans at [rustdesk.com/pricing](https://rustdesk.com/pricing), then email [sales@rustdesk.com](mailto:sales@rustdesk.com) for the evaluation terms available to your organization.
 
 Either way, stand up a server against your own environment and validate it before you commit.

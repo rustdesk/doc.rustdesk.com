@@ -21,7 +21,7 @@ faq:
   - question: 'Can I self-host Chrome Remote Desktop?'
     answer: "No. Chrome Remote Desktop is brokered entirely through Google's infrastructure and tied to your Google account; there is no option to run the connection service on your own server or to audit the client code. If self-hosting and code you can inspect matter to you, an open-source alternative is a different assurance model."
 metadata:
-  description: 'Is Chrome Remote Desktop safe? A fair look at its encryption, PIN and Google-account model, the real risks, and where self-hosting differs.'
+  description: 'Is Chrome Remote Desktop safe? What Google documents about CRD encryption, PIN protection, the practical risks, and the Google-account trust model.'
   keywords: 'is Chrome Remote Desktop safe, Chrome Remote Desktop security, Chrome Remote Desktop encryption, Chrome Remote Desktop PIN, Chrome Remote Desktop risks, CRD safe'
 ---
 
@@ -37,7 +37,7 @@ Where you should pause is anything beyond casual use. CRD is tied to your Google
 
 Three mechanisms do the real work, all documented on [Google's help pages](https://support.google.com/chrome/answer/1649523):
 
-- **Encryption.** Google states that "all remote desktop sessions are fully encrypted." Independent reviews describe the connection as using standard web transport security (TLS with AES). Google doesn't publish a detailed protocol breakdown on its consumer pages, so treat the encryption as adequate but not something you can independently audit.
+- **Encryption.** Google states that "all remote desktop sessions are fully encrypted." Third-party analyses generally describe the connection as using standard web transport security (TLS with AES). Google doesn't publish a detailed protocol breakdown on its consumer pages, so treat the encryption as adequate but not something you can independently audit.
 - **PIN for unattended access.** To reach a computer you've set up for ongoing remote access, you enter a PIN. This is what stops a random person with your Google session from silently connecting.
 - **One-time access codes for support.** When you're helping someone in real time, the host generates a code that, per Google, works only once, and continued sharing requires re-confirmation periodically.
 
@@ -59,7 +59,7 @@ CRD is deliberately minimal, and for a lot of people that's the appeal. But it's
 
 You can't self-host it. Every CRD connection is brokered through Google's cloud and tied to a Google account; there's no option to run the rendezvous service on your own server, and no source code to audit — you trust Google that the host behaves as described. There's also little in the way of team administration, centralized policy, access-control lists, session logging, or device grouping. That's not a knock on Google; it's just not what CRD is for. If you need those, you've outgrown it, and a [more capable free remote-desktop tool](/blog/best-free-remote-desktop-software) or a [dedicated Chrome Remote Desktop alternative](/blog/chrome-remote-desktop-alternative) is the honest next step.
 
-This is where an open-source, self-hosted model offers a different _kind_ of assurance rather than just more features. With RustDesk, the client is [open source under the AGPL](/blog/case-for-open-source-remote-access), so the code is auditable and buildable — you don't take the vendor's word for what it does. And self-hosting means the ID/rendezvous and relay servers run on your own machine or VPS, so brokering and access policy stay on infrastructure you control instead of Google's cloud — which maps directly onto [data-sovereignty and GDPR](/blog/remote-desktop-data-sovereignty-gdpr) concerns.
+This is where an open-source, self-hosted model offers a different _kind_ of assurance rather than just more features. With RustDesk, the software is [open source under the AGPL](/blog/case-for-open-source-remote-access), so the code is auditable and buildable — you don't take the vendor's word for what it does. And self-hosting means the ID/rendezvous and relay servers run on your own machine or VPS, so brokering and access policy stay on infrastructure you control instead of Google's cloud — which maps directly onto [data-sovereignty and GDPR](/blog/remote-desktop-data-sovereignty-gdpr) concerns.
 
 That openness cuts both ways, to be clear: because the code is public, so are RustDesk's own vulnerabilities, so keep an eye on the [latest releases](https://github.com/rustdesk/rustdesk/releases) and disclosure records. And self-hosting is a foundation, not an automatic compliance win — traffic still travels directly between endpoints, and the server is yours to patch.
 

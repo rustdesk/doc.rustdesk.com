@@ -20,8 +20,8 @@ faq:
     answer: 'Self-hosting changes who holds the pricing power: with RustDesk Server Pro you host it, so the cost is your infrastructure plus a license instead of a renewal the vendor sets. The product still has annual license terms, so compare the current pricing page at each renewal.'
   - question: 'Is switching away from AnyDesk worth the migration cost?'
     answer: "There is a real one-time switch cost — migration time, some retraining, and standing up and securing a server — but when the increase recurs, a switch often pays for itself within a renewal cycle or two. Estimate the switch cost once and weigh it against the increase you'd otherwise absorb at every renewal."
-  - question: 'Is RustDesk open source?'
-    answer: "Yes. RustDesk's core is open source under the AGPL, so you can read the code, verify what the client does, build it yourself, and run the free community server indefinitely."
+  - question: 'Can I audit what the RustDesk client does?'
+    answer: 'Yes — RustDesk is AGPL open source. You can read exactly what runs on your endpoints, build the client from source, and run the free community server for as long as you like.'
   - question: 'Is self-hosting always cheaper than AnyDesk?'
     answer: 'Not necessarily in every configuration. Compare current quotes using the same login-user, managed-device, concurrency, feature, infrastructure, and support requirements; see rustdesk.com/pricing.'
 
@@ -30,11 +30,11 @@ metadata:
   keywords: 'AnyDesk price increase, AnyDesk renewal cost, AnyDesk pricing alternatives, AnyDesk three-year TCO'
 ---
 
-If you searched for "AnyDesk price increase," compare your dated renewal quote with current alternatives and include migration and operating costs. Compare current public or written quotes.
+If you searched for "AnyDesk price increase," you have two real options: renew and negotiate, or switch to a model whose cost you control. This guide weighs both — comparing your dated renewal quote against current written quotes, migration, and operating costs — and shows where self-hosting RustDesk changes the math.
 
-That is the trap of the subscription remote-desktop market. Your tooling cost is set by a vendor's roadmap, not yours. This guide is for teams — [MSPs](/blog/rustdesk-for-msps), internal IT, support desks — who are tired of that cycle and want a remote support solution with a cost they actually control. We'll be honest about the trade-offs, but the short version is: self-hosting changes who holds the pricing power.
+That is the trap of the subscription remote-desktop market. Your tooling cost is set by a vendor's roadmap, not yours. This guide is for teams — [MSPs](/blog/rustdesk-for-msps), internal IT, support desks — who are tired of that cycle and want a remote support solution with a cost they actually control. The short version: self-hosting changes who holds the pricing power.
 
-## Why the AnyDesk price increase keeps happening
+## Why subscription renewals climb
 
 A cloud subscription is a recurring lever. The vendor owns the infrastructure your sessions run through, so renewal pricing, seat tiers, and channel counts are theirs to adjust. When they do, your only options are pay more or migrate — and migration is painful enough that most teams just pay.
 
@@ -59,7 +59,7 @@ RustDesk licensing is **per login-user plus per managed-device**, and you can [u
 | What you're evaluating     | Cloud subscription tools | RustDesk Server Pro                                                               |
 | -------------------------- | ------------------------ | --------------------------------------------------------------------------------- |
 | Where sessions run         | Vendor's cloud           | Your server (on-prem or your VPS)                                                 |
-| Who sets renewal pricing   | The vendor               | You host it; cost is your infrastructure + license                                |
+| Who sets renewal pricing   | The vendor               | You for the infrastructure; the license renews annually at current rates          |
 | Concurrent connections     | Often tiered/limited     | Unlimited on standard plans; limited on Customized V2                             |
 | Licensing model            | Per seat / per channel   | [Per login-user + per managed-device](/blog/rustdesk-pro-license-cost-how-to-pay) |
 | Source code                | Closed                   | [Open source (AGPL)](/blog/case-for-open-source-remote-access), auditable         |
@@ -100,7 +100,7 @@ Put each option into the same worksheet instead of comparing one renewal quote w
 | Cost input                                 |            AnyDesk renewal |                             Self-hosted alternative |
 | ------------------------------------------ | -------------------------: | --------------------------------------------------: |
 | Required licensed users and endpoints      |           Your dated quote |                    Login users plus managed devices |
-| Required concurrency or channels           | Plan allowance and add-ons |            Standard-plan or Customized V2 allowance |
+| Required concurrency or channels           | Plan allowance and add-ons |            Unlimited on standard plans; defined Customized V2 allowance |
 | Hosting, backup, monitoring, and bandwidth |   Usually included in SaaS |                            Your infrastructure cost |
 | Deployment and migration labor             |      Policy/client changes |        Server setup, client rollout, access mapping |
 | Ongoing administration                     |  Vendor/account management | Patching, certificates, capacity, incident response |
@@ -110,6 +110,6 @@ Run a base case and a growth case for the same 36-month period. A self-hosted op
 
 ## Run the comparison on your own infrastructure
 
-You do not need to book a demo to find out if this fits. **Self-host the free community server today**, or email [sales@rustdesk.com](mailto:sales@rustdesk.com) for current Pro evaluation terms. Point a couple of technicians and a handful of devices at it, run real sessions, and see whether owning your infrastructure feels like the right trade for your team. Prefer to watch first? There's a full [video walkthrough](/blog/see-rustdesk-in-action) on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk).
+You do not need to book a demo to find out if this fits. Give the free community server a couple of technicians and a handful of devices, run real sessions for a week, and see whether owning the infrastructure feels like the right trade — it is open source and costs nothing to keep running. For Pro evaluation terms, write to [sales@rustdesk.com](mailto:sales@rustdesk.com), and feed the per-user and per-device numbers from [rustdesk.com/pricing](https://rustdesk.com/pricing) into the three-year worksheet above.
 
-The next price-increase email is a matter of when, not if. Self-hosting is how you stop being on the receiving end of it.
+If another price-increase email comes, self-hosting is how you stop being on the receiving end of it.

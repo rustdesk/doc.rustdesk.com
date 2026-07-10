@@ -22,7 +22,7 @@ faq:
   - question: 'Can I self-host the RustDesk server on Linux?'
     answer: 'Yes. The RustDesk server (the hbbs ID/rendezvous and hbbr relay processes) is built for Linux and is the standard way to run it. The free open-source community server runs indefinitely at no cost, and Server Pro adds a web console, device groups and a custom client generator on top. Both install on a plain Linux VM or bare-metal host.'
 metadata:
-  description: 'Install and run RustDesk on Linux: .deb, .rpm, Flatpak and AppImage, X11 vs Wayland, headless and unattended access, and self-hosting the server.'
+  description: 'RustDesk on Linux, end to end: package choices for every distro and ARM board, Wayland and X11 capture, headless setup, and running your own server.'
   keywords: 'RustDesk for Linux, RustDesk Ubuntu, RustDesk Wayland, RustDesk X11, RustDesk Linux install'
 ---
 
@@ -44,7 +44,7 @@ RustDesk ships packages for every common Linux packaging format, so you rarely h
 
 The `.deb` and `.rpm` packages are the ones to use if you want RustDesk running as a background service that survives reboots — both register and start a systemd unit automatically. The Flatpak (`com.rustdesk.RustDesk` on [Flathub](https://flathub.org/apps/com.rustdesk.RustDesk)) is a sandboxed build that is convenient for desktop use but does not install a system service by default. For a distribution RustDesk doesn't package directly, reach for the **Flatpak** first — because it bundles its own runtime it tends to be the most broadly compatible. The AppImage is a portable single-file alternative, but its compatibility is more hit-or-miss in practice (for example it may need `libfuse2` on recent Ubuntu).
 
-In practice RustDesk is used across Ubuntu, Debian, Fedora, RHEL/CentOS, openSUSE, Arch and NixOS, with builds for **x86_64, ARM64 (aarch64) and ARM32 (ARMv7)** — so it runs on ARM boards and servers as well as standard PCs. If your distribution isn't on that list, the Flatpak from Flathub is the most broadly compatible option.
+In practice RustDesk is used across Ubuntu, Debian, Fedora, RHEL/CentOS, openSUSE, Arch and NixOS, with builds for **x86_64, ARM64 (aarch64) and ARM32 (ARMv7)** — so it runs on ARM boards and servers as well as standard PCs.
 
 ## X11 vs Wayland: the part that matters
 
@@ -65,9 +65,9 @@ Unattended access means connecting to a machine with nobody sitting in front of 
 
 1. Install via `.deb` or `.rpm` so the systemd service is registered, or click **Enable Service** in the app.
 2. In RustDesk, set a strong **permanent password** under the connection settings (and ideally enable two-factor authentication).
-3. For access before or across user logins, use the headless virtual-display configuration below — or an X11 session where your distribution still offers one. Capturing the Wayland greeter is a platform gap RustDesk is actively closing ([PR #15420](https://github.com/rustdesk/rustdesk/pull/15420)), not a RustDesk shortcoming.
+3. For access before or across user logins, use the headless virtual-display configuration below (the Wayland greeter gap covered above applies here).
 
-One Wayland reality to plan for: because the portal is designed to require a human to approve screen sharing, fully unattended capture is harder on Wayland than on X11 — for every screen-sharing tool, not just RustDesk. RustDesk is actively working to close that gap ([unattended Wayland is in active development](https://github.com/rustdesk/rustdesk/pull/15420)); until it lands, cover pre-login or hands-off machines with the headless virtual-display setup — or an X11 session where your distribution still offers one, keeping in mind that X11 is being retired across many distros.
+One Wayland reality to plan for: the consent-based portal described in the Wayland section makes fully unattended capture harder than on X11 until the in-development unattended support lands, so plan on the headless virtual-display setup for hands-off machines.
 
 ## Headless Linux: servers with no monitor
 

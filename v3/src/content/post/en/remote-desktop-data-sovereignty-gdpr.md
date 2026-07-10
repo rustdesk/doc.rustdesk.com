@@ -15,7 +15,7 @@ tags:
 author: RustDesk Team
 faq:
   - question: 'Is RustDesk ISO 27001, SOC 2, or HIPAA compliant?'
-    answer: 'RustDesk is self-hosted, so compliance centers on your environment: you run remote access inside your own ISO 27001 or HIPAA scope and existing controls, and the open-source client can be audited directly rather than taken on trust. If you specifically need a vendor SOC 2 report, a signed BAA, a DPA, or completed security questionnaires, ask sales@rustdesk.com what is available for your scenario.'
+    answer: 'RustDesk is self-hosted, so compliance centers on your environment: you run remote access inside your own ISO 27001 or HIPAA scope and existing controls, and the open-source software can be audited directly rather than taken on trust. If you specifically need a vendor SOC 2 report, a signed BAA, a DPA, or completed security questionnaires, ask sales@rustdesk.com what is available for your scenario.'
   - question: 'Does self-hosting RustDesk help with GDPR compliance?'
     answer: 'Yes — it gives you the control GDPR is usually about: you choose where the ID/rendezvous, relay, console, and device data live and can keep them in-region on infrastructure you operate. That is a strong foundation rather than an automatic guarantee, since GDPR is a program — lawful basis, controller/processor roles, retention, access control, endpoint locations, and incident response are still yours to define, with the controller remaining responsible.'
   - question: 'Where does RustDesk session data actually go?'
@@ -73,13 +73,13 @@ The architecture also scales with your estate: RustDesk publishes [large-fleet p
 
 ## How RustDesk fits ISO 27001, SOC 2, or HIPAA requirements
 
-Enterprise procurement and healthcare teams almost always ask how a remote-access tool maps to ISO 27001, SOC 2, or HIPAA. With a cloud product, you inherit — and depend on — the vendor's certification of _their_ infrastructure. RustDesk's model is different, and for regulated teams the difference usually works in your favor: because you **self-host**, remote access runs inside the environment you already control and audit, so it falls under _your_ ISO 27001 or HIPAA scope and _your_ existing controls rather than a third party's. You place the ID, relay, and console on infrastructure your program already covers, and — because the core client is [open source](/blog/case-for-open-source-remote-access) — your security team can read and verify exactly what it does as part of an assessment, instead of trusting a closed binary.
+Enterprise procurement and healthcare teams almost always ask how a remote-access tool maps to ISO 27001, SOC 2, or HIPAA. With a cloud product, you inherit — and depend on — the vendor's certification of _their_ infrastructure. RustDesk's model is different, and for regulated teams the difference usually works in your favor: because you **self-host**, remote access runs inside the environment you already control and audit, so it falls under _your_ ISO 27001 or HIPAA scope and _your_ existing controls rather than a third party's. You place the ID, relay, and console on infrastructure your program already covers, and — because RustDesk is [open source](/blog/case-for-open-source-remote-access) — your security team can read and verify exactly what it does as part of an assessment, instead of trusting a closed binary.
 
 A few practical notes:
 
 - Self-hosting keeps the sensitive systems — rendezvous, relay, console, and device data — on hardware you own, which is exactly what a data-residency or HIPAA control is usually trying to guarantee. The deployment checklist further down turns that into documented controls.
 - If your procurement specifically requires a vendor-side SOC 2 report, a signed Business Associate Agreement (BAA), a DPA, or completed security questionnaires, ask the RustDesk team at [sales@rustdesk.com](mailto:sales@rustdesk.com) what is currently available for your scenario.
-- Because the client is open source, "how do we know what it does?" is answered by inspection, not by a certificate you have to take on faith.
+- Because RustDesk is open source, "how do we know what it does?" is answered by inspection, not by a certificate you have to take on faith.
 
 In short, self-hosting lets you fold remote access into the compliance program you already run — often a stronger position for a regulated team than renting a certified black box.
 
@@ -90,7 +90,7 @@ Self-hosting is the foundation, and on top of it RustDesk provides concrete cont
 - **Telemetry goes to your relay, not RustDesk.** The usage data described in RustDesk's privacy policy — app start, IP address, basic machine stats, session times, and RustDesk IDs — is collected by the _relay_ server, so when clients use your own self-hosted relay it is **collected by your relay, not RustDesk**. Beyond the Server Pro license check, little else needs to reach rustdesk.com — confirm the exact outbound connections for the client build and settings you deploy. That keeps session and usage data on infrastructure you control by default, a strong data-minimization posture.
 - **Built-in audit-log rotation and retention.** Server Pro's audit logs come in four categories — connection, file-transfer, alarm, and console-operation — with **built-in log rotation** so audit data is not retained indefinitely (storage limitation), and you can export them from the web console or the REST API for your records of processing.
 - **Granular, scoped access.** Per-user assignments, device groups, cross-group rules, and a Control Role (what a technician may do in-session — input, clipboard, file transfer, camera, terminal) enforce least privilege and purpose limitation, backed by SSO/LDAP and controlled-device 2FA.
-- **Privacy mode and per-connection consent.** The controlled side can require confirmation for an incoming connection and can blacken its screen (privacy mode) during a session, limiting incidental exposure of personal data on-screen.
+- **Privacy mode and per-connection consent.** The controlled side can require confirmation for an incoming connection and can blacken its screen (privacy mode, supported on Windows and macOS) during a session, limiting incidental exposure of personal data on-screen.
 - **Deletion on your terms.** Because the data lives on your server, you can disable or remove users, delete devices and records — including via the REST API — and service erasure and retention requests directly.
 - **In-region, self-operated infrastructure.** The ID/rendezvous, relay, console, and stored data run where you place them, on hardware you control.
 - **Even custom-client builds leave no data behind.** Generating a branded client is the one step that uses RustDesk's build service, and it is deliberately transient: the build configuration you submit is not retained on RustDesk's build server (it is deleted once the build completes), and the generated installer is auto-removed after about a day, so you download and keep it yourself.
@@ -111,10 +111,10 @@ Self-hosting gives you choices; the deployment has to turn those choices into co
 - Record the purpose, retention period, and access policy for device, account, audit, and connection metadata.
 - Apply least-privilege device groups, MFA/SSO where available, and a joiner-mover-leaver process for technicians.
 - Put the web console behind HTTPS, restrict administrative network access, and test backup restoration.
-- Complete the appropriate legal assessment—such as records of processing, processor review, transfer assessment, and DPIA—based on your use case.
+- Complete the appropriate legal assessment — such as records of processing, processor review, transfer assessment, and DPIA — based on your use case.
 
 RustDesk can support a sovereignty architecture, but the controller remains responsible for the architecture and its legal basis.
 
-## Try it without a sales call
+## Evaluate it inside your own perimeter
 
 You can evaluate on your own terms. Self-host the free, open-source community server today, or email [sales@rustdesk.com](mailto:sales@rustdesk.com) for current evaluation terms for the Pro features. Check current plans and exact features at [rustdesk.com/pricing](https://rustdesk.com/pricing). Prefer to watch first? There's a full [video walkthrough](/blog/see-rustdesk-in-action) on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk).

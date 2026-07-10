@@ -75,7 +75,7 @@ When the work ends, disable the contractor user in the console. RustDesk documen
 
 ## Who asks this
 
-This comes up most from IT admins, [MSPs](/blog/rustdesk-for-msps), and businesses that need to give a contractor, vendor, or auditor access to one machine without authorizing access to the rest of the environment.
+The scenario behind this question is almost always a scoped outsider: an [MSP](/blog/rustdesk-for-msps) or internal IT team needs to give a contractor, vendor, or auditor access to one machine without authorizing access to the rest of the environment.
 
 ## Related questions
 
@@ -83,6 +83,6 @@ This comes up most from IT admins, [MSPs](/blog/rustdesk-for-msps), and business
 - [What are device groups and cross-group access rules?](/blog/enhanced-acl-in-rustdesk-server-pro-1-5-0)
 - [How do I create and later disable a temporary user account for external access?](/blog/rustdesk-for-enterprise)
 - [How does RustDesk handle per-device passwords and controlled-device 2FA?](/blog/rustdesk-unattended-access-setup)
-- [Does per-user access control require RustDesk Server Pro or a self-hosted server?](/blog/rustdesk-for-enterprise)
+- [Does per-user access control require RustDesk Server Pro or a self-hosted server?](/blog/rustdesk-self-hosted-vs-cloud-saas-option)
 
 Need to give an outside contractor access to one machine? Configure Access Control with a dedicated account, test both the allow and deny paths, and disable the account when the work is done.

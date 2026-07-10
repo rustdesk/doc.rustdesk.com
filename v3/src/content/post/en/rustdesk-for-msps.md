@@ -31,23 +31,19 @@ metadata:
 
 Most MSPs are not looking for another remote-support tool. They are looking for _fewer_ of them.
 
-MSPs often evaluate consolidation when multiple remote-support tools create separate consoles, contracts, and operating procedures. Build the comparison from current contracts and technical requirements.
-
 This is a guide to **RustDesk for MSPs**: how one self-hosted, open-source, brandable tool can replace that pile — and, just as important, where the trade-offs are.
 
 ## Why consolidation keeps stalling
 
 The reason MSPs run three tools is rarely preference. It is that each vendor's pricing and limits push you toward a workaround.
 
-The recurring decision factors are price, security, hosting control, and workflow consolidation. Public disclosures and current vendor documentation provide a reliable basis for comparison.
-
-Different vendors, same three complaints: cost that climbs, licensing that limits how you work, and control you never actually had.
+So the stack accretes — a cloud remote-support seat here, a per-technician tool there, a standalone quick-support utility for one-off jobs. Different vendors, same three complaints: cost that climbs, licensing that limits how you work, and control you never actually had.
 
 ## The core difference: you host it, you own it
 
 RustDesk Server Pro is **self-hosted**. The ID/rendezvous server, relay, console, and stored deployment data run on infrastructure you control. Direct sessions still flow between endpoints; relayed sessions use the relay you operate.
 
-The client core is **[open source (AGPL)](/blog/case-for-open-source-remote-access)**. You can read the code, audit exactly what it does on a customer's machine, build it yourself, and run the free community server indefinitely. For an MSP that has to answer "what is this agent doing on our endpoints?" during a security review, that is a materially different conversation than pointing at a closed binary.
+RustDesk is **[open source (AGPL)](/blog/case-for-open-source-remote-access)**. You can read the code, audit exactly what it does on a customer's machine, build it yourself, and run the free community server indefinitely. For an MSP that has to answer "what is this agent doing on our endpoints?" during a security review, that is a materially different conversation than pointing at a closed binary.
 
 Here is how that maps against the tools MSPs commonly consolidate away from:
 
@@ -58,7 +54,7 @@ Here is how that maps against the tools MSPs commonly consolidate away from:
 | Concurrent sessions | Often capped / per-channel    | Unlimited on standard plans; limited on [Customized V2](https://rustdesk.com/pricing#custom2)                             |
 | Licensing basis     | Per seat / per channel        | [Per login-user + per managed-device](/blog/rustdesk-pro-license-cost-how-to-pay) |
 | Session data path   | Through vendor infrastructure | Server-side services on infrastructure you control                                |
-| Branding            | Add-on or unavailable         | Custom-branded client generator                                                   |
+| Branding            | Add-on or unavailable         | Custom-branded client generator (Basic plan and up)                               |
 
 For exact plan tiers and current prices, see [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
@@ -72,7 +68,7 @@ You pay per login-user (your technicians) and per managed-device (the machines y
 
 RustDesk ships the pieces an MSP actually needs to operate at scale: a self-hosted **[web console](/blog/rustdesk-web-console-custom-client-generator-port-21114)**, a **custom-branded client generator**, and **[device groups plus a shared address book](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book)** for per-user access control. **[LDAP/SSO](/blog/rustdesk-active-directory-ldap-sso) (OIDC) is available from the Basic plan and up.**
 
-The branded client matters because clients install a tool configured for your service. Access control can scope technicians to assigned device groups. Custom client generation and identity features are available from the Basic plan and up, so verify the current matrix before relying on them.
+The branded client matters because your clients see your brand on the tool they install, not a vendor's. Access control can scope technicians to assigned device groups. Verify the current plan matrix before relying on these features.
 
 ## Control over server-side data location
 
@@ -84,14 +80,14 @@ It also scales beyond proof-of-concept. RustDesk publishes large-fleet planning 
 
 Self-hosting lets an MSP keep every client's coordination, branding, and device data on servers it operates — one tool, no per-technician cloud rental, no outsider in the session path. That is control you can build a business on.
 
-## Try it without a sales call
+## Put it to the test on your own terms
 
 You can evaluate RustDesk today with no meeting booked:
 
-- **Self-host the free community server** — open source, run it indefinitely, no time limit.
-- **Want to try the Pro features?** Email [sales@rustdesk.com](mailto:sales@rustdesk.com) to ask about current evaluation terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) for standard plan rates.
-- **Prefer to see it first?** [See RustDesk in action](/blog/see-rustdesk-in-action), or head to the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk) — no booking required.
+- **Stand up the free community server on a spare VM.** It is open source and never expires, so you can validate a real client workflow before spending anything.
+- **When branding and access control enter the picture,** compare tiers at [rustdesk.com/pricing](https://rustdesk.com/pricing) and ask [sales@rustdesk.com](mailto:sales@rustdesk.com) what evaluation terms currently apply.
+- **Short on lab time?** [See RustDesk in action](/blog/see-rustdesk-in-action) first, or browse the walkthroughs on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk).
 
-Licensing is per login-user + per managed-device, and you can **[upgrade any time](/blog/upgrade-rustdesk-license-mid-subscription) (prorated)** — no per-channel model, no per-seat cloud subscription stacked on top. Start at [rustdesk.com/pricing](https://rustdesk.com/pricing).
+You can **[upgrade any time](/blog/upgrade-rustdesk-license-mid-subscription) (prorated)** as your client base grows — start at [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
 If you are running several remote-support tools today, spin up the community server on a test VM and validate a representative client session before planning migration.

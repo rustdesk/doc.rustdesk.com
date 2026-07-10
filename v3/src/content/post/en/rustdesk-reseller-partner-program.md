@@ -16,14 +16,14 @@ faq:
   - question: 'Can I resell RustDesk licenses or get a partner discount?'
     answer: 'The public pricing page does not describe a formal reseller tier or discount. Ask RustDesk to confirm current partner terms, whether an MSP can purchase for a client, and who owns the account and renewal before quoting.'
   - question: 'Does RustDesk offer volume or bulk discounts for large orders?'
-    answer: 'No public bulk-discount schedule is stated here. Size login users, managed devices, and any plan-specific concurrency, then request written terms for a large order.'
+    answer: 'RustDesk does not publish a bulk-discount schedule. Size login users, managed devices, and any plan-specific concurrency, then request written terms for a large order.'
   - question: 'Does RustDesk integrate with WHMCS or other billing platforms?'
     answer: 'Public pricing does not document WHMCS integration, deal registration, or automated reseller provisioning. If those are required, confirm current support and API options directly before designing the workflow.'
   - question: 'Who should own the RustDesk license, the MSP or the client?'
     answer: 'Decide before purchase. If a client will eventually control renewals or hold the license under their own account, confirm that account-ownership and renewal workflow up front so the billing path matches your service model.'
 
 metadata:
-  description: "RustDesk's public pricing does not describe a formal reseller program. Confirm partner, account-ownership, and renewal terms before quoting clients."
+  description: "Reselling RustDesk to clients? No formal partner tier is published — get written confirmation on discounts, account ownership, and renewals first."
   keywords: 'RustDesk reseller program, RustDesk partner program, RustDesk reseller discount, buy RustDesk on behalf of clients, RustDesk for MSPs, resell RustDesk licenses'
 ---
 
@@ -45,13 +45,13 @@ A practical note on pricing: build the proposal around services you can deliver�
 
 ## Who asks this
 
-This question comes mostly from MSPs, IT service providers, and regional distributors that want to standardize deployments across clients. They need a documented answer about channel contracts, discounts, deal registration, account ownership, support, and renewals; public silence is not a substitute for those terms.
+Channel businesses raise this — MSPs, IT service providers, and regional distributors that want to standardize deployments across their client base. They need a documented answer about channel contracts, discounts, deal registration, account ownership, support, and renewals; public silence is not a substitute for those terms.
 
 ## Related questions
 
 - [Can I self-host RustDesk Server Pro for multiple clients on one server?](/blog/rustdesk-for-msps)
 - [How does RustDesk per-user vs. per-device licensing work?](/blog/rustdesk-pro-license-cost-how-to-pay)
-- [What account ownership and renewal workflow should I confirm before buying for a client?](/blog/upgrade-rustdesk-license-mid-subscription)
+- [How do license renewals and the self-service portal work?](/blog/upgrade-rustdesk-license-mid-subscription)
 - [Do you offer volume or bulk discounts for large deployments?](/blog/rustdesk-custom-quote-minimum-users-invoice-fees)
 - [Is there a RustDesk white-label or co-branding option?](/blog/rustdesk-web-console-custom-client-generator-port-21114)
 

@@ -16,11 +16,11 @@ faq:
   - question: 'Does RustDesk offer a lifetime or perpetual license?'
     answer: 'The public Server Pro pricing is term-based and does not list a lifetime or perpetual license. Check the current pricing page or written sales terms before purchase.'
   - question: 'Can I buy RustDesk for multiple years up front?'
-    answer: 'Yes. Multi-year terms are available — contact sales@rustdesk.com to arrange one. Confirm the available term, per-year rate, renewal date, and refund or cancellation conditions in writing.'
+    answer: 'Yes. Multi-year terms are available — contact sales@rustdesk.com to arrange one. Confirm the available term, per-year rate, renewal date, and cancellation or transfer conditions in writing.'
   - question: 'Can I self-host RustDesk Server without a Server Pro license?'
     answer: 'Yes. The open-source client and community ID and relay server have their own open-source terms. Server Pro is the term-licensed commercial offering for centralized administration and enterprise features.'
 metadata:
-  description: "Does RustDesk offer a lifetime license? No — pricing is term-based, but annual and multi-year terms are available. Contact sales for multi-year; what procurement should confirm."
+  description: "Does RustDesk offer a lifetime license? No — pricing is term-based, with annual and multi-year terms available (multi-year arranged through sales)."
   keywords: 'RustDesk lifetime license, RustDesk perpetual license, RustDesk multi-year license, RustDesk license term'
 ---
 
@@ -28,7 +28,7 @@ RustDesk's public Server Pro pricing is term-based and does not include a lifeti
 
 ## Lifetime and multi-year are not the same
 
-A lifetime license is a one-time payment for indefinite use. A multi-year purchase still ends on a defined date and may have specific renewal, refund, transfer, or capacity-change conditions. Do not describe a long prepaid term as perpetual.
+A lifetime license is a one-time payment for indefinite use. A multi-year purchase still ends on a defined date and may have specific renewal, refund, transfer, or capacity-change conditions. Budget a long prepaid term as term-based, not perpetual.
 
 The open-source components are separate from Server Pro. You can run the community ID and relay server under its open-source license; the commercial Server Pro features require the applicable license term.
 
@@ -42,7 +42,7 @@ Use the current [pricing page](https://rustdesk.com/pricing) for standard annual
 - any [Customized V2](https://rustdesk.com/pricing#custom2) concurrency allowance;
 - total and per-year price;
 - treatment of mid-term upgrades;
-- renewal, cancellation, refund, and transfer conditions.
+- renewal, cancellation, and transfer conditions.
 
 Budget Server Pro as a recurring software line unless the signed terms state otherwise. A long term can reduce procurement work, but it also reduces flexibility if requirements change.
 

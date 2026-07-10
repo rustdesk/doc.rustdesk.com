@@ -18,7 +18,7 @@ faq:
   - question: 'What infrastructure does Splashtop On-Prem require?'
     answer: 'Splashtop On-Prem uses a customer-operated Splashtop Gateway. The organization must plan server capacity, networking, TLS, monitoring, backup, upgrades, and availability according to its deployment requirements.'
   - question: 'Should I self-host or use a vendor-operated service?'
-    answer: 'Self-host when you want control of the server-side services, an open-source client, or licensing based on your own users and devices; a vendor-operated SaaS is the alternative when you specifically want someone else to run the service. Test required workflows and compare current written terms before deciding.'
+    answer: 'Self-host when you want control of the server-side services, open-source software, or licensing based on your own users and devices; a vendor-operated SaaS is the alternative when you specifically want someone else to run the service. Test required workflows and compare current written terms before deciding.'
   - question: 'How should an IT team test a Splashtop replacement?'
     answer: 'Run a parallel pilot with representative users, endpoints, networks, and support workflows. Define acceptance criteria for connection reliability, remote audio, monitor mapping, mobile access, administration, and security controls, and keep a documented rollback path until the replacement passes them.'
 metadata:
@@ -26,7 +26,7 @@ metadata:
   keywords: 'self-hosted Splashtop alternative, Splashtop replacement, migrate from Splashtop, RustDesk vs Splashtop, Splashtop alternative for IT teams'
 ---
 
-A self-hosted Splashtop alternative is worth evaluating when your IT team needs control over server-side services, an open-source core client, or a licensing model that better matches its users, devices, and simultaneous sessions. It is not automatically the right move: switching also transfers infrastructure work to your team and can expose workflow gaps that a feature matrix misses.
+A self-hosted Splashtop alternative is worth evaluating when your IT team needs control over server-side services, open-source software, or a licensing model that better matches its users, devices, and simultaneous sessions. It is not automatically the right move: switching also transfers infrastructure work to your team and can expose workflow gaps that a feature matrix misses.
 
 Splashtop sells managed SaaS plans and a **separately licensed On-Prem** product. RustDesk makes self-hosting the core deployment model through its free community server and Server Pro. The useful comparison is therefore between three operating models, not simply "cloud versus self-hosted."
 
@@ -40,7 +40,7 @@ Splashtop sells managed SaaS plans and a **separately licensed On-Prem** product
 | Concurrent sessions | Unlimited on standard plans; a defined allowance on Customized V2                                                     | Plan-dependent                                              | License-dependent                                                                                               |
 | Governance          | Server Pro features are plan-dependent; compare SSO, 2FA, audit, access control, address books, and device management | Enterprise controls are plan-dependent                      | User/group permissions, Active Directory integration, IP restrictions, and other features are edition-dependent |
 | Infrastructure work | Your team owns deployment, TLS, network exposure, monitoring, backup, upgrades, and availability                      | Vendor owns the service infrastructure                      | Your team owns Gateway sizing, network placement, TLS, monitoring, backup, upgrades, and availability           |
-| Best starting point | Free community server for basic evaluation; Server Pro trial for management features                                  | SaaS trial for teams that want a managed service            | Direct sales and a scoped infrastructure evaluation                                                             |
+| Best starting point | Free community server for basic evaluation; Server Pro evaluation via sales@rustdesk.com for management features                                  | SaaS trial for teams that want a managed service            | Direct sales and a scoped infrastructure evaluation                                                             |
 
 Choose the operating model before comparing individual features. If your team wants a vendor to run the service, compare the effort of running RustDesk yourself with Splashtop SaaS. If infrastructure control is mandatory, compare RustDesk Server Pro with Splashtop On-Prem.
 
@@ -50,7 +50,7 @@ The reasons usually fall into four decision areas. These are evaluation prompts,
 
 ### Licensing fit
 
-Remote-support workloads can be measured by technicians, named users, managed endpoints, attended sessions, or concurrent connections. A plan that works for a small fixed team may become awkward for an MSP, a seasonal workforce, or an organization near a device threshold. Compare the current written terms against your actual workload rather than assuming any vendor is always cheaper.
+Remote-support workloads can be measured by technicians, named users, managed endpoints, attended sessions, or concurrent connections. A plan that works for a small fixed team may become awkward for an MSP, a seasonal workforce, or an organization near a device threshold — no vendor is automatically the cheaper one.
 
 ### Infrastructure control
 
@@ -72,7 +72,7 @@ Splashtop On-Prem is therefore real, but it is not the default deployment behind
 
 RustDesk starts from the opposite direction. The community server and Server Pro are self-hosted. With Server Pro, the ID/rendezvous server, relay, console, and stored deployment data run on infrastructure you control; direct sessions can still flow between endpoints. This provides architectural control, but it does not remove the need to secure and operate the server.
 
-Do not describe Splashtop as cloud-only, and do not treat a standard Splashtop SaaS trial as an evaluation of Splashtop On-Prem. They have different deployment and procurement paths.
+Splashtop is not cloud-only, and a SaaS trial tells you little about On-Prem — the two have different deployment and procurement paths.
 
 ## Source code and trust model
 
@@ -87,7 +87,7 @@ Splashtop On-Prem can answer the first requirement. RustDesk is designed to answ
 
 ## Licensing and cost: model the required system
 
-RustDesk standard Server Pro plans are sized by login users and managed devices and include unlimited concurrent connections. Customized V2 instead includes a defined concurrency allowance and prices additional connections. For current figures, use [RustDesk pricing](https://rustdesk.com/pricing) and a dated quote for customized terms.
+RustDesk standard Server Pro plans are sized by login users and managed devices and include unlimited concurrent connections. Customized V2 instead includes a defined concurrency allowance and prices additional connections. Current figures are at [RustDesk pricing](https://rustdesk.com/pricing).
 
 Splashtop pricing depends on whether the requirement is Remote Access, Remote Support, Enterprise SaaS, or On-Prem. Its public pricing page provides figures for several SaaS plans, while Enterprise and On-Prem require sales engagement. Compare the same quantities on both sides:
 
@@ -104,7 +104,7 @@ A lower starting price, another customer's historical quote, or a first-year pro
 
 A 2025 thread in the [Splashtop official community](https://www.reddit.com/r/Splashtop_Official/comments/1ltgest/constant_crashing_on_local_win10_computer/) documents Windows client crashes and follow-up troubleshooting. A separate 2026 [Atera community discussion](https://www.reddit.com/r/atera/comments/1qucbx3/is_splashtop_just_terrible_for_you_guys/) contains both negative reports and administrators describing stable deployments. It also shows why an **integration-specific** problem should not automatically be attributed to the standalone Splashtop product.
 
-Use reports like these to build a test matrix, not to publish an unbounded claim that Splashtop is unreliable. Record results on your own endpoint mix, network paths, RMM packaging, security software, and operating-system versions.
+These reports don't show Splashtop is broadly unreliable — use them to build the test matrix for your own pilot. Record results on your own endpoint mix, network paths, RMM packaging, security software, and operating-system versions.
 
 ## Operations: self-hosting is a responsibility
 
@@ -124,7 +124,7 @@ Infrastructure control is valuable when the team is prepared to operate it; if y
 
 The free RustDesk community server does not include every Server Pro governance feature. If you need SSO, controlled-device 2FA, audit logs, synchronized address books, or scoped access through user assignments and device groups, compare the current Server Pro plan matrix and [LDAP/SSO documentation](/blog/rustdesk-active-directory-ldap-sso).
 
-Do not infer Splashtop On-Prem capabilities from a Splashtop SaaS trial, and do not infer Server Pro capabilities from the free RustDesk server. Confirm the exact edition and license for identity integration, permissions, high availability, recording, IP restrictions, and other required controls.
+Do not infer Server Pro capabilities from the free RustDesk server. Confirm the exact edition and license for identity integration, permissions, high availability, recording, IP restrictions, and other required controls.
 
 ## Migration checklist: test the workflow, not the logo
 
@@ -177,7 +177,7 @@ This approach costs more during the overlap, but it reduces the risk of discover
 
 ## When RustDesk is the stronger candidate
 
-RustDesk deserves evaluation when the organization wants self-hosting as the normal deployment model, an open-source core client, a free community-server path, or Server Pro licensing based on login users and managed devices. It is also relevant when teams want to build and audit the client rather than use a proprietary endpoint application.
+RustDesk deserves evaluation when the organization wants self-hosting as the normal deployment model, open-source software, a free community-server path, or Server Pro licensing based on login users and managed devices. It is also relevant when teams want to build and audit the client rather than use a proprietary endpoint application.
 
 Those advantages do not remove the operational caveat: your team still needs to provision, secure, monitor, back up, and update the RustDesk server.
 

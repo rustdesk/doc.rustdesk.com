@@ -28,7 +28,7 @@ metadata:
   keywords: 'why self-host remote desktop, self-hosted remote desktop benefits, on-premise remote access, remote desktop without vendor cloud'
 ---
 
-Self-hosting is often evaluated when organizations want more control over price, features, and infrastructure. This article focuses on those structural trade-offs.
+Most remote-desktop tools are sold one way: as a cloud subscription, with the vendor's servers brokering — and often relaying — every session.
 
 There is another way to run remote access, and it is not new — it is just less marketed, because it doesn't come with a recurring cloud subscription attached. It's the decision to **self-host your remote desktop software**: run the server that coordinates connections and relays traffic when direct connectivity fails on infrastructure you control. This article makes the case for that model and uses RustDesk as the concrete example.
 
@@ -36,7 +36,7 @@ There is another way to run remote access, and it is not new — it is just less
 
 Most mainstream remote-support tools are cloud-only. When your technician connects to a client's PC, the session is coordinated — and often relayed — through the vendor's servers. That's convenient. It also means your device list, your connection metadata, and sometimes your session traffic pass through a third party, on their uptime, under their pricing, subject to their security posture.
 
-Self-hosting flips that. With RustDesk Server Pro, the ID/rendezvous server, relay, console, and stored deployment data run on **your infrastructure**. Direct sessions still flow between endpoints; relayed sessions use your configured relay. The core client is [open source (AGPL)](/blog/case-for-open-source-remote-access) and the free community server runs indefinitely—the auditability argument for that is [its own topic](/blog/case-for-open-source-remote-access); this piece stays on the self-hosting decision itself.
+Self-hosting flips that. With RustDesk Server Pro, the ID/rendezvous server, relay, console, and stored deployment data run on **your infrastructure**. Direct sessions still flow between endpoints; relayed sessions use your configured relay. RustDesk is [open source (AGPL)](/blog/case-for-open-source-remote-access) and the free community server runs indefinitely — the auditability argument for that is its own topic; this piece stays on the self-hosting decision itself.
 
 ## Four reasons the self-hosted model wins
 
@@ -72,7 +72,7 @@ Self-hosting doesn't mean giving up scale or capability. RustDesk publishes [lar
 
 ## Own the server, own the outcome
 
-That is the thesis in a line: run the server and the data, the cost, and the failure domain become yours to control rather than yours to rent. For an IT team already running infrastructure, it is a next step, not a leap.
+That is the thesis in a line: run the server, and the data, the cost, and the failure domain become yours to control rather than yours to rent. For an IT team already running infrastructure, it is a next step, not a leap.
 
 ## What running the server actually involves
 
@@ -89,8 +89,8 @@ None of this is exotic, and most of it is one-time setup. If a question comes up
 
 ## How to evaluate self-hosting
 
-- **Self-host the free open-source community server today.** The core is AGPL — deploy it, audit it, and run it indefinitely at no cost.
-- **Want to try the Pro features?** Email [sales@rustdesk.com](mailto:sales@rustdesk.com) to ask about current evaluation terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) for standard plan rates.
-- **Prefer to see it first?** Watch a full [video demo](/blog/see-rustdesk-in-action) on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk) — no booking required.
+- **Start with the community server.** The core is AGPL — deploy the free open-source server this afternoon, audit it, and run it for as long as you like at no cost.
+- **Need the Pro feature set?** Current plan rates are at [rustdesk.com/pricing](https://rustdesk.com/pricing), and [sales@rustdesk.com](mailto:sales@rustdesk.com) can tell you which evaluation options exist right now.
+- **Rather watch than install?** There's a full [video demo](/blog/see-rustdesk-in-action) on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk).
 
 If price hikes, closed code, or a cloud you don't control are what pushed you to start shopping, self-hosting is the structural fix, not a discount. Own the server, own the data, own the cost.

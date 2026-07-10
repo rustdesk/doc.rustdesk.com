@@ -39,13 +39,13 @@ LDAP is gated to the Basic plan and above rather than included in every paid tie
 
 The most important operational detail is how RustDesk keys user identity. It uses the **username as the unique identifier**, not the full Distinguished Name (DN). That distinction matters in real AD environments where objects get reorganized. If you move a user between Organizational Units (OUs), their DN changes, but as long as the username stays the same their RustDesk identity remains stable and their access is unaffected. Conversely, renaming a username can create a mismatch. The practical rule: reorganize your directory freely, but treat usernames as immutable once provisioned.
 
-One current limitation to plan around: **LDAPS with a custom PKI certificate is not yet supported**. If your security policy requires LDAP over TLS validated against your own internal certificate authority, that specific configuration is on RustDesk's feature-request list rather than shipping today. It is worth raising with the team so your use case is counted. [rustdesk.com](https://rustdesk.com)
+One current limitation to plan around: **LDAPS with a custom PKI certificate is not yet supported**. If your security policy requires LDAP over TLS validated against your own internal certificate authority, that is not a documented configuration today — the console offers StartTLS and a skip-verification option (NoTLSVerify), but no field to trust your own private CA. It is worth raising with the team so your use case is counted. [rustdesk.com](https://rustdesk.com)
 
 For setup, you point Server Pro's LDAP configuration at your directory server (bind account, base DN, user search filter) through the admin console. Because the exact fields and console layout evolve between releases, follow the current [RustDesk LDAP documentation](https://rustdesk.com/docs) rather than relying on a static screenshot.
 
 ## Who asks this
 
-This comes up most from IT admins, [MSPs](/blog/rustdesk-for-msps), and businesses standardizing on a single identity source. If users move to another Active Directory OU and their DN changes, preserve the username used as RustDesk's unique identifier and validate synchronization in a test environment.
+Directory admins — in-house or at an [MSP](/blog/rustdesk-for-msps) — wiring RustDesk into an existing Active Directory or OIDC identity source raise this while planning SSO, usually because policy forbids a second set of credentials. If users move to another Active Directory OU and their DN changes, preserve the username used as RustDesk's unique identifier and validate synchronization in a test environment.
 
 ## Related questions
 

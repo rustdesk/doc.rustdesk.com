@@ -45,13 +45,13 @@ For current allowances and per-connection pricing on Customized V2, check [rustd
 
 ## Who asks this
 
-This question comes up most from IT admins and [MSPs](/blog/rustdesk-for-msps) evaluating a move from tools that price simultaneous channels separately. The important step is to compare the exact RustDesk plan: standard plans and Customized V2 handle concurrency differently.
+Support desks and [MSPs](/blog/rustdesk-for-msps) that have been rationing simultaneous sessions under channel-priced tools are the classic askers here. The important step is to compare the exact RustDesk plan: standard plans and Customized V2 handle concurrency differently.
 
 ## Related questions
 
 - [What is the difference between a user and a device in RustDesk licensing?](/blog/what-counts-as-a-managed-device)
 - [Do I need a separate license for every technician on my team?](/blog/rustdesk-pro-license-cost-how-to-pay)
-- [Can multiple people control the same device at the same time?](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book)
+- [How do I control which users can connect to which devices?](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book)
 - [How do I count devices for unattended access?](/blog/rustdesk-unattended-access-setup)
 - [Does RustDesk charge extra for peak-hour usage or overages?](/blog/rustdesk-custom-quote-minimum-users-invoice-fees)
 

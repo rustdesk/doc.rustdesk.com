@@ -41,7 +41,7 @@ A session that never connects almost always comes down to one of three things: t
 | Symptom                                         | Most likely layer                          | First check                                                                            |
 | ----------------------------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------------- |
 | Client shows “Not ready” or cannot obtain an ID | ID server or DNS reachability              | Resolve the server name and test TCP/UDP 21116 from that client network                |
-| “Key mismatch” or “invalid public key”          | Client/server configuration                | Compare the client key with the server's current `id_ed25519.pub`                      |
+| “Key Mismatch” or “invalid public key”          | Client/server configuration                | Compare the client key with the server's current `id_ed25519.pub`                      |
 | Peer is found but the session times out         | Firewall, NAT, or relay path               | Test TCP 21117 and review cloud security groups, host firewall, and NAT rules          |
 | Direct connection fails but forced relay works  | NAT traversal                              | Check UDP 21116 and accept relay for symmetric NAT or restrictive networks             |
 | Both direct and relay fail                      | Server address, key, or relay availability | Confirm both peers use the same ID server and inspect `hbbs`/`hbbr` logs               |
@@ -91,17 +91,17 @@ Open only what your deployment uses: **TCP 21115-21117 and UDP 21116** are the c
 
 ## Step 4: Understand direct vs. relayed connections
 
-RustDesk tries a **direct peer-to-peer** connection first, using the ID server to coordinate NAT hole punching. When both peers sit behind cooperative NATs, you get a fast direct link. When hole punching fails—symmetric NAT, strict corporate firewalls, carrier-grade NAT—traffic **falls back to the relay** when that path is reachable, usually with extra latency ([self-hosting architecture](https://rustdesk.com/docs/en/self-host/)).
+RustDesk tries a **direct peer-to-peer** connection first, using the ID server to coordinate NAT hole punching. When both peers sit behind cooperative NATs, you get a fast direct link. When hole punching fails — symmetric NAT, strict corporate firewalls, carrier-grade NAT — traffic **falls back to the relay** when that path is reachable, usually with extra latency ([self-hosting architecture](https://rustdesk.com/docs/en/self-host/)).
 
 If direct connections are flaky, you can **force relay mode** to make sessions more deterministic. That trades a little latency for reliability — and it makes relay capacity matter, which is the next point.
 
-Direct IP access is also available for LAN or port-forwarded scenarios: you can enter a target's IP directly to bypass the ID server, though you then lose automatic NAT traversal and relay failover, so both ends must be reachable on the network you configure.
+Direct IP access is also available for LAN or port-forwarded scenarios: enable **Direct IP access** on the controlled device first, then enter its IP to bypass the ID server — though you then lose automatic NAT traversal and relay failover, so both ends must be reachable on the network you configure.
 
 ## Step 5: Stop fighting the public server
 
 The public rendezvous and relay are shared infrastructure and are not a substitute for a capacity plan or service commitment. If connections are unreliable and the client, network, and endpoint checks above pass, compare the result with a self-hosted test server before attributing the failure to the public service.
 
-The durable fix is to **self-host**. Running your own server on a small VPS or a local machine gives you dedicated capacity, a stable key you control, and no dependence on someone else's uptime. The **free community server runs indefinitely** at no cost, and you don't need a container runtime to do it — see [running the server without Docker](/blog/rustdesk-server-pro-without-docker). Because the [client is open source](/blog/open-source-remote-desktop-software) and the server is yours, there's no black-box vendor deciding whether your session goes through.
+The durable fix is to **self-host**. Running your own server on a small VPS or a local machine gives you dedicated capacity, a stable key you control, and no dependence on someone else's uptime. The **free community server runs indefinitely** at no cost, and you don't need a container runtime to do it — see [running the server without Docker](/blog/rustdesk-server-pro-without-docker). Because [RustDesk is open source](/blog/open-source-remote-desktop-software) and the server is yours, there's no black-box vendor deciding whether your session goes through.
 
 ## Step 6: Update everything
 

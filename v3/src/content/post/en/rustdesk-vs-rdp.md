@@ -4,7 +4,7 @@ lang: en
 translationKey: rustdesk-vs-rdp
 draft: false
 title: 'RustDesk vs RDP: Cross-Platform vs Windows-Native'
-excerpt: 'RustDesk vs Microsoft RDP: an honest comparison of cross-platform reach, internet access without a VPN, LAN speed, and security trade-offs.'
+excerpt: 'RustDesk vs Microsoft RDP: a practical comparison of cross-platform reach, internet access without a VPN, LAN speed, and security trade-offs.'
 image: ~/assets/images/blog/rustdesk-vs-rdp-og.png
 category: Comparisons
 tags:
@@ -22,7 +22,7 @@ faq:
   - question: 'Can RustDesk connect to a Mac or Linux machine?'
     answer: 'Yes. RustDesk can control macOS and Linux hosts from its supported desktop and mobile controller apps. RDP is primarily a Windows host protocol, so reaching macOS or Linux hosts usually means adding third-party servers or clients. RustDesk for iOS can control other devices but cannot expose an iPhone or iPad as a remote-control host.'
 metadata:
-  description: 'RustDesk vs Microsoft RDP compared honestly: cross-platform reach, internet access without a VPN, LAN performance, AD integration, and security trade-offs.'
+  description: 'RustDesk vs Microsoft RDP compared point by point: cross-platform reach, internet access without a VPN, LAN performance, AD integration, and security trade-offs.'
   keywords: 'RustDesk vs RDP, RustDesk vs Microsoft Remote Desktop, RDP over internet without VPN, cross-platform RDP alternative'
 ---
 
@@ -54,7 +54,7 @@ The safer way to publish RDP is through a properly configured VPN or RD Gateway 
 
 |                              | RustDesk                                                             | Microsoft RDP                                                                                                                                                              |
 | ---------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Cost                         | Open-source client; free self-hosted community server                | Free, built into Windows Pro/Enterprise/Education/Server                                                                                                                   |
+| Cost                         | Open source; free self-hosted community server                       | Free, built into Windows Pro/Enterprise/Education/Server                                                                                                                   |
 | Source code                  | Open source (AGPL), auditable                                        | Proprietary                                                                                                                                                                |
 | Host platforms               | Windows, macOS, Linux, Android                                       | Windows Pro/Enterprise/Education/Server ([not Home](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/remotepc/remote-desktop-allow-access)) |
 | Controller platforms         | Windows, macOS, Linux, Android, iOS                                  | Windows, macOS, iOS, Android, and other Microsoft clients                                                                                                                  |

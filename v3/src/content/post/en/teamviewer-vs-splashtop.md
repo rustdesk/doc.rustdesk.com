@@ -33,7 +33,7 @@ TeamViewer and Splashtop both cover remote access and support, but the right com
 | Published plans  | Business, Premium, Corporate, and enterprise offerings; features and session capacity vary by plan | Remote Access Solo, Pro, Performance, and Enterprise; Remote Support uses separate packaging                                                             |
 | Deployment model | Vendor-operated service                                                                            | Vendor-operated SaaS plans; a separately licensed On-Prem product is available for enterprise deployments                                                |
 | Administration   | Policy controls, reporting, mass deployment, and enterprise integrations vary by edition           | Roles, access management, and session recording on relevant plans; SSO, granular controls, SIEM, and other controls are concentrated in Enterprise       |
-| Performance      | Test relay routing, responsiveness, audio, and multi-monitor workflows on representative networks  | Performance advertises 4:4:4 color, high-fidelity audio, and up to 240 FPS; validate those workflows on the endpoints and networks you will actually use |
+| Performance      | Managed relay network; no published fps/color-depth claims                                         | Performance advertises 4:4:4 color, high-fidelity audio, and up to 240 FPS; validate those workflows on the endpoints and networks you will actually use |
 | Buying fit       | Teams that value a mature managed service, structured administration, and broad integrations       | Individuals and teams comparing lower published entry tiers, multimedia features, or a separately quoted On-Prem deployment                              |
 | Source model     | Proprietary                                                                                        | Proprietary                                                                                                                                              |
 
@@ -79,7 +79,7 @@ Record connection time, interaction latency, image quality, failure rate, and te
 
 Security claims need dates and boundaries. Splashtop's [September 18, 2025 announcement](https://www.splashtop.com/press/splashtop-achieves-iso-iec-27001-2022-certification) reports ISO/IEC 27001:2022 certification, while its current [security page](https://www.splashtop.com/security) lists SOC 2, TLS 1.2, and 256-bit AES session protection. Certification does not prove an absence of incidents: on June 30, 2026, Splashtop [disclosed a third-party Klue incident](https://www.splashtop.com/blog/security-update-third-party-klue-incident) that it says did not affect Splashtop products or services.
 
-TeamViewer's current [Trust Center](https://www.teamviewer.com/en/resources/trust-center/) lists SOC 2/SOC 3 and ISO/IEC 27001, and its [technical security overview](https://teamviewer.scene7.com/is/content/teamviewergmbh/teamviewer/central-image-hub/pdf/en/teamviewer-security-technical-overview-en.pdf) documents current architecture and encryption. TeamViewer's [TV-2024-1005 incident bulletin](https://www.teamviewer.com/en/resources/trust-center/security-bulletins/tv-2024-1005/) says the June 2024 attack was contained to its internal corporate IT environment and did not affect the product environment, connectivity platform, or customer data. These are dated vendor disclosures, not an unbounded claim that either company has never had a breach.
+TeamViewer's current [Trust Center](https://www.teamviewer.com/en/resources/trust-center/) lists SOC 2/SOC 3 and ISO/IEC 27001, and its [technical security overview](https://teamviewer.scene7.com/is/content/teamviewergmbh/teamviewer/central-image-hub/pdf/en/teamviewer-security-technical-overview-en.pdf) documents current architecture and encryption. TeamViewer's [TV-2024-1005 incident bulletin](https://www.teamviewer.com/en/resources/trust-center/security-bulletins/tv-2024-1005/) says the June 2024 attack was contained to its internal corporate IT environment and did not affect the product environment, connectivity platform, or customer data. Both are vendor statements — verify against current disclosures.
 
 ## Where each product fits
 
@@ -91,13 +91,13 @@ The decision changes when infrastructure control, source visibility, or a differ
 
 ## Why some teams also evaluate RustDesk
 
-This is where we make RustDesk's case plainly, so read it as that.
+Cards on the table: RustDesk is our product, and this section explains why it belongs on this particular shortlist.
 
 **A published licensing model.** RustDesk Server Pro standard plans license **login users plus managed devices** and include unlimited concurrent connections. [Customized V2](https://rustdesk.com/pricing#custom2) has a defined concurrency allowance, so confirm the current [pricing matrix](https://rustdesk.com/pricing) for the plan you are evaluating.
 
 **Self-hosted server-side services.** RustDesk Server Pro runs the ID/rendezvous, relay, console, and stored deployment data on infrastructure you control. When customer-operated infrastructure is mandatory, compare it with Splashtop On-Prem rather than with Splashtop's SaaS plans.
 
-**Open-source client and community server.** RustDesk's core client and free server are AGPL-licensed, so teams can inspect the code and evaluate basic self-hosting before buying Server Pro. TeamViewer and Splashtop are proprietary products.
+**Open source.** RustDesk's core client and free server are AGPL-licensed, so teams can inspect the code and evaluate basic self-hosting before buying Server Pro. TeamViewer and Splashtop are proprietary products.
 
 **A third option for the MSP workflow.** A self-hosted web console, custom client generator, device groups, and a shared address book cover the "one console, many technicians" requirement. RustDesk still licenses login users and managed devices, and Customized V2 has a concurrency allowance. See [RustDesk for MSPs](/blog/rustdesk-for-msps), [RustDesk vs TeamViewer](/blog/rustdesk-vs-teamviewer), and [Self-Hosted Splashtop Alternative: What IT Teams Should Evaluate Before Switching](/blog/rustdesk-vs-splashtop).
 
@@ -107,4 +107,4 @@ Between two SaaS products sits the option neither sells: run the coordination yo
 
 ## Try it
 
-Self-host the free community server today. Email [sales@rustdesk.com](mailto:sales@rustdesk.com) to ask about current evaluation terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing) for standard plan rates. Prefer to watch first? There's a full video walkthrough on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk).
+The free community server runs for as long as you like at no cost. If the Pro features are the deciding factor, email [sales@rustdesk.com](mailto:sales@rustdesk.com) for current evaluation terms; plan details are at [rustdesk.com/pricing](https://rustdesk.com/pricing), and the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk) has a walkthrough if you want to see it running before installing anything.

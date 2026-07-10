@@ -44,7 +44,7 @@ For a strictly air-gapped network, this is the deciding detail. A truly isolated
 
 ## Who asks this
 
-This question comes up repeatedly from IT admins, [MSPs](/blog/rustdesk-for-msps), and security teams standing up RustDesk in locked-down or regulated environments, often while migrating away from cloud-dependent tools like TeamViewer or AnyDesk. Their networks may sit behind strict egress firewalls, or they simply want to minimize external dependencies. Knowing that the license needs an ongoing outbound path — but only that — lets them write a precise firewall rule rather than either over-opening the network or wrongly assuming the product will run in a total vacuum.
+Operators of isolated or regulated networks ask this before RustDesk is even installed — security teams and [MSPs](/blog/rustdesk-for-msps) serving locked-down environments alike. Their networks may sit behind strict egress firewalls, or they simply want to minimize external dependencies. Knowing that the license needs an ongoing outbound path — but only that — lets them write a precise firewall rule rather than either over-opening the network or wrongly assuming the product will run in a total vacuum.
 
 ## Related questions
 
