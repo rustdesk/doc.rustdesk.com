@@ -27,6 +27,8 @@ metadata:
   keywords: 'Chrome Remote Desktop alternative, self-hosted Chrome Remote Desktop alternative, remote desktop without Google account, RustDesk vs Chrome Remote Desktop'
 ---
 
+The self-hosted, open-source answer to Chrome Remote Desktop is RustDesk: you host the brokering and can read the client's source, instead of routing every session through Google's cloud and tying access to a Google account.
+
 ## Why look for a Chrome Remote Desktop alternative
 
 [Chrome Remote Desktop](https://support.google.com/chrome/answer/1649523) is Google's free, browser-based remote-access tool. It's simple and fast: install a small host, sign in, and you can reach your machine from another device in a couple of minutes — exactly what casual personal use calls for.

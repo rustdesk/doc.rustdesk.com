@@ -20,6 +20,8 @@ faq:
     answer: 'Evaluation terms are set by the RustDesk sales team and change over time, so there is no fixed public policy to quote. Email sales@rustdesk.com for the current availability, duration, price, and included features, and do not assume a fixed duration or feature set until sales confirms it in writing.'
   - question: 'What happens to my server and connections when a test license expires?'
     answer: 'Do not assume connections keep working after a test license expires — confirm expiry behavior with sales before your pilot. Ask sales@rustdesk.com exactly what happens to your server and active sessions at the end of the evaluation window before you rely on a test license in production.'
+  - question: 'Can I evaluate RustDesk for free without a trial license?'
+    answer: 'Yes. The open-source community server is free to run indefinitely, so you can self-host it, connect real devices, and validate connectivity, performance, and the self-hosting fit at no cost and no time limit. Email sales@rustdesk.com only for the Server Pro layer — the web console, centralized management, and custom client — that the open-source build does not include.'
 
 metadata:
   description: 'Is there a RustDesk Server Pro free trial? No fixed public trial — evaluation terms come from the sales team and change; confirm them in writing first.'
@@ -39,6 +41,16 @@ RustDesk Server Pro is a self-hosted platform, meaning you run the server on you
 If custom branding or a preconfigured client is part of what you need to validate — common for [MSPs](/blog/rustdesk-for-msps) and businesses rolling RustDesk out to end users — ask whether your evaluation can include those workflows. That way you test something representative of what you'd actually run in production.
 
 For genuine evaluators, the practical takeaway is simple: scope your proof of concept around the workflows you actually care about, then confirm the current evaluation path, duration, and included features in writing before you start — and do not assume a fixed number of days, a specific price, or custom-client availability unless the current offer says so.
+
+## Evaluate the core for free, no trial required
+
+For most of what a proof of concept needs to prove, you don't need a trial license at all. The [open-source community server](/blog/open-source-remote-desktop-software) is free to run for as long as you like: stand it up on your own host, point real devices at it, and validate the things that actually decide the platform — connectivity and NAT traversal on your network, session performance, and whether self-hosting fits your operations. With no clock running and the same core that Server Pro builds on, that is often a more representative test than a time-boxed trial.
+
+So the evaluation path is really two-track: prove the **core** for free with the community server today, and use a sales conversation only for the **Server Pro layer** you can't exercise on the open-source build.
+
+## What still needs a Pro evaluation
+
+The Pro-only capabilities are the web console, centralized user and device management, [device groups and a shared address book](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book), and — from the Basic plan and up — the [custom-branded client generator](/blog/rustdesk-web-console-custom-client-generator-port-21114) and [LDAP/AD and OIDC SSO](/blog/rustdesk-active-directory-ldap-sso). If validating those is part of your pilot, that is when to email [sales@rustdesk.com](mailto:sales@rustdesk.com) and confirm the current evaluation path, duration, and included features in writing — and ask exactly what happens to your server and active sessions when a test license ends, before you rely on one in production.
 
 ## Who asks this
 

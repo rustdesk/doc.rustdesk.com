@@ -184,6 +184,7 @@ If you'd like to see it running before you touch a server, [see RustDesk in acti
 - [RustDesk vs TeamViewer](/blog/rustdesk-vs-teamviewer)
 - [RustDesk vs ScreenConnect](/blog/rustdesk-vs-screenconnect)
 - [Best AnyDesk Alternative: Self-Hosted RustDesk](/blog/anydesk-alternative-self-hosted)
+- [TeamViewer vs AnyDesk for MSPs](/blog/teamviewer-vs-anydesk-for-msps)
 - [AnyDesk Price Increase: Alternatives for Teams](/blog/anydesk-price-increase-alternatives)
 - [Is AnyDesk Safe?](/blog/is-anydesk-safe)
 

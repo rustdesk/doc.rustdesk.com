@@ -150,7 +150,7 @@ test('consolidates Splashtop comparisons without erasing the On-Prem product', (
 test('positions the Splashtop alternative page as an evidence-bounded IT switching guide', () => {
   const article = readPost('rustdesk-vs-splashtop.md');
 
-  assert.match(article, /title: 'Self-Hosted Splashtop Alternative: What IT Teams Should Evaluate Before Switching'/);
+  assert.match(article, /title: 'Self-Hosted Splashtop Alternative/);
   assert.match(article, /excerpt: 'A self-hosted Splashtop alternative evaluation guide/);
   assert.match(article, /## Why IT teams evaluate alternatives to Splashtop/);
   assert.match(article, /do not establish how common/i);
@@ -378,7 +378,7 @@ test('shows concrete self-hosted GDPR controls, not just obligations', () => {
   const article = readPost('remote-desktop-data-sovereignty-gdpr.md');
 
   assert.match(article, /built-in log rotation/i);
-  assert.match(article, /collected by your relay, not RustDesk/i);
+  assert.match(article, /stays on your own server when you self-host/i);
   assert.match(article, /Control Role/);
 });
 

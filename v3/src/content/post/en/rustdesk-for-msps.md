@@ -26,7 +26,7 @@ faq:
 
 metadata:
   description: 'RustDesk for MSPs: a self-hosted ScreenConnect/TeamViewer alternative — consolidate remote support with branding, access control, and plan-based concurrency.'
-  keywords: 'RustDesk for MSPs, self-hosted remote support for MSPs, white label remote desktop, ScreenConnect alternative, TeamViewer alternative for MSPs, open source remote support tool, AnyDesk alternative, per-technician remote desktop licensing'
+  keywords: 'RustDesk for MSPs, self-hosted remote support for MSPs, white-label remote desktop for MSPs, MSP remote support tool, per-technician remote desktop licensing'
 ---
 
 Most MSPs are not looking for another remote-support tool. They are looking for _fewer_ of them.

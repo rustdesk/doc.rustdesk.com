@@ -22,7 +22,7 @@ faq:
   - question: 'Can RustDesk connect to a Mac or Linux machine?'
     answer: 'Yes. RustDesk can control macOS and Linux hosts from its supported desktop and mobile controller apps. RDP is primarily a Windows host protocol, so reaching macOS or Linux hosts usually means adding third-party servers or clients. RustDesk for iOS can control other devices but cannot expose an iPhone or iPad as a remote-control host.'
 metadata:
-  description: 'RustDesk vs Microsoft RDP compared point by point: cross-platform reach, internet access without a VPN, LAN performance, AD integration, and security trade-offs.'
+  description: 'RustDesk vs Microsoft RDP, point by point: cross-platform reach, internet access without a VPN, LAN performance, AD integration, and security trade-offs.'
   keywords: 'RustDesk vs RDP, RustDesk vs Microsoft Remote Desktop, RDP over internet without VPN, cross-platform RDP alternative'
 ---
 

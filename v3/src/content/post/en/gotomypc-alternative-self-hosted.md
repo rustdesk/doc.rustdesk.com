@@ -27,6 +27,8 @@ metadata:
   keywords: 'GoToMyPC alternative, self-hosted GoToMyPC alternative, open source GoToMyPC alternative, RustDesk vs GoToMyPC, self-hosted remote access, GoToMyPC replacement'
 ---
 
+The self-hosted answer to GoToMyPC is RustDesk: you run the server that brokers your unattended connections, so reach, cost, and data stay on your own infrastructure rather than a per-computer vendor cloud.
+
 [GoToMyPC](https://get.gotomypc.com/) is built around a simple job: leave an agent on a computer and reach that computer later without someone at the far end. If that is the workflow you need to preserve, evaluate alternatives on unattended reliability, reboot recovery, display handling, file transfer, remote printing, and mobile access—not on the length of a generic feature list.
 
 RustDesk is a different model from GoToMyPC's per-computer cloud: you host it, so you own the access and the data. Here is how it maps onto the GoToMyPC workflow.

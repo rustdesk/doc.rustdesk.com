@@ -3,7 +3,7 @@ publishDate: 2026-07-06T10:09:00Z
 lang: en
 translationKey: rustdesk-vs-splashtop
 draft: false
-title: 'Self-Hosted Splashtop Alternative: What IT Teams Should Evaluate Before Switching'
+title: 'Self-Hosted Splashtop Alternative: What to Evaluate First'
 excerpt: 'A self-hosted Splashtop alternative evaluation guide covering licensing, infrastructure, reliability evidence, workflow testing, and migration risk.'
 image: ~/assets/images/blog/rustdesk-vs-splashtop-og.png
 category: Comparisons

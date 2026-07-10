@@ -22,7 +22,7 @@ faq:
   - question: 'How should I protect a device that accepts RustDesk connections?'
     answer: 'Set a strong, unique permanent password on the controlled device, enable the client’s TOTP connection 2FA, and use its IP allowlist when your controller addresses or CIDR ranges are predictable. Keep trusted-device exceptions narrow. These layers reduce password and network-origin risks, but they cannot protect someone who deliberately gives a scammer the password, current 2FA code, or manual approval.'
 metadata:
-  description: 'How RustDesk responds to remote-access scams through public warnings, Google Play withdrawal, public-server login, controlled-device 2FA, and CIDR IP allowlists.'
+  description: 'How RustDesk responds to remote-access scams: public warnings, Google Play withdrawal, public-server login, controlled-device 2FA, and CIDR IP allowlists.'
   keywords: 'RustDesk scam, is RustDesk a scam, RustDesk Google Play, RustDesk login required, RustDesk 2FA, RustDesk IP whitelist, remote access scam prevention'
 ---
 

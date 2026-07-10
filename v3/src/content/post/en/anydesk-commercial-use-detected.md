@@ -21,7 +21,7 @@ faq:
     answer: "No. AnyDesk's free version is for personal, non-commercial use. Remote work, organizational device administration, and support for customers or colleagues require commercial terms. Check AnyDesk's current terms for the authoritative definition."
   - question: 'What counts as commercial use on AnyDesk?'
     answer: 'Supporting clients or colleagues, remote work (including checking work email), server administration, managing devices for an organization, or any use you are paid for. Helping family and friends or reaching your own personal devices is personal use.'
-  - question: 'Does RustDesk have a commercial-use detector?'
+  - question: 'Does RustDesk flag commercial use the way AnyDesk does?'
     answer: "RustDesk's open-source community server does not implement AnyDesk's commercial-use classifier. Server Pro is commercially licensed and self-hosted, with limits determined by the purchased RustDesk plan rather than an AnyDesk free-tier detector. Standard RustDesk plans include unlimited concurrent connections; Customized V2 does not."
 metadata:
   description: "AnyDesk flagging your personal use as commercial? Here's the official whitelist fix, what counts as commercial use, and how self-hosted RustDesk avoids it."

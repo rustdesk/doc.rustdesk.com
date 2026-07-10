@@ -30,6 +30,8 @@ metadata:
   keywords: 'AnyDesk alternative, self-hosted AnyDesk alternative, open source AnyDesk alternative, AnyDesk replacement'
 ---
 
+If you want an AnyDesk alternative you actually control, it's RustDesk: open source and self-hosted, so the ID/relay servers, session brokering, and your device list run on your own infrastructure — licensed per user and device, not by a cloud seat count.
+
 ## Why people leave AnyDesk: rising bills and lost control
 
 Most people who look for an AnyDesk alternative aren't chasing a shinier feature list. They're reacting to two things: the bill going up, and the feeling that they no longer control their own remote-access setup — sharpened, for security-conscious buyers, by the fact that AnyDesk publicly disclosed a security incident in early 2024 (evaluate that event through public reporting and AnyDesk's own disclosure).

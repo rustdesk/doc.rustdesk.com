@@ -27,6 +27,8 @@ metadata:
   keywords: 'Zoho Assist alternative, self-hosted Zoho Assist alternative, open source Zoho Assist alternative, RustDesk vs Zoho Assist, self-hosted remote support, on-premise remote support software'
 ---
 
+Want a Zoho Assist alternative on infrastructure you own? That's RustDesk — an open-source, self-hosted tool where you run the ID and relay yourself, so session brokering and your device list never route through a vendor cloud.
+
 [Zoho Assist](https://www.zoho.com/assist/) is a cloud-based remote support and remote access product, part of the broader Zoho suite. If you have landed here, you are probably not unhappy with what it does — you are asking a different question: **can I run something like this on my own infrastructure, and stop routing every session through a vendor's cloud?**
 
 RustDesk is a genuinely different model from Zoho Assist's cloud: you run the server, so brokering and data stay yours. Here is where it fits as a self-hosted alternative.
