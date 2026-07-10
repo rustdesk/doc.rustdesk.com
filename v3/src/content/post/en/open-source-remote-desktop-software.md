@@ -14,7 +14,7 @@ tags:
 author: RustDesk Team
 faq:
   - question: 'What open-source remote desktop software is available?'
-    answer: 'Options range from protocol-level building blocks like VNC (TigerVNC, TightVNC) and the Apache Guacamole browser gateway to full support platforms. RustDesk aims to give you an auditable, self-hostable core plus support-team features like device groups, a shared address book, and a custom client generator.'
+    answer: 'Options range from protocol-level building blocks like VNC (TigerVNC, TightVNC) and the Apache Guacamole browser gateway to full support platforms. RustDesk gives you an auditable, self-hostable core plus support-team features like device groups, a shared address book, and a custom client generator.'
   - question: 'Is RustDesk open source?'
     answer: "Yes. RustDesk's core is open source under the AGPL, so you can read the code, audit exactly what the client does, build it yourself, and run the free community server indefinitely."
   - question: "Can I self-host RustDesk's server?"
@@ -60,7 +60,7 @@ Those concerns are structural: closed tools can change price, packaging, and hos
 | TeamViewer                     | No              | No                                       | Yes (vendor cloud)                                           |
 | AnyDesk                        | No              | On-premises appliance on top tier only   | Yes                                                          |
 
-VNC variants are proven and genuinely open, but you're building the connection, NAT traversal, and access control around them. Guacamole is a great browser-based gateway if you want clientless access, though it's an infrastructure project in its own right. RustDesk aims to give you the auditable, self-hostable core _plus_ the support-team features that closed tools sell — without the closed part.
+VNC variants are proven and genuinely open, but you're building the connection, NAT traversal, and access control around them. Guacamole is a great browser-based gateway if you want clientless access, though it's an infrastructure project in its own right. RustDesk gives you the auditable, self-hostable core _plus_ the support-team features that closed tools sell — without the closed part.
 
 ### Where RustDesk fits: auditable and self-hosted
 

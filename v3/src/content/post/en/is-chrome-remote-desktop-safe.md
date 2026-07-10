@@ -65,6 +65,6 @@ That openness cuts both ways, to be clear: because the code is public, so are Ru
 
 ## The verdict
 
-Is Chrome Remote Desktop safe? For casual personal use — reaching your own PC, helping a relative — yes, it's reasonably safe, and it's hard to beat for zero-cost simplicity. Rate it accordingly. Turn on two-factor authentication for your Google account, pick a PIN that isn't your birthday, and never read an access code to someone who contacted you first, and you've handled the risks that actually matter.
+Is Chrome Remote Desktop safe? For casual personal use — reaching your own PC, helping a relative — yes, it's reasonably safe, and simple and low-cost. Rate it accordingly. Turn on two-factor authentication for your Google account, pick a PIN that isn't your birthday, and never read an access code to someone who contacted you first, and you've handled the risks that actually matter.
 
 Where CRD runs out of road is control and scale: it's closed, Google-cloud-brokered, and thin on administration. If you need to audit the code, keep brokering on your own infrastructure, or manage more than a couple of machines, that's the point to look at an open-source, self-hosted option — not because CRD is unsafe, but because it was never trying to be that tool.

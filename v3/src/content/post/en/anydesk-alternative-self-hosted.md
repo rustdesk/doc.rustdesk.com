@@ -19,7 +19,7 @@ faq:
   - question: 'Can I self-host an AnyDesk alternative?'
     answer: 'Yes. RustDesk Server Pro is self-hosted by design, and you can also run the free open-source community server indefinitely at no cost. Someone on your side has to provision the host, open ports, set up TLS, and patch it over time.'
   - question: 'Is RustDesk cheaper than AnyDesk?'
-    answer: 'RustDesk licensing is per login-user plus per managed-device, with unlimited concurrent connections on standard plans and a defined allowance on Customized V2. Self-hosting is not guaranteed to have the lowest sticker price in every configuration, so model both products against the same user, device, concurrency, feature, and infrastructure requirements; see rustdesk.com/pricing.'
+    answer: 'RustDesk licensing is per login-user plus per managed-device, with unlimited concurrent connections on standard plans and a defined allowance on Customized V2. Your cost tracks your own users and devices plus a license, rather than a per-seat schedule set by a vendor, so model both products against the same user, device, concurrency, feature, and infrastructure requirements; see rustdesk.com/pricing.'
   - question: 'Does RustDesk support SSO and access control?'
     answer: 'Yes. RustDesk Pro includes a self-hosted web console, device groups plus a shared address book for per-user access control, and LDAP/SSO (OIDC) available from the Basic plan and up.'
   - question: 'Can I try RustDesk without a sales call?'

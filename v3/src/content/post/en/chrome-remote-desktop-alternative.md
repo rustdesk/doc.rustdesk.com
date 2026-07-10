@@ -29,7 +29,7 @@ metadata:
 
 ## Why look for a Chrome Remote Desktop alternative
 
-[Chrome Remote Desktop](https://support.google.com/chrome/answer/1649523) is Google's free, browser-based remote-access tool. It's genuinely convenient: install a small host, sign in, and you can reach your machine from another device in a couple of minutes. For casual personal use, that's hard to beat.
+[Chrome Remote Desktop](https://support.google.com/chrome/answer/1649523) is Google's free, browser-based remote-access tool. It's simple and fast: install a small host, sign in, and you can reach your machine from another device in a couple of minutes — exactly what casual personal use calls for.
 
 But the moment your needs grow past "help my own laptop from the couch," the seams show. You're tied to Google identity and signaling, some support-team features are missing, and the control plane is not self-hostable. Google's [network guide](https://support.google.com/chrome/a/answer/16364503) explains the boundary: connections are initially negotiated through Google services, while live WebRTC traffic uses Direct, STUN, or TURN/relay paths. Only TURN/relay session packets are relayed through Google data centers. If you've bumped into those trade-offs, this page lays out what a self-hosted, open-source alternative looks like.
 

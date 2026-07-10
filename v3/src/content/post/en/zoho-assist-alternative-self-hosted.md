@@ -27,13 +27,13 @@ metadata:
   keywords: 'Zoho Assist alternative, self-hosted Zoho Assist alternative, open source Zoho Assist alternative, RustDesk vs Zoho Assist, self-hosted remote support, on-premise remote support software'
 ---
 
-[Zoho Assist](https://www.zoho.com/assist/) is a capable, cloud-based remote support and remote access product, and part of the broader Zoho suite. If you have landed here, you are probably not unhappy with what it does — you are asking a different question: **can I run something like this on my own infrastructure, and stop routing every session through a vendor's cloud?**
+[Zoho Assist](https://www.zoho.com/assist/) is a cloud-based remote support and remote access product, part of the broader Zoho suite. If you have landed here, you are probably not unhappy with what it does — you are asking a different question: **can I run something like this on my own infrastructure, and stop routing every session through a vendor's cloud?**
 
 RustDesk is a genuinely different model from Zoho Assist's cloud: you run the server, so brokering and data stay yours. Here is where it fits as a self-hosted alternative.
 
 ## What Zoho Assist does well
 
-Credit where it is due. Zoho Assist is [cloud-based](https://www.zoho.com/assist/) remote support and unattended access software that runs in the browser with no installation needed for technicians to start a session. It handles attended support and unattended access, file transfer, multi-monitor navigation, and it can be rebranded to suit your business. It integrates tightly with the rest of the Zoho ecosystem, and — like any mature SaaS — it means **zero server maintenance** on your side. Zoho runs the infrastructure; you log in and work.
+Credit where it is due. Zoho Assist is [cloud-based](https://www.zoho.com/assist/) remote support and unattended access software that runs in the browser with no installation needed for technicians to start a session. It handles attended support and unattended access, file transfer, multi-monitor navigation, and it can be rebranded to suit your business. It integrates with the rest of the Zoho ecosystem, and — like any mature SaaS — it means **zero server maintenance** on your side. Zoho runs the infrastructure; you log in and work.
 
 For many teams that is exactly the right call. The reason people go looking for an alternative is usually one of two things: they want their session data and brokering on their _own_ servers, or they want to get out of a per-technician cloud subscription model.
 

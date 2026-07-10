@@ -33,7 +33,7 @@ RustDesk is a different model from GoToMyPC's per-computer cloud: you host it, s
 
 ## What GoToMyPC is (and isn't)
 
-GoToMyPC is a mature, [cloud-based remote-access product](https://en.wikipedia.org/wiki/GoToMyPC): you install a host agent on the machine you want to reach, and connect to it from a browser or app anywhere. It handles file transfer, remote printing, and multi-monitor support, and it is **fully managed** — GoTo runs the infrastructure, so there is nothing on your side to maintain.
+GoToMyPC is an established, [cloud-based remote-access product](https://en.wikipedia.org/wiki/GoToMyPC): you install a host agent on the machine you want to reach, and connect to it from a browser or app anywhere. It handles file transfer, remote printing, and multi-monitor support, and it is **fully managed** — GoTo runs the infrastructure, so there is nothing on your side to maintain.
 
 Two things send people looking for an alternative. First, it is **cloud-only**: there is no self-hosted option, so every session is brokered through GoTo's servers. Second, its pricing is **per computer, per month** across the Personal, Pro, and Corporate tiers ([GoToMyPC plans](https://get.gotomypc.com/plansandpricing)), which adds up quickly as the number of machines you need to reach grows.
 

@@ -19,7 +19,7 @@ faq:
   - question: 'Does self-hosting make remote-desktop costs more predictable?'
     answer: 'Self-hosting changes who holds the pricing power: with RustDesk Server Pro you host it, so the cost is your infrastructure plus a license instead of a renewal the vendor sets. The product still has annual license terms, so compare the current pricing page at each renewal.'
   - question: 'Is switching away from AnyDesk worth the migration cost?'
-    answer: "There is a real one-time switch cost — migration time, some retraining, and standing up and securing a server — but when the increase recurs, a switch often pays for itself within a renewal cycle or two. Estimate the switch cost once and weigh it against the increase you'd otherwise absorb at every renewal."
+    answer: "There is a real one-time switch cost — migration time, some retraining, and standing up your own server — but when the increase recurs, a switch often pays for itself within a renewal cycle or two. Estimate the switch cost once and weigh it against the increase you'd otherwise absorb at every renewal."
   - question: 'Can I audit what the RustDesk client does?'
     answer: 'Yes — RustDesk is AGPL open source. You can read exactly what runs on your endpoints, build the client from source, and run the free community server for as long as you like.'
   - question: 'Is self-hosting always cheaper than AnyDesk?'
@@ -85,7 +85,7 @@ When the renewal quote jumps, you really have two moves, and it's worth costing 
 
 **Renew and negotiate.** The fastest path: no migration, no retraining, a tool your team already knows, and sometimes you can talk the increase down. But you're negotiating from the weaker seat — the vendor knows switching is painful and has priced that pain into the quote — any discount you win tends to be temporary, and you're back at the same table next year. This is the right call when the increase is genuinely modest, you're mid-project, or your switching cost is unusually high.
 
-**Switch.** There's a real upfront cost here, and we won't pretend otherwise: migration time, some retraining, and standing up and securing a server. What you buy with that one-time cost is a change in _who holds the lever_ — with a self-hosted, open-source tool, your recurring spend becomes your own infrastructure plus a license, not a seat count a vendor re-prices on its own schedule.
+**Switch.** There's a real upfront cost here, and we won't pretend otherwise: migration time, some retraining, and standing up your own server. What you buy with that one-time cost is a change in _who holds the lever_ — with a self-hosted, open-source tool, your recurring spend becomes your own infrastructure plus a license, not a seat count a vendor re-prices on its own schedule.
 
 **The break-even.** Estimate the switch cost once — hours to migrate plus server setup — and weigh it against the increase you'd otherwise absorb at _every_ renewal. A one-time cost is a single line; a compounding annual increase is a curve. When the increase recurs, a switch often pays for itself within a renewal cycle or two. Run it with your own numbers before committing either way.
 

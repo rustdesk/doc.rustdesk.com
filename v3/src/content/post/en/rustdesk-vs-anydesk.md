@@ -115,7 +115,7 @@ Prices change constantly, so this section compares _models_, not exact dollar am
 
 The two things to internalize about this model are annual billing and plan-specific concurrent-connection capacity. Scaling simultaneous connections can require add-ons or a different tier. Verify the current page and a dated written quote before budgeting because public packaging can change after this article's check date.
 
-**RustDesk** licenses by **login users plus managed devices**, with prorated upgrades. Standard plans include unlimited concurrent connections, while Customized V2 limits and prices them separately. Self-hosting is not guaranteed to be cheaper in every configuration; compare current quotes for the same user, device, feature, and concurrency requirements. See [RustDesk Pro pricing](/blog/rustdesk-pro-license-cost-how-to-pay) and [the concurrency FAQ](/blog/rustdesk-concurrent-connections-limit).
+**RustDesk** licenses by **login users plus managed devices**, with prorated upgrades. Standard plans include unlimited concurrent connections, while Customized V2 limits and prices them separately. Because your cost becomes infrastructure plus a license you control rather than a per-seat cloud renewal, compare current quotes for the same user, device, feature, and concurrency requirements to see how it lands for your fleet. See [RustDesk Pro pricing](/blog/rustdesk-pro-license-cost-how-to-pay) and [the concurrency FAQ](/blog/rustdesk-concurrent-connections-limit).
 
 Because RustDesk pricing itself shifts, this article deliberately doesn't quote a RustDesk dollar figure — the current numbers live at [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
