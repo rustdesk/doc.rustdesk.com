@@ -8,6 +8,10 @@ keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk
 
 This guide covers large-scale RustDesk client deployment with scripts and automation tools such as PowerShell, batch, and macOS bash. If you need the simplest experience and have RustDesk Server Pro, start with the custom client generator: https://twitter.com/rustdesk/status/1788905463678951787.
 
+{{% notice note %}}
+Related reading: [setting up unattended access](https://rustdesk.com/blog/rustdesk-unattended-access-setup).
+{{% /notice %}}
+
 ## What is the best way to deploy RustDesk clients at scale?
 
 For RustDesk Server Pro, the easiest large-scale deployment path is usually the custom client generator because it packages your server settings into the client build. For environments managed through RMM, Intune, GPO, or custom automation, PowerShell, batch, and shell scripts are more flexible.

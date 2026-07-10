@@ -7,6 +7,10 @@ weight: 4
 
 Use this Android guide to control remote devices, transfer files, configure your ID and relay server, and share the screen or file system of an Android phone.
 
+{{% notice note %}}
+See also: [remote control from Android and iOS](https://rustdesk.com/blog/rustdesk-remote-control-android-ios).
+{{% /notice %}}
+
 ## Remote Control
 
 Enter the ID of the remote device in the home page or select a historical device to verify.

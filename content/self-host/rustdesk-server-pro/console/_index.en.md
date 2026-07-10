@@ -9,6 +9,10 @@ The RustDesk Server Pro web console is the main administrative interface for man
 
 The web console is integrated in the RustDesk server Pro, serviced by the `21114` port.
 
+{{% notice note %}}
+See also the [web console and custom client generator walkthrough](https://rustdesk.com/blog/rustdesk-web-console-custom-client-generator-port-21114).
+{{% /notice %}}
+
 ## What is the RustDesk Server Pro web console?
 
 The web console is the main control plane for a self-hosted RustDesk Server Pro deployment. It is where administrators manage users, devices, groups, permissions, strategies, relay settings, SMTP, tokens, and custom clients.

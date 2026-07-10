@@ -19,6 +19,10 @@ RustDesk Server Pro is the commercial self-hosted deployment option for teams th
 - Treat the [Windows install path](/docs/en/self-host/rustdesk-server-pro/installscript/windows/) as legacy.
 - Plan for HTTPS, licensing, and client configuration immediately after the server starts.
 
+{{% notice note %}}
+Deciding whether Pro fits you? See [self-hosted vs. cloud SaaS](https://rustdesk.com/blog/rustdesk-self-hosted-vs-cloud-saas-option), [how to evaluate Server Pro](https://rustdesk.com/blog/rustdesk-server-pro-free-trial), and [RustDesk for enterprise](https://rustdesk.com/blog/rustdesk-for-enterprise).
+{{% /notice %}}
+
 ## When to choose RustDesk Server Pro
 
 Choose RustDesk Server Pro when RustDesk Server OSS is not enough and you need:
@@ -47,7 +51,7 @@ We recommend reading this first before proceeding, [How does self-hosted server 
 
 ## Hardware requirement
 
-Lowest level VPS is enough for your use cases. The server software is not CPU and memory intensive. Our public ID server hosted on a 2 CPU/4 GB Vultr server serves 1.0+ million endpoints. Each relay connection consumes avg 180kb per second. 1 cpu core and 1G ram is enough to support 1000 relay concurrent connections.
+Lowest level VPS is enough for your use cases. The server software is not CPU and memory intensive. Our public ID server hosted on a 2 CPU/4 GB Vultr server serves 1.0+ million endpoints. Each relay connection consumes avg 180kb per second. 1 cpu core and 1G ram is enough to support 1000 relay concurrent connections. For sizing at large scale, see [self-hosting server hardware at scale](https://rustdesk.com/blog/self-host-rustdesk-server-hardware-at-scale) and [scaling to 50,000–200,000 devices](https://rustdesk.com/blog/rustdesk-scale-50000-200000-devices).
 
 ## Article tutorials
 [Step-by-Step Guide: Self-Host RustDesk Server Pro on Cloud via Docker for Secure Remote Access](https://www.linkedin.com/pulse/step-by-step-guide-self-host-rustdesk-server-pro-cloud-montinaro-fwnmf/)

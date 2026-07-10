@@ -10,6 +10,10 @@ RustDesk Server OSS is the free and open-source self-hosted backend for RustDesk
 
 Use RustDesk Server OSS when you want core self-hosting capabilities and are comfortable managing deployment, networking, and upgrades yourself. If you need a web console, API access, OIDC, LDAP, 2FA, device management, or other centralized admin features, compare it with [RustDesk Server Pro](/docs/en/self-host/rustdesk-server-pro/).
 
+{{% notice note %}}
+Related reading: [what open-source remote desktop software gives you](https://rustdesk.com/blog/open-source-remote-desktop-software) and [why self-host remote desktop software](https://rustdesk.com/blog/why-self-host-remote-desktop-software).
+{{% /notice %}}
+
 ## What is included in RustDesk Server OSS?
 
 - `hbbs` for RustDesk ID, rendezvous, and signaling.

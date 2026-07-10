@@ -7,6 +7,10 @@ weight: 4
 
 Use this Linux guide to install RustDesk on major distributions, review Wayland and login-screen limitations, and troubleshoot common permission issues such as SELinux policy blocks.
 
+{{% notice note %}}
+See also the overview guide: [RustDesk for Linux](https://rustdesk.com/blog/rustdesk-for-linux).
+{{% /notice %}}
+
 ## Which Linux package should you use?
 
 | Situation | Best package |
