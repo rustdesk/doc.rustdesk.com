@@ -25,7 +25,7 @@ RustDesk Server OSS만으로 부족하고 다음이 필요할 때 RustDesk Serve
 - [API](https://github.com/rustdesk/rustdesk/wiki/FAQ#api-of-rustdesk-server-pro)
 - [OIDC](/docs/ko/self-host/rustdesk-server-pro/oidc/), [LDAP](/docs/ko/self-host/rustdesk-server-pro/ldap/), [2FA](/docs/ko/self-host/rustdesk-server-pro/2fa/)
 - 주소록
-- 로그 관리(연결, 파일 전송, 알람 등)
+- [로그 관리](/docs/ko/self-host/rustdesk-server-pro/audit-logs/)(연결, 파일 전송, 알람 등)
 - 디바이스 관리
 - [Security Settings sync](/docs/ko/self-host/rustdesk-server-pro/strategy/)
 - [Access control](/docs/ko/self-host/rustdesk-server-pro/permissions/)

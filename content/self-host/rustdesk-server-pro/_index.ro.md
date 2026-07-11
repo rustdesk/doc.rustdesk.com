@@ -21,7 +21,7 @@ RustDesk Server Pro oferă mai multe funcționalități comparativ cu versiunea 
 - [API](https://github.com/rustdesk/rustdesk/wiki/FAQ#api-of-rustdesk-server-pro)
 - [OIDC](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/), [LDAP](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/), [2FA](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/)
 - [Agendă](/docs/ro/self-host/rustdesk-server-pro/address-book/)
-- Management jurnale (conexiuni, transfer fișiere, alarme etc.)
+- [Management jurnale](/docs/ro/self-host/rustdesk-server-pro/audit-logs/) (conexiuni, transfer fișiere, alarme etc.)
 - Management dispozitive
 - [Sincronizare setări de securitate](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/)
 - [Control acces](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/)
