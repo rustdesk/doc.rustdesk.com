@@ -9,7 +9,7 @@ A Lista de endereços permite que usuários salvem IDs de dispositivos RustDesk,
 
 ## Respostas rápidas
 
-- **Minha lista de contatos** é privada para o usuário conectado. Senhas digitadas manualmente e lembradas são salvas em **Minha lista de contatos** e podem ser sincronizadas entre os dispositivos do usuário.
+- **Minha lista de contatos** é a lista privada do usuário conectado. Senhas digitadas manualmente e lembradas são salvas em **Minha lista de contatos** e podem ser sincronizadas entre os dispositivos do usuário.
 - Listas de endereços **compartilhadas** podem ser compartilhadas com usuários específicos, grupos de usuários ou todos os usuários.
 - Uma lista de endereços compartilhada pode armazenar uma senha no nível da lista de endereços, e cada entrada de dispositivo pode armazenar uma senha no nível do dispositivo. Quando a senha no nível do dispositivo não está definida, a senha no nível da lista de endereços é usada.
 - Tags podem ser usadas para filtrar dispositivos na console web e no cliente RustDesk.
@@ -24,7 +24,7 @@ Use uma lista de endereços compartilhada quando os usuários precisarem se cone
 
 3. Compartilhe a lista de endereços com usuários específicos, grupos de usuários ou todos os usuários.
 
-4. O usuário entra no cliente RustDesk e abre a aba **Lista de endereços**.
+4. O usuário entra no cliente RustDesk e abre a aba geral **Lista de endereços**.
 
 5. O usuário seleciona a lista de endereços compartilhada e clica no cartão do dispositivo.
 
@@ -91,7 +91,7 @@ Se nenhuma senha estiver definida, o usuário se conecta normalmente e talvez pr
 
 ## Cliente RustDesk
 
-Após entrar, use o seletor de lista de endereços para alternar entre **Minha lista de contatos** e listas de endereços compartilhadas. Para listas de endereços compartilhadas, o cliente mostra a permissão do usuário atual.
+Após entrar, use o seletor na aba **Lista de endereços** para alternar entre a lista privada **Minha lista de contatos** e listas de endereços compartilhadas. Para listas de endereços compartilhadas, o cliente mostra a permissão do usuário atual.
 
 ![Seletor de lista de endereços do cliente RustDesk](/docs/en/self-host/rustdesk-server-pro/address-book/images/client-address-book-selector.png)
 
