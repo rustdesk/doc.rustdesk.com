@@ -31,7 +31,7 @@ Choose RustDesk Server Pro when RustDesk Server OSS is not enough and you need:
 - [Web console](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
 - [API](https://github.com/rustdesk/rustdesk/wiki/FAQ#api-of-rustdesk-server-pro)
 - [OIDC](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/), [LDAP](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/), [2FA](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/)
-- Address book
+- [Address book](/docs/en/self-host/rustdesk-server-pro/address-book/)
 - Log management (Connection, file transfer, alarm, etc.)
 - Device management
 - [Security Settings sync](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/)
