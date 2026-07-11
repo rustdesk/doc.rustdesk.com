@@ -20,7 +20,7 @@ pre: "<b>2.2. </b>"
 - [網頁控制台](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
 - [API](https://github.com/rustdesk/rustdesk/wiki/FAQ#api-of-rustdesk-server-pro)
 - [OIDC](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/)、[LDAP](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/)、[2FA](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/)
-- 通訊錄
+- [通訊錄](/docs/zh-tw/self-host/rustdesk-server-pro/address-book/)
 - 日誌管理（連線、檔案傳輸、警報等）
 - 設備管理
 - [安全性設定同步](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/)

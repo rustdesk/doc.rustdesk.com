@@ -20,7 +20,7 @@ RustDesk Server Pro hat mehr Funktionen im Vergleich zur Open-Source-Version.
 - [Webkonsole](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
 - [API](https://github.com/rustdesk/rustdesk/wiki/FAQ#api-of-rustdesk-server-pro)
 - [OIDC](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/), [LDAP](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/), [2FA](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/)
-- Adressbuch
+- [Adressbuch](/docs/de/self-host/rustdesk-server-pro/address-book/)
 - Protokollverwaltung (Verbindung, Dateiübertragung, Alarm, etc.)
 - Gerätemanagement
 - [Synchronisierung der Sicherheitseinstellungen](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/)

@@ -20,7 +20,7 @@ O RustDesk Server Pro tem mais recursos comparado à versão de código aberto.
 - [Console web](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/)
 - [API](https://github.com/rustdesk/rustdesk/wiki/FAQ#api-of-rustdesk-server-pro)
 - [OIDC](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/), [LDAP](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/), [2FA](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/)
-- Catálogo de endereços
+- [Lista de endereços](/docs/pt/self-host/rustdesk-server-pro/address-book/)
 - Gerenciamento de logs (Conexão, transferência de arquivos, alarme, etc.)
 - Gerenciamento de dispositivos
 - [Sincronização de configurações de segurança](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/)
