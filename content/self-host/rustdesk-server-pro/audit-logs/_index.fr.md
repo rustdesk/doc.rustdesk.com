@@ -113,9 +113,9 @@ Les types d’alarme de connexion distante incluent :
 
 Les types d’alarme de compte de connexion incluent :
 
-- Plus de 30 tentatives de connexion consécutives (ancien)
-- Plusieurs tentatives de connexion en une minute (ancien)
-- Plusieurs tentatives de connexion en une heure (ancien)
+- Plus de 30 tentatives de connexion consécutives
+- Plusieurs tentatives de connexion en une minute
+- Plusieurs tentatives de connexion en une heure
 
 ## Journaux des opérations de console
 
