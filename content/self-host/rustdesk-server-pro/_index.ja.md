@@ -21,7 +21,7 @@ RustDesk Server Pro はオープンソース版と比較してより多くの機
 - [API](https://github.com/rustdesk/rustdesk/wiki/FAQ#api-of-rustdesk-server-pro)
 - [OIDC](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/oidc/)、[LDAP](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/)、[2FA](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/2fa/)
 - [アドレス帳](/docs/ja/self-host/rustdesk-server-pro/address-book/)
-- ログ管理（接続、ファイル転送、アラームなど）
+- [ログ管理](/docs/ja/self-host/rustdesk-server-pro/audit-logs/)（接続、ファイル転送、アラームなど）
 - デバイス管理
 - [セキュリティ設定の同期](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/)
 - [アクセス制御](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/)
