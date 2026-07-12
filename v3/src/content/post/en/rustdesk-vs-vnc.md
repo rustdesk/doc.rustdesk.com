@@ -4,7 +4,7 @@ lang: en
 translationKey: rustdesk-vs-vnc
 draft: false
 title: 'RustDesk vs VNC: NAT Traversal, Codecs, Encryption'
-excerpt: "RustDesk vs VNC compared in practice: NAT traversal without port-forwarding, modern codecs, built-in encryption, and why teams move from VNC to RustDesk."
+excerpt: 'RustDesk vs VNC compared in practice: NAT traversal without port-forwarding, modern codecs, built-in encryption, and why teams move from VNC to RustDesk.'
 image: ~/assets/images/blog/rustdesk-vs-vnc-og.png
 category: Comparisons
 tags:
@@ -61,7 +61,7 @@ RustDesk applies **end-to-end encryption by default** on every connection, self-
 | Source code           | Open source (AGPL)                                                   | Mixed: GPL/open (TigerVNC, TightVNC), proprietary (RealVNC)                                                      |
 | Cross-platform        | Windows, macOS, Linux, Android; iOS (controller only)                | Very broad, including Raspberry Pi                                                                               |
 | NAT traversal         | Built in (rendezvous + relay)                                        | None in base protocol — [needs port-forwarding/VPN/SSH](https://en.wikipedia.org/wiki/Virtual_Network_Computing) |
-| Encryption            | End-to-end (NaCl) by default ([docs](https://rustdesk.com/docs/en/)) | Varies: AES (RealVNC) to none (TightVNC)                                                                         |
+| Encryption            | End-to-end (NaCl) by default ([docs](https://rustdesk.com/docs/en/)) | Varies: AES (RealVNC) to [none (TightVNC)](https://en.wikipedia.org/wiki/Virtual_Network_Computing)              |
 | Video transport       | Modern codecs (VP8/VP9/AV1, H.264/H.265)                             | Pixel-based RFB encodings                                                                                        |
 | Self-hosting          | Yes — your own ID/relay server                                       | Yes for open implementations (no built-in broker)                                                                |
 | Setup on LAN          | Simple                                                               | Very simple                                                                                                      |
@@ -76,7 +76,7 @@ RustDesk's design advantages appear the moment you leave the LAN or need consist
 - **Internet reach without plumbing.** NAT traversal and relay fallback mean no port-forwarding, VPN, or SSH tunnel per endpoint.
 - **Encryption you don't have to configure.** End-to-end by default, not an implementation you have to vet.
 - **Modern codecs.** VP8/VP9/AV1 and hardware H.264/H.265 tend to hold up better over constrained or high-latency links than raw pixel encodings.
-- **One auditable app and one self-hosted server.** Open-source (AGPL) software plus a self-hosted ID/relay keeps both the code and your session data on infrastructure you control — the heart of the [open-source remote desktop](/blog/open-source-remote-desktop-software) argument.
+- **One auditable app and one self-hosted server.** Open-source (AGPL) software plus a self-hosted ID/relay keeps both the code and your session data on infrastructure you control.
 
 The trade: self-hosting RustDesk means **someone runs the server** — provisioning, TLS, ports, and patching over time. A LAN-only VNC setup skips that entirely. That is the real trade.
 

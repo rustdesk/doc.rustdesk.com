@@ -47,13 +47,13 @@ This is where architecture, not marketing, decides the outcome.
 
 **RustDesk Server Pro is self-hosted.** The ID/rendezvous server, relay server, web console, and managed-device data run on infrastructure you choose. RustDesk first attempts a direct peer-to-peer connection through hole punching; if that fails, session traffic uses your configured relay. This gives you control over the rendezvous/relay layer and stored device data, but the endpoints and their network routes still determine where direct traffic travels.
 
-|                                | Vendor-cloud tools     | Self-hosted RustDesk                                                                        |
-| ------------------------------ | ---------------------- | ------------------------------------------------------------------------------------------- |
-| Where sessions are coordinated | Vendor's cloud         | Your ID/rendezvous server                                                                   |
-| Where session traffic flows    | Vendor-defined routing | Direct between endpoints when possible; otherwise through your relay                        |
-| Who controls data residency    | The vendor             | You choose server-side location and relay policy; endpoints still matter                    |
-| Auditability of the client     | Usually closed source  | [Open source (AGPL)](/blog/case-for-open-source-remote-access) — read and build it yourself |
-| Who runs the server            | Vendor                 | Your team                                                                                   |
+|                                | Vendor-cloud tools     | Self-hosted RustDesk                                                                    |
+| ------------------------------ | ---------------------- | --------------------------------------------------------------------------------------- |
+| Where sessions are coordinated | Vendor's cloud         | Your ID/rendezvous server                                                               |
+| Where session traffic flows    | Vendor-defined routing | Direct between endpoints when possible; otherwise through your relay                    |
+| Who controls data residency    | The vendor             | You choose server-side location and relay policy; endpoints still matter                |
+| Auditability of the client     | Usually closed source  | [Open source (AGPL)](https://github.com/rustdesk/rustdesk) — read and build it yourself |
+| Who runs the server            | Vendor                 | Your team                                                                               |
 
 Teams evaluating self-hosting often cite the ability to choose the location and operator of the rendezvous, relay, and management systems. That is a meaningful control, but it must be documented together with endpoint locations and routing behavior.
 
@@ -63,17 +63,17 @@ Placing the ID, relay, and management services in a German data center lets you 
 
 ## Benefit 2: Open source means you can prove it, not just trust it
 
-Data sovereignty isn't only about location — it's about knowing what the software does. RustDesk's core is **open source under AGPL**. You (or your security team) can read the code, audit exactly what the client does, build it yourself, and run the free community server indefinitely. That auditability matters more than usual right now: buyers in regulated sectors have grown wary after publicly reported incidents such as [AnyDesk's 2024 security incident](https://www.infosecurity-magazine.com/news/anydesk-hit-cyberattack-customer/) and the [2024 ConnectWise ScreenConnect vulnerability](https://www.cisa.gov/news-events/alerts/2024/02/22/cisa-adds-one-known-exploited-connectwise-vulnerability-cve-2024-1709-catalog). Being able to inspect the client yourself is a concrete answer to "how do we know?"
+Data sovereignty isn't only about location — it's about knowing what the software does. RustDesk's core is **open source under AGPL**. You (or your security team) can read the code, audit exactly what the client does, build it yourself, and run the free community server indefinitely. That auditability matters more than usual for remote access: because the software is trusted to control a machine entirely, buyers in regulated sectors increasingly want to verify what a client does rather than take a vendor's word for it. Being able to inspect the client yourself is a concrete answer to "how do we know?"
 
 ## Benefit 3: Sovereignty without a licensing tax
 
 RustDesk standard plans are licensed **per login-user plus per managed-device** and include unlimited concurrent connections; [Customized V2](https://rustdesk.com/pricing#custom2) instead limits and prices concurrent connections. You can [upgrade a license](/blog/upgrade-rustdesk-license-mid-subscription) as requirements change. Check the current plan matrix before purchasing.
 
-The architecture also scales with your estate: RustDesk publishes [large-fleet planning guidance](/blog/rustdesk-scale-50000-200000-devices) for teams evaluating bigger deployments. For [per-user access control](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book), self-hosted deployments include a [web console](/blog/rustdesk-web-console-custom-client-generator-port-21114), a custom-branded client generator, device groups with a shared address book, and [LDAP/SSO](/blog/rustdesk-active-directory-ldap-sso) (OIDC) available from the Basic plan and up.
+The architecture also scales with your estate: RustDesk publishes [large-fleet planning guidance](/blog/rustdesk-scale-50000-200000-devices) for teams evaluating bigger deployments. For [per-user access control](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/), self-hosted deployments include a [web console](https://rustdesk.com/docs), a custom-branded client generator, device groups with a shared address book, and [LDAP/SSO](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/) (OIDC) available from the Basic plan and up.
 
 ## How RustDesk fits ISO 27001, SOC 2, or HIPAA requirements
 
-Enterprise procurement and healthcare teams almost always ask how a remote-access tool maps to ISO 27001, SOC 2, or HIPAA. With a cloud product, you inherit — and depend on — the vendor's certification of _their_ infrastructure. RustDesk's model is different, and for regulated teams the difference usually works in your favor: because you **self-host**, remote access runs inside the environment you already control and audit, so it falls under _your_ ISO 27001 or HIPAA scope and _your_ existing controls rather than a third party's. You place the ID, relay, and console on infrastructure your program already covers, and — because RustDesk is [open source](/blog/case-for-open-source-remote-access) — your security team can read and verify exactly what it does as part of an assessment, instead of trusting a closed binary.
+Enterprise procurement and healthcare teams almost always ask how a remote-access tool maps to ISO 27001, SOC 2, or HIPAA. With a cloud product, you inherit — and depend on — the vendor's certification of _their_ infrastructure. RustDesk's model is different, and for regulated teams the difference usually works in your favor: because you **self-host**, remote access runs inside the environment you already control and audit, so it falls under _your_ ISO 27001 or HIPAA scope and _your_ existing controls rather than a third party's. You place the ID, relay, and console on infrastructure your program already covers, and — because RustDesk is [open source](https://github.com/rustdesk/rustdesk) — your security team can read and verify exactly what it does as part of an assessment, instead of trusting a closed binary.
 
 A few practical notes:
 
@@ -117,4 +117,4 @@ RustDesk can support a sovereignty architecture, but the controller remains resp
 
 ## Evaluate it inside your own perimeter
 
-You can evaluate on your own terms. Self-host the free, open-source community server today, or email [sales@rustdesk.com](mailto:sales@rustdesk.com) for current evaluation terms for the Pro features. Check current plans and exact features at [rustdesk.com/pricing](https://rustdesk.com/pricing). Prefer to watch first? There's a full [video walkthrough](/blog/see-rustdesk-in-action) on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk).
+You can evaluate on your own terms. Self-host the free, open-source community server today, or email [sales@rustdesk.com](mailto:sales@rustdesk.com) for current evaluation terms for the Pro features. Check current plans and exact features at [rustdesk.com/pricing](https://rustdesk.com/pricing). Prefer to watch first? There's a full video walkthrough on the [RustDesk YouTube channel](https://www.youtube.com/@rustdesk).

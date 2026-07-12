@@ -10,7 +10,7 @@ weight: 600
 This FAQ covers the most common RustDesk Server Pro tasks: installation, conversion from OSS, upgrades, license migration, logging, SMTP issues, and device-management problems. If you are starting from scratch, begin with the [installation guide](/docs/en/self-host/rustdesk-server-pro/installscript/). If you already have a running server, the most common follow-up pages are [License](/docs/en/self-host/rustdesk-server-pro/license/), [SMTP](/docs/en/self-host/rustdesk-server-pro/smtp/), and [Client Deployment](/docs/en/self-host/client-deployment/).
 
 {{% notice note %}}
-Troubleshooting help: [RustDesk not connecting](https://rustdesk.com/blog/rustdesk-not-connecting-troubleshooting), ["connected, waiting for image"](https://rustdesk.com/blog/rustdesk-connected-waiting-for-image), and [running Server Pro without Docker](https://rustdesk.com/blog/rustdesk-server-pro-without-docker).
+Troubleshooting help: ["connected, waiting for image"](https://rustdesk.com/blog/rustdesk-connected-waiting-for-image).
 {{% /notice %}}
 
 ## Which page should you use for each common task?

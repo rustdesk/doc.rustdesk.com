@@ -48,16 +48,16 @@ If a monitor _is_ attached, the next suspect is that it went to sleep.
 
 ## Fix by cause
 
-| Cause                          | Signal                              | Fix                                                                                   |
-| ------------------------------ | ----------------------------------- | ------------------------------------------------------------------------------------- |
-| Headless / no display          | Black screen on a server or mini-PC | Attach a monitor, add an HDMI dummy plug, or use the Linux headless path              |
-| Screen asleep / locked         | Worked earlier, black after idle    | Wake the screen; disable sleep/screensaver; on macOS stop the display sleeping in Settings |
-| Missing permission (macOS)     | Connects, permanent black           | Grant Screen Recording in Privacy & Security; install the helper for the login screen |
-| Codec mismatch                 | Blank or frozen image               | Switch codec (VP8 / VP9 / AV1 / H.264 / H.265); fall back to a software codec         |
-| Hardware acceleration conflict | Black on specific GPUs              | Turn off hardware codec in the session toolbar or Settings, or switch codec      |
-| Outdated GPU driver            | Black after a driver/OS update      | Update the GPU driver (NVIDIA especially)                                             |
+| Cause                          | Signal                              | Fix                                                                                                                                      |
+| ------------------------------ | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Headless / no display          | Black screen on a server or mini-PC | Attach a monitor, add an HDMI dummy plug, or use the Linux headless path                                                                 |
+| Screen asleep / locked         | Worked earlier, black after idle    | Wake the screen; disable sleep/screensaver; on macOS stop the display sleeping in Settings                                               |
+| Missing permission (macOS)     | Connects, permanent black           | Grant Screen Recording in Privacy & Security; install the helper for the login screen                                                    |
+| Codec mismatch                 | Blank or frozen image               | Switch codec (VP8 / VP9 / AV1 / H.264 / H.265); fall back to a software codec                                                            |
+| Hardware acceleration conflict | Black on specific GPUs              | Turn off hardware codec in the session toolbar or Settings, or switch codec                                                              |
+| Outdated GPU driver            | Black after a driver/OS update      | Update the GPU driver (NVIDIA especially)                                                                                                |
 | Wayland session (Linux)        | No consent prompt, blank            | Accept the PipeWire/portal prompt and confirm the desktop portal is installed; an X11 session also works where a distro still offers one |
-| Network / relay stall          | Sticks on "waiting for image"       | Allow TCP 21115-21117 and UDP 21116; add TCP 21118-21119 for WebSocket clients        |
+| Network / relay stall          | Sticks on "waiting for image"       | Allow TCP 21115-21117 and UDP 21116; add TCP 21118-21119 for WebSocket clients                                                           |
 
 ### Screen sleep, lock, and screensavers
 
@@ -88,7 +88,7 @@ On Linux, **Wayland screen capture goes through PipeWire and the `xdg-desktop-po
 
 ### Network and relay
 
-Because the message contains the word "connected," the session is usually already up — but the _video_ can still stall if the relay is overloaded or a relay port is blocked. For the standard server path, make sure **TCP 21115-21117 and UDP 21116** are reachable end to end. Open **TCP 21118-21119 only if you use WebSocket clients**. The public demo server is shared and its throughput isn't guaranteed, so if you rely on RustDesk daily, [self-hosting your own relay](/blog/self-host-rustdesk-server-hardware-at-scale) gives you far more consistent behavior. If the session itself is dropping or never establishing, that's a different problem — see our guide to [RustDesk not connecting](/blog/rustdesk-not-connecting-troubleshooting).
+Because the message contains the word "connected," the session is usually already up — but the _video_ can still stall if the relay is overloaded or a relay port is blocked. For the standard server path, make sure **TCP 21115-21117 and UDP 21116** are reachable end to end. Open **TCP 21118-21119 only if you use WebSocket clients**. The public demo server is shared and its throughput isn't guaranteed, so if you rely on RustDesk daily, self-hosting your own relay gives you far more consistent behavior. If the session itself is dropping or never establishing, that's a different problem — see the [RustDesk Server Pro FAQ](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/).
 
 ## Keep everything current
 
@@ -96,7 +96,7 @@ Old builds carry old capture bugs. Update **both** the controlling client and th
 
 ## The open-source advantage
 
-When a black screen defies the checklist, RustDesk gives you something closed-source tools don't: the [actual capture code](/blog/open-source-remote-desktop-software) under an AGPL license. You (or a contractor) can read exactly how capture works on your platform, reproduce the issue, and file a precise report against the public repository — instead of waiting on a vendor's support queue.
+When a black screen defies the checklist, RustDesk gives you something closed-source tools don't: the actual capture code under an AGPL license. You (or a contractor) can read exactly how capture works on your platform, reproduce the issue, and file a precise report against the public repository — instead of waiting on a vendor's support queue.
 
 ## Fewer variables when the server is yours
 

@@ -56,12 +56,12 @@ Once RustDesk runs as a service, it loads before anyone logs in, which is what l
 
 ## Per-platform notes
 
-| Platform | What to do                                         | Watch out for                                                                                       |
-| -------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Windows  | Install; keep the service running (starts with the machine) | Portable exe drops on logout/UAC; use the installer                                                 |
-| macOS    | Install, set permanent password, grant permissions | Screen Recording and Accessibility must be granted; login-screen capture needs the helper installed |
-| Linux    | Install the service package                        | Wayland needs an active session; for pre-login use the headless virtual-display setup, or X11 where a distro still offers one |
-| Android  | Set permanent password; enable capture             | Screen must be awake; grant the screen-capture (MediaProjection) consent and input permission        |
+| Platform | What to do                                                  | Watch out for                                                                                                                 |
+| -------- | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Windows  | Install; keep the service running (starts with the machine) | Portable exe drops on logout/UAC; use the installer                                                                           |
+| macOS    | Install, set permanent password, grant permissions          | Screen Recording and Accessibility must be granted; login-screen capture needs the helper installed                           |
+| Linux    | Install the service package                                 | Wayland needs an active session; for pre-login use the headless virtual-display setup, or X11 where a distro still offers one |
+| Android  | Set permanent password; enable capture                      | Screen must be awake; grant the screen-capture (MediaProjection) consent and input permission                                 |
 
 ### Windows
 
@@ -79,15 +79,15 @@ Install RustDesk so its service component runs at boot. For a machine that sits 
 
 Configuring one machine by hand is fine. Configuring fifty isn't. On **Basic and higher self-hosted plans**, the **Custom Client Generator** in the web console builds an installer with your **server address, public key, and settings pre-baked**, so end users type nothing. Combined with your existing deployment tool (Group Policy, Intune, an MSP RMM, a shell script), each device installs the service and registers against _your_ server on first run.
 
-This is where self-hosting pays off for teams: you get an [unattended fleet you fully control](/blog/rustdesk-for-msps), with no per-seat cloud metering deciding how many endpoints you're "allowed" to reach. Set up the generator via the [web console on port 21114](/blog/rustdesk-web-console-custom-client-generator-port-21114). Note that RustDesk is licensed per **login-user and managed-device**, not per concurrent session, so budget by how many machines and admins you have — see [what counts as a managed device](/blog/what-counts-as-a-managed-device).
+This is where self-hosting pays off for teams: you get an [unattended fleet you fully control](/blog/rustdesk-for-msps), with no per-seat cloud metering deciding how many endpoints you're "allowed" to reach. Set up the generator via the [web console on port 21114](https://rustdesk.com/docs). Note that RustDesk is licensed per **login-user and managed-device**, not per concurrent session, so budget by how many machines and admins you have — see [what counts as a managed device](/blog/what-counts-as-a-managed-device).
 
 ## Lock it down
 
 Unattended access is a standing door into a machine, so treat the credentials seriously:
 
 - **Strong, unique permanent password**, rotated periodically.
-- **Two-factor authentication** and, on Pro, **access controls** so only authorized accounts can connect. Our write-up on [per-user access control and device groups](/blog/rustdesk-per-user-access-control-device-groups-shared-address-book) covers scoping who reaches what.
-- **Self-host the server-side services** when you need control of rendezvous, relay, console, and stored deployment data. Endpoint credentials remain an endpoint-security responsibility. Because [RustDesk is open source under AGPL](/blog/open-source-remote-desktop-software), its authentication implementation can be reviewed.
+- **Two-factor authentication** and, on Pro, **access controls** so only authorized accounts can connect. Our write-up on [per-user access control and device groups](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/) covers scoping who reaches what.
+- **Self-host the server-side services** when you need control of rendezvous, relay, console, and stored deployment data. Endpoint credentials remain an endpoint-security responsibility. Because RustDesk is open source under AGPL, its authentication implementation can be reviewed.
 
 ## Unattended access you actually control
 

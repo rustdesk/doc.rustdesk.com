@@ -2,19 +2,18 @@
 publishDate: 2024-10-12T00:00:00Z
 lang: ar
 translationKey: rustdesk-web-client-v2-preview
-title: معاينة عميل RustDesk Web V2
-excerpt: يقدم V2 ترميزات أفضل ودعم لوحة المفاتيح الدولية والحافظة ونقل الملفات.
+title: "معاينة عميل RustDesk Web V2"
+excerpt: "يوفر الإصدار V2 ترميزات أفضل، ودعم لوحة مفاتيح دولية، ودعم الحافظة، ونقل الملفات، وغير ذلك."
 image: ~/assets/images/blog/web-client.jpg
 category: إصدار
 slug: muayinat-rustdesk-web-client-v2
 tags: [عميل الويب, إصدار]
 ---
 
-لم يتلق عميل RustDesk Web V1 تحديثًا منذ أكثر من عامين وكان يفتقد ميزات عديدة. أمضى فريقنا ثلاثة أشهر في تطوير V2. تحسّن المعاينة فك الترميز ودعم لوحات المفاتيح الدولية، وتدعم حافظة النصوص والصور ونقل الملفات. ورغم قيود المتصفح، نسعى إلى تجربة متسقة مع إصدار سطح المكتب.
+يسعدنا أن نقدّم معاينة الإصدار V2 من عميل RustDesk للويب. يجلب هذا الإصدار فك ترميز أقوى، ودعمًا أفضل للوحات المفاتيح الدولية، ودعم الحافظة (ليس النصوص فقط، بل الصور أيضًا)، ونقل الملفات. عملنا على إبقاء مجموعة الميزات وتجربة المستخدم في عميل الويب متزامنة مع عميل سطح المكتب، في حدود ما تسمح به المتصفحات.
 
-جرّبه على https://rustdesk.com/web. للوصول إلى خادمك، اضبط WebSocket Secure ‏(WSS) على المنفذين 21118/21119 وفق [الوثائق](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client).
-
-```nginx
+يمكنك الوصول إلى معاينة الإصدار V2 من عميل RustDesk للويب بزيارة https://rustdesk.com/web. إذا كنت ترغب في الوصول إلى خادمك الخاص عبر V2، فيرجى ضبط دعم WebSocket Secure ‏(WSS) وفقًا لـ[الوثائق](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client)، وإعداده على المنفذين 21118/21119.
+```
     location /ws/id {
         proxy_pass http://localhost:21118;
         proxy_http_version 1.1;
@@ -25,6 +24,7 @@ tags: [عميل الويب, إصدار]
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
     }
+
     location /ws/relay {
         proxy_pass http://localhost:21119;
         proxy_http_version 1.1;
@@ -36,7 +36,13 @@ tags: [عميل الويب, إصدار]
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 ```
+كما أن عميل الويب **مدمج في RustDesk Server Pro**، بحيث يمكنك تقديمه من خادمك الخاص عبر `https://rustdesk.yourcompany.com/web` بدلاً من الاعتماد على الخادم العام.
 
-بعد استقرار V2 سندمج عميل الويب في إصدار Pro أيضًا، وسيكون متاحًا عبر `https://rustdesk.yourcompany.com/web`.
+## طريقتان لاستخدام عميل الويب مع خادمك الخاص
 
-يسعدنا تقديم هذه التحسينات، ونرحب بملاحظاتكم بينما نواصل تطوير RustDesk Web Client V2.
+- **عميل الويب العام (`rustdesk.com/web`) موجَّهًا إلى خادمك.** يمكنك استخدام عميل الويب المستضاف من RustDesk وربطه بخادم المعرِّفات (ID)/الترحيل (relay) الخاص بك، لكن يتعين عليك إعداده بنفسك: يحتاج المتصفح إلى WebSocket Secure ‏(WSS) ورؤوس CORS الصحيحة للوصول إلى خادمك. راجع [إعداد WSS وCORS لعميل الويب](https://github.com/rustdesk/rustdesk/wiki/FAQ#wss-and-cors-setup-for-web-client).
+- **عميل ويب مستضاف ذاتيًا (يقدَّم عبر Server Pro على `https://your-server/web`).** عميل الويب [مدمج في RustDesk Server Pro](https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro)، لذا فهو يعمل من خادمك الخاص بدلاً من الخادم العام. الاستضافة الذاتية لعميل الويب **غير متضمَّنة في الخطط الأساسية** — إذ تتطلب خطة كبيرة بما يكفي لتحقيق **(عدد المستخدمين × 10) + عدد الأجهزة ≥ 400** (على سبيل المثال 10 مستخدمين / 300 جهاز، أو 30 مستخدمًا / 100 جهاز، أو 20 مستخدمًا / 200 جهاز). ويمكن أيضًا [تخصيص](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-to-customize-self-hosted-web-client) عميل الويب المستضاف ذاتيًا.
+
+أيًا كان المسار الذي تختاره، فإن عميل الويب هو **متحكِّم**: فأنت تتحكم في أجهزة أخرى من علامة تبويب في المتصفح، لكن علامة تبويب المتصفح لا يمكن أن تعمل كمضيف غير مراقَب (unattended).
+
+يسعدنا تقديم هذه التحسينات لمستخدمينا، ونتطلع إلى ملاحظاتكم بينما نواصل تنقيح وتحسين RustDesk Web Client V2.

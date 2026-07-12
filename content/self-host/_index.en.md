@@ -11,7 +11,7 @@ Self-hosting RustDesk lets you control your own ID and relay infrastructure, kee
 Support is available via our [Discord](https://discord.com/invite/nDceKgxnkV) for OSS and [email](mailto:support@rustdesk.com) for Pro.
 
 {{% notice note %}}
-Background reading: [why self-host remote desktop software](https://rustdesk.com/blog/why-self-host-remote-desktop-software), [self-hosted vs. cloud SaaS](https://rustdesk.com/blog/rustdesk-self-hosted-vs-cloud-saas-option), and [what open-source remote desktop software gives you](https://rustdesk.com/blog/open-source-remote-desktop-software).
+Background reading: [why self-host remote desktop software](https://rustdesk.com/blog/why-self-host-remote-desktop-software).
 {{% /notice %}}
 
 ## Which RustDesk server should you choose?

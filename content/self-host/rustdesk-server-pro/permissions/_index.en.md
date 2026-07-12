@@ -7,10 +7,6 @@ keywords: ["rustdesk access control", "rustdesk device permissions", "rustdesk u
 
 Use Access Control to decide which users or groups can connect to which devices in RustDesk Server Pro.
 
-{{% notice note %}}
-For a practical overview, see [per-user access control, device groups, and the shared address book](https://rustdesk.com/blog/rustdesk-per-user-access-control-device-groups-shared-address-book).
-{{% /notice %}}
-
 ## What is Access Control in RustDesk Server Pro?
 
 Access Control determines whether a user or group is allowed to reach a device. It is about connection eligibility, not about what the operator can do after the connection starts. For in-session permissions, use [Control Role](/docs/en/self-host/rustdesk-server-pro/control-role/).

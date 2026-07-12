@@ -30,26 +30,24 @@ No — a self-hosted RustDesk Server Pro deployment is not designed to run fully
 
 ## The short answer
 
-Server Pro needs an outbound path to rustdesk.com for license validation, and that requirement does not go away once the server is running. In practice the check is periodic rather than constant: the server contacts rustdesk.com over port 443 roughly once a day, and if a check fails it retries until it either succeeds or about seven days elapse — after which the license stops validating. That built-in grace window means a short internet outage will not immediately break your deployment, but a permanently offline server will. Your ID and relay services remain self-hosted; direct sessions flow between endpoints and relayed sessions use your relay. You can keep the network tightly restricted: a proxy is supported, so in practice you allow the required outbound HTTPS path and lock down the rest.
+In practice the check is periodic rather than constant: the server contacts rustdesk.com over port 443 roughly once a day, and if a check fails it retries until it either succeeds or about seven days elapse — after which the license stops validating. That built-in grace window means a short internet outage will not immediately break your deployment, but a permanently offline server will. Your ID and relay services stay self-hosted; direct sessions flow between endpoints and relayed sessions use your relay. A proxy is supported, so you can allow the required outbound HTTPS path and lock the rest of the network down.
 
 ## In detail
 
-Many teams evaluating a self-hosted remote-desktop tool assume "self-hosted" should mean "fully offline forever." With RustDesk Server Pro, remote sessions do not depend on a permanently live vendor cloud — but the **license** does require ongoing outbound connectivity. Activation is an online-only step, and validation continues while the server runs, so a server that is completely cut off from rustdesk.com is not a supported configuration for the licensed product.
+This requirement applies specifically to the **licensed Server Pro** feature set — the open-source RustDesk server you can self-host without a license is a separate matter. If your goal is to keep session data on your own infrastructure, self-hosting already achieves that: the outbound requirement is about licensing, not about brokering every session.
 
-It is worth separating two things. The open-source RustDesk server you can self-host without a license is a different matter; the requirement here applies specifically to the **licensed Server Pro** feature set. If your objection is fundamentally about keeping session data on your own infrastructure, self-hosting already achieves that — the outbound requirement is about licensing, not about brokering every session.
+One more workflow to account for: **building a custom client**. If you generate a branded or pre-configured client from Server Pro, that provisioning step also expects outbound access. Confirm the current behavior for your version and plan.
 
-There is a second workflow to account for: **building a custom client**. If you generate a branded or pre-configured client from Server Pro, that provisioning step also expects outbound access. Confirm the current behavior for your version and plan.
-
-For a strictly air-gapped network, this is the deciding detail. A truly isolated server that can _never_ reach rustdesk.com falls outside the default model, so if you have hard air-gap requirements, confirm your exact scenario with RustDesk before committing. For the far more common "mostly isolated, tight egress" setup, the practical takeaway is to budget for one outbound HTTPS path to rustdesk.com — directly or via a proxy — and define the exact domains, ports, and approval workflow before you write the firewall policy. See the [RustDesk docs](https://rustdesk.com/docs), and note that the same license requirement is why you [cannot run Server Pro without any internet access even when installing without Docker](/blog/rustdesk-server-pro-without-docker).
+For a strictly air-gapped network, this is the deciding detail: a server that can _never_ reach rustdesk.com falls outside the default model, so if you have hard air-gap requirements, confirm your exact scenario with RustDesk before committing. For the far more common "mostly isolated, tight egress" setup, budget for one outbound HTTPS path to rustdesk.com — directly or via a proxy — and define the exact domains, ports, and approval workflow before you write the firewall policy. See the [RustDesk docs](https://rustdesk.com/docs), and note that the same license requirement is why you [cannot run Server Pro without any internet access even when installing without Docker](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/).
 
 ## Who asks this
 
-Operators of isolated or regulated networks ask this before RustDesk is even installed — security teams and [MSPs](/blog/rustdesk-for-msps) serving locked-down environments alike. Their networks may sit behind strict egress firewalls, or they simply want to minimize external dependencies. Knowing that the license needs an ongoing outbound path — but only that — lets them write a precise firewall rule rather than either over-opening the network or wrongly assuming the product will run in a total vacuum.
+Operators of isolated or regulated networks ask this before RustDesk is even installed — security teams and [MSPs](/blog/rustdesk-for-msps) serving locked-down environments alike, whether behind strict egress firewalls or simply minimizing external dependencies. Knowing the license needs an ongoing outbound path — but only that — lets them write a precise firewall rule instead of over-opening the network or wrongly assuming the product will run in a total vacuum.
 
 ## Related questions
 
-- [Which domains and ports does RustDesk Server Pro need for outbound connectivity?](https://rustdesk.com/docs)
-- [Can I install RustDesk Server Pro without Docker on a plain VM?](/blog/rustdesk-server-pro-without-docker)
-- [How do I generate and distribute a custom-branded RustDesk client?](/blog/rustdesk-web-console-custom-client-generator-port-21114)
+- Outbound domains and ports: see the [RustDesk docs](https://rustdesk.com/docs).
+- [Can I install RustDesk Server Pro without Docker on a plain VM?](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/)
+- Generating a custom-branded client: see the [RustDesk docs](https://rustdesk.com/docs).
 
 Planning a locked-down or near-air-gapped rollout? Confirm the current connectivity and licensing specifics on rustdesk.com before you finalize your firewall policy.

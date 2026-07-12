@@ -10,7 +10,7 @@ pre: "<b>1. </b>"
 The RustDesk Client is the application you install on devices to start or receive remote desktop sessions through RustDesk public servers or your own self-hosted RustDesk Server. Use this guide to download the correct build, install it on each platform, connect to another device, and point the client to RustDesk Server OSS or RustDesk Server Pro.
 
 {{% notice note %}}
-Platform guides: [RustDesk for Linux](https://rustdesk.com/blog/rustdesk-for-linux), [RustDesk for Mac](https://rustdesk.com/blog/rustdesk-for-mac), and [remote control from Android and iOS](https://rustdesk.com/blog/rustdesk-remote-control-android-ios). See also [the best free remote desktop software](https://rustdesk.com/blog/best-free-remote-desktop-software).
+Platform guides: [RustDesk for Linux](https://rustdesk.com/blog/rustdesk-for-linux) and [remote control from Android and iOS](https://rustdesk.com/blog/rustdesk-remote-control-android-ios). See also [the best free remote desktop software](https://rustdesk.com/blog/best-free-remote-desktop-software).
 {{% /notice %}}
 
 ## Supported Platforms

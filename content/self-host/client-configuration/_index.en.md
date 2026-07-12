@@ -33,8 +33,6 @@ Most self-hosted RustDesk clients only need a few values:
 
 You can have your own name, logo, icon, configuration, be signed and more.
 
-For a guided overview, see the [web console and custom client generator walkthrough](https://rustdesk.com/blog/rustdesk-web-console-custom-client-generator-port-21114).
-
 Currently, Windows X64, Mac Arm64 / X64, [Linux](https://twitter.com/rustdesk/status/1788905463678951787), Android Arm 64 are supported.
 
 [Video](https://twitter.com/rustdesk/status/1769171628426944539)

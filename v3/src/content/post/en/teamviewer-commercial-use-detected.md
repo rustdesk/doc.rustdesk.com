@@ -75,13 +75,11 @@ When the usage is genuinely commercial, there is no legitimate reset workaround.
 | Choose another managed SaaS | You want no server operations but a different commercial offer  | Sessions and administration remain vendor-operated                       |
 | Pilot a self-hosted tool    | You want to operate the ID, relay, console, and deployment data | Your team owns hosting, patching, certificates, monitoring, and recovery |
 
-RustDesk belongs in the third row. Its community server can be self-hosted without a commercial-use classifier, while Server Pro is licensed by login users and managed devices. Standard plans include unlimited concurrent connections; [Customized V2](https://rustdesk.com/pricing#custom2) has a defined allowance. Direct sessions still flow between endpoints, and Server Pro's commercial license terms still apply.
+RustDesk belongs in the third row: you self-host the community server with no commercial-use classifier watching sessions — [why self-hosting removes that tripwire](/blog/why-self-host-remote-desktop-software) — while Server Pro is licensed by login users and managed devices, with a defined allowance on [Customized V2](https://rustdesk.com/pricing#custom2).
 
 ## A safe migration path
 
-Do not uninstall TeamViewer as the first step. Stand up a test RustDesk server and validate the workflows behind your commercial usage: attended and unattended access, elevation, file transfer, multi-monitor, client deployment, access restrictions, and relay performance. Then compare the operating cost with the current TeamViewer quote.
-
-The [self-hosted TeamViewer alternative guide](/blog/self-hosted-teamviewer-alternative) covers the full migration and feature comparison. If the reset is approved, your free personal-use access continues. If any of your use is commercial, licensing is the durable fix — either TeamViewer's paid tier or a tool licensed for how you work.
+Do not uninstall TeamViewer as the first step. Stand up a test RustDesk server, validate the workflows behind your commercial usage, then compare the operating cost with the current TeamViewer quote. The [self-hosted TeamViewer alternative guide](/blog/self-hosted-teamviewer-alternative) covers the full migration and feature comparison. If the reset is approved, your free personal-use access continues; if any of your use is commercial, licensing is the durable fix — either TeamViewer's paid tier or a tool licensed for how you work.
 
 ## What to do next
 
@@ -89,4 +87,4 @@ The [self-hosted TeamViewer alternative guide](/blog/self-hosted-teamviewer-alte
 - If the use is commercial, compare current written quotes and license terms.
 - If self-hosting is a requirement, test the free community server before evaluating Server Pro features and plans at [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
-Do not use unofficial ID-reset scripts or delete configuration files to evade the classification; they do not change the license terms and can create additional security or support problems.
+And skip the ID-reset scripts and config-file deletions that circulate on forums: they leave TeamViewer's license terms exactly where they were and tend to create security or support problems of their own.

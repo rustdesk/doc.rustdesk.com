@@ -20,7 +20,7 @@ faq:
   - question: 'What is the catch with free remote desktop software?'
     answer: 'The catch is usually that you host it yourself. Free self-hosted tools like RustDesk, Guacamole, and MeshCentral need a server you run — with RustDesk the hardware requirements are low and upkeep is light once it is set up. VNC needs port-forwarding or a VPN to work across the internet. The saving is money; the trade is running your own server and, sometimes, missing convenience features.'
   - question: 'How is this different from open-source remote desktop software?'
-    answer: 'Open source is about the license and auditability; free is about price and terms. There is overlap, but they are not the same lens. This guide focuses on tools that are free to run — especially for business — while our open-source guide compares the auditable, self-hostable options in depth.'
+    answer: 'Open source is about the license and auditability; free is about price and terms. There is overlap, but they are not the same lens. This guide focuses on tools that are free to run — especially for business — rather than on how auditable or self-hostable each one is.'
 metadata:
   description: 'Genuinely free remote desktop software for 2026 — including tools you can use for business without a commercial-use flag. Six options, each with its catch.'
   keywords: 'best free remote desktop software, free remote desktop for business, free remote desktop no commercial use, RustDesk free, Apache Guacamole, MeshCentral, free VNC remote desktop'
@@ -32,7 +32,7 @@ Search "free remote desktop software" and you'll get a wall of tools that are fr
 
 So this guide applies a stricter test. To make the list, a tool has to be **genuinely free to run** — and ideally free for **business** use with no commercial-use trip wire. That rules out the "free until we decide it isn't" tier and leaves the tools you can actually build a workflow on.
 
-A note on scope: this is the _free_ lens. If what you care about is auditability and licensing specifically, our companion piece on [open-source remote desktop software](/blog/open-source-remote-desktop-software) compares the auditable, self-hostable options in depth. There's overlap, but "free" and "open source" aren't the same question.
+A note on scope: this is the _free_ lens — the test here is price and terms, not whether the code is open to inspect. Auditability and licensing are a related but separate question; there's overlap, but "free" and "open source" aren't the same thing.
 
 ## The genuinely free options
 
@@ -40,9 +40,9 @@ The order below starts with the tools that are genuinely free for business use a
 
 ### RustDesk — free, open source, no commercial-use nag
 
-RustDesk sits first here because it is open source under the **[AGPL](/blog/case-for-open-source-remote-access)** and the **community server has no license fee or commercial-use classifier**. You still pay for any hosting and operations you choose. It is cross-platform (Windows, macOS, Linux, Android, iOS). On Windows, macOS, and Linux hosts it includes file transfer and permanent-password unattended access; Android can host attended sessions, and the iOS app is controller-only. The source can be inspected and built independently.
+RustDesk sits first here because it is open source under the **[AGPL](https://github.com/rustdesk/rustdesk)** and the **community server has no license fee or commercial-use classifier**. You still pay for any hosting and operations you choose. It is cross-platform (Windows, macOS, Linux, Android, iOS). On Windows, macOS, and Linux hosts it includes file transfer and permanent-password unattended access; Android can host attended sessions, and the iOS app is controller-only. The source can be inspected and built independently.
 
-**The catch:** you run the server yourself — though the hardware requirements are low and, once it is set up, upkeep is light. Someone provisions a host, opens ports, and sets up TLS, then keeps it patched over time. The free community server also isn't the paid Server Pro — team features like the [web console, custom-branded clients, and device groups](/blog/rustdesk-web-console-custom-client-generator-port-21114) live in Server Pro (self-hosted, not free). For current terms, see [rustdesk.com/pricing](https://rustdesk.com/pricing).
+**The catch:** you run the server yourself — though the hardware requirements are low and, once it is set up, upkeep is light. Someone provisions a host, opens ports, and sets up TLS, then keeps it patched over time. The free community server also isn't the paid Server Pro — team features like the [web console, custom-branded clients, and device groups](https://rustdesk.com/docs) live in Server Pro (self-hosted, not free). For current terms, see [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
 ### Chrome Remote Desktop — free and simple, with Google-managed coordination
 
@@ -76,14 +76,14 @@ VNC is the granddaddy of open remote access. Free implementations like [TigerVNC
 
 ## Free remote desktop software compared
 
-| Tool                             | Free for business?                        | Self-host a server?            | Best for                                         |
-| -------------------------------- | ----------------------------------------- | ------------------------------ | ------------------------------------------------ |
-| **RustDesk**                     | Yes (AGPL + free community server)        | Yes (free server / Server Pro) | Cross-platform access with no commercial-use nag |
-| Chrome Remote Desktop            | Yes; enterprise policies available        | No self-hosted control plane   | Simple access with Google-managed coordination   |
-| VNC (TigerVNC/TightVNC/UltraVNC) | Yes (open protocol)                       | Yes (you assemble it)          | LAN/DIY access with a VPN                        |
-| Apache Guacamole                 | Yes (Apache 2.0)                          | Yes (gateway)                  | Browser access to existing RDP/VNC/SSH           |
-| MeshCentral                      | Yes (Apache 2.0)                          | Yes (agent-based)              | Managing a fleet of devices                      |
-| Remmina                          | Yes (client only)                         | N/A (client)                   | A free remote desktop client on Linux            |
+| Tool                             | Free for business?                 | Self-host a server?            | Best for                                         |
+| -------------------------------- | ---------------------------------- | ------------------------------ | ------------------------------------------------ |
+| **RustDesk**                     | Yes (AGPL + free community server) | Yes (free server / Server Pro) | Cross-platform access with no commercial-use nag |
+| Chrome Remote Desktop            | Yes; enterprise policies available | No self-hosted control plane   | Simple access with Google-managed coordination   |
+| VNC (TigerVNC/TightVNC/UltraVNC) | Yes (open protocol)                | Yes (you assemble it)          | LAN/DIY access with a VPN                        |
+| Apache Guacamole                 | Yes (Apache 2.0)                   | Yes (gateway)                  | Browser access to existing RDP/VNC/SSH           |
+| MeshCentral                      | Yes (Apache 2.0)                   | Yes (agent-based)              | Managing a fleet of devices                      |
+| Remmina                          | Yes (client only)                  | N/A (client)                   | A free remote desktop client on Linux            |
 
 For exact TeamViewer and AnyDesk terms, check their current pages — we don't quote numbers or license terms we can't stand behind.
 
@@ -91,12 +91,12 @@ For exact TeamViewer and AnyDesk terms, check their current pages — we don't q
 
 Most of the free options make you choose between Google-managed simplicity (CRD), heavier infrastructure (Guacamole and MeshCentral), or DIY networking (VNC). RustDesk's pitch is that you don't have to trade away business use, cross-platform reach, self-hosting, or auditability to run something free.
 
-- **Open source you can audit.** The code is [AGPL](/blog/case-for-open-source-remote-access) — read it, build it, verify it.
+- **Open source you can audit.** The code is [AGPL](https://github.com/rustdesk/rustdesk) — read it, build it, verify it.
 - **A community server without a license fee.** Self-host it under its open-source license; infrastructure and operating costs remain yours.
 - **No black-box vendor.** Sessions run through infrastructure you control, not a cloud that can meter or flag you.
 - **Every major platform.** Windows, macOS, Linux, and Android hosts; iOS is a controller app.
 
-When your team outgrows the free server, [Server Pro](/blog/rustdesk-pro-license-cost-how-to-pay) adds the console, custom clients, device groups, and SSO — still self-hosted, priced per login-user and per managed-device.
+When your team outgrows the free server, [Server Pro](https://rustdesk.com/pricing) adds the console, custom clients, device groups, and SSO — still self-hosted, priced per login-user and per managed-device.
 
 ## Free, and genuinely yours
 
