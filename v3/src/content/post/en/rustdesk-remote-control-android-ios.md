@@ -5,7 +5,7 @@ translationKey: rustdesk-remote-control-android-ios
 draft: false
 title: 'RustDesk Android & iOS Remote Control: What Works'
 excerpt: 'How RustDesk remote-controls Android phones, turns iPhones and iPads into controllers, and why no vendor can remote-control iOS.'
-image: ~/assets/images/blog/rustdesk-remote-control-android-ios-og.png
+image: ~/assets/images/blog/rustdesk-remote-control-android-ios-og.webp
 category: Guides
 tags:
   - RustDesk

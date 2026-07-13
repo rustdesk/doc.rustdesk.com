@@ -5,7 +5,7 @@ translationKey: 'teamviewer-commercial-use-detected'
 draft: false
 title: 'TeamViewer meldet „Kommerzielle Nutzung festgestellt“: So beheben Sie das Problem'
 excerpt: 'Wurde bei TeamViewer „Kommerzielle Nutzung festgestellt“ angezeigt? Hier erfahren Sie den offiziellen Einspruchsprozess, was tatsächlich als kommerzielle Nutzung zählt, und wie Sie das Problem mit einer selbst gehosteten Lösung ganz vermeiden.'
-image: ~/assets/images/blog/teamviewer-commercial-use-detected-og.png
+image: ~/assets/images/blog/teamviewer-commercial-use-detected-og.webp
 category: 'Fehlerbehebung'
 tags: ['TeamViewer', 'Fehlerbehebung', 'Lizenzierung']
 author: 'RustDesk Team'

@@ -5,7 +5,7 @@ translationKey: 'teamviewer-vs-splashtop'
 draft: false
 title: 'TeamViewer مقابل Splashtop: التسعير والأداء والاستضافة الذاتية'
 excerpt: 'مقارنة بين TeamViewer وSplashtop من حيث السعر والأداء والأمان، بالإضافة إلى كيف يغيّر خيار استضافة ذاتية ثالث معادلة القرار.'
-image: ~/assets/images/blog/teamviewer-vs-splashtop-og.png
+image: ~/assets/images/blog/teamviewer-vs-splashtop-og.webp
 category: 'مقارنات'
 tags: ['TeamViewer', 'Splashtop', 'مقارنة']
 author: 'RustDesk Team'

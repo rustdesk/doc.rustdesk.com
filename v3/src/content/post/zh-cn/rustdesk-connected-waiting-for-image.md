@@ -5,7 +5,7 @@ translationKey: 'rustdesk-connected-waiting-for-image'
 draft: false
 title: 'RustDesk 显示“已连接，等待图像”：完整修复指南'
 excerpt: '“已连接，等待图像”意味着远程屏幕未被捕获。本文列出了所有可能的原因——无头主机、休眠、编解码器、驱动程序——并给出相应的修复方法。'
-image: '~/assets/images/blog/rustdesk-connected-waiting-for-image-og.png'
+image: '~/assets/images/blog/rustdesk-connected-waiting-for-image-og.webp'
 category: '故障排除'
 tags: ['RustDesk', '故障排除']
 author: 'RustDesk Team'

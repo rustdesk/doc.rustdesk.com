@@ -5,7 +5,7 @@ translationKey: rustdesk-vs-screenconnect
 draft: false
 title: 'RustDesk vs ScreenConnect: Self-Hosted Remote Support'
 excerpt: 'A full comparison of RustDesk vs ScreenConnect: features, OS support, security, pricing models, and the self-hosting trade-off.'
-image: ~/assets/images/blog/rustdesk-vs-screenconnect-og.png
+image: ~/assets/images/blog/rustdesk-vs-screenconnect-og.webp
 category: Comparisons
 tags:
   - RustDesk

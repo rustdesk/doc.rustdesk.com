@@ -5,7 +5,7 @@ translationKey: rustdesk-for-enterprise
 draft: false
 title: 'RustDesk للمؤسسات: مُستضاف ذاتيًا، وقابل للتوسع، وجاهز للتكامل مع Active Directory'
 excerpt: 'لماذا تختار فرق تقنية المعلومات في المؤسسات RustDesk: تحكّم كامل بالبيانات عبر الاستضافة الذاتية، ودعم AD/LDAP، وتحكّم بالوصول عبر مجموعات الأجهزة، وتسعير يمكن التنبؤ به لأساطيل الأجهزة الكبيرة.'
-image: ~/assets/images/blog/rustdesk-for-enterprise-og.png
+image: ~/assets/images/blog/rustdesk-for-enterprise-og.webp
 category: 'أدلة'
 tags: ['RustDesk', 'الشركات', 'الاستضافة الذاتية']
 author: RustDesk Team

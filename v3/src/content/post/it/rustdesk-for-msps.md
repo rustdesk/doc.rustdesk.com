@@ -5,7 +5,7 @@ translationKey: rustdesk-for-msps
 draft: false
 title: 'RustDesk per gli MSP: un unico strumento self-hosted e personalizzabile'
 excerpt: "Confronta il consolidamento di TeamViewer, AnyDesk e ScreenConnect in un'unica piattaforma di supporto remoto self-hosted e personalizzabile."
-image: ~/assets/images/blog/rustdesk-for-msps-og.png
+image: ~/assets/images/blog/rustdesk-for-msps-og.webp
 category: 'Guide'
 tags: ['RustDesk', 'MSP', 'Self-hosting']
 author: RustDesk Team

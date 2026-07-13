@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-anydesk'
 draft: false
 title: 'RustDesk vs AnyDesk: 자체 호스팅, 오픈소스 원격 데스크톱'
 excerpt: 'RustDesk와 AnyDesk를 기능, OS 지원, 보안, 가격 모델, 그리고 자체 호스팅과 오픈소스의 장단점까지 총망라해 비교합니다.'
-image: '~/assets/images/blog/rustdesk-vs-anydesk-og.png'
+image: '~/assets/images/blog/rustdesk-vs-anydesk-og.webp'
 category: '비교'
 tags: ['RustDesk', 'AnyDesk', '비교']
 author: 'RustDesk Team'

@@ -5,7 +5,7 @@ translationKey: 'remote-desktop-data-sovereignty-gdpr'
 draft: false
 title: 'سيادة بيانات سطح المكتب البعيد و GDPR: الاستضافة الذاتية'
 excerpt: 'كيف تمنح الاستضافة الذاتية الفرق الخاضعة للأطر التنظيمية سيطرة كاملة على خوادم الالتقاء (rendezvous) والترحيل (relay) وبيانات الأجهزة، وما الأسئلة المتعلقة بامتثال GDPR التي تظل قائمة.'
-image: ~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.png
+image: ~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.webp
 category: 'الأمان'
 tags: ['RustDesk', 'الأمان', 'GDPR', 'الاستضافة الذاتية']
 author: 'RustDesk Team'

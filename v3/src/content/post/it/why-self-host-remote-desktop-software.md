@@ -5,7 +5,7 @@ translationKey: 'why-self-host-remote-desktop-software'
 draft: false
 title: 'Perché fare self-hosting del tuo software di desktop remoto'
 excerpt: 'Perché i team che abbandonano TeamViewer e AnyDesk scelgono di fare self-hosting del desktop remoto: controllo dei dati, costi prevedibili e nessun cloud di mezzo.'
-image: '~/assets/images/blog/why-self-host-remote-desktop-software-og.png'
+image: '~/assets/images/blog/why-self-host-remote-desktop-software-og.webp'
 category: 'Guide'
 tags: ['RustDesk', 'Self-hosting']
 author: 'RustDesk Team'

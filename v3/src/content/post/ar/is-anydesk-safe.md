@@ -5,7 +5,7 @@ translationKey: 'is-anydesk-safe'
 draft: false
 title: 'هل AnyDesk آمن؟ التشفير، والحادثة الأمنية 2024، وعمليات الاحتيال'
 excerpt: 'هل AnyDesk آمن؟ نظرة موضوعية على تشفيره، وحادثة أمنية في أنظمة الإنتاج في عام 2024، وسبب استغلال المحتالين له - بالإضافة إلى مقارنته بالبرمجيات مفتوحة المصدر.'
-image: '~/assets/images/blog/is-anydesk-safe-og.png'
+image: '~/assets/images/blog/is-anydesk-safe-og.webp'
 category: 'الأمان'
 tags: ['AnyDesk', 'الأمان']
 author: 'RustDesk Team'

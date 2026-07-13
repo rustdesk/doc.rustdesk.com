@@ -5,7 +5,7 @@ translationKey: upgrade-rustdesk-license-mid-subscription
 draft: false
 title: 'ترقية ترخيص RustDesk في منتصف الاشتراك: كيف تعمل'
 excerpt: 'نعم — يمكنك ترقية ترخيص RustDesk في أي وقت لإضافة مستخدمين أو أجهزة. تعرّف على كيفية عمل الاحتساب بالتناسب (proration) وكيفية تطبيق الحدود الجديدة: قم بتحديث الترخيص في وحدة التحكم عبر الويب لتفعيله فورًا، أو انتظر الفحص التلقائي الذي يتم كل 24 ساعة.'
-image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.png
+image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.webp
 category: 'التسعير'
 tags: ['RustDesk', 'التسعير', 'الترخيص']
 author: 'RustDesk Team'

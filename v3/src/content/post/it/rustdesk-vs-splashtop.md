@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-splashtop'
 draft: false
 title: 'Alternativa a Splashtop self-hosted: cosa valutare prima di tutto'
 excerpt: "Una guida alla valutazione di un'alternativa a Splashtop self-hosted, che copre licenze, infrastruttura, evidenze di affidabilità, test dei flussi di lavoro e rischi di migrazione."
-image: '~/assets/images/blog/rustdesk-vs-splashtop-og.png'
+image: '~/assets/images/blog/rustdesk-vs-splashtop-og.webp'
 category: 'Confronti'
 tags: ['RustDesk', 'Splashtop', 'Confronto']
 author: 'RustDesk Team'

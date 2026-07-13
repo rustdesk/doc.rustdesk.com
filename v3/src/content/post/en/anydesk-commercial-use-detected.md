@@ -5,7 +5,7 @@ translationKey: anydesk-commercial-use-detected
 draft: false
 title: 'AnyDesk Commercial Use Detected: How to Fix It'
 excerpt: "Flagged for commercial use on AnyDesk's free version? Here's the official whitelist process, what counts as commercial use, and the self-hosted way to avoid it."
-image: ~/assets/images/blog/anydesk-commercial-use-detected-og.png
+image: ~/assets/images/blog/anydesk-commercial-use-detected-og.webp
 category: Troubleshooting
 tags:
   - AnyDesk

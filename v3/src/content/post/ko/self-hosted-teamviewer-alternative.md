@@ -5,7 +5,7 @@ translationKey: 'self-hosted-teamviewer-alternative'
 draft: false
 title: '최고의 셀프 호스팅 TeamViewer 및 AnyDesk 대안'
 excerpt: '팀들이 TeamViewer와 AnyDesk를 떠나 직접 통제할 수 있는 셀프 호스팅 오픈소스 대안을 선택하는 이유, 그리고 RustDesk가 그 답이 되는 방법.'
-image: '~/assets/images/blog/self-hosted-teamviewer-alternative-og.png'
+image: '~/assets/images/blog/self-hosted-teamviewer-alternative-og.webp'
 category: '대안'
 tags: ['RustDesk', 'TeamViewer', 'AnyDesk', '대안', '셀프 호스팅']
 author: 'RustDesk Team'

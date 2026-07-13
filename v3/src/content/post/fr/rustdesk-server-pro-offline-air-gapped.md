@@ -5,7 +5,7 @@ translationKey: 'rustdesk-server-pro-offline-air-gapped'
 draft: false
 title: 'RustDesk Server Pro peut-il fonctionner hors ligne ou en environnement air-gapped ?'
 excerpt: "Non — RustDesk Server Pro autohébergé a besoin d'un accès sortant permanent vers rustdesk.com pour valider sa licence, de sorte qu'un déploiement entièrement air-gapped n'est pas pris en charge."
-image: '~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.png'
+image: '~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.webp'
 category: 'Déploiement'
 tags: ['RustDesk', 'Déploiement', 'Auto-hébergement']
 author: 'RustDesk Team'

@@ -5,7 +5,7 @@ translationKey: 'rustdesk-for-enterprise'
 draft: false
 title: 'RustDesk para Empresas: Auto-hospedado, Escalável e Pronto para AD'
 excerpt: 'Por que as equipes de TI empresariais escolhem o RustDesk: controle de dados auto-hospedado, AD/LDAP, controle de acesso por grupos de dispositivos e preços previsíveis para grandes frotas.'
-image: '~/assets/images/blog/rustdesk-for-enterprise-og.png'
+image: '~/assets/images/blog/rustdesk-for-enterprise-og.webp'
 category: 'Guias'
 tags: ['RustDesk', 'Empresa', 'Auto-hospedagem']
 author: 'RustDesk Team'

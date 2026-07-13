@@ -5,7 +5,7 @@ translationKey: 'upgrade-rustdesk-license-mid-subscription'
 draft: false
 title: "Mettre à niveau sa licence RustDesk en cours d'abonnement : comment ça marche"
 excerpt: "Oui, vous pouvez mettre à niveau votre licence RustDesk à tout moment pour ajouter des utilisateurs ou des appareils. Découvrez comment fonctionne le calcul au prorata et comment les nouvelles limites s'appliquent : actualisez la console web pour un effet immédiat, ou attendez la vérification automatique toutes les 24 heures."
-image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.png
+image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.webp
 category: 'Tarifs'
 tags: ['RustDesk', 'Tarifs', 'Licences']
 author: 'RustDesk Team'

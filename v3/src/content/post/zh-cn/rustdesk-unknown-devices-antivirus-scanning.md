@@ -5,7 +5,7 @@ translationKey: 'rustdesk-unknown-devices-antivirus-scanning'
 draft: false
 title: 'RustDesk 控制台中出现未知设备？请先排查'
 excerpt: '在 RustDesk 控制台中看到陌生设备？杀毒软件沙盒是可能原因之一，但必须先排除配置泄露或未经授权注册的可能性。'
-image: '~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.png'
+image: '~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.webp'
 category: '部署'
 tags: ['RustDesk', '部署', '安全']
 author: 'RustDesk Team'

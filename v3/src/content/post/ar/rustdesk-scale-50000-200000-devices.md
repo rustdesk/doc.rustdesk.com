@@ -5,7 +5,7 @@ translationKey: 'rustdesk-scale-50000-200000-devices'
 draft: false
 title: 'هل يمكن لـ RustDesk التوسع إلى 200,000 جهاز؟'
 excerpt: 'اطّلع على السياق التشغيلي المباشر من RustDesk لتخطيط الأساطيل الكبيرة، وما تكشفه ملاحظة الخادم العام، وما الذي يجب أن يتحقق منه أي نشر ذاتي الاستضافة.'
-image: ~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.png
+image: ~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.webp
 category: 'النشر'
 tags: ['RustDesk', 'النشر', 'الشركات']
 author: 'RustDesk Team'

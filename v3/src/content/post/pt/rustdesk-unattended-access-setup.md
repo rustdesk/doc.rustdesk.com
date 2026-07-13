@@ -5,7 +5,7 @@ translationKey: rustdesk-unattended-access-setup
 draft: false
 title: 'Acesso Não Assistido do RustDesk: Guia de Configuração'
 excerpt: 'Configure o acesso não assistido do RustDesk da maneira correta: uma senha permanente, execução como serviço para iniciar com o sistema, e implantação em escala com um cliente pré-configurado.'
-image: ~/assets/images/blog/rustdesk-unattended-access-setup-og.png
+image: ~/assets/images/blog/rustdesk-unattended-access-setup-og.webp
 category: 'Implantação'
 tags: ['RustDesk', 'Implantação', 'Acesso não assistido']
 author: 'RustDesk Team'

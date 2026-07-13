@@ -5,7 +5,7 @@ translationKey: 'why-self-host-remote-desktop-software'
 draft: false
 title: '为什么要自行托管你的远程桌面软件'
 excerpt: '为什么越来越多正在放弃 TeamViewer 和 AnyDesk 的团队选择自行托管远程桌面:数据掌控、成本可预测,中间没有云端介入。'
-image: ~/assets/images/blog/why-self-host-remote-desktop-software-og.png
+image: ~/assets/images/blog/why-self-host-remote-desktop-software-og.webp
 category: '指南'
 tags: ['RustDesk', '自托管']
 author: 'RustDesk Team'

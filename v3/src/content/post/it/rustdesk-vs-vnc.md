@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-vnc'
 draft: false
 title: 'RustDesk vs VNC: attraversamento NAT, codec e crittografia'
 excerpt: 'Confronto pratico tra RustDesk e VNC: attraversamento NAT senza port-forwarding, codec moderni, crittografia integrata e perché i team passano da VNC a RustDesk.'
-image: ~/assets/images/blog/rustdesk-vs-vnc-og.png
+image: ~/assets/images/blog/rustdesk-vs-vnc-og.webp
 category: 'Confronti'
 tags: ['RustDesk', 'VNC', 'Confronto', 'Open source']
 author: 'RustDesk Team'

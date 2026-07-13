@@ -5,7 +5,7 @@ translationKey: self-hosted-teamviewer-alternative
 draft: false
 title: 'Die beste selbst gehostete TeamViewer- und AnyDesk-Alternative'
 excerpt: 'Warum Teams TeamViewer und AnyDesk den Rücken kehren und zu einer selbst gehosteten Open-Source-Alternative wechseln, die sie wirklich kontrollieren – und wie RustDesk dazu passt.'
-image: ~/assets/images/blog/self-hosted-teamviewer-alternative-og.png
+image: ~/assets/images/blog/self-hosted-teamviewer-alternative-og.webp
 category: 'Alternativen'
 tags: ['RustDesk', 'TeamViewer', 'AnyDesk', 'Alternative', 'Selbst-Hosting']
 author: 'RustDesk Team'

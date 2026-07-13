@@ -5,7 +5,7 @@ translationKey: 'anydesk-price-increase-alternatives'
 draft: false
 title: 'AnyDesk-Preiserhöhung: Alternativen für Teams'
 excerpt: 'Schon wieder eine AnyDesk-Preiserhöhung, die Ihr Budget belastet? So wechseln Teams zu einer planbaren, selbst gehosteten Open-Source-Remote-Desktop-Lösung.'
-image: '~/assets/images/blog/anydesk-price-increase-alternatives-og.png'
+image: '~/assets/images/blog/anydesk-price-increase-alternatives-og.webp'
 category: 'Anleitungen'
 tags: ['RustDesk', 'AnyDesk', 'Preise', 'Alternative']
 author: 'RustDesk Team'

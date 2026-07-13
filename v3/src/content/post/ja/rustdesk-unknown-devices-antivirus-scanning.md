@@ -5,7 +5,7 @@ translationKey: rustdesk-unknown-devices-antivirus-scanning
 draft: false
 title: 'RustDeskコンソールに見覚えのないデバイスが表示される?まず調査を'
 excerpt: 'RustDeskコンソールに見覚えのないデバイスが表示されていませんか?アンチウイルスのサンドボックス実行が原因である可能性はありますが、設定情報の漏えいや不正な登録の可能性をまず排除する必要があります。'
-image: ~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.png
+image: ~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.webp
 category: '導入'
 tags: ['RustDesk', '導入', 'セキュリティ']
 author: RustDesk Team

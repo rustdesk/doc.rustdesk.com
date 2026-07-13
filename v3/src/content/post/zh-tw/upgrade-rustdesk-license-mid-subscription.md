@@ -5,7 +5,7 @@ translationKey: 'upgrade-rustdesk-license-mid-subscription'
 draft: false
 title: '訂閱期間升級 RustDesk 授權:運作方式說明'
 excerpt: '是的——您可以隨時升級 RustDesk 授權,以新增使用者或裝置。了解按比例計費的運作方式,以及新額度如何生效:在網頁控制台重新整理即可立即生效,或等待系統自動於 24 小時內完成檢查。'
-image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.png
+image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.webp
 category: '定價'
 tags: ['RustDesk', '定價', '授權']
 author: 'RustDesk Team'

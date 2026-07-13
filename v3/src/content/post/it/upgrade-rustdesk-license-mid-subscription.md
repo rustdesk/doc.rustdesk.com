@@ -5,7 +5,7 @@ translationKey: 'upgrade-rustdesk-license-mid-subscription'
 draft: false
 title: 'Aggiornare la licenza RustDesk a metà abbonamento: come funziona'
 excerpt: 'Sì, puoi aggiornare la tua licenza RustDesk in qualsiasi momento per aggiungere utenti o dispositivi. Scopri come funziona il calcolo proporzionale e come vengono applicati i nuovi limiti: aggiorna la licenza nella console web per un effetto immediato, oppure attendi il controllo automatico ogni 24 ore.'
-image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.png
+image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.webp
 category: 'Prezzi'
 tags: ['RustDesk', 'Prezzi', 'Licenze']
 author: 'RustDesk Team'

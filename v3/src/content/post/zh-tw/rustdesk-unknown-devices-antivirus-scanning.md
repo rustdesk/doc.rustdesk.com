@@ -5,7 +5,7 @@ translationKey: rustdesk-unknown-devices-antivirus-scanning
 draft: false
 title: 'RustDesk 主控台出現不明裝置？請先調查再說'
 excerpt: '在 RustDesk 主控台看到陌生裝置？防毒軟體的沙箱測試是可能原因之一，但必須先排除設定外洩或未經授權註冊等情況。'
-image: ~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.png
+image: ~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.webp
 category: '部署'
 tags: ['RustDesk', '部署', '安全']
 author: 'RustDesk Team'

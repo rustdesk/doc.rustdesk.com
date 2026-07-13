@@ -5,7 +5,7 @@ translationKey: rustdesk-scale-50000-200000-devices
 draft: false
 title: 'RustDesk 能否扩展至20万台设备？'
 excerpt: '了解 RustDesk 官方第一手运营数据，助力大规模设备部署规划——包括公共服务器观测结果揭示了什么，以及自托管部署仍需验证哪些方面。'
-image: ~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.png
+image: ~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.webp
 category: '部署'
 tags: ['RustDesk', '部署', '企业']
 author: RustDesk Team

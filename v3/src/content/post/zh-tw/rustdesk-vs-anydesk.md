@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-anydesk'
 draft: false
 title: 'RustDesk vs AnyDesk:自架、開源的遠端桌面軟體'
 excerpt: '完整比較 RustDesk 與 AnyDesk:功能、作業系統支援、安全性、定價模式,以及自架與開源的取捨。'
-image: '~/assets/images/blog/rustdesk-vs-anydesk-og.png'
+image: '~/assets/images/blog/rustdesk-vs-anydesk-og.webp'
 category: '比較'
 tags: ['RustDesk', 'AnyDesk', '比較']
 author: 'RustDesk Team'

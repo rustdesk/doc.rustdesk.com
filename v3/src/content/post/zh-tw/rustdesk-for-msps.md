@@ -5,7 +5,7 @@ translationKey: 'rustdesk-for-msps'
 draft: false
 title: 'RustDesk 為 MSP 打造:單一自架、可客製品牌的工具'
 excerpt: '帶你比較如何把 TeamViewer、AnyDesk 與 ScreenConnect,整合為單一自架、可客製品牌的遠端支援平台。'
-image: '~/assets/images/blog/rustdesk-for-msps-og.png'
+image: '~/assets/images/blog/rustdesk-for-msps-og.webp'
 category: '指南'
 tags: ['RustDesk', 'MSP', '自架']
 author: 'RustDesk Team'

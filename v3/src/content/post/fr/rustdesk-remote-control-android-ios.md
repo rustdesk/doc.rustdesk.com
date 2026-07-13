@@ -5,7 +5,7 @@ translationKey: 'rustdesk-remote-control-android-ios'
 draft: false
 title: 'Contrôle à distance RustDesk sur Android et iOS : ce qui fonctionne'
 excerpt: 'Comment RustDesk contrôle à distance les téléphones Android, transforme les iPhone et iPad en contrôleurs, et pourquoi aucun éditeur ne peut contrôler iOS à distance.'
-image: '~/assets/images/blog/rustdesk-remote-control-android-ios-og.png'
+image: '~/assets/images/blog/rustdesk-remote-control-android-ios-og.webp'
 category: 'Guides'
 tags: ['RustDesk', 'Mobile']
 author: 'RustDesk Team'

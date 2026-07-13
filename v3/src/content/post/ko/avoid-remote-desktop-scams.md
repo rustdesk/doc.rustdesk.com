@@ -5,7 +5,7 @@ translationKey: 'avoid-remote-desktop-scams'
 draft: false
 title: '원격 데스크톱 사기: 알아채고 피하는 방법'
 excerpt: '원격 접속 사기가 어떤 방식으로 이루어지는지, 이를 알아챌 수 있는 위험 신호는 무엇인지, 그리고 사기범이 이미 컴퓨터를 장악했을 때 정확히 어떻게 대처해야 하는지 알아봅니다.'
-image: '~/assets/images/blog/avoid-remote-desktop-scams-og.png'
+image: '~/assets/images/blog/avoid-remote-desktop-scams-og.webp'
 category: '보안'
 tags: ['보안', '문제 해결']
 author: 'RustDesk Team'

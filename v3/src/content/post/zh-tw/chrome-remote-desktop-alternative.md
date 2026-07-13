@@ -5,7 +5,7 @@ translationKey: chrome-remote-desktop-alternative
 draft: false
 title: 'Chrome Remote Desktop 替代方案：自架 RustDesk'
 excerpt: 'Chrome Remote Desktop 免費又簡單，但會將你綁定在 Google 之上，且缺少關鍵功能。以下介紹一個由你掌控、開源自架的替代方案。'
-image: ~/assets/images/blog/chrome-remote-desktop-alternative-og.png
+image: ~/assets/images/blog/chrome-remote-desktop-alternative-og.webp
 category: '替代方案'
 tags: ['RustDesk', 'Chrome Remote Desktop', '替代方案', '自架']
 author: 'RustDesk Team'

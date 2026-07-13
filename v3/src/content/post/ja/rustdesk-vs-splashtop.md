@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-splashtop'
 draft: false
 title: 'セルフホスト型Splashtop代替製品:最初に評価すべきこと'
 excerpt: 'ライセンス、インフラ、信頼性の実例、ワークフローテスト、移行リスクを網羅した、セルフホスト型Splashtop代替製品の評価ガイドです。'
-image: '~/assets/images/blog/rustdesk-vs-splashtop-og.png'
+image: '~/assets/images/blog/rustdesk-vs-splashtop-og.webp'
 category: '比較'
 tags: ['RustDesk', 'Splashtop', '比較']
 author: 'RustDesk Team'

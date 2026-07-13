@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-splashtop'
 draft: false
 title: '자체 호스팅 Splashtop 대안: 가장 먼저 평가해야 할 것들'
 excerpt: '라이선스, 인프라, 안정성 근거, 워크플로우 테스트, 마이그레이션 리스크를 다루는 자체 호스팅 Splashtop 대안 평가 가이드입니다.'
-image: '~/assets/images/blog/rustdesk-vs-splashtop-og.png'
+image: '~/assets/images/blog/rustdesk-vs-splashtop-og.webp'
 category: '비교'
 tags: ['RustDesk', 'Splashtop', '비교']
 author: 'RustDesk Team'

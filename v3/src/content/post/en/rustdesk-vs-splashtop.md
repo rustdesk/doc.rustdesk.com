@@ -5,7 +5,7 @@ translationKey: rustdesk-vs-splashtop
 draft: false
 title: 'Self-Hosted Splashtop Alternative: What to Evaluate First'
 excerpt: 'A self-hosted Splashtop alternative evaluation guide covering licensing, infrastructure, reliability evidence, workflow testing, and migration risk.'
-image: ~/assets/images/blog/rustdesk-vs-splashtop-og.png
+image: ~/assets/images/blog/rustdesk-vs-splashtop-og.webp
 category: Comparisons
 tags:
   - RustDesk

@@ -5,7 +5,7 @@ translationKey: rustdesk-vs-rdp
 draft: false
 title: 'RustDesk vs RDP: Cross-Platform vs Windows-Native'
 excerpt: 'RustDesk vs Microsoft RDP: a practical comparison of cross-platform reach, internet access without a VPN, LAN speed, and security trade-offs.'
-image: ~/assets/images/blog/rustdesk-vs-rdp-og.png
+image: ~/assets/images/blog/rustdesk-vs-rdp-og.webp
 category: Comparisons
 tags:
   - RustDesk

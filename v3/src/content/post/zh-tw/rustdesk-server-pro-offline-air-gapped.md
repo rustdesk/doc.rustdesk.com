@@ -5,7 +5,7 @@ translationKey: rustdesk-server-pro-offline-air-gapped
 draft: false
 title: 'RustDesk Server Pro 可以離線或在氣隙環境中運作嗎？'
 excerpt: '不行——自架的 RustDesk Server Pro 需要持續對外連線至 rustdesk.com 以驗證授權，因此不支援完全氣隙化的部署。'
-image: ~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.png
+image: ~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.webp
 category: '部署'
 tags: ['RustDesk', '部署', '自架']
 author: 'RustDesk Team'

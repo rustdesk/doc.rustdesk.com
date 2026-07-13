@@ -5,7 +5,7 @@ translationKey: rustdesk-unknown-devices-antivirus-scanning
 draft: false
 title: 'أجهزة مجهولة في لوحة تحكم RustDesk؟ تحقّق أولاً'
 excerpt: 'هل تلاحظ أجهزة غير مألوفة في لوحة تحكم RustDesk لديك؟ قد يكون تشغيلها داخل بيئة معزولة لمكافحة الفيروسات أحد الاحتمالات، إلا أنه يجب أولاً استبعاد تسرّب الإعدادات أو التسجيل غير المصرح به.'
-image: ~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.png
+image: ~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.webp
 category: 'النشر'
 tags: ['RustDesk', 'النشر', 'الأمان']
 author: 'RustDesk Team'

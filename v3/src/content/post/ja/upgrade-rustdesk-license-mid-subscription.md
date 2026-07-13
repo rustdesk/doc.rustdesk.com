@@ -5,7 +5,7 @@ translationKey: 'upgrade-rustdesk-license-mid-subscription'
 draft: false
 title: 'サブスクリプション途中でのRustDeskライセンスアップグレード:その仕組み'
 excerpt: 'はい—RustDeskのライセンスはいつでもアップグレードして、ユーザーやデバイスを追加できます。日割り計算の仕組みと新しい上限の適用方法(即座に反映させるにはWebコンソールで更新、または自動的な24時間ごとのチェックを待つ)についてご説明します。'
-image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.png
+image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.webp
 category: '料金'
 tags: ['RustDesk', '料金', 'ライセンス']
 author: 'RustDesk Team'

@@ -5,7 +5,7 @@ translationKey: 'rustdesk-for-enterprise'
 draft: false
 title: 'RustDesk 企业版:自托管、可扩展、AD 就绪'
 excerpt: '为什么企业 IT 团队选择 RustDesk:自托管带来的数据掌控力、AD/LDAP 集成、设备分组访问控制,以及面向大规模设备群的可预测定价。'
-image: '~/assets/images/blog/rustdesk-for-enterprise-og.png'
+image: '~/assets/images/blog/rustdesk-for-enterprise-og.webp'
 category: '指南'
 tags: ['RustDesk', '企业', '自托管']
 author: 'RustDesk Team'

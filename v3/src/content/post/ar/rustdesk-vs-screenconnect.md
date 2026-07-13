@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-screenconnect'
 draft: false
 title: 'RustDesk مقابل ScreenConnect: الدعم عن بُعد ذاتي الاستضافة'
 excerpt: 'مقارنة شاملة بين RustDesk وScreenConnect: الميزات، ودعم أنظمة التشغيل، والأمان، ونماذج التسعير، ومفاضلات الاستضافة الذاتية.'
-image: '~/assets/images/blog/rustdesk-vs-screenconnect-og.png'
+image: '~/assets/images/blog/rustdesk-vs-screenconnect-og.webp'
 category: 'مقارنات'
 tags: ['RustDesk', 'ScreenConnect', 'مقارنة']
 author: 'RustDesk Team'

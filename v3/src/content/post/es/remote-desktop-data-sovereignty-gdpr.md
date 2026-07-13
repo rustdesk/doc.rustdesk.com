@@ -5,7 +5,7 @@ translationKey: 'remote-desktop-data-sovereignty-gdpr'
 draft: false
 title: 'Soberanía de Datos en el Escritorio Remoto y RGPD: Autoalojamiento'
 excerpt: 'Cómo el autoalojamiento da a los equipos regulados control sobre los datos de rendezvous, relay y dispositivos, y qué preguntas de RGPD y cumplimiento normativo quedan pendientes.'
-image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.png'
+image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.webp'
 category: 'Seguridad'
 tags: ['RustDesk', 'Seguridad', 'GDPR', 'Autoalojamiento']
 author: 'RustDesk Team'

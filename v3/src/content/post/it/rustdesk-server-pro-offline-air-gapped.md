@@ -5,7 +5,7 @@ translationKey: 'rustdesk-server-pro-offline-air-gapped'
 draft: false
 title: 'RustDesk Server Pro può funzionare offline o air-gapped?'
 excerpt: 'No: RustDesk Server Pro self-hosted necessita di un accesso in uscita continuo a rustdesk.com per convalidare la licenza, quindi un deployment completamente air-gapped non è supportato.'
-image: '~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.png'
+image: '~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.webp'
 category: 'Distribuzione'
 tags: ['RustDesk', 'Distribuzione', 'Self-hosting']
 author: 'RustDesk Team'

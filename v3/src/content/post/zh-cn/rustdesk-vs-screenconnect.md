@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-screenconnect'
 draft: false
 title: 'RustDesk 对比 ScreenConnect:自托管远程支持方案'
 excerpt: '全面对比 RustDesk 与 ScreenConnect:功能、操作系统支持、安全性、定价模式,以及自托管的利弊权衡。'
-image: '~/assets/images/blog/rustdesk-vs-screenconnect-og.png'
+image: '~/assets/images/blog/rustdesk-vs-screenconnect-og.webp'
 category: '对比'
 tags: ['RustDesk', 'ScreenConnect', '对比']
 author: 'RustDesk Team'

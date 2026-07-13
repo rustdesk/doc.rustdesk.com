@@ -5,7 +5,7 @@ translationKey: best-free-remote-desktop-software
 draft: false
 title: 'Meilleurs logiciels de bureau à distance gratuits pour les entreprises (2026)'
 excerpt: "Des outils de bureau à distance véritablement gratuits — y compris certains que vous pouvez utiliser en entreprise sans déclencher de détection d'usage commercial. Six options bien réelles, chacune avec son inconvénient."
-image: ~/assets/images/blog/best-free-remote-desktop-software-og.png
+image: ~/assets/images/blog/best-free-remote-desktop-software-og.webp
 category: 'Guides'
 tags: ['RustDesk', 'Open source', 'Comparatif']
 author: 'RustDesk Team'

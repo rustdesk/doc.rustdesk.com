@@ -5,7 +5,7 @@ translationKey: 'avoid-remote-desktop-scams'
 draft: false
 title: '远程桌面诈骗:如何识别与防范'
 excerpt: '远程访问诈骗是如何运作的、有哪些暴露诈骗者的危险信号,以及如果骗子已经控制了你的电脑,你应该采取哪些具体措施。'
-image: '~/assets/images/blog/avoid-remote-desktop-scams-og.png'
+image: '~/assets/images/blog/avoid-remote-desktop-scams-og.webp'
 category: '安全'
 tags: ['安全', '故障排除']
 author: 'RustDesk Team'

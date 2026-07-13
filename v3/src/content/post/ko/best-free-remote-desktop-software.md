@@ -5,7 +5,7 @@ translationKey: 'best-free-remote-desktop-software'
 draft: false
 title: '기업용 최고의 무료 원격 데스크톱 소프트웨어 (2026년)'
 excerpt: '진짜 무료인 원격 데스크톱 도구들 — 상업적 사용 제한 없이 기업에서도 쓸 수 있는 도구를 포함합니다. 실제로 존재하는 6가지 선택지와 각각의 단점을 소개합니다.'
-image: '~/assets/images/blog/best-free-remote-desktop-software-og.png'
+image: '~/assets/images/blog/best-free-remote-desktop-software-og.webp'
 category: '가이드'
 tags: ['RustDesk', '오픈 소스', '비교']
 author: 'RustDesk Team'

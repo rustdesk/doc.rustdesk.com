@@ -5,7 +5,7 @@ translationKey: 'anydesk-commercial-use-detected'
 draft: false
 title: 'تم اكتشاف استخدام تجاري في AnyDesk: كيفية حل المشكلة'
 excerpt: 'هل تم وسم حسابك على النسخة المجانية من AnyDesk بالاستخدام التجاري؟ إليك عملية القائمة البيضاء الرسمية، وما الذي يُعد استخدامًا تجاريًا، والطريقة القائمة على الاستضافة الذاتية لتفادي ذلك.'
-image: ~/assets/images/blog/anydesk-commercial-use-detected-og.png
+image: ~/assets/images/blog/anydesk-commercial-use-detected-og.webp
 category: 'استكشاف الأخطاء'
 tags: ['AnyDesk', 'استكشاف الأخطاء', 'الترخيص']
 author: 'RustDesk Team'

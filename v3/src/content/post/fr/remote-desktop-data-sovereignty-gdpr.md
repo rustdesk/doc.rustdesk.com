@@ -5,7 +5,7 @@ translationKey: 'remote-desktop-data-sovereignty-gdpr'
 draft: false
 title: "Souveraineté des données et RGPD pour le bureau à distance : l'auto-hébergement"
 excerpt: "Comment l'auto-hébergement donne aux équipes soumises à réglementation le contrôle des serveurs de rendez-vous, de relais et des données d'appareils — et quelles questions de RGPD et de conformité restent ouvertes."
-image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.png'
+image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.webp'
 category: 'Sécurité'
 tags: ['RustDesk', 'Sécurité', 'GDPR', 'Auto-hébergement']
 author: 'RustDesk Team'

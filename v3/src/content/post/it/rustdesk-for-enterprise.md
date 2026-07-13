@@ -5,7 +5,7 @@ translationKey: rustdesk-for-enterprise
 draft: false
 title: 'RustDesk per le aziende: self-hosted, scalabile, pronto per AD'
 excerpt: 'Perché i team IT aziendali scelgono RustDesk: controllo dei dati self-hosted, integrazione AD/LDAP, controllo degli accessi per gruppi di dispositivi e prezzi prevedibili per flotte di grandi dimensioni.'
-image: ~/assets/images/blog/rustdesk-for-enterprise-og.png
+image: ~/assets/images/blog/rustdesk-for-enterprise-og.webp
 category: 'Guide'
 tags: ['RustDesk', 'Aziende', 'Self-hosting']
 author: RustDesk Team

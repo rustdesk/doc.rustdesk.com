@@ -5,7 +5,7 @@ translationKey: best-free-remote-desktop-software
 draft: false
 title: 'O Melhor Software Gratuito de Acesso Remoto para Empresas (2026)'
 excerpt: 'Ferramentas de acesso remoto genuinamente gratuitas — incluindo algumas que você pode usar para fins empresariais sem sinalização de uso comercial. Seis opções reais, cada uma com sua pegadinha.'
-image: ~/assets/images/blog/best-free-remote-desktop-software-og.png
+image: ~/assets/images/blog/best-free-remote-desktop-software-og.webp
 category: 'Guias'
 tags: ['RustDesk', 'Código aberto', 'Comparação']
 author: 'RustDesk Team'

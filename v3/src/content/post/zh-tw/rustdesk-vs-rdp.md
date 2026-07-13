@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-rdp'
 draft: false
 title: 'RustDesk vs RDP：跨平台 vs Windows 原生'
 excerpt: 'RustDesk 與 Microsoft RDP 的實用比較：跨平台涵蓋範圍、無需 VPN 即可透過網際網路存取、區域網路速度，以及安全性取捨。'
-image: '~/assets/images/blog/rustdesk-vs-rdp-og.png'
+image: '~/assets/images/blog/rustdesk-vs-rdp-og.webp'
 category: '比較'
 tags: ['RustDesk', 'RDP', '比較']
 author: 'RustDesk Team'

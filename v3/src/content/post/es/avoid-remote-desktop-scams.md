@@ -5,7 +5,7 @@ translationKey: 'avoid-remote-desktop-scams'
 draft: false
 title: 'Estafas de escritorio remoto: cómo detectarlas y evitarlas'
 excerpt: 'Cómo funcionan las estafas de acceso remoto, las señales de alerta que las delatan y qué hacer exactamente si un estafador ya tomó el control de tu computadora.'
-image: '~/assets/images/blog/avoid-remote-desktop-scams-og.png'
+image: '~/assets/images/blog/avoid-remote-desktop-scams-og.webp'
 category: 'Seguridad'
 tags: ['Seguridad', 'Solución de problemas']
 author: 'RustDesk Team'

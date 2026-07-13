@@ -5,7 +5,7 @@ translationKey: 'avoid-remote-desktop-scams'
 draft: false
 title: 'Remote-Desktop-Betrug: So erkennen und vermeiden Sie ihn'
 excerpt: 'Wie Remote-Access-Betrug funktioniert, an welchen Warnsignalen Sie ihn erkennen, und was genau zu tun ist, wenn ein Betrüger bereits die Kontrolle über Ihren Computer übernommen hat.'
-image: ~/assets/images/blog/avoid-remote-desktop-scams-og.png
+image: ~/assets/images/blog/avoid-remote-desktop-scams-og.webp
 category: 'Sicherheit'
 tags: ['Sicherheit', 'Fehlerbehebung']
 author: 'RustDesk Team'

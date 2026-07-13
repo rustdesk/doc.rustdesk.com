@@ -5,7 +5,7 @@ translationKey: what-counts-as-a-managed-device
 draft: false
 title: 'What Counts as a Managed Device in RustDesk?'
 excerpt: 'On standard RustDesk plans every device you set up to reach counts once. Customized V2 counts only devices assigned to a group or user; ad-hoc devices are not counted.'
-image: ~/assets/images/blog/what-counts-as-a-managed-device-og.png
+image: ~/assets/images/blog/what-counts-as-a-managed-device-og.webp
 category: Pricing
 tags:
   - RustDesk

@@ -5,7 +5,7 @@ translationKey: teamviewer-commercial-use-detected
 draft: false
 title: 'TeamViewer Commercial Use Detected: How to Fix It'
 excerpt: "Flagged for commercial use on TeamViewer? Here's the official appeal process, what actually counts as commercial use, and the self-hosted way to avoid it."
-image: ~/assets/images/blog/teamviewer-commercial-use-detected-og.png
+image: ~/assets/images/blog/teamviewer-commercial-use-detected-og.webp
 category: Troubleshooting
 tags:
   - TeamViewer

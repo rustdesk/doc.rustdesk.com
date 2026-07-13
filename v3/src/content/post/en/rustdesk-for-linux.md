@@ -5,7 +5,7 @@ translationKey: rustdesk-for-linux
 draft: false
 title: 'RustDesk for Linux: The Open-Source Remote Desktop'
 excerpt: 'Install and run RustDesk on Linux: .deb, .rpm, Flatpak and AppImage, X11 vs Wayland, headless and unattended access, and self-hosting the server.'
-image: ~/assets/images/blog/rustdesk-for-linux-og.png
+image: ~/assets/images/blog/rustdesk-for-linux-og.webp
 category: Guides
 tags:
   - RustDesk

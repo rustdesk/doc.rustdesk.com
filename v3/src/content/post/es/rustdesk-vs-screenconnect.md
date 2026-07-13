@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-screenconnect'
 draft: false
 title: 'RustDesk vs ScreenConnect: soporte remoto autoalojado'
 excerpt: 'Una comparación completa entre RustDesk y ScreenConnect: funciones, compatibilidad con sistemas operativos, seguridad, modelos de precios y las contrapartidas del autoalojamiento.'
-image: '~/assets/images/blog/rustdesk-vs-screenconnect-og.png'
+image: '~/assets/images/blog/rustdesk-vs-screenconnect-og.webp'
 category: 'Comparativas'
 tags: ['RustDesk', 'ScreenConnect', 'Comparativa']
 author: 'RustDesk Team'

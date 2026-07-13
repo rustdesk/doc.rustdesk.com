@@ -5,7 +5,7 @@ translationKey: 'rustdesk-connected-waiting-for-image'
 draft: false
 title: 'مشكلة «متصل، في انتظار الصورة» في RustDesk: دليل الإصلاح الشامل'
 excerpt: 'تعني رسالة «متصل، في انتظار الصورة» أن شاشة الجهاز البعيد لا يتم التقاطها. إليك كل الأسباب المحتملة – من الأجهزة الخالية من الشاشة (headless) إلى وضع السكون وبرامج الترميز وتعريفات التشغيل – وطريقة حل كل منها.'
-image: '~/assets/images/blog/rustdesk-connected-waiting-for-image-og.png'
+image: '~/assets/images/blog/rustdesk-connected-waiting-for-image-og.webp'
 category: 'استكشاف الأخطاء'
 tags: ['RustDesk', 'استكشاف الأخطاء']
 author: 'RustDesk Team'

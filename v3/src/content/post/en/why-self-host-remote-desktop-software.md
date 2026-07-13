@@ -5,7 +5,7 @@ translationKey: why-self-host-remote-desktop-software
 draft: false
 title: 'Why Self-Host Your Remote Desktop Software'
 excerpt: 'Why teams leaving TeamViewer and AnyDesk are choosing to self-host remote desktop: data control, predictable cost, and no cloud in the middle.'
-image: ~/assets/images/blog/why-self-host-remote-desktop-software-og.png
+image: ~/assets/images/blog/why-self-host-remote-desktop-software-og.webp
 category: Guides
 tags:
   - RustDesk

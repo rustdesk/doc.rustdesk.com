@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-teamviewer'
 draft: false
 title: "RustDesk vs TeamViewer : l'alternative auto-hébergée"
 excerpt: "RustDesk face à TeamViewer : comparatif des fonctionnalités, de la prise en charge des systèmes d'exploitation, de la sécurité, des modèles de licence et des vrais compromis — auto-hébergement, open source, sans tarification par canal."
-image: '~/assets/images/blog/rustdesk-vs-teamviewer-og.png'
+image: '~/assets/images/blog/rustdesk-vs-teamviewer-og.webp'
 category: 'Comparatifs'
 tags: ['RustDesk', 'TeamViewer', 'Comparatif']
 author: 'RustDesk Team'

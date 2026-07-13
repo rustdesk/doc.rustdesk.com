@@ -5,7 +5,7 @@ translationKey: 'rustdesk-unattended-access-setup'
 draft: false
 title: 'الوصول غير المراقب في RustDesk: دليل الإعداد'
 excerpt: 'أعدّ الوصول غير المراقب في RustDesk بالطريقة الصحيحة: كلمة مرور دائمة، وتشغيله كخدمة لتبدأ مع الإقلاع، ونشره على نطاق واسع بعميل مُهيأ مسبقًا.'
-image: '~/assets/images/blog/rustdesk-unattended-access-setup-og.png'
+image: '~/assets/images/blog/rustdesk-unattended-access-setup-og.webp'
 category: 'النشر'
 tags: ['RustDesk', 'النشر', 'الوصول غير المراقب']
 author: 'RustDesk Team'

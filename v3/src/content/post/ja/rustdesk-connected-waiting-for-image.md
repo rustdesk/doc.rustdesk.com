@@ -5,7 +5,7 @@ translationKey: 'rustdesk-connected-waiting-for-image'
 draft: false
 title: 'RustDeskの「Connected, waiting for image」を完全解決するガイド'
 excerpt: '「Connected, waiting for image」は、リモート画面のキャプチャができていない状態を意味します。ヘッドレス構成、スリープ、コーデック、ドライバーなど、考えられるあらゆる原因とその対処法を解説します。'
-image: '~/assets/images/blog/rustdesk-connected-waiting-for-image-og.png'
+image: '~/assets/images/blog/rustdesk-connected-waiting-for-image-og.webp'
 category: 'トラブルシューティング'
 tags: ['RustDesk', 'トラブルシューティング']
 author: 'RustDesk Team'

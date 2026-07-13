@@ -5,7 +5,7 @@ translationKey: 'rustdesk-server-pro-offline-air-gapped'
 draft: false
 title: 'هل يمكن تشغيل RustDesk Server Pro دون اتصال بالإنترنت أو في بيئة معزولة تمامًا (Air-Gapped)؟'
 excerpt: 'لا — يحتاج RustDesk Server Pro المستضاف ذاتيًا إلى اتصال صادر مستمر بـ rustdesk.com للتحقق من صلاحية الترخيص، لذا لا يُدعم النشر المعزول تمامًا (Air-Gapped) عن الشبكة.'
-image: '~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.png'
+image: '~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.webp'
 category: 'النشر'
 tags: ['RustDesk', 'النشر', 'الاستضافة الذاتية']
 author: 'RustDesk Team'

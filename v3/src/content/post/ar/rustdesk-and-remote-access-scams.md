@@ -5,7 +5,7 @@ translationKey: 'rustdesk-and-remote-access-scams'
 draft: false
 title: 'RustDesk واحتيالات الوصول عن بُعد: ما الذي نقوم به'
 excerpt: 'لماذا غادرت RustDesk متجر Google Play، وأضافت تحذيرات ومتطلبات تسجيل دخول للخادم العام، وكيف يمكن للمستخدمين تعزيز حماية الأجهزة الخاضعة للتحكم بكلمات المرور والمصادقة الثنائية وقوائم عناوين IP المسموح بها.'
-image: '~/assets/images/blog/rustdesk-and-remote-access-scams-og.png'
+image: '~/assets/images/blog/rustdesk-and-remote-access-scams-og.webp'
 category: 'الأمان'
 tags: ['RustDesk', 'الأمان', 'عمليات الاحتيال']
 author: 'RustDesk Team'

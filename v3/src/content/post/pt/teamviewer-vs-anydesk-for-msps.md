@@ -5,7 +5,7 @@ translationKey: teamviewer-vs-anydesk-for-msps
 draft: false
 title: 'TeamViewer vs AnyDesk para MSPs: Uma Terceira Opção Auto-Hospedada'
 excerpt: 'Como o TeamViewer e o AnyDesk se comparam para MSPs — licenciamento atual, integrações, hospedagem e por que alguns olham além de ambos para uma opção auto-hospedada.'
-image: ~/assets/images/blog/teamviewer-vs-anydesk-for-msps-og.png
+image: ~/assets/images/blog/teamviewer-vs-anydesk-for-msps-og.webp
 category: 'Comparações'
 tags: ['TeamViewer', 'AnyDesk', 'MSP', 'Comparação']
 author: 'RustDesk Team'

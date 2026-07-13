@@ -5,7 +5,7 @@ translationKey: 'remote-desktop-data-sovereignty-gdpr'
 draft: false
 title: 'Soberania de Dados em Desktop Remoto & GDPR: Auto-hospedagem'
 excerpt: 'Como a auto-hospedagem dá às equipas reguladas controlo sobre os dados de rendezvous, relay e dispositivos — e que questões de GDPR e conformidade permanecem.'
-image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.png'
+image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.webp'
 category: 'Segurança'
 tags: ['RustDesk', 'Segurança', 'GDPR', 'Auto-hospedagem']
 author: 'RustDesk Team'

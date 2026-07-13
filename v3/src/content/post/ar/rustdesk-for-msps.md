@@ -5,7 +5,7 @@ translationKey: 'rustdesk-for-msps'
 draft: false
 title: 'RustDesk لمزودي الخدمات المُدارة (MSP): أداة واحدة ذاتية الاستضافة وقابلة لوضع العلامة التجارية'
 excerpt: 'قارن بين دمج TeamViewer وAnyDesk وScreenConnect ضمن منصة واحدة للدعم عن بُعد، ذاتية الاستضافة وقابلة لوضع العلامة التجارية.'
-image: '~/assets/images/blog/rustdesk-for-msps-og.png'
+image: '~/assets/images/blog/rustdesk-for-msps-og.webp'
 category: 'أدلة'
 tags: ['RustDesk', 'MSP', 'الاستضافة الذاتية']
 author: 'RustDesk Team'

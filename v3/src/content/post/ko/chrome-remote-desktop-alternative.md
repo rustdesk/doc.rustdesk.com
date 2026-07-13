@@ -5,7 +5,7 @@ translationKey: chrome-remote-desktop-alternative
 draft: false
 title: 'Chrome Remote Desktop 대안: 자체 호스팅형 RustDesk'
 excerpt: 'Chrome Remote Desktop은 무료이고 간편하지만 Google에 종속되고 핵심 기능이 빠져 있습니다. 여기 직접 통제할 수 있는 오픈소스 자체 호스팅 대안을 소개합니다.'
-image: ~/assets/images/blog/chrome-remote-desktop-alternative-og.png
+image: ~/assets/images/blog/chrome-remote-desktop-alternative-og.webp
 category: '대안'
 tags: ['RustDesk', 'Chrome Remote Desktop', '대안', '셀프 호스팅']
 author: RustDesk Team

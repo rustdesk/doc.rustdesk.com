@@ -5,7 +5,7 @@ translationKey: 'teamviewer-commercial-use-detected'
 draft: false
 title: 'TeamViewer 상업적 사용 감지(Commercial Use Detected): 해결 방법'
 excerpt: 'TeamViewer에서 상업적 사용으로 플래그가 지정되었나요? 공식 이의 제기 절차와 실제로 상업적 사용에 해당하는 기준, 그리고 이를 원천적으로 피할 수 있는 셀프 호스팅 방법을 안내합니다.'
-image: '~/assets/images/blog/teamviewer-commercial-use-detected-og.png'
+image: '~/assets/images/blog/teamviewer-commercial-use-detected-og.webp'
 category: '문제 해결'
 tags: ['TeamViewer', '문제 해결', '라이선스']
 author: 'RustDesk Team'

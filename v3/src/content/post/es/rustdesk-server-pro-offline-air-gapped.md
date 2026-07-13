@@ -5,7 +5,7 @@ translationKey: rustdesk-server-pro-offline-air-gapped
 draft: false
 title: '¿Puede RustDesk Server Pro funcionar sin conexión o en modo air-gapped?'
 excerpt: 'No: RustDesk Server Pro autoalojado necesita acceso saliente continuo a rustdesk.com para validar su licencia, por lo que no se admite una implementación completamente air-gapped.'
-image: ~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.png
+image: ~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.webp
 category: 'Implementación'
 tags: ['RustDesk', 'Implementación', 'Autoalojamiento']
 author: 'RustDesk Team'

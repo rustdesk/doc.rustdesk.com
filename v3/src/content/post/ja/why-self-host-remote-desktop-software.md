@@ -5,7 +5,7 @@ translationKey: 'why-self-host-remote-desktop-software'
 draft: false
 title: 'リモートデスクトップソフトウェアをセルフホストすべき理由'
 excerpt: 'TeamViewerやAnyDeskから乗り換えるチームが、なぜリモートデスクトップのセルフホストを選ぶのか。データ管理の主導権、予測可能なコスト、そして間に入るクラウドがないという理由です。'
-image: '~/assets/images/blog/why-self-host-remote-desktop-software-og.png'
+image: '~/assets/images/blog/why-self-host-remote-desktop-software-og.webp'
 category: 'ガイド'
 tags: ['RustDesk', 'セルフホスティング']
 author: 'RustDesk Team'

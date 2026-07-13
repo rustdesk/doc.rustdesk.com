@@ -5,7 +5,7 @@ translationKey: 'rustdesk-connected-waiting-for-image'
 draft: false
 title: 'RustDesk "연결됨, 이미지 대기 중" 완벽 해결 가이드'
 excerpt: '"연결됨, 이미지 대기 중"이라는 메시지는 원격 화면이 캡처되지 않고 있다는 의미입니다. 헤드리스 시스템, 절전 모드, 코덱, 드라이버 문제까지 모든 원인과 해결책을 정리했습니다.'
-image: '~/assets/images/blog/rustdesk-connected-waiting-for-image-og.png'
+image: '~/assets/images/blog/rustdesk-connected-waiting-for-image-og.webp'
 category: '문제 해결'
 tags: ['RustDesk', '문제 해결']
 author: 'RustDesk Team'

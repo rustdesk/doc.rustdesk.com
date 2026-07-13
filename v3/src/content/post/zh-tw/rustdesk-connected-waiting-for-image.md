@@ -5,7 +5,7 @@ translationKey: 'rustdesk-connected-waiting-for-image'
 draft: false
 title: 'RustDesk「已連線，等待影像中」完整修復指南'
 excerpt: '「已連線，等待影像中」代表遠端畫面沒有被擷取到。本文彙整所有可能原因——無頭主機、休眠、編碼格式、驅動程式——並提供對應的解決方法。'
-image: '~/assets/images/blog/rustdesk-connected-waiting-for-image-og.png'
+image: '~/assets/images/blog/rustdesk-connected-waiting-for-image-og.webp'
 category: '疑難排解'
 tags: ['RustDesk', '疑難排解']
 author: 'RustDesk Team'

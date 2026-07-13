@@ -5,7 +5,7 @@ translationKey: 'anydesk-price-increase-alternatives'
 draft: false
 title: 'AnyDesk 漲價：團隊適用的替代方案'
 excerpt: 'AnyDesk 又漲價，壓縮了你的預算嗎？看看團隊如何改用價格可預測、可自行架設的開源遠端桌面方案——以及損益平衡的計算方式。'
-image: '~/assets/images/blog/anydesk-price-increase-alternatives-og.png'
+image: '~/assets/images/blog/anydesk-price-increase-alternatives-og.webp'
 category: '指南'
 tags: ['RustDesk', 'AnyDesk', '定價', '替代方案']
 author: 'RustDesk Team'

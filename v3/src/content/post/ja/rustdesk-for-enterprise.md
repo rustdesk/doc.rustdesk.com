@@ -5,7 +5,7 @@ translationKey: 'rustdesk-for-enterprise'
 draft: false
 title: 'エンタープライズ向けRustDesk:セルフホスト型、高スケーラビリティ、AD連携対応'
 excerpt: '企業のIT部門がRustDeskを選ぶ理由:セルフホストによるデータ管理、AD/LDAP連携、デバイスグループ単位のアクセス制御、そして大規模フリートにも対応する予測可能な料金体系。'
-image: '~/assets/images/blog/rustdesk-for-enterprise-og.png'
+image: '~/assets/images/blog/rustdesk-for-enterprise-og.webp'
 category: 'ガイド'
 tags: ['RustDesk', 'エンタープライズ', 'セルフホスティング']
 author: 'RustDesk Team'

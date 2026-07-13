@@ -5,7 +5,7 @@ translationKey: 'is-anydesk-safe'
 draft: false
 title: "AnyDesk è sicuro? Crittografia, l'incidente di sicurezza del 2024 e le truffe"
 excerpt: "AnyDesk è sicuro? Uno sguardo equilibrato sulla sua crittografia, sull'incidente di sicurezza dei sistemi di produzione del 2024 e sul perché i truffatori ne abusano — con un confronto rispetto all'open source."
-image: '~/assets/images/blog/is-anydesk-safe-og.png'
+image: '~/assets/images/blog/is-anydesk-safe-og.webp'
 category: 'Sicurezza'
 tags: ['AnyDesk', 'Sicurezza']
 author: 'RustDesk Team'

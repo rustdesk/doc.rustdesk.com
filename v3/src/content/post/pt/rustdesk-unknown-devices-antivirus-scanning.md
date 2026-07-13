@@ -5,7 +5,7 @@ translationKey: 'rustdesk-unknown-devices-antivirus-scanning'
 draft: false
 title: 'Dispositivos desconhecidos no seu console RustDesk? Investigue primeiro'
 excerpt: 'Está vendo dispositivos desconhecidos no seu console RustDesk? A execução em sandbox por antivírus é uma possibilidade, mas antes é preciso descartar configuração vazada ou registro não autorizado.'
-image: '~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.png'
+image: '~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.webp'
 category: 'Implantação'
 tags: ['RustDesk', 'Implantação', 'Segurança']
 author: 'RustDesk Team'

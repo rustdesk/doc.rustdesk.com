@@ -5,7 +5,7 @@ translationKey: 'best-free-remote-desktop-software'
 draft: false
 title: 'أفضل برامج سطح المكتب البعيد المجانية للأعمال (2026)'
 excerpt: 'أدوات سطح مكتب بعيد مجانية فعلاً — بما في ذلك أدوات يمكنك استخدامها في العمل دون مؤشر يرصد الاستخدام التجاري. ستة خيارات حقيقية، لكل منها مأخذه.'
-image: '~/assets/images/blog/best-free-remote-desktop-software-og.png'
+image: '~/assets/images/blog/best-free-remote-desktop-software-og.webp'
 category: 'أدلة'
 tags: ['RustDesk', 'مفتوح المصدر', 'مقارنة']
 author: 'RustDesk Team'

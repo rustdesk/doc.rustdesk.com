@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-screenconnect'
 draft: false
 title: 'RustDesk와 ScreenConnect 비교: 자체 호스팅 원격 지원'
 excerpt: 'RustDesk와 ScreenConnect의 전체 비교: 기능, OS 지원, 보안, 가격 모델, 자체 호스팅의 트레이드오프까지 다룹니다.'
-image: '~/assets/images/blog/rustdesk-vs-screenconnect-og.png'
+image: '~/assets/images/blog/rustdesk-vs-screenconnect-og.webp'
 category: '비교'
 tags: ['RustDesk', 'ScreenConnect', '비교']
 author: 'RustDesk Team'

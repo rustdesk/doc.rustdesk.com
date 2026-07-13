@@ -5,7 +5,7 @@ translationKey: teamviewer-commercial-use-detected
 draft: false
 title: 'Utilisation commerciale détectée sur TeamViewer : comment résoudre le problème'
 excerpt: "Votre compte TeamViewer a été signalé pour utilisation commerciale ? Voici la procédure officielle de contestation, ce qui constitue réellement une utilisation commerciale, et la solution auto-hébergée pour l'éviter."
-image: ~/assets/images/blog/teamviewer-commercial-use-detected-og.png
+image: ~/assets/images/blog/teamviewer-commercial-use-detected-og.webp
 category: 'Dépannage'
 tags: ['TeamViewer', 'Dépannage', 'Licences']
 author: 'RustDesk Team'

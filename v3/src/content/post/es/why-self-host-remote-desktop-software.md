@@ -5,7 +5,7 @@ translationKey: why-self-host-remote-desktop-software
 draft: false
 title: 'Por qué autoalojar tu software de escritorio remoto'
 excerpt: 'Por qué los equipos que dejan TeamViewer y AnyDesk optan por autoalojar su escritorio remoto: control de los datos, costos predecibles y sin una nube de por medio.'
-image: ~/assets/images/blog/why-self-host-remote-desktop-software-og.png
+image: ~/assets/images/blog/why-self-host-remote-desktop-software-og.webp
 category: 'Guías'
 tags: ['RustDesk', 'Autoalojamiento']
 author: 'RustDesk Team'

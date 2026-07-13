@@ -5,7 +5,7 @@ translationKey: 'rustdesk-for-linux'
 draft: false
 title: 'RustDesk لنظام Linux: سطح المكتب البعيد مفتوح المصدر'
 excerpt: 'ثبّت RustDesk وشغّله على Linux: حزم .deb و.rpm وFlatpak وAppImage، الفرق بين X11 وWayland، الوصول بلا رأس (headless) والوصول غير المراقَب، واستضافة الخادم ذاتيًا.'
-image: '~/assets/images/blog/rustdesk-for-linux-og.png'
+image: '~/assets/images/blog/rustdesk-for-linux-og.webp'
 category: 'أدلة'
 tags: ['RustDesk', 'Linux', 'الاستضافة الذاتية']
 author: 'RustDesk Team'

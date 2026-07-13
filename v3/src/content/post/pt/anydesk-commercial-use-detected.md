@@ -5,7 +5,7 @@ translationKey: 'anydesk-commercial-use-detected'
 draft: false
 title: 'Uso Comercial Detectado no AnyDesk: Como Corrigir'
 excerpt: 'Recebeu um aviso de uso comercial na versão gratuita do AnyDesk? Veja o processo oficial de whitelist, o que conta como uso comercial e como evitar isso hospedando o seu próprio servidor.'
-image: '~/assets/images/blog/anydesk-commercial-use-detected-og.png'
+image: '~/assets/images/blog/anydesk-commercial-use-detected-og.webp'
 category: 'Solução de problemas'
 tags: ['AnyDesk', 'Solução de problemas', 'Licenciamento']
 author: 'RustDesk Team'

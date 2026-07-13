@@ -5,7 +5,7 @@ translationKey: 'why-self-host-remote-desktop-software'
 draft: false
 title: '원격 데스크톱 소프트웨어를 자체 호스팅해야 하는 이유'
 excerpt: 'TeamViewer와 AnyDesk를 떠나는 팀들이 원격 데스크톱을 자체 호스팅하기로 선택하는 이유: 데이터 통제권, 예측 가능한 비용, 그리고 중간에 끼어드는 클라우드가 없다는 점입니다.'
-image: '~/assets/images/blog/why-self-host-remote-desktop-software-og.png'
+image: '~/assets/images/blog/why-self-host-remote-desktop-software-og.webp'
 category: '가이드'
 tags: ['RustDesk', '셀프 호스팅']
 author: 'RustDesk Team'

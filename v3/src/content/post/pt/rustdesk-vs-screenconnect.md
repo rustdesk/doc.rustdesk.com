@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-screenconnect'
 draft: false
 title: 'RustDesk vs ScreenConnect: Suporte Remoto Auto-Hospedado'
 excerpt: 'Uma comparação completa entre RustDesk e ScreenConnect: recursos, suporte a sistemas operacionais, segurança, modelos de preços e o trade-off da auto-hospedagem.'
-image: '~/assets/images/blog/rustdesk-vs-screenconnect-og.png'
+image: '~/assets/images/blog/rustdesk-vs-screenconnect-og.webp'
 category: 'Comparações'
 tags: ['RustDesk', 'ScreenConnect', 'Comparação']
 author: 'RustDesk Team'

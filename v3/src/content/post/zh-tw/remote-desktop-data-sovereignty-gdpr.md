@@ -5,7 +5,7 @@ translationKey: 'remote-desktop-data-sovereignty-gdpr'
 draft: false
 title: '遠端桌面資料主權與 GDPR:自行架設伺服器'
 excerpt: '自行架設伺服器如何讓受監管產業的團隊掌控配對、中繼與裝置資料——以及還有哪些 GDPR 與合規問題需要自行解決。'
-image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.png'
+image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.webp'
 category: '安全'
 tags: ['RustDesk', '安全', 'GDPR', '自架']
 author: 'RustDesk Team'

@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-anydesk'
 draft: false
 title: 'RustDesk 对比 AnyDesk：自托管、开源的远程桌面方案'
 excerpt: '全面对比 RustDesk 与 AnyDesk：功能特性、操作系统支持、安全性、定价模式，以及自托管与开源之间的权衡取舍。'
-image: ~/assets/images/blog/rustdesk-vs-anydesk-og.png
+image: ~/assets/images/blog/rustdesk-vs-anydesk-og.webp
 category: '对比'
 tags: ['RustDesk', 'AnyDesk', '对比']
 author: 'RustDesk Team'

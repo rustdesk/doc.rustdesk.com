@@ -5,7 +5,7 @@ translationKey: 'rustdesk-and-remote-access-scams'
 draft: false
 title: 'RustDesk 與遠端存取詐騙：我們正在採取的措施'
 excerpt: '為什麼 RustDesk 退出 Google Play、新增警告與公共伺服器登入要求，以及使用者如何透過密碼、雙因素驗證（2FA）與 IP 允許清單強化受控裝置的安全性。'
-image: '~/assets/images/blog/rustdesk-and-remote-access-scams-og.png'
+image: '~/assets/images/blog/rustdesk-and-remote-access-scams-og.webp'
 category: '安全'
 tags: ['RustDesk', '安全', '詐騙']
 author: 'RustDesk Team'

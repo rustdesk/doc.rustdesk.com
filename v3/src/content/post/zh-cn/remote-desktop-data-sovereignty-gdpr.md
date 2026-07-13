@@ -5,7 +5,7 @@ translationKey: 'remote-desktop-data-sovereignty-gdpr'
 draft: false
 title: '远程桌面数据主权与 GDPR：自托管方案'
 excerpt: '自托管如何让受监管团队掌控协商服务器、中继服务器与设备数据——以及哪些 GDPR 与合规问题仍需自行解决。'
-image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.png'
+image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.webp'
 category: '安全'
 tags: ['RustDesk', '安全', 'GDPR', '自托管']
 author: 'RustDesk Team'

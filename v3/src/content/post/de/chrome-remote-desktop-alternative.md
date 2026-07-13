@@ -5,7 +5,7 @@ translationKey: chrome-remote-desktop-alternative
 draft: false
 title: 'Alternative zu Chrome Remote Desktop: selbst gehostetes RustDesk'
 excerpt: 'Chrome Remote Desktop ist kostenlos und einfach, bindet Sie aber an Google und lässt wichtige Funktionen vermissen. Hier ist eine selbst gehostete Open-Source-Alternative, die Sie vollständig kontrollieren.'
-image: ~/assets/images/blog/chrome-remote-desktop-alternative-og.png
+image: ~/assets/images/blog/chrome-remote-desktop-alternative-og.webp
 category: 'Alternativen'
 tags: ['RustDesk', 'Chrome Remote Desktop', 'Alternative', 'Selbst-Hosting']
 author: RustDesk Team

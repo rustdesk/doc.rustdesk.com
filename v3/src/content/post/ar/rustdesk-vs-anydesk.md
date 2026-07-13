@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-anydesk'
 draft: false
 title: 'RustDesk مقابل AnyDesk: سطح مكتب بعيد ذاتي الاستضافة ومفتوح المصدر'
 excerpt: 'مقارنة شاملة بين RustDesk وAnyDesk: الميزات، ودعم أنظمة التشغيل، والأمان، ونماذج التسعير، ومفاضلات الاستضافة الذاتية والمصدر المفتوح.'
-image: '~/assets/images/blog/rustdesk-vs-anydesk-og.png'
+image: '~/assets/images/blog/rustdesk-vs-anydesk-og.webp'
 category: 'مقارنات'
 tags: ['RustDesk', 'AnyDesk', 'مقارنة']
 author: 'RustDesk Team'

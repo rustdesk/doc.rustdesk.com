@@ -5,7 +5,7 @@ translationKey: 'rustdesk-connected-waiting-for-image'
 draft: false
 title: "RustDesk «Connesso, in attesa dell'immagine»: guida completa alla risoluzione"
 excerpt: "«Connesso, in attesa dell'immagine» significa che lo schermo remoto non viene catturato. Ecco tutte le cause — macchine headless, sospensione, codec, driver — e la relativa soluzione."
-image: '~/assets/images/blog/rustdesk-connected-waiting-for-image-og.png'
+image: '~/assets/images/blog/rustdesk-connected-waiting-for-image-og.webp'
 category: 'Risoluzione dei problemi'
 tags: ['RustDesk', 'Risoluzione dei problemi']
 author: 'RustDesk Team'

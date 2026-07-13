@@ -5,7 +5,7 @@ translationKey: 'rustdesk-server-pro-offline-air-gapped'
 draft: false
 title: 'RustDesk Server Pro는 오프라인 또는 에어갭 환경에서 실행할 수 있나요?'
 excerpt: '아니요 — 자체 호스팅하는 RustDesk Server Pro는 라이선스를 검증하기 위해 rustdesk.com으로의 지속적인 아웃바운드 접속이 필요하므로, 완전한 에어갭 배포는 지원되지 않습니다.'
-image: '~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.png'
+image: '~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.webp'
 category: '배포'
 tags: ['RustDesk', '배포', '셀프 호스팅']
 author: 'RustDesk Team'

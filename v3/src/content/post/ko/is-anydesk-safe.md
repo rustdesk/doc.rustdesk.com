@@ -5,7 +5,7 @@ translationKey: 'is-anydesk-safe'
 draft: false
 title: 'AnyDesk, 안전할까요? 암호화, 2024년 보안 사고, 사기 수법'
 excerpt: 'AnyDesk는 안전할까요? 암호화 방식과 2024년 프로덕션 시스템 보안 사고, 사기범들이 이를 악용하는 이유를 공정하게 살펴보고, 오픈소스와 비교해봅니다.'
-image: '~/assets/images/blog/is-anydesk-safe-og.png'
+image: '~/assets/images/blog/is-anydesk-safe-og.webp'
 category: '보안'
 tags: ['AnyDesk', '보안']
 author: 'RustDesk Team'

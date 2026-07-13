@@ -5,7 +5,7 @@ translationKey: rustdesk-vs-screenconnect
 draft: false
 title: 'RustDesk vs ScreenConnect:セルフホスト型リモートサポート徹底比較'
 excerpt: 'RustDeskとScreenConnectを徹底比較:機能、対応OS、セキュリティ、料金モデル、セルフホスティングのトレードオフまで解説します。'
-image: ~/assets/images/blog/rustdesk-vs-screenconnect-og.png
+image: ~/assets/images/blog/rustdesk-vs-screenconnect-og.webp
 category: '比較'
 tags: ['RustDesk', 'ScreenConnect', '比較']
 author: 'RustDesk Team'

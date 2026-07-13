@@ -5,7 +5,7 @@ translationKey: avoid-remote-desktop-scams
 draft: false
 title: 'Remote Desktop Scams: How to Spot and Avoid Them'
 excerpt: 'How remote access scams work, the red flags that give them away, and exactly what to do if a scammer already took control of your computer.'
-image: ~/assets/images/blog/avoid-remote-desktop-scams-og.png
+image: ~/assets/images/blog/avoid-remote-desktop-scams-og.webp
 category: Security
 tags:
   - security

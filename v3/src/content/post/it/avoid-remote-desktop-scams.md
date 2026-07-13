@@ -5,7 +5,7 @@ translationKey: avoid-remote-desktop-scams
 draft: false
 title: 'Truffe del desktop remoto: come riconoscerle ed evitarle'
 excerpt: "Come funzionano le truffe dell'accesso remoto, i segnali d'allarme che le tradiscono ed esattamente cosa fare se un truffatore ha già preso il controllo del tuo computer."
-image: ~/assets/images/blog/avoid-remote-desktop-scams-og.png
+image: ~/assets/images/blog/avoid-remote-desktop-scams-og.webp
 category: 'Sicurezza'
 tags: ['Sicurezza', 'Risoluzione dei problemi']
 author: RustDesk Team

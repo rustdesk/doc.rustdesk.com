@@ -5,7 +5,7 @@ translationKey: 'teamviewer-vs-splashtop'
 draft: false
 title: 'TeamViewer 對比 Splashtop：價格、效能與自架部署'
 excerpt: '從價格、效能與安全性比較 TeamViewer 與 Splashtop，並探討自架的第三種選擇如何改變這個決策。'
-image: ~/assets/images/blog/teamviewer-vs-splashtop-og.png
+image: ~/assets/images/blog/teamviewer-vs-splashtop-og.webp
 category: '比較'
 tags: ['TeamViewer', 'Splashtop', '比較']
 author: 'RustDesk Team'

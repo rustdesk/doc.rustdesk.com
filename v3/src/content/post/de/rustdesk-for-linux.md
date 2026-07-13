@@ -5,7 +5,7 @@ translationKey: rustdesk-for-linux
 draft: false
 title: 'RustDesk für Linux: Der Open-Source-Remote-Desktop'
 excerpt: 'RustDesk unter Linux installieren und betreiben: .deb, .rpm, Flatpak und AppImage, X11 vs. Wayland, Headless- und unbeaufsichtigter Zugriff sowie Self-Hosting des Servers.'
-image: ~/assets/images/blog/rustdesk-for-linux-og.png
+image: ~/assets/images/blog/rustdesk-for-linux-og.webp
 category: 'Anleitungen'
 tags: ['RustDesk', 'Linux', 'Selbst-Hosting']
 author: RustDesk Team

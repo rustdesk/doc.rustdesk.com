@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-rdp'
 draft: false
 title: 'RustDesk vs RDP: 크로스플랫폼 vs 윈도우 네이티브'
 excerpt: 'RustDesk vs Microsoft RDP: 크로스플랫폼 지원 범위, VPN 없는 인터넷 접속, LAN 속도, 보안 트레이드오프를 실용적으로 비교합니다.'
-image: '~/assets/images/blog/rustdesk-vs-rdp-og.png'
+image: '~/assets/images/blog/rustdesk-vs-rdp-og.webp'
 category: '비교'
 tags: ['RustDesk', 'RDP', '비교']
 author: 'RustDesk Team'

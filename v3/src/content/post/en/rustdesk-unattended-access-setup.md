@@ -5,7 +5,7 @@ translationKey: rustdesk-unattended-access-setup
 draft: false
 title: 'RustDesk Unattended Access: Setup Guide'
 excerpt: 'Set up RustDesk unattended access the right way: a permanent password, run as a service so it starts on boot, and deploy at scale with a pre-configured client.'
-image: ~/assets/images/blog/rustdesk-unattended-access-setup-og.png
+image: ~/assets/images/blog/rustdesk-unattended-access-setup-og.webp
 category: Deployment
 tags:
   - RustDesk

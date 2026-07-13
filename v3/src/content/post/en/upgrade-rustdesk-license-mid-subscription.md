@@ -5,7 +5,7 @@ translationKey: upgrade-rustdesk-license-mid-subscription
 draft: false
 title: 'Upgrade RustDesk License Mid-Subscription: How It Works'
 excerpt: 'Yes—you can upgrade your RustDesk license anytime to add users or devices. Learn how proration works and how new limits apply: refresh in the web console for instant effect, or wait for the automatic 24-hour check.'
-image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.png
+image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.webp
 category: Pricing
 tags:
   - RustDesk

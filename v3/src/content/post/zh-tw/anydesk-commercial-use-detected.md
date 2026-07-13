@@ -5,7 +5,7 @@ translationKey: 'anydesk-commercial-use-detected'
 draft: false
 title: 'AnyDesk 偵測到「商業用途」:如何解決'
 excerpt: 'AnyDesk 免費版把你標記為商業用途?以下是官方白名單申請流程、商業用途的認定標準,以及透過自架伺服器避免此問題的方法。'
-image: '~/assets/images/blog/anydesk-commercial-use-detected-og.png'
+image: '~/assets/images/blog/anydesk-commercial-use-detected-og.webp'
 category: '疑難排解'
 tags: ['AnyDesk', '疑難排解', '授權']
 author: 'RustDesk Team'

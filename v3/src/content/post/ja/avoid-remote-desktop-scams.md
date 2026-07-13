@@ -5,7 +5,7 @@ translationKey: avoid-remote-desktop-scams
 draft: false
 title: 'リモートデスクトップ詐欺:見分け方と回避策'
 excerpt: 'リモートアクセス詐欺の手口、詐欺を見抜く決め手となる危険信号、そして詐欺師にすでにパソコンを操作されてしまった場合に取るべき具体的な対処法を解説します。'
-image: ~/assets/images/blog/avoid-remote-desktop-scams-og.png
+image: ~/assets/images/blog/avoid-remote-desktop-scams-og.webp
 category: 'セキュリティ'
 tags: ['セキュリティ', 'トラブルシューティング']
 author: RustDesk Team

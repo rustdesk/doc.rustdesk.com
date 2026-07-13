@@ -5,7 +5,7 @@ translationKey: rustdesk-scale-50000-200000-devices
 draft: false
 title: 'Can RustDesk Scale to 200,000 Devices?'
 excerpt: 'See RustDesk first-party operational context for large-fleet planning, what the public-server observation shows, and what a self-hosted rollout must still validate.'
-image: ~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.png
+image: ~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.webp
 category: Deployment
 tags:
   - RustDesk

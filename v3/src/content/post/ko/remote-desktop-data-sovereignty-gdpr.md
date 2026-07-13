@@ -5,7 +5,7 @@ translationKey: 'remote-desktop-data-sovereignty-gdpr'
 draft: false
 title: '원격 데스크톱 데이터 주권과 GDPR: 셀프 호스팅'
 excerpt: '셀프 호스팅이 규제 대상 조직에게 랑데부, 릴레이, 디바이스 데이터에 대한 통제권을 어떻게 부여하는지, 그리고 여전히 남아 있는 GDPR 및 컴플라이언스 질문은 무엇인지 살펴봅니다.'
-image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.png'
+image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.webp'
 category: '보안'
 tags: ['RustDesk', '보안', 'GDPR', '셀프 호스팅']
 author: 'RustDesk Team'

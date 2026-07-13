@@ -5,7 +5,7 @@ translationKey: 'remote-desktop-data-sovereignty-gdpr'
 draft: false
 title: 'リモートデスクトップのデータ主権とGDPR：セルフホスティングという選択肢'
 excerpt: 'セルフホスティングによって、規制対象のチームはランデブーサーバー・リレー・デバイスデータをどこまで管理できるのか。そしてGDPRやコンプライアンスにおいてなお残る論点とは。'
-image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.png'
+image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.webp'
 category: 'セキュリティ'
 tags: ['RustDesk', 'セキュリティ', 'GDPR', 'セルフホスティング']
 author: 'RustDesk Team'

@@ -5,7 +5,7 @@ translationKey: 'why-self-host-remote-desktop-software'
 draft: false
 title: 'Pourquoi héberger vous-même votre logiciel de bureau à distance'
 excerpt: "Pourquoi les équipes qui quittent TeamViewer et AnyDesk choisissent d'auto-héberger leur bureau à distance : contrôle des données, coûts prévisibles et aucun cloud intermédiaire."
-image: ~/assets/images/blog/why-self-host-remote-desktop-software-og.png
+image: ~/assets/images/blog/why-self-host-remote-desktop-software-og.webp
 category: 'Guides'
 tags: ['RustDesk', 'Auto-hébergement']
 author: 'RustDesk Team'

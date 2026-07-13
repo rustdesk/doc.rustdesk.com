@@ -5,7 +5,7 @@ translationKey: 'anydesk-price-increase-alternatives'
 draft: false
 title: 'AnyDeskの値上げ:チームのための代替案'
 excerpt: 'AnyDeskの値上げがまた予算を圧迫していませんか?チームが予測可能でセルフホスト型、オープンソースのリモートデスクトップへ乗り換える方法を紹介します。'
-image: '~/assets/images/blog/anydesk-price-increase-alternatives-og.png'
+image: '~/assets/images/blog/anydesk-price-increase-alternatives-og.webp'
 category: 'ガイド'
 tags: ['RustDesk', 'AnyDesk', '料金', '代替']
 author: 'RustDesk Team'

@@ -5,7 +5,7 @@ translationKey: upgrade-rustdesk-license-mid-subscription
 draft: false
 title: '订阅期内升级 RustDesk 许可证:具体是如何运作的'
 excerpt: '没错——您可以随时升级 RustDesk 许可证以增加用户数或设备数。了解按比例计费的计算方式,以及新的额度如何生效:在 Web 控制台中刷新即可立即生效,或等待自动的 24 小时定期检查。'
-image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.png
+image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.webp
 category: '定价'
 tags: ['RustDesk', '定价', '许可']
 author: 'RustDesk Team'

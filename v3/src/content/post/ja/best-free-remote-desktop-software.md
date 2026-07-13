@@ -5,7 +5,7 @@ translationKey: best-free-remote-desktop-software
 draft: false
 title: 'ビジネスにおすすめの無料リモートデスクトップソフト（2026年版）'
 excerpt: '商用利用フラグを気にせずビジネスでも使える、本当に無料のリモートデスクトップツールを紹介。実在する6つの選択肢と、それぞれの注意点。'
-image: ~/assets/images/blog/best-free-remote-desktop-software-og.png
+image: ~/assets/images/blog/best-free-remote-desktop-software-og.webp
 category: 'ガイド'
 tags: ['RustDesk', 'オープンソース', '比較']
 author: RustDesk Team

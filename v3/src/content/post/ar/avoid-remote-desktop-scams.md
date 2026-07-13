@@ -5,7 +5,7 @@ translationKey: 'avoid-remote-desktop-scams'
 draft: false
 title: 'عمليات احتيال سطح المكتب البعيد: كيف تكتشفها وتتجنبها'
 excerpt: 'كيف تعمل عمليات احتيال الوصول عن بُعد، وما هي العلامات التحذيرية التي تكشفها، وما الذي يجب عليك فعله بالضبط إذا كان أحد المحتالين قد سيطر بالفعل على جهاز الكمبيوتر الخاص بك.'
-image: '~/assets/images/blog/avoid-remote-desktop-scams-og.png'
+image: '~/assets/images/blog/avoid-remote-desktop-scams-og.webp'
 category: 'الأمان'
 tags: ['الأمان', 'استكشاف الأخطاء']
 author: 'RustDesk Team'

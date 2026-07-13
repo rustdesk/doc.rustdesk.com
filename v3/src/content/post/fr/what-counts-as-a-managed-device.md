@@ -5,7 +5,7 @@ translationKey: 'what-counts-as-a-managed-device'
 draft: false
 title: "Qu'est-ce qui compte comme appareil géré dans RustDesk ?"
 excerpt: 'Sur les forfaits RustDesk standard, chaque appareil que vous configurez pour y accéder compte une seule fois. Le forfait Customized V2 ne comptabilise que les appareils assignés à un groupe ou à un utilisateur ; les appareils ponctuels ne sont pas comptabilisés.'
-image: '~/assets/images/blog/what-counts-as-a-managed-device-og.png'
+image: '~/assets/images/blog/what-counts-as-a-managed-device-og.webp'
 category: 'Tarifs'
 tags: ['RustDesk', 'Tarifs', 'Licences']
 author: 'RustDesk Team'

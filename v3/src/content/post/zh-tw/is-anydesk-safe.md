@@ -5,7 +5,7 @@ translationKey: 'is-anydesk-safe'
 draft: false
 title: 'AnyDesk 安全嗎？加密技術、2024 年資安事件與詐騙手法'
 excerpt: 'AnyDesk 安全嗎？公正檢視其加密技術、2024 年正式環境系統資安事件，以及詐騙集團為何濫用它——並比較開源方案的差異。'
-image: '~/assets/images/blog/is-anydesk-safe-og.png'
+image: '~/assets/images/blog/is-anydesk-safe-og.webp'
 category: '安全'
 tags: ['AnyDesk', '安全']
 author: 'RustDesk Team'

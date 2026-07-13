@@ -5,7 +5,7 @@ translationKey: anydesk-commercial-use-detected
 draft: false
 title: 'AnyDeskで「商用利用が検出されました」と表示されたときの対処法'
 excerpt: 'AnyDeskの無料版で商用利用のフラグが立てられましたか?公式のホワイトリスト申請の手順、商用利用とみなされる条件、そしてセルフホスト型でこの問題を回避する方法を解説します。'
-image: '~/assets/images/blog/anydesk-commercial-use-detected-og.png'
+image: '~/assets/images/blog/anydesk-commercial-use-detected-og.webp'
 category: 'トラブルシューティング'
 tags: ['AnyDesk', 'トラブルシューティング', 'ライセンス']
 author: 'RustDesk Team'

@@ -5,7 +5,7 @@ translationKey: 'teamviewer-vs-anydesk-for-msps'
 draft: false
 title: 'TeamViewer 與 AnyDesk 的 MSP 選型比較:自架託管的第三種選擇'
 excerpt: 'TeamViewer 與 AnyDesk 在 MSP 場景下的比較——最新授權方案、整合能力、託管方式,以及為何有些團隊選擇跳過兩者、改用自架方案。'
-image: '~/assets/images/blog/teamviewer-vs-anydesk-for-msps-og.png'
+image: '~/assets/images/blog/teamviewer-vs-anydesk-for-msps-og.webp'
 category: '比較'
 tags: ['TeamViewer', 'AnyDesk', 'MSP', '比較']
 author: 'RustDesk Team'

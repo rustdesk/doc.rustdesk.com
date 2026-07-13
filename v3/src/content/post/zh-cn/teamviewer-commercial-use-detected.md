@@ -5,7 +5,7 @@ translationKey: 'teamviewer-commercial-use-detected'
 draft: false
 title: 'TeamViewer 检测到商业用途：如何解决'
 excerpt: '被 TeamViewer 标记为商业用途？本文介绍官方申诉流程、真正构成商业用途的行为，以及通过自托管彻底避免该问题的方法。'
-image: ~/assets/images/blog/teamviewer-commercial-use-detected-og.png
+image: ~/assets/images/blog/teamviewer-commercial-use-detected-og.webp
 category: '故障排除'
 tags: ['TeamViewer', '故障排除', '许可']
 author: 'RustDesk Team'

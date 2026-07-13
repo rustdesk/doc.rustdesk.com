@@ -5,7 +5,7 @@ translationKey: 'rustdesk-connected-waiting-for-image'
 draft: false
 title: 'RustDesk Connected Waiting for Image: Der komplette Leitfaden zur Fehlerbehebung'
 excerpt: '„Connected, waiting for image" bedeutet, dass der Bildschirm des Remote-Rechners nicht erfasst wird. Hier finden Sie jede Ursache – Headless-Rechner, Ruhezustand, Codecs, Treiber – und die passende Lösung.'
-image: ~/assets/images/blog/rustdesk-connected-waiting-for-image-og.png
+image: ~/assets/images/blog/rustdesk-connected-waiting-for-image-og.webp
 category: 'Fehlerbehebung'
 tags: ['RustDesk', 'Fehlerbehebung']
 author: 'RustDesk Team'

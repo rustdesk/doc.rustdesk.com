@@ -5,7 +5,7 @@ translationKey: 'rustdesk-unattended-access-setup'
 draft: false
 title: 'Accès non surveillé RustDesk : guide de configuration'
 excerpt: "Configurez correctement l'accès non surveillé de RustDesk : un mot de passe permanent, une exécution en tant que service pour qu'il démarre avec la machine, et un déploiement à grande échelle grâce à un client préconfiguré."
-image: '~/assets/images/blog/rustdesk-unattended-access-setup-og.png'
+image: '~/assets/images/blog/rustdesk-unattended-access-setup-og.webp'
 category: 'Déploiement'
 tags: ['RustDesk', 'Déploiement', 'Accès sans surveillance']
 author: 'RustDesk Team'

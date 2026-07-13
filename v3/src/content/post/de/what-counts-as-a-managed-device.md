@@ -5,7 +5,7 @@ translationKey: 'what-counts-as-a-managed-device'
 draft: false
 title: 'Was zählt als verwaltetes Gerät bei RustDesk?'
 excerpt: 'In den Standard-Tarifen von RustDesk zählt jedes Gerät, das Sie für den Zugriff einrichten, einmal. Customized V2 zählt nur Geräte, die einer Gruppe oder einem Benutzer zugewiesen sind; Ad-hoc-Geräte werden nicht gezählt.'
-image: ~/assets/images/blog/what-counts-as-a-managed-device-og.png
+image: ~/assets/images/blog/what-counts-as-a-managed-device-og.webp
 category: 'Preise'
 tags: ['RustDesk', 'Preise', 'Lizenzierung']
 author: 'RustDesk Team'

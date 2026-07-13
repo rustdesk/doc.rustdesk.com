@@ -5,7 +5,7 @@ translationKey: 'anydesk-price-increase-alternatives'
 draft: false
 title: 'ارتفاع أسعار AnyDesk: بدائل للفرق'
 excerpt: 'هل تدفع زيادة أخرى في أسعار AnyDesk ميزانيتك نحو الحافة؟ إليك كيف تنتقل الفرق إلى سطح مكتب بعيد ذاتي الاستضافة ومفتوح المصدر بتكلفة يمكن التنبؤ بها — ومعادلة نقطة التعادل.'
-image: '~/assets/images/blog/anydesk-price-increase-alternatives-og.png'
+image: '~/assets/images/blog/anydesk-price-increase-alternatives-og.webp'
 category: 'أدلة'
 tags: ['RustDesk', 'AnyDesk', 'التسعير', 'بديل']
 author: 'RustDesk Team'

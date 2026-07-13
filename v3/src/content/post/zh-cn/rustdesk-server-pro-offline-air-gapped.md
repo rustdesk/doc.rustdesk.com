@@ -5,7 +5,7 @@ translationKey: rustdesk-server-pro-offline-air-gapped
 draft: false
 title: 'RustDesk Server Pro 能否离线或在气隙网络中运行？'
 excerpt: '不能——自托管的 RustDesk Server Pro 需要持续访问 rustdesk.com 的出站连接以验证许可证，因此不支持完全气隙隔离（air-gapped）部署。'
-image: ~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.png
+image: ~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.webp
 category: '部署'
 tags: ['RustDesk', '部署', '自托管']
 author: RustDesk Team

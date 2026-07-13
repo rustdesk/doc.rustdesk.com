@@ -5,7 +5,7 @@ translationKey: 'what-counts-as-a-managed-device'
 draft: false
 title: 'RustDeskでは何が「管理対象デバイス」としてカウントされるのか?'
 excerpt: 'RustDeskの標準プランでは、アクセスできるように設定したデバイスはそれぞれ1台としてカウントされます。Customized V2では、デバイスグループまたはユーザーに割り当てられたデバイスのみがカウント対象となり、その場限りのアドホックなデバイスはカウントされません。'
-image: ~/assets/images/blog/what-counts-as-a-managed-device-og.png
+image: ~/assets/images/blog/what-counts-as-a-managed-device-og.webp
 category: '料金'
 tags: ['RustDesk', '料金', 'ライセンス']
 author: 'RustDesk Team'

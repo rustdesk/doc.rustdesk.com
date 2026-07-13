@@ -5,7 +5,7 @@ translationKey: rustdesk-server-pro-offline-air-gapped
 draft: false
 title: 'O RustDesk Server Pro Pode Funcionar Offline ou em Rede Isolada (Air-Gapped)?'
 excerpt: 'Não — o RustDesk Server Pro auto-hospedado precisa de acesso de saída contínuo a rustdesk.com para validar sua licença, portanto uma implantação totalmente isolada (air-gapped) não é suportada.'
-image: ~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.png
+image: ~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.webp
 category: 'Implantação'
 tags: ['RustDesk', 'Implantação', 'Auto-hospedagem']
 author: RustDesk Team

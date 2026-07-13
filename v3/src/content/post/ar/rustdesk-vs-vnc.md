@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-vnc'
 draft: false
 title: 'RustDesk مقابل VNC: اجتياز NAT، الترميز، والتشفير'
 excerpt: 'مقارنة عملية بين RustDesk وVNC: اجتياز NAT بدون إعادة توجيه المنافذ، ترميز فيديو حديث، تشفير مدمج، ولماذا تنتقل الفرق من VNC إلى RustDesk.'
-image: '~/assets/images/blog/rustdesk-vs-vnc-og.png'
+image: '~/assets/images/blog/rustdesk-vs-vnc-og.webp'
 category: 'مقارنات'
 tags: ['RustDesk', 'VNC', 'مقارنة', 'مفتوح المصدر']
 author: 'RustDesk Team'

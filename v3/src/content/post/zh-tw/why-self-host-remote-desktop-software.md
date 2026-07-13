@@ -5,7 +5,7 @@ translationKey: why-self-host-remote-desktop-software
 draft: false
 title: '為什麼要自行架設遠端桌面軟體'
 excerpt: '為什麼越來越多離開 TeamViewer 與 AnyDesk 的團隊,選擇自行架設遠端桌面:掌握資料、成本可預測,中間不再有雲端廠商。'
-image: ~/assets/images/blog/why-self-host-remote-desktop-software-og.png
+image: ~/assets/images/blog/why-self-host-remote-desktop-software-og.webp
 category: '指南'
 tags: ['RustDesk', '自架']
 author: RustDesk Team

@@ -5,7 +5,7 @@ translationKey: rustdesk-unattended-access-setup
 draft: false
 title: 'Unbeaufsichtigter Zugriff mit RustDesk: Einrichtungsanleitung'
 excerpt: 'Richten Sie den unbeaufsichtigten Zugriff mit RustDesk richtig ein: ein dauerhaftes Passwort, Ausführung als Dienst für den Start beim Booten und Rollout im großen Maßstab mit einem vorkonfigurierten Client.'
-image: ~/assets/images/blog/rustdesk-unattended-access-setup-og.png
+image: ~/assets/images/blog/rustdesk-unattended-access-setup-og.webp
 category: 'Bereitstellung'
 tags: ['RustDesk', 'Bereitstellung', 'Unbeaufsichtigter Zugriff']
 author: RustDesk Team

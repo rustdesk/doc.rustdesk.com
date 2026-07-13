@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-vnc'
 draft: false
 title: 'RustDesk 对比 VNC：NAT 穿透、编解码器与加密'
 excerpt: 'RustDesk 与 VNC 的实战对比：无需端口转发即可实现 NAT 穿透、现代编解码器、内置加密，以及团队为何从 VNC 转向 RustDesk。'
-image: '~/assets/images/blog/rustdesk-vs-vnc-og.png'
+image: '~/assets/images/blog/rustdesk-vs-vnc-og.webp'
 category: '对比'
 tags: ['RustDesk', 'VNC', '对比', '开源']
 author: 'RustDesk Team'

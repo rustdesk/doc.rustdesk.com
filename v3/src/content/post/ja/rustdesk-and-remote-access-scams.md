@@ -5,7 +5,7 @@ translationKey: 'rustdesk-and-remote-access-scams'
 draft: false
 title: 'RustDeskとリモートアクセス詐欺:私たちの取り組み'
 excerpt: 'RustDeskがGoogle Playから撤退し、警告表示やパブリックサーバーへのログイン要件を追加した理由と、パスワード・2FA・IP許可リストを使って被制御デバイスを強化する方法について解説します。'
-image: '~/assets/images/blog/rustdesk-and-remote-access-scams-og.png'
+image: '~/assets/images/blog/rustdesk-and-remote-access-scams-og.webp'
 category: 'セキュリティ'
 tags: ['RustDesk', 'セキュリティ', '詐欺']
 author: 'RustDesk Team'

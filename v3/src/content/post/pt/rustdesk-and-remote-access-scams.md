@@ -5,7 +5,7 @@ translationKey: rustdesk-and-remote-access-scams
 draft: false
 title: 'RustDesk e Golpes de Acesso Remoto: O Que Estamos Fazendo'
 excerpt: 'Por que o RustDesk saiu da Google Play, adicionou avisos e exigências de login no servidor público, e como os usuários podem reforçar a segurança de dispositivos controlados com senhas, 2FA e listas de permissão de IP.'
-image: ~/assets/images/blog/rustdesk-and-remote-access-scams-og.png
+image: ~/assets/images/blog/rustdesk-and-remote-access-scams-og.webp
 category: 'Segurança'
 tags: ['RustDesk', 'Segurança', 'Golpes']
 author: RustDesk Team

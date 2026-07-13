@@ -5,7 +5,7 @@ translationKey: is-chrome-remote-desktop-safe
 draft: false
 title: 'Chrome Remote Desktop 安全嗎？誠實評測'
 excerpt: 'Chrome Remote Desktop 安全嗎？公正檢視其加密機制、PIN 與 Google 帳號模式、真正的風險，以及自架伺服器有何不同之處。'
-image: ~/assets/images/blog/is-chrome-remote-desktop-safe-og.png
+image: ~/assets/images/blog/is-chrome-remote-desktop-safe-og.webp
 category: '安全'
 tags: ['Chrome Remote Desktop', '安全']
 author: RustDesk Team

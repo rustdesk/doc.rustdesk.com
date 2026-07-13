@@ -5,7 +5,7 @@ translationKey: rustdesk-remote-control-android-ios
 draft: false
 title: 'RustDesk Fernsteuerung für Android & iOS: Was funktioniert'
 excerpt: 'Wie RustDesk Android-Smartphones fernsteuert, iPhones und iPads in Steuergeräte verwandelt – und warum kein Anbieter iOS fernsteuern kann.'
-image: ~/assets/images/blog/rustdesk-remote-control-android-ios-og.png
+image: ~/assets/images/blog/rustdesk-remote-control-android-ios-og.webp
 category: 'Anleitungen'
 tags: ['RustDesk', 'Mobil']
 author: RustDesk Team

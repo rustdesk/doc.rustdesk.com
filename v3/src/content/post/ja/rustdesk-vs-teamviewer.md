@@ -5,7 +5,7 @@ translationKey: rustdesk-vs-teamviewer
 draft: false
 title: 'RustDesk vs TeamViewer:セルフホスト型の代替ソフト'
 excerpt: 'RustDeskとTeamViewerを比較:機能、OSサポート、セキュリティ、ライセンスモデル、そして本当のトレードオフ——セルフホスティング、オープンソース、チャンネル単位の課金なし。'
-image: ~/assets/images/blog/rustdesk-vs-teamviewer-og.png
+image: ~/assets/images/blog/rustdesk-vs-teamviewer-og.webp
 category: '比較'
 tags: ['RustDesk', 'TeamViewer', '比較']
 author: RustDesk Team

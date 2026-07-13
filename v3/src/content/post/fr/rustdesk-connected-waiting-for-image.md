@@ -5,7 +5,7 @@ translationKey: 'rustdesk-connected-waiting-for-image'
 draft: false
 title: 'RustDesk « Connected, waiting for image » : guide de dépannage complet'
 excerpt: "« Connected, waiting for image » signifie que l'écran distant n'est pas capturé. Voici toutes les causes possibles — machines headless, veille, codecs, pilotes — et leur solution."
-image: ~/assets/images/blog/rustdesk-connected-waiting-for-image-og.png
+image: ~/assets/images/blog/rustdesk-connected-waiting-for-image-og.webp
 category: 'Dépannage'
 tags: ['RustDesk', 'Dépannage']
 author: 'RustDesk Team'

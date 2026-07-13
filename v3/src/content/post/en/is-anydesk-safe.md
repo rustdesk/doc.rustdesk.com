@@ -5,7 +5,7 @@ translationKey: is-anydesk-safe
 draft: false
 title: 'Is AnyDesk Safe? Encryption, the 2024 Security Incident & Scams'
 excerpt: 'Is AnyDesk safe? A fair look at its encryption, the 2024 production-systems security incident, and why scammers abuse it — plus how open source compares.'
-image: ~/assets/images/blog/is-anydesk-safe-og.png
+image: ~/assets/images/blog/is-anydesk-safe-og.webp
 category: Security
 tags:
   - AnyDesk

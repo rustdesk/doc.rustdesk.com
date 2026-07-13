@@ -5,7 +5,7 @@ translationKey: 'rustdesk-unattended-access-setup'
 draft: false
 title: 'RustDesk無人アクセス設定ガイド'
 excerpt: 'RustDeskの無人アクセスを正しい方法で設定しましょう。固定パスワードの設定、システム起動時に自動的に開始するサービスとしての実行、そして事前設定済みクライアントによる大規模展開までを解説します。'
-image: '~/assets/images/blog/rustdesk-unattended-access-setup-og.png'
+image: '~/assets/images/blog/rustdesk-unattended-access-setup-og.webp'
 category: '導入'
 tags: ['RustDesk', '導入', '無人アクセス']
 author: 'RustDesk Team'

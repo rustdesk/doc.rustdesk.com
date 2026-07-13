@@ -5,7 +5,7 @@ translationKey: 'what-counts-as-a-managed-device'
 draft: false
 title: 'RustDesk 的「受管理裝置」如何計算？'
 excerpt: '在 RustDesk 標準方案中，您設定要存取的每部裝置只會計算一次。Customized V2 方案則僅計算已指派至群組或使用者的裝置；臨時（ad-hoc）連線的裝置不計入。'
-image: ~/assets/images/blog/what-counts-as-a-managed-device-og.png
+image: ~/assets/images/blog/what-counts-as-a-managed-device-og.webp
 category: '定價'
 tags: ['RustDesk', '定價', '授權']
 author: 'RustDesk Team'

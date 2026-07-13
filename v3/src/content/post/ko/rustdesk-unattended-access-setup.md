@@ -5,7 +5,7 @@ translationKey: 'rustdesk-unattended-access-setup'
 draft: false
 title: 'RustDesk 무인 원격 접속: 설정 가이드'
 excerpt: 'RustDesk 무인 원격 접속을 제대로 설정하는 방법을 안내합니다. 영구 비밀번호 설정, 부팅 시 자동으로 시작되는 서비스 실행, 그리고 사전 구성된 클라이언트를 통한 대규모 배포까지 다룹니다.'
-image: '~/assets/images/blog/rustdesk-unattended-access-setup-og.png'
+image: '~/assets/images/blog/rustdesk-unattended-access-setup-og.webp'
 category: '배포'
 tags: ['RustDesk', '배포', '무인 액세스']
 author: 'RustDesk Team'

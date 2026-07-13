@@ -5,7 +5,7 @@ translationKey: 'rustdesk-remote-control-android-ios'
 draft: false
 title: 'RustDeskのAndroid・iOSリモートコントロール:実際にできること'
 excerpt: 'RustDeskがAndroidスマートフォンをリモート操作する仕組み、iPhoneとiPadをコントローラーとして活用する方法、そしてどのベンダーもiOSをリモート操作できない理由を解説します。'
-image: ~/assets/images/blog/rustdesk-remote-control-android-ios-og.png
+image: ~/assets/images/blog/rustdesk-remote-control-android-ios-og.webp
 category: 'ガイド'
 tags: ['RustDesk', 'モバイル']
 author: 'RustDesk Team'

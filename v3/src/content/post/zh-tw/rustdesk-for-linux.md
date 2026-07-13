@@ -5,7 +5,7 @@ translationKey: 'rustdesk-for-linux'
 draft: false
 title: 'RustDesk for Linux：開源遠端桌面軟體'
 excerpt: '在 Linux 上安裝並執行 RustDesk：.deb、.rpm、Flatpak 與 AppImage 安裝包、X11 與 Wayland 的差異、無頭與無人值守存取，以及自行架設伺服器。'
-image: '~/assets/images/blog/rustdesk-for-linux-og.png'
+image: '~/assets/images/blog/rustdesk-for-linux-og.webp'
 category: '指南'
 tags: ['RustDesk', 'Linux', '自架']
 author: 'RustDesk Team'

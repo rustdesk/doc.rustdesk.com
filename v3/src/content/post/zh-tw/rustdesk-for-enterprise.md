@@ -5,7 +5,7 @@ translationKey: 'rustdesk-for-enterprise'
 draft: false
 title: '企業級 RustDesk：自架部署、可擴展、AD 整合就緒'
 excerpt: '為什麼企業 IT 團隊選擇 RustDesk：自架架構掌控資料、支援 AD/LDAP、裝置群組存取控制，以及大規模部署下可預測的定價模式。'
-image: '~/assets/images/blog/rustdesk-for-enterprise-og.png'
+image: '~/assets/images/blog/rustdesk-for-enterprise-og.webp'
 category: '指南'
 tags: ['RustDesk', '企業', '自架']
 author: 'RustDesk Team'

@@ -5,7 +5,7 @@ translationKey: best-free-remote-desktop-software
 draft: false
 title: 'El mejor software de escritorio remoto gratuito para empresas (2026)'
 excerpt: 'Herramientas de escritorio remoto genuinamente gratuitas, incluidas algunas que puedes usar para empresas sin un indicador de uso comercial. Seis opciones reales, cada una con su contrapartida.'
-image: ~/assets/images/blog/best-free-remote-desktop-software-og.png
+image: ~/assets/images/blog/best-free-remote-desktop-software-og.webp
 category: 'Guías'
 tags: ['RustDesk', 'Código abierto', 'Comparativa']
 author: 'RustDesk Team'

@@ -5,7 +5,7 @@ translationKey: 'anydesk-commercial-use-detected'
 draft: false
 title: 'AnyDesk 상업적 사용 감지: 해결 방법'
 excerpt: 'AnyDesk 무료 버전에서 상업적 사용으로 표시되었나요? 공식 화이트리스트 신청 절차와 상업적 사용 기준, 그리고 셀프 호스팅으로 이를 피하는 방법을 안내합니다.'
-image: '~/assets/images/blog/anydesk-commercial-use-detected-og.png'
+image: '~/assets/images/blog/anydesk-commercial-use-detected-og.webp'
 category: '문제 해결'
 tags: ['AnyDesk', '문제 해결', '라이선스']
 author: 'RustDesk Team'

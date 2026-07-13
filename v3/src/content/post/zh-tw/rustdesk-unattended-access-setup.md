@@ -5,7 +5,7 @@ translationKey: rustdesk-unattended-access-setup
 draft: false
 title: 'RustDesk 無人值守存取：設定指南'
 excerpt: '以正確方式設定 RustDesk 無人值守存取：設定永久密碼、以服務方式執行讓系統開機時自動啟動，並使用預先設定好的用戶端進行大規模部署。'
-image: ~/assets/images/blog/rustdesk-unattended-access-setup-og.png
+image: ~/assets/images/blog/rustdesk-unattended-access-setup-og.webp
 category: '部署'
 tags: ['RustDesk', '部署', '無人值守存取']
 author: 'RustDesk Team'

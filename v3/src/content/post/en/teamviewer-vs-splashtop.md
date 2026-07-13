@@ -5,7 +5,7 @@ translationKey: teamviewer-vs-splashtop
 draft: false
 title: 'TeamViewer vs Splashtop: Pricing, Performance & Self-Hosting'
 excerpt: 'TeamViewer vs Splashtop compared on price, performance, and security — plus how a self-hosted third option changes the decision.'
-image: ~/assets/images/blog/teamviewer-vs-splashtop-og.png
+image: ~/assets/images/blog/teamviewer-vs-splashtop-og.webp
 category: Comparisons
 tags:
   - TeamViewer

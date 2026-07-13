@@ -5,7 +5,7 @@ translationKey: what-counts-as-a-managed-device
 draft: false
 title: 'RustDesk에서 관리 기기는 어떻게 계산될까요?'
 excerpt: 'RustDesk 표준 플랜에서는 접속하도록 설정한 모든 기기가 한 번만 계산됩니다. Customized V2는 그룹이나 사용자에 할당된 기기만 계산하며, 임시(ad-hoc) 기기는 계산에 포함되지 않습니다.'
-image: ~/assets/images/blog/what-counts-as-a-managed-device-og.png
+image: ~/assets/images/blog/what-counts-as-a-managed-device-og.webp
 category: '가격'
 tags: ['RustDesk', '가격', '라이선스']
 author: 'RustDesk Team'

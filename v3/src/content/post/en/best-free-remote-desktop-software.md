@@ -5,7 +5,7 @@ translationKey: best-free-remote-desktop-software
 draft: false
 title: 'Best Free Remote Desktop Software for Business (2026)'
 excerpt: 'Genuinely free remote desktop tools — including ones you can use for business without a commercial-use flag. Six real options, each with its catch.'
-image: ~/assets/images/blog/best-free-remote-desktop-software-og.png
+image: ~/assets/images/blog/best-free-remote-desktop-software-og.webp
 category: Guides
 tags:
   - RustDesk

@@ -5,7 +5,7 @@ translationKey: 'rustdesk-unattended-access-setup'
 draft: false
 title: 'RustDesk 无人值守访问：设置指南'
 excerpt: '以正确方式设置 RustDesk 无人值守访问：配置永久密码、以系统服务方式运行以实现开机启动，并通过预配置客户端完成规模化部署。'
-image: '~/assets/images/blog/rustdesk-unattended-access-setup-og.png'
+image: '~/assets/images/blog/rustdesk-unattended-access-setup-og.webp'
 category: '部署'
 tags: ['RustDesk', '部署', '无人值守访问']
 author: 'RustDesk Team'

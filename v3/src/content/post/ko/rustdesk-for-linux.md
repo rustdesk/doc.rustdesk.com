@@ -5,7 +5,7 @@ translationKey: 'rustdesk-for-linux'
 draft: false
 title: '리눅스용 RustDesk: 오픈소스 원격 데스크톱'
 excerpt: '리눅스에서 RustDesk를 설치하고 실행하는 방법: .deb, .rpm, Flatpak, AppImage 패키지 선택, X11과 Wayland 비교, 헤드리스 및 무인 접속, 서버 자체 호스팅까지 다룹니다.'
-image: '~/assets/images/blog/rustdesk-for-linux-og.png'
+image: '~/assets/images/blog/rustdesk-for-linux-og.webp'
 category: '가이드'
 tags: ['RustDesk', 'Linux', '셀프 호스팅']
 author: 'RustDesk Team'

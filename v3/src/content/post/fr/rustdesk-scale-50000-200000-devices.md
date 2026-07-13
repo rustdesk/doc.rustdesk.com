@@ -5,7 +5,7 @@ translationKey: 'rustdesk-scale-50000-200000-devices'
 draft: false
 title: "RustDesk peut-il monter en charge jusqu'à 200 000 appareils ?"
 excerpt: "Découvrez le contexte opérationnel interne de RustDesk pour la planification de grandes flottes, ce que révèle l'observation du serveur public, et ce qu'un déploiement autohébergé doit encore valider."
-image: '~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.png'
+image: '~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.webp'
 category: 'Déploiement'
 tags: ['RustDesk', 'Déploiement', 'Entreprise']
 author: 'RustDesk Team'

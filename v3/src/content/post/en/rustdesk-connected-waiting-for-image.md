@@ -5,7 +5,7 @@ translationKey: rustdesk-connected-waiting-for-image
 draft: false
 title: 'RustDesk Connected Waiting for Image: Full Fix Guide'
 excerpt: '"Connected, waiting for image" means the remote screen isn''t being captured. Here''s every cause — headless machines, sleep, codecs, drivers — and its fix.'
-image: ~/assets/images/blog/rustdesk-connected-waiting-for-image-og.png
+image: ~/assets/images/blog/rustdesk-connected-waiting-for-image-og.webp
 category: Troubleshooting
 tags:
   - RustDesk

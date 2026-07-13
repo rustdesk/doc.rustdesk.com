@@ -5,7 +5,7 @@ translationKey: rustdesk-vs-splashtop
 draft: false
 title: 'Alternativa a Splashtop autoalojada: qué evaluar primero'
 excerpt: 'Una guía de evaluación de alternativas autoalojadas a Splashtop que abarca licencias, infraestructura, evidencia de fiabilidad, pruebas de flujo de trabajo y riesgo de migración.'
-image: ~/assets/images/blog/rustdesk-vs-splashtop-og.png
+image: ~/assets/images/blog/rustdesk-vs-splashtop-og.webp
 category: 'Comparativas'
 tags: ['RustDesk', 'Splashtop', 'Comparativa']
 author: RustDesk Team

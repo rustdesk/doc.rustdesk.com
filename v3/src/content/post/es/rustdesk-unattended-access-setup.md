@@ -5,7 +5,7 @@ translationKey: rustdesk-unattended-access-setup
 draft: false
 title: 'Acceso desatendido en RustDesk: guía de configuración'
 excerpt: 'Configura el acceso desatendido de RustDesk de la forma correcta: una contraseña permanente, ejecución como servicio para que se inicie con el sistema, y despliegue a gran escala con un cliente preconfigurado.'
-image: ~/assets/images/blog/rustdesk-unattended-access-setup-og.png
+image: ~/assets/images/blog/rustdesk-unattended-access-setup-og.webp
 category: 'Implementación'
 tags: ['RustDesk', 'Implementación', 'Acceso desatendido']
 author: 'RustDesk Team'

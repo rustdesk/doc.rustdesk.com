@@ -5,7 +5,7 @@ translationKey: avoid-remote-desktop-scams
 draft: false
 title: '遠端桌面詐騙：如何識破與避免受騙'
 excerpt: '遠端存取詐騙的運作方式、足以拆穿騙局的警訊，以及萬一詐騙者已掌控您的電腦，您該採取的具體行動。'
-image: ~/assets/images/blog/avoid-remote-desktop-scams-og.png
+image: ~/assets/images/blog/avoid-remote-desktop-scams-og.webp
 category: '安全'
 tags: ['安全', '疑難排解']
 author: RustDesk Team

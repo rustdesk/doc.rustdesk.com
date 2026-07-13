@@ -5,7 +5,7 @@ translationKey: anydesk-price-increase-alternatives
 draft: false
 title: 'AnyDesk Price Increase: Alternatives for Teams'
 excerpt: "Another AnyDesk price increase pushing your budget? Here's how teams switch to a predictable, self-hosted, open-source remote desktop — and the break-even math."
-image: ~/assets/images/blog/anydesk-price-increase-alternatives-og.png
+image: ~/assets/images/blog/anydesk-price-increase-alternatives-og.webp
 category: Guides
 tags:
   - RustDesk

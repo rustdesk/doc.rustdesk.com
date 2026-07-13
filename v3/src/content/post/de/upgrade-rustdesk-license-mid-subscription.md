@@ -5,7 +5,7 @@ translationKey: 'upgrade-rustdesk-license-mid-subscription'
 draft: false
 title: 'RustDesk-Lizenz während des Abonnements upgraden: So funktioniert es'
 excerpt: 'Ja – Sie können Ihre RustDesk-Lizenz jederzeit upgraden, um Nutzer oder Geräte hinzuzufügen. Erfahren Sie, wie die anteilige Berechnung funktioniert und wie neue Limits angewendet werden: aktualisieren Sie die Lizenz in der Web-Konsole für sofortige Wirkung, oder warten Sie auf die automatische 24-Stunden-Prüfung.'
-image: '~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.png'
+image: '~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.webp'
 category: 'Preise'
 tags: ['RustDesk', 'Preise', 'Lizenzierung']
 author: 'RustDesk Team'

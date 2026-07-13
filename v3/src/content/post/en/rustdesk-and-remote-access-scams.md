@@ -5,7 +5,7 @@ translationKey: rustdesk-and-remote-access-scams
 draft: false
 title: 'RustDesk and Remote Access Scams: What We Are Doing'
 excerpt: 'Why RustDesk left Google Play, added warnings and public-server login requirements, and how users can harden controlled devices with passwords, 2FA, and IP allowlists.'
-image: ~/assets/images/blog/rustdesk-and-remote-access-scams-og.png
+image: ~/assets/images/blog/rustdesk-and-remote-access-scams-og.webp
 category: Security
 tags:
   - RustDesk

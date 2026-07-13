@@ -5,7 +5,7 @@ translationKey: 'upgrade-rustdesk-license-mid-subscription'
 draft: false
 title: '구독 중간에 RustDesk 라이선스 업그레이드하기: 작동 방식'
 excerpt: '네—사용자나 디바이스를 추가하려면 언제든지 RustDesk 라이선스를 업그레이드할 수 있습니다. 일할 계산이 어떻게 이루어지는지, 새로운 한도가 어떻게 적용되는지 알아보세요: 웹 콘솔에서 새로고침하면 즉시 적용되고, 그렇지 않으면 24시간마다 실행되는 자동 확인을 기다리면 됩니다.'
-image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.png
+image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.webp
 category: '가격'
 tags: ['RustDesk', '가격', '라이선스']
 author: 'RustDesk Team'

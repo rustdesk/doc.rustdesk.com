@@ -5,7 +5,7 @@ translationKey: 'teamviewer-commercial-use-detected'
 draft: false
 title: 'TeamViewer Commercial Use Detected: come risolvere il problema'
 excerpt: 'Sei stato segnalato per uso commerciale su TeamViewer? Ecco la procedura ufficiale di ricorso, cosa conta davvero come uso commerciale e la soluzione self-hosted per evitarlo.'
-image: '~/assets/images/blog/teamviewer-commercial-use-detected-og.png'
+image: '~/assets/images/blog/teamviewer-commercial-use-detected-og.webp'
 category: 'Risoluzione dei problemi'
 tags: ['TeamViewer', 'Risoluzione dei problemi', 'Licenze']
 author: 'RustDesk Team'

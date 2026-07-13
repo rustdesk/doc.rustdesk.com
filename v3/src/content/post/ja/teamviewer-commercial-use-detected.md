@@ -5,7 +5,7 @@ translationKey: 'teamviewer-commercial-use-detected'
 draft: false
 title: 'TeamViewerで「商用利用が検出されました」と表示された場合の対処法'
 excerpt: 'TeamViewerで商用利用のフラグが立てられましたか?公式のリセット(異議申立て)プロセス、実際に何が商用利用と見なされるのか、そしてセルフホストでそれを回避する方法を解説します。'
-image: ~/assets/images/blog/teamviewer-commercial-use-detected-og.png
+image: ~/assets/images/blog/teamviewer-commercial-use-detected-og.webp
 category: 'トラブルシューティング'
 tags: ['TeamViewer', 'トラブルシューティング', 'ライセンス']
 author: 'RustDesk Team'

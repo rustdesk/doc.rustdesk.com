@@ -5,7 +5,7 @@ translationKey: 'remote-desktop-data-sovereignty-gdpr'
 draft: false
 title: 'Sovranità dei dati del desktop remoto e GDPR: self-hosting'
 excerpt: 'Come il self-hosting garantisce ai team regolamentati il controllo su rendezvous, relay e dati dei dispositivi — e quali domande su GDPR e conformità restano aperte.'
-image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.png'
+image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.webp'
 category: 'Sicurezza'
 tags: ['RustDesk', 'Sicurezza', 'GDPR', 'Self-hosting']
 author: 'RustDesk Team'

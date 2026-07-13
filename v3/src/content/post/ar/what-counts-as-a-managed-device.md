@@ -5,7 +5,7 @@ translationKey: what-counts-as-a-managed-device
 draft: false
 title: 'ما الذي يُحتسب كجهاز مُدار في RustDesk؟'
 excerpt: 'في خطط RustDesk القياسية، يُحتسب كل جهاز تقوم بإعداده للوصول إليه مرة واحدة فقط. أما خطة Customized V2 فتحتسب فقط الأجهزة المُخصصة لمجموعة أو مستخدم؛ ولا يتم احتساب الأجهزة العرضية (ad-hoc).'
-image: ~/assets/images/blog/what-counts-as-a-managed-device-og.png
+image: ~/assets/images/blog/what-counts-as-a-managed-device-og.webp
 category: 'التسعير'
 tags: ['RustDesk', 'التسعير', 'الترخيص']
 author: RustDesk Team

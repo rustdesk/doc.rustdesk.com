@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-splashtop'
 draft: false
 title: 'بديل Splashtop ذاتي الاستضافة: ما الذي يجب تقييمه أولاً'
 excerpt: 'دليل تقييم بديل ذاتي الاستضافة لـ Splashtop يغطي الترخيص، والبنية التحتية، وأدلة الموثوقية، واختبار سير العمل، ومخاطر الترحيل.'
-image: '~/assets/images/blog/rustdesk-vs-splashtop-og.png'
+image: '~/assets/images/blog/rustdesk-vs-splashtop-og.webp'
 category: 'مقارنات'
 tags: ['RustDesk', 'Splashtop', 'مقارنة']
 author: 'RustDesk Team'

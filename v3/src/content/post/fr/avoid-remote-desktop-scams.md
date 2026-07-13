@@ -5,7 +5,7 @@ translationKey: 'avoid-remote-desktop-scams'
 draft: false
 title: 'Arnaques au bureau à distance : comment les repérer et les éviter'
 excerpt: "Comment fonctionnent les arnaques à l'accès à distance, les signaux d'alerte qui les trahissent, et la marche à suivre exacte si un escroc a déjà pris le contrôle de votre ordinateur."
-image: '~/assets/images/blog/avoid-remote-desktop-scams-og.png'
+image: '~/assets/images/blog/avoid-remote-desktop-scams-og.webp'
 category: 'Sécurité'
 tags: ['Sécurité', 'Dépannage']
 author: 'RustDesk Team'

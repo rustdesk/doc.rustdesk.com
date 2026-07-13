@@ -5,7 +5,7 @@ translationKey: 'rustdesk-for-msps'
 draft: false
 title: 'RustDesk 助力 MSP：一套自托管、可定制品牌的工具'
 excerpt: '对比将 TeamViewer、AnyDesk 和 ScreenConnect 整合为一套自托管、可定制品牌的远程支持平台。'
-image: '~/assets/images/blog/rustdesk-for-msps-og.png'
+image: '~/assets/images/blog/rustdesk-for-msps-og.webp'
 category: '指南'
 tags: ['RustDesk', 'MSP', '自托管']
 author: 'RustDesk Team'

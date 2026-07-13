@@ -5,7 +5,7 @@ translationKey: 'is-chrome-remote-desktop-safe'
 draft: false
 title: 'Ist Chrome Remote Desktop sicher? Eine ehrliche Bewertung'
 excerpt: 'Ist Chrome Remote Desktop sicher? Ein fairer Blick auf Verschlüsselung, PIN- und Google-Konto-Modell, die tatsächlichen Risiken und wo Self-Hosting einen Unterschied macht.'
-image: '~/assets/images/blog/is-chrome-remote-desktop-safe-og.png'
+image: '~/assets/images/blog/is-chrome-remote-desktop-safe-og.webp'
 category: 'Sicherheit'
 tags: ['Chrome Remote Desktop', 'Sicherheit']
 author: 'RustDesk Team'

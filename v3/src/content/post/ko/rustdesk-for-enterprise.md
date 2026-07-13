@@ -5,7 +5,7 @@ translationKey: 'rustdesk-for-enterprise'
 draft: false
 title: '기업용 RustDesk: 셀프 호스팅, 확장성, AD 연동 지원'
 excerpt: '기업 IT팀이 RustDesk를 선택하는 이유: 셀프 호스팅 기반 데이터 통제, AD/LDAP 연동, 디바이스 그룹 기반 접근 제어, 그리고 대규모 디바이스 플릿에서도 예측 가능한 가격 정책.'
-image: '~/assets/images/blog/rustdesk-for-enterprise-og.png'
+image: '~/assets/images/blog/rustdesk-for-enterprise-og.webp'
 category: '가이드'
 tags: ['RustDesk', '엔터프라이즈', '셀프 호스팅']
 author: 'RustDesk Team'

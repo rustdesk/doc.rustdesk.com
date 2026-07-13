@@ -5,7 +5,7 @@ translationKey: 'rustdesk-server-pro-offline-air-gapped'
 draft: false
 title: 'RustDesk Server Proはオフラインやエアギャップ環境で稼働できますか?'
 excerpt: 'いいえ――セルフホスト型のRustDesk Server Proは、ライセンスを検証するためにrustdesk.comへの継続的なアウトバウンドアクセスを必要とするため、完全にエアギャップされた環境への導入はサポートされていません。'
-image: '~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.png'
+image: '~/assets/images/blog/rustdesk-server-pro-offline-air-gapped-og.webp'
 category: '導入'
 tags: ['RustDesk', '導入', 'セルフホスティング']
 author: 'RustDesk Team'

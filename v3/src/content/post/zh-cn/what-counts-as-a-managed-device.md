@@ -5,7 +5,7 @@ translationKey: 'what-counts-as-a-managed-device'
 draft: false
 title: 'RustDesk 中什么才算作受管理设备?'
 excerpt: '在 RustDesk 标准套餐中,你设置可访问的每台设备只计费一次。Customized V2 套餐则只计算已分配到分组或用户的设备,临时(ad-hoc)设备不计入统计。'
-image: ~/assets/images/blog/what-counts-as-a-managed-device-og.png
+image: ~/assets/images/blog/what-counts-as-a-managed-device-og.webp
 category: '定价'
 tags: ['RustDesk', '定价', '许可']
 author: 'RustDesk Team'

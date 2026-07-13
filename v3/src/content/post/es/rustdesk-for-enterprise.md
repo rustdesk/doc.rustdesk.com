@@ -5,7 +5,7 @@ translationKey: 'rustdesk-for-enterprise'
 draft: false
 title: 'RustDesk para empresas: autoalojado, escalable y listo para AD'
 excerpt: 'Por qué los equipos de TI empresariales eligen RustDesk: control de datos autoalojado, integración con AD/LDAP, control de acceso por grupos de dispositivos y precios predecibles para flotas grandes.'
-image: '~/assets/images/blog/rustdesk-for-enterprise-og.png'
+image: '~/assets/images/blog/rustdesk-for-enterprise-og.webp'
 category: 'Guías'
 tags: ['RustDesk', 'Empresa', 'Autoalojamiento']
 author: 'RustDesk Team'

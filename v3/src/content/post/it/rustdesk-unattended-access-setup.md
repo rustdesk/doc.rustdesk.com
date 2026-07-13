@@ -5,7 +5,7 @@ translationKey: 'rustdesk-unattended-access-setup'
 draft: false
 title: 'Accesso non presidiato con RustDesk: guida alla configurazione'
 excerpt: "Configura correttamente l'accesso non presidiato con RustDesk: una password permanente, l'esecuzione come servizio per l'avvio automatico all'accensione e la distribuzione su larga scala con un client preconfigurato."
-image: '~/assets/images/blog/rustdesk-unattended-access-setup-og.png'
+image: '~/assets/images/blog/rustdesk-unattended-access-setup-og.webp'
 category: 'Distribuzione'
 tags: ['RustDesk', 'Distribuzione', 'Accesso non presidiato']
 author: 'RustDesk Team'

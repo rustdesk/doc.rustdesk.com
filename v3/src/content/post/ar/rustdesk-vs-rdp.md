@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-rdp'
 draft: false
 title: 'RustDesk مقابل RDP: التوافق مع جميع الأنظمة مقابل الحصرية على Windows'
 excerpt: 'RustDesk مقابل RDP من مايكروسوفت: مقارنة عملية بين التوافق مع جميع الأنظمة، والوصول عبر الإنترنت دون VPN، وسرعة الشبكة المحلية، والمفاضلات الأمنية.'
-image: '~/assets/images/blog/rustdesk-vs-rdp-og.png'
+image: '~/assets/images/blog/rustdesk-vs-rdp-og.webp'
 category: 'مقارنات'
 tags: ['RustDesk', 'RDP', 'مقارنة']
 author: 'RustDesk Team'

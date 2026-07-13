@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-anydesk'
 draft: false
 title: 'RustDesk vs AnyDesk : bureau à distance open source et auto-hébergé'
 excerpt: "Une comparaison complète entre RustDesk et AnyDesk : fonctionnalités, prise en charge des systèmes d'exploitation, sécurité, modèles tarifaires et compromis liés à l'auto-hébergement et à l'open source."
-image: ~/assets/images/blog/rustdesk-vs-anydesk-og.png
+image: ~/assets/images/blog/rustdesk-vs-anydesk-og.webp
 category: 'Comparatifs'
 tags: ['RustDesk', 'AnyDesk', 'Comparatif']
 author: 'RustDesk Team'

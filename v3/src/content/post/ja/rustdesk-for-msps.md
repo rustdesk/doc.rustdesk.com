@@ -5,7 +5,7 @@ translationKey: rustdesk-for-msps
 draft: false
 title: 'MSP向けRustDesk: セルフホスト型でブランド化可能な単一のツール'
 excerpt: 'TeamViewer、AnyDesk、ScreenConnectを、セルフホスト型でブランド化可能な単一のリモートサポートプラットフォームへ統合する方法を比較します。'
-image: ~/assets/images/blog/rustdesk-for-msps-og.png
+image: ~/assets/images/blog/rustdesk-for-msps-og.webp
 category: 'ガイド'
 tags: ['RustDesk', 'MSP', 'セルフホスティング']
 author: 'RustDesk Team'

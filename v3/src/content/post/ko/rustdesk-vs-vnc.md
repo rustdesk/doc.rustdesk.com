@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-vnc'
 draft: false
 title: 'RustDesk와 VNC 비교: NAT 통과, 코덱, 암호화'
 excerpt: '실전에서 비교하는 RustDesk와 VNC: 포트 포워딩 없는 NAT 통과, 최신 코덱, 기본 내장 암호화, 그리고 팀들이 VNC에서 RustDesk로 전환하는 이유.'
-image: ~/assets/images/blog/rustdesk-vs-vnc-og.png
+image: ~/assets/images/blog/rustdesk-vs-vnc-og.webp
 category: '비교'
 tags: ['RustDesk', 'VNC', '비교', '오픈 소스']
 author: 'RustDesk Team'

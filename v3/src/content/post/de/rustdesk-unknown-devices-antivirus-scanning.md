@@ -5,7 +5,7 @@ translationKey: 'rustdesk-unknown-devices-antivirus-scanning'
 draft: false
 title: 'Unbekannte Geräte in Ihrer RustDesk-Konsole? Erst untersuchen'
 excerpt: 'Unbekannte Geräte in Ihrer RustDesk-Konsole entdeckt? Antiviren-Sandboxing ist eine mögliche Erklärung – doch durchgesickerte Konfigurationen oder unautorisierte Registrierungen müssen zuerst ausgeschlossen werden.'
-image: '~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.png'
+image: '~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.webp'
 category: 'Bereitstellung'
 tags: ['RustDesk', 'Bereitstellung', 'Sicherheit']
 author: 'RustDesk Team'

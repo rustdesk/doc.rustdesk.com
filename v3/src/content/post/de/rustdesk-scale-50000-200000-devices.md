@@ -5,7 +5,7 @@ translationKey: 'rustdesk-scale-50000-200000-devices'
 draft: false
 title: 'Skaliert RustDesk auf 200.000 Geräte?'
 excerpt: 'Erfahren Sie aus erster Hand, welchen betrieblichen Kontext RustDesk für die Planung großer Geräteflotten liefert, was die Beobachtung des öffentlichen Servers zeigt und was ein selbst gehostetes Rollout noch validieren muss.'
-image: '~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.png'
+image: '~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.webp'
 category: 'Bereitstellung'
 tags: ['RustDesk', 'Bereitstellung', 'Unternehmen']
 author: 'RustDesk Team'

@@ -5,7 +5,7 @@ translationKey: 'rustdesk-for-msps'
 draft: false
 title: 'RustDesk para MSPs: uma ferramenta única, autogerenciada e personalizável'
 excerpt: 'Compare a consolidação do TeamViewer, AnyDesk e ScreenConnect em uma única plataforma de suporte remoto autogerenciada e personalizável.'
-image: ~/assets/images/blog/rustdesk-for-msps-og.png
+image: ~/assets/images/blog/rustdesk-for-msps-og.webp
 category: 'Guias'
 tags: ['RustDesk', 'MSP', 'Auto-hospedagem']
 author: 'RustDesk Team'

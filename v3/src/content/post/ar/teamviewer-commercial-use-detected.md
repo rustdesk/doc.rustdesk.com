@@ -5,7 +5,7 @@ translationKey: teamviewer-commercial-use-detected
 draft: false
 title: 'تم اكتشاف الاستخدام التجاري في TeamViewer: كيفية إصلاح المشكلة'
 excerpt: 'هل تم وضع علامة على حسابك في TeamViewer بسبب الاستخدام التجاري؟ إليك عملية الاستئناف الرسمية، وما يُعتبر فعليًا استخدامًا تجاريًا، والطريقة المستضافة ذاتيًا لتجنب ذلك بالكامل.'
-image: ~/assets/images/blog/teamviewer-commercial-use-detected-og.png
+image: ~/assets/images/blog/teamviewer-commercial-use-detected-og.webp
 category: 'استكشاف الأخطاء'
 tags: ['TeamViewer', 'استكشاف الأخطاء', 'الترخيص']
 author: 'RustDesk Team'

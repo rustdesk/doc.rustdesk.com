@@ -5,7 +5,7 @@ translationKey: 'rustdesk-unknown-devices-antivirus-scanning'
 draft: false
 title: 'RustDesk 콘솔에 낯선 기기가 보인다면? 먼저 조사부터 하세요'
 excerpt: 'RustDesk 콘솔에서 낯선 기기가 보이시나요? 백신 샌드박싱이 원인 중 하나일 수 있지만, 설정 유출이나 무단 등록 가능성부터 먼저 배제해야 합니다.'
-image: '~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.png'
+image: '~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.webp'
 category: '배포'
 tags: ['RustDesk', '배포', '보안']
 author: 'RustDesk Team'

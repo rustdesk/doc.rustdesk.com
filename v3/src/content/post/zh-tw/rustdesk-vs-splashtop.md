@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-splashtop'
 draft: false
 title: '自架 Splashtop 替代方案：首先該評估哪些重點'
 excerpt: '一份自架 Splashtop 替代方案評估指南，涵蓋授權模式、基礎設施、可靠性佐證、工作流程測試與遷移風險。'
-image: '~/assets/images/blog/rustdesk-vs-splashtop-og.png'
+image: '~/assets/images/blog/rustdesk-vs-splashtop-og.webp'
 category: '比較'
 tags: ['RustDesk', 'Splashtop', '比較']
 author: 'RustDesk Team'

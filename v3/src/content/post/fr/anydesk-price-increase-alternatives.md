@@ -5,7 +5,7 @@ translationKey: 'anydesk-price-increase-alternatives'
 draft: false
 title: 'Hausse des prix AnyDesk : quelles alternatives pour les équipes ?'
 excerpt: 'Une nouvelle hausse des prix AnyDesk pèse sur votre budget ? Voici comment les équipes basculent vers un bureau à distance open source, auto-hébergé et au coût prévisible — et le calcul du seuil de rentabilité.'
-image: '~/assets/images/blog/anydesk-price-increase-alternatives-og.png'
+image: '~/assets/images/blog/anydesk-price-increase-alternatives-og.webp'
 category: 'Guides'
 tags: ['RustDesk', 'AnyDesk', 'Tarifs', 'Alternative']
 author: 'RustDesk Team'

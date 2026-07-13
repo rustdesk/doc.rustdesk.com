@@ -5,7 +5,7 @@ translationKey: 'avoid-remote-desktop-scams'
 draft: false
 title: 'Golpes de Acesso Remoto: Como Identificar e Evitar'
 excerpt: 'Como funcionam os golpes de acesso remoto, os sinais de alerta que os denunciam e exatamente o que fazer se um golpista já tiver assumido o controle do seu computador.'
-image: '~/assets/images/blog/avoid-remote-desktop-scams-og.png'
+image: '~/assets/images/blog/avoid-remote-desktop-scams-og.webp'
 category: 'Segurança'
 tags: ['Segurança', 'Solução de problemas']
 author: 'RustDesk Team'

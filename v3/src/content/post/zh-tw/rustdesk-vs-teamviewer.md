@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-teamviewer'
 draft: false
 title: 'RustDesk 對比 TeamViewer:自架伺服器的替代方案'
 excerpt: 'RustDesk 與 TeamViewer 全面比較:功能、作業系統支援、安全性、授權模式,以及真正的取捨——自架主機、開放原始碼、不按通道數計價。'
-image: ~/assets/images/blog/rustdesk-vs-teamviewer-og.png
+image: ~/assets/images/blog/rustdesk-vs-teamviewer-og.webp
 category: '比較'
 tags: ['RustDesk', 'TeamViewer', '比較']
 author: 'RustDesk Team'

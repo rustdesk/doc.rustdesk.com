@@ -5,7 +5,7 @@ translationKey: 'anydesk-price-increase-alternatives'
 draft: false
 title: 'AnyDesk 가격 인상: 팀을 위한 대안'
 excerpt: '또 한 번의 AnyDesk 가격 인상으로 예산이 빠듯해지셨나요? 팀들이 예측 가능한 자체 호스팅 오픈소스 원격 데스크톱으로 전환하는 방법과 손익분기점 계산을 소개합니다.'
-image: ~/assets/images/blog/anydesk-price-increase-alternatives-og.png
+image: ~/assets/images/blog/anydesk-price-increase-alternatives-og.webp
 category: '가이드'
 tags: ['RustDesk', 'AnyDesk', '가격', '대안']
 author: 'RustDesk Team'

@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-rdp'
 draft: false
 title: 'RustDesk vs RDP: multiplataforma frente a nativo de Windows'
 excerpt: 'RustDesk frente a Microsoft RDP: una comparación práctica del alcance multiplataforma, el acceso a internet sin VPN, la velocidad en LAN y las contrapartidas de seguridad.'
-image: '~/assets/images/blog/rustdesk-vs-rdp-og.png'
+image: '~/assets/images/blog/rustdesk-vs-rdp-og.webp'
 category: 'Comparativas'
 tags: ['RustDesk', 'RDP', 'Comparativa']
 author: 'RustDesk Team'

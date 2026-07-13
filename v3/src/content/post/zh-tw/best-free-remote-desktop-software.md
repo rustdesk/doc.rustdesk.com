@@ -5,7 +5,7 @@ translationKey: best-free-remote-desktop-software
 draft: false
 title: '2026 年企業適用的最佳免費遠端桌面軟體'
 excerpt: '真正免費的遠端桌面工具——包括可用於企業、且不會被標記為商業用途的選項。六款實用方案，各有其取捨。'
-image: ~/assets/images/blog/best-free-remote-desktop-software-og.png
+image: ~/assets/images/blog/best-free-remote-desktop-software-og.webp
 category: '指南'
 tags: ['RustDesk', '開源', '比較']
 author: 'RustDesk Team'

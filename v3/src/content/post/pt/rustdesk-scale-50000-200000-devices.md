@@ -5,7 +5,7 @@ translationKey: 'rustdesk-scale-50000-200000-devices'
 draft: false
 title: 'O RustDesk consegue escalar para 200.000 dispositivos?'
 excerpt: 'Veja o contexto operacional direto da RustDesk para o planeamento de grandes frotas de dispositivos, o que a observação do servidor público demonstra e o que uma implementação auto-hospedada ainda precisa de validar.'
-image: ~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.png
+image: ~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.webp
 category: 'Implantação'
 tags: ['RustDesk', 'Implantação', 'Empresa']
 author: 'RustDesk Team'

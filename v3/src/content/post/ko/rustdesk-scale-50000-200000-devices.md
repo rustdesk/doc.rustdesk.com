@@ -5,7 +5,7 @@ translationKey: 'rustdesk-scale-50000-200000-devices'
 draft: false
 title: 'RustDesk는 20만 대의 디바이스까지 확장할 수 있을까요?'
 excerpt: '대규모 디바이스 플릿을 계획할 때 참고할 수 있는 RustDesk의 자체 운영 데이터, 퍼블릭 서버 관측 결과가 시사하는 바, 그리고 셀프 호스팅 배포 시 반드시 검증해야 할 사항을 확인하세요.'
-image: '~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.png'
+image: '~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.webp'
 category: '배포'
 tags: ['RustDesk', '배포', '엔터프라이즈']
 author: 'RustDesk Team'

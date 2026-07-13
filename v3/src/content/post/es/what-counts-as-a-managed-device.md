@@ -5,7 +5,7 @@ translationKey: 'what-counts-as-a-managed-device'
 draft: false
 title: '¿Qué cuenta como un dispositivo administrado en RustDesk?'
 excerpt: 'En los planes estándar de RustDesk, cada dispositivo que configuras para acceder cuenta una sola vez. Customized V2 solo cuenta los dispositivos asignados a un grupo o usuario; los dispositivos ad hoc no se cuentan.'
-image: ~/assets/images/blog/what-counts-as-a-managed-device-og.png
+image: ~/assets/images/blog/what-counts-as-a-managed-device-og.webp
 category: 'Precios'
 tags: ['RustDesk', 'Precios', 'Licencias']
 author: 'RustDesk Team'

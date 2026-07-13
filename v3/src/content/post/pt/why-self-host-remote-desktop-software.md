@@ -5,7 +5,7 @@ translationKey: 'why-self-host-remote-desktop-software'
 draft: false
 title: 'Por Que Auto-Hospedar Seu Software de Área de Trabalho Remota'
 excerpt: 'Por que as equipes que estão deixando o TeamViewer e o AnyDesk optam por hospedar o próprio acesso remoto: controle dos dados, custo previsível e nenhuma nuvem no meio do caminho.'
-image: ~/assets/images/blog/why-self-host-remote-desktop-software-og.png
+image: ~/assets/images/blog/why-self-host-remote-desktop-software-og.webp
 category: 'Guias'
 tags: ['RustDesk', 'Auto-hospedagem']
 author: 'RustDesk Team'

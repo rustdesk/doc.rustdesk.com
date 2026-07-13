@@ -5,7 +5,7 @@ translationKey: 'best-free-remote-desktop-software'
 draft: false
 title: 'Il miglior software gratuito per il desktop remoto aziendale (2026)'
 excerpt: 'Strumenti per desktop remoto davvero gratuiti — inclusi quelli utilizzabili in azienda senza segnalazioni per uso commerciale. Sei opzioni reali, ciascuna con il proprio compromesso.'
-image: '~/assets/images/blog/best-free-remote-desktop-software-og.png'
+image: '~/assets/images/blog/best-free-remote-desktop-software-og.webp'
 category: 'Guide'
 tags: ['RustDesk', 'Open source', 'Confronto']
 author: 'RustDesk Team'

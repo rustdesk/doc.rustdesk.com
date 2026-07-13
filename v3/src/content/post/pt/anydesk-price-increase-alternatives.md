@@ -5,7 +5,7 @@ translationKey: 'anydesk-price-increase-alternatives'
 draft: false
 title: 'Aumento de Preço da AnyDesk: Alternativas para Equipes'
 excerpt: 'Mais um aumento de preço da AnyDesk pressionando o seu orçamento? Veja como as equipes estão migrando para um acesso remoto previsível, auto-hospedado e de código aberto — e a matemática do ponto de equilíbrio.'
-image: ~/assets/images/blog/anydesk-price-increase-alternatives-og.png
+image: ~/assets/images/blog/anydesk-price-increase-alternatives-og.webp
 category: 'Guias'
 tags: ['RustDesk', 'AnyDesk', 'Preços', 'Alternativa']
 author: 'RustDesk Team'

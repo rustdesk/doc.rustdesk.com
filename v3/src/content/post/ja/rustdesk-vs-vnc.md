@@ -5,7 +5,7 @@ translationKey: 'rustdesk-vs-vnc'
 draft: false
 title: 'RustDesk vs VNC: NATトラバーサル、コーデック、暗号化を徹底比較'
 excerpt: 'RustDesk と VNC を実践的に比較:ポート転送不要のNATトラバーサル、最新コーデック、標準搭載の暗号化、そしてチームがVNCからRustDeskへ移行する理由を解説します。'
-image: '~/assets/images/blog/rustdesk-vs-vnc-og.png'
+image: '~/assets/images/blog/rustdesk-vs-vnc-og.webp'
 category: '比較'
 tags: ['RustDesk', 'VNC', '比較', 'オープンソース']
 author: 'RustDesk Team'

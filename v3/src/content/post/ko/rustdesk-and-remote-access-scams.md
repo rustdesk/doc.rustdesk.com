@@ -5,7 +5,7 @@ translationKey: rustdesk-and-remote-access-scams
 draft: false
 title: 'RustDesk와 원격 접속 사기: 우리의 대응'
 excerpt: 'RustDesk가 Google Play에서 철수하고 경고 문구와 퍼블릭 서버 로그인 요건을 추가한 이유, 그리고 사용자가 비밀번호, 2단계 인증(2FA), IP 허용 목록으로 피제어 기기를 강화하는 방법을 설명합니다.'
-image: ~/assets/images/blog/rustdesk-and-remote-access-scams-og.png
+image: ~/assets/images/blog/rustdesk-and-remote-access-scams-og.webp
 category: '보안'
 tags: ['RustDesk', '보안', '사기']
 author: 'RustDesk Team'

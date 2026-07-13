@@ -5,7 +5,7 @@ translationKey: is-anydesk-safe
 draft: false
 title: '¿Es seguro AnyDesk? Cifrado, el incidente de seguridad de 2024 y las estafas'
 excerpt: '¿Es seguro AnyDesk? Un análisis imparcial de su cifrado, el incidente de seguridad de 2024 en sus sistemas de producción y por qué los estafadores lo utilizan, además de cómo se compara con el código abierto.'
-image: ~/assets/images/blog/is-anydesk-safe-og.png
+image: ~/assets/images/blog/is-anydesk-safe-og.webp
 category: 'Seguridad'
 tags: ['AnyDesk', 'Seguridad']
 author: RustDesk Team

@@ -5,7 +5,7 @@ translationKey: 'rustdesk-remote-control-android-ios'
 draft: false
 title: 'RustDesk Android 與 iOS 遠端控制：哪些功能真正可用'
 excerpt: 'RustDesk 如何遠端控制 Android 手機、將 iPhone 與 iPad 變成控制端，以及為何沒有任何廠商能遠端控制 iOS。'
-image: '~/assets/images/blog/rustdesk-remote-control-android-ios-og.png'
+image: '~/assets/images/blog/rustdesk-remote-control-android-ios-og.webp'
 category: '指南'
 tags: ['RustDesk', '行動裝置']
 author: 'RustDesk Team'

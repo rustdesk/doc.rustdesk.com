@@ -5,7 +5,7 @@ translationKey: 'why-self-host-remote-desktop-software'
 draft: false
 title: 'لماذا يجب استضافة برنامج سطح المكتب البعيد الخاص بك ذاتيًا'
 excerpt: 'لماذا تختار الفرق التي تترك TeamViewer وAnyDesk الاستضافة الذاتية لسطح المكتب البعيد: التحكم في البيانات، وتكلفة يمكن التنبؤ بها، وبدون سحابة وسيطة.'
-image: '~/assets/images/blog/why-self-host-remote-desktop-software-og.png'
+image: '~/assets/images/blog/why-self-host-remote-desktop-software-og.webp'
 category: 'أدلة'
 tags: ['RustDesk', 'الاستضافة الذاتية']
 author: 'RustDesk Team'

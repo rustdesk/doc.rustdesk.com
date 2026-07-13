@@ -5,7 +5,7 @@ translationKey: 'rustdesk-scale-50000-200000-devices'
 draft: false
 title: 'RustDeskは20万台のデバイスまでスケールできるか?'
 excerpt: '大規模フリートを計画する際に参考となるRustDesk自社の運用データ、パブリックサーバーでの観測結果が示す内容、そしてセルフホスト展開において別途検証すべき事項を解説します。'
-image: '~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.png'
+image: '~/assets/images/blog/rustdesk-scale-50000-200000-devices-og.webp'
 category: '導入'
 tags: ['RustDesk', '導入', 'エンタープライズ']
 author: 'RustDesk Team'

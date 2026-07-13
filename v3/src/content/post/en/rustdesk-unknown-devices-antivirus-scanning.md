@@ -5,7 +5,7 @@ translationKey: rustdesk-unknown-devices-antivirus-scanning
 draft: false
 title: 'Unknown Devices in Your RustDesk Console? Investigate First'
 excerpt: 'Seeing unfamiliar devices in your RustDesk console? AV sandboxing is one possibility; leaked config or unauthorized registration must be ruled out first.'
-image: ~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.png
+image: ~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.webp
 category: Deployment
 tags:
   - RustDesk
