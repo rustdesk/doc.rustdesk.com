@@ -117,7 +117,7 @@ _Pros_
 _Cons_
 
 - You run, patch, and update the server yourself
-- No fully free trial of Server Pro (email sales@rustdesk.com for a test license)
+- No fully free trial of Server Pro (email [sales@rustdesk.com](mailto:sales@rustdesk.com) for a test license)
 - Some conveniences (LDAP/SSO) start at the Basic plan, not the entry tier
 
 **ScreenConnect**

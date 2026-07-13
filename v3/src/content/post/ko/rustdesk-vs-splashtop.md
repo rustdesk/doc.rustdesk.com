@@ -9,7 +9,7 @@ image: '~/assets/images/blog/rustdesk-vs-splashtop-og.png'
 category: '비교'
 tags: ['RustDesk', 'Splashtop', '비교']
 author: 'RustDesk Team'
-slug: "rustdesk-vs-splashtop-ko"
+slug: 'rustdesk-vs-splashtop-ko'
 faq:
   - question: 'RustDesk와 Splashtop 모두 자체 호스팅이 가능한가요?'
     answer: '네, 하지만 제품 모델이 서로 다릅니다. RustDesk는 자체 호스팅을 중심으로 설계된 무료 오픈소스 서버와 상용 Server Pro 플랜을 제공합니다. Splashtop은 주력 SaaS 플랜 외에도 별도로 라이선스가 부여되는 독점(비공개) On-Prem 제품을 제공합니다.'
@@ -38,7 +38,7 @@ IT 팀이 서버 측 서비스에 대한 통제권, 오픈소스 소프트웨어
 | 동시 세션        | 표준 플랜은 무제한, Customized V2는 정해진 한도 내                                                                                                                      | 플랜에 따라 다름                                           | 라이선스에 따라 다름                                                                       |
 | 거버넌스         | Server Pro 기능은 플랜에 따라 다름. SSO, 2FA, 감사(audit), 접근 제어, 주소록, 기기 관리 기능을 비교하세요                                                               | Enterprise 제어 기능은 플랜에 따라 다름                    | 사용자/그룹 권한, Active Directory 연동, IP 제한 등은 에디션에 따라 다름                   |
 | 인프라 운영 부담 | 배포, TLS, 네트워크 노출, 모니터링, 백업, 업그레이드, 가용성을 팀이 직접 관리                                                                                           | 벤더가 서비스 인프라를 관리                                | Gateway 규모 산정, 네트워크 배치, TLS, 모니터링, 백업, 업그레이드, 가용성을 팀이 직접 관리 |
-| 권장 시작점      | 기본 평가에는 무료 커뮤니티 서버, 관리 기능 평가는 sales@rustdesk.com을 통한 Server Pro 평가                                                                            | 관리형 서비스를 원하는 팀을 위한 SaaS 체험판               | 영업팀과의 직접 상담 및 범위가 정해진 인프라 평가                                          |
+| 권장 시작점      | 기본 평가에는 무료 커뮤니티 서버, 관리 기능 평가는 [sales@rustdesk.com](mailto:sales@rustdesk.com)을 통한 Server Pro 평가                                               | 관리형 서비스를 원하는 팀을 위한 SaaS 체험판               | 영업팀과의 직접 상담 및 범위가 정해진 인프라 평가                                          |
 
 개별 기능을 비교하기 전에 먼저 운영 모델을 선택하십시오. 벤더가 서비스를 대신 운영해주길 원한다면, RustDesk를 직접 운영하는 수고와 Splashtop SaaS를 저울질해 보십시오. 인프라 통제가 반드시 필요하다면 RustDesk Server Pro를 Splashtop On-Prem과 비교해야 합니다. On-Prem에 대해 거의 알려주는 바가 없는 SaaS 체험판과 비교해서는 안 됩니다.
 

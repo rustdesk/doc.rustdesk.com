@@ -115,7 +115,7 @@ _장점_
 _단점_
 
 - 서버의 실행, 패치, 업데이트를 직접 수행해야 함
-- Server Pro의 완전 무료 체험판은 없음(테스트 라이선스는 sales@rustdesk.com으로 문의)
+- Server Pro의 완전 무료 체험판은 없음(테스트 라이선스는 [sales@rustdesk.com](mailto:sales@rustdesk.com)으로 문의)
 - LDAP/SSO 같은 일부 편의 기능은 입문 등급이 아닌 Basic 플랜부터 제공
 
 **ScreenConnect**

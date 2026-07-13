@@ -115,7 +115,7 @@ _Ventajas_
 _Desventajas_
 
 - Tú mismo ejecutas, parcheas y actualizas el servidor
-- No existe una prueba totalmente gratuita de Server Pro (escribe a sales@rustdesk.com para obtener una licencia de prueba)
+- No existe una prueba totalmente gratuita de Server Pro (escribe a [sales@rustdesk.com](mailto:sales@rustdesk.com) para obtener una licencia de prueba)
 - Algunas comodidades (LDAP/SSO) empiezan en el plan Basic, no en el nivel de entrada
 
 **ScreenConnect**

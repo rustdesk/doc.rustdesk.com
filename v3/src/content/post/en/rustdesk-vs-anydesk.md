@@ -134,7 +134,7 @@ _Pros:_
 _Cons:_
 
 - You run, patch, and update the server yourself
-- No fully free trial of Server Pro (email sales@rustdesk.com for a test license)
+- No fully free trial of Server Pro (email [sales@rustdesk.com](mailto:sales@rustdesk.com) for a test license)
 
 **AnyDesk**
 

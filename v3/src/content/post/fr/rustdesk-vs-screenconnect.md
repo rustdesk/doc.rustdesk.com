@@ -115,7 +115,7 @@ _Avantages_
 _Inconvénients_
 
 - Vous exploitez, corrigez et mettez à jour le serveur vous-même
-- Pas d'essai entièrement gratuit de Server Pro (contactez sales@rustdesk.com pour une licence de test)
+- Pas d'essai entièrement gratuit de Server Pro (contactez [sales@rustdesk.com](mailto:sales@rustdesk.com) pour une licence de test)
 - Certaines commodités (LDAP/SSO) démarrent au forfait Basic, pas au palier d'entrée
 
 **ScreenConnect**

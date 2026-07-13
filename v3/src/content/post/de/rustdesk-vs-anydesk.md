@@ -132,7 +132,7 @@ _Vorteile:_
 _Nachteile:_
 
 - Sie betreiben, patchen und aktualisieren den Server selbst
-- Kein vollständig kostenloser Test von Server Pro (für eine Testlizenz E-Mail an sales@rustdesk.com)
+- Kein vollständig kostenloser Test von Server Pro (für eine Testlizenz E-Mail an [sales@rustdesk.com](mailto:sales@rustdesk.com))
 
 **AnyDesk**
 

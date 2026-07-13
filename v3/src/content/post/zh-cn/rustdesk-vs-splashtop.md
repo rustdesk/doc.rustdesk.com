@@ -9,7 +9,7 @@ image: ~/assets/images/blog/rustdesk-vs-splashtop-og.png
 category: '对比'
 tags: ['RustDesk', 'Splashtop', '对比']
 author: 'RustDesk Team'
-slug: "rustdesk-vs-splashtop-zh-cn"
+slug: 'rustdesk-vs-splashtop-zh-cn'
 faq:
   - question: 'RustDesk 和 Splashtop 是否都可以自托管？'
     answer: '可以，但产品模式不同。RustDesk 提供免费开源服务器，以及围绕自托管构建的商业版 Server Pro 套餐；Splashtop 除主流 SaaS 套餐外，还提供需要单独授权的专有 On-Prem 产品。'
@@ -30,15 +30,15 @@ metadata:
 
 ## 简明结论
 
-| 决策因素     | RustDesk                                                                                                                 | Splashtop SaaS                                          | Splashtop On-Prem                                                            |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| 服务器运维   | 客户自行运维社区服务器或 Server Pro                                                                                      | 厂商运维                                                | 客户自行运维 Splashtop On-Prem Gateway                                       |
-| 源代码模式   | 核心客户端和社区服务器基于 AGPL 开源                                                                                     | 闭源专有                                                | 闭源专有                                                                     |
-| 授权方式     | 标准版 Server Pro 套餐按登录用户数加受管设备数计费；[Customized V2](https://rustdesk.com/pricing#custom2) 则按并发数计费 | 因 Remote Access、Remote Support 或 Enterprise 套餐而异 | 单独授权，需通过销售洽谈；请以书面报价为准                                   |
-| 并发会话数   | 标准套餐无限制；Customized V2 设有明确额度                                                                               | 取决于套餐                                              | 取决于许可                                                                   |
-| 治理管控     | Server Pro 功能因套餐而异；请比较 SSO、2FA、审计、访问控制、通讯录和设备管理等功能                                       | 企业级管控功能因套餐而异                                | 用户/组权限、Active Directory 集成、IP 限制等功能因版本而异                  |
-| 基础设施工作 | 由你的团队负责部署、TLS、网络暴露面、监控、备份、升级和可用性                                                            | 服务基础设施由厂商负责                                  | 由你的团队负责 Gateway 容量规划、网络部署位置、TLS、监控、备份、升级和可用性 |
-| 最佳起点     | 免费社区服务器可用于基础评估；如需管理功能，可发送邮件至 sales@rustdesk.com 进行 Server Pro 评估                         | SaaS 试用，适合希望使用托管服务的团队                   | 直接联系销售并进行范围明确的基础设施评估                                     |
+| 决策因素     | RustDesk                                                                                                                      | Splashtop SaaS                                          | Splashtop On-Prem                                                            |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| 服务器运维   | 客户自行运维社区服务器或 Server Pro                                                                                           | 厂商运维                                                | 客户自行运维 Splashtop On-Prem Gateway                                       |
+| 源代码模式   | 核心客户端和社区服务器基于 AGPL 开源                                                                                          | 闭源专有                                                | 闭源专有                                                                     |
+| 授权方式     | 标准版 Server Pro 套餐按登录用户数加受管设备数计费；[Customized V2](https://rustdesk.com/pricing#custom2) 则按并发数计费      | 因 Remote Access、Remote Support 或 Enterprise 套餐而异 | 单独授权，需通过销售洽谈；请以书面报价为准                                   |
+| 并发会话数   | 标准套餐无限制；Customized V2 设有明确额度                                                                                    | 取决于套餐                                              | 取决于许可                                                                   |
+| 治理管控     | Server Pro 功能因套餐而异；请比较 SSO、2FA、审计、访问控制、通讯录和设备管理等功能                                            | 企业级管控功能因套餐而异                                | 用户/组权限、Active Directory 集成、IP 限制等功能因版本而异                  |
+| 基础设施工作 | 由你的团队负责部署、TLS、网络暴露面、监控、备份、升级和可用性                                                                 | 服务基础设施由厂商负责                                  | 由你的团队负责 Gateway 容量规划、网络部署位置、TLS、监控、备份、升级和可用性 |
+| 最佳起点     | 免费社区服务器可用于基础评估；如需管理功能，可发送邮件至 [sales@rustdesk.com](mailto:sales@rustdesk.com) 进行 Server Pro 评估 | SaaS 试用，适合希望使用托管服务的团队                   | 直接联系销售并进行范围明确的基础设施评估                                     |
 
 在比较具体功能之前，先确定运维模式。如果你希望由厂商运维服务，就应该权衡自行运维 RustDesk 的投入与使用 Splashtop SaaS 之间的取舍。如果掌控基础设施是硬性要求，就应该将 RustDesk Server Pro 与 Splashtop On-Prem 进行比较——而不是与 SaaS 试用版比较，因为后者对 On-Prem 几乎没有参考价值。
 

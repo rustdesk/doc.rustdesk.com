@@ -52,7 +52,7 @@ metadata:
 | ライセンスモデル                           | 座席単位/プラン単位のサブスクリプション      | [ログインユーザー数 + 管理対象デバイス数](https://rustdesk.com/pricing)                         |
 | [同時接続数](https://rustdesk.com/pricing) | プランに依存                                 | スタンダードプランでは無制限、[Customized V2](https://rustdesk.com/pricing#custom2)では制限あり |
 | サーバー側データの保管場所                 | ベンダーが管理                               | 自分で選択・運用(エンドポイントのルートも依然として重要)                                        |
-| 購入前のお試し                             | ベンダーのトライアル(ベンダーのページを参照) | 無料サーバーは今すぐ利用可能、Proの評価はsales@rustdesk.comまで                                 |
+| 購入前のお試し                             | ベンダーのトライアル(ベンダーのページを参照) | 無料サーバーは今すぐ利用可能、Proの評価は[sales@rustdesk.com](mailto:sales@rustdesk.com)まで    |
 
 _競合製品の詳細はプランによって異なります——最新のTeamViewerまたはAnyDeskの利用条件はベンダーに直接ご確認ください。[RustDeskの料金はこちら](https://rustdesk.com/pricing)。_
 

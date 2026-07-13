@@ -115,7 +115,7 @@ _Pros_
 _Cons_
 
 - 服务器的运行、打补丁和更新均需自己团队承担
-- Server Pro 没有完全免费的试用(可发邮件至 sales@rustdesk.com 申请测试授权)
+- Server Pro 没有完全免费的试用(可发邮件至 [sales@rustdesk.com](mailto:sales@rustdesk.com) 申请测试授权)
 - 部分便利功能(如 LDAP/SSO)从 Basic 套餐才开始提供,而非入门套餐
 
 **ScreenConnect**

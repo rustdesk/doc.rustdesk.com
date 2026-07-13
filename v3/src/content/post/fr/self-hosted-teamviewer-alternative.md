@@ -52,7 +52,7 @@ Une réserve : les sessions directes continuent de circuler entre les terminaux 
 | Modèle de licence                                      | Abonnement par utilisateur / par plan           | [Par utilisateur connecté + par appareil géré](https://rustdesk.com/pricing)                            |
 | [Connexions simultanées](https://rustdesk.com/pricing) | Selon le plan                                   | Illimitées sur les plans standards ; limitées sur [Customized V2](https://rustdesk.com/pricing#custom2) |
 | Emplacement des données côté serveur                   | Contrôlé par le fournisseur                     | Choisi et exploité par vous ; le routage des terminaux reste déterminant                                |
-| Essai avant achat                                      | Essai fournisseur (voir la page du fournisseur) | Serveur gratuit dès aujourd'hui, ou évaluation Pro via sales@rustdesk.com                               |
+| Essai avant achat                                      | Essai fournisseur (voir la page du fournisseur) | Serveur gratuit dès aujourd'hui, ou évaluation Pro via [sales@rustdesk.com](mailto:sales@rustdesk.com)  |
 
 _Les détails concernant les concurrents varient selon le plan — vérifiez les conditions actuelles de TeamViewer ou AnyDesk directement auprès du fournisseur. [Consultez la tarification RustDesk](https://rustdesk.com/pricing)._
 

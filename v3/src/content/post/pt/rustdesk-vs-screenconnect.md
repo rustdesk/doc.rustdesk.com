@@ -115,7 +115,7 @@ _Prós_
 _Contras_
 
 - Você mesmo executa, aplica patches e atualiza o servidor
-- Não há um teste totalmente gratuito do Server Pro (envie um e-mail para sales@rustdesk.com para obter uma licença de teste)
+- Não há um teste totalmente gratuito do Server Pro (envie um e-mail para [sales@rustdesk.com](mailto:sales@rustdesk.com) para obter uma licença de teste)
 - Algumas conveniências (LDAP/SSO) começam no plano Basic, não no nível de entrada
 
 **ScreenConnect**

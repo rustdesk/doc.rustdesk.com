@@ -132,7 +132,7 @@ _Prós:_
 _Contras:_
 
 - Você mesmo administra, corrige e atualiza o servidor
-- Não há teste totalmente gratuito do Server Pro (envie um e-mail para sales@rustdesk.com para obter uma licença de teste)
+- Não há teste totalmente gratuito do Server Pro (envie um e-mail para [sales@rustdesk.com](mailto:sales@rustdesk.com) para obter uma licença de teste)
 
 **AnyDesk**
 

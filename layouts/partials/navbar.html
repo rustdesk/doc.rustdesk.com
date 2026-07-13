@@ -40,7 +40,7 @@
           {{- partial "navbar-language-switch" (dict "context" $currentPage) -}}
         {{- end -}}
         {{- if $displayThemeToggle -}}
-          {{- partial "theme-toggle.html" (dict "hideLabel" true) -}}
+          {{- partial "theme-toggle.html" (dict "hideLabel" true "iconHeight" 20 "location" "top") -}}
         {{- end -}}
         {{- partial "search.html" (dict "params" .Params) -}}
       {{- else -}}

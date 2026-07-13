@@ -132,7 +132,7 @@ _장점:_
 _단점:_
 
 - 서버 운영, 패치, 업데이트를 직접 수행해야 함
-- Server Pro의 완전 무료 체험판은 없음(테스트 라이선스는 sales@rustdesk.com으로 문의)
+- Server Pro의 완전 무료 체험판은 없음(테스트 라이선스는 [sales@rustdesk.com](mailto:sales@rustdesk.com)으로 문의)
 
 **AnyDesk**
 

@@ -56,7 +56,7 @@ One caveat: direct sessions still flow between endpoints (relayed sessions use y
 | Licensing model                                        | Per-seat / per-plan subscription | [Per login-user + per managed-device](https://rustdesk.com/pricing)                           |
 | [Concurrent connections](https://rustdesk.com/pricing) | Plan-dependent                   | Unlimited on standard plans; limited on [Customized V2](https://rustdesk.com/pricing#custom2) |
 | Server-side data location                              | Vendor-controlled                | Chosen and operated by you; endpoint routes still matter                                      |
-| Try before you buy                                     | Vendor trial (see vendor page)   | Free server today, or Pro evaluation via sales@rustdesk.com                                   |
+| Try before you buy                                     | Vendor trial (see vendor page)   | Free server today, or Pro evaluation via [sales@rustdesk.com](mailto:sales@rustdesk.com)      |
 
 _Competitor details vary by plan — confirm current TeamViewer or AnyDesk terms with the vendor. [See RustDesk pricing](https://rustdesk.com/pricing)._
 

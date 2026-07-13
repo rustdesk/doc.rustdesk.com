@@ -9,7 +9,7 @@ image: '~/assets/images/blog/rustdesk-vs-splashtop-og.png'
 category: '比較'
 tags: ['RustDesk', 'Splashtop', '比較']
 author: 'RustDesk Team'
-slug: "rustdesk-vs-splashtop-zh-tw"
+slug: 'rustdesk-vs-splashtop-zh-tw'
 faq:
   - question: 'RustDesk 和 Splashtop 是否都能自行架設？'
     answer: '可以，但兩者採用的產品模式不同。RustDesk 提供免費的開源伺服器，以及以自架為核心設計的商業版 Server Pro 方案。Splashtop 則是在主流 SaaS 方案之外，另外提供需單獨授權的專有 On-Prem 產品。'
@@ -38,7 +38,7 @@ metadata:
 | 同時連線數       | 標準方案無限制；Customized V2 則有明確配額                                                                                           | 依方案而異                                              | 依授權而異                                                               |
 | 治理與控管       | Server Pro 功能依方案而異；請比較 SSO、雙因素驗證（2FA）、稽核、存取控制、通訊錄與裝置管理等功能                                     | 企業級控管功能依方案而異                                | 使用者／群組權限、Active Directory 整合、IP 限制等功能依版本而異         |
 | 基礎設施維運工作 | 由您的團隊負責部署、TLS、網路曝露範圍、監控、備份、升級與可用性                                                                      | 由廠商負責服務基礎設施                                  | 由您的團隊負責 Gateway 規模規劃、網路配置、TLS、監控、備份、升級與可用性 |
-| 最佳入門方式     | 免費社群版伺服器可供基本評估；如需管理功能，可透過 sales@rustdesk.com 洽詢 Server Pro 評估方案                                       | 適合想要代管服務的團隊試用 SaaS                         | 直接洽詢業務並進行範圍明確的基礎設施評估                                 |
+| 最佳入門方式     | 免費社群版伺服器可供基本評估；如需管理功能，可透過 [sales@rustdesk.com](mailto:sales@rustdesk.com) 洽詢 Server Pro 評估方案          | 適合想要代管服務的團隊試用 SaaS                         | 直接洽詢業務並進行範圍明確的基礎設施評估                                 |
 
 在比較個別功能之前，請先選定維運模式。如果您希望由廠商代管服務，就該將自行維運 RustDesk 所需的心力，拿來與使用 Splashtop SaaS 相互權衡。如果基礎設施的掌控權是必要條件，則應將 RustDesk Server Pro 與 Splashtop On-Prem 相互比較——而非與 SaaS 試用版比較，因為後者對 On-Prem 幾乎沒有參考價值。
 

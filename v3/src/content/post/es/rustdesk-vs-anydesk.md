@@ -132,7 +132,7 @@ _Ventajas:_
 _Desventajas:_
 
 - Tú mismo ejecutas, parcheas y actualizas el servidor
-- No hay una prueba totalmente gratuita de Server Pro (escribe a sales@rustdesk.com para obtener una licencia de prueba)
+- No hay una prueba totalmente gratuita de Server Pro (escribe a [sales@rustdesk.com](mailto:sales@rustdesk.com) para obtener una licencia de prueba)
 
 **AnyDesk**
 

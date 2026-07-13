@@ -66,7 +66,7 @@ The table below compares the day-to-day capabilities most teams ask about. The R
 | Multi-monitor support         | Yes — multi-monitor                                                                           | Yes — 4K multi-monitor ([features](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                       |
 | Concurrent-session cap        | Unlimited on standard plans; limited on [Customized V2](https://rustdesk.com/pricing#custom2) | Capped by plan tier (see [licensing](#licensing-and-pricing-models))                                                                                                                                  |
 
-One row deserves extra attention: the **feature-parity question.** Both products cover the day-to-day workflows most support and admin teams live in — remote control, unattended access, file transfer, session recording, remote printing, and multi-monitor. Rather than take any table's word for it, trial RustDesk against your actual tasks; that is why we point evaluators to sales@rustdesk.com for a test license rather than a signed contract.
+One row deserves extra attention: the **feature-parity question.** Both products cover the day-to-day workflows most support and admin teams live in — remote control, unattended access, file transfer, session recording, remote printing, and multi-monitor. Rather than take any table's word for it, trial RustDesk against your actual tasks; that is why we point evaluators to [sales@rustdesk.com](mailto:sales@rustdesk.com) for a test license rather than a signed contract.
 
 ## Operating system and platform support
 

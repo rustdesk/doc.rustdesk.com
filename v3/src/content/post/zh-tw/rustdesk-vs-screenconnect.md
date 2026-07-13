@@ -115,7 +115,7 @@ _優點_
 _缺點_
 
 - 伺服器的執行、修補與更新都需自行負責
-- Server Pro 沒有完全免費的試用方案（可來信 sales@rustdesk.com 索取測試授權）
+- Server Pro 沒有完全免費的試用方案（可來信 [sales@rustdesk.com](mailto:sales@rustdesk.com) 索取測試授權）
 - 部分便利功能（LDAP／SSO）需從 Basic 方案起才提供，而非入門層級
 
 **ScreenConnect**

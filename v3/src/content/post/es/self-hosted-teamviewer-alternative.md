@@ -45,14 +45,14 @@ Una salvedad: las sesiones directas siguen fluyendo entre los extremos (las sesi
 
 ## RustDesk frente a TeamViewer y AnyDesk de un vistazo
 
-|                                                        | TeamViewer / AnyDesk (nube)                             | RustDesk (autoalojado)                                                                                |
-| ------------------------------------------------------ | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Dónde se ejecutan las sesiones                         | Nube del proveedor                                      | Tu servidor (en las instalaciones o tu VPS)                                                           |
-| Código fuente                                          | Cerrado                                                 | Núcleo de código abierto (AGPL)                                                                       |
-| Modelo de licenciamiento                               | Suscripción por puesto / por plan                       | [Por usuario de inicio de sesión + por dispositivo administrado](https://rustdesk.com/pricing)        |
-| [Conexiones simultáneas](https://rustdesk.com/pricing) | Depende del plan                                        | Ilimitadas en los planes estándar; limitadas en [Customized V2](https://rustdesk.com/pricing#custom2) |
-| Ubicación de los datos del lado del servidor           | Controlada por el proveedor                             | Elegida y operada por ti; las rutas de los extremos siguen siendo relevantes                          |
-| Prueba antes de comprar                                | Prueba del proveedor (consulta la página del proveedor) | Servidor gratuito hoy mismo, o evaluación de Pro a través de sales@rustdesk.com                       |
+|                                                        | TeamViewer / AnyDesk (nube)                             | RustDesk (autoalojado)                                                                                       |
+| ------------------------------------------------------ | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Dónde se ejecutan las sesiones                         | Nube del proveedor                                      | Tu servidor (en las instalaciones o tu VPS)                                                                  |
+| Código fuente                                          | Cerrado                                                 | Núcleo de código abierto (AGPL)                                                                              |
+| Modelo de licenciamiento                               | Suscripción por puesto / por plan                       | [Por usuario de inicio de sesión + por dispositivo administrado](https://rustdesk.com/pricing)               |
+| [Conexiones simultáneas](https://rustdesk.com/pricing) | Depende del plan                                        | Ilimitadas en los planes estándar; limitadas en [Customized V2](https://rustdesk.com/pricing#custom2)        |
+| Ubicación de los datos del lado del servidor           | Controlada por el proveedor                             | Elegida y operada por ti; las rutas de los extremos siguen siendo relevantes                                 |
+| Prueba antes de comprar                                | Prueba del proveedor (consulta la página del proveedor) | Servidor gratuito hoy mismo, o evaluación de Pro a través de [sales@rustdesk.com](mailto:sales@rustdesk.com) |
 
 _Los detalles de la competencia varían según el plan: confirma las condiciones actuales de TeamViewer o AnyDesk con el proveedor. [Consulta los precios de RustDesk](https://rustdesk.com/pricing)._
 

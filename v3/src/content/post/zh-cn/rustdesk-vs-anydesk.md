@@ -132,7 +132,7 @@ _优点：_
 _缺点：_
 
 - 需要自行运维、修补和更新服务器
-- Server Pro 没有完全免费的试用版本（可发邮件至 sales@rustdesk.com 申请测试许可证）
+- Server Pro 没有完全免费的试用版本（可发邮件至 [sales@rustdesk.com](mailto:sales@rustdesk.com) 申请测试许可证）
 
 **AnyDesk**
 

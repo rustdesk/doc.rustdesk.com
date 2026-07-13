@@ -132,7 +132,7 @@ _メリット:_
 _デメリット:_
 
 - サーバーの運用・パッチ適用・更新は自分で行う必要がある
-- Server Proの完全無料トライアルはない(テストライセンスについてはsales@rustdesk.comまでメールで問い合わせ)
+- Server Proの完全無料トライアルはない(テストライセンスについては[sales@rustdesk.com](mailto:sales@rustdesk.com)までメールで問い合わせ)
 
 **AnyDesk**
 

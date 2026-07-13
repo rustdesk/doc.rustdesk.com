@@ -45,14 +45,14 @@ Ein Vorbehalt: Direktverbindungen laufen weiterhin zwischen den Endpunkten (weit
 
 ## RustDesk vs. TeamViewer und AnyDesk im Überblick
 
-|                                                            | TeamViewer / AnyDesk (Cloud)                    | RustDesk (selbst gehostet)                                                                        |
-| ---------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| Wo Sitzungen laufen                                        | Anbieter-Cloud                                  | Ihr Server (vor Ort oder Ihr VPS)                                                                 |
-| Quellcode                                                  | Geschlossen                                     | Open-Source-Kern (AGPL)                                                                           |
-| Lizenzmodell                                               | Abonnement pro Sitzplatz / pro Plan             | [Pro Login-Benutzer + pro verwaltetem Gerät](https://rustdesk.com/pricing)                        |
-| [Gleichzeitige Verbindungen](https://rustdesk.com/pricing) | Abhängig vom Plan                               | Unbegrenzt bei Standardplänen; begrenzt bei [Customized V2](https://rustdesk.com/pricing#custom2) |
-| Standort der serverseitigen Daten                          | Vom Anbieter kontrolliert                       | Von Ihnen gewählt und betrieben; Endpunkt-Routing spielt weiterhin eine Rolle                     |
-| Vorab testen                                               | Testversion des Anbieters (siehe Anbieterseite) | Kostenloser Server schon heute, oder Pro-Testphase über sales@rustdesk.com                        |
+|                                                            | TeamViewer / AnyDesk (Cloud)                    | RustDesk (selbst gehostet)                                                                              |
+| ---------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Wo Sitzungen laufen                                        | Anbieter-Cloud                                  | Ihr Server (vor Ort oder Ihr VPS)                                                                       |
+| Quellcode                                                  | Geschlossen                                     | Open-Source-Kern (AGPL)                                                                                 |
+| Lizenzmodell                                               | Abonnement pro Sitzplatz / pro Plan             | [Pro Login-Benutzer + pro verwaltetem Gerät](https://rustdesk.com/pricing)                              |
+| [Gleichzeitige Verbindungen](https://rustdesk.com/pricing) | Abhängig vom Plan                               | Unbegrenzt bei Standardplänen; begrenzt bei [Customized V2](https://rustdesk.com/pricing#custom2)       |
+| Standort der serverseitigen Daten                          | Vom Anbieter kontrolliert                       | Von Ihnen gewählt und betrieben; Endpunkt-Routing spielt weiterhin eine Rolle                           |
+| Vorab testen                                               | Testversion des Anbieters (siehe Anbieterseite) | Kostenloser Server schon heute, oder Pro-Testphase über [sales@rustdesk.com](mailto:sales@rustdesk.com) |
 
 _Die Details der Mitbewerber variieren je nach Plan – bestätigen Sie die aktuellen TeamViewer- oder AnyDesk-Konditionen beim Anbieter. [RustDesk-Preise ansehen](https://rustdesk.com/pricing)._
 

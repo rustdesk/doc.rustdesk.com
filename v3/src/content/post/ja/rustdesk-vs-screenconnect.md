@@ -115,7 +115,7 @@ _メリット_
 _デメリット_
 
 - サーバーの運用・パッチ適用・アップデートは自分たちで行う必要がある
-- Server Proには完全無料のトライアルがない(テストライセンスについては sales@rustdesk.com までメールで問い合わせが必要)
+- Server Proには完全無料のトライアルがない(テストライセンスについては [sales@rustdesk.com](mailto:sales@rustdesk.com) までメールで問い合わせが必要)
 - LDAP/SSOなど一部の便利機能はエントリーティアではなくBasicプランからの提供となる
 
 **ScreenConnect**

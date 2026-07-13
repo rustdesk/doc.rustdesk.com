@@ -9,7 +9,7 @@ image: '~/assets/images/blog/rustdesk-vs-splashtop-og.png'
 category: '比較'
 tags: ['RustDesk', 'Splashtop', '比較']
 author: 'RustDesk Team'
-slug: "rustdesk-vs-splashtop-ja"
+slug: 'rustdesk-vs-splashtop-ja'
 faq:
   - question: 'RustDeskとSplashtopはどちらもセルフホストできますか?'
     answer: 'はい、可能です。ただし、製品モデルは異なります。RustDeskは無料のオープンソースサーバーと、セルフホストを前提に構築された商用のServer Proプランを提供しています。Splashtopは主力のSaaSプランに加えて、別ライセンスとなるプロプライエタリなOn-Prem製品を提供しています。'
@@ -38,7 +38,7 @@ metadata:
 | 同時セッション数   | 標準プランでは無制限、Customized V2では規定の割り当て数                                                                                               | プランに依存                                                              | ライセンスに依存                                                                                         |
 | ガバナンス         | Server Proの機能はプランに依存。SSO、2FA、監査、アクセス制御、アドレス帳、デバイス管理を比較すること                                                  | エンタープライズ向け制御機能はプランに依存                                | ユーザー/グループの権限、Active Directory連携、IP制限などの機能はエディションに依存                      |
 | インフラ運用の負担 | 自社チームが展開、TLS、ネットワーク公開、監視、バックアップ、アップグレード、可用性を担う                                                             | ベンダーがサービスインフラを担う                                          | 自社チームがGatewayのサイジング、ネットワーク配置、TLS、監視、バックアップ、アップグレード、可用性を担う |
-| 最適な出発点       | 基本評価には無料のコミュニティサーバー、管理機能の評価にはsales@rustdesk.comを通じたServer Proの評価                                                  | マネージドサービスを求めるチームにはSaaSトライアル                        | 直接営業とスコープを定めたインフラ評価                                                                   |
+| 最適な出発点       | 基本評価には無料のコミュニティサーバー、管理機能の評価には[sales@rustdesk.com](mailto:sales@rustdesk.com)を通じたServer Proの評価                     | マネージドサービスを求めるチームにはSaaSトライアル                        | 直接営業とスコープを定めたインフラ評価                                                                   |
 
 個別機能を比較する前に、運用モデルを選択してください。ベンダーにサービス運用を任せたいのであれば、RustDeskを自社で運用する手間とSplashtop SaaSを比較検討します。インフラの管理権限が必須条件であれば、RustDesk Server ProとSplashtop On-Premを比較してください——SaaSトライアルはOn-Premについてほとんど何も教えてくれないため、比較対象にはなりません。
 

@@ -115,7 +115,7 @@ _Vorteile_
 _Nachteile_
 
 - Sie betreiben, patchen und aktualisieren den Server selbst
-- Kein vollständig kostenloser Test von Server Pro (für eine Testlizenz eine E-Mail an sales@rustdesk.com senden)
+- Kein vollständig kostenloser Test von Server Pro (für eine Testlizenz eine E-Mail an [sales@rustdesk.com](mailto:sales@rustdesk.com) senden)
 - Manche Annehmlichkeiten (LDAP/SSO) sind erst ab dem Basic-Plan verfügbar, nicht in der Einstiegsstufe
 
 **ScreenConnect**
