@@ -270,6 +270,25 @@ Folosește whitelist pentru IP-uri.
 | :------: | :------: | :------: | :------: |
 | N | `,` or `<ip1>,<ip2>,<ip3>` | `,` means no filter | `whitelist=,` |
 
+Notația CIDR este acceptată, de exemplu `whitelist=192.168.1.0/24,10.0.0.5`.
+
+### id-whitelist
+
+Folosește whitelist pentru ID-uri. Doar ID-urile din listă se pot conecta la acest dispozitiv.
+
+Sunt acceptate metacaractere: `*` corespunde oricărui număr de caractere, `?` exact unui caracter. Potrivirea nu ține cont de majuscule.
+
+**Notă**: ID-ul este raportat de clientul care se conectează, deci nu este un mecanism de autentificare. Această listă reduce expunerea, nu înlocuiește parola sau 2FA.
+
+**Locație**:
+
+1. **Desktop** Settings → Security → Security → Use ID whitelisting
+2. **Mobile** Settings → Share screen → Use ID whitelisting
+
+| Install required | Values | Default | Example | Version |
+| :------: | :------: | :------: | :------: | :------: |
+| N | `,` or `<id1>,<id2>,<id3>` | `,` means no filter | `id-whitelist=123456789,98765432?,abc*` | >= 1.5.0 |
+
 ### allow-auto-disconnect & auto-disconnect-timeout
 
 Închide automat sesiunile primite după o perioadă de inactivitate a utilizatorului.

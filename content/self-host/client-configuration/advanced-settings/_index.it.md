@@ -269,6 +269,25 @@ Usa whitelist IP.
 | :------: | :------: | :------: | :------: |
 | N | `,` o `<ip1>,<ip2>,<ip3>` | `,` significa nessun filtro | `whitelist=,` |
 
+È supportata la notazione CIDR, ad esempio `whitelist=192.168.1.0/24,10.0.0.5`.
+
+### id-whitelist
+
+Usa whitelist ID. Solo gli ID elencati possono connettersi a questo dispositivo.
+
+Sono supportati i caratteri jolly: `*` corrisponde a un numero qualsiasi di caratteri, `?` a un solo carattere. La corrispondenza non distingue maiuscole e minuscole.
+
+**Nota**: L'ID è dichiarato dal client che si connette, quindi non è un meccanismo di autenticazione. Questa whitelist riduce l'esposizione, non sostituisce la password o la 2FA.
+
+**Posizione**:
+
+1. **Desktop** Impostazioni → Sicurezza → Sicurezza → Consenti solo ID dalla whitelist
+2. **Mobile** Impostazioni → Condividi schermo → Consenti solo ID dalla whitelist
+
+| Installazione richiesta | Valori | Predefinito | Esempio | Versione |
+| :------: | :------: | :------: | :------: | :------: |
+| N | `,` o `<id1>,<id2>,<id3>` | `,` significa nessun filtro | `id-whitelist=123456789,98765432?,abc*` | >= 1.5.0 |
+
 ### allow-auto-disconnect & auto-disconnect-timeout
 
 Chiude automaticamente le sessioni in ingresso dopo un periodo di inattività dell'utente.

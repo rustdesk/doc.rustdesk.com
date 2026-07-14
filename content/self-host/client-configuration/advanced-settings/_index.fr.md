@@ -269,6 +269,25 @@ Utilise la liste blanche IP.
 | :------: | :------: | :------: | :------: |
 | N | `,` ou `<ip1>,<ip2>,<ip3>` | `,` signifie aucun filtre | `whitelist=,` |
 
+La notation CIDR est prise en charge, par exemple `whitelist=192.168.1.0/24,10.0.0.5`.
+
+### id-whitelist
+
+Utilise la liste blanche d’ID. Seuls les ID listés peuvent se connecter à cet appareil.
+
+Les caractères génériques sont pris en charge : `*` correspond à un nombre quelconque de caractères, `?` à un seul caractère. La casse n’est pas prise en compte.
+
+**Remarque** : L’ID est déclaré par le client qui se connecte, ce n’est donc pas un mécanisme d’authentification. Cette liste blanche réduit l’exposition, elle ne remplace ni le mot de passe ni la 2FA.
+
+**Emplacement** :
+
+1. **Bureau** Paramètres → Sécurité → Sécurité → Autoriser uniquement les ID de la liste blanche
+2. **Mobile** Paramètres → Partage d'écran → Autoriser uniquement les ID de la liste blanche
+
+| Installation requise | Valeurs | Défaut | Exemple | Version |
+| :------: | :------: | :------: | :------: | :------: |
+| N | `,` ou `<id1>,<id2>,<id3>` | `,` signifie aucun filtre | `id-whitelist=123456789,98765432?,abc*` | >= 1.5.0 |
+
 ### allow-auto-disconnect & auto-disconnect-timeout
 
 Ferme automatiquement les sessions entrantes après une période d'inactivité utilisateur.

@@ -270,6 +270,25 @@ Użyj białej listy adresów IP.
 | :------: | :------: | :------: | :------: |
 | N | `,` lub `<ip1>,<ip2>,<ip3>` | `,` oznacza brak filtru | `whitelist=,` |
 
+Obsługiwana jest notacja CIDR, na przykład `whitelist=192.168.1.0/24,10.0.0.5`.
+
+### id-whitelist
+
+Użyj białej listy ID. Tylko wymienione ID mogą łączyć się z tym urządzeniem.
+
+Obsługiwane są symbole wieloznaczne: `*` odpowiada dowolnej liczbie znaków, `?` dokładnie jednemu znakowi. Wielkość liter nie ma znaczenia.
+
+**Uwaga**: ID jest zgłaszane przez łączącego się klienta, więc nie jest to mechanizm uwierzytelniania. Ta biała lista zmniejsza ekspozycję, nie zastępuje hasła ani 2FA.
+
+**Lokalizacja**:
+
+1. **K. stacjonarny** Ustawienia → Zabezpieczenia → Zabezpieczenia → Użyj białej listy ID
+2. **Smartfon** Ustawienia → Udostępnianie ekranu → Użyj białej listy ID
+
+| Wymagana instalacja | Wartości | Domyślne | Przykład | Wersja |
+| :------: | :------: | :------: | :------: | :------: |
+| N | `,` lub `<id1>,<id2>,<id3>` | `,` oznacza brak filtru | `id-whitelist=123456789,98765432?,abc*` | >= 1.5.0 |
+
 ### allow-auto-disconnect i auto-disconnect-timeout
 
 Automatycznie zamykaj sesje przychodzące po okresie braku aktywności użytkownika.

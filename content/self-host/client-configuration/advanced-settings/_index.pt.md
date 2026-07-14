@@ -269,6 +269,25 @@ Usar lista branca de IP.
 | :------: | :------: | :------: | :------: |
 | N | `,` ou `<ip1>,<ip2>,<ip3>` | `,` significa sem filtro | `whitelist=,` |
 
+A notação CIDR é suportada, por exemplo `whitelist=192.168.1.0/24,10.0.0.5`.
+
+### id-whitelist
+
+Usar lista branca de ID. Apenas os IDs listados podem se conectar a este dispositivo.
+
+Curingas são suportados: `*` corresponde a qualquer número de caracteres, `?` a exatamente um caractere. A correspondência não diferencia maiúsculas de minúsculas.
+
+**Nota**: O ID é informado pelo cliente que se conecta, portanto não é um mecanismo de autenticação. Esta lista branca reduz a exposição, não substitui a senha nem o 2FA.
+
+**Localização**:
+
+1. **Desktop** Configurações → Segurança → Segurança → Permitir apenas IDs da lista branca
+2. **Móvel** Configurações → Compartilhar tela → Permitir apenas IDs da lista branca
+
+| Instalação necessária | Valores | Padrão | Exemplo | Versão |
+| :------: | :------: | :------: | :------: | :------: |
+| N | `,` ou `<id1>,<id2>,<id3>` | `,` significa sem filtro | `id-whitelist=123456789,98765432?,abc*` | >= 1.5.0 |
+
 ### allow-auto-disconnect & auto-disconnect-timeout
 
 Fecha automaticamente sessões de entrada após um período de inatividade do usuário.

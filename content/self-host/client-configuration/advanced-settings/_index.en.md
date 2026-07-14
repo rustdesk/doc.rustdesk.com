@@ -279,6 +279,25 @@ Use IP Whitelisting.
 | :------: | :------: | :------: | :------: |
 | N | `,` or `<ip1>,<ip2>,<ip3>` | `,` means no filter | `whitelist=,` |
 
+CIDR notation is supported, e.g. `whitelist=192.168.1.0/24,10.0.0.5`.
+
+### id-whitelist
+
+Use ID whitelisting. Only the listed IDs can connect to this device.
+
+Wildcards are supported: `*` matches any number of characters, `?` matches exactly one character. Matching is case-insensitive.
+
+**Note**: The ID is reported by the connecting client, so it is not an authentication mechanism. This whitelist reduces exposure, it does not replace the password or 2FA.
+
+**Location**:
+
+1. **Desktop** Settings → Security → Security → Use ID whitelisting
+2. **Mobile** Settings → Share screen → Use ID whitelisting
+
+| Install required | Values | Default | Example | Version |
+| :------: | :------: | :------: | :------: | :------: |
+| N | `,` or `<id1>,<id2>,<id3>` | `,` means no filter | `id-whitelist=123456789,98765432?,abc*` | >= 1.5.0 |
+
 ### allow-auto-disconnect & auto-disconnect-timeout
 
 Automatically close incoming sessions after a period of user inactivity.
