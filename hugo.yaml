@@ -28,10 +28,13 @@ enableRobotsTXT: true
 enableGitInfo: true
 
 # Sitemap configuration
+# changefreq and priority are deliberately unset: Google and Bing ignore both,
+# and a site-wide constant priority carries no signal even for parsers that read it.
 sitemap:
-  changefreq: "weekly"
-  priority: 0.8
   filename: "sitemap.xml"
+
+# No page uses tags or categories, so Hugo's taxonomy pages would be empty.
+disableKinds: ["taxonomy", "term"]
 
 # Configure static file handling for absolute paths
 staticDir: ["static"]

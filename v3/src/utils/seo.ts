@@ -122,15 +122,12 @@ export const shouldIndexUtilityPage = (pathname: string) => {
   return !['success', 'cancel', 'utility'].includes(kind);
 };
 
-export const AI_CRAWLER_POLICIES = [
-  { name: 'GPTBot', allow: '/' },
-  { name: 'ChatGPT-User', allow: '/' },
-  { name: 'PerplexityBot', allow: '/' },
-  { name: 'ClaudeBot', allow: '/' },
-  { name: 'anthropic-ai', allow: '/' },
-  { name: 'Google-Extended', allow: '/' },
-  { name: 'Bingbot', allow: '/' },
-];
+// Crawlers are allowed by the `User-agent: *` group in robots.txt, so AI crawlers need no
+// entry of their own. Only bots we want to keep out are named here.
+export const BLOCKED_CRAWLERS = ['CCBot', 'img2dataset'];
+
+// The /docs section is a separate Hugo build, so its sitemap is not part of the Astro one.
+export const SITEMAP_PATHS = ['/sitemap-index.xml', '/docs/sitemap.xml'];
 
 export const getImportantSiteLinks = () => [
   { label: 'Homepage', url: `${SITE_URL}/` },

@@ -1,0 +1,25 @@
+{{- printf "<?xml version=%q encoding=%q standalone=%q?>" "1.0" "utf-8" "yes" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{- range .Pages }}
+    {{- with .Sitemap.Disable }}{{ continue }}{{ end }}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{- with .Lastmod }}
+    <lastmod>{{ .Format "2006-01-02T15:04:05-07:00" }}</lastmod>
+    {{- end }}
+    {{- if .IsTranslated }}
+      {{- range .AllTranslations }}
+      {{- /* Lang, not LanguageCode: the site-wide languageCode is en-US, which would target
+             English at the US only and clash with the bare codes used by every other language. */}}
+    <xhtml:link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+      {{- end }}
+      {{- /* x-default must point at defaultContentLanguage (en, per hugo.yaml). */}}
+      {{- range .AllTranslations }}
+        {{- if eq .Language.Lang "en" }}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  </url>
+  {{- end }}
+</urlset>
