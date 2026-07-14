@@ -13,6 +13,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          # Hugo uses per-file Git history for accurate sitemap lastmod values.
+          fetch-depth: 0
           submodules: recursive
           persist-credentials: false
 

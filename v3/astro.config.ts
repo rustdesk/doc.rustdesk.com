@@ -14,10 +14,12 @@ import type { AstroIntegration } from 'astro';
 import astrowind from './vendor/integration';
 
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
+import { shouldIncludeInSitemap } from './src/utils/sitemap.mjs';
 
 import react from '@astrojs/react';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const locales = ['en', 'de', 'es', 'fr', 'it', 'ja', 'pt', 'zh-cn', 'zh-tw', 'ko', 'ar'];
 
 const hasExternalScripts = false;
 const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
@@ -27,7 +29,7 @@ export default defineConfig({
   output: 'static',
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'de', 'es', 'fr', 'it', 'ja', 'pt', 'zh-cn', 'zh-tw', 'ko', 'ar'],
+    locales,
     routing: {
       prefixDefaultLocale: true,
       redirectToDefaultLocale: false,
@@ -38,7 +40,9 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    sitemap(),
+    sitemap({
+      filter: (page) => shouldIncludeInSitemap(page, locales),
+    }),
     mdx(),
     icon({
       include: {
