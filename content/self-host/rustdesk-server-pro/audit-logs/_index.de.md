@@ -20,7 +20,7 @@ Gehen Sie zu **Protokolle > Verbindung**, um Remote-Sitzungen und die zugehörig
 
 Verbindungsprotokolle zeigen:
 
-- **Typ**: Fernzugriff, Dateiübertragung, Portweiterleitung, Kamera anzeigen, Terminal oder Nicht angemeldet. **Nicht angemeldet** bedeutet, dass die Verbindung nicht abgeschlossen wurde oder die Authentifizierung fehlgeschlagen ist.
+- **Typ**: Fernzugriff, Dateiübertragung, Portweiterleitung, Kamera anzeigen, Terminal oder Nicht angemeldet. **Nicht angemeldet** bedeutet, dass die Authentifizierung fehlgeschlagen ist.
 - **Gesteuertes Gerät**: ID und Name des Zielgeräts.
 - **Steuernde Seite**: Der steuernde Benutzer, wenn die steuernde Seite angemeldet ist, plus steuerndes Gerät, Gerätename und IP-Adresse.
 - **Startzeit**, **Endzeit** und **Dauer**.
@@ -161,3 +161,5 @@ Verwenden Sie **Einstellungen > Sonstiges > Protokollaufbewahrung (Tage)**, um f
 ## Audit-Protokolle exportieren
 
 Jede Protokollseite hat **Als CSV exportieren** in der Werkzeugleiste. Die exportierte Datei folgt den aktuellen Filtern auf der Seite und verwendet dieselben Zeitwerte, die in der Webkonsole angezeigt werden. Jeder Export enthält bis zu 1000 Einträge, aber Sie können den Filter **Startzeit** verwenden, um alle Protokolle stapelweise zu exportieren.
+
+Sie können Audit-Protokolle auch mit einem [API-Token](/docs/de/self-host/rustdesk-server-pro/console/#prüfprotokolle-auditspy) über `audits.py` abfragen.
