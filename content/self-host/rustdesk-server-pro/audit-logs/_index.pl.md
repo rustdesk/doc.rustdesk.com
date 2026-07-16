@@ -20,7 +20,7 @@ Przejdź do **Logi > Połączenie**, aby przeglądać sesje zdalne i powiązane 
 
 Logi połączeń pokazują:
 
-- **Typ**: Zdalny pulpit, Transfer plików, Przekierowanie portów, Podgląd kamery, Terminal albo Niezalogowany. **Niezalogowany** oznacza, że połączenie nie zostało ukończone albo uwierzytelnianie się nie powiodło.
+- **Typ**: Zdalny pulpit, Transfer plików, Przekierowanie portów, Podgląd kamery, Terminal albo Niezalogowany. **Niezalogowany** oznacza, że uwierzytelnianie się nie powiodło.
 - **Urządzenie kontrolowane**: ID i nazwę urządzenia docelowego.
 - **Strona kontrolująca**: użytkownika kontrolującego, gdy strona kontrolująca jest zalogowana, oraz urządzenie kontrolujące, nazwę urządzenia i adres IP.
 - **Czas rozpoczęcia**, **Czas zakończenia** i **Czas trwania**.
@@ -161,3 +161,5 @@ Użyj **Ustawienia > Inne > Retencja logów (dni)**, aby określić, jak długo 
 ## Eksport logów audytu
 
 Każda strona logów ma na pasku narzędzi **Eksportuj jako CSV**. Eksportowany plik używa aktualnych filtrów na stronie i tych samych wartości czasu, które są pokazane w konsoli web. Każdy eksport zawiera do 1000 rekordów, ale możesz użyć filtra **Czas rozpoczęcia**, aby eksportować wszystkie logi partiami.
+
+Możesz też użyć [tokenu API](/docs/pl/self-host/rustdesk-server-pro/console/#audyty-auditspy) z `audits.py`, aby odpytywać logi audytu.

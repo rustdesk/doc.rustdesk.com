@@ -20,7 +20,7 @@ Vaya a **Registros > Conexión** para revisar sesiones remotas y tipos de conexi
 
 Los registros de conexión muestran:
 
-- **Tipo**: Escritorio remoto, Transferencia de archivos, Reenvío de puertos, Ver cámara, Terminal o No conectado. **No conectado** significa que la conexión no se completó o la autenticación no tuvo éxito.
+- **Tipo**: Escritorio remoto, Transferencia de archivos, Reenvío de puertos, Ver cámara, Terminal o No conectado. **No conectado** significa que la autenticación no tuvo éxito.
 - **Dispositivo controlado**: El ID y nombre del dispositivo de destino.
 - **Lado controlador**: El usuario controlador cuando el lado controlador ha iniciado sesión, además del dispositivo controlador, nombre del dispositivo y dirección IP.
 - **Hora de inicio**, **Hora de fin** y **Duración**.
@@ -161,3 +161,5 @@ Use **Configuración > Otros > Retención de registros (días)** para controlar 
 ## Exportar registros de auditoría
 
 Cada página de registros tiene **Exportar como CSV** en la barra de herramientas. El archivo exportado sigue los filtros actuales de la página y usa los mismos valores de hora mostrados en la consola web. Cada exportación incluye hasta 1000 registros, pero puede usar el filtro **Hora de inicio** para exportar todos los registros por lotes.
+
+También puede usar un [token de API](/docs/es/self-host/rustdesk-server-pro/console/#auditorías-auditspy) con `audits.py` para consultar registros de auditoría.

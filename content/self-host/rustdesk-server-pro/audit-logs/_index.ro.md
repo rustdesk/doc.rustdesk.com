@@ -20,7 +20,7 @@ Mergi la **Jurnale > Conexiune** pentru a revizui sesiunile la distanță și ti
 
 Jurnalele de conexiuni afișează:
 
-- **Tip**: Desktop la distanță, Transfer fișiere, Transfer port, Vizualizare cameră, Terminal sau Neautentificat. **Neautentificat** înseamnă că această conexiune nu s-a finalizat sau autentificarea nu a reușit.
+- **Tip**: Desktop la distanță, Transfer fișiere, Transfer port, Vizualizare cameră, Terminal sau Neautentificat. **Neautentificat** înseamnă că autentificarea nu a reușit.
 - **Dispozitiv controlat**: ID-ul și numele dispozitivului țintă.
 - **Partea de control**: utilizatorul care controlează atunci când partea de control este autentificată, plus dispozitivul de control, numele dispozitivului și adresa IP.
 - **Ora de început**, **Ora de sfârșit** și **Durata**.
@@ -161,3 +161,5 @@ Folosește **Setări > Altele > Retenție jurnale (zile)** pentru a controla câ
 ## Export jurnale de audit
 
 Fiecare pagină de jurnale are **Exportă ca CSV** în bara de instrumente. Fișierul exportat respectă filtrele curente de pe pagină și folosește aceleași valori de timp afișate în consola web. Fiecare export include până la 1000 de înregistrări, dar poți folosi filtrul **Ora de început** pentru a exporta toate jurnalele în loturi.
+
+Poți folosi și un [token API](/docs/ro/self-host/rustdesk-server-pro/console/#audits-auditspy) cu `audits.py` pentru a interoga jurnalele de audit.

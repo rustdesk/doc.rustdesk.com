@@ -20,7 +20,7 @@ Go to **Logs > Connection** to review remote sessions and related connection typ
 
 Connection logs show:
 
-- **Type**: Remote Desktop, File Transfer, Port Transfer, View Camera, Terminal, or Not Logged In. **Not Logged In** means the connection did not complete or authentication did not succeed.
+- **Type**: Remote Desktop, File Transfer, Port Transfer, View Camera, Terminal, or Not Logged In. **Not Logged In** means authentication did not succeed.
 - **Controlled Device**: The target device ID and name.
 - **Controlling Side**: The controlling user when the controlling side is signed in, plus the controlling device, device name, and IP address.
 - **Start Time**, **End Time**, and **Duration**.
@@ -161,3 +161,5 @@ Use **Settings > Other > Log Retention (Days)** to control how long audit logs a
 ## Export audit logs
 
 Each log page has **Export as csv** in the toolbar. The exported file follows the current filters on the page and uses the same time values shown in the web console. Each export includes up to 1000 records, but you can use the **Start Time** filter to export all logs in batches.
+
+You can also use an [API token](/docs/en/self-host/rustdesk-server-pro/console/#audits-auditspy) with `audits.py` to query audit logs.

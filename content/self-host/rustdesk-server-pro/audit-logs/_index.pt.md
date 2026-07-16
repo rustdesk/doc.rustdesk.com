@@ -20,7 +20,7 @@ Vá para **Logs > Conexão** para revisar sessões remotas e tipos de conexão r
 
 Os logs de conexões mostram:
 
-- **Tipo**: Desktop remoto, Transferência de arquivos, Redirecionamento de porta, Visualizar câmera, Terminal ou Não conectado. **Não conectado** significa que a conexão não foi concluída ou a autenticação não teve sucesso.
+- **Tipo**: Desktop remoto, Transferência de arquivos, Redirecionamento de porta, Visualizar câmera, Terminal ou Não conectado. **Não conectado** significa que a autenticação não teve sucesso.
 - **Dispositivo controlado**: O ID e nome do dispositivo de destino.
 - **Lado controlador**: O usuário controlador quando o lado controlador está conectado, além do dispositivo controlador, nome do dispositivo e endereço IP.
 - **Hora de início**, **Hora de término** e **Duração**.
@@ -161,3 +161,5 @@ Use **Configurações > Outros > Retenção de logs (dias)** para controlar por 
 ## Exportar logs de auditoria
 
 Cada página de logs tem **Exportar como CSV** na barra de ferramentas. O arquivo exportado segue os filtros atuais da página e usa os mesmos valores de tempo mostrados no console web. Cada exportação inclui até 1000 registros, mas você pode usar o filtro **Hora de início** para exportar todos os logs em lotes.
+
+Você também pode usar um [token de API](/docs/pt/self-host/rustdesk-server-pro/console/#auditorias-auditspy) com `audits.py` para consultar logs de auditoria.

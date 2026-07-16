@@ -20,7 +20,7 @@ Vai a **Log > Connessione** per esaminare le sessioni remote e i relativi tipi d
 
 I log connessioni mostrano:
 
-- **Tipo**: Desktop remoto, Trasferimento file, Inoltro porta, Visualizza webcam, Terminale o Non connesso. **Non connesso** significa che la connessione non è stata completata o che l’autenticazione non è riuscita.
+- **Tipo**: Desktop remoto, Trasferimento file, Inoltro porta, Visualizza webcam, Terminale o Non connesso. **Non connesso** significa che l’autenticazione non è riuscita.
 - **Dispositivo controllato**: ID e nome del dispositivo di destinazione.
 - **Lato controllore**: l’utente controllore quando il lato controllore ha effettuato l’accesso, più dispositivo controllore, nome dispositivo e indirizzo IP.
 - **Ora di inizio**, **Ora di fine** e **Durata**.
@@ -161,3 +161,5 @@ Usa **Impostazioni > Altro > Conservazione log (giorni)** per controllare per qu
 ## Esportare i log di audit
 
 Ogni pagina log ha **Esporta come CSV** nella barra degli strumenti. Il file esportato segue i filtri correnti della pagina e usa gli stessi valori temporali mostrati nella console web. Ogni esportazione include fino a 1000 record, ma puoi usare il filtro **Ora di inizio** per esportare tutti i log in batch.
+
+Puoi anche usare un [token API](/docs/it/self-host/rustdesk-server-pro/console/#audit-auditspy) con `audits.py` per interrogare i log di audit.
