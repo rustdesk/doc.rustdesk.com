@@ -33,6 +33,12 @@ ufw allow 21116/udp
 sudo ufw enable
 ```
 
+{{% notice warning %}}
+When WebSocket is enabled (ports `21118`/`21119` are open for the [web client](https://rustdesk.com/web/)), `hbbs`/`hbbr` trust the `X-Real-IP` / `X-Forwarded-For` headers of incoming WebSocket connections to determine the real client IP, so that the client IP is preserved when the WebSocket traffic goes through a reverse proxy ([WSS](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms)). These headers are not validated, so anyone who can reach `21118`/`21119` directly can spoof an arbitrary IP address with forged headers, bypassing IP-based rate limiting and blocking, and falsifying the IP addresses recorded in logs.
+
+If you use the web client, expose the WebSocket ports only through a reverse proxy that sets `X-Real-IP` itself, and restrict `21118`/`21119` with firewall rules so that only the reverse proxy can connect to them. If you do not use the web client, keep ports `21118` and `21119` closed.
+{{% /notice %}}
+
 ## Install
 ### Method 1: Docker (Recommended)
 

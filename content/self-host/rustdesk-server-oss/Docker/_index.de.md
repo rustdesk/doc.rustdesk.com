@@ -39,6 +39,12 @@ Stellen Sie sicher, dass Sie diese Ports in der Firewall öffnen:
 
 *Wenn Sie keine Webclient-Unterstützung benötigen, können die entsprechenden Ports `21118`, `21119` deaktiviert werden.*
 
+{{% notice warning %}}
+Wenn WebSocket aktiviert ist (die Ports `21118`/`21119` für den [Webclient](https://rustdesk.com/web/) geöffnet sind), vertrauen `hbbs`/`hbbr` den Headern `X-Real-IP` / `X-Forwarded-For` eingehender WebSocket-Verbindungen, um die echte Client-IP zu ermitteln, damit die Client-IP erhalten bleibt, wenn der WebSocket-Verkehr über einen Reverse-Proxy ([WSS](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms)) läuft. Diese Header werden nicht validiert. Wer `21118`/`21119` direkt erreichen kann, kann daher mit gefälschten Headern eine beliebige IP-Adresse vortäuschen, IP-basierte Ratenbegrenzung und Sperren umgehen und die in den Logs aufgezeichneten IP-Adressen verfälschen.
+
+Wenn Sie den Webclient verwenden, stellen Sie die WebSocket-Ports nur über einen Reverse-Proxy bereit, der `X-Real-IP` selbst setzt, und beschränken Sie `21118`/`21119` mit Firewall-Regeln so, dass sich nur der Reverse-Proxy mit ihnen verbinden kann. Wenn Sie den Webclient nicht verwenden, lassen Sie die Ports `21118` und `21119` geschlossen.
+{{% /notice %}}
+
 ### Docker-Beispiele
 
 ```sh

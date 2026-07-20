@@ -39,6 +39,12 @@ keywords: ["rustdesk docker", "rustdesk docker compose", "rustdesk server docker
 
 *如果您不需要网页客户端支持，可以禁用相应的端口 `21118`、`21119`。*
 
+{{% notice warning %}}
+启用 WebSocket（为[网页客户端](https://rustdesk.com/web/)开放端口 `21118`/`21119`）后，`hbbs`/`hbbr` 会信任 WebSocket 连接中的 `X-Real-IP` / `X-Forwarded-For` 请求头来确定客户端的真实 IP，以便在 WebSocket 流量经过反向代理（[WSS](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms)）时保留客户端真实 IP。这些请求头不会被校验，因此任何能直接访问 `21118`/`21119` 的人都可以通过伪造请求头来伪装任意 IP 地址，从而绕过基于 IP 的限速和封禁，并伪造日志中记录的 IP 地址。
+
+如果您使用网页客户端，请只通过反向代理（由代理自行设置 `X-Real-IP`）暴露 WebSocket 端口，并通过防火墙规则限制 `21118`/`21119` 只接受来自反向代理的连接。如果您不使用网页客户端，请保持端口 `21118`、`21119` 关闭。
+{{% /notice %}}
+
 ### Docker 示例
 
 ```sh

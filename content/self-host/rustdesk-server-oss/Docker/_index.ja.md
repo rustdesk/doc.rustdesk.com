@@ -39,6 +39,12 @@ rustdesk-server を Docker コンテナとして実行するには、Docker/Podm
 
 *ウェブクライアントサポートが不要な場合、対応するポート `21118`、`21119` は無効にできます。*
 
+{{% notice warning %}}
+WebSocket を有効にしている場合（[ウェブクライアント](https://rustdesk.com/web/)用にポート `21118`/`21119` を開放している場合）、`hbbs`/`hbbr` は、WebSocket トラフィックがリバースプロキシ（[WSS](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms)）を経由してもクライアントの実 IP が失われないように、受信した WebSocket 接続の `X-Real-IP` / `X-Forwarded-For` ヘッダーを信頼してクライアントの実 IP を判定します。これらのヘッダーは検証されないため、`21118`/`21119` に直接アクセスできる者は、偽造ヘッダーで任意の IP アドレスを偽装でき、IP ベースのレート制限やブロックを回避したり、ログに記録される IP アドレスを偽ったりできます。
+
+ウェブクライアントを使用する場合は、`X-Real-IP` を自ら設定するリバースプロキシ経由でのみ WebSocket ポートを公開し、ファイアウォールルールで `21118`/`21119` への接続をリバースプロキシからのみに制限してください。ウェブクライアントを使用しない場合は、ポート `21118`、`21119` を閉じたままにしてください。
+{{% /notice %}}
+
 ### Docker の例
 
 ```sh

@@ -33,6 +33,12 @@ ufw allow 21116/udp
 sudo ufw enable
 ```
 
+{{% notice warning %}}
+啟用 WebSocket（為[網頁客戶端](https://rustdesk.com/web/)開放埠口 `21118`/`21119`）後，`hbbs`/`hbbr` 會信任 WebSocket 連線中的 `X-Real-IP` / `X-Forwarded-For` 請求標頭來判斷客戶端的真實 IP，以便在 WebSocket 流量經過反向代理（[WSS](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms)）時保留客戶端真實 IP。這些標頭不會被驗證，因此任何能直接連線 `21118`/`21119` 的人都可以透過偽造標頭來偽裝任意 IP 位址，從而繞過基於 IP 的速率限制和封鎖，並偽造日誌中記錄的 IP 位址。
+
+如果您使用網頁客戶端，請只透過反向代理（由代理自行設定 `X-Real-IP`）公開 WebSocket 埠口，並透過防火牆規則限制 `21118`/`21119` 只接受來自反向代理的連線。如果您不使用網頁客戶端，請保持埠口 `21118`、`21119` 關閉。
+{{% /notice %}}
+
 ## 安裝
 ### 方法1：Docker（建議）
 

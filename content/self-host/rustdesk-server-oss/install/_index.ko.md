@@ -34,6 +34,12 @@ ufw allow 21116/udp
 sudo ufw enable
 ```
 
+{{% notice warning %}}
+WebSocket이 활성화된 경우([웹 클라이언트](https://rustdesk.com/web/)를 위해 포트 `21118`/`21119`가 열려 있는 경우), `hbbs`/`hbbr`는 WebSocket 트래픽이 리버스 프록시([WSS](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms))를 거칠 때 클라이언트의 실제 IP가 유지되도록, 수신되는 WebSocket 연결의 `X-Real-IP` / `X-Forwarded-For` 헤더를 신뢰하여 클라이언트의 실제 IP를 판단합니다. 이 헤더는 검증되지 않으므로, `21118`/`21119`에 직접 접근할 수 있는 사람은 위조된 헤더로 임의의 IP 주소를 사칭하여 IP 기반 속도 제한과 차단을 우회하고 로그에 기록되는 IP 주소를 위조할 수 있습니다.
+
+웹 클라이언트를 사용하는 경우, `X-Real-IP`를 직접 설정하는 리버스 프록시를 통해서만 WebSocket 포트를 노출하고, 방화벽 규칙으로 `21118`/`21119`에는 리버스 프록시만 연결할 수 있도록 제한하세요. 웹 클라이언트를 사용하지 않는 경우, 포트 `21118`, `21119`를 닫아 두세요.
+{{% /notice %}}
+
 ## 설치하기
 ### 방법 1: Docker (권장)
 

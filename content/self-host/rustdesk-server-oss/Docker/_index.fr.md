@@ -39,6 +39,12 @@ Assurez-vous d'ouvrir ces ports dans le pare-feu :
 
 *Si vous n'avez pas besoin du support client web, les ports correspondants `21118`, `21119` peuvent être désactivés.*
 
+{{% notice warning %}}
+Lorsque WebSocket est activé (les ports `21118`/`21119` sont ouverts pour le [client web](https://rustdesk.com/web/)), `hbbs`/`hbbr` font confiance aux en-têtes `X-Real-IP` / `X-Forwarded-For` des connexions WebSocket entrantes pour déterminer l'adresse IP réelle du client, afin que celle-ci soit conservée lorsque le trafic WebSocket passe par un reverse proxy ([WSS](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms)). Ces en-têtes ne sont pas validés : quiconque peut atteindre directement `21118`/`21119` peut usurper une adresse IP arbitraire avec des en-têtes falsifiés, contourner la limitation de débit et le blocage basés sur l'IP, et falsifier les adresses IP enregistrées dans les journaux.
+
+Si vous utilisez le client web, n'exposez les ports WebSocket qu'à travers un reverse proxy qui définit lui-même `X-Real-IP`, et restreignez `21118`/`21119` avec des règles de pare-feu afin que seul le reverse proxy puisse s'y connecter. Si vous n'utilisez pas le client web, laissez les ports `21118` et `21119` fermés.
+{{% /notice %}}
+
 ### Exemples Docker
 
 ```sh
