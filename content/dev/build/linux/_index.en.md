@@ -49,7 +49,7 @@ git checkout 2023.10.19
 cd ..
 vcpkg/bootstrap-vcpkg.sh
 export VCPKG_ROOT=$PWD/vcpkg
-vcpkg/vcpkg install --x-install-root="$VCPKG_ROOT/installed"
+# Run install from the RustDesk repo root (manifest mode), shown below in Build.
 ```
 
 ### Fix libvpx (for Fedora)
@@ -72,6 +72,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
 git clone --recurse-submodules https://github.com/rustdesk/rustdesk
 cd rustdesk
+# vcpkg uses this repository's manifest (vcpkg.json), so run from here.
+"$VCPKG_ROOT/vcpkg" install --x-install-root="$VCPKG_ROOT/installed"
 mkdir -p target/debug
 wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so
 mv libsciter-gtk.so target/debug
