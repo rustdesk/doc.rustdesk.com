@@ -45,7 +45,7 @@ weight: 600
 10. 輸入您在步驟 1 中購買的許可證代碼。
 
 ## 有新版本的 RustDesk Server Pro 推出，如何升級？
-您最好先備份數據文件（sqlite3 文件等），https://github.com/rustdesk/rustdesk-server-pro/discussions/184#discussioncomment-8013375。
+您最好先備份資料文件（sqlite3 文件等），https://github.com/rustdesk/rustdesk-server-pro/discussions/184#discussioncomment-8013375。
 - ### 如果您使用腳本安裝（`install.sh`）
 請運行 [update.sh](/docs/en/self-host/rustdesk-server-pro/installscript/script/#upgrade)。
 - ### Docker Compose
@@ -536,7 +536,7 @@ sudo firewall-cmd --permanent --add-port=443/tcp
 執行以上命令後，運行 `sudo firewall-cmd --reload` 重新加載防火牆。
 
 ## 在 Web 控制台中更改管理員密碼後無法登錄。有簡單的方法重置密碼嗎？
-1. 確保您已安裝 `rustdesk-utils`。如果沒有，您可以在[這裡](https://github.com/rustdesk/rustdesk-server-pro)獲取。您還需要從數據庫所在的資料夾執行命令，即 `/var/lib/rustdesk-server`。
+1. 確保您已安裝 `rustdesk-utils`。如果沒有，您可以在[這裡](https://github.com/rustdesk/rustdesk-server-pro)獲取。您還需要從資料庫所在的資料夾執行命令，即 `/var/lib/rustdesk-server`。
 2. 命令是 `rustdesk-utils set_password username password`。如果成功，它會顯示 *Done*。
 
 您還有以下其他命令 `genkeypair`、`validatekeypair [public key] [secret key]`、`doctor [rustdesk-server]`、`reset_email_verification` 和 `reset_2fa_verification`，可以與 `rustdesk-utils` 一起使用。
