@@ -110,7 +110,7 @@ FVM 旨在使用更複雜的設置，它可以為不同的項目提供不同的 
 export PATH=$HOME/fvm/default/bin:$PATH
 ```
 
-完成後，您應該禁用遙測並檢查一切是否正常：
+完成後，您應該停用遙測並檢查一切是否正常：
 
 ```sh
 flutter --disable-analytics

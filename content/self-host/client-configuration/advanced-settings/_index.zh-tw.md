@@ -644,7 +644,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 **桌面端** 設定 → 通用 → 其他 → 使用紋理渲染
 
-使用紋理渲染可以使畫面更流暢。如果遇到渲染問題，可以嘗試禁用此選項。僅在桌面端可用。
+使用紋理渲染可以使畫面更流暢。如果遇到渲染問題，可以嘗試停用此選項。僅在桌面端可用。
 
 | 可選值 | 預設值 | 範例 |
 | :------: | :------: | :------: |
@@ -802,9 +802,9 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 ### disable-audio
 
-此選項將為每個對等端在首次連接後設定「禁用音訊」選項。
+此選項將為每個對等端在首次連接後設定「停用音訊」選項。
 
-每個對等端設定中的「禁用音訊」選項將控制是否播放聲音。
+每個對等端設定中的「停用音訊」選項將控制是否播放聲音。
 
 **位置**：
 
@@ -832,14 +832,14 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 ### disable-clipboard
 
-此選項將為每個對等端在首次連接後設定「禁用剪貼簿」選項。
+此選項將為每個對等端在首次連接後設定「停用剪貼簿」選項。
 
-每個對等端設定中的「禁用剪貼簿」選項將控制是否啟用文字複製貼上。
+每個對等端設定中的「停用剪貼簿」選項將控制是否啟用文字複製貼上。
 
 **位置**：
 
-1. **桌面** 設定 → 顯示 → 其他預設選項 → 禁用剪貼簿
-2. **行動裝置** 設定 → 顯示設定 → 其他預設選項 → 禁用剪貼簿
+1. **桌面** 設定 → 顯示 → 其他預設選項 → 停用剪貼簿
+2. **行動裝置** 設定 → 顯示設定 → 其他預設選項 → 停用剪貼簿
 
 | 安裝需要 | 值 | 預設值 | 範例 |
 | :------: | :------: | :------: | :------: |
@@ -1114,7 +1114,7 @@ preset-address-book-alias、preset-address-book-password、preset-address-book-n
 
 ### disable-group-panel
 
-在RustDesk使用者端上禁用群組面板（在通訊錄面板旁邊，自1.3.8版本起命名為「可存取設備」），https://github.com/rustdesk/rustdesk-server-pro/issues/250。
+在RustDesk使用者端上停用群組面板（在通訊錄面板旁邊，自1.3.8版本起命名為「可存取設備」），https://github.com/rustdesk/rustdesk-server-pro/issues/250。
 
 | 選項 | 安裝需要 | 值 | 預設值 | 範例 |
 | :------: | :------: | :------: | :------: | :------: |
@@ -1245,7 +1245,7 @@ https://github.com/rustdesk/rustdesk/discussions/7956
 
 ### hide-general-settings
 
-控制是否隱藏設定頁面的`一般`分頁。與其他 `hide-*-settings` 選項不同，即使`禁用設定`已開啟，此選項仍會生效，因為`禁用設定`不會隱藏`一般`分頁。
+控制是否隱藏設定頁面的`一般`分頁。與其他 `hide-*-settings` 選項不同，即使`停用設定`已開啟，此選項仍會生效，因為`停用設定`不會隱藏`一般`分頁。
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/1001
 
@@ -1257,7 +1257,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/1001
 
 ### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings / hide-remote-printer-settings
 
-控制是否隱藏某些設定。請確保`禁用設定`已關閉，否則這些不會生效。
+控制是否隱藏某些設定。請確保`停用設定`已關閉，否則這些不會生效。
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/263
 
@@ -1329,7 +1329,7 @@ https://github.com/rustdesk/rustdesk/discussions/8513#discussioncomment-10234494
 
 ### hide-tray
 
-禁用系統匣中的匣圖示。
+停用系統匣中的匣圖示。
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/332
 
@@ -1349,7 +1349,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/332
 
 ### one-way-clipboard-redirection
 
-禁用從受控端到控制端的剪貼簿同步，在RustDesk使用者端>=1.3.1（受控端）中可用
+停用從受控端到控制端的剪貼簿同步，在RustDesk使用者端>=1.3.1（受控端）中可用
 
 https://github.com/rustdesk/rustdesk/discussions/7837
 
@@ -1359,7 +1359,7 @@ https://github.com/rustdesk/rustdesk/discussions/7837
 
 ### one-way-file-transfer
 
-禁用從受控端到控制端的檔案傳輸，在RustDesk使用者端>=1.3.1（受控端）中可用
+停用從受控端到控制端的檔案傳輸，在RustDesk使用者端>=1.3.1（受控端）中可用
 
 https://github.com/rustdesk/rustdesk/discussions/7837
 
@@ -1435,7 +1435,7 @@ D3D渲染可以獲得高幀率並減少CPU使用率，但在某些設備上遠�
 
 ### allow-numeric-one-time-password
 
-此選項啟用或禁用僅數字一次性密碼的使用。
+此選項啟用或停用僅數字一次性密碼的使用。
 僅在RustDesk使用者端>=1.4.1和Pro伺服器>= 1.5.9中可用。
 
 **討論**： https://github.com/rustdesk/rustdesk-server-pro/discussions/685
@@ -1620,7 +1620,7 @@ https://github.com/rustdesk/rustdesk/pull/12911
 
 ### allow-command-line-settings-when-settings-disabled
 
-當自訂客戶端中啟用了「禁用設定」時，允許透過命令列參數進行配置。設定為 Y 後，僅禁用 UI 設定介面，但仍可使用命令列參數配置客戶端。
+當自訂客戶端中啟用了「停用設定」時，允許透過命令列參數進行配置。設定為 Y 後，僅停用 UI 設定介面，但仍可使用命令列參數配置客戶端。
 
 自 RustDesk 1.4.7 起可用
 

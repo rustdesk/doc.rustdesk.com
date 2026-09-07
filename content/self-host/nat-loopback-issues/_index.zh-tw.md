@@ -72,7 +72,7 @@ NAT Loopback 功能將在過程的更早階段有效地更改地址的來源「�
 
 請看範例:
 #### AdGuard Home
-封鎖廣告可能會造成問題，如果您不想要尋找解決方法，並且想要關閉這個功能，請選擇"禁用保護"按鈕。
+封鎖廣告可能會造成問題，如果您不想要尋找解決方法，並且想要關閉這個功能，請選擇"停用保護"按鈕。
 
 ![](/docs/en/self-host/nat-loopback-issues/images/adguard_home_disable_protection.png)
 <br>

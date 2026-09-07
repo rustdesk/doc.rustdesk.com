@@ -560,7 +560,7 @@ Windows 命令列預設不會輸出結果。若要查看輸出，可使用：
 ./strategies.py --url <url> --token <token> view --guid "01983006-fcca-7c12-9a91-b1df483c6073"
 ```
 
-**啟用或禁用策略：**  
+**啟用或停用策略：**
 ```bash
 ./strategies.py --url <url> --token <token> enable --name "策略名稱"
 ./strategies.py --url <url> --token <token> disable --name "策略名稱"

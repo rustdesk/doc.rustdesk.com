@@ -66,10 +66,10 @@ Outbound Rules – `From` 是 RustDesk 內部 21114 地址，`To` 是外部地�
 
 ## 壓縮
 
-1. 禁用 `Dynamic Content Compression`。
+1. 停用 `Dynamic Content Compression`。
 
 ## 故障排除
 
-如果您遇到 500.52 錯誤，請加入提到的變量：[IIS acting as reverse proxy: Where the problems start](https://techcommunity.microsoft.com/t5/iis-support-blog/iis-acting-as-reverse-proxy-where-the-problems-start/ba-p/846259)。
+如果您遇到 500.52 錯誤，請加入提到的變數：[IIS acting as reverse proxy: Where the problems start](https://techcommunity.microsoft.com/t5/iis-support-blog/iis-acting-as-reverse-proxy-where-the-problems-start/ba-p/846259)。
 
 您可能需要將 SSL 設置更改為 “Require SSL → Ignore”。

@@ -204,7 +204,7 @@ sudo apt remove nginx
 ```
 
 ## 如何從 Web 控制台的設備列表中移除設備？
-禁用後，刪除選項將變為可用。
+停用後，刪除選項將變為可用。
 
 ## 如何使用 PowerShell 更新 RustDesk？
 ```ps
