@@ -46,7 +46,7 @@ export const headerData = (locale?: Lang) => {
               ja: 'サポート',
               pt: 'Suporte',
               'zh-cn': '支持',
-              'zh-tw': '支持',
+              'zh-tw': '支援',
               ar: 'الدعم',
               ko: '지원',
             }),

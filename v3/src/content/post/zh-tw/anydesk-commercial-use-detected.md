@@ -32,7 +32,7 @@ metadata:
 
 AnyDesk 針對用途確實屬於個人、非商業性質的使用者,提供官方的[白名單申請](https://anydesk.com/en/commercial-use)管道。大致流程如下:
 
-1. **記下每一台相關設備的 AnyDesk 位址(ID)**——也就是開啟用戶端時顯示的號碼——包括你用來連線的 _來源_ 設備,以及你要連線的 _目標_ 設備。
+1. **記下每一台相關設備的 AnyDesk 位址(ID)**——也就是開啟使用者端時顯示的號碼——包括你用來連線的 _來源_ 設備,以及你要連線的 _目標_ 設備。
 2. **開啟 AnyDesk 官方的[商業用途/白名單申請表單](https://anydesk.com/en/commercial-use)。**
 3. **誠實描述你的實際用途**——例如「我只用它來協助父母處理家中的電腦」,或任何能真實反映你實際使用情況的說明。
 4. **送出申請,並等待 AnyDesk 審核。** 如需後續跟進,請使用表單上目前顯示的聯絡方式。
@@ -59,7 +59,7 @@ AnyDesk 並未公開任何官方門檻值,因此第三方文章中提到的任�
 
 ## 核心差異:掌控自己的伺服器
 
-根據 AnyDesk 的[用戶端設定文件](https://support.anydesk.com/docs/settings)說明,AnyDesk 同時支援直接連線與中繼連線,而且並未公開其偵測機制的運算公式——因此,這項標記並不能證明每個工作階段都會經過 AnyDesk 中繼站。執行機制可以透過用戶端、帳號和授權中繼資料來完成,而不需要將你的工作階段媒體經由雲端中繼。**RustDesk 把執行機制的所在位置移到了你自己運行的硬體上。** ID/集合伺服器(rendezvous server)、中繼站與控制台都歸你所有,因此不會再有遠端存取 SaaS 服務來把工作階段分類為個人或商業用途——[自架伺服器的理由](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)一文說明了為什麼這麼做能徹底移除這道觸發機制,而不只是將它重置。原始碼是採用 [AGPL](https://github.com/rustdesk/rustdesk) 授權的開源軟體,你可以自行稽核或編譯建置,而 RustDesk 自身的商業授權條款仍然適用於 Server Pro。
+根據 AnyDesk 的[使用者端設定文件](https://support.anydesk.com/docs/settings)說明,AnyDesk 同時支援直接連線與中繼連線,而且並未公開其偵測機制的運算公式——因此,這項標記並不能證明每個工作階段都會經過 AnyDesk 中繼站。執行機制可以透過使用者端、帳號和授權中繼資料來完成,而不需要將你的工作階段媒體經由雲端中繼。**RustDesk 把執行機制的所在位置移到了你自己運行的硬體上。** ID/集合伺服器(rendezvous server)、中繼站與控制台都歸你所有,因此不會再有遠端存取 SaaS 服務來把工作階段分類為個人或商業用途——[自架伺服器的理由](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)一文說明了為什麼這麼做能徹底移除這道觸發機制,而不只是將它重置。原始碼是採用 [AGPL](https://github.com/rustdesk/rustdesk) 授權的開源軟體,你可以自行稽核或編譯建置,而 RustDesk 自身的商業授權條款仍然適用於 Server Pro。
 
 ## 兩種模式的比較
 
@@ -75,7 +75,7 @@ AnyDesk 並未公開任何官方門檻值,因此第三方文章中提到的任�
 
 ## 自架 RustDesk 能為支援團隊帶來什麼
 
-授權在一開始就已約定:依登入使用者數 + 受管理設備數計費,不會另外收取按席位雲端訂閱費用,而且你可以[隨時升級](/zh-tw/blog/upgrade-rustdesk-license-mid-subscription-zh-tw)(按比例計費)。針對客戶支援工作,Server Pro 還提供[自架網頁控制台](https://rustdesk.com/docs)、自訂品牌的用戶端產生器、可用於個別使用者存取控制的[設備群組加上共用通訊錄](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/),以及自 Basic 方案起即可使用的 [LDAP/SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)(OIDC)。由於這套基礎設施由你自行架設,也請一併衡量相關的[資料主權與 GDPR 影響](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)——直接連線的工作階段仍然是在端點之間傳輸。各項功能是否提供會因方案而異,[請參閱 rustdesk.com/pricing](https://rustdesk.com/pricing)。
+授權在一開始就已約定:依登入使用者數 + 受管理設備數計費,不會另外收取按席位雲端訂閱費用,而且你可以[隨時升級](/zh-tw/blog/upgrade-rustdesk-license-mid-subscription-zh-tw)(按比例計費)。針對客戶支援工作,Server Pro 還提供[自架網頁控制台](https://rustdesk.com/docs)、自訂品牌的使用者端產生器、可用於個別使用者存取控制的[設備群組加上共用通訊錄](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/),以及自 Basic 方案起即可使用的 [LDAP/SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)(OIDC)。由於這套基礎設施由你自行架設,也請一併衡量相關的[資料主權與 GDPR 影響](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)——直接連線的工作階段仍然是在端點之間傳輸。各項功能是否提供會因方案而異,[請參閱 rustdesk.com/pricing](https://rustdesk.com/pricing)。
 
 ## 接下來該怎麼做
 

@@ -1,7 +1,7 @@
 ---
 title: 策略
 weight: 200
-description: "RustDesk 的策略文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的策略文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk strategy", "rustdesk policy management", "rustdesk bulk settings", "rustdesk device strategy", "rustdesk server pro strategy"]
 ---
 

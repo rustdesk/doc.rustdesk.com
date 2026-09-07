@@ -1,7 +1,7 @@
 ---
 title: 安裝
 weight: 2
-description: "RustDesk 的安裝文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的安裝文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk server pro install", "rustdesk self-host pro", "rustdesk pro docker", "rustdesk pro linux install", "rustdesk pro windows install"]
 ---
 

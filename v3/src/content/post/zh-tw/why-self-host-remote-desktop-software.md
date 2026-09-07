@@ -14,7 +14,7 @@ faq:
   - question: '自行架設遠端桌面軟體是什麼意思?'
     answer: '這代表在您自己掌控的基礎架構上,執行負責協調連線、並在直接連線失敗時進行流量中繼的伺服器,而不是讓連線工作階段透過廠商的雲端來傳送。使用 RustDesk Server Pro 時,ID/集合伺服器(rendezvous server)、中繼伺服器、主控台以及儲存的部署資料,都運行在您自己的基礎架構上。'
   - question: '實際上,自行架設 RustDesk 伺服器需要做哪些事?'
-    answer: '硬體需求並不高,而且大部分工作只需要做一次:準備一台小型 Linux 主機、只開放您實際使用的連接埠(原生用戶端需要 TCP 21115-21117 與 UDP 21116)、在反向代理設定 TLS,並排定備份計畫;之後就只是例行的修補與監控,若遇到問題,也能取得 RustDesk 的支援協助。'
+    answer: '硬體需求並不高,而且大部分工作只需要做一次:準備一台小型 Linux 主機、只開放您實際使用的連接埠(原生使用者端需要 TCP 21115-21117 與 UDP 21116)、在反向代理設定 TLS,並排定備份計畫;之後就只是例行的修補與監控,若遇到問題,也能取得 RustDesk 的支援協助。'
   - question: '自行架設有助於資料落地(data residency)與 GDPR 合規嗎?'
     answer: '有幫助——這方面您能取得真正的掌控權:您可以選擇集合伺服器、中繼伺服器、主控台與裝置資料的執行地點。不過,這只是基礎,而非絕對保證,因為直接連線仍然是在端點之間直接傳輸——因此,流量是否維持在境內、是否符合 GDPR 義務,也取決於您如何規劃路由與營運整個部署。'
   - question: '自行架設適合所有團隊嗎?'
@@ -45,15 +45,15 @@ metadata:
 | 中斷風險依賴對象       | 廠商的正常運行時間        | 您自己的維運團隊                                                                                                |
 | 由誰營運伺服器         | 廠商                      | 您自己                                                                                                          |
 
-自行架設不代表要犧牲規模或功能。針對需要支援更大規模裝置群的團隊,RustDesk 提供了[大規模裝置部署規劃指南](/zh-tw/blog/rustdesk-scale-50000-200000-devices-zh-tw)。對於 [MSP(受管理服務供應商)](/zh-tw/blog/rustdesk-for-msps-zh-tw)與內部 IT 部門而言,還有[自行架設的 Web 主控台](https://rustdesk.com/docs)、客製化品牌用戶端產生器,以及用於逐使用者存取控制的[裝置群組與共用通訊錄](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)。[LDAP/SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)(OIDC)功能則從 Basic 方案起即可使用。
+自行架設不代表要犧牲規模或功能。針對需要支援更大規模裝置群的團隊,RustDesk 提供了[大規模裝置部署規劃指南](/zh-tw/blog/rustdesk-scale-50000-200000-devices-zh-tw)。對於 [MSP(受管理服務供應商)](/zh-tw/blog/rustdesk-for-msps-zh-tw)與內部 IT 部門而言,還有[自行架設的 Web 主控台](https://rustdesk.com/docs)、客製化品牌使用者端產生器,以及用於逐使用者存取控制的[裝置群組與共用通訊錄](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)。[LDAP/SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)(OIDC)功能則從 Basic 方案起即可使用。
 
 ## 營運伺服器實際上需要做什麼
 
 掌控權伴隨著一些維運工作——比多數團隊預期的要少,而且大部分只需做一次。以下是實際情況:
 
 - **準備主機。** RustDesk 的硬體需求並不高,一台規格普通的 Linux 虛擬機——無論是地端主機或平價 VPS——即可執行 ID/集合伺服器與中繼服務。請依照您的裝置數量,以及最終有多少流量會走中繼(而非點對點)來規劃主機規格。
-- **只開放您實際使用的連接埠。** RustDesk 原生用戶端需要 **TCP 21115-21117 與 UDP 21116**,用於 NAT 測試、連線服務、註冊、心跳偵測與中繼。請勿將 21114-21119 整個範圍都對外開放。TCP 21118-21119 是 WebSocket 後端,TCP 21114 則是 Pro 版 HTTP API/主控台後端。當 HTTPS/WSS 反向代理位於 Pro API 與 WebSocket 服務前端時,該部分流量只需對外開放 TCP 443,並讓 21114 與 21118-21119 保持在內部網路。若同時有原生用戶端連線,公開的 443 並不能取代原生用戶端所需的核心連接埠。詳見[官方連接埠參考文件](https://rustdesk.com/docs/en/self-host/)。
-- **設定 TLS。** 在反向代理端終止 HTTPS 與 WSS 連線,讓憑證、API 呼叫與瀏覽器用戶端流量都透過公開的 TCP 443,而不是直接暴露未加密的 HTTP 主控台/API 或原始 WebSocket 後端。
+- **只開放您實際使用的連接埠。** RustDesk 原生使用者端需要 **TCP 21115-21117 與 UDP 21116**,用於 NAT 測試、連線服務、註冊、心跳偵測與中繼。請勿將 21114-21119 整個範圍都對外開放。TCP 21118-21119 是 WebSocket 後端,TCP 21114 則是 Pro 版 HTTP API/主控台後端。當 HTTPS/WSS 反向代理位於 Pro API 與 WebSocket 服務前端時,該部分流量只需對外開放 TCP 443,並讓 21114 與 21118-21119 保持在內部網路。若同時有原生使用者端連線,公開的 443 並不能取代原生使用者端所需的核心連接埠。詳見[官方連接埠參考文件](https://rustdesk.com/docs/en/self-host/)。
+- **設定 TLS。** 在反向代理端終止 HTTPS 與 WSS 連線,讓憑證、API 呼叫與瀏覽器使用者端流量都透過公開的 TCP 443,而不是直接暴露未加密的 HTTP 主控台/API 或原始 WebSocket 後端。
 - **執行備份。** 伺服器上儲存著您的裝置清單、使用者帳號、通訊錄與存取規則。請排定備份計畫——並且實際測試能否成功還原。
 - **維持修補節奏。** 新的伺服器版本會持續發布,而底層作業系統也由您自行負責。請決定由誰負責套用更新,以及更新頻率。
 - **進行監控。** 協調服務現在是您自己的,因此需要監看正常運行時間、磁碟空間與中繼吞吐量,警示與復原機制也都由您自行負責。

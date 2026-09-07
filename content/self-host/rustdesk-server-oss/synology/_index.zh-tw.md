@@ -1,7 +1,7 @@
 ---
 title: Synology 群暉
 weight: 22
-description: "RustDesk 的Synology 群暉文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的Synology 群暉文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk synology", "rustdesk nas", "rustdesk synology docker", "rustdesk dsm 7.2", "rustdesk synology container manager"]
 ---
 

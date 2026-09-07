@@ -1,7 +1,7 @@
 ---
 title: SMTP
 weight: 16
-description: "RustDesk 的SMTP文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的SMTP文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk smtp", "rustdesk email notifications", "rustdesk login verification email", "rustdesk invitation email", "rustdesk server pro smtp"]
 ---
 

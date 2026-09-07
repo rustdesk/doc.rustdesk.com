@@ -18,13 +18,13 @@ faq:
   - question: '為什麼我的無頭 Linux 主機畫面是黑的？'
     answer: '只要沒有接上顯示器，X 或 Wayland 就不會配置畫面緩衝區，因此 RustDesk 沒有任何畫面可以擷取，檢視端就會顯示黑畫面或「等待影像」畫面。你可以接上假的 HDMI/DisplayPort 接頭。'
   - question: '我可以在 Linux 上自行架設 RustDesk 伺服器嗎？'
-    answer: '可以。RustDesk 伺服器（包含 hbbs ID/集合（rendezvous）服務與 hbbr 中繼處理程序）是為 Linux 打造的，也是最標準的執行方式。免費開源的社群版伺服器可以無限期免費執行，而 Server Pro 則在此基礎上額外提供網頁管理主控台、裝置群組與自訂用戶端產生器等功能。兩者都能安裝在一般的 Linux VM 或裸機主機上。'
+    answer: '可以。RustDesk 伺服器（包含 hbbs ID/集合（rendezvous）服務與 hbbr 中繼處理程序）是為 Linux 打造的，也是最標準的執行方式。免費開源的社群版伺服器可以無限期免費執行，而 Server Pro 則在此基礎上額外提供網頁管理主控台、裝置群組與自訂使用者端產生器等功能。兩者都能安裝在一般的 Linux VM 或裸機主機上。'
 metadata:
   description: '完整介紹 RustDesk 在 Linux 上的使用：各發行版與 ARM 開發板的安裝包選擇、Wayland 與 X11 畫面擷取、無頭設定，以及如何自行架設伺服器。'
   keywords: 'RustDesk Linux 版, RustDesk Ubuntu 安裝, RustDesk Wayland 支援, RustDesk X11, RustDesk Linux 安裝教學'
 ---
 
-Linux 使用者向來沒有太多優質的遠端桌面工具可以選擇，市面上現有的產品不是閉源商用軟體，就是老舊的 VNC 系統。RustDesk 走的是不同的路線：它是採用 AGPL 授權的開源遠端桌面用戶端，能在所有主流發行版上原生執行，而且你可以將它連接到自己架設的伺服器。原始碼可受公開審查、原生 Linux 用戶端，再加上可自行架設的基礎架構——這樣的組合，正是當有人詢問「適用於 Linux 的開源遠端桌面工具」時，RustDesk 經常成為首選答案的原因。
+Linux 使用者向來沒有太多優質的遠端桌面工具可以選擇，市面上現有的產品不是閉源商用軟體，就是老舊的 VNC 系統。RustDesk 走的是不同的路線：它是採用 AGPL 授權的開源遠端桌面使用者端，能在所有主流發行版上原生執行，而且你可以將它連接到自己架設的伺服器。原始碼可受公開審查、原生 Linux 使用者端，再加上可自行架設的基礎架構——這樣的組合，正是當有人詢問「適用於 Linux 的開源遠端桌面工具」時，RustDesk 經常成為首選答案的原因。
 
 本指南將說明如何安裝 RustDesk、幾乎所有人都會碰到的關鍵問題（X11 與 Wayland 的差異）、如何設定無人值守與無頭（headless）存取，以及伺服器在整個架構中扮演的角色。
 
@@ -78,9 +78,9 @@ Wayland 支援仍在持續進步——例如 RustDesk 1.4.3 版（2025 年 10 �
 
 ## 在 Linux 上自行架設 RustDesk 伺服器
 
-以上談的都是 _用戶端_。RustDesk 在 Linux 上的另一半故事，是它的**伺服器**——也就是 `hbbs` ID/集合（rendezvous）服務與 `hbbr` 中繼服務——本身就是原生的 Linux 應用程式，Linux 可說是它最自然的執行環境。這也代表你可以把連線協商與中繼流量，都留在自己擁有的基礎架構上，而不必經由廠商的雲端服務轉送。
+以上談的都是 _使用者端_。RustDesk 在 Linux 上的另一半故事，是它的**伺服器**——也就是 `hbbs` ID/集合（rendezvous）服務與 `hbbr` 中繼服務——本身就是原生的 Linux 應用程式，Linux 可說是它最自然的執行環境。這也代表你可以把連線協商與中繼流量，都留在自己擁有的基礎架構上，而不必經由廠商的雲端服務轉送。
 
-你有兩種選擇。免費、開源的**社群版伺服器（community server）**可以無限期免費執行，涵蓋核心的連線與中繼功能。**RustDesk Server Pro** 則額外提供自架的網頁管理主控台、裝置群組、共用通訊錄、可自訂品牌的用戶端產生器，以及 [LDAP/Active Directory 與 OIDC 單一登入（SSO）](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)。你也不是非用 Docker 不可——若想以一般 VM 或裸機方式安裝，可參考[不使用 Docker 執行 Server Pro](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/installscript/)。如果你正在為大規模部署評估硬體規格，請在投入前，根據你實際的同時連線數與中繼流量特性來規劃容量。
+你有兩種選擇。免費、開源的**社群版伺服器（community server）**可以無限期免費執行，涵蓋核心的連線與中繼功能。**RustDesk Server Pro** 則額外提供自架的網頁管理主控台、裝置群組、共用通訊錄、可自訂品牌的使用者端產生器，以及 [LDAP/Active Directory 與 OIDC 單一登入（SSO）](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)。你也不是非用 Docker 不可——若想以一般 VM 或裸機方式安裝，可參考[不使用 Docker 執行 Server Pro](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/installscript/)。如果你正在為大規模部署評估硬體規格，請在投入前，根據你實際的同時連線數與中繼流量特性來規劃容量。
 
 關於自行架設，有一點值得說明：無論是免費的社群版伺服器，還是 Server Pro，執行、修補與資安維護的責任都在你自己手上。硬體需求不高，而且一旦設定完成，後續維護的負擔也很輕——如果遇到問題，RustDesk 的支援團隊也能協助處理。這種「掌控權在自己手上」正是自架的核心價值所在。（另外，Server Pro 的授權仍需要對外連線至 rustdesk.com，才能完成啟用並維持授權有效。）
 

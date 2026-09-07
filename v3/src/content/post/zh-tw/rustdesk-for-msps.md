@@ -12,11 +12,11 @@ author: 'RustDesk Team'
 slug: 'rustdesk-for-msps-zh-tw'
 faq:
   - question: 'RustDesk 能整合多套 MSP 遠端支援工具嗎?'
-    answer: '可以。RustDesk 的目標,是用一套自架、開源、可客製品牌的平台,取代一大堆各自獨立的工具,讓你擁有單一主控台、客製品牌用戶端產生器,以及依使用者設定的存取控制,不必再面對多套主控台與合約。'
+    answer: '可以。RustDesk 的目標,是用一套自架、開源、可客製品牌的平台,取代一大堆各自獨立的工具,讓你擁有單一主控台、客製品牌使用者端產生器,以及依使用者設定的存取控制,不必再面對多套主控台與合約。'
   - question: 'RustDesk 對 MSP 的授權計費方式是什麼?'
     answer: '計費方式是依「登入使用者數」(你的技術人員)與「受管裝置數」(你所支援的機器)計算,標準方案並包含無限並行連線,讓多位技術人員可以同時執行工作階段,不必額外購買頻道。Customized V2 方案則會另外限制並計算並行連線的費用,詳情請參閱 rustdesk.com/pricing。'
-  - question: '我可以為 RustDesk 用戶端加上白牌或客製品牌嗎?'
-    answer: '可以。RustDesk 內建客製品牌用戶端產生器,讓客戶安裝的是專為你的服務所設定的工具版本。客製用戶端產生與身分識別功能,自 Basic 方案起提供,建議在依賴這些功能前,先確認目前的方案對照表。'
+  - question: '我可以為 RustDesk 使用者端加上白牌或客製品牌嗎?'
+    answer: '可以。RustDesk 內建客製品牌使用者端產生器,讓客戶安裝的是專為你的服務所設定的工具版本。客製使用者端產生與身分識別功能,自 Basic 方案起提供,建議在依賴這些功能前,先確認目前的方案對照表。'
   - question: 'RustDesk 是自架的嗎?伺服器由誰負責維運?'
     answer: '是的,RustDesk Server Pro 採自架架構:ID/集合(rendezvous)伺服器、中繼(relay)、主控台,以及儲存的部署資料,都運作在你自己掌控的基礎架構上。你這邊需要有人負責建置主機、開放連接埠、設定 TLS,並進行修補更新——這對 MSP 來說屬於例行的基礎架構工作,一旦設定完成,維護負擔就很輕。'
   - question: 'MSP 應該如何開始評估 RustDesk?'
@@ -40,7 +40,7 @@ RustDesk Server Pro 採**自架**架構:ID/集合(rendezvous)伺服器、中繼(
 |                  | 各自獨立的雲端遠端支援工具 | RustDesk Server Pro                                                               |
 | ---------------- | -------------------------- | --------------------------------------------------------------------------------- |
 | 需要管理的主控台 | 每套工具一個               | 單一自架主控台                                                                    |
-| 品牌客製         | 附加功能或不提供           | 客製品牌用戶端產生器(Basic 方案起)                                                |
+| 品牌客製         | 附加功能或不提供           | 客製品牌使用者端產生器(Basic 方案起)                                                |
 | 部署位置         | 廠商雲端                   | 自架(地端或自有 VPS)                                                              |
 | 原始碼           | 封閉                       | 開源(AGPL)核心                                                                    |
 | 並行工作階段     | 常有上限/按頻道計費        | 標準方案無限制;[Customized V2](https://rustdesk.com/pricing#custom2) 方案則有限制 |
@@ -54,7 +54,7 @@ RustDesk Server Pro 採**自架**架構:ID/集合(rendezvous)伺服器、中繼(
 
 ## 打造品牌形象,加上存取控制
 
-RustDesk 提供 MSP 要規模化營運時真正需要的元件:自架的**[網頁主控台](https://rustdesk.com/docs)**、**客製品牌用戶端產生器**,以及用於依使用者設定存取控制的**[裝置群組與共用通訊錄](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)**。**[LDAP/SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/) (OIDC) 自 Basic 方案起即可使用。**
+RustDesk 提供 MSP 要規模化營運時真正需要的元件:自架的**[網頁主控台](https://rustdesk.com/docs)**、**客製品牌使用者端產生器**,以及用於依使用者設定存取控制的**[裝置群組與共用通訊錄](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)**。**[LDAP/SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/) (OIDC) 自 Basic 方案起即可使用。**
 
 品牌客製之所以重要,是因為你的客戶在安裝工具時看到的是你的品牌,而不是廠商的品牌。存取控制可以將技術人員限制在指派的裝置群組範圍內。在依賴這些功能之前,請先確認目前的方案對照表。
 

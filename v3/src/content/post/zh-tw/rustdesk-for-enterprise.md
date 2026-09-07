@@ -12,7 +12,7 @@ author: 'RustDesk Team'
 slug: 'rustdesk-for-enterprise-zh-tw'
 faq:
   - question: 'RustDesk 能否大規模部署到整個企業裝置群？'
-    answer: '可以。RustDesk 提供 Windows MSI 安裝包，可透過 msiexec 進行無聲、無人值守的安裝，並可透過群組原則(GPO)、Microsoft Intune、RMM 或封裝工具部署；自訂用戶端產生器(Basic 方案起提供)則能產出預先設定好連向您自己伺服器的用戶端。'
+    answer: '可以。RustDesk 提供 Windows MSI 安裝包，可透過 msiexec 進行無聲、無人值守的安裝，並可透過群組原則(GPO)、Microsoft Intune、RMM 或封裝工具部署；自訂使用者端產生器(Basic 方案起提供)則能產出預先設定好連向您自己伺服器的使用者端。'
   - question: 'RustDesk 是否提供 REST API？'
     answer: '有。RustDesk Server Pro 提供 REST API，可用於批次裝置管理與腳本自動化，讓您能以程式化方式進行裝置的上線、列舉與移除，不必只透過網頁主控台操作。請在 RustDesk 文件中確認目前的 API 端點。'
   - question: 'RustDesk 是否支援 Active Directory 與 SSO 做為企業身分驗證方案？'
@@ -34,7 +34,7 @@ metadata:
 
 ## 核心差異：自己架設，自己掌控
 
-RustDesk Server Pro 採**自架部署**。ID/會合伺服器、中繼伺服器、主控台，以及儲存的部署資料，都運行在您自己的防護邊界之內，也就是您自己操作的基礎架構上([為什麼自架是企業的預設選擇](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw))。這項單一的架構事實，決定了以下大多數企業級優勢。這也是為什麼 RustDesk 核心採用**[開源(AGPL)](https://github.com/rustdesk/rustdesk)**模式如此重要的原因：您的資安團隊可以閱讀原始碼、確切稽核用戶端的一舉一動、自行編譯，並無限期執行免費的社群版伺服器。對於必須為每一項接觸生產環境端點的軟體提出正當理由的組織而言，「您可以閱讀原始碼」不是一句行銷口號，而是一項您真正能夠滿足的採購要求。
+RustDesk Server Pro 採**自架部署**。ID/會合伺服器、中繼伺服器、主控台，以及儲存的部署資料，都運行在您自己的防護邊界之內，也就是您自己操作的基礎架構上([為什麼自架是企業的預設選擇](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw))。這項單一的架構事實，決定了以下大多數企業級優勢。這也是為什麼 RustDesk 核心採用**[開源(AGPL)](https://github.com/rustdesk/rustdesk)**模式如此重要的原因：您的資安團隊可以閱讀原始碼、確切稽核使用者端的一舉一動、自行編譯，並無限期執行免費的社群版伺服器。對於必須為每一項接觸生產環境端點的軟體提出正當理由的組織而言，「您可以閱讀原始碼」不是一句行銷口號，而是一項您真正能夠滿足的採購要求。
 
 ## 企業架構須先釐清的問題
 
@@ -46,7 +46,7 @@ RustDesk Server Pro 採**自架部署**。ID/會合伺服器、中繼伺服器�
 | 權限管理 | 裝置群組的擁有權、技術人員角色、承包商權限邊界，以及審批模式                                                |
 | 網路架構 | ID 與中繼伺服器的部署位置、直連與中繼政策、對外開放的通訊埠，以及區域路由                                   |
 | 可用性   | 容量規劃假設、監控、備份、復原目標，以及多中繼伺服器設計                                                    |
-| 端點管理 | 支援的作業系統版本、用戶端封裝方式、設定強制執行，以及更新 SLA                                              |
+| 端點管理 | 支援的作業系統版本、使用者端封裝方式、設定強制執行，以及更新 SLA                                              |
 | 資安維運 | 日誌記錄、保留政策、警示、漏洞應變，以及事件責任歸屬                                                        |
 | 授權方案 | 所需的登入使用者數、受管理裝置數，以及任何 [Customized V2](https://rustdesk.com/pricing#custom2) 併發量額度 |
 
@@ -72,11 +72,11 @@ RustDesk 採**按登入使用者數與受管理裝置數**計費，並可[在訂
 
 企業級遠端存取必須能夠回答「誰可以連線到哪些機器，而且我們能否加以證明」這個問題。RustDesk 的付費方案**自 Basic 方案起即提供 LDAP/SSO(OIDC)**，讓您能依照現有的身分來源來配置技術人員的存取權限，不必再另外維護一份平行的使用者清單。
 
-在存取權限的架構上，自架的網頁主控台提供**裝置群組與共用通訊錄，可依使用者進行存取控制**。自訂用戶端產生器與身分整合功能自 Basic 方案起提供；[請查看目前的方案內容](https://rustdesk.com/pricing)。
+在存取權限的架構上，自架的網頁主控台提供**裝置群組與共用通訊錄，可依使用者進行存取控制**。自訂使用者端產生器與身分整合功能自 Basic 方案起提供；[請查看目前的方案內容](https://rustdesk.com/pricing)。
 
 ## 大規模部署與自動化
 
-手動將遠端存取工具部署到數千台端點上根本不切實際，因此 RustDesk 支援標準的企業部署途徑。在 Windows 上，RustDesk 提供**MSI 安裝包**，可透過 `msiexec /qn` 進行無聲、無人值守的安裝，並可透過**群組原則(GPO)、Microsoft Intune、RMM，或任何封裝工具**推送安裝，同時提供命令列參數以設定安裝位置、捷徑與其他選項。搭配[自訂用戶端產生器](https://rustdesk.com/docs)使用，您部署出去的用戶端便能開箱即預先設定好連向您自己的伺服器與相關設定，不必再逐台機器手動設定。
+手動將遠端存取工具部署到數千台端點上根本不切實際，因此 RustDesk 支援標準的企業部署途徑。在 Windows 上，RustDesk 提供**MSI 安裝包**，可透過 `msiexec /qn` 進行無聲、無人值守的安裝，並可透過**群組原則(GPO)、Microsoft Intune、RMM，或任何封裝工具**推送安裝，同時提供命令列參數以設定安裝位置、捷徑與其他選項。搭配[自訂使用者端產生器](https://rustdesk.com/docs)使用，您部署出去的使用者端便能開箱即預先設定好連向您自己的伺服器與相關設定，不必再逐台機器手動設定。
 
 在大規模裝置維運方面，Server Pro 提供**REST API**，可用於批次裝置管理與腳本自動化 — 透過程式化的方式列舉裝置、自動化上線流程，並清除失效端點，不必在主控台裡一台一台手動點選。請在 [RustDesk 部署與 Server Pro 文件](https://rustdesk.com/docs/en/self-host/)中，確認您所使用版本目前的 MSI 參數、GPO/Intune 指引，以及 API 端點。
 
@@ -89,6 +89,6 @@ RustDesk 採**按登入使用者數與受管理裝置數**計費，並可[在訂
 您可以**[不必透過業務通話](https://www.youtube.com/@rustdesk)**完成評估。有兩種途徑：
 
 - **使用免費的開源社群版伺服器驗證架構。**它可以在您自己的網路上無限期執行 — 是一種低風險的方式，能向您的資安團隊證明自架模式確實可行。
-- **若要體驗 Pro 版功能 — 身分整合、存取控制、用戶端產生器 —**請至 [rustdesk.com/pricing](https://rustdesk.com/pricing) 查看目前的方案，然後發信至 [sales@rustdesk.com](mailto:sales@rustdesk.com)，詢問適用於您組織的評估方案。
+- **若要體驗 Pro 版功能 — 身分整合、存取控制、使用者端產生器 —**請至 [rustdesk.com/pricing](https://rustdesk.com/pricing) 查看目前的方案，然後發信至 [sales@rustdesk.com](mailto:sales@rustdesk.com)，詢問適用於您組織的評估方案。
 
 無論選擇哪一種途徑，建議都先在自己的環境中架設伺服器並完成驗證，再做出最終承諾。

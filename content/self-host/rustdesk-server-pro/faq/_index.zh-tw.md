@@ -24,24 +24,24 @@ weight: 600
 ## 如何使用簡單安裝腳本安裝？
 1. 從 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 獲取您的許可證，請查看[許可證](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/)頁面了解更多詳情。
 2. 啟動 VPS、裸機或 Linux VM。
-3. 如果您想使用 DNS 和 SSL，請創建 DNS 名稱，例如 `rustdesk.yourdomain.com`。
+3. 如果您想使用 DNS 和 SSL，請建立 DNS 名稱，例如 `rustdesk.yourdomain.com`。
 4. [此頁面](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/installscript/#方法-2installsh)。
 5. 複製並粘貼命令到您的 Linux 終端。
 6. 按照提示指導您完成安裝。
 7. 安裝完成後訪問 `https://rustdesk.yourdomain.com` 或 `http://youripaddress:21114`。
-8. 使用用戶名 `admin` 和密碼 `test1234` 登錄。
+8. 使用使用者名稱 `admin` 和密碼 `test1234` 登錄。
 9. 輸入您在步驟 1 中購買的許可證代碼。
 
 ## 如何從 RustDesk Server 開源版轉換為 RustDesk Server Pro？
 1. 從 [https://rustdesk.com/pricing.html](https://rustdesk.com/pricing.html) 獲取您的許可證，請查看[許可證](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/)頁面了解更多詳情。
-2. 開放 TCP 端口 21114。
+2. 開放 TCP 連接埠 21114。
 3. 登錄到您的 RustDesk Server。
-4. 如果您還沒有使用 DNS 並想使用 SSL，請創建 DNS 名稱，例如 `rustdesk.yourdomain.com`。
+4. 如果您還沒有使用 DNS 並想使用 SSL，請建立 DNS 名稱，例如 `rustdesk.yourdomain.com`。
 5. [此頁面](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#convert-from-open-source)。
 6. 複製並粘貼命令到您的 Linux 終端。
 7. 按照提示指導您完成安裝。
 8. 安裝完成後訪問 `https://rustdesk.yourdomain.com` 或 `http://youripaddress:21114`。
-9. 使用用戶名 `admin` 和密碼 `test1234` 登錄。
+9. 使用使用者名稱 `admin` 和密碼 `test1234` 登錄。
 10. 輸入您在步驟 1 中購買的許可證代碼。
 
 ## 有新版本的 RustDesk Server Pro 推出，如何升級？
@@ -134,20 +134,20 @@ rustdesk/makepkg               latest    86a981e2e18f   2 months ago   2.23GB
 
 ## 如何更改管理員密碼？
 1. 訪問 `https://rustdesk.yourdomain.com` 或 `http://youripaddress:21114`。
-2. 使用用戶名 `admin` 和密碼 `test1234` 登錄。
+2. 使用使用者名稱 `admin` 和密碼 `test1234` 登錄。
 3. 點擊右上角的 `admin`。
 4. 點擊 `設置`。
 5. 在提供的框中輸入您的新密碼。
 
-## 如何將我的許可證移動到新服務器？
+## 如何將我的許可證移動到新伺服器？
 請查看[這裡](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/#invoices-and-migration)。
 
 ## 我的 VPS 電子郵件無法正常工作
-許多 VPS 提供商阻止端口 465 和 25。
+許多 VPS 提供商阻止連接埠 465 和 25。
 
 一個簡單的檢查方法是使用 telnet。在 Linux 終端中測試輸入 `telnet your.mailserver.com 25`。在 Windows 上使用 PowerShell 輸入 `Test-NetConnection -ComputerName your.mailserver.com -Port 25`。
 
-您的郵件服務器可能不使用端口 25。請確保您使用正確的端口。
+您的郵件伺服器可能不使用連接埠 25。請確保您使用正確的連接埠。
 
 ## 我可以使用 PowerShell 或類似工具部署 RustDesk 嗎？
 當然可以，您可以在[這裡](https://rustdesk.com/docs/en/self-host/client-deployment/)找到幫助部署的腳本。
@@ -167,17 +167,17 @@ rustdesk/makepkg               latest    86a981e2e18f   2 months ago   2.23GB
 3. 選擇您想要訪問的相關組（它會自動將它們添加到相應的組中）。
 
 ## 如何自動獲取配置？
-配置會自動生成。
+配置會自動產生。
 1. 從 [GitHub](https://github.com/rustdesk/rustdesk/releases/latest) 下載最新的客戶端。
 2. 在 Web 控制台的主頁上點擊 `Windows EXE`。
 3. 填入主機和 API（如果與您的配置不同）。
 4. 點擊 `Submit`。
-5. 在 Android 上掃描 QR 碼，並將 exe 重命名為生成的名稱。
+5. 在 Android 上掃描 QR 碼，並將 exe 重命名為產生的名稱。
 
 ## 您為 RustDesk Server Pro 提供托管服務嗎？
 請聯繫我們的[銷售](mailto://sales@rustdesk.com)團隊。
 
-## 有地方可以看視頻設置指南嗎？
+## 有地方可以看影片設置指南嗎？
 是的！我們有一個 [YouTube 頻道](https://youtube.com/@RustDesk)。
 
 ## 為什麼我的日誌/設備名稱是空的？
@@ -232,26 +232,26 @@ Start-Process .\rustdesk.exe --silent-install -wait
 ## `密鑰不匹配`錯誤
 請使用[正確的密鑰](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/)配置您的客戶端。
 
-## `連接到中繼服務器失敗`錯誤
-請確保 `hbbr` 正在運行。有關 `hbbr` 的更多信息，您可以在[這裡](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/)找到。
-如果您的 `hbbr` 不在與 `hbbs` 相同的機器上運行，或者您有多個中繼服務器，或者您不在默認端口 `21117` 上運行，您必須明確告知 `hbbs`。請檢查[這裡](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/)。
+## `連接到中繼伺服器失敗`錯誤
+請確保 `hbbr` 正在運行。有關 `hbbr` 的更多資訊，您可以在[這裡](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/)找到。
+如果您的 `hbbr` 不在與 `hbbs` 相同的機器上運行，或者您有多個中繼伺服器，或者您不在預設連接埠 `21117` 上運行，您必須明確告知 `hbbs`。請檢查[這裡](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/)。
 
 ## 重置管理員帳戶的 MFA
 https://github.com/rustdesk/rustdesk/discussions/6576
 
 ## 手動為 Web 控制台設置 HTTPS
 
-### 1. 購買域名並將其解析到您的服務器 IP 地址。
+### 1. 購買域名並將其解析到您的伺服器 IP 地址。
 * 從 GoDaddy、Namecheap 或 Namesilo 等域名註冊商購買域名。
-* 使用以下之一將域名解析到您的服務器 IP 地址：
+* 使用以下之一將域名解析到您的伺服器 IP 地址：
     - 您的域名註冊商的控制面板（推薦）
     - [DNS 提供商](https://en.wikipedia.org/wiki/List_of_managed_DNS_providers)
 
-例如，如果您從 `Namesilo` 購買域名 `example.com`，而您的服務器 IP 地址是 `123.123.123.123`，您想使用 `rustdesk.example.com` 子域作為您的 HTTPS Web 控制台地址。您需要打開[鏈接](https://www.namesilo.com/account_domains.php)，點擊帶有提示 `Manage dns for the domain` 的按鈕，添加一個主機名為 `rustdesk` 和您服務器 IP 地址的 `A` 記錄。
+例如，如果您從 `Namesilo` 購買域名 `example.com`，而您的伺服器 IP 地址是 `123.123.123.123`，您想使用 `rustdesk.example.com` 子域作為您的 HTTPS Web 控制台地址。您需要打開[鏈接](https://www.namesilo.com/account_domains.php)，點擊帶有提示 `Manage dns for the domain` 的按鈕，添加一個主機名為 `rustdesk` 和您伺服器 IP 地址的 `A` 記錄。
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-button.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-add-a-record.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-table.png)
-* DNS 生效需要一些時間，https://www.whatsmydns.net 檢查域名是否已解析到您的服務器 IP 地址。步驟 6 取決於正確的解析結果。在以下步驟中，將 `YOUR_DOMAIN` 替換為您的子域，例如 `rustdesk.example.com`。
+* DNS 生效需要一些時間，https://www.whatsmydns.net 檢查域名是否已解析到您的伺服器 IP 地址。步驟 6 取決於正確的解析結果。在以下步驟中，將 `YOUR_DOMAIN` 替換為您的子域，例如 `rustdesk.example.com`。
 
 ### 2. 安裝 Nginx
 * Debian/Ubuntu：`sudo apt-get install nginx`
@@ -314,7 +314,7 @@ sudo ufw --force enable
 sudo ufw --force reload
 ```
 
-### 6. 生成 SSL 證書
+### 6. 產生 SSL 證書
 將 `$YOUR_DOMAIN` 替換為您的域名，然後運行
 `sudo certbot --nginx --cert-name $YOUR_DOMAIN --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d $YOUR_DOMAIN`。
 
@@ -354,7 +354,7 @@ server {
 
 原因可能是 Certbot 沒有找到 `rustdesk.conf` 文件，您可以嘗試以下解決方案之一：
 - 檢查步驟 5 的結果，運行 `sudo service nginx restart`。
-- 將包含 `YOUR_DOMAIN` 的服務器配置 `server{...}` 復制到 `rustdesk.conf`，並將 `location{...}` 更改為以下內容。
+- 將包含 `YOUR_DOMAIN` 的伺服器配置 `server{...}` 複製到 `rustdesk.conf`，並將 `location{...}` 更改為以下內容。
 
 ```sh
 location / {
@@ -375,12 +375,12 @@ location / {
 注意：如果您手動更改 `rustdesk.conf`，請運行 `sudo service nginx restart`。
 
 ### 7. 登錄到網頁
-* 在瀏覽器中打開 `https://YOUR_DOMAIN`，使用默認用戶名 "admin" 和密碼 "test1234" 登錄，然後將密碼更改為您自己的。
+* 在瀏覽器中打開 `https://YOUR_DOMAIN`，使用預設使用者名稱 "admin" 和密碼 "test1234" 登錄，然後將密碼更改為您自己的。
 
-### 8. 為 ID 服務器和中繼服務器添加 WebSocket Secure (WSS) 支持，以啟用所有平台的安全通信。
+### 8. 為 ID 伺服器和中繼伺服器添加 WebSocket Secure (WSS) 支援，以啟用所有平台的安全通信。
 
 將以下配置添加到 `/etc/nginx/.../rustdesk.conf` 文件的第一個 `server` 部分，然後重啟 `Nginx` 服務。
-Web 客戶端可以通過 `https://YOUR_DOMAIN/web` 訪問。自定義客戶端可以通過在高級選項中設置 `allow-websocket=Y` 來使用 WebSocket。如果使用啟用 WebSocket 的自定義客戶端，它將不會使用 TCP/UDP，只能通過中繼連接（直接 IP 連接除外）。如果只使用這種啟用 WebSocket 的客戶端，服務器可以關閉端口 21114 到 21119，只保持端口 443 開放。
+Web 客戶端可以通過 `https://YOUR_DOMAIN/web` 訪問。自訂客戶端可以通過在高級選項中設置 `allow-websocket=Y` 來使用 WebSocket。如果使用啟用 WebSocket 的自訂客戶端，它將不會使用 TCP/UDP，只能通過中繼連接（直接 IP 連接除外）。如果只使用這種啟用 WebSocket 的客戶端，伺服器可以關閉連接埠 21114 到 21119，只保持連接埠 443 開放。
 
 ```
     location /ws/id {
@@ -501,14 +501,14 @@ sudo restorecon -v '/usr/bin/hbbr'
 ## 防火牆
 
 ### 雲防火牆
-如果您在 AWS/Azure/Google/DigitalOcean 雲上運行，請在雲供應商的儀表板上開放 UDP（21116）和 TCP（21114-21119）入站端口。
+如果您在 AWS/Azure/Google/DigitalOcean 雲上運行，請在雲供應商的儀表板上開放 UDP（21116）和 TCP（21114-21119）入站連接埠。
 
 - [AWS] https://docs.aws.amazon.com/network-firewall/latest/developerguide/getting-started.html
 - [Azure] https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
 - [Google] https://cloud.google.com/firewall/docs/firewalls
 - [DigitalOcean] https://docs.digitalocean.com/products/networking/firewalls/
 
-### 本地服務器防火牆
+### 本地伺服器防火牆
 RustDesk 使用 `ufw` 設置防火牆。在某些發行版（如 CentOS 9）上可能無法工作，您可以嘗試使用 `firewall-cmd`：
 
 ```sh

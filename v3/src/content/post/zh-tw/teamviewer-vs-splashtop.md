@@ -97,7 +97,7 @@ Splashtop SaaS 可能適合重視部署簡便、公開的入門價格，以及�
 
 **效能同樣遵循「自己動手測試」的原則。** Splashtop 宣傳了具體的色彩、音訊與影格率數據；RustDesk 並未公布與之競爭的宣傳數字，而且一旦建立直接連線，工作階段便會在各端點之間以點對點（peer-to-peer）方式傳輸，而不經過廠商中繼。就像上文 Splashtop 與 TeamViewer 的數據一樣，真正能起決定作用的唯一數字，是你在自己的端點與網路上實測得出的那一個。
 
-**開放原始碼，為 MSP 工作流程而生。** RustDesk 的核心用戶端與免費伺服器採用 AGPL 授權，團隊可以在購買 Server Pro 之前，先檢視原始碼並評估基本的自架部署；TeamViewer 與 Splashtop 則皆為封閉原始碼產品。自架的 Web 主控台、自訂用戶端產生器、裝置群組，以及共用通訊錄，能滿足「一個主控台、多位技術人員」的需求，不過實際可用的功能會因方案而異，且 Customized V2 設有並行連線額度。詳見[RustDesk 適用於 MSP](/zh-tw/blog/rustdesk-for-msps-zh-tw)、[RustDesk 對比 TeamViewer](/zh-tw/blog/rustdesk-vs-teamviewer-zh-tw)，以及[自架版 Splashtop 替代方案](/zh-tw/blog/rustdesk-vs-splashtop-zh-tw)。
+**開放原始碼，為 MSP 工作流程而生。** RustDesk 的核心使用者端與免費伺服器採用 AGPL 授權，團隊可以在購買 Server Pro 之前，先檢視原始碼並評估基本的自架部署；TeamViewer 與 Splashtop 則皆為封閉原始碼產品。自架的 Web 主控台、自訂使用者端產生器、裝置群組，以及共用通訊錄，能滿足「一個主控台、多位技術人員」的需求，不過實際可用的功能會因方案而異，且 Customized V2 設有並行連線額度。詳見[RustDesk 適用於 MSP](/zh-tw/blog/rustdesk-for-msps-zh-tw)、[RustDesk 對比 TeamViewer](/zh-tw/blog/rustdesk-vs-teamviewer-zh-tw)，以及[自架版 Splashtop 替代方案](/zh-tw/blog/rustdesk-vs-splashtop-zh-tw)。
 
 ## 光譜中自架的那一端
 

@@ -1,7 +1,7 @@
 ---
 title: Windows 安裝 (deprecated)
 weight: 5
-description: "RustDesk 的Windows 安裝 (deprecated)文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的Windows 安裝 (deprecated)文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk server pro windows", "rustdesk pro windows install", "rustdesk self-host pro windows", "rustdesk windows install deprecated", "rustdesk pro license windows"]
 ---
 
@@ -37,7 +37,7 @@ GUI 版本 `RustDeskServer.setup.exe` 已不再維護，不推薦使用。
 6. 按照提示進行安裝。
 7. 點擊 `Services` 然後點擊 `Start`。
 8. 安裝完成後訪問 `http://youripaddress:21114`。
-9. 使用用戶名 `admin` 和密碼 `test1234` 登入。
+9. 使用使用者名稱 `admin` 和密碼 `test1234` 登入。
 10. 輸入您在第 1 步中購買的授權證代碼。
 
 ## 使用 IIS 作為代理

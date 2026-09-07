@@ -18,7 +18,7 @@ faq:
   - question: 'Chrome Remote Desktop 有哪些安全風險？'
     answer: '實際上有三項風險：過於簡單或容易被猜到的 PIN（最少只需六位數）、主機所綁定的 Google 帳號遭入侵，以及社交工程詐騙——有心人士誘騙受害者安裝軟體並分享存取代碼。只要為你的 Google 帳號啟用兩步驟驗證，並且絕不將代碼分享給主動聯繫你的人，就能消除現實世界中大部分的危險。'
   - question: '我可以自行架設 Chrome Remote Desktop 嗎？'
-    answer: '不行。Chrome Remote Desktop 完全透過 Google 的基礎設施進行中介，並與你的 Google 帳號綁定；你無法在自己的伺服器上執行連線服務，也無法稽核用戶端程式碼。如果自架伺服器與可檢視的原始碼對你來說很重要，開源替代方案提供的是另一種截然不同的保障模式。'
+    answer: '不行。Chrome Remote Desktop 完全透過 Google 的基礎設施進行中介，並與你的 Google 帳號綁定；你無法在自己的伺服器上執行連線服務，也無法稽核使用者端程式碼。如果自架伺服器與可檢視的原始碼對你來說很重要，開源替代方案提供的是另一種截然不同的保障模式。'
 metadata:
   description: 'Chrome Remote Desktop 安全嗎？Google 官方文件對 CRD 加密機制、PIN 保護、實際風險，以及 Google 帳號信任模式的說明。'
   keywords: 'Chrome Remote Desktop 安全嗎, Chrome Remote Desktop 安全性, Chrome Remote Desktop 加密, Chrome Remote Desktop PIN, Chrome Remote Desktop 風險, CRD 安全嗎'
@@ -58,7 +58,7 @@ CRD 刻意保持精簡，這對許多人來說正是它的吸引力所在。但�
 
 你無法自行架設 CRD 伺服器。每一個 CRD 連線都透過 Google 的雲端進行中介，並與 Google 帳號綁定；你無法在自己的伺服器上執行媒合服務，也沒有原始碼可供稽核——你只能信任 Google，相信主機的運作方式如其所述。此外，CRD 在團隊管理、集中式政策、存取控制清單、工作階段紀錄或裝置分組方面也幾乎付之闕如。這並不是在批評 Google——只是這本來就不是 CRD 設計的用途。如果你需要這些功能，就代表你已經超出了 CRD 所能負荷的範圍，這時[功能更完整的免費遠端桌面工具](/zh-tw/blog/best-free-remote-desktop-software-zh-tw)或[專門的 Chrome Remote Desktop 替代方案](/zh-tw/blog/chrome-remote-desktop-alternative-zh-tw)才是誠實的下一步選擇。
 
-這正是開源、自架伺服器模式能提供不同 _類型_ 保障之處，而不只是多了幾項功能而已。CRD 要求你在沒有公開協定可供檢視的情況下，就把它的加密視為足夠可靠；而 RustDesk 則[採用 AGPL 授權開源](https://github.com/rustdesk/rustdesk)，因此用戶端及其加密機制都擺在那裡供你稽核，而不必單憑信任來接受。而且，CRD 把你的 Google 帳號當作防線，[自架伺服器](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)則把 ID/媒合伺服器與中繼伺服器放在你自己的機器或 VPS 上——因此中介與存取政策留在你所掌控的基礎設施上，而非藏在單一的雲端登入之後——這正好直接對應到[資料主權與 GDPR](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw) 方面的考量。
+這正是開源、自架伺服器模式能提供不同 _類型_ 保障之處，而不只是多了幾項功能而已。CRD 要求你在沒有公開協定可供檢視的情況下，就把它的加密視為足夠可靠；而 RustDesk 則[採用 AGPL 授權開源](https://github.com/rustdesk/rustdesk)，因此使用者端及其加密機制都擺在那裡供你稽核，而不必單憑信任來接受。而且，CRD 把你的 Google 帳號當作防線，[自架伺服器](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)則把 ID/媒合伺服器與中繼伺服器放在你自己的機器或 VPS 上——因此中介與存取政策留在你所掌控的基礎設施上，而非藏在單一的雲端登入之後——這正好直接對應到[資料主權與 GDPR](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw) 方面的考量。
 
 需要說清楚的是，這種開放性是一體兩面的：正因為程式碼是公開的，RustDesk 本身的漏洞也同樣公開，因此請留意[最新版本](https://github.com/rustdesk/rustdesk/releases)與弱點揭露紀錄。而且自架伺服器只是把一種維護工作換成另一種——CRD 所需的帳號與 PIN 維護，變成了需要你自己修補的伺服器，而流量仍然直接在端點之間傳輸。這是另一種保障模式，而非更輕鬆的模式。
 

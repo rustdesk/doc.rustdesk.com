@@ -1,13 +1,13 @@
 ---
 title: Azure
 weight: 16
-description: "RustDesk 的Azure文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的Azure文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "rustdesk oidc azure", "rustdesk server pro azure"]
 ---
 
 ## Azure OIDC 設定是做什麼的？
 
-本設定讓使用者透過 Microsoft Entra ID 帳戶使用 OpenID Connect 登入 RustDesk Server Pro。實際操作是：在 Azure 中註冊 RustDesk 應用，把用戶端憑證填入 RustDesk Pro，並把 RustDesk Pro 指向你的 Entra 租戶 issuer URL。
+本設定讓使用者透過 Microsoft Entra ID 帳戶使用 OpenID Connect 登入 RustDesk Server Pro。實際操作是：在 Azure 中註冊 RustDesk 應用，把使用者端憑證填入 RustDesk Pro，並把 RustDesk Pro 指向你的 Entra 租戶 issuer URL。
 
 ## Azure OIDC 檢查清單
 
@@ -15,7 +15,7 @@ keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "ru
 - 在 Microsoft Entra ID 中建立應用程式註冊。
 - 將 Azure 的 `Client ID` 複製到 RustDesk Pro。
 - 建立 client secret，並立即保存 secret value。
-- 用 `Directory (tenant) ID` 生成 issuer URL。
+- 用 `Directory (tenant) ID` 產生 issuer URL。
 - 在 Azure 驗證設定裡啟用 `ID tokens`。
 
 ## Azure 中哪些值要填到 RustDesk Pro？
@@ -27,7 +27,7 @@ keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "ru
 | Client secret | `Certificates & secrets` 中建立的 secret `Value` |
 | Issuer | `https://login.microsoftonline.com/<Directory (tenant) ID>/v2.0` |
 
-## 視頻教程
+## 影片教程
 
 [https://www.youtube.com/watch?v=izGxSmifURI](https://www.youtube.com/watch?v=izGxSmifURI)
 

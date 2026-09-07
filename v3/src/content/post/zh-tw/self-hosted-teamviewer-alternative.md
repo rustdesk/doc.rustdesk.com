@@ -20,7 +20,7 @@ faq:
   - question: 'RustDesk 會像 AnyDesk 那樣標記商業用途嗎?'
     answer: '不會。RustDesk Server Pro 採自架架構,並依您購買的方案進行商業授權,因此不會像 AnyDesk 免費版那樣,存在監視您連線工作階段、判定商業用途的免費層分類器。'
   - question: 'RustDesk 適合 MSP 與較大型的 IT 維運團隊使用嗎?'
-    answer: '適合。它提供自架式網頁控制台、自訂品牌用戶端產生器,以及具備共用通訊錄、可依使用者設定存取權限的裝置群組功能,並自 Basic 方案起提供 LDAP/SSO(OIDC)支援。大規模裝置部署規劃可從約 50,000 台受管理裝置起步,若規模更大則需另行驗證評估。'
+    answer: '適合。它提供自架式網頁控制台、自訂品牌使用者端產生器,以及具備共用通訊錄、可依使用者設定存取權限的裝置群組功能,並自 Basic 方案起提供 LDAP/SSO(OIDC)支援。大規模裝置部署規劃可從約 50,000 台受管理裝置起步,若規模更大則需另行驗證評估。'
   - question: '自架部署是否有助於將資料留在境內、並符合 GDPR 規範?'
     answer: '有幫助——您能掌控會合伺服器、中繼伺服器、控制台以及儲存的裝置資料,這是很好的基礎。但這並非絕對保證:直接連線仍會在端點之間傳輸,因此流量是否留在境內、是否符合 GDPR 相關義務,還取決於您如何規劃連線路由與部署方式的實際運作。'
 
@@ -39,7 +39,7 @@ metadata:
 
 **掌控權。** 使用純雲端工具時,您的連線流量與裝置清單都存放在供應商的基礎架構上。對越來越多團隊而言——尤其是醫療產業、公部門,以及任何適用 [GDPR](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw) 的場景——能夠自行決定伺服器端資料與中繼層的運作位置,是硬性要求,而不僅僅是偏好。
 
-**自架版替代方案**能同時解決這兩項問題:RustDesk Server Pro [從設計之初就採自架架構](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)——ID/會合伺服器、中繼伺服器、控制台以及儲存的部署資料,都執行在您掌控的基礎架構上——而且其核心是採用 [AGPL](https://github.com/rustdesk/rustdesk) 授權的開源軟體,因此您可以精確稽核用戶端究竟做了什麼、依自己的時程進行修補更新,並且無限期執行免費的社群版伺服器,而不必依賴封閉式雲端。
+**自架版替代方案**能同時解決這兩項問題:RustDesk Server Pro [從設計之初就採自架架構](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)——ID/會合伺服器、中繼伺服器、控制台以及儲存的部署資料,都執行在您掌控的基礎架構上——而且其核心是採用 [AGPL](https://github.com/rustdesk/rustdesk) 授權的開源軟體,因此您可以精確稽核使用者端究竟做了什麼、依自己的時程進行修補更新,並且無限期執行免費的社群版伺服器,而不必依賴封閉式雲端。
 
 唯一需要留意的是:直接連線仍會在端點之間直接傳輸(經中繼的連線則會使用您設定的中繼伺服器),因此僅靠自架部署,並不能保證流量必然留在境內,也不能保證符合 GDPR 規範——您如何規劃連線路由與運作整個部署,仍然至關重要。
 
@@ -64,7 +64,7 @@ RustDesk 依「登入使用者數」加上「受管理裝置數」計費。**標
 
 ## 專為 MSP 與 IT 團隊打造
 
-對於需要支援大量客戶的團隊,RustDesk 在您自有的基礎架構上,重新建構了 TeamViewer 和 AnyDesk 使用者所期待的「一個控制台、多位技術人員、多台[受管理裝置](/zh-tw/blog/what-counts-as-a-managed-device-zh-tw)」工作流程:[自架式網頁控制台](https://rustdesk.com/docs)、自訂品牌用戶端產生器、具備[共用通訊錄](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)的裝置群組,以及自 Basic 方案起即提供的 [LDAP/SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)(OIDC)支援。工具的完整說明請參閱[為什麼要自架](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw),各方案的功能支援情形則請參閱 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
+對於需要支援大量客戶的團隊,RustDesk 在您自有的基礎架構上,重新建構了 TeamViewer 和 AnyDesk 使用者所期待的「一個控制台、多位技術人員、多台[受管理裝置](/zh-tw/blog/what-counts-as-a-managed-device-zh-tw)」工作流程:[自架式網頁控制台](https://rustdesk.com/docs)、自訂品牌使用者端產生器、具備[共用通訊錄](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)的裝置群組,以及自 Basic 方案起即提供的 [LDAP/SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)(OIDC)支援。工具的完整說明請參閱[為什麼要自架](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw),各方案的功能支援情形則請參閱 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
 
 ## TeamViewer 遷移必須納入考量的事項
 
@@ -83,7 +83,7 @@ TeamViewer 的部署會累積一些功能,而逐項對照的檢查清單很容�
 - **沒有商業用途偵測器。** AnyDesk 的免費層可能會將它判定為[商業用途](/zh-tw/blog/anydesk-commercial-use-detected-zh-tw)的帳號標記出來;而由您自行架設並完整購買授權的伺服器,不會有這種監視您連線工作階段的分類器。
 - **不會受併發數限制。** AnyDesk 依方案限制同時連線數;RustDesk 標準方案包含無限併發連線(Customized V2 則設有配額),因此您可以依登入使用者數與受管理裝置數、而非連線名額來重新推算——並可隨著規模成長[隨時按比例升級](/zh-tw/blog/upgrade-rustdesk-license-mid-subscription-zh-tw)。各項單價請參見 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
 - **需要重新建立的通訊錄、別名與無人值守存取。** 請盤點您所依賴的 AnyDesk 別名、通訊錄項目與無人值守存取密碼,並將它們對應至 RustDesk 的登入使用者、裝置群組與共用通訊錄。
-- **自訂命名空間或品牌用戶端。** 如果您以自訂命名空間或品牌用戶端執行 AnyDesk,請規劃對等的自訂品牌 RustDesk 用戶端,讓最終使用者持續看到一致的工具。
+- **自訂命名空間或品牌使用者端。** 如果您以自訂命名空間或品牌使用者端執行 AnyDesk,請規劃對等的自訂品牌 RustDesk 使用者端,讓最終使用者持續看到一致的工具。
 
 ## 遷移計畫
 

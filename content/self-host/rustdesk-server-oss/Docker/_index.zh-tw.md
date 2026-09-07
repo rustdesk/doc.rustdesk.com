@@ -1,7 +1,7 @@
 ---
 title: Docker
 weight: 7
-description: "RustDesk 的Docker文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的Docker文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk docker", "rustdesk docker compose", "rustdesk server docker", "rustdesk hbbs hbbr docker", "rustdesk podman", "rustdesk self-host docker"]
 ---
 
@@ -27,7 +27,7 @@ keywords: ["rustdesk docker", "rustdesk docker compose", "rustdesk server docker
 ### 要求
 您需要安裝 Docker/Podman 才能將 rustdesk-server 作為 Docker 容器執行。如有疑問，請使用此[指南](https://docs.docker.com/engine/install)安裝 Docker，以確保它是最新的！
 
-確保在防火牆中開啟這些埠口：
+確保在防火牆中開啟這些連接埠：
 - `hbbs`:
   - `21114` (TCP): 用於網頁控制台，僅在 `Pro` 版本中可用。
   - `21115` (TCP): 用於 NAT 類型測試。
@@ -37,12 +37,12 @@ keywords: ["rustdesk docker", "rustdesk docker compose", "rustdesk server docker
   - `21117` (TCP): 用於中繼服務。
   - `21119` (TCP): 用於支援網頁客戶端。
 
-*如果您不需要網頁客戶端支援，可以停用相應的埠口 `21118`、`21119`。*
+*如果您不需要網頁客戶端支援，可以停用相應的連接埠 `21118`、`21119`。*
 
 {{% notice warning %}}
-啟用 WebSocket（為[網頁客戶端](https://rustdesk.com/web/)開放埠口 `21118`/`21119`）後，`hbbs`/`hbbr` 會信任 WebSocket 連線中的 `X-Real-IP` / `X-Forwarded-For` 請求標頭來判斷客戶端的真實 IP，以便在 WebSocket 流量經過反向代理（[WSS](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms)）時保留客戶端真實 IP。這些標頭不會被驗證，因此任何能直接連線 `21118`/`21119` 的人都可以透過偽造標頭來偽裝任意 IP 位址，從而繞過基於 IP 的速率限制和封鎖，並偽造日誌中記錄的 IP 位址。
+啟用 WebSocket（為[網頁客戶端](https://rustdesk.com/web/)開放連接埠 `21118`/`21119`）後，`hbbs`/`hbbr` 會信任 WebSocket 連線中的 `X-Real-IP` / `X-Forwarded-For` 請求標頭來判斷客戶端的真實 IP，以便在 WebSocket 流量經過反向代理（[WSS](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms)）時保留客戶端真實 IP。這些標頭不會被驗證，因此任何能直接連線 `21118`/`21119` 的人都可以透過偽造標頭來偽裝任意 IP 位址，從而繞過基於 IP 的速率限制和封鎖，並偽造日誌中記錄的 IP 位址。
 
-如果您使用網頁客戶端，請只透過反向代理（由代理自行設定 `X-Real-IP`）公開 WebSocket 埠口，並透過防火牆規則限制 `21118`/`21119` 只接受來自反向代理的連線。如果您不使用網頁客戶端，請保持埠口 `21118`、`21119` 關閉。
+如果您使用網頁客戶端，請只透過反向代理（由代理自行設定 `X-Real-IP`）公開 WebSocket 連接埠，並透過防火牆規則限制 `21118`/`21119` 只接受來自反向代理的連線。如果您不使用網頁客戶端，請保持連接埠 `21118`、`21119` 關閉。
 {{% /notice %}}
 
 ### Docker 範例
@@ -62,7 +62,7 @@ sudo docker run --name hbbr -v ./data:/root -td --net=host --restart unless-stop
 {{% /notice %}}
 
 {{% notice note %}}
-如果您無法使用 `-td` 看到日誌，可以透過 `docker logs hbbs` 查看日誌。或者您可以使用 `-it` 執行，`hbbs/hbbr` 不會作為守護進程模式執行。
+如果您無法使用 `-td` 看到日誌，可以透過 `docker logs hbbs` 查看日誌。或者您可以使用 `-it` 執行，`hbbs/hbbr` 不會作為守護程序模式執行。
 {{% /notice %}}
 
 ### Docker Compose 範例

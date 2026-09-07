@@ -17,8 +17,8 @@ faq:
     answer: '自行架設改變的是「誰掌握定價權」：使用 RustDesk Server Pro 時，伺服器由你自行架設，因此成本是你的基礎設施加上授權費用，而不是由廠商決定的續約價格。此產品仍採年度授權條款，因此每次續約時都應比對目前的定價頁面。'
   - question: '從 AnyDesk 轉換過去，值得付出遷移成本嗎？'
     answer: '確實存在一次性的轉換成本，包括遷移時間、部分人員再培訓，以及架設自己的伺服器；但當漲價不斷重複發生時，轉換通常能在一到兩個續約週期內回本。建議先估算一次轉換成本，再與你每次續約都要吸收的漲價幅度相互權衡。'
-  - question: '我可以稽核 RustDesk 用戶端實際的運作內容嗎？'
-    answer: '可以——RustDesk 採用 AGPL 開源授權。你可以確切了解在你的終端裝置上執行的程式碼、從原始碼自行建置用戶端，並且可以無限期執行免費的社群版伺服器。'
+  - question: '我可以稽核 RustDesk 使用者端實際的運作內容嗎？'
+    answer: '可以——RustDesk 採用 AGPL 開源授權。你可以確切了解在你的終端裝置上執行的程式碼、從原始碼自行建置使用者端，並且可以無限期執行免費的社群版伺服器。'
   - question: '自行架設一定比 AnyDesk 便宜嗎？'
     answer: '並非在所有情況下都是如此。請以相同的登入使用者數、受管理裝置數、並行連線數、功能、基礎設施與支援需求，比較目前的報價；詳見 rustdesk.com/pricing。'
 
@@ -45,11 +45,11 @@ AnyDesk 以**分級的年度訂閱**形式銷售，依受管理裝置、並行�
 
 RustDesk 的授權方式是**按登入使用者數加上受管理裝置數**計費，你也可以透過按比例分攤費用的方式進行[升級](/zh-tw/blog/upgrade-rustdesk-license-mid-subscription-zh-tw)。標準方案包含無限制的[並行連線](https://rustdesk.com/pricing)；[Customized V2](https://rustdesk.com/pricing#custom2) 則另有連線數限制，並採獨立計價。如需確切的授權價格與方案級距，請[參閱 rustdesk.com/pricing](https://rustdesk.com/pricing)。
 
-## 掌握自己的資料——並稽核用戶端
+## 掌握自己的資料——並稽核使用者端
 
-成本並非團隊離開的唯一理由。自行架設讓你可以選擇集合伺服器、中繼伺服器、主控台，以及受管理裝置資料的所在位置——不過這本身並不保證終端裝置之間的直接流量會停留在同一個國家，也不代表這樣的部署方式就符合法規要求。完整的資料流向請參閱[資料主權指南](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)。而且由於 RustDesk 的核心是**採用 [AGPL](https://github.com/rustdesk/rustdesk) 授權的開放原始碼**，你可以閱讀原始碼、驗證用戶端在你的終端裝置上的實際行為、自行建置，並無限期執行免費的社群版伺服器。（想單獨評估這家現有廠商的資安狀況嗎？請參閱 [AnyDesk 安全嗎？](/zh-tw/blog/is-anydesk-safe-zh-tw)）
+成本並非團隊離開的唯一理由。自行架設讓你可以選擇集合伺服器、中繼伺服器、主控台，以及受管理裝置資料的所在位置——不過這本身並不保證終端裝置之間的直接流量會停留在同一個國家，也不代表這樣的部署方式就符合法規要求。完整的資料流向請參閱[資料主權指南](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)。而且由於 RustDesk 的核心是**採用 [AGPL](https://github.com/rustdesk/rustdesk) 授權的開放原始碼**，你可以閱讀原始碼、驗證使用者端在你的終端裝置上的實際行為、自行建置，並無限期執行免費的社群版伺服器。（想單獨評估這家現有廠商的資安狀況嗎？請參閱 [AnyDesk 安全嗎？](/zh-tw/blog/is-anydesk-safe-zh-tw)）
 
-對 MSP 與 IT 團隊來說，Pro 版本還加入了[自架網頁主控台](https://rustdesk.com/docs)、自訂品牌用戶端產生器，以及用於按使用者設定存取控制的[裝置群組與共用通訊錄](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)；[LDAP／SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)（OIDC）自 Basic 方案起即可使用，針對更大型的環境，RustDesk 也發布了[大型裝置群規劃指南](/zh-tw/blog/rustdesk-scale-50000-200000-devices-zh-tw)。
+對 MSP 與 IT 團隊來說，Pro 版本還加入了[自架網頁主控台](https://rustdesk.com/docs)、自訂品牌使用者端產生器，以及用於按使用者設定存取控制的[裝置群組與共用通訊錄](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)；[LDAP／SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)（OIDC）自 Basic 方案起即可使用，針對更大型的環境，RustDesk 也發布了[大型裝置群規劃指南](/zh-tw/blog/rustdesk-scale-50000-200000-devices-zh-tw)。
 
 ## 續約議價 vs. 轉換：損益平衡點
 
@@ -70,7 +70,7 @@ RustDesk 的授權方式是**按登入使用者數加上受管理裝置數**計�
 | 所需授權使用者數與終端裝置數       |         你標註日期的報價 |             登入使用者數加上受管理裝置數 |
 | 所需並行連線數或工作階段數         |       方案額度與附加功能 | 標準方案無限制；Customized V2 有明確額度 |
 | 主機代管、備份、監控與頻寬         | 通常已包含在 SaaS 費用中 |                         你的基礎設施成本 |
-| 部署與遷移人力                     |         政策／用戶端變更 |       伺服器架設、用戶端部署、存取權對應 |
+| 部署與遷移人力                     |         政策／使用者端變更 |       伺服器架設、使用者端部署、存取權對應 |
 | 持續維運管理                       |           廠商／帳號管理 |       修補更新、憑證、容量規劃、事件應變 |
 | 選用的品牌客製化、SSO 與管理控制項 | 正確的方案級距／附加功能 |               正確的 Server Pro 方案級距 |
 

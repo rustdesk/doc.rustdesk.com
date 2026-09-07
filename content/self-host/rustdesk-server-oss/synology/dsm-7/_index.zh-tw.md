@@ -1,7 +1,7 @@
 ---
 title: Synology DSM 7.2
 weight: 20
-description: "RustDesk 的Synology DSM 7.2文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的Synology DSM 7.2文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk synology dsm 7.2", "rustdesk container manager", "rustdesk synology nas", "rustdesk synology docker", "rustdesk self-host synology"]
 ---
 <!--to translater: When translating elements like "buttons", don't just translate, please refer actual naming in their interface.-->
@@ -68,7 +68,7 @@ services:
     restart: always
 
 # 因為使用 docker host mode
-# 以防你忘記這些端口:
+# 以防你忘記這些連接埠:
 # 21114 TCP 用於網頁控制台，僅在 Pro 版本中可用
 # 21115 TCP NAT 類型測試
 # 21116 TCP TCP 打洞
@@ -94,7 +94,7 @@ services:
 
 如果您還是無法找到設定，Google 搜尋 `{路由器廠牌} + port forwarding` 或 `{路由器型號} + port forwarding`
 
-開啟這些需要的端口:
+開啟這些需要的連接埠:
   * `21115` `TCP` NAT 類型測試
   * `21116` `TCP` TCP 打洞
   * `21116` `UDP` 心跳/ID 伺服器

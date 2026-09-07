@@ -1,7 +1,7 @@
 ---
 title: 2FA
 weight: 16
-description: "RustDesk 的2FA文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的2FA文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk 2fa", "rustdesk totp", "rustdesk email verification", "rustdesk authenticator", "rustdesk server pro 2fa"]
 ---
 

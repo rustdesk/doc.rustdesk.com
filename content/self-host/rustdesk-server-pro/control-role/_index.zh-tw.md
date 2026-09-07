@@ -1,7 +1,7 @@
 ---
 title: 控制角色
 weight: 18
-description: "RustDesk 的控制角色文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的控制角色文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk server pro control role", "rustdesk access control vs strategy", "rustdesk remote control policy"]
 ---
 
@@ -47,7 +47,7 @@ keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk ser
 
 每個權限有三種狀態：
 
-- **使用用戶端設定**：不覆蓋，使用被控裝置的本機設定
+- **使用使用者端設定**：不覆蓋，使用被控裝置的本機設定
 - **啟用**：明確啟用此權限（覆蓋本機設定）
 - **停用**：明確停用此權限（覆蓋本機設定）
 
@@ -59,8 +59,8 @@ keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk ser
 | 啟用 | 停用 | **啟用** |
 | 停用 | 啟用 | **停用** |
 | 停用 | 停用 | 停用 |
-| 使用用戶端設定 | 啟用 | 啟用 |
-| 使用用戶端設定 | 停用 | 停用 |
+| 使用使用者端設定 | 啟用 | 啟用 |
+| 使用使用者端設定 | 停用 | 停用 |
 
 **特殊情況：遠端配置修改**
 
@@ -70,7 +70,7 @@ keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk ser
 |---|---|
 | 任一停用 | **停用** |
 | 無停用，任一啟用 | **啟用** |
-| 全部使用用戶端設定 | 使用本機設定 |
+| 全部使用使用者端設定 | 使用本機設定 |
 
 ### 套用哪個角色
 

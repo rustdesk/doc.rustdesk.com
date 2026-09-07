@@ -18,7 +18,7 @@ faq:
   - question: 'RDP 可以在 Windows Home 上使用嗎？'
     answer: '不行。根據 Microsoft 的說明，Windows Home 版本無法作為遠端桌面主機；只有 Professional、Enterprise、Education，以及 Windows Server 版本才能接受傳入的 RDP 連線。RustDesk 則可以在 Windows Home、macOS、Linux 和 Android 上代管遠端工作階段；iOS 僅能作為控制端使用。'
   - question: 'RustDesk 可以連線到 Mac 或 Linux 電腦嗎？'
-    answer: '可以。RustDesk 能透過其支援的桌面版和行動版控制端應用程式，控制 macOS 和 Linux 主機。RDP 主要是 Windows 主機通訊協定，因此若要連線至 macOS 或 Linux 主機，通常需要另外加裝第三方伺服器或用戶端。適用於 iOS 的 RustDesk 可以控制其他裝置，但無法將 iPhone 或 iPad 開放作為遠端控制主機。'
+    answer: '可以。RustDesk 能透過其支援的桌面版和行動版控制端應用程式，控制 macOS 和 Linux 主機。RDP 主要是 Windows 主機通訊協定，因此若要連線至 macOS 或 Linux 主機，通常需要另外加裝第三方伺服器或使用者端。適用於 iOS 的 RustDesk 可以控制其他裝置，但無法將 iPhone 或 iPad 開放作為遠端控制主機。'
 metadata:
   description: 'RustDesk 與 Microsoft RDP 逐項比較：跨平台涵蓋範圍、無需 VPN 即可透過網際網路存取、區域網路效能、AD 整合，以及安全性取捨。'
   keywords: 'RustDesk 與 RDP 比較, RustDesk 與 Microsoft 遠端桌面比較, 無需 VPN 透過網際網路使用 RDP, 跨平台 RDP 替代方案'
@@ -32,7 +32,7 @@ metadata:
 
 RDP 是**內建於 Windows 的通訊協定**。當您啟用遠端桌面功能時，Windows 會開啟一個監聽連接埠（TCP 3389）並等待傳入連線。這種設計在區域網路上運作得很優雅，但要跨越網際網路就顯得棘手，因為必須有*某種方式*將外部連線導向該連接埠——例如 VPN、RD Gateway，或是路由器上的連接埠轉發。
 
-RustDesk 則採用相反的模式。用戶端會主動建立**傳出**連線，連接至 ID／集合伺服器（rendezvous server），由該伺服器協調兩台裝置之間的點對點工作階段；若無法建立直接路徑，則會回退使用中繼連線。根據 [RustDesk 文件](https://rustdesk.com/docs/en/)，工作階段預設採用端對端加密（以 NaCl 為基礎），您可以將每個用戶端指向公共基礎架構、您自行架設的伺服器，或是您自己撰寫的集合／中繼伺服器。由於端點用戶端是主動發起傳出連線，RustDesk 得以在不使用 VPN、也不必為每個端點逐一設定連接埠轉發的情況下，穿越 NAT 與防火牆。這項「無需開放傳入連接埠」的優勢僅適用於端點：自行架設的伺服器本身，仍需在文件所列的 ID、集合、中繼，以及選用的 WebSocket 服務連接埠上接受傳入連線。
+RustDesk 則採用相反的模式。使用者端會主動建立**傳出**連線，連接至 ID／集合伺服器（rendezvous server），由該伺服器協調兩台裝置之間的點對點工作階段；若無法建立直接路徑，則會回退使用中繼連線。根據 [RustDesk 文件](https://rustdesk.com/docs/en/)，工作階段預設採用端對端加密（以 NaCl 為基礎），您可以將每個使用者端指向公共基礎架構、您自行架設的伺服器，或是您自己撰寫的集合／中繼伺服器。由於端點使用者端是主動發起傳出連線，RustDesk 得以在不使用 VPN、也不必為每個端點逐一設定連接埠轉發的情況下，穿越 NAT 與防火牆。這項「無需開放傳入連接埠」的優勢僅適用於端點：自行架設的伺服器本身，仍需在文件所列的 ID、集合、中繼，以及選用的 WebSocket 服務連接埠上接受傳入連線。
 
 ## 平台涵蓋範圍
 
@@ -46,7 +46,7 @@ RustDesk 可以在**Windows（包含 Home 版）、macOS、Linux 和 Android**�
 
 暴露在外的 RDP，是網路犯罪中最常遭到濫用的入侵管道之一。美國聯邦調查局（FBI）網路犯罪投訴中心（Internet Crime Complaint Center）多年前便已提出警告，指出「網路攻擊者……日益頻繁地利用遠端桌面通訊協定進行惡意活動」（[IC3 PSA](https://www.ic3.gov/PSA/2018/PSA180927)），而且這種趨勢至今只增不減——RDP 遭入侵，仍是勒索軟體事件中最常見的初始入侵管道之一（[RH-ISAC](https://rhisac.org/ransomware/remote-desktop-protocol-use-in-ransomware-attacks/)）。全網掃描工具能在短短幾分鐘內找到新暴露的連接埠 3389，並開始對其發動憑證填充攻擊（credential-stuffing）。
 
-發布 RDP 較安全的做法，是透過妥善設定的 VPN，或搭配網路層級驗證（Network Level Authentication）的 RD Gateway，但這些都是需要您自行維護的基礎架構。RustDesk 採用的是主動註冊、NAT 穿越，以及中繼回退機制，而非在每個端點上直接暴露 RDP。即便如此，您仍需要使用最新版本的用戶端、實施嚴謹的存取控管，並持續留意公開的漏洞紀錄。
+發布 RDP 較安全的做法，是透過妥善設定的 VPN，或搭配網路層級驗證（Network Level Authentication）的 RD Gateway，但這些都是需要您自行維護的基礎架構。RustDesk 採用的是主動註冊、NAT 穿越，以及中繼回退機制，而非在每個端點上直接暴露 RDP。即便如此，您仍需要使用最新版本的使用者端、實施嚴謹的存取控管，並持續留意公開的漏洞紀錄。
 
 ## RustDesk 與 RDP 一覽表
 
@@ -55,7 +55,7 @@ RustDesk 可以在**Windows（包含 Home 版）、macOS、Linux 和 Android**�
 | 成本             | 開源；免費自架社群版伺服器                                         | 免費，內建於 Windows Pro/Enterprise/Education/Server                                                                                                                            |
 | 原始碼           | 開源（AGPL），可供稽核                                             | 專有（封閉原始碼）                                                                                                                                                              |
 | 主機平台         | Windows、macOS、Linux、Android                                     | Windows Pro/Enterprise/Education/Server（[不含 Home 版](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/remotepc/remote-desktop-allow-access)） |
-| 控制端平台       | Windows、macOS、Linux、Android、iOS                                | Windows、macOS、iOS、Android，以及其他 Microsoft 用戶端                                                                                                                         |
+| 控制端平台       | Windows、macOS、Linux、Android、iOS                                | Windows、macOS、iOS、Android，以及其他 Microsoft 使用者端                                                                                                                         |
 | 網際網路存取     | 透過集合＋中繼進行 NAT 穿越，無需 VPN 或連接埠轉發                 | 需要 VPN、RD Gateway 或連接埠轉發                                                                                                                                               |
 | 暴露的傳入連接埠 | 端點無需暴露；自架伺服器則有服務連接埠                             | TCP 3389（除非透過通道），屬[勒索軟體入侵管道](https://www.ic3.gov/PSA/2018/PSA180927)                                                                                          |
 | 加密方式         | 預設端對端加密（NaCl）（[文件](https://rustdesk.com/docs/en/)）    | TLS/NLA；正確設定時具高強度                                                                                                                                                     |

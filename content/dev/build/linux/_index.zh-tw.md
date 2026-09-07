@@ -1,7 +1,7 @@
 ---
 title: Linux
 weight: 10
-description: "RustDesk 的Linux文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的Linux文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["build rustdesk linux", "rustdesk linux build", "rustdesk vcpkg linux", "rustdesk cargo run linux", "rustdesk ubuntu build"]
 ---
 

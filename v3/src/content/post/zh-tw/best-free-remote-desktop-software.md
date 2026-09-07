@@ -40,7 +40,7 @@ metadata:
 
 RustDesk 之所以排在第一位，是因為它以 **[AGPL](https://github.com/rustdesk/rustdesk)** 授權開放原始碼，而且**社群伺服器沒有授權費用，也沒有商業用途的分類機制**。你仍然需要為自己選擇的主機代管與維運方式付費。它支援跨平台（Windows、macOS、Linux、Android、iOS）。在 Windows、macOS 與 Linux 主機上，內建檔案傳輸與永久密碼無人值守存取功能；Android 可作為有人值守連線的被控端，而 iOS 版應用程式則僅能作為控制端。原始碼可供獨立檢視與建置。
 
-**取捨之處：**你得自行架設伺服器——不過硬體需求不高，設定完成後維護也相當輕鬆。得有人準備主機、開放連接埠、設定 TLS，並隨著時間持續更新修補。免費的社群伺服器也不等於付費的 Server Pro——像是[網頁控制台、自訂品牌用戶端，以及裝置群組](https://rustdesk.com/docs)這類團隊功能，都屬於 Server Pro（同樣可自架，但並非免費）。目前的條款請參見 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
+**取捨之處：**你得自行架設伺服器——不過硬體需求不高，設定完成後維護也相當輕鬆。得有人準備主機、開放連接埠、設定 TLS，並隨著時間持續更新修補。免費的社群伺服器也不等於付費的 Server Pro——像是[網頁控制台、自訂品牌使用者端，以及裝置群組](https://rustdesk.com/docs)這類團隊功能，都屬於 Server Pro（同樣可自架，但並非免費）。目前的條款請參見 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
 
 ### Chrome Remote Desktop——免費又簡單，由 Google 管理協調機制
 
@@ -54,9 +54,9 @@ VNC 可說是開放式遠端存取的元老級技術。像 [TigerVNC](https://ti
 
 **取捨之處：**純粹的 VNC 只是一種顯示協定，並未內建 NAT 穿透或中繼功能，因此若要跨網際網路連線到目標機器，通常得自行設定**連接埠轉發（port-forwarding）或 VPN**——並在此基礎上額外設定加密與存取控制。它強大又免費，但周邊的基礎設施得靠你自己搭建。（相關取捨可參見我們的 [RustDesk 與 VNC 比較](/zh-tw/blog/rustdesk-vs-vnc-zh-tw)一文。）
 
-### Apache Guacamole——免用戶端的免費 HTML5 閘道
+### Apache Guacamole——免使用者端的免費 HTML5 閘道
 
-[Apache Guacamole](https://guacamole.apache.org/) 是一款以 Apache 2.0 授權釋出的「免用戶端遠端桌面閘道」。由於採用 HTML5 技術，「一旦 Guacamole 安裝在伺服器上，你只需要一個網頁瀏覽器就能存取你的桌面」——不需要外掛程式，也不需要用戶端軟體。它負責代理連線至 **RDP、VNC 與 SSH** 等標準協定。
+[Apache Guacamole](https://guacamole.apache.org/) 是一款以 Apache 2.0 授權釋出的「免使用者端遠端桌面閘道」。由於採用 HTML5 技術，「一旦 Guacamole 安裝在伺服器上，你只需要一個網頁瀏覽器就能存取你的桌面」——不需要外掛程式，也不需要使用者端軟體。它負責代理連線至 **RDP、VNC 與 SSH** 等標準協定。
 
 **取捨之處：**Guacamole 本身就是一項基礎設施專案。你得自行架設閘道，將其串接至現有的 RDP／VNC／SSH 端點，並負責管理維運。當你已經擁有這些後端連線、並且想要以瀏覽器為基礎的集中式存取時，它的優勢最為明顯——但若只是想要一個兩分鐘就能建立的點對點連線工具，它就顯得有些大材小用。
 
@@ -66,11 +66,11 @@ VNC 可說是開放式遠端存取的元老級技術。像 [TigerVNC](https://ti
 
 **取捨之處：**它以代理程式為基礎，並以管理為導向，這意味著相較於輕量級的點對點工具，需要更多的設定步驟，而且介面設計是針對系統管理員。如果你想要一套免費的裝置群管理控制台，它相當出色；但如果你只是想要最簡單的一次性連線，那它可能就超出你所需要的了。
 
-### Remmina——免費的 Linux 用戶端
+### Remmina——免費的 Linux 使用者端
 
-[Remmina](https://remmina.org/) 是一款免費、採用 copyleft 授權的遠端桌面**用戶端**，適用於 Linux 及其他類 Unix 系統，並能在單一整合介面中支援 RDP、VNC、SSH、SPICE 等多種協定。
+[Remmina](https://remmina.org/) 是一款免費、採用 copyleft 授權的遠端桌面**使用者端**，適用於 Linux 及其他類 Unix 系統，並能在單一整合介面中支援 RDP、VNC、SSH、SPICE 等多種協定。
 
-**取捨之處：**Remmina 是一款 _用戶端_ 軟體，而非完整的遠端存取系統。它只負責連線到已支援這些協定的伺服器，並不提供被控端功能、NAT 穿透，或管理層機制。它是 Linux 上首選的免費用戶端——你需要在伺服器端另行搭配相應的解決方案。
+**取捨之處：**Remmina 是一款 _使用者端_ 軟體，而非完整的遠端存取系統。它只負責連線到已支援這些協定的伺服器，並不提供被控端功能、NAT 穿透，或管理層機制。它是 Linux 上首選的免費使用者端——你需要在伺服器端另行搭配相應的解決方案。
 
 ## 免費遠端桌面軟體比較
 
@@ -81,7 +81,7 @@ VNC 可說是開放式遠端存取的元老級技術。像 [TigerVNC](https://ti
 | VNC（TigerVNC／TightVNC／UltraVNC） | 是（開放協定）              | 可以（需自行組裝）             | 搭配 VPN 的區網／自建存取        |
 | Apache Guacamole                    | 是（Apache 2.0）            | 可以（閘道）                   | 以瀏覽器存取既有的 RDP／VNC／SSH |
 | MeshCentral                         | 是（Apache 2.0）            | 可以（以代理程式為基礎）       | 管理裝置群                       |
-| Remmina                             | 是（僅用戶端）              | 不適用（用戶端）               | Linux 上的免費遠端桌面用戶端     |
+| Remmina                             | 是（僅使用者端）              | 不適用（使用者端）               | Linux 上的免費遠端桌面使用者端     |
 
 關於 TeamViewer 與 AnyDesk 的確切條款，請查閱其官方最新頁面——我們不會引用自己無法保證正確性的數字或授權條款。
 
@@ -94,7 +94,7 @@ VNC 可說是開放式遠端存取的元老級技術。像 [TigerVNC](https://ti
 - **沒有黑箱供應商。** 連線工作階段透過你自己掌控的基礎設施運行，而非可能對你計量或標記的雲端服務。
 - **涵蓋所有主要平台。** Windows、macOS、Linux 與 Android 皆可作為被控端；iOS 則為控制端應用程式。
 
-當你的團隊需求超出免費伺服器所能負荷時，[Server Pro](https://rustdesk.com/pricing) 提供了控制台、自訂用戶端、裝置群組與 SSO 單一登入等功能——同樣可自架，並依登入使用者數與受管裝置數計價。
+當你的團隊需求超出免費伺服器所能負荷時，[Server Pro](https://rustdesk.com/pricing) 提供了控制台、自訂使用者端、裝置群組與 SSO 單一登入等功能——同樣可自架，並依登入使用者數與受管裝置數計價。
 
 ## 免費，而且真正屬於你
 
@@ -102,6 +102,6 @@ VNC 可說是開放式遠端存取的元老級技術。像 [TigerVNC](https://ti
 
 ## 免費起步，合適的話就持續免費
 
-社群伺服器是那種難得一見、能夠始終保持免費的方案：開放原始碼、沒有到期日，也沒有隨時可能被觸發的商業用途標記。只要它還能滿足你的需求，就可以持續使用下去；如果日後你的團隊想要 Pro 控制台與品牌客製用戶端，[sales@rustdesk.com](mailto:sales@rustdesk.com) 可協助處理評估條款相關問題，最新價格則可參見 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
+社群伺服器是那種難得一見、能夠始終保持免費的方案：開放原始碼、沒有到期日，也沒有隨時可能被觸發的商業用途標記。只要它還能滿足你的需求，就可以持續使用下去；如果日後你的團隊想要 Pro 控制台與品牌客製使用者端，[sales@rustdesk.com](mailto:sales@rustdesk.com) 可協助處理評估條款相關問題，最新價格則可參見 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
 
 到 [GitHub](https://github.com/rustdesk/rustdesk) 閱讀原始碼、架設一台伺服器，親自驗證判斷。

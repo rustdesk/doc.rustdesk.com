@@ -1,7 +1,7 @@
 ---
 title: 網頁控制台
 weight: 10
-description: "RustDesk 的網頁控制台文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的網頁控制台文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk web console", "rustdesk server pro console", "rustdesk port 21114", "rustdesk device management", "rustdesk admin console"]
 ---
 
@@ -635,7 +635,7 @@ Windows 命令列預設不會輸出結果。若要查看輸出，可使用：
 **篩選條件：**
 
     --remote : peer ID（連線或檔案稽核用）
-    --conn-type : 0=遠端桌面, 1=檔案傳輸, 2=端口傳輸, 3=觀看攝影機, 4=終端機
+    --conn-type : 0=遠端桌面, 1=檔案傳輸, 2=連接埠傳輸, 3=觀看攝影機, 4=終端機
     --device : 設備 ID（警示稽核用）
     --operator : 操作者使用者名稱（控制台稽核用）
     --created-at : 本地時間篩選，例如 "2025-09-16 14:15:57"

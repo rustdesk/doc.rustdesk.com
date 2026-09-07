@@ -1,7 +1,7 @@
 ---
 title: macOS
 weight: 21
-description: "RustDesk 的macOS文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的macOS文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["build rustdesk macos", "rustdesk mac build", "rustdesk sciter mac", "rustdesk flutter macos build", "rustdesk vcpkg macos"]
 ---
 
@@ -35,7 +35,7 @@ keywords: ["build rustdesk macos", "rustdesk mac build", "rustdesk sciter mac", 
 brew install python3 create-dmg nasm cmake gcc wget ninja pkg-config wget rustup
 ```
 
-某些安裝可能會失敗，因為我們系統上不存在某些目標文件夾。在這種情況下，創建文件夾、設置所有者和權限，然後再次運行 `brew` 命令。例如，如果 `/usr/local/include` 不存在：
+某些安裝可能會失敗，因為我們系統上不存在某些目標文件夾。在這種情況下，建立文件夾、設置所有者和權限，然後再次運行 `brew` 命令。例如，如果 `/usr/local/include` 不存在：
 ```sh
 sudo mkdir /usr/local/include
 sudo chown <使用者名稱>:admin /usr/local/include
@@ -62,7 +62,7 @@ rustup-init
 rustup default 1.75.0
 rustup component add rustfmt
 ```
-要查看已安裝和默認的 Rust 工具鏈概覽，請運行 `rustup show`。
+要查看已安裝和預設的 Rust 工具鏈概覽，請運行 `rustup show`。
 
 ## 下載 RustDesk 源文件
 
@@ -81,7 +81,7 @@ export PATH=~/Library/Python/3.9/bin:$PATH
 ```
 完成後，再次運行失敗的命令。記得也要編輯 `~/.bash_profile`。
 
-## 安裝用戶界面組件
+## 安裝使用者界面組件
 RustDesk 可以使用 [Sciter](https://sciter.com/) 和 [Flutter](https://flutter.dev/) 構建。這兩者都需要額外的組件，因此請按照相關版本的步驟操作，或兩者都操作。
 
 ### Sciter
@@ -104,7 +104,7 @@ brew install fvm cocoapods
 ```sh
 fvm global 3.16.9
 ```
-FVM 旨在使用更複雜的設置，它可以為不同的項目提供不同的 Flutter 版本，但這超出了本指南的範圍。相反，只需手動將 FVM 提供的默認 Flutter 位置添加到您的 `PATH`，這意味著您必須使用 `fvm global` 來切換 Flutter 版本：
+FVM 旨在使用更複雜的設置，它可以為不同的項目提供不同的 Flutter 版本，但這超出了本指南的範圍。相反，只需手動將 FVM 提供的預設 Flutter 位置添加到您的 `PATH`，這意味著您必須使用 `fvm global` 來切換 Flutter 版本：
 
 ```sh
 export PATH=$HOME/fvm/default/bin:$PATH

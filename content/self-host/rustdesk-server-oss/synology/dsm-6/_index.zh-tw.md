@@ -1,7 +1,7 @@
 ---
 title: Synology DSM 6
 weight: 22
-description: "RustDesk 的Synology DSM 6文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的Synology DSM 6文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk synology dsm 6", "rustdesk synology docker", "rustdesk nas dsm 6", "rustdesk self-host synology"]
 ---
 
@@ -58,7 +58,7 @@ DSM 7.2 更新後，Docker 升級為新的 "Container Manager"，請查看[這�
 
 - 設定命令
 {{% notice note %}}
-Synology 的作業系統基於 Debian，所以主機網路 (--net=host) 工作良好，我們不需要用 `-p` 選項映射埠口。
+Synology 的作業系統基於 Debian，所以主機網路 (--net=host) 工作良好，我們不需要用 `-p` 選項映射連接埠。
 
 {{% /notice %}}
 

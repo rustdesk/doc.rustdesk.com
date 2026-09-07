@@ -16,7 +16,7 @@ faq:
   - question: 'RustDesk Server Pro 需要永久不中斷的網路連線嗎？'
     answer: '它需要持續對 rustdesk.com 保有對外連線以進行授權驗證，但不需要字面意義上完全不中斷的連線。伺服器大約每天會透過 443 連接埠檢查一次，若檢查失敗，系統會持續重試，直到成功為止，或是大約經過七天後——因此短暫的中斷是可以容忍的，但如果伺服器與 rustdesk.com 斷線的時間超過這段寬限期，授權驗證就會停止。至於遠端連線本身，則是由您自行架設的中繼（relay）伺服器與 ID（rendezvous，會合）伺服器負責媒合。'
   - question: '隔離環境中的 RustDesk Server Pro 部署，需要哪些對外連線存取權限？'
-    answer: '請開放伺服器對 rustdesk.com 的對外 HTTPS 連線，用於授權驗證（若您有使用自訂用戶端產生功能，也包含其佈建流程）。系統支援透過 Proxy 伺服器連線，因此網路的其餘部分仍可維持鎖定狀態。確切的網域與連接埠，請以 RustDesk 文件為準。'
+    answer: '請開放伺服器對 rustdesk.com 的對外 HTTPS 連線，用於授權驗證（若您有使用自訂使用者端產生功能，也包含其佈建流程）。系統支援透過 Proxy 伺服器連線，因此網路的其餘部分仍可維持鎖定狀態。確切的網域與連接埠，請以 RustDesk 文件為準。'
   - question: '是否有完全氣隙化的 RustDesk 授權選項？'
     answer: '標準授權產品的設計，並不支援從不對外連線的氣隙環境。如果您有硬性的氣隙需求，請務必在正式導入前，先向 RustDesk 確認您的實際情境。'
 metadata:
@@ -34,7 +34,7 @@ metadata:
 
 您可以在不使用授權的情況下自架的開源版 RustDesk 伺服器，屬於另一回事；本文所述的需求，專門適用於**已授權的 Server Pro** 功能集。如果您真正在意的是將連線資料保留在自己的基礎架構之內，自架方案本身就已經能達成這個目標——對外連線的需求純粹與授權有關，並不是每一次連線都要透過對方中介。
 
-還有第二種工作流程需要考量：**建置自訂用戶端**。如果您透過 Server Pro 產生具備品牌客製化或預先設定的用戶端，這個產生步驟同樣需要對外連線。請依您目前的版本與方案，確認實際行為。
+還有第二種工作流程需要考量：**建置自訂使用者端**。如果您透過 Server Pro 產生具備品牌客製化或預先設定的使用者端，這個產生步驟同樣需要對外連線。請依您目前的版本與方案，確認實際行為。
 
 對於嚴格要求氣隙化的網路而言，這正是關鍵所在。一台*永遠*無法連上 rustdesk.com 的完全隔離伺服器，並不在預設支援的模式之內，因此如果您有硬性的氣隙需求，請務必在正式導入前，先向 RustDesk 確認您的實際情境是否可行。至於更常見的「大部分隔離、嚴格限制對外流量」架構，實務上的建議是：預留一條通往 rustdesk.com 的對外 HTTPS 路徑——無論是直接連線或透過 Proxy——並在撰寫防火牆政策之前，先明確定義好網域、連接埠與核准流程。詳情請參閱 [RustDesk 文件](https://rustdesk.com/docs)，同樣的授權需求，也是為什麼即使[以非 Docker 方式安裝 Server Pro，仍然無法在完全沒有網路連線的情況下運作](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/installscript/)的原因。
 
@@ -46,6 +46,6 @@ metadata:
 
 - 對外連線的網域與連接埠：請參閱 [RustDesk 文件](https://rustdesk.com/docs)。
 - [我可以在一般 VM 上以非 Docker 方式安裝 RustDesk Server Pro 嗎？](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/installscript/)
-- 產生具品牌客製化的用戶端：請參閱 [RustDesk 文件](https://rustdesk.com/docs)。
+- 產生具品牌客製化的使用者端：請參閱 [RustDesk 文件](https://rustdesk.com/docs)。
 
 正在規劃高度封閉或接近氣隙化的部署嗎？在敲定防火牆政策之前，請先至 rustdesk.com 確認最新的連線與授權相關細節。
