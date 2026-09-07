@@ -56,8 +56,8 @@ RustDesk Server Pro 授權用來在您的自架伺服器上啟用 Pro 功能。�
 ![](/docs/en/self-host/rustdesk-server-pro/license/images/unbind.jpg)
 
 ## 代理
-如果您的伺服器無法直接訪問互聯網以驗證許可證，您可以添加代理，例如`proxy=http://username:password@example.com:8080 ./hbbs`。
+如果您的伺服器無法直接訪問互聯網以驗證許可證，您可以加入代理，例如`proxy=http://username:password@example.com:8080 ./hbbs`。
 
-或者，您可以將`proxy=http://username:password@example.com:8080`添加到工作目錄（`id_ed25519` / `db.sqlite3`文件所在的位置）下的`.env`文件中。
+或者，您可以將`proxy=http://username:password@example.com:8080`加入到工作目錄（`id_ed25519` / `db.sqlite3`文件所在的位置）下的`.env`文件中。
 
 `http`可以替換為`https`或`socks5`。如果沒有`username` / `password` / `port`，可以使用`proxy=http://example.com`。

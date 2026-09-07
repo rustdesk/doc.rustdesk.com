@@ -162,9 +162,9 @@ rustdesk/makepkg               latest    86a981e2e18f   2 months ago   2.23GB
 
 ## 我無法連接到不同組中的設備，為什麼？
 這很容易解決，您需要允許跨組訪問。
-1. 添加新組。
+1. 加入新組。
 2. 點擊 `編輯`。
-3. 選擇您想要訪問的相關組（它會自動將它們添加到相應的組中）。
+3. 選擇您想要訪問的相關組（它會自動將它們加入到相應的組中）。
 
 ## 如何自動獲取配置？
 配置會自動產生。
@@ -247,7 +247,7 @@ https://github.com/rustdesk/rustdesk/discussions/6576
     - 您的域名註冊商的控制面板（推薦）
     - [DNS 提供商](https://en.wikipedia.org/wiki/List_of_managed_DNS_providers)
 
-例如，如果您從 `Namesilo` 購買域名 `example.com`，而您的伺服器 IP 地址是 `123.123.123.123`，您想使用 `rustdesk.example.com` 子域作為您的 HTTPS Web 控制台地址。您需要打開[鏈接](https://www.namesilo.com/account_domains.php)，點擊帶有提示 `Manage dns for the domain` 的按鈕，添加一個主機名為 `rustdesk` 和您伺服器 IP 地址的 `A` 記錄。
+例如，如果您從 `Namesilo` 購買域名 `example.com`，而您的伺服器 IP 地址是 `123.123.123.123`，您想使用 `rustdesk.example.com` 子域作為您的 HTTPS Web 控制台地址。您需要打開[鏈接](https://www.namesilo.com/account_domains.php)，點擊帶有提示 `Manage dns for the domain` 的按鈕，加入一個主機名為 `rustdesk` 和您伺服器 IP 地址的 `A` 記錄。
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-button.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-add-a-record.png)
 ![](/docs/en/self-host/rustdesk-server-pro/faq/images/namesilo-dns-table.png)
@@ -366,7 +366,7 @@ location / {
 
 * `too many certificates (5) already issued for this exact set of domains in the last 168 hours`
 
-解決方案：向 DNS 添加另一個域名並將 `YOUR_DOMAIN` 更改為它，例如 `rustdesk2.example.com`。然後重複步驟 1、4、6。
+解決方案：向 DNS 加入另一個域名並將 `YOUR_DOMAIN` 更改為它，例如 `rustdesk2.example.com`。然後重複步驟 1、4、6。
 
 * `Error getting validation data`
 
@@ -377,9 +377,9 @@ location / {
 ### 7. 登錄到網頁
 * 在瀏覽器中打開 `https://YOUR_DOMAIN`，使用預設使用者名稱 "admin" 和密碼 "test1234" 登錄，然後將密碼更改為您自己的。
 
-### 8. 為 ID 伺服器和中繼伺服器添加 WebSocket Secure (WSS) 支援，以啟用所有平台的安全通信。
+### 8. 為 ID 伺服器和中繼伺服器加入 WebSocket Secure (WSS) 支援，以啟用所有平台的安全通信。
 
-將以下配置添加到 `/etc/nginx/.../rustdesk.conf` 文件的第一個 `server` 部分，然後重啟 `Nginx` 服務。
+將以下配置加入到 `/etc/nginx/.../rustdesk.conf` 文件的第一個 `server` 部分，然後重啟 `Nginx` 服務。
 Web 客戶端可以通過 `https://YOUR_DOMAIN/web` 訪問。自訂客戶端可以通過在高級選項中設置 `allow-websocket=Y` 來使用 WebSocket。如果使用啟用 WebSocket 的自訂客戶端，它將不會使用 TCP/UDP，只能通過中繼連接（直接 IP 連接除外）。如果只使用這種啟用 WebSocket 的客戶端，伺服器可以關閉連接埠 21114 到 21119，只保持連接埠 443 開放。
 
 ```
@@ -462,12 +462,12 @@ server {
 ```
 
 {{% notice note %}}
-如果您之前為 Web 客戶端部署並希望在所有平台上使用它，您需要添加 `proxy_read_timeout`。
+如果您之前為 Web 客戶端部署並希望在所有平台上使用它，您需要加入 `proxy_read_timeout`。
 {{% /notice %}}
 
 ### 9. 如果使用 RustDesk 公共 Web 客戶端 `https://rustdesk.com/web` 則繞過 CORS
 
-您需要在 `/etc/nginx/.../rustdesk.conf` 的 `location /` 部分中添加以下內容以繞過瀏覽器的 CORS 限制。如果您使用自己的 Web 客戶端，請跳過此步驟。
+您需要在 `/etc/nginx/.../rustdesk.conf` 的 `location /` 部分中加入以下內容以繞過瀏覽器的 CORS 限制。如果您使用自己的 Web 客戶端，請跳過此步驟。
 
 ```
         if ($http_origin ~* (https?://(www\.)?rustdesk\.com)) {
@@ -543,5 +543,5 @@ sudo firewall-cmd --permanent --add-port=443/tcp
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/183
 
-## 將根 CA 證書添加到 Docker 容器中（用於 SMTP、OIDC 等的 TLS 故障）
+## 將根 CA 證書加入到 Docker 容器中（用於 SMTP、OIDC 等的 TLS 故障）
 https://github.com/rustdesk/rustdesk-server-pro/issues/99#issuecomment-2235014703

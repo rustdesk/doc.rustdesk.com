@@ -166,7 +166,7 @@ To                         Action      From
 <br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/3e178174-5fbf-46b7-a335-01f77125dfad">
 
-您可以通過幾種方式自動化[下載過程](https://dev.maxmind.com/geoip/updating-databases)，但您可以將以下命令添加到您的crontab中，將{您的訪問密鑰}替換為您從上一步獲得的API密鑰。
+您可以通過幾種方式自動化[下載過程](https://dev.maxmind.com/geoip/updating-databases)，但您可以將以下命令加入到您的crontab中，將{您的訪問密鑰}替換為您從上一步獲得的API密鑰。
 
 ```
 /usr/bin/curl -L --silent 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={您的訪問密鑰}&suffix=tar.gz' | /bin/tar -C '/var/lib/rustdesk-server/' -xvz --keep-newer-files --strip-components=1 --wildcards '*GeoLite2-City.mmdb'
@@ -174,10 +174,10 @@ To                         Action      From
 
 ### 在RustDesk Pro Web控制台中更改設置
 
-將您的中繼伺服器IP地址或DNS名稱（從版本1.1.11開始支援DNS）添加到`Relay Servers`。**不需要連接埠，顯式使用`21117`連接埠。**<br>
+將您的中繼伺服器IP地址或DNS名稱（從版本1.1.11開始支援DNS）加入到`Relay Servers`。**不需要連接埠，顯式使用`21117`連接埠。**<br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/c4452ba4-5e1d-437a-ae1d-fc0070bfa26c">
 
-通過添加伺服器IP地址和伺服器所在位置的坐標來添加地理覆蓋。<br>
+通過加入伺服器IP地址和伺服器所在位置的坐標來加入地理覆蓋。<br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/41c558e3-423b-4296-90d3-cb0769f4a369">
 
 點擊`Reload Geo`，您的列表應該類似於此。<br>

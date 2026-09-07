@@ -24,10 +24,10 @@ keywords: ["build rustdesk macos", "rustdesk mac build", "rustdesk sciter mac", 
 - 複製 RustDesk 原始碼倉庫及其子模組。
 - 在開始建置前補齊 Sciter 或 Flutter 所需元件。
 
-最大的挑戰可能是找到所有工具可以一起工作的版本，特別是因為工具鏈的某些部分（如 Xcode 和 LLVM）由您的 macOS 版本決定。本指南中使用的版本可能不是您應該使用的版本。作為確定使用哪些版本的起點，可以查看您想要構建的 RustDesk 版本的 [GitHub 構建工作流程](https://github.com/rustdesk/rustdesk/blob/master/.github/workflows/flutter-build.yml)。在頁面左上角選擇標籤以查看文件。但這不一定會起作用，因為 GitHub runner 附帶的 macOS 工具可能與您本地系統上的版本不同。
+最大的挑戰可能是找到所有工具可以一起工作的版本，特別是因為工具鏈的某些部分（如 Xcode 和 LLVM）由您的 macOS 版本決定。本指南中使用的版本可能不是您應該使用的版本。作為確定使用哪些版本的起點，可以查看您想要建置的 RustDesk 版本的 [GitHub 建置工作流程](https://github.com/rustdesk/rustdesk/blob/master/.github/workflows/flutter-build.yml)。在頁面左上角選擇標籤以查看文件。但這不一定會起作用，因為 GitHub runner 附帶的 macOS 工具可能與您本地系統上的版本不同。
 
 ### Export
-`export` 用於設置各種環境變數。當您運行 `export` 時，該變數僅為當前終端會話設置，因此必須為您想要用於構建 RustDesk 的每個新終端窗口重複執行，無論是現在還是將來。通常，最好將所有 `export` 添加到為每個打開的終端自動執行的腳本中，例如 `~/.bash_profile`。這裡列出的完整 `export` 命令可以簡單地附加到文件中，但也必須在當前終端中運行，因為該文件要到打開*新*終端時才會被讀取。
+`export` 用於設置各種環境變數。當您運行 `export` 時，該變數僅為當前終端會話設置，因此必須為您想要用於建置 RustDesk 的每個新終端窗口重複執行，無論是現在還是將來。通常，最好將所有 `export` 加入到為每個打開的終端自動執行的腳本中，例如 `~/.bash_profile`。這裡列出的完整 `export` 命令可以簡單地附加到文件中，但也必須在當前終端中運行，因為該文件要到打開*新*終端時才會被讀取。
 
 ## 從 Homebrew 安裝我們將要使用的工具
 
@@ -64,9 +64,9 @@ rustup component add rustfmt
 ```
 要查看已安裝和預設的 Rust 工具鏈概覽，請運行 `rustup show`。
 
-## 下載 RustDesk 源文件
+## 下載 RustDesk 原始碼
 
-決定您想要 RustDesk 源文件的位置，並從您希望 `rustdesk` 資料夾所在的資料夾運行以下命令。在此示例中，使用 `/Users/<使用者名稱>/repos/` 作為位置。
+決定您想要 RustDesk 原始碼的位置，並從您希望 `rustdesk` 資料夾所在的資料夾運行以下命令。在此示例中，使用 `/Users/<使用者名稱>/repos/` 作為位置。
 
 ```sh
 git clone --recurse-submodules https://github.com/rustdesk/rustdesk
@@ -75,14 +75,14 @@ python3 -m pip install --upgrade pip
 pip3 install -r requirements.txt
 ```
 
-如果 `python3` 或 `pip` 未知，請使用類似以下內容將它們添加到 `PATH`（使用您的實際資料夾名稱）：
+如果 `python3` 或 `pip` 未知，請使用類似以下內容將它們加入到 `PATH`（使用您的實際資料夾名稱）：
 ```sh
 export PATH=~/Library/Python/3.9/bin:$PATH
 ```
 完成後，再次運行失敗的命令。記得也要編輯 `~/.bash_profile`。
 
 ## 安裝使用者介面元件
-RustDesk 可以使用 [Sciter](https://sciter.com/) 和 [Flutter](https://flutter.dev/) 構建。這兩者都需要額外的元件，因此請按照相關版本的步驟操作，或兩者都操作。
+RustDesk 可以使用 [Sciter](https://sciter.com/) 和 [Flutter](https://flutter.dev/) 建置。這兩者都需要額外的元件，因此請按照相關版本的步驟操作，或兩者都操作。
 
 ### Sciter
 
@@ -104,7 +104,7 @@ brew install fvm cocoapods
 ```sh
 fvm global 3.16.9
 ```
-FVM 旨在使用更複雜的設置，它可以為不同的項目提供不同的 Flutter 版本，但這超出了本指南的範圍。相反，只需手動將 FVM 提供的預設 Flutter 位置添加到您的 `PATH`，這意味著您必須使用 `fvm global` 來切換 Flutter 版本：
+FVM 旨在使用更複雜的設置，它可以為不同的項目提供不同的 Flutter 版本，但這超出了本指南的範圍。相反，只需手動將 FVM 提供的預設 Flutter 位置加入到您的 `PATH`，這意味著您必須使用 `fvm global` 來切換 Flutter 版本：
 
 ```sh
 export PATH=$HOME/fvm/default/bin:$PATH
@@ -125,15 +125,15 @@ flutter doctor -v
 cargo install flutter_rust_bridge_codegen --version "1.80.1" --features "uuid"
 ```
 
-## 構建
+## 建置
 
-從 `rustdesk` 資料夾構建。使用以下命令構建 Sciter 版本：
+從 `rustdesk` 資料夾建置。使用以下命令建置 Sciter 版本：
 
 ```sh
 python3 ./build.py
 ```
 
-使用以下命令構建 Flutter 版本：
+使用以下命令建置 Flutter 版本：
 ```sh
 flutter_rust_bridge_codegen --rust-input ./src/flutter_ffi.rs --dart-output ./flutter/lib/generated_bridge.dart --c-output ./flutter/macos/Runner/bridge_generated.h
 python3 ./build.py --flutter

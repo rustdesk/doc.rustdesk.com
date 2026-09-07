@@ -63,7 +63,7 @@ cp libvpx.a $VCPKG_ROOT/installed/x64-linux/lib/
 cd
 ```
 
-## 構建
+## 建置
 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

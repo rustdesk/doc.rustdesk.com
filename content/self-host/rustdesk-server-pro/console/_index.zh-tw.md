@@ -142,7 +142,7 @@ RustDesk Server Pro Web 主控台是管理使用者、裝置、群組、授權�
 | `--address_book_password <password>`    | 設定通訊錄條目的密碼                        | 1.6.6             | 1.4.3           | 
 | `--address_book_note <note>`            | 設定通訊錄條目的備註                        | 1.6.6             | 1.4.3           | 
 | `--device_group_name <devicegroupname>` | 將設備分配到設備群組                        |                   |                 | 
-| `--note <note>`                         | 為設備添加備註                             | 1.6.6             | 1.4.3           | 
+| `--note <note>`                         | 為設備加入備註                             | 1.6.6             | 1.4.3           | 
 | `--device_username <device_username>`   | 設定設備使用者名稱                           | 1.6.6             | 1.4.3           | 
 | `--device_name <device_name>`           | 設定設備名稱                               | 1.6.6             | 1.4.3           | 
 | [`--deploy`](/docs/en/self-host/client-deployment/#explicit-deployment-for-new-devices) | 啟用 **新裝置必須部署後註冊** 時註冊新裝置。需要具有 **裝置** **讀寫** 權限的 API token。 | 1.8.3 | 1.4.7 |
