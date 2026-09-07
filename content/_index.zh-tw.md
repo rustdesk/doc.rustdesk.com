@@ -3,7 +3,7 @@ title: "RustDesk 文件"
 type: docs
 breadcrumbs: false
 weight: 1
-description: "RustDesk 的RustDesk 文件文件，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的RustDesk 文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk", "remote desktop", "open source", "self-host", "documentation", "remote access", "VNC alternative", "teamviewer alternative"]
 ---
 

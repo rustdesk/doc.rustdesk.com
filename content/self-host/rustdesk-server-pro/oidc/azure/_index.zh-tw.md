@@ -27,7 +27,7 @@ keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "ru
 | Client secret | `Certificates & secrets` 中建立的 secret `Value` |
 | Issuer | `https://login.microsoftonline.com/<Directory (tenant) ID>/v2.0` |
 
-## 影片教程
+## 影片教學
 
 [https://www.youtube.com/watch?v=izGxSmifURI](https://www.youtube.com/watch?v=izGxSmifURI)
 

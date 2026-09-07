@@ -35,7 +35,7 @@ keywords: ["build rustdesk macos", "rustdesk mac build", "rustdesk sciter mac", 
 brew install python3 create-dmg nasm cmake gcc wget ninja pkg-config wget rustup
 ```
 
-某些安裝可能會失敗，因為我們系統上不存在某些目標文件夾。在這種情況下，建立文件夾、設置所有者和權限，然後再次運行 `brew` 命令。例如，如果 `/usr/local/include` 不存在：
+某些安裝可能會失敗，因為我們系統上不存在某些目標資料夾。在這種情況下，建立資料夾、設置所有者和權限，然後再次運行 `brew` 命令。例如，如果 `/usr/local/include` 不存在：
 ```sh
 sudo mkdir /usr/local/include
 sudo chown <使用者名稱>:admin /usr/local/include
@@ -43,7 +43,7 @@ sudo chmod 775 /usr/local/include
 ```
 
 ## 安裝 vcpkg
-Vcpkg 用於管理 RustDesk 使用的 C/C++ 依賴項。決定您想要安裝的位置，並從您希望 `vcpkg` 文件夾所在的文件夾運行以下命令。在此示例中，使用 `/Users/<使用者名稱>/repos/` 作為位置，並使用標籤 `2023.04.15` 作為版本。
+Vcpkg 用於管理 RustDesk 使用的 C/C++ 依賴項。決定您想要安裝的位置，並從您希望 `vcpkg` 資料夾所在的資料夾運行以下命令。在此示例中，使用 `/Users/<使用者名稱>/repos/` 作為位置，並使用標籤 `2023.04.15` 作為版本。
 
 ```sh
 git clone https://github.com/microsoft/vcpkg
@@ -66,7 +66,7 @@ rustup component add rustfmt
 
 ## 下載 RustDesk 源文件
 
-決定您想要 RustDesk 源文件的位置，並從您希望 `rustdesk` 文件夾所在的文件夾運行以下命令。在此示例中，使用 `/Users/<使用者名稱>/repos/` 作為位置。
+決定您想要 RustDesk 源文件的位置，並從您希望 `rustdesk` 資料夾所在的資料夾運行以下命令。在此示例中，使用 `/Users/<使用者名稱>/repos/` 作為位置。
 
 ```sh
 git clone --recurse-submodules https://github.com/rustdesk/rustdesk
@@ -75,18 +75,18 @@ python3 -m pip install --upgrade pip
 pip3 install -r requirements.txt
 ```
 
-如果 `python3` 或 `pip` 未知，請使用類似以下內容將它們添加到 `PATH`（使用您的實際文件夾名稱）：
+如果 `python3` 或 `pip` 未知，請使用類似以下內容將它們添加到 `PATH`（使用您的實際資料夾名稱）：
 ```sh
 export PATH=~/Library/Python/3.9/bin:$PATH
 ```
 完成後，再次運行失敗的命令。記得也要編輯 `~/.bash_profile`。
 
-## 安裝使用者界面組件
-RustDesk 可以使用 [Sciter](https://sciter.com/) 和 [Flutter](https://flutter.dev/) 構建。這兩者都需要額外的組件，因此請按照相關版本的步驟操作，或兩者都操作。
+## 安裝使用者介面元件
+RustDesk 可以使用 [Sciter](https://sciter.com/) 和 [Flutter](https://flutter.dev/) 構建。這兩者都需要額外的元件，因此請按照相關版本的步驟操作，或兩者都操作。
 
 ### Sciter
 
-從 `rustdesk` 文件夾運行：
+從 `rustdesk` 資料夾運行：
 ```sh
 wget https://github.com/c-smile/sciter-sdk/raw/master/bin.osx/libsciter.dylib
 ```
@@ -119,7 +119,7 @@ flutter doctor -v
 ```
 如果某些檢查失敗並不重要，它們通常會失敗，重要的是您打算使用的環境檢查是否正常，即 `Xcode`。如果報告了問題，請在繼續之前解決它們。
 
-一旦 Flutter 啟動並運行，就該安裝將 Rust 和 Flutter 綁定在一起的"橋接"了。這是另一個必須與其他所有組件一起工作的版本，在此示例中我們使用 `1.80.1`：
+一旦 Flutter 啟動並運行，就該安裝將 Rust 和 Flutter 綁定在一起的"橋接"了。這是另一個必須與其他所有元件一起工作的版本，在此示例中我們使用 `1.80.1`：
 
 ```sh
 cargo install flutter_rust_bridge_codegen --version "1.80.1" --features "uuid"
@@ -127,7 +127,7 @@ cargo install flutter_rust_bridge_codegen --version "1.80.1" --features "uuid"
 
 ## 構建
 
-從 `rustdesk` 文件夾構建。使用以下命令構建 Sciter 版本：
+從 `rustdesk` 資料夾構建。使用以下命令構建 Sciter 版本：
 
 ```sh
 python3 ./build.py
@@ -138,4 +138,4 @@ python3 ./build.py
 flutter_rust_bridge_codegen --rust-input ./src/flutter_ffi.rs --dart-output ./flutter/lib/generated_bridge.dart --c-output ./flutter/macos/Runner/bridge_generated.h
 python3 ./build.py --flutter
 ```
-如果一切順利，您現在應該在 `rustdesk` 文件夾中有一個準備安裝的 `dmg` 文件。
+如果一切順利，您現在應該在 `rustdesk` 資料夾中有一個準備安裝的 `dmg` 文件。

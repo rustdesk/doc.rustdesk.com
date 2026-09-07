@@ -118,7 +118,7 @@ nix profile install nixpkgs#rustdesk
 有多種方法可以配置 RustDesk。
 
 最簡單的方法是使用 RustDesk 伺服器專業版，您可以獲得一個加密的配置字符串，這可以與 `--config` 一起使用來導入設置。要做到這一點：
-1. 在您使用的任何作業系統上打開終端機，到 RustDesk 安裝的文件夾，如 Windows 上的 `C:\Program Files\RustDesk`，Linux 上的 `/usr/bin`。
+1. 在您使用的任何作業系統上打開終端機，到 RustDesk 安裝的資料夾，如 Windows 上的 `C:\Program Files\RustDesk`，Linux 上的 `/usr/bin`。
 2. 使用命令 `rustdesk.exe --config your-encrypted-string`，例如 `rustdesk.exe --config 9JSPSvJzNrBDasJjNSdXOVVBlERDlleoNWZzIHcOJiOikXZr8mcw5yazVGZ0NXdy5CdyciojI0N3boJye`。
 
 您也可以手動設定客戶端。要做到這一點：
@@ -129,7 +129,7 @@ nix profile install nixpkgs#rustdesk
 
 ![](/docs/en/client/images/network-settings.png)
 
-如果您手動設定了客戶端，您可以搜尋 `RustDesk2.toml` 文件（在使用者文件夾中），並使用 `--import-config` 以類似於上面的範例。
+如果您手動設定了客戶端，您可以搜尋 `RustDesk2.toml` 文件（在使用者資料夾中），並使用 `--import-config` 以類似於上面的範例。
 
 ## 命令行參數
 - `--password` 可用於設置固定密碼。
