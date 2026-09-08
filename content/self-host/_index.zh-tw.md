@@ -6,7 +6,7 @@ weight: 5
 pre: "<b>2. </b>"
 ---
 
-如果您使用 RustDesk，您應該擁有自己的 RustDesk 伺服器，這些文檔將在您的 RustDesk 之旅中提供幫助。
+如果您使用 RustDesk，您應該擁有自己的 RustDesk 伺服器，這些文件將在您的 RustDesk 之旅中提供幫助。
 
 支援服務可透過我們的 [Discord](https://discord.com/invite/nDceKgxnkV) 獲得開源版本的協助，以及透過[Email](mailto:support@rustdesk.com)獲得專業版支援。
 
@@ -21,7 +21,7 @@ pre: "<b>2. </b>"
 
 這裡有 RustDesk 客戶端如何與 `hbbr` / `hbbs` 通信的[圖解](https://github.com/rustdesk/rustdesk/wiki/How-does-RustDesk-work%3F)。
 
-只要 RustDesk 在機器上運行，該機器就會不斷地 ping ID 伺服器（`hbbs`），以使其當前的 IP 位址和連接埠被知悉。
+只要 RustDesk 在機器上執行，該機器就會不斷地 ping ID 伺服器（`hbbs`），以使其目前的 IP 位址和連接埠被知悉。
 
 當您從電腦 A 啟動到電腦 B 的連接時，電腦 A 會聯繫 ID 伺服器並要求與電腦 B 通信。
 
@@ -35,7 +35,7 @@ ID 伺服器然後嘗試使用打洞技術將 A 和 B 直接連接。
 
 ## 所需的連結埠
 
-自架 RustDesk 伺服器所需的連接埠在很大程度上取決於您的環境以及您想要使用 RustDesk 做什麼。整個文檔中顯示的範例通常會建議開啟所有連接埠。
+自架 RustDesk 伺服器所需的連接埠在很大程度上取決於您的環境以及您想要使用 RustDesk 做什麼。整個文件中顯示的範例通常會建議開啟所有連接埠。
 
 核心連接埠：\
 TCP `21114-21119` \
@@ -45,6 +45,6 @@ UDP `21116`
 
 TCP 連接埠 `21118` 和 `21119` 是 [RustDesk Web 客戶端](https://rustdesk.com/web/)的 WebSocket 連接埠，您需要反向代理來支援 HTTPS，請參考這個 [Nginx 配置範例](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client)。
 
-對於沒有 SSL 代理的專業版用戶，您需要開啟 TCP 連接埠 `21114` 以使 API 運作，或者使用 SSL 代理開啟 TCP 連接埠 `443`。
+對於沒有 SSL 代理的專業版使用者，您需要開啟 TCP 連接埠 `21114` 以使 API 運作，或者使用 SSL 代理開啟 TCP 連接埠 `443`。
 
 {{% children depth="4" showhidden="true" %}}

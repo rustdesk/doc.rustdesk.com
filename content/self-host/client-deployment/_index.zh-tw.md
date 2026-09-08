@@ -2,7 +2,7 @@
 title: 客戶端部署
 weight: 400
 pre: "<b>2.4. </b>"
-description: "RustDesk 的客戶端部署文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的客戶端部署文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk client deployment", "rustdesk powershell deploy", "rustdesk mass deployment", "rustdesk intune", "rustdesk rmm", "rustdesk silent deployment"]
 ---
 
@@ -384,7 +384,7 @@ echo "..............................................."
 
 ## 新裝置的明確部署
 
-預設情況下，RustDesk 用戶端第一次連線到自架伺服器時，會註冊到該伺服器。一般模式下不需要額外的部署步驟。
+預設情況下，RustDesk 使用者端第一次連線到自架伺服器時，會註冊到該伺服器。一般模式下不需要額外的部署步驟。
 
 如果在伺服器 Web 控制台中啟用 **設定 → 其他 → 新裝置必須部署後註冊**，新裝置必須先明確部署，才能註冊到此伺服器。
 
@@ -416,6 +416,6 @@ rustdesk --deploy --token <api_token> --id <custom_id>
 
 ### Android
 
-Android 不使用命令列部署流程。當伺服器要求部署且 Android 用戶端尚未部署時，RustDesk 會顯示 **部署** 提示。點選 **確定**，在部署對話框中輸入 API token，並可選擇輸入自訂 ID。也可以從 **設定 → 部署** 手動開啟同一個對話框。
+Android 不使用命令列部署流程。當伺服器要求部署且 Android 使用者端尚未部署時，RustDesk 會顯示 **部署** 提示。點選 **確定**，在部署對話框中輸入 API token，並可選擇輸入自訂 ID。也可以從 **設定 → 部署** 手動開啟同一個對話框。
 
-部署成功後，裝置會加入伺服器裝置清單中，用戶端即可正常註冊。
+部署成功後，裝置會加入伺服器裝置清單中，使用者端即可正常註冊。

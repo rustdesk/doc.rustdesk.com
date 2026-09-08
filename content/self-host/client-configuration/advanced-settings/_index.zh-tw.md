@@ -1,7 +1,7 @@
 ---
 title: 進階設定
 weight: 49
-description: "RustDesk 的進階設定文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的進階設定文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk advanced settings", "rustdesk custom client settings", "rustdesk privilege levels", "rustdesk override settings", "rustdesk default settings"]
 ---
 
@@ -19,15 +19,15 @@ RustDesk 自訂客戶端中的進階設定允許管理員在發佈前預先定�
 
 <!-- GEO-LOCALIZED-INTRO:END -->
 
-所有自訂用戶端中的進階設定都在這裡涵蓋。
+所有自訂使用者端中的進階設定都在這裡涵蓋。
 
 ## 設定的權限層級
 
 有四種類型的設定：
 
-1. 覆蓋設定，在`Web控制台` → `自訂用戶端`中
-2. 預設設定，在`Web控制台` → `自訂用戶端`中
-3. 使用者設定，在RustDesk用戶端中
+1. 覆蓋設定，在`Web控制台` → `自訂使用者端`中
+2. 預設設定，在`Web控制台` → `自訂使用者端`中
+3. 使用者設定，在RustDesk使用者端中
 4. 策略設定，在`Web控制台` → `策略`中
 
 這些設定的權限層次結構如下：`覆蓋 > 策略 > 使用者 > 預設`。
@@ -102,11 +102,11 @@ RustDesk 自訂客戶端中的進階設定允許管理員在發佈前預先定�
 
 ### enable-terminal
 
-為傳入連線啟用終端。
+為傳入連線啟用終端機。
 
 **位置**:
 
-**桌面端** 設定 → 安全 → 權限 → 啟用終端
+**桌面端** 設定 → 安全 → 權限 → 啟用終端機
 
 | 是否需要安裝 | 可選值 | 預設值 | 範例 |
 | :------: | :------: | :------: | :------: |
@@ -278,7 +278,7 @@ RustDesk 自訂客戶端中的進階設定允許管理員在發佈前預先定�
 
 支援萬用字元：`*` 符合任意數量的字元，`?` 符合單一字元。比對不區分大小寫。
 
-**注意**：ID 由對端用戶端回報，因此它不是驗證機制。白名單用於減少暴露面，不能取代密碼或 2FA。
+**注意**：ID 由對端使用者端回報，因此它不是驗證機制。白名單用於減少暴露面，不能取代密碼或 2FA。
 
 **位置**：
 
@@ -383,7 +383,7 @@ RustDesk 自訂客戶端中的進階設定允許管理員在發佈前預先定�
 
 ### theme
 
-控制RustDesk用戶端的UI主題。
+控制RustDesk使用者端的UI主題。
 
 **位置**：
 
@@ -396,7 +396,7 @@ RustDesk 自訂客戶端中的進階設定允許管理員在發佈前預先定�
 
 ### lang
 
-控制RustDesk用戶端的語言。
+控制RustDesk使用者端的語言。
 
 **位置**：
 
@@ -411,7 +411,7 @@ RustDesk 自訂客戶端中的進階設定允許管理員在發佈前預先定�
 
 ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, kz, lt, lv, nb, nl, pl, pt, ro, ru, sk, sl, sq, sr, sv, th, tr, uk, vn, zh-cn, zh-tw
 
-您可以查看代碼中的[LANGS](https://github.com/rustdesk/rustdesk/blob/master/src/lang.rs#L45)獲取最新的語言清單。
+您可以查看程式碼中的[LANGS](https://github.com/rustdesk/rustdesk/blob/master/src/lang.rs#L45)獲取最新的語言清單。
 
 ### allow-auto-record-incoming
 
@@ -469,7 +469,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 ### windows-service-video-save-directory
 
-已安裝的 Windows 用戶端作為服務執行時，用於儲存錄影的目錄。路徑必須是絕對路徑。空白或相對路徑將被忽略，RustDesk 會改用預設目錄。
+已安裝的 Windows 使用者端作為服務執行時，用於儲存錄影的目錄。路徑必須是絕對路徑。空白或相對路徑將被忽略，RustDesk 會改用預設目錄。
 
 | 安裝需要 | 值 | 預設值 | 範例 |
 | :------: | :------: | :------: | :------: |
@@ -477,7 +477,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 ### allow-auto-update
 
-允許自動更新。啟用後，當有新版本發布時，用戶端會自動從 GitHub 官方發布頁面下載並安裝最新版本。
+允許自動更新。啟用後，當有新版本發布時，使用者端會自動從 GitHub 官方發布頁面下載並安裝最新版本。
 
 此設定僅在 Windows 下，且連線類型設為雙向 (Bidirectional) 或入站 (Incoming) 時生效，對出站 (Outgoing) 不生效。
 
@@ -644,7 +644,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 **桌面端** 設定 → 通用 → 其他 → 使用紋理渲染
 
-使用紋理渲染可以使畫面更流暢。如果遇到渲染問題，可以嘗試禁用此選項。僅在桌面端可用。
+使用紋理渲染可以使畫面更流暢。如果遇到渲染問題，可以嘗試停用此選項。僅在桌面端可用。
 
 | 可選值 | 預設值 | 範例 |
 | :------: | :------: | :------: |
@@ -802,9 +802,9 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 ### disable-audio
 
-此選項將為每個對等端在首次連接後設定「禁用音訊」選項。
+此選項將為每個對等端在首次連接後設定「停用音訊」選項。
 
-每個對等端設定中的「禁用音訊」選項將控制是否播放聲音。
+每個對等端設定中的「停用音訊」選項將控制是否播放聲音。
 
 **位置**：
 
@@ -832,14 +832,14 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 ### disable-clipboard
 
-此選項將為每個對等端在首次連接後設定「禁用剪貼簿」選項。
+此選項將為每個對等端在首次連接後設定「停用剪貼簿」選項。
 
-每個對等端設定中的「禁用剪貼簿」選項將控制是否啟用文字複製貼上。
+每個對等端設定中的「停用剪貼簿」選項將控制是否啟用文字複製貼上。
 
 **位置**：
 
-1. **桌面** 設定 → 顯示 → 其他預設選項 → 禁用剪貼簿
-2. **行動裝置** 設定 → 顯示設定 → 其他預設選項 → 禁用剪貼簿
+1. **桌面** 設定 → 顯示 → 其他預設選項 → 停用剪貼簿
+2. **行動裝置** 設定 → 顯示設定 → 其他預設選項 → 停用剪貼簿
 
 | 安裝需要 | 值 | 預設值 | 範例 |
 | :------: | :------: | :------: | :------: |
@@ -1068,12 +1068,12 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 此選項將在首次連線後為每个裝置設定「terminal-persistent」選項。
 
-然後，每个裝置設定中的「terminal-persistent」選項將控制斷線時是否保留終端工作階段。
+然後，每个裝置設定中的「terminal-persistent」選項將控制斷線時是否保留終端機工作階段。
 
 **位置**:
 
-1. **桌面端** 設定 → 顯示 → 其他預設選項 → 斷線時保留終端工作階段
-2. **行動端** 設定 → 顯示設定 → 其他預設選項 → 斷線時保留終端工作階段
+1. **桌面端** 設定 → 顯示 → 其他預設選項 → 斷線時保留終端機工作階段
+2. **行動端** 設定 → 顯示設定 → 其他預設選項 → 斷線時保留終端機工作階段
 
 | 是否需要安裝 | 可選值 | 預設值 | 範例 |
 | :------: | :------: | :------: | :------: |
@@ -1110,11 +1110,11 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | preset-address-book-password | 否 | | | `preset-address-book-password=<設備密碼>` |
 | preset-address-book-note | 否 | | | `preset-address-book-note=<設備備註>` |
 
-preset-address-book-alias、preset-address-book-password、preset-address-book-note在RustDesk用戶端>=1.4.3、pro >= 1.6.6中可用。
+preset-address-book-alias、preset-address-book-password、preset-address-book-note在RustDesk使用者端>=1.4.3、pro >= 1.6.6中可用。
 
 ### disable-group-panel
 
-在RustDesk用戶端上禁用群組面板（在通訊錄面板旁邊，自1.3.8版本起命名為「可存取設備」），https://github.com/rustdesk/rustdesk-server-pro/issues/250。
+在RustDesk使用者端上停用群組面板（在通訊錄面板旁邊，自1.3.8版本起命名為「可存取設備」），https://github.com/rustdesk/rustdesk-server-pro/issues/250。
 
 | 選項 | 安裝需要 | 值 | 預設值 | 範例 |
 | :------: | :------: | :------: | :------: | :------: |
@@ -1233,7 +1233,7 @@ https://github.com/rustdesk/rustdesk/issues/7425
 
 ### remove-preset-password-warning
 
-控制當自訂用戶端中有預設密碼時是否移除GUI上的安全警告。
+控制當自訂使用者端中有預設密碼時是否移除GUI上的安全警告。
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/286
 
@@ -1245,7 +1245,7 @@ https://github.com/rustdesk/rustdesk/discussions/7956
 
 ### hide-general-settings
 
-控制是否隱藏設定頁面的`一般`分頁。與其他 `hide-*-settings` 選項不同，即使`禁用設定`已開啟，此選項仍會生效，因為`禁用設定`不會隱藏`一般`分頁。
+控制是否隱藏設定頁面的`一般`分頁。與其他 `hide-*-settings` 選項不同，即使`停用設定`已開啟，此選項仍會生效，因為`停用設定`不會隱藏`一般`分頁。
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/1001
 
@@ -1257,7 +1257,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/1001
 
 ### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings / hide-remote-printer-settings
 
-控制是否隱藏某些設定。請確保`禁用設定`已關閉，否則這些不會生效。
+控制是否隱藏某些設定。請確保`停用設定`已關閉，否則這些不會生效。
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/263
 
@@ -1307,13 +1307,13 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/277
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
 
-設備群組在RustDesk用戶端>=1.3.8、pro >= 1.5.0中可用
+設備群組在RustDesk使用者端>=1.3.8、pro >= 1.5.0中可用
 
-preset-device-username、preset-device-name、preset-note在RustDesk用戶端>=1.4.3、pro >= 1.6.6中可用。
+preset-device-username、preset-device-name、preset-note在RustDesk使用者端>=1.4.3、pro >= 1.6.6中可用。
 
 ### default-connect-password
 
-您使用`預設連接密碼`來建立到遠端設備的連接。此密碼在控制端設定，不應與受控（僅傳入）用戶端上找到的任何[預設密碼](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-can-we-set-up-a-client-with-a-fixed-password-for-unattended-remote-access)混淆。
+您使用`預設連接密碼`來建立到遠端設備的連接。此密碼在控制端設定，不應與受控（僅傳入）使用者端上找到的任何[預設密碼](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-can-we-set-up-a-client-with-a-fixed-password-for-unattended-remote-access)混淆。
 
 例如 `default-connect-password=abcd1234`
 
@@ -1329,7 +1329,7 @@ https://github.com/rustdesk/rustdesk/discussions/8513#discussioncomment-10234494
 
 ### hide-tray
 
-禁用系統匣中的匣圖示。
+停用系統匣中的匣圖示。
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/332
 
@@ -1339,7 +1339,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/332
 
 ### hide-stop-service
 
-在服務執行時隱藏停止/切換服務的控制項。這主要用於自訂用戶端，防止使用者從介面停止服務（桌面設定、系統匣選單、Android 伺服器頁面和 Android 懸浮視窗選單）。
+在服務執行時隱藏停止/切換服務的控制項。這主要用於自訂使用者端，防止使用者從介面停止服務（桌面設定、系統匣選單、Android 伺服器頁面和 Android 懸浮視窗選單）。
 
 當服務已停止時，啟動/啟用項目仍然可見。
 
@@ -1349,7 +1349,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/332
 
 ### one-way-clipboard-redirection
 
-禁用從受控端到控制端的剪貼簿同步，在RustDesk用戶端>=1.3.1（受控端）中可用
+停用從受控端到控制端的剪貼簿同步，在RustDesk使用者端>=1.3.1（受控端）中可用
 
 https://github.com/rustdesk/rustdesk/discussions/7837
 
@@ -1359,7 +1359,7 @@ https://github.com/rustdesk/rustdesk/discussions/7837
 
 ### one-way-file-transfer
 
-禁用從受控端到控制端的檔案傳輸，在RustDesk用戶端>=1.3.1（受控端）中可用
+停用從受控端到控制端的檔案傳輸，在RustDesk使用者端>=1.3.1（受控端）中可用
 
 https://github.com/rustdesk/rustdesk/discussions/7837
 
@@ -1370,7 +1370,7 @@ https://github.com/rustdesk/rustdesk/discussions/7837
 
 ### sync-init-clipboard
 
-建立連接時是否同步初始剪貼簿（僅從控制端到受控端），在RustDesk用戶端>=1.3.1（控制端）中可用
+建立連接時是否同步初始剪貼簿（僅從控制端到受控端），在RustDesk使用者端>=1.3.1（控制端）中可用
 
 https://github.com/rustdesk/rustdesk/discussions/9010
 
@@ -1380,9 +1380,9 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 ### allow-logon-screen-password
 
-在使用[僅點擊批准模式](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode)時是否允許在登入畫面上輸入密碼，在RustDesk用戶端>=1.3.1（受控端）中可用
+在使用[僅點擊批准模式](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode)時是否允許在登入畫面上輸入密碼，在RustDesk使用者端>=1.3.1（受控端）中可用
 
-啟用後，當目前的工作階段處於登入畫面或鎖定畫面狀態時，也允許使用固定密碼。這適用於 Click、Password 和 Both 批准模式。在RustDesk用戶端>=1.4.7（受控端）中可用
+啟用後，當目前的工作階段處於登入畫面或鎖定畫面狀態時，也允許使用固定密碼。這適用於 Click、Password 和 Both 批准模式。在RustDesk使用者端>=1.4.7（受控端）中可用
 
 https://github.com/rustdesk/rustdesk/discussions/9269
 
@@ -1392,7 +1392,7 @@ https://github.com/rustdesk/rustdesk/discussions/9269
 
 ### allow-https-21114
 
-通常，HTTPS使用連接埠443。當API伺服器的連接埠錯誤地設定為21114時，RustDesk用戶端預設會移除21114連接埠設定。將選項設定為Y允許使用21114作為HTTPS連接埠。在RustDesk用戶端>=1.3.9中可用。
+通常，HTTPS使用連接埠443。當API伺服器的連接埠錯誤地設定為21114時，RustDesk使用者端預設會移除21114連接埠設定。將選項設定為Y允許使用21114作為HTTPS連接埠。在RustDesk使用者端>=1.3.9中可用。
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/570
 
@@ -1402,7 +1402,7 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/570
 
 ### allow-d3d-render
 
-D3D渲染可以獲得高幀率並減少CPU使用率，但在某些設備上遠端控制螢幕可能會變黑。在RustDesk用戶端>=1.3.9中可用，僅Windows。
+D3D渲染可以獲得高幀率並減少CPU使用率，但在某些設備上遠端控制螢幕可能會變黑。在RustDesk使用者端>=1.3.9中可用，僅Windows。
 
 | 值 | 預設值 | 範例 |
 | :------: | :------: | :------: |
@@ -1410,9 +1410,9 @@ D3D渲染可以獲得高幀率並減少CPU使用率，但在某些設備上遠�
 
 ### allow-hostname-as-id
 
-[使用主機名作為ID](https://github.com/rustdesk/rustdesk-server-pro/discussions/483)，主機名中的空格會被替換為'-'。這不是100%保證的，只在第一次執行RustDesk用戶端時發生（即在新安裝的用戶端上）；如果發生衝突，將分配一個隨機ID。
+[使用主機名作為ID](https://github.com/rustdesk/rustdesk-server-pro/discussions/483)，主機名中的空格會被替換為'-'。這不是100%保證的，只在第一次執行RustDesk使用者端時發生（即在新安裝的使用者端上）；如果發生衝突，將分配一個隨機ID。
 
-在RustDesk用戶端版本1.4.0及更高版本中可用。
+在RustDesk使用者端版本1.4.0及更高版本中可用。
 
 | 值 | 預設值 | 範例 |
 | :------: | :------: | :------: |
@@ -1420,7 +1420,7 @@ D3D渲染可以獲得高幀率並減少CPU使用率，但在某些設備上遠�
 
 ### allow-websocket
 
-使用WebSocket協定連接伺服器和用戶端。僅在RustDesk用戶端>=1.4.0和Pro伺服器>= 1.5.7中可用。請注意，WebSocket僅支援中繼連接。
+使用WebSocket協定連接伺服器和使用者端。僅在RustDesk使用者端>=1.4.0和Pro伺服器>= 1.5.7中可用。請注意，WebSocket僅支援中繼連接。
 
 要使WebSocket工作，您需要正確設定反向代理， https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
 
@@ -1435,8 +1435,8 @@ D3D渲染可以獲得高幀率並減少CPU使用率，但在某些設備上遠�
 
 ### allow-numeric-one-time-password
 
-此選項啟用或禁用僅數字一次性密碼的使用。
-僅在RustDesk用戶端>=1.4.1和Pro伺服器>= 1.5.9中可用。
+此選項啟用或停用僅數字一次性密碼的使用。
+僅在RustDesk使用者端>=1.4.1和Pro伺服器>= 1.5.9中可用。
 
 **討論**： https://github.com/rustdesk/rustdesk-server-pro/discussions/685
 
@@ -1620,7 +1620,7 @@ https://github.com/rustdesk/rustdesk/pull/12911
 
 ### allow-command-line-settings-when-settings-disabled
 
-當自訂客戶端中啟用了「禁用設定」時，允許透過命令列參數進行配置。設定為 Y 後，僅禁用 UI 設定介面，但仍可使用命令列參數配置客戶端。
+當自訂客戶端中啟用了「停用設定」時，允許透過命令列參數進行配置。設定為 Y 後，僅停用 UI 設定介面，但仍可使用命令列參數配置客戶端。
 
 自 RustDesk 1.4.7 起可用
 

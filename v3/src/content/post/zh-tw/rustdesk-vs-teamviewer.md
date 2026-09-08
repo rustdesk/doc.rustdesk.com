@@ -12,7 +12,7 @@ author: 'RustDesk Team'
 slug: 'rustdesk-vs-teamviewer-zh-tw'
 faq:
   - question: 'RustDesk 是 TeamViewer 的免費替代方案嗎?'
-    answer: 'RustDesk 的核心用戶端與社群伺服器皆為開放原始碼,可免費自行架設且沒有到期限制。付費的 Server Pro 方案則新增集中管理功能,並依登入使用者數與受管理裝置數計費;最新價格請參見 rustdesk.com/pricing。'
+    answer: 'RustDesk 的核心使用者端與社群伺服器皆為開放原始碼,可免費自行架設且沒有到期限制。付費的 Server Pro 方案則新增集中管理功能,並依登入使用者數與受管理裝置數計費;最新價格請參見 rustdesk.com/pricing。'
   - question: '如果我停止付費,RustDesk 還能繼續運作嗎?就像早期 TeamViewer 的永久授權那樣?'
     answer: '開放原始碼的社群伺服器會持續免費運作。Server Pro 是年度商業授權;若授權到期,您仍可保留免費伺服器,但會失去 Pro 的管理功能。這兩款產品都不是一次付費、終身使用的工具。'
   - question: 'RustDesk 可以自架主機嗎?TeamViewer 不行嗎?'
@@ -42,9 +42,9 @@ TeamViewer 是一款商業遠端存取平台,擁有豐富的整合生態系。�
 
 ## RustDesk 與 TeamViewer 概覽
 
-**TeamViewer** 是來自 TeamViewer SE 的商業遠端存取與遠端支援平台,自 2005 年進入市場,是同類工具中部署最廣泛的產品之一。它以代管、雲端仲介的 SaaS 形式提供:TeamViewer 負責營運連線基礎設施,您只需安裝用戶端,工作階段則透過 TeamViewer 自有的路由網路進行仲介。它是閉源軟體,以年度訂閱方式銷售,較高階的方案(品牌名稱為 **TeamViewer Tensor**)還新增了單一登入(SSO)、條件式存取、批次部署,以及與 ServiceNow、Jira、Microsoft Intune 等工具的廣泛整合目錄等企業級功能。([TeamViewer Tensor / 整合功能](https://www.teamviewer.com/en/integrations/))
+**TeamViewer** 是來自 TeamViewer SE 的商業遠端存取與遠端支援平台,自 2005 年進入市場,是同類工具中部署最廣泛的產品之一。它以代管、雲端仲介的 SaaS 形式提供:TeamViewer 負責營運連線基礎設施,您只需安裝使用者端,工作階段則透過 TeamViewer 自有的路由網路進行仲介。它是閉源軟體,以年度訂閱方式銷售,較高階的方案(品牌名稱為 **TeamViewer Tensor**)還新增了單一登入(SSO)、條件式存取、批次部署,以及與 ServiceNow、Jira、Microsoft Intune 等工具的廣泛整合目錄等企業級功能。([TeamViewer Tensor / 整合功能](https://www.teamviewer.com/en/integrations/))
 
-**RustDesk** 是一款開放原始碼遠端桌面工具,建立在截然不同的前提之上:您可以自行架設整套系統。RustDesk 採用 AGPL 授權開放原始碼,因此可供稽核、可從原始碼建置,並可搭配可無限期免費使用的社群伺服器。商業版產品 **RustDesk Server Pro** 為自架主機——ID/仲介伺服器與中繼伺服器都在您自己的機器或 VPS 上執行,這代表工作階段的中繼資料與連線仲介都留在您所掌控的基礎設施內。RustDesk 依登入使用者數與受管理裝置數計費,而非依同時連線數計費,並且設計上可從單一技術人員擴展至大規模裝置群。如果您對 TeamViewer 的疑慮從根本上來說是關於**掌控權**——無論是資料、成本,還是軟體本身——那麼這正是這兩款產品差異最大的一條分界線。
+**RustDesk** 是一款開放原始碼遠端桌面工具,建立在截然不同的前提之上:您可以自行架設整套系統。RustDesk 採用 AGPL 授權開放原始碼,因此可供稽核、可從原始碼建構,並可搭配可無限期免費使用的社群伺服器。商業版產品 **RustDesk Server Pro** 為自架主機——ID/仲介伺服器與中繼伺服器都在您自己的機器或 VPS 上執行,這代表工作階段的中繼資料與連線仲介都留在您所掌控的基礎設施內。RustDesk 依登入使用者數與受管理裝置數計費,而非依同時連線數計費,並且設計上可從單一技術人員擴展至大規模裝置群。如果您對 TeamViewer 的疑慮從根本上來說是關於**掌控權**——無論是資料、成本,還是軟體本身——那麼這正是這兩款產品差異最大的一條分界線。
 
 本文接下來將逐項功能進行比較。
 
@@ -54,7 +54,7 @@ TeamViewer 是一款商業遠端存取平台,擁有豐富的整合生態系。�
 
 | 功能                   | RustDesk                                                                        | TeamViewer                                                                                                                                                                             |
 | ---------------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 遠端控制(核心工作階段) | 是——這是核心用戶端功能                                                          | 是([功能介紹](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                             |
+| 遠端控制(核心工作階段) | 是——這是核心使用者端功能                                                          | 是([功能介紹](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                             |
 | 無人值守存取           | 是——裝置以受管理、隨時可控制的端點形式授權                                      | 是([功能介紹](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                             |
 | 行動裝置存取           | 是——Android;iOS 僅支援控制端                                                    | 是,透過行動應用程式([功能介紹](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                            |
 | 檔案傳輸               | 是(雙向皆可)                                                                    | 是([功能介紹](https://www.teamviewer.com/en-us/products/remote/features/))                                                                                                             |
@@ -80,7 +80,7 @@ TeamViewer 是一款商業遠端存取平台,擁有豐富的整合生態系。�
 | ChromeOS        | 本文未驗證                                   | 是,但僅支援畫面分享——完整遠端控制並非官方正式支援([支援的作業系統](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                   |
 | Raspberry Pi OS | 是——官方 ARM64/ARM32 Linux 版本              | 是,透過 TeamViewer Classic([支援的作業系統](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-remote/download-and-installation/supported-operating-systems-for-teamviewer-remote/))                                          |
 
-重點在於,兩款產品都能在 Windows、macOS、Linux、Android 與 iOS 上執行,因此對於絕大多數混合裝置環境的支援工作而言,兩款工具都能觸及您所需的端點。TeamViewer 多涵蓋了少數邊緣情境(ChromeOS 畫面分享,以及透過其較舊的 Classic 用戶端支援 Raspberry Pi),而 RustDesk 則以標準 ARM64/ARM32 Linux 版本支援 Pi。如果特殊端點對您很重要,請在決定前對照各廠商的最新清單,確認具體裝置是否受支援。
+重點在於,兩款產品都能在 Windows、macOS、Linux、Android 與 iOS 上執行,因此對於絕大多數混合裝置環境的支援工作而言,兩款工具都能觸及您所需的端點。TeamViewer 多涵蓋了少數邊緣情境(ChromeOS 畫面分享,以及透過其較舊的 Classic 使用者端支援 Raspberry Pi),而 RustDesk 則以標準 ARM64/ARM32 Linux 版本支援 Pi。如果特殊端點對您很重要,請在決定前對照各廠商的最新清單,確認具體裝置是否受支援。
 
 ## 安全性與身分驗證
 
@@ -90,9 +90,9 @@ TeamViewer 是一款商業遠端存取平台,擁有豐富的整合生態系。�
 
 不過,除了這些功能之外,還有一個關於安全模式的重點值得一提。任何集中式廠商自身的基礎設施本身就是一個高價值攻擊目標,沒有任何供應商能完全免疫於這類攻擊——而這正是自架主機模式所能改變的風險輪廓。
 
-**RustDesk 的安全模式**則從不同的出發點開始。RustDesk 採用 AGPL 授權開放原始碼,因此程式碼可獨立稽核並可從原始碼建置。RustDesk Server Pro 為自架主機:您自行營運 ID/仲介伺服器、中繼伺服器、主控台,以及部署所儲存的資料。直接連線的工作階段流量仍在端點之間傳輸。開放原始碼也意味著缺陷會被公開,因此建議查閱[最新版本](https://github.com/rustdesk/rustdesk/releases)與目前的漏洞紀錄,而不要假設自架主機就能完全消除軟體風險。
+**RustDesk 的安全模式**則從不同的出發點開始。RustDesk 採用 AGPL 授權開放原始碼,因此程式碼可獨立稽核並可從原始碼建構。RustDesk Server Pro 為自架主機:您自行營運 ID/仲介伺服器、中繼伺服器、主控台,以及部署所儲存的資料。直接連線的工作階段流量仍在端點之間傳輸。開放原始碼也意味著缺陷會被公開,因此建議查閱[最新版本](https://github.com/rustdesk/rustdesk/releases)與目前的漏洞紀錄,而不要假設自架主機就能完全消除軟體風險。
 
-在**身分驗證**方面,有一點對規劃而言相當重要,值得澄清。RustDesk 支援 LDAP/Active Directory,以及透過 OIDC 的 SSO 單一登入,且此功能**自 Basic 方案起即可使用**:並非僅限最高階方案才有,但低於 Basic 的方案則不包含此功能——請依您打算購買的具體方案來對應確認。完整設定細節請參見〈[RustDesk LDAP 與 Active Directory 設定指南](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)〉。至於逐使用者的存取控制,RustDesk 提供自架主機的網頁主控台、裝置群組、共用通訊錄,以及可自訂品牌的用戶端產生器,讓您的使用者安裝的應用程式掛的是您自己的品牌,而非廠商的品牌。
+在**身分驗證**方面,有一點對規劃而言相當重要,值得澄清。RustDesk 支援 LDAP/Active Directory,以及透過 OIDC 的 SSO 單一登入,且此功能**自 Basic 方案起即可使用**:並非僅限最高階方案才有,但低於 Basic 的方案則不包含此功能——請依您打算購買的具體方案來對應確認。完整設定細節請參見〈[RustDesk LDAP 與 Active Directory 設定指南](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)〉。至於逐使用者的存取控制,RustDesk 提供自架主機的網頁主控台、裝置群組、共用通訊錄,以及可自訂品牌的使用者端產生器,讓您的使用者安裝的應用程式掛的是您自己的品牌,而非廠商的品牌。
 
 如果將工作階段資料留在您所掌控的基礎設施上正是這整件事的核心考量,相關專題討論請參見〈[遠端桌面與資料主權](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)〉與〈[為何要自架遠端桌面軟體](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)〉。
 
@@ -102,7 +102,7 @@ TeamViewer 是一款商業遠端存取平台,擁有豐富的整合生態系。�
 
 **TeamViewer 的模式**採訂閱制,以具名方案等級搭配同時連線數限制來組織。方案內容與價格會因地區與合約期限而異,因此請以 TeamViewer 目前的定價頁面與您取得的書面報價為準,而非參考過去的第三方數字或私下取得的客戶發票。
 
-**關於 TeamViewer 較舊的「終身」授權的說明。**許多團隊最初採用 TeamViewer 時,使用的是**永久授權**——一次性購買、綁定特定主要版本。TeamViewer 目前已不再銷售永久授權,改為僅提供訂閱制,而舊有的永久授權僅能在其原本核准使用的版本上繼續使用,並受 TeamViewer 產品生命週期政策的規範。實務上,這意味著隨著所綁定的版本逐漸淘汰,較舊的永久授權用戶端最終可能無法再連線,而「我付費買的永久授權現在無法連線了」正是我們觀察到團隊開始尋找替代方案的常見原因之一。RustDesk 自身的模式則不同:社群伺服器免費且開放原始碼,沒有到期限制,而商業版 Server Pro 則採年度授權,而非終身買斷。([TeamViewer 訂閱常見問答](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-classic/licensing/subscription/all-about-subscription/))
+**關於 TeamViewer 較舊的「終身」授權的說明。**許多團隊最初採用 TeamViewer 時,使用的是**永久授權**——一次性購買、綁定特定主要版本。TeamViewer 目前已不再銷售永久授權,改為僅提供訂閱制,而舊有的永久授權僅能在其原本核准使用的版本上繼續使用,並受 TeamViewer 產品生命週期政策的規範。實務上,這意味著隨著所綁定的版本逐漸淘汰,較舊的永久授權使用者端最終可能無法再連線,而「我付費買的永久授權現在無法連線了」正是我們觀察到團隊開始尋找替代方案的常見原因之一。RustDesk 自身的模式則不同:社群伺服器免費且開放原始碼,沒有到期限制,而商業版 Server Pro 則採年度授權,而非終身買斷。([TeamViewer 訂閱常見問答](https://www.teamviewer.com/en-us/global/support/knowledge-base/teamviewer-classic/licensing/subscription/all-about-subscription/))
 
 **RustDesk 的模式**在兩方面有所不同。首先,商業方案依**登入使用者數加上受管理裝置數**計費。標準方案包含無限同時連線數;Customized V2 則有明確的連線數額度。升級可按比例計費,請以定價頁面上目前的期中升級條款為準。其次,社群伺服器沒有授權費用,而 Server Pro 是提供集中管理功能的商業選項。RustDesk 並未公開發布固定的自助式 Server Pro 試用方案;在規劃概念驗證之前,請先詢問目前的評估條款。付款機制詳情請參見 [RustDesk 定價頁面](https://rustdesk.com/pricing)。
 
@@ -118,10 +118,10 @@ _優點_
 
 - 依登入使用者數 + 受管理裝置數計費,可隨時按比例升級——而非依同時連線數計量的席次通道
 - 免費方案不會因疑似「商業用途」而標記並中斷工作階段,也沒有隨版本淘汰而無法再連線的永久授權
-- 開放原始碼(AGPL)——可稽核、可從原始碼建置,並提供可無限期免費使用的社群伺服器
+- 開放原始碼(AGPL)——可稽核、可從原始碼建構,並提供可無限期免費使用的社群伺服器
 - Server Pro 自架主機:ID/仲介伺服器與中繼伺服器都在您自己的機器或 VPS 上執行,將工作階段仲介保留在您的防護範圍內
 - 自 Basic 方案起即支援 LDAP/Active Directory 與 OIDC SSO
-- 自架主機的網頁主控台、裝置群組、共用通訊錄,以及可自訂品牌的用戶端產生器;並為更大規模部署提供大規模裝置群的規劃指引
+- 自架主機的網頁主控台、裝置群組、共用通訊錄,以及可自訂品牌的使用者端產生器;並為更大規模部署提供大規模裝置群的規劃指引
 
 _缺點_
 
@@ -154,7 +154,7 @@ _缺點_
 
 **他們想要能閱讀原始碼。**對於重視安全的買家而言,「我們可以自行檢視」與「廠商說沒問題」是截然不同等級的保證。
 
-**他們是希望擁有一套可掛自有品牌、可自架主機工具的 MSP 或企業。**對於受管理服務供應商(MSP)而言,可自訂品牌的用戶端產生器,讓 RustDesk 成為一套白牌支援平台——參見〈[RustDesk 適用於 MSP](/zh-tw/blog/rustdesk-for-msps-zh-tw)〉。對於需要 AD/LDAP 並具備成長空間的大型組織,請參見〈[RustDesk 適用於企業](/zh-tw/blog/rustdesk-for-enterprise-zh-tw)〉。
+**他們是希望擁有一套可掛自有品牌、可自架主機工具的 MSP 或企業。**對於受管理服務供應商(MSP)而言,可自訂品牌的使用者端產生器,讓 RustDesk 成為一套白牌支援平台——參見〈[RustDesk 適用於 MSP](/zh-tw/blog/rustdesk-for-msps-zh-tw)〉。對於需要 AD/LDAP 並具備成長空間的大型組織,請參見〈[RustDesk 適用於企業](/zh-tw/blog/rustdesk-for-enterprise-zh-tw)〉。
 
 也在比較其他選項嗎?參見〈[RustDesk 對比 AnyDesk](/zh-tw/blog/rustdesk-vs-anydesk-zh-tw)〉、〈[RustDesk 對比 ScreenConnect](/zh-tw/blog/rustdesk-vs-screenconnect-zh-tw)〉,以及〈[最佳自架主機 TeamViewer 替代方案](/zh-tw/blog/self-hosted-teamviewer-alternative-zh-tw)〉。
 

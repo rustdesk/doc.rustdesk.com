@@ -1,7 +1,7 @@
 ---
 title: 授權
 weight: 15
-description: "RustDesk 的授權文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的授權文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk pro license", "rustdesk server pro activate", "rustdesk pricing license", "rustdesk change license", "rustdesk web console license"]
 ---
 
@@ -38,7 +38,7 @@ RustDesk Server Pro 授權用來在您的自架伺服器上啟用 Pro 功能。�
 
 續期/升級許可證可以通過[自助許可證門戶](https://rustdesk.com/self-host/account/)找到，如下所述，使用您購買許可證時使用的電子郵件登錄。
 
-| 帶有續期/升級操作的許可證頁面 | 升級窗口 |
+| 帶有續期/升級操作的許可證頁面 | 升級視窗 |
 | --- | --- |
 | ![](/docs/en/self-host/rustdesk-server-pro/license/images/renew.jpg?v2) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/upgrade.png) |
 
@@ -51,13 +51,13 @@ RustDesk Server Pro 授權用來在您的自架伺服器上啟用 Pro 功能。�
 
 ## 發票、許可證檢索和遷移
 
-許可證只能在一台機器上使用（僅限hbbs，hbbr不需要許可證），如果您想要遷移到其他機器、檢索您的許可證或下載發票，請訪問[https://rustdesk.com/self-host/account/](https://rustdesk.com/self-host/account/)。使用在Stripe結帳時使用的電子郵件地址登錄，解綁您要遷移的舊機器，如下所示，當您在新伺服器的網頁控制台中設置許可證時，它將自動分配許可證並在控制台中註冊。
+許可證只能在一台機器上使用（僅限hbbs，hbbr不需要許可證），如果您想要遷移到其他機器、檢索您的許可證或下載發票，請訪問[https://rustdesk.com/self-host/account/](https://rustdesk.com/self-host/account/)。使用在Stripe結帳時使用的電子郵件地址登錄，解綁您要遷移的舊機器，如下所示，當您在新伺服器的網頁控制台中設定許可證時，它將自動分配許可證並在控制台中註冊。
 
 ![](/docs/en/self-host/rustdesk-server-pro/license/images/unbind.jpg)
 
 ## 代理
-如果您的伺服器無法直接訪問互聯網以驗證許可證，您可以添加代理，例如`proxy=http://username:password@example.com:8080 ./hbbs`。
+如果您的伺服器無法直接訪問互聯網以驗證許可證，您可以加入代理，例如`proxy=http://username:password@example.com:8080 ./hbbs`。
 
-或者，您可以將`proxy=http://username:password@example.com:8080`添加到工作目錄（`id_ed25519` / `db.sqlite3`文件所在的位置）下的`.env`文件中。
+或者，您可以將`proxy=http://username:password@example.com:8080`加入到工作目錄（`id_ed25519` / `db.sqlite3`文件所在的位置）下的`.env`文件中。
 
 `http`可以替換為`https`或`socks5`。如果沒有`username` / `password` / `port`，可以使用`proxy=http://example.com`。

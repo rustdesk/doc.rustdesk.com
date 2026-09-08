@@ -1,12 +1,12 @@
 ---
 title: Windows & PM2 或 NSSM
 weight: 20
-description: "RustDesk 的Windows & PM2 或 NSSM文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的Windows & PM2 或 NSSM文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk server windows", "rustdesk pm2", "rustdesk nssm", "rustdesk hbbs windows", "rustdesk hbbr windows", "rustdesk self-host windows"]
 ---
 
 {{% notice note %}}
-Windows 安全政策較為複雜，如果這份教程對您不適用，或您遇到連線不穩定的情況，請轉移到 Linux 伺服器。
+Windows 安全政策較為複雜，如果這份教學對您不適用，或您遇到連線不穩定的情況，請轉移到 Linux 伺服器。
 {{% /notice %}}
 
 {{% notice note %}}
@@ -34,7 +34,7 @@ GUI 版本 `RustDeskServer.setup.exe` 已不再維護，不建議使用。
 - 適合 Windows Server 使用
 - 開機自動啟動，無需登入（建立啟動項目的使用者無需登入即可啟動）。
 - 將兩個執行檔作為服務執行。
-- 獨立運行（不依賴於 Node.js）
+- 獨立執行（不依賴於 Node.js）
 
 使用 PM2 的好處包括：
 - 如果您在主要工作的電腦上執行伺服器，這是一個好主意
@@ -126,5 +126,5 @@ pm2 log hbbr
 pm2 log hbbs
 ```
 
-## 替代教程
+## 替代教學
 https://pedja.supurovic.net/setting-up-self-hosted-rustdesk-server-on-windows/?lang=lat

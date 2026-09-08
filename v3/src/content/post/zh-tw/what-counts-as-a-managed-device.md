@@ -35,7 +35,7 @@ metadata:
 
 ## 詳細說明
 
-真正會改變計算方式的是方案本身。在 **[Customized V2](https://rustdesk.com/pricing#custom2)** 方案中，「受管理裝置」的定義較為狹窄：只有您**指派給裝置群組或使用者**的裝置，才會計入您的授權裝置數量。僅用於臨時、一次性支援、且從未被指派的機器不會被計入，也不會被停用。如果您希望這些未指派的裝置完全不出現在主控台中，可以透過 [`register-device` 用戶端設定](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#register-device) 來控制，該設定會在授權的同時連線數達到 2 或以上時生效。實務上，這類快速支援工作階段只會顯示一組 ID 與一次性密碼，用於單一有人值守連線，因此真正的一次性互動永遠不需要在您的裝置清單中占用固定名額。如果您的工作大多屬於這種情況，Customized V2 通常會是更合適的選擇——請將您的使用情境寄至 [sales@rustdesk.com](mailto:sales@rustdesk.com) 以取得目前的條款，或查看 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
+真正會改變計算方式的是方案本身。在 **[Customized V2](https://rustdesk.com/pricing#custom2)** 方案中，「受管理裝置」的定義較為狹窄：只有您**指派給裝置群組或使用者**的裝置，才會計入您的授權裝置數量。僅用於臨時、一次性支援、且從未被指派的機器不會被計入，也不會被停用。如果您希望這些未指派的裝置完全不出現在主控台中，可以透過 [`register-device` 使用者端設定](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#register-device) 來控制，該設定會在授權的同時連線數達到 2 或以上時生效。實務上，這類快速支援工作階段只會顯示一組 ID 與一次性密碼，用於單一有人值守連線，因此真正的一次性互動永遠不需要在您的裝置清單中占用固定名額。如果您的工作大多屬於這種情況，Customized V2 通常會是更合適的選擇——請將您的使用情境寄至 [sales@rustdesk.com](mailto:sales@rustdesk.com) 以取得目前的條款，或查看 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
 
 舉例來說，假設某家 [MSP](/zh-tw/blog/rustdesk-for-msps-zh-tw) 擁有 20 名技術人員，負責支援大約 1,000 部客戶機器：該公司需要同時滿足**兩個**授權維度——足夠讓 20 名技術人員登入的使用者數量，以及足夠涵蓋所有需要保持可連線機器的受管理裝置數量。對於真正只是一次性支援請求的端點，則適用上述 Customized V2 的計算規則；目前的方案額度請參閱 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
 
