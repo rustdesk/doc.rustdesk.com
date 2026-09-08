@@ -50,12 +50,12 @@ services:
     restart: unless-stopped
 ```
 
-然後運行 `sudo docker compose up -d` 或 `podman-compose up -d`
+然後執行 `sudo docker compose up -d` 或 `podman-compose up -d`
 
 > `sudo apt install podman-compose` 安裝 `podman-compose`
 
 {{% notice note %}}
-如何[手動為 Web 控制台設置 HTTPS](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually)。
+如何[手動為 Web 控制台設定 HTTPS](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually)。
 {{% /notice %}}
 
 ## Docker 指令
@@ -68,7 +68,7 @@ services:
 bash <(wget -qO- https://get.docker.com)
 ```
 
-運行以下指令（s6 鏡像可能需要 `./data:/data` 而不是 `./data:/root`）：
+執行以下指令（s6 鏡像可能需要 `./data:/data` 而不是 `./data:/root`）：
 
 ```sh
 sudo docker image pull rustdesk/rustdesk-server-pro
@@ -87,7 +87,7 @@ sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v ./data:/root -td --
 ```
 
 {{% notice note %}}
-如何[手動為 Web 控制台設置 HTTPS](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually)。
+如何[手動為 Web 控制台設定 HTTPS](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually)。
 {{% /notice %}}
 
 

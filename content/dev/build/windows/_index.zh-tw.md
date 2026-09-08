@@ -5,18 +5,18 @@ description: "RustDesk 的Windows文件，提供安裝、設定、部署與疑�
 keywords: ["build rustdesk windows", "rustdesk windows build", "rustdesk vcpkg windows", "rustdesk sciter dll", "rustdesk llvm libclang"]
 ---
 
-## 在 Windows 上建置前需要準備什麼？
+## 在 Windows 上建構前需要準備什麼？
 
-在 Windows 上建置 RustDesk 需要準備 Visual Studio C++ 工具鏈、Rust、`vcpkg`、`sciter.dll` 以及已設定好 `LIBCLANG_PATH` 的 LLVM。這裡的命令請在 Git Bash 中執行，這樣範例命令與環境變數寫法才能直接生效。
+在 Windows 上建構 RustDesk 需要準備 Visual Studio C++ 工具鏈、Rust、`vcpkg`、`sciter.dll` 以及已設定好 `LIBCLANG_PATH` 的 LLVM。這裡的命令請在 Git Bash 中執行，這樣範例命令與環境變數寫法才能直接生效。
 
-## Windows 建置檢查清單
+## Windows 建構檢查清單
 
 - 安裝含 C++ 工作負載的 Visual Studio。
 - 透過 `rustup-init.exe` 安裝 Rust。
 - 複製並初始化 `vcpkg`，然後設定 `VCPKG_ROOT`。
 - 下載桌面 UI 所需的 `sciter.dll`。
 - 安裝 LLVM，並將 `LIBCLANG_PATH` 指向其 `bin` 目錄。
-- 複製 RustDesk，並在 Git Bash 中執行預設建置步驟。
+- 複製 RustDesk，並在 Git Bash 中執行預設建構步驟。
 
 {{% notice note %}}
 此處的所有指令皆須在 git-bash 中執行，而非命令提示字元，否則您會遇到語法錯誤。

@@ -59,7 +59,7 @@ AnyDesk 並未公開任何官方門檻值,因此第三方文章中提到的任�
 
 ## 核心差異:掌控自己的伺服器
 
-根據 AnyDesk 的[使用者端設定文件](https://support.anydesk.com/docs/settings)說明,AnyDesk 同時支援直接連線與中繼連線,而且並未公開其偵測機制的運算公式——因此,這項標記並不能證明每個工作階段都會經過 AnyDesk 中繼站。執行機制可以透過使用者端、帳號和授權中繼資料來完成,而不需要將你的工作階段媒體經由雲端中繼。**RustDesk 把執行機制的所在位置移到了你自己運行的硬體上。** ID/集合伺服器(rendezvous server)、中繼站與控制台都歸你所有,因此不會再有遠端存取 SaaS 服務來把工作階段分類為個人或商業用途——[自架伺服器的理由](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)一文說明了為什麼這麼做能徹底移除這道觸發機制,而不只是將它重置。原始碼是採用 [AGPL](https://github.com/rustdesk/rustdesk) 授權的開源軟體,你可以自行稽核或編譯建置,而 RustDesk 自身的商業授權條款仍然適用於 Server Pro。
+根據 AnyDesk 的[使用者端設定文件](https://support.anydesk.com/docs/settings)說明,AnyDesk 同時支援直接連線與中繼連線,而且並未公開其偵測機制的運算公式——因此,這項標記並不能證明每個工作階段都會經過 AnyDesk 中繼站。執行機制可以透過使用者端、帳號和授權中繼資料來完成,而不需要將你的工作階段媒體經由雲端中繼。**RustDesk 把執行機制的所在位置移到了你自己執行的硬體上。** ID/集合伺服器(rendezvous server)、中繼站與控制台都歸你所有,因此不會再有遠端存取 SaaS 服務來把工作階段分類為個人或商業用途——[自架伺服器的理由](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)一文說明了為什麼這麼做能徹底移除這道觸發機制,而不只是將它重置。原始碼是採用 [AGPL](https://github.com/rustdesk/rustdesk) 授權的開源軟體,你可以自行稽核或編譯建構,而 RustDesk 自身的商業授權條款仍然適用於 Server Pro。
 
 ## 兩種模式的比較
 

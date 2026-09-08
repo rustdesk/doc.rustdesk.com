@@ -38,7 +38,7 @@ RustDesk Server Pro 授權用來在您的自架伺服器上啟用 Pro 功能。�
 
 續期/升級許可證可以通過[自助許可證門戶](https://rustdesk.com/self-host/account/)找到，如下所述，使用您購買許可證時使用的電子郵件登錄。
 
-| 帶有續期/升級操作的許可證頁面 | 升級窗口 |
+| 帶有續期/升級操作的許可證頁面 | 升級視窗 |
 | --- | --- |
 | ![](/docs/en/self-host/rustdesk-server-pro/license/images/renew.jpg?v2) | ![](/docs/en/self-host/rustdesk-server-pro/license/images/upgrade.png) |
 
@@ -51,7 +51,7 @@ RustDesk Server Pro 授權用來在您的自架伺服器上啟用 Pro 功能。�
 
 ## 發票、許可證檢索和遷移
 
-許可證只能在一台機器上使用（僅限hbbs，hbbr不需要許可證），如果您想要遷移到其他機器、檢索您的許可證或下載發票，請訪問[https://rustdesk.com/self-host/account/](https://rustdesk.com/self-host/account/)。使用在Stripe結帳時使用的電子郵件地址登錄，解綁您要遷移的舊機器，如下所示，當您在新伺服器的網頁控制台中設置許可證時，它將自動分配許可證並在控制台中註冊。
+許可證只能在一台機器上使用（僅限hbbs，hbbr不需要許可證），如果您想要遷移到其他機器、檢索您的許可證或下載發票，請訪問[https://rustdesk.com/self-host/account/](https://rustdesk.com/self-host/account/)。使用在Stripe結帳時使用的電子郵件地址登錄，解綁您要遷移的舊機器，如下所示，當您在新伺服器的網頁控制台中設定許可證時，它將自動分配許可證並在控制台中註冊。
 
 ![](/docs/en/self-host/rustdesk-server-pro/license/images/unbind.jpg)
 

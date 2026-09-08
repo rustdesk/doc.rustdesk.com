@@ -38,7 +38,7 @@ metadata:
 
 ### RustDesk——免費、開放原始碼，不會被商業用途盯上
 
-RustDesk 之所以排在第一位，是因為它以 **[AGPL](https://github.com/rustdesk/rustdesk)** 授權開放原始碼，而且**社群伺服器沒有授權費用，也沒有商業用途的分類機制**。你仍然需要為自己選擇的主機代管與維運方式付費。它支援跨平台（Windows、macOS、Linux、Android、iOS）。在 Windows、macOS 與 Linux 主機上，內建檔案傳輸與永久密碼無人值守存取功能；Android 可作為有人值守連線的被控端，而 iOS 版應用程式則僅能作為控制端。原始碼可供獨立檢視與建置。
+RustDesk 之所以排在第一位，是因為它以 **[AGPL](https://github.com/rustdesk/rustdesk)** 授權開放原始碼，而且**社群伺服器沒有授權費用，也沒有商業用途的分類機制**。你仍然需要為自己選擇的主機代管與維運方式付費。它支援跨平台（Windows、macOS、Linux、Android、iOS）。在 Windows、macOS 與 Linux 主機上，內建檔案傳輸與永久密碼無人值守存取功能；Android 可作為有人值守連線的被控端，而 iOS 版應用程式則僅能作為控制端。原始碼可供獨立檢視與建構。
 
 **取捨之處：**你得自行架設伺服器——不過硬體需求不高，設定完成後維護也相當輕鬆。得有人準備主機、開放連接埠、設定 TLS，並隨著時間持續更新修補。免費的社群伺服器也不等於付費的 Server Pro——像是[網頁控制台、自訂品牌使用者端，以及裝置群組](https://rustdesk.com/docs)這類團隊功能，都屬於 Server Pro（同樣可自架，但並非免費）。目前的條款請參見 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
 
@@ -89,9 +89,9 @@ VNC 可說是開放式遠端存取的元老級技術。像 [TigerVNC](https://ti
 
 大多數免費選項，都得讓你在 Google 管理的簡易性（CRD）、較重的基礎設施（Guacamole 與 MeshCentral），或是自行組建網路（VNC）之間做出取捨。RustDesk 的核心主張是：使用免費方案，不代表你得犧牲企業用途、跨平台涵蓋範圍、自架能力，或是可稽核性。
 
-- **開放原始碼，可供稽核。** 程式碼採用 [AGPL](https://github.com/rustdesk/rustdesk) 授權——你可以閱讀、建置、驗證它。
+- **開放原始碼，可供稽核。** 程式碼採用 [AGPL](https://github.com/rustdesk/rustdesk) 授權——你可以閱讀、建構、驗證它。
 - **無授權費用的社群伺服器。** 依其開放原始碼授權自行架設；基礎設施與維運成本由你自行負擔。
-- **沒有黑箱供應商。** 連線工作階段透過你自己掌控的基礎設施運行，而非可能對你計量或標記的雲端服務。
+- **沒有黑箱供應商。** 連線工作階段透過你自己掌控的基礎設施執行，而非可能對你計量或標記的雲端服務。
 - **涵蓋所有主要平台。** Windows、macOS、Linux 與 Android 皆可作為被控端；iOS 則為控制端應用程式。
 
 當你的團隊需求超出免費伺服器所能負荷時，[Server Pro](https://rustdesk.com/pricing) 提供了控制台、自訂使用者端、裝置群組與 SSO 單一登入等功能——同樣可自架，並依登入使用者數與受管裝置數計價。

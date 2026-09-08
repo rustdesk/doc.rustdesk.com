@@ -87,7 +87,7 @@ ScreenConnect（前身為 ConnectWise Control）是一款商業遠端存取平�
 
 **修補本質上是所有權的問題。** 採用供應商代管的服務時，由供應商掌控修補的時程，而自架的操作者則需自行更新伺服器。安全修補、憑證輪替以及類似的事件，都會落在*您自己*的變更行事曆上，而不是供應商的行事曆——這正是讓資料留在您自有基礎架構上的同一種「所有權」上的取捨；自行架設 RustDesk 同樣需要承擔這份責任。
 
-**RustDesk 的安全模型。** RustDesk 的做法在架構上截然不同：正因為它以 AGPL 授權開放原始碼，程式碼便能獨立稽核並從原始碼建置，而不必單憑信任——這是 ScreenConnect 的雲端版本與私有部署版本都無法提供的特性。Server Pro 採自架部署，因此集合／中繼伺服器與工作階段的仲介作業都留在您所掌控的基礎架構之內，而對於最在意資料落地與 GDPR 的團隊而言，這正是重點所在（[為何要自架](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)一文對其中的道理有深入說明）。在身分驗證方面，RustDesk 支援 LDAP，也支援透過 OIDC 實現的 SSO——這裡有一點值得明確說明：**LDAP／SSO 功能自 Basic 方案起才提供；低於 Basic 的方案並不包含此功能。** 管理作業透過自架的網頁主控台進行，存取控制則以裝置群組與共用通訊錄來處理，讓您能界定哪些使用者可以存取哪些機器。詳細的設定方式請參閱我們的 [RustDesk LDAP 與 Active Directory 指南](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)。
+**RustDesk 的安全模型。** RustDesk 的做法在架構上截然不同：正因為它以 AGPL 授權開放原始碼，程式碼便能獨立稽核並從原始碼建構，而不必單憑信任——這是 ScreenConnect 的雲端版本與私有部署版本都無法提供的特性。Server Pro 採自架部署，因此集合／中繼伺服器與工作階段的仲介作業都留在您所掌控的基礎架構之內，而對於最在意資料落地與 GDPR 的團隊而言，這正是重點所在（[為何要自架](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)一文對其中的道理有深入說明）。在身分驗證方面，RustDesk 支援 LDAP，也支援透過 OIDC 實現的 SSO——這裡有一點值得明確說明：**LDAP／SSO 功能自 Basic 方案起才提供；低於 Basic 的方案並不包含此功能。** 管理作業透過自架的網頁主控台進行，存取控制則以裝置群組與共用通訊錄來處理，讓您能界定哪些使用者可以存取哪些機器。詳細的設定方式請參閱我們的 [RustDesk LDAP 與 Active Directory 指南](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)。
 
 開放原始碼並不代表軟體就毫無弱點可言。建議查閱 RustDesk 的[最新版本紀錄](https://github.com/rustdesk/rustdesk/releases)與公開漏洞紀錄。ScreenConnect 雲端模式提供的是由供應商代為營運的服務；RustDesk 提供的則是可供稽核的程式碼與自架的伺服器端服務，同時也伴隨著營運責任。關於流量路由與資料落地的界線，請參閱[遠端桌面與資料主權](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)。
 
@@ -108,7 +108,7 @@ _優點_
 - 標準方案的並行連線數不受限——不依技術人員數對工作階段計費（僅 Customized V2 方案有限制）
 - 自訂品牌使用者端產生器可產生掛上您自己名號、而非 ConnectWise 品牌的白牌工具
 - 自架 Server Pro 讓仲介／中繼作業留在您自有的基礎架構上（資料主權、GDPR）
-- 開放原始碼（AGPL）——可稽核，也可從原始碼自行建置
+- 開放原始碼（AGPL）——可稽核，也可從原始碼自行建構
 - 免費的社群版伺服器可無限期免費執行
 - 可擴展至大規模裝置群（詳見後文）
 

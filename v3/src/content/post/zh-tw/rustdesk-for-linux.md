@@ -40,9 +40,9 @@ RustDesk 為每一種常見的 Linux 封裝格式都提供了安裝包，因此�
 | AppImage | 任何發行版，可攜式            | 否                 | 較新版本的 Ubuntu 可能需要 `libfuse2`；先執行 `chmod +x` 再執行                                              |
 | AUR      | Arch、Manjaro                 | 依套件而定         | 由社群維護（`rustdesk-bin`、`rustdesk-appimage`）                                                            |
 
-如果你希望 RustDesk 能以背景服務的方式執行，並在重新開機後依然存在，`.deb` 與 `.rpm` 安裝包是最佳選擇——兩者都會自動註冊並啟動 systemd 單元。Flatpak（[Flathub](https://flathub.org/apps/com.rustdesk.RustDesk) 上的 `com.rustdesk.RustDesk`）則是沙盒化的建置版本，方便桌面使用，但預設不會安裝系統服務。若你所用的發行版沒有 RustDesk 直接提供的安裝包，建議優先選擇 **Flatpak**——因為它內建自己的執行環境，相容性通常最廣。AppImage 則是可攜式的單一檔案替代方案，但實務上相容性較不穩定（例如在較新版本的 Ubuntu 上可能需要 `libfuse2`）。
+如果你希望 RustDesk 能以背景服務的方式執行，並在重新開機後依然存在，`.deb` 與 `.rpm` 安裝包是最佳選擇——兩者都會自動註冊並啟動 systemd 單元。Flatpak（[Flathub](https://flathub.org/apps/com.rustdesk.RustDesk) 上的 `com.rustdesk.RustDesk`）則是沙盒化的建構版本，方便桌面使用，但預設不會安裝系統服務。若你所用的發行版沒有 RustDesk 直接提供的安裝包，建議優先選擇 **Flatpak**——因為它內建自己的執行環境，相容性通常最廣。AppImage 則是可攜式的單一檔案替代方案，但實務上相容性較不穩定（例如在較新版本的 Ubuntu 上可能需要 `libfuse2`）。
 
-實務上，RustDesk 廣泛用於 Ubuntu、Debian、Fedora、RHEL/CentOS、openSUSE、Arch 與 NixOS 等發行版，並提供 **x86_64、ARM64（aarch64）與 ARM32（ARMv7）** 架構的建置版本——因此不論是標準 PC，還是 ARM 開發板或伺服器，都能執行 RustDesk。
+實務上，RustDesk 廣泛用於 Ubuntu、Debian、Fedora、RHEL/CentOS、openSUSE、Arch 與 NixOS 等發行版，並提供 **x86_64、ARM64（aarch64）與 ARM32（ARMv7）** 架構的建構版本——因此不論是標準 PC，還是 ARM 開發板或伺服器，都能執行 RustDesk。
 
 ## X11 與 Wayland：真正需要注意的重點
 

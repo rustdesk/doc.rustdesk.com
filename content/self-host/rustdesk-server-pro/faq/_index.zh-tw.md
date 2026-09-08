@@ -26,7 +26,7 @@ weight: 600
 2. 啟動 VPS、裸機或 Linux VM。
 3. 如果您想使用 DNS 和 SSL，請建立 DNS 名稱，例如 `rustdesk.yourdomain.com`。
 4. [此頁面](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/installscript/#方法-2installsh)。
-5. 複製並粘貼命令到您的 Linux 終端。
+5. 複製並貼上命令到您的 Linux 終端機。
 6. 按照提示指導您完成安裝。
 7. 安裝完成後訪問 `https://rustdesk.yourdomain.com` 或 `http://youripaddress:21114`。
 8. 使用使用者名稱 `admin` 和密碼 `test1234` 登錄。
@@ -38,7 +38,7 @@ weight: 600
 3. 登錄到您的 RustDesk Server。
 4. 如果您還沒有使用 DNS 並想使用 SSL，請建立 DNS 名稱，例如 `rustdesk.yourdomain.com`。
 5. [此頁面](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/#convert-from-open-source)。
-6. 複製並粘貼命令到您的 Linux 終端。
+6. 複製並貼上命令到您的 Linux 終端機。
 7. 按照提示指導您完成安裝。
 8. 安裝完成後訪問 `https://rustdesk.yourdomain.com` 或 `http://youripaddress:21114`。
 9. 使用使用者名稱 `admin` 和密碼 `test1234` 登錄。
@@ -47,7 +47,7 @@ weight: 600
 ## 有新版本的 RustDesk Server Pro 推出，如何升級？
 您最好先備份資料文件（sqlite3 文件等），https://github.com/rustdesk/rustdesk-server-pro/discussions/184#discussioncomment-8013375。
 - ### 如果您使用腳本安裝（`install.sh`）
-請運行 [update.sh](/docs/en/self-host/rustdesk-server-pro/installscript/script/#upgrade)。
+請執行 [update.sh](/docs/en/self-host/rustdesk-server-pro/installscript/script/#upgrade)。
 - ### Docker Compose
 ```
 sudo docker compose down
@@ -136,7 +136,7 @@ rustdesk/makepkg               latest    86a981e2e18f   2 months ago   2.23GB
 1. 訪問 `https://rustdesk.yourdomain.com` 或 `http://youripaddress:21114`。
 2. 使用使用者名稱 `admin` 和密碼 `test1234` 登錄。
 3. 點擊右上角的 `admin`。
-4. 點擊 `設置`。
+4. 點擊 `設定`。
 5. 在提供的框中輸入您的新密碼。
 
 ## 如何將我的許可證移動到新伺服器？
@@ -145,7 +145,7 @@ rustdesk/makepkg               latest    86a981e2e18f   2 months ago   2.23GB
 ## 我的 VPS 電子郵件無法正常工作
 許多 VPS 提供商阻止連接埠 465 和 25。
 
-一個簡單的檢查方法是使用 telnet。在 Linux 終端中測試輸入 `telnet your.mailserver.com 25`。在 Windows 上使用 PowerShell 輸入 `Test-NetConnection -ComputerName your.mailserver.com -Port 25`。
+一個簡單的檢查方法是使用 telnet。在 Linux 終端機中測試輸入 `telnet your.mailserver.com 25`。在 Windows 上使用 PowerShell 輸入 `Test-NetConnection -ComputerName your.mailserver.com -Port 25`。
 
 您的郵件伺服器可能不使用連接埠 25。請確保您使用正確的連接埠。
 
@@ -177,14 +177,14 @@ rustdesk/makepkg               latest    86a981e2e18f   2 months ago   2.23GB
 ## 您為 RustDesk Server Pro 提供托管服務嗎？
 請聯繫我們的[銷售](mailto://sales@rustdesk.com)團隊。
 
-## 有地方可以看影片設置指南嗎？
+## 有地方可以看影片設定指南嗎？
 是的！我們有一個 [YouTube 頻道](https://youtube.com/@RustDesk)。
 
 ## 為什麼我的日誌/設備名稱是空的？
-確保在被控制的設備上正確設置了 API，https://github.com/rustdesk/rustdesk-server-pro/issues/21#issuecomment-1637935750。
+確保在被控制的設備上正確設定了 API，https://github.com/rustdesk/rustdesk-server-pro/issues/21#issuecomment-1637935750。
 
 ## 如何卸載 RustDesk Server Pro？
-運行以下命令：
+執行以下命令：
 ```sh
 sudo systemctl stop rustdesk-hbbs.service
 sudo systemctl disable rustdesk-hbbs.service
@@ -233,13 +233,13 @@ Start-Process .\rustdesk.exe --silent-install -wait
 請使用[正確的密鑰](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/)配置您的客戶端。
 
 ## `連接到中繼伺服器失敗`錯誤
-請確保 `hbbr` 正在運行。有關 `hbbr` 的更多資訊，您可以在[這裡](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/)找到。
-如果您的 `hbbr` 不在與 `hbbs` 相同的機器上運行，或者您有多個中繼伺服器，或者您不在預設連接埠 `21117` 上運行，您必須明確告知 `hbbs`。請檢查[這裡](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/)。
+請確保 `hbbr` 正在執行。有關 `hbbr` 的更多資訊，您可以在[這裡](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/)找到。
+如果您的 `hbbr` 不在與 `hbbs` 相同的機器上執行，或者您有多個中繼伺服器，或者您不在預設連接埠 `21117` 上執行，您必須明確告知 `hbbs`。請檢查[這裡](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/)。
 
 ## 重置管理員帳戶的 MFA
 https://github.com/rustdesk/rustdesk/discussions/6576
 
-## 手動為 Web 控制台設置 HTTPS
+## 手動為 Web 控制台設定 HTTPS
 
 ### 1. 購買域名並將其解析到您的伺服器 IP 地址。
 * 從 GoDaddy、Namecheap 或 Namesilo 等域名註冊商購買域名。
@@ -261,18 +261,18 @@ https://github.com/rustdesk/rustdesk/discussions/6576
 * Gentoo：`sudo emerge -av nginx`
 * Alpine：`sudo apk add --no-cache nginx`
 
-運行 `nginx -h` 檢查是否安裝成功。
+執行 `nginx -h` 檢查是否安裝成功。
 
 ### 3. 安裝 Certbot
-* 方法 1：如果安裝了 `snap`，運行 `sudo snap install certbot --classic`。
+* 方法 1：如果安裝了 `snap`，執行 `sudo snap install certbot --classic`。
 * 方法 2：使用 `python3-certbot-nginx`，例如 Ubuntu 使用 `sudo apt-get install python3-certbot-nginx`。
 * 方法 3：如果上述兩種方法失敗，嘗試安裝 `certbot-nginx`，例如 CentOS 7 使用 `sudo yum install certbot-nginx`。
 
-運行 `certbot -h` 檢查是否安裝成功。
+執行 `certbot -h` 檢查是否安裝成功。
 
 ### 4. 配置 Nginx
 有兩種方法：
-* 如果目錄 `/etc/nginx/sites-available` 和 `/etc/nginx/sites-enabled` 存在，將以下命令中的 `YOUR_DOMAIN` 替換為您的域名並運行。
+* 如果目錄 `/etc/nginx/sites-available` 和 `/etc/nginx/sites-enabled` 存在，將以下命令中的 `YOUR_DOMAIN` 替換為您的域名並執行。
 ```sh
 cat > /etc/nginx/sites-available/rustdesk.conf << EOF
 server {
@@ -285,11 +285,11 @@ server {
 }
 EOF
 ```
-然後運行 `sudo ln -s /etc/nginx/sites-available/rustdesk.conf /etc/nginx/sites-enabled/rustdesk.conf`。
+然後執行 `sudo ln -s /etc/nginx/sites-available/rustdesk.conf /etc/nginx/sites-enabled/rustdesk.conf`。
 
-運行 `cat /etc/nginx/sites-available/rustdesk.conf` 確保其內容正確。
+執行 `cat /etc/nginx/sites-available/rustdesk.conf` 確保其內容正確。
 
-* 如果目錄 `/etc/nginx/sites-available` 和 `/etc/nginx/sites-enabled` 不存在且目錄 `/etc/nginx/conf.d` 存在，將以下命令中的 `YOUR_DOMAIN` 替換為您的域名並運行。
+* 如果目錄 `/etc/nginx/sites-available` 和 `/etc/nginx/sites-enabled` 不存在且目錄 `/etc/nginx/conf.d` 存在，將以下命令中的 `YOUR_DOMAIN` 替換為您的域名並執行。
 ```sh
 cat > /etc/nginx/conf.d/rustdesk.conf << EOF
 server {
@@ -302,10 +302,10 @@ server {
 }
 EOF
 ```
-運行 `cat /etc/nginx/conf.d/rustdesk.conf` 確保其內容正確。
+執行 `cat /etc/nginx/conf.d/rustdesk.conf` 確保其內容正確。
 
 ### 5. 為域名啟用防火牆規則
-運行以下命令：
+執行以下命令：
 
 ```sh
 sudo ufw allow 80/tcp
@@ -315,7 +315,7 @@ sudo ufw --force reload
 ```
 
 ### 6. 產生 SSL 證書
-將 `$YOUR_DOMAIN` 替換為您的域名，然後運行
+將 `$YOUR_DOMAIN` 替換為您的域名，然後執行
 `sudo certbot --nginx --cert-name $YOUR_DOMAIN --key-type ecdsa --renew-by-default --no-eff-email --agree-tos --server https://acme-v02.api.letsencrypt.org/directory -d $YOUR_DOMAIN`。
 
 如果提示 `Enter email address (used for urgent renewal and security notices)`，輸入您的電子郵件地址。
@@ -353,7 +353,7 @@ server {
 * 控制台打印 `Successfully deployed certificate for YOUR_DOMAIN to /etc/nginx/.../default` 而不是 `Successfully deployed certificate for YOUR_DOMAIN to /etc/nginx/.../rustdesk.conf`。
 
 原因可能是 Certbot 沒有找到 `rustdesk.conf` 文件，您可以嘗試以下解決方案之一：
-- 檢查步驟 5 的結果，運行 `sudo service nginx restart`。
+- 檢查步驟 5 的結果，執行 `sudo service nginx restart`。
 - 將包含 `YOUR_DOMAIN` 的伺服器配置 `server{...}` 複製到 `rustdesk.conf`，並將 `location{...}` 更改為以下內容。
 
 ```sh
@@ -372,7 +372,7 @@ location / {
 
 解決方案：可能是防火牆引起的，請參考 https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#firewall
 
-注意：如果您手動更改 `rustdesk.conf`，請運行 `sudo service nginx restart`。
+注意：如果您手動更改 `rustdesk.conf`，請執行 `sudo service nginx restart`。
 
 ### 7. 登錄到網頁
 * 在瀏覽器中打開 `https://YOUR_DOMAIN`，使用預設使用者名稱 "admin" 和密碼 "test1234" 登錄，然後將密碼更改為您自己的。
@@ -380,7 +380,7 @@ location / {
 ### 8. 為 ID 伺服器和中繼伺服器加入 WebSocket Secure (WSS) 支援，以啟用所有平台的安全通信。
 
 將以下配置加入到 `/etc/nginx/.../rustdesk.conf` 文件的第一個 `server` 部分，然後重啟 `Nginx` 服務。
-Web 客戶端可以通過 `https://YOUR_DOMAIN/web` 訪問。自訂客戶端可以通過在高級選項中設置 `allow-websocket=Y` 來使用 WebSocket。如果使用啟用 WebSocket 的自訂客戶端，它將不會使用 TCP/UDP，只能通過中繼連接（直接 IP 連接除外）。如果只使用這種啟用 WebSocket 的客戶端，伺服器可以關閉連接埠 21114 到 21119，只保持連接埠 443 開放。
+Web 客戶端可以通過 `https://YOUR_DOMAIN/web` 訪問。自訂客戶端可以通過在高級選項中設定 `allow-websocket=Y` 來使用 WebSocket。如果使用啟用 WebSocket 的自訂客戶端，它將不會使用 TCP/UDP，只能通過中繼連接（直接 IP 連接除外）。如果只使用這種啟用 WebSocket 的客戶端，伺服器可以關閉連接埠 21114 到 21119，只保持連接埠 443 開放。
 
 ```
     location /ws/id {
@@ -501,7 +501,7 @@ sudo restorecon -v '/usr/bin/hbbr'
 ## 防火牆
 
 ### 雲防火牆
-如果您在 AWS/Azure/Google/DigitalOcean 雲上運行，請在雲供應商的儀表板上開放 UDP（21116）和 TCP（21114-21119）入站連接埠。
+如果您在 AWS/Azure/Google/DigitalOcean 雲上執行，請在雲供應商的儀表板上開放 UDP（21116）和 TCP（21114-21119）入站連接埠。
 
 - [AWS] https://docs.aws.amazon.com/network-firewall/latest/developerguide/getting-started.html
 - [Azure] https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
@@ -509,7 +509,7 @@ sudo restorecon -v '/usr/bin/hbbr'
 - [DigitalOcean] https://docs.digitalocean.com/products/networking/firewalls/
 
 ### 本地伺服器防火牆
-RustDesk 使用 `ufw` 設置防火牆。在某些發行版（如 CentOS 9）上可能無法工作，您可以嘗試使用 `firewall-cmd`：
+RustDesk 使用 `ufw` 設定防火牆。在某些發行版（如 CentOS 9）上可能無法工作，您可以嘗試使用 `firewall-cmd`：
 
 ```sh
 sudo firewall-cmd --permanent --add-port=21115/tcp
@@ -533,7 +533,7 @@ sudo firewall-cmd --permanent --add-port=80/tcp
 sudo firewall-cmd --permanent --add-port=443/tcp
 ```
 
-執行以上命令後，運行 `sudo firewall-cmd --reload` 重新加載防火牆。
+執行以上命令後，執行 `sudo firewall-cmd --reload` 重新加載防火牆。
 
 ## 在 Web 控制台中更改管理員密碼後無法登錄。有簡單的方法重置密碼嗎？
 1. 確保您已安裝 `rustdesk-utils`。如果沒有，您可以在[這裡](https://github.com/rustdesk/rustdesk-server-pro)獲取。您還需要從資料庫所在的資料夾執行命令，即 `/var/lib/rustdesk-server`。

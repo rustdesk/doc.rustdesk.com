@@ -5,9 +5,9 @@ description: "RustDesk 的Windows 常見問題文件，提供安裝、設定、�
 keywords: ["rustdesk build faq windows", "rustdesk vcpkg error", "rustdesk cargo lock error", "rustdesk libclang path", "rustdesk windows build troubleshooting"]
 ---
 
-## 什麼時候應該使用這個 Windows 建置 FAQ？
+## 什麼時候應該使用這個 Windows 建構 FAQ？
 
-當你的 Windows 建置環境已經大致準備好，但 `cargo run`、`vcpkg` 或 `bindgen` 仍然報錯時，就該看這一頁。它集中處理 RustDesk Windows 建置中最常見的依賴與環境變數問題。
+當你的 Windows 建構環境已經大致準備好，但 `cargo run`、`vcpkg` 或 `bindgen` 仍然報錯時，就該看這一頁。它集中處理 RustDesk Windows 建構中最常見的依賴與環境變數問題。
 
 ## vcpkg 下載包失敗
 
@@ -54,7 +54,7 @@ $ cargo run
 
 
 
-## VCPKG_ROOT 環境變數未設置
+## VCPKG_ROOT 環境變數未設定
 
 ### 錯誤
 
@@ -68,7 +68,7 @@ thread 'main' panicked at 'Failed to find package: VcpkgNotFound("No vcpkg insta
 
 
 
-## 未安裝 clang 環境，或未設置 LIBCLANG_PATH 環境變數
+## 未安裝 clang 環境，或未設定 LIBCLANG_PATH 環境變數
 
 ### 錯誤
 
@@ -78,4 +78,4 @@ thread 'main' panicked at 'Unable to find libclang: "couldn't find any valid sha
 
 ### 解決辦法
 
-安裝 [llvm](https://releases.llvm.org/download.html)，設置 `LIBCLANG_PATH` 環境變數為 `llvm_install_dir/bin`
+安裝 [llvm](https://releases.llvm.org/download.html)，設定 `LIBCLANG_PATH` 環境變數為 `llvm_install_dir/bin`

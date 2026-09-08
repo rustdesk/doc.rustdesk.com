@@ -162,8 +162,8 @@ keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server p
 | Users-Force Logout | 強制所選使用者群組內的非管理員使用者登出。 |
 | Users-Update Strategy | 更改所選使用者群組內非管理員使用者的策略。 |
 | Users-Update Control Role | 更改所選使用者群組內非管理員使用者的控制角色。 |
-| Devices-View | 讀取當前角色管理的裝置的清單資訊。 |
-| Devices-Enable/Disable | 啟用或停用當前角色管理的裝置。 |
-| Devices-Delete | 刪除當前角色管理的裝置。 |
-| Devices-Edit Info | 編輯當前角色管理的裝置的資訊。 |
-| Devices-Update Strategy | 更改當前角色管理的裝置的策略。 |
+| Devices-View | 讀取目前角色管理的裝置的清單資訊。 |
+| Devices-Enable/Disable | 啟用或停用目前角色管理的裝置。 |
+| Devices-Delete | 刪除目前角色管理的裝置。 |
+| Devices-Edit Info | 編輯目前角色管理的裝置的資訊。 |
+| Devices-Update Strategy | 更改目前角色管理的裝置的策略。 |

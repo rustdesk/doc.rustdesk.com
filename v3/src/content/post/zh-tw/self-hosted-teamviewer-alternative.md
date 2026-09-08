@@ -14,7 +14,7 @@ faq:
   - question: 'RustDesk 是良好的自架版 TeamViewer 與 AnyDesk 替代方案嗎?'
     answer: 'RustDesk Server Pro 從設計之初就採自架架構——ID/會合伺服器(rendezvous server)、中繼伺服器、控制台與儲存的資料都執行在您掌控的基礎架構上——而且 RustDesk 是採用 AGPL 授權的開源軟體。這正好解決了團隊離開 TeamViewer 和 AnyDesk 的兩大原因:成本與掌控權。'
   - question: '我可以在自己的伺服器上自架 TeamViewer 或 AnyDesk 替代方案嗎?'
-    answer: '可以。透過 RustDesk Server Pro,您可以在自有機房或 VPS 上自行架設伺服器,而且可以無限期執行免費的開源社群版伺服器。您這邊需要有人負責建置主機、開放連接埠、設定 TLS,並持續進行修補更新。'
+    answer: '可以。透過 RustDesk Server Pro,您可以在自有機房或 VPS 上自行架設伺服器,而且可以無限期執行免費的開源社群版伺服器。您這邊需要有人負責建構主機、開放連接埠、設定 TLS,並持續進行修補更新。'
   - question: 'RustDesk 的授權方式與按席位或按方案的訂閱制相比有何不同?'
     answer: 'RustDesk 依「登入使用者數」加上「受管理裝置數」計費,標準方案提供無限併發連線數,Customized V2 方案則有明確的連線數上限;方案升級如發生在合約期中,費用會按比例計算。建議依目前定價頁面,將這三項數字都納入評估。'
   - question: 'RustDesk 會像 AnyDesk 那樣標記商業用途嗎?'
@@ -89,7 +89,7 @@ TeamViewer 的部署會累積一些功能,而逐項對照的檢查清單很容�
 
 在盤點清楚這些功能之後,接著分階段進行遷移:
 
-1. 在非正式環境中建置 RustDesk,並同時測試直接連線與中繼連線路徑。
+1. 在非正式環境中建構 RustDesk,並同時測試直接連線與中繼連線路徑。
 2. 將使用者、群組與通訊錄的所有權,對應至符合最小權限原則的 RustDesk 存取規則。
 3. 針對具代表性的 Windows、macOS、Linux 與行動裝置進行試點測試,包括權限提升與無人值守存取。
 4. 驗證更新機制、金鑰備份、憑證更新、記錄、監控以及災難復原流程。

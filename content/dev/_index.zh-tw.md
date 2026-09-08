@@ -11,10 +11,10 @@ keywords: ["rustdesk development", "build rustdesk", "rustdesk contributor docs"
 
 | 需求 | 最佳指南 |
 | --- | --- |
-| 從整體貢獻者建置文件開始 | [建置](/docs/zh-tw/dev/build/) |
-| 在 Linux 上建置桌面應用 | [Linux](/docs/zh-tw/dev/build/linux/) |
-| 在 Windows 上建置桌面應用 | [Windows](/docs/zh-tw/dev/build/windows/) |
-| 在 macOS 上建置桌面應用 | [macOS](/docs/zh-tw/dev/build/osx/) |
-| 排查常見 Windows 建置問題 | [Windows FAQ](/docs/zh-tw/dev/build/faq/) |
+| 從整體貢獻者建構文件開始 | [建構](/docs/zh-tw/dev/build/) |
+| 在 Linux 上建構桌面應用 | [Linux](/docs/zh-tw/dev/build/linux/) |
+| 在 Windows 上建構桌面應用 | [Windows](/docs/zh-tw/dev/build/windows/) |
+| 在 macOS 上建構桌面應用 | [macOS](/docs/zh-tw/dev/build/osx/) |
+| 排查常見 Windows 建構問題 | [Windows FAQ](/docs/zh-tw/dev/build/faq/) |
 
 {{% children depth="3" showhidden="true" %}}

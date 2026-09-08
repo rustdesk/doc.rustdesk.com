@@ -21,7 +21,7 @@ pre: "<b>2. </b>"
 
 這裡有 RustDesk 客戶端如何與 `hbbr` / `hbbs` 通信的[圖解](https://github.com/rustdesk/rustdesk/wiki/How-does-RustDesk-work%3F)。
 
-只要 RustDesk 在機器上運行，該機器就會不斷地 ping ID 伺服器（`hbbs`），以使其當前的 IP 位址和連接埠被知悉。
+只要 RustDesk 在機器上執行，該機器就會不斷地 ping ID 伺服器（`hbbs`），以使其目前的 IP 位址和連接埠被知悉。
 
 當您從電腦 A 啟動到電腦 B 的連接時，電腦 A 會聯繫 ID 伺服器並要求與電腦 B 通信。
 
