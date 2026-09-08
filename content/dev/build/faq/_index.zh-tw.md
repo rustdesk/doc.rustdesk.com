@@ -68,7 +68,7 @@ thread 'main' panicked at 'Failed to find package: VcpkgNotFound("No vcpkg insta
 
 
 
-## 未安裝 clang 環境，或未設定 LIBCLANG_PATH 環境變數
+## 未安裝 clang ，或未設定 LIBCLANG_PATH 環境變數
 
 ### 錯誤
 

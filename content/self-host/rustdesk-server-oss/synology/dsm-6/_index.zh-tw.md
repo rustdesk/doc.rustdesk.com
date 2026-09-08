@@ -50,7 +50,7 @@ DSM 7.2 更新後，Docker 升級為新的 "Container Manager"，請查看[這�
 - 啟用 `使用與 Docker Host 相同的網路`。關於主機網路的更多資訊，請[查看](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/#net-host)。
 ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-6/images/host-net.png)
 
-- 掛載主機目錄（例如 `/home/rustdesk/`）到 `/root`，hbbs 將在此目錄中產生一些檔案（資料庫和 `key` 檔案），這些檔案需要在重啟後持久保存。
+- 掛載主機目錄（例如 `/home/rustdesk/`）到 `/root`，hbbs 將在此目錄中產生一些檔案（資料庫和 `key` 檔案），這些檔案需要在重啟後持久儲存。
 
 | 掛載 | 在主機目錄中產生的檔案 |
 | --- | --- |

@@ -52,7 +52,7 @@ GUI 版本 `RustDeskServer.setup.exe` 已不再維護，不推薦使用。
 1. 在 IIS 伺服器主機下打開應用程式要求路由。
 2. 轉到 Server Proxy Settings。
 3. 啟用代理，所有設定都會出現，您可以保持預設值。
-4. 保存設定，然後我們可以進入下一步：URL Rewrite。
+4. 儲存設定，然後我們可以進入下一步：URL Rewrite。
 
 ## URL Rewrite
 

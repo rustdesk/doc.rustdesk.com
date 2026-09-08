@@ -14,7 +14,7 @@ keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "ru
 - 透過最終 callback origin 開啟 RustDesk Pro Web 控制台。
 - 在 Microsoft Entra ID 中建立應用程式註冊。
 - 將 Azure 的 `Client ID` 複製到 RustDesk Pro。
-- 建立 client secret，並立即保存 secret value。
+- 建立 client secret，並立即儲存 secret value。
 - 用 `Directory (tenant) ID` 產生 issuer URL。
 - 在 Azure 驗證設定裡啟用 `ID tokens`。
 
