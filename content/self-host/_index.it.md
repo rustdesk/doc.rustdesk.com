@@ -41,10 +41,20 @@ Porte Principali: \
 TCP `21114-21119` \
 UDP `21116`
 
-Le `21115-21117` sopra sono le porte minime richieste per far funzionare RustDesk, queste gestiscono le porte di segnale e relay così come l'attraversamento NAT.
+- TCP `21114`: Usata per il server API HTTP in RustDesk Server Pro.
+- TCP `21115`: Usata per il test del tipo NAT.
+- UDP `21116`: Usata per la registrazione dei dispositivi.
+- TCP `21116`: Usata per la registrazione dei dispositivi e il NAT hole punching.
+- TCP `21117`: Usata per la comunicazione relay.
+- TCP `21118`: Usata per la comunicazione WebSocket.
+- TCP `21119`: Usata per la comunicazione WebSocket.
 
-Le porte TCP `21118` e `21119` sono le porte WebSocket per il [Client Web RustDesk](https://rustdesk.com/web/), hai bisogno di un reverse proxy per farlo supportare HTTPS, per favore fai riferimento a questa [configurazione di esempio Nginx](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client).
+Le porte `21115`-`21117` sono le porte minime richieste per far funzionare RustDesk. Gestiscono segnalazione, relay e attraversamento NAT.
 
-Per gli utenti Pro senza un Proxy SSL dovrai aprire la porta TCP `21114` perché l'API funzioni alternativamente usando un Proxy SSL apri la porta TCP `443`.
+Per una configurazione WSS, le porte TCP `21118` e TCP `21119` di solito non devono essere esposte esternamente perché vengono usate internamente dal reverse proxy, come Nginx. Se non usi WebSocket, queste porte non devono essere esposte. Fai riferimento a questa [configurazione di esempio Nginx](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms).
+
+Per gli utenti Pro senza un proxy SSL, devi aprire la porta TCP `21114` perché l'API funzioni. Se HTTPS (`443`) è configurato per il server, TCP `21114` non deve essere esposto a Internet.
+
+RustDesk supporta anche una modalità di distribuzione in cui è esposto solo TCP `443` e tutte le altre porte sono chiuse. Con questa configurazione, la comunicazione può funzionare solo tramite relay WSS e le connessioni peer-to-peer dirette non sono disponibili.
 
 {{% children depth="4" showhidden="true" %}}

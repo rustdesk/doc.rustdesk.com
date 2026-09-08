@@ -41,10 +41,20 @@ RustDesk 服务器自托管所需的端口很大程度上取决于您的环境�
 TCP `21114-21119` \
 UDP `21116`
 
-上述 `21115-21117` 是 RustDesk 工作所需的最小端口，这些处理信号和中继端口以及 NAT 穿越。
+- TCP `21114`：用于 RustDesk Server Pro 中的 HTTP API 服务器。
+- TCP `21115`：用于 NAT 类型测试。
+- UDP `21116`：用于设备注册。
+- TCP `21116`：用于设备注册和 NAT 打洞。
+- TCP `21117`：用于中继通信。
+- TCP `21118`：用于 WebSocket 通信。
+- TCP `21119`：用于 WebSocket 通信。
 
-TCP 端口 `21118` 和 `21119` 是 [RustDesk Web 客户端](https://rustdesk.com/web/)的 WebSocket 端口，您需要反向代理来使其支持 HTTPS，请参考这个[示例 Nginx 配置](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client)。
+`21115`-`21117` 是 RustDesk 工作所需的最小端口。这些端口处理信令、中继和 NAT 穿透。
 
-对于没有 SSL 代理的专业版用户，您需要打开 TCP 端口 `21114` 以使 API 工作，或者使用 SSL 代理打开 TCP 端口 `443`。
+对于 WSS 配置，TCP `21118` 和 TCP `21119` 通常不需要对外暴露，因为它们通常由 Nginx 等反向代理在内部访问。如果您不使用 WebSocket，也不需要暴露这些端口。请参考这个[示例 Nginx 配置](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms)。
+
+对于没有 SSL 代理的专业版用户，您需要打开 TCP 端口 `21114` 以使 API 工作。如果服务器已配置 HTTPS (`443`)，TCP `21114` 不需要暴露到 Internet。
+
+RustDesk 还支持仅暴露 TCP `443` 并关闭所有其他端口的部署模式。使用此配置时，通信只能通过 WSS 中继进行，无法使用直接点对点连接。
 
 {{% children depth="4" showhidden="true" %}}

@@ -48,10 +48,20 @@ RustDesk 서버 자체 호스팅에 필요한 포트는 주로 귀하의 환경�
 TCP `21114-21119` \
 UDP `21116`
 
-위의 `21115-21117`는 RustDesk가 작동하는 데 필요한 최소한의 포트이며, 이들은 신호 및 릴레이 포트와 NAT 트래버스를 처리합니다.
+- TCP `21114`: RustDesk Server Pro의 HTTP API 서버에 사용됩니다.
+- TCP `21115`: NAT 유형 테스트에 사용됩니다.
+- UDP `21116`: 장치 등록에 사용됩니다.
+- TCP `21116`: 장치 등록 및 NAT 홀 펀칭에 사용됩니다.
+- TCP `21117`: 릴레이 통신에 사용됩니다.
+- TCP `21118`: WebSocket 통신에 사용됩니다.
+- TCP `21119`: WebSocket 통신에 사용됩니다.
 
-TCP 포트 `21118` 및 `21119`는 [RustDesk Web Client](https://rustdesk.com/web/)의 웹소켓 포트이며, HTTPS를 지원하려면 역방향 프록시가 필요합니다. 이 [sample Nginx configuration](/docs/ko/self-host/rustdesk-server-pro/faq/#8-id-서버와-릴레이-서버에-websocket-secure-wss-지원을-추가하여-모든-플랫폼에서-안전한-통신을-가능하게-하십시오)를 참조하십시오.
+포트 `21115`-`21117`는 RustDesk가 작동하는 데 필요한 최소 포트입니다. 이 포트들은 신호, 릴레이 및 NAT 트래버스를 처리합니다.
 
-SSL 프록시가 없는 Pro 사용자의 경우 API가 작동하려면 TCP 포트 `21114`를 열어야 하며, 대신 SSL 프록시를 사용하여 TCP 포트 `443`를 열어야 합니다.
+WSS 구성에서는 TCP `21118` 및 TCP `21119`가 일반적으로 Nginx 같은 역방향 프록시에서 내부적으로 접근되므로 외부에 노출할 필요가 없습니다. WebSocket을 사용하지 않는 경우에도 이 포트들을 노출할 필요가 없습니다. 이 [sample Nginx configuration](/docs/ko/self-host/rustdesk-server-pro/faq/#8-id-서버와-릴레이-서버에-websocket-secure-wss-지원을-추가하여-모든-플랫폼에서-안전한-통신을-가능하게-하십시오)를 참조하십시오.
+
+SSL 프록시가 없는 Pro 사용자의 경우 API가 작동하려면 TCP 포트 `21114`를 열어야 합니다. 서버에 HTTPS (`443`)가 구성되어 있으면 TCP `21114`를 인터넷에 노출할 필요가 없습니다.
+
+RustDesk는 TCP `443`만 노출하고 다른 모든 포트를 닫는 배포 모드도 지원합니다. 이 구성에서는 통신이 WSS 릴레이를 통해서만 작동할 수 있으며 직접 P2P 연결은 사용할 수 없습니다.
 
 {{% children depth="4" showhidden="true" %}}
