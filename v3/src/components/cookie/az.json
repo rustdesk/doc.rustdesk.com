@@ -2,7 +2,7 @@
   "consentModal": {
     "label": "Kukilərə razılıq",
     "title": "Salam, səyyah, kuki vaxtıdır!",
-    "description": "Veb saytımız düzgün işləməsini təmin etmək üçün zəruri kukilərdən, onunla necə qarşılıqlı əlaqədə olduğunuzu anlamaq üçün isə izləmə kukilərindən istifadə edir. İzləmə kukiləri yalnız razılığınızdan sonra təyin ediləcək. <button type=\"button\" data-cc=\"show-preferencesModal\" class=\"cc__link\">Tərcihləri idarə et</button>",
+    "description": "Veb saytımızın düzgün işləməsini təmin etmək üçün zəruri kukilərdən, onunla necə qarşılıqlı əlaqədə olduğunuzu anlamaq üçün isə izləmə kukilərindən istifadə edir. İzləmə kukiləri yalnız razılığınızdan sonra təyin ediləcək. <button type=\"button\" data-cc=\"show-preferencesModal\" class=\"cc__link\">Tərcihləri idarə et</button>",
     "acceptAllBtn": "Hamısını qəbul et",
     "acceptNecessaryBtn": "Hamısını rədd et",
     "showPreferencesBtn": "Tərcihləri idarə et"
@@ -24,7 +24,7 @@
         "linkedCategory": "necessary"
       },
       {
-        "title": "Məhsuldarlıq və analitika kukiləri",
+        "title": "Performans və analitika kukiləri",
         "description": "Bu kukilər veb sayta keçmişdə etdiyiniz seçimləri yadda saxlamağa imkan verir",
         "linkedCategory": "analytics",
         "cookieTable": {
