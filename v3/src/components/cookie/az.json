@@ -1,0 +1,55 @@
+{
+  "consentModal": {
+    "label": "Kukilərə razılıq",
+    "title": "Salam, səyyah, kuki vaxtıdır!",
+    "description": "Veb saytımız düzgün işləməsini təmin etmək üçün zəruri kukilərdən, onunla necə qarşılıqlı əlaqədə olduğunuzu anlamaq üçün isə izləmə kukilərindən istifadə edir. İzləmə kukiləri yalnız razılığınızdan sonra təyin ediləcək. <button type=\"button\" data-cc=\"show-preferencesModal\" class=\"cc__link\">Tərcihləri idarə et</button>",
+    "acceptAllBtn": "Hamısını qəbul et",
+    "acceptNecessaryBtn": "Hamısını rədd et",
+    "showPreferencesBtn": "Tərcihləri idarə et"
+  },
+  "preferencesModal": {
+    "title": "Kuki tərcihləri",
+    "acceptAllBtn": "Hamısını qəbul et",
+    "acceptNecessaryBtn": "Hamısını rədd et",
+    "savePreferencesBtn": "Tərcihləri yadda saxla",
+    "closeIconLabel": "Bağla",
+    "sections": [
+      {
+        "title": "Kukilərdən istifadə",
+        "description": "Veb saytın əsas funksiyalarını təmin etmək və onlayn təcrübənizi yaxşılaşdırmaq üçün kukilərdən istifadə edirik ..."
+      },
+      {
+        "title": "Mütləq zəruri kukilər",
+        "description": "Bu kukilər veb saytımın düzgün işləməsi üçün zəruridir. Bu kukilər olmadan veb sayt düzgün işləməz",
+        "linkedCategory": "necessary"
+      },
+      {
+        "title": "Məhsuldarlıq və analitika kukiləri",
+        "description": "Bu kukilər veb sayta keçmişdə etdiyiniz seçimləri yadda saxlamağa imkan verir",
+        "linkedCategory": "analytics",
+        "cookieTable": {
+          "headers": {
+            "name": "Ad",
+            "domain": "Xidmət",
+            "description": "Təsvir",
+            "expiration": "Vaxtın bitməsi"
+          },
+          "body": [
+            {
+              "name": "_ga",
+              "domain": "Google Analytics",
+              "description": "<a href=\"#das\">Google Analytics</a> tərəfindən təyin edilən kuki.",
+              "expiration": "Bitmə vaxtı: 12 gündən sonra"
+            },
+            {
+              "name": "_gid",
+              "domain": "Google Analytics",
+              "description": "<a href=\"#das\">Google Analytics</a> tərəfindən təyin edilən kuki",
+              "expiration": "Sessiya"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
