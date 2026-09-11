@@ -70,6 +70,20 @@ From there, note down the IP/DNS and Key shown at the end of the install and ins
 
 Please [Download](https://github.com/rustdesk/rustdesk-server/releases/latest) deb files yourself and install with `apt-get -f install <filename>.deb` or `dpkg -i <filename>.deb`.
 
+Once the deb file has been installed, you should retrieve the public key from `/var/lib/rustdesk-server/id_ed25519.pub` to configure your clients.
+
+Additionally, ensure the relevant ports have been opened in your system's firewall. A quick way to check is with the command `sudo ss - tulpn | grep 2111`, which will show all of the 2111X ports open on your system, and what PID they are owned by:
+
+```
+❯ sudo ss -tulpn | grep 2111
+udp   UNCONN 0      0                  *:21116            *:*    users:(("hbbs",pid=10659,fd=14))
+tcp   LISTEN 0      128                *:21115            *:*    users:(("hbbs",pid=10659,fd=19))
+tcp   LISTEN 0      128                *:21119            *:*    users:(("hbbr",pid=10359,fd=10))
+tcp   LISTEN 0      128                *:21118            *:*    users:(("hbbs",pid=10659,fd=20))
+tcp   LISTEN 0      128                *:21117            *:*    users:(("hbbr",pid=10359,fd=9))
+tcp   LISTEN 0      128                *:21116            *:*    users:(("hbbs",pid=10659,fd=18))
+```
+
 ## What do clients need after server installation?
 
 After the server is running, clients usually need the `ID Server` address and the server public `Key`. If you are configuring RustDesk Server Pro clients, you may also need the `API Server`. Please check [this](/docs/en/self-host/client-configuration/#2-manual-config).
