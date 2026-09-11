@@ -72,7 +72,7 @@ Please [Download](https://github.com/rustdesk/rustdesk-server/releases/latest) d
 
 Once the deb file has been installed, you should retrieve the public key from `/var/lib/rustdesk-server/id_ed25519.pub` to configure your clients.
 
-Additionally, ensure the relevant ports have been opened in your system's firewall. A quick way to check is with the command `sudo ss - tulpn | grep 2111`, which will show all of the 2111X ports open on your system, and what PID they are owned by:
+Additionally, ensure the relevant ports have been opened in your system's firewall. A quick way to check is with the command `sudo ss -tulpn | grep 2111`, which will show all of the 2111X ports open on your system, and what PID they are owned by:
 
 ```
 ❯ sudo ss -tulpn | grep 2111
