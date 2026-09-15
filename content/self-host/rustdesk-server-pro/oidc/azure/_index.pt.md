@@ -57,8 +57,6 @@ Essa configuração permite que os usuários entrem no RustDesk Server Pro com c
 12. No RustDesk Pro, preencha o campo **Emissor** com `https://login.microsoftonline.com/<Directory (tenant) ID>/v2.0`. Substitua `Directory (tenant) ID` pelo seu **ID do diretório (locatário)**. O **ID do diretório (locatário)** está no painel **Visão geral** do aplicativo Azure.
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/9-RustDesk-Issuer.png)
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/10-Azure-TenantID.png)
-13. No Azure, selecione o menu **Autenticação**. Em seguida, configure a autorização, escolhendo **Tokens de ID (usados para fluxos implícitos e híbridos)**.
-![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/11-Azure-Auth.png)
 
 ## Referências
 

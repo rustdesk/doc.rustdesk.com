@@ -57,8 +57,6 @@ Ta konfiguracja pozwala użytkownikom logować się do RustDesk Server Pro za po
 12. W RustDeska Pro wypełnij pole **Wystawca** wartością `https://login.microsoftonline.com/<Identyfikator katalogu (dzierżawy)>/v2.0`. Zastąp `Identyfikator katalogu (dzierżawy)` swoim **Identyfikatorem katalogu (dzierżawy)**. **Identyfikator katalogu (dzierżawy)** znajduje się w panelu **Przegląd** aplikacji w Azure.
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/9-RustDesk-Issuer.png)
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/10-Azure-TenantID.png)
-13. W Azure wybierz menu **Uwierzytelnianie**. Skonfiguruj autoryzację, wybierając **Tokeny identyfikatorów (używane dla przepływów niejawnych i hybrydowych)**.
-![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/11-Azure-Auth.png)
 
 ## Materiały referencyjne
 

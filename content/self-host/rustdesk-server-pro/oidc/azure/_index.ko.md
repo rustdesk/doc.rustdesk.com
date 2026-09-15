@@ -59,8 +59,6 @@ keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "ru
 12. RustDesk Pro에서 **발급자** 필드에 `https://login.microsoftonline.com/<Directory (tenant) ID>/v2.0`를 입력하세요. `Directory (tenant) ID`를 귀하의 **디렉터리(테넌트) ID**로 바꿔주세요. **디렉터리(테넌트) ID**는 Azure의 애플리케이션 **개요** 패널에 있습니다.
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/9-RustDesk-Issuer.png)
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/10-Azure-TenantID.png)
-13. Azure에서 **인증** 메뉴를 선택하세요. 그런 다음 **ID 토큰(암시적 및 하이브리드 플로우에 사용)**을 선택하여 권한 부여를 설정하세요.
-![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/11-Azure-Auth.png)
 
 ## 참고문헌
 

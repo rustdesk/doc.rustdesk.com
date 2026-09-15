@@ -53,8 +53,6 @@ keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "ru
 12. 在 RustDesk Pro 中，填入 **Issuer** 字段，`https://login.microsoftonline.com/<Directory (tenant) ID>/v2.0`。请将 `Directory (tenant) ID` 替换为您的 **目录(租户) ID**。**目录(租户) ID** 在 Azure 的应用 **概要** 面板中。
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/9-RustDesk-Issuer.png)
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/10-Azure-TenantID.png)
-13. 在 Azure 中， 选择 **身份验证** 菜单，设置授权，选择 **ID 令牌(用于隐式流和混合流)** 。
-![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/11-Azure-Auth.png)
 
 
 # 故障排除

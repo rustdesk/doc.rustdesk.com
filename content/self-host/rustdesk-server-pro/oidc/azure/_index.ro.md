@@ -57,8 +57,6 @@ Această configurare le permite utilizatorilor să se autentifice în RustDesk S
 12. În RustDesk Pro, completați câmpul **Issuer** cu `https://login.microsoftonline.com/<Directory (tenant) ID>/v2.0`. Înlocuiți `Directory (tenant) ID` cu **Directory (tenant) ID** al contului dvs. Acesta se găsește în panoul **Overview** al aplicației din Azure.
 ![](/docs/ro/self-host/rustdesk-server-pro/oidc/azure/images/9-RustDesk-Issuer.png)
 ![](/docs/ro/self-host/rustdesk-server-pro/oidc/azure/images/10-Azure-TenantID.png)
-13. În Azure, accesați meniul **Authentication**. Apoi activați autorizarea, bifând **ID tokens (used for implicit and hybrid flows)**.
-![](/docs/ro/self-host/rustdesk-server-pro/oidc/azure/images/11-Azure-Auth.png)
 
 ## Referințe
 

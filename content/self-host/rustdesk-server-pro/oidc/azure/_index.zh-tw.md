@@ -57,8 +57,6 @@ keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "ru
 12. 在 RustDesk Pro 中，在 **發行者** 欄位中填入 `https://login.microsoftonline.com/<Directory (tenant) ID>/v2.0`。請用您的 **目錄（租戶）ID** 替換 `Directory (tenant) ID`。**目錄（租戶）ID** 在 Azure 應用程式的 **概述** 面板中。
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/9-RustDesk-Issuer.png)
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/10-Azure-TenantID.png)
-13. 在 Azure 中，選擇 **驗證** 菜單。然後透過選擇 **ID 令牌（用於隱式和混合流）** 來設置授權。
-![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/11-Azure-Auth.png)
 
 ## 參考資料
 
