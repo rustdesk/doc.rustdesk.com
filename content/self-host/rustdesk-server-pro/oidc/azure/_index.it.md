@@ -16,7 +16,6 @@ Questa configurazione permette agli utenti di accedere a RustDesk Server Pro con
 - Copia il `Client ID` di Azure in RustDesk Pro.
 - Crea un client secret e salva subito il secret value.
 - Genera l'issuer URL con il `Directory (tenant) ID`.
-- Abilita `ID tokens` nelle impostazioni di autenticazione di Azure.
 
 ## Quali valori di Azure vanno in RustDesk Pro?
 

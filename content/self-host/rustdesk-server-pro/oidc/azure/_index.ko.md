@@ -18,7 +18,6 @@ keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "ru
 - Azure에서 `Client ID`를 RustDesk Pro로 복사합니다.
 - 클라이언트 시크릿을 생성하고 즉시 시크릿 값을 저장하세요.
 - 귀하의 `Directory (tenant) ID`를 사용해 발급자 URL을 구성하세요.
-- Azure 인증 설정에서 `ID tokens`를 활성화하세요.
 
 ## RustDesk Pro에 입력해야 하는 Azure 값은 무엇인가요?
 

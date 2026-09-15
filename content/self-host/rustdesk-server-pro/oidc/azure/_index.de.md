@@ -16,7 +16,6 @@ Mit dieser Konfiguration melden sich Benutzer uber Microsoft Entra ID per OpenID
 - Ubertragen Sie die Azure-`Client ID` nach RustDesk Pro.
 - Erstellen Sie ein Client-Secret und speichern Sie den Secret-Wert sofort.
 - Erzeugen Sie die Issuer-URL mit der `Directory (tenant) ID`.
-- Aktivieren Sie `ID tokens` in den Azure-Authentifizierungseinstellungen.
 
 ## Welche Azure-Werte gehoren in RustDesk Pro?
 

@@ -16,7 +16,6 @@ keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "ru
 - 將 Azure 的 `Client ID` 複製到 RustDesk Pro。
 - 建立 client secret，並立即保存 secret value。
 - 用 `Directory (tenant) ID` 生成 issuer URL。
-- 在 Azure 驗證設定裡啟用 `ID tokens`。
 
 ## Azure 中哪些值要填到 RustDesk Pro？
 

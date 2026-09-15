@@ -16,7 +16,6 @@ keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "ru
 - Azure の `Client ID` を RustDesk Pro にコピーします。
 - client secret を作成し、secret value をすぐ保存します。
 - `Directory (tenant) ID` で issuer URL を組み立てます。
-- Azure の認証設定で `ID tokens` を有効にします。
 
 ## Azure のどの値を RustDesk Pro に入れますか？
 
