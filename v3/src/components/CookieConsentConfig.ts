@@ -11,6 +11,12 @@ import ko from './cookie/ko.json';
 import zhCN from './cookie/zh-CN.json';
 import zhTW from './cookie/zh-TW.json';
 
+declare global {
+  interface Window {
+    loadGoogleAnalytics?: () => void;
+  }
+}
+
 export const config: CookieConsentConfig = {
   guiOptions: {
     consentModal: {
@@ -37,12 +43,14 @@ export const config: CookieConsentConfig = {
         ga4: {
           label:
             '<a href="https://marketingplatform.google.com/about/analytics/terms/us/" target="_blank">Google Analytics 4</a>',
+          // Defined by Analytics.astro, which only declares the loader and never calls
+          // it, so Google is contacted for the first time here -- after consent.
           onAccept: () => {
-            // TODO: load ga4
+            window.loadGoogleAnalytics?.();
           },
-          onReject: () => {
-            console.log('ga4 rejected');
-          },
+          // Nothing to undo: rejecting means the loader was never called, and the
+          // cookies matched below are erased by the library itself.
+          onReject: () => {},
           cookies: [
             {
               name: /^_ga/,

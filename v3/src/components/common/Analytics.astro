@@ -1,13 +1,29 @@
 ---
-import { GoogleAnalytics } from '@astrolib/analytics';
 import { ANALYTICS } from 'astrowind:config';
+
+const gaId = ANALYTICS?.vendors?.googleAnalytics?.id ? String(ANALYTICS.vendors.googleAnalytics.id) : '';
+
+// Nothing is loaded here. This only defines the loader; the analytics service in
+// CookieConsentConfig calls it once the visitor accepts that category, so no Google
+// script runs and no _ga cookie is set before consent is given.
+const loader = `
+window.loadGoogleAnalytics = function () {
+  if (window.__gaLoaded) return;
+  window.__gaLoaded = true;
+
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=${gaId}';
+  document.head.appendChild(s);
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () {
+    window.dataLayer.push(arguments);
+  };
+  window.gtag('js', new Date());
+  window.gtag('config', '${gaId}');
+};
+`;
 ---
 
-{
-  ANALYTICS?.vendors?.googleAnalytics?.id ? (
-    <GoogleAnalytics
-      id={String(ANALYTICS.vendors.googleAnalytics.id)}
-      partytown={ANALYTICS?.vendors?.googleAnalytics?.partytown}
-    />
-  ) : null
-}
+{gaId ? <script is:inline set:html={loader} /> : null}
