@@ -3,12 +3,23 @@ import { ANALYTICS } from 'astrowind:config';
 
 const gaId = ANALYTICS?.vendors?.googleAnalytics?.id ? String(ANALYTICS.vendors.googleAnalytics.id) : '';
 
-// Nothing is loaded here. This only defines the loader; the analytics service in
-// CookieConsentConfig calls it once the visitor accepts that category, so no Google
-// script runs and no _ga cookie is set before consent is given.
+// Nothing is loaded here. This only defines the loader and its counterpart; the
+// analytics service in CookieConsentConfig calls them when the visitor accepts or
+// rejects that category, so no Google script runs and no _ga cookie is set before
+// consent is given, and neither survives consent being withdrawn afterwards.
 const loader = `
 window.loadGoogleAnalytics = function () {
-  if (window.__gaLoaded) return;
+  // Clear the opt-out flag first: on a re-accept the script is already in the page,
+  // so lifting the flag is the only thing that lets it send again.
+  window['ga-disable-${gaId}'] = false;
+
+  if (window.__gaLoaded) {
+    // Re-accepting without a reload: the script is still in the page but measurement was
+    // switched off, so resume it and re-run config -- otherwise this view is never counted.
+    window.gtag && window.gtag('consent', 'update', { analytics_storage: 'granted' });
+    window.gtag && window.gtag('config', '${gaId}');
+    return;
+  }
   window.__gaLoaded = true;
 
   var s = document.createElement('script');
@@ -22,6 +33,16 @@ window.loadGoogleAnalytics = function () {
   };
   window.gtag('js', new Date());
   window.gtag('config', '${gaId}');
+};
+
+window.disableGoogleAnalytics = function () {
+  // Google's documented opt-out property. Google specifies it must be set before any
+  // gtag() call: that holds from the next page load on, where the stored rejection means
+  // the loader never runs and gtag never loads at all. Setting it here also stops the
+  // gtag already injected in this page view -- it re-checks the property before each hit
+  // -- but that ordering is not part of Google's documented contract.
+  window['ga-disable-${gaId}'] = true;
+  window.gtag && window.gtag('consent', 'update', { analytics_storage: 'denied' });
 };
 `;
 ---

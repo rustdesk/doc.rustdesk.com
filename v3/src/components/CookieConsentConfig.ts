@@ -14,6 +14,7 @@ import zhTW from './cookie/zh-TW.json';
 declare global {
   interface Window {
     loadGoogleAnalytics?: () => void;
+    disableGoogleAnalytics?: () => void;
   }
 }
 
@@ -39,6 +40,14 @@ export const config: CookieConsentConfig = {
     },
     functionality: {},
     analytics: {
+      // reloadPage fires only when this category goes from accepted to rejected, so
+      // withdrawing consent reloads into a page where the stored rejection means gtag
+      // is never loaded at all. That is what makes withdrawal deterministic rather than
+      // dependent on switching off a tag that is already running.
+      autoClear: {
+        cookies: [{ name: /^_ga/ }],
+        reloadPage: true,
+      },
       services: {
         ga4: {
           label:
@@ -48,9 +57,12 @@ export const config: CookieConsentConfig = {
           onAccept: () => {
             window.loadGoogleAnalytics?.();
           },
-          // Nothing to undo: rejecting means the loader was never called, and the
-          // cookies matched below are erased by the library itself.
-          onReject: () => {},
+          // Rejecting is not only a first refusal: the visitor may have accepted
+          // earlier, in which case gtag is already running and keeps sending (and
+          // re-setting _ga) unless it is switched off explicitly.
+          onReject: () => {
+            window.disableGoogleAnalytics?.();
+          },
           cookies: [
             {
               name: /^_ga/,

@@ -4,7 +4,7 @@ description: 'Read the RustDesk privacy policy covering website usage, cookies, 
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-**Effective date: 15 September 2026**
+**Effective date: 16 September 2026**
 
 This Privacy Policy (hereinafter the “**Policy**”) governs the terms and conditions under which Purslane Tech Pte. Ltd. (hereinafter “**us**” or “**we**”), processes personal data in connection with the activities and services concerning the operation of the website rustdesk.com and other websites or social media profiles run and managed by us (hereinafter the “**Websites**”), and in connection with the RustDesk software and the services we operate for it.
 
@@ -46,7 +46,7 @@ We may process your personal data for the following legal grounds and for the fo
 ### a. Provision and improvement of and support for our Websites
 We process various information about your online activity, e.g. the time of access to our Websites, the time spent on our websites, conversions (i.e. completed activity on our Websites), etc., for the purposes of technical support and improvement of our Websites as well as monitoring of functionalities thereof (for details regarding the extent of the data being processed see Section 3 (c) and (d) of this Policy).
 
-For this purpose of personal data processing, we process your personal data under the lawful ground of legitimate interest (operation of the Websites, statistical purposes and data security).
+Where we carry out that processing through the analytics cookies described in Section 3 (c), we do so on the lawful ground of your consent, and we stop if you withdraw it. Where we process your personal data in order to operate and secure the Websites without those cookies, for example in the server logs needed to deliver the pages you request and to detect abuse, we do so under the lawful ground of legitimate interest (operation of the Websites and data security).
 
 ### b. Processing of the personal data of the visitors to the Websites
 If you publish any personal data on our Websites, we may process such personal data to the extent published for the purpose of responding to your post. Usually, we process following personal data categories on our Websites: your name, surname and any personal data which you upload on the Websites or which we receive via personal messages.
@@ -62,11 +62,13 @@ To provide you with the RustDesk software application and to constantly improve 
 We process the personal data acquired via the RustDesk software under lawful grounds of performance of a contract (performance of RustDesk software license agreement concluded between us and yourself including customer support) and our legitimate interest (RustDesk software development).
 
 ## 4. Who we share your personal data with
-We do not sell your personal data. We share it only with service providers that process it on our behalf, and only to the extent they need it in order to provide their service to us. The categories of those providers are:
+We do not sell your personal data. We share it only with service providers, and only to the extent described in this Section. The categories of those providers are:
 
 - **analytics providers**, for the website usage statistics described in Section 3 (a) and (c) — currently Google, through Google Analytics 4;
 - **payment providers**, for processing your payment when you buy a license — currently Stripe. Your card details are collected directly by the payment provider; we do not receive or store them;
 - **hosting, infrastructure and communication providers**, for the operation of the Websites, of the public ID and relay servers, and of our support and email channels.
+
+Most of these providers act as our processors and handle your personal data only on our instructions. Some also act as controllers in their own right, for their own purposes, which we do not determine and which their own privacy notices govern. In particular, Stripe processes payment data as an independent controller in order to prevent fraud, to meet its own legal and regulatory obligations, and to improve its services; its [Privacy Policy](https://stripe.com/privacy) and [Data Processing Agreement](https://stripe.com/legal/dpa) describe that processing.
 
 We may also disclose personal data where the law requires us to, where it is necessary to establish, exercise or defend a legal claim, or where it is necessary to protect the rights and safety of another person.
 
