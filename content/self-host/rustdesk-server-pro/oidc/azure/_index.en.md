@@ -18,7 +18,6 @@ This setup lets users sign in to RustDesk Server Pro with Microsoft Entra ID acc
 - Copy the `Client ID` from Azure into RustDesk Pro.
 - Create a client secret and save the secret value immediately.
 - Build the issuer URL with your `Directory (tenant) ID`.
-- Enable `ID tokens` in Azure authentication settings.
 
 ## Which Azure values go into RustDesk Pro?
 
@@ -59,8 +58,6 @@ This setup lets users sign in to RustDesk Server Pro with Microsoft Entra ID acc
 12. In RustDesk Pro, fill in the **Issuer** field with `https://login.microsoftonline.com/<Directory (tenant) ID>/v2.0`. Please replace `Directory (tenant) ID` with your **Directory (tenant) ID**. The **Directory (tenant) ID** is in Azure's app **Overview** panel.
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/9-RustDesk-Issuer.png)
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/10-Azure-TenantID.png)
-13. In Azure, select **Authentication** menu. Then set up authorization, by choosing **ID tokens (used for implicit and hybrid flows)**.
-![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/11-Azure-Auth.png)
 
 ## References
 

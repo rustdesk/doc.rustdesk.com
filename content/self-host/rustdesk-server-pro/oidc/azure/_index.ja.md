@@ -16,7 +16,6 @@ keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "ru
 - Azure の `Client ID` を RustDesk Pro にコピーします。
 - client secret を作成し、secret value をすぐ保存します。
 - `Directory (tenant) ID` で issuer URL を組み立てます。
-- Azure の認証設定で `ID tokens` を有効にします。
 
 ## Azure のどの値を RustDesk Pro に入れますか？
 
@@ -57,8 +56,6 @@ keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "ru
 12. RustDesk Proで、**発行者**フィールドに`https://login.microsoftonline.com/<Directory (tenant) ID>/v2.0`を入力します。`Directory (tenant) ID`を**ディレクトリ（テナント）ID**に置き換えてください。**ディレクトリ（テナント）ID**は、Azureアプリの**概要**パネルにあります。
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/9-RustDesk-Issuer.png)
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/10-Azure-TenantID.png)
-13. Azureで、**認証**メニューを選択します。次に、**IDトークン（暗黙的およびハイブリッドフローで使用）**を選択して認証を設定します。
-![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/11-Azure-Auth.png)
 
 ## 参考資料
 
