@@ -10,6 +10,7 @@ import ar from './cookie/ar.json';
 import ko from './cookie/ko.json';
 import zhCN from './cookie/zh-CN.json';
 import zhTW from './cookie/zh-TW.json';
+import az from './cookie/az.json';
 
 declare global {
   interface Window {
@@ -76,7 +77,7 @@ export const config: CookieConsentConfig = {
     default: 'en',
     autoDetect: 'document',
     translations: {
-      en, de, es, fr, ja, pt, it, 'zh-CN': zhCN, 'zh-TW': zhTW, ar, ko,
+      en, de, es, fr, ja, pt, it, 'zh-CN': zhCN, 'zh-TW': zhTW, ar, ko, az,
     },
   },
 };
