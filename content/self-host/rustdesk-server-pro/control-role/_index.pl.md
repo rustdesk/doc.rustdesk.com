@@ -34,6 +34,10 @@ Rola Kontroli umożliwia konfigurację uprawnień zdalnego sterowania dla różn
 - Urządzenie kontrolowane: RustDesk **1.4.5** lub nowszy (urządzenia Android kontrolowane nie są jeszcze obsługiwane)
 - Urządzenie kontrolujące: Brak wymagań dotyczących wersji
 
+### Tryb prywatności
+
+Uprawnienie **Tryb prywatności** wymaga RustDesk Server Pro **1.8.7** lub nowszego oraz RustDesk **1.4.7** lub nowszego na kontrolowanym urządzeniu. Starsze klienty na kontrolowanych urządzeniach ignorują to uprawnienie.
+
 ## Obliczanie Uprawnień
 
 ### Jak Działają Uprawnienia
@@ -94,7 +98,7 @@ Zastosowana Rola Kontroli zależy od statusu logowania użytkownika kontrolując
 
 ## Dostępne Uprawnienia
 
-12 kontrolowanych uprawnień odpowiada Ustawieniom → Bezpieczeństwo → Uprawnienia kontrolowanego urządzenia:
+13 kontrolowanych uprawnień odpowiada Ustawieniom → Bezpieczeństwo → Uprawnienia kontrolowanego urządzenia:
 
 - Klawiatura/Mysz
 - Zdalna Drukarka
@@ -108,6 +112,7 @@ Zastosowana Rola Kontroli zależy od statusu logowania użytkownika kontrolując
 - Nagrywanie Sesji
 - Blokuj Wejście Użytkownika
 - Zdalna Modyfikacja Konfiguracji
+- Tryb prywatności
 
 ## Operacje Konsoli
 

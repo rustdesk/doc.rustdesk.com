@@ -34,6 +34,10 @@ keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk ser
 - 被控设备：RustDesk **1.4.5** 或以上版本（暂不支持 Android 被控设备）
 - 控制设备：无版本要求
 
+### 隐私模式
+
+**隐私模式**权限从 RustDesk Server Pro **1.8.7** 开始支持，同时要求被控端使用 RustDesk **1.4.7** 或以上版本。更早版本的被控端会忽略这项权限。
+
 ## 权限计算
 
 ### 权限工作原理
@@ -94,7 +98,7 @@ keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk ser
 
 ## 可用权限
 
-12 个可控权限对应被控设备的 设置 → 安全 → 权限：
+13 个可控权限对应被控设备的 设置 → 安全 → 权限：
 
 - 键盘/鼠标
 - 远程打印机
@@ -108,6 +112,7 @@ keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk ser
 - 录制会话
 - 阻止用户输入
 - 远程配置修改
+- 隐私模式
 
 ## 控制台操作
 
