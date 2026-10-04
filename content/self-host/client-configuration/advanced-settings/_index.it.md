@@ -649,6 +649,21 @@ Usa il rendering delle texture per rendere le immagini più fluide. Puoi provare
 | :------: | :------: | :------: |
 | Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
 
+### enable-tcp-punch
+
+Abilita l'hole punching TCP. È abilitato per impostazione predefinita sia per i server autogestiti sia per quelli pubblici.
+
+**Posizione**:
+
+1. **Desktop** Impostazioni → Generale → Altro → Abilita hole punching TCP
+2. **Mobile** Impostazioni → Abilita hole punching TCP
+
+Disponibile da RustDesk 1.5.0
+
+| Valori | Predefinito | Esempio |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-tcp-punch=N` |
+
 ### enable-udp-punch
 
 **Posizione**:
@@ -660,7 +675,7 @@ Disponibile da RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 
 | Valori | Predefinito | Esempio |
 | :------: | :------: | :------: |
-| Y, N | Y | `enable-udp-punch=N` |
+| Y, N | selfhost:N, altrimenti:Y | `enable-udp-punch=N` |
 
 ### enable-ipv6-punch
 
@@ -674,6 +689,37 @@ Disponibile da RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 | Valori | Predefinito | Esempio |
 | :------: | :------: | :------: |
 | Y, N | selfhost:N, altrimenti:Y | `enable-ipv6-punch=N` |
+
+### enable-webrtc
+
+Abilita le connessioni P2P WebRTC. Come l'hole punching UDP e le connessioni P2P IPv6, questa opzione è disabilitata per impostazione predefinita per i server autogestiti. Imposta `enable-webrtc=Y` per abilitarla esplicitamente.
+
+**Posizione**:
+
+1. **Desktop** Impostazioni → Generale → Altro → Abilita connessione P2P WebRTC
+2. **Mobile** Impostazioni → Abilita connessione P2P WebRTC
+
+Disponibile da RustDesk 1.5.0, RustDesk Server Pro 1.8.7
+
+| Valori | Predefinito | Esempio |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, altrimenti:Y | `enable-webrtc=Y` |
+
+### relay-fallback-delay
+
+Tempo, in secondi, durante il quale una connessione relay già stabilita attende una connessione WebRTC diretta prima che venga utilizzato il relay. Aumenta il valore per dare più tempo a una connessione diretta lenta; riducilo per utilizzare prima il relay quando non è possibile stabilire una connessione diretta.
+
+Si applica solo quando WebRTC è abilitato (`enable-webrtc`). Il campo nel client desktop è nascosto quando WebRTC è disabilitato. Lascialo vuoto per utilizzare il valore predefinito di 2.5 secondi. Anche i valori non validi, zero o negativi utilizzano il valore predefinito.
+
+**Posizione**:
+
+**Desktop** Impostazioni → Generale → Altro → Abilita connessione P2P WebRTC → Ritardo fallback relay (secondi)
+
+Disponibile da RustDesk 1.5.0
+
+| Valori | Predefinito | Esempio |
+| :------: | :------: | :------: |
+| Numero positivo di secondi, oppure vuoto | 2.5 | `relay-fallback-delay=2.5` |
 
 ## Impostazioni Display
 

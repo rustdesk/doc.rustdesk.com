@@ -650,6 +650,21 @@ Użyj renderowania tekstur, aby uzyskać płynniejsze obrazy. Jeśli napotkasz p
 | :------: | :------: | :------: |
 | Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
 
+### enable-tcp-punch
+
+Włącza tworzenie tunelu TCP (hole punching). Opcja jest domyślnie włączona zarówno dla serwerów hostowanych samodzielnie, jak i publicznych.
+
+**Lokalizacja**:
+
+1. **K. stacjonarny** Ustawienia → Ogólne → Inne → Włącz tworzenie tunelu TCP
+2. **Smartfon** Ustawienia → Włącz tworzenie tunelu TCP
+
+Dostępne od wersji RustDesk 1.5.0
+
+| Wartości | Domyślnie | Przykład |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-tcp-punch=N` |
+
 ### enable-udp-punch
 
 **Lokalizacja**:
@@ -661,7 +676,7 @@ Dostępne od wersji RustDesk 1.4.1, RustDesk w wersji Pro od 1.6.2
 
 | Wartości | Domyślnie | Przykład |
 | :------: | :------: | :------: |
-| Y, N | Y | `enable-udp-punch=N` |
+| Y, N | selfhost:N, otherwise:Y | `enable-udp-punch=N` |
 
 ### enable-ipv6-punch
 
@@ -675,6 +690,37 @@ Dostępne od wersji RustDesk 1.4.1, RustDesk w wersji Pro od 1.6.2
 | Wartości | Domyślnie | Przykład |
 | :------: | :------: | :------: |
 | Y, N | selfhost:N, otherwise:Y | `enable-ipv6-punch=N` |
+
+### enable-webrtc
+
+Włącza połączenia P2P WebRTC. Podobnie jak przebijanie NAT przez UDP i połączenia P2P IPv6, ta opcja jest domyślnie wyłączona dla serwerów hostowanych samodzielnie. Ustaw `enable-webrtc=Y`, aby ją jawnie włączyć.
+
+**Lokalizacja**:
+
+1. **K. stacjonarny** Ustawienia → Ogólne → Inne → Włącz połączenie P2P WebRTC
+2. **Smartfon** Ustawienia → Włącz połączenie P2P WebRTC
+
+Dostępne od wersji RustDesk 1.5.0, RustDesk Server Pro 1.8.7
+
+| Wartości | Domyślnie | Przykład |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, otherwise:Y | `enable-webrtc=Y` |
+
+### relay-fallback-delay
+
+Czas w sekundach, przez jaki już nawiązane połączenie przez przekaźnik czeka na bezpośrednie połączenie WebRTC, zanim zostanie użyty przekaźnik. Zwiększ tę wartość, aby dać wolnemu połączeniu bezpośredniemu więcej czasu; zmniejsz ją, aby wcześniej użyć przekaźnika, gdy nie można nawiązać połączenia bezpośredniego.
+
+Ma zastosowanie tylko wtedy, gdy WebRTC jest włączone (`enable-webrtc`). Pole w kliencie stacjonarnym jest ukryte, gdy WebRTC jest wyłączone. Pozostaw je puste, aby użyć wartości domyślnej 2.5 sekundy. Nieprawidłowe wartości, zero lub wartości ujemne również powodują użycie wartości domyślnej.
+
+**Lokalizacja**:
+
+**K. stacjonarny** Ustawienia → Ogólne → Inne → Włącz połączenie P2P WebRTC → Opóźnienie przed przejściem na przekaźnik w sekundach
+
+Dostępne od wersji RustDesk 1.5.0
+
+| Wartości | Domyślnie | Przykład |
+| :------: | :------: | :------: |
+| Dodatnia liczba sekund lub puste pole | 2.5 | `relay-fallback-delay=2.5` |
 
 ## Ustawienia wyświetlania
 
