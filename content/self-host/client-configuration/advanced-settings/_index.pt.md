@@ -649,6 +649,21 @@ Use a renderização de textura para tornar as imagens mais suaves. Pode tentar 
 | :------: | :------: | :------: |
 | Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
 
+### enable-tcp-punch
+
+Ativa TCP hole punching. Está ativado por predefinição tanto para servidores autoalojados como para servidores públicos.
+
+**Localização**:
+
+1. **Desktop** Definições → Geral → Outro → Ativar TCP hole punching
+2. **Mobile** Definições → Ativar TCP hole punching
+
+Disponível desde RustDesk 1.5.0
+
+| Valores | Predefinição | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-tcp-punch=N` |
+
 ### enable-udp-punch
 
 **Localização**:
@@ -660,7 +675,7 @@ Disponível desde RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 
 | Valores | Predefinição | Exemplo |
 | :------: | :------: | :------: |
-| Y, N | Y | `enable-udp-punch=N` |
+| Y, N | selfhost:N, caso contrário:Y | `enable-udp-punch=N` |
 
 ### enable-ipv6-punch
 
@@ -674,6 +689,37 @@ Disponível desde RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 | Valores | Predefinição | Exemplo |
 | :------: | :------: | :------: |
 | Y, N | selfhost:N, caso contrário:Y | `enable-ipv6-punch=N` |
+
+### enable-webrtc
+
+Ativa ligações P2P por WebRTC. Tal como a perfuração UDP e as ligações P2P IPv6, esta opção está desativada por predefinição para servidores autoalojados. Defina `enable-webrtc=Y` para a ativar explicitamente.
+
+**Localização**:
+
+1. **Desktop** Definições → Geral → Outro → Ativar ligação P2P por WebRTC
+2. **Mobile** Definições → Ativar ligação P2P por WebRTC
+
+Disponível desde RustDesk 1.5.0, RustDesk Server Pro 1.8.7
+
+| Valores | Predefinição | Exemplo |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, caso contrário:Y | `enable-webrtc=Y` |
+
+### relay-fallback-delay
+
+Tempo, em segundos, durante o qual uma ligação de retransmissão já estabelecida aguarda uma ligação direta WebRTC antes de ser utilizada. Aumente o valor para dar mais tempo a uma ligação direta lenta; diminua-o para utilizar a retransmissão mais cedo quando não for possível estabelecer uma ligação direta.
+
+Aplica-se apenas quando o WebRTC está ativado (`enable-webrtc`). O campo no cliente de desktop fica oculto quando o WebRTC está desativado. Deixe-o vazio para utilizar o valor predefinido de 2.5 segundos. Valores inválidos, zero ou negativos também utilizam o valor predefinido.
+
+**Localização**:
+
+**Desktop** Definições → Geral → Outro → Ativar ligação P2P por WebRTC → Atraso antes de recorrer ao retransmissor em segundos
+
+Disponível desde RustDesk 1.5.0
+
+| Valores | Predefinição | Exemplo |
+| :------: | :------: | :------: |
+| Número positivo de segundos ou vazio | 2.5 | `relay-fallback-delay=2.5` |
 
 ## Definições de visualização
 

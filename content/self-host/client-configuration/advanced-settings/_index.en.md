@@ -659,6 +659,21 @@ Use texture rendering to make the pictures smoother. You could try disabling thi
 | :------: | :------: | :------: |
 | Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
 
+### enable-tcp-punch
+
+Enable TCP hole punching. Enabled by default for both self-hosted and public servers.
+
+**Location**:
+
+1. **Desktop** Settings → General → Other → Enable TCP hole punching
+2. **Mobile** Settings → Enable TCP hole punching
+
+Available since RustDesk 1.5.0
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-tcp-punch=N` |
+
 ### enable-udp-punch
 
 **Location**:
@@ -670,7 +685,7 @@ Available since RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
-| Y, N | Y | `enable-udp-punch=N` |
+| Y, N | selfhost:N, otherwise:Y | `enable-udp-punch=N` |
 
 ### enable-ipv6-punch
 
@@ -684,6 +699,37 @@ Available since RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | selfhost:N, otherwise:Y | `enable-ipv6-punch=N` |
+
+### enable-webrtc
+
+Enable WebRTC P2P connections. As with UDP hole punching and IPv6 P2P connections, this is disabled by default for self-hosted servers. Set `enable-webrtc=Y` to enable it explicitly.
+
+**Location**:
+
+1. **Desktop** Settings → General → Other → Enable WebRTC P2P connection
+2. **Mobile** Settings → Enable WebRTC P2P connection
+
+Available since RustDesk 1.5.0, RustDesk Server Pro 1.8.7
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, otherwise:Y | `enable-webrtc=Y` |
+
+### relay-fallback-delay
+
+How long an already-established relay connection waits for a direct WebRTC connection before the relay is used, in seconds. Increase this to give a slow direct connection more time; decrease it to use the relay sooner when a direct connection cannot be established.
+
+Only applies when WebRTC is enabled (`enable-webrtc`). The desktop field is hidden when WebRTC is disabled. Leave it empty to use the default of 2.5 seconds. Invalid, zero, or negative values also use the default.
+
+**Location**:
+
+**Desktop** Settings → General → Other → Enable WebRTC P2P connection → Relay fallback delay in seconds
+
+Available since RustDesk 1.5.0
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Positive number of seconds, or empty | 2.5 | `relay-fallback-delay=2.5` |
 
 ## Display Settings
 
