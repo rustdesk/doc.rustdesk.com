@@ -41,10 +41,20 @@ Portas Principais: \
 TCP `21114-21119` \
 UDP `21116`
 
-As `21115-21117` acima são as portas mínimas necessárias para o RustDesk funcionar, estas lidam com as portas de sinal e retransmissão bem como travessia NAT.
+- TCP `21114`: Usada para o servidor API HTTP no RustDesk Server Pro.
+- TCP `21115`: Usada para o teste de tipo NAT.
+- UDP `21116`: Usada para registro de dispositivos.
+- TCP `21116`: Usada para registro de dispositivos e NAT hole punching.
+- TCP `21117`: Usada para comunicação de retransmissão.
+- TCP `21118`: Usada para comunicação WebSocket.
+- TCP `21119`: Usada para comunicação WebSocket.
 
-As portas TCP `21118` e `21119` são as portas WebSocket para o [Cliente Web RustDesk](https://rustdesk.com/web/), você precisa de um proxy reverso para fazê-lo suportar HTTPS, por favor consulte esta [configuração de exemplo do Nginx](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client).
+As portas `21115`-`21117` são as portas mínimas necessárias para o RustDesk funcionar. Elas lidam com sinalização, retransmissão e travessia NAT.
 
-Para usuários Pro sem um Proxy SSL você precisará abrir a porta TCP `21114` para a API funcionar, alternativamente usando um Proxy SSL abra a porta TCP `443`.
+Para configuração WSS, as portas TCP `21118` e TCP `21119` geralmente não precisam ser expostas externamente porque são acessadas internamente pelo proxy reverso, como o Nginx. Se você não usa WebSocket, essas portas não precisam ser expostas. Consulte esta [configuração de exemplo do Nginx](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms).
+
+Para usuários Pro sem um proxy SSL, você precisa abrir a porta TCP `21114` para que a API funcione. Se HTTPS (`443`) estiver configurado para o servidor, TCP `21114` não precisa ser exposto à Internet.
+
+O RustDesk também oferece suporte a um modo de implantação em que apenas TCP `443` é exposto e todas as outras portas ficam fechadas. Com essa configuração, a comunicação só pode funcionar por retransmissão WSS, e conexões diretas ponto a ponto não ficam disponíveis.
 
 {{% children depth="4" showhidden="true" %}}

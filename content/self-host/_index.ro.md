@@ -41,10 +41,20 @@ Porturi de bază: \
 TCP `21114-21119` \
 UDP `21116`
 
-Porturile `21115-21117` sunt minimul necesar pentru funcționarea RustDesk; acestea gestionează semnalizarea, porturile de relay și traversarea NAT.
+- TCP `21114`: folosit pentru serverul HTTP API în RustDesk Server Pro.
+- TCP `21115`: folosit pentru testul tipului NAT.
+- UDP `21116`: folosit pentru înregistrarea dispozitivelor.
+- TCP `21116`: folosit pentru înregistrarea dispozitivelor și NAT hole punching.
+- TCP `21117`: folosit pentru comunicarea relay.
+- TCP `21118`: folosit pentru comunicarea WebSocket.
+- TCP `21119`: folosit pentru comunicarea WebSocket.
 
-Porturile TCP `21118` și `21119` sunt porturile WebSocket pentru [RustDesk Web Client](https://rustdesk.com/web/). Aveți nevoie de un reverse proxy pentru a suporta HTTPS; consultați acest [exemplu de configurare Nginx](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client).
+Porturile `21115`-`21117` sunt minimul necesar pentru funcționarea RustDesk. Acestea gestionează semnalizarea, relay-ul și traversarea NAT.
 
-Pentru utilizatorii Pro fără un SSL Proxy va fi necesar să deschideți portul TCP `21114` pentru ca API-ul să funcționeze; alternativ, folosind un SSL Proxy se va deschide portul TCP `443`.
+Pentru o configurație WSS, porturile TCP `21118` și TCP `21119` de obicei nu trebuie expuse extern, deoarece sunt accesate intern de reverse proxy, cum ar fi Nginx. Dacă nu utilizați WebSocket, aceste porturi nu trebuie expuse. Consultați acest [exemplu de configurare Nginx](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms).
+
+Pentru utilizatorii Pro fără un proxy SSL, trebuie să deschideți portul TCP `21114` pentru ca API-ul să funcționeze. Dacă HTTPS (`443`) este configurat pentru server, TCP `21114` nu trebuie expus pe Internet.
+
+RustDesk suportă și un mod de implementare în care doar TCP `443` este expus și toate celelalte porturi sunt închise. Cu această configurație, comunicarea poate funcționa doar prin relay WSS, iar conexiunile directe peer-to-peer nu sunt disponibile.
 
 {{% children depth="4" showhidden="true" %}}
