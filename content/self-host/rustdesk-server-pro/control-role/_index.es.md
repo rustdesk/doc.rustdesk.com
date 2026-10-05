@@ -34,6 +34,10 @@ El Rol de Control le permite configurar permisos de control remoto para diferent
 - Dispositivo controlado: RustDesk **1.4.5** o superior (los dispositivos Android controlados aún no son compatibles)
 - Dispositivo controlador: Sin requisitos de versión
 
+### Modo de privacidad
+
+El permiso **Modo de privacidad** requiere RustDesk Server Pro **1.8.7** o posterior y RustDesk **1.4.7** o posterior en el dispositivo controlado. Los clientes controlados de versiones anteriores ignoran este permiso.
+
 ## Cálculo de Permisos
 
 ### Cómo Funcionan los Permisos
@@ -94,7 +98,7 @@ El Rol de Control aplicado depende del estado de inicio de sesión del usuario c
 
 ## Permisos Disponibles
 
-Los 12 permisos controlables corresponden a Configuración → Seguridad → Permisos del dispositivo controlado:
+Los 13 permisos controlables corresponden a Configuración → Seguridad → Permisos del dispositivo controlado:
 
 - Teclado/Ratón
 - Impresora Remota
@@ -108,6 +112,7 @@ Los 12 permisos controlables corresponden a Configuración → Seguridad → Per
 - Grabación de Sesión
 - Bloquear Entrada del Usuario
 - Modificación de Configuración Remota
+- Modo de privacidad
 
 ## Operaciones de Consola
 

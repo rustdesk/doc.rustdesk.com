@@ -34,6 +34,10 @@ Use a Control Role when you want to limit what an operator can do after connecti
 - Controlled device: RustDesk **1.4.5** or above (Android controlled device is not supported yet)
 - Controlling device: No version requirement
 
+### Privacy Mode
+
+The **Privacy Mode** permission requires RustDesk Server Pro **1.8.7** or later and RustDesk **1.4.7** or later on the controlled device. Earlier controlled clients ignore this permission.
+
 ## Permission Calculation
 
 ### How Permissions Work
@@ -94,7 +98,7 @@ The Control Role applied depends on the controlling user's login status and role
 
 ## Available Permissions
 
-The 12 controllable permissions correspond to the controlled device's Settings → Security → Permissions:
+The 13 controllable permissions correspond to the controlled device's Settings → Security → Permissions:
 
 - Keyboard/Mouse
 - Remote Printer
@@ -108,6 +112,7 @@ The 12 controllable permissions correspond to the controlled device's Settings �
 - Recording Session
 - Block User Input
 - Remote Configuration Modification
+- Privacy Mode
 
 ## Console Operations
 

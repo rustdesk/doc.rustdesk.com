@@ -34,6 +34,10 @@ keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk ser
 - 被コントロールデバイス：RustDesk **1.4.5** 以上（Android被コントロールデバイスはまだサポートされていません）
 - コントロールデバイス：バージョン要件なし
 
+### プライバシーモード
+
+**プライバシーモード**権限は RustDesk Server Pro **1.8.7** 以降でサポートされ、被コントロールデバイスには RustDesk **1.4.7** 以降が必要です。それ以前のバージョンの被コントロール側クライアントは、この権限を無視します。
+
 ## 権限の計算
 
 ### 権限の仕組み
@@ -94,7 +98,7 @@ keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk ser
 
 ## 利用可能な権限
 
-12のコントロール可能な権限は、被コントロールデバイスの設定 → セキュリティ → 権限に対応しています：
+13のコントロール可能な権限は、被コントロールデバイスの設定 → セキュリティ → 権限に対応しています：
 
 - キーボード/マウス
 - リモートプリンター
@@ -108,6 +112,7 @@ keywords: ["rustdesk control role", "rustdesk remote permissions", "rustdesk ser
 - セッション録画
 - ユーザー入力のブロック
 - リモート設定変更
+- プライバシーモード
 
 ## コンソール操作
 

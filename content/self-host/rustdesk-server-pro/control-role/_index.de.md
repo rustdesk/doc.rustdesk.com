@@ -34,6 +34,10 @@ Die Kontrollrolle ermöglicht es Ihnen, Fernsteuerungsberechtigungen für versch
 - Gesteuertes Gerät: RustDesk **1.4.5** oder höher (Android-gesteuerte Geräte werden noch nicht unterstützt)
 - Steuerndes Gerät: Keine Versionsanforderung
 
+### Datenschutzmodus
+
+Die Berechtigung **Datenschutzmodus** erfordert RustDesk Server Pro **1.8.7** oder neuer und RustDesk **1.4.7** oder neuer auf dem gesteuerten Gerät. Ältere Clients auf dem gesteuerten Gerät ignorieren diese Berechtigung.
+
 ## Berechtigungsberechnung
 
 ### Wie Berechtigungen funktionieren
@@ -94,7 +98,7 @@ Die angewendete Kontrollrolle hängt vom Anmeldestatus und der Rollenzuweisung d
 
 ## Verfügbare Berechtigungen
 
-Die 12 steuerbaren Berechtigungen entsprechen den Einstellungen des gesteuerten Geräts → Sicherheit → Berechtigungen:
+Die 13 steuerbaren Berechtigungen entsprechen den Einstellungen des gesteuerten Geräts → Sicherheit → Berechtigungen:
 
 - Tastatur/Maus
 - Remote-Drucker
@@ -108,6 +112,7 @@ Die 12 steuerbaren Berechtigungen entsprechen den Einstellungen des gesteuerten 
 - Sitzungsaufzeichnung
 - Benutzereingabe blockieren
 - Remote-Konfigurationsänderung
+- Datenschutzmodus
 
 ## Konsolenoperationen
 
