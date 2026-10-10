@@ -34,6 +34,10 @@ Le Rôle de Contrôle vous permet de configurer les permissions de contrôle à 
 - Appareil contrôlé : RustDesk **1.4.5** ou supérieur (les appareils Android contrôlés ne sont pas encore pris en charge)
 - Appareil contrôleur : Aucune exigence de version
 
+### Mode confidentialité
+
+La permission **Mode confidentialité** nécessite RustDesk Server Pro **1.8.7** ou ultérieur et RustDesk **1.4.7** ou ultérieur sur l’appareil contrôlé. Les clients contrôlés de versions antérieures ignorent cette permission.
+
 ## Calcul des Permissions
 
 ### Comment Fonctionnent les Permissions
@@ -94,7 +98,7 @@ Le Rôle de Contrôle appliqué dépend du statut de connexion de l'utilisateur 
 
 ## Permissions Disponibles
 
-Les 12 permissions contrôlables correspondent aux Paramètres → Sécurité → Permissions de l'appareil contrôlé :
+Les 13 permissions contrôlables correspondent aux Paramètres → Sécurité → Permissions de l'appareil contrôlé :
 
 - Clavier/Souris
 - Imprimante à Distance
@@ -108,6 +112,7 @@ Les 12 permissions contrôlables correspondent aux Paramètres → Sécurité �
 - Enregistrement de Session
 - Bloquer l'Entrée Utilisateur
 - Modification de Configuration à Distance
+- Mode confidentialité
 
 ## Opérations de Console
 

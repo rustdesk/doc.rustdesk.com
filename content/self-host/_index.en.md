@@ -46,16 +46,26 @@ Here is a discussion about [Should you self-host a rustdesk server?](https://www
 
 ## Ports Required
 
-Ports required for RustDesk Server self-hosting depends largely on your environment and what you want to do with RustDesk. The Examples shown throughout the docs will generally have all ports suggested to be opened.
+The ports required for RustDesk Server self-hosting depend largely on your environment and what you want to do with RustDesk. The examples shown throughout the docs generally suggest opening all ports.
 
 Core Ports: \
 TCP `21114-21119` \
 UDP `21116`
 
-The above `21115-21117` are the minimum required ports for RustDesk to work, these handle the signal and relay ports as well as NAT traversal.
+- TCP `21114`: Used for the HTTP API server in RustDesk Server Pro.
+- TCP `21115`: Used for the NAT type test.
+- UDP `21116`: Used for device registration.
+- TCP `21116`: Used for device registration and NAT hole punching.
+- TCP `21117`: Used for relay communication.
+- TCP `21118`: Used for WebSocket communication.
+- TCP `21119`: Used for WebSocket communication.
 
-TCP ports `21118` and `21119` are the WebSocket ports for the [RustDesk Web Client](https://rustdesk.com/web/), you need a reverse proxy to make it support HTTPS, please refer this [sample Nginx configuration](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client).
+Ports `21115`-`21117` are the minimum required ports for RustDesk to work. These handle signal, relay, and NAT traversal.
 
-For Pro users without an SSL Proxy you will need to open TCP port `21114` for the API to work alternatively using an SSL Proxy open TCP port `443`.
+For WSS configuration, TCP `21118` and TCP `21119` usually do not need to be exposed externally because they are accessed internally by the reverse proxy, such as Nginx. If you do not use WebSocket, these ports do not need to be exposed. Please refer to this [sample Nginx configuration](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms).
+
+For Pro users without an SSL proxy, you need to open TCP port `21114` for the API to work. If HTTPS (`443`) is configured for the server, TCP `21114` does not need to be exposed to the Internet.
+
+RustDesk also supports a deployment mode where only TCP `443` is exposed and all other ports are closed. With this configuration, communication can only work through WSS relay, and direct peer-to-peer connections are not available.
 
 {{% children depth="4" showhidden="true" %}}

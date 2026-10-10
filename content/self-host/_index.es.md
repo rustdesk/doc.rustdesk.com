@@ -41,10 +41,20 @@ Puertos Principales: \
 TCP `21114-21119` \
 UDP `21116`
 
-Los `21115-21117` anteriores son los puertos mínimos requeridos para que RustDesk funcione, estos manejan los puertos de señal y retransmisión así como la traversía NAT.
+- TCP `21114`: Se usa para el servidor API HTTP en RustDesk Server Pro.
+- TCP `21115`: Se usa para la prueba de tipo de NAT.
+- UDP `21116`: Se usa para el registro de dispositivos.
+- TCP `21116`: Se usa para el registro de dispositivos y la perforación NAT.
+- TCP `21117`: Se usa para la comunicación de retransmisión.
+- TCP `21118`: Se usa para la comunicación WebSocket.
+- TCP `21119`: Se usa para la comunicación WebSocket.
 
-Los puertos TCP `21118` y `21119` son los puertos WebSocket para el [Cliente Web RustDesk](https://rustdesk.com/web/), necesitas un proxy reverso para hacer que soporte HTTPS, por favor consulta esta [configuración de ejemplo de Nginx](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client).
+Los puertos `21115`-`21117` son los puertos mínimos requeridos para que RustDesk funcione. Estos manejan señalización, retransmisión y travesía NAT.
 
-Para usuarios Pro sin un Proxy SSL necesitarás abrir el puerto TCP `21114` para que la API funcione alternativamente usando un Proxy SSL abre el puerto TCP `443`.
+Para una configuración WSS, los puertos TCP `21118` y TCP `21119` normalmente no necesitan exponerse externamente porque el proxy inverso, como Nginx, accede a ellos internamente. Si no usas WebSocket, estos puertos no necesitan exponerse. Consulta esta [configuración de ejemplo de Nginx](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms).
+
+Para usuarios Pro sin un proxy SSL, debes abrir el puerto TCP `21114` para que la API funcione. Si HTTPS (`443`) está configurado para el servidor, TCP `21114` no necesita exponerse a Internet.
+
+RustDesk también admite un modo de despliegue en el que solo se expone TCP `443` y todos los demás puertos están cerrados. Con esta configuración, la comunicación solo puede funcionar mediante retransmisión WSS, y las conexiones directas punto a punto no están disponibles.
 
 {{% children depth="4" showhidden="true" %}}

@@ -34,6 +34,10 @@ A Função de Controle permite configurar permissões de controle remoto para di
 - Dispositivo controlado: RustDesk **1.4.5** ou superior (dispositivos Android controlados ainda não são suportados)
 - Dispositivo controlador: Sem requisitos de versão
 
+### Modo de privacidade
+
+A permissão **Modo de privacidade** requer RustDesk Server Pro **1.8.7** ou posterior e RustDesk **1.4.7** ou posterior no dispositivo controlado. Os clientes controlados de versões anteriores ignoram essa permissão.
+
 ## Cálculo de Permissões
 
 ### Como as Permissões Funcionam
@@ -94,7 +98,7 @@ A Função de Controle aplicada depende do status de login do usuário controlad
 
 ## Permissões Disponíveis
 
-As 12 permissões controláveis correspondem às Configurações → Segurança → Permissões do dispositivo controlado:
+As 13 permissões controláveis correspondem às Configurações → Segurança → Permissões do dispositivo controlado:
 
 - Teclado/Mouse
 - Impressora Remota
@@ -108,6 +112,7 @@ As 12 permissões controláveis correspondem às Configurações → Segurança 
 - Gravação de Sessão
 - Bloquear Entrada do Usuário
 - Modificação de Configuração Remota
+- Modo de privacidade
 
 ## Operações do Console
 

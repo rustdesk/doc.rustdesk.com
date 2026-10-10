@@ -16,7 +16,6 @@ Esta configuracion permite que los usuarios inicien sesion en RustDesk Server Pr
 - Copia el `Client ID` de Azure a RustDesk Pro.
 - Crea un client secret y guarda el secret value inmediatamente.
 - Genera el issuer URL con el `Directory (tenant) ID`.
-- Activa `ID tokens` en la configuracion de autenticacion de Azure.
 
 ## ¿Que valores de Azure van en RustDesk Pro?
 
@@ -57,8 +56,6 @@ Esta configuracion permite que los usuarios inicien sesion en RustDesk Server Pr
 12. En RustDesk Pro, complete el campo **Emisor** con `https://login.microsoftonline.com/<Directory (tenant) ID>/v2.0`. Reemplace `Directory (tenant) ID` con su **ID de directorio (inquilino)**. El **ID de directorio (inquilino)** está en el panel **Información general** de la aplicación Azure.
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/9-RustDesk-Issuer.png)
 ![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/10-Azure-TenantID.png)
-13. En Azure, seleccione el menú **Autenticación**. Luego configure la autorización, eligiendo **Tokens de ID (utilizados para flujos implícitos e híbridos)**.
-![](/docs/en/self-host/rustdesk-server-pro/oidc/azure/images/11-Azure-Auth.png)
 
 ## Referencias
 

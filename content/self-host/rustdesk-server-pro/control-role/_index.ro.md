@@ -34,6 +34,10 @@ Rolul de Control vă permite să configurați permisiunile de control la distan�
 - Dispozitiv controlat: RustDesk **1.4.5** sau superior (dispozitivele Android controlate nu sunt încă suportate)
 - Dispozitiv care controlează: Fără cerințe de versiune
 
+### Mod de confidențialitate
+
+Permisiunea **Mod de confidențialitate** necesită RustDesk Server Pro **1.8.7** sau o versiune ulterioară și RustDesk **1.4.7** sau o versiune ulterioară pe dispozitivul controlat. Clienții controlați cu versiuni mai vechi ignoră această permisiune.
+
 ## Calculul Permisiunilor
 
 ### Cum Funcționează Permisiunile
@@ -94,7 +98,7 @@ Rolul de Control aplicat depinde de starea de conectare a utilizatorului care co
 
 ## Permisiuni Disponibile
 
-Cele 12 permisiuni controlabile corespund Setărilor → Securitate → Permisiuni ale dispozitivului controlat:
+Cele 13 permisiuni controlabile corespund Setărilor → Securitate → Permisiuni ale dispozitivului controlat:
 
 - Tastatură/Mouse
 - Imprimantă la Distanță
@@ -108,6 +112,7 @@ Cele 12 permisiuni controlabile corespund Setărilor → Securitate → Permisiu
 - Înregistrare Sesiune
 - Blochează Intrarea Utilizatorului
 - Modificare Configurație la Distanță
+- Mod de confidențialitate
 
 ## Operațiuni Consolă
 

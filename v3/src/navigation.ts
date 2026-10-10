@@ -255,6 +255,22 @@ export const footerData = (locale?: Lang) => {
         })
         , href: getPermalink('/privacy')
       },
+      {
+        text: t({
+          en: 'Cookie settings',
+          de: 'Cookie-Einstellungen',
+          es: 'Configuración de cookies',
+          fr: 'Paramètres des cookies',
+          it: 'Impostazioni cookie',
+          ja: 'Cookie設定',
+          pt: 'Configurações de cookies',
+          'zh-cn': 'Cookie 设置',
+          'zh-tw': 'Cookie 設定',
+          ar: 'إعدادات ملفات تعريف الارتباط',
+          ko: '쿠키 설정',
+        })
+        , href: '#cookie-settings'
+      },
     ],
     socialLinks: [
       { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://twitter.com/rustdesk' },

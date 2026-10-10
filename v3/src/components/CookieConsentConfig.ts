@@ -11,6 +11,13 @@ import ko from './cookie/ko.json';
 import zhCN from './cookie/zh-CN.json';
 import zhTW from './cookie/zh-TW.json';
 
+declare global {
+  interface Window {
+    loadGoogleAnalytics?: () => void;
+    disableGoogleAnalytics?: () => void;
+  }
+}
+
 export const config: CookieConsentConfig = {
   guiOptions: {
     consentModal: {
@@ -33,15 +40,28 @@ export const config: CookieConsentConfig = {
     },
     functionality: {},
     analytics: {
+      // reloadPage fires only when this category goes from accepted to rejected, so
+      // withdrawing consent reloads into a page where the stored rejection means gtag
+      // is never loaded at all. That is what makes withdrawal deterministic rather than
+      // dependent on switching off a tag that is already running.
+      autoClear: {
+        cookies: [{ name: /^_ga/ }],
+        reloadPage: true,
+      },
       services: {
         ga4: {
           label:
             '<a href="https://marketingplatform.google.com/about/analytics/terms/us/" target="_blank">Google Analytics 4</a>',
+          // Defined by Analytics.astro, which only declares the loader and never calls
+          // it, so Google is contacted for the first time here -- after consent.
           onAccept: () => {
-            // TODO: load ga4
+            window.loadGoogleAnalytics?.();
           },
+          // Rejecting is not only a first refusal: the visitor may have accepted
+          // earlier, in which case gtag is already running and keeps sending (and
+          // re-setting _ga) unless it is switched off explicitly.
           onReject: () => {
-            console.log('ga4 rejected');
+            window.disableGoogleAnalytics?.();
           },
           cookies: [
             {

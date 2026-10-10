@@ -41,10 +41,20 @@ Główne porty: \
 TCP `21114-21119` \
 UDP `21116`
 
-Powyższy zakres `21115-21117` to minimum portów potrzebnych RustDeskowi do działania. To one zajmują się sygnalizowaniem i przekazywaniem oraz przechodzeniem przez NAT.
+- TCP `21114`: używany przez serwer HTTP API w RustDesk Server Pro.
+- TCP `21115`: używany do testu typu NAT.
+- UDP `21116`: używany do rejestracji urządzeń.
+- TCP `21116`: używany do rejestracji urządzeń i NAT hole punching.
+- TCP `21117`: używany do komunikacji relay.
+- TCP `21118`: używany do komunikacji WebSocket.
+- TCP `21119`: używany do komunikacji WebSocket.
 
-Porty TCP `21118` i `21119` są portami WebSocketów dla [klienta webowego RustDeska](https://rustdesk.com/web/). Potrzebujesz wstecznego proxy, jeżeli chcesz używać HTTPS - zobacz [przykładową konfigurację Nginxa](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client).
+Porty `21115`-`21117` to minimum portów potrzebnych RustDeskowi do działania. Obsługują sygnalizację, relay i przechodzenie przez NAT.
 
-Użytkownicy Pro bez proxy SSL będą potrzebowali otworzyć port TCP `21114` żeby API było w stanie funckjonować - alternatywnie użyj proxy SSL i otwórz port `443`. 
+Przy konfiguracji WSS porty TCP `21118` i TCP `21119` zwykle nie muszą być wystawione na zewnątrz, ponieważ są używane wewnętrznie przez reverse proxy, takie jak Nginx. Jeśli nie używasz WebSocket, tych portów nie trzeba wystawiać. Zobacz [przykładową konfigurację Nginxa](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms).
+
+Użytkownicy Pro bez proxy SSL muszą otworzyć port TCP `21114`, aby API działało. Jeśli HTTPS (`443`) jest skonfigurowany dla serwera, TCP `21114` nie musi być wystawiony do Internetu.
+
+RustDesk obsługuje też tryb wdrożenia, w którym wystawiony jest tylko TCP `443`, a wszystkie pozostałe porty są zamknięte. W tej konfiguracji komunikacja może działać tylko przez relay WSS, a bezpośrednie połączenia peer-to-peer nie są dostępne.
 
 {{% children depth="4" showhidden="true" %}}

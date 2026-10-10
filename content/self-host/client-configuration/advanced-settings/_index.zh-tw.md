@@ -650,6 +650,21 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | :------: | :------: | :------: |
 | Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
 
+### enable-tcp-punch
+
+啟用 TCP 打洞。使用自架伺服器或公共伺服器時均預設啟用。
+
+**位置**:
+
+1. **桌面端** 設定 → 通用 → 其他 → 啟用 TCP 打洞
+2. **行動端** 設定 → 啟用 TCP 打洞
+
+自 RustDesk 1.5.0 起可用
+
+| 可選值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-tcp-punch=N` |
+
 ### enable-udp-punch
 
 **位置**:
@@ -661,7 +676,7 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 | 可選值 | 預設值 | 範例 |
 | :------: | :------: | :------: |
-| Y, N | Y | `enable-udp-punch=N` |
+| Y, N | selfhost:N, 其他:Y | `enable-udp-punch=N` |
 
 ### enable-ipv6-punch
 
@@ -675,6 +690,37 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | 可選值 | 預設值 | 範例 |
 | :------: | :------: | :------: |
 | Y, N | selfhost:N, 其他:Y | `enable-ipv6-punch=N` |
+
+### enable-webrtc
+
+啟用 WebRTC P2P 連線。與 UDP 打洞和 IPv6 P2P 連線一樣，使用自架伺服器時預設停用。設定 `enable-webrtc=Y` 可明確啟用。
+
+**位置**:
+
+1. **桌面端** 設定 → 通用 → 其他 → 啟用 WebRTC P2P 連線
+2. **行動端** 設定 → 啟用 WebRTC P2P 連線
+
+自 RustDesk 1.5.0, RustDesk Server Pro 1.8.7 起可用
+
+| 可選值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, 其他:Y | `enable-webrtc=Y` |
+
+### relay-fallback-delay
+
+指定已建立的中繼連線在被使用前等待 WebRTC 直連的時間，單位為秒。調大此值可給較慢的直連更多時間；調小則可在無法建立直連時更快使用中繼。
+
+僅在啟用 WebRTC（`enable-webrtc`）時生效。停用 WebRTC 時，桌面用戶端會隱藏此輸入框。留空使用預設值 2.5 秒。無效值、零或負數也會使用預設值。
+
+**位置**:
+
+**桌面端** 設定 → 通用 → 其他 → 啟用 WebRTC P2P 連線 → 回退到中繼前的等待時間（秒）
+
+自 RustDesk 1.5.0 起可用
+
+| 可選值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| 正數（秒），或留空 | 2.5 | `relay-fallback-delay=2.5` |
 
 ## 顯示設定
 

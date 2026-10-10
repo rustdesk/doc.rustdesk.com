@@ -650,6 +650,21 @@ Folosiți redarea pe texturi pentru imagini mai line. Dacă întâmpinați probl
 | :------: | :------: | :------: |
 | Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
 
+### enable-tcp-punch
+
+Activează traversarea TCP (hole punching). Este activată implicit atât pentru serverele găzduite pe infrastructura proprie, cât și pentru serverele publice.
+
+**Locație**:
+
+1. **Desktop** Setări → General → Altele → Activează traversarea TCP (hole punching)
+2. **Mobile** Setări → Activează traversarea TCP (hole punching)
+
+Disponibil din RustDesk 1.5.0
+
+| Valori | Implicit | Exemplu |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-tcp-punch=N` |
+
 ### enable-udp-punch
 
 **Locație**:
@@ -661,7 +676,7 @@ Disponibil din RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 
 | Valori | Implicit | Exemplu |
 | :------: | :------: | :------: |
-| Y, N | Y | `enable-udp-punch=N` |
+| Y, N | selfhost:N, otherwise:Y | `enable-udp-punch=N` |
 
 ### enable-ipv6-punch
 
@@ -675,6 +690,37 @@ Disponibil din RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | selfhost:N, otherwise:Y | `enable-ipv6-punch=N` |
+
+### enable-webrtc
+
+Activează conexiunile P2P prin WebRTC. La fel ca traversarea UDP și conexiunile P2P prin IPv6, această opțiune este dezactivată implicit pentru serverele găzduite pe infrastructura proprie. Setați `enable-webrtc=Y` pentru a o activa explicit.
+
+**Locație**:
+
+1. **Desktop** Setări → General → Altele → Activează conexiunea P2P prin WebRTC
+2. **Mobile** Setări → Activează conexiunea P2P prin WebRTC
+
+Disponibil din RustDesk 1.5.0, RustDesk Server Pro 1.8.7
+
+| Valori | Implicit | Exemplu |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, otherwise:Y | `enable-webrtc=Y` |
+
+### relay-fallback-delay
+
+Durata, în secunde, în care o conexiune prin releu deja stabilită așteaptă o conexiune directă WebRTC înainte de a fi utilizat releul. Măriți valoarea pentru a acorda mai mult timp unei conexiuni directe lente; micșorați-o pentru a utiliza releul mai devreme atunci când nu se poate stabili o conexiune directă.
+
+Se aplică doar când WebRTC este activat (`enable-webrtc`). Câmpul din clientul desktop este ascuns când WebRTC este dezactivat. Lăsați-l gol pentru a utiliza valoarea implicită de 2.5 secunde. Valorile nevalide, zero sau negative folosesc, de asemenea, valoarea implicită.
+
+**Locație**:
+
+**Desktop** Setări → General → Altele → Activează conexiunea P2P prin WebRTC → Întârziere înainte de trecerea la releu în secunde
+
+Disponibil din RustDesk 1.5.0
+
+| Valori | Implicit | Exemplu |
+| :------: | :------: | :------: |
+| Număr pozitiv de secunde sau câmp gol | 2.5 | `relay-fallback-delay=2.5` |
 
 ## Setări de afișare
 
