@@ -2,17 +2,17 @@
 publishDate: 2024-10-12T00:00:00Z
 lang: zh-tw
 translationKey: rustdesk-web-client-v2-preview
-title: "RustDesk Web 用戶端 V2 預覽版"
+title: "RustDesk Web 使用者端 V2 預覽版"
 excerpt: "V2 提供更好的編解碼器、國際鍵盤支援、剪貼簿支援、檔案傳輸等功能。"
 image: ~/assets/images/blog/web-client.jpg
 category: 發布
 slug: rustdesk-web-yong-hu-duan-v2-yu-lan
-tags: [Web 用戶端, 發布]
+tags: [Web 使用者端, 發布]
 ---
 
-我們很榮幸推出 RustDesk Web 用戶端 V2 預覽版。此版本帶來更強的解碼能力、更好的國際鍵盤支援、剪貼簿支援（不僅限於文字，也支援圖片）以及檔案傳輸功能。在瀏覽器限制範圍內，我們致力於讓 Web 版的功能集與使用體驗與桌面用戶端保持一致。
+我們很榮幸推出 RustDesk Web 使用者端 V2 預覽版。此版本帶來更強的解碼能力、更好的國際鍵盤支援、剪貼簿支援（不僅限於文字，也支援圖片）以及檔案傳輸功能。在瀏覽器限制範圍內，我們致力於讓 Web 版的功能集與使用體驗與桌面使用者端保持一致。
 
-您可以造訪 https://rustdesk.com/web 來使用 RustDesk Web 用戶端 V2 預覽版。若您希望透過 V2 存取自己的伺服器，請依照[文件](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client)設定 WebSocket Secure（WSS）支援，並在連接埠 21118/21119 上進行設定。
+您可以造訪 https://rustdesk.com/web 來使用 RustDesk Web 使用者端 V2 預覽版。若您希望透過 V2 存取自己的伺服器，請依照[文件](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client)設定 WebSocket Secure（WSS）支援，並在連接埠 21118/21119 上進行設定。
 ```
     location /ws/id {
         proxy_pass http://localhost:21118;
@@ -36,13 +36,13 @@ tags: [Web 用戶端, 發布]
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 ```
-Web 用戶端也已**整合至 RustDesk Server Pro**，讓您可以從自己的伺服器（例如 `https://rustdesk.yourcompany.com/web`）提供服務，而不必依賴公開版本。
+Web 使用者端也已**整合至 RustDesk Server Pro**，讓您可以從自己的伺服器（例如 `https://rustdesk.yourcompany.com/web`）提供服務，而不必依賴公開版本。
 
-## 在自己的伺服器上使用 Web 用戶端的兩種方式
+## 在自己的伺服器上使用 Web 使用者端的兩種方式
 
-- **公開 Web 用戶端（`rustdesk.com/web`）連接至您的伺服器。** 您可以使用 RustDesk 代管的 Web 用戶端，並將其連接到自己的 ID/中繼伺服器，但需要自行完成設定：瀏覽器需要 WebSocket Secure（WSS）以及正確的 CORS 標頭才能連線到您的伺服器。詳見 [Web 用戶端的 WSS 與 CORS 設定](https://github.com/rustdesk/rustdesk/wiki/FAQ#wss-and-cors-setup-for-web-client)。
-- **自架 Web 用戶端（由 Server Pro 於 `https://your-server/web` 提供服務）。** Web 用戶端已[整合至 RustDesk Server Pro](https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro)，因此可從您自己的伺服器執行，而不必使用公開版本。自架 Web 用戶端**不包含在入門級方案**中——需要方案規模達到 **（使用者數 × 10）+ 裝置數 ≥ 400**（例如 10 位使用者／300 台裝置、30 位使用者／100 台裝置，或 20 位使用者／200 台裝置）才能滿足此條件。自架 Web 用戶端也可以進行[自訂](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-to-customize-self-hosted-web-client)。
+- **公開 Web 使用者端（`rustdesk.com/web`）連接至您的伺服器。** 您可以使用 RustDesk 代管的 Web 使用者端，並將其連接到自己的 ID/中繼伺服器，但需要自行完成設定：瀏覽器需要 WebSocket Secure（WSS）以及正確的 CORS 標頭才能連線到您的伺服器。詳見 [Web 使用者端的 WSS 與 CORS 設定](https://github.com/rustdesk/rustdesk/wiki/FAQ#wss-and-cors-setup-for-web-client)。
+- **自架 Web 使用者端（由 Server Pro 於 `https://your-server/web` 提供服務）。** Web 使用者端已[整合至 RustDesk Server Pro](https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro)，因此可從您自己的伺服器執行，而不必使用公開版本。自架 Web 使用者端**不包含在入門級方案**中——需要方案規模達到 **（使用者數 × 10）+ 裝置數 ≥ 400**（例如 10 位使用者／300 台裝置、30 位使用者／100 台裝置，或 20 位使用者／200 台裝置）才能滿足此條件。自架 Web 使用者端也可以進行[自訂](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-to-customize-self-hosted-web-client)。
 
-無論選擇哪種方式，Web 用戶端都是一個**控制端**：您可以透過瀏覽器分頁操控其他裝置，但瀏覽器分頁無法作為無人值守主機使用。
+無論選擇哪種方式，Web 使用者端都是一個**控制端**：您可以透過瀏覽器分頁操控其他裝置，但瀏覽器分頁無法作為無人值守主機使用。
 
 我們很高興能為使用者帶來這些改進，並期待在我們持續完善 RustDesk Web Client V2 的過程中收到您的意見回饋。

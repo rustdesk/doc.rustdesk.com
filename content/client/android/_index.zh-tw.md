@@ -1,7 +1,7 @@
 ---
 title: Android
 weight: 4
-description: "RustDesk 的Android文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的Android文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk android", "rustdesk android remote control", "rustdesk android file transfer", "rustdesk android screen share", "rustdesk android id relay server", "rustdesk android permissions"]
 ---
 
@@ -72,7 +72,7 @@ config={"host": "xxx", "key": "xxx"}
 
 ## 分享您Android手機的螢幕/檔案
 
-從1.1.9版本開始，Android用戶端增加了分享手機螢幕和分享手機檔案系統的功能。
+從1.1.9版本開始，Android使用者端增加了分享手機螢幕和分享手機檔案系統的功能。
 
 - 螢幕分享需要Android 6及以上版本
 - 分享手機系統內部音訊需要Android 10及以上版本

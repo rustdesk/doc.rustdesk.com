@@ -2,16 +2,16 @@
   "consentModal": {
     "label": "Cookie 同意",
     "title": "您好旅行者，是時候談談 Cookie 了！",
-    "description": "我們的網站使用必要的 Cookie 來確保其正常運作，並使用追蹤 Cookie 來了解您如何與之互動。後者只有在得到同意後才會設置。<button type=\"button\" data-cc=\"show-preferencesModal\" class=\"cc__link\">管理偏好設置</button>",
+    "description": "我們的網站使用必要的 Cookie 來確保其正常運作，並使用追蹤 Cookie 來了解您如何與之互動。後者只有在得到同意後才會設定。<button type=\"button\" data-cc=\"show-preferencesModal\" class=\"cc__link\">管理偏好設定</button>",
     "acceptAllBtn": "接受全部",
     "acceptNecessaryBtn": "拒絕全部",
-    "showPreferencesBtn": "管理偏好設置"
+    "showPreferencesBtn": "管理偏好設定"
   },
   "preferencesModal": {
-    "title": "Cookie 偏好設置",
+    "title": "Cookie 偏好設定",
     "acceptAllBtn": "接受全部",
     "acceptNecessaryBtn": "拒絕全部",
-    "savePreferencesBtn": "保存偏好設置",
+    "savePreferencesBtn": "儲存偏好設定",
     "closeIconLabel": "關閉",
     "sections": [
       {
@@ -38,13 +38,13 @@
             {
               "name": "_ga",
               "domain": "Google Analytics",
-              "description": "由 <a href=\"#das\">Google Analytics</a> 設置的 Cookie。",
+              "description": "由 <a href=\"#das\">Google Analytics</a> 設定的 Cookie。",
               "expiration": "12天後過期"
             },
             {
               "name": "_gid",
               "domain": "Google Analytics",
-              "description": "由 <a href=\"#das\">Google Analytics</a> 設置的 Cookie",
+              "description": "由 <a href=\"#das\">Google Analytics</a> 設定的 Cookie",
               "expiration": "會話結束時"
             }
           ]

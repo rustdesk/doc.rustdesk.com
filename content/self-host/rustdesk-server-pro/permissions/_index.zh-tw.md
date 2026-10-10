@@ -1,7 +1,7 @@
 ---
 title: 存取控制
 weight: 16
-description: "RustDesk 的存取控制文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的存取控制文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk access control", "rustdesk device permissions", "rustdesk user group access", "rustdesk server pro permissions", "rustdesk device assignment"]
 ---
 

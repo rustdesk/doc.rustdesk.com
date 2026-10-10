@@ -1,7 +1,7 @@
 ---
 title: 配置中繼伺服器
 weight: 17
-description: "RustDesk 的配置中繼伺服器文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的配置中繼伺服器文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk relay server", "rustdesk hbbr", "rustdesk geolocation relay", "rustdesk additional relay", "rustdesk server pro relay"]
 ---
 
@@ -22,14 +22,14 @@ keywords: ["rustdesk relay server", "rustdesk hbbr", "rustdesk geolocation relay
 ## RustDesk Pro - 使用docker安裝具有地理位置的附加中繼伺服器
 
 {{% notice note %}}
-[簡單安裝](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/)會在同一台機器上隱式創建一個中繼伺服器（`hbbr`進程），您無需顯式指定中繼伺服器。
+[簡單安裝](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/installscript/)會在同一台機器上隱式建立一個中繼伺服器（`hbbr`程序），您無需顯式指定中繼伺服器。
 
-如果您想在另一台機器上顯式創建附加中繼伺服器，請按照[OSS安裝](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/)運行`hbbr`。您可以在`rustdesk-server-linux-amd64.tar.gz`、`rustdesk-server-hbbr_<version>-<arch>.deb`、`rustdesk-server-windows-x86_64.tar.gz`或`docker`（`sudo docker run ... rustdesk/rustdesk-server-pro hbbr`）中找到`hbbr`。
+如果您想在另一台機器上顯式建立附加中繼伺服器，請按照[OSS安裝](https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/install/)執行`hbbr`。您可以在`rustdesk-server-linux-amd64.tar.gz`、`rustdesk-server-hbbr_<version>-<arch>.deb`、`rustdesk-server-windows-x86_64.tar.gz`或`docker`（`sudo docker run ... rustdesk/rustdesk-server-pro hbbr`）中找到`hbbr`。
 
 `hbbr`不需要許可證，與開源版本相同。
 {{% /notice %}}
 
-您可以在全球運行多個中繼伺服器，並利用地理位置自動使用最近的中繼伺服器，從而在連接遠程計算機時獲得更快的體驗。`hbbs`每隔幾秒鐘自動檢查這些中繼伺服器是否在線，它只選擇在線的中繼伺服器。
+您可以在全球執行多個中繼伺服器，並利用地理位置自動使用最近的中繼伺服器，從而在連接遠端電腦時獲得更快的體驗。`hbbs`每隔幾秒鐘自動檢查這些中繼伺服器是否在線，它只選擇在線的中繼伺服器。
 
 {{% notice note %}}
 已知問題：https://github.com/rustdesk/rustdesk/discussions/7934
@@ -76,7 +76,7 @@ services:
 
 # 安裝步驟
 
-1 - 如果已安裝docker，通過SSH連接到您的伺服器並為hbbr創建卷：
+1 - 如果已安裝docker，通過SSH連接到您的伺服器並為hbbr建立卷：
 ```
 # docker volume create hbbr
 ```
@@ -85,13 +85,13 @@ services:
 
 2 - 將私鑰對複製到卷位置，在本例中我們將使用SCP複製文件。
 
-命令語法為`scp <路徑/文件名> 用戶名@伺服器:</目標/路徑>`。
+命令語法為`scp <路徑/文件名> 使用者名稱@伺服器:</目標/路徑>`。
 ```
 # scp id_ed25519 root@100.100.100.100:/var/lib/docker/volumes/hbbr/_data
 # scp id_ed25519.pub root@100.100.100.100:/var/lib/docker/volumes/hbbr/_data
 ```
 
-3 - 使用先前創建的卷部署hbbr容器。該卷包含運行私有中繼伺服器所需的私鑰對。
+3 - 使用先前建立的卷部署hbbr容器。該卷包含執行私有中繼伺服器所需的私鑰對。
 ```
 # sudo docker run --name hbbr -v hbbr:/root -td --net=host rustdesk/rustdesk-server-pro hbbr
 ```
@@ -106,7 +106,7 @@ services:
 
 從RustDesk Server Pro 1.8.6開始，`hbbr`的`-k`選項已棄用且會被忽略。如果未設定`KEY`，`hbbr`會從`id_ed25519`中取得公開金鑰；如果私鑰檔案不存在，則從`id_ed25519.pub`中讀取。如果兩個檔案都不存在，`hbbr`將以公開中繼模式執行。
 
-4 - 檢查運行日誌以驗證hbbr正在使用您的密鑰對運行：
+4 - 檢查執行日誌以驗證hbbr正在使用您的密鑰對執行：
 ```
 # docker logs hbbr
 
@@ -119,7 +119,7 @@ INFO [src/relay_server.rs:81] Listening on tcp :21117
 
 根據您的作業系統，您可能希望使用防火牆阻止/允許IP。
 
-在我們的例子中，運行Ubuntu時，我們希望允許任何TCP連接到端口21117和21119。
+在我們的例子中，執行Ubuntu時，我們希望允許任何TCP連接到連接埠21117和21119。
 
 ```
 # sudo ufw allow proto tcp from any to any port 21117,21119
@@ -148,7 +148,7 @@ To                         Action      From
 
 要使用地理位置，hbbs需要訪問MaxMind GeoLite2 City資料庫。該資料庫是免費的，您可以註冊下載檔案並獲取API密鑰。
 
-首先通過訪問[網站](https://www.maxmind.com/en/account/login)創建賬戶（如果您還沒有）。
+首先通過訪問[網站](https://www.maxmind.com/en/account/login)建立賬戶（如果您還沒有）。
 轉到`Download Databases`並下載GeoLite2 City，選擇gzip檔案，解壓縮後應該有`mmdb`檔案。
 
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/e14318fb-ec52-463c-af77-d08c9479c1b5">
@@ -161,23 +161,23 @@ To                         Action      From
 
 您需要定期更新此檔案，我們可以使用cronjob來執行。您需要一個API密鑰來訪問下載鏈接，這是免費的。
 
-轉到`Manage License Keys`並生成新的許可證密鑰。<br>
+轉到`Manage License Keys`並產生新的許可證密鑰。<br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/632aeb33-4f5d-4a31-9010-38e01c22d3c9">
 <br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/3e178174-5fbf-46b7-a335-01f77125dfad">
 
-您可以通過幾種方式自動化[下載過程](https://dev.maxmind.com/geoip/updating-databases)，但您可以將以下命令添加到您的crontab中，將{您的訪問密鑰}替換為您從上一步獲得的API密鑰。
+您可以通過幾種方式自動化[下載過程](https://dev.maxmind.com/geoip/updating-databases)，但您可以將以下命令加入到您的crontab中，將{您的訪問密鑰}替換為您從上一步獲得的API密鑰。
 
 ```
 /usr/bin/curl -L --silent 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key={您的訪問密鑰}&suffix=tar.gz' | /bin/tar -C '/var/lib/rustdesk-server/' -xvz --keep-newer-files --strip-components=1 --wildcards '*GeoLite2-City.mmdb'
 ```
 
-### 在RustDesk Pro Web控制台中更改設置
+### 在RustDesk Pro Web控制台中更改設定
 
-將您的中繼伺服器IP地址或DNS名稱（從版本1.1.11開始支持DNS）添加到`Relay Servers`。**不需要端口，顯式使用`21117`端口。**<br>
+將您的中繼伺服器IP地址或DNS名稱（從版本1.1.11開始支援DNS）加入到`Relay Servers`。**不需要指定連接埠，系統會自動使用`21117`連接埠。**<br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/c4452ba4-5e1d-437a-ae1d-fc0070bfa26c">
 
-通過添加伺服器IP地址和伺服器所在位置的坐標來添加地理覆蓋。<br>
+通過加入伺服器IP地址和伺服器所在位置的坐標來加入地理覆蓋。<br>
 <img width="500" alt="image" src="https://github.com/rustdesk/doc.rustdesk.com/assets/642149/41c558e3-423b-4296-90d3-cb0769f4a369">
 
 點擊`Reload Geo`，您的列表應該類似於此。<br>
@@ -185,7 +185,7 @@ To                         Action      From
 
 要確認結果，在點擊`Reload Geo`時檢查您的hbbs日誌，您應該看到顯示中繼伺服器IP地址及其坐標的訊息。
 
-> 如果您在Linux機器上運行RustDesk Pro，請使用命令`RUST_LOG=debug ./hbbs`查看日誌。如果您在Docker容器上運行，請使用`docker logs hbbs`。
+> 如果您在Linux機器上執行RustDesk Pro，請使用命令`RUST_LOG=debug ./hbbs`查看日誌。如果您在Docker容器上執行，請使用`docker logs hbbs`。
 
 ```
 RUST_LOG=debug ./hbbs

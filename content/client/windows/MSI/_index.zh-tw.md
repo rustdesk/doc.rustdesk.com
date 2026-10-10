@@ -1,7 +1,7 @@
 ---
 title: MSI
 weight: 49
-description: "RustDesk 的MSI文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的MSI文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk msi", "rustdesk silent install", "rustdesk msiexec", "rustdesk windows msi", "rustdesk installfolder", "rustdesk printer install"]
 ---
 

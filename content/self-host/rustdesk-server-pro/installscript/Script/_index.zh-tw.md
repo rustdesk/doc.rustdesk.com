@@ -1,7 +1,7 @@
 ---
 title: install.sh 
 weight: 4
-description: "RustDesk 的install.sh文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的install.sh文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk server pro install.sh", "rustdesk pro linux install", "rustdesk pro script install", "rustdesk self-host pro linux", "rustdesk server pro setup"]
 ---
 
@@ -39,10 +39,10 @@ keywords: ["rustdesk server pro install.sh", "rustdesk pro linux install", "rust
 
 - 安裝一些依賴項
 - 在可用情況下設定 UFW 防火牆
-- 創建工作目錄 `/var/lib/rustdesk-server` 和日誌目錄 `/var/log/rustdesk-server`
+- 建立工作目錄 `/var/lib/rustdesk-server` 和日誌目錄 `/var/log/rustdesk-server`
 - 將可執行檔案安裝到 `/usr/bin`
 - 下載並解壓 RustDesk Pro 服務到上述資料夾
-- 為 hbbs 和 hbbr 創建 systemd 服務（服務名稱為 `rustdesk-hbbs.service` 和 `rustdesk-hbbr.service`）
+- 為 hbbs 和 hbbr 建立 systemd 服務（服務名稱為 `rustdesk-hbbs.service` 和 `rustdesk-hbbr.service`）
 - 如果您選擇了網域，它將安裝 Nginx 和 Certbot，讓 API 能夠在連接埠 `443` (HTTPS) 上存取，並透過連接埠 `80` 獲取 SSL 證書，它會自動續期。當 https 準備就緒後，請使用 `https://yourdomain.com` 存取，而不是 `https://yourdomain.com:21114`。
 
 {{% notice note %}}
@@ -93,10 +93,10 @@ keywords: ["rustdesk server pro install.sh", "rustdesk pro linux install", "rust
 - 停用並移除舊服務
 - 安裝依賴套件
 - 在可用情況下設定 UFW 防火牆
-- 創建資料夾 `/var/lib/rustdesk-server` 並將證書複製到這裡
-- 刪除 `/var/log/rustdesk` 並創建 `/var/log/rustdesk-server`
+- 建立資料夾 `/var/lib/rustdesk-server` 並將證書複製到這裡
+- 刪除 `/var/log/rustdesk` 並建立 `/var/log/rustdesk-server`
 - 下載並解壓 RustDesk Pro 服務到上述資料夾
-- 為 hbbs 和 hbbr 創建 systemd 服務（服務名稱為 `rustdesk-hbbs.service` 和 `rustdesk-hbbr.service`）
+- 為 hbbs 和 hbbr 建立 systemd 服務（服務名稱為 `rustdesk-hbbs.service` 和 `rustdesk-hbbr.service`）
 - 如果您選擇了網域，它將安裝 Nginx 和 Certbot，讓 API 能夠在連接埠 `443` (HTTPS) 上存取，並透過連接埠 `80` 獲取 SSL 證書，它會自動續期。當 https 準備就緒後，請使用 `https://yourdomain.com` 存取，而不是 `https://yourdomain.com:21114`。
 
 {{% notice note %}}

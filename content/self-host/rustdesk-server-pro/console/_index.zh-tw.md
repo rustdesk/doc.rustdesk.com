@@ -1,7 +1,7 @@
 ---
 title: 網頁控制台
 weight: 10
-description: "RustDesk 的網頁控制台文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的網頁控制台文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk web console", "rustdesk server pro console", "rustdesk port 21114", "rustdesk device management", "rustdesk admin console"]
 ---
 
@@ -142,7 +142,7 @@ RustDesk Server Pro Web 主控台是管理使用者、裝置、群組、授權�
 | `--address_book_password <password>`    | 設定通訊錄條目的密碼                        | 1.6.6             | 1.4.3           | 
 | `--address_book_note <note>`            | 設定通訊錄條目的備註                        | 1.6.6             | 1.4.3           | 
 | `--device_group_name <devicegroupname>` | 將設備分配到設備群組                        |                   |                 | 
-| `--note <note>`                         | 為設備添加備註                             | 1.6.6             | 1.4.3           | 
+| `--note <note>`                         | 為設備加入備註                             | 1.6.6             | 1.4.3           | 
 | `--device_username <device_username>`   | 設定設備使用者名稱                           | 1.6.6             | 1.4.3           | 
 | `--device_name <device_name>`           | 設定設備名稱                               | 1.6.6             | 1.4.3           | 
 | [`--deploy`](/docs/en/self-host/client-deployment/#explicit-deployment-for-new-devices) | 啟用 **新裝置必須部署後註冊** 時註冊新裝置。需要具有 **裝置** **讀寫** 權限的 API token。 | 1.8.3 | 1.4.7 |
@@ -560,7 +560,7 @@ Windows 命令列預設不會輸出結果。若要查看輸出，可使用：
 ./strategies.py --url <url> --token <token> view --guid "01983006-fcca-7c12-9a91-b1df483c6073"
 ```
 
-**啟用或禁用策略：**  
+**啟用或停用策略：**
 ```bash
 ./strategies.py --url <url> --token <token> enable --name "策略名稱"
 ./strategies.py --url <url> --token <token> disable --name "策略名稱"
@@ -635,7 +635,7 @@ Windows 命令列預設不會輸出結果。若要查看輸出，可使用：
 **篩選條件：**
 
     --remote : peer ID（連線或檔案稽核用）
-    --conn-type : 0=遠端桌面, 1=檔案傳輸, 2=端口傳輸, 3=觀看攝影機, 4=終端機
+    --conn-type : 0=遠端桌面, 1=檔案傳輸, 2=連接埠傳輸, 3=觀看攝影機, 4=終端機
     --device : 設備 ID（警示稽核用）
     --operator : 操作者使用者名稱（控制台稽核用）
     --created-at : 本地時間篩選，例如 "2025-09-16 14:15:57"

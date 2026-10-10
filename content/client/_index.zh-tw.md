@@ -3,7 +3,7 @@ title: RustDesk Client
 weight: 2
 pre: "<b>1. </b>"
 chapter: true
-description: "RustDesk 的RustDesk Client文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的RustDesk Client文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk client", "rustdesk download", "rustdesk installation", "rustdesk windows", "rustdesk mac", "rustdesk linux", "rustdesk android", "rustdesk ios", "rustdesk web client", "rustdesk client configuration"]
 ---
 
@@ -37,13 +37,13 @@ RustDesk 客戶端可用於透過我們的 RustDesk 伺服器（無論是開源�
 
 打開 dmg 檔案並將 `RustDesk` 拖到 `應用程式`。
 
-允許 RustDesk 運行。
+允許 RustDesk 執行。
 
-啟用所需的權限並按照 RustDesk 左側的提示完成設置。
+啟用所需的權限並按照 RustDesk 左側的提示完成設定。
 
 ### Linux
 
-請參照以下指南安裝各種 Linux "口味" 的 RustDesk（安裝程序可在 GitHub 或發行版的代碼庫中找到）。
+請參照以下指南安裝各種 Linux "口味" 的 RustDesk（安裝程序可在 GitHub 或發行版的程式碼庫中找到）。
 
 #### Debian 衍生版
 
@@ -78,7 +78,7 @@ sudo zypper install --allow-unsigned-rpm ./rustdesk-<version>-suse.rpm
 nix shell nixpkgs#rustdesk
 ```
 
-在當前用戶配置文件中安裝：
+在目前使用者配置文件中安裝：
 
 ```sh
 nix profile install nixpkgs#rustdesk
@@ -100,41 +100,41 @@ nix profile install nixpkgs#rustdesk
 從 [App Store](https://apps.apple.com/us/app/rustdesk-remote-desktop/id1581225015) 下載。
 
 ## 使用
-安裝後（或作為臨時可執行文件執行），RustDesk 將連接到公共伺服器。您將在底部看到消息 (1) "準備就緒，若您需要更快的連線速度，您可以選擇自行建立伺服器"。在左上角您會看到您的 (2) ID，(3) 一次性密碼，以及在右側的 (4) 方框，用於連接到另一台電腦（如果您知道他們的 ID）。
+安裝後（或作為臨時可執行文件執行），RustDesk 將連接到公共伺服器。您將在底部看到訊息 (1) "準備就緒，若您需要更快的連線速度，您可以選擇自行建立伺服器"。在左上角您會看到您的 (2) ID，(3) 一次性密碼，以及在右側的 (4) 方框，用於連接到另一台電腦（如果您知道他們的 ID）。
 
 ![](/docs/en/client/images/client.png)
 
-要訪問設置，請點擊 ID 右側的 (5) 選單按鈕 [ &#8942; ]。
+要訪問設定，請點擊 ID 右側的 (5) 選單按鈕 [ &#8942; ]。
 
-在設置中您會找到：
+在設定中您會找到：
 - 一般 - 服務控制、主題、硬體編解碼器、音訊、錄製和語言
 - 安全 - 控制權限、密碼、更改 ID 和進階安全設定
-- 網絡 - 在此處設置您自己的伺服器設置和代理伺服器
-- 顯示 - 控制遠端工作階段的顯示設置和其他預設選項，同步剪貼板等
+- 網路 - 在此處設定您自己的伺服器設定和代理伺服器
+- 顯示 - 控制遠端工作階段的顯示設定和其他預設選項，同步剪貼板等
 - 帳戶 - 可與專業版伺服器一起使用，以登入 API
 - 關於 - 顯示有關軟體的資訊。
 
 ## 配置 RustDesk
 有多種方法可以配置 RustDesk。
 
-最簡單的方法是使用 RustDesk 伺服器專業版，您可以獲得一個加密的配置字符串，這可以與 `--config` 一起使用來導入設置。要做到這一點：
-1. 在您使用的任何作業系統上打開終端機，到 RustDesk 安裝的文件夾，如 Windows 上的 `C:\Program Files\RustDesk`，Linux 上的 `/usr/bin`。
+最簡單的方法是使用 RustDesk 伺服器專業版，您可以獲得一個加密的配置字符串，這可以與 `--config` 一起使用來導入設定。要做到這一點：
+1. 在您使用的任何作業系統上打開終端機，到 RustDesk 安裝的資料夾，如 Windows 上的 `C:\Program Files\RustDesk`，Linux 上的 `/usr/bin`。
 2. 使用命令 `rustdesk.exe --config your-encrypted-string`，例如 `rustdesk.exe --config 9JSPSvJzNrBDasJjNSdXOVVBlERDlleoNWZzIHcOJiOikXZr8mcw5yazVGZ0NXdy5CdyciojI0N3boJye`。
 
 您也可以手動設定客戶端。要做到這一點：
 1. 點擊設定。
-2. 點擊網絡。
-3. 點擊解鎖網絡設定。
+2. 點擊網路。
+3. 點擊解鎖網路設定。
 4. 輸入您的 ID、中繼、API（如果使用專業版伺服器）和您的 Key。
 
 ![](/docs/en/client/images/network-settings.png)
 
-如果您手動設定了客戶端，您可以搜尋 `RustDesk2.toml` 文件（在用戶文件夾中），並使用 `--import-config` 以類似於上面的範例。
+如果您手動設定了客戶端，您可以搜尋 `RustDesk2.toml` 文件（在使用者資料夾中），並使用 `--import-config` 以類似於上面的範例。
 
 ## 命令行參數
-- `--password` 可用於設置固定密碼。
+- `--password` 可用於設定固定密碼。
 - `--get-id` 可用於取得 ID。
-- `--set-id` 可用於設置 ID，請注意 ID 應以字母開頭。
+- `--set-id` 可用於設定 ID，請注意 ID 應以字母開頭。
 - `--silent-install` 可用於在 Windows 上靜默安裝 RustDesk。
 
 更多高級參數可在 [此處](https://github.com/rustdesk/rustdesk/blob/bdc5cded221af9697eb29aa30babce75e987fcc9/src/core_main.rs#L242) 找到。

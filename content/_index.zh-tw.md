@@ -3,7 +3,7 @@ title: "RustDesk 文件"
 type: docs
 breadcrumbs: false
 weight: 1
-description: "RustDesk 的RustDesk 文件文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的RustDesk 文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk", "remote desktop", "open source", "self-host", "documentation", "remote access", "VNC alternative", "teamviewer alternative"]
 ---
 
@@ -16,7 +16,7 @@ RustDesk 是一個功能完整的開源遠端控制替代方案，支援自託�
 | 作為終端使用者或管理員使用 RustDesk | [客戶端](/docs/zh-tw/client/) |
 | 自建免費開源伺服器 | [RustDesk Server OSS](/docs/zh-tw/self-host/rustdesk-server-oss/) |
 | 需要 Web 控制台、SSO 與企業級控制的自建部署 | [RustDesk Server Pro](/docs/zh-tw/self-host/rustdesk-server-pro/) |
-| 從原始碼建置或封裝 RustDesk | [開發](/docs/zh-tw/dev/) |
+| 從原始碼建構或封裝 RustDesk | [開發](/docs/zh-tw/dev/) |
 
 ## 功能特性
 - 支援 Windows、macOS、Linux、iOS、Android、Web。

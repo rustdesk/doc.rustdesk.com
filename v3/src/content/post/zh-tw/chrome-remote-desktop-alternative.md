@@ -24,7 +24,7 @@ metadata:
   keywords: 'Chrome Remote Desktop 替代方案, 自架 Chrome Remote Desktop 替代方案, 不需要 Google 帳號的遠端桌面, RustDesk 與 Chrome Remote Desktop 比較'
 ---
 
-若要尋找 Chrome Remote Desktop 的自架、開源替代方案，答案就是 RustDesk：你可以自行架設仲介（brokering）伺服器，也能檢視用戶端原始碼，而不必將每個工作階段都透過 Google 雲端傳輸，並將存取權綁定在 Google 帳號上。
+若要尋找 Chrome Remote Desktop 的自架、開源替代方案，答案就是 RustDesk：你可以自行架設仲介（brokering）伺服器，也能檢視使用者端原始碼，而不必將每個工作階段都透過 Google 雲端傳輸，並將存取權綁定在 Google 帳號上。
 
 ## 為什麼要尋找 Chrome Remote Desktop 的替代方案
 
@@ -63,7 +63,7 @@ CRD 可以進行無人值守存取，但目標機器仍必須**開機且保持�
 | 檔案傳輸／傳輸工作流程                                                                 | 僅支援上傳／下載（不支援拖放）                             | 內建支援                                                                                                                                |
 | [無人值守存取](/zh-tw/blog/rustdesk-unattended-access-setup-zh-tw) | 需相同 Google 帳號，機器須保持喚醒                         | 以永久密碼存取你所管理的整批裝置                                                                                                        |
 | 集中管理                                                                               | Google 管理原則；無自架支援主控台                          | 網頁主控台、[裝置群組、共用通訊錄](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)                          |
-| 自訂品牌                                                                               | 無                                                         | 自訂品牌用戶端產生器（Basic 方案以上）                                                                                                  |
+| 自訂品牌                                                                               | 無                                                         | 自訂品牌使用者端產生器（Basic 方案以上）                                                                                                  |
 | 平台支援                                                                               | Windows／macOS／Linux（限 Chrome 內）                      | Windows／macOS／[Linux](/zh-tw/blog/rustdesk-for-linux-zh-tw)／Android；iOS 僅提供控制端應用程式 |
 
 ## RustDesk 的定位：自架且開源
@@ -72,7 +72,7 @@ RustDesk 的核心設計圍繞著兩件 CRD 在架構上做不到的事：**由�
 
 RustDesk 採用 **[AGPL](https://github.com/rustdesk/rustdesk)** 授權開源——你可以確切稽核機器上執行的每一段程式碼、自行編譯，並**永久免費執行社群版伺服器**。當你升級到 Server Pro 時，它在**[設計上就是自架](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)**的：ID／集合（rendezvous）伺服器與中繼伺服器都執行在你自己的機器，或你租用的 VPS 上，中間不會有 Google（或任何廠商）的雲端介入。有個合規規劃上的細節值得留意：直連仍會在端點之間直接傳輸，而中繼流量會經由你的中繼伺服器，因此請詳閱[資料主權方面的影響](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)，不要單純假設伺服器所在位置就能掌控每一個封包的流向。
 
-在這個自架核心之上，RustDesk 還新增了 CRD 所缺乏的團隊功能：[自架網頁主控台](https://rustdesk.com/docs)、自訂品牌用戶端產生器、用於範圍化存取的[裝置群組與共用通訊錄](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)，以及從 Basic 方案起提供的 [LDAP／AD 與 OIDC SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)。完整的檔案傳輸功能與永久密碼[無人值守存取](/zh-tw/blog/rustdesk-unattended-access-setup-zh-tw)在 Windows、macOS、Linux 與 Android 主機上皆為標準配備；iOS 應用程式則僅提供控制端功能。
+在這個自架核心之上，RustDesk 還新增了 CRD 所缺乏的團隊功能：[自架網頁主控台](https://rustdesk.com/docs)、自訂品牌使用者端產生器、用於範圍化存取的[裝置群組與共用通訊錄](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)，以及從 Basic 方案起提供的 [LDAP／AD 與 OIDC SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)。完整的檔案傳輸功能與永久密碼[無人值守存取](/zh-tw/blog/rustdesk-unattended-access-setup-zh-tw)在 Windows、macOS、Linux 與 Android 主機上皆為標準配備；iOS 應用程式則僅提供控制端功能。
 
 ## 脫離 Google 雲端，掌握在自己手中
 

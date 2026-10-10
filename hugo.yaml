@@ -244,13 +244,13 @@ languages:
       keywords: ["rustdesk", "远程桌面", "开源", "自托管", "文档", "远程访问", "VNC替代", "teamviewer替代"]
 
   zh-tw:
-    title: "RustDesk文檔"
+    title: "RustDesk文件"
     weight: 3
     languageName: "繁體中文"
     params:
       landingPageName: "🏠 首頁"
-      description: "RustDesk完整文檔 - 開源遠端桌面軟體。學習如何自主託管、配置客戶端並在您的基礎架構中部署RustDesk。"
-      keywords: ["rustdesk", "遠端桌面", "開源", "自主託管", "文檔", "遠端存取", "VNC替代", "teamviewer替代"]
+      description: "RustDesk完整文件 - 開源遠端桌面軟體。學習如何自主託管、配置客戶端並在您的基礎架構中部署RustDesk。"
+      keywords: ["rustdesk", "遠端桌面", "開源", "自主託管", "文件", "遠端存取", "VNC替代", "teamviewer替代"]
   
   ro:
     title: "Documentația RustDesk"

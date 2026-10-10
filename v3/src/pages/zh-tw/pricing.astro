@@ -15,8 +15,8 @@ const metadata = {
 
 const faqRawItems = [
       {
-        title: '這些計劃是否包含客戶支持？',
-        description: '當然，所有付費計劃都包括訪問我們專門的客戶支持，以協助您解決任何疑問或問題。',
+        title: '這些計劃是否包含客戶支援？',
+        description: '當然，所有付費計劃都包括訪問我們專門的客戶支援，以協助您解決任何疑問或問題。',
       },
       {
         title: '是否有試用許可證？',
@@ -56,7 +56,7 @@ const faqRawItems = [
           '是的，已整合，但需要滿足（使用者數 × 10）+ 裝置數 ≥ 400 的方案。詳情請查看此<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro">FAQ 條目</a>。為避免混淆，<b>web client</b> 指在瀏覽器分頁中直接使用 RustDesk 發起遠端工作階段，<b>web console</b> 指 RustDesk Server Pro 的管理後台網站，用於管理使用者、裝置、權限、策略與授權。',
       },
       {
-        title: '對於臨時支持案例怎麼辦？我們有一些設備需要偶爾支持，但不需要無人值守訪問。',
+        title: '對於臨時支援案例怎麼辦？我們有一些設備需要偶爾支援，但不需要無人值守訪問。',
         description:
           '我們提供這個<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk-server-pro/discussions/182#discussioncomment-10083053">解決方案</a>',
       },
@@ -139,7 +139,7 @@ const currencyCopy = {
             description: '在線狀態',
           },
           {
-            description: '社區支持',
+            description: '社區支援',
           },
         ],
         callToAction: {
@@ -156,7 +156,7 @@ const currencyCopy = {
         items: [
           {
             description:
-              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">1位登入用戶 <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">1位登入使用者 <span class="inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full hover:bg-red-600 cursor-help ml-1" title="Click for more information">?</span></a>',
           },
           {
             description:
@@ -189,7 +189,7 @@ const currencyCopy = {
           },
           {
             description:
-              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/">集中設置</a>',
+              '<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/">集中設定</a>',
           },
           {
             description:
@@ -214,7 +214,7 @@ const currencyCopy = {
           },
           {
             description:
-              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">10位登入用戶</a>',
+              '<a class="underline" target="_blank" href="https://github.com/rustdesk/rustdesk/wiki/FAQ#login-users">10位登入使用者</a>',
           },
           {
             description:
@@ -234,7 +234,7 @@ const currencyCopy = {
           },
           {
             description:
-              '<a class="underline text-blue-500 font-bold" target="_blank" href="https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only">自定義客戶端生成器</a>',
+              '<a class="underline text-blue-500 font-bold" target="_blank" href="https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only">自訂客戶端產生器</a>',
           },
         ],
         callToAction: {
@@ -245,8 +245,8 @@ const currencyCopy = {
         ribbonTitle: '熱門',
       },
       {
-        title: '自定義',
-        subtitle: '自定義<span class="font-bold">專業版</span>計劃',
+        title: '自訂',
+        subtitle: '自訂<span class="font-bold">專業版</span>計劃',
         price: '<span id="cprice">23.88</span> <span class="text-sm">/月</span>',
         period: '年付',
         items: [
@@ -255,7 +255,7 @@ const currencyCopy = {
             icon: 'tabler:checks',
           },
           {
-            description: '每增加一位用戶1.20美元',
+            description: '每增加一位使用者1.20美元',
           },
           {
             description: '每增加一台設備0.12美元',
@@ -263,7 +263,7 @@ const currencyCopy = {
         ],
         content: `
 <form class="flex flex-col space-y-3 mx-3 min-w-[200px]">
-  <label for="users" class="text-left font-bold">登入用戶數量：</label>
+  <label for="users" class="text-left font-bold">登入使用者數量：</label>
   <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="users" name="users" value="10" min="10" max="500" step="10">
   <input type="range" id="usersSlider" class="slider" name="usersRange" value="10" min="10" max="500" step="10">
   <label for="devices" class="text-left font-bold">管理設備數量：</label>
@@ -285,20 +285,20 @@ const currencyCopy = {
     currencyCopy={currencyCopy}
     prices={[
       {
-        title: '自定義 V2',
-        subtitle: '自定義<span class="font-bold">專業版</span>計劃，限制並發連接',
+        title: '自訂 V2',
+        subtitle: '自訂<span class="font-bold">專業版</span>計劃，限制並發連接',
         price: '<span id="cprice2">23.88</span> <span class="text-sm">/月</span>',
         period: '年付',
         items: [
           {
-            description: `<span class="font-bold">基本自託管計劃的所有功能<span class="underline font-normal">但限制並發連接，超出的管理設備不會被禁用</span></span>`,
+            description: `<span class="font-bold">基本自託管計劃的所有功能<span class="underline font-normal">但限制並發連接，超出的管理設備不會被停用</span></span>`,
             icon: 'tabler:checks',
           },
           {
-            description: '每個並發連接可無限制的並發會話（在標籤頁或單獨窗口中）',
+            description: '每個並發連接可無限制的並發會話（在標籤頁或單獨視窗中）',
           },
           {
-            description: '每增加一位用戶1.20美元',
+            description: '每增加一位使用者1.20美元',
           },
           {
             description: '每增加一台設備0.12美元',
@@ -310,7 +310,7 @@ const currencyCopy = {
         id: 'custom2',
         content: `
 <form class="flex flex-col space-y-3 mx-3">
-  <label for="users2" class="text-left font-bold">登入用戶數量：</label>
+  <label for="users2" class="text-left font-bold">登入使用者數量：</label>
   <input class="bg-white text-black rounded-md border border-gray-300 py-1 px-2 w-24 h-10" type="number" id="users2" name="users2" value="10" min="10" max="500" step="10">
   <input type="range" id="usersSlider2" class="slider" name="usersRange2" value="10" min="10" max="500" step="10">
   <label for="devices2" class="text-left font-bold">管理設備數量：</label>
@@ -375,7 +375,7 @@ const currencyCopy = {
         title: '準備就緒！',
         icon: 'tabler:check',
         description:
-          '詳細說明請參考我們的<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/">文檔</a>。',
+          '詳細說明請參考我們的<a class="underline" target="_blank" href="https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/license/">文件</a>。',
       },
     ]}
     image={{
