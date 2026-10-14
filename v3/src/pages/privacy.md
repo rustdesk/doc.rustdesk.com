@@ -1,6 +1,6 @@
 ---
 title: 'Privacy Policy'
-description: 'Read the RustDesk privacy policy covering website usage, cookies, support, and the processing of personal data related to RustDesk services.'
+description: 'Privacy policy for rustdesk.com and RustDesk remote desktop software: what personal data Purslane Tech processes and why, cookies, providers and GDPR rights.'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 

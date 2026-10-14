@@ -14,5 +14,7 @@
  ln -s ../currencies.json
  ln -s ../v2/web
  cp -rf ../zh ./
+ # Bing flags meta descriptions outside ~120-160 characters; see the script.
+ node ../../scripts/fit-meta-descriptions.mjs .
  tar czf x *
  mv x ..

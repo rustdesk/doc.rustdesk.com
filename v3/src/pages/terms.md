@@ -1,6 +1,6 @@
 ---
 title: 'Terms and Conditions'
-description: 'Review the RustDesk software terms and conditions, including license rights, restrictions, warranties, liability, and acceptable use.'
+description: 'Terms and conditions for RustDesk Server Pro, our public ID and relay servers and rustdesk.com: license scope, prohibited uses, liability and Singapore law.'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 

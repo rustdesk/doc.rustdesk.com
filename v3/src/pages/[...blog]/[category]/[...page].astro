@@ -1,6 +1,6 @@
 ---
 import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
-import { blogCategoryRobots, getStaticPathsBlogCategory } from '~/utils/blog';
+import { blogCategoryRobots, fetchPosts, getStaticPathsBlogCategory } from '~/utils/blog';
 
 import Layout from '~/layouts/PageLayout.astro';
 import BlogList from '~/components/blog/List.astro';
@@ -26,160 +26,174 @@ const categorySlug = String(category.slug ?? '').toLowerCase();
 const localizedCategoryDescriptions: Record<Lang, Record<string, string>> = {
   en: {
     alternatives:
-      'Evaluate self-hosted and open-source alternatives by deployment model, licensing, security, workflow fit, and migration effort.',
+      'Articles on replacing TeamViewer, AnyDesk or Chrome Remote Desktop with a self-hosted, open-source remote desktop: licensing, security and migration.',
     comparisons:
-      'Compare RustDesk with remote-access products and protocols using current requirements, explicit trade-offs, and proof-of-concept criteria.',
+      'Head-to-head remote desktop comparisons of RustDesk, TeamViewer, AnyDesk, ScreenConnect, Splashtop, RDP and VNC: features, security, licensing, self-hosting.',
     deployment:
-      'Plan and operate RustDesk deployments, from server sizing and networking to identity, access control, client rollout, and recovery.',
+      'Self-hosted RustDesk in practice: large device fleets, unattended access, unknown devices in the console, and whether Server Pro can run offline or air-gapped.',
     guides:
-      'Practical guides for evaluating, configuring, and operating RustDesk across platforms, teams, and deployment models.',
+      'Practical RustDesk guides for Linux, Android and iOS, MSPs and enterprise IT, plus why teams self-host remote desktop and which free tools suit business use.',
     pricing:
-      'Understand RustDesk licensing, users, managed devices, concurrency, purchase terms, upgrades, and evaluation options.',
+      'Answers to licensing questions on self-hosted RustDesk Server Pro, such as what counts as a login user or managed device and how mid-term upgrades work.',
     security:
-      'Assess remote-access security, data flows, scams, vulnerabilities, access controls, and deployment hardening without absolute compliance claims.',
+      'Remote desktop security without the hype: how scams work, how safe AnyDesk and Chrome Remote Desktop are, and what self-hosting can and cannot do for GDPR.',
     troubleshooting:
-      'Diagnose connection, display, configuration, and licensing symptoms with targeted checks and safe escalation paths.',
+      'Fixes for common remote desktop errors, from RustDesk stuck on waiting for image to TeamViewer and AnyDesk commercial-use flags, with checks to run first.',
   },
   de: {
     alternatives:
-      'Bewerte selbst gehostete und Open-Source-Alternativen nach Bereitstellungsmodell, Lizenzierung, Sicherheit, Workflow-Fit und Migrationsaufwand.',
+      'Alternativen zu TeamViewer, AnyDesk und Chrome Remote Desktop: was ein selbst gehosteter Open-Source-Remote-Desktop bei Lizenz, Sicherheit und Umstieg ändert.',
     comparisons:
-      'Vergleiche RustDesk mit Remote-Access-Produkten und -Protokollen anhand aktueller Anforderungen, klarer Abwägungen und Proof-of-Concept-Kriterien.',
+      'Remote-Desktop-Tools im Vergleich: RustDesk, TeamViewer, AnyDesk, ScreenConnect, Splashtop, RDP und VNC nach Funktionen, Sicherheit, Lizenz und Self-Hosting.',
     deployment:
-      'Plane und betreibe RustDesk-Bereitstellungen, von Server-Größe und Netzwerk bis zu Identität, Zugriffskontrolle, Client-Rollout und Wiederherstellung.',
+      'Selbst gehostetes RustDesk in der Praxis: große Geräteflotten, unbeaufsichtigter Zugriff, unbekannte Geräte und ob Server Pro offline oder air-gapped läuft.',
     guides:
-      'Praktische Anleitungen zum Bewerten, Konfigurieren und Betreiben von RustDesk auf verschiedenen Plattformen, in Teams und in unterschiedlichen Bereitstellungsmodellen.',
+      'Praxisanleitungen zu RustDesk unter Linux, Android und iOS, für MSPs und Unternehmens-IT, dazu Gründe fürs Self-Hosting und kostenlose Remote-Desktop-Tools.',
     pricing:
-      'Verstehe RustDesk-Lizenzierung, Nutzer, verwaltete Geräte, Gleichzeitigkeit, Kaufbedingungen, Upgrades und Testoptionen.',
+      'Lizenzfragen zu RustDesk Server Pro geklärt, etwa was als Benutzer oder verwaltetes Gerät zählt und wie Upgrades und gleichzeitige Verbindungen funktionieren.',
     security:
-      'Beurteile Sicherheit, Datenflüsse, Betrugsversuche, Schwachstellen, Zugriffskontrollen und Härtung für Remote-Zugriffe ohne pauschale Compliance-Behauptungen.',
+      'Sicherheit beim Fernzugriff ohne Schönfärberei: Betrugsmaschen erkennen, AnyDesk und Chrome Remote Desktop im Check, Self-Hosting und DSGVO nüchtern bewertet.',
     troubleshooting:
-      'Diagnostiziere Verbindungs-, Anzeige-, Konfigurations- und Lizenzsymptome mit gezielten Prüfungen und sicheren Eskalationspfaden.',
+      'Remote-Desktop-Fehler gezielt beheben, etwa wenn RustDesk bei Waiting for image hängt oder TeamViewer und AnyDesk eine kommerzielle Nutzung melden.',
   },
   es: {
     alternatives:
-      'Evalúa alternativas autoalojadas y de código abierto por modelo de despliegue, licencias, seguridad, ajuste al flujo de trabajo y esfuerzo de migración.',
+      'Cómo sustituir TeamViewer, AnyDesk o Chrome Remote Desktop por un escritorio remoto autoalojado y de código abierto: licencias, seguridad y migración.',
     comparisons:
-      'Compara RustDesk con productos y protocolos de acceso remoto usando requisitos actuales, compensaciones explícitas y criterios de prueba de concepto.',
+      'Comparativas de escritorio remoto entre RustDesk, TeamViewer, AnyDesk, ScreenConnect, Splashtop, RDP y VNC: funciones, seguridad, licencias y autoalojamiento.',
     deployment:
-      'Planifica y opera implementaciones de RustDesk, desde el tamaño del servidor y la red hasta la identidad, el control de acceso, el despliegue de clientes y la recuperación.',
+      'Despliegue autoalojado de RustDesk: grandes flotas, acceso desatendido, equipos desconocidos y si RustDesk Server Pro puede funcionar sin conexión o aislado.',
     guides:
-      'Guías prácticas para evaluar, configurar y operar RustDesk en distintas plataformas, equipos y modelos de despliegue.',
+      'Guías de RustDesk para Linux, Android e iOS, MSP y TI corporativa, por qué autoalojar tu escritorio remoto y qué herramientas gratuitas sirven a una empresa.',
     pricing:
-      'Entiende la licencia de RustDesk, usuarios, dispositivos gestionados, concurrencia, condiciones de compra, actualizaciones y opciones de evaluación.',
+      'Licencias de RustDesk Server Pro: qué cuenta como usuario o dispositivo administrado, conexiones simultáneas y actualizaciones a mitad de suscripción.',
     security:
-      'Evalúa la seguridad del acceso remoto, los flujos de datos, las estafas, las vulnerabilidades, los controles de acceso y el endurecimiento del despliegue sin afirmaciones absolutas de cumplimiento.',
+      'Seguridad del escritorio remoto sin promesas absolutas: estafas, si AnyDesk y Chrome Remote Desktop son seguros y qué aporta autoalojar frente al RGPD.',
     troubleshooting:
-      'Diagnostica síntomas de conexión, pantalla, configuración y licencias con comprobaciones dirigidas y rutas seguras de escalado.',
+      'Errores de escritorio remoto resueltos paso a paso, como RustDesk atascado en esperando imagen o el aviso de uso comercial de TeamViewer y AnyDesk.',
   },
   fr: {
     alternatives:
-      'Évaluez les alternatives auto-hébergées et open source selon le modèle de déploiement, la licence, la sécurité, l’adéquation au flux de travail et l’effort de migration.',
+      'Alternatives à TeamViewer, AnyDesk et Chrome Remote Desktop : ce que change un bureau à distance open source auto-hébergé en licence, sécurité et migration.',
     comparisons:
-      'Comparez RustDesk avec des produits et protocoles d’accès à distance à l’aide d’exigences actuelles, de compromis explicites et de critères de preuve de concept.',
+      'Comparatifs de bureau à distance entre RustDesk, TeamViewer, AnyDesk, ScreenConnect, Splashtop, RDP et VNC : fonctions, sécurité, licences, auto-hébergement.',
     deployment:
-      'Planifiez et exploitez des déploiements RustDesk, du dimensionnement des serveurs et du réseau à l’identité, au contrôle d’accès, au déploiement client et à la reprise.',
+      'Déploiement auto-hébergé de RustDesk : grands parcs, accès sans surveillance, appareils inconnus et Server Pro peut-il fonctionner hors ligne ou isolé ?',
     guides:
-      'Guides pratiques pour évaluer, configurer et exploiter RustDesk sur différentes plateformes, pour diverses équipes et selon plusieurs modèles de déploiement.',
+      'Guides RustDesk pour Linux, Android et iOS, les MSP et l’IT d’entreprise, plus pourquoi auto-héberger son bureau à distance et quels outils gratuits choisir.',
     pricing:
-      'Comprenez la licence RustDesk, les utilisateurs, les appareils gérés, la concurrence, les conditions d’achat, les mises à niveau et les options d’évaluation.',
+      'Licences RustDesk Server Pro expliquées, de la notion d’utilisateur et d’appareil géré aux connexions simultanées et à la mise à niveau en cours d’abonnement.',
     security:
-      'Évaluez la sécurité de l’accès à distance, les flux de données, les arnaques, les vulnérabilités, les contrôles d’accès et le durcissement du déploiement sans affirmation de conformité absolue.',
+      'Sécurité du bureau à distance, sans langue de bois : arnaques, AnyDesk et Chrome Remote Desktop au crible, ce que l’auto-hébergement règle ou non pour le RGPD.',
     troubleshooting:
-      'Diagnostiquez les symptômes de connexion, d’affichage, de configuration et de licence avec des vérifications ciblées et des voies d’escalade sûres.',
+      'Dépannage pas à pas quand RustDesk reste bloqué sur waiting for image ou que TeamViewer et AnyDesk signalent un usage commercial, avec les bons contrôles.',
   },
   it: {
     alternatives:
-      'Valuta alternative self-hosted e open source per modello di distribuzione, licenze, sicurezza, aderenza al flusso di lavoro e sforzo di migrazione.',
+      'Alternative self-hosted e open source a TeamViewer, AnyDesk e Chrome Remote Desktop: come scegliere un desktop remoto per licenze, sicurezza e migrazione.',
     comparisons:
-      'Confronta RustDesk con prodotti e protocolli di accesso remoto usando requisiti attuali, compromessi espliciti e criteri di prova di concetto.',
+      'RustDesk a confronto con AnyDesk, TeamViewer, ScreenConnect, Splashtop, VNC e RDP: pro e contro reali del desktop remoto open source e self-hosted.',
     deployment:
-      'Pianifica e gestisci distribuzioni RustDesk, dal dimensionamento del server e della rete fino a identità, controllo accessi, rollout dei client e ripristino.',
+      'Mettere in produzione RustDesk self-hosted: accesso non presidiato, grandi flotte, dispositivi sconosciuti e se Server Pro funziona offline o air-gapped.',
     guides:
-      'Guide pratiche per valutare, configurare e gestire RustDesk su piattaforme, team e modelli di distribuzione diversi.',
+      'Guide pratiche a RustDesk su Linux, Android e iOS, per aziende con Active Directory e per MSP, e perché scegliere un desktop remoto self-hosted e open source.',
     pricing:
-      'Comprendi la licenza RustDesk, gli utenti, i dispositivi gestiti, la concorrenza, i termini di acquisto, gli upgrade e le opzioni di valutazione.',
+      'Licenze del desktop remoto self-hosted RustDesk Server Pro spiegate: dispositivi gestiti, utenti, connessioni simultanee e upgrade a metà abbonamento.',
     security:
-      'Valuta sicurezza, flussi di dati, truffe, vulnerabilità, controlli di accesso e hardening del deployment senza affermazioni assolute di conformità.',
+      'Sicurezza del desktop remoto senza promesse assolute: truffe, AnyDesk e Chrome Remote Desktop sotto esame, GDPR e sovranità dei dati con il self-hosting.',
     troubleshooting:
-      'Diagnostica sintomi di connessione, schermo, configurazione e licenza con controlli mirati e percorsi di escalation sicuri.',
+      'Soluzioni ai problemi di desktop remoto: RustDesk fermo in attesa dell\'immagine, avvisi di uso commerciale di AnyDesk e TeamViewer e quando chiedere aiuto.',
   },
   ja: {
     alternatives:
-      'デプロイ形態、ライセンス、セキュリティ、業務フローとの適合性、移行コストでセルフホスト型とオープンソースの代替案を評価します。',
+      'TeamViewer、AnyDesk、Chrome Remote Desktopの代替を探すための記事集です。導入形態、ライセンス、セキュリティ、業務フローとの相性、移行の手間という観点で、セルフホスト型のオープンソース・リモートデスクトップを評価し、RustDeskで満たせる要件を整理します。',
     comparisons:
-      '最新の要件、明確なトレードオフ、PoC の基準を使って、RustDesk をリモートアクセス製品やプロトコルと比較します。',
+      '他のリモートアクセス製品やプロトコルとRustDeskを比べる記事です。TeamViewer、AnyDesk、ScreenConnect、RDP、VNCと機能、セキュリティ、ライセンスのトレードオフを整理し、セルフホスト型のオープンソース・リモートデスクトップが合うかをPoCで見極める基準も示します。',
     deployment:
-      'サーバーの規模設計やネットワークから、ID 管理、アクセス制御、クライアント展開、復旧まで RustDesk の導入と運用を計画します。',
-    guides: 'RustDesk をさまざまなプラットフォーム、チーム、導入形態で評価・設定・運用するための実践ガイドです。',
+      'オープンソースのリモートデスクトップRustDeskを導入・運用するための記事集です。無人アクセスの設定とクライアント展開、コンソールに見覚えのないデバイスが現れたときの調査、大規模展開の計画、セルフホストのRustDesk Server Proをオフラインやエアギャップ環境で使えるかを解説します。',
+    guides: '実践ガイドのカテゴリーです。LinuxでのインストールとX11、Waylandの違い、AndroidとiOSのリモート操作でできること、AD/LDAP連携、MSP向けのツール統合、無料のリモートデスクトップ選び、オープンソースのセルフホストへ移る際のコストまで、RustDeskの活用法を紹介します。',
     pricing:
-      'RustDesk のライセンス、ユーザー数、管理デバイス、同時接続、購入条件、アップグレード、評価方法を理解します。',
+      '料金カテゴリーでは、オープンソースのリモートデスクトップRustDeskのセルフホスト用ライセンスと課金を解説します。管理対象デバイスの数え方、Customized V2でアドホックなデバイスが対象外になる理由、契約途中にユーザーやデバイスを追加したときの日割り計算と反映のタイミングを確認できます。',
     security:
-      'リモートアクセスのセキュリティ、データフロー、詐欺、脆弱性、アクセス制御、導入時の強化策を、断定的な適合性主張なしで評価します。',
-    troubleshooting: '接続、表示、設定、ライセンスの症状を、的を絞った確認と安全なエスカレーション手順で切り分けます。',
+      'リモートアクセスの安全性を検証する記事のカテゴリーです。リモートデスクトップ詐欺の見分け方と被害時の対処、AnyDeskとChrome Remote Desktopの暗号化とリスク、セルフホストでデータ主権やGDPRについて解決できることとできないこと、オープンソースのRustDeskの詐欺対策を扱います。',
+    troubleshooting: 'トラブル解決のための記事をまとめています。RustDeskで接続後に画面が表示されない原因をヘッドレス構成、スリープ、コーデック、ドライバーから切り分けるほか、TeamViewerやAnyDeskで商用利用と判定された際の公式手順と、オープンソースのセルフホスト型リモートデスクトップでの回避策も解説します。',
   },
   ko: {
     alternatives:
-      '배포 방식, 라이선스, 보안, 업무 흐름 적합성, 마이그레이션 노력 기준으로 자체 호스팅 및 오픈소스 대안을 평가합니다.',
+      'TeamViewer, AnyDesk, Chrome Remote Desktop을 대체할 자체 호스팅 오픈소스 원격 데스크톱을 찾고 있나요? 라이선스, 보안, 배포 방식, 업무 흐름 적합성, 마이그레이션 부담을 기준으로 RustDesk 같은 대안을 평가하는 방법을 정리했습니다.',
     comparisons:
-      '최신 요구사항, 명확한 트레이드오프, PoC 기준을 사용해 RustDesk를 원격 액세스 제품과 프로토콜과 비교합니다.',
-    deployment: '서버 규모와 네트워크부터 ID, 접근 제어, 클라이언트 배포, 복구까지 RustDesk 배포와 운영을 계획합니다.',
-    guides: '다양한 플랫폼, 팀, 배포 모델에서 RustDesk를 평가·구성·운영하는 실용 가이드입니다.',
-    pricing: 'RustDesk 라이선스, 사용자, 관리 장치, 동시성, 구매 조건, 업그레이드, 평가 옵션을 이해합니다.',
+      'RustDesk를 AnyDesk, TeamViewer, ScreenConnect, Splashtop, VNC, RDP와 나란히 비교합니다. 자체 호스팅 오픈소스 원격 데스크톱의 장단점, NAT 통과와 코덱, 암호화 차이, PoC로 직접 검증할 기준까지 정리했습니다.',
+    deployment: '자체 호스팅 RustDesk를 실제 운영 환경에 배포하고 관리하는 방법을 다룹니다. 무인 원격 접속 설정, 대규모 기기 확장 계획, 콘솔의 낯선 기기 점검, RustDesk Server Pro를 오프라인이나 에어갭 환경에서 쓸 수 있는지까지 정리했습니다.',
+    guides: '리눅스, Android와 iOS, Active Directory를 쓰는 기업, 여러 고객사를 관리하는 MSP 환경에서 RustDesk를 활용하는 실전 가이드 모음입니다. 무료 원격 데스크톱 선택법과 오픈소스 솔루션을 자체 호스팅으로 운영해야 하는 이유도 설명합니다.',
+    pricing: 'RustDesk 라이선스 가이드입니다. 자체 호스팅 원격 데스크톱 RustDesk Server Pro에서 어떤 기기가 관리 기기로 계산되는지, 로그인 사용자 수와 동시 연결은 어떻게 적용되는지, 구독 도중 업그레이드할 때 요금은 어떻게 정산되는지 정리했습니다.',
     security:
-      '원격 액세스 보안, 데이터 흐름, 사기, 취약점, 접근 제어, 배포 강화 방안을 절대적인 준수 주장 없이 평가합니다.',
-    troubleshooting: '연결, 화면, 설정, 라이선스 증상을 집중 점검과 안전한 에스컬레이션 경로로 진단합니다.',
+      '과장 없는 원격 데스크톱 보안 가이드입니다. 원격 접속 사기를 알아채고 피하는 방법, RustDesk의 사기 대응, AnyDesk와 Chrome Remote Desktop의 암호화와 안전성 검토, GDPR과 데이터 주권을 위한 오픈소스 자체 호스팅까지 다룹니다.',
+    troubleshooting: '원격 데스크톱 연결이 막힐 때 참고할 문제 해결 가이드입니다. RustDesk가 연결 후 이미지 대기 중에 멈출 때 헤드리스, 절전, 코덱, 드라이버 등 원인별 해결법과 AnyDesk, TeamViewer 상업적 사용 감지 경고 대처법, 지원 요청 시점을 안내합니다.',
   },
   pt: {
     alternatives:
-      'Avalie alternativas auto-hospedadas e de código aberto por modelo de implantação, licenciamento, segurança, aderência ao fluxo de trabalho e esforço de migração.',
+      'Alternativas auto-hospedadas e de código aberto ao TeamViewer, AnyDesk e Chrome Remote Desktop: licença, segurança, implantação e migração de acesso remoto.',
     comparisons:
-      'Compare o RustDesk com produtos e protocolos de acesso remoto usando requisitos atuais, trocas explícitas e critérios de prova de conceito.',
+      'RustDesk versus AnyDesk, TeamViewer, ScreenConnect, Splashtop, VNC e RDP: prós e contras da área de trabalho remota auto-hospedada e de código aberto.',
     deployment:
-      'Planeje e opere implantações do RustDesk, do dimensionamento do servidor e da rede até identidade, controle de acesso, implantação de clientes e recuperação.',
+      'Implantação do RustDesk auto-hospedado: acesso não assistido, grandes frotas, dispositivos desconhecidos no console e se o Server Pro roda offline ou isolado.',
     guides:
-      'Guias práticos para avaliar, configurar e operar o RustDesk em diferentes plataformas, equipes e modelos de implantação.',
+      'Guias de RustDesk para Linux, Android, iOS, empresas com Active Directory e MSPs, e por que usar uma área de trabalho remota auto-hospedada de código aberto.',
     pricing:
-      'Entenda o licenciamento do RustDesk, usuários, dispositivos gerenciados, concorrência, termos de compra, upgrades e opções de avaliação.',
+      'Licenciamento do RustDesk Server Pro auto-hospedado: o que conta como dispositivo gerenciado, usuários, conexões simultâneas e upgrade no meio da assinatura.',
     security:
-      'Avalie a segurança de acesso remoto, fluxos de dados, golpes, vulnerabilidades, controles de acesso e endurecimento da implantação sem alegações absolutas de conformidade.',
+      'Segurança em área de trabalho remota sem promessas absolutas: golpes de acesso remoto, análises do AnyDesk e Chrome Remote Desktop e GDPR com auto-hospedagem.',
     troubleshooting:
-      'Diagnostique sintomas de conexão, tela, configuração e licenciamento com verificações direcionadas e caminhos seguros de escalonamento.',
+      'Soluções para falhas de área de trabalho remota: RustDesk aguardando imagem, alertas de uso comercial do AnyDesk e TeamViewer e quando escalar o problema.',
   },
   'zh-cn': {
-    alternatives: '按部署模式、许可、安全性、工作流匹配度和迁移成本评估自托管与开源替代方案。',
-    comparisons: '使用当前需求、明确取舍和概念验证标准，将 RustDesk 与远程访问产品和协议进行比较。',
-    deployment: '规划和运行 RustDesk 部署，从服务器规格和网络，到身份、访问控制、客户端推广和恢复。',
-    guides: '用于在不同平台、团队和部署模式下评估、配置和运行 RustDesk 的实用指南。',
-    pricing: '了解 RustDesk 的许可、用户、受管设备、并发、购买条款、升级和评估选项。',
-    security: '在不做绝对合规断言的前提下，评估远程访问安全、数据流、诈骗、漏洞、访问控制和部署加固。',
-    troubleshooting: '通过有针对性的检查和安全的升级路径，诊断连接、显示、配置和许可问题。',
+    alternatives: '寻找 TeamViewer、AnyDesk 或 Chrome Remote Desktop 替代品的文章合集，帮助团队从部署方式、许可条款、安全性、日常工作流契合度和迁移成本出发，评估真正由自己掌控的开源、自建远程桌面方案，并说明 RustDesk 能满足哪些需求、又有哪些需要权衡。',
+    comparisons: '对比评测栏目：将 RustDesk 与 TeamViewer、AnyDesk、ScreenConnect、Splashtop 等产品，以及 RDP、VNC 等协议逐一比较，从功能、系统支持、安全性到授权模式讲清取舍，并给出概念验证阶段的评估要点，帮你判断开源、自建的远程桌面是否适合自己。',
+    deployment: '本分类聚焦开源远程桌面 RustDesk 的部署与运维：如何配置无人值守访问并分发预配置客户端，控制台出现陌生设备时应先排查什么，大规模设备群如何规划，以及自建的 RustDesk Server Pro 能否离线或在完全气隙隔离的环境中运行。',
+    guides: '实用指南栏目，帮你在不同平台和团队规模下用好 RustDesk：Linux 安装包选择与 X11、Wayland 的差异，Android 和 iOS 远程控制的真实能力，企业 AD/LDAP 集成与 MSP 工具整合，以及挑选免费商用远程桌面、转向开源自建方案前需要算清的账。',
+    pricing: '这里收录开源远程桌面 RustDesk 的许可与计费文章：解释受管设备如何计数、临时连接的设备在 Customized V2 套餐中为何不计入，订阅期内增加用户或设备时如何按比例计费、新额度如何生效（可在 Web 控制台刷新后立即启用），帮你在购买自建服务器许可证之前把成本算清楚。',
+    release: 'RustDesk 版本发布与开发动态：介绍 Wayland 下无人值守远程访问等新功能，以及我们如何让 Flutter 3.24 继续在 Windows 7 上运行，帮助你及时了解这款开源远程桌面软件及自建服务器部署的最新进展、兼容性变化与升级要点。',
+    security: '远程访问安全专题：教你识别远程桌面诈骗的危险信号以及中招后的应对步骤，客观评估 AnyDesk 与 Chrome Remote Desktop 的加密机制和风险，说明自建服务器在数据主权与 GDPR 方面能解决什么、不能解决什么，并介绍 RustDesk 这一开源项目的防诈措施。',
+    troubleshooting: '故障排除文章汇总：分析 RustDesk 连接成功却一直等待图像的常见原因，包括无头主机、休眠、编解码器和驱动程序，并给出相应的修复方法；也讲解 TeamViewer、AnyDesk 被判定为商业用途时的官方申诉流程，以及改用开源、自建远程桌面后如何从根本上避开这类问题。',
   },
   'zh-tw': {
-    alternatives: '依部署模式、授權、安全性、工作流程契合度與遷移成本，評估自架與開源替代方案。',
-    comparisons: '使用當前需求、明確取捨與概念驗證標準，將 RustDesk 與遠端存取產品和協定進行比較。',
-    deployment: '規劃並營運 RustDesk 部署，從伺服器規模與網路，到身分、存取控制、用戶端推廣與復原。',
-    guides: '協助在不同平台、團隊與部署模式下評估、設定與營運 RustDesk 的實用指南。',
-    pricing: '了解 RustDesk 的授權、使用者、受管裝置、同時連線、購買條款、升級與評估選項。',
-    security: '在不做絕對合規宣稱的前提下，評估遠端存取安全、資料流、詐騙、漏洞、存取控制與部署強化。',
-    troubleshooting: '透過有針對性的檢查與安全的升級路徑，診斷連線、顯示、設定與授權症狀。',
+    alternatives: '替代方案分類，專為想離開 TeamViewer、AnyDesk 或 Chrome Remote Desktop 的團隊整理：依部署方式、授權條款、安全性、工作流程契合度與遷移成本，協助你評估可自架、由自己掌控的開源遠端桌面工具，並說明 RustDesk 能滿足哪些需求、又有哪些取捨。',
+    comparisons: '比較評測分類：將 RustDesk 與 TeamViewer、AnyDesk、ScreenConnect、Splashtop 等產品，以及 RDP、VNC 等協定逐一對照，從功能、作業系統支援、安全性到授權模式說清取捨，並列出概念驗證的評估重點，幫你判斷自架的開源遠端桌面是否合用。',
+    deployment: '此分類收錄開源遠端桌面 RustDesk 的部署與維運實務：如何設定無人值守存取並派送預先設定的用戶端、主控台出現不明裝置時該先查什麼、大量裝置該怎麼規劃，以及自架的 RustDesk Server Pro 能否離線或在氣隙隔離環境中運作。',
+    guides: '實用指南合集，幫你在不同平台與團隊規模下用好 RustDesk：Linux 安裝套件怎麼選、X11 與 Wayland 有何差異，Android 與 iOS 遠端控制實際能做到什麼，企業 AD/LDAP 整合與 MSP 工具整併，以及挑選免費商用遠端桌面、改用開源自架方案前該算清的成本。',
+    pricing: '開源遠端桌面 RustDesk 的授權與計費文章：說明受管理裝置如何計算、臨時連線的裝置在 Customized V2 方案中為何不計入，訂閱期間加購使用者或裝置時如何按比例計費、新額度何時生效（在網頁主控台重新整理即可立即套用），幫你在購買自架伺服器授權前先把帳算清楚。',
+    release: 'RustDesk 版本發布與開發動態：介紹 Wayland 下無人值守遠端存取等新功能，以及我們如何讓 Flutter 3.24 繼續在 Windows 7 上執行，協助你即時了解這款開源遠端桌面軟體與自架伺服器部署的最新進展、相容性變化與升級重點。',
+    security: '遠端存取資安專區：教你辨識遠端桌面詐騙的警訊與受騙後的處理步驟，客觀檢視 AnyDesk 與 Chrome Remote Desktop 的加密機制與風險，說明自架伺服器在資料主權與 GDPR 上做得到與做不到的事，並介紹 RustDesk 這個開源專案採取的防詐措施。',
+    troubleshooting: '疑難排解文章彙整：分析 RustDesk 連線成功卻一直等待影像的常見原因，例如無外接螢幕的主機、休眠、編碼器與驅動程式，並提供對應的修復方法；也說明 TeamViewer、AnyDesk 被判定為商業用途時的官方申訴流程，以及改用開源自架遠端桌面後如何避開這類問題。',
   },
   ar: {
     alternatives:
-      'قيّم البدائل ذاتية الاستضافة ومفتوحة المصدر حسب نموذج النشر والترخيص والأمان وملاءمة سير العمل وجهد الانتقال.',
+      'بدائل ذاتية الاستضافة ومفتوحة المصدر لـ TeamViewer وAnyDesk وChrome Remote Desktop، ومعايير اختيار سطح المكتب البعيد حسب الترخيص والأمان والنشر والانتقال.',
     comparisons:
-      'قارن RustDesk بمنتجات وبروتوكولات الوصول عن بُعد باستخدام المتطلبات الحالية والمفاضلات الواضحة ومعايير إثبات المفهوم.',
+      'مقارنات بين RustDesk وAnyDesk وTeamViewer وScreenConnect وSplashtop وVNC وRDP، توضح مزايا وحدود سطح المكتب البعيد مفتوح المصدر وذاتي الاستضافة ومعايير التجربة.',
     deployment:
-      'خطّط وشغّل عمليات نشر RustDesk، من تحديد حجم الخادم والشبكة إلى الهوية والتحكم في الوصول وتوزيع العملاء والاستعادة.',
-    guides: 'أدلة عملية لتقييم RustDesk وتهيئته وتشغيله عبر منصات وفرق ونماذج نشر مختلفة.',
-    pricing: 'افهم ترخيص RustDesk والمستخدمين والأجهزة المُدارة والتزامن وشروط الشراء والترقيات وخيارات التقييم.',
+      'نشر RustDesk ذاتي الاستضافة: الوصول غير المراقب، والتوسع لأعداد كبيرة من الأجهزة، وفحص الأجهزة المجهولة، وهل يمكن تشغيل RustDesk Server Pro دون اتصال بالإنترنت.',
+    guides: 'أدلة عملية لـ RustDesk على Linux وAndroid وiOS، وللمؤسسات مع Active Directory ومزودي الخدمات المُدارة، ولماذا تختار سطح مكتب بعيد مفتوح المصدر وذاتي الاستضافة.',
+    pricing: 'شرح ترخيص RustDesk Server Pro ذاتي الاستضافة: ما الذي يُحتسب جهازًا مُدارًا، وكيف يُعدّ المستخدمون والاتصالات المتزامنة، وكيف تتم الترقية في منتصف الاشتراك.',
     security:
-      'قيّم أمان الوصول عن بُعد وتدفقات البيانات وعمليات الاحتيال والثغرات وضوابط الوصول وتقوية النشر دون ادعاءات امتثال مطلقة.',
-    troubleshooting: 'شخّص أعراض الاتصال والعرض والتهيئة والترخيص عبر فحوصات محددة ومسارات تصعيد آمنة.',
+      'أمان سطح المكتب البعيد بلا ادعاءات مطلقة: كيف تكشف عمليات الاحتيال، ومراجعات لأمان AnyDesk وChrome Remote Desktop، وسيادة البيانات وGDPR عبر الاستضافة الذاتية.',
+    troubleshooting: 'حلول لمشكلات سطح المكتب البعيد: توقف RustDesk عند انتظار الصورة بعد الاتصال، وتنبيهات الاستخدام التجاري في AnyDesk وTeamViewer، ومتى تصعّد المشكلة.',
   },
 };
+// Category slugs are transliterated per language (/zh-cn/category/an1-quan2,
+// /ja/category/gaido), but the descriptions above are keyed by the English
+// slug, so a direct lookup only ever matched the Latin-script languages.
+// Resolve the English key through this category's posts and their English
+// translations.
+const englishPosts = await fetchPosts('en');
+const categoryKey =
+  categorySlug in localizedCategoryDescriptions.en
+    ? categorySlug
+    : (page.data
+        .map((post) => englishPosts.find((en) => en.translationKey === post.translationKey)?.category?.slug)
+        .find(Boolean) ?? categorySlug);
 const categoryDescription =
-  localizedCategoryDescriptions[lang]?.[categorySlug] ?? localizedCategoryDescriptions.en[categorySlug];
+  localizedCategoryDescriptions[lang]?.[categoryKey] ?? localizedCategoryDescriptions.en[categoryKey];
 const localePaths = (Object.keys(LOCALES) as Lang[]).map((targetLang) => ({
   lang: targetLang,
   path: getBlogPermalink(targetLang),

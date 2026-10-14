@@ -1,7 +1,7 @@
 ---
 title: Windows
 weight: 4
-description: "RustDesk 的Windows文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "在 Windows 上安裝與部署 RustDesk 的完整指南：用戶端初始設定、使用 MSI 安裝套件向大量電腦派送、靜默安裝參數與常用選項，以及可攜版如何取得管理員權限，協助 IT 團隊在企業內快速推廣 RustDesk 遠端桌面，省去逐台手動安裝。"
 keywords: ["rustdesk windows", "rustdesk windows install", "rustdesk msi", "rustdesk silent install", "rustdesk portable elevation", "rustdesk windows deployment"]
 ---
 

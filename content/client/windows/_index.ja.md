@@ -1,7 +1,7 @@
 ---
 title: Windows
 weight: 4
-description: "RustDesk のWindowsに関するドキュメントです。インストール、設定、展開、トラブルシューティングのガイドを参照できます。"
+description: "Windows 版 RustDesk のインストールと展開ガイドです。IT 管理者向けに、クライアントの初期設定、MSI パッケージによる一括配布、サイレントインストールのオプション、ポータブル版で管理者権限を得る方法まで、社内展開に必要な手順を解説します。"
 keywords: ["rustdesk windows", "rustdesk windows install", "rustdesk msi", "rustdesk silent install", "rustdesk portable elevation", "rustdesk windows deployment"]
 ---
 

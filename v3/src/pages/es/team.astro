@@ -6,7 +6,7 @@ import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
   title: 'Sobre RustDesk - Equipo de Software de Escritorio Remoto e Información de la Empresa',
-  description: 'Conoce al equipo de RustDesk y nuestra misión de proporcionar el mejor software de escritorio remoto de código abierto. Conoce a nuestros desarrolladores y contribuyentes detrás de la solución de acceso remoto autoalojada.',
+  description: 'Sobre RustDesk: cómo una licencia de TeamViewer muy cara en 2020 dio origen a este escritorio remoto de código abierto, el equipo y la sede en Singapur.',
   keywords: 'equipo rustdesk, sobre rustdesk, empresa escritorio remoto, desarrolladores código abierto, equipo acceso remoto autoalojado, colaboradores rustdesk',
   author: 'RustDesk Team',
 };
@@ -15,17 +15,17 @@ const metadata = {
 <Layout metadata={metadata} i18n>
   <!-- Hero Widget ******************* -->
 
-  <Hero tagline="About us">
-    <Fragment slot="title"> Why Are We Building This? </Fragment>
+  <Hero tagline="Sobre nosotros">
+    <Fragment slot="title">¿Por qué construimos esto?</Fragment>
 
     <Fragment slot="subtitle">
       <p class="text-left">
-        In the midst of the Covid-19 pandemic in mid-2020, the now lead dev / founder found themselves compelled to
-        procure a commercial license for TeamViewer to facilitate remote work in Singapore. However, they were taken
-        aback by the exorbitant cost. Following a restless night, they embarked on a mission to create an alternative
-        solution. Thus, RustDesk was conceived — an open-source, freely accessible remote desktop software that was
-        diligently crafted through numerous sleepless nights. This labor of dedication and determination culminated in
-        the release of RustDesk on GitHub in 2021, allowing it to be utilized by individuals worldwide.
+        A mediados de 2020, en plena pandemia de Covid-19, la persona que fundó RustDesk y hoy dirige su desarrollo
+        necesitó comprar una licencia comercial de TeamViewer para poder teletrabajar desde Singapur. El precio,
+        desorbitado, le dejó sin palabras. Tras una noche sin dormir, se propuso crear una alternativa. Así nació
+        RustDesk: un software de escritorio remoto de código abierto y gratuito, construido con esmero a lo largo de
+        muchas noches en vela. Ese esfuerzo culminó en 2021 con la publicación de RustDesk en GitHub, al alcance de
+        cualquier persona en el mundo.
       </p>
     </Fragment>
   </Hero>
@@ -33,18 +33,18 @@ const metadata = {
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
-    title="Core Team"
+    title="Equipo principal"
     items={[
       {
         title: 'Joseph Jacks<br><small>CEO</small>',
         description:
-          "Joseph Jacks founded OSS Capital in 2018. It is the world's first and only early stage VC dedicated exclusively to COSS (commercial open source) startups on a global basis. Previously, he helped start and run the very first Kubernetes startup (Kismatic) and also found and run KubeCon (the Kubernetes community conference) before donating it to the Linux Foundation in 2016 as the CNCF (Cloud Native Computing Foundation) was materializing.",
+          'Joseph Jacks fundó OSS Capital en 2018, el primer y único fondo de capital riesgo en fase inicial del mundo dedicado exclusivamente a startups de COSS (código abierto comercial) a escala global. Antes ayudó a poner en marcha y dirigir la primera startup de Kubernetes (Kismatic), y fundó y dirigió KubeCon (la conferencia de la comunidad de Kubernetes) hasta donarla a la Linux Foundation en 2016, cuando se estaba formando la CNCF (Cloud Native Computing Foundation).',
         icon: 'tabler:user',
       },
       {
-        title: 'Daniel Lamb<br><small>Community Assistant</small>',
+        title: 'Daniel Lamb<br><small>Asistente de la comunidad</small>',
         description:
-          "With a remarkable quarter century career in the IT industry, Daniel Lamb has actively participated in numerous open-source projects, assuming various roles and responsibilities. Additionally, he has accomplished the establishment of an IT services company based in Scotland, catering to customers worldwide. Daniel's extensive expertise encompasses support, sales, and community engagement, bringing a large amount of knowledge and experience to the project.",
+          'Con una destacada trayectoria de un cuarto de siglo en el sector de TI, Daniel Lamb ha participado activamente en numerosos proyectos de código abierto, asumiendo distintos roles y responsabilidades. Además, fundó una empresa de servicios de TI con sede en Escocia que atiende a clientes de todo el mundo. Su amplia experiencia abarca el soporte, las ventas y la relación con la comunidad, y aporta al proyecto un gran caudal de conocimientos.',
         icon: 'tabler:user',
       },
     ]}
@@ -53,12 +53,12 @@ const metadata = {
   <!-- Features2 Widget ************** -->
 
   <Features2
-    title="Our locations"
-    tagline="Find us"
+    title="Nuestras oficinas"
+    tagline="Encuéntranos"
     columns={1}
     items={[
       {
-        title: 'Singapore',
+        title: 'Singapur',
         description: '68 CIRCULAR ROAD, #02-01, SINGAPORE 049422',
       },
     ]}

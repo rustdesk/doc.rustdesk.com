@@ -23,6 +23,12 @@ jobs:
         with:
           hugo-version: '0.147.8'
 
+      # For scripts/fit-meta-descriptions.mjs, run after the Hugo build.
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Add SSH key to agent
         run: |
           mkdir -p ~/.ssh
@@ -36,6 +42,15 @@ jobs:
       - name: Build
         run: |
           hugo --minify
+          # Bing flags meta descriptions outside ~120-160 characters; see the script.
+          node scripts/fit-meta-descriptions.mjs public
           cd public; tar czf x *
           scp x ${{ secrets.NAME }}@${{ secrets.HOST }}:/tmp/
           ssh ${{ secrets.NAME }}@${{ secrets.HOST }} "sudo rm -rf /var/www/html/rustdesk.com/docs/* && sudo tar xzf /tmp/x -C /var/www/html/rustdesk.com/docs/ && /bin/rm /tmp/x && sudo chown www-data:www-data /var/www/html/rustdesk.com/docs/ -R"
+
+      # Ask Bing to recrawl the docs now. The docs are already live, so a
+      # failure here is reported but does not fail the deploy. The key file
+      # ships with the site (Deploy-web), so that must have run once first.
+      - name: IndexNow
+        continue-on-error: true
+        run: node scripts/indexnow.mjs docs

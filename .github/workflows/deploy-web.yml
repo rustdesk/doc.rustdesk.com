@@ -38,3 +38,9 @@ jobs:
           ./build.sh
           scp x ${{ secrets.NAME }}@${{ secrets.HOST }}:/tmp/
           ssh ${{ secrets.NAME }}@${{ secrets.HOST }} "sudo tar xzf /tmp/x -C /var/www/html/v3 && /bin/rm /tmp/x && sudo chown www-data:www-data /var/www/html/v3 -R"
+
+      # Ask Bing to recrawl the site's pages now. The site is already live, so
+      # a failure here is reported but does not fail the deploy.
+      - name: IndexNow
+        continue-on-error: true
+        run: node scripts/indexnow.mjs site

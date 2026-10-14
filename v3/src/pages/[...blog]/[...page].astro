@@ -28,7 +28,7 @@ const copy = getBlogCopy(lang);
 
 const metadata = {
   title: `${copy.title}${currentPage > 1 ? ` — ${copy.page} ${currentPage}` : ''}`,
-  description: copy.subtitle,
+  description: copy.description,
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,

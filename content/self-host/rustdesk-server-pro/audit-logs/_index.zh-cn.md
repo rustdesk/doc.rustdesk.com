@@ -1,7 +1,7 @@
 ---
 title: 审计日志
 weight: 19
-description: "在 RustDesk Server Pro Web 控制台中使用审计日志，查看连接、文件传输、控制台操作和风险异常报警事件。"
+description: "介绍如何在 RustDesk Server Pro 的 Web 控制台中使用审计日志：按时间和设备查看连接记录、文件传输、控制台操作和风险异常报警事件，追踪谁在何时访问了哪台设备、做了哪些操作，便于企业开展安全审计、事后追溯与日常问题排查。"
 keywords: ["rustdesk audit logs", "rustdesk server pro logs", "rustdesk connection logs", "rustdesk file transfer logs", "rustdesk alarm logs", "rustdesk console audit"]
 ---
 

@@ -3,7 +3,7 @@ title: 開發
 weight: 8
 pre: "<b>3. </b>"
 chapter: true
-description: "RustDesk 的開發文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "面向 RustDesk 貢獻者的開發文件：介紹如何在 Linux、Windows 與 macOS 上從原始碼編譯 RustDesk、需要準備的相依套件與工具鏈、常見編譯問題的排解方式，以及參與這個開源遠端桌面專案、提交程式碼與回報問題的入門資訊。"
 keywords: ["rustdesk development", "build rustdesk", "rustdesk contributor docs", "rustdesk linux build", "rustdesk windows build", "rustdesk macos build"]
 ---
 

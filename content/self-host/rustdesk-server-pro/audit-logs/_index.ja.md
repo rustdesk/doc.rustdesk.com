@@ -1,7 +1,7 @@
 ---
 title: 監査ログ
 weight: 19
-description: "RustDesk Server Pro の Web コンソールで監査ログを使用し、接続、ファイル転送、コンソール操作、アラームイベントを確認します。"
+description: "RustDesk Server Pro の Web コンソールで監査ログを使う方法です。接続履歴、ファイル転送、コンソール操作、アラームイベントを確認し、いつ誰がどの端末にアクセスしたかを追跡して、セキュリティ監査やトラブル調査に役立てられます。"
 keywords: ["rustdesk audit logs", "rustdesk server pro logs", "rustdesk connection logs", "rustdesk file transfer logs", "rustdesk alarm logs", "rustdesk console audit"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 稽核日誌
 weight: 19
-description: "在 RustDesk Server Pro Web 主控台中使用稽核日誌，檢視連線、檔案傳輸、主控台操作和風險異常警報事件。"
+description: "介紹如何在 RustDesk Server Pro 的 Web 主控台中使用稽核日誌：依時間與裝置檢視連線紀錄、檔案傳輸、主控台操作與風險異常警報事件，追蹤誰在何時存取了哪台裝置、做了哪些操作，方便企業進行安全稽核、事後追溯與日常問題排查。"
 keywords: ["rustdesk audit logs", "rustdesk server pro logs", "rustdesk connection logs", "rustdesk file transfer logs", "rustdesk alarm logs", "rustdesk console audit"]
 ---
 

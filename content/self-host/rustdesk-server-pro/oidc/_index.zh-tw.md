@@ -1,7 +1,7 @@
 ---
 title: OIDC
 weight: 16
-description: "RustDesk 的OIDC文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "在 RustDesk Server Pro 中設定 OpenID Connect（OIDC）單一登入，讓使用者以 Google、Okta、Azure、GitHub、GitLab 等身分提供者的帳號登入，並說明回呼網址、用戶端 ID 與密鑰等關鍵設定。"
 keywords: ["rustdesk oidc", "rustdesk openid connect", "rustdesk sso", "rustdesk azure login", "rustdesk okta login", "rustdesk github login"]
 ---
 

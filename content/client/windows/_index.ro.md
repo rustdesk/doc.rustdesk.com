@@ -1,7 +1,7 @@
 ---
 title: Windows
 weight: 4
-description: "Documentație RustDesk pentru Windows. Găsiți ghiduri de instalare, configurare, implementare și depanare."
+description: "Instalați RustDesk pe Windows: configurarea clientului, pachet MSI pentru distribuire în masă, instalare silențioasă și drepturi de admin în modul portabil."
 keywords: ["rustdesk windows", "rustdesk windows install", "rustdesk msi", "rustdesk silent install", "rustdesk portable elevation", "rustdesk windows deployment"]
 ---
 
