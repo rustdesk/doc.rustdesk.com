@@ -1,6 +1,5 @@
-import { DEFAULT_LOCALE_SETTING, LOCALES_SETTING } from "./locales";
-import { getRelativeLocaleUrl } from "astro:i18n";
-
+import { DEFAULT_LOCALE_SETTING, LOCALES_SETTING } from './locales';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
 /**
  * User-defined locales list
@@ -10,9 +9,9 @@ export const LOCALES = LOCALES_SETTING as Record<string, LocaleConfig>;
 type LocaleConfig = {
   readonly label: string;
   readonly lang?: string;
-  readonly dir?: "ltr" | "rtl";
+  readonly openGraphLocale?: string;
+  readonly dir?: 'ltr' | 'rtl';
 };
-
 
 /**
  * Type for the language code
@@ -21,13 +20,11 @@ type LocaleConfig = {
  */
 export type Lang = keyof typeof LOCALES;
 
-
 /**
  * Default locale code
  * @constant @readonly
-*/
+ */
 export const DEFAULT_LOCALE = DEFAULT_LOCALE_SETTING as Lang;
-
 
 /**
  * Type for the multilingual object
@@ -36,7 +33,6 @@ export const DEFAULT_LOCALE = DEFAULT_LOCALE_SETTING as Lang;
  */
 export type Multilingual = { [key in Lang]?: string | React.ReactNode };
 
-
 /**
  * Helper to get the translation function
  * @param - The current language
@@ -44,14 +40,13 @@ export type Multilingual = { [key in Lang]?: string | React.ReactNode };
  */
 export function useTranslations(lang: Lang) {
   return function t(multilingual: Multilingual | string): string | React.ReactNode {
-    if (typeof multilingual === "string") {
+    if (typeof multilingual === 'string') {
       return multilingual;
     } else {
-      return multilingual[lang] || multilingual[DEFAULT_LOCALE] || "";
+      return multilingual[lang] || multilingual[DEFAULT_LOCALE] || '';
     }
   };
 }
-
 
 /**
  * Helper to get corresponding path list for all locales
@@ -65,7 +60,7 @@ export function getLocalePaths(url: URL): LocalePath[] {
   return Object.keys(LOCALES).map((lang) => {
     return {
       lang: lang as Lang,
-      path: getRelativeLocaleUrl(lang, path)
+      path: getRelativeLocaleUrl(lang, path),
     };
   });
 }
@@ -73,7 +68,6 @@ export type LocalePath = {
   lang: Lang;
   path: string;
 };
-
 
 /**
  * Helper to get locale parms for Astro's `getStaticPaths` function
@@ -89,4 +83,4 @@ export const getLocalPath = (lang: Lang, path: string) => {
     return path + '?lang=en';
   }
   return lang + path;
-}
+};

@@ -27,7 +27,7 @@ const copy = getBlogCopy(post.lang);
       <div class="flex justify-between flex-col sm:flex-row max-w-4xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
         <p>
           <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
-          <time datetime={String(post.publishDate)} class="inline-block"
+          <time datetime={post.publishDate.toISOString()} class="inline-block"
             >{getFormattedDate(post.publishDate, post.lang)}</time
           >
           {
@@ -37,7 +37,7 @@ const copy = getBlogCopy(post.lang);
                 · <Icon name="tabler:refresh" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
                 <span class="inline-block text-sm text-gray-500">
                   {copy.updated}:{' '}
-                  <time datetime={String(post.updateDate)}>{getFormattedDate(post.updateDate, post.lang)}</time>
+                  <time datetime={post.updateDate.toISOString()}>{getFormattedDate(post.updateDate, post.lang)}</time>
                 </span>
               </>
             )

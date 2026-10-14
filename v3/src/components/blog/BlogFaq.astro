@@ -1,15 +1,20 @@
 ---
+import type { Lang } from '@/i18n';
+import { getBlogCopy } from '@/i18n/blog';
+
 export interface Props {
   items?: Array<{ question: string; answer: string }>;
+  lang?: Lang;
 }
 
-const { items = [] } = Astro.props;
+const { items = [], lang } = Astro.props;
+const copy = getBlogCopy(lang);
 ---
 
 {
   items.length > 0 && (
     <section aria-labelledby="post-faq-heading">
-      <h2 id="post-faq-heading">Frequently asked questions</h2>
+      <h2 id="post-faq-heading">{copy.frequentlyAskedQuestions}</h2>
       <div>
         {items.map((item) => (
           <details>

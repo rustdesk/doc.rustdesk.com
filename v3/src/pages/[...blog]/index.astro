@@ -73,7 +73,7 @@ const articleData = {
 >
   <SinglePost post={{ ...post, image: image }} url={url}>
     {post.Content ? <post.Content /> : <Fragment set:html={post.content || ''} />}
-    <BlogFaq items={post.faq} />
+    <BlogFaq items={post.faq} lang={post.lang} />
   </SinglePost>
   <ToBlogLink lang={post.lang} />
   <RelatedPosts post={post} />

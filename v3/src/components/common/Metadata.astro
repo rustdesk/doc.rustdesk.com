@@ -9,9 +9,11 @@ import type { MetaData } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
 
 import { adaptOpenGraphImages } from '~/utils/images';
+import { LOCALES, type Lang } from '@/i18n';
 
 export interface Props extends MetaData {
   dontUseTitleTemplate?: boolean;
+  lang?: Lang;
 }
 
 const {
@@ -24,6 +26,7 @@ const {
   author,
   openGraph = {},
   twitter = {},
+  lang = Astro.currentLocale as Lang,
 } = Astro.props;
 
 const seoProps: AstroSeoProps = merge(
@@ -38,7 +41,7 @@ const seoProps: AstroSeoProps = merge(
       url: canonical,
       site_name: SITE?.name,
       images: [],
-      locale: I18N?.language || 'en',
+      locale: LOCALES[lang || I18N?.language]?.openGraphLocale || 'en_US',
       type: 'website',
     },
     twitter: {

@@ -2,6 +2,7 @@
 import appleTouchIcon from '~/assets/favicons/apple-touch-icon.png';
 
 import type { MetaData } from '~/types';
+import type { Lang } from '@/i18n';
 import {
   getKeywordList,
   getLocaleLanguageTag,
@@ -17,6 +18,7 @@ import {
 export interface Props {
   type?: 'website' | 'article' | 'software' | 'faq';
   metadata?: MetaData;
+  lang?: Lang;
   article?: {
     title: string;
     description?: string;
@@ -29,11 +31,11 @@ export interface Props {
   faqItems?: Array<{ question: string; answer: string }>;
 }
 
-const { type = 'website', metadata, article, faqItems = [] } = Astro.props;
+const { type = 'website', metadata, lang, article, faqItems = [] } = Astro.props;
 
 const siteOrigin = getSiteOrigin(Astro.site);
 const currentUrl = metadata?.canonical || new URL(Astro.url.pathname, siteOrigin).toString();
-const localeTag = getLocaleLanguageTag(Astro.currentLocale);
+const localeTag = getLocaleLanguageTag(lang || Astro.currentLocale);
 const pageKind = getPageKind(Astro.url.pathname);
 const pageTitle = getPageTitle(metadata);
 const pageName = getPageName(Astro.url.pathname, metadata);
@@ -220,7 +222,7 @@ const breadcrumbItems = (() => {
       '@type': 'ListItem',
       position: 2,
       name: 'Blog',
-      item: `${siteOrigin}/blog`,
+      item: `${siteOrigin}${localePrefix}/blog`,
     });
     items.push({
       '@type': 'ListItem',
@@ -291,4 +293,5 @@ const jsonLd = {
 };
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+<!-- Keep JSON text out of HTML parsing, including during astro-compress processing. -->
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />

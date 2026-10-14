@@ -47,9 +47,22 @@ if (live?.trim() !== key) {
   process.exit(1);
 }
 
+// Sitemaps that could not be read. An error page must not pass for an empty
+// sitemap: that would skip its URLs and still report success.
+const failed = [];
+
 /** Every <loc> under a sitemap, following sitemap indexes. */
 async function urlsOf(sitemap) {
-  const xml = await fetch(sitemap).then((r) => r.text());
+  let xml;
+  try {
+    const res = await fetch(sitemap);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    xml = await res.text();
+    if (!/<(urlset|sitemapindex)[\s>]/.test(xml)) throw new Error("not a sitemap");
+  } catch (err) {
+    failed.push(`${sitemap}: ${err.message}`);
+    return [];
+  }
   const locs = [...xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)].map((m) => m[1]);
   if (!/<sitemapindex/.test(xml)) return locs;
   // One at a time: a burst of parallel fetches trips Cloudflare's timeouts.
@@ -62,6 +75,11 @@ const sources = which === "all" ? Object.values(SITEMAPS) : [SITEMAPS[which]];
 const found = [];
 for (const s of sources) found.push(...(await urlsOf(s)));
 const urlList = [...new Set(found)].filter((u) => u.startsWith(`${ORIGIN}/`));
+for (const f of failed) console.error(`[indexnow] could not read ${f}`);
+if (!urlList.length) {
+  console.error("[indexnow] no URLs found, nothing submitted");
+  process.exit(1);
+}
 
 // One request takes up to 10,000 URLs.
 for (let i = 0; i < urlList.length; i += 10000) {
@@ -75,3 +93,5 @@ for (let i = 0; i < urlList.length; i += 10000) {
   console.log(`[indexnow] ${batch.length} URLs (${which}) submitted: HTTP ${res.status}`);
   if (!res.ok) process.exit(1);
 }
+// The readable sitemaps went in above; an unreadable one still fails the run.
+if (failed.length) process.exit(1);

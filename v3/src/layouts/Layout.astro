@@ -84,9 +84,9 @@ metadata.description ||= (t({
     <Favicons />
     <CustomStyles />
     <ApplyColorMode />
-    <Metadata {...metadata} />
+    <Metadata {...metadata} lang={locale} />
     <SiteVerification />
-    <StructuredData type={structuredDataType} metadata={metadata} article={articleData} faqItems={faqItems} />
+    <StructuredData type={structuredDataType} metadata={metadata} lang={locale} article={articleData} faqItems={faqItems} />
 
     <!-- Comment the line below to disable View Transitions -->
     <ViewTransitions fallback="swap" />
