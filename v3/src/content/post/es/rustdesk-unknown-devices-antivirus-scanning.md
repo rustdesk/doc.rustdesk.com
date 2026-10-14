@@ -1,72 +1,74 @@
 ---
+updateDate: 2026-10-14T00:00:00Z
 publishDate: 2026-06-30T13:46:00Z
 lang: 'es'
 translationKey: 'rustdesk-unknown-devices-antivirus-scanning'
 draft: false
 title: '¿Dispositivos desconocidos en tu consola de RustDesk? Investiga primero'
-excerpt: '¿Ves dispositivos desconocidos en tu consola de RustDesk? El sandboxing de antivirus es una posibilidad, pero antes hay que descartar una configuración filtrada o un registro no autorizado.'
+excerpt: '¿Ves dispositivos desconocidos en tu consola de RustDesk? El sandbox de un antivirus es una posibilidad, pero antes hay que descartar una configuración filtrada o un registro no autorizado.'
 image: '~/assets/images/blog/rustdesk-unknown-devices-antivirus-scanning-og.webp'
 category: 'Implementación'
 tags: ['RustDesk', 'Implementación', 'Seguridad']
 author: 'RustDesk Team'
 slug: 'dispositivos-desconocidos-en-tu-consola-de-rustdesk-investiga-primero'
 faq:
-  - question: '¿Por qué aparecen en mi consola de RustDesk dispositivos desconocidos que nunca instalé?'
-    answer: 'El sandboxing de antivirus o de protección de endpoints puede crear registros temporales, pero un dispositivo desconocido también puede deberse a una configuración filtrada, un token de implementación expuesto, un registro no autorizado o un error de implementación. Trátalo como un incidente de seguridad hasta que los logs, las credenciales, las claves, los tokens y el historial de implementación identifiquen la causa; después restringe la inscripción de nuevos dispositivos.'
-  - question: '¿Cómo evito por completo que se registren dispositivos desconocidos?'
-    answer: 'Si tu lista de dispositivos es estable y no agregas máquinas con regularidad, desactiva el registro de nuevos dispositivos en la consola, en Settings → Others → Disable new devices on web console. A partir de ese momento, nada nuevo podrá registrarse, ya sea desde un sandbox o no. Si aún incorporas dispositivos con regularidad, usa en su lugar un token de implementación para que las implementaciones reales sigan funcionando.'
-  - question: '¿Cómo exijo un token de implementación para los dispositivos nuevos?'
-    answer: 'Activa Settings → Others → Require deployment for new devices en la consola web, crea un token de API con el permiso Devices configurado como Read and write, y haz que tu proceso de instalación ejecute rustdesk --deploy --token <api_token> en cada dispositivo nuevo (con sudo en macOS y Linux). Solo los dispositivos que presenten un token válido pueden registrarse, de modo que un análisis de antivirus en sandbox no puede añadirse a sí mismo, mientras que tu RMM o tu implementación mediante script sigue funcionando con normalidad.'
-  - question: '¿Cómo distingo un análisis de antivirus benigno de una intrusión real?'
-    answer: 'Un registro de corta duración que coincide con un análisis de seguridad conocido y no muestra ninguna sesión posterior puede respaldar la explicación del sandbox. Las sesiones inesperadas, la inscripción repetida, el uso de credenciales válidas o un cliente configurado que se distribuye fuera de su canal previsto no son benignos y requieren una respuesta ante incidentes.'
+  - question: '¿Por qué aparecen en mi consola de RustDesk dispositivos desconocidos que nunca he instalado?'
+    answer: 'El sandbox de un antivirus o de una solución de protección de endpoints puede crear registros temporales, pero un dispositivo desconocido también puede indicar una configuración filtrada, un token de despliegue expuesto, un registro no autorizado o un error de despliegue. Trátalo como un incidente de seguridad hasta que los logs, las credenciales, las claves, los tokens y el historial de despliegue identifiquen la causa; después, restringe el alta de dispositivos nuevos.'
+  - question: '¿Cómo impido por completo que se registren dispositivos desconocidos?'
+    answer: 'Si tu lista de dispositivos es estable y no añades equipos con frecuencia, desactiva el registro de dispositivos nuevos en la consola, en Configuración → Otros → Desactivar dispositivos nuevos en la consola web (Disable new devices on web console). A partir de ahí no se puede registrar nada nuevo, venga o no de un sandbox. Si sigues incorporando dispositivos con regularidad, usa en su lugar un token de despliegue para que los despliegues reales sigan funcionando.'
+  - question: '¿Cómo exijo un token de despliegue para los dispositivos nuevos?'
+    answer: 'Activa Configuración → Otros → Requerir despliegue para nuevos dispositivos, crea un token de API con el permiso Dispositivos en Lectura y escritura y ejecuta rustdesk --deploy --token <api_token> durante la instalación autorizada (con sudo en macOS y Linux). Un sandbox no puede usar esta vía de alta salvo que también consiga el token. No incluyas los tokens en clientes distribuidos ni en scripts públicos, limita sus permisos y rota los que hayan quedado expuestos.'
+  - question: '¿Cómo distingo un análisis antivirus inofensivo de una intrusión real?'
+    answer: 'Un registro de corta duración que coincide con un análisis de seguridad conocido y no va seguido de ninguna sesión puede respaldar la explicación del sandbox. Las sesiones inesperadas, las altas repetidas, el uso de credenciales válidas o un cliente configurado distribuido fuera de su canal previsto no son inofensivos y requieren una respuesta ante incidentes.'
 
 metadata:
-  description: 'Los dispositivos desconocidos en tu consola de RustDesk requieren investigación. Aprende a distinguir el sandboxing de antivirus de una configuración filtrada o un registro no autorizado.'
+  description: 'Dispositivos desconocidos en tu consola de RustDesk: cómo distinguir el sandbox de un antivirus de una configuración filtrada o un registro no autorizado.'
   keywords: 'dispositivo desconocido rustdesk, dispositivo fantasma rustdesk, registro aleatorio de dispositivos rustdesk, sandbox de antivirus rustdesk, desactivar nuevos dispositivos rustdesk, rustdesk --deploy'
 ---
 
-Un dispositivo desconocido en la consola de RustDesk no basta por sí solo para identificar su causa. El sandboxing de antivirus es una posibilidad conocida, pero el mismo síntoma puede deberse a una configuración filtrada, una inscripción no autorizada, un token expuesto o un error de implementación.
+Un dispositivo desconocido en la consola de RustDesk no basta para identificar su causa. El sandbox de un antivirus es una posibilidad conocida, pero el mismo síntoma puede deberse a una configuración filtrada, un alta no autorizada, un token expuesto o un error de despliegue.
 
 ## La respuesta corta
 
-Algunos productos de antivirus/EDR ejecutan binarios desconocidos en sandboxes en la nube. Si un sandbox recibe una compilación del cliente que contiene la configuración de tu servidor y puede alcanzar el servidor de ID, es posible que se registre brevemente. Sin embargo, una dirección IP de un proveedor de nube o un nombre de hardware inusual **no** demuestra esta explicación; los atacantes también usan servidores en la nube. Conserva y revisa la evidencia antes de descartar el incidente.
+Algunos productos antivirus y EDR ejecutan binarios desconocidos en sandboxes en la nube. Si un sandbox recibe una compilación del cliente que contiene la configuración de tu servidor y puede llegar al servidor de ID, es posible que se registre brevemente. Sin embargo, una dirección IP de un proveedor de nube o un nombre de hardware poco habitual **no** demuestran esta explicación: los atacantes también usan servidores en la nube. Conserva y revisa las pruebas antes de descartar el incidente.
 
 ## En detalle
 
-### Por qué ocurre esto
+### Por qué ocurre
 
-Los clientes de RustDesk pueden registrarse con el servidor de ID/rendezvous configurado cuando se ejecutan y pueden alcanzarlo. Esto hace que la ejecución en sandbox sea una causa plausible, como se explica en un [hilo público de GitHub](https://github.com/rustdesk/rustdesk-server-pro/discussions/307), pero también significa que cualquiera que obtenga un cliente configurado o material de implementación válido puede producir un registro similar.
+Los clientes de RustDesk pueden registrarse en el servidor de ID/rendezvous configurado cuando se ejecutan y pueden alcanzarlo. Eso hace que la ejecución en un sandbox sea una causa plausible, como se comenta en un [hilo público de GitHub](https://github.com/rustdesk/rustdesk-server-pro/discussions/307), pero también significa que cualquiera que consiga un cliente configurado o material de despliegue válido puede producir un registro similar.
 
-Antes de clasificar el incidente, revisa los logs de registro y conexión del servidor, la hora de primera aparición del dispositivo y su IP de origen, el historial de implementación y la ruta de distribución de los clientes personalizados. Rota las contraseñas expuestas, los tokens de API/implementación y la configuración o las claves del servidor según corresponda. Comprueba si las mismas credenciales se reutilizaron en otro lugar y si el dispositivo desconocido intentó o completó alguna sesión.
+Antes de clasificar el incidente, revisa los logs de registro y de conexión del servidor, la hora en que apareció el dispositivo por primera vez y su IP de origen, el historial de despliegues y la vía de distribución de los clientes personalizados. Rota, según corresponda, las contraseñas expuestas, los tokens de API o de despliegue y la configuración o las claves del servidor. Comprueba si las mismas credenciales se han reutilizado en otros sitios y si el dispositivo desconocido intentó o llegó a completar alguna sesión.
 
 ### Cómo detenerlo
 
-Dos ajustes de la consola resuelven esto, y cuál te conviene depende de si todavía estás incorporando activamente dispositivos nuevos reales.
+Hay dos ajustes de la consola que lo resuelven, y cuál te conviene depende de si sigues incorporando dispositivos nuevos reales.
 
-**Opción 1 — desactivar por completo el registro de nuevos dispositivos.** Si tu lista de dispositivos es básicamente estable y no agregas máquinas con regularidad, esta es la solución más simple: ve a **Settings → Others → Disable new devices on web console**. A partir de ahí, nada nuevo podrá registrarse, ya sea desde un sandbox o no.
+**Opción 1: desactivar por completo el registro de dispositivos nuevos.** Si tu lista de dispositivos es básicamente estable y no añades equipos con frecuencia, es la solución más sencilla: ve a **Configuración → Otros → Desactivar dispositivos nuevos en la consola web** (_Disable new devices on web console_). A partir de ahí no se puede registrar nada nuevo, venga o no de un sandbox.
 
-**Opción 2 — exigir un token de implementación.** Si todavía estás implementando dispositivos nuevos con regularidad (un MSP incorporando clientes, un equipo de TI instalando imágenes en máquinas nuevas), un ajuste general de «desactivar nuevos dispositivos» se convierte en un obstáculo para tu propio trabajo. En su lugar, activa **Settings → Others → Require deployment for new devices**, crea un token de API (permiso Devices, Read and write) y haz que tu proceso de instalación ejecute el [comando de implementación](https://rustdesk.com/docs/en/self-host/client-deployment/#explicit-deployment-for-new-devices) documentado en cada dispositivo:
+**Opción 2: exigir un token de despliegue.** Si sigues desplegando dispositivos nuevos con regularidad (un MSP que incorpora clientes, un equipo de TI que prepara imágenes para equipos nuevos), un ajuste general de «desactivar dispositivos nuevos» te estorba a ti mismo. En su lugar, activa **Configuración → Otros → Requerir despliegue para nuevos dispositivos**, crea un token de API (permiso **Dispositivos**, **Lectura y escritura**) y haz que tu proceso de instalación ejecute en cada dispositivo el [comando de despliegue](https://rustdesk.com/docs/es/self-host/client-deployment/#despliegue-explícito-para-nuevos-dispositivos) documentado:
 
 ```
 rustdesk --deploy --token <api_token>
 ```
 
-La opción exacta puede cambiar entre versiones, así que trata esto como algo ilustrativo y verifica la sintaxis actual en la documentación de RustDesk Server Pro antes de incluirla en un script. Solo un dispositivo que presente un token válido se añade a tu inventario. Un análisis de antivirus en sandbox — que no tiene forma de conocer ni proporcionar ese token — no logra registrarse, mientras que tu implementación real sigue funcionando con normalidad. Este es también el mecanismo que usan los MSP para inscribir dispositivos mediante RMM o una instalación por script, sin que un técnico tenga que iniciar sesión manualmente en cada máquina.
+La [documentación de despliegue](https://rustdesk.com/docs/es/self-host/client-deployment/#despliegue-explícito-para-nuevos-dispositivos) especifica esta vía de alta. Exigir un token puede bloquear un sandbox que solo recibe el cliente configurado, **siempre que el token no esté incluido en ese cliente ni en su material de instalación**. Un sandbox o un atacante con un token válido sí puede darse de alta. Protege la distribución de los tokens, usa los permisos mínimos necesarios y rota un token si ha podido filtrarse.
 
-**Un control relacionado y más específico:** si prefieres dejar el registro abierto pero simplemente mantener los dispositivos no asignados fuera de la vista hasta que los hayas revisado, también existe **Settings → Others → Only admin can access unassigned devices** — esto no detiene el registro, pero sí evita que los usuarios normales vean o puedan tocar cualquier cosa que aparezca antes de que hayas tenido la oportunidad de revisarla.
+**Un control relacionado, más limitado:** si prefieres dejar abierto el registro pero mantener fuera de la vista los dispositivos sin asignar hasta revisarlos, también existe **Configuración → Otros → Solo el administrador puede acceder a dispositivos no asignados** (_Only admin can access unassigned devices_). No impide el registro, pero los usuarios normales no podrán ver ni tocar nada de lo que aparezca antes de que hayas podido revisarlo.
 
 ### Cómo evaluar el resultado
 
-El registro por sí solo no demuestra que un atacante haya controlado otro endpoint, pero sigue siendo una actividad no autorizada hasta que se explique. Un registro de corta duración que coincide con un análisis de seguridad conocido y no muestra ningún acceso posterior puede respaldar la hipótesis del sandbox. Las sesiones inesperadas, la inscripción repetida, el uso de credenciales válidas o la distribución de un cliente configurado fuera de su canal previsto requieren una respuesta ante incidentes.
+El registro por sí solo no demuestra que un atacante haya controlado otro endpoint, pero sigue siendo una actividad no autorizada mientras no se explique. Un registro de corta duración que coincide con un análisis de seguridad conocido y no va seguido de ningún acceso puede respaldar la hipótesis del sandbox. Las sesiones inesperadas, las altas repetidas, el uso de credenciales válidas o la distribución de un cliente configurado fuera de su canal previsto requieren una respuesta ante incidentes.
 
 ## Quién pregunta esto
 
-Los nuevos operadores de servidores — tanto administradores de TI como MSP — suelen encontrarse con esto pocos días después de poner en marcha un servidor autoalojado, antes de haber reforzado los controles de registro. Investigar a tiempo importa porque un análisis benigno y una inscripción no autorizada pueden parecer similares en la consola.
+Quienes empiezan a operar un servidor, tanto administradores de TI como MSP, suelen toparse con esto a los pocos días de montar un servidor autoalojado, antes de haber reforzado los controles de registro. Investigar pronto importa, porque en la consola un análisis inofensivo y un alta no autorizada pueden parecer iguales.
 
 ## Preguntas relacionadas
 
 - Generar un cliente personalizado con tu marca: consulta la [documentación de RustDesk](https://rustdesk.com/docs).
-- [¿Qué se considera un dispositivo administrado en RustDesk?](/es/blog/que-cuenta-como-un-dispositivo-administrado-en-rustdesk)
-- [Consulta las versiones actuales de RustDesk y las correcciones de seguridad](https://github.com/rustdesk/rustdesk/releases)
-- [RustDesk para MSP: una única herramienta autoalojada y de marca blanca](/es/blog/rustdesk-para-msp-una-unica-herramienta-autoalojada-y-personalizable)
-  ¿Ves un dispositivo que no reconoces? Conserva los logs relevantes, restringe la inscripción de nuevos dispositivos, rota cualquier secreto que pueda estar expuesto y ponte en contacto con el soporte de RustDesk con detalles de diagnóstico no sensibles si la causa sigue sin estar clara.
+- [¿Qué cuenta como dispositivo gestionado en RustDesk?](/es/blog/que-cuenta-como-un-dispositivo-administrado-en-rustdesk)
+- [Consulta las versiones actuales de RustDesk y sus correcciones de seguridad](https://github.com/rustdesk/rustdesk/releases)
+- [RustDesk para MSP: una única herramienta autoalojada y con tu marca](/es/blog/rustdesk-para-msp-una-unica-herramienta-autoalojada-y-personalizable)
+
+¿Ves un dispositivo que no reconoces? Conserva los logs relevantes, restringe las altas nuevas, rota cualquier secreto que haya podido quedar expuesto y, si la causa sigue sin estar clara, ponte en contacto con el soporte de RustDesk aportando datos de diagnóstico no sensibles.

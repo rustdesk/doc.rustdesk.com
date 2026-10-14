@@ -1,83 +1,84 @@
 ---
+updateDate: 2026-10-14T00:00:00Z
 publishDate: 2026-06-29T18:05:00Z
 lang: 'es'
 translationKey: 'anydesk-price-increase-alternatives'
 draft: false
 title: 'Aumento de precios de AnyDesk: alternativas para equipos'
-excerpt: '¿Otro aumento de precios de AnyDesk que está presionando tu presupuesto? Así es como los equipos están migrando a un escritorio remoto de código abierto, autoalojado y con costos predecibles.'
+excerpt: 'Evalúa una subida en la renovación de AnyDesk con los derechos actuales, el esfuerzo de migración y el coste total a tres años, incluidas la licencia y la operación de RustDesk Server Pro.'
 image: '~/assets/images/blog/anydesk-price-increase-alternatives-og.webp'
 category: 'Guías'
 tags: ['RustDesk', 'AnyDesk', 'Precios', 'Alternativa']
 author: 'RustDesk Team'
 slug: 'aumento-de-precios-de-anydesk-alternativas-para-equipos'
 faq:
-  - question: '¿Cuáles son mis opciones cuando AnyDesk sube el precio?'
-    answer: 'En realidad tienes dos movimientos posibles: renovar y negociar, o cambiar a una herramienta autoalojada y de código abierto como RustDesk, donde tu gasto recurrente se convierte en tu propia infraestructura más una licencia, en lugar de un número de puestos que el proveedor vuelve a fijar según su propio calendario. Calcula el costo real de ambas opciones antes de decidir.'
-  - question: '¿El autoalojamiento hace que los costos del escritorio remoto sean más predecibles?'
-    answer: 'El autoalojamiento cambia quién tiene el poder de fijar el precio: con RustDesk Server Pro, tú alojas el servicio, así que el costo es tu infraestructura más una licencia, en lugar de una renovación que fija el proveedor. El producto sigue teniendo condiciones de licencia anuales, así que compara la página de precios vigente en cada renovación.'
-  - question: '¿Vale la pena el costo de migración al dejar AnyDesk?'
-    answer: 'Existe un costo real y único por el cambio: tiempo de migración, algo de capacitación y la puesta en marcha de tu propio servidor; pero cuando el aumento se repite, el cambio suele amortizarse en uno o dos ciclos de renovación. Calcula el costo del cambio una sola vez y compáralo con el aumento que, de otro modo, tendrías que absorber en cada renovación.'
+  - question: '¿Qué opciones tengo cuando AnyDesk sube el precio?'
+    answer: 'Tienes tres opciones: renovar y negociar, pasarte a otro servicio gestionado o autoalojar con una herramienta como RustDesk. Calcula el coste de cada una para la misma carga de trabajo. RustDesk Server OSS (el servidor comunitario gratuito) no tiene cuota de licencia; Server Pro tiene condiciones comerciales anuales más los costes de infraestructura y operación, así que autoalojar te da control de la infraestructura, no inmunidad frente a los cambios de precio de la licencia.'
+  - question: '¿Hace el autoalojamiento más previsibles los costes del escritorio remoto?'
+    answer: 'Sí, en lo que respecta a la infraestructura. Autoalojar pone bajo tu control la capacidad, la ubicación y la operación del servidor, y RustDesk Server Pro se renueva como una licencia de usuarios con inicio de sesión y dispositivos gestionados, no como un servicio en la nube facturado por consumo. Sus condiciones de licencia siguen siendo anuales y pueden cambiar, y los costes de infraestructura varían, así que compara en cada renovación las condiciones vigentes, el ancho de banda del relay y el esfuerzo de operación.'
+  - question: '¿Compensa el coste de migrar desde AnyDesk?'
+    answer: 'Sí, cuando el ahorro anual recupera el coste único de la migración dentro de tu horizonte de planificación. Estima la puesta en marcha, el despliegue y la formación, y compara los costes anuales de licencia, infraestructura, ancho de banda y operación de ambas opciones. Los años hasta el punto de equilibrio son el coste de migración dividido entre el ahorro anual en coste total; no existe una amortización universal en una o dos renovaciones.'
   - question: '¿Puedo auditar lo que hace el cliente de RustDesk?'
-    answer: 'Sí. RustDesk es de código abierto bajo licencia AGPL. Puedes leer exactamente lo que se ejecuta en tus endpoints, compilar el cliente desde el código fuente y usar el servidor comunitario gratuito durante el tiempo que quieras.'
-  - question: '¿El autoalojamiento siempre es más económico que AnyDesk?'
-    answer: 'No necesariamente, en todas las configuraciones. Compara las cotizaciones vigentes usando los mismos requisitos de usuarios de inicio de sesión, dispositivos administrados, concurrencia, funciones, infraestructura y soporte; consulta rustdesk.com/pricing.'
+    answer: 'Sí. El cliente de RustDesk es de código abierto con licencia AGPL, así que puedes leer exactamente lo que se ejecuta en tus endpoints y compilar el cliente desde el código fuente. RustDesk Server OSS (el servidor comunitario gratuito) también tiene licencia AGPL y es gratuito, sin cuota de licencia ni caducidad; las funciones de gestión de Server Pro son comerciales y propietarias.'
+  - question: '¿Autoalojar es siempre más barato que AnyDesk?'
+    answer: 'No, no en todas las configuraciones. Autoalojar sustituye la renovación con un proveedor por una licencia de RustDesk Server Pro más tu propio alojamiento, ancho de banda y tiempo de administración, y el balance depende de tu flota. Compara presupuestos vigentes con los mismos requisitos de usuarios con inicio de sesión, dispositivos gestionados, conexiones simultáneas, funciones, infraestructura y soporte; consulta rustdesk.com/pricing.'
 
 metadata:
-  description: '¿Te enfrentas a otro aumento de precios de AnyDesk? Descubre por qué los equipos cambian a RustDesk: costos autoalojados predecibles, control de tus propios datos y transparencia de código abierto.'
-  keywords: 'aumento de precios de AnyDesk, costo de renovación de AnyDesk, alternativas de precios a AnyDesk, TCO a tres años de AnyDesk'
+  description: 'Compara una renovación de AnyDesk con una alternativa autoalojada según usuarios, dispositivos, conexiones simultáneas, migración y coste total a tres años.'
+  keywords: 'aumento de precios de AnyDesk, coste de renovación de AnyDesk, alternativas a los precios de AnyDesk, TCO a tres años de AnyDesk'
 ---
 
-Si buscaste "aumento de precios de AnyDesk", tienes dos opciones reales: renovar y negociar, o cambiar a un modelo cuyo costo tú controlas. Esta es la guía sobre **quién tiene el poder de fijar el precio**: evalúa ambos movimientos, muestra las cuentas del punto de equilibrio al cambiar y explica por qué ser dueño de la infraestructura (y poder auditarla) es la salida duradera. Para la comparación completa función por función, consulta [RustDesk frente a AnyDesk](/es/blog/rustdesk-vs-anydesk-escritorio-remoto-autoalojado-y-de-codigo-abierto).
+Si la renovación de AnyDesk ha subido, tienes tres opciones reales: renovar y negociar, pasarte a otro servicio gestionado o cambiar a un modelo autoalojado cuya infraestructura controlas tú. Esta guía explica cómo comprobar qué ha subido realmente, normalizar los derechos de uso y hacer las cuentas del punto de equilibrio para pasarte a RustDesk. Para las diferencias de funciones y de despliegue, consulta [RustDesk vs AnyDesk](/es/blog/rustdesk-vs-anydesk-escritorio-remoto-autoalojado-y-de-codigo-abierto).
 
-## Por qué las renovaciones de AnyDesk no las defines tú
+## Cómo se fijan los precios de las renovaciones de AnyDesk
 
-AnyDesk se vende como **suscripciones anuales por niveles**, medidas por dispositivos administrados, sesiones concurrentes y espacios de nombres (namespaces), donde los niveles superiores desbloquean más sesiones simultáneas y funciones de administración — y el **appliance on-premises solo en el nivel más alto**. El proveedor es dueño de la infraestructura por la que pasan tus sesiones, así que el precio de renovación, los límites de cada nivel y el número de sesiones son ajustes que solo él controla. Cuando lo hace, tus opciones son pagar más o migrar — y migrar resulta lo bastante doloroso como para que la mayoría de los equipos simplemente pague.
+AnyDesk vende niveles con facturación anual que incluyen cupos de usuarios, dispositivos gestionados y conexiones simultáneas, además de complementos. Sus planes en la nube usan una coordinación operada por el proveedor; Ultimate ofrece también un appliance On-Premises que opera el cliente. El proveedor fija los límites de cada nivel, los cupos y las tarifas, así que cualquiera de ellos puede cambiar en la renovación.
 
-No vamos a inventar las cifras de AnyDesk; consulta tú mismo las [tarifas actuales](https://anydesk.com/en/pricing).
+Compara los [planes publicados actualmente](https://anydesk.com/en/pricing) con tu presupuesto de renovación fechado.
 
-## Verifica qué aumentó realmente
+## Comprueba qué ha subido realmente
 
-Antes de comparar nada, coloca lado a lado la factura anterior, la cotización de renovación y la página oficial de planes vigente de AnyDesk, y normaliza la moneda, los impuestos, el período de facturación, el descuento, los usuarios con licencia, las sesiones concurrentes, los dispositivos administrados, los espacios de nombres (namespaces) y los complementos. Un total más alto puede deberse a un cambio de tarifa, al fin de un descuento, a un mayor uso o a un cambio de empaquetado — a menudo varios de estos factores a la vez. Registra el costo efectivo anual y los derechos exactos incluidos en ambas cotizaciones, para tener una cifra de "aumento de precio" defendible en lugar de una simple corazonada.
+Antes de comparar nada, pon una al lado de otra la factura anterior, el presupuesto de renovación y la página de planes actual de AnyDesk, y normaliza la moneda, los impuestos, el periodo de facturación, los descuentos, los usuarios con licencia, las sesiones simultáneas, los dispositivos gestionados, los namespaces y los complementos. Un total más alto puede deberse a un cambio de tarifa, al fin de un descuento, a un mayor uso o a un cambio de empaquetado, y a menudo a varias cosas a la vez. Anota el coste anual efectivo y los derechos exactos de ambos presupuestos para tener una cifra de «subida de precio» defendible y no una simple impresión.
 
-## La diferencia clave: tú lo alojas, tú controlas el costo
+## El autoalojamiento cambia las variables de coste
 
-Con RustDesk Server Pro **alojas tú mismo** el servidor de ID/rendezvous, el relay, la consola y los datos de implementación almacenados ([por qué eso cambia las cuentas](/es/blog/por-que-autoalojar-tu-software-de-escritorio-remoto)). El producto sigue teniendo condiciones de licencia anuales, así que compara la página de precios vigente en cada renovación — pero lo que se renueva es una licencia, no un servicio que el proveedor mide.
+Con RustDesk operas tú mismo los servicios de ID/rendezvous y relay y, con Server Pro, también la consola y los datos de gestión almacenados ([por qué eso cambia las cuentas](/es/blog/por-que-autoalojar-tu-software-de-escritorio-remoto)). El cliente de RustDesk y RustDesk Server OSS (el servidor comunitario gratuito) tienen licencia AGPL, y Server OSS no tiene cuota de licencia. Server Pro es software de servidor autoalojado, comercial y propietario, que añade gestión centralizada. El coste pasa a ser **licencia anual más infraestructura y operación**: lo que se renueva es una licencia, no un servicio en la nube facturado por consumo.
 
-La licencia de RustDesk es **por usuario de inicio de sesión más por dispositivo administrado**, y puedes [actualizar tu plan](/es/blog/actualizar-la-licencia-de-rustdesk-a-mitad-de-suscripcion-como-funciona) con prorrateo. Los planes estándar incluyen [conexiones concurrentes](https://rustdesk.com/pricing) ilimitadas; [Customized V2](https://rustdesk.com/pricing#custom2) las limita y las tarifica por separado. Para conocer los precios exactos de las licencias y los niveles de plan, [consulta rustdesk.com/pricing](https://rustdesk.com/pricing).
+Las licencias de RustDesk son **por usuario con inicio de sesión más por dispositivo gestionado**. Puedes comprar una [ampliación](/es/blog/actualizar-la-licencia-de-rustdesk-a-mitad-de-suscripcion-como-funciona) en cualquier momento en el portal de autoservicio: extiende la caducidad de la licencia a un año completo desde la fecha de la ampliación y descuenta el valor pagado que le quede a tu licencia actual. Los planes estándar incluyen [conexiones simultáneas](https://rustdesk.com/pricing) ilimitadas; solo [Customized V2](https://rustdesk.com/pricing#custom2) licencia un número determinado de conexiones simultáneas. Para los precios exactos de las licencias y los niveles de los planes, [consulta rustdesk.com/pricing](https://rustdesk.com/pricing).
 
-## Sé dueño de tus datos y audita el cliente
+## Controla tus datos y audita el cliente
 
-El costo no es la única razón por la que los equipos se van. El autoalojamiento te permite elegir dónde se ejecutan los datos de rendezvous, relay, consola y dispositivos administrados — aunque, por sí solo, no garantiza que el tráfico directo entre endpoints permanezca dentro de un solo país ni hace que una implementación sea conforme. Mapea el flujo de datos completo en la [guía de soberanía de datos](/es/blog/soberania-de-datos-en-el-escritorio-remoto-y-rgpd-autoalojamiento). Y como el núcleo de RustDesk es **de código abierto bajo la licencia [AGPL](https://github.com/rustdesk/rustdesk)**, puedes leer el código, verificar qué hace el cliente en tus endpoints, compilarlo tú mismo y ejecutar el servidor comunitario gratuito de forma indefinida. (¿Evalúas por separado la seguridad del proveedor actual? Consulta [¿Es seguro AnyDesk?](/es/blog/es-seguro-anydesk-cifrado-el-incidente-de-seguridad-de-2024-y-las))
+El coste no es el único motivo por el que los equipos se van. Autoalojar te permite elegir dónde se ejecutan el rendezvous, el relay, la consola y los datos de los dispositivos gestionados, aunque por sí solo no garantiza que el tráfico directo entre extremos se quede en un país ni hace que un despliegue cumpla la normativa; traza el flujo de datos completo con la [guía de soberanía de datos](/es/blog/soberania-de-datos-en-el-escritorio-remoto-y-rgpd-autoalojamiento). Y como el cliente de RustDesk es **de código abierto con licencia [AGPL](https://github.com/rustdesk/rustdesk)**, puedes leer el código y verificar lo que hace en tus endpoints. (¿Estás valorando aparte la seguridad de tu proveedor actual? Consulta [¿Es seguro AnyDesk?](/es/blog/es-seguro-anydesk-cifrado-el-incidente-de-seguridad-de-2024-y-las))
 
-Para los MSP y los equipos de TI, Pro añade una [consola web autoalojada](https://rustdesk.com/docs), un generador de clientes personalizados con marca propia y [grupos de dispositivos junto con una libreta de direcciones compartida](https://rustdesk.com/docs/es/self-host/rustdesk-server-pro/permissions/) para el control de acceso por usuario; [LDAP/SSO](https://rustdesk.com/docs/es/self-host/rustdesk-server-pro/ldap/) (OIDC) está disponible desde el plan Basic en adelante, y RustDesk publica [guías de planificación para flotas grandes](/es/blog/puede-rustdesk-escalar-a-200-000-dispositivos) para entornos de mayor tamaño.
+Para MSP y equipos de TI, Server Pro añade una consola autoalojada, grupos de dispositivos, libretas de direcciones compartidas y [Control de acceso](https://rustdesk.com/docs/es/self-host/rustdesk-server-pro/permissions/) por usuario y grupo de dispositivos, con generación de clientes personalizados y SSO con LDAP/OIDC desde el plan Basic. Para parques más grandes, RustDesk publica una guía de [planificación para flotas grandes](/es/blog/puede-rustdesk-escalar-a-200-000-dispositivos).
 
-## Renovar y negociar frente a cambiar: el punto de equilibrio
+## Renovar y negociar o cambiar: el punto de equilibrio
 
-Cuando la cotización de renovación se dispara, en realidad tienes dos movimientos posibles, y vale la pena calcular el costo real de ambos en lugar de reaccionar por impulso.
+Cuando la renovación se dispara, en realidad tienes dos jugadas, y merece la pena calcular el coste de ambas en lugar de reaccionar por impulso.
 
-**Renovar y negociar.** El camino más rápido: sin migración, sin necesidad de capacitación, una herramienta que tu equipo ya conoce, y a veces puedes negociar una rebaja en el aumento. Pero negocias desde la posición más débil — el proveedor sabe que cambiar es doloroso y probablemente lo tiene en cuenta — cualquier descuento suele ser temporal, y volverás a la misma mesa el próximo año. Es la opción correcta justo cuando el aumento es realmente modesto, estás a mitad de un proyecto o tu costo de cambio es inusualmente alto.
+**Renovar y negociar.** Es el camino más rápido: sin migración, sin formación, con una herramienta que tu equipo ya conoce, y a veces consigues rebajar la subida. Pero cualquier descuento puede ser temporal, y el año que viene volverás a la misma mesa. Es la opción adecuada cuando la subida es moderada, estás en mitad de un proyecto o tu coste de cambio es excepcionalmente alto.
 
-**Cambiar.** Aquí hay un costo inicial real, y no vamos a fingir lo contrario: tiempo de migración, algo de capacitación y la puesta en marcha de tu propio servidor. Lo que compras con ese costo único es un gasto recurrente que se convierte en tu propia infraestructura más una licencia.
+**Cambiar.** Hay un coste inicial real, y no vamos a fingir lo contrario: tiempo de migración, algo de formación y la puesta en marcha de tu propio servidor. Lo que compras con ese coste único es un gasto recurrente que pasa a ser tu propia infraestructura más una licencia.
 
-**El punto de equilibrio.** Calcula el costo del cambio una sola vez — horas de migración más la configuración del servidor — y compáralo con el aumento que, de otro modo, tendrías que absorber en _cada_ renovación. Un costo único es una sola línea; un aumento anual que se acumula es una curva. Cuando el aumento se repite, el cambio suele amortizarse en uno o dos ciclos de renovación. Si llegaste aquí por un aviso de "uso comercial" en lugar de una renovación, [ese escenario tiene su propia guía](/es/blog/uso-comercial-detectado-en-anydesk-como-solucionarlo).
+**El punto de equilibrio.** Si la alternativa tiene un coste total anual menor, los años hasta el punto de equilibrio son **coste único de migración ÷ ahorro anual en coste total**. Incluye las licencias y complementos de ambos proveedores, el alojamiento, las copias de seguridad, el ancho de banda, la supervisión y el tiempo de administración. Un coste único es una sola línea; una subida recurrente se repite en cada renovación. Si el ahorro anual es nulo o negativo, con esos supuestos el cambio no se amortiza por coste, así que modela por separado los beneficios de control o de gobernanza. Si has llegado aquí por un aviso de «uso comercial» y no por una renovación, [ese caso tiene su propia guía](/es/blog/uso-comercial-detectado-en-anydesk-como-solucionarlo).
 
-## Construye un modelo de costo comparable a tres años
+## Construye un modelo de costes comparable a tres años
 
-Coloca cada opción en la misma hoja de cálculo, en lugar de comparar una cotización de renovación con el precio de entrada de otro proveedor:
+Pon cada opción en la misma hoja de cálculo en lugar de comparar un presupuesto de renovación con el precio de entrada de otro proveedor:
 
-| Variable de costo                                   |                Renovación de AnyDesk |                                              Alternativa autoalojada |
-| --------------------------------------------------- | -----------------------------------: | -------------------------------------------------------------------: |
-| Usuarios y endpoints con licencia requeridos        |                Tu cotización fechada |          Usuarios de inicio de sesión más dispositivos administrados |
-| Concurrencia o sesiones requeridas                  |   Asignación del plan y complementos |   Ilimitada en planes estándar; asignación definida en Customized V2 |
-| Hosting, respaldo, monitoreo y ancho de banda       |      Normalmente incluido en el SaaS |                                       El costo de tu infraestructura |
-| Trabajo de implementación y migración               |        Cambios de política o cliente | Configuración del servidor, despliegue de clientes, mapeo de accesos |
-| Administración continua                             | Gestión del proveedor o de la cuenta |             Parches, certificados, capacidad, respuesta a incidentes |
-| Marca, SSO y controles de administración opcionales |         Nivel/complementos correctos |                                         Nivel correcto de Server Pro |
+| Variable de coste                                              |                Renovación de AnyDesk |                                              Alternativa autoalojada |
+| -------------------------------------------------------------- | -----------------------------------: | -------------------------------------------------------------------: |
+| Usuarios con licencia y endpoints necesarios                   |               Tu presupuesto fechado |           Usuarios con inicio de sesión más dispositivos gestionados |
+| Conexiones simultáneas o sesiones necesarias                   |         Cupo del plan y complementos |    Ilimitadas en los planes estándar; cupo definido en Customized V2 |
+| Alojamiento, copias de seguridad, supervisión y ancho de banda |     Normalmente incluidos en el SaaS |                                          Tu coste de infraestructura |
+| Trabajo de despliegue y migración                              |   Cambios de políticas o del cliente | Configuración del servidor, despliegue de clientes, mapeo de accesos |
+| Administración continua                                        | Gestión del proveedor o de la cuenta |             Parches, certificados, capacidad, respuesta a incidentes |
+| Marca, SSO y controles de administración opcionales            |       Nivel o complementos adecuados |                                         Nivel adecuado de Server Pro |
 
-Calcula un caso base y un caso de crecimiento para el mismo período de 36 meses. Una opción autoalojada puede reducir los costos de la nube del proveedor, pero no es operativamente gratuita; el resultado útil es el costo total para _tu_ carga de trabajo, no el número más pequeño de una página de precios. Si quieres el recorrido de migración dedicado, consulta [la mejor alternativa a AnyDesk en 2026](/es/blog/la-mejor-alternativa-autoalojada-a-teamviewer).
+Calcula un caso base y un caso de crecimiento para los mismos 36 meses. Una opción autoalojada puede reducir los costes de la nube del proveedor, pero operarla no sale gratis; el resultado útil es el coste total para _tu_ carga de trabajo, no la cifra más baja de una página de precios. Si quieres la guía de migración específica, consulta [Una alternativa autoalojada a TeamViewer y AnyDesk](/es/blog/la-mejor-alternativa-autoalojada-a-teamviewer).
 
 ## Haz la comparación en tu propia infraestructura
 
-No necesitas reservar una demo para averiguar si esto te conviene. Dale al servidor comunitario gratuito un par de técnicos y un puñado de dispositivos, ejecuta sesiones reales durante una semana y comprueba si ser dueño de la infraestructura te parece la decisión correcta — es de código abierto y no cuesta nada mantenerlo en funcionamiento. Para conocer las condiciones de evaluación de Pro, escribe a [sales@rustdesk.com](mailto:sales@rustdesk.com), e incorpora las cifras por usuario y por dispositivo de [rustdesk.com/pricing](https://rustdesk.com/pricing) en la hoja de cálculo a tres años que se muestra arriba.
+Empieza un piloto con Server OSS, con endpoints y sesiones de soporte representativos. Anota el tiempo de despliegue, la tasa de conexiones correctas, el ancho de banda del relay y las tareas de mantenimiento, y después añade la [licencia de Server Pro](https://rustdesk.com/pricing) si necesitas sus funciones de gestión. El [equipo comercial](mailto:sales@rustdesk.com) puede facilitarte las condiciones de evaluación vigentes de Pro.
 
-Si llega otro correo de aumento de precio, el autoalojamiento es la forma de dejar de ser quien siempre lo recibe.
+Si llega otro correo de subida de precios, negociarás desde una posición más fuerte: servidores que operas tú, un cliente que puedes auditar, Server OSS gratuito como alternativa de respaldo y una licencia de Server Pro con conexiones simultáneas ilimitadas en los planes estándar.

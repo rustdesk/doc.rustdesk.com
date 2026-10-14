@@ -1,94 +1,99 @@
 ---
 publishDate: 2026-06-29T16:16:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: 'zh-tw'
 translationKey: 'rustdesk-for-enterprise'
 draft: false
-title: '企業級 RustDesk：自架部署、可擴展、AD 整合就緒'
-excerpt: '為什麼企業 IT 團隊選擇 RustDesk：自架架構掌控資料、支援 AD/LDAP、裝置群組存取控制，以及大規模部署下可預測的定價模式。'
+title: 'RustDesk 企業部署：自架、可擴充、支援 AD/LDAP'
+excerpt: '企業 IT 團隊為什麼選擇 RustDesk：自架掌控資料、AD/LDAP、裝置群組存取控制，以及大規模裝置群也能預估的價格。'
 image: '~/assets/images/blog/rustdesk-for-enterprise-og.webp'
 category: '指南'
 tags: ['RustDesk', '企業', '自架']
 author: 'RustDesk Team'
 slug: 'rustdesk-for-enterprise-zh-tw'
 faq:
-  - question: 'RustDesk 能否大規模部署到整個企業裝置群？'
-    answer: '可以。RustDesk 提供 Windows MSI 安裝包，可透過 msiexec 進行無聲、無人值守的安裝，並可透過群組原則(GPO)、Microsoft Intune、RMM 或封裝工具部署；自訂用戶端產生器(Basic 方案起提供)則能產出預先設定好連向您自己伺服器的用戶端。'
-  - question: 'RustDesk 是否提供 REST API？'
-    answer: '有。RustDesk Server Pro 提供 REST API，可用於批次裝置管理與腳本自動化，讓您能以程式化方式進行裝置的上線、列舉與移除，不必只透過網頁主控台操作。請在 RustDesk 文件中確認目前的 API 端點。'
-  - question: 'RustDesk 是否支援 Active Directory 與 SSO 做為企業身分驗證方案？'
-    answer: '支援。Server Pro 自 Basic 方案起即包含 LDAP/Active Directory 與 OIDC SSO，讓技術人員能透過您現有的身分來源進行驗證，不必另外維護一份獨立的使用者清單。'
-  - question: '企業能否將 RustDesk 的資料保留在自己的基礎架構上？'
-    answer: '可以 — 這正是核心運作模式。您可以自行架設 ID/會合伺服器、中繼伺服器、主控台，以及儲存裝置資料。由於直連工作階段的流量仍會在端點之間直接傳輸，請將端點路由與伺服器部署位置一併記錄清楚。'
-  - question: '大規模裝置部署下，RustDesk 的定價方式為何？'
-    answer: 'RustDesk 按登入使用者數與受管理裝置數計費，標準方案的併發連線數不受限制(僅 Customized V2 會計量併發數)，升級時按比例計費。請依照 rustdesk.com/pricing 上目前的方案矩陣，估算所需的數量。'
+  - question: 'RustDesk 能大量部署到整個企業的裝置群嗎？'
+    answer: '可以。RustDesk 提供 Windows MSI，可透過 msiexec 靜默、無人值守安裝，並以群組原則（GPO）、Microsoft Intune、RMM 或封裝工具部署；自訂用戶端產生器（Basic 方案起提供）則能產出預先設定連向您自己伺服器的用戶端。'
+  - question: 'RustDesk 有 REST API 嗎？'
+    answer: '有。RustDesk Server Pro 提供 REST API，以在網頁主控台建立的 API 權杖授權，另有 Python CLI 管理工具。指令碼可以批次完成裝置的上線、列舉、指派與移除，並管理使用者、群組、通訊錄與稽核日誌，不必只透過網頁主控台操作。'
+  - question: 'RustDesk 支援以 Active Directory 與 SSO 作為企業身分來源嗎？'
+    answer: '支援。RustDesk Server Pro 自 Basic 方案起包含 LDAP/Active Directory 與 OIDC SSO，技術人員可以用您現有的身分來源驗證，不必另外維護一份使用者清單。Individual 方案不包含 LDAP/AD 與 OIDC SSO。'
+  - question: '企業能把 RustDesk 的資料留在自己的基礎架構上嗎？'
+    answer: '可以，這正是 RustDesk Server Pro 的核心模式。ID/連線協調伺服器、中繼、網頁主控台與儲存的裝置資料，都自架在您營運的基礎架構上。直接連線的工作階段在端點之間傳輸，經中繼的工作階段則使用您自己的中繼伺服器，因此請把端點路由與伺服器位置一併記錄下來。'
+  - question: '大規模裝置群的 RustDesk 價格怎麼計算？'
+    answer: 'RustDesk Server Pro 依登入使用者與受管裝置授權，標準方案包含無限同時連線；只有 Customized V2 授權固定數量的同時連線。升級可以隨時購買，授權會延長為自升級日起一整年，並折抵剩餘的已付價值。請到 rustdesk.com/pricing 試算這兩項數量。'
 metadata:
-  description: '企業級 RustDesk：自架於自己的伺服器上，掌控資料、支援 LDAP/AD、裝置群組存取控制，且無按頻道計費模式。'
-  keywords: 'RustDesk 企業級應用, RustDesk 企業部署, AD 整合遠端支援, RustDesk 企業架構'
+  description: 'RustDesk 企業部署：自架 ID、中繼與主控台，LDAP/AD 與 OIDC SSO，裝置群組存取控制，MSI 大量部署，以及標準方案的無限同時連線。'
+  keywords: 'RustDesk 企業應用, RustDesk 企業部署, AD 整合遠端支援, RustDesk 企業架構'
 ---
 
 ## 讓遠端存取留在您掌控的基礎架構上
 
-企業在評估時，通常著重於基礎架構掌控、身分管理、存取政策、可稽核性、擴展能力，以及授權模式的可預測性。這些需求都可以直接對照公開的產品功能與文件進行比較。
+RustDesk Server Pro 在您的網路邊界內執行 ID/連線協調、中繼、網頁主控台與裝置資料，自 Basic 方案起提供 LDAP/AD 與 OIDC SSO，標準方案包含無限同時連線。這涵蓋了企業評估時通常最在意的重點：基礎架構掌控、身分、存取政策、可稽核性、規模，以及授權的可預測性。
 
-如果您正在評估**企業級 RustDesk**的導入，核心問題通常都一樣：我們能否大規模執行遠端支援、把資料留在自己掌控的基礎架構上，並將存取權限與現有的身分系統綁定 — 同時不必支付每次續約都會增加的按頻道計費費用？本文將說明 RustDesk 如何回應這些需求，以及其中誠實的取捨之處。
+RustDesk 的用戶端與 RustDesk Server OSS（免費的社群伺服器）採用 AGPL 授權；Server Pro 則是商業、專有的自架伺服器軟體。
 
 ## 核心差異：自己架設，自己掌控
 
-RustDesk Server Pro 採**自架部署**。ID/會合伺服器、中繼伺服器、主控台，以及儲存的部署資料，都運行在您自己的防護邊界之內，也就是您自己操作的基礎架構上([為什麼自架是企業的預設選擇](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw))。這項單一的架構事實，決定了以下大多數企業級優勢。這也是為什麼 RustDesk 核心採用**[開源(AGPL)](https://github.com/rustdesk/rustdesk)**模式如此重要的原因：您的資安團隊可以閱讀原始碼、確切稽核用戶端的一舉一動、自行編譯，並無限期執行免費的社群版伺服器。對於必須為每一項接觸生產環境端點的軟體提出正當理由的組織而言，「您可以閱讀原始碼」不是一句行銷口號，而是一項您真正能夠滿足的採購要求。
+RustDesk Server Pro 採**自架**模式：營運伺服器的是您的團隊，而不是廠商（[團隊為什麼選擇自架](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)）。這項架構事實帶來了下列大部分好處，也讓 [**AGPL 授權的用戶端**](https://github.com/rustdesk/rustdesk)不只是宣傳話術：必須為每一個進入正式環境端點的代理程式提出理由的資安團隊，可以閱讀原始碼、自行建置用戶端，於是「我們能確切稽核執行的是什麼」就成了一項真正能勾選的採購條件。
 
 ## 企業架構須先釐清的問題
 
-在比較功能矩陣之前，請先明確定義部署設計：
+在比較功能矩陣之前，請先把部署設計講清楚：
 
-| 決策項目 | 設計中須明確定義的內容                                                                                      |
-| -------- | ----------------------------------------------------------------------------------------------------------- |
-| 身分管理 | OIDC 或 LDAP 來源、多因素驗證(MFA)政策、緊急存取機制，以及帳號生命週期                                      |
-| 權限管理 | 裝置群組的擁有權、技術人員角色、承包商權限邊界，以及審批模式                                                |
-| 網路架構 | ID 與中繼伺服器的部署位置、直連與中繼政策、對外開放的通訊埠，以及區域路由                                   |
-| 可用性   | 容量規劃假設、監控、備份、復原目標，以及多中繼伺服器設計                                                    |
-| 端點管理 | 支援的作業系統版本、用戶端封裝方式、設定強制執行，以及更新 SLA                                              |
-| 資安維運 | 日誌記錄、保留政策、警示、漏洞應變，以及事件責任歸屬                                                        |
-| 授權方案 | 所需的登入使用者數、受管理裝置數，以及任何 [Customized V2](https://rustdesk.com/pricing#custom2) 併發量額度 |
+| 決策項目 | 設計中必須說明的內容                                                                                          |
+| -------- | ------------------------------------------------------------------------------------------------------------- |
+| 身分     | OIDC 或 LDAP 來源、MFA 政策、緊急存取帳號，以及帳號生命週期                                                   |
+| 權限     | 裝置群組擁有權、技術人員角色、外包人員的權限邊界，以及核准模式                                                |
+| 網路     | ID 與中繼伺服器的位置、直接連線與中繼的政策、對外開放的連接埠，以及區域路由                                   |
+| 可用性   | 容量假設、監控、備份、復原目標，以及多中繼伺服器設計                                                          |
+| 端點管理 | 支援的作業系統版本、用戶端封裝、設定強制套用，以及更新 SLA                                                    |
+| 資安維運 | 日誌、保留期限、警示、漏洞應變，以及事件負責人                                                                |
+| 授權方案 | 所需的登入使用者、受管裝置，以及任何 [Customized V2](https://rustdesk.com/pricing#custom2) 同時連線額度       |
 
-RustDesk 提供遠端存取元件與企業級控管功能；您的架構設計則決定了這些功能是否符合組織在可用性、合規性與維運上的要求。
+RustDesk 提供遠端存取元件與企業控管功能；這些功能能否滿足組織在可用性、合規與維運上的要求，取決於您的架構設計。
 
-## 資料掌控與合規性
+## 資料掌控與合規
 
-自架部署讓您能自行選擇會合伺服器、中繼伺服器、主控台，以及儲存裝置資料的所在位置與營運方。由於直連的工作階段仍會在端點之間直接傳輸，單靠伺服器所在位置並無法保證流量留在境內或符合 GDPR 合規要求。請完整記錄[資料流向與合規控管措施](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)。
+自架讓您選擇連線協調、中繼、主控台與儲存裝置資料的所在位置與營運者。直接連線的工作階段仍在端點之間傳輸，因此單靠伺服器位置，無法保證流量留在境內或符合 GDPR。請完整記錄[資料流向與合規控制](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)。
 
-除了地理位置之外，Server Pro 還內建了資料保護計畫實際會用到的控管功能：由於使用量遙測資料是由中繼伺服器收集，自行架設中繼伺服器可讓這些資料留在**您自己的**中繼伺服器上，而非落到 RustDesk 手中(授權檢查除外)；**內建的稽核日誌輪替機制**可限制連線、檔案傳輸、警示與主控台日誌的保留時間；**細緻的存取控制**與控制角色(Control Role)可落實最小權限原則；您也能直接或透過 REST API **刪除使用者、裝置與紀錄**，以因應資料刪除與保留請求。完整說明請見[遠端桌面資料主權與 GDPR](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)。
+Server Pro 會為連線、檔案傳輸、警報與主控台操作記錄[稽核日誌](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/audit-logs/)。將 **設定 > 其他 > 日誌保留（天）** 設為正數，就會自動刪除較舊的日誌（每小時清理一次）；設為 `0` 則無限期保留。您可以在主控台或透過 API 停用或刪除使用者與裝置，以處理資料刪除請求。需要事先規劃的對外連線流程包括：Pro 授權驗證、自訂用戶端建置服務、用戶端更新，以及您串接的任何外部身分提供者。
 
-這也是成本考量促使企業遷移時，一個較少被提及的原因。許多企業團隊不只是對價格感到不滿，更是在為一整套用不完的雲端服務與功能組合付費。自架部署則正好相反：您只佈建自己實際需要的資源，不必被迫透過他人的資料中心作為強制中介來付費使用。
+這也是成本驅動的遷移中較少被提到的原因。許多企業團隊不只是對價格不滿，而是在為一套用不完的雲端服務與功能組合付費。自架則正好相反：只準備您需要的資源，也不必把別人的資料中心當成強制的中間人來租用。
 
-## 擴展規模，免除按頻道計費的額外成本
+## 規模與同時連線授權
 
-企業部署失敗通常出在兩個面向：技術上限與價格上限。RustDesk 針對這兩者都提出了對策。
+企業部署會卡在兩個面向：技術上限與價格上限。RustDesk 兩者都有對策。
 
-在技術層面，RustDesk 針對數萬台裝置規模的部署提供了規劃指引；若目標規模更大，則需要進行工作負載驗證、容量規劃與調校。請將這些指引視為架構規劃的參考，而非放諸四海皆準、開箱即用的效能基準。
+技術面上，RustDesk 的公共伺服器於 2026 年 7 月 7 日，在一台 12 核心、32 GB 記憶體的主機上記錄到超過兩百萬個線上端點（內部遙測資料，並非經過稽核的效能基準，也不代表 Server Pro 的保證）。Server Pro 方面，[20 萬台裝置規劃指南](/zh-tw/blog/rustdesk-scale-50000-200000-devices-zh-tw)說明了試行時需要驗證的資料庫、主控台與中繼負載。
 
-RustDesk 採**按登入使用者數與受管理裝置數**計費，並可[在訂閱期間隨時升級](/zh-tw/blog/upgrade-rustdesk-license-mid-subscription-zh-tw)，按比例計費。標準方案的併發連線數不受限制；Customized V2 則會限制併發數並另行計價。請依照目前的方案矩陣，估算所有相關的數量。
+RustDesk 依**登入使用者與受管裝置**計費。標準方案包含無限同時連線；只有 [Customized V2](https://rustdesk.com/pricing#custom2) 授權固定數量。您可以隨時[在訂閱期間升級](/zh-tw/blog/upgrade-rustdesk-license-mid-subscription-zh-tw)：升級會把授權延長為自升級日起一整年，並折抵目前授權剩餘的已付價值。
 
 ## 管理員期待的 AD/LDAP 與存取控制
 
-企業級遠端存取必須能夠回答「誰可以連線到哪些機器，而且我們能否加以證明」這個問題。RustDesk 的付費方案**自 Basic 方案起即提供 LDAP/SSO(OIDC)**，讓您能依照現有的身分來源來配置技術人員的存取權限，不必再另外維護一份平行的使用者清單。
+企業遠端存取必須回答「誰能連到哪些機器，我們能不能證明」。RustDesk 付費方案**自 Basic 方案起提供 LDAP/SSO（OIDC）**，您可以依照現有的身分來源配置技術人員的存取權，不必另外維護一份平行的使用者清單。
 
-在存取權限的架構上，自架的網頁主控台提供**裝置群組與共用通訊錄，可依使用者進行存取控制**。自訂用戶端產生器與身分整合功能自 Basic 方案起提供；[請查看目前的方案內容](https://rustdesk.com/pricing)。
+[存取控制](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)透過使用者指派、裝置群組與跨群組規則，決定誰能連到哪些裝置。每台裝置隸屬於一個裝置群組，使用者群組與裝置群組的權限會累加。共用通訊錄為技術人員整理裝置項目，但它不是存取邊界。[控制角色](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/control-role/)限制技術人員在工作階段內能做的操作。自訂用戶端產生器同樣自 Basic 方案起提供；[請見方案比較](https://rustdesk.com/pricing)。
 
-## 大規模部署與自動化
+## 大量部署與自動化
 
-手動將遠端存取工具部署到數千台端點上根本不切實際，因此 RustDesk 支援標準的企業部署途徑。在 Windows 上，RustDesk 提供**MSI 安裝包**，可透過 `msiexec /qn` 進行無聲、無人值守的安裝，並可透過**群組原則(GPO)、Microsoft Intune、RMM，或任何封裝工具**推送安裝，同時提供命令列參數以設定安裝位置、捷徑與其他選項。搭配[自訂用戶端產生器](https://rustdesk.com/docs)使用，您部署出去的用戶端便能開箱即預先設定好連向您自己的伺服器與相關設定，不必再逐台機器手動設定。
+要手動把遠端存取工具裝到數千台端點上根本不可行，因此 RustDesk 支援標準的企業部署途徑。在 Windows 上，RustDesk 提供 **MSI 套件**，可透過 `msiexec /qn` 靜默、無人值守安裝，並經由**群組原則（GPO）、Microsoft Intune、RMM 或任何封裝工具**推送，也有命令列參數可設定安裝位置、捷徑與各項選項。搭配[自訂用戶端產生器](https://rustdesk.com/docs/zh-tw/self-host/client-configuration/#1-自定義客戶端生成器僅限-pro-版本基礎計劃或自定義計劃)，部署出去的用戶端一開始就預先設定好您的伺服器與各項設定，不必逐台設定。
 
-在大規模裝置維運方面，Server Pro 提供**REST API**，可用於批次裝置管理與腳本自動化 — 透過程式化的方式列舉裝置、自動化上線流程，並清除失效端點，不必在主控台裡一台一台手動點選。請在 [RustDesk 部署與 Server Pro 文件](https://rustdesk.com/docs/en/self-host/)中，確認您所使用版本目前的 MSI 參數、GPO/Intune 指引，以及 API 端點。
+裝置群維運請參考 [Windows MSI 說明](https://rustdesk.com/docs/zh-tw/client/windows/msi/)、[用戶端部署指南](https://rustdesk.com/docs/zh-tw/self-host/client-deployment/)與 [Server Pro API／CLI 工具](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/console/#python-cli-管理工具)。管理工具涵蓋使用者、裝置、群組、通訊錄、政策與稽核。請依工作需要限縮 API 權杖的權限，並在試行中測試上線、停用與刪除流程。
 
-## 企業級掌控，主導權在您手中
+## 推出前的驗收檢查
 
-當規模擴大時，這個論點會變得更加清晰：ID/中繼伺服器、主控台與儲存的資料，都存放在您自己的防護邊界之內，並與您的身分系統及政策緊密整合，核心架構不必假手任何供應商運行。這正是採購與資安團隊通常會要求的架構態勢。
+推出前，請驗證預期的使用者對裝置存取矩陣、身分復原、無人值守存取、用戶端更新、尖峰中繼容量、日誌保留與備份還原。這些驗收檢查，能讓自架基礎架構的掌控權落實為可實際營運的企業部署。
 
-## 承諾之前，先親自試用
+## 企業級掌控，依您的條件
 
-您可以**[不必透過業務通話](https://www.youtube.com/@rustdesk)**完成評估。有兩種途徑：
+在企業規模下，理由很直接：ID／中繼、主控台與儲存的資料都在您的網路邊界內，串接您的身分系統與存取政策，核心不由任何廠商營運。這正是採購與資安團隊要求的架構，而 RustDesk Server Pro 就是為此打造的。
 
-- **使用免費的開源社群版伺服器驗證架構。**它可以在您自己的網路上無限期執行 — 是一種低風險的方式，能向您的資安團隊證明自架模式確實可行。
-- **若要體驗 Pro 版功能 — 身分整合、存取控制、用戶端產生器 —**請至 [rustdesk.com/pricing](https://rustdesk.com/pricing) 查看目前的方案，然後發信至 [sales@rustdesk.com](mailto:sales@rustdesk.com)，詢問適用於您組織的評估方案。
+## 投入之前，先親自試用
 
-無論選擇哪一種途徑，建議都先在自己的環境中架設伺服器並完成驗證，再做出最終承諾。
+您可以[**不經業務洽談**](https://www.youtube.com/@rustdesk)就完成評估。有兩種途徑：
+
+- **用 Server OSS 驗證架構**。它免費，沒有授權費，也沒有使用期限，並在您自己的網路上執行——這是向資安團隊證明自架模式的低風險方式。
+- **若需要 Pro 功能（身分整合、存取控制、用戶端產生）**，請到 [rustdesk.com/pricing](https://rustdesk.com/pricing) 查看目前方案，再來信 [sales@rustdesk.com](mailto:sales@rustdesk.com) 洽詢適用於貴組織的評估條款。
+
+不論選哪一種，請先在自己的環境中架好伺服器並完成驗證，再做決定。

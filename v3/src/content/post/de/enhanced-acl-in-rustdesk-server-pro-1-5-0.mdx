@@ -1,27 +1,30 @@
 ---
 publishDate: 2025-02-19T00:00:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: de
 translationKey: enhanced-acl-in-rustdesk-server-pro-1-5-0
 title: Erweiterte ACL in RustDesk Server Pro 1.5.0
-excerpt: RustDesk Server Pro unterstützt jetzt zusätzlich zu Benutzergruppen benutzerspezifische ACLs und Gerätegruppen.
+excerpt: 'RustDesk Server Pro 1.5.0 führte Zugriffskontrolle auf Benutzerebene sowie Gerätegruppen zusätzlich zu Benutzergruppen ein.'
 image: ~/assets/images/blog/device-group.png
 category: Veröffentlichung
 slug: erweiterte-acl-in-rustdesk-server-pro-1-5-0
 tags: [RustDesk Server Pro, Veröffentlichung]
 ---
 
-RustDesk Server Pro 1.5.0 ist jetzt verfügbar.
+RustDesk Server Pro 1.5.0 ist jetzt verfügbar – mit Gerätegruppen und Zugriffskontrolle auf Benutzerebene.
 
 ## Änderungsprotokoll
 
-* Gerätegruppen und deren ACL hinzugefügt
-* Feingranulare ACLs auf Benutzerebene hinzugefügt
-* Strategien für Gerätegruppen hinzugefügt
-* Sortierbare Tabellen hinzugefügt
-* OIDC verknüpft bei einem E-Mail-Konflikt das alte Konto
-* `-` (Bindestrich) in IDs erlaubt
-* Fehler bei einem leeren OIDC-Namen behoben
+- Gerätegruppen und ihre Zugriffsregeln hinzugefügt
+- Zugriffskontrolle auf Benutzerebene hinzugefügt
+- Richtlinien für Gerätegruppen hinzugefügt
+- Sortierbare Tabellen hinzugefügt
+- OIDC-Anmeldung wird bei übereinstimmender E-Mail-Adresse mit einem bestehenden Konto verknüpft
+- `-` (Bindestrich) in Geräte-IDs erlaubt
+- Fehlgeschlagene Anmeldung behoben, wenn der OIDC-Name `null` ist
 
-Gerätegruppen sind eine neue Funktion in RustDesk Server Pro 1.5.0. Bisher setzte RustDesk zugunsten der Einfachheit ausschließlich auf Benutzergruppen zur Verwaltung von ACLs (Access Control Lists). In großen Organisationen wurde die Konfiguration von Zugriffsrechten dadurch jedoch umständlich. Deshalb führen wir in Version 1.5.0 Gerätegruppen und ACLs auf Benutzerebene ein. Geräte lassen sich nun gruppieren und Richtlinien auf diese Gruppen anwenden, was die Verwaltung großer Umgebungen deutlich verbessert.
+Gerätegruppen sind eine neue Funktion in RustDesk Server Pro 1.5.0. Bisher hat RustDesk der Einfachheit halber auf Gerätegruppen verzichtet und ACLs (Access Control Lists) ausschließlich über Benutzergruppen verwaltet. In großen Organisationen wurde die Konfiguration von Zugriffsrechten dadurch jedoch umständlich. Deshalb haben wir in Version 1.5.0 Gerätegruppen und ACLs auf Benutzerebene eingeführt. Geräte lassen sich nun gruppieren und Richtlinien auf diese Gruppen anwenden, was die Geräteverwaltung in großen Umgebungen deutlich verbessert.
 
-Zuvor unterstützte RustDesk Server Pro nur Benutzergruppen; nun werden auch Gerätegruppen unterstützt. Jedes Gerät kann zusätzlich zu seinem Benutzer genau einer Gerätegruppe zugeordnet werden. Damit lassen sich weitere Richtlinien umsetzen, etwa der Zugriff auf bestimmte Geräte einschränken oder erlauben. ACLs auf Benutzerebene ermöglichen außerdem individuelle Berechtigungen zusätzlich zu Benutzergruppen und bieten so mehr Flexibilität und Kontrolle.
+Zuvor unterstützte RustDesk Server Pro nur Benutzergruppen; mit diesem Update werden auch Gerätegruppen unterstützt. Jedes Gerät kann zusätzlich zu seiner Zuordnung zu einem Benutzer genau einer Gerätegruppe zugewiesen werden. Damit lassen sich weitere Richtlinien auf Basis von Gerätegruppen umsetzen, etwa den Zugriff auf bestimmte Geräte einschränken oder gewähren. Außerdem führt dieses Release ACLs auf Benutzerebene ein, mit denen Sie zusätzlich zu Benutzergruppen Berechtigungen für einzelne Benutzer festlegen können – für mehr Flexibilität und Kontrolle bei der Zugriffsverwaltung.
+
+**Update (2026):** Spätere Versionen von Server Pro haben die [Kontrollrolle](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/control-role/) für Berechtigungen innerhalb der Sitzung ergänzt. Berechtigungen aus Benutzer- und Gerätegruppen addieren sich, sodass jede der beiden Zugriff gewähren kann. Die aktuelle Konfiguration beschreibt die [Dokumentation zur Zugriffskontrolle](https://rustdesk.com/docs/de/self-host/rustdesk-server-pro/permissions/).

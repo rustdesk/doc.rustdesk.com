@@ -1,5 +1,6 @@
 ---
 publishDate: 2026-06-30T13:46:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: en
 translationKey: rustdesk-unknown-devices-antivirus-scanning
 draft: false
@@ -18,7 +19,7 @@ faq:
   - question: 'How do I stop unknown devices from registering entirely?'
     answer: 'If your device list is stable and you are not regularly adding machines, disable new-device registration in the console under Settings → Others → Disable new devices on web console. Nothing new can register after that, sandboxed or otherwise. If you still onboard devices regularly, use a deployment token instead so real rollouts keep working.'
   - question: 'How do I require a deployment token for new devices?'
-    answer: 'Enable Settings → Others → Require deployment for new devices in the web console, create an API token with the Devices permission set to Read and write, and have your install process run rustdesk --deploy --token <api_token> on each new device (with sudo on macOS and Linux). Only devices that present a valid token can register, so a sandboxed AV scan cannot add itself while your RMM or scripted rollout continues normally.'
+    answer: 'Enable Settings → Others → Require deployment for new devices, create an API token with Devices Read and write permission, and run rustdesk --deploy --token <api_token> during authorized installation (with sudo on macOS/Linux). A sandbox cannot use this enrollment path unless it also obtains the token. Keep tokens out of distributed clients and public scripts, restrict their permissions and rotate exposed tokens.'
   - question: 'How do I tell a benign AV scan from a real intrusion?'
     answer: 'A short-lived registration that lines up with a known security scan and shows no subsequent session may support the sandbox explanation. Unexpected sessions, repeated enrollment, use of valid credentials, or a configured client distributed outside its intended channel is not benign and warrants incident response.'
 
@@ -53,7 +54,7 @@ Two console settings solve this, and which one fits depends on whether you're st
 rustdesk --deploy --token <api_token>
 ```
 
-The exact flag can change between releases, so treat this as illustrative and verify the current syntax in the RustDesk Server Pro docs before scripting it. Only a device that presents a valid token gets added to your inventory. A sandboxed AV scan — which has no way to know or supply that token — fails to register, while your real rollout continues to work normally. This is also the mechanism MSPs use to enroll devices via RMM or a scripted install without a technician manually logging in on each machine.
+The [deployment documentation](https://rustdesk.com/docs/en/self-host/client-deployment/#explicit-deployment-for-new-devices) specifies this enrollment path. Requiring a token can block a sandbox that receives only the configured client, **provided the token is not included in that client or its installation materials**. A sandbox or attacker with a valid token can still enroll. Protect token distribution, use the narrowest required permissions and rotate a token if it may have leaked.
 
 **A related, narrower control:** if you'd rather leave registration open but simply keep unassigned devices out of view until you've reviewed them, there's also **Settings → Others → Only admin can access unassigned devices** — this doesn't stop registration, but it does mean regular users won't see or be able to touch anything that shows up before you've had a chance to look at it.
 

@@ -1,27 +1,30 @@
 ---
 publishDate: 2025-02-19T00:00:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: zh-tw
 translationKey: enhanced-acl-in-rustdesk-server-pro-1-5-0
 title: RustDesk Server Pro 1.5.0 強化 ACL
-excerpt: RustDesk Server Pro 現已在使用者群組之外支援使用者層級 ACL 與裝置群組。
+excerpt: 'RustDesk Server Pro 1.5.0 在使用者群組之外，新增使用者層級存取控制與裝置群組，讓大型組織更容易管理存取權限。'
 image: ~/assets/images/blog/device-group.png
 category: 發布
 slug: rustdesk-server-pro-1-5-0-qiang-hua-acl
 tags: [RustDesk Server Pro, 發布]
 ---
 
-RustDesk Server Pro 1.5.0 現已推出。
+RustDesk Server Pro 1.5.0 現已推出，新增裝置群組與使用者層級存取控制。
 
 ## 更新日誌
 
-* 新增裝置群組及其 ACL
-* 新增使用者層級細緻 ACL
-* 新增裝置群組策略
-* 新增可排序表格
-* 電子郵件衝突時，OIDC 會連結舊帳戶
-* ID 中允許使用 `-`（連字號）
-* 修正 OIDC 名稱為空時的失敗問題
+- 新增裝置群組及其存取控制規則
+- 新增使用者層級存取控制
+- 新增裝置群組策略
+- 新增可排序的表格
+- 電子郵件相符時，OIDC 登入會連結至現有帳號
+- 裝置 ID 允許使用 `-`（連字號）
+- 修正 OIDC 名稱為 `null` 時登入失敗的問題
 
-裝置群組是 RustDesk Server Pro 1.5.0 的新功能。過去 RustDesk 重視簡潔，未引入裝置群組，而只依賴使用者群組管理 ACL（存取控制清單）。但在大型組織中，這會使權限設定變得繁瑣。因此，我們在 1.5.0 加入裝置群組與使用者層級 ACL。現在可將裝置分組並套用群組策略，大幅改善大規模環境的裝置管理。
+裝置群組是 RustDesk Server Pro 1.5.0 的新功能。過去 RustDesk 以簡潔為優先，沒有引入裝置群組，只依賴使用者群組管理 ACL（存取控制清單）。然而在大型組織中，這種做法讓存取權限的設定變得繁瑣。因此，我們決定在 1.5.0 版加入裝置群組與使用者層級 ACL。這項強化讓您能將裝置分組並對這些群組套用策略，大幅改善大規模環境中的裝置管理。
 
-RustDesk Server Pro 原本僅支援使用者群組，這次更新後也支援裝置群組。每台裝置除了關聯一位使用者，也能指派至一個裝置群組。如此便可依裝置群組實施額外策略，例如限制或允許存取特定裝置。本版本也加入使用者層級 ACL，可在使用者群組之外為個別使用者設定權限，使存取管理更靈活、更可控。
+RustDesk Server Pro 原本只支援使用者群組，這次更新後也支援裝置群組。每台裝置除了與一位使用者關聯之外，還可以指派到一個裝置群組。如此一來，您就能依裝置群組實施額外的策略，例如限制或授予特定裝置的存取權。此外，本版本也加入使用者層級 ACL，除了使用者群組之外，還能為個別使用者設定權限，讓存取管理更有彈性、更好掌控。
+
+**更新（2026 年）：** 後續的 Server Pro 版本新增了用於工作階段內權限的[控制角色](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/control-role/)。使用者群組與裝置群組的權限會累加，因此任一方都可以授予存取權。目前的設定方式請參閱[存取控制文件](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)。

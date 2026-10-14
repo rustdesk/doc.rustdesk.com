@@ -1,5 +1,6 @@
 ---
 publishDate: 2026-07-08T11:04:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: en
 translationKey: rustdesk-unattended-access-setup
 draft: false
@@ -14,11 +15,11 @@ tags:
 author: RustDesk Team
 faq:
   - question: 'How do I set up unattended access in RustDesk?'
-    answer: "Two things are required: set a permanent password under Settings, Security so you don't need someone to approve each connection, and install RustDesk as a system service so it runs before login and survives logout. With both in place you can reach the machine any time, including at the login screen, without a person present."
+    answer: 'Two steps: set a permanent password in Settings → Security, and install RustDesk so its system service starts with the machine. The default approval mode already accepts the permanent password; macOS also needs Screen Recording and Accessibility permissions. With both steps done, you can reach the online machine at any time, including at the Windows login screen, without anyone present.'
   - question: 'Why does my RustDesk connection drop when the user logs out?'
-    answer: 'That happens when RustDesk is run as a portable executable instead of installed as a service. A portable session ends when the user logs out or a UAC prompt appears. Install RustDesk (rather than running the portable executable) and keep its service enabled — the installed service starts with the system — so it runs in the background independent of any logged-in user, which is what makes unattended access reliable.'
+    answer: 'Because RustDesk is running as a portable executable instead of an installed service. A portable process lives inside the user session, so it stops at logout, and without elevation it cannot operate the Windows UAC secure desktop. Install RustDesk and keep its system service enabled; the service runs independently of any logged-in user. Portable elevation remains available for attended Windows support.'
   - question: 'Is unattended access with a permanent password safe?'
-    answer: 'It can be deployed safely when configured well. Use a long, unique permanent password, restrict who can connect, enable available identity and access controls, patch clients, and review logs. Self-hosting controls server-side services and stored deployment data; the endpoint still protects its local credentials.'
+    answer: 'Yes, when it is configured well. Use a long, unique permanent password that differs from the operating-system login, enable connection 2FA on the controlled device, and restrict who can connect with an IP or ID allowlist and, on Server Pro, Access Control. Keep clients patched and review logs. Self-hosting puts the rendezvous, relay and console on servers you run.'
   - question: 'Can I deploy RustDesk unattended access to many computers at once?'
     answer: "Yes. On Basic and higher self-hosted plans, the Custom Client Generator produces a pre-configured installer with your server address, key, and settings baked in, so end users don't type anything. Push it with your existing deployment tooling and each device installs the service and registers against your server automatically."
   - question: 'Does unattended access work at the Windows login screen?'
@@ -29,11 +30,11 @@ metadata:
   keywords: 'RustDesk unattended access, RustDesk permanent password, RustDesk start on boot, RustDesk service install, RustDesk unattended setup, RustDesk deploy at scale, unattended remote access'
 ---
 
-Unattended access means reaching a computer when no one is sitting in front of it — a server in a rack, a kiosk, a family member's PC across the country. RustDesk does this well, but only if you configure two things correctly: a **permanent password** so no one has to approve each connection, and RustDesk running **as a service** so it's available before login and after logout. This guide covers both, plus how to roll it out across a fleet.
+Unattended access means reaching a computer when no one is sitting in front of it — a server in a rack, a kiosk, a family member's PC across the country. RustDesk does this well once two things are in place: a **permanent password**, so no one has to approve each connection, and RustDesk running **as a service**, so it's available before login and after logout. This guide covers both, the per-platform permissions, and how to roll it out across a fleet.
 
 ## The short answer
 
-Set a **permanent password** (Settings → Security) and **install RustDesk as a system service** — the installed service starts with the machine. The password removes the need for a human to accept the prompt; the service makes RustDesk run independently of any logged-in user, so you can connect at any time — including at the login screen. To deploy at scale, generate a pre-configured client so every machine installs itself against your server automatically.
+Set a **permanent password** (Settings → Security) and **install RustDesk as a system service**, which starts with the machine. The default approval mode already accepts the permanent password, so no one has to click accept; the service runs independently of any logged-in user, so you can connect at any time, including at the Windows login screen. macOS also needs Screen Recording and Accessibility permissions. To deploy at scale, generate a pre-configured client so every machine installs itself against your server.
 
 ## Step 1: Set a permanent password
 
@@ -43,25 +44,27 @@ By default, RustDesk shows a rotating one-time password that a person on the rem
 2. Go to **Settings → Security** (older builds: the password area on the main screen).
 3. Choose **Set permanent password** and enter a strong, unique value.
 
+The defaults already accept that password: sessions are accepted via both password and click, and both password types are allowed. If someone changed the approval mode to click-only or the password type to one-time-only, switch back to **Accept sessions via password** (or **via both**) and **Use permanent password** (or **Use both passwords**). For managed deployments, the matching [config keys](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#approve-mode) are `approve-mode` (default `password-click`) and `verification-method` (default `use-both-passwords`).
+
 The [RustDesk client documentation](https://rustdesk.com/docs/en/client/) describes this as the core of unattended access. One rule worth emphasizing: **do not reuse the operating-system login password.** Use a dedicated, high-entropy password for RustDesk so a leak of one credential doesn't compromise the other.
 
 ## Step 2: Install as a service and start on boot
 
-This is the step people miss. If you just run the portable `.exe` or `.app`, the session **ends the moment the user logs out or a UAC/permission prompt appears** — because that process only exists inside the user's session. To be truly unattended, RustDesk must run as a background **system service**.
+This is the step people miss. A portable `.exe` or `.app` runs inside the user's session, so it stops when the user logs out, and on Windows it cannot operate the UAC secure desktop without elevation ([portable elevation](https://rustdesk.com/docs/en/client/windows/windows-portable-elevation/) exists for attended support). To be truly unattended, RustDesk must run as a background **system service**.
 
 - Run the RustDesk **installer** (not the portable build) and complete installation.
 - In **Settings → General**, make sure the **Service** is running — use **Start** if it shows as stopped. Once installed, the service starts with the machine automatically.
 
-Once RustDesk runs as a service, it loads before anyone logs in, which is what lets you connect to the **login screen**, authenticate remotely, and even reboot and reconnect without a person present. Community write-ups on [proper Windows service setup](https://www.smolkin.org/blog/2026/03/rustdesk-unattended-service-windows.html) stress the same distinction: portable equals attended-only; installed service equals unattended.
+Once RustDesk runs as a service, it loads before anyone logs in, which is what lets you connect to the **login screen**, authenticate remotely, and even reboot and reconnect without a person present. macOS and Linux add their own screen-capture and display-session requirements, covered below.
 
 ## Per-platform notes
 
-| Platform | What to do                                                  | Watch out for                                                                                                                 |
-| -------- | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Windows  | Install; keep the service running (starts with the machine) | Portable exe drops on logout/UAC; use the installer                                                                           |
-| macOS    | Install, set permanent password, grant permissions          | Screen Recording and Accessibility must be granted; login-screen capture needs the helper installed                           |
-| Linux    | Install the service package                                 | Wayland needs an active session; for pre-login use the headless virtual-display setup, or X11 where a distro still offers one |
-| Android  | Set permanent password; enable capture                      | Screen must be awake; grant the screen-capture (MediaProjection) consent and input permission                                 |
+| Platform | What to do                                                  | Watch out for                                                                                                                                              |
+| -------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Windows  | Install; keep the service running (starts with the machine) | Portable exe stops at logout and can't operate UAC prompts without elevation; use the installer                                                            |
+| macOS    | Install, set permanent password, grant permissions          | Screen Recording and Accessibility must be granted; login-screen capture needs the helper installed                                                        |
+| Linux    | Install the service package                                 | Standard Wayland builds capture the logged-in session; the [unattended preview](/blog/unattended-remote-access-wayland) adds login-screen access (x86_64 Debian/Ubuntu) |
+| Android  | Set permanent password; enable capture                      | Screen must be awake; grant the screen-capture (MediaProjection) consent and input permission                                                              |
 
 ### Windows
 
@@ -73,21 +76,21 @@ macOS gates screen capture and input behind permissions. After installing, open 
 
 ### Linux
 
-Install RustDesk so its service component runs at boot. For a machine that sits at the login greeter, Wayland can't capture the greeter yet — a Wayland design (not a RustDesk limit) that RustDesk is actively working to close ([PR #15420](https://github.com/rustdesk/rustdesk/pull/15420)). On a headless box, use the virtual-display configuration; on a desktop, an X11/Xorg session still handles it where a distribution provides one, though several are moving to Wayland-only. See [RustDesk for Linux](/blog/rustdesk-for-linux) for the details.
+Install RustDesk so its service runs at boot. Standard RustDesk builds capture Wayland desktops, including multiple monitors since 1.4.3, through PipeWire and `xdg-desktop-portal` in a logged-in session. For a machine that sits at the login greeter, the separate [Wayland unattended preview](/blog/unattended-remote-access-wayland) for **x86_64 Debian/Ubuntu-based systems** adds unattended access and login-screen access after a reboot. Where a distribution still offers one, an X11 login greeter is another option; on a headless box, add a dummy plug or virtual display. See [RustDesk for Linux](/blog/rustdesk-for-linux) for the details.
 
 ## Step 3: Deploy at scale with a pre-configured client
 
 Configuring one machine by hand is fine. Configuring fifty isn't. On **Basic and higher self-hosted plans**, the **Custom Client Generator** in the web console builds an installer with your **server address, public key, and settings pre-baked**, so end users type nothing. Combined with your existing deployment tool (Group Policy, Intune, an MSP RMM, a shell script), each device installs the service and registers against _your_ server on first run.
 
-This is where self-hosting pays off for teams: you get an [unattended fleet you fully control](/blog/rustdesk-for-msps), with no per-seat cloud metering deciding how many endpoints you're "allowed" to reach. Set up the generator via the [web console on port 21114](https://rustdesk.com/docs). Note that RustDesk is licensed per **login-user and managed-device**, not per concurrent session, so budget by how many machines and admins you have — see [what counts as a managed device](/blog/what-counts-as-a-managed-device).
+This is where self-hosting pays off for teams: the whole fleet registers against ID/rendezvous and relay servers you run (see [RustDesk for MSPs](/blog/rustdesk-for-msps)). Server Pro plans license **login users and managed devices**. Standard plans include unlimited concurrent connections; only [Customized V2](https://rustdesk.com/pricing#custom2) licenses a set number of concurrent connections. Budget by how many machines and admins you have — see [what counts as a managed device](/blog/what-counts-as-a-managed-device). Serve the web console [over HTTPS](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually) behind a reverse proxy.
 
 ## Lock it down
 
 Unattended access is a standing door into a machine, so treat the credentials seriously:
 
 - **Strong, unique permanent password**, rotated periodically.
-- **Two-factor authentication** and, on Pro, **access controls** so only authorized accounts can connect. Our write-up on [per-user access control and device groups](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/) covers scoping who reaches what.
-- **Self-host the server-side services** when you need control of rendezvous, relay, console, and stored deployment data. Endpoint credentials remain an endpoint-security responsibility. Because RustDesk is open source under AGPL, its authentication implementation can be reviewed.
+- **Connection 2FA** on the controlled device and, on Server Pro, [Access Control](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/), which decides who can reach which devices through user and device-group rules (user-group and device-group permissions are cumulative). The shared address book only organizes entries; it is not an access boundary. [Control Role](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/control-role/) limits what a technician can do inside a session.
+- **Self-host the server**, so the rendezvous, relay, console and stored management data run on infrastructure you choose. The RustDesk client and Server OSS are AGPL-licensed, so their authentication code can be reviewed; Server Pro is commercial, proprietary self-hosted server software.
 
 ## Unattended access you actually control
 

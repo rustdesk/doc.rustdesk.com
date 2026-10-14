@@ -1,10 +1,11 @@
 ---
 publishDate: 2026-07-06T12:36:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: en
 translationKey: rustdesk-and-remote-access-scams
 draft: false
 title: 'RustDesk and Remote Access Scams: What We Are Doing'
-excerpt: 'Why RustDesk left Google Play, added warnings and public-server login requirements, and how users can harden controlled devices with passwords, 2FA, and IP allowlists.'
+excerpt: 'Why RustDesk left Google Play, added warnings and public-server login requirements, and how users can harden controlled devices with passwords, 2FA, and IP and ID allowlists.'
 image: ~/assets/images/blog/rustdesk-and-remote-access-scams-og.webp
 category: Security
 tags:
@@ -20,10 +21,10 @@ faq:
   - question: 'Why does the RustDesk public server require login?'
     answer: 'RustDesk says controller login is currently required on its public server because of ongoing scam and botnet abuse. Login is free through supported third-party identity providers. The public server is intended for demonstration and testing rather than production or sensitive work; self-hosting remains available for organizations that need to operate their own infrastructure and policies.'
   - question: 'How should I protect a device that accepts RustDesk connections?'
-    answer: 'Set a strong, unique permanent password on the controlled device, enable the client’s TOTP connection 2FA, and use its IP allowlist when your controller addresses or CIDR ranges are predictable. Keep trusted-device exceptions narrow. These layers reduce password and network-origin risks, but they cannot protect someone who deliberately gives a scammer the password, current 2FA code, or manual approval.'
+    answer: 'Set a strong, unique permanent password on the controlled device, enable the client’s TOTP connection 2FA, and use its IP allowlist when your controller addresses or CIDR ranges are predictable. From RustDesk 1.5.0, an ID allowlist can also limit which RustDesk IDs may connect. Keep trusted-device exceptions narrow. These layers reduce password and network-origin risks, but they cannot protect someone who deliberately gives a scammer the password, current 2FA code, or manual approval.'
 metadata:
-  description: 'How RustDesk responds to remote-access scams: public warnings, Google Play withdrawal, public-server login, controlled-device 2FA, and CIDR IP allowlists.'
-  keywords: 'RustDesk scam, is RustDesk a scam, RustDesk Google Play, RustDesk login required, RustDesk 2FA, RustDesk IP whitelist, remote access scam prevention'
+  description: 'How RustDesk responds to remote-access scams: public warnings, Google Play withdrawal, public-server login, controlled-device 2FA, and IP and ID allowlists.'
+  keywords: 'RustDesk scam, is RustDesk a scam, RustDesk Google Play, RustDesk login required, RustDesk 2FA, RustDesk IP whitelist, RustDesk ID whitelist, remote access scam prevention'
 ---
 
 RustDesk is legitimate open-source remote-access software, but legitimate software can be abused. A scammer can call a victim, invent an urgent problem, and persuade that person to install a remote-control tool and grant access. RustDesk is not exempt from that risk, and encryption cannot fix consent obtained through deception.
@@ -101,17 +102,38 @@ The setting accepts individual IPv4 or IPv6 addresses and CIDR ranges. CIDR comb
 - `2001:db8::10/128`: one IPv6 address.
 - `2001:db8:1234::/64`: one IPv6 subnet.
 
-These are documentation-only example ranges; do not copy them unchanged. Enter your actual controller addresses or networks. Multiple entries may be separated by commas, semicolons, spaces, or new lines. RustDesk documents the setting in its [advanced client configuration reference](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#whitelist), and the [controlled-side enforcement is visible in source](https://github.com/rustdesk/rustdesk/blob/master/src/server/connection.rs#L1347-L1374).
+These are documentation-only example ranges; do not copy them unchanged. Enter your actual controller addresses or networks. Multiple entries may be separated by commas, semicolons, spaces, or new lines. RustDesk documents the setting in its [advanced client configuration reference](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#whitelist), and the [controlled-side enforcement is visible in source](https://github.com/rustdesk/rustdesk/blob/1.5.0/src/server/connection.rs#L1410-L1437).
 
 Use the smallest practical ranges. Fixed office egress addresses and known VPN ranges are good candidates. Dynamic residential addresses and roaming controllers are not. Confirm which source address RustDesk sees in your NAT, VPN, direct, or relay topology, and test the new rule from another session before closing the working session. A wrong address or CIDR can lock out legitimate support staff.
 
 An allowlist narrows where a connection may originate. It does not replace a password or 2FA, and it cannot stop a malicious controller already operating from an allowed network.
 
+### 4. Limit which RustDesk IDs can connect
+
+From RustDesk 1.5.0, a controlled device can also accept connections only from listed RustDesk IDs. The interface calls this **ID whitelisting**. It suits support teams whose network addresses change but whose controlling devices are known, where an IP allowlist is impractical.
+
+Configure it at:
+
+- **Desktop controlled device:** **Settings → Security → Security → Use ID whitelisting**
+- **Mobile controlled device:** **Settings → Share screen → Use ID whitelisting**
+
+Enter the RustDesk IDs of the devices allowed to control this one. As with the IP list, entries may be separated by commas, semicolons, spaces, or new lines. Matching ignores case, and two wildcards are supported:
+
+- `123456789`: one ID.
+- `12345678?`: `?` matches exactly one character, so this allows any nine-character ID that begins with `12345678`.
+- `support-*`: `*` matches any number of characters, which helps when your controllers use custom IDs with a shared prefix.
+
+These are example values too. The setting appears as `id-whitelist` in the [advanced client configuration reference](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#id-whitelist), so administrators can preset it in a custom client, and [its enforcement is visible in source](https://github.com/rustdesk/rustdesk/blob/1.5.0/src/server/connection.rs#L1439-L1467).
+
+The check runs when the controller sends its login request, before the password or 2FA code is checked. It also applies when the two sides of a session switch roles, which otherwise needs no password. If an IP allowlist is set as well, a connection must pass both. A rejected controller sees "Your ID is blocked by the peer", and attempts are rate-limited, so the list cannot be probed quickly for allowed IDs.
+
+Know its limit. The ID is reported by the connecting client. It is not proof of identity, and a modified client can claim an allowed ID; RustDesk shows this caveat next to the setting. What the list does is turn away ordinary clients with unlisted IDs before they reach the password prompt. On a device where an administrator has preset the list, a caller who talks the user into reading out the ID and password still cannot connect from an unlisted ID with the standard client. Keep a strong password and 2FA in place, and test the list from another session before closing a working one: a typo can lock out legitimate support staff.
+
 ## What these measures cannot do
 
-Warnings, store withdrawal, login requirements, strong passwords, 2FA, and IP allowlists each remove part of an attacker's opportunity. None removes the central social-engineering risk: a person can still be persuaded to approve access or disclose every factor.
+Warnings, store withdrawal, login requirements, strong passwords, 2FA, and IP and ID allowlists each remove part of an attacker's opportunity. None removes the central social-engineering risk: a person can still be persuaded to approve access or disclose every factor.
 
-Self-hosting does not make abuse impossible either. It gives an organization control of its RustDesk server and policies, but a scammer can also operate private infrastructure or distribute a modified client. RustDesk's public-server restrictions should not be mistaken for protection that automatically extends to every self-hosted deployment.
+Self-hosting does not make abuse impossible either. It gives an organization control of its RustDesk server and policies, but a scammer can also operate private infrastructure or distribute a modified client. RustDesk's public-server restrictions apply to the public server only; a self-hosted deployment runs under whatever policies its operator sets.
 
 If an unknown caller tells you to install RustDesk, start its service, share a password, disclose a 2FA code, or open a banking site, stop. Our vendor-neutral guide to [spotting, preventing, and recovering from remote-desktop scams](/blog/avoid-remote-desktop-scams) explains the warning signs and what to do if access has already been granted.
 

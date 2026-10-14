@@ -1,10 +1,11 @@
 ---
 publishDate: 2026-07-03T09:34:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: 'fr'
 translationKey: teamviewer-commercial-use-detected
 draft: false
 title: 'Utilisation commerciale détectée sur TeamViewer : comment résoudre le problème'
-excerpt: "Votre compte TeamViewer a été signalé pour utilisation commerciale ? Voici la procédure officielle de contestation, ce qui constitue réellement une utilisation commerciale, et la solution auto-hébergée pour l'éviter."
+excerpt: "Votre compte TeamViewer a été signalé pour utilisation commerciale ? Voici la procédure officielle de contestation, ce qui constitue réellement une utilisation commerciale, et une alternative sans ce type de détecteur."
 image: ~/assets/images/blog/teamviewer-commercial-use-detected-og.webp
 category: 'Dépannage'
 tags: ['TeamViewer', 'Dépannage', 'Licences']
@@ -16,14 +17,14 @@ faq:
   - question: "Qu'est-ce qui constitue une utilisation commerciale sur TeamViewer ?"
     answer: "Selon les définitions mêmes de TeamViewer, l'utilisation commerciale comprend le fait de fournir une assistance à des clients, de travailler depuis son domicile (même simplement pour consulter ses e-mails professionnels), toute connexion entrante ou sortante dans un cadre commercial, l'administration ou la surveillance de serveurs, et un travail salarié au sein d'une organisation à but non lucratif. L'utilisation personnelle consiste à aider sa famille et ses amis ou à se connecter à ses propres appareils non-serveurs."
   - question: 'La demande de réinitialisation fonctionnera-t-elle si mon usage est réellement commercial ?'
-    answer: "Non. Une réinitialisation ne lève le signalement que s'il a été déclenché par erreur ; si votre usage réel est commercial, TeamViewer l'identifiera correctement, et la solution durable consiste à utiliser un logiciel dont la licence couvre cette activité."
+    answer: "Non. Une réinitialisation ne lève le signalement que s'il a été déclenché par erreur ; si votre usage réel est commercial, TeamViewer l'identifiera correctement, et la solution durable est une licence TeamViewer payante ou un autre outil, comme RustDesk auto-hébergé, dont la licence couvre cette activité. TeamViewer peut aussi vous proposer de signer une déclaration d'usage privé."
   - question: "RustDesk dispose-t-il d'un détecteur d'utilisation commerciale ?"
-    answer: "Non. Le serveur communautaire de RustDesk peut être auto-hébergé sans classificateur d'utilisation commerciale, tandis que Server Pro est licencié en fonction des utilisateurs connectés et des appareils gérés, avec des connexions simultanées illimitées sur les offres standard et un quota défini sur Customized V2."
+    answer: "Non. RustDesk Server OSS, le serveur communautaire gratuit, ne comporte aucun détecteur d'utilisation commerciale. RustDesk Server Pro est licencié selon les comptes utilisateurs et les appareils gérés, et n'est limité que par l'offre achetée, avec des connexions simultanées illimitées sur les offres standard ; seule Customized V2 licencie un nombre défini de connexions simultanées."
   - question: "Puis-je éviter le signalement avec des scripts de réinitialisation d'identifiant ou en supprimant des fichiers de configuration ?"
-    answer: "Non. N'utilisez pas de scripts non officiels de réinitialisation d'identifiant ni ne supprimez de fichiers de configuration pour échapper à la classification ; cela ne change en rien les conditions de licence et peut créer des problèmes supplémentaires de sécurité ou de support."
+    answer: "Non. N'utilisez pas de scripts non officiels de réinitialisation d'identifiant et ne supprimez pas de fichiers de configuration pour échapper à la classification : cela ne change en rien les conditions de licence et peut créer des problèmes supplémentaires de sécurité ou de support. Si le signalement est erroné, utilisez la demande officielle sur teamviewer.com/reset ; si l'usage est commercial, prenez une licence."
 
 metadata:
-  description: "Votre compte a été signalé pour « utilisation commerciale détectée » sur TeamViewer ? Voici la procédure officielle de réinitialisation, ce qui constitue une utilisation commerciale, et comment RustDesk auto-hébergé permet de l'éviter."
+  description: "Alerte « utilisation commerciale détectée » sur TeamViewer ? La procédure officielle, ce qui compte comme usage commercial, et RustDesk, sans ce détecteur."
   keywords: 'utilisation commerciale détectée TeamViewer, réinitialisation utilisation commerciale TeamViewer, contestation utilisation commerciale TeamViewer, TeamViewer usage personnel signalé'
 ---
 
@@ -59,7 +60,7 @@ Si vous faites l'une de ces choses, la procédure de contestation vous identifie
 
 L'offre gratuite de TeamViewer est concédée sous licence pour un usage personnel uniquement, et le produit peut classer une utilisation comme commerciale. Cette classification peut être erronée, c'est pourquoi TeamViewer propose la procédure de réinitialisation décrite ci-dessus. TeamViewer ne publie aucune formule sur laquelle les utilisateurs pourraient s'appuyer ; ne considérez donc pas les nombres de connexions, la durée des sessions ou le total d'appareils mentionnés dans des articles tiers comme des seuils officiels.
 
-Pour quiconque effectue un travail d'assistance commercial, il ne s'agit pas d'un bug à contourner, mais du produit qui applique ses conditions de licence. Comparez les offres payantes actuelles ou les alternatives plutôt que de vous fier à des anecdotes de renouvellement rapportées par des particuliers.
+Pour quiconque effectue un travail d'assistance commercial, il ne s'agit pas d'un bug à contourner, mais du produit qui applique ses conditions de licence. Comparez les offres payantes actuelles ou les alternatives plutôt que de vous fier à des anecdotes privées de renouvellement.
 
 Donc, si la contestation ne s'applique pas à votre cas — parce que votre usage est réellement commercial —, la vraie question devient : payer, ou passer à une solution totalement dépourvue de détecteur d'utilisation commerciale ?
 
@@ -69,20 +70,20 @@ Lorsque l'usage est réellement commercial, il n'existe aucun contournement lég
 
 | Option                        | Cas d'usage idéal                                                                                 | Compromis                                                                                                       |
 | ----------------------------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Acheter TeamViewer            | Vous souhaitez conserver le flux de travail actuel et le service géré                             | Abonnement fournisseur continu, conditions et bouquet de fonctionnalités                                        |
-| Choisir un autre SaaS géré    | Vous ne voulez pas gérer de serveur, mais souhaitez une offre commerciale différente              | Les sessions et l'administration restent gérées par le fournisseur                                              |
-| Piloter un outil auto-hébergé | Vous souhaitez gérer vous-même l'identifiant, le relais, la console et les données de déploiement | Votre équipe assume l'hébergement, les correctifs, les certificats, la supervision et la reprise après incident |
+| Acheter TeamViewer            | Vous souhaitez conserver le flux de travail actuel et le service géré                             | Dépendance durable à l'offre, aux conditions et au découpage fonctionnel de l'éditeur                           |
+| Choisir un autre SaaS géré    | Vous ne voulez pas gérer de serveur, mais souhaitez une offre commerciale différente              | La coordination et l'administration restent exploitées par l'éditeur ; le média peut être direct ou relayé      |
+| Piloter un outil auto-hébergé | Vous souhaitez exploiter vous-même le serveur ID, le relais, la console et les données de déploiement | Votre équipe assume l'hébergement, les correctifs, les certificats, la supervision et la reprise après incident |
 
-RustDesk se situe dans la troisième catégorie : vous auto-hébergez vous-même le serveur communautaire, sans aucun classificateur d'utilisation commerciale qui surveille les sessions — [pourquoi l'auto-hébergement supprime ce détecteur](/fr/blog/pourquoi-heberger-vous-meme-votre-logiciel-de-bureau-a-distance) — tandis que Server Pro est licencié en fonction des utilisateurs connectés et des appareils gérés, avec un quota défini sur [Customized V2](https://rustdesk.com/pricing#custom2).
+RustDesk se situe dans la catégorie auto-hébergée. Le client RustDesk et RustDesk Server OSS (le serveur communautaire gratuit) sont sous licence AGPL, et Server OSS ne comporte aucun détecteur d'utilisation commerciale : sa licence en permet l'usage gratuit, à titre personnel comme professionnel. Server Pro est un logiciel serveur auto-hébergé, commercial et propriétaire, licencié selon les comptes utilisateurs et les appareils gérés et limité uniquement par l'offre achetée. Les offres standard incluent des connexions simultanées illimitées ; seule [Customized V2](https://rustdesk.com/pricing#custom2) licencie un nombre défini de connexions.
 
 ## Un chemin de migration sûr
 
-Ne désinstallez pas TeamViewer dès la première étape. Déployez un serveur RustDesk de test et validez les flux de travail qui sous-tendent votre usage commercial. Comparez ensuite le coût d'exploitation avec le devis TeamViewer actuel. Le [guide de l'alternative auto-hébergée à TeamViewer](/fr/blog/la-meilleure-alternative-a-teamviewer-en-auto-hebergement) couvre l'intégralité de la migration et la comparaison des fonctionnalités. Si la réinitialisation est approuvée, votre accès gratuit à usage personnel se poursuit. Si une partie de votre usage est commerciale, la licence est la solution durable — que ce soit l'offre payante de TeamViewer ou un outil dont la licence correspond réellement à votre activité.
+Ne désinstallez pas TeamViewer dès la première étape. Déployez un serveur RustDesk de test et validez les flux de travail qui sous-tendent votre usage commercial. Comparez ensuite le coût d'exploitation avec le devis TeamViewer actuel. Le [guide de l'alternative auto-hébergée à TeamViewer et AnyDesk](/fr/blog/la-meilleure-alternative-a-teamviewer-en-auto-hebergement) couvre l'intégralité de la migration et la comparaison des fonctionnalités. Si la réinitialisation est approuvée, votre accès gratuit à usage personnel se poursuit. Si une partie de votre usage est commerciale, la licence est la solution durable — que ce soit l'offre payante de TeamViewer ou un outil dont la licence correspond réellement à votre activité.
 
 ## Que faire ensuite
 
 - Soumettez la demande officielle de réinitialisation si la classification est réellement erronée.
 - Si l'usage est commercial, comparez les devis écrits actuels et les conditions de licence.
-- Si l'auto-hébergement est une exigence, testez le serveur communautaire gratuit avant d'évaluer les fonctionnalités et les offres de Server Pro sur [rustdesk.com/pricing](https://rustdesk.com/pricing).
+- Si l'auto-hébergement est une exigence, testez Server OSS avant d'évaluer les fonctionnalités et les offres de Server Pro sur [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
 Et laissez tomber les scripts de réinitialisation d'identifiant et les suppressions de fichiers de configuration qui circulent sur les forums : ils laissent les conditions de licence de TeamViewer exactement là où elles étaient et ont tendance à créer leurs propres problèmes de sécurité ou de support.

@@ -1,10 +1,11 @@
 ---
 publishDate: 2026-07-06T08:31:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: en
 translationKey: rustdesk-connected-waiting-for-image
 draft: false
 title: 'RustDesk Connected Waiting for Image: Full Fix Guide'
-excerpt: '"Connected, waiting for image" means the remote screen isn''t being captured. Here''s every cause — headless machines, sleep, codecs, drivers — and its fix.'
+excerpt: 'Diagnose RustDesk “Connected, waiting for image”: display availability, capture permissions, codecs, GPU drivers, Wayland builds and relay connectivity.'
 image: ~/assets/images/blog/rustdesk-connected-waiting-for-image-og.webp
 category: Troubleshooting
 tags:
@@ -13,30 +14,30 @@ tags:
 author: RustDesk Team
 faq:
   - question: 'Why does RustDesk say "Connected, waiting for image"?'
-    answer: "The session established successfully, but the remote machine is not producing a screen image to send. The most common reason is that there is no active display to capture — a headless server with no monitor, a screen that has gone to sleep or locked, or a display the OS won't let RustDesk record. Fix the capture source and the image appears."
+    answer: 'The session connected but no image is arriving. The most commonly reported cause is that the remote machine has nothing to capture: no monitor, a sleeping display, or missing screen-recording permission. Attach a monitor, HDMI dummy plug or virtual display, wake the screen, grant permission, then try another codec such as VP9.'
   - question: 'How do I fix RustDesk waiting for image on a headless computer?'
-    answer: 'A machine with no monitor has no framebuffer to capture, so RustDesk has nothing to send. Attach a real monitor or plug in an inexpensive HDMI dummy plug that makes the GPU think a display is connected. Waking or keeping the display awake resolves most cases.'
+    answer: 'Give the headless computer a display to capture. Attach a monitor or an inexpensive HDMI dummy plug, which makes the GPU behave as if a display is connected, or configure a virtual display. Then keep the display awake, confirm screen-capture permission, and switch to a software codec such as VP9 if the image still does not appear.'
   - question: 'Does changing the video codec fix the black screen?'
     answer: 'Often, yes. In the remote session toolbar or settings you can switch codecs — VP8, VP9, AV1, or H.264/H.265 where hardware supports them. A codec the remote hardware cannot encode will show a blank or frozen image, and falling back to a software codec such as VP9 usually restores the picture.'
   - question: 'RustDesk shows the image on one PC but not another. Why?'
-    answer: "That points to something local on the failing machine — an asleep or absent display, missing screen-recording permission on macOS, an outdated GPU driver, a hardware-acceleration conflict, or a codec the hardware can't handle. Work through the per-cause fixes in this guide on the machine that fails, not the one that works."
+    answer: "A difference between two PCs points to something local on the failing machine: an asleep or absent display, missing screen-recording permission on macOS, an outdated GPU driver, a hardware-acceleration conflict, or a codec the hardware can't handle. Apply the per-cause fixes on the machine that fails, not the one that works."
   - question: 'Could my self-hosted server cause "waiting for image"?'
-    answer: 'Usually the session is already connected by the time you see this message, so the server is doing its job. But an overloaded public relay or a blocked relay port can stall the video stream. For the standard server path, allow TCP 21115-21117 and UDP 21116; allow TCP 21118-21119 only if you use WebSocket clients. Consider self-hosting the relay for more consistent throughput.'
+    answer: 'Usually not. By the time RustDesk shows "Connected, waiting for image", the ID server has already done its job. A blocked relay port or an overloaded relay can still stall the video stream. On a self-hosted server, allow TCP 21115-21117 and UDP 21116, and allow TCP 21118-21119 only if you use WebSocket clients.'
 
 metadata:
   description: '"RustDesk connected, waiting for image"? Fix the black screen: headless displays, sleep/lock, video codecs, GPU drivers, Wayland, and firewall ports.'
   keywords: 'RustDesk connected waiting for image, RustDesk black screen, RustDesk waiting for image fix, RustDesk no image, RustDesk HDMI dummy plug, RustDesk video codec, RustDesk hardware acceleration'
 ---
 
-If RustDesk says **"Connected, waiting for image"** and then shows a black screen, the good news is that the hard part already worked: the two ends found each other and the session is established. What's missing is the _picture_. Something on the remote machine isn't producing a screen image to send. This guide walks through every known cause, from the single most common one to the edge cases, with a concrete fix for each.
+If RustDesk says **"Connected, waiting for image"** and then shows a black screen, the hard part already worked: the two ends found each other and the session is established. What's missing is the _picture_. Most often the remote machine has nothing to capture; less often a codec, GPU driver or relay path stalls the stream. This guide walks through each cause, from the most commonly reported one to the edge cases, with a concrete fix for each.
 
 ## The short answer
 
-The session connected, but there is no framebuffer to capture. On a remote machine with **no monitor, an asleep or locked display, or a screen the OS won't let RustDesk record**, the video stream has nothing to encode. Give RustDesk a real, awake display to capture — a monitor, an HDMI dummy plug, the right permission, or a compatible codec — and the image appears.
+The session connected, but no image is arriving. The most commonly reported cause is a remote machine with nothing to capture: **no monitor, an asleep display, or missing screen-recording permission**. Give RustDesk a real, awake display (a monitor, an HDMI dummy plug or a virtual display) and the right permission, then switch to another codec such as VP9 if the image still doesn't appear. If it still stays black, update the GPU driver and check that the relay ports are reachable.
 
 ## Start here: is there anything to capture?
 
-By far the most reported cause is a **headless machine** — a server, mini-PC, or workstation running with no monitor attached, or with the display asleep. With no active display, the GPU produces no framebuffer, so RustDesk connects but has nothing to send. This pattern shows up repeatedly in the RustDesk issue tracker, including [reports of black screens specifically when the target's monitor is off](https://github.com/rustdesk/rustdesk/issues/9884) and the long-running ["Connected, waiting for image" thread](https://github.com/rustdesk/rustdesk/issues/222).
+The most commonly reported cause is a **headless machine** — a server, mini-PC, or workstation running with no monitor attached, or with the display asleep. With no active display there is often no framebuffer to capture, so RustDesk connects but has nothing to send. This pattern shows up repeatedly in the RustDesk issue tracker, including [reports of black screens specifically when the target's monitor is off](https://github.com/rustdesk/rustdesk/issues/9884) and the long-running ["Connected, waiting for image" thread](https://github.com/rustdesk/rustdesk/issues/222).
 
 Two ways to give it something to capture:
 
@@ -50,7 +51,7 @@ If a monitor _is_ attached, the next suspect is that it went to sleep.
 | Cause                          | Signal                              | Fix                                                                                                                                      |
 | ------------------------------ | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | Headless / no display          | Black screen on a server or mini-PC | Attach a monitor or add an HDMI dummy plug                                                                                               |
-| Screen asleep / locked         | Worked earlier, black after idle    | Wake the screen; disable sleep/screensaver; on macOS stop the display sleeping in Settings                                               |
+| Screen asleep / locked         | Worked earlier, black after idle    | Wake the screen; keep the display awake during access hours; keep password-protected locking enabled                                    |
 | Missing permission (macOS)     | Connects, permanent black           | Grant Screen Recording in Privacy & Security; install the helper for the login screen                                                    |
 | Codec mismatch                 | Blank or frozen image               | Switch codec (VP8 / VP9 / AV1 / H.264 / H.265); fall back to a software codec                                                            |
 | Hardware acceleration conflict | Black on specific GPUs              | Turn off hardware codec in the session toolbar or Settings, or switch codec                                                              |
@@ -62,7 +63,7 @@ If a monitor _is_ attached, the next suspect is that it went to sleep.
 
 If it worked earlier and went black after the machine sat idle, the display went to sleep.
 
-- **Windows:** set the power plan so the display and the machine never sleep during the hours you need remote access, and disable the screensaver (or set it not to require a password mid-session).
+- **Windows:** set the power plan so the display and the machine stay awake during the hours you need remote access. With RustDesk installed as a service you can connect at the lock screen, so keep password-protected locking enabled.
 - **macOS:** stop the display from sleeping during the hours you need remote access — set it in **System Settings → Displays** (or Lock Screen / Energy settings), and keep the Mac on a power adapter, since sleep behaves differently on battery.
 - **Android:** the screen must be on to be shared, so touch the display to wake it before connecting. Connecting from iOS to a dozing Android device with the screen off is a [known "waiting for image" case](https://github.com/rustdesk/rustdesk/issues/11479) — wake the target first.
 
@@ -83,11 +84,11 @@ Some GPUs — NVIDIA configurations come up most often — clash with RustDesk's
 
 ### Linux and Wayland
 
-On Linux, **Wayland screen capture goes through PipeWire and the `xdg-desktop-portal`**: it prompts for consent to pick a display the first time — in most cases the choice is remembered, so it does not prompt again — and works inside an active login session. That is a Wayland security design, so by itself it does not cover the greeter or a truly headless box — though unattended Wayland capture is in active development ([PR #15420](https://github.com/rustdesk/rustdesk/pull/15420)). If you get a blank screen on Wayland, the fix is usually to accept the portal's screen-share prompt and confirm `xdg-desktop-portal` and PipeWire are installed and running. Logging into an X11/Xorg session also avoids the portal path where a distribution still offers one — but as many distributions move to Wayland-only, fixing the portal/PipeWire path is the more future-proof approach.
+On Linux, standard RustDesk builds capture Wayland desktops, including multiple monitors since 1.4.3, through **PipeWire and the `xdg-desktop-portal`** in a logged-in session. The portal asks you to pick a display to share, and portal v4 and newer can remember the choice. If you get a blank screen on Wayland, accept the portal's screen-share prompt and confirm `xdg-desktop-portal` and PipeWire are installed and running. Logging into an X11/Xorg session also avoids the portal path where a distribution still offers one. A black screen at the login greeter is expected with standard builds, which capture the logged-in session; the separate [Wayland unattended preview](/blog/unattended-remote-access-wayland) for **x86_64 Debian/Ubuntu-based systems** adds unattended access and login-screen access after reboot.
 
 ### Network and relay
 
-Because the message contains the word "connected," the session is usually already up — but the _video_ can still stall if the relay is overloaded or a relay port is blocked. For the standard server path, make sure **TCP 21115-21117 and UDP 21116** are reachable end to end. Open **TCP 21118-21119 only if you use WebSocket clients**. The public demo server is shared and its throughput isn't guaranteed, so if you rely on RustDesk daily, self-hosting your own relay gives you far more consistent behavior. If the session itself is dropping or never establishing, that's a different problem — see the [RustDesk Server Pro FAQ](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/).
+Because the message contains the word "connected," the session is usually already up — but the _video_ can still stall if the relay is overloaded or a relay port is blocked. For the standard server path, make sure **TCP 21115-21117 and UDP 21116** are reachable end to end. Open **TCP 21118-21119 only if you use WebSocket clients**. The public demo server is shared and its throughput isn't guaranteed, so if you rely on RustDesk daily, self-hosting your relay gives you control over capacity and monitoring. If the session itself is dropping or never establishing, that's a different problem — see the [RustDesk Server Pro FAQ](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/).
 
 ## Keep everything current
 

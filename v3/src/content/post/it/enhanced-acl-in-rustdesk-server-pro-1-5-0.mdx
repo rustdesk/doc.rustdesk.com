@@ -1,27 +1,30 @@
 ---
+updateDate: 2026-10-14T00:00:00Z
 publishDate: 2025-02-19T00:00:00Z
 lang: it
 translationKey: enhanced-acl-in-rustdesk-server-pro-1-5-0
 title: ACL migliorate in RustDesk Server Pro 1.5.0
-excerpt: RustDesk Server Pro ora supporta ACL per utente e gruppi di dispositivi oltre ai gruppi di utenti.
+excerpt: 'RustDesk Server Pro 1.5.0 ha introdotto il controllo di accesso a livello di utente e i gruppi di dispositivi, oltre ai gruppi di utenti.'
 image: ~/assets/images/blog/device-group.png
 category: Rilascio
 slug: acl-migliorate-rustdesk-server-pro-1-5-0
 tags: [RustDesk Server Pro, rilascio]
 ---
 
-RustDesk Server Pro 1.5.0 è ora disponibile.
+RustDesk Server Pro 1.5.0 è ora disponibile, con i gruppi di dispositivi e il controllo di accesso a livello di utente.
 
 ## Registro delle modifiche
 
-* Aggiunti gruppi di dispositivi e relative ACL
-* Aggiunte ACL granulari per utente
-* Aggiunte strategie per gruppi di dispositivi
-* Aggiunte tabelle ordinabili
-* OIDC collega il vecchio account in caso di conflitto e-mail
-* Consentito `-` nell’ID
-* Corretto l’errore con nome OIDC nullo
+- Aggiunti i gruppi di dispositivi e le relative regole di controllo di accesso
+- Aggiunto il controllo di accesso a livello di utente
+- Aggiunte policy per i gruppi di dispositivi
+- Aggiunte tabelle ordinabili
+- L'accesso OIDC viene collegato a un account esistente quando l'email corrisponde
+- Consentito il carattere `-` (trattino) negli ID dei dispositivi
+- Corretto l'errore di accesso quando il nome OIDC è `null`
 
-I gruppi di dispositivi sono una novità di RustDesk Server Pro 1.5.0. In precedenza RustDesk privilegiava la semplicità e gestiva le ACL solo tramite gruppi di utenti. Nelle grandi organizzazioni ciò rendeva complessa la configurazione dei permessi. La versione 1.5.0 introduce quindi gruppi di dispositivi e ACL per utente. È possibile raggruppare i dispositivi e applicare criteri al gruppo, migliorando notevolmente la gestione su larga scala.
+I gruppi di dispositivi sono una novità di RustDesk Server Pro 1.5.0. In precedenza RustDesk privilegiava la semplicità ed evitava di introdurre i gruppi di dispositivi, affidandosi solo ai gruppi di utenti per la gestione delle ACL (Access Control List, elenchi di controllo degli accessi). Questo approccio, però, rendeva macchinosa la configurazione dei permessi di accesso nelle grandi organizzazioni. Per questo abbiamo deciso di introdurre nella versione 1.5.0 i gruppi di dispositivi e le ACL a livello di utente. Il miglioramento ti permette di raggruppare i dispositivi e di applicare policy a questi gruppi, rendendo molto più semplice la gestione dei dispositivi negli ambienti di grandi dimensioni.
 
-Ogni dispositivo può essere assegnato a un gruppo oltre a essere associato a un utente. Si possono così applicare criteri aggiuntivi, ad esempio limitare o consentire l’accesso a dispositivi specifici. Le ACL per utente permettono inoltre permessi individuali, offrendo maggiore flessibilità e controllo.
+In origine RustDesk Server Pro supportava solo i gruppi di utenti; con questo aggiornamento supporta anche i gruppi di dispositivi. Ogni dispositivo può essere assegnato a un solo gruppo di dispositivi, oltre a essere associato a un utente. In questo modo puoi applicare policy aggiuntive basate sui gruppi di dispositivi, ad esempio limitare o concedere l'accesso a dispositivi specifici. Questa release introduce inoltre le ACL a livello di utente, che permettono di impostare i permessi per i singoli utenti oltre che per i gruppi di utenti, con maggiore flessibilità e controllo nella gestione degli accessi.
+
+**Aggiornamento (2026):** le release successive di Server Pro hanno aggiunto il [Ruolo di controllo](https://rustdesk.com/docs/it/self-host/rustdesk-server-pro/control-role/) per i permessi all'interno della sessione. I permessi dei gruppi di utenti e dei gruppi di dispositivi si sommano, quindi l'accesso può essere concesso dagli uni o dagli altri. Per la configurazione attuale, consulta la [documentazione sul Controllo di accesso](https://rustdesk.com/docs/it/self-host/rustdesk-server-pro/permissions/).

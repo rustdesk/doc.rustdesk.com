@@ -1,9 +1,10 @@
 ---
 publishDate: 2024-10-12T00:00:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: zh-cn
 translationKey: rustdesk-web-client-v2-preview
-title: "RustDesk Web 客户端 V2 预览版"
-excerpt: "V2 带来更好的编解码器、国际键盘支持、剪贴板支持和文件传输等功能。"
+title: 'RustDesk Web 客户端 V2：2024 年预览版与当前部署方式'
+excerpt: 'RustDesk Web 客户端 V2（2024 年 10 月预览版）：编解码、键盘、剪贴板和文件传输的升级，以及公共 Web 客户端与自托管 Server Pro 两种使用方式。'
 image: ~/assets/images/blog/web-client.jpg
 category: 发布
 slug: rustdesk-web-ke-hu-duan-v2-yu-lan
@@ -12,10 +13,11 @@ tags:
   - 发布
 ---
 
-我们很高兴推出 RustDesk Web 客户端 V2 预览版。它带来了更强的解码能力、更好的国际键盘支持、剪贴板支持（不仅支持文本，还支持图像）以及文件传输功能。在浏览器能力所允许的范围内，我们努力让 Web 版的功能集和用户体验与桌面客户端保持一致。
+2024 年 10 月，我们推出了 **RustDesk Web 客户端 V2 预览版**。它带来了更强的解码能力、更好的国际键盘支持、同时支持图像和文本的剪贴板，以及文件传输功能。在浏览器能力所允许的范围内，我们努力让 Web 版的功能集和用户体验与桌面客户端保持一致。
 
-访问 https://rustdesk.com/web 即可体验 RustDesk Web 客户端 V2 预览版。如果希望通过 V2 访问您自己的服务器，请按照[文档](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client)配置 WebSocket Secure（WSS）支持，并在端口 21118/21119 上进行设置。
-```
+访问 https://rustdesk.com/web 即可使用 RustDesk Web 客户端 V2 预览版。如果希望通过 V2 访问你自己的服务器，请按照[文档](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-pro/faq/#8-为-id-服务器和中继服务器添加-websocket-secure-wss-支持以启用所有平台的安全通信)配置 WebSocket Secure（WSS）支持，通过 HTTPS/WSS 反向代理端口 21118/21119 上的 ID 和中继 WebSocket 后端。当反向代理对外开放 TCP 443 时，请让这些后端端口仅在内部可达。
+
+```nginx
     location /ws/id {
         proxy_pass http://localhost:21118;
         proxy_http_version 1.1;
@@ -38,13 +40,14 @@ tags:
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 ```
-Web 客户端也**已集成到 RustDesk Server Pro 中**，因此您可以在自己的服务器上通过 `https://rustdesk.yourcompany.com/web` 提供服务，而无需依赖公共版本。
+
+Web 客户端也**已集成到 RustDesk Server Pro 中**，因此你可以在自己的服务器上通过 `https://rustdesk.yourcompany.com/web` 提供服务，而无需依赖公共版本。
 
 ## 通过自己的服务器使用 Web 客户端的两种方式
 
-- **公共 Web 客户端（`rustdesk.com/web`），指向您自己的服务器。** 您可以使用 RustDesk 托管的 Web 客户端，并将其连接到您自己的 ID/中继服务器，但需要自行完成配置：浏览器需要具备 WebSocket Secure（WSS）以及正确的 CORS 头，才能访问您的服务器。请参阅 [Web 客户端的 WSS 与 CORS 设置](https://github.com/rustdesk/rustdesk/wiki/FAQ#wss-and-cors-setup-for-web-client)。
-- **自托管 Web 客户端（由 Server Pro 在 `https://your-server/web` 提供服务）。** Web 客户端已[集成到 RustDesk Server Pro 中](https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro)，因此它运行在您自己的服务器上，而不是公共服务器。自托管 Web 客户端**不包含在入门级方案中**——需要满足**（用户数 × 10）+ 设备数 ≥ 400** 的方案规模（例如 10 个用户 / 300 台设备、30 个用户 / 100 台设备，或 20 个用户 / 200 台设备）。自托管的 Web 客户端还可以进行[自定义](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-to-customize-self-hosted-web-client)。
+- **公共 Web 客户端（`rustdesk.com/web`），指向你自己的服务器。** 你可以使用 RustDesk 托管的 Web 客户端，并将其连接到你自己的 ID/中继服务器，但需要自行完成配置：浏览器需要 WebSocket Secure（WSS）和正确的 CORS 头，才能访问你的服务器。请参阅 [Web 客户端的 WSS 与 CORS 设置](https://github.com/rustdesk/rustdesk/wiki/FAQ#wss-and-cors-setup-for-web-client)。
+- **自托管 Web 客户端（由 Server Pro 在 `https://your-server/web` 提供服务）。** Web 客户端已[集成到 RustDesk Server Pro 中](https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro)，因此它运行在你自己的服务器上，而不是公共服务器上。自托管 Web 客户端**不包含在入门级套餐中**——所选套餐的规模需要满足 **（用户数 × 10）+ 设备数 ≥ 400**（例如 10 个用户 / 300 台设备、30 个用户 / 100 台设备，或 20 个用户 / 200 台设备）。自托管的 Web 客户端还可以进行[自定义](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-to-customize-self-hosted-web-client)。
 
-无论选择哪种方式，Web 客户端都是一个**控制端**：您可以从浏览器标签页操控其他设备，但浏览器标签页无法作为无人值守的被控端。
+无论选择哪种方式，Web 客户端都是一个**控制端**：你可以从浏览器标签页操控其他设备，但浏览器标签页无法作为无人值守的被控端。
 
-我们很高兴能为用户带来这些改进，也期待在持续完善 RustDesk Web Client V2 的过程中收到您的反馈。
+立即试用 [Web 客户端](https://rustdesk.com/web)，并查阅 [Server Pro 文档](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-pro/)了解当前的部署细节。不同浏览器的剪贴板权限和键盘处理方式有所不同，请测试团队实际使用的浏览器。

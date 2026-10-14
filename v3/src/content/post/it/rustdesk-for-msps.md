@@ -1,10 +1,11 @@
 ---
+updateDate: 2026-10-14T00:00:00Z
 publishDate: 2026-07-05T19:40:00Z
 lang: it
 translationKey: rustdesk-for-msps
 draft: false
 title: 'RustDesk per gli MSP: un unico strumento self-hosted e personalizzabile'
-excerpt: "Confronta il consolidamento di TeamViewer, AnyDesk e ScreenConnect in un'unica piattaforma di supporto remoto self-hosted e personalizzabile."
+excerpt: "Confronta il consolidamento di TeamViewer, AnyDesk e ScreenConnect in un'unica piattaforma di supporto remoto self-hosted e personalizzabile con il tuo marchio."
 image: ~/assets/images/blog/rustdesk-for-msps-og.webp
 category: 'Guide'
 tags: ['RustDesk', 'MSP', 'Self-hosting']
@@ -12,62 +13,64 @@ author: RustDesk Team
 slug: 'rustdesk-per-gli-msp-un-unico-strumento-self-hosted-e-personalizzabile'
 faq:
   - question: 'RustDesk può consolidare più strumenti di supporto remoto per MSP?'
-    answer: "Sì. RustDesk punta a sostituire un cumulo di strumenti separati con un'unica piattaforma self-hosted, open source e personalizzabile, offrendoti una console unica, un generatore di client personalizzato e un controllo degli accessi per utente, al posto di console e contratti separati."
+    answer: "Sì, per il controllo e il supporto remoto. RustDesk Server Pro offre a un MSP un'unica console self-hosted, client con il proprio marchio dal piano Basic, il Controllo di accesso per utente e per gruppo di dispositivi e connessioni simultanee illimitate nei piani standard, al posto di console e contratti separati. Prima, fai un pilota delle integrazioni PSA/RMM da cui dipendi."
   - question: 'Come funziona la licenza di RustDesk per gli MSP?'
-    answer: 'Paghi per utente di accesso (i tuoi tecnici) più per dispositivo gestito (le macchine che supporti), e i piani standard includono connessioni simultanee illimitate, così più tecnici possono avviare sessioni contemporaneamente senza dover acquistare canali. Customized V2 limita e tariffa la concorrenza separatamente; consulta rustdesk.com/pricing.'
+    answer: 'Paghi per utente con login (i tuoi tecnici) e per dispositivo gestito (le macchine che supporti), e i piani standard includono connessioni simultanee illimitate, così più tecnici possono gestire sessioni contemporaneamente senza acquistare canali. Solo Customized V2 concede in licenza un numero prestabilito di connessioni simultanee; vedi rustdesk.com/pricing.'
   - question: 'Posso applicare il white-label o personalizzare il branding del client RustDesk?'
-    answer: 'Sì. RustDesk include un generatore di client con marchio personalizzato, così i tuoi clienti installano uno strumento configurato per il tuo servizio. Le funzionalità di generazione client personalizzata e identità sono disponibili dal piano Basic in su, quindi verifica la matrice attuale prima di farvi affidamento.'
+    answer: 'Sì. RustDesk Server Pro include un generatore di client personalizzati, disponibile dal piano Basic in su, che crea un client con il tuo nome, logo, icona e configurazione del server. I tuoi clienti installano uno strumento con il tuo marchio che si connette al tuo server, invece di un download con il marchio di un fornitore.'
   - question: 'RustDesk è self-hosted, e chi gestisce il server?'
-    answer: "RustDesk Server Pro è self-hosted: il server ID/rendezvous, il relay, la console e i dati di deployment memorizzati vengono eseguiti su un'infrastruttura che controlli tu. Qualcuno del tuo team predispone l'host, apre le porte, configura il TLS e lo aggiorna: un lavoro di infrastruttura di routine per un MSP, leggero una volta configurato."
+    answer: "Sì. RustDesk Server Pro è self-hosted: l'MSP gestisce server ID/rendezvous, relay, console web e dati di gestione memorizzati sul proprio host on-prem o VPS, e si occupa di patch, monitoraggio, backup e certificati. RustDesk Server OSS, il server community gratuito, fornisce ID/rendezvous e relay senza la gestione Pro."
   - question: 'Come dovrebbe un MSP iniziare a valutare RustDesk?'
-    answer: 'Un percorso comune è iniziare con il server community gratuito su una VM di test o un piccolo host interno, convalidare un flusso di lavoro client rappresentativo, quindi decidere se vale la pena aggiungere le funzionalità Pro. Puoi anche scrivere a sales@rustdesk.com per informazioni sulle condizioni di valutazione attuali.'
+    answer: 'Inizia con RustDesk Server OSS, il server community gratuito, su una VM di test: non ha canone di licenza né scadenza, quindi i tecnici possono convalidare un flusso di supporto rappresentativo prima di pagare. Aggiungi Server Pro quando il team ha bisogno della console web, dei client con il tuo marchio o del Controllo di accesso, e scrivi a sales@rustdesk.com per le condizioni di valutazione attuali.'
 
 metadata:
-  description: "RustDesk per gli MSP: un'alternativa self-hosted a ScreenConnect/TeamViewer — consolida il supporto remoto con branding, controllo degli accessi e concorrenza basata sul piano."
+  description: 'RustDesk per MSP: alternativa self-hosted a ScreenConnect/TeamViewer con client a tuo marchio, Controllo di accesso e sessioni illimitate nei piani standard.'
   keywords: 'RustDesk per MSP, supporto remoto self-hosted per MSP, desktop remoto white-label per MSP, strumento di supporto remoto per MSP, licenza desktop remoto per tecnico'
 ---
 
-La maggior parte degli MSP non è alla ricerca di un altro strumento di supporto remoto. Ne cercano _meno_. Lo stack si accumula per ragioni strutturali, non per preferenza: una licenza cloud per il supporto remoto qui, uno strumento per tecnico là, un'utility standalone di supporto rapido per i lavori occasionali — fornitori diversi e sempre le stesse tre lamentele su costi che salgono, licenze che limitano il modo in cui lavori e un controllo che, in realtà, non hai mai avuto.
+La maggior parte degli MSP non cerca un altro strumento di supporto remoto. Ne cerca _meno_: una postazione cloud di supporto remoto qui, uno strumento per tecnico là, un'utility di supporto rapido per i lavori occasionali, ciascuno con la sua console, il suo contratto e il suo rinnovo. RustDesk sostituisce questo cumulo con un'unica piattaforma self-hosted e personalizzabile con il tuo marchio; prima di dismettere qualcosa, fai un pilota delle integrazioni PSA/RMM e dei flussi sugli endpoint su cui contano i tuoi tecnici.
 
-Questa è una guida a **RustDesk per gli MSP**: come un unico strumento self-hosted, open source e personalizzabile possa sostituire quel cumulo di strumenti — e, altrettanto importante, dove si trovano i compromessi.
+Questa guida tratta il client open source di RustDesk, le opzioni di server self-hosted, l'amministrazione commerciale Pro, il branding e le licenze per i flussi di lavoro degli MSP.
 
-## La differenza fondamentale: lo ospiti tu, è tuo
+## Gestisci in proprio i servizi di accesso remoto
 
-RustDesk Server Pro è **self-hosted**: il server ID/rendezvous, il relay, la console e i dati dei dispositivi memorizzati vengono eseguiti su un'infrastruttura che controlli tu, non su quella di un fornitore ([perché il self-hosting è importante per gli MSP](/it/blog/perche-fare-self-hosting-del-tuo-software-di-desktop-remoto)). E poiché il core è **[open source (AGPL)](https://github.com/rustdesk/rustdesk)**, quando la revisione di sicurezza di un cliente chiede "cosa fa questo agente sui nostri endpoint?", puoi indicare il codice sorgente invece di un binario chiuso.
+RustDesk Server Pro è **self-hosted**: è il tuo team a gestire ID/rendezvous, relay, console e dati di gestione memorizzati. Il client di RustDesk e RustDesk Server OSS (il server community gratuito) hanno **[licenza AGPL](https://github.com/rustdesk/rustdesk)**; Server Pro è un software server self-hosted commerciale e proprietario. Quando la revisione di sicurezza di un cliente chiede «che cosa fa questo agent sui nostri endpoint?», puoi indicare il codice sorgente del client invece di un binario chiuso, e scegli tu dove girano i servizi lato server.
 
-Ecco come un'unica piattaforma self-hosted si misura con la massa di strumenti di cui gli MSP si liberano consolidando:
+Ecco come un'unica piattaforma self-hosted si confronta con il cumulo di strumenti che gli MSP stanno abbandonando:
 
-|                     | Strumenti di supporto remoto cloud separati | RustDesk Server Pro                                                                              |
-| ------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| Console da gestire  | Una per strumento                           | Un'unica console self-hosted                                                                     |
-| Branding            | Componente aggiuntivo o non disponibile     | Generatore di client personalizzato (piano Basic e superiori)                                    |
-| Hosting             | Cloud del fornitore                         | Self-hosted (on-prem o il tuo VPS)                                                               |
-| Codice sorgente     | Chiuso                                      | Core open source (AGPL)                                                                          |
-| Sessioni simultanee | Spesso limitate / per canale                | Illimitate sui piani standard; limitate su [Customized V2](https://rustdesk.com/pricing#custom2) |
-| Base di licenza     | Per postazione / per canale                 | [Per utente di accesso + per dispositivo gestito](https://rustdesk.com/pricing)                  |
+|                                          | Strumenti di supporto remoto cloud separati | RustDesk Server Pro                                                                                              |
+| ---------------------------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Console da gestire                       | Una per strumento                           | Un'unica console self-hosted                                                                                     |
+| Branding del client                      | Dipende dal prodotto e dal piano            | Generatore di client personalizzati dal piano Basic in su                                                        |
+| Hosting                                  | Cloud del fornitore                         | Self-hosted (on-prem o il tuo VPS)                                                                               |
+| Codice sorgente                          | Dipende dal prodotto, spesso proprietario   | Client AGPL verificabile                                                                                         |
+| Connessioni/canali simultanei in licenza | Limite che dipende dal piano                | Illimitati nei piani standard; [Customized V2](https://rustdesk.com/pricing#custom2) prevede un numero in licenza |
+| Base di licenza                          | Per postazione / per canale                 | [Per utente con login + per dispositivo gestito](https://rustdesk.com/pricing)                                   |
 
 Per i livelli di piano esatti e i prezzi attuali, consulta [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
-## Connessioni simultanee dipendenti dal piano
+## Connessioni simultanee secondo il piano
 
-Paghi per utente di accesso (i tuoi tecnici) più per dispositivo gestito (le macchine che supporti), e i piani standard includono [connessioni simultanee](https://rustdesk.com/pricing) illimitate — più tecnici possono avviare sessioni contemporaneamente senza dover acquistare "canali", mentre Customized V2 le limita e le tariffa separatamente. Se durante un'interruzione di servizio tre ingegneri si trovano contemporaneamente su tre sedi cliente diverse, è la normalità — non un evento a consumo. Se finora hai dovuto razionare le sessioni simultanee o organizzare i turni del tuo team in base a un numero di canali, questo vincolo scompare.
+Paghi per gli utenti con login autorizzati (di solito i tecnici) e per i dispositivi gestiti. I piani standard includono connessioni simultanee illimitate, quindi quando durante un'interruzione tre tecnici lavorano contemporaneamente su tre siti clienti diversi, è un martedì qualsiasi, non un evento da conteggiare. Se finora hai razionato le sessioni simultanee o organizzato il team in base a un numero di canali, nei piani standard quel vincolo sparisce.
+
+Solo [Customized V2](https://rustdesk.com/pricing#custom2) concede in licenza un numero prestabilito di connessioni simultanee. Secondo la [definizione di connessione simultanea](https://github.com/rustdesk/rustdesk/wiki/FAQ#concurrent-connections) di RustDesk, una connessione simultanea è un dispositivo di controllo attivo, un «canale»: una postazione tecnica con cinque schede di sessione usa un canale, e tre postazioni tecniche attive contemporaneamente ne usano tre. Customized V2 conta inoltre come dispositivi gestiti solo quelli assegnati a un utente o a un gruppo di dispositivi, quindi le macchine assistite occasionalmente non vengono né conteggiate né disattivate; vedi [cosa conta come dispositivo gestito](/it/blog/cosa-conta-come-dispositivo-gestito-in-rustdesk).
 
 ## Personalizzalo con il tuo marchio e aggiungi il controllo degli accessi
 
-RustDesk offre gli elementi di cui un MSP ha davvero bisogno per operare su larga scala: una **[console web](https://rustdesk.com/docs)** self-hosted, un **generatore di client personalizzato** e **[gruppi di dispositivi più una rubrica condivisa](https://rustdesk.com/docs/it/self-host/rustdesk-server-pro/permissions/)** per il controllo degli accessi per utente. **[LDAP/SSO](https://rustdesk.com/docs/it/self-host/rustdesk-server-pro/ldap/) (OIDC) è disponibile dal piano Basic in su.**
+Server Pro offre a un MSP una console web self-hosted e tre controlli distinti. Il [Controllo di accesso](https://rustdesk.com/docs/it/self-host/rustdesk-server-pro/permissions/) decide quali tecnici possono raggiungere quali dispositivi, tramite regole per utenti e gruppi di dispositivi; ogni dispositivo appartiene a un solo gruppo di dispositivi, e i permessi dei gruppi di utenti e dei gruppi di dispositivi sono cumulativi. La rubrica condivisa organizza le voci per i tecnici; non è un confine di accesso. Il [Ruolo di controllo](https://rustdesk.com/docs/it/self-host/rustdesk-server-pro/control-role/) limita cosa può fare un tecnico all'interno di una sessione. Il generatore di client personalizzati e lo SSO LDAP/OIDC partono dal piano Basic.
 
-Il client personalizzato conta perché i tuoi clienti vedono il tuo marchio sullo strumento che installano, non quello di un fornitore. Il controllo degli accessi può limitare i tecnici ai gruppi di dispositivi loro assegnati. Verifica la matrice dei piani attuale prima di fare affidamento su queste funzionalità.
+Il client personalizzato conta perché i tuoi clienti installano uno strumento con il tuo nome, il tuo logo e le impostazioni del tuo server, non quello di un fornitore. Il Controllo di accesso ti permette di limitare ogni tecnico ai gruppi di dispositivi dei siti clienti che segue.
 
 ## Controllo sulla posizione dei dati lato server
 
-Il self-hosting offre a un MSP il controllo sulla posizione dei dati lato server. Non garantisce che il traffico diretto tra endpoint rimanga all'interno di un singolo paese, né stabilisce da solo la conformità al GDPR; mappa le posizioni degli endpoint, il routing, la conservazione dei dati e gli obblighi legali.
+Il self-hosting permette a un MSP di scegliere dove girano ID/rendezvous, relay, console e dati dei dispositivi memorizzati e chi li gestisce, ed è spesso il punto decisivo per i clienti dei settori regolamentati. È un controllo sul deployment, non una certificazione di conformità: le sessioni dirette continuano a viaggiare tra gli endpoint, quindi mappa posizioni e instradamento degli endpoint come descritto in [Sovranità dei dati del desktop remoto e GDPR](/it/blog/sovranita-dei-dati-del-desktop-remoto-e-gdpr-self-hosting).
 
 ## Mettilo alla prova alle tue condizioni
 
-Puoi valutare RustDesk già da oggi, senza dover prenotare alcun incontro:
+Puoi valutare RustDesk già da oggi, senza prenotare alcun incontro:
 
-- **Avvia il server community gratuito su una VM di riserva.** È open source e non scade mai, così puoi convalidare un flusso di lavoro client reale prima di spendere qualsiasi cosa.
-- **Quando branding e controllo degli accessi entrano in gioco,** confronta i livelli su [rustdesk.com/pricing](https://rustdesk.com/pricing) e chiedi a [sales@rustdesk.com](mailto:sales@rustdesk.com) quali condizioni di valutazione sono attualmente in vigore.
-- **Poco tempo per i test?** Guarda RustDesk in azione per prima cosa, oppure sfoglia le guide sul [canale YouTube di RustDesk](https://www.youtube.com/@rustdesk).
+- **Avvia Server OSS su una VM di riserva.** Non ha canone di licenza né scadenza, così puoi convalidare un flusso di lavoro reale con un cliente prima di spendere qualsiasi cosa.
+- **Quando entrano in gioco branding e controllo degli accessi,** confronta i livelli su [rustdesk.com/pricing](https://rustdesk.com/pricing) e chiedi a [sales@rustdesk.com](mailto:sales@rustdesk.com) quali condizioni di valutazione sono in vigore.
+- **Poco tempo per i test?** Guarda prima RustDesk in azione, oppure sfoglia le guide sul [canale YouTube di RustDesk](https://www.youtube.com/@rustdesk).
 
-Puoi **[effettuare l'upgrade in qualsiasi momento](/it/blog/aggiornare-la-licenza-rustdesk-a-meta-abbonamento-come-funziona) (con importo proporzionale)** man mano che la tua base di clienti cresce — inizia su [rustdesk.com/pricing](https://rustdesk.com/pricing).
+Puoi **[effettuare l'upgrade in qualsiasi momento](/it/blog/aggiornare-la-licenza-rustdesk-a-meta-abbonamento-come-funziona)** man mano che la tua base di clienti cresce: l'upgrade estende la licenza a un anno intero dalla data dell'upgrade e accredita il valore residuo già pagato. Inizia da [rustdesk.com/pricing](https://rustdesk.com/pricing).

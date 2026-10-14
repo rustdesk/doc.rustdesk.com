@@ -1,51 +1,56 @@
 ---
+updateDate: 2026-10-14T00:00:00Z
 publishDate: 2026-07-02T14:43:00Z
 lang: 'es'
 translationKey: 'what-counts-as-a-managed-device'
 draft: false
-title: '¿Qué cuenta como un dispositivo administrado en RustDesk?'
-excerpt: 'En los planes estándar de RustDesk, cada dispositivo que configuras para acceder cuenta una sola vez. Customized V2 solo cuenta los dispositivos asignados a un grupo o usuario; los dispositivos ad hoc no se cuentan.'
+title: '¿Qué cuenta como dispositivo gestionado en RustDesk?'
+excerpt: 'En los planes estándar de RustDesk Server Pro, cada dispositivo al que configuras el acceso cuenta una vez. Customized V2 solo cuenta los asignados a un grupo o usuario; los puntuales no cuentan.'
 image: ~/assets/images/blog/what-counts-as-a-managed-device-og.webp
 category: 'Precios'
 tags: ['RustDesk', 'Precios', 'Licencias']
 author: 'RustDesk Team'
 slug: 'que-cuenta-como-un-dispositivo-administrado-en-rustdesk'
 faq:
-  - question: '¿Cómo cuenta RustDesk los dispositivos administrados?'
-    answer: 'En los planes estándar, cada dispositivo que configuras para acceder cuenta como un dispositivo administrado, una sola vez, ya sea atendido o no atendido, y sin importar si te conectas una vez o mil veces. Customized V2 cuenta de forma diferente: solo los dispositivos asignados a un grupo de dispositivos o a un usuario cuentan para tu número de dispositivos con licencia.'
-  - question: '¿Cómo se cuentan los dispositivos de soporte puntual y ad hoc?'
-    answer: 'En el plan Customized V2, solo los dispositivos asignados a un grupo de dispositivos o a un usuario cuentan como dispositivos administrados. Una máquina a la que te conectas una sola vez para brindar soporte espontáneo, y que nunca asignas, no se cuenta para tu número de dispositivos con licencia y no se deshabilita. Para el trabajo que es mayormente ad hoc, esto hace que Customized V2 sea una mejor opción que contar cada endpoint.'
+  - question: '¿Cómo cuenta RustDesk los dispositivos gestionados?'
+    answer: 'En los planes estándar, cada dispositivo al que configuras el acceso cuenta como un dispositivo gestionado, una sola vez, tanto si hay alguien delante como si no, y tanto si te conectas una vez como mil. Customized V2 cuenta de otra forma: solo los dispositivos asignados a un grupo de dispositivos o a un usuario cuentan para tu número de dispositivos bajo licencia.'
+  - question: '¿Cómo se cuentan los dispositivos de soporte puntual?'
+    answer: 'En el plan Customized V2, solo cuentan como dispositivos gestionados los asignados a un grupo de dispositivos o a un usuario. Un equipo al que te conectas una vez para un soporte puntual, y que nunca asignas, no cuenta para tu número de dispositivos bajo licencia ni se desactiva. Si tu trabajo es sobre todo puntual, Customized V2 encaja mejor que un modelo que cuente cada endpoint.'
 
 metadata:
-  description: 'Cómo cuenta RustDesk los dispositivos administrados: los planes estándar cuentan cada dispositivo accesible una vez; Customized V2 solo cuenta los dispositivos asignados a un grupo o usuario.'
-  keywords: 'qué cuenta como dispositivo administrado, conteo de dispositivos en rustdesk, licencias rustdesk vs teamviewer, licencia de dispositivo atendido vs no atendido, soporte ad hoc en rustdesk, licenciamiento de soporte remoto para msp'
+  description: 'Dispositivos gestionados en RustDesk: los planes estándar cuentan una vez cada equipo accesible; Customized V2, solo los asignados a un grupo o usuario.'
+  keywords: 'qué cuenta como dispositivo gestionado, recuento de dispositivos en rustdesk, licencias rustdesk vs teamviewer, licencia de dispositivo con o sin supervisión, soporte puntual en rustdesk, licencias de soporte remoto para msp'
 ---
 
-Si vienes del modelo por asiento de TeamViewer, la regla de conteo en los planes estándar de RustDesk resulta refrescantemente simple: **cada dispositivo al que quieras acceder cuenta como un dispositivo administrado, contado una sola vez.** El plan **[Customized V2](https://rustdesk.com/pricing#custom2)** cuenta de otra manera: solo cuentan los dispositivos que asignas a un grupo o usuario, lo que lo convierte en la opción adecuada para un soporte ad hoc intensivo.
+RustDesk Server Pro cuenta los usuarios con inicio de sesión autorizados y los dispositivos gestionados. En sus planes estándar, **cada dispositivo al que quieres acceder cuenta como un dispositivo gestionado, y se cuenta una sola vez.** El plan **[Customized V2](https://rustdesk.com/pricing#custom2)** cuenta de otra forma —solo cuentan los dispositivos que asignas a un grupo o a un usuario—, y por eso es el adecuado para un uso intensivo del soporte puntual.
 
-## La respuesta breve
+## La respuesta corta
 
-En los planes estándar, un "dispositivo administrado" es cualquier máquina a la que quieras poder acceder, y el servidor cuenta cada una una sola vez. No importa:
+En los planes estándar, un «dispositivo gestionado» es cualquier equipo al que quieras poder acceder, y el servidor cuenta cada uno una sola vez. Da igual:
 
-- si el dispositivo está **atendido** (alguien está sentado frente a él) o **no atendido** (un servidor sin monitor, un kiosco o una estación de trabajo siempre activa),
-- si te conectarás **una vez** o **muchas veces**,
+- si el dispositivo es **supervisado** (hay alguien delante) o **desatendido** (un servidor sin monitor, un quiosco o una estación de trabajo siempre encendida),
+- si te vas a conectar **una vez** o **muchas**,
 - con qué frecuencia accedes a él.
 
-Si tu trabajo consiste principalmente en soporte espontáneo y puntual, el conteo más acotado de **[Customized V2](https://rustdesk.com/pricing#custom2)**, que se explica más abajo, está diseñado exactamente para ese caso.
+Si tu trabajo consiste sobre todo en soporte espontáneo y puntual, el recuento más restringido de **[Customized V2](https://rustdesk.com/pricing#custom2)**, que se explica a continuación, está pensado precisamente para ese caso.
 
 ## En detalle
 
-Lo que _sí_ cambia las cosas es el plan. En el plan **[Customized V2](https://rustdesk.com/pricing#custom2)**, la definición de dispositivo administrado es más acotada: solo los dispositivos que **asignas a un grupo de dispositivos o a un usuario** cuentan para tu número de dispositivos con licencia. Las máquinas a las que accedes únicamente para soporte puntual y ad hoc, y que nunca asignas, no se cuentan ni se deshabilitan. Si prefieres que estos dispositivos sin asignar ni siquiera aparezcan en la consola, la [configuración de cliente `register-device`](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#register-device) controla eso, y entra en vigor una vez que el número de conexiones concurrentes con licencia es 2 o más. En la práctica, una sesión de soporte rápido de este tipo solo muestra un ID y una contraseña de un solo uso para una única conexión atendida, de modo que una interacción realmente puntual nunca necesita un espacio permanente en tu flota. Si gran parte de tu trabajo es así, Customized V2 suele ser la opción más adecuada; escribe a [sales@rustdesk.com](mailto:sales@rustdesk.com) con tu escenario para conocer las condiciones vigentes, o consulta [rustdesk.com/pricing](https://rustdesk.com/pricing).
+Lo que cambia el recuento es el plan. En el plan **[Customized V2](https://rustdesk.com/pricing#custom2)**, la definición de dispositivo gestionado es más restringida: solo cuentan para tu número de dispositivos bajo licencia los dispositivos que **asignas a un grupo de dispositivos o a un usuario**. Los equipos a los que solo accedes para un soporte puntual, y que nunca asignas, no se cuentan ni se desactivan. Si prefieres que estos dispositivos sin asignar ni siquiera aparezcan en la consola, lo controla el [ajuste de cliente `register-device`](https://rustdesk.com/docs/es/self-host/client-configuration/advanced-settings/#register-device), que surte efecto cuando el número de conexiones simultáneas bajo licencia es 2 o más. En la práctica, una sesión de soporte rápido de este tipo solo muestra un ID y una contraseña de un solo uso para una única conexión con el usuario presente, así que una interacción realmente puntual nunca necesita una plaza permanente en tu flota. Si buena parte de tu trabajo es así, Customized V2 suele ser la mejor opción: escribe a [sales@rustdesk.com](mailto:sales@rustdesk.com) con tu caso para conocer las condiciones vigentes o consulta [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
-Por ejemplo, imagina un [MSP](/es/blog/rustdesk-para-msp-una-unica-herramienta-autoalojada-y-personalizable) con 20 técnicos que brindan soporte a aproximadamente 1000 máquinas de clientes: necesitaría cumplir con **ambas** dimensiones de licenciamiento: suficientes usuarios de inicio de sesión para los 20 técnicos y suficientes dispositivos administrados para las máquinas que se mantienen accesibles. Para los endpoints que son realmente llamadas de soporte puntuales, se aplica la regla de Customized V2 explicada arriba; los límites vigentes están en [rustdesk.com/pricing](https://rustdesk.com/pricing).
+Por ejemplo, imagina un [MSP](/es/blog/rustdesk-para-msp-una-unica-herramienta-autoalojada-y-personalizable) con 20 técnicos que da soporte a unos 1.000 equipos de clientes: tendría que cubrir **las dos** dimensiones de la licencia, es decir, suficientes usuarios con inicio de sesión para los 20 técnicos y suficientes dispositivos gestionados para los equipos que se mantienen accesibles. Para los endpoints que son de verdad llamadas de soporte puntuales, se aplica la regla de Customized V2 anterior; los cupos vigentes están en [rustdesk.com/pricing](https://rustdesk.com/pricing).
+
+## Las conexiones simultáneas son una unidad de licencia aparte
+
+Los planes estándar de Server Pro (Individual, Basic, Customized) incluyen conexiones simultáneas ilimitadas; solo [Customized V2](https://rustdesk.com/pricing#custom2) se licencia por un número determinado. Según la [definición de conexiones simultáneas](https://github.com/rustdesk/rustdesk/wiki/FAQ#concurrent-connections) de RustDesk, una conexión simultánea es un dispositivo de control activo, un «canal», y no cada pestaña de sesión saliente: un equipo de técnico con cinco pestañas de sesión usa un canal, y tres equipos de control activos a la vez usan tres. En Customized V2, dimensiona por separado los usuarios con inicio de sesión, los dispositivos gestionados y los canales.
 
 ## Quién pregunta esto
 
-Cualquiera que intente traducir un conteo de asientos de TeamViewer o AnyDesk a las unidades de RustDesk se topa primero con esta definición, porque las unidades de licenciamiento no se corresponden una a una. Los planes pagos de RustDesk requieren capacidad tanto para las personas que inician sesión como para los dispositivos que se mantienen bajo administración.
+Cualquiera que intente traducir un número de puestos de TeamViewer o AnyDesk a las unidades de RustDesk se encuentra primero con esta definición, porque las unidades de licencia no se corresponden una a una. Los planes de pago de RustDesk requieren capacidad tanto para las personas que inician sesión como para los dispositivos que se mantienen bajo gestión.
 
 ## Preguntas relacionadas
 
-- Licenciamiento por usuario vs. por dispositivo, conexiones simultáneas y conteo de dispositivos para Server Pro: consulta [precios de RustDesk](https://rustdesk.com/pricing).
-- [¿Vienes de TeamViewer? ¿Cómo se compara el precio de RustDesk para MSP?](/es/blog/rustdesk-vs-teamviewer-la-alternativa-autoalojada)
+- Licencias por usuario frente a por dispositivo, conexiones simultáneas y recuento de dispositivos en Server Pro: consulta los [precios de RustDesk](https://rustdesk.com/pricing).
+- [¿Vienes de TeamViewer? Cómo se comparan los precios de RustDesk para un MSP](/es/blog/rustdesk-vs-teamviewer-la-alternativa-autoalojada)
 
-¿Estás dimensionando tu flota y no estás seguro de si las llamadas de soporte puntuales deben incluirse en tu conteo de dispositivos? Consulta las condiciones vigentes en [rustdesk.com/pricing](https://rustdesk.com/pricing) o pregúntale al equipo antes de comprar.
+¿Estás dimensionando una flota y no sabes si las llamadas de soporte puntuales deben entrar en tu recuento de dispositivos? Consulta las condiciones vigentes en [rustdesk.com/pricing](https://rustdesk.com/pricing) o pregunta al equipo antes de comprar.

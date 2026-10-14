@@ -1,19 +1,21 @@
 ---
+updateDate: 2026-10-14T00:00:00Z
 publishDate: 2024-10-12T00:00:00Z
 lang: pt
 translationKey: rustdesk-web-client-v2-preview
-title: "Prévia do cliente Web RustDesk V2"
-excerpt: "A V2 oferece codecs melhores, suporte a teclado internacional, suporte à área de transferência e transferência de arquivos, entre outros recursos."
+title: 'Cliente Web RustDesk V2: a prévia de 2024 e as opções atuais de implantação'
+excerpt: 'Cliente Web RustDesk V2 (prévia de outubro de 2024): melhorias de codec, teclado, área de transferência e arquivos; uso público ou auto-hospedado no Server Pro.'
 image: ~/assets/images/blog/web-client.jpg
 category: Lançamento
 slug: previa-cliente-web-rustdesk-v2
 tags: [cliente Web, lançamento]
 ---
 
-Temos o prazer de apresentar a Prévia do cliente Web RustDesk V2. Ela traz decodificação mais robusta, melhor suporte a teclados internacionais, suporte à área de transferência (não apenas texto, mas também imagens) e transferência de arquivos. Trabalhamos para manter o conjunto de recursos e a experiência do usuário da versão Web alinhados com o cliente desktop, dentro dos limites impostos pelos navegadores.
+Em outubro de 2024, apresentamos a **Prévia do cliente Web RustDesk V2**. Ela traz decodificação mais robusta, melhor suporte a teclados internacionais, área de transferência com suporte a imagens além de texto e transferência de arquivos. Trabalhamos para manter os recursos e a experiência de uso da versão web alinhados aos do cliente desktop, dentro dos limites impostos pelos navegadores.
 
-Você pode acessar a Prévia do cliente Web RustDesk V2 visitando https://rustdesk.com/web. Se quiser acessar seu próprio servidor por meio da V2, configure o suporte a WebSocket Secure (WSS) de acordo com a [documentação](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client), configurando-o nas portas 21118/21119.
-```
+Você pode acessar a prévia do cliente Web RustDesk V2 em https://rustdesk.com/web. Se quiser acessar o seu próprio servidor pela V2, configure o suporte a WebSocket Secure (WSS) de acordo com a [documentação](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/faq/#8-adicionar-suporte-websocket-secure-wss-para-o-servidor-de-id-e-servidor-de-retransmissão-para-habilitar-comunicação-segura-em-todas-as-plataformas), fazendo o proxy dos backends WebSocket de ID e de relay, nas portas 21118/21119, por HTTPS/WSS. Mantenha essas portas de backend internas quando o proxy reverso expuser a porta TCP 443.
+
+```nginx
     location /ws/id {
         proxy_pass http://localhost:21118;
         proxy_http_version 1.1;
@@ -36,13 +38,14 @@ Você pode acessar a Prévia do cliente Web RustDesk V2 visitando https://rustde
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 ```
-O cliente Web também está **integrado ao RustDesk Server Pro**, permitindo que você o disponibilize no seu próprio servidor em `https://rustdesk.yourcompany.com/web`, em vez de depender do cliente público.
+
+O cliente Web também está **integrado ao RustDesk Server Pro**, então você pode disponibilizá-lo a partir do seu próprio servidor em `https://rustdesk.yourcompany.com/web`, em vez de depender do cliente público.
 
 ## Duas formas de usar o cliente Web com seu próprio servidor
 
 - **Cliente Web público (`rustdesk.com/web`), apontado para o seu servidor.** Você pode usar o cliente Web hospedado pela RustDesk e conectá-lo ao seu próprio servidor de ID/relay, mas a configuração fica por sua conta: o navegador precisa de WebSocket Secure (WSS) e dos cabeçalhos CORS corretos para alcançar seu servidor. Veja [Configuração de WSS e CORS para o cliente Web](https://github.com/rustdesk/rustdesk/wiki/FAQ#wss-and-cors-setup-for-web-client).
-- **Cliente Web auto-hospedado (servido pelo Server Pro em `https://your-server/web`).** O cliente Web está [integrado ao RustDesk Server Pro](https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro), portanto ele é executado a partir do seu próprio servidor, e não do servidor público. Auto-hospedar o cliente Web **não está incluído nos planos básicos** — é necessário um plano grande o suficiente para atender a **(número de usuários × 10) + número de dispositivos ≥ 400** (por exemplo, 10 usuários / 300 dispositivos, 30 usuários / 100 dispositivos, ou 20 usuários / 200 dispositivos). Um cliente Web auto-hospedado também pode ser [personalizado](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-to-customize-self-hosted-web-client).
+- **Cliente Web auto-hospedado (servido pelo Server Pro em `https://your-server/web`).** O cliente Web está [integrado ao RustDesk Server Pro](https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro), portanto ele é executado a partir do seu próprio servidor, e não do servidor público. Auto-hospedar o cliente Web **não está incluído nos planos de entrada** — é necessário um plano grande o suficiente para atender a **(número de usuários × 10) + número de dispositivos ≥ 400** (por exemplo, 10 usuários / 300 dispositivos, 30 usuários / 100 dispositivos, ou 20 usuários / 200 dispositivos). Um cliente Web auto-hospedado também pode ser [personalizado](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-to-customize-self-hosted-web-client).
 
-Independentemente do caminho escolhido, o cliente Web é um **controlador**: você opera outros dispositivos a partir de uma aba do navegador, mas uma aba do navegador não pode atuar como host não assistido.
+Seja qual for o caminho escolhido, o cliente Web é um **controlador**: você controla outros dispositivos a partir de uma aba do navegador, mas uma aba do navegador não pode atuar como host não assistido.
 
-Estamos entusiasmados em trazer essas melhorias para nossos usuários e aguardamos seu feedback enquanto continuamos a refinar e aprimorar o RustDesk Web Client V2.
+Experimente o [cliente Web](https://rustdesk.com/web) hoje mesmo e consulte a [documentação do Server Pro](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/) para os detalhes atuais de implantação. As permissões de área de transferência e o tratamento do teclado variam de um navegador para outro, então teste os navegadores que a sua equipe usa.

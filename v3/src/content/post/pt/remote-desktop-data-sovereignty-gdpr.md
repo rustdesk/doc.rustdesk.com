@@ -1,117 +1,118 @@
 ---
+updateDate: 2026-10-14T00:00:00Z
 publishDate: 2026-07-04T17:05:00Z
 lang: 'pt'
 translationKey: 'remote-desktop-data-sovereignty-gdpr'
 draft: false
 title: 'Soberania de Dados em Desktop Remoto & GDPR: Auto-hospedagem'
-excerpt: 'Como a auto-hospedagem dá às equipas reguladas controlo sobre os dados de rendezvous, relay e dispositivos — e que questões de GDPR e conformidade permanecem.'
+excerpt: 'Como a auto-hospedagem dá a equipes reguladas controle sobre rendezvous, relay e dados de dispositivos — e quais questões de GDPR e conformidade continuam em aberto.'
 image: '~/assets/images/blog/remote-desktop-data-sovereignty-gdpr-og.webp'
 category: 'Segurança'
 tags: ['RustDesk', 'Segurança', 'GDPR', 'Auto-hospedagem']
 author: 'RustDesk Team'
 slug: 'soberania-de-dados-em-desktop-remoto-and-gdpr-auto-hospedagem'
 faq:
-  - question: 'A RustDesk é compatível com ISO 27001, SOC 2 ou HIPAA?'
-    answer: 'O RustDesk é auto-hospedado, pelo que a conformidade depende do seu próprio ambiente: executa o acesso remoto dentro do âmbito da sua própria certificação ISO 27001 ou HIPAA e dos seus controlos existentes, e o software open source pode ser auditado diretamente em vez de ser aceite por confiança. Se precisar especificamente de um relatório SOC 2 do fornecedor, de um BAA assinado, de um DPA ou de questionários de segurança preenchidos, contacte sales@rustdesk.com para saber o que está disponível para o seu cenário.'
+  - question: 'O RustDesk está em conformidade com ISO 27001, SOC 2 ou HIPAA?'
+    answer: 'O RustDesk auto-hospedado é avaliado dentro do seu próprio programa de conformidade: o ID/rendezvous, o relay e o console rodam em infraestrutura que você opera, então entram no seu escopo ISO 27001, nos seus controles SOC 2 ou nas suas salvaguardas HIPAA, como o restante do ambiente. A auto-hospedagem é um controle de implantação, não uma certificação. Pergunte a sales@rustdesk.com quais relatórios do fornecedor, BAA, DPA ou documentos para compras estão disponíveis no seu cenário.'
   - question: 'A auto-hospedagem do RustDesk ajuda na conformidade com o GDPR?'
-    answer: 'Sim — dá-lhe o controlo em que o GDPR normalmente se baseia: escolhe onde residem os dados do servidor de ID/rendezvous, do relay, da consola e dos dispositivos, podendo mantê-los na região em infraestrutura que opera. Trata-se de uma base sólida, mas não de uma garantia automática, uma vez que o GDPR é um programa contínuo — o fundamento jurídico, os papéis de responsável pelo tratamento/subcontratante, a retenção, o controlo de acesso, a localização dos terminais e a resposta a incidentes continuam a ser definidos por si, com o responsável pelo tratamento a manter-se responsável.'
-  - question: 'Para onde vão realmente os dados de sessão do RustDesk?'
-    answer: 'O RustDesk tenta primeiro uma ligação direta ponto a ponto; se falhar, o tráfego passa pelo relay que configurou. A auto-hospedagem remove do percurso um servidor de rendezvous e relay operado por um fornecedor, mas uma sessão entre terminais em países diferentes continua a atravessar essas redes — a localização do servidor, por si só, não confina todo o tráfego a uma única jurisdição.'
-  - question: 'Posso manter os dados de desktop remoto dentro da UE com o RustDesk?'
-    answer: 'Pode colocar o servidor de ID/rendezvous, o relay, a consola e os dados armazenados dos dispositivos num centro de dados na UE. Para também restringir o tráfego de sessão, ambos os terminais têm de estar dentro dessa fronteira e a política tem de forçar o tráfego a passar pelo seu relay aprovado; documente a localização dos terminais e o encaminhamento juntamente com a localização do servidor.'
-  - question: 'Que funcionalidades do RustDesk ajudam a cumprir o GDPR?'
-    answer: 'A auto-hospedagem mantém os dados em infraestrutura que controla: uma vez que a telemetria de utilização que o serviço RustDesk alojado processaria permanece no seu próprio servidor quando faz auto-hospedagem, e, para além da verificação da licença Server Pro, pouco mais precisa de chegar ao rustdesk.com. O Server Pro acrescenta registos de auditoria integrados com rotação de registos, controlo de acesso granular e uma Função de Controlo (Control Role), SSO/LDAP e 2FA para dispositivos controlados, modo de privacidade e consentimento por ligação, e eliminação direta de utilizadores, dispositivos e registos (incluindo através da API REST) para pedidos de eliminação e retenção.'
+    answer: 'Sim — ela dá o controle que o GDPR normalmente exige: você escolhe onde ficam o ID/rendezvous, o relay, o console e os dados de dispositivos e pode mantê-los na região, em infraestrutura que você opera. Isso é uma base sólida, não uma garantia automática, porque o GDPR é um programa: base legal, papéis de controlador e operador, retenção, controle de acesso, localização dos endpoints e resposta a incidentes continuam a ser definidos por você, e o controlador segue responsável.'
+  - question: 'Para onde vão, de fato, os dados de sessão do RustDesk?'
+    answer: 'O RustDesk tenta primeiro uma conexão direta ponto a ponto; se ela falhar, o tráfego passa pelo relay que você configurou. A auto-hospedagem tira do caminho um rendezvous e um relay operados por fornecedor, mas uma sessão entre endpoints em países diferentes continua atravessando essas redes — a localização do servidor, sozinha, não confina todo o tráfego a uma única jurisdição.'
+  - question: 'Posso manter os dados de área de trabalho remota dentro da UE com o RustDesk?'
+    answer: 'Sim. Você pode colocar o ID/rendezvous, o relay, o console e os dados de dispositivos armazenados em um data center na UE. Para restringir também o tráfego das sessões, os dois endpoints precisam estar dentro da fronteira e a política deve forçar o tráfego pelo relay aprovado; documente a localização dos endpoints e o roteamento junto com a localização dos servidores.'
+  - question: 'Quais recursos do RustDesk ajudam a atender ao GDPR?'
+    answer: 'O RustDesk Server Pro oferece logs de auditoria com retenção configurável (Configurações > Outros > Retenção de logs (dias); 0 mantém os logs indefinidamente), Controle de acesso e Função de controle para o privilégio mínimo, SSO via LDAP/OIDC, consentimento por conexão, modo de privacidade no Windows e no macOS e exclusão de usuários e dispositivos pelo console ou pela API para pedidos de eliminação. A auto-hospedagem permite escolher onde tudo isso roda.'
 metadata:
-  description: 'Soberania de dados em desktop remoto e GDPR: o que a auto-hospedagem controla, em que diferem as sessões diretas e as retransmitidas (relay), e porque é que a conformidade exige mais do que a localização do servidor.'
+  description: 'Soberania de dados e GDPR no acesso remoto: o que a auto-hospedagem controla, sessões diretas vs. via relay e por que a conformidade vai além do servidor.'
   keywords: 'soberania de dados em desktop remoto, GDPR no acesso remoto, residência de dados em desktop remoto, conformidade de acesso remoto auto-hospedado'
 ---
 
-Se a sua organização está vinculada ao GDPR, a regras de privacidade da área da saúde ou a um mandato do setor público do tipo "os nossos dados ficam na nossa infraestrutura", há uma pergunta que decide, à partida, que ferramentas de desktop remoto pode sequer considerar: **onde vão realmente os dados de sessão?**
+Se a sua organização está sujeita ao GDPR, a regras de privacidade da área da saúde ou a uma exigência do setor público do tipo "nossos dados ficam na nossa infraestrutura", uma pergunta decide quais ferramentas de área de trabalho remota podem sequer entrar na lista: **para onde vão, de fato, os dados da sessão?**
 
-Na maioria dos produtos de acesso remoto convencionais, a resposta é "através da cloud do fornecedor". O seu técnico liga-se, o seu terminal liga-se, e o tráfego é intermediado por servidores que não são seus, numa jurisdição que pode não controlar. Para muitos compradores, isso não é problema. Para equipas reguladas, é um problema de conformidade ainda antes de alguém partilhar um ecrã.
+Em um serviço hospedado pelo fornecedor, em geral é o fornecedor que opera a coordenação e armazena os dados de gerenciamento e de conta. A mídia da sessão pode trafegar diretamente entre os endpoints ou passar por um relay. Uma análise de fluxo de dados precisa distinguir esses caminhos; "intermediado pela nuvem" não significa que cada pacote de tela passe por ela.
 
-Este guia é sobre **soberania de dados em desktop remoto**: o que significa, porque é importante para compradores regulados e da UE, e que partes de uma implementação de acesso remoto a auto-hospedagem lhe permite controlar. Vamos usar o RustDesk como exemplo prático.
+Este guia trata de **soberania de dados em área de trabalho remota**: o que significa, por que importa para compradores regulados e da UE e quais partes de uma implantação de acesso remoto a auto-hospedagem permite controlar. Vamos usar o RustDesk como exemplo prático.
 
-## O que significa "soberania de dados" no acesso remoto
+## O que "soberania de dados" significa no acesso remoto
 
-Soberania de dados é o princípio segundo o qual os dados estão sujeitos às leis do país onde são fisicamente armazenados e processados. No suporte remoto, os dados sensíveis não são apenas os ficheiros que transfere — é a própria sessão: o que está no ecrã, a lista de dispositivos que gere, os metadados de ligação e, frequentemente, o encaminhamento dos pixels em tempo real.
+Soberania de dados é o princípio de que os dados estão sujeitos às leis do país onde são fisicamente armazenados e processados. No suporte remoto, os dados sensíveis não são apenas os arquivos que você transfere — é a própria sessão: o que aparece na tela, a lista de dispositivos que você gerencia, os metadados de conexão e, muitas vezes, o roteamento dos pixels em tempo real.
 
-As perguntas fundamentais são: **que sistemas armazenam os metadados, que sistemas retransmitem o tráfego e onde estão ambos os terminais?** A auto-hospedagem pode remover do percurso um serviço de rendezvous ou relay operado por um fornecedor, mas não pode garantir que uma sessão entre terminais em países diferentes permaneça numa única jurisdição.
+As perguntas centrais são: **quais sistemas armazenam metadados, quais sistemas retransmitem o tráfego e onde estão os dois endpoints?** A auto-hospedagem pode tirar do caminho um serviço de rendezvous ou relay operado por fornecedor, mas não garante que uma sessão entre endpoints em países diferentes permaneça em uma única jurisdição.
 
-## A diferença fundamental: cloud do fornecedor vs. a sua infraestrutura
+## A diferença central: nuvem do fornecedor vs. sua infraestrutura
 
 É aqui que a arquitetura, e não o marketing, decide o resultado.
 
-**O RustDesk Server Pro é auto-hospedado.** O servidor de ID/rendezvous, o servidor relay, a consola web e os dados dos dispositivos geridos são executados na infraestrutura que escolher. O RustDesk tenta primeiro uma ligação direta ponto a ponto através de hole punching; se falhar, o tráfego da sessão passa pelo relay que configurou. Isto dá-lhe controlo sobre a camada de rendezvous/relay e sobre os dados armazenados dos dispositivos, mas os terminais e as suas rotas de rede continuam a determinar por onde viaja o tráfego direto.
+**O RustDesk Server Pro é auto-hospedado.** O servidor ID/rendezvous, o servidor relay, o console web e os dados de dispositivos gerenciados rodam na infraestrutura que você escolher. O RustDesk tenta primeiro uma conexão direta ponto a ponto por hole punching; se isso falhar, o tráfego da sessão passa pelo relay que você configurou. Isso dá a você controle sobre a camada de rendezvous/relay e sobre os dados de dispositivos armazenados, mas são os endpoints e suas rotas de rede que determinam por onde passa o tráfego direto.
 
-|                                      | Ferramentas com cloud do fornecedor     | RustDesk auto-hospedado                                                                                  |
-| ------------------------------------ | --------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| Onde as sessões são coordenadas      | Cloud do fornecedor                     | O seu servidor de ID/rendezvous                                                                          |
-| Por onde flui o tráfego da sessão    | Encaminhamento definido pelo fornecedor | Direto entre terminais quando possível; caso contrário, através do seu relay                             |
-| Quem controla a residência dos dados | O fornecedor                            | Escolhe a localização do lado do servidor e a política de relay; os terminais continuam a ser relevantes |
-| Auditabilidade do cliente            | Normalmente closed source               | [Open source (AGPL)](https://github.com/rustdesk/rustdesk) — leia e compile-o você mesmo                 |
-| Quem opera o servidor                | O fornecedor                            | A sua equipa                                                                                             |
+|                                      | Ferramentas na nuvem do fornecedor  | RustDesk auto-hospedado                                                                               |
+| ------------------------------------ | ----------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Onde as sessões são coordenadas      | Na nuvem do fornecedor              | No seu servidor ID/rendezvous                                                                         |
+| Por onde passa o tráfego da sessão   | Roteamento definido pelo fornecedor | Direto entre os endpoints quando possível; caso contrário, pelo seu relay                             |
+| Quem controla a residência dos dados | O fornecedor                        | Você escolhe a localização do lado do servidor e a política de relay; os endpoints continuam importando |
+| Auditabilidade do cliente            | Em geral, código fechado            | [Código aberto (AGPL)](https://github.com/rustdesk/rustdesk) — leia e compile você mesmo              |
+| Quem opera o servidor                | O fornecedor                        | A sua equipe                                                                                          |
 
-As equipas que avaliam a auto-hospedagem citam frequentemente a capacidade de escolher a localização e o operador dos sistemas de rendezvous, relay e gestão. Trata-se de um controlo significativo, mas tem de ser documentado em conjunto com a localização dos terminais e o comportamento de encaminhamento.
+As equipes que avaliam a auto-hospedagem costumam citar esse controle em primeiro lugar: escolher a localização e o operador dos sistemas de rendezvous, relay e gerenciamento.
 
-## Vantagem 1: Controla a localização dos dados do lado do servidor
+## Vantagem 1: você controla a localização dos dados do lado do servidor
 
-Colocar os serviços de ID, relay e gestão num centro de dados na Alemanha permite-lhe documentar onde residem esses serviços e os respetivos dados armazenados. Se ambos os terminais também estiverem dentro da fronteira exigida e a política forçar o tráfego a passar por um relay aprovado, pode desenhar uma rota mais restrita. Sem esses controlos adicionais, a localização do servidor, por si só, não garante que todo o tráfego da sessão permaneça na Alemanha.
+Coloque os serviços de ID, relay e gerenciamento em um data center na Alemanha e você consegue documentar exatamente onde ficam esses serviços e os dados que eles armazenam. Mantenha os dois endpoints dentro da fronteira exigida e force o tráfego pelo relay aprovado, e você também consegue restringir a rota da sessão.
 
-## Vantagem 2: Ser open source significa que pode provar, não apenas confiar
+## Vantagem 2: código aberto significa que você pode verificar o cliente
 
-A soberania de dados não diz respeito apenas à localização — trata-se de saber o que o software faz. O núcleo do RustDesk é **open source, sob licença AGPL**. Você (ou a sua equipa de segurança) pode ler o código, auditar exatamente o que o cliente faz, compilá-lo você mesmo e executar indefinidamente o servidor gratuito da comunidade. Essa auditabilidade é mais importante do que o habitual no acesso remoto: como se confia ao software o controlo total de uma máquina, os compradores em setores regulados querem cada vez mais verificar o que um cliente faz, em vez de aceitar a palavra do fornecedor. Poder inspecionar o cliente por si próprio é uma resposta concreta à pergunta "como sabemos?".
+O **cliente RustDesk e o RustDesk Server OSS (o servidor comunitário gratuito) são [licenciados sob a AGPL](https://github.com/rustdesk/rustdesk)**; **o Server Pro é um software de servidor auto-hospedado, comercial e proprietário**. Sua equipe de segurança pode ler o código do cliente, auditar o que ele faz em um endpoint e compilá-lo por conta própria. Isso pesa mais do que o normal no acesso remoto: o software recebe a confiança de controlar uma máquina inteira, e compradores regulados querem cada vez mais verificar o que um cliente faz, em vez de aceitar a palavra do fornecedor.
 
-## Vantagem 3: Soberania sem sobretaxa de licenciamento
+## Vantagem 3: um modelo diferente de licenciamento do servidor
 
-Os planos padrão do RustDesk são licenciados **por utilizador de login, mais por dispositivo gerido**, e incluem ligações simultâneas ilimitadas; o [Customized V2](https://rustdesk.com/pricing#custom2), pelo contrário, limita e cobra pelas ligações simultâneas. Pode [atualizar uma licença](/pt/blog/atualizar-a-licenca-do-rustdesk-no-meio-da-assinatura-como-funciona) à medida que os requisitos mudam. Consulte a tabela de planos atual antes de comprar.
+Os planos padrão do RustDesk são licenciados **por usuário com login e por dispositivo gerenciado** e incluem conexões simultâneas ilimitadas; somente o [Customized V2](https://rustdesk.com/pricing#custom2) licencia uma quantidade definida de conexões simultâneas. Você pode [fazer o upgrade de uma licença](/pt/blog/atualizar-a-licenca-do-rustdesk-no-meio-da-assinatura-como-funciona) a qualquer momento, conforme os requisitos mudam.
 
-A arquitetura também escala com o seu parque de dispositivos: o RustDesk publica [orientações de planeamento para frotas de grande dimensão](/pt/blog/o-rustdesk-consegue-escalar-para-200-000-dispositivos) para equipas que avaliam implementações maiores. Para [controlo de acesso por utilizador](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/permissions/), as implementações auto-hospedadas incluem uma [consola web](https://rustdesk.com/docs), um gerador de clientes personalizados com a sua marca, grupos de dispositivos com livro de endereços partilhado, e [LDAP/SSO](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/ldap/) (OIDC), disponível a partir do plano Basic, inclusive.
+O modelo acompanha o tamanho do seu parque: o [guia de planejamento para frotas grandes](/pt/blog/o-rustdesk-consegue-escalar-para-200-000-dispositivos) cobre implantações de até 200.000 dispositivos. O Server Pro acrescenta [Controle de acesso](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/permissions/) por usuário e por grupo de dispositivos, além de SSO via LDAP/OIDC e geração de cliente personalizado a partir do plano Basic.
 
-## Como o RustDesk se enquadra nos requisitos de ISO 27001, SOC 2 ou HIPAA
+## Como o RustDesk se encaixa nos requisitos de ISO 27001, SOC 2 ou HIPAA
 
-As equipas de compras empresariais e da área da saúde perguntam quase sempre como é que uma ferramenta de acesso remoto se enquadra na ISO 27001, na SOC 2 ou na HIPAA. Com um produto na cloud, herda e depende da certificação que o fornecedor tem sobre a _própria_ infraestrutura. O modelo do RustDesk é diferente e, para equipas reguladas, essa diferença costuma jogar a seu favor: como faz **auto-hospedagem**, o acesso remoto é executado dentro do ambiente que já controla e audita, pelo que passa a estar sob o âmbito _da sua própria_ certificação ISO 27001 ou HIPAA e sob _os seus_ controlos já existentes, e não os de terceiros. Coloca o ID, o relay e a consola em infraestrutura que já está coberta pelo seu programa e — porque o RustDesk é [open source](https://github.com/rustdesk/rustdesk) — a sua equipa de segurança pode ler e verificar exatamente o que ele faz como parte de uma avaliação, em vez de confiar num binário fechado.
+Equipes de compras corporativas e da área da saúde quase sempre perguntam como uma ferramenta de acesso remoto se relaciona com ISO 27001, SOC 2 ou HIPAA. Com um produto em nuvem, você depende da certificação que o fornecedor tem da própria infraestrutura e dos termos de responsabilidade compartilhada. O RustDesk auto-hospedado funciona ao contrário: o ID/rendezvous, o relay e o console rodam em infraestrutura que o seu programa já cobre, então você os avalia dentro do seu próprio escopo ISO 27001, dos seus controles SOC 2 ou das suas salvaguardas HIPAA, e sua equipe de segurança pode inspecionar o código-fonte do cliente como parte dessa avaliação. A auto-hospedagem é um controle de implantação, não uma certificação; é a avaliação que a coloca dentro do escopo.
 
 Algumas notas práticas:
 
-- A auto-hospedagem mantém os sistemas sensíveis — rendezvous, relay, consola e dados dos dispositivos — em hardware que lhe pertence, que é exatamente o que um controlo de residência de dados ou de HIPAA normalmente pretende garantir. A checklist de implementação mais adiante transforma isso em controlos documentados.
-- Se o seu processo de compras exigir especificamente um relatório SOC 2 do fornecedor, um Business Associate Agreement (BAA) assinado, um DPA ou questionários de segurança preenchidos, contacte a equipa do RustDesk em [sales@rustdesk.com](mailto:sales@rustdesk.com) para saber o que está atualmente disponível para o seu cenário.
-- Como o RustDesk é open source, a pergunta "como sabemos o que ele faz?" é respondida por inspeção, e não por um certificado que tem de aceitar por fé.
+- A auto-hospedagem permite escolher a localização e o operador do rendezvous, do relay, do console e dos dados de gerenciamento armazenados. Documente o roteamento dos endpoints, os backups e o acesso de administradores junto com essas localizações.
+- Se o seu processo de compras exige especificamente um relatório SOC 2 do fornecedor, um Business Associate Agreement (BAA) assinado, um DPA ou questionários de segurança preenchidos, pergunte à equipe do RustDesk em [sales@rustdesk.com](mailto:sales@rustdesk.com) o que está disponível hoje para o seu cenário.
+- Como o cliente é de código aberto, a pergunta "como sabemos o que ele faz?" é respondida pela inspeção; relatórios de garantia do fornecedor respondem a outra pergunta do processo de compras.
 
-Em suma, a auto-hospedagem permite-lhe integrar o acesso remoto no programa de conformidade que já tem em funcionamento — muitas vezes, uma posição mais forte para uma equipa regulada do que alugar uma caixa preta certificada.
+Em resumo, a auto-hospedagem traz o acesso remoto para dentro do programa de conformidade que você já opera, o que muitas vezes é uma posição mais forte para uma equipe regulada do que depender da certificação de um fornecedor sobre uma infraestrutura que você não pode inspecionar.
 
-## Controlos que suportam um programa de GDPR auto-hospedado
+## Controles que apoiam um programa de GDPR auto-hospedado
 
-A auto-hospedagem é a base e, a partir daí, o RustDesk fornece controlos concretos nos quais as equipas auto-hospedadas se apoiam para cumprir o GDPR na prática:
+A auto-hospedagem é a base e, sobre ela, o RustDesk oferece controles concretos em que as equipes auto-hospedadas se apoiam em um programa de GDPR:
 
-- **A telemetria vai para o seu servidor, não para o RustDesk.** Os dados de utilização descritos na política de privacidade do RustDesk — arranque da aplicação, endereço IP, estatísticas básicas da máquina, horários de sessão e IDs do RustDesk — são o que o **serviço público alojado** do RustDesk processa; quando executa os seus próprios servidores de ID/rendezvous e relay, esses dados ficam, em vez disso, na **sua** infraestrutura. Para além da verificação da licença Server Pro, pouco mais precisa de chegar ao rustdesk.com — confirme as ligações de saída exatas da compilação do cliente e das definições que implementa. Isso mantém, por predefinição, os dados de sessão e de utilização em infraestrutura que controla, uma postura sólida de minimização de dados.
-- **Rotação e retenção integradas de registos de auditoria.** Os registos de auditoria do Server Pro têm quatro categorias — ligação, transferência de ficheiros, alarme e operação na consola — com **rotação de registos integrada**, para que os dados de auditoria não sejam retidos indefinidamente (limitação da conservação), podendo exportá-los a partir da consola web ou da API REST para os seus registos das atividades de tratamento.
-- **Acesso granular e delimitado.** As atribuições por utilizador, os grupos de dispositivos, as regras entre grupos e uma Função de Controlo (Control Role) — que define o que um técnico pode fazer durante a sessão: teclado/rato, área de transferência, transferência de ficheiros, áudio, câmara, terminal, impressão, gravação e muito mais — impõem o privilégio mínimo e a limitação da finalidade, apoiados por SSO/LDAP e 2FA para dispositivos controlados.
-- **Modo de privacidade e consentimento por ligação.** O lado controlado pode exigir confirmação para uma ligação recebida e pode escurecer o seu ecrã (modo de privacidade, suportado no Windows e no macOS) durante uma sessão, limitando a exposição incidental de dados pessoais no ecrã.
-- **Eliminação nos seus próprios termos.** Como os dados residem no seu servidor, pode desativar ou remover utilizadores, eliminar dispositivos e registos — incluindo através da API REST — e responder diretamente a pedidos de eliminação e de retenção.
-- **Infraestrutura na região, operada por si.** O servidor de ID/rendezvous, o relay, a consola e os dados armazenados são executados onde os colocar, em hardware que controla.
-- **Até as compilações de clientes personalizados não deixam dados para trás.** Gerar um cliente com a sua marca é o único passo que utiliza o serviço de compilação do RustDesk, e é deliberadamente transitório: a configuração de compilação que submete não é retida no servidor de compilação do RustDesk (é eliminada assim que a compilação termina), e o instalador gerado é removido automaticamente ao fim de cerca de um dia, pelo que é você quem o transfere e guarda.
+- **Os dados do servidor ficam onde você os coloca, com uma lista curta de fluxos de saída.** Os serviços auto-hospedados de ID/rendezvous, relay e gerenciamento Pro processam os dados da implantação onde você os executa. Os fluxos de saída a documentar são a validação da licença Pro (HTTPS para rustdesk.com cerca de uma vez por dia), o serviço de build de clientes personalizados, as atualizações do cliente, o SMTP, se você configurar um servidor de e-mail externo, e qualquer provedor de identidade externo que você conectar. Veja o [guia do Server Pro offline e em rede isolada](/pt/blog/o-rustdesk-server-pro-pode-funcionar-offline-ou-em-rede-isolada-air).
+- **Retenção de auditoria configurável.** Os [logs de auditoria do Server Pro](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/audit-logs/#visibilidade-e-retenção-de-logs) cobrem conexões, transferência de arquivos, alarmes e operações do console. Em **Configurações → Outros → Retenção de logs (dias)** (Settings → Other → Log Retention (Days)), `0` mantém todos os logs indefinidamente; um valor positivo exclui os logs mais antigos, com limpeza uma vez por hora. Defina separadamente a retenção de exportações e backups.
+- **Acesso granular e delimitado.** O [Controle de acesso](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/permissions/) define quem pode acessar quais dispositivos por meio de atribuições por usuário, grupos de dispositivos e regras entre grupos (as permissões de grupos de usuários e de grupos de dispositivos são cumulativas). O catálogo de endereços compartilhado apenas organiza entradas; ele não é uma fronteira de acesso. A [Função de controle](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/control-role/) limita o que um técnico pode fazer durante a sessão — teclado/mouse, área de transferência, transferência de arquivos, áudio, câmera, terminal, impressão, gravação e mais. Junto com SSO/LDAP e 2FA no dispositivo controlado, esses controles aplicam o privilégio mínimo e a limitação de finalidade.
+- **Modo de privacidade e consentimento por conexão.** O lado controlado pode exigir aprovação para cada conexão recebida, e o modo de privacidade (suportado no Windows e no macOS) apaga a tela local durante a sessão, limitando a exposição acidental de dados pessoais na tela.
+- **Exclusão nos seus termos.** Como os dados ficam no seu servidor, você pode desativar ou remover usuários, excluir dispositivos e registros — inclusive pela API REST — e atender diretamente a pedidos de eliminação e de retenção.
+- **Infraestrutura na região, operada por você.** O ID/rendezvous, o relay, o console e os dados armazenados rodam onde você os coloca, em hardware que você controla.
+- **Os builds de cliente personalizado são temporários.** Gerar um cliente com a sua marca é a única etapa que usa o serviço de build do RustDesk, e ela é propositalmente de curta duração: a configuração de build enviada é excluída assim que o build termina, e o instalador gerado é removido automaticamente depois de cerca de um dia, então você o baixa e o guarda no seu próprio repositório aprovado.
 
-Estas são alavancas que um programa de GDPR pode efetivamente acionar: continua a ser você a documentá-las e operá-las, mas não está à espera que um fornecedor atue perante um pedido de um titular dos dados.
+Essas são alavancas que um programa de GDPR consegue de fato acionar: você ainda as documenta e opera, mas não fica esperando um fornecedor agir sobre a solicitação de um titular de dados.
 
-## Soberania tangível
+## Soberania que você pode demonstrar
 
-Hospedar você mesmo o rendezvous, o relay, a consola e os dados armazenados dá a um programa de conformidade algo concreto: infraestrutura que coloca, opera e audita. É uma base, não uma linha de chegada, mas é a parte sobre a qual tudo o resto assenta.
+Hospedar você mesmo o rendezvous, o relay, o console e os dados armazenados dá ao programa de conformidade algo concreto: infraestrutura que você posiciona, opera e audita. É um ponto de partida, e não a linha de chegada, mas é a parte sobre a qual todo o resto se apoia.
 
-## Checklist de implementação para GDPR e soberania
+## Checklist de implantação para GDPR e soberania
 
-A auto-hospedagem dá-lhe opções; a implementação tem de transformar essas opções em controlos:
+A auto-hospedagem dá opções; a implantação precisa transformar essas opções em controles:
 
-- Documente onde estão localizados o servidor de ID, o relay, a consola, as cópias de segurança, os registos e os administradores.
-- Mapeie separadamente as rotas diretas ponto a ponto e as rotas retransmitidas (via relay). Um servidor na Alemanha não mantém dentro da Alemanha uma sessão direta entre a Alemanha e outro país.
-- Decida quando o relay deve ser forçado, porque encaminhar o tráfego através de um local controlado é mais importante do que o desempenho da ligação ponto a ponto.
-- Registe a finalidade, o período de retenção e a política de acesso para os metadados de dispositivos, contas, auditoria e ligações.
-- Aplique grupos de dispositivos com privilégio mínimo, MFA/SSO sempre que disponível, e um processo de admissão, mudança de função e saída (joiner-mover-leaver) para técnicos.
-- Coloque a consola web atrás de HTTPS, restrinja o acesso de rede administrativo e teste a restauração das cópias de segurança.
-- Complete a avaliação jurídica adequada — como o registo das atividades de tratamento, a avaliação de subcontratantes, a avaliação de transferências e a DPIA — consoante o seu caso de utilização.
+- Documente onde ficam o servidor de ID, o relay, o console, os backups, os logs e os administradores.
+- Mapeie as rotas diretas ponto a ponto separadamente das rotas via relay. Um servidor na Alemanha não mantém dentro da Alemanha uma sessão direta entre a Alemanha e outro país.
+- Decida quando o relay deve ser forçado, porque rotear por um local controlado importa mais do que o desempenho ponto a ponto.
+- Registre a finalidade, o período de retenção e a política de acesso dos metadados de dispositivos, contas, auditoria e conexões.
+- Aplique grupos de dispositivos com privilégio mínimo, MFA/SSO onde houver e um processo de entrada, mudança e saída (joiner-mover-leaver) para técnicos.
+- Coloque o console web atrás de HTTPS, restrinja o acesso administrativo pela rede e teste a restauração dos backups.
+- Conclua a avaliação jurídica adequada ao seu caso de uso — como o registro das operações de tratamento, a avaliação de operadores, a avaliação de transferências internacionais e a DPIA.
 
-O RustDesk pode apoiar uma arquitetura de soberania, mas o responsável pelo tratamento continua a ser o responsável pela arquitetura e pelo seu fundamento jurídico.
+O RustDesk pode apoiar uma arquitetura de soberania, mas o controlador continua responsável pela arquitetura e por sua base legal.
 
 ## Avalie dentro do seu próprio perímetro
 
-Pode avaliar nos seus próprios termos. Faça já a auto-hospedagem do servidor gratuito e open source da comunidade, ou envie um email para [sales@rustdesk.com](mailto:sales@rustdesk.com) para conhecer as condições de avaliação atuais das funcionalidades Pro. Consulte os planos atuais e as funcionalidades exatas em [rustdesk.com/pricing](https://rustdesk.com/pricing). Prefere ver primeiro? Há um vídeo de demonstração completo no [canal do RustDesk no YouTube](https://www.youtube.com/@rustdesk).
+Você pode avaliar nos seus próprios termos. Auto-hospede o Server OSS hoje mesmo ou envie um e-mail para [sales@rustdesk.com](mailto:sales@rustdesk.com) para conhecer as condições de avaliação atuais dos recursos Pro. Confira os planos atuais e os recursos exatos em [rustdesk.com/pricing](https://rustdesk.com/pricing). Prefere assistir antes? Há um tutorial completo em vídeo no [canal do RustDesk no YouTube](https://www.youtube.com/@rustdesk).

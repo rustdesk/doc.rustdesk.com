@@ -1,10 +1,11 @@
 ---
+updateDate: 2026-10-14T00:00:00Z
 publishDate: 2026-06-30T15:11:00Z
 lang: 'it'
 translationKey: 'self-hosted-teamviewer-alternative'
 draft: false
-title: 'La Migliore Alternativa Self-Hosted a TeamViewer e AnyDesk'
-excerpt: "Perché i team stanno abbandonando TeamViewer e AnyDesk per un'alternativa self-hosted e open source che controllano davvero — e come si inserisce RustDesk."
+title: "Un'alternativa self-hosted a TeamViewer e AnyDesk: RustDesk"
+excerpt: 'Valuta RustDesk come alternativa a TeamViewer o AnyDesk: client open source, Server OSS gratuito, amministrazione Pro commerciale e un piano di migrazione per fasi.'
 image: '~/assets/images/blog/self-hosted-teamviewer-alternative-og.webp'
 category: 'Alternative'
 tags: ['RustDesk', 'TeamViewer', 'AnyDesk', 'Alternativa', 'Self-hosting']
@@ -12,94 +13,95 @@ author: 'RustDesk Team'
 slug: 'la-migliore-alternativa-self-hosted-a-teamviewer'
 faq:
   - question: 'RustDesk è una buona alternativa self-hosted a TeamViewer e AnyDesk?'
-    answer: "RustDesk Server Pro è self-hosted per progettazione — il server ID/rendezvous, il relay, la console e i dati memorizzati vengono eseguiti su un'infrastruttura che controlli — e RustDesk è open source con licenza AGPL. Risponde ai due motivi principali per cui i team abbandonano TeamViewer e AnyDesk: costo e controllo."
-  - question: "Posso ospitare da solo un'alternativa a TeamViewer o AnyDesk sui miei server?"
-    answer: "Sì. Con RustDesk Server Pro ospiti i server tu stesso, on-prem o su una VPS, e puoi eseguire il server community gratuito e open source a tempo indeterminato. Qualcuno del tuo team dovrà predisporre l'host, aprire le porte, configurare il TLS e mantenerlo aggiornato con le patch."
+    answer: "Sì. RustDesk abbina un client con licenza AGPL e RustDesk Server OSS (il server community gratuito) all'amministrazione commerciale di Server Pro, tutto in self-hosting, e i piani Pro standard includono connessioni simultanee illimitate. Sei tu a gestire rendezvous, relay, console e dati di gestione memorizzati. Anche AnyDesk offre Ultimate On-Premises, quindi confronta visibilità del codice sorgente, licenze e flussi di lavoro, oltre all'hosting."
+  - question: "Posso ospitare un'alternativa a TeamViewer o AnyDesk sui miei server?"
+    answer: "Sì. Con RustDesk Server OSS (il server community gratuito) o con Server Pro ospiti tu i server, on-prem o su una VPS, e Server OSS non ha canone di licenza né scadenza. Qualcuno del tuo team deve predisporre l'host, aprire le porte, configurare il TLS e mantenerlo aggiornato con le patch."
   - question: 'Come si confronta la licenza di RustDesk con un abbonamento per postazione o per piano?'
-    answer: 'RustDesk applica la licenza per utente di accesso più per dispositivo gestito, con connessioni simultanee illimitate sui piani standard e un limite definito su Customized V2; gli upgrade a metà periodo vengono calcolati in modo proporzionale. Calcola tutti e tre i conteggi confrontandoli con la pagina dei prezzi aggiornata.'
+    answer: "RustDesk Server Pro concede in licenza utenti con login più dispositivi gestiti, con connessioni simultanee illimitate nei piani standard; solo Customized V2 ne concede in licenza un numero prestabilito. Un upgrade si può acquistare in qualsiasi momento: estende la scadenza della licenza a un anno intero dalla data dell'upgrade e accredita il valore residuo già pagato della licenza attuale. Stima utenti, dispositivi e connessioni simultanee sulla pagina dei prezzi aggiornata."
   - question: "RustDesk segnala l'uso commerciale come fa AnyDesk?"
-    answer: "No. RustDesk Server Pro è self-hosted e concesso in licenza commerciale in base al piano che acquisti, quindi non esiste alcun classificatore dell'uso commerciale di un livello gratuito che monitora le tue sessioni come invece avviene nella versione gratuita di AnyDesk."
+    answer: "No. RustDesk Server OSS (il server community gratuito) non ha un classificatore dell'uso commerciale come quello del piano gratuito di AnyDesk, quindi l'uso aziendale di Server OSS non viene segnalato né interrotto. RustDesk Server Pro è un prodotto commerciale i cui limiti dipendono dal piano acquistato: il numero di utenti con login e di dispositivi gestiti che concede in licenza."
   - question: 'RustDesk funziona per gli MSP e le operazioni IT su larga scala?'
-    answer: 'Sì. Include una console web self-hosted, un generatore di client personalizzabile con il proprio brand e gruppi di dispositivi con una rubrica condivisa per il controllo degli accessi per utente, oltre a LDAP/SSO (OIDC) dal piano Basic in su. La pianificazione per flotte di grandi dimensioni parte da circa 50.000 dispositivi gestiti, mentre parchi macchine più estesi richiedono una validazione.'
-  - question: "Il self-hosting aiuta a mantenere i miei dati all'interno del paese e a rispettare il GDPR?"
-    answer: "Sì — controlli il rendezvous, il relay, la console e i dati dei dispositivi memorizzati, il che rappresenta una solida base. Non è tuttavia una garanzia assoluta: le connessioni dirette continuano a fluire tra gli endpoint, quindi mantenere il traffico all'interno del paese e soddisfare gli obblighi del GDPR dipende anche da come instradi e gestisci il deployment."
+    answer: 'Sì. RustDesk Server Pro aggiunge una console self-hosted, gruppi di dispositivi, rubriche condivise e il Controllo di accesso per utente e per gruppo di dispositivi; la generazione di client personalizzati e lo SSO LDAP/OIDC partono dal piano Basic, e i piani standard includono connessioni simultanee illimitate. RustDesk pubblica indicazioni per pianificare grandi flotte; per parchi molto estesi, convalida la capacità sul tuo carico di lavoro reale.'
+  - question: "Il self-hosting aiuta a mantenere i miei dati all'interno del paese e a supportare il GDPR?"
+    answer: 'Sì, come controllo sul deployment. Con RustDesk in self-hosting scegli chi gestisce rendezvous, relay, console e dati dei dispositivi memorizzati, e dove girano. Non è una certificazione di conformità: le connessioni dirette continuano a passare tra gli endpoint, quindi il traffico nel paese e gli obblighi GDPR dipendono anche da come instradi e gestisci il deployment.'
 
 metadata:
-  description: "Cerchi un'alternativa self-hosted a TeamViewer o AnyDesk? RustDesk è open source, funziona sui tuoi server e non prevede un abbonamento cloud per canale né per postazione. Scopri il confronto."
-  keywords: 'alternativa self-hosted a TeamViewer, alternativa self-hosted a AnyDesk, sostituto di TeamViewer, sostituto di AnyDesk, alternativa open source per desktop remoto'
+  description: 'Valuta RustDesk come alternativa self-hosted a TeamViewer o AnyDesk: client e Server OSS con licenza AGPL, Server Pro commerciale, licenze e migrazione.'
+  keywords: 'alternativa self-hosted a TeamViewer, alternativa self-hosted ad AnyDesk, sostituto di TeamViewer, sostituto di AnyDesk, alternativa open source per desktop remoto'
 ---
 
-La ricerca di una **alternativa self-hosted a TeamViewer o AnyDesk** inizia solitamente allo stesso modo: un preventivo di rinnovo che non corrisponde più ai flussi di lavoro che utilizzi, mentre il prodotto continua a instradare le tue sessioni attraverso un'infrastruttura che non controlli.
+La ricerca di un'**alternativa self-hosted a TeamViewer o AnyDesk** di solito inizia allo stesso modo: un preventivo di rinnovo che non corrisponde più ai flussi di lavoro che usi, mentre il prodotto continua a gestire le tue sessioni attraverso un'infrastruttura che non controlli. RustDesk è un'alternativa self-hosted a entrambi: gestisci tu i server ID/rendezvous e relay, partendo da RustDesk Server OSS (il server community gratuito), e aggiungi il Server Pro commerciale quando ti serve l'amministrazione centralizzata.
 
 ## Perché i team abbandonano TeamViewer e AnyDesk
 
-Due fattori decisionali emergono ripetutamente.
+Due fattori decisionali ricorrono di continuo.
 
-**Costo.** Gli importi di rinnovo possono crescere indipendentemente dall'utilizzo — il pacchetto del livello, i componenti aggiuntivi e le variazioni tariffarie influenzano tutti la cifra finale. Confronta il preventivo attuale con le alternative a parità di requisiti.
+**Costo.** Gli importi di rinnovo possono crescere indipendentemente dall'utilizzo: il packaging dei livelli, i componenti aggiuntivi e le variazioni tariffarie spostano tutti la cifra finale. Confronta il preventivo attuale con le alternative a parità di requisiti.
 
-**Controllo.** Con uno strumento solo cloud, il traffico delle tue sessioni e l'elenco dei tuoi dispositivi risiedono sull'infrastruttura di un fornitore. Per un numero crescente di team — in particolare nel settore sanitario, nella pubblica amministrazione e ovunque si applichi il [GDPR](/it/blog/sovranita-dei-dati-del-desktop-remoto-e-gdpr-self-hosting) — scegliere dove risiedono i dati lato server e il livello di relay è un requisito imprescindibile, non una preferenza.
+**Controllo.** I servizi ospitati dal fornitore in genere gestiscono il coordinamento delle connessioni e i dati di gestione; i flussi della sessione possono essere diretti o passare da un relay. Il servizio standard di TeamViewer segue questo modello, mentre AnyDesk offre anche un'appliance Ultimate On-Premises.
 
-Una **alternativa self-hosted** risponde a entrambe le esigenze: RustDesk Server Pro è [self-hosted per progettazione](/it/blog/perche-fare-self-hosting-del-tuo-software-di-desktop-remoto) — il server ID/rendezvous, il relay, la console e i dati di deployment memorizzati vengono eseguiti su un'infrastruttura che controlli tu — e il suo core è open source con licenza [AGPL](https://github.com/rustdesk/rustdesk), così puoi verificare esattamente cosa fa il client, applicare le patch secondo i tuoi tempi ed eseguire il server community gratuito a tempo indeterminato anziché affidarti a un cloud chiuso.
+Il **client e Server OSS di RustDesk hanno licenza AGPL** e possono essere ispezionati e compilati in modo indipendente. Server OSS fornisce i servizi ID/rendezvous e relay senza canone di licenza né scadenza. **Server Pro è un software server self-hosted commerciale e proprietario** che aggiunge l'amministrazione centralizzata sulla tua infrastruttura. In entrambi i casi, decidi tu dove girano i server e chi li gestisce.
 
-Un'avvertenza: le sessioni dirette continuano a fluire tra gli endpoint (le sessioni tramite relay utilizzano il relay che hai configurato), quindi il solo self-hosting non garantisce che il traffico resti all'interno del paese né la conformità al GDPR — il modo in cui instradi e gestisci il deployment resta determinante.
+Un'avvertenza: le sessioni dirette viaggiano tra gli endpoint (quelle tramite relay passano dal tuo relay), quindi il self-hosting è un controllo sul deployment, non una certificazione di conformità: il traffico nel paese e gli obblighi GDPR dipendono comunque da come instradi e gestisci il deployment.
 
 ## RustDesk vs TeamViewer e AnyDesk in breve
 
-|                                                        | TeamViewer / AnyDesk (cloud)                    | RustDesk (self-hosted)                                                                                    |
-| ------------------------------------------------------ | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| Dove vengono eseguite le sessioni                      | Cloud del fornitore                             | Il tuo server (on-prem o la tua VPS)                                                                      |
-| Codice sorgente                                        | Chiuso                                          | Core open source (AGPL)                                                                                   |
-| Modello di licenza                                     | Abbonamento per postazione / per piano          | [Per utente di accesso + per dispositivo gestito](https://rustdesk.com/pricing)                           |
-| [Connessioni simultanee](https://rustdesk.com/pricing) | Dipende dal piano                               | Illimitate sui piani standard; limitate su [Customized V2](https://rustdesk.com/pricing#custom2)          |
-| Posizione dei dati lato server                         | Controllata dal fornitore                       | Scelta e gestita da te; i percorsi degli endpoint restano rilevanti                                       |
-| Prova prima di acquistare                              | Prova del fornitore (vedi pagina del fornitore) | Server gratuito da subito, oppure valutazione Pro tramite [sales@rustdesk.com](mailto:sales@rustdesk.com) |
+|                                                        | TeamViewer / AnyDesk (cloud)                                                   | RustDesk (self-hosted)                                                                                      |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| Coordinamento delle connessioni                        | Gestito dal fornitore nei piani cloud standard                                 | Il tuo server ID/rendezvous                                                                                 |
+| Percorso dei flussi della sessione                     | Diretto o tramite relay del fornitore, a seconda del prodotto e della rete     | Diretto tra gli endpoint o tramite il relay che hai configurato                                             |
+| Codice sorgente                                        | Client proprietari                                                             | Client e Server OSS con licenza AGPL; gestione Server Pro proprietaria                                      |
+| Modello di licenza                                     | Abbonamento per postazione / per piano                                         | [Per utente con login + per dispositivo gestito](https://rustdesk.com/pricing)                              |
+| [Connessioni simultanee](https://rustdesk.com/pricing) | Dipende dal piano                                                              | Illimitate nei piani standard; limitate su [Customized V2](https://rustdesk.com/pricing#custom2)            |
+| Posizione dei dati lato server                         | Controllata dal fornitore                                                      | Scelta e gestita da te; i percorsi tra gli endpoint restano rilevanti                                       |
+| Prova prima di acquistare                              | Prova del fornitore (vedi la pagina del fornitore)                             | Server OSS gratuito da subito, oppure valutazione Pro tramite [sales@rustdesk.com](mailto:sales@rustdesk.com) |
 
-_I dettagli della concorrenza variano in base al piano — verifica le condizioni attuali di TeamViewer o AnyDesk con il fornitore. [Consulta i prezzi di RustDesk](https://rustdesk.com/pricing)._
+_I dettagli dei concorrenti variano in base al piano: verifica con il fornitore le condizioni attuali di TeamViewer o AnyDesk. [Consulta i prezzi di RustDesk](https://rustdesk.com/pricing)._
 
-## Licenza prevedibile, nessuna tassa per canale
+## Licenze per utenti con login, dispositivi e connessioni simultanee secondo il piano
 
-RustDesk applica la licenza per utente di accesso più per dispositivo gestito. **I piani standard includono connessioni simultanee illimitate; Customized V2 prevede un limite definito.** Gli upgrade a metà periodo vengono calcolati in modo proporzionale (pro rata). Calcola tutti e tre i conteggi confrontandoli con la pagina dei prezzi aggiornata.
+RustDesk concede le licenze per utente con login più per dispositivo gestito. **I piani standard (Individual, Basic, Customized) includono connessioni simultanee illimitate; solo Customized V2 concede in licenza un numero prestabilito di connessioni simultanee**, conteggiate come dispositivi di controllo attivi: una postazione tecnica con cinque schede di sessione è quindi una sola connessione. Puoi acquistare un [upgrade](/it/blog/aggiornare-la-licenza-rustdesk-a-meta-abbonamento-come-funziona) in qualsiasi momento dal portale self-service: estende la scadenza della licenza a un anno intero dalla data dell'upgrade e accredita il valore residuo già pagato della licenza attuale. Stima tutti e tre i valori sulla pagina dei prezzi aggiornata.
 
-Questo si adatta perfettamente al modo in cui i team di supporto crescono realmente. Inoltre scala bene ben oltre un deployment iniziale: la [pianificazione per flotte di grandi dimensioni](/it/blog/rustdesk-puo-scalare-fino-a-200-000-dispositivi) parte oggi da circa 50.000 dispositivi gestiti, mentre parchi macchine più estesi richiedono una validazione su caching, ottimizzazione del database e progettazione del rollout.
+Questo modello rispecchia bene il modo in cui crescono i team di supporto. Per parchi molto estesi, RustDesk pubblica indicazioni per la [pianificazione di grandi flotte](/it/blog/rustdesk-puo-scalare-fino-a-200-000-dispositivi) che trattano 200.000 dispositivi online come un obiettivo di pianificazione da convalidare sul tuo carico di caching, database e relay.
 
 ## Pensato per MSP e team IT
 
-Per i team che supportano molti clienti, RustDesk ricostruisce il flusso di lavoro "una console, molti tecnici, molti [dispositivi gestiti](/it/blog/cosa-conta-come-dispositivo-gestito-in-rustdesk)" che gli utenti di TeamViewer e AnyDesk si aspettano su un'infrastruttura di tua proprietà: una [console web self-hosted](https://rustdesk.com/docs), un generatore di client personalizzabile con il proprio brand, gruppi di dispositivi con una [rubrica condivisa](https://rustdesk.com/docs/it/self-host/rustdesk-server-pro/permissions/) e [LDAP/SSO](https://rustdesk.com/docs/it/self-host/rustdesk-server-pro/ldap/) (OIDC) dal piano Basic in su. Consulta [perché fare self-hosting](/it/blog/perche-fare-self-hosting-del-tuo-software-di-desktop-remoto) per il dettaglio completo degli strumenti e [rustdesk.com/pricing](https://rustdesk.com/pricing) per la disponibilità delle funzionalità per piano.
+Server Pro offre una console self-hosted, gruppi di dispositivi, rubriche condivise, il [Controllo di accesso](https://rustdesk.com/docs/it/self-host/rustdesk-server-pro/permissions/) per utente e per gruppo di dispositivi e i permessi del [Ruolo di controllo](https://rustdesk.com/docs/it/self-host/rustdesk-server-pro/control-role/) per le azioni in sessione, con un generatore di client personalizzati e lo [SSO LDAP/OIDC](https://rustdesk.com/docs/it/self-host/rustdesk-server-pro/ldap/) dal piano Basic. Ogni dispositivo appartiene a un solo gruppo di dispositivi, e i permessi di accesso dei gruppi di utenti e dei gruppi di dispositivi sono cumulativi.
 
 ## Cosa deve considerare una migrazione da TeamViewer
 
-I deployment di TeamViewer accumulano funzionalità che una checklist di corrispondenza uno a uno può tralasciare, quindi mappale prima di scegliere un piano — e conferma le condizioni attuali e la disponibilità delle funzionalità con ciascun fornitore, poiché entrambe cambiano nel tempo:
+I deployment di TeamViewer accumulano funzionalità che una checklist di corrispondenza uno a uno può tralasciare, quindi mappale prima di scegliere un piano, e conferma con ciascun fornitore le condizioni attuali e la disponibilità delle funzionalità, perché entrambe cambiano nel tempo:
 
-- **Funzionalità specifiche del livello.** I livelli enterprise come **TeamViewer Tensor** aggiungono controlli quali accesso condizionato, distribuzione di massa e provisioning SSO/directory che potrebbero non corrispondere uno a uno; elenca quelli da cui dipendi davvero. Se usi **TeamViewer Frontline** (la sua suite AR/per operatori industriali), trattala come un prodotto separato, al di fuori di una migrazione di desktop remoto.
-- **Accesso condizionato e criteri sui dispositivi.** Se limiti chi può connettersi a quali macchine tramite l'accesso basato su regole e le impostazioni dei criteri distribuiti di TeamViewer, pianifica come tradurre quelle regole in gruppi di dispositivi RustDesk, una rubrica condivisa e regole di accesso a privilegio minimo.
-- **Console di gestione e struttura dei gruppi.** TeamViewer organizza dispositivi, gruppi condivisi e profili utente o aziendali nella propria console di gestione; censisci questa gerarchia in modo da poter ricostruire raggruppamenti e proprietà equivalenti nella console self-hosted.
-- **Conteggio per dispositivo rispetto a per postazione.** TeamViewer e RustDesk conteggiano le licenze in modo diverso, quindi rimodella l'utilizzo reale — utenti con licenza, dispositivi gestiti e sessioni simultanee — rispetto al modello di RustDesk per utente di accesso più per dispositivo gestito, anziché presumere che un numero di postazioni si trasferisca tale e quale.
-- **Parità di funzionalità da verificare.** Se stampa remota, registrazione delle sessioni, supporto mobile, Wake-on-LAN o integrazioni specifiche sono indispensabili nel tuo flusso di lavoro con TeamViewer, verifica ciascuna su RustDesk durante il pilota anziché dare per scontata la parità.
+- **Funzionalità specifiche del livello.** I livelli enterprise come **TeamViewer Tensor** aggiungono controlli quali accesso condizionato, distribuzione di massa e provisioning SSO/directory che potrebbero non avere un equivalente diretto; elenca quelli da cui dipendi davvero. Se usi **TeamViewer Frontline** (la sua suite AR per operatori industriali), trattala come un prodotto separato, al di fuori di una migrazione di desktop remoto.
+- **Accesso condizionato e criteri sui dispositivi.** Se limiti chi può connettersi a quali macchine tramite l'accesso basato su regole e i criteri distribuiti di TeamViewer, pianifica come tradurre quelle regole in gruppi di dispositivi RustDesk, una rubrica condivisa e regole di accesso a privilegio minimo.
+- **Console di gestione e struttura dei gruppi.** TeamViewer organizza dispositivi, gruppi condivisi e profili utente o aziendali nella propria console di gestione; censisci questa gerarchia per poter ricostruire raggruppamenti e proprietà equivalenti nella console self-hosted.
+- **Conteggio per dispositivo o per postazione.** TeamViewer e RustDesk conteggiano le licenze in modo diverso, quindi rimodella l'utilizzo reale (utenti con licenza, dispositivi gestiti e sessioni simultanee) sul modello di RustDesk per utente con login più per dispositivo gestito, invece di presumere che il numero di postazioni si trasferisca tale e quale.
+- **Parità di funzionalità da verificare.** Se stampa remota, registrazione delle sessioni, supporto mobile, Wake-on-LAN o integrazioni specifiche sono indispensabili nel tuo flusso di lavoro con TeamViewer, verifica ciascuna su RustDesk durante il pilota invece di dare per scontata la parità.
 
 ## Cosa cambia nello specifico abbandonando AnyDesk
 
-Alcuni aspetti sono specifici del passaggio da AnyDesk anziché da TeamViewer:
+Alcuni aspetti riguardano in particolare il passaggio da AnyDesk, più che da TeamViewer:
 
-- **Nessun rilevatore di uso commerciale.** Il livello gratuito di AnyDesk può segnalare gli account che ritiene di [uso commerciale](/it/blog/uso-commerciale-rilevato-su-anydesk-come-risolvere-il-problema); un server che ospiti e concedi in licenza per intero non ha alcun classificatore di questo tipo che monitora le tue sessioni.
-- **Una simultaneità che non ti pone limiti.** AnyDesk contingenta le connessioni simultanee in base al piano; i piani standard di RustDesk includono connessioni simultanee illimitate (Customized V2 definisce un limite), quindi rimodelli in base agli utenti di accesso e ai dispositivi gestiti, non agli slot di connessione — e puoi [effettuare l'upgrade in qualsiasi momento, con calcolo proporzionale](/it/blog/aggiornare-la-licenza-rustdesk-a-meta-abbonamento-come-funziona) man mano che cresci. Per le tariffe per unità, consulta [rustdesk.com/pricing](https://rustdesk.com/pricing).
-- **Rubrica, alias e accesso non presidiato da ricreare.** Censisci gli alias di AnyDesk, le voci della rubrica e le password di accesso non presidiato da cui dipendi, e mappali su utenti di accesso, gruppi di dispositivi e rubrica condivisa di RustDesk.
-- **Namespace personalizzato o client con brand.** Se usi AnyDesk con un namespace personalizzato o un client con brand, pianifica il client RustDesk equivalente personalizzato con il tuo brand, così gli utenti finali continuano a vedere uno strumento coerente.
+- **Nessun rilevatore di uso commerciale.** Il piano gratuito di AnyDesk può segnalare gli account che ritiene di [uso commerciale](/it/blog/uso-commerciale-rilevato-su-anydesk-come-risolvere-il-problema); RustDesk Server OSS non ha un classificatore di questo tipo, mentre Server Pro applica i limiti della licenza acquistata.
+- **Nessun tetto alle connessioni simultanee per livello nei piani standard.** I piani Pro standard di RustDesk includono connessioni simultanee illimitate, e solo Customized V2 ne concede in licenza un numero prestabilito; i limiti di AnyDesk variano in base al piano. Includi utenti con login e dispositivi nel modello dei costi, e rivedi il [calcolo dell'upgrade](/it/blog/aggiornare-la-licenza-rustdesk-a-meta-abbonamento-come-funziona) prima di aggiungere capacità.
+- **Rubrica, alias e accesso non presidiato da ricreare.** Censisci gli alias di AnyDesk, le voci della rubrica e le password di accesso non presidiato da cui dipendi, e mappali su utenti con login, gruppi di dispositivi e rubrica condivisa di RustDesk.
+- **Namespace personalizzato o client con il tuo marchio.** Se usi AnyDesk con un namespace personalizzato o un client con il tuo marchio, pianifica il client RustDesk personalizzato equivalente, così gli utenti finali continuano a vedere uno strumento coerente.
 
 ## Piano di migrazione
 
-Una volta inventariate queste capacità, migra per fasi:
+Una volta censite queste funzionalità, migra per fasi:
 
 1. Attiva RustDesk in un ambiente non di produzione e testa sia i percorsi diretti sia quelli tramite relay.
-2. Mappa utenti, gruppi e proprietà della rubrica su regole di accesso RustDesk basate sul minimo privilegio.
+2. Mappa utenti, gruppi e proprietà della rubrica su regole di accesso RustDesk basate sul privilegio minimo.
 3. Esegui un pilota su dispositivi rappresentativi Windows, macOS, Linux e mobile, inclusi l'elevazione dei privilegi e l'accesso non presidiato.
 4. Convalida aggiornamenti, backup delle chiavi, rinnovo dei certificati, logging, monitoraggio e disaster recovery.
-5. Esegui il tuo strumento attuale e RustDesk in parallelo per un gruppo definito di utenti, con un percorso di rollback documentato.
-6. Rimuovi il vecchio agente solo dopo che il nuovo servizio supera i criteri di accettazione e il personale di supporto è stato formato.
+5. Esegui lo strumento attuale e RustDesk in parallelo per un gruppo definito di utenti, con un percorso di rollback documentato.
+6. Rimuovi il vecchio agente solo dopo che il nuovo servizio ha superato i criteri di accettazione e il personale di supporto è stato formato.
 
-Questa sequenza evita che una decisione sulla licenza si trasformi in un passaggio di infrastruttura non testato.
+Questa sequenza evita che una decisione di licenza si trasformi in una migrazione dell'infrastruttura non testata.
 
 ## Valuta il passaggio sulla tua infrastruttura
 
-Non serve parlare con nessuno per iniziare: il server community gratuito e open source si installa sul tuo hardware e funziona a tempo indeterminato. Per provare le funzionalità Pro rispetto al piano di migrazione sopra descritto, chiedi a [sales@rustdesk.com](mailto:sales@rustdesk.com) le condizioni di valutazione attualmente disponibili; le tariffe dei piani standard sono consultabili su [rustdesk.com/pricing](https://rustdesk.com/pricing). E se vuoi vederlo funzionare prima di installare qualsiasi cosa, la [demo video](https://www.youtube.com/@rustdesk) copre una sessione completa dall'inizio alla fine.
+Non serve parlare con nessuno per iniziare: Server OSS si installa sul tuo hardware ed è gratuito, senza canone di licenza né scadenza. Per provare le funzionalità Pro seguendo il piano di migrazione qui sopra, chiedi a [sales@rustdesk.com](mailto:sales@rustdesk.com) le condizioni di valutazione attuali; le tariffe dei piani standard sono su [rustdesk.com/pricing](https://rustdesk.com/pricing). Se vuoi prima vederlo in funzione, la [demo video](https://www.youtube.com/@rustdesk) mostra una sessione completa dall'inizio alla fine.
 
-Il modo più rapido per scoprire se il self-hosting mantiene le promesse su costo e controllo è una breve prova di concetto sul tuo stesso hardware.
+Il modo più rapido per capire se il self-hosting mantiene le promesse su costi e controllo è una breve proof of concept sul tuo hardware.

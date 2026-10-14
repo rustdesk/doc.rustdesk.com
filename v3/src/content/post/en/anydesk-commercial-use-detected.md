@@ -1,10 +1,11 @@
 ---
 publishDate: 2026-07-02T12:27:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: en
 translationKey: anydesk-commercial-use-detected
 draft: false
 title: 'AnyDesk Commercial Use Detected: How to Fix It'
-excerpt: "Flagged for commercial use on AnyDesk's free version? Here's the official whitelist process, what counts as commercial use, and the self-hosted way to avoid it."
+excerpt: "Flagged for commercial use on AnyDesk's free version? Here's the official whitelist process, what counts as commercial use, and an alternative with no such classifier."
 image: ~/assets/images/blog/anydesk-commercial-use-detected-og.webp
 category: Troubleshooting
 tags:
@@ -18,13 +19,13 @@ faq:
   - question: "How do I fix 'commercial use detected' on AnyDesk for personal use?"
     answer: "Submit AnyDesk's official whitelist request with your AnyDesk address and an honest description of your personal use. AnyDesk reviews the request. If your use is genuinely commercial, the appropriate fix is a license or another tool whose terms cover that work."
   - question: 'Is AnyDesk free for business use?'
-    answer: "No. AnyDesk's free version is for personal, non-commercial use. Remote work, organizational device administration, and support for customers or colleagues require commercial terms. Check AnyDesk's current terms for the authoritative definition."
+    answer: "No. AnyDesk's free version is for personal, non-commercial use. Remote work, organizational device administration, and support for customers or colleagues require commercial terms. Business use needs a paid AnyDesk license or another tool whose license covers that work, such as self-hosted RustDesk."
   - question: 'What counts as commercial use on AnyDesk?'
-    answer: 'Supporting clients or colleagues, remote work (including checking work email), server administration, managing devices for an organization, or any use you are paid for. Helping family and friends or reaching your own personal devices is personal use.'
+    answer: "Per AnyDesk's terms, commercial use is any connection made in the course of a trade, business or profession, such as supporting clients or colleagues, remote work (including checking work email), server administration, managing devices for an organization, or any use you are paid for. Helping family and friends or reaching your own personal devices is personal use."
   - question: 'Does RustDesk flag commercial use the way AnyDesk does?'
-    answer: "RustDesk's open-source community server does not implement AnyDesk's commercial-use classifier. Server Pro is commercially licensed and self-hosted, with limits determined by the purchased RustDesk plan rather than an AnyDesk free-tier detector. Standard RustDesk plans include unlimited concurrent connections; Customized V2 does not."
+    answer: 'No. RustDesk Server OSS, the free community server, has no commercial-use classifier, so it never flags how you use it. RustDesk Server Pro is commercially licensed and self-hosted, limited only by the plan you buy: login users and managed devices, with unlimited concurrent connections on standard plans; only Customized V2 licenses a set number.'
 metadata:
-  description: "AnyDesk flagging your personal use as commercial? Here's the official whitelist fix, what counts as commercial use, and how self-hosted RustDesk avoids it."
+  description: 'AnyDesk flagging personal use as commercial? The official whitelist fix, what counts as commercial use, and RustDesk Server OSS, which has no such classifier.'
   keywords: 'AnyDesk commercial use detected, AnyDesk personal use flagged, AnyDesk whitelist request, AnyDesk commercial use appeal'
 ---
 
@@ -59,26 +60,26 @@ AnyDesk publishes no official detection threshold, so treat any specific connect
 
 If the appeal does not apply, you have two durable paths: pay for a commercial license, or switch to a tool with no commercial-use tripwire at all.
 
-## The core difference: own the server
+## The core difference: no free-tier commercial-use classifier
 
-AnyDesk does not publish the detector's formula, and it supports both direct and relayed sessions per its [client settings documentation](https://support.anydesk.com/docs/settings) — so the flag is not proof that your session media crosses an AnyDesk relay; enforcement runs through client, account, and licensing metadata. **RustDesk moves that enforcement point onto hardware you run:** the ID/rendezvous server, relay, and console are yours, so no remote-access SaaS classifies a session as personal or commercial — [the case for self-hosting](/blog/why-self-host-remote-desktop-software) covers why that removes the tripwire instead of resetting it. The code is open source under the [AGPL](https://github.com/rustdesk/rustdesk), and RustDesk's commercial license terms still apply to Server Pro.
+AnyDesk does not publish the detector's formula, and it supports direct and relayed sessions, so a warning is not proof that your screen media crossed an AnyDesk relay. **RustDesk Server OSS (the free community server) has no commercial-use classifier at all**: it is free for personal and business use under its license. RustDesk's client and Server OSS are [AGPL-licensed](https://github.com/rustdesk/rustdesk); Server Pro is commercial, proprietary self-hosted server software, limited only by the plan you buy. Both let you run the rendezvous and relay services yourself.
 
 ## How the two models compare
 
 |                                                        | AnyDesk free tier                                      | RustDesk                                                                                |
 | ------------------------------------------------------ | ------------------------------------------------------ | --------------------------------------------------------------------------------------- |
-| "Commercial use" detection                             | Yes — can flag, throttle to short sessions, or block   | None — you host the server                                                              |
+| "Commercial use" detection                             | Yes — may restrict access under free-use terms         | No commercial-use classifier in Server OSS; Pro uses purchased license limits           |
 | Session path                                           | Direct when available; AnyDesk network relay otherwise | Direct when available; your relay otherwise                                             |
 | Device allowance                                       | Set by AnyDesk's free-use terms                        | Commercial plans count managed devices                                                  |
-| Source code                                            | Closed                                                 | Open source (AGPL), auditable                                                           |
+| Source code                                            | Proprietary client                                     | Auditable AGPL client                                                                   |
 | [Concurrent connections](https://rustdesk.com/pricing) | Gated on free tier                                     | Standard plans unlimited; [Customized V2](https://rustdesk.com/pricing#custom2) limited |
 | Pricing model                                          | Free for personal use; paid plans per seat             | [Per login-user + per managed-device](https://rustdesk.com/pricing)                     |
 | Data boundary                                          | AnyDesk-run services; media direct or relayed          | Server-side services on infrastructure you control; endpoint routes still matter        |
 
 ## What self-hosted RustDesk gives a support team
 
-Licensing is agreed up front — per login-user plus per managed-device, no per-seat cloud subscription — and you can [upgrade any time](/blog/upgrade-rustdesk-license-mid-subscription) (prorated). For client-support work, Server Pro adds a [self-hosted web console](https://rustdesk.com/docs), a custom-branded client generator, [device groups and a shared address book](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/) for per-user access control, and [LDAP/SSO](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/) (OIDC) from the Basic plan up. Since you host that infrastructure, weigh the [data-sovereignty and GDPR implications](/blog/remote-desktop-data-sovereignty-gdpr) too — direct sessions still travel between endpoints. Feature availability varies by plan; [see rustdesk.com/pricing](https://rustdesk.com/pricing).
+Licensing is agreed up front: Server Pro plans count login users and managed devices, with unlimited concurrent connections on standard plans; only [Customized V2](https://rustdesk.com/pricing#custom2) licenses a set number. You can [upgrade any time](/blog/upgrade-rustdesk-license-mid-subscription): the upgrade extends the license to one full year from the upgrade date and credits the remaining paid value. For client-support work, Pro adds a self-hosted web console and per-user and device-group [Access Control](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/), plus a custom-branded client generator and [LDAP/OIDC SSO](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/) from the Basic plan.
 
 ## What to do next
 
-If the flag was a false positive, the whitelist request above is your fix. If your use is genuinely commercial, pilot on the free community server first: reproduce the workflow that triggered the flag — same technicians, endpoints, unattended sessions, and support volume — and size both licensing dimensions (login users and managed devices) before committing to an annual purchase. Whichever alternative you weigh, read its license before deploying it for work — a free download does not automatically permit commercial use. For Pro evaluation terms, contact [sales@rustdesk.com](mailto:sales@rustdesk.com).
+If the flag was a false positive, the whitelist request above is your fix. If your use is genuinely commercial, pilot on Server OSS first: reproduce the workflow that triggered the flag — same technicians, endpoints, unattended sessions, and support volume — and size both licensing dimensions (login users and managed devices) before committing to an annual purchase. Whichever alternative you weigh, read its license before deploying it for work — a free download does not automatically permit commercial use. For Pro evaluation terms, contact [sales@rustdesk.com](mailto:sales@rustdesk.com).

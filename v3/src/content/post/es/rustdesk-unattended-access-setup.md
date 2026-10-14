@@ -1,10 +1,11 @@
 ---
+updateDate: 2026-10-14T00:00:00Z
 publishDate: 2026-07-08T11:04:00Z
 lang: 'es'
 translationKey: rustdesk-unattended-access-setup
 draft: false
 title: 'Acceso desatendido en RustDesk: guía de configuración'
-excerpt: 'Configura el acceso desatendido de RustDesk de la forma correcta: una contraseña permanente, ejecución como servicio para que se inicie con el sistema, y despliegue a gran escala con un cliente preconfigurado.'
+excerpt: 'Configura bien el acceso desatendido de RustDesk: una contraseña permanente, ejecución como servicio para que arranque con el equipo y despliegue masivo con un cliente preconfigurado.'
 image: ~/assets/images/blog/rustdesk-unattended-access-setup-og.webp
 category: 'Implementación'
 tags: ['RustDesk', 'Implementación', 'Acceso desatendido']
@@ -12,81 +13,83 @@ author: 'RustDesk Team'
 slug: 'acceso-desatendido-en-rustdesk-guia-de-configuracion'
 faq:
   - question: '¿Cómo configuro el acceso desatendido en RustDesk?'
-    answer: 'Se requieren dos cosas: establecer una contraseña permanente en Configuración, Seguridad para no necesitar que alguien apruebe cada conexión, e instalar RustDesk como servicio del sistema para que se ejecute antes de iniciar sesión y siga funcionando después de cerrarla. Con ambas configuradas, puedes acceder al equipo en cualquier momento, incluso en la pantalla de inicio de sesión, sin que haya una persona presente.'
+    answer: 'En dos pasos: establece una contraseña permanente en Ajustes → Seguridad e instala RustDesk para que su servicio del sistema arranque con el equipo. El modo de aprobación predeterminado ya acepta la contraseña permanente; en macOS también hacen falta los permisos de Grabación de pantalla y Accesibilidad. Con ambos pasos hechos, puedes acceder al equipo encendido en cualquier momento, incluida la pantalla de inicio de sesión de Windows, sin que haya nadie delante.'
   - question: '¿Por qué se corta mi conexión de RustDesk cuando el usuario cierra sesión?'
-    answer: 'Eso ocurre cuando RustDesk se ejecuta como ejecutable portátil en lugar de instalarse como servicio. Una sesión portátil termina cuando el usuario cierra sesión o aparece un aviso de UAC. Instala RustDesk (en lugar de ejecutar el ejecutable portátil) y mantén su servicio habilitado —el servicio instalado se inicia con el sistema— para que se ejecute en segundo plano independientemente de cualquier usuario con sesión iniciada, que es lo que hace fiable el acceso desatendido.'
+    answer: 'Porque RustDesk se está ejecutando como ejecutable portable y no como servicio instalado. Un proceso portable vive dentro de la sesión del usuario, así que se detiene al cerrar sesión y, sin elevación, no puede manejar el escritorio seguro de UAC de Windows. Instala RustDesk y mantén activo su servicio del sistema, que funciona con independencia de cualquier usuario conectado. La elevación del portable sigue disponible para el soporte en Windows con el usuario presente.'
   - question: '¿Es seguro el acceso desatendido con una contraseña permanente?'
-    answer: 'Puede implementarse de forma segura cuando se configura correctamente. Usa una contraseña permanente larga y única, restringe quién puede conectarse, habilita los controles de identidad y acceso disponibles, mantén los clientes actualizados y revisa los registros. El autoalojamiento controla los servicios del lado del servidor y los datos de implementación almacenados; el endpoint sigue siendo responsable de proteger sus propias credenciales locales.'
-  - question: '¿Puedo implementar el acceso desatendido de RustDesk en muchos equipos a la vez?'
-    answer: 'Sí. En los planes autoalojados Basic y superiores, el Generador de Cliente Personalizado produce un instalador preconfigurado con la dirección de tu servidor, la clave y la configuración ya integradas, de modo que los usuarios finales no tienen que escribir nada. Distribúyelo con tu herramienta de implementación habitual y cada dispositivo instalará el servicio y se registrará automáticamente en tu servidor.'
+    answer: 'Sí, si está bien configurado. Usa una contraseña permanente larga y única, distinta del inicio de sesión del sistema operativo, activa la 2FA de conexión en el dispositivo controlado y restringe quién puede conectarse con una lista de IP o de ID permitidos y, en Server Pro, con el Control de acceso. Mantén los clientes actualizados y revisa los registros. Autoalojar sitúa el rendezvous, el relay y la consola en servidores que operas tú.'
+  - question: '¿Puedo desplegar el acceso desatendido de RustDesk en muchos equipos a la vez?'
+    answer: 'Sí. En los planes autoalojados Basic y superiores, el generador de clientes personalizados crea un instalador preconfigurado con la dirección de tu servidor, la clave y los ajustes ya integrados, de modo que los usuarios finales no tienen que escribir nada. Distribúyelo con tus herramientas de despliegue habituales y cada dispositivo instalará el servicio y se registrará automáticamente en tu servidor.'
   - question: '¿Funciona el acceso desatendido en la pantalla de inicio de sesión de Windows?'
-    answer: 'Sí, una vez que RustDesk está instalado como servicio. El servicio instalado se inicia con el sistema antes de que cualquier usuario inicie sesión, por lo que puedes conectarte a la pantalla de inicio de sesión, autenticarte e incluso provocar un reinicio y reconectarte. El ejecutable portátil no puede hacer esto porque solo existe dentro de una sesión de usuario.'
+    answer: 'Sí, una vez que RustDesk está instalado como servicio. El servicio instalado arranca con el sistema antes de que ningún usuario inicie sesión, así que puedes conectarte a la pantalla de inicio de sesión, autenticarte e incluso reiniciar el equipo y volver a conectarte. El ejecutable portable no puede hacerlo porque solo existe dentro de una sesión de usuario.'
 
 metadata:
-  description: 'Configura el acceso desatendido de RustDesk: contraseña permanente, ejecución como servicio para el inicio con el sistema, notas por plataforma para Windows/macOS/Linux, e implementación en flotas.'
+  description: 'Acceso desatendido en RustDesk: contraseña permanente, servicio que arranca con el equipo, notas para Windows, macOS y Linux, y despliegue en flotas.'
   keywords: 'acceso desatendido RustDesk, contraseña permanente RustDesk, inicio con el sistema RustDesk, instalación como servicio RustDesk, configuración de acceso desatendido RustDesk, implementación a gran escala RustDesk, acceso remoto desatendido'
 ---
 
-El acceso desatendido significa poder llegar a un equipo cuando no hay nadie sentado frente a él: un servidor en un rack, un quiosco, el PC de un familiar al otro lado del país. RustDesk hace esto muy bien, pero solo si configuras correctamente dos cosas: una **contraseña permanente** para que nadie tenga que aprobar cada conexión, y RustDesk ejecutándose **como servicio** para que esté disponible antes de iniciar sesión y después de cerrarla. Esta guía cubre ambos aspectos, además de cómo implementarlo en toda una flota de equipos.
+El acceso desatendido consiste en conectarse a un equipo cuando no hay nadie delante: un servidor en un rack, un quiosco, el PC de un familiar en la otra punta del país. RustDesk lo resuelve bien en cuanto se cumplen dos condiciones: una **contraseña permanente**, para que nadie tenga que aprobar cada conexión, y RustDesk ejecutándose **como servicio**, para que esté disponible antes del inicio de sesión y después de cerrarla. Esta guía cubre ambas cosas, los permisos de cada plataforma y cómo desplegarlo en toda una flota.
 
 ## La respuesta corta
 
-Establece una **contraseña permanente** (Configuración → Seguridad) e **instala RustDesk como servicio del sistema** —el servicio instalado se inicia junto con el equipo. La contraseña elimina la necesidad de que una persona acepte el aviso de conexión; el servicio hace que RustDesk se ejecute independientemente de cualquier usuario con sesión iniciada, para que puedas conectarte en cualquier momento, incluso en la pantalla de inicio de sesión. Para implementarlo a gran escala, genera un cliente preconfigurado para que cada equipo se instale automáticamente contra tu servidor.
+Establece una **contraseña permanente** (Ajustes → Seguridad) e **instala RustDesk como servicio del sistema**, que arranca con el equipo. El modo de aprobación predeterminado ya acepta la contraseña permanente, así que nadie tiene que hacer clic para aceptar; el servicio funciona con independencia de cualquier usuario conectado, de modo que puedes conectarte en cualquier momento, incluida la pantalla de inicio de sesión de Windows. En macOS también hacen falta los permisos de Grabación de pantalla y Accesibilidad. Para desplegarlo a gran escala, genera un cliente preconfigurado para que cada equipo se instale contra tu servidor.
 
 ## Paso 1: Establece una contraseña permanente
 
-De forma predeterminada, RustDesk muestra una contraseña de un solo uso que va rotando, la cual una persona en el extremo remoto te leería en voz alta. Para el acceso desatendido, la sustituyes por una credencial fija:
+De forma predeterminada, RustDesk muestra una contraseña de un solo uso que va cambiando y que la persona del otro lado te leería. Para el acceso desatendido, la sustituyes por una credencial fija:
 
 1. Abre RustDesk en el equipo al que quieres acceder.
-2. Ve a **Configuración → Seguridad** (en versiones antiguas: el área de contraseña en la pantalla principal).
-3. Elige **Establecer contraseña permanente** e introduce un valor fuerte y único.
+2. Ve a **Ajustes → Seguridad** (en versiones antiguas, el área de contraseña de la pantalla principal).
+3. Elige **Establecer contraseña permanente** (*Set permanent password*) e introduce un valor fuerte y único.
 
-La [documentación del cliente de RustDesk](https://rustdesk.com/docs/en/client/) describe esto como el núcleo del acceso desatendido. Una regla que vale la pena destacar: **no reutilices la contraseña de inicio de sesión del sistema operativo.** Usa una contraseña dedicada y de alta entropía para RustDesk, de modo que la filtración de una credencial no comprometa la otra.
+La configuración predeterminada ya acepta esa contraseña: las sesiones se aceptan tanto por contraseña como por clic, y se permiten ambos tipos de contraseña. Si alguien cambió el modo de aprobación a solo clic o el tipo de contraseña a solo de un solo uso, vuelve a **Aceptar sesiones a través de contraseña** (o **a través de ambos**) y a **Usar contraseña permanente** (*Use permanent password*) o **Usar ambas contraseñas**. En despliegues gestionados, las [claves de configuración](https://rustdesk.com/docs/es/self-host/client-configuration/advanced-settings/#approve-mode) equivalentes son `approve-mode` (predeterminada: `password-click`) y `verification-method` (predeterminada: `use-both-passwords`).
 
-## Paso 2: Instálalo como servicio e inícialo con el sistema
+La [documentación del cliente de RustDesk](https://rustdesk.com/docs/es/client/) lo describe como el núcleo del acceso desatendido. Una regla que conviene subrayar: **no reutilices la contraseña de inicio de sesión del sistema operativo.** Usa una contraseña exclusiva y de alta entropía para RustDesk, de modo que la filtración de una credencial no comprometa la otra.
 
-Este es el paso que muchos pasan por alto. Si simplemente ejecutas el `.exe` o `.app` portátil, la sesión **termina en el momento en que el usuario cierra sesión o aparece un aviso de UAC/permisos** —porque ese proceso solo existe dentro de la sesión del usuario. Para ser verdaderamente desatendido, RustDesk debe ejecutarse como un **servicio del sistema** en segundo plano.
+## Paso 2: Instálalo como servicio y haz que arranque con el equipo
 
-- Ejecuta el **instalador** de RustDesk (no la versión portátil) y completa la instalación.
-- En **Configuración → General**, asegúrate de que el **Servicio** esté en ejecución —usa **Iniciar** si aparece como detenido. Una vez instalado, el servicio se inicia automáticamente con el equipo.
+Este es el paso que más se pasa por alto. Un `.exe` o `.app` portable se ejecuta dentro de la sesión del usuario, así que se detiene cuando el usuario cierra sesión y, en Windows, no puede manejar el escritorio seguro de UAC sin elevación (la [elevación del portable](https://rustdesk.com/docs/es/client/windows/windows-portable-elevation/) existe para el soporte con el usuario presente). Para que sea realmente desatendido, RustDesk debe ejecutarse en segundo plano como **servicio del sistema**.
 
-Una vez que RustDesk se ejecuta como servicio, se carga antes de que nadie inicie sesión, lo que te permite conectarte a la **pantalla de inicio de sesión**, autenticarte de forma remota e incluso reiniciar y reconectarte sin que haya una persona presente. Artículos de la comunidad sobre la [configuración correcta del servicio en Windows](https://www.smolkin.org/blog/2026/03/rustdesk-unattended-service-windows.html) insisten en la misma distinción: portátil equivale a solo asistido; servicio instalado equivale a desatendido.
+- Ejecuta el **instalador** de RustDesk (no la versión portable) y completa la instalación.
+- En **Ajustes → General**, comprueba que el **Servicio** esté en ejecución; usa **Iniciar** si aparece detenido. Una vez instalado, el servicio arranca automáticamente con el equipo.
+
+Cuando RustDesk funciona como servicio, se carga antes de que nadie inicie sesión, y eso es lo que te permite conectarte a la **pantalla de inicio de sesión**, autenticarte a distancia e incluso reiniciar y volver a conectarte sin nadie presente. macOS y Linux añaden sus propios requisitos de captura de pantalla y de sesión gráfica, que se explican a continuación.
 
 ## Notas por plataforma
 
-| Plataforma | Qué hacer                                                            | Ten en cuenta                                                                                                                                                                                |
-| ---------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Windows    | Instálalo; mantén el servicio en ejecución (se inicia con el equipo) | El exe portátil se desconecta al cerrar sesión/UAC; usa el instalador                                                                                                                        |
-| macOS      | Instálalo, establece la contraseña permanente, concede los permisos  | Deben concederse Grabación de Pantalla y Accesibilidad; la captura en la pantalla de inicio de sesión necesita el helper instalado                                                           |
-| Linux      | Instala el paquete del servicio                                      | Wayland necesita una sesión activa; para el acceso previo al inicio de sesión usa la configuración de pantalla virtual sin interfaz gráfica, o X11 donde una distribución todavía lo ofrezca |
-| Android    | Establece la contraseña permanente; habilita la captura              | La pantalla debe estar activa; concede el consentimiento de captura de pantalla (MediaProjection) y el permiso de entrada                                                                    |
+| Plataforma | Qué hacer                                                         | Ten en cuenta                                                                                                                                                                                              |
+| ---------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Windows    | Instálalo; mantén el servicio en ejecución (arranca con el equipo) | El ejecutable portable se detiene al cerrar sesión y no puede manejar las solicitudes de UAC sin elevación; usa el instalador                                                                             |
+| macOS      | Instálalo, establece la contraseña permanente y concede permisos | Hay que conceder Grabación de pantalla y Accesibilidad; la captura en la pantalla de inicio de sesión requiere instalar el componente auxiliar                                                             |
+| Linux      | Instala el paquete con el servicio                                | Las compilaciones estándar capturan en Wayland la sesión iniciada; la [versión preliminar desatendida](/es/blog/unattended-remote-access-wayland-es) añade el acceso a la pantalla de inicio de sesión (x86_64 Debian/Ubuntu) |
+| Android    | Establece la contraseña permanente; activa la captura            | La pantalla debe estar activa; concede el consentimiento de captura de pantalla (MediaProjection) y el permiso de entrada                                                                                  |
 
 ### Windows
 
-El camino más limpio. Instala, activa el servicio, establece la contraseña permanente, listo. Como el servicio se ejecuta al arrancar, el acceso desatendido a la pantalla de inicio de sesión y a través de reinicios funciona como se espera.
+El camino más limpio. Instala, activa el servicio, establece la contraseña permanente y listo. Como el servicio se ejecuta al arrancar, el acceso desatendido a la pantalla de inicio de sesión y tras los reinicios funciona como cabe esperar.
 
 ### macOS
 
-macOS restringe la captura de pantalla y la entrada detrás de permisos. Después de instalarlo, abre **Configuración del Sistema → Privacidad y Seguridad** y concede a RustDesk tanto **Grabación de Pantalla** como **Accesibilidad**. Para acceder en la _ventana de inicio de sesión_ (antes de que cualquier usuario inicie sesión), el servicio/helper de RustDesk debe estar instalado para poder capturar antes del inicio de sesión; de lo contrario, obtendrás ahí una pantalla negra, el mismo [problema de captura que cubrimos en nuestra guía de pantalla negra](/es/blog/rustdesk-conectado-esperando-imagen-guia-completa-de-solucion).
+macOS protege la captura de pantalla y la entrada con permisos. Después de instalarlo, abre **Ajustes del Sistema → Privacidad y seguridad** y concede a RustDesk **Grabación de pantalla** y **Accesibilidad**. Para acceder en la _ventana de inicio de sesión_ (antes de que ningún usuario inicie sesión), el servicio o componente auxiliar de RustDesk debe estar instalado para poder capturar antes del inicio de sesión; si no, verás una pantalla negra, el mismo [problema de captura que explicamos en nuestra guía sobre la pantalla negra](/es/blog/rustdesk-conectado-esperando-imagen-guia-completa-de-solucion).
 
 ### Linux
 
-Instala RustDesk para que su componente de servicio se ejecute al arrancar. En un equipo que permanece en la pantalla de bienvenida de inicio de sesión, Wayland todavía no puede capturar esa pantalla —una limitación de diseño de Wayland (no de RustDesk) que el equipo de RustDesk está trabajando activamente para resolver ([PR #15420](https://github.com/rustdesk/rustdesk/pull/15420)). En un equipo sin interfaz gráfica (headless), usa la configuración de pantalla virtual; en un equipo de escritorio, una sesión X11/Xorg todavía se encarga de ello donde una distribución ofrezca una, aunque varias se están moviendo exclusivamente a Wayland. Consulta [RustDesk para Linux](/es/blog/rustdesk-para-linux-el-escritorio-remoto-de-codigo-abierto) para más detalles.
+Instala RustDesk para que su servicio se ejecute al arrancar. Las compilaciones estándar de RustDesk capturan escritorios Wayland, incluidos varios monitores desde la versión 1.4.3, mediante PipeWire y `xdg-desktop-portal` en una sesión iniciada. Para un equipo que se queda en la pantalla de inicio de sesión, la [versión preliminar de acceso desatendido en Wayland](/es/blog/unattended-remote-access-wayland-es), independiente y para **sistemas x86_64 basados en Debian/Ubuntu**, añade el acceso desatendido y el acceso a la pantalla de inicio de sesión tras un reinicio. Si la distribución aún la ofrece, una pantalla de inicio de sesión X11 es otra opción; en un equipo sin monitor, añade un emulador de pantalla o una pantalla virtual. Consulta [RustDesk para Linux](/es/blog/rustdesk-para-linux-el-escritorio-remoto-de-codigo-abierto) para más detalles.
 
-## Paso 3: Despliega a gran escala con un cliente preconfigurado
+## Paso 3: Despliégalo a gran escala con un cliente preconfigurado
 
-Configurar un equipo a mano está bien; configurar cincuenta, no. En los **planes autoalojados Basic y superiores**, el **Generador de Cliente Personalizado** de la consola web crea un instalador con tu **dirección de servidor, clave pública y configuración ya integradas**, de modo que los usuarios finales no tienen que escribir nada. Combinado con tu herramienta de implementación existente (Group Policy, Intune, un RMM de MSP, un script de shell), cada dispositivo instala el servicio y se registra en _tu_ servidor en la primera ejecución.
+Configurar un equipo a mano está bien; configurar cincuenta, no. En los **planes autoalojados Basic y superiores**, el **generador de clientes personalizados** de la consola web crea un instalador con la **dirección de tu servidor, la clave pública y los ajustes ya integrados**, de modo que los usuarios finales no tienen que escribir nada. Combinado con tu herramienta de despliegue habitual (directivas de grupo, Intune, el RMM de un MSP, un script de shell), cada dispositivo instala el servicio y se registra en _tu_ servidor en la primera ejecución.
 
-Aquí es donde el autoalojamiento resulta rentable para los equipos: obtienes una [flota desatendida bajo tu control total](/es/blog/rustdesk-para-msp-una-unica-herramienta-autoalojada-y-personalizable), sin una medición en la nube por asiento que decida cuántos endpoints tienes "permitido" alcanzar. Configura el generador a través de la [consola web en el puerto 21114](https://rustdesk.com/docs). Ten en cuenta que RustDesk se licencia por **usuario de inicio de sesión y dispositivo gestionado**, no por sesión concurrente, así que calcula tu presupuesto según cuántos equipos y administradores tienes; consulta [qué cuenta como dispositivo gestionado](/es/blog/que-cuenta-como-un-dispositivo-administrado-en-rustdesk).
+Aquí es donde el autoalojamiento compensa a los equipos: toda la flota se registra en servidores de ID/rendezvous y relay que operas tú (consulta [RustDesk para MSP](/es/blog/rustdesk-para-msp-una-unica-herramienta-autoalojada-y-personalizable)). Los planes de Server Pro se licencian por **usuarios con inicio de sesión y dispositivos gestionados**. Los planes estándar incluyen conexiones simultáneas ilimitadas; solo [Customized V2](https://rustdesk.com/pricing#custom2) se licencia por un número determinado de conexiones simultáneas. Presupuesta según cuántos equipos y administradores tienes; consulta [qué cuenta como dispositivo gestionado](/es/blog/que-cuenta-como-un-dispositivo-administrado-en-rustdesk). Sirve la consola web [por HTTPS](https://rustdesk.com/docs/es/self-host/rustdesk-server-pro/faq/#configurar-https-para-consola-web-manualmente) detrás de un proxy inverso.
 
 ## Protégelo bien
 
-El acceso desatendido es una puerta permanentemente abierta a un equipo, así que trata las credenciales con seriedad:
+El acceso desatendido es una puerta permanente a un equipo, así que trata las credenciales con seriedad:
 
-- **Contraseña permanente fuerte y única**, rotada periódicamente.
-- **Autenticación de dos factores** y, en Pro, **controles de acceso** para que solo las cuentas autorizadas puedan conectarse. Nuestro artículo sobre [control de acceso por usuario y grupos de dispositivos](https://rustdesk.com/docs/es/self-host/rustdesk-server-pro/permissions/) explica cómo delimitar quién accede a qué.
-- **Autoaloja los servicios del lado del servidor** cuando necesites controlar el rendezvous, el relay, la consola y los datos de implementación almacenados. Las credenciales del endpoint siguen siendo responsabilidad de la seguridad del propio endpoint. Como RustDesk es de código abierto bajo AGPL, su implementación de autenticación puede revisarse.
+- **Contraseña permanente fuerte y única**, renovada periódicamente.
+- **2FA de conexión** en el dispositivo controlado y, en Server Pro, [Control de acceso](https://rustdesk.com/docs/es/self-host/rustdesk-server-pro/permissions/), que decide quién puede llegar a qué dispositivos mediante reglas de usuarios y grupos de dispositivos (los permisos de los grupos de usuarios y de dispositivos son acumulativos). La libreta de direcciones compartida solo organiza entradas; no es una barrera de acceso. El [Rol de control](https://rustdesk.com/docs/es/self-host/rustdesk-server-pro/control-role/) limita lo que un técnico puede hacer dentro de una sesión.
+- **Autoaloja el servidor**, para que el rendezvous, el relay, la consola y los datos de gestión almacenados se ejecuten en la infraestructura que elijas. El cliente de RustDesk y Server OSS tienen licencia AGPL, así que su código de autenticación puede revisarse; Server Pro es software de servidor autoalojado, comercial y propietario.
 
 ## Acceso desatendido que realmente controlas
 
-Apunta una flota siempre activa hacia un servidor que tú mismo gestionas, y el acceso permanente a esos equipos seguirá intermediado por hardware que te pertenece, no por una nube que alquilas. Para un acceso permanente, mantener ese camino bajo tu propio control vale la pena la breve configuración inicial.
+Apunta una flota siempre encendida a un servidor que operas tú y el acceso permanente a esos equipos seguirá pasando por hardware que es tuyo, no por una nube que alquilas. Para un acceso permanente, mantener esa ruta en tus manos compensa de sobra la breve configuración.

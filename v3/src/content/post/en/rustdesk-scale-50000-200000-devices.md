@@ -1,5 +1,6 @@
 ---
 publishDate: 2026-07-09T10:47:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: en
 translationKey: rustdesk-scale-50000-200000-devices
 draft: false
@@ -14,11 +15,11 @@ tags:
 author: RustDesk Team
 faq:
   - question: 'How many devices can a self-hosted RustDesk server handle?'
-    answer: 'RustDesk internal telemetry recorded more than two million online endpoints on one 12-core, 32 GB public-server host on July 7, 2026.'
+    answer: "RustDesk's public server recorded more than two million online endpoints on one 12-core, 32 GB host on July 7, 2026 (internal telemetry, not an audited benchmark). For RustDesk Server Pro, treat 200,000 devices as a planning target and validate database, console and relay load in a pilot."
   - question: 'What has to be tuned to reach 200,000 devices?'
-    answer: 'Validate online-device churn, simultaneous remote sessions, relay bandwidth, caching, database write performance, and management-console activity against your own workload.'
+    answer: 'Database writes, relay capacity and console load matter most at 200,000 devices. Load-test RustDesk Server Pro in stages for online-device churn, simultaneous remote sessions, relay bandwidth, caching, database write performance and management-console activity, using your own workload rather than endpoint presence alone.'
   - question: 'Does RustDesk Server Pro support high availability or load balancing?'
-    answer: 'The architecture scales out — you can run multiple relays and place them regionally — but high availability is a design exercise, not an out-of-the-box default. Validate relay redundancy, database failover, and session distribution with RustDesk.'
+    answer: 'Yes, for relays: RustDesk Server Pro supports multiple relay servers placed by region, and hbbr relays need no license. A Pro license binds to one hbbs (ID/rendezvous) server, so high availability for the ID server and database is a design exercise; plan failover and recovery with RustDesk before rollout.'
 
 metadata:
   description: 'See RustDesk first-party operational context for planning 200,000 devices and the workload variables a self-hosted Server Pro deployment must validate.'
@@ -27,11 +28,11 @@ metadata:
 
 RustDesk internal telemetry recorded **more than two million online endpoints** on one public-server host with a **12-core CPU and 32 GB of RAM** on July 7, 2026.
 
-Two caveats define its scope. First, "online endpoints" means devices reported online at that moment, not two million simultaneous remote-control sessions. Second, it is an internal production observation, not an independently audited benchmark or a Server Pro guarantee — there is no public dashboard or downloadable dataset, and a Server Pro deployment carries different database writes, audit activity, console use, policy processing, and relay traffic. Treat the figure as first-party context for sizing, and validate any target against your own workload.
+Two caveats define its scope. First, "online endpoints" means devices reported online at that moment, not two million simultaneous remote-control sessions. Second, it is an internal production observation, not an independently audited benchmark or a Server Pro guarantee: a Server Pro deployment adds database writes, audit activity, console use, policy processing and relay traffic.
 
 ## The short answer
 
-Yes — 200,000 online devices is a credible planning target. The observation above sat an order of magnitude higher on a single 12-core, 32 GB host, so the ceiling is not the constraint; the real work is validating your specific workload, which the rest of this article breaks down.
+**200,000 online devices is a realistic planning target for Server Pro.** The public-server observation above sits an order of magnitude higher on a single 12-core, 32 GB host. What you validate in a pilot is the load Server Pro adds on top of endpoint presence: device churn, policies, audit writes, console use and concurrent relayed sessions.
 
 ## In detail
 
@@ -39,9 +40,11 @@ Scale questions are among the most common we hear from IT teams migrating off Te
 
 For a Server Pro rollout, validate the parts the public-server figure does not cover. Caching and database write performance matter as devices come and go. Relay bandwidth and CPU depend on the number, duration, resolution, and codec of simultaneous relayed sessions. Console queries, audit retention, device groups, policies, and integrations add load that endpoint presence alone does not measure. Capture your intended online count, connection churn, simultaneous direct and relayed sessions, database retention, and administrative activity in a representative load test.
 
-High availability and load balancing deserve the same treatment. For very large fleets they are worth designing in, but the specifics — relay redundancy, database failover, and how sessions are distributed — should be validated with RustDesk rather than assumed as out-of-the-box defaults.
+For a repeatable Server Pro pilot, record the client/server versions, hardware, database and relay placement. Increase online-device presence and churn in stages while running the expected console queries, policy updates and audit writes. Measure registration/reconnect success, connection setup time, database latency, CPU/RAM, disk growth and relay throughput. Include peak concurrent sessions and a recovery exercise; keep those measurements separate from the online-endpoint count.
 
-Then confirm licensing: at this scale RustDesk uses per-user and per-device models, so verify the exact tier for your fleet at [rustdesk.com/pricing](https://rustdesk.com/pricing).
+High availability and load balancing deserve the same treatment. Relays scale out: you can run several, place them by region, and hbbr relays need no license. A Pro license binds to one hbbs server, so design ID-server and database failover explicitly and review it with RustDesk for very large fleets.
+
+Then size licensing: Server Pro licenses login users and managed devices, and standard plans include unlimited concurrent connections. Pick the tier for your fleet at [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
 ## Who asks this
 

@@ -1,10 +1,11 @@
 ---
 publishDate: 2026-06-30T15:11:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: en
 translationKey: self-hosted-teamviewer-alternative
 draft: false
-title: 'The Best Self-Hosted TeamViewer & AnyDesk Alternative'
-excerpt: 'Why teams are leaving TeamViewer and AnyDesk for a self-hosted, open-source alternative they actually control — and how RustDesk fits.'
+title: 'A Self-Hosted TeamViewer and AnyDesk Alternative: RustDesk'
+excerpt: 'Evaluate RustDesk as a TeamViewer or AnyDesk alternative: an open client, free Server OSS, commercial Pro administration and a staged migration plan.'
 image: ~/assets/images/blog/self-hosted-teamviewer-alternative-og.webp
 category: Alternatives
 tags:
@@ -16,24 +17,24 @@ tags:
 author: RustDesk Team
 faq:
   - question: 'Is RustDesk a good self-hosted alternative to TeamViewer and AnyDesk?'
-    answer: 'RustDesk Server Pro is self-hosted by design — the ID/rendezvous server, relay, console, and stored data run on infrastructure you control — and RustDesk is open source under the AGPL. It answers the two reasons teams leave TeamViewer and AnyDesk: cost and control.'
+    answer: 'Yes. RustDesk pairs an AGPL client and RustDesk Server OSS (the free community server) with commercial Server Pro administration, all self-hosted, and standard Pro plans include unlimited concurrent connections. You operate the rendezvous, relay, console and stored management data. AnyDesk also offers Ultimate On-Premises, so compare source visibility, licensing and workflows as well as hosting.'
   - question: 'Can I self-host a TeamViewer or AnyDesk alternative on my own servers?'
-    answer: 'Yes. With RustDesk Server Pro you host the servers yourself, on-prem or on a VPS, and you can run the free open-source community server indefinitely. Someone on your side provisions the host, opens ports, sets up TLS, and keeps it patched.'
+    answer: 'Yes. With RustDesk Server OSS (the free community server) or Server Pro you host the servers yourself, on-prem or on a VPS, and Server OSS has no license fee or expiry. Someone on your side provisions the host, opens ports, sets up TLS, and keeps it patched.'
   - question: 'How does RustDesk licensing compare to a per-seat or per-plan subscription?'
-    answer: 'RustDesk licenses per login-user plus per managed-device, with unlimited concurrent connections on standard plans and a defined allowance on Customized V2; mid-term upgrades are prorated. Model all three counts against the current pricing page.'
+    answer: 'RustDesk Server Pro licenses login users plus managed devices, with unlimited concurrent connections on standard plans; only Customized V2 licenses a set number. An upgrade can be bought at any time; it extends the license expiry to one full year from the upgrade date and credits the remaining paid value of the current license. Model users, devices and concurrency against the current pricing page.'
   - question: 'Does RustDesk flag commercial use the way AnyDesk does?'
-    answer: "No. RustDesk Server Pro is self-hosted and commercially licensed by the plan you buy, so there is no free-tier commercial-use classifier watching your sessions the way AnyDesk's free version has one."
+    answer: 'No. RustDesk Server OSS (the free community server) has no AnyDesk-style free-tier commercial-use classifier, so business use of Server OSS is not flagged or interrupted. RustDesk Server Pro is a commercial product whose limits are set by the purchased plan: the number of login users and managed devices it licenses.'
   - question: 'Does RustDesk work for MSPs and larger IT operations?'
-    answer: 'Yes. It includes a self-hosted web console, a custom-branded client generator, and device groups with a shared address book for per-user access control, plus LDAP/SSO (OIDC) from the Basic plan and up. Large-fleet planning starts around 50,000 managed devices, with larger estates requiring validation.'
+    answer: 'Yes. RustDesk Server Pro adds a self-hosted console, device groups, shared address books and per-user and device-group Access Control; custom client generation and LDAP/OIDC SSO start at Basic, and standard plans include unlimited concurrent connections. RustDesk publishes large-fleet planning guidance; validate capacity for very large estates against your own workload.'
   - question: 'Does self-hosting help keep my data in-country and support GDPR?'
-    answer: 'Yes — you control the rendezvous, relay, console, and stored device data, which is a strong foundation. It is not an absolute guarantee, though: direct connections still flow between endpoints, so keeping traffic in-country and satisfying GDPR obligations also depends on how you route and operate the deployment.'
+    answer: 'Yes, as a deployment control. With self-hosted RustDesk you choose who operates the rendezvous, relay, console and stored device data, and where they run. It is not a compliance certification: direct connections still flow between endpoints, so in-country traffic and GDPR obligations also depend on how you route and operate the deployment.'
 
 metadata:
-  description: 'Looking for a self-hosted TeamViewer or AnyDesk alternative? RustDesk is open-source, runs on your servers, with no per-channel or per-seat cloud subscription. See how it compares.'
+  description: 'Evaluate RustDesk as a self-hosted TeamViewer or AnyDesk alternative: AGPL client and Server OSS, commercial Server Pro, licensing and migration steps.'
   keywords: 'self-hosted TeamViewer alternative, self-hosted AnyDesk alternative, TeamViewer replacement, AnyDesk replacement, open source remote desktop alternative'
 ---
 
-The search for a **self-hosted TeamViewer or AnyDesk alternative** usually starts the same way: a renewal quote no longer matches the workflows you use, and the product still routes your sessions through infrastructure you do not control.
+The search for a **self-hosted TeamViewer or AnyDesk alternative** usually starts the same way: a renewal quote no longer matches the workflows you use, and the product still brokers your sessions through infrastructure you do not control. RustDesk is a self-hosted alternative to both: you run the ID/rendezvous and relay servers yourself, starting with RustDesk Server OSS (the free community server), and add commercial Server Pro when you need centralized administration.
 
 ## Why teams leave TeamViewer and AnyDesk
 
@@ -41,34 +42,35 @@ Two decision factors show up repeatedly.
 
 **Cost.** Renewal totals can grow independent of usage — tier packaging, add-ons, and rate changes all move the number. Compare the current quote against alternatives on identical requirements.
 
-**Control.** With a cloud-only tool, your session traffic and device list live on a vendor's infrastructure. For a growing number of teams — especially in healthcare, the public sector, and anywhere [GDPR](/blog/remote-desktop-data-sovereignty-gdpr) applies — choosing where the server-side data and relay layer run is a hard requirement, not a preference.
+**Control.** Vendor-hosted services generally operate connection coordination and management data; session media may be direct or relayed. TeamViewer's standard service follows that model, while AnyDesk also offers an Ultimate On-Premises appliance.
 
-A **self-hosted alternative** answers both: RustDesk Server Pro is [self-hosted by design](/blog/why-self-host-remote-desktop-software) — the ID/rendezvous server, relay, console, and stored deployment data run on infrastructure you control — and its core is open source under the [AGPL](https://github.com/rustdesk/rustdesk), so you can audit exactly what the client does, patch on your own schedule, and run the free community server indefinitely instead of trusting a closed cloud.
+RustDesk's **client and Server OSS are AGPL-licensed** and can be inspected and built independently. Server OSS provides ID/rendezvous and relay services with no license fee or expiry. **Server Pro is commercial, proprietary self-hosted server software**, adding centralized administration on your infrastructure. Either way, you control where the servers run and who operates them.
 
-One caveat: direct sessions still flow between endpoints (relayed sessions use your configured relay), so self-hosting alone does not guarantee in-country traffic or GDPR compliance — how you route and operate the deployment still matters.
+One caveat: direct sessions travel between the endpoints (relayed sessions use your relay), so self-hosting is a deployment control, not a compliance certification — in-country traffic and GDPR obligations still depend on how you route and operate the deployment.
 
 ## RustDesk vs TeamViewer and AnyDesk at a glance
 
-|                                                        | TeamViewer / AnyDesk (cloud)     | RustDesk (self-hosted)                                                                        |
-| ------------------------------------------------------ | -------------------------------- | --------------------------------------------------------------------------------------------- |
-| Where sessions run                                     | Vendor cloud                     | Your server (on-prem or your VPS)                                                             |
-| Source code                                            | Closed                           | Open source (AGPL) core                                                                       |
-| Licensing model                                        | Per-seat / per-plan subscription | [Per login-user + per managed-device](https://rustdesk.com/pricing)                           |
-| [Concurrent connections](https://rustdesk.com/pricing) | Plan-dependent                   | Unlimited on standard plans; limited on [Customized V2](https://rustdesk.com/pricing#custom2) |
-| Server-side data location                              | Vendor-controlled                | Chosen and operated by you; endpoint routes still matter                                      |
-| Try before you buy                                     | Vendor trial (see vendor page)   | Free server today, or Pro evaluation via [sales@rustdesk.com](mailto:sales@rustdesk.com)      |
+|                                                        | TeamViewer / AnyDesk (cloud)                               | RustDesk (self-hosted)                                                                        |
+| ------------------------------------------------------ | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Connection coordination                                | Vendor-operated in standard cloud plans                    | Your ID/rendezvous server                                                                     |
+| Session media path                                     | Direct or vendor-relayed, depending on product and network | Direct between endpoints or through your configured relay                                     |
+| Source code                                            | Proprietary clients                                        | AGPL client and Server OSS; proprietary Server Pro management                                 |
+| Licensing model                                        | Per-seat / per-plan subscription                           | [Per login-user + per managed-device](https://rustdesk.com/pricing)                           |
+| [Concurrent connections](https://rustdesk.com/pricing) | Plan-dependent                                             | Unlimited on standard plans; limited on [Customized V2](https://rustdesk.com/pricing#custom2) |
+| Server-side data location                              | Vendor-controlled                                          | Chosen and operated by you; endpoint routes still matter                                      |
+| Try before you buy                                     | Vendor trial (see vendor page)                             | Free Server OSS today, or Pro evaluation via [sales@rustdesk.com](mailto:sales@rustdesk.com)  |
 
 _Competitor details vary by plan — confirm current TeamViewer or AnyDesk terms with the vendor. [See RustDesk pricing](https://rustdesk.com/pricing)._
 
-## Predictable licensing, no per-channel tax
+## Licensing by login users, devices and plan-specific concurrency
 
-RustDesk licenses per login-user plus per managed-device. **Standard plans include unlimited concurrent connections; Customized V2 has a defined allowance.** Mid-term upgrades are prorated. Model all three counts against the current pricing page.
+RustDesk licenses per login-user plus per managed-device. **Standard plans (Individual, Basic, Customized) include unlimited concurrent connections; only Customized V2 licenses a set number of concurrent connections**, counted as active controlling devices, so one technician machine with five session tabs is one connection. You can buy an [upgrade](/blog/upgrade-rustdesk-license-mid-subscription) at any time in the self-service portal: it extends the license expiry to one full year from the upgrade date and credits the remaining paid value of your current license. Model all three counts against the current pricing page.
 
-That maps cleanly onto how support teams grow, and it scales well beyond a starter deployment: [large-fleet planning](/blog/rustdesk-scale-50000-200000-devices) starts around 50,000 managed devices today, with larger estates requiring validation around caching, database tuning, and rollout design.
+That maps cleanly onto how support teams grow. For very large estates, RustDesk publishes [large-fleet planning](/blog/rustdesk-scale-50000-200000-devices) guidance that treats 200,000 online devices as a planning target to validate against your own caching, database and relay workload.
 
 ## Built for MSPs and IT teams
 
-For teams supporting many clients, RustDesk rebuilds the "one console, many technicians, many [managed devices](/blog/what-counts-as-a-managed-device)" workflow TeamViewer and AnyDesk users expect on infrastructure you own: a [self-hosted web console](https://rustdesk.com/docs), a custom-branded client generator, device groups with a [shared address book](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/), and [LDAP/SSO](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/) (OIDC) from the Basic plan up. See [why self-host](/blog/why-self-host-remote-desktop-software) for the full tooling breakdown and [rustdesk.com/pricing](https://rustdesk.com/pricing) for feature availability by plan.
+Server Pro provides a self-hosted console, device groups, shared address books, per-user and device-group [Access Control](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/) and [Control Role](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/control-role/) permissions for in-session actions, with a custom client generator and [LDAP/OIDC SSO](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/) from the Basic plan. Devices belong to one device group, and user-group and device-group access permissions are cumulative.
 
 ## What a TeamViewer migration must account for
 
@@ -84,8 +86,8 @@ TeamViewer deployments accumulate features that a like-for-like checklist can mi
 
 A few things are specific to moving off AnyDesk rather than TeamViewer:
 
-- **No commercial-use detector.** AnyDesk's free tier can flag accounts it judges to be [commercial use](/blog/anydesk-commercial-use-detected); a server you host and license outright has no such classifier watching your sessions.
-- **Concurrency you aren't gated on.** AnyDesk meters simultaneous connections by plan; RustDesk standard plans include unlimited concurrent connections (Customized V2 defines an allowance), so you re-model on login-users and managed-devices, not connection slots — and [upgrade any time, prorated](/blog/upgrade-rustdesk-license-mid-subscription) as you grow. For per-unit rates, see [rustdesk.com/pricing](https://rustdesk.com/pricing).
+- **No commercial-use detector.** AnyDesk's free tier can flag accounts it judges to be [commercial use](/blog/anydesk-commercial-use-detected); RustDesk Server OSS has no such commercial-use classifier, while Server Pro uses purchased license limits.
+- **No per-tier concurrency ceiling on standard plans.** RustDesk standard Pro plans include unlimited concurrent connections, and only Customized V2 licenses a set number; AnyDesk's allowances vary by plan. Include login users and devices in the cost model, and review the [upgrade calculation](/blog/upgrade-rustdesk-license-mid-subscription) before adding capacity.
 - **Address book, aliases, and unattended access to re-create.** Inventory the AnyDesk aliases, address-book entries, and unattended-access passwords you depend on, and map them to RustDesk login users, device groups, and the shared address book.
 - **Custom namespace or branded client.** If you run AnyDesk with a custom namespace or branded client, plan the equivalent custom-branded RustDesk client so end users keep seeing a consistent tool.
 
@@ -104,6 +106,6 @@ This sequence prevents a licensing decision from turning into an untested infras
 
 ## Evaluate the switch on your own infrastructure
 
-You don't need to talk to anyone to get started: the free, open-source community server installs on your own hardware and runs indefinitely. To trial the Pro features against the migration plan above, ask [sales@rustdesk.com](mailto:sales@rustdesk.com) for current evaluation terms; standard plan rates live at [rustdesk.com/pricing](https://rustdesk.com/pricing). To watch it work first, the [video demo](https://www.youtube.com/@rustdesk) covers a full session end to end.
+You don't need to talk to anyone to get started: Server OSS installs on your own hardware and is free, with no license fee or expiry. To trial the Pro features against the migration plan above, ask [sales@rustdesk.com](mailto:sales@rustdesk.com) for current evaluation terms; standard plan rates live at [rustdesk.com/pricing](https://rustdesk.com/pricing). To watch it work first, the [video demo](https://www.youtube.com/@rustdesk) covers a full session end to end.
 
 The quickest way to know whether self-hosting delivers on cost and control is a short proof of concept on your own hardware.

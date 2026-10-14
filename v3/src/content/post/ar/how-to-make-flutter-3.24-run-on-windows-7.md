@@ -1,43 +1,46 @@
 ---
 publishDate: 2024-12-02T00:00:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: ar
 translationKey: how-to-make-flutter-3-24-run-on-windows-7
-title: كيف تشغّل Flutter 3.24 على Windows 7؟
-excerpt: أوقف Flutter دعم Windows 7 / 8 منذ الإصدار 3.22، لذا نحتاج إلى تعديل Flutter Engine.
+title: 'كيف عدّلنا Flutter 3.24.5 ليعمل على Windows 7'
+excerpt: 'كان Flutter 3.19 آخر إصدار يدعم Windows 7 و8. وهذه هي تعديلات المحرك وDart التي طبّقتها RustDesk على Flutter 3.24.5 في أواخر عام 2024.'
 image: ~/assets/images/blog/flutter-win7.png
 category: إصدار
 slug: tashghil-flutter-3-24-ala-windows-7
 tags: [تطوير]
 ---
 
-أدخلنا مؤخرًا Flutter 3.24.5 إلى [RustDesk](https://github.com/rustdesk/rustdesk)، فتوقف عن العمل على Windows 7. لحل المشكلة عدّلنا Flutter Engine.
+يوثّق هذا المقال تعديلات المحرك التي طبّقتها RustDesk على **Flutter 3.24.5** في أواخر عام 2024. فقد أدّت ترقية [RustDesk](https://github.com/rustdesk/rustdesk) إلى Flutter 3.24.5 إلى توقفه عن العمل على Windows 7، لذا عدّلنا محرك Flutter وتراجعنا عن ثلاثة تغييرات في Dart.
 
 ## حل تشغيل Flutter 3.24.5 على Windows 7
 
-أعلنت Flutter وDart أن Dart 3.3 وFlutter 3.19 هما آخر إصدارين يدعمان Windows 7 و8. لاستخدام Flutter 3.24.5 يجب التراجع عن بعض تغييرات Dart.
+أعلن فريقا Flutter وDart أن **Flutter 3.19 وDart 3.3** هما آخر إصدارين يدعمان Windows 7 و8. ولكي يعمل بناؤنا من Flutter 3.24.5 على Windows 7، تراجعنا عن تغييرات Dart الثلاثة أدناه. وكل تراجع يعيد أيضًا السلوك الأقدم، بما في ذلك قيده المعروف.
 
-الرابط: [الإعلان الرسمي](https://groups.google.com/g/flutter-announce/c/s0tM5gxAgs4/m/ryxV2vZYAQAJ?pli=1)
+رابط ذو صلة: [الإعلان الرسمي](https://groups.google.com/g/flutter-announce/c/s0tM5gxAgs4/m/ryxV2vZYAQAJ?pli=1)
 
-## 1. إصلاح `Platform.localHostname` في البيئات الصينية
+## 1. إصلاح مشكلة `Platform.localHostname` في البيئات الصينية
 
-استخدم Dart واجهة `gethostname` التي سببت فشل `Platform.localHostname` في البيئات الصينية، ثم انتقل إلى `GetHostNameW` المتاحة بدءًا من Windows 8. لدعم Windows 7 يجب التراجع عن هذا التغيير، مع تأثير جانبي على `Platform.localHostname` في تلك البيئات.
+كان Dart يستخدم في الأصل واجهة `gethostname` البرمجية، ما تسبب في فشل `Platform.localHostname` في البيئات الصينية. ولحل هذه المشكلة انتقل Dart إلى واجهة `GetHostNameW`، المتاحة فقط في Windows 8 والإصدارات الأحدث. ولكي يعمل Flutter على Windows 7، علينا التراجع عن هذا التغيير. ولاحظ أن التراجع عنه سيؤثر في عمل `Platform.localHostname` في البيئات الصينية.
 
-Issue: [Platform.localHostname fails on Chinese Windows](https://github.com/dart-lang/sdk/issues/52701)
+المشكلة ذات الصلة: [Platform.localHostname fails on Chinese Windows](https://github.com/dart-lang/sdk/issues/52701)
 
-## 2. استعادة معالجة unwinding records في Windows 7
+## 2. إزالة معالجة واجهة سجلات فك المكدس (unwinding records) في Windows 7
 
-كان Dart يعالج غياب `RtlAddGrowableFunctionTable` في Windows 7، ثم أزيل هذا التوافق. يجب التراجع عن الالتزام الذي أزاله.
+كان Dart قد أجرى سابقًا تعديلات توافق لتعويض غياب واجهة `RtlAddGrowableFunctionTable` في Windows 7، لكن هذا التعديل أُزيل الآن. وللحفاظ على التوافق مع Windows 7، علينا التراجع عن الإيداع (commit) الذي أزال هذه المعالجة.
 
-Commit: [Remove Windows7 handling of unwinding records API](https://github.com/dart-lang/sdk/commit/34213ba60578e46fc2455c5a56b09d9efabc532b)
+الإيداع ذو الصلة: [Remove Windows7 handling of unwinding records API](https://github.com/dart-lang/sdk/commit/34213ba60578e46fc2455c5a56b09d9efabc532b)
 
-## 3. إصلاح الروابط الرمزية النسبية للمجلدات
+## 3. إصلاح مشكلة عدم عمل الروابط الرمزية النسبية إلى المجلدات على Windows
 
-عدّل إصلاح Dart الدالة `File::GetType` مستخدمًا `PathCchCombineEx` المتاحة بدءًا من Windows 8 فقط. يجب التراجع عن هذا التغيير أيضًا.
+كان Dart قد أصلح سابقًا مشكلة عدم عمل الروابط الرمزية النسبية إلى المجلدات على Windows، وعدّل لذلك الدالة `File::GetType`. واستخدم هذا التعديل واجهة `PathCchCombineEx`، المتاحة فقط في Windows 8 والإصدارات الأحدث. ولاستعادة دعم Windows 7، علينا التراجع عن هذا التعديل أيضًا.
 
-Commit: [Fix a bug where relative symlinks to directories did not work on Windows](https://github.com/dart-lang/sdk/commit/b4574904f9cd0d6f7147950c02ee2447569d0be9)
+الإيداع ذو الصلة: [Fix a bug where relative symlinks to directories did not work on Windows](https://github.com/dart-lang/sdk/commit/b4574904f9cd0d6f7147950c02ee2447569d0be9)
 
 ## الخلاصة
 
-يتطلب تشغيل Flutter 3.24.5 على Windows 7 التراجع عن تغييرات أساسية في Dart. يؤثر ذلك في `Platform.localHostname` بالبيئات الصينية والروابط الرمزية النسبية، لكنه ضروري لمستخدمي Windows 7.
+في بنائنا من Flutter 3.24.5، أعادت هذه التراجعات الثلاثة التوافق مع Windows 7. والثمن هو سلوك Dart الأقدم: إذ يعود `Platform.localHostname` إلى الفشل في البيئات باللغة الصينية، وتفقد الروابط الرمزية النسبية إلى المجلدات الإصلاح الأحدث. وقد انتهى الدعم الرسمي لـ Windows 7 مع Flutter 3.19 وDart 3.3، لذا إذا أعدت استخدام هذه التعديلات فاختبر المحرك المعدّل مع تطبيقك.
 
-راجع [نظام CI](https://github.com/rustdesk/engine/blob/main/.github/workflows/flutter-engine-windows-x64-release-build.yml) للتنفيذ الكامل، و[هذا الرابط](https://github.com/rustdesk/rustdesk/blob/dea99ffb3ab34fee562090d214af419b557debdf/.github/workflows/flutter-build.yml#L109) لمعرفة طريقة تطبيق المحرك المعدّل.
+وللاطلاع على التنفيذ الكامل، راجع [نظام CI لدينا](https://github.com/rustdesk/engine/blob/main/.github/workflows/flutter-engine-windows-x64-release-build.yml).
+
+و[هنا](https://github.com/rustdesk/rustdesk/blob/dea99ffb3ab34fee562090d214af419b557debdf/.github/workflows/flutter-build.yml#L109) تجد كيف نطبّق المحرك المعدّل على مشروعنا.

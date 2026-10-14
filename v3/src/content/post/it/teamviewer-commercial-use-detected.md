@@ -1,10 +1,11 @@
 ---
+updateDate: 2026-10-14T00:00:00Z
 publishDate: 2026-07-03T09:34:00Z
 lang: 'it'
 translationKey: 'teamviewer-commercial-use-detected'
 draft: false
-title: 'TeamViewer Commercial Use Detected: come risolvere il problema'
-excerpt: 'Sei stato segnalato per uso commerciale su TeamViewer? Ecco la procedura ufficiale di ricorso, cosa conta davvero come uso commerciale e la soluzione self-hosted per evitarlo.'
+title: 'Uso commerciale rilevato su TeamViewer: come risolvere il problema'
+excerpt: 'Sei stato segnalato per uso commerciale su TeamViewer? Ecco la procedura ufficiale di ricorso, cosa conta davvero come uso commerciale e un''alternativa senza questo tipo di classificatore.'
 image: '~/assets/images/blog/teamviewer-commercial-use-detected-og.webp'
 category: 'Risoluzione dei problemi'
 tags: ['TeamViewer', 'Risoluzione dei problemi', 'Licenze']
@@ -16,14 +17,14 @@ faq:
   - question: 'Cosa conta come uso commerciale su TeamViewer?'
     answer: "Secondo le definizioni ufficiali di TeamViewer, l'uso commerciale comprende: fornire assistenza a clienti, lavorare da casa (anche solo controllare la posta di lavoro), qualsiasi connessione in entrata o in uscita in un contesto commerciale, l'amministrazione o il monitoraggio di server e il lavoro retribuito presso un'organizzazione no-profit. L'uso personale significa invece aiutare familiari e amici o connettersi ai propri dispositivi non server."
   - question: 'La richiesta di reset funziona se il mio utilizzo è davvero commerciale?'
-    answer: 'No. Il reset elimina la segnalazione solo quando è stata generata per errore; se il tuo utilizzo è effettivamente commerciale, TeamViewer lo identificherà correttamente, e la soluzione duratura è un software la cui licenza copra quel tipo di lavoro.'
+    answer: 'No. Il reset elimina la segnalazione solo quando è stata generata per errore; se il tuo utilizzo è effettivamente commerciale, TeamViewer lo identificherà correttamente, e la soluzione duratura è una licenza TeamViewer a pagamento o un altro strumento, come RustDesk self-hosted, la cui licenza copra quel lavoro. In alternativa, TeamViewer può proporti di firmare una dichiarazione di uso privato.'
   - question: 'RustDesk ha un rilevatore di uso commerciale?'
-    answer: 'No. Il server community di RustDesk può essere self-hosted senza alcun classificatore di uso commerciale, mentre Server Pro è concesso in licenza in base agli utenti di accesso e ai dispositivi gestiti, con connessioni simultanee illimitate nei piani standard e un limite definito nel piano Customized V2.'
-  - question: "Posso evitare la segnalazione con script di reset dell'ID o eliminando i file di configurazione?"
-    answer: "No. Non utilizzare script non ufficiali per il reset dell'ID né eliminare i file di configurazione per aggirare la classificazione: non modificano i termini di licenza e possono creare ulteriori problemi di sicurezza o di assistenza."
+    answer: 'No. RustDesk Server OSS, il server community gratuito, non ha alcun classificatore di uso commerciale. RustDesk Server Pro ha licenze basate su utenti con login e dispositivi gestiti ed è limitato solo dal piano che acquisti, con connessioni simultanee illimitate nei piani standard; solo Customized V2 prevede in licenza un numero definito di connessioni simultanee.'
+  - question: 'Posso evitare la segnalazione con script di reset dell''ID o eliminando i file di configurazione?'
+    answer: 'No. Non usare script non ufficiali di reset dell''ID e non eliminare i file di configurazione per aggirare la classificazione: non modificano i termini di licenza e possono creare ulteriori problemi di sicurezza o di assistenza. Se la segnalazione è sbagliata, usa la richiesta ufficiale di reset su teamviewer.com/reset; se l''uso è commerciale, acquista una licenza.'
 
 metadata:
-  description: "Sei stato segnalato per 'uso commerciale rilevato' su TeamViewer? Ecco la procedura ufficiale di reset, cosa conta come uso commerciale e come RustDesk self-hosted permette di evitarlo."
+  description: '«Uso commerciale rilevato» su TeamViewer? La procedura ufficiale di reset, cosa conta come uso commerciale e RustDesk, che non ha questo classificatore.'
   keywords: 'TeamViewer uso commerciale rilevato, reset uso commerciale TeamViewer, ricorso uso commerciale TeamViewer, TeamViewer uso personale segnalato'
 ---
 
@@ -67,13 +68,13 @@ Quindi, se il ricorso non fa al caso tuo — perché il tuo utilizzo è realment
 
 Quando l'utilizzo è realmente commerciale, non esiste un modo legittimo per aggirare il reset. Confronta tre percorsi possibili:
 
-| Percorso                               | Ideale per                                                                | Compromesso                                                                     |
-| -------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| Acquistare TeamViewer                  | Vuoi mantenere il flusso di lavoro attuale e il servizio gestito          | Piano, termini e pacchetto di funzionalità del fornitore in continua evoluzione |
-| Scegliere un altro SaaS gestito        | Vuoi evitare la gestione dei server ma con un'offerta commerciale diversa | Le sessioni e l'amministrazione restano gestite dal fornitore                   |
-| Avviare un progetto pilota self-hosted | Vuoi gestire tu ID, relay, console e dati di distribuzione                | Il tuo team si assume hosting, patch, certificati, monitoraggio e ripristino    |
+| Percorso                               | Ideale per                                                                | Compromesso                                                                                              |
+| -------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Acquistare TeamViewer                  | Vuoi mantenere il flusso di lavoro attuale e il servizio gestito          | Piano, condizioni e pacchetto di funzionalità del fornitore, che restano soggetti a cambiamenti          |
+| Scegliere un altro SaaS gestito        | Vuoi evitare la gestione dei server ma con un'offerta commerciale diversa | Coordinamento e amministrazione restano gestiti dal fornitore; i flussi possono essere diretti o inoltrati |
+| Avviare un progetto pilota self-hosted | Vuoi gestire tu ID, relay, console e dati di installazione                | Il tuo team si fa carico di hosting, patch, certificati, monitoraggio e ripristino                       |
 
-RustDesk rientra nella terza riga: sei tu a fare self-hosting del server community, senza alcun classificatore di uso commerciale che sorvegli le sessioni — [perché il self-hosting elimina questo meccanismo](/it/blog/perche-fare-self-hosting-del-tuo-software-di-desktop-remoto) — mentre Server Pro è concesso in licenza in base agli utenti di accesso e ai dispositivi gestiti, con un limite definito nel piano [Customized V2](https://rustdesk.com/pricing#custom2).
+RustDesk rientra nella riga self-hosted. Il client RustDesk e RustDesk Server OSS (il server community gratuito) hanno licenza AGPL, e Server OSS non ha alcun classificatore di uso commerciale: secondo la sua licenza è gratuito sia per uso personale sia per uso aziendale. Server Pro è un software server self-hosted commerciale e proprietario, con licenze basate su utenti con login e dispositivi gestiti, ed è limitato solo dal piano che acquisti. I piani standard includono connessioni simultanee illimitate; solo [Customized V2](https://rustdesk.com/pricing#custom2) ne prevede in licenza un numero definito.
 
 ## Un percorso di migrazione sicuro
 
@@ -83,6 +84,6 @@ Non disinstallare TeamViewer come primo passo. Metti in piedi un server RustDesk
 
 - Invia la richiesta ufficiale di reset se la classificazione è effettivamente errata.
 - Se l'utilizzo è commerciale, confronta i preventivi scritti attuali e i termini di licenza.
-- Se il self-hosting è un requisito, testa il server community gratuito prima di valutare le funzionalità e i piani di Server Pro su [rustdesk.com/pricing](https://rustdesk.com/pricing).
+- Se il self-hosting è un requisito, testa Server OSS prima di valutare le funzionalità e i piani di Server Pro su [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
 E lascia perdere gli script di reset dell'ID e le cancellazioni dei file di configurazione che circolano nei forum: lasciano i termini di licenza di TeamViewer esattamente dov'erano e tendono a creare ulteriori problemi di sicurezza o di assistenza.

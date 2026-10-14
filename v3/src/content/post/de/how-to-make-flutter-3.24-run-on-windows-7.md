@@ -1,43 +1,46 @@
 ---
 publishDate: 2024-12-02T00:00:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: de
 translationKey: how-to-make-flutter-3-24-run-on-windows-7
-title: Wie lässt sich Flutter 3.24 unter Windows 7 ausführen?
-excerpt: Seit Flutter 3.22 Windows 7 / 8 nicht mehr unterstützt, muss die Flutter Engine angepasst werden.
+title: Wie wir Flutter 3.24.5 unter Windows 7 zum Laufen gebracht haben
+excerpt: Flutter 3.19 unterstützte als letzte Version Windows 7 und 8. Diese Engine- und Dart-Patches hat RustDesk Ende 2024 auf Flutter 3.24.5 angewendet.
 image: ~/assets/images/blog/flutter-win7.png
 category: Veröffentlichung
 slug: flutter-3-24-unter-windows-7-ausfuehren
 tags: [Entwicklung]
 ---
 
-Wir haben kürzlich Flutter 3.24.5 in [RustDesk](https://github.com/rustdesk/rustdesk) eingeführt. Dadurch lief RustDesk nicht mehr unter Windows 7. Um das Problem zu lösen, haben wir die Flutter Engine angepasst.
+Dieser Beitrag dokumentiert die Engine-Patches, die RustDesk Ende 2024 auf **Flutter 3.24.5** angewendet hat. Nach dem Umstieg von [RustDesk](https://github.com/rustdesk/rustdesk) auf Flutter 3.24.5 lief die Anwendung nicht mehr unter Windows 7; deshalb haben wir die Flutter-Engine angepasst und drei Dart-Änderungen zurückgenommen.
 
 ## Lösung für Flutter 3.24.5 unter Windows 7
 
-Flutter und Dart haben angekündigt, dass Dart 3.3 und Flutter 3.19 die letzten Versionen mit Unterstützung für Windows 7 und 8 sind. Damit Flutter 3.24.5 dennoch funktioniert, müssen einige Dart-Änderungen zurückgenommen werden.
+Das Flutter- und das Dart-Team haben **Flutter 3.19 und Dart 3.3** als letzte Versionen mit Unterstützung für Windows 7 und 8 angekündigt. Damit unser Build mit Flutter 3.24.5 unter Windows 7 läuft, haben wir die drei unten beschriebenen Dart-Änderungen zurückgenommen. Jede Rücknahme bringt auch das ältere Verhalten zurück, einschließlich seiner bekannten Einschränkung.
 
 Weiterführender Link: [Offizielle Ankündigung](https://groups.google.com/g/flutter-announce/c/s0tM5gxAgs4/m/ryxV2vZYAQAJ?pli=1)
 
-## 1. `Platform.localHostname` in chinesischen Umgebungen
+## 1. Korrektur für `Platform.localHostname` in chinesischen Umgebungen
 
-Dart verwendete ursprünglich die API `gethostname`, wodurch `Platform.localHostname` in chinesischen Umgebungen fehlschlug. Als Lösung wechselte Dart zur erst ab Windows 8 verfügbaren API `GetHostNameW`. Für Windows 7 muss diese Änderung zurückgenommen werden. Dadurch wird allerdings `Platform.localHostname` in chinesischen Umgebungen beeinträchtigt.
+Dart verwendete ursprünglich die API `gethostname`, wodurch `Platform.localHostname` in chinesischen Umgebungen fehlschlug. Als Lösung wechselte Dart zur API `GetHostNameW`, die erst ab Windows 8 verfügbar ist. Damit Flutter unter Windows 7 läuft, müssen wir diese Änderung zurücknehmen. Beachten Sie, dass die Rücknahme die Funktion von `Platform.localHostname` in chinesischen Umgebungen beeinträchtigt.
 
-Issue: [Platform.localHostname fails on Chinese Windows](https://github.com/dart-lang/sdk/issues/52701)
+Zugehöriges Issue: [Platform.localHostname fails on Chinese Windows](https://github.com/dart-lang/sdk/issues/52701)
 
 ## 2. Behandlung der Unwinding-Records-API für Windows 7 wiederherstellen
 
-Dart enthielt eine Kompatibilitätsbehandlung für die unter Windows 7 fehlende API `RtlAddGrowableFunctionTable`, die später entfernt wurde. Für die Windows-7-Kompatibilität muss der entsprechende Commit zurückgenommen werden.
+Dart enthielt früher eine Kompatibilitätsanpassung für die unter Windows 7 fehlende API `RtlAddGrowableFunctionTable`, die inzwischen entfernt wurde. Um die Kompatibilität mit Windows 7 zu erhalten, müssen wir den Commit zurücknehmen, der diese Behandlung entfernt hat.
 
-Commit: [Remove Windows7 handling of unwinding records API](https://github.com/dart-lang/sdk/commit/34213ba60578e46fc2455c5a56b09d9efabc532b)
+Zugehöriger Commit: [Remove Windows7 handling of unwinding records API](https://github.com/dart-lang/sdk/commit/34213ba60578e46fc2455c5a56b09d9efabc532b)
 
-## 3. Relative symbolische Verzeichnislinks unter Windows
+## 3. Korrektur für relative symbolische Verzeichnislinks unter Windows
 
-Eine Dart-Korrektur für relative symbolische Verzeichnislinks änderte `File::GetType` und verwendete dabei die erst ab Windows 8 verfügbare API `PathCchCombineEx`. Auch diese Änderung muss für Windows 7 zurückgenommen werden.
+Dart hatte zuvor das Problem behoben, dass relative symbolische Links auf Verzeichnisse unter Windows nicht funktionierten, und dafür die Methode `File::GetType` geändert. Diese Änderung verwendete die API `PathCchCombineEx`, die erst ab Windows 8 verfügbar ist. Um Windows 7 wieder zu unterstützen, müssen wir auch diese Änderung zurücknehmen.
 
-Commit: [Fix a bug where relative symlinks to directories did not work on Windows](https://github.com/dart-lang/sdk/commit/b4574904f9cd0d6f7147950c02ee2447569d0be9)
+Zugehöriger Commit: [Fix a bug where relative symlinks to directories did not work on Windows](https://github.com/dart-lang/sdk/commit/b4574904f9cd0d6f7147950c02ee2447569d0be9)
 
 ## Fazit
 
-Für Flutter 3.24.5 unter Windows 7 sind mehrere Rücknahmen in Dart nötig. Sie haben Nebenwirkungen bei `Platform.localHostname` in chinesischen Umgebungen und bei relativen symbolischen Links, sind für Nutzer von Windows 7 aber erforderlich.
+In unserem Build mit Flutter 3.24.5 haben diese drei Rücknahmen die Kompatibilität mit Windows 7 wiederhergestellt. Der Preis dafür ist das ältere Dart-Verhalten: `Platform.localHostname` schlägt in chinesischsprachigen Umgebungen wieder fehl, und relative symbolische Verzeichnislinks verlieren die neuere Korrektur. Die offizielle Unterstützung für Windows 7 endete mit Flutter 3.19 und Dart 3.3; wenn Sie diese Patches übernehmen, testen Sie die angepasste Engine daher mit Ihrer eigenen Anwendung.
 
-Die vollständige Umsetzung finden Sie in [unserer CI](https://github.com/rustdesk/engine/blob/main/.github/workflows/flutter-engine-windows-x64-release-build.yml). [Hier](https://github.com/rustdesk/rustdesk/blob/dea99ffb3ab34fee562090d214af419b557debdf/.github/workflows/flutter-build.yml#L109) wird die angepasste Engine in RustDesk eingebunden.
+Die vollständige Umsetzung finden Sie in [unserer CI](https://github.com/rustdesk/engine/blob/main/.github/workflows/flutter-engine-windows-x64-release-build.yml).
+
+[Hier](https://github.com/rustdesk/rustdesk/blob/dea99ffb3ab34fee562090d214af419b557debdf/.github/workflows/flutter-build.yml#L109) sehen Sie, wie wir die angepasste Engine in unser Projekt einbinden.

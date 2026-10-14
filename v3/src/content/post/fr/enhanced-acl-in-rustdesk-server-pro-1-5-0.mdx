@@ -1,27 +1,30 @@
 ---
 publishDate: 2025-02-19T00:00:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: fr
 translationKey: enhanced-acl-in-rustdesk-server-pro-1-5-0
 title: ACL améliorées dans RustDesk Server Pro 1.5.0
-excerpt: RustDesk Server Pro prend désormais en charge les ACL par utilisateur et les groupes d’appareils.
+excerpt: 'RustDesk Server Pro 1.5.0 a introduit le contrôle d’accès par utilisateur et les groupes d’appareils, en plus des groupes d’utilisateurs.'
 image: ~/assets/images/blog/device-group.png
 category: Version
 slug: acl-ameliorees-rustdesk-server-pro-1-5-0
 tags: [RustDesk Server Pro, version]
 ---
 
-RustDesk Server Pro 1.5.0 est maintenant disponible.
+RustDesk Server Pro 1.5.0 est disponible, avec les groupes d’appareils et le contrôle d’accès par utilisateur.
 
 ## Journal des modifications
 
-* Ajout des groupes d’appareils et de leurs ACL
-* Ajout d’ACL fines par utilisateur
-* Ajout de stratégies pour les groupes d’appareils
-* Ajout de tableaux triables
-* OIDC relie l’ancien compte en cas de conflit d’adresse e-mail
-* Le caractère `-` est autorisé dans l’identifiant
-* Correction de l’échec lorsque le nom OIDC est nul
+- Ajout des groupes d’appareils et de leurs règles de contrôle d’accès
+- Ajout du contrôle d’accès par utilisateur
+- Ajout de stratégies pour les groupes d’appareils
+- Ajout de tableaux triables
+- Connexion OIDC rattachée au compte existant lorsque l’adresse e-mail correspond
+- `-` (tiret) autorisé dans les ID d’appareils
+- Correction de l’échec de connexion lorsque le nom OIDC est `null`
 
-Les groupes d’appareils sont une nouveauté de RustDesk Server Pro 1.5.0. RustDesk privilégiait auparavant la simplicité et gérait les ACL uniquement avec des groupes d’utilisateurs. Cette approche compliquait les autorisations dans les grandes organisations. La version 1.5.0 introduit donc les groupes d’appareils et les ACL par utilisateur. Il devient possible de regrouper les appareils et de leur appliquer des politiques, ce qui facilite nettement la gestion à grande échelle.
+Les groupes d’appareils sont une nouveauté de RustDesk Server Pro 1.5.0. Auparavant, RustDesk privilégiait la simplicité et évitait d’introduire des groupes d’appareils, en s’appuyant uniquement sur les groupes d’utilisateurs pour gérer les ACL (listes de contrôle d’accès). Cette approche rendait toutefois le paramétrage des autorisations fastidieux pour les grandes organisations. Nous avons donc décidé d’introduire les groupes d’appareils et les ACL par utilisateur dans la version 1.5.0. Cette amélioration vous permet de regrouper des appareils et d’appliquer des stratégies à ces groupes, ce qui facilite nettement la gestion des appareils dans les environnements à grande échelle.
 
-Chaque appareil peut appartenir à un groupe d’appareils en plus d’être associé à un utilisateur. Des politiques supplémentaires peuvent ainsi limiter ou autoriser l’accès à des appareils précis. Les ACL par utilisateur permettent aussi de définir des autorisations individuelles en complément des groupes, avec davantage de souplesse et de contrôle.
+À l’origine, RustDesk Server Pro ne prenait en charge que les groupes d’utilisateurs ; avec cette mise à jour, il prend aussi en charge les groupes d’appareils. Chaque appareil peut être affecté à un seul groupe d’appareils, en plus d’être associé à un utilisateur. Vous pouvez ainsi appliquer des stratégies supplémentaires fondées sur les groupes d’appareils, par exemple pour restreindre ou accorder l’accès à des appareils précis. Cette version introduit en outre les ACL par utilisateur, qui permettent de définir des autorisations pour chaque utilisateur en plus des groupes d’utilisateurs, pour plus de souplesse et de contrôle dans la gestion des accès.
+
+**Mise à jour (2026) :** des versions ultérieures de Server Pro ont ajouté le [Rôle de contrôle](https://rustdesk.com/docs/fr/self-host/rustdesk-server-pro/control-role/) pour les autorisations en cours de session. Les autorisations des groupes d’utilisateurs et des groupes d’appareils se cumulent : l’un ou l’autre type de groupe peut accorder l’accès. Pour la configuration actuelle, consultez la [documentation du Contrôle d’accès](https://rustdesk.com/docs/fr/self-host/rustdesk-server-pro/permissions/).

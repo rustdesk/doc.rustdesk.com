@@ -1,26 +1,27 @@
 ---
 publishDate: 2026-08-14T10:00:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: 'ar'
 translationKey: 'unattended-remote-access-wayland'
 draft: false
-title: 'الوصول عن بُعد غير المراقب على Wayland باستخدام RustDesk'
-excerpt: 'يوفّر RustDesk الآن وصولاً حقيقياً غير مراقب عن بُعد على Wayland، بما في ذلك دعم الشاشات المتعددة. جرّب الإصدار التجريبي لأنظمة x86_64 المبنية على Debian/Ubuntu.'
+title: 'معاينة RustDesk على Wayland: الوصول غير المراقب والوصول إلى شاشة تسجيل الدخول'
+excerpt: 'معاينة من RustDesk لأنظمة x86_64 المبنية على Debian/Ubuntu تضيف الوصول غير المراقب على Wayland، مع الشاشات المتعددة وشاشة تسجيل الدخول بعد إعادة التشغيل.'
 image: '~/assets/images/blog/unattended-remote-access-wayland-og.webp'
 category: 'إصدار'
 tags: ['RustDesk', 'Wayland', 'Linux', 'الوصول غير المراقب']
 author: 'RustDesk Team'
-slug: "unattended-remote-access-wayland-ar"
+slug: 'unattended-remote-access-wayland-ar'
 
 metadata:
-  description: 'يجلب RustDesk الوصول الحقيقي غير المراقب عن بُعد إلى Wayland، مع دعم الشاشات المتعددة. الإصدار التجريبي لأنظمة x86_64 المبنية على Debian/Ubuntu متاح الآن.'
-  keywords: 'RustDesk Wayland, الوصول غير المراقب Wayland, سطح المكتب البعيد Wayland, سطح المكتب البعيد لينكس Wayland, RustDesk لينكس, الوصول عن بعد غير المراقب'
+  description: 'جرّب معاينة RustDesk على Wayland لأنظمة x86_64 المبنية على Debian/Ubuntu: وصول غير مراقب عبر شاشات متعددة وعند شاشة تسجيل الدخول بعد إعادة التشغيل.'
+  keywords: 'RustDesk Wayland, الوصول غير المراقب على Wayland, سطح المكتب البعيد على Wayland, سطح المكتب البعيد على Linux مع Wayland, RustDesk لنظام Linux, الوصول غير المراقب عن بُعد'
 ---
 
-لطالما كان دعم Wayland من أصعب جوانب سطح المكتب البعيد على لينكس.
+لطالما كان دعم Wayland من أصعب جوانب سطح المكتب البعيد على Linux.
 
-يستطيع RustDesk الآن توفير **وصول حقيقي غير مراقب على Wayland**، دون الحاجة إلى وجود شخص عند الجهاز البعيد للموافقة على كل جلسة. **كما أن إعدادات الشاشات المتعددة مدعومة أيضاً.**
+تلتقط إصدارات RustDesk القياسية أسطح مكتب Wayland أصلًا، بما في ذلك الشاشات المتعددة منذ الإصدار 1.4.3، عبر PipeWire و`xdg-desktop-portal` في جلسة مسجَّل الدخول إليها. أما **معاينة RustDesk الجديدة على Wayland لأنظمة x86_64 المبنية على Debian/Ubuntu** فتضيف **وصولًا غير مراقب حقيقيًا على Wayland**: فبعد الإعداد الأولي، لا يحتاج أحد عند الجهاز البعيد إلى الموافقة على كل جلسة. **وتعمل الشاشات المتعددة في الجلسات غير المراقبة أيضًا.**
 
-بعد الإعداد الأولي، يمكنك الاتصال حتى لو لم يكن هناك أحد عند الجهاز البعيد — بما في ذلك من **شاشة تسجيل الدخول** بعد إعادة التشغيل.
+ويمكنك الاتصال حتى عندما لا يكون أي مستخدم قد سجّل دخوله، بما في ذلك عند **شاشة تسجيل الدخول** بعد إعادة التشغيل.
 
 <div class="twitter-embed" style="display:flex;justify-content:center;">
 <blockquote class="twitter-video" data-media-max-width="560"><a href="https://twitter.com/rustdesk/status/2087945266855026744">شاهد الفيديو التوضيحي على X</a></blockquote>
@@ -39,21 +40,22 @@ metadata:
 })();
 </script>
 
-في الوقت الحالي، نُصدر هذه الميزة كإصدار تجريبي منفصل لأنظمة **x86_64 المبنية على Debian/Ubuntu**:
+ونصدر هذه الميزة حاليًا في صورة إصدار معاينة منفصل لـ **أنظمة x86_64 المبنية على Debian/Ubuntu**:
 
 **[تنزيل إصدار Wayland للوصول غير المراقب](https://github.com/rustdesk/rustdesk/releases/download/nightly/rustdesk-unattended-wayland-1.4.9-x86_64.deb)**
 
-لا يزال دعم Wayland محدوداً في العديد من منتجات سطح المكتب البعيد الرئيسية. يتطلب AnyDesk حالياً Xorg للجلسات الواردة على لينكس، بينما لا يزال TeamViewer يصف دعمه لـ Wayland بأنه تجريبي في بيئات سطح المكتب الشائعة.
+وللمقارنة، [توثّق AnyDesk أن Xorg مطلوب للاتصالات الواردة على Linux](https://support.anydesk.com/anydesk-for-linux-raspberry-pi)، بينما [تصف TeamViewer دعمها لـ Wayland بأنه تجريبي](https://community.teamviewer.com/English/discussion/122410).
 
-نودّ الحصول على المزيد من الاختبارات في بيئات حقيقية قبل جعل هذا هو الوضع الافتراضي.
+ونودّ الحصول على مزيد من الاختبارات في بيئات حقيقية قبل جعل هذا السلوك افتراضيًا.
 
-بمجرد استقرار التنفيذ، نخطط لجلب الوصول غير المراقب على Wayland إلى المزيد من توزيعات لينكس، بما في ذلك **Fedora و Arch Linux**، وإدراجه في النهاية ضمن إصدارات RustDesk القياسية.
+وبمجرد استقرار التنفيذ، نخطط لتوفير الوصول غير المراقب على Wayland في مزيد من توزيعات Linux، بما فيها **Fedora وArch Linux**، ثم إدراجه في نهاية المطاف ضمن إصدارات RustDesk القياسية.
 
-إذا كنت تستخدم Wayland، وخصوصاً مع عدة شاشات، فجرّب الإصدار التجريبي وأخبرنا بما يعمل جيداً — وما لا يعمل.
+إذا كنت تستخدم Wayland، وخاصة مع عدة شاشات، فجرّب إصدار المعاينة وأخبرنا بما يعمل وما لا يعمل. ومن الاختبارات المفيدة: الاتصال بعد إعادة التشغيل قبل أن يسجّل أي شخص دخوله، وإعادة الاتصال بعد تسجيل الخروج، واختيار كل شاشة على حدة. واذكر في ملاحظاتك التوزيعة وبيئة سطح المكتب ومدير العرض وإصدار البناء، وأبقِ وسيلة الوصول الحالية لديك إلى أن تنجح هذه الاختبارات.
 
-## قراءات ذات صلة
+## مقالات ذات صلة
 
 - [RustDesk لنظام Linux](/ar/blog/rustdesk-for-linux-ar)
 - [الوصول غير المراقب في RustDesk](/ar/blog/rustdesk-unattended-access-setup-ar)
 - [RustDesk مقابل AnyDesk](/ar/blog/rustdesk-vs-anydesk-ar)
 - [RustDesk مقابل TeamViewer](/ar/blog/rustdesk-vs-teamviewer-ar)
+- [تنفيذ التقاط شاشة Wayland ‏(DRM/KMS)](https://github.com/rustdesk/rustdesk/pull/15420)

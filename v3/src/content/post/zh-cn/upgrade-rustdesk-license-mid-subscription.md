@@ -1,51 +1,52 @@
 ---
 publishDate: 2026-07-03T09:40:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: 'zh-cn'
 translationKey: upgrade-rustdesk-license-mid-subscription
 draft: false
-title: '订阅期内升级 RustDesk 许可证:具体是如何运作的'
-excerpt: '没错——您可以随时升级 RustDesk 许可证以增加用户数或设备数。了解按比例计费的计算方式,以及新的额度如何生效:在 Web 控制台中刷新即可立即生效,或等待自动的 24 小时定期检查。'
+title: '订阅期内升级 RustDesk 许可证：具体如何运作'
+excerpt: '在订阅期内为 RustDesk Server Pro 增加用户或设备：了解新的一年到期日、剩余已付期限如何抵扣，以及如何刷新许可证让新额度生效。'
 image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.webp
 category: '定价'
 tags: ['RustDesk', '定价', '许可']
 author: 'RustDesk Team'
 slug: 'upgrade-rustdesk-license-mid-subscription-zh-cn'
 faq:
-  - question: '我可以在订阅期内升级 RustDesk 许可证吗?'
-    answer: '可以。您可以在订阅期内的任何时候升级 RustDesk 许可证,以增加可管理的设备数或用户数。升级费用会按比例计算。若要让新的额度立即生效,请在 Web 控制台中刷新许可证;否则,新额度会在大约 24 小时内、随定期许可证检查自动生效。'
-  - question: 'RustDesk 许可证升级是如何按比例计费的?'
-    answer: '升级费用会根据您当前订阅周期的剩余时间按比例计算:系统会根据剩余天数,针对新增的用户数或设备数收取差价,而不是按全新价格收费。具体的套餐详情请参见 rustdesk.com/pricing。'
-  - question: '为什么升级许可证后,新设备没有出现?'
-    answer: '许可证会通过大约每 24 小时一次的定期检查进行更新,因此新的额度并不总是立即生效。请在 Web 控制台中刷新许可证,以立即拉取最新的授权信息。'
-  - question: '如何在 Web 控制台中刷新我的许可证?'
-    answer: '购买升级后,打开 Web 控制台,使用许可证刷新操作来拉取最新的授权信息。这样即可为您的部署启用更高的用户数和设备数上限。'
-  - question: '我该去哪里购买升级或续订许可证?'
-    answer: '请前往 rustdesk.com/self-host/account/ 上的自助许可证门户。使用您购买许可证时在付款页面所用的邮箱地址登录;如果记不清是哪个邮箱,请联系 support@rustdesk.com。该门户同时保存您的发票和续订记录。'
-  - question: '我可以在订阅期内降级或减少席位吗?'
-    answer: '本文介绍的是升级操作,您可以随时进行升级。若需要减少席位或在订阅期内降级,请与 RustDesk 团队联系确认当前的处理方式:sales@rustdesk.com。'
+  - question: '可以在订阅期内升级 RustDesk 许可证吗？'
+    answer: '可以。您可以随时通过自助服务门户增加用户或受管设备。升级时抵扣原许可证剩余已付价值，并将到期日延长至升级日起一年。在 Web 控制台中刷新同一个许可证，新额度会立即生效；不刷新的话，约 24 小时内也会自动生效。'
+  - question: 'RustDesk 许可证升级如何计价？'
+    answer: 'RustDesk Server Pro 升级会把许可证延长至升级日起一整年，并抵扣原许可证剩余已付价值。新增的用户或设备按一整年计费；原有容量只对超出原到期日的延长部分计费。官方 Wiki FAQ 给出了计算示例，自助服务门户会在付款前显示总金额。'
+  - question: '升级许可证后，为什么新设备没有出现？'
+    answer: '新额度会在约 24 小时内、Server Pro 下次检查许可证时自动生效。如需立即生效，请在 Server Pro Web 控制台中刷新许可证：点击“编辑”，然后在不修改密钥的情况下点击“确定”。刷新会立即拉取更新后的授权，许可证密钥保持不变。'
+  - question: '如何在 Web 控制台中刷新许可证？'
+    answer: '付款后，打开 Server Pro Web 控制台的许可证设置，点击“编辑”，然后在不修改密钥的情况下点击“确定”。这会拉取更新后的授权，许可证密钥保持不变。如果不刷新，新额度会在约 24 小时内、下一次定期许可证检查时自动生效。'
+  - question: '在哪里购买升级或续订许可证？'
+    answer: '请使用 rustdesk.com/self-host/account/ 上的自助许可证门户。用您购买许可证时在付款页面填写的邮箱登录；如果记不清是哪个邮箱，请联系 support@rustdesk.com。门户中还可以查看发票和办理续订。'
+  - question: '可以在订阅期内降级或减少席位吗？'
+    answer: 'RustDesk Server Pro 许可证的降级和减少席位需要由 RustDesk 团队处理：请把您的许可证邮箱和所需变更发送至 sales@rustdesk.com。rustdesk.com/self-host/account/ 上的自助服务门户负责处理升级（可随时购买）、续订和发票。'
 
 metadata:
-  description: '随时升级您的 RustDesk 许可证以增加用户数或设备数,费用按比例计算。在 Web 控制台中刷新即可立即生效,或在大约 24 小时内自动生效。'
-  keywords: '订阅期内升级 RustDesk 许可证, RustDesk 许可证增加设备数, RustDesk 许可证按比例计费, 增加 RustDesk 可管理设备数, Web 控制台刷新 RustDesk 许可证, RustDesk 按用户按设备计费'
+  description: '在订阅期内升级 RustDesk Server Pro：新的一年到期日、原许可证剩余已付价值如何抵扣、官方计算示例，以及在 Web 控制台刷新许可证的步骤。'
+  keywords: '订阅期内升级 RustDesk 许可证, RustDesk 许可证增加设备, RustDesk 许可证升级价格, 增加 RustDesk 受管设备, Web 控制台刷新 RustDesk 许可证, RustDesk 按用户按设备授权'
 ---
 
-没错——您可以在订阅期内随时升级 RustDesk 许可证,在团队规模扩大时增加更多[受管设备](/zh-cn/blog/what-counts-as-a-managed-device-zh-cn)或用户数。您无需等待年度续订:RustDesk 会将升级视为对现有许可证的原地变更,而且由于您已经为当年的部分时间付过费,升级会按比例计费——系统只会根据您订阅期的剩余天数,针对新增的用户数或设备数收取差价,而不是按全新的完整价格收费。
+您可以在订阅期内升级 RustDesk Server Pro 许可证，增加[受管设备](/zh-cn/blog/what-counts-as-a-managed-device-zh-cn)或登录用户。根据[官方升级规则](https://github.com/rustdesk/rustdesk/wiki/FAQ#renew--upgrade-license)，到期日会延长至升级日起一整年。计算时会抵扣原许可证剩余已付价值：新增容量按十二个月计费，原有容量则按超出原到期日的延长期限计费。这并不是简单地按剩余天数对新增的用户或设备收费。
 
 ## 如何升级
 
-升级操作本身在[自助许可证门户](https://rustdesk.com/self-host/account/)中完成——使用您首次购买许可证时在付款页面所用的邮箱登录。如果记不清是哪个邮箱,请发邮件至 [support@rustdesk.com](mailto:support@rustdesk.com)。同一个门户也是您续订许可证和下载发票的地方。
+在[自助许可证门户](https://rustdesk.com/self-host/account/)中完成升级。用您首次购买许可证时在付款页面填写的邮箱登录；如果记不清是哪个邮箱，请发邮件至 [support@rustdesk.com](mailto:support@rustdesk.com)。续订和下载发票也在同一个门户中进行。
 
-有一个操作细节很容易被忽略:新的额度并不总是立即生效。RustDesk 大约每 24 小时重新检查一次许可证,因此升级有可能需要长达一天的时间才会自动显现。若要立即生效,请在 Web 控制台内刷新许可证——这样会立刻拉取最新的授权信息。如果您完成升级后新席位没有马上出现,原因就在于此,手动刷新即可解决。
+付款后，在 [Web 控制台中刷新许可证](https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-pro/license/#刷新许可证)：点击 **编辑**，然后在不修改密钥的情况下点击 **确定**。新额度会立即生效；如果不刷新，新额度会在约 24 小时内、下一次定期许可证检查时自动生效。原有的许可证密钥保持不变。
 
-对于正在从 TeamViewer 或 AnyDesk 迁移的团队来说,这种灵活性是一个实实在在的优势:您可以先满足当下所需的容量,再逐步扩容,只为新增的部分付费,而无需在订阅期中途重新协商合同。具体的套餐价格和席位定义请参见官方定价页面 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
+举个例子，[官方计算示例](https://github.com/rustdesk/rustdesk/wiki/FAQ#is-it-over-charge-in-upgrade)描述了这样一次升级：一份原定于 2026 年 3 月 12 日到期的许可证，在 2025 年 8 月 14 日升级。增加 100 台设备后，到期日变为 2026 年 8 月 14 日：新增设备按一年计费，原有的 10 个用户和 800 台设备则按大约五个月的延长期计费。这个示例说明的是计算方法，而不是当前费率；实际购买请以门户显示的总额和[当前定价](https://rustdesk.com/pricing)为准。
 
 ## 谁会问这个问题
 
-业务增长通常是触发这个问题的原因:管理员或 [MSP](/zh-cn/blog/rustdesk-for-msps-zh-cn) 当初是按现有设备规模配置的许可证,而现在需要在订阅年度中途接入新的终端、员工或客户站点。背后的顾虑通常有两点:订阅期中途是否真的可以扩容,以及是否会被合理收费。
+业务增长通常是起因：管理员或 [MSP](/zh-cn/blog/rustdesk-for-msps-zh-cn) 当初按当时的设备规模购买了许可证，现在却要在年度中途接入新的终端、员工或客户站点。背后的顾虑通常有两点：订阅期中途能否扩容，以及费用是否合理。
 
 ## 相关问题
 
-- [RustDesk 许可证如何计算用户数和受管设备数,以及按用户计费与按设备计费的区别](/zh-cn/blog/what-counts-as-a-managed-device-zh-cn)
-- 在 Web 控制台中刷新许可证:参见 [RustDesk 文档](https://rustdesk.com/docs)。
+- [RustDesk 如何计算用户和受管设备，以及按用户与按设备授权的区别](/zh-cn/blog/what-counts-as-a-managed-device-zh-cn)
+- 在 Web 控制台中刷新许可证：参见 [RustDesk 文档](https://rustdesk.com/docs/zh-cn/)。
 
-正在扩展您的部署规模?每当您的团队需要更多容量时,都可以在[自助服务门户](https://rustdesk.com/self-host/account/)中升级。
+部署规模在扩大？团队需要更多容量时，随时可以在[自助服务门户](https://rustdesk.com/self-host/account/)中升级。

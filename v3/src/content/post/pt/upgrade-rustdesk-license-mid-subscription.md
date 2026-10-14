@@ -1,51 +1,52 @@
 ---
+updateDate: 2026-10-14T00:00:00Z
 publishDate: 2026-07-03T09:40:00Z
 lang: 'pt'
 translationKey: upgrade-rustdesk-license-mid-subscription
 draft: false
-title: 'Atualizar a Licença do RustDesk no Meio da Assinatura: Como Funciona'
-excerpt: 'Sim — você pode atualizar sua licença do RustDesk a qualquer momento para adicionar usuários ou dispositivos. Saiba como funciona o cálculo proporcional e como os novos limites são aplicados: atualize no console web para efeito imediato ou aguarde a verificação automática de 24 horas.'
+title: 'Upgrade da Licença do RustDesk no Meio da Assinatura: Como Funciona'
+excerpt: 'Adicione usuários ou dispositivos ao RustDesk Server Pro no meio do período: o novo vencimento de um ano, o crédito pelo período já pago e a atualização da licença que aplica os limites.'
 image: ~/assets/images/blog/upgrade-rustdesk-license-mid-subscription-og.webp
 category: 'Preços'
 tags: ['RustDesk', 'Preços', 'Licenciamento']
 author: 'RustDesk Team'
 slug: 'atualizar-a-licenca-do-rustdesk-no-meio-da-assinatura-como-funciona'
 faq:
-  - question: 'Posso atualizar minha licença do RustDesk no meio da assinatura?'
-    answer: 'Sim. Você pode atualizar sua licença do RustDesk a qualquer momento durante a assinatura para adicionar mais dispositivos gerenciados ou usuários. As atualizações são cobradas de forma proporcional. Para aplicar os novos limites imediatamente, atualize a licença no console web; caso contrário, eles entram em vigor automaticamente em cerca de 24 horas, quando a verificação periódica da licença é executada.'
-  - question: 'Como é calculada a proporcionalidade de uma atualização de licença do RustDesk?'
-    answer: 'A atualização é calculada proporcionalmente ao tempo restante do seu período atual: o sistema cobra a diferença referente aos usuários ou dispositivos adicionados com base nos dias restantes, em vez de um novo preço integral. Consulte rustdesk.com/pricing para detalhes sobre os planos.'
-  - question: 'Por que meus novos dispositivos não aparecem depois que eu atualizo minha licença?'
-    answer: 'A licença é atualizada em uma verificação periódica cerca de uma vez a cada 24 horas, então os novos limites nem sempre são aplicados instantaneamente. Atualize a licença no console web para obter o direito de uso atualizado imediatamente.'
+  - question: 'Posso fazer upgrade da minha licença do RustDesk no meio da assinatura?'
+    answer: 'Sim. Faça o upgrade de usuários ou dispositivos gerenciados pelo portal de autoatendimento a qualquer momento. O upgrade estende o vencimento para um ano completo a partir da data do upgrade e credita o valor pago restante da sua licença atual. Atualize a mesma licença no console web para aplicar os novos limites imediatamente; caso contrário, eles passam a valer automaticamente em cerca de 24 horas.'
+  - question: 'Como é calculado o preço de um upgrade de licença do RustDesk?'
+    answer: 'Um upgrade do RustDesk Server Pro estende a licença para um ano completo a partir da data do upgrade e credita o valor pago restante da licença atual. Usuários ou dispositivos novos são cobrados por um ano inteiro; a capacidade existente é cobrada apenas pela extensão além da antiga data de vencimento. O FAQ oficial na Wiki mostra um cálculo de exemplo, e o portal de autoatendimento exibe o total antes do pagamento.'
+  - question: 'Por que meus novos dispositivos não aparecem depois do upgrade da licença?'
+    answer: 'Os novos limites passam a valer automaticamente em cerca de 24 horas, na próxima verificação de licença do Server Pro. Para aplicá-los imediatamente, atualize a licença no console web do Server Pro: clique em Editar e depois em OK, sem alterar a chave. A atualização obtém na hora o direito de uso atualizado, e a chave de licença continua a mesma.'
   - question: 'Como atualizo minha licença no console web?'
-    answer: 'Abra o console web depois de comprar a atualização e use a ação de atualização de licença para obter seu direito de uso atualizado. Isso ativa os limites mais altos de usuários e dispositivos para a sua implantação.'
-  - question: 'Onde eu compro a atualização ou renovo minha licença?'
-    answer: 'Use o portal de licenças de autoatendimento em rustdesk.com/self-host/account/. Faça login com o endereço de e-mail que você usou na página de pagamento quando comprou a licença; se você não se lembra mais qual e-mail foi esse, entre em contato com support@rustdesk.com. O portal também armazena suas faturas e renovações.'
+    answer: 'Depois do pagamento, abra as configurações de licença no console web do Server Pro, clique em Editar e depois em OK, sem alterar a chave. Isso obtém o direito de uso atualizado; a chave de licença continua a mesma. Sem essa atualização, os novos limites passam a valer automaticamente em cerca de 24 horas, na próxima verificação periódica da licença.'
+  - question: 'Onde eu compro o upgrade ou renovo minha licença?'
+    answer: 'Use o portal de licenças de autoatendimento em rustdesk.com/self-host/account/. Faça login com o endereço de e-mail que você usou na página de pagamento quando comprou a licença; se não souber mais qual e-mail foi esse, entre em contato com support@rustdesk.com. O portal também reúne suas faturas e renovações.'
   - question: 'Posso fazer downgrade ou reduzir o número de licenças no meio da assinatura?'
-    answer: 'Este artigo aborda atualizações (upgrades), que você pode fazer a qualquer momento. Para reduzir o número de licenças ou fazer downgrade no meio do período, confirme o procedimento atual com a equipe do RustDesk em sales@rustdesk.com.'
+    answer: 'Downgrades e reduções de usuários ou dispositivos em uma licença do RustDesk Server Pro são feitos pela equipe do RustDesk: escreva para sales@rustdesk.com informando o e-mail da licença e a alteração necessária. O portal de autoatendimento em rustdesk.com/self-host/account/ cuida dos upgrades, que você pode comprar a qualquer momento, além das renovações e faturas.'
 
 metadata:
-  description: 'Atualize sua licença do RustDesk a qualquer momento para adicionar usuários ou dispositivos, com cobrança proporcional. Atualize no console web para efeito imediato, ou a mudança será aplicada em cerca de 24 horas.'
-  keywords: 'atualizar licença RustDesk no meio da assinatura, adicionar mais dispositivos à licença RustDesk, cálculo proporcional da licença RustDesk, aumentar dispositivos gerenciados RustDesk, atualizar licença no console web RustDesk, licenciamento por usuário e por dispositivo RustDesk'
+  description: 'Upgrade do RustDesk Server Pro no meio do período: vencimento de um ano, crédito do valor pago restante, exemplo oficial de cálculo e atualização da licença.'
+  keywords: 'upgrade de licença RustDesk no meio da assinatura, adicionar mais dispositivos à licença RustDesk, preço do upgrade de licença RustDesk, aumentar dispositivos gerenciados RustDesk, atualizar licença no console web RustDesk, licenciamento por usuário e por dispositivo RustDesk'
 ---
 
-Sim — você pode atualizar sua licença do RustDesk no meio da assinatura para adicionar mais [dispositivos gerenciados](/pt/blog/o-que-conta-como-dispositivo-gerenciado-no-rustdesk) ou usuários sempre que sua equipe crescer. Você não precisa esperar a renovação anual: o RustDesk trata a atualização como uma alteração direta na sua licença existente e, como você já pagou por parte do ano, ela é calculada proporcionalmente — o sistema cobra apenas a diferença referente aos usuários ou dispositivos adicionados, com base nos dias restantes do seu período, em vez de um novo preço integral.
+Você pode fazer upgrade da sua licença do RustDesk Server Pro no meio da assinatura para adicionar [dispositivos gerenciados](/pt/blog/o-que-conta-como-dispositivo-gerenciado-no-rustdesk) ou usuários com login. As [regras oficiais de upgrade](https://github.com/rustdesk/rustdesk/wiki/FAQ#renew--upgrade-license) estendem o vencimento para um ano completo a partir da data do upgrade. O cálculo credita o valor pago restante da sua licença atual: a capacidade nova é cobrada por doze meses, e a capacidade existente é cobrada pelo período adicional além do vencimento anterior. Não se trata simplesmente de cobrar os usuários ou dispositivos adicionados pelos dias restantes.
 
-## Como atualizar
+## Como fazer o upgrade
 
-Você realiza a própria atualização no [portal de licenças de autoatendimento](https://rustdesk.com/self-host/account/) — faça login com o e-mail que você usou na página de pagamento quando comprou a licença pela primeira vez. Se você não se lembra mais qual e-mail foi esse, envie um e-mail para [support@rustdesk.com](mailto:support@rustdesk.com). É no mesmo portal que você renova e baixa suas faturas.
+Faça o upgrade no [portal de licenças de autoatendimento](https://rustdesk.com/self-host/account/). Entre com o e-mail que você usou na página de pagamento quando comprou a licença pela primeira vez; se não souber mais qual e-mail foi esse, escreva para [support@rustdesk.com](mailto:support@rustdesk.com). É no mesmo portal que você renova a licença e baixa as faturas.
 
-Há um detalhe operacional fácil de passar despercebido: os novos limites nem sempre são aplicados instantaneamente. O RustDesk verifica novamente a licença cerca de uma vez a cada 24 horas, então uma atualização pode levar até um dia para aparecer por conta própria. Para aplicá-la imediatamente, atualize a licença dentro do console web — isso obtém o direito de uso atualizado na hora. Se você atualizar e as novas licenças não aparecerem de imediato, é por esse motivo, e uma atualização manual resolve.
+Depois do pagamento, atualize a licença no [console web](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/license/): clique em **Editar** e depois em **OK**, sem alterar a chave. Os novos limites passam a valer imediatamente; sem essa atualização, eles entram em vigor automaticamente em cerca de 24 horas, na próxima verificação periódica da licença. A chave de licença existente é mantida.
 
-Para equipes migrando do TeamViewer ou AnyDesk, essa flexibilidade representa uma diferença significativa: você pode começar com a capacidade que precisa hoje e expandir gradualmente, pagando apenas pelo que adicionar, sem precisar renegociar um contrato no meio do período. Os planos de preços exatos e as definições de licenças estão na página oficial de preços [rustdesk.com/pricing](https://rustdesk.com/pricing).
+Por exemplo, o [cálculo de exemplo oficial](https://github.com/rustdesk/rustdesk/wiki/FAQ#is-it-over-charge-in-upgrade) descreve um upgrade em 14 de agosto de 2025 de uma licença que vencia em 12 de março de 2026. Adicionar 100 dispositivos leva o vencimento para 14 de agosto de 2026: os dispositivos novos são cobrados por um ano, e os 10 usuários e 800 dispositivos existentes, pela extensão de cerca de cinco meses. O exemplo explica o método, não os preços atuais; para a sua compra, use o total exibido no portal e os [preços atuais](https://rustdesk.com/pricing).
 
 ## Quem faz essa pergunta
 
-O crescimento é o gatilho mais comum: um administrador ou [MSP](/pt/blog/rustdesk-para-msps-uma-ferramenta-unica-autogerenciada-e-personalizavel) que dimensionou a licença para a frota como ela era agora está integrando novos endpoints, funcionários ou sites de clientes no meio do ano. A preocupação por trás disso costuma ser dupla: se é sequer possível expandir a capacidade no meio do período e se a cobrança será feita de forma justa.
+O crescimento é o gatilho mais comum: um administrador ou [MSP](/pt/blog/rustdesk-para-msps-uma-ferramenta-unica-autogerenciada-e-personalizavel) que dimensionou a licença para a frota como ela era agora está integrando novos endpoints, funcionários ou clientes no meio do ano. A preocupação por trás disso costuma ser dupla: se é possível ampliar a capacidade no meio do período e se a cobrança será justa.
 
 ## Perguntas relacionadas
 
 - [Como o RustDesk conta usuários e dispositivos gerenciados, e licenciamento por usuário vs. por dispositivo](/pt/blog/o-que-conta-como-dispositivo-gerenciado-no-rustdesk)
-- Atualizar sua licença no console web: consulte a [documentação do RustDesk](https://rustdesk.com/docs).
+- Como atualizar a sua licença no console web: consulte a [documentação do RustDesk](https://rustdesk.com/docs/pt/self-host/rustdesk-server-pro/license/).
 
-Sua implantação está crescendo? Faça a atualização pelo [portal de autoatendimento](https://rustdesk.com/self-host/account/) sempre que sua equipe precisar de mais capacidade.
+Sua implantação está crescendo? Faça o upgrade pelo [portal de autoatendimento](https://rustdesk.com/self-host/account/) sempre que sua equipe precisar de mais capacidade.

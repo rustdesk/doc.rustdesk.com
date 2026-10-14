@@ -1,10 +1,11 @@
 ---
 publishDate: 2026-07-02T14:43:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: en
 translationKey: what-counts-as-a-managed-device
 draft: false
 title: 'What Counts as a Managed Device in RustDesk?'
-excerpt: 'On standard RustDesk plans every device you set up to reach counts once. Customized V2 counts only devices assigned to a group or user; ad-hoc devices are not counted.'
+excerpt: 'On standard RustDesk Server Pro plans every device you set up to reach counts once. Customized V2 counts only devices assigned to a group or user; ad-hoc devices are not counted.'
 image: ~/assets/images/blog/what-counts-as-a-managed-device-og.webp
 category: Pricing
 tags:
@@ -23,7 +24,7 @@ metadata:
   keywords: 'what counts as a managed device, rustdesk device counting, rustdesk vs teamviewer licensing, unattended vs attended device license, rustdesk ad-hoc support, msp remote support licensing'
 ---
 
-If you're coming from TeamViewer's per-seat model, the counting rule on RustDesk's standard plans is refreshingly simple: **every device you want to access counts as one managed device, counted once.** The **[Customized V2](https://rustdesk.com/pricing#custom2)** plan counts differently — only devices you assign to a group or user count — which is what makes it the fit for heavy ad-hoc support.
+RustDesk Server Pro counts authorized login users and managed devices. On its standard plans, **every device you want to access counts as one managed device, counted once.** The **[Customized V2](https://rustdesk.com/pricing#custom2)** plan counts differently — only devices you assign to a group or user count — which is what makes it the fit for heavy ad-hoc support.
 
 ## The short answer
 
@@ -40,6 +41,10 @@ If your work is largely spontaneous, one-off support, the narrower **[Customized
 What changes the count is the plan. On the **[Customized V2](https://rustdesk.com/pricing#custom2)** plan the definition of a managed device is narrower: only the devices you **assign to a device group or a user** count toward your licensed device number. Machines you reach only for ad-hoc, one-off support — and never assign — are not counted, and they are not disabled. If you would rather these unassigned devices not appear in the console at all, the [`register-device` client setting](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#register-device) controls that, and it takes effect once the licensed concurrent-connection count is 2 or more. In practice such a quick-support session shows only an ID and a one-time password for a single attended connection, so a genuine one-off interaction never needs a permanent slot in your fleet. If a lot of your work looks like that, Customized V2 is usually the better fit — email [sales@rustdesk.com](mailto:sales@rustdesk.com) with your scenario for current terms, or check [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
 For example, imagine an [MSP](/blog/rustdesk-for-msps) with 20 technicians supporting roughly 1,000 customer machines: it would need to satisfy **both** licensing dimensions — enough login users for all 20 technicians and enough managed devices for the machines kept reachable. For endpoints that are truly one-time support calls, the Customized V2 rule above applies; current allowances are at [rustdesk.com/pricing](https://rustdesk.com/pricing).
+
+## Concurrent connections are a separate licensing unit
+
+Standard Server Pro plans (Individual, Basic, Customized) include unlimited concurrent connections; only [Customized V2](https://rustdesk.com/pricing#custom2) licenses a set number. In RustDesk's [concurrency definition](https://github.com/rustdesk/rustdesk/wiki/FAQ#concurrent-connections), a concurrent connection is an active controlling device, a "channel", not each outgoing session tab: one technician machine with five session tabs uses one channel, and three controlling machines active at once use three. On Customized V2, size login users, managed devices and channels separately.
 
 ## Who asks this
 

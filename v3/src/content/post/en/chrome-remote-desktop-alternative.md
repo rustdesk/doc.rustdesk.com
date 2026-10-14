@@ -1,10 +1,11 @@
 ---
 publishDate: 2026-07-01T08:14:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: en
 translationKey: chrome-remote-desktop-alternative
 draft: false
 title: 'Chrome Remote Desktop Alternative: Self-Hosted RustDesk'
-excerpt: "Chrome Remote Desktop is free and simple, but ties you to Google and drops key features. Here's an open-source, self-hosted alternative you control."
+excerpt: 'Compare Google-operated Chrome Remote Desktop with RustDesk: self-hosted rendezvous and relay, an open client, free Server OSS and Pro team management.'
 image: ~/assets/images/blog/chrome-remote-desktop-alternative-og.webp
 category: Alternatives
 tags:
@@ -15,25 +16,25 @@ tags:
 author: RustDesk Team
 faq:
   - question: 'Is there a Chrome Remote Desktop alternative that does not require a Google account?'
-    answer: 'Yes. Self-hosted RustDesk needs no third-party account at all (the public demo server requires a free controller sign-in), using its own ID/rendezvous and relay servers instead of a Google account, and you can self-host those servers so no third-party cloud sits in the middle. Chrome Remote Desktop, by contrast, requires a Google account on both the host and the client.'
+    answer: 'Yes. RustDesk clients pointed at your self-hosted server connect by device ID and password, with no Google or other third-party account. Server Pro can add locally managed accounts or your own identity provider. Only the public RustDesk demo server asks for a free controller sign-in. Chrome Remote Desktop uses Google identity and Google-operated coordination.'
   - question: 'Does Chrome Remote Desktop support file transfer?'
-    answer: 'Chrome Remote Desktop provides basic file upload/download but not drag-and-drop transfer. RustDesk includes built-in file transfer alongside remote control.'
+    answer: 'Yes, but only basic upload and download. Chrome Remote Desktop does not offer drag-and-drop transfer. RustDesk includes built-in two-way file transfer alongside remote control, so a technician can move files in both directions without leaving the session or switching to another tool.'
   - question: 'Can Chrome Remote Desktop provide unattended access?'
-    answer: 'It can, but the target machine must be powered on and signed into the same Google account, and Chrome Remote Desktop cannot wake a sleeping computer. RustDesk supports permanent-password unattended access to a fleet you manage from your own console.'
+    answer: 'Yes. Chrome Remote Desktop supports account-based, PIN-protected unattended access while the target is online. RustDesk uses a permanent password, which its default settings accept, with the RustDesk service running on the host; Server Pro adds centralized management of those devices. Neither tool wakes a powered-off machine by itself.'
   - question: 'Is RustDesk free like Chrome Remote Desktop?'
-    answer: 'RustDesk is open source under the AGPL, and you can run the free community server indefinitely at no cost. The commercial Server Pro adds team features and is self-hosted; see rustdesk.com/pricing for current terms.'
+    answer: 'Yes. The RustDesk client and RustDesk Server OSS (the free community server) are AGPL-licensed and free, with no license fee or expiry; you supply the hosting and bandwidth. Commercial, proprietary Server Pro adds self-hosted team management such as a web console, device groups and LDAP/OIDC SSO; see rustdesk.com/pricing.'
 metadata:
   description: 'Chrome Remote Desktop is free and simple but ties you to Google and lacks key features. Compare it with RustDesk, an open-source, self-hosted alternative.'
   keywords: 'Chrome Remote Desktop alternative, self-hosted Chrome Remote Desktop alternative, remote desktop without Google account, RustDesk vs Chrome Remote Desktop'
 ---
 
-The self-hosted, open-source answer to Chrome Remote Desktop is RustDesk: you host the brokering and can read the client's source, instead of routing every session through Google's cloud and tying access to a Google account.
+The self-hosted, open-source alternative to Chrome Remote Desktop is RustDesk: you run the ID/rendezvous and relay servers yourself with RustDesk Server OSS (the free community server) and can read the client's source, instead of tying access to a Google account and Google-operated coordination. Commercial Server Pro adds team administration on the same self-hosted footing.
 
 ## Why look for a Chrome Remote Desktop alternative
 
 [Chrome Remote Desktop](https://support.google.com/chrome/answer/1649523) is Google's free, browser-based remote-access tool. It's simple and fast: install a small host, sign in, and you can reach your machine from another device in a couple of minutes — exactly what casual personal use calls for.
 
-But the moment your needs grow past "help my own laptop from the couch," the seams show. You're tied to Google identity and signaling, some support-team features are missing, and the control plane is not self-hostable. Google's [network guide](https://support.google.com/chrome/a/answer/16364503) explains the boundary: connections are initially negotiated through Google services, while live WebRTC traffic uses Direct, STUN, or TURN/relay paths. Only TURN/relay session packets are relayed through Google data centers. If you've bumped into those trade-offs, this page lays out what a self-hosted, open-source alternative looks like.
+But the moment your needs grow past "help my own laptop from the couch," the seams show: you're tied to Google identity and signaling, some support-team features are missing, and the control plane is not self-hostable. Google's [network guide](https://support.google.com/chrome/a/answer/16364503) explains the boundary: connections are negotiated through Google services, while live session traffic uses Direct, STUN or TURN/relay paths, and only TURN/relay packets pass through Google data centers.
 
 ## What Chrome Remote Desktop does well
 
@@ -49,7 +50,7 @@ Google's help pages document remote access to files and applications and let adm
 
 ### Unattended access and sleeping machines
 
-CRD can do unattended access, but the target still has to be **powered on and online** and signed into the **same Google account**. Google documents PIN-based remote access, not a wake-on-LAN substitute. If the machine is asleep or offline, there is nothing for CRD to connect to. For a fleet of remote endpoints, that is a real operational constraint.
+CRD supports PIN-protected unattended access, but the target has to be powered on, online and associated with the same Google account. RustDesk also needs the host online, with its service running and platform permissions granted. Neither tool wakes a powered-off machine by itself; RustDesk's documentation notes that after LAN discovery, Wake-on-LAN can work if supported locally.
 
 ### Managing users and the Google-account requirement
 
@@ -57,32 +58,32 @@ Every participant needs a Google account, and for shared (non-unattended) sessio
 
 ## Chrome Remote Desktop vs. RustDesk at a glance
 
-|                                                             | Chrome Remote Desktop                                            | RustDesk                                                                                                                   |
-| ----------------------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Cost                                                        | Free                                                             | Open source (AGPL); free community server; paid Server Pro                                                                 |
-| Control plane and traffic                                   | Google identity/signaling; direct, STUN, or Google-relayed media | [Self-hosted](/blog/why-self-host-remote-desktop-software) server roles; direct or self-relayed media                      |
-| Source code                                                 | Proprietary                                                      | Open source ([AGPL](https://github.com/rustdesk/rustdesk)), auditable                                                      |
-| Account needed                                              | Google account on both ends                                      | Your own ID; no third-party account required                                                                               |
-| File transfer / transfer workflows                          | Upload/download only (no drag-and-drop)                          | Built in                                                                                                                   |
-| [Unattended access](/blog/rustdesk-unattended-access-setup) | Same Google account, machine must be awake                       | Permanent-password access to a fleet you manage                                                                            |
-| Central management                                          | Google Admin policies; no self-hosted support console            | Web console, [device groups, shared address book](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/) |
-| Custom branding                                             | No                                                               | Custom-branded client generator (Basic plan and up)                                                                        |
-| Platforms                                                   | Win/macOS/Linux (in Chrome)                                      | Win/macOS/[Linux](/blog/rustdesk-for-linux)/Android; iOS controller app                                                    |
+|                                                             | Chrome Remote Desktop                                                                                                                                  | RustDesk                                                                                              |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| Cost                                                        | Free                                                                                                                                                   | Free client and Server OSS; paid Server Pro                                                           |
+| Control plane and traffic                                   | Google identity/signaling; direct, STUN, or Google-relayed media                                                                                       | [Self-hosted](/blog/why-self-host-remote-desktop-software) server roles; direct or self-relayed media |
+| Source code                                                 | [Public Chromium remoting components](https://chromium.googlesource.com/chromium/src/+/main/remoting/); Google service is not offered for self-hosting | AGPL client and Server OSS; proprietary Server Pro management                                         |
+| Account needed                                              | Google account on both ends                                                                                                                            | Your own ID; no third-party account required                                                          |
+| File transfer / transfer workflows                          | Upload/download only (no drag-and-drop)                                                                                                                | Built in                                                                                              |
+| [Unattended access](/blog/rustdesk-unattended-access-setup) | Account/PIN-based; target must be online                                                                                                               | Permanent password; service running and OS permissions granted; target must be online                 |
+| Central management                                          | Google Admin policies; no customer-operated CRD control service                                                                                        | Server Pro console, Access Control, device groups and shared address books                            |
+| Custom branding                                             | No                                                                                                                                                     | Custom-branded client generator (Basic plan and up)                                                   |
+| Platforms                                                   | Win/macOS/Linux (in Chrome)                                                                                                                            | Win/macOS/[Linux](/blog/rustdesk-for-linux)/Android; iOS controller app                               |
 
 ## Where RustDesk fits: self-hosted and open source
 
-RustDesk is built around the two things CRD structurally can't offer: **you host the infrastructure, and you can read the code.**
+RustDesk's distinction is a **deployable self-hosted server path**. [Chromium publishes CRD's remoting source](https://chromium.googlesource.com/chromium/src/+/main/remoting/), but Google's coordination service cannot be self-hosted; with RustDesk, you run Server OSS or Server Pro yourself.
 
-RustDesk is open source under the **[AGPL](https://github.com/rustdesk/rustdesk)** — you can audit exactly what runs on your machines, build it yourself, and run the **free community server indefinitely**. When you move to Server Pro, it's **[self-hosted by design](/blog/why-self-host-remote-desktop-software)**: the ID/rendezvous and relay servers run on your own machine or a VPS you rent, so there's no Google (or any vendor) cloud in the middle. One nuance for compliance planning: direct connections still travel between endpoints, and relayed traffic uses your relay, so review the [data-sovereignty implications](/blog/remote-desktop-data-sovereignty-gdpr) rather than assuming server location controls every packet.
+The **RustDesk client and Server OSS are AGPL-licensed** and can be inspected and built independently. Server OSS provides self-hosted ID/rendezvous and relay with no license fee or expiry. **Server Pro is commercial, proprietary self-hosted server software**, adding administration on your infrastructure. Direct sessions travel between the endpoints; relayed sessions use your relay. Review the [data-sovereignty implications](/blog/remote-desktop-data-sovereignty-gdpr) alongside server placement.
 
-On top of that self-hosted core, RustDesk adds the team features CRD lacks: a [self-hosted web console](https://rustdesk.com/docs), a custom-branded client generator, [device groups and a shared address book](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/) for scoped access, and [LDAP/AD and OIDC SSO](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/ldap/) from the Basic plan up. Real file transfer and permanent-password [unattended access](/blog/rustdesk-unattended-access-setup) come standard on Windows, macOS, Linux, and Android hosts; the iOS app is controller-only.
+Server Pro adds the team features CRD lacks: a self-hosted web console, device groups, shared address books and per-user and device-group [Access Control](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/), with custom client generation and LDAP/OIDC SSO from the Basic plan. Permanent-password unattended access works on Windows, macOS and Linux hosts once the service is running and OS permissions are granted; Android hosts also need screen-capture consent and input permission and are subject to OEM background limits, and the iOS app is a controller only.
 
 ## Off Google's cloud, onto yours
 
-The step up from Chrome Remote Desktop is control: brokering, access policy, and session data move from Google's servers to one you operate and can audit. For anyone who wants remote access that answers to them, that is the payoff.
+The step up from Chrome Remote Desktop is control: brokering, access policy and management data move from Google's servers to servers you operate, with a client you can audit. That control brings responsibility for patching, availability and recovery.
 
 ## Try it without a sales call
 
-You can evaluate RustDesk on your own terms, with no Google account anywhere in the loop. The open-source community server is free to run for as long as you like; when the Pro team features matter, [sales@rustdesk.com](mailto:sales@rustdesk.com) can tell you the current evaluation terms, and [rustdesk.com/pricing](https://rustdesk.com/pricing) lists the plan rates.
+You can evaluate RustDesk on your own terms, with no Google account anywhere in the loop. Server OSS is free to run, with no license fee or expiry; when the Pro team features matter, [sales@rustdesk.com](mailto:sales@rustdesk.com) can tell you the current evaluation terms, and [rustdesk.com/pricing](https://rustdesk.com/pricing) lists the plan rates.
 
 Read the code for yourself on [GitHub](https://github.com/rustdesk/rustdesk), point a couple of devices at your own server, and decide whether the trade-offs fit before committing anything.

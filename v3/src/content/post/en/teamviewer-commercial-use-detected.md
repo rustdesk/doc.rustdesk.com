@@ -1,10 +1,11 @@
 ---
 publishDate: 2026-07-03T09:34:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: en
 translationKey: teamviewer-commercial-use-detected
 draft: false
 title: 'TeamViewer Commercial Use Detected: How to Fix It'
-excerpt: "Flagged for commercial use on TeamViewer? Here's the official appeal process, what actually counts as commercial use, and the self-hosted way to avoid it."
+excerpt: "Flagged for commercial use on TeamViewer? Here's the official appeal process, what actually counts as commercial use, and an alternative with no such classifier."
 image: ~/assets/images/blog/teamviewer-commercial-use-detected-og.webp
 category: Troubleshooting
 tags:
@@ -18,14 +19,14 @@ faq:
   - question: 'What counts as commercial use in TeamViewer?'
     answer: "Per TeamViewer's own definitions, commercial use includes providing support to clients or customers, working from home (even just checking work email), any inbound or outbound connection in a commercial setting, server administration or monitoring, and salaried work at a non-profit. Personal use means helping family and friends or connecting to your own non-server devices."
   - question: 'Will the reset request work if my use is genuinely commercial?'
-    answer: 'No. A reset clears the flag only when it was raised in error; if your actual usage is commercial, TeamViewer will correctly identify it, and the lasting fix is software whose license covers that work.'
+    answer: 'No. A reset clears the flag only when it was raised in error; if your actual usage is commercial, TeamViewer will correctly identify it, and the lasting fix is a paid TeamViewer license or another tool, such as self-hosted RustDesk, whose license covers that work. TeamViewer may instead offer a declaration of private use to sign.'
   - question: 'Does RustDesk have a commercial-use detector?'
-    answer: "No. RustDesk's community server can be self-hosted without a commercial-use classifier, while Server Pro is licensed by login users and managed devices, with unlimited concurrent connections on standard plans and a defined allowance on Customized V2."
+    answer: 'No. RustDesk Server OSS, the free community server, has no commercial-use classifier. RustDesk Server Pro is licensed by login users and managed devices and limited only by the plan you buy, with unlimited concurrent connections on standard plans; only Customized V2 licenses a set number of concurrent connections.'
   - question: 'Can I avoid the flag with ID-reset scripts or by deleting config files?'
-    answer: 'No. Do not use unofficial ID-reset scripts or delete configuration files to evade the classification; they do not change the license terms and can create additional security or support problems.'
+    answer: 'No. Do not use unofficial ID-reset scripts or delete configuration files to evade the classification; they do not change the license terms and can create additional security or support problems. If the flag is wrong, use the official reset request at teamviewer.com/reset; if the use is commercial, license it.'
 
 metadata:
-  description: "Flagged for 'commercial use detected' on TeamViewer? Here's the official reset process, what counts as commercial use, and how self-hosted RustDesk avoids it."
+  description: "Flagged for 'commercial use detected' on TeamViewer? The official reset process, what counts as commercial use, and RustDesk, which has no such classifier."
   keywords: 'TeamViewer commercial use detected, TeamViewer reset commercial use, TeamViewer commercial use appeal, TeamViewer personal use flagged'
 ---
 
@@ -69,13 +70,13 @@ So if the appeal doesn't apply to you — because your use genuinely is commerci
 
 When the usage is genuinely commercial, there is no legitimate reset workaround. Compare three paths:
 
-| Path                        | Best fit                                                        | Trade-off                                                                |
-| --------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| Buy TeamViewer              | You want to preserve the current workflow and managed service   | Ongoing vendor plan, terms, and feature packaging                        |
-| Choose another managed SaaS | You want no server operations but a different commercial offer  | Sessions and administration remain vendor-operated                       |
-| Pilot a self-hosted tool    | You want to operate the ID, relay, console, and deployment data | Your team owns hosting, patching, certificates, monitoring, and recovery |
+| Path                        | Best fit                                                        | Trade-off                                                                              |
+| --------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Buy TeamViewer              | You want to preserve the current workflow and managed service   | Ongoing vendor plan, terms, and feature packaging                                      |
+| Choose another managed SaaS | You want no server operations but a different commercial offer  | Coordination and administration remain vendor-operated; media may be direct or relayed |
+| Pilot a self-hosted tool    | You want to operate the ID, relay, console, and deployment data | Your team owns hosting, patching, certificates, monitoring, and recovery               |
 
-RustDesk belongs in the third row: you self-host the community server with no commercial-use classifier watching sessions — [why self-hosting removes that tripwire](/blog/why-self-host-remote-desktop-software) — while Server Pro is licensed by login users and managed devices, with a defined allowance on [Customized V2](https://rustdesk.com/pricing#custom2).
+RustDesk belongs in the self-hosted row. RustDesk's client and RustDesk Server OSS (the free community server) are AGPL-licensed, and Server OSS has no commercial-use classifier: it is free for personal and business use under its license. Server Pro is commercial, proprietary self-hosted server software, licensed by login users and managed devices and limited only by the plan you buy. Standard plans include unlimited concurrent connections; only [Customized V2](https://rustdesk.com/pricing#custom2) licenses a set number.
 
 ## A safe migration path
 
@@ -85,6 +86,6 @@ Do not uninstall TeamViewer as the first step. Stand up a test RustDesk server, 
 
 - Submit the official reset request if the classification is genuinely wrong.
 - If the use is commercial, compare current written quotes and license terms.
-- If self-hosting is a requirement, test the free community server before evaluating Server Pro features and plans at [rustdesk.com/pricing](https://rustdesk.com/pricing).
+- If self-hosting is a requirement, test Server OSS before evaluating Server Pro features and plans at [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
 And skip the ID-reset scripts and config-file deletions that circulate on forums: they leave TeamViewer's license terms exactly where they were and tend to create security or support problems of their own.

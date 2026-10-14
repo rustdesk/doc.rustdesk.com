@@ -1,10 +1,11 @@
 ---
+updateDate: 2026-10-14T00:00:00Z
 publishDate: 2026-07-09T13:01:00Z
 lang: 'es'
 translationKey: 'rustdesk-vs-screenconnect'
 draft: false
 title: 'RustDesk vs ScreenConnect: soporte remoto autoalojado'
-excerpt: 'Una comparación completa entre RustDesk y ScreenConnect: funciones, compatibilidad con sistemas operativos, seguridad, modelos de precios y las contrapartidas del autoalojamiento.'
+excerpt: 'Una comparativa completa de RustDesk y ScreenConnect: funciones, sistemas operativos compatibles, seguridad, modelos de precios y lo que implica autoalojar.'
 image: '~/assets/images/blog/rustdesk-vs-screenconnect-og.webp'
 category: 'Comparativas'
 tags: ['RustDesk', 'ScreenConnect', 'Comparativa']
@@ -12,28 +13,28 @@ author: 'RustDesk Team'
 slug: 'rustdesk-vs-screenconnect-soporte-remoto-autoalojado'
 faq:
   - question: '¿Es RustDesk una alternativa autoalojada a ScreenConnect?'
-    answer: 'Sí. RustDesk Server Pro ejecuta los servicios de ID/rendezvous y de retransmisión (relay) en una infraestructura que tú controlas, y RustDesk es de código abierto bajo la licencia AGPL. ScreenConnect ofrece un servicio en la nube gestionado y una edición autoalojada on-premise, ambas propietarias.'
-  - question: '¿Cómo se compara el precio de RustDesk con el de ScreenConnect?'
-    answer: 'ScreenConnect otorga licencias por técnico/sesión concurrente; RustDesk otorga licencias por usuarios de inicio de sesión y dispositivos gestionados, con concurrencia ilimitada en los planes estándar (solo Customized V2 la limita). Compara presupuestos por escrito y actualizados para los mismos técnicos, endpoints y funciones.'
-  - question: '¿RustDesk admite SSO y LDAP al igual que ScreenConnect?'
-    answer: 'RustDesk admite LDAP/Active Directory y SSO mediante OIDC desde el plan Basic en adelante. ScreenConnect indica integraciones de SSO mediante LDAP, SAML y OAuth; confirma el nivel exacto que requiere cada producto para la gestión de identidad.'
+    answer: 'Sí. RustDesk Server OSS (el servidor comunitario gratuito) y Server Pro ejecutan los servicios de ID/rendezvous y relay en tu propia infraestructura, y el cliente de RustDesk y Server OSS tienen licencia AGPL. Server Pro, comercial, añade gestión centralizada, incluido un generador de clientes con tu marca desde el plan Basic. ScreenConnect vende una edición On-Premise propietaria junto a su servicio en la nube.'
+  - question: '¿Cómo se comparan los precios de RustDesk y ScreenConnect?'
+    answer: 'RustDesk Server Pro se licencia por usuarios con inicio de sesión y dispositivos gestionados, con conexiones simultáneas ilimitadas en los planes estándar; solo Customized V2 licencia un número determinado. ScreenConnect licencia técnicos simultáneos y limita las sesiones simultáneas por técnico a 1 en One, hasta 3 en Standard y hasta 10 en Premium (consultado el 14 de octubre de 2026). Compara presupuestos por escrito para los mismos técnicos, endpoints y funciones.'
+  - question: '¿Admite RustDesk SSO y LDAP como ScreenConnect?'
+    answer: 'Sí. RustDesk Server Pro admite LDAP/Active Directory y SSO con OIDC desde el plan Basic. ScreenConnect enumera integraciones de SSO con LDAP, SAML y OAuth en su página de precios. Si el inicio de sesión con el directorio es obligatorio, confirma en un presupuesto por escrito el nivel exacto que exige cada producto.'
 metadata:
-  description: 'Comparación en profundidad entre RustDesk y ScreenConnect: funciones, compatibilidad con sistemas operativos, seguridad, modelos de precios y pros y contras claros para los MSP.'
-  keywords: 'RustDesk vs ScreenConnect, RustDesk vs ConnectWise Control, comparación de ScreenConnect'
+  description: 'Comparativa a fondo de RustDesk y ScreenConnect: funciones, sistemas operativos compatibles, seguridad, modelos de precios y ventajas e inconvenientes para MSP.'
+  keywords: 'RustDesk vs ScreenConnect, RustDesk vs ConnectWise Control, comparativa de ScreenConnect'
 ---
 
-RustDesk y ScreenConnect apuntan al mismo flujo de trabajo de soporte remoto para proveedores de servicios gestionados (MSP); la diferencia está en la propiedad: ScreenConnect es software propietario con licencia por técnico concurrente, mientras que RustDesk es de código abierto y está diseñado para ser autoalojado. Este artículo se basa en documentación pública de producto, en lugar de reproducir correos electrónicos privados de clientes, fechas de contratos o detalles de implementación.
+RustDesk y ScreenConnect se dirigen al mismo flujo de trabajo de soporte remoto de los MSP; la diferencia está en la propiedad y en las licencias. ScreenConnect es software propietario con licencia por técnico simultáneo. RustDesk está pensado para autoalojarse, con un cliente de código abierto, RustDesk Server OSS (el servidor comunitario gratuito) y la gestión comercial de Server Pro, y se licencia por usuarios y dispositivos en lugar de por sesiones de técnico.
 
-ScreenConnect (anteriormente ConnectWise Control) es una plataforma comercial de acceso remoto con una gran base instalada en el mercado de los MSP. RustDesk es una alternativa de código abierto y autoalojable, construida sobre una filosofía distinta: software que tú mismo ejecutas y posees, en lugar de un servicio alojado por un proveedor. A continuación encontrarás una comparación sección por sección de cómo se posicionan ambas soluciones, y por qué los MSP migran a RustDesk.
+ScreenConnect (antes ConnectWise Control) es una plataforma comercial de acceso remoto con una gran base instalada en el mercado de los MSP. A continuación encontrarás una comparativa, sección por sección, de cómo se posicionan ambas y de por qué los MSP se pasan a RustDesk.
 
 ## Índice
 
 - [Resumen: RustDesk y ScreenConnect de un vistazo](#resumen-rustdesk-y-screenconnect-de-un-vistazo)
-- [Comparación de funciones](#comparación-de-funciones)
+- [Comparativa de funciones](#comparativa-de-funciones)
 - [Compatibilidad con sistemas operativos y plataformas](#compatibilidad-con-sistemas-operativos-y-plataformas)
 - [Seguridad e identidad](#seguridad-e-identidad)
 - [Modelos de licencias y precios](#modelos-de-licencias-y-precios)
-- [Pros y contras](#pros-y-contras)
+- [Ventajas e inconvenientes](#ventajas-e-inconvenientes)
 - [Por qué los MSP se cambian a RustDesk de todos modos](#por-qué-los-msp-se-cambian-a-rustdesk-de-todos-modos)
 - [Prueba RustDesk tú mismo](#prueba-rustdesk-tú-mismo)
 - [Lecturas relacionadas](#lecturas-relacionadas)
@@ -41,81 +42,81 @@ ScreenConnect (anteriormente ConnectWise Control) es una plataforma comercial de
 
 ## Resumen: RustDesk y ScreenConnect de un vistazo
 
-**ScreenConnect** es el producto de acceso y soporte remoto de ConnectWise, comercializado hoy bajo el nombre ScreenConnect (durante varios años se vendió con la marca ConnectWise Control). Está orientado principalmente a los MSP y a equipos de TI internos. Puedes ejecutarlo como un servicio gestionado en la nube sobre la infraestructura de ConnectWise, o adquirir una licencia de la edición on-premise que alojas tú mismo. Ofrece grabación de sesiones, administración en segundo plano "Backstage", línea de comandos remota, impresión remota, audio VoIP e integración con el resto de la suite de ConnectWise (tickets de PSA, Automate/RMM). Si ya trabajas dentro del ecosistema de ConnectWise, ScreenConnect está diseñado para encajar de forma natural.
+**ScreenConnect** es el producto de acceso y soporte remoto de ConnectWise, que hoy se comercializa con el nombre ScreenConnect (durante varios años se vendió como ConnectWise Control). Está muy orientado a proveedores de servicios gestionados y a equipos de TI internos. Puedes usarlo como servicio gestionado en la nube sobre la infraestructura de ConnectWise o adquirir la licencia de una edición On-Premise que alojas tú mismo. Ofrece grabación de sesiones, administración en segundo plano con «Backstage», línea de comandos remota, impresión remota, audio VoIP e integración con el resto de la suite de ConnectWise (tickets en PSA, Automate/RMM). Si ya trabajas dentro del ecosistema de ConnectWise, ScreenConnect está pensado para encajar en él.
 
-**RustDesk** responde a la misma necesidad de los MSP sin el bloqueo del ecosistema de ConnectWise. Su cliente principal es de código abierto bajo la licencia AGPL, y Server Pro es autoalojado, por lo que tú mismo operas los servicios de ID/rendezvous y de retransmisión (relay) en lugar de alquilar capacidad de técnicos por puesto. Donde ScreenConnect cobra por técnicos concurrentes, los planes estándar de RustDesk incluyen conexiones concurrentes ilimitadas; solo [Customized V2](https://rustdesk.com/pricing#custom2) las limita. La generación de clientes personalizados está disponible desde el plan Basic en adelante, algo útil cuando la herramienta que ven tus clientes debe llevar tu marca, no la de ConnectWise. La contrapartida es que tu equipo debe ejecutar, parchear y proteger el servidor.
+**RustDesk** responde a la misma necesidad de los MSP sin atarte a un ecosistema. Tú operas los servicios de ID/rendezvous y relay con Server OSS o Server Pro. El **cliente y Server OSS tienen licencia AGPL**; **Server Pro es software de servidor autoalojado, comercial y propietario**, que añade gestión centralizada. Donde ScreenConnect licencia técnicos simultáneos, los planes estándar de Server Pro incluyen conexiones simultáneas ilimitadas; solo [Customized V2](https://rustdesk.com/pricing#custom2) licencia un número determinado. La generación de clientes personalizados está disponible desde el plan Basic, algo útil cuando la herramienta que ven tus clientes debe llevar tu marca y no la de ConnectWise.
 
-En una frase: ScreenConnect es una plataforma comercial con todo un ecosistema de MSP a su alrededor; RustDesk es software de código abierto y autoalojado que posees por completo.
+En una frase: ScreenConnect es una plataforma comercial con un ecosistema MSP a su alrededor; RustDesk es software autoalojado con un cliente auditable y sin límite de sesiones por técnico en los planes estándar.
 
-## Comparación de funciones
+## Comparativa de funciones
 
-La siguiente tabla recoge el conjunto de funciones habituales de soporte remoto. Una nota sobre el método: en la columna de **ScreenConnect**, los datos proceden de las propias páginas de funciones y precios de ConnectWise, según nuestra investigación de julio de 2026 (las fuentes se enumeran al final). La columna de **RustDesk** refleja las capacidades documentadas del producto. Consulta la documentación actual de RustDesk para confirmar los detalles concretos de tu compilación.
+La siguiente tabla recoge las funciones habituales del soporte remoto. Una nota sobre el método: en la columna de **ScreenConnect**, los datos proceden de las propias páginas de funciones y precios de ConnectWise, según nuestra investigación de julio de 2026 (las fuentes figuran al final). La columna de **RustDesk** refleja las capacidades documentadas del producto. Consulta la documentación actual de RustDesk para confirmar los detalles de tu compilación.
 
-| Función                                       | RustDesk (Server Pro autoalojado)                                                                                                                | ScreenConnect (ConnectWise Control)                                                                          |
-| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| Visualización y control remoto                | Sí: hosts en Windows, macOS, Linux y Android; en iOS solo funciona como controlador                                                              | Sí: soporte remoto multimonitor en todos los niveles                                                         |
-| Acceso desatendido a dispositivos gestionados | Sí: dispositivos gestionados a través de tu servidor autoalojado, organizados con grupos de dispositivos y una libreta de direcciones compartida | Sí: agentes desatendidos (10 en el nivel básico; ilimitados en los niveles superiores)                       |
-| Acceso móvil                                  | Android puede controlar o ser controlado; iOS solo funciona como controlador                                                                     | Sí: apps de técnico para iOS y Android; soporte de cliente invitado móvil desde el plan Standard en adelante |
-| Grabación de sesiones                         | Sí (puede grabar automáticamente conexiones entrantes/salientes)                                                                                 | Sí: incluida desde el nivel Standard en adelante                                                             |
-| Transferencia de archivos                     | Sí (en ambas direcciones)                                                                                                                        | Sí: incluida en todos los niveles                                                                            |
-| Chat durante la sesión                        | Sí: chat de texto                                                                                                                                | Sí: chat durante la sesión                                                                                   |
-| Impresión remota                              | Sí: impresora remota para conexiones entrantes (Windows)                                                                                         | Sí: imprime desde la máquina remota en una impresora local                                                   |
-| Límite de conexiones concurrentes             | Ilimitado en los planes estándar; limitado en Customized V2                                                                                      | Con licencia por técnico concurrente; consulta los niveles actuales                                          |
+| Función                                       | RustDesk (Server Pro autoalojado)                                                                                                                | ScreenConnect (ConnectWise Control)                                                                      |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| Visualización y control remotos               | Sí: hosts en Windows, macOS, Linux y Android; iOS solo como controlador                                                                          | Sí: soporte remoto multimonitor en todos los niveles                                                     |
+| Acceso desatendido a dispositivos gestionados | Sí: dispositivos gestionados a través de tu servidor autoalojado, organizados con grupos de dispositivos y una libreta de direcciones compartida | Sí: agentes desatendidos (10 en el nivel de entrada; ilimitados en los superiores)                       |
+| Acceso móvil                                  | Android puede controlar o ser controlado; iOS solo como controlador                                                                              | Sí: apps de técnico para iOS y Android; cliente invitado móvil desde Standard                            |
+| Grabación de sesiones                         | Sí (puede grabar automáticamente las sesiones entrantes y salientes)                                                                             | Sí: incluida desde el nivel Standard                                                                     |
+| Transferencia de archivos                     | Sí (en ambos sentidos)                                                                                                                           | Sí: incluida en todos los niveles                                                                        |
+| Chat en la sesión                             | Sí: chat de texto                                                                                                                                | Sí: chat en la sesión                                                                                    |
+| Impresión remota                              | Sí: impresora remota para conexiones entrantes (Windows)                                                                                         | Sí: imprime desde la máquina remota en una impresora local                                               |
+| Límite de conexiones simultáneas              | Ilimitadas en los planes estándar; limitadas en Customized V2                                                                                    | Licencia por técnico simultáneo; 1 / hasta 3 / hasta 10 sesiones por técnico en One / Standard / Premium |
 
-La concurrencia es el eje de ambos modelos de costo. ScreenConnect otorga licencias según la capacidad simultánea de técnicos, mientras que los planes estándar de RustDesk son ilimitados y Customized V2 otorga licencias con un límite de concurrencia definido. Consulta la [página de precios de RustDesk](https://rustdesk.com/pricing).
+Las conexiones simultáneas determinan ambos modelos de coste. ScreenConnect licencia técnicos simultáneos y limita las sesiones simultáneas que puede abrir cada uno: una en One, hasta tres en Standard y hasta diez en Premium, según su [página de precios](https://www.screenconnect.com/pricing) consultada el 14 de octubre de 2026. Los planes estándar de RustDesk incluyen conexiones simultáneas ilimitadas; solo Customized V2 licencia un número determinado. Consulta la [página de precios de RustDesk](https://rustdesk.com/pricing).
 
 ## Compatibilidad con sistemas operativos y plataformas
 
 Ambas herramientas son multiplataforma, con una diferencia estructural que conviene entender: ScreenConnect distingue entre el lado **host** (el técnico) y el lado **guest** (la máquina a la que se da soporte), y la compatibilidad de plataformas varía ligeramente entre ambos.
 
-| Plataforma                 | RustDesk                                                                                                                                             | ScreenConnect                                                                 |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| Windows                    | Sí: x64, ARM64, 32 bits                                                                                                                              | Sí: host y guest (Windows 10/11, Server 2016-2025)                            |
-| macOS                      | Sí: Apple Silicon e Intel                                                                                                                            | Sí: host y guest (versión actual y las dos anteriores)                        |
-| Linux                      | Sí: x86_64, ARM64 y ARM32; buen soporte de Wayland                                                                                                   | Sí: host y guest (x86_64, glibc 2.17+)                                        |
-| Android                    | Sí: arm64, arm32, x64 (host y controlador)                                                                                                           | Soporte guest; app de técnico para Android                                    |
-| iOS                        | Solo como controlador                                                                                                                                | Compartición de pantalla guest de solo visualización; app de técnico para iOS |
-| Control desde el navegador | Cliente web para controlar (cliente web público, o autoalojado a partir de cierto tamaño de plan); para ser controlado se necesita el cliente nativo | Sí: host mediante Chrome, Firefox, Safari, Edge                               |
+| Plataforma                 | RustDesk                                                                                                                                                                              | ScreenConnect                                                                 |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| Windows                    | Sí: x64, ARM64, 32 bits                                                                                                                                                               | Sí: host y guest (Windows 10/11, Server 2016–2025)                            |
+| macOS                      | Sí: Apple Silicon e Intel                                                                                                                                                             | Sí: host y guest (versión actual y las dos anteriores)                        |
+| Linux                      | Sí: x86_64, ARM64 y ARM32; X11 y Wayland (acceso desatendido y a la pantalla de inicio de sesión en Wayland en la [versión preliminar](/es/blog/unattended-remote-access-wayland-es)) | Sí: host y guest (x86_64, glibc 2.17+)                                        |
+| Android                    | Sí: arm64, arm32, x64 (host y controlador)                                                                                                                                            | Soporte guest; app de técnico para Android                                    |
+| iOS                        | Solo controlador; RustDesk no implementa el modo host ni la compartición de pantalla en iOS                                                                                           | Compartición de pantalla guest de solo visualización; app de técnico para iOS |
+| Control desde el navegador | Cliente de navegador para controlar (cliente web público, o autoalojado según el tamaño del plan); para ser controlado hace falta el cliente nativo                                   | Sí: host mediante Chrome, Firefox, Safari y Edge                              |
 
-Un par de aclaraciones para que nadie se lleve una idea equivocada. La propia página de compatibilidad de ConnectWise, según nuestra investigación, enumera Windows/macOS/Linux para host y guest, además de las apps móviles de iOS y Android; algunos artículos de terceros también mencionan clientes para ChromeOS y Raspberry Pi, pero no pudimos verificarlos en la página oficial de ConnectWise, así que los hemos omitido. Por otro lado, cuando los equipos hablan de Raspberry Pi al evaluar RustDesk, normalmente se refieren a autoalojar el _servidor de RustDesk_ en hardware pequeño; se trata de un escenario de implementación del lado del servidor, no de una afirmación sobre plataformas cliente.
+Un par de aclaraciones para que nadie se lleve una idea equivocada. La página de compatibilidad de ConnectWise, según nuestra investigación, enumera Windows/macOS/Linux para host y guest, además de las apps móviles para iOS y Android; algunos artículos de terceros mencionan también clientes para ChromeOS y Raspberry Pi, pero no pudimos verificarlos en la página oficial de ConnectWise, así que los hemos omitido. Por otro lado, cuando se habla de Raspberry Pi al evaluar RustDesk, normalmente se trata de autoalojar el _servidor de RustDesk_ en hardware pequeño: es un escenario de despliegue del lado del servidor, no una afirmación sobre plataformas cliente.
 
 ## Seguridad e identidad
 
-Esta sección aborda las preguntas de seguridad y cumplimiento normativo que suelen guiar la evaluación.
+Esta sección aborda las cuestiones de seguridad y cumplimiento normativo que suelen guiar la evaluación.
 
-**El modelo de seguridad de ScreenConnect.** La página de precios actual de ConnectWise menciona cifrado AES-256, autenticación de dos factores, prevención de ataques de fuerza bruta, gestión granular de accesos e integraciones con LDAP, SAML, OAuth y otros proveedores de SSO. Su página de producto on-premise menciona autenticación multifactor y controles de acceso basados en roles, y describe configuraciones pensadas para respaldar los requisitos de SOC 2, PCI, CJIS y HIPAA. Se trata de afirmaciones del propio proveedor, no de una conclusión de que cualquier implementación cumpla automáticamente con la normativa; los enlaces a las páginas oficiales están en [Fuentes](#fuentes).
+**El modelo de seguridad de ScreenConnect.** La página de precios actual de ConnectWise enumera cifrado AES-256, autenticación de dos factores, prevención de ataques de fuerza bruta, gestión granular de accesos e integraciones con LDAP, SAML, OAuth y otros proveedores de SSO. Su página del producto On-Premise menciona autenticación multifactor y controles de acceso basados en roles, y describe configuraciones pensadas para respaldar los requisitos de SOC 2, PCI, CJIS y HIPAA. Son capacidades de apoyo al cumplimiento declaradas por el proveedor; las páginas oficiales están enlazadas en [Fuentes](#fuentes).
 
-**Aplicar parches es una cuestión de propiedad.** Con un servicio alojado por el proveedor, es el proveedor quien controla el calendario de parches, mientras que los operadores autoalojados actualizan sus propios servidores. Los parches de seguridad, las rotaciones de certificados y eventos similares caen en _tu_ calendario de cambios, no en el del proveedor: la misma contrapartida de propiedad que mantiene tus datos dentro de tu infraestructura, y autoalojar RustDesk conlleva exactamente esta responsabilidad.
+**Aplicar parches es una cuestión de propiedad.** Con un servicio alojado por el proveedor, es este quien controla el calendario de parches; quienes autoalojan actualizan sus propios servidores. Los parches de seguridad, las rotaciones de certificados y otros eventos similares caen en _tu_ calendario de cambios, no en el del proveedor, y autoalojar RustDesk conlleva exactamente esa responsabilidad.
 
-**El modelo de seguridad de RustDesk.** El enfoque de RustDesk es estructuralmente distinto: al ser de código abierto bajo la licencia AGPL, el código puede auditarse de forma independiente y compilarse desde el código fuente en lugar de aceptarse por confianza ciega, algo que no puede ofrecer ni la nube de ScreenConnect ni su edición on-premise. Server Pro es autoalojado, por lo que los servidores de rendezvous/relay y la intermediación de sesiones permanecen dentro de una infraestructura que tú controlas, que es justo el objetivo para los equipos cuya principal preocupación es la residencia de datos y el RGPD ([por qué autoalojar](/es/blog/por-que-autoalojar-tu-software-de-escritorio-remoto) explica el razonamiento en profundidad). En cuanto a identidad, RustDesk admite LDAP y SSO mediante OIDC, y aquí conviene decirlo con claridad: **LDAP/SSO está disponible desde el plan Basic en adelante; los planes por debajo de Basic no lo incluyen.** La administración se realiza mediante una consola web autoalojada, y el control de acceso se gestiona con grupos de dispositivos y una libreta de direcciones compartida, de modo que puedes delimitar qué usuarios acceden a qué máquinas. Los detalles de configuración están en nuestra [guía de RustDesk sobre LDAP y Active Directory](https://rustdesk.com/docs/es/self-host/rustdesk-server-pro/ldap/).
+**El modelo de seguridad de RustDesk.** Como el cliente es de código abierto, se puede auditar de forma independiente y compilar desde el código fuente en lugar de aceptarlo por confianza, algo que un producto propietario no puede ofrecer. Tú eliges dónde se ejecutan el rendezvous, el relay, la consola y los datos de despliegue almacenados; las sesiones directas viajan entre los extremos, y las sesiones basadas en ID están cifradas de extremo a extremo cuando los clientes se configuran con la clave pública de tu servidor. Server Pro admite LDAP y SSO con OIDC desde Basic, con permisos de [Control de acceso](https://rustdesk.com/docs/es/self-host/rustdesk-server-pro/permissions/) por usuario y grupo de dispositivos y de [Rol de control](https://rustdesk.com/docs/es/self-host/rustdesk-server-pro/control-role/) para las acciones dentro de la sesión.
 
-Ser de código abierto no hace que un software sea invulnerable. Revisa las [últimas versiones](https://github.com/rustdesk/rustdesk/releases) de RustDesk y los registros públicos de vulnerabilidades. El modo en la nube de ScreenConnect ofrece un servicio operado por el proveedor; RustDesk ofrece código auditable y servicios de servidor autoalojados, junto con la responsabilidad operativa correspondiente. Para conocer los límites de enrutamiento y residencia de datos, consulta [Escritorio remoto y soberanía de datos](/es/blog/soberania-de-datos-en-el-escritorio-remoto-y-rgpd-autoalojamiento).
+Ser de código abierto no hace invulnerable a un software, así que sigue las [últimas versiones](https://github.com/rustdesk/rustdesk/releases) de RustDesk y los registros públicos de vulnerabilidades. Para los límites de enrutamiento y residencia de los datos, consulta [Soberanía de datos en el escritorio remoto y RGPD](/es/blog/soberania-de-datos-en-el-escritorio-remoto-y-rgpd-autoalojamiento).
 
 ## Modelos de licencias y precios
 
-Los precios cambian con frecuencia, así que en lugar de tratar cualquier cifra como un dato permanente, compararemos los dos _modelos_ e indicaremos la fecha de las cifras.
+Los precios cambian a menudo, así que, en lugar de tratar cualquier cifra como un dato permanente, compararemos los dos _modelos_ y fecharemos las cifras.
 
-**ScreenConnect** empaqueta la capacidad de técnicos/sesiones, los agentes desatendidos y las funciones según el producto y el nivel contratado. Esos detalles cambian, y las condiciones on-premise requieren confirmación directa. Utiliza la página de precios actual de ConnectWise y solicita un presupuesto por escrito para el mismo número de técnicos, sesiones simultáneas, endpoints desatendidos, controles de seguridad y requisitos de soporte; este artículo no conserva una instantánea de precios que quedaría desactualizada.
+**ScreenConnect** empaqueta por nivel las licencias de técnico, las sesiones simultáneas por técnico, los agentes desatendidos y las funciones. Su [página de precios](https://www.screenconnect.com/pricing), consultada el 14 de octubre de 2026, permite una sesión simultánea por técnico en One, hasta tres en Standard y hasta diez en Premium. Los precios cambian, así que pide un presupuesto por escrito para el mismo número de técnicos, sesiones simultáneas, endpoints desatendidos, controles de seguridad y requisitos de soporte.
 
-**RustDesk** fija precios según los usuarios de inicio de sesión y los dispositivos gestionados. Los planes estándar incluyen conexiones concurrentes ilimitadas; Customized V2 añade un límite de concurrencia definido. Comparar directamente el precio de lista puede llevar a confusión, así que dimensiona ambos productos según tus necesidades reales de usuarios, dispositivos, concurrencia, funciones y soporte. Los precios actuales de RustDesk están disponibles en [rustdesk.com/pricing](https://rustdesk.com/pricing).
+**RustDesk** fija sus precios por usuarios con inicio de sesión y dispositivos gestionados. Los planes estándar incluyen conexiones simultáneas ilimitadas; solo Customized V2 licencia un número determinado de conexiones simultáneas. Comparar solo el precio de lista induce a error, así que dimensiona ambos productos según tus requisitos reales de usuarios, dispositivos, conexiones simultáneas, funciones y soporte. Los precios actuales de RustDesk están en [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
-## Pros y contras
+## Ventajas e inconvenientes
 
 **RustDesk**
 
 _Ventajas_
 
-- Conexiones concurrentes ilimitadas en los planes estándar: sin cobro por sesión de cada técnico (solo Customized V2 está limitado)
-- El generador de clientes con marca personalizada entrega una herramienta de marca blanca con tu nombre, no el de ConnectWise
-- Server Pro autoalojado mantiene la intermediación/relay en una infraestructura que te pertenece (soberanía de datos, RGPD)
-- Código abierto (AGPL): auditable y compilable desde el código fuente
-- El servidor comunitario gratuito funciona indefinidamente sin costo
-- Escala a flotas de gran tamaño (más detalles a continuación)
+- Conexiones simultáneas ilimitadas en los planes Pro estándar, sin límite de sesiones por técnico (solo Customized V2 licencia un número determinado)
+- El generador de clientes con marca personalizada te da una herramienta de marca blanca con tu nombre, no el de ConnectWise
+- Server Pro autoalojado ejecuta la intermediación y el relay en la infraestructura que tú elijas
+- Cliente auditable que puedes leer y compilar desde el código fuente
+- Server OSS es gratuito, sin cuota de licencia ni caducidad
+- Escala desde un equipo de prueba de concepto hasta flotas grandes (más detalles abajo)
 
-_Desventajas_
+_Inconvenientes_
 
 - Tú mismo ejecutas, parcheas y actualizas el servidor
-- No existe una prueba totalmente gratuita de Server Pro (escribe a [sales@rustdesk.com](mailto:sales@rustdesk.com) para obtener una licencia de prueba)
+- No hay prueba gratuita de Server Pro en autoservicio (escribe a [sales@rustdesk.com](mailto:sales@rustdesk.com) para conocer las condiciones de evaluación)
 - Algunas comodidades (LDAP/SSO) empiezan en el plan Basic, no en el nivel de entrada
 
 **ScreenConnect**
@@ -124,37 +125,47 @@ _Ventajas_
 
 - Integración con el ecosistema PSA/RMM de ConnectWise
 - Opción de nube gestionada con parcheo automático
-- Conjunto de funciones que incluye grabación de sesiones, Backstage, VoIP y diagnósticos
+- Funciones que incluyen grabación de sesiones, Backstage, VoIP y diagnósticos
 - Amplia base instalada entre los MSP: es fácil encontrar documentación y técnicos con experiencia
 - Controles de identidad de nivel empresarial (2FA, SSO/SAML/OAuth, LDAP y controles de acceso basados en roles)
 
-_Desventajas_
+_Inconvenientes_
 
 - Propietario y de código cerrado: no puedes auditar el código
-- La licencia por técnico concurrente limita tu capacidad
-- Las funciones avanzadas quedan restringidas a los niveles superiores; algunas funciones son líneas de producto de pago independientes
+- Licencias por técnico simultáneo, con un máximo de 1 / hasta 3 / hasta 10 sesiones simultáneas por técnico en One / Standard / Premium
+- Las funciones avanzadas quedan reservadas a los niveles superiores; algunas funciones son líneas de producto de pago aparte
 
 ## Por qué los MSP se cambian a RustDesk de todos modos
 
-Todo lo anterior es la comparación neutral. Esta es la parte en la que defendemos abiertamente la propuesta de RustDesk, porque los requisitos mencionados arriba son, precisamente, los que suelen llevar a los MSP a evaluar una alternativa autoalojada en primer lugar. Puedes ejecutar tú mismo toda la capa de coordinación y mantener los datos de sesión dentro de tu propio perímetro, algo que una herramienta alojada por un proveedor no puede ofrecer por su propia naturaleza. Server Pro te permite elegir dónde se ejecutan los datos de ID, relay, consola y dispositivos. El tráfico directo entre endpoints sigue atravesando las redes que hay entre ellos, y el cumplimiento normativo exige más que la simple ubicación del servidor. Muchos equipos empiezan autoalojando el servicio en hardware modesto para validar el concepto, y después comprueban la capacidad frente a su perfil real de concurrencia y de relay. Para los equipos cuya primera preocupación es la residencia de datos y el control, eso lo decide todo.
+Todo lo anterior es la comparativa neutral. Esta es la parte en la que defendemos abiertamente a RustDesk.
 
-Si estás evaluando la solución específicamente como MSP, nuestro artículo [RustDesk para MSP](/es/blog/rustdesk-para-msp-una-unica-herramienta-autoalojada-y-personalizable) está escrito justo para tu caso; los compradores empresariales deberían empezar por [RustDesk para empresas](/es/blog/rustdesk-para-empresas-autoalojado-escalable-y-listo-para-ad). Consulta también [Escritorio remoto y soberanía de datos](/es/blog/soberania-de-datos-en-el-escritorio-remoto-y-rgpd-autoalojamiento) y [¿Puede RustDesk escalar a más de 50 000 dispositivos?](/es/blog/puede-rustdesk-escalar-a-200-000-dispositivos).
+**Conexiones simultáneas ilimitadas en los planes estándar.** ScreenConnect limita a cada técnico a una sesión simultánea en One, tres en Standard y diez en Premium. Los planes estándar de RustDesk Server Pro incluyen conexiones simultáneas ilimitadas, así que los técnicos que atienden a varios clientes a la vez no te obligan a subir de nivel.
+
+**Tu marca desde el plan Basic.** El generador de clientes personalizados te entrega un cliente de marca blanca con tu nombre, no el de ConnectWise.
+
+**Un piloto gratuito antes de comprar.** Server OSS no tiene cuota de licencia ni caducidad, así que puedes comprobar la conectividad y el rendimiento del relay en las instalaciones reales de un cliente, con hardware modesto, antes de comprar Server Pro.
+
+**Un cliente que puedes auditar.** Puedes leer y compilar el cliente que instalan tus clientes en lugar de fiarte de lo que el proveedor dice que hace.
+
+ScreenConnect On-Premise también te permite alojar el servidor tú mismo; lo que RustDesk añade es el cliente abierto, la vía de entrada gratuita y unos planes estándar que no limitan las sesiones por técnico. Una salvedad: si tu servicio de soporte funciona sobre las integraciones de ConnectWise PSA y Automate, prueba esos flujos de trabajo durante el piloto.
+
+Si estás evaluando específicamente como MSP, nuestro artículo [RustDesk para MSP](/es/blog/rustdesk-para-msp-una-unica-herramienta-autoalojada-y-personalizable) está escrito justo para tu situación; los compradores empresariales deberían empezar por [RustDesk para empresas](/es/blog/rustdesk-para-empresas-autoalojado-escalable-y-listo-para-ad). Consulta también [Soberanía de datos en el escritorio remoto y RGPD](/es/blog/soberania-de-datos-en-el-escritorio-remoto-y-rgpd-autoalojamiento) y [¿Puede RustDesk escalar a 200.000 dispositivos?](/es/blog/puede-rustdesk-escalar-a-200-000-dispositivos).
 
 ## Prueba RustDesk tú mismo
 
-La forma de evaluar RustDesk sin ninguna presión es mediante una prueba de concepto representativa. Pon en marcha el servidor comunitario gratuito y apunta hacia él unos cuantos endpoints: sin costo, sin llamadas de ventas. Para las funciones de Pro, escribe a [sales@rustdesk.com](mailto:sales@rustdesk.com) y consulta las condiciones de evaluación vigentes, o visita [rustdesk.com/pricing](https://rustdesk.com/pricing); también hay un [recorrido en vídeo](https://www.youtube.com/@rustdesk) por si prefieres ver primero cómo funciona.
+La forma de evaluar RustDesk sin presiones es una prueba de concepto representativa. Pon en marcha Server OSS y conecta unos cuantos endpoints: sin cuota de licencia ni llamadas comerciales. Para las funciones de Pro, pregunta a [sales@rustdesk.com](mailto:sales@rustdesk.com) por las condiciones de evaluación vigentes o consulta [rustdesk.com/pricing](https://rustdesk.com/pricing); también hay un [recorrido en vídeo](https://www.youtube.com/@rustdesk) si prefieres verlo antes.
 
 ## Lecturas relacionadas
 
 - [RustDesk para MSP](/es/blog/rustdesk-para-msp-una-unica-herramienta-autoalojada-y-personalizable)
-- [RustDesk frente a AnyDesk](/es/blog/rustdesk-vs-anydesk-escritorio-remoto-autoalojado-y-de-codigo-abierto)
+- [RustDesk vs AnyDesk](/es/blog/rustdesk-vs-anydesk-escritorio-remoto-autoalojado-y-de-codigo-abierto)
 
 ## Fuentes
 
-Los detalles del producto ScreenConnect se verificaron contra estas páginas oficiales de ConnectWise el 7 de julio de 2026. Las funciones, la compatibilidad de plataformas, el empaquetado y los precios pueden cambiar; verifica las páginas actuales y solicita un presupuesto por escrito antes de comprar.
+Los detalles de ScreenConnect se contrastaron con estas páginas oficiales de ConnectWise el 7 de julio de 2026; los límites de sesiones por técnico se volvieron a comprobar en la página de precios el 14 de octubre de 2026. Las funciones, la compatibilidad de plataformas, la oferta y los precios pueden cambiar; consulta las páginas actuales y pide un presupuesto por escrito antes de comprar.
 
 - [Planes de precios de ScreenConnect](https://www.screenconnect.com/pricing): niveles actuales, límites de sesiones simultáneas, agentes desatendidos, funciones de soporte remoto, controles de seguridad, integraciones de identidad e integraciones con ConnectWise.
-- [ScreenConnect on-premise](https://www.screenconnect.com/on-premise): autoalojamiento, Backstage, grabación de sesiones, compatibilidad, seguridad y capacidades de cumplimiento normativo declaradas por el proveedor.
+- [ScreenConnect On-Premise](https://www.screenconnect.com/on-premise): autoalojamiento, Backstage, grabación de sesiones, compatibilidad, seguridad y capacidades de cumplimiento declaradas por el proveedor.
 - [Requisitos del cliente host de ScreenConnect](https://docs.connectwise.com/ScreenConnect_Documentation/Get_started/Host_client/Host_client_requirements): requisitos de sistema operativo del lado del técnico.
-- [Requisitos del cliente guest de ScreenConnect](https://docs.connectwise.com/ScreenConnect_Documentation/Get_started/Guest_client/Guest_client_requirements): requisitos de sistema operativo de los dispositivos compatibles.
-- [Requisitos de la app de iOS de ScreenConnect](https://docs.connectwise.com/ScreenConnect_Documentation/Mobile_apps/iOS/iOS_app_requirements): requisitos actuales de la aplicación para iOS y restricciones del fabricante.
+- [Requisitos del cliente guest de ScreenConnect](https://docs.connectwise.com/ScreenConnect_Documentation/Get_started/Guest_client/Guest_client_requirements): requisitos de sistema operativo de los dispositivos a los que se da soporte.
+- [Requisitos de la app de ScreenConnect para iOS](https://docs.connectwise.com/ScreenConnect_Documentation/Mobile_apps/iOS/iOS_app_requirements): requisitos actuales de la aplicación para iOS y restricciones del fabricante.

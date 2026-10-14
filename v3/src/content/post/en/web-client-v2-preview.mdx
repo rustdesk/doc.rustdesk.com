@@ -1,21 +1,23 @@
 ---
 publishDate: 2024-10-12T00:00:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: en
 translationKey: rustdesk-web-client-v2-preview
-title: RustDesk web client V2 Preview
-excerpt: V2 offers better codecs, international keyboard support, clipboard support, file transfer etc.
+title: 'RustDesk Web Client V2: The 2024 Preview and Current Deployment Options'
+excerpt: 'RustDesk Web Client V2 (October 2024 preview): codec, keyboard, clipboard and file-transfer upgrades, plus public and self-hosted Server Pro options.'
 image: ~/assets/images/blog/web-client.jpg
 category: Release
 slug: rustdesk-web-client-v2-preview
 tags:
-  - web client 
+  - web client
   - release
 ---
 
-We are proud to introduce the RustDesk web client V2 Preview. It brings stronger decoding, better international keyboard support, clipboard support (not just text but also images), and file transfer. We have worked to keep the web version's feature set and user experience in sync with the desktop client, within the limits that browsers impose.
+In October 2024 we introduced the **RustDesk Web Client V2 Preview**. It brings stronger decoding, better international keyboard support, clipboard support for images as well as text, and file transfer. We worked to keep the web version's feature set and user experience in step with the desktop client, within the limits that browsers impose.
 
-You can access the RustDesk web client V2 Preview by visiting https://rustdesk.com/web. If you wish to access your own server through V2, please configure WebSocket Secure (WSS) support according to the [documentation](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client), setting it up on ports 21118/21119.
-```
+You can access the RustDesk web client V2 Preview by visiting https://rustdesk.com/web. If you wish to access your own server through V2, please configure WebSocket Secure (WSS) support according to the [documentation](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms), proxying the ID and relay WebSocket backends on ports 21118/21119 through HTTPS/WSS. Keep those backend ports internal when the reverse proxy exposes TCP 443.
+
+```nginx
     location /ws/id {
         proxy_pass http://localhost:21118;
         proxy_http_version 1.1;
@@ -38,6 +40,7 @@ You can access the RustDesk web client V2 Preview by visiting https://rustdesk.c
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 ```
+
 The web client is also **integrated into RustDesk Server Pro**, so you can serve it from your own server at `https://rustdesk.yourcompany.com/web` instead of relying on the public one.
 
 ## Two ways to use the web client with your own server
@@ -47,4 +50,4 @@ The web client is also **integrated into RustDesk Server Pro**, so you can serve
 
 Whichever route you take, the web client is a **controller**: you drive other devices from a browser tab, but a browser tab cannot act as an unattended host.
 
-We are excited to bring these enhancements to our users and look forward to your feedback as we continue to refine and improve the RustDesk Web Client V2.
+Try the [Web Client](https://rustdesk.com/web) today, and see the [Server Pro documentation](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/) for current deployment details. Browser clipboard permissions and keyboard handling differ between browsers, so test the ones your team uses.

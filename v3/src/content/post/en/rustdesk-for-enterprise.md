@@ -1,5 +1,6 @@
 ---
 publishDate: 2026-06-29T16:16:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: en
 translationKey: rustdesk-for-enterprise
 draft: false
@@ -16,27 +17,27 @@ faq:
   - question: 'Can RustDesk be mass-deployed across an enterprise fleet?'
     answer: 'Yes. RustDesk provides a Windows MSI for silent, unattended installation via msiexec, deployable through Group Policy (GPO), Microsoft Intune, an RMM, or packaging tools, and the custom client generator (Basic plan and up) ships a client pre-configured to your own server.'
   - question: 'Does RustDesk have a REST API?'
-    answer: 'Yes. RustDesk Server Pro exposes a REST API for bulk device management and scripting, so you can onboard, enumerate, and remove devices programmatically instead of only through the web console. Confirm current endpoints in the RustDesk documentation.'
+    answer: 'Yes. RustDesk Server Pro exposes a REST API, authorized by API tokens created in the web console, plus Python CLI management tools. Scripts can onboard, enumerate, assign and remove devices, and manage users, groups, address books and audit logs in bulk, instead of working only through the web console.'
   - question: 'Does RustDesk support Active Directory and SSO for enterprise identity?'
-    answer: 'Yes. Server Pro includes LDAP/Active Directory and OIDC SSO from the Basic plan and up, so technicians authenticate against your existing identity source rather than a separate user list.'
+    answer: 'Yes. RustDesk Server Pro includes LDAP/Active Directory and OIDC SSO from the Basic plan and up, so technicians authenticate against your existing identity source rather than a separate user list. The Individual plan does not include LDAP/AD or OIDC SSO.'
   - question: 'Can enterprises keep RustDesk data on their own infrastructure?'
-    answer: 'Yes — that is the core model. You self-host the ID/rendezvous, relay, console, and stored device data. Direct session traffic still flows between endpoints, so document endpoint routing alongside server placement.'
+    answer: 'Yes, that is the core model of RustDesk Server Pro. You self-host the ID/rendezvous server, relay, web console and stored device data on infrastructure you operate. Direct sessions travel between the endpoints and relayed sessions use your own relay, so document endpoint routing alongside server placement.'
   - question: 'How does RustDesk pricing work for large fleets?'
-    answer: 'RustDesk licenses per login-user and per managed-device, with unlimited concurrency on standard plans (only Customized V2 meters concurrency) and prorated upgrades. Size the counts against the current matrix at rustdesk.com/pricing.'
+    answer: 'RustDesk Server Pro licenses login users and managed devices, and standard plans include unlimited concurrent connections; only Customized V2 licenses a set number of concurrent connections. Upgrades can be bought at any time and extend the license to one full year from the upgrade date, crediting the remaining paid value. Size both counts at rustdesk.com/pricing.'
 metadata:
-  description: 'RustDesk for enterprise: self-host on your own servers for data control, LDAP/AD, device-group access control, and no per-channel pricing.'
+  description: 'RustDesk for enterprise: self-hosted ID, relay and console, LDAP/AD and OIDC SSO, device-group access control, MSI mass deployment and unlimited concurrency.'
   keywords: 'RustDesk for enterprise, RustDesk enterprise deployment, AD-integrated remote support, enterprise RustDesk architecture'
 ---
 
 ## Keep remote access on infrastructure you control
 
-Enterprise evaluations usually focus on infrastructure control, identity, access policy, auditability, scale, and licensing predictability. Those requirements can be compared directly against public product capabilities and documentation.
+RustDesk Server Pro runs ID/rendezvous, relay, web console and device data inside your perimeter, with LDAP/AD and OIDC SSO from the Basic plan and unlimited concurrent connections on standard plans. That covers the points enterprise evaluations usually turn on: infrastructure control, identity, access policy, auditability, scale and licensing predictability.
 
-If you're evaluating **RustDesk for enterprise** use, the core question is usually the same: can we run remote support at scale, keep the data on infrastructure we control, and tie access to our existing identity system — without a per-channel bill that grows every renewal? This article walks through how RustDesk answers that, and where the honest trade-offs are.
+RustDesk's client and RustDesk Server OSS (the free community server) are AGPL-licensed; Server Pro is commercial, proprietary self-hosted server software.
 
 ## The core difference: you host it, so you control it
 
-RustDesk Server Pro is **self-hosted** — the ID/rendezvous server, relay, console, and stored deployment data run inside your perimeter, on infrastructure you operate ([why self-hosting is the enterprise default](/blog/why-self-host-remote-desktop-software)). That one architectural fact drives most of the benefits below, and it makes the core being **[open source (AGPL)](https://github.com/rustdesk/rustdesk)** more than a talking point: a security team that has to justify every agent on a production endpoint can read the source and build the client itself, so "we can audit exactly what runs" becomes a procurement box you can actually tick.
+RustDesk Server Pro is **self-hosted**: your team, not a vendor, operates the servers ([why teams choose self-hosting](/blog/why-self-host-remote-desktop-software)). That one architectural fact drives most of the benefits below, and it makes the **[AGPL-licensed client](https://github.com/rustdesk/rustdesk)** more than a talking point: a security team that has to justify every agent on a production endpoint can read the source and build the client itself, so "we can audit exactly what runs" becomes a procurement box you can actually tick.
 
 ## Enterprise architecture questions to answer first
 
@@ -58,39 +59,43 @@ RustDesk supplies the remote-access components and enterprise controls; your arc
 
 Self-hosting lets you choose the location and operator of the rendezvous, relay, console, and stored device data. Direct sessions still flow between endpoints, so server location alone does not guarantee in-country traffic or GDPR compliance. Document the complete [data flow and compliance controls](/blog/remote-desktop-data-sovereignty-gdpr).
 
-Beyond location, Server Pro ships the controls a data-protection program actually uses: because usage telemetry is collected by the relay, running your own relay keeps that data on **your** relay rather than RustDesk (beyond the license check); **built-in audit-log rotation** caps how long connection, file-transfer, alarm, and console logs are kept; **granular access control** and a Control Role enforce least privilege; and you can **delete users, devices, and records** directly or through the REST API to service erasure and retention requests. The full breakdown is in [Remote Desktop Data Sovereignty & GDPR](/blog/remote-desktop-data-sovereignty-gdpr).
+Server Pro records [audit logs](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/audit-logs/) for connections, file transfers, alarms and console operations. Set **Settings > Other > Log Retention (Days)** to a positive number to delete older logs automatically (cleanup runs hourly); `0` keeps logs indefinitely. You can disable or delete users and devices in the console or through the API to service erasure requests. The outbound workflows to plan for are Pro license validation, the custom client build service, client updates and any external identity provider you connect.
 
 This is also a quiet reason cost-driven migrations happen. Many enterprise teams are not only frustrated by price; they are paying for a cloud service and feature bundle they do not fully use. Self-hosting inverts that: you provision what you need, and you're not renting someone else's data center as a mandatory middleman.
 
-## Scale without a per-channel tax
+## Scale and concurrent-connection licensing
 
 Enterprise deployments fail on two axes: technical ceiling and pricing ceiling. RustDesk addresses both.
 
-On the technical side, RustDesk publishes large-fleet planning guidance for deployments in the tens of thousands of devices, with larger targets requiring workload validation, sizing work, and tuning. Treat that as architecture planning, not as a blanket out-of-the-box benchmark.
+On the technical side, RustDesk's public server recorded more than two million online endpoints on one 12-core, 32 GB host on July 7, 2026 (internal telemetry, not an audited benchmark or a Server Pro guarantee). For Server Pro, the [200,000-device planning guide](/blog/rustdesk-scale-50000-200000-devices) covers the database, console and relay load to validate in a pilot.
 
-RustDesk charges **per login-user and per managed-device**, and you can [upgrade mid-subscription](/blog/upgrade-rustdesk-license-mid-subscription) with proration. Standard plans include unlimited concurrent connections; Customized V2 limits and prices them separately. Size all relevant counts against the current plan matrix.
+RustDesk charges **per login-user and per managed-device**. Standard plans include unlimited concurrent connections; only [Customized V2](https://rustdesk.com/pricing#custom2) licenses a set number. You can [upgrade mid-subscription](/blog/upgrade-rustdesk-license-mid-subscription) at any time: the upgrade extends the license to one full year from the upgrade date and credits the remaining paid value of the current license.
 
 ## AD/LDAP and access control your admins expect
 
 Enterprise remote access has to answer "who can reach which machines, and can we prove it." RustDesk's paid plans include **LDAP/SSO (OIDC) available from the Basic plan and up**, so you provision technician access against the identity source you already run rather than maintaining a parallel user list.
 
-For structuring access, the self-hosted web console provides **device groups and a shared address book for per-user access control**. The custom client generator and identity features are available from the Basic plan and up; [check current availability](https://rustdesk.com/pricing).
+[Access Control](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/) decides who can reach which devices, through user assignments, device groups and cross-group rules. A device belongs to one device group, and user-group and device-group permissions are cumulative. The shared address book organizes device entries for technicians; it is not an access boundary. [Control Role](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/control-role/) limits what a technician can do inside a session. The custom client generator also starts at Basic; [see the plan matrix](https://rustdesk.com/pricing).
 
 ## Mass deployment and automation
 
-Rolling remote access onto thousands of endpoints by hand is a non-starter, so RustDesk supports the standard enterprise deployment paths. On Windows it ships an **MSI package** for silent, unattended installation via `msiexec /qn`, which you can push through **Group Policy (GPO), Microsoft Intune, an RMM, or any packaging tool**, with command-line parameters for install location, shortcuts, and options. Pair that with the [custom client generator](https://rustdesk.com/docs) so the client you deploy is pre-configured to your own server and settings out of the box, instead of requiring per-machine setup.
+Rolling remote access onto thousands of endpoints by hand is a non-starter, so RustDesk supports the standard enterprise deployment paths. On Windows it ships an **MSI package** for silent, unattended installation via `msiexec /qn`, which you can push through **Group Policy (GPO), Microsoft Intune, an RMM, or any packaging tool**, with command-line parameters for install location, shortcuts, and options. Pair that with the [custom client generator](https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only-basic-plan-or-custom-plan) so the client you deploy is pre-configured to your own server and settings out of the box, instead of requiring per-machine setup.
 
-For fleet operations, Server Pro exposes a **REST API** for bulk device management and scripting — enumerate devices, automate onboarding, and purge stale endpoints programmatically rather than clicking through the console one at a time. Confirm the current MSI parameters, GPO/Intune guidance, and API endpoints in the [RustDesk deployment and Server Pro documentation](https://rustdesk.com/docs/en/self-host/) for your version.
+For fleet operations, use the [Windows MSI reference](https://rustdesk.com/docs/en/client/windows/msi/), [client deployment guide](https://rustdesk.com/docs/en/self-host/client-deployment/) and [Server Pro API/CLI tools](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/#python-cli-management-tools). The management tools cover users, devices, groups, address books, policies and audits. Scope API-token permissions to the task and test onboarding, disabling and deletion in a pilot.
+
+## Acceptance checks before rollout
+
+Before rollout, verify the intended user-to-device access matrix, identity recovery, unattended access, client updates, peak relay capacity, log retention and backup restoration. Those acceptance checks turn self-hosted infrastructure control into an operable enterprise deployment.
 
 ## Enterprise control, on your terms
 
-At scale the case sharpens: the ID/relay, console, and stored data live inside your perimeter, wired to your identity system and your policies, with no vendor running the core. That is the posture procurement and security teams tend to ask for.
+At enterprise scale the case is straightforward: the ID/relay, console and stored data live inside your perimeter, wired to your identity system and your access policies, with no vendor running the core. That is the posture procurement and security teams ask for, and RustDesk Server Pro is built to deliver it.
 
 ## Try it before you commit
 
 You can evaluate **[without a sales call](https://www.youtube.com/@rustdesk)**. Two paths:
 
-- **Validate the architecture with the free, open-source community server.** It runs indefinitely on your own network — a low-stakes way to prove the self-hosted model to your security team.
+- **Validate the architecture with Server OSS.** It is free, with no license fee or expiry, and runs on your own network — a low-stakes way to prove the self-hosted model to your security team.
 - **For the Pro capabilities — identity, access control, client generation —** review current plans at [rustdesk.com/pricing](https://rustdesk.com/pricing), then email [sales@rustdesk.com](mailto:sales@rustdesk.com) for the evaluation terms available to your organization.
 
 Either way, stand up a server against your own environment and validate it before you commit.

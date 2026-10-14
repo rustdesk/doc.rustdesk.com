@@ -1,19 +1,21 @@
 ---
 publishDate: 2024-10-12T00:00:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: ja
 translationKey: rustdesk-web-client-v2-preview
-title: "RustDesk Web クライアント V2 プレビュー"
-excerpt: "V2 では、より優れたコーデック、国際キーボード対応、クリップボード対応、ファイル転送などが利用できます。"
+title: 'RustDesk Web クライアント V2：2024年のプレビューと現在の展開方法'
+excerpt: 'RustDesk Web クライアント V2（2024年10月のプレビュー）：コーデック、キーボード、クリップボード、ファイル転送の改善と、公開版およびセルフホストの Server Pro での利用方法。'
 image: ~/assets/images/blog/web-client.jpg
 category: リリース
 slug: rustdesk-web-client-v2-preview-ja
 tags: [Web クライアント, リリース]
 ---
 
-RustDesk Web クライアント V2 プレビューをご紹介できることを誇りに思います。より強力なデコード性能、優れた国際キーボード対応、クリップボード対応(テキストだけでなく画像にも対応)、そしてファイル転送機能を備えています。ブラウザーが課す制約の範囲内で、Web 版の機能セットとユーザー体験をデスクトップクライアントと同期させるよう努めてきました。
+2024年10月、私たちは **RustDesk Web クライアント V2 プレビュー** を公開しました。より強力なデコード性能、海外のキーボード配列へのより良い対応、テキストだけでなく画像にも対応したクリップボード、そしてファイル転送を備えています。ブラウザーが課す制約の範囲内で、Web 版の機能とユーザー体験をデスクトップクライアントにそろえるよう取り組みました。
 
-RustDesk Web クライアント V2 プレビューには、https://rustdesk.com/web にアクセスすることでご利用いただけます。V2 経由で独自のサーバーにアクセスしたい場合は、[ドキュメント](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-the-web-client)に従って、ポート 21118/21119 で WebSocket Secure(WSS)のサポートを設定してください。
-```
+RustDesk Web クライアント V2 プレビューは、https://rustdesk.com/web にアクセスして利用できます。V2 から自社のサーバーに接続したい場合は、[ドキュメント](https://rustdesk.com/docs/ja/self-host/rustdesk-server-pro/faq/)に従って WebSocket Secure（WSS）への対応を設定し、ポート 21118/21119 の ID サーバーとリレーサーバーの WebSocket バックエンドを HTTPS/WSS 経由でプロキシしてください。リバースプロキシで TCP 443 を公開する場合、これらのバックエンドのポートは内部にとどめておきます。
+
+```nginx
     location /ws/id {
         proxy_pass http://localhost:21118;
         proxy_http_version 1.1;
@@ -36,13 +38,14 @@ RustDesk Web クライアント V2 プレビューには、https://rustdesk.com/
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 ```
-Web クライアントは**RustDesk Server Pro にも統合されている**ため、パブリック版に頼ることなく、`https://rustdesk.yourcompany.com/web` のように自社サーバーから配信できます。
 
-## 独自サーバーで Web クライアントを利用する 2 つの方法
+Web クライアントは **RustDesk Server Pro にも統合されている** ため、公開版に頼らず、`https://rustdesk.yourcompany.com/web` のように自社のサーバーから配信できます。
 
-- **パブリック Web クライアント(`rustdesk.com/web`)を自社サーバーに接続する方法。** RustDesk がホストする Web クライアントを使用し、独自の ID/リレーサーバーに接続できますが、設定はご自身で行う必要があります。ブラウザーが自社サーバーに到達するには、WebSocket Secure(WSS)と適切な CORS ヘッダーが必要です。詳しくは[Web クライアント向け WSS および CORS の設定](https://github.com/rustdesk/rustdesk/wiki/FAQ#wss-and-cors-setup-for-web-client)を参照してください。
-- **セルフホスト型 Web クライアント(Server Pro が `https://your-server/web` で配信)。** Web クライアントは[RustDesk Server Pro に統合されている](https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro)ため、パブリック版ではなく自社サーバーから実行されます。Web クライアントのセルフホストは**エントリーレベルのプランには含まれておらず**、**(ユーザー数 × 10)+ デバイス数 ≥ 400** を満たす十分な規模のプランが必要です(例:ユーザー 10 名/デバイス 300 台、ユーザー 30 名/デバイス 100 台、ユーザー 20 名/デバイス 200 台)。セルフホスト型 Web クライアントは[カスタマイズ](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-to-customize-self-hosted-web-client)することも可能です。
+## 自社のサーバーで Web クライアントを使う 2 つの方法
 
-どちらの方法を選んでも、Web クライアントは**コントローラー**です。ブラウザータブから他のデバイスを操作しますが、ブラウザータブが無人ホストとして機能することはできません。
+- **公開 Web クライアント（`rustdesk.com/web`）を自社のサーバーに接続する。** RustDesk がホストする Web クライアントを使い、自社の ID/リレーサーバーに接続できますが、設定はご自身で行います。ブラウザーが自社のサーバーに到達するには、WebSocket Secure（WSS）と適切な CORS ヘッダーが必要です。詳しくは[Web クライアント向けの WSS と CORS の設定](https://github.com/rustdesk/rustdesk/wiki/FAQ#wss-and-cors-setup-for-web-client)をご覧ください。
+- **セルフホストの Web クライアント（Server Pro が `https://your-server/web` で配信）。** Web クライアントは[RustDesk Server Pro に統合されている](https://github.com/rustdesk/rustdesk/wiki/FAQ#is-web-client-integrated-into-rusetdesk-server-pro)ため、公開版ではなく自社のサーバーから動作します。Web クライアントのセルフホストは**エントリーレベルのプランには含まれておらず**、**（ユーザー数 × 10）＋ デバイス数 ≥ 400** を満たす規模のプランが必要です（例：ユーザー 10 名／デバイス 300 台、ユーザー 30 名／デバイス 100 台、ユーザー 20 名／デバイス 200 台）。セルフホストの Web クライアントは[カスタマイズ](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-to-customize-self-hosted-web-client)することもできます。
 
-これらの改善をユーザーの皆様にお届けできることを嬉しく思います。RustDesk Web Client V2 の改良と機能強化を続けていく中で、皆様からのフィードバックをお待ちしております。
+どちらの方法でも、Web クライアントは**コントローラー**です。ブラウザーのタブからほかのデバイスを操作できますが、ブラウザーのタブを無人アクセスのホストにすることはできません。
+
+今すぐ [Web クライアント](https://rustdesk.com/web)をお試しください。現在の展開方法の詳細は [Server Pro のドキュメント](https://rustdesk.com/docs/ja/self-host/rustdesk-server-pro/)をご覧ください。クリップボードの権限やキーボードの扱いはブラウザーによって異なるため、チームで使うブラウザーでテストしてください。

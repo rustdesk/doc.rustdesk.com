@@ -1,10 +1,11 @@
 ---
 publishDate: 2026-07-06T12:36:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: 'de'
 translationKey: rustdesk-and-remote-access-scams
 draft: false
 title: 'RustDesk und Remote-Access-Betrug: Was wir tun'
-excerpt: 'Warum RustDesk Google Play verlassen hat, Warnhinweise und eine Login-Pflicht für den öffentlichen Server eingeführt hat und wie Nutzer gesteuerte Geräte mit Passwörtern, 2FA und IP-Allowlists absichern können.'
+excerpt: 'Warum RustDesk Google Play verlassen und Warnhinweise sowie eine Login-Pflicht am öffentlichen Server eingeführt hat – und wie Sie gesteuerte Geräte mit Passwort, 2FA sowie IP- und ID-Allowlists absichern.'
 image: ~/assets/images/blog/rustdesk-and-remote-access-scams-og.webp
 category: 'Sicherheit'
 tags: ['RustDesk', 'Sicherheit', 'Betrug']
@@ -18,10 +19,10 @@ faq:
   - question: 'Warum verlangt der öffentliche RustDesk-Server eine Anmeldung?'
     answer: 'RustDesk gibt an, dass die Anmeldung für Controller auf dem öffentlichen Server derzeit aufgrund anhaltenden Betrugs- und Botnet-Missbrauchs erforderlich ist. Die Anmeldung ist über unterstützte Drittanbieter-Identitätsdienste kostenlos. Der öffentliche Server ist für Demonstrations- und Testzwecke gedacht, nicht für den Produktivbetrieb oder sensible Aufgaben. Self-Hosting bleibt für Organisationen verfügbar, die ihre eigene Infrastruktur betreiben und eigene Richtlinien festlegen müssen.'
   - question: 'Wie sollte ich ein Gerät schützen, das RustDesk-Verbindungen akzeptiert?'
-    answer: 'Legen Sie auf dem gesteuerten Gerät ein starkes, einzigartiges permanentes Passwort fest, aktivieren Sie die TOTP-2FA für Verbindungen im Client, und nutzen Sie die IP-Allowlist, wenn Ihre Controller-Adressen oder CIDR-Bereiche vorhersehbar sind. Halten Sie Ausnahmen für vertrauenswürdige Geräte eng gefasst. Diese Schutzebenen verringern das Risiko durch Passwörter und den Verbindungsursprung, können aber niemanden schützen, der einem Betrüger absichtlich das Passwort, den aktuellen 2FA-Code oder eine manuelle Freigabe mitteilt.'
+    answer: 'Legen Sie auf dem gesteuerten Gerät ein starkes, einzigartiges permanentes Passwort fest, aktivieren Sie die TOTP-2FA für Verbindungen im Client, und nutzen Sie die IP-Allowlist, wenn Ihre Controller-Adressen oder CIDR-Bereiche vorhersehbar sind. Ab RustDesk 1.5.0 kann zusätzlich eine ID-Allowlist festlegen, welche RustDesk-IDs sich verbinden dürfen. Halten Sie Ausnahmen für vertrauenswürdige Geräte eng gefasst. Diese Schutzebenen verringern das Risiko durch Passwörter und den Verbindungsursprung, können aber niemanden schützen, der einem Betrüger absichtlich das Passwort, den aktuellen 2FA-Code oder eine manuelle Freigabe mitteilt.'
 metadata:
-  description: 'Wie RustDesk auf Remote-Access-Betrug reagiert: öffentliche Warnhinweise, Rückzug aus Google Play, Login-Pflicht für den öffentlichen Server, 2FA für gesteuerte Geräte und CIDR-IP-Allowlists.'
-  keywords: 'RustDesk Betrug, ist RustDesk Betrug, RustDesk Google Play, RustDesk Login erforderlich, RustDesk 2FA, RustDesk IP-Whitelist, Schutz vor Remote-Access-Betrug'
+  description: 'Wie RustDesk auf Remote-Access-Betrug reagiert: Warnhinweise, Rückzug aus Google Play, Login-Pflicht am öffentlichen Server, 2FA sowie IP- und ID-Allowlists.'
+  keywords: 'RustDesk Betrug, ist RustDesk Betrug, RustDesk Google Play, RustDesk Login erforderlich, RustDesk 2FA, RustDesk IP-Whitelist, RustDesk ID-Whitelist, Schutz vor Remote-Access-Betrug'
 ---
 
 RustDesk ist eine legitime Open-Source-Software für den Fernzugriff, aber auch legitime Software kann missbraucht werden. Ein Betrüger kann ein Opfer anrufen, ein dringendes Problem erfinden und die Person dazu überreden, ein Fernsteuerungs-Tool zu installieren und Zugriff zu gewähren. RustDesk ist von diesem Risiko nicht ausgenommen, und Verschlüsselung ändert nichts daran, wenn eine Zustimmung durch Täuschung erschlichen wurde.
@@ -43,9 +44,9 @@ Dies sind Maßnahmen zur Risikominderung, keine Behauptung, dass RustDesk betrug
 
 Die [RustDesk-Support-Seite](https://rustdesk.com/support) beginnt mit einer direkten Betrugswarnung. Sie fordert Personen, die gerade mit jemandem telefonieren, den sie nicht kennen und dem sie nicht vertrauen, und die aufgefordert wurden, RustDesk zu installieren, auf, das Gespräch abzubrechen. Auch das [RustDesk-GitHub-Repository](https://github.com/rustdesk/rustdesk) enthält einen Hinweis zum Missbrauch, der sich gegen unbefugten Zugriff, unbefugte Steuerung und Verletzung der Privatsphäre richtet.
 
-Die Warnung befindet sich auch im offiziellen Android-Client, der über [GitHub Releases](https://github.com/rustdesk/rustdesk/releases) verteilt wird. Tippt man auf einem noch nicht angemeldeten Android-Gerät, das gesteuert werden soll, auf **Dienst starten**, öffnet sich eine Warnung, bevor der Bildschirmaufnahme-Dienst startet. Die Warnung fordert einen Nutzer, der von einem unbekannten und nicht vertrauenswürdigen Anrufer dazu angewiesen wurde, auf, aufzulegen und abzubrechen. Offizielle Builds erzwingen einen Countdown, bevor der Nutzer fortfahren kann. Sowohl der [aktuelle Ablauf auf der gesteuerten Seite](https://github.com/rustdesk/rustdesk/blob/6c578292e8ebbbec708b76986ba8c4bc7c509747/flutter/lib/mobile/pages/server_page.dart#L244-L421) als auch der [englische Warntext](https://github.com/rustdesk/rustdesk/blob/6c578292e8ebbbec708b76986ba8c4bc7c509747/src/lang/en.rs#L192-L194) sind im Open-Source-Repository einsehbar.
+Die Warnung befindet sich auch im offiziellen Android-Client, der über [GitHub Releases](https://github.com/rustdesk/rustdesk/releases) verteilt wird. Tippt man auf einem nicht angemeldeten Android-Gerät, das gesteuert werden soll, auf **Vermittlungsdienst starten** (Start service), öffnet sich eine Warnung, bevor der Bildschirmaufnahme-Dienst startet. Sie fordert Nutzer, die von einem unbekannten, nicht vertrauenswürdigen Anrufer angeleitet wurden, auf, abzubrechen und aufzulegen. Offizielle Builds erzwingen einen Countdown, bevor der Nutzer fortfahren kann. Sowohl der [aktuelle Ablauf auf der gesteuerten Seite](https://github.com/rustdesk/rustdesk/blob/6c578292e8ebbbec708b76986ba8c4bc7c509747/flutter/lib/mobile/pages/server_page.dart#L244-L421) als auch der [englische Warntext](https://github.com/rustdesk/rustdesk/blob/6c578292e8ebbbec708b76986ba8c4bc7c509747/src/lang/en.rs#L192-L194) sind im Open-Source-Repository einsehbar.
 
-Diese Platzierung ist wichtig. Eine allgemeine Sicherheitsseite erreicht vielleicht jemanden, der sich über ein Produkt informiert; eine Warnung bei **Dienst starten** erreicht die Person genau in dem Moment, in dem eine eingehende Android-Sitzung möglich zu werden droht. Sie kann diese Person aber trotzdem nicht dazu zwingen, einem überzeugenden Anrufer zu misstrauen.
+Diese Platzierung ist wichtig. Eine allgemeine Sicherheitsseite erreicht vielleicht jemanden, der sich über ein Produkt informiert; eine Warnung bei **Vermittlungsdienst starten** erreicht die Person genau in dem Moment, in dem eine eingehende Android-Sitzung möglich wird. Sie kann diese Person aber trotzdem nicht dazu zwingen, einem überzeugenden Anrufer zu misstrauen.
 
 ## Warum RustDesk nicht bei Google Play ist
 
@@ -65,7 +66,7 @@ Das führte auch zu Störungen. In einer [Reddit-Diskussion über den neuen Anme
 
 ## Wie sichern Sie ein gesteuertes RustDesk-Gerät ab?
 
-Einschränkungen auf Plattformebene sind nur eine Schutzebene. Der Besitzer oder Administrator eines gesteuerten Geräts sollte zusätzlich einschränken, wer sich verbinden kann, und begrenzen, was gestohlene Zugangsdaten ermöglichen.
+Einschränkungen auf Plattformebene sind nur eine Schutzebene. Wer ein gesteuertes Gerät besitzt oder verwaltet, sollte zusätzlich einschränken, wer sich verbinden kann und was gestohlene Zugangsdaten ermöglichen.
 
 ### 1. Ein starkes, einzigartiges permanentes Passwort festlegen
 
@@ -85,12 +86,12 @@ RustDesk kann optional einem Controller-Gerät vertrauen und spätere 2FA-Abfrag
 
 ### 3. Eingehende Verbindungen mit einer IP-Allowlist einschränken
 
-In der RustDesk-Oberfläche heißt diese Funktion **IP Whitelisting**. Erklärt bedeutet das: Es handelt sich um eine IP-Allowlist. Das gesteuerte Gerät weist eine Verbindung, deren Quelladresse außerhalb der konfigurierten Liste liegt, bereits vor der Passwort- und 2FA-Autorisierung ab.
+In der deutschen RustDesk-Oberfläche heißt diese Funktion **IP-Whitelist**. Der Sache nach ist es eine IP-Allowlist: Das gesteuerte Gerät weist eine Verbindung, deren Quelladresse außerhalb der konfigurierten Liste liegt, schon vor der Passwort- und 2FA-Prüfung ab.
 
 Konfigurieren Sie sie hier:
 
-- **Gesteuertes Desktop-Gerät:** **Einstellungen → Sicherheit → Sicherheit → IP Whitelisting verwenden**
-- **Gesteuertes Mobilgerät:** **Einstellungen → Bildschirm freigeben → IP Whitelisting verwenden**
+- **Gesteuertes Desktop-Gerät:** **Einstellungen → Sicherheit → Sicherheit → IP-Whitelist verwenden**
+- **Gesteuertes Mobilgerät:** **Einstellungen → Bildschirm freigeben → IP-Whitelist verwenden**
 
 Die Einstellung akzeptiert einzelne IPv4- oder IPv6-Adressen sowie CIDR-Bereiche. CIDR kombiniert eine Netzwerkadresse mit einer Präfixlänge. Das Präfix gibt an, wie viele führende Bits fest vorgegeben sind: Ein größeres Präfix bedeutet einen kleineren zulässigen Bereich.
 
@@ -99,17 +100,38 @@ Die Einstellung akzeptiert einzelne IPv4- oder IPv6-Adressen sowie CIDR-Bereiche
 - `2001:db8::10/128`: eine einzelne IPv6-Adresse.
 - `2001:db8:1234::/64`: ein IPv6-Subnetz.
 
-Dies sind ausschließlich Beispielbereiche zu Dokumentationszwecken; übernehmen Sie sie nicht unverändert. Tragen Sie Ihre tatsächlichen Controller-Adressen oder -Netzwerke ein. Mehrere Einträge können durch Kommas, Semikolons, Leerzeichen oder Zeilenumbrüche getrennt werden. RustDesk dokumentiert diese Einstellung in der [Referenz zur erweiterten Client-Konfiguration](https://rustdesk.com/docs/en/self-host/client-configuration/advanced-settings/#whitelist), und die [Durchsetzung auf der Seite des gesteuerten Geräts ist im Quellcode einsehbar](https://github.com/rustdesk/rustdesk/blob/master/src/server/connection.rs#L1347-L1374).
+Dies sind ausschließlich Beispielbereiche zu Dokumentationszwecken; übernehmen Sie sie nicht unverändert. Tragen Sie Ihre tatsächlichen Controller-Adressen oder -Netzwerke ein. Mehrere Einträge können durch Kommas, Semikolons, Leerzeichen oder Zeilenumbrüche getrennt werden. RustDesk dokumentiert diese Einstellung in der [Referenz zur erweiterten Client-Konfiguration](https://rustdesk.com/docs/de/self-host/client-configuration/advanced-settings/#whitelist), und die [Durchsetzung auf der Seite des gesteuerten Geräts ist im Quellcode einsehbar](https://github.com/rustdesk/rustdesk/blob/1.5.0/src/server/connection.rs#L1410-L1437).
 
-Verwenden Sie die kleinstmöglichen praktikablen Bereiche. Feste Ausgangsadressen aus dem Büro und bekannte VPN-Bereiche sind gute Kandidaten. Dynamische private Adressen und Controller mit wechselndem Standort sind es nicht. Prüfen Sie, welche Quelladresse RustDesk in Ihrer NAT-, VPN-, Direkt- oder Relay-Topologie sieht, und testen Sie die neue Regel aus einer weiteren Sitzung heraus, bevor Sie die aktuell laufende Sitzung schließen. Eine falsche Adresse oder ein falsches CIDR kann legitimes Support-Personal aussperren.
+Verwenden Sie die kleinstmöglichen praktikablen Bereiche. Feste Ausgangsadressen aus dem Büro und bekannte VPN-Bereiche sind gute Kandidaten. Dynamische Adressen von Privatanschlüssen und Controller mit wechselndem Standort sind es nicht. Prüfen Sie, welche Quelladresse RustDesk in Ihrer NAT-, VPN-, Direkt- oder Relay-Topologie sieht, und testen Sie die neue Regel aus einer weiteren Sitzung heraus, bevor Sie die aktuell laufende Sitzung schließen. Eine falsche Adresse oder ein falsches CIDR kann legitimes Support-Personal aussperren.
 
 Eine Allowlist schränkt ein, von wo aus eine Verbindung ausgehen darf. Sie ersetzt weder Passwort noch 2FA und kann einen böswilligen Controller, der bereits aus einem zugelassenen Netzwerk heraus agiert, nicht aufhalten.
 
+### 4. Einschränken, welche RustDesk-IDs sich verbinden können
+
+Ab RustDesk 1.5.0 kann ein gesteuertes Gerät außerdem nur Verbindungen von aufgeführten RustDesk-IDs annehmen. In der Oberfläche heißt diese Funktion **ID-Whitelist**. Sie eignet sich für Support-Teams, deren Netzwerkadressen sich ändern, deren steuernde Geräte aber bekannt sind – also dort, wo eine IP-Allowlist nicht praktikabel ist.
+
+Konfigurieren Sie sie hier:
+
+- **Gesteuertes Desktop-Gerät:** **Einstellungen → Sicherheit → Sicherheit → ID-Whitelist verwenden**
+- **Gesteuertes Mobilgerät:** **Einstellungen → Bildschirm freigeben → ID-Whitelist verwenden**
+
+Tragen Sie die RustDesk-IDs der Geräte ein, die dieses Gerät steuern dürfen. Wie bei der IP-Liste können Einträge durch Kommas, Semikolons, Leerzeichen oder Zeilenumbrüche getrennt werden. Beim Abgleich wird Groß- und Kleinschreibung ignoriert, und zwei Platzhalter werden unterstützt:
+
+- `123456789`: eine einzelne ID.
+- `12345678?`: `?` steht für genau ein Zeichen; zulässig ist damit jede neun Zeichen lange ID, die mit `12345678` beginnt.
+- `support-*`: `*` steht für beliebig viele Zeichen. Das hilft, wenn Ihre Controller benutzerdefinierte IDs mit einem gemeinsamen Präfix verwenden.
+
+Auch dies sind Beispielwerte. Die Einstellung erscheint als `id-whitelist` in der [Referenz zur erweiterten Client-Konfiguration](https://rustdesk.com/docs/de/self-host/client-configuration/advanced-settings/#id-whitelist), sodass Administratoren sie in einem benutzerdefinierten Client voreinstellen können, und [ihre Durchsetzung ist im Quellcode einsehbar](https://github.com/rustdesk/rustdesk/blob/1.5.0/src/server/connection.rs#L1439-L1467).
+
+Die Prüfung erfolgt, wenn der Controller seine Anmeldeanfrage sendet, noch bevor Passwort oder 2FA-Code geprüft werden. Sie greift auch, wenn die beiden Seiten einer Sitzung die Rollen tauschen – ein Vorgang, der sonst kein Passwort erfordert. Ist zusätzlich eine IP-Allowlist gesetzt, muss eine Verbindung beide Prüfungen bestehen. Ein abgewiesener Controller sieht die Meldung „Ihre ID wird von der Gegenstelle blockiert“, und Versuche werden gedrosselt, sodass sich die Liste nicht schnell nach zulässigen IDs absuchen lässt.
+
+Beachten Sie die Grenze dieser Funktion. Die ID wird vom verbindenden Client gemeldet. Sie ist kein Identitätsnachweis, und ein modifizierter Client kann eine zulässige ID vorgeben; RustDesk zeigt diesen Hinweis neben der Einstellung an. Was die Liste leistet: Sie weist gewöhnliche Clients mit nicht aufgeführten IDs ab, bevor diese die Passwortabfrage erreichen. Auf einem Gerät, auf dem ein Administrator die Liste voreingestellt hat, kann sich ein Anrufer, der den Nutzer dazu überredet, ID und Passwort vorzulesen, mit dem Standard-Client trotzdem nicht von einer nicht aufgeführten ID aus verbinden. Behalten Sie ein starkes Passwort und 2FA bei, und testen Sie die Liste aus einer weiteren Sitzung heraus, bevor Sie eine funktionierende Sitzung schließen: Ein Tippfehler kann legitimes Support-Personal aussperren.
+
 ## Was diese Maßnahmen nicht leisten können
 
-Warnhinweise, der Rückzug aus dem Store, Anmeldepflichten, starke Passwörter, 2FA und IP-Allowlists nehmen einem Angreifer jeweils einen Teil seiner Möglichkeiten. Keine dieser Maßnahmen beseitigt das zentrale Risiko des Social Engineering: Eine Person kann weiterhin dazu überredet werden, Zugriff zu genehmigen oder jeden einzelnen Faktor preiszugeben.
+Warnhinweise, der Rückzug aus dem Store, Anmeldepflichten, starke Passwörter, 2FA sowie IP- und ID-Allowlists nehmen einem Angreifer jeweils einen Teil seiner Möglichkeiten. Keine dieser Maßnahmen beseitigt das zentrale Risiko des Social Engineering: Eine Person kann weiterhin dazu überredet werden, Zugriff zu genehmigen oder jeden einzelnen Faktor preiszugeben.
 
-Auch Self-Hosting macht Missbrauch nicht unmöglich. Es gibt einer Organisation die Kontrolle über ihren eigenen RustDesk-Server und ihre Richtlinien, aber auch ein Betrüger kann private Infrastruktur betreiben oder einen modifizierten Client verbreiten. Die Einschränkungen des öffentlichen RustDesk-Servers sollten nicht mit einem Schutz verwechselt werden, der sich automatisch auf jede selbst gehostete Bereitstellung erstreckt.
+Auch Self-Hosting macht Missbrauch nicht unmöglich. Es gibt einer Organisation die Kontrolle über ihren eigenen RustDesk-Server und ihre Richtlinien, aber auch ein Betrüger kann private Infrastruktur betreiben oder einen modifizierten Client verbreiten. Die Einschränkungen des öffentlichen RustDesk-Servers gelten nur für den öffentlichen Server; eine selbst gehostete Bereitstellung läuft nach den Richtlinien, die ihr Betreiber festlegt.
 
 Wenn ein unbekannter Anrufer Sie auffordert, RustDesk zu installieren, den Dienst zu starten, ein Passwort weiterzugeben, einen 2FA-Code preiszugeben oder eine Online-Banking-Seite zu öffnen, brechen Sie ab. Unser herstellerneutraler Leitfaden zum [Erkennen, Verhindern und Beheben von Remote-Desktop-Betrug](/de/blog/remote-desktop-betrug-so-erkennen-und-vermeiden-sie-ihn) erklärt die Warnzeichen und was zu tun ist, wenn bereits Zugriff gewährt wurde.
 

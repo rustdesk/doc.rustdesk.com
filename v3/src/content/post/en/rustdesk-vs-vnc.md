@@ -1,5 +1,6 @@
 ---
 publishDate: 2026-07-09T18:44:00Z
+updateDate: 2026-10-14T00:00:00Z
 lang: en
 translationKey: rustdesk-vs-vnc
 draft: false
@@ -15,13 +16,13 @@ tags:
 author: RustDesk Team
 faq:
   - question: 'Is RustDesk based on VNC?'
-    answer: 'No. VNC uses the RFB (Remote Framebuffer) protocol to send pixel updates. RustDesk is a separate, open-source (AGPL) application with its own rendezvous/relay architecture, modern video codecs, and end-to-end encryption. It is not a VNC client or server.'
+    answer: 'No. VNC uses the RFB (Remote Framebuffer) protocol to send pixel updates. RustDesk is a separate application with an open-source (AGPL) client, its own rendezvous/relay architecture, VP8/VP9/AV1 video codecs, and end-to-end encrypted ID-based sessions. RustDesk is neither a VNC client nor a VNC server.'
   - question: 'Does VNC work over the internet without port-forwarding?'
-    answer: "Not by itself. The base VNC/RFB protocol has no NAT traversal, so internet use typically requires port-forwarding TCP 5900, a VPN, or an SSH tunnel — unless you use a vendor's cloud brokering service. RustDesk brokers the connection through an ID server and relay, so it crosses NAT without any of that."
+    answer: "No, not by itself. The base VNC/RFB protocol has no NAT traversal, so internet use typically requires port-forwarding TCP 5900, a VPN, or an SSH tunnel — unless you use a vendor's cloud brokering service. RustDesk brokers the connection through an ID server and relay, so it crosses NAT without any of that."
   - question: 'Is VNC encrypted?'
-    answer: 'It varies by implementation. RealVNC offers AES encryption in its commercial product, while TightVNC transmits picture data without encryption and is meant to be tunneled through SSH. RustDesk applies end-to-end encryption (NaCl) by default across all connections.'
+    answer: 'Only in some implementations. TigerVNC supports TLS/X509 security, RealVNC offers AES encryption, and TightVNC recommends SSH tunneling on untrusted networks. RustDesk encrypts ID-brokered sessions end to end when clients are configured with the correct server public key. RustDesk Direct IP Access is a separate, unencrypted mode best kept behind a VPN.'
   - question: 'Is RustDesk or VNC better for a home lab on a LAN?'
-    answer: 'On a trusted LAN, VNC is dead-simple, standardized, and widely available on almost every OS and even Raspberry Pi. RustDesk adds NAT traversal, modern codecs, and default encryption that matter more once you leave the LAN or need mixed-OS remote access.'
+    answer: 'On a trusted LAN, VNC is often the simpler choice: it is standardized, quick to deploy and available on almost every OS, including Raspberry Pi. RustDesk is the better fit once you leave the LAN or need mixed-OS remote access, because it adds NAT traversal, modern video codecs and end-to-end encrypted ID-based sessions.'
 metadata:
   description: "RustDesk vs VNC compared point by point: NAT traversal, modern codecs, built-in encryption, self-hosting, and where VNC's simplicity and ubiquity still win."
   keywords: 'RustDesk vs VNC, RustDesk vs RealVNC, VNC NAT traversal, VNC encryption comparison'
@@ -33,39 +34,39 @@ This comparison sticks to durable, verifiable facts rather than benchmarks that 
 
 ## What VNC actually is
 
-"VNC" is not one program but a family of implementations — RealVNC, TightVNC, TigerVNC, UltraVNC and others — that speak the **RFB (Remote Framebuffer) protocol** ([Wikipedia](<https://en.wikipedia.org/wiki/RFB_(protocol)>)). RFB is fundamentally **pixel-based**: the server ships framebuffer updates to the viewer. That design is beautifully simple and portable, and it is why VNC exists on everything from enterprise servers to a Raspberry Pi.
+"VNC" is a family of implementations — RealVNC, TightVNC, TigerVNC, UltraVNC and others — that speak the **RFB (Remote Framebuffer) protocol**. RFB sends framebuffer updates using negotiated encodings, which may compress images or use video. For example, [TigerVNC supports Tight, JPEG, ZRLE, Hextile, H.264 and Raw encodings](https://tigervnc.org/doc/vncviewer.html). Performance therefore depends on the implementation and encoding, not on RFB itself.
 
 The licensing is mixed. TigerVNC is distributed under the GNU GPL and TightVNC is a community-driven open fork, while RealVNC's viewer is a proprietary, commercially maintained product. So "VNC is open source" is true of _some_ implementations, not all of them.
 
 ## What RustDesk is
 
-RustDesk is a **single open-source application (AGPL)** with its own architecture. Clients connect outward to an ID/rendezvous server, which brokers a peer-to-peer or relayed session. Per the [RustDesk documentation](https://rustdesk.com/docs/en/), traffic is end-to-end encrypted (built on NaCl), and video uses modern codecs — VP8, VP9, and AV1 in software, with H.264/H.265 hardware paths — rather than raw pixel rectangles. You can run every client against the public infrastructure, your own self-hosted server, or a rendezvous/relay you write yourself.
+RustDesk's client and RustDesk Server OSS (the free community server) are **AGPL-licensed**; Server Pro is commercial, proprietary self-hosted server software that adds centralized management. RustDesk uses an ID/rendezvous and relay architecture. Clients connect outward to the ID server, which coordinates direct peer-to-peer or relayed sessions. The [client supports VP8, VP9 and AV1 software codecs and H.264/H.265 hardware codecs](https://rustdesk.com/docs/en/). You can use your own server for coordination and relay without deploying a separate VPN or SSH tunnel per endpoint.
 
 ## The internet problem: NAT traversal
 
-This is the sharpest divide. The base VNC protocol has **no NAT traversal**. As the [VNC documentation notes](https://en.wikipedia.org/wiki/Virtual_Network_Computing), to reach a machine over the internet "a user must open this port in the local firewall and configure port forwarding to forward TCP Port 5900 ... if behind a network address translation (NAT) router." The common workaround is to "tunnel VNC through Secure Shell (SSH)," which also adds the encryption that plain VNC lacks. Some commercial VNC products (like RealVNC's cloud service) add their own brokering to avoid this, but that is a vendor feature layered on top, not part of the protocol.
+The base RFB protocol does not provide NAT traversal. A direct VNC deployment generally needs an accessible network route, such as a VPN, SSH tunnel or forwarded port. [TightVNC documents its port-forwarding and SSH options](https://www.tightvnc.com/faq.php). Some VNC products add cloud brokering; that is a product feature rather than a requirement of RFB.
 
-RustDesk was built the other way around. Because endpoint clients connect **outbound** to a rendezvous server and fall back to a relay when a direct path fails, RustDesk **crosses NAT and firewalls without per-endpoint port-forwarding, a VPN, or an SSH tunnel**. The endpoints do not need inbound listening ports, but a self-hosted ID/rendezvous and relay server must accept inbound traffic on its documented service ports. That is the same NAT-traversal story that makes it a practical [Chrome Remote Desktop or free-tool alternative](/blog/best-free-remote-desktop-software) for remote and mixed-OS access.
+RustDesk was built the other way around. Because endpoint clients connect **outbound** to a rendezvous server and fall back to a relay when a direct path fails, RustDesk **crosses NAT and firewalls without per-endpoint port-forwarding, a VPN, or an SSH tunnel**. The endpoints do not need inbound listening ports, but a self-hosted ID/rendezvous and relay server must accept inbound traffic on its documented service ports. That is the same NAT-traversal story that makes it a practical [free remote desktop option for business](/blog/best-free-remote-desktop-software) for remote and mixed-OS access.
 
 ## Encryption: default vs it-depends
 
-With VNC, encryption is an implementation detail. RealVNC offers AES encryption in its commercial package; by contrast, per the [VNC documentation](https://en.wikipedia.org/wiki/Virtual_Network_Computing), "TightVNC is not secure as picture data is transmitted without encryption" and "should be tunneled through an SSH connection." So the security of a VNC session depends entirely on which server you chose and how you configured it.
+VNC security varies by implementation. [TigerVNC supports TLS and X509 security types](https://tigervnc.org/doc/vncviewer.html), while [TightVNC warns that session traffic is unencrypted and recommends SSH tunneling on untrusted networks](https://www.tightvnc.com/faq.php). The actual server, viewer and configured security type decide whether a VNC session is encrypted.
 
-RustDesk applies **end-to-end encryption by default** on every connection, self-hosted or not, with no SSH tunnel to remember to set up.
+RustDesk supports **end-to-end encrypted ID-brokered sessions**, whether the negotiated path is direct or relayed. Self-hosted clients need the [correct server public key](https://rustdesk.com/docs/en/self-host/client-configuration/). **Direct IP Access** — entering an IP address instead of using an ID — is a different, [unencrypted mode](https://github.com/rustdesk/rustdesk/wiki/FAQ#i-only-use-rustdesk-for-a-few-devices-on-my-local-network-with-no-internet-connectivity-can-i-still-use-rustdesk-with-direct-ip-access); protect that path with a VPN.
 
 ## RustDesk vs VNC at a glance
 
-|                       | RustDesk                                                             | VNC (RFB)                                                                                                        |
-| --------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| What it is            | One AGPL app + rendezvous/relay                                      | RFB protocol, many implementations                                                                               |
-| Source code           | Open source (AGPL)                                                   | Mixed: GPL/open (TigerVNC, TightVNC), proprietary (RealVNC)                                                      |
-| Cross-platform        | Windows, macOS, Linux, Android; iOS (controller only)                | Very broad, including Raspberry Pi                                                                               |
-| NAT traversal         | Built in (rendezvous + relay)                                        | None in base protocol — [needs port-forwarding/VPN/SSH](https://en.wikipedia.org/wiki/Virtual_Network_Computing) |
-| Encryption            | End-to-end (NaCl) by default ([docs](https://rustdesk.com/docs/en/)) | Varies: AES (RealVNC) to [none (TightVNC)](https://en.wikipedia.org/wiki/Virtual_Network_Computing)              |
-| Video transport       | Modern codecs (VP8/VP9/AV1, H.264/H.265)                             | Pixel-based RFB encodings                                                                                        |
-| Self-hosting          | Yes — your own ID/relay server                                       | Yes for open implementations (no built-in broker)                                                                |
-| Setup on LAN          | Simple                                                               | Very simple                                                                                                      |
-| Standardized protocol | RustDesk-specific                                                    | Open, long-standing RFB standard                                                                                 |
+|                       | RustDesk                                                                         | VNC (RFB)                                                                                    |
+| --------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| What it is            | One app + rendezvous/relay servers                                               | RFB protocol, many implementations                                                           |
+| Source code           | Client and Server OSS: AGPL; Server Pro: proprietary                             | Mixed: GPL/open (TigerVNC, TightVNC), proprietary (RealVNC)                                  |
+| Cross-platform        | Windows, macOS, Linux, Android; iOS (controller only)                            | Very broad, including Raspberry Pi                                                           |
+| NAT traversal         | Built-in rendezvous and relay                                                    | Not part of base RFB; product-specific brokers or VPN/SSH routes may provide access          |
+| Encryption            | Encrypted ID-brokered sessions with correct key; Direct IP Access is unencrypted | Implementation-dependent; TLS/X509 in TigerVNC, AES in RealVNC, SSH recommended for TightVNC |
+| Video transport       | VP8/VP9/AV1, optional hardware H.264/H.265                                       | RFB encodings vary by implementation; compressed-image and video paths may be available      |
+| Self-hosting          | Yes — your own ID/relay server                                                   | Yes for open implementations (no built-in broker)                                            |
+| Setup on LAN          | Simple                                                                           | Very simple                                                                                  |
+| Standardized protocol | RustDesk-specific                                                                | Open, long-standing RFB standard                                                             |
 
 Confirm current RustDesk plan details at [rustdesk.com/pricing](https://rustdesk.com/pricing).
 
@@ -74,11 +75,11 @@ Confirm current RustDesk plan details at [rustdesk.com/pricing](https://rustdesk
 RustDesk's design advantages appear the moment you leave the LAN or need consistency across teams and platforms:
 
 - **Internet reach without plumbing.** NAT traversal and relay fallback mean no port-forwarding, VPN, or SSH tunnel per endpoint.
-- **Encryption you don't have to configure.** End-to-end by default, not an implementation you have to vet.
-- **Modern codecs.** VP8/VP9/AV1 and hardware H.264/H.265 tend to hold up better over constrained or high-latency links than raw pixel encodings.
-- **One auditable app and one self-hosted server.** Open-source (AGPL) software plus a self-hosted ID/relay keeps both the code and your session data on infrastructure you control.
+- **Encryption on the ID path.** ID-based sessions are end-to-end encrypted, direct or relayed, once clients have your server's public key.
+- **A choice of codecs.** VP8, VP9 and AV1 in software, plus H.264/H.265 hardware codecs where the device supports them.
+- **An open client and deployable server.** You can inspect and build the client and Server OSS yourself; your own ID and relay services coordinate connections and carry relayed traffic.
 
-The trade: self-hosting RustDesk means **someone runs the server** — provisioning, TLS, ports, and patching over time. A LAN-only VNC setup skips that entirely. That is the real trade.
+The trade: self-hosting RustDesk means **someone runs the server** — provisioning, TLS, ports, and patching over time. A LAN-only VNC setup skips that entirely.
 
 ## So which should you use?
 
@@ -86,4 +87,4 @@ For a trusted LAN, an air-gapped segment, or a Raspberry Pi, VNC's simplicity an
 
 ## Try it
 
-If this comparison is what finally retires your SSH tunnel, start with the free community server — open source, no expiry, NAT traversal included. Email [sales@rustdesk.com](mailto:sales@rustdesk.com) when you want Pro evaluation terms; current plan rates are at [rustdesk.com/pricing](https://rustdesk.com/pricing).
+If this comparison is what finally retires your SSH tunnel, start with Server OSS — free, with no license fee or expiry, NAT traversal included. Email [sales@rustdesk.com](mailto:sales@rustdesk.com) when you want Pro evaluation terms; current plan rates are at [rustdesk.com/pricing](https://rustdesk.com/pricing).
