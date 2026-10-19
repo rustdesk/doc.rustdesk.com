@@ -208,12 +208,15 @@ languages:
   #  params:
   #    landingPageName: "🏠 Startpagina"
 
-  # tr:
-  #  title: "RustDesk için Belgeler"
-  #  weight: 2
-  #  languageName: "Türkçe"
-  #  params:
-  #    landingPageName: "🏠 Ana sayfa"
+  tr:
+    title: "RustDesk Dokümantasyonu"
+    weight: 2
+    languageName: "Türkçe"
+    params:
+      landingPageName: "🏠 Ana sayfa"
+      disable_cookie: true
+      description: "RustDesk için eksiksiz dokümantasyon: Açık kaynaklı uzak masaüstü yazılımı. Kendi sunucunuzu kurmayı, istemcileri yapılandırmayı ve dağıtmayı öğrenin."
+      keywords: ["rustdesk", "uzak masaüstü", "açık kaynak", "kendi sunucun", "dokümantasyon", "uzaktan erişim", "VNC alternatifi", "teamviewer alternatifi"]
 
   ja:
     title: "RustDeskのドキュメント"
