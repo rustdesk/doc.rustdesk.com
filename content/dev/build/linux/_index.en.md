@@ -49,20 +49,21 @@ git checkout 2023.10.19
 cd ..
 vcpkg/bootstrap-vcpkg.sh
 export VCPKG_ROOT=$PWD/vcpkg
-vcpkg/vcpkg install --x-install-root="$VCPKG_ROOT/installed"
+# Run install from the RustDesk repo root (manifest mode), shown below in Build.
 ```
 
 ### Fix libvpx (for Fedora)
 
 ```sh
-cd vcpkg/buildtrees/libvpx/src
-cd *
+# Run this after `"$VCPKG_ROOT/vcpkg" install` in the Build section.
+cd "$VCPKG_ROOT/buildtrees/libvpx/src"
+cd */
 ./configure
 sed -i 's/CFLAGS+=-I/CFLAGS+=-fPIC -I/g' Makefile
 sed -i 's/CXXFLAGS+=-I/CXXFLAGS+=-fPIC -I/g' Makefile
 make
-cp libvpx.a $VCPKG_ROOT/installed/x64-linux/lib/
-cd
+cp libvpx.a "$VCPKG_ROOT/installed/x64-linux/lib/"
+cd rustdesk
 ```
 
 ### Build
@@ -72,6 +73,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
 git clone --recurse-submodules https://github.com/rustdesk/rustdesk
 cd rustdesk
+# vcpkg uses this repository's manifest (vcpkg.json), so run from here.
+"$VCPKG_ROOT/vcpkg" install --x-install-root="$VCPKG_ROOT/installed"
+# If needed on Fedora, apply the libvpx fix now (see section above).
 mkdir -p target/debug
 wget https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so
 mv libsciter-gtk.so target/debug
