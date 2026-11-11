@@ -1660,3 +1660,13 @@ Verfügbar seit RustDesk 1.4.7
 | Werte | Standard | Beispiel |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-command-line-settings-when-settings-disabled=Y` |
+
+### quit-button-text
+
+Passt den Text der Schaltfläche „Beenden“ im Hauptfenster von Desktop-Clients an, die nur eingehende Verbindungen zulassen.
+
+Wenn die Option nicht gesetzt oder leer ist oder nur Leerraum enthält, wird die vorhandene lokalisierte Beschriftung der Schaltfläche „Beenden“ verwendet. Benutzerdefinierter Text wird ohne Übersetzung angezeigt.
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Text | Leer (lokalisierte Beschriftung „Beenden“) | `quit-button-text=Schließen` |

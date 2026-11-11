@@ -1682,3 +1682,13 @@ Available since RustDesk 1.4.7
 | Values | Default | Example |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-command-line-settings-when-settings-disabled=Y` |
+
+### quit-button-text
+
+Customize the Quit button text on the main window of incoming-only desktop clients.
+
+If the option is unset, empty, or contains only whitespace, the existing localized Quit label is used. Custom text is displayed without translation.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Text | Empty (localized Quit label) | `quit-button-text=Close` |

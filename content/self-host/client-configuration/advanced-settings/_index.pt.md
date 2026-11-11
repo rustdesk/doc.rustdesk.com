@@ -1662,3 +1662,13 @@ Disponível desde RustDesk 1.4.7
 | Valores | Padrão | Exemplo |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-command-line-settings-when-settings-disabled=Y` |
+
+### quit-button-text
+
+Personaliza o texto do botão Sair na janela principal dos clientes de desktop que permitem apenas conexões de entrada.
+
+Se a opção não estiver definida, estiver vazia ou contiver apenas espaços em branco, será usado o rótulo localizado existente do botão Sair. O texto personalizado é exibido sem tradução.
+
+| Valores | Padrão | Exemplo |
+| :------: | :------: | :------: |
+| Texto | Vazio (rótulo localizado do botão Sair) | `quit-button-text=Fechar` |

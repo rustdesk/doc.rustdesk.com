@@ -1660,3 +1660,13 @@ Disponible depuis RustDesk 1.4.7
 | Valeurs | Par défaut | Exemple |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-command-line-settings-when-settings-disabled=Y` |
+
+### quit-button-text
+
+Personnalise le texte du bouton Quitter dans la fenêtre principale des clients de bureau qui n'autorisent que les connexions entrantes.
+
+Si l'option n'est pas définie, est vide ou ne contient que des espaces blancs, le libellé localisé existant du bouton Quitter est utilisé. Le texte personnalisé est affiché sans traduction.
+
+| Valeurs | Par défaut | Exemple |
+| :------: | :------: | :------: |
+| Texte | Vide (libellé localisé du bouton Quitter) | `quit-button-text=Fermer` |

@@ -1660,3 +1660,13 @@ Disponible desde RustDesk 1.4.7
 | Valores | Predeterminado | Ejemplo |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-command-line-settings-when-settings-disabled=Y` |
+
+### quit-button-text
+
+Personaliza el texto del botón Salir en la ventana principal de los clientes de escritorio que solo permiten conexiones entrantes.
+
+Si la opción no está configurada, está vacía o contiene solo espacios en blanco, se utiliza la etiqueta localizada existente del botón Salir. El texto personalizado se muestra sin traducción.
+
+| Valores | Predeterminado | Ejemplo |
+| :------: | :------: | :------: |
+| Texto | Vacío (etiqueta localizada del botón Salir) | `quit-button-text=Cerrar` |

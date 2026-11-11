@@ -1663,3 +1663,13 @@ https://github.com/rustdesk/rustdesk/pull/12911
 | 值 | 默认值 | 示例 |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-command-line-settings-when-settings-disabled=Y` |
+
+### quit-button-text
+
+自定义仅允许传入连接的桌面客户端主窗口中的“退出”按钮文字。
+
+如果未设置此选项、值为空或仅包含空白字符，则使用原有的本地化“退出”文字。自定义文字不经过翻译，直接显示。
+
+| 值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| 文本 | 空（本地化的“退出”文字） | `quit-button-text=关闭` |

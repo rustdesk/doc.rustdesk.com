@@ -1673,3 +1673,13 @@ Disponibil din RustDesk 1.4.7
 | Valori | Implicit | Exemplu |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-command-line-settings-when-settings-disabled=Y` |
+
+### quit-button-text
+
+Personalizează textul butonului Ieși din fereastra principală a clienților desktop care permit doar conexiuni de intrare.
+
+Dacă opțiunea nu este setată, este goală sau conține doar spații albe, se utilizează eticheta localizată existentă a butonului Ieși. Textul personalizat este afișat fără traducere.
+
+| Valori | Implicit | Exemplu |
+| :------: | :------: | :------: |
+| Text | Gol (eticheta localizată a butonului Ieși) | `quit-button-text=Închide` |
