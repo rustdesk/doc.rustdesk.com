@@ -1672,3 +1672,13 @@ Dostępne od RustDesk 1.4.7
 | Wartości | Domyślnie | Przykład |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-command-line-settings-when-settings-disabled=Y` |
+
+### quit-button-text
+
+Dostosowuje tekst przycisku zamykania aplikacji w głównym oknie klientów stacjonarnych, które zezwalają tylko na połączenia przychodzące.
+
+Jeśli opcja nie jest ustawiona, jest pusta lub zawiera wyłącznie białe znaki, używana jest dotychczasowa zlokalizowana etykieta przycisku. Niestandardowy tekst jest wyświetlany bez tłumaczenia.
+
+| Wartości | Domyślnie | Przykład |
+| :------: | :------: | :------: |
+| Tekst | Puste (zlokalizowana etykieta przycisku zamykania aplikacji) | `quit-button-text=Zamknij` |

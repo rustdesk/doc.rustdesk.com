@@ -1660,3 +1660,13 @@ Disponibile da RustDesk 1.4.7
 | Valori | Predefinito | Esempio |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-command-line-settings-when-settings-disabled=Y` |
+
+### quit-button-text
+
+Personalizza il testo del pulsante Esci nella finestra principale dei client desktop che consentono solo connessioni in entrata.
+
+Se l'opzione non è impostata, è vuota o contiene solo spazi bianchi, viene utilizzata l'etichetta localizzata esistente del pulsante Esci. Il testo personalizzato viene visualizzato senza traduzione.
+
+| Valori | Predefinito | Esempio |
+| :------: | :------: | :------: |
+| Testo | Vuoto (etichetta localizzata del pulsante Esci) | `quit-button-text=Chiudi` |
