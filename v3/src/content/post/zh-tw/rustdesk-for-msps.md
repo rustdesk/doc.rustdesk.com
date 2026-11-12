@@ -17,7 +17,7 @@ faq:
   - question: 'RustDesk 對 MSP 如何授權？'
     answer: '依登入使用者（你的技術人員）與受管裝置（你支援的機器）付費，標準方案包含無限同時連線，多位技術人員可以同時進行工作階段，不必購買通道。只有 Customized V2 授權固定數量的同時連線；詳情請見 rustdesk.com/pricing。'
   - question: '可以為 RustDesk 使用者端做白牌或加上自己的品牌嗎？'
-    answer: '可以。RustDesk Server Pro 內建自訂使用者端產生器，自 Basic 方案起提供，能建構帶有你自己的名稱、標誌、圖示與伺服器設定的使用者端。你的客戶安裝的是帶有你的品牌、連到你的伺服器的工具，而不是廠商品牌的下載檔。'
+    answer: '可以。RustDesk Server Pro 內建自訂使用者端產生器，自 Basic 方案起提供，能建置帶有你自己的名稱、標誌、圖示與伺服器設定的使用者端。你的客戶安裝的是帶有你的品牌、連到你的伺服器的工具，而不是廠商品牌的下載檔。'
   - question: 'RustDesk 是自架的嗎？伺服器由誰維運？'
     answer: '是。RustDesk Server Pro 採自架模式：MSP 在自己的地端主機或 VPS 上執行 ID/連線協調伺服器、中繼、網頁主控台與儲存的管理資料，並負責修補、監控、備份與憑證。RustDesk Server OSS（免費的社群伺服器）則提供 ID/連線協調與中繼，但沒有 Pro 的管理功能。'
   - question: 'MSP 該如何開始評估 RustDesk？'

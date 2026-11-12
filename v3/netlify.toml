@@ -211,3 +211,9 @@
   to = "/zh-tw/blog/rustdesk-server-pro-1-5-0-qiang-hua-acl"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/zh-tw/tag/web-yong4-hu4-duan1"
+  to = "/zh-tw/tag/web-shi3-yong4-zhe3-duan1"
+  status = 301
+  force = true

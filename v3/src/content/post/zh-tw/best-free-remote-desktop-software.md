@@ -39,7 +39,7 @@ metadata:
 
 ### RustDesk——開放原始碼使用者端與免費自架的 Server OSS
 
-我們從 RustDesk 開始，因為它的使用者端與 RustDesk Server OSS（免費的社群伺服器）採用 **[AGPL 授權](https://github.com/rustdesk/rustdesk)**，而且 **Server OSS 沒有授權費、使用期限，也沒有商業用途判定機制**。它支援跨平台（Windows、macOS、Linux、Android、iOS）。在 Windows、macOS 與 Linux 主機上，內建檔案傳輸與固定密碼的無人值守存取；Android 可作為有人值守工作階段的受控端，iOS 應用程式則僅能作為控制端。原始碼可以獨立檢視與建構。
+我們從 RustDesk 開始，因為它的使用者端與 RustDesk Server OSS（免費的社群伺服器）採用 **[AGPL 授權](https://github.com/rustdesk/rustdesk)**，而且 **Server OSS 沒有授權費、使用期限，也沒有商業用途判定機制**。它支援跨平台（Windows、macOS、Linux、Android、iOS）。在 Windows、macOS 與 Linux 主機上，內建檔案傳輸與固定密碼的無人值守存取；Android 可作為有人值守工作階段的受控端，iOS 應用程式則僅能作為控制端。原始碼可以獨立檢視與建置。
 
 **代價**：伺服器要自己架。硬體需求不高，但中繼頻寬的規劃、修補、監控與備份都得自己來。付費、專有的 Server Pro 會再加上網頁主控台、存取控制、裝置群組等管理功能；自訂使用者端產生從 Basic 方案起提供。請見[目前方案](https://rustdesk.com/pricing)。
 
@@ -90,7 +90,7 @@ TeamViewer 與 AnyDesk 的確切條款請查閱其最新頁面——我們不引
 
 大多數免費選項，都要你在 Google 管理的簡便（CRD）、較重的基礎架構（Guacamole 與 MeshCentral）或自己處理網路（VNC）之間取捨。RustDesk 的主張是：想用免費的工具，不必犧牲商業用途、跨平台涵蓋、自架能力或可稽核性。
 
-- **可以稽核的開放原始碼。** 使用者端與 Server OSS 的程式碼採用 [AGPL](https://github.com/rustdesk/rustdesk) 授權——可以閱讀、建構、驗證。
+- **可以稽核的開放原始碼。** 使用者端與 Server OSS 的程式碼採用 [AGPL](https://github.com/rustdesk/rustdesk) 授權——可以閱讀、建置、驗證。
 - **沒有授權費與使用期限的 Server OSS。** 依其開放原始碼授權自架，不會被標記為商業用途。
 - **由客戶自行營運的伺服器服務。** 你的 ID/連線協調伺服器負責協調連線，你的中繼伺服器承載經中繼的流量；直接連線的工作階段則在端點之間傳輸。
 - **涵蓋所有主要平台。** Windows、macOS、Linux 與 Android 都能作為受控端；iOS 為控制端應用程式。

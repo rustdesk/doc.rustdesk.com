@@ -57,9 +57,9 @@ metadata:
 
 這正是 AnyDesk 與 RustDesk 兩種模式分道揚鑣之處——差別不在加密好不好，而在*你必須憑信任接受哪些事*。
 
-AnyDesk 是專有軟體。你無法閱讀使用者端的原始碼、無法自行建構，也無法獨立驗證它的行為；你只能相信 AnyDesk 的執行檔確實如其宣稱般運作。而且預設情況下，你的工作階段由 AnyDesk 的雲端協調，該基礎架構的可用性與安全性由廠商負責——2024 年的事件正說明了這一點。AnyDesk Ultimate 提供地端（on-premises）版本，對購買的客戶而言可以縮小這個落差。
+AnyDesk 是專有軟體。你無法閱讀使用者端的原始碼、無法自行建置，也無法獨立驗證它的行為；你只能相信 AnyDesk 的執行檔確實如其宣稱般運作。而且預設情況下，你的工作階段由 AnyDesk 的雲端協調，該基礎架構的可用性與安全性由廠商負責——2024 年的事件正說明了這一點。AnyDesk Ultimate 提供地端（on-premises）版本，對購買的客戶而言可以縮小這個落差。
 
-在這兩點上，RustDesk 都站在相反的起點。RustDesk 的使用者端與 RustDesk Server OSS（免費社群伺服器）[以 AGPL 授權開源](https://github.com/rustdesk/rustdesk)；Server Pro 則是商業、專有的自架伺服器軟體。使用者端可以稽核、可以自行建構，你不必盲目信任專有的執行檔。而且因為你可以[自架](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw) ID/連線協調與中繼伺服器，協調你工作階段的基礎架構屬於你，而不是第三方——這正是 2024 年事件所凸顯的廠商集中風險。這也有助於實現[資料主權設計](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)。
+在這兩點上，RustDesk 都站在相反的起點。RustDesk 的使用者端與 RustDesk Server OSS（免費社群伺服器）[以 AGPL 授權開源](https://github.com/rustdesk/rustdesk)；Server Pro 則是商業、專有的自架伺服器軟體。使用者端可以稽核、可以自行建置，你不必盲目信任專有的執行檔。而且因為你可以[自架](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw) ID/連線協調與中繼伺服器，協調你工作階段的基礎架構屬於你，而不是第三方——這正是 2024 年事件所凸顯的廠商集中風險。這也有助於實現[資料主權設計](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)。
 
 同樣公平地說，這是轉移了信任，而不是消除信任。正因為程式碼公開，RustDesk 自己的缺陷也是公開的，所以請追蹤[最新版本](https://github.com/rustdesk/rustdesk/releases)與漏洞紀錄。而且可稽核、自架的基礎架構只是起點，不是保證：工作階段仍會在端點之間直接傳輸，伺服器也要由你自己修補。
 

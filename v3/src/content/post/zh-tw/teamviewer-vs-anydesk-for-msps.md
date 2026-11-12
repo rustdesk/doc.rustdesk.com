@@ -17,7 +17,7 @@ faq:
   - question: 'AnyDesk 目前怎麼收費？'
     answer: 'AnyDesk 官方定價頁面（2026 年 7 月 7 日查閱）列出按年計費的方案，各方案分別規定授權使用者、受管裝置與同時連線數。Standard 起始為 1 個連線，Advanced 為 2 個；加購上限因方案而異。編列預算前，請確認 https://anydesk.com/en/pricing 並取得附日期的書面報價。'
   - question: 'MSP 可以自架，而不使用 TeamViewer 或 AnyDesk 的雲端嗎？'
-    answer: '可以。RustDesk Server OSS（免費社群伺服器）與 Server Pro 讓你在自己掌控的基礎架構上（無論是機房內或自有 VPS）執行 ID/連線協調與中繼伺服器，工作階段的連線協調就不會落在廠商的雲端裡。代價是伺服器的建構、修補與安全防護由你的團隊負責，而不是由廠商的維運團隊代勞。'
+    answer: '可以。RustDesk Server OSS（免費社群伺服器）與 Server Pro 讓你在自己掌控的基礎架構上（無論是機房內或自有 VPS）執行 ID/連線協調與中繼伺服器，工作階段的連線協調就不會落在廠商的雲端裡。代價是伺服器的建置、修補與安全防護由你的團隊負責，而不是由廠商的維運團隊代勞。'
   - question: 'RustDesk 的授權與按席位或按通道計費的模式有何不同？'
     answer: 'RustDesk Server Pro 方案計算登入使用者與受管裝置。標準方案不限同時連線數，因此沒有按通道計算的費用；只有 Customized V2 授權固定的同時連線數。技術人員增加時仍需要足夠的登入使用者額度，所以請到 rustdesk.com/pricing 比較所有相關數量。'
 metadata:

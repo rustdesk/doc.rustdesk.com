@@ -51,10 +51,10 @@ Splashtop 的標準 Remote Access 與 Remote Support 方案由廠商營運。其
 
 ## 開源與信任模式
 
-RustDesk 的**使用者端與 Server OSS 採用 AGPL 授權**。資安或工程團隊不必先購買商業授權，就能閱讀程式碼、建構使用者端並執行 Server OSS；**Server Pro 則是商業、專有的自架伺服器軟體**，在此之上增加集中管理功能。Splashtop SaaS 與 On-Prem 都是專有軟體——On-Prem 改變的是伺服器*在哪裡*執行，而不是程式碼是否開放。決定這件事的是兩個獨立的問題：
+RustDesk 的**使用者端與 Server OSS 採用 AGPL 授權**。資安或工程團隊不必先購買商業授權，就能閱讀程式碼、建置使用者端並執行 Server OSS；**Server Pro 則是商業、專有的自架伺服器軟體**，在此之上增加集中管理功能。Splashtop SaaS 與 On-Prem 都是專有軟體——On-Prem 改變的是伺服器*在哪裡*執行，而不是程式碼是否開放。決定這件事的是兩個獨立的問題：
 
 1. 伺服器端服務是否必須在我們掌控的基礎架構上執行？_（On-Prem 與 RustDesk 的答案都是「是」。）_
-2. 我們是否需要看得到原始碼，並能自行建構使用者端？_（只有 RustDesk 的答案是「是」。）_
+2. 我們是否需要看得到原始碼，並能自行建置使用者端？_（只有 RustDesk 的答案是「是」。）_
 
 ## 授權與成本
 
@@ -86,9 +86,9 @@ RustDesk 標準 Server Pro 方案依**登入使用者加受管裝置**計算規�
 - **自架應該是預設。** Server OSS 與 Server Pro 都在您選擇的基礎架構上執行；Splashtop 對應的則是需單獨授權的 On-Prem 產品。
 - **同時連線不該決定帳單。** 標準 Server Pro 方案依登入使用者與受管裝置授權，且不限同時連線數。
 - **目錄登入很重要。** LDAP/Active Directory 與 OIDC SSO 從 Basic 方案起就包含在內。
-- **您想免費試行並稽核使用者端。** Server OSS 免授權費、沒有到期限制，使用者端也能閱讀原始碼並自行建構。
+- **您想免費試行並稽核使用者端。** Server OSS 免授權費、沒有到期限制，使用者端也能閱讀原始碼並自行建置。
 
-有一點同時適用於 RustDesk 與 Splashtop On-Prem：伺服器的建構、防護、監控、備份與更新都由您的團隊負責。
+有一點同時適用於 RustDesk 與 Splashtop On-Prem：伺服器的建置、防護、監控、備份與更新都由您的團隊負責。
 
 ## 不必全面導入，也能評估 RustDesk
 

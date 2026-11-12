@@ -71,7 +71,7 @@ CRD 支援受 PIN 碼保護的無人值守存取，但目標機器必須開機�
 
 RustDesk 的區別在於**一條可實際部署的自架伺服器路徑**。[Chromium 公開了 CRD 的 remoting 原始碼](https://chromium.googlesource.com/chromium/src/+/main/remoting/)，但 Google 的連線協調服務無法自架；使用 RustDesk，你可以自行執行 Server OSS 或 Server Pro。
 
-**RustDesk 使用者端與 Server OSS 採用 AGPL 授權**，可以獨立檢視與建構。Server OSS 提供自架的 ID/連線協調與中繼，免授權費、沒有到期限制。**Server Pro 則是商業、專有的自架伺服器軟體**，在你的基礎架構上增加管理功能。直連工作階段在兩端之間傳輸；經中繼的工作階段則走你的中繼伺服器。請連同伺服器位置一起檢視[資料主權方面的影響](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)。
+**RustDesk 使用者端與 Server OSS 採用 AGPL 授權**，可以獨立檢視與建置。Server OSS 提供自架的 ID/連線協調與中繼，免授權費、沒有到期限制。**Server Pro 則是商業、專有的自架伺服器軟體**，在你的基礎架構上增加管理功能。直連工作階段在兩端之間傳輸；經中繼的工作階段則走你的中繼伺服器。請連同伺服器位置一起檢視[資料主權方面的影響](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)。
 
 Server Pro 補上了 CRD 缺少的團隊功能：自架網頁主控台、裝置群組、共用通訊錄，以及依使用者與裝置群組設定的[存取控制](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)，並自 Basic 方案起提供自訂使用者端產生與 LDAP/OIDC SSO。只要服務正在執行並已授予作業系統權限，固定密碼的無人值守存取就能在 Windows、macOS 與 Linux 主機上運作；Android 主機還需要螢幕擷取同意與輸入權限，並受 OEM 背景執行限制影響，iOS App 則只能當控制端。
 

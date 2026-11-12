@@ -72,7 +72,7 @@ RustDesk 可以在 **Windows（包含 Home 版）、macOS、Linux 與 Android** 
 
 - **混合作業系統。** 一個應用程式就能控制 Windows、macOS、Linux 與 Android 主機；iOS 可作為控制端。
 - **透過網際網路存取，卻不必暴露連接埠。** 網際網路上沒有 3389，不必為每個端點設 VPN，也不必維運 RD Gateway。
-- **開放原始碼，可以自架。** 您可以閱讀原始碼、自行建構，並把 ID／中繼伺服器——搭配 Server Pro 時還包括受管裝置清單——放在您掌控的基礎架構上。這種可稽核性與資料存放位置的掌控，正是[自架理由](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)的核心。
+- **開放原始碼，可以自架。** 您可以閱讀原始碼、自行建置，並把 ID／中繼伺服器——搭配 Server Pro 時還包括受管裝置清單——放在您掌控的基礎架構上。這種可稽核性與資料存放位置的掌控，正是[自架理由](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)的核心。
 - **消費級 Windows 與 BYOD。** RustDesk 可在 Windows Home 與 RDP 無法作為主機的非受管裝置上運作。
 
 這項取捨也有另一面：自架代表**您這邊必須有人維運伺服器**——準備主機、限制連接埠、設定 TLS，並持續套用修補程式。這是換取掌控權的代價。如果您只想在純 Windows 區域網路上使用原生功能，不想多維運任何新系統，RDP 確實很難被取代。

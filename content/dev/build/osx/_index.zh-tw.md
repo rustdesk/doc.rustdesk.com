@@ -7,27 +7,27 @@ keywords: ["build rustdesk macos", "rustdesk mac build", "rustdesk sciter mac", 
 
 有多種方法可以做到這一點，本指南假設 `Xcode`、`Git` 和 `Homebrew` 已經安裝。
 
-## 應該選擇哪條 macOS 建構路徑？
+## 應該選擇哪條 macOS 建置路徑？
 
 | 需求 | 最佳路徑 |
 | --- | --- |
-| 建構傳統桌面 UI | Sciter |
-| 建構較新的桌面堆疊 | Flutter |
+| 建置傳統桌面 UI | Sciter |
+| 建置較新的桌面堆疊 | Flutter |
 | 準備共用原生依賴 | Homebrew + `vcpkg` + Rust |
 
-## macOS 建構檢查清單
+## macOS 建置檢查清單
 
 - 確認已安裝 `Xcode`、`Git` 與 `Homebrew`。
 - 透過 Homebrew 安裝所需工具。
 - 複製並初始化 `vcpkg`，然後匯出 `VCPKG_ROOT`。
 - 透過 `rustup` 安裝並設定 Rust。
 - 複製 RustDesk 原始碼倉庫及其子模組。
-- 在開始建構前補齊 Sciter 或 Flutter 所需元件。
+- 在開始建置前補齊 Sciter 或 Flutter 所需元件。
 
-最大的挑戰可能是找到所有工具可以一起工作的版本，特別是因為工具鏈的某些部分（如 Xcode 和 LLVM）由您的 macOS 版本決定。本指南中使用的版本可能不是您應該使用的版本。作為確定使用哪些版本的起點，可以查看您想要建構的 RustDesk 版本的 [GitHub 建構工作流程](https://github.com/rustdesk/rustdesk/blob/master/.github/workflows/flutter-build.yml)。在頁面左上角選擇標籤以查看文件。但這不一定會起作用，因為 GitHub runner 附帶的 macOS 工具可能與您本地系統上的版本不同。
+最大的挑戰可能是找到所有工具可以一起工作的版本，特別是因為工具鏈的某些部分（如 Xcode 和 LLVM）由您的 macOS 版本決定。本指南中使用的版本可能不是您應該使用的版本。作為確定使用哪些版本的起點，可以查看您想要建置的 RustDesk 版本的 [GitHub 建置工作流程](https://github.com/rustdesk/rustdesk/blob/master/.github/workflows/flutter-build.yml)。在頁面左上角選擇標籤以查看文件。但這不一定會起作用，因為 GitHub runner 附帶的 macOS 工具可能與您本地系統上的版本不同。
 
 ### Export
-`export` 用於設定各種環境變數。當您執行 `export` 時，該變數僅為目前終端機會話設定，因此必須為您想要用於建構 RustDesk 的每個新終端機視窗重複執行，無論是現在還是將來。通常，最好將所有 `export` 加入到為每個打開的終端機自動執行的腳本中，例如 `~/.bash_profile`。這裡列出的完整 `export` 命令可以簡單地附加到文件中，但也必須在目前終端機中執行，因為該文件要到打開*新*終端機時才會被讀取。
+`export` 用於設定各種環境變數。當您執行 `export` 時，該變數僅為目前終端機會話設定，因此必須為您想要用於建置 RustDesk 的每個新終端機視窗重複執行，無論是現在還是將來。通常，最好將所有 `export` 加入到為每個打開的終端機自動執行的腳本中，例如 `~/.bash_profile`。這裡列出的完整 `export` 命令可以簡單地附加到文件中，但也必須在目前終端機中執行，因為該文件要到打開*新*終端機時才會被讀取。
 
 ## 從 Homebrew 安裝我們將要使用的工具
 
@@ -82,7 +82,7 @@ export PATH=~/Library/Python/3.9/bin:$PATH
 完成後，再次執行失敗的命令。記得也要編輯 `~/.bash_profile`。
 
 ## 安裝使用者介面元件
-RustDesk 可以使用 [Sciter](https://sciter.com/) 和 [Flutter](https://flutter.dev/) 建構。這兩者都需要額外的元件，因此請按照相關版本的步驟操作，或兩者都操作。
+RustDesk 可以使用 [Sciter](https://sciter.com/) 和 [Flutter](https://flutter.dev/) 建置。這兩者都需要額外的元件，因此請按照相關版本的步驟操作，或兩者都操作。
 
 ### Sciter
 
@@ -125,15 +125,15 @@ flutter doctor -v
 cargo install flutter_rust_bridge_codegen --version "1.80.1" --features "uuid"
 ```
 
-## 建構
+## 建置
 
-從 `rustdesk` 資料夾建構。使用以下命令建構 Sciter 版本：
+從 `rustdesk` 資料夾建置。使用以下命令建置 Sciter 版本：
 
 ```sh
 python3 ./build.py
 ```
 
-使用以下命令建構 Flutter 版本：
+使用以下命令建置 Flutter 版本：
 ```sh
 flutter_rust_bridge_codegen --rust-input ./src/flutter_ffi.rs --dart-output ./flutter/lib/generated_bridge.dart --c-output ./flutter/macos/Runner/bridge_generated.h
 python3 ./build.py --flutter

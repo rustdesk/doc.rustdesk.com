@@ -31,7 +31,7 @@ RustDesk 是適用於 Linux 的開源遠端桌面。其使用者端與 RustDesk 
 
 ## 在 Linux 上安裝 RustDesk
 
-RustDesk 為所有常見的 Linux 封裝格式都提供套件，所以你很少需要自行從原始碼建構。請從 [GitHub 上的 RustDesk 版本頁面](https://github.com/rustdesk/rustdesk/releases)或 [Linux 安裝文件](https://rustdesk.com/docs/zh-tw/client/linux/)取得最新版本，並選擇符合你發行版的格式。
+RustDesk 為所有常見的 Linux 封裝格式都提供套件，所以你很少需要自行從原始碼建置。請從 [GitHub 上的 RustDesk 版本頁面](https://github.com/rustdesk/rustdesk/releases)或 [Linux 安裝文件](https://rustdesk.com/docs/zh-tw/client/linux/)取得最新版本，並選擇符合你發行版的格式。
 
 | 格式     | 最適合                        | 是否自動啟動服務？ | 備註                                                                                                         |
 | -------- | ----------------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------ |

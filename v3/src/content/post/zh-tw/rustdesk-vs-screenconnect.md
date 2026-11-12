@@ -88,7 +88,7 @@ ScreenConnect（前身為 ConnectWise Control）是一套商業遠端存取平�
 
 **修補是所有權的問題。** 使用廠商代管的服務時，修補時程由廠商掌控；自架的營運者則要自行更新伺服器。安全修補、憑證輪替等事件會排進*您自己*的變更行事曆，而不是廠商的，自架 RustDesk 也正好要承擔這份責任。
 
-**RustDesk 的安全模型。** 由於使用者端開放原始碼，程式碼可以獨立稽核並從原始碼建構，不必單憑信任——這是專有產品做不到的。連線協調、中繼、主控台與儲存的部署資料在哪裡執行，由您決定；直連工作階段在兩端之間傳輸，而只要使用者端設定了您伺服器的公鑰，以 ID 建立的工作階段就是端對端加密。Server Pro 自 Basic 方案起支援 LDAP 與 OIDC SSO，並提供依使用者與裝置群組設定的[存取控制](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)，以及限制工作階段內操作的[控制角色](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/control-role/)權限。
+**RustDesk 的安全模型。** 由於使用者端開放原始碼，程式碼可以獨立稽核並從原始碼建置，不必單憑信任——這是專有產品做不到的。連線協調、中繼、主控台與儲存的部署資料在哪裡執行，由您決定；直連工作階段在兩端之間傳輸，而只要使用者端設定了您伺服器的公鑰，以 ID 建立的工作階段就是端對端加密。Server Pro 自 Basic 方案起支援 LDAP 與 OIDC SSO，並提供依使用者與裝置群組設定的[存取控制](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)，以及限制工作階段內操作的[控制角色](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/control-role/)權限。
 
 開源並不代表軟體刀槍不入，因此請追蹤 RustDesk 的[最新版本](https://github.com/rustdesk/rustdesk/releases)與公開漏洞紀錄。關於流量路由與資料落地的界線，請參閱[遠端桌面資料主權與 GDPR](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)。
 
@@ -109,7 +109,7 @@ _優點_
 - 標準 Pro 方案不限同時連線數，也不限制每位技術人員的工作階段數（只有 Customized V2 授權固定數量）
 - 自訂品牌使用者端產生器可產出掛您名號、而非 ConnectWise 品牌的白牌工具
 - 自架的 Server Pro 在您選定的基礎架構上執行連線協調與中繼
-- 可稽核的使用者端，能閱讀原始碼並自行建構
+- 可稽核的使用者端，能閱讀原始碼並自行建置
 - Server OSS 免費，免授權費且沒有到期限制
 - 可從概念驗證用的單台主機擴展到大型裝置群（詳見下文）
 
@@ -145,7 +145,7 @@ _缺點_
 
 **購買前可免費試行。** Server OSS 免授權費、沒有到期限制，您可以先用普通規格的硬體，在真實的客戶現場驗證連線能力與中繼效能，再決定是否購買 Server Pro。
 
-**可稽核的使用者端。** 您可以閱讀並建構客戶安裝的使用者端，不必聽信廠商對它行為的說法。
+**可稽核的使用者端。** 您可以閱讀並建置客戶安裝的使用者端，不必聽信廠商對它行為的說法。
 
 ScreenConnect On-Premise 同樣讓您自行託管伺服器；RustDesk 多出來的是開放的使用者端、免費的入門途徑，以及不限制每位技術人員工作階段數的標準方案。唯一要注意的是：如果您的服務台仰賴 ConnectWise PSA 與 Automate 整合，請在試行期間測試這些流程。
 

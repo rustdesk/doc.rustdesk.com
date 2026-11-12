@@ -17,7 +17,7 @@ faq:
   - question: 'RustDesk Server Pro 需要永久不中斷的網路連線嗎？'
     answer: '需要持續能對外連到 rustdesk.com 以驗證授權，但不需要完全不中斷。伺服器大約每天透過連接埠 443 檢查一次，若檢查失敗，會持續重試，直到成功或約七天過去；所以短暫斷線可以容忍，但與 rustdesk.com 斷線超過這段寬限期，授權就無法通過驗證。遠端工作階段本身則由您自架的中繼與 ID（連線協調）伺服器協調。'
   - question: '隔離環境中的 RustDesk Server Pro 部署需要哪些對外連線？'
-    answer: '請允許伺服器以 HTTPS 對外連到 rustdesk.com 進行授權驗證；如果要產生品牌使用者端，也要允許連到自訂使用者端建構服務。Server Pro 支援 Proxy，因此網路的其他部分可以維持封鎖。其他需要規劃的對外流程，還包括使用者端更新與您串接的任何外部身分提供者。'
+    answer: '請允許伺服器以 HTTPS 對外連到 rustdesk.com 進行授權驗證；如果要產生品牌使用者端，也要允許連到自訂使用者端建置服務。Server Pro 支援 Proxy，因此網路的其他部分可以維持封鎖。其他需要規劃的對外流程，還包括使用者端更新與您串接的任何外部身分提供者。'
   - question: 'RustDesk 有完全實體隔離的授權選項嗎？'
     answer: '沒有。標準的 RustDesk Server Pro 授權需要定期線上驗證。RustDesk Server OSS（免費的社群伺服器）沒有授權檢查：其 ID/連線協調與中繼服務可以在隔離網路內執行，但沒有 Pro 網頁主控台與管理功能。若 Pro 有嚴格的實體隔離需求，請將您的情境寄到 sales@rustdesk.com。'
 metadata:
@@ -35,13 +35,13 @@ metadata:
 
 這項要求適用於 **Server Pro**。**RustDesk Server OSS**（免費的社群伺服器）沒有授權檢查。RustDesk 的使用者端與 Server OSS 採用 AGPL 授權；Server Pro 則是商業、專有的自架伺服器軟體。在隔離網路中，使用者端與本地的 ID／中繼服務仍需要可用的路由、正確的金鑰與平台權限。經 ID 協商的直接連線工作階段在端點之間傳輸；經中繼的工作階段則使用您的伺服器。只要使用者端帶有您伺服器的公鑰，以 ID 建立的工作階段就是端對端加密；而 [IP 直接連線不加密](https://github.com/rustdesk/rustdesk/wiki/FAQ)，因此無法取代正確設定的 ID 連線。
 
-還有一個流程要納入考量：**建構自訂使用者端**。如果您從 Server Pro 產生品牌或預先設定好的使用者端，建構會在 RustDesk 的建構服務上執行，因此同樣需要對外連線。提交的設定會在建構完成後刪除，安裝程式也會在大約一天後自動移除，所以請下載下來，存放在您自己的儲存庫中。
+還有一個流程要納入考量：**建置自訂使用者端**。如果您從 Server Pro 產生品牌或預先設定好的使用者端，建置會在 RustDesk 的建置服務上執行，因此同樣需要對外連線。提交的設定會在建置完成後刪除，安裝程式也會在大約一天後自動移除，所以請下載下來，存放在您自己的儲存庫中。
 
 對嚴格實體隔離的網路來說，這是決定性的細節：*永遠*連不到 rustdesk.com 的伺服器不在預設模式之內，因此如果您有硬性的實體隔離需求，請在投入之前先向 RustDesk 確認您的實際情境。至於更常見的「大致隔離、嚴格限制對外流量」架構，請預留一條連到 rustdesk.com 的對外 HTTPS 路徑——直接連線或透過 Proxy 皆可——並在撰寫防火牆政策前，先定義好確切的網域、連接埠與核准流程。請參閱 [RustDesk 文件](https://rustdesk.com/docs/zh-tw/)；也正因為同樣的授權要求，[即使不使用 Docker 安裝，Server Pro 也無法在完全沒有網路的情況下執行](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/installscript/)。
 
 ## 盤點所有對外相依性
 
-服務封閉環境的資安團隊與 [MSP](/zh-tw/blog/rustdesk-for-msps-zh-tw)，通常在安裝 RustDesk 之前就會問這個問題。Server Pro 的對外清單很短：以 HTTPS 連到 rustdesk.com 的授權驗證、產生品牌使用者端時的自訂使用者端建構服務、使用者端更新、郵件伺服器位於網路外時的 SMTP，以及您串接的任何外部身分提供者。ID/連線協調伺服器、中繼與主控台都在您的網路內執行，因此只需要精確的防火牆規則，不必過度開放網路。
+服務封閉環境的資安團隊與 [MSP](/zh-tw/blog/rustdesk-for-msps-zh-tw)，通常在安裝 RustDesk 之前就會問這個問題。Server Pro 的對外清單很短：以 HTTPS 連到 rustdesk.com 的授權驗證、產生品牌使用者端時的自訂使用者端建置服務、使用者端更新、郵件伺服器位於網路外時的 SMTP，以及您串接的任何外部身分提供者。ID/連線協調伺服器、中繼與主控台都在您的網路內執行，因此只需要精確的防火牆規則，不必過度開放網路。
 
 ## 相關問題
 

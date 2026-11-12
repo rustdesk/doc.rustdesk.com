@@ -7,7 +7,7 @@ keywords: ["rustdesk azure oidc", "rustdesk entra id", "rustdesk azure sso", "ru
 
 ## Azure OIDC 設定是做什麼的？
 
-本設定讓使用者透過 Microsoft Entra ID 帳戶使用 OpenID Connect 登入 RustDesk Server Pro。實際操作是：在 Azure 中註冊 RustDesk 應用，把使用者端憑證填入 RustDesk Pro，並把 RustDesk Pro 指向你的 Entra 租戶 issuer URL。
+本設定讓使用者透過 Microsoft Entra ID 帳戶使用 OpenID Connect 登入 RustDesk Server Pro。實際操作是：在 Azure 中註冊 RustDesk 應用，把應用程式（Client）ID 與 Secret 填入 RustDesk Pro，並把 RustDesk Pro 指向你的 Entra 租戶 issuer URL。
 
 ## Azure OIDC 檢查清單
 
