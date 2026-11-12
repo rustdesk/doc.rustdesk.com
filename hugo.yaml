@@ -158,12 +158,14 @@ languages:
       description: "Documentation complète pour RustDesk - le logiciel de bureau à distance open source. Apprenez à auto-héberger, configurer les clients et déployer RustDesk sur votre infrastructure."
       keywords: ["rustdesk", "bureau à distance", "open source", "auto-hébergement", "documentation", "accès distant", "alternative VNC", "alternative teamviewer"]
 
-  # ru:
-  #  title: "Документация для RustDesk"
-  #  weight: 2
-  #  languageName: "Русский"
-  #  params:
-  #    landingPageName: "🏠 Домашняя страница"
+  ru:
+    title: "Документация RustDesk"
+    weight: 2
+    languageName: "Русский"
+    params:
+      landingPageName: "🏠 Главная"
+      description: "Полная документация RustDesk — программы для удалённого рабочего стола с открытым исходным кодом. Узнайте, как развернуть собственный сервер, настроить клиенты и внедрить RustDesk в своей инфраструктуре."
+      keywords: ["rustdesk", "удалённый рабочий стол", "открытый исходный код", "собственный сервер", "документация", "удалённый доступ", "альтернатива VNC", "альтернатива teamviewer"]
 
   pl:
     title: "Dokumentacja RustDesk"
