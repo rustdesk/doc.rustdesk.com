@@ -36,7 +36,7 @@ sudo docker compose up -d
 
 Подробнее см. [Docker](/docs/ru/self-host/rustdesk-server-pro/installscript/docker/).
 
-## Способ 2: install.sh
+## Способ 2: install.sh {#method-2-installsh}
 
 Используйте приведённый ниже сценарий, только если хорошо знаете Linux. Иначе, если что-то пойдёт не так, можно столкнуться с серьёзными проблемами, причину которых будет трудно найти.
 

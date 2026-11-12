@@ -52,6 +52,8 @@ keywords: ["rustdesk pro license", "rustdesk server pro activate", "rustdesk pri
 
 ![](/docs/en/self-host/rustdesk-server-pro/license/images/updatelic.jpg)
 
+<a name="invoices-and-migration"></a>
+
 ## Счета, получение и перенос лицензии {#invoices-license-retrieval-and-migration}
 
 Лицензию можно использовать только на одном компьютере (только для hbbs; hbbr лицензия не нужна). Чтобы перенести её на другой компьютер, получить лицензию повторно или скачать счета, откройте [https://rustdesk.com/self-host/account/](https://rustdesk.com/self-host/account/). Войдите с адресом электронной почты, который указывали при оплате в Stripe, и отвяжите старый компьютер, с которого переносите лицензию, как показано ниже. Когда вы установите лицензию в веб-консоли нового сервера, она будет назначена ему и зарегистрирована в консоли автоматически.
