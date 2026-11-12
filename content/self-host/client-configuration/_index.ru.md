@@ -40,6 +40,8 @@ pre: "<b>2.3. </b>"
 ![](/docs/en/self-host/client-configuration/images/custom-client-qs.png)
 ![](/docs/en/self-host/client-configuration/images/web_console_custom_client_config.jpeg)
 
+<a name="manual-config"></a>
+
 ## 2. Ручная настройка {#2-manual-config}
 
 На главном экране клиента RustDesk нажмите кнопку меню [ &#8942; ] рядом с вашим ID, затем «Сеть». Разблокируйте настройки с повышенными правами и укажите `ID`, `Ретранслятор`, `API` и `Ключ`. Обратите внимание: этот `Ключ` — открытый ключ для шифрования соединения, а не лицензионный ключ, который вы получаете при покупке версии Pro.
