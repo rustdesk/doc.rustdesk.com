@@ -182,6 +182,11 @@
       "source": "/zh-tw/blog/2025/02/rustdesk-server-pro-1-5-0-qiang-hua-acl",
       "destination": "/zh-tw/blog/rustdesk-server-pro-1-5-0-qiang-hua-acl",
       "permanent": true
+    },
+    {
+      "source": "/zh-tw/tag/web-yong4-hu4-duan1",
+      "destination": "/zh-tw/tag/web-shi3-yong4-zhe3-duan1",
+      "permanent": true
     }
   ]
 }

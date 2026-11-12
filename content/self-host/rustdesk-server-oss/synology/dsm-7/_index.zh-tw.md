@@ -1,7 +1,7 @@
 ---
 title: Synology DSM 7.2
 weight: 20
-description: "RustDesk 的Synology DSM 7.2文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的Synology DSM 7.2文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk synology dsm 7.2", "rustdesk container manager", "rustdesk synology nas", "rustdesk synology docker", "rustdesk self-host synology"]
 ---
 <!--to translater: When translating elements like "buttons", don't just translate, please refer actual naming in their interface.-->
@@ -68,7 +68,7 @@ services:
     restart: always
 
 # 因為使用 docker host mode
-# 以防你忘記這些端口:
+# 以防你忘記這些連接埠:
 # 21114 TCP 用於網頁控制台，僅在 Pro 版本中可用
 # 21115 TCP NAT 類型測試
 # 21116 TCP TCP 打洞
@@ -86,15 +86,15 @@ services:
 
 ![](/docs/en/self-host/rustdesk-server-oss/synology/dsm-7/images/dsm7_viewing_public_key_though_syno_text_editor.png)
 
-看看[這裡](/docs/zh-tw/client)來設置您的客戶端，只有 `ID 伺服器` 以及 `Key` 是需要的，中繼伺服器不需設定，因為我們已經把它設置在 `hbbs` 了，hbbs 會自動提供這項資訊。
+看看[這裡](/docs/zh-tw/client)來設定您的客戶端，只有 `ID 伺服器` 以及 `Key` 是需要的，中繼伺服器不需設定，因為我們已經把它設定在 `hbbs` 了，hbbs 會自動提供這項資訊。
 
-# 5. 在您的路由器設置 port forwarding (通訊埠轉發)
+# 5. 在您的路由器設定 port forwarding (通訊埠轉發)
 
-前往您的路由器的管理頁面，尋找任何有關於 `Port forwarding` 或是 `通訊埠轉發` 的設定，他應該在 `WAN`、`網際網路` 或是 `防火牆` 設置。
+前往您的路由器的管理頁面，尋找任何有關於 `Port forwarding` 或是 `通訊埠轉發` 的設定，他應該在 `WAN`、`網際網路` 或是 `防火牆` 設定。
 
 如果您還是無法找到設定，Google 搜尋 `{路由器廠牌} + port forwarding` 或 `{路由器型號} + port forwarding`
 
-開啟這些需要的端口:
+開啟這些需要的連接埠:
   * `21115` `TCP` NAT 類型測試
   * `21116` `TCP` TCP 打洞
   * `21116` `UDP` 心跳/ID 伺服器

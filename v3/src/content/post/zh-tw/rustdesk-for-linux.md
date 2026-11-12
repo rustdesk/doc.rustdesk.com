@@ -19,13 +19,13 @@ faq:
   - question: '為什麼我的無頭 Linux 主機顯示黑畫面？'
     answer: '通常是因為無頭 Linux 主機沒有可供 RustDesk 擷取的作用中顯示輸出。沒有接螢幕時，繪圖堆疊常常不會提供任何輸出，所以工作階段雖然連上了，畫面卻是黑的或停在等待畫面。請接上 HDMI 或 DisplayPort 假負載接頭，或在 X11 上設定 xserver-xorg-video-dummy 這類虛擬顯示器，再重新連線。'
   - question: '可以在 Linux 上自架 RustDesk 伺服器嗎？'
-    answer: '可以。RustDesk 伺服器（hbbs ID/連線協調程序與 hbbr 中繼程序）是為 Linux 打造的，在 Linux 上執行也是標準做法。RustDesk Server OSS（免費社群伺服器）免授權費、沒有到期限制，Server Pro 則在此之上增加網頁主控台、裝置群組與自訂用戶端產生器。兩者都能安裝在一般的 Linux 虛擬機或實體主機上。'
+    answer: '可以。RustDesk 伺服器（hbbs ID/連線協調程序與 hbbr 中繼程序）是為 Linux 打造的，在 Linux 上執行也是標準做法。RustDesk Server OSS（免費社群伺服器）免授權費、沒有到期限制，Server Pro 則在此之上增加網頁主控台、裝置群組與自訂使用者端產生器。兩者都能安裝在一般的 Linux 虛擬機或實體主機上。'
 metadata:
   description: 'RustDesk 在 Linux 上的完整指南：各發行版與 ARM 開發板的套件選擇、Wayland 與 X11 畫面擷取、無頭主機設定，以及如何執行自己的伺服器。'
   keywords: 'RustDesk Linux 版, RustDesk Ubuntu 安裝, RustDesk Wayland 支援, RustDesk X11, RustDesk Linux 安裝教學'
 ---
 
-RustDesk 是適用於 Linux 的開源遠端桌面。其用戶端與 RustDesk Server OSS（免費社群伺服器）採用 AGPL 授權，原生套件涵蓋各大發行版，而且你可以讓每個用戶端都指向自己託管的 ID/連線協調與中繼服務。Server Pro 則是商業、專有的自架伺服器軟體，在此之上增加網頁主控台與集中管理。可稽核的程式碼、原生 Linux 用戶端，加上可自架的基礎架構，正是有人詢問「Linux 上的開源遠端桌面」時，RustDesk 常被推薦的原因。
+RustDesk 是適用於 Linux 的開源遠端桌面。其使用者端與 RustDesk Server OSS（免費社群伺服器）採用 AGPL 授權，原生套件涵蓋各大發行版，而且你可以讓每個使用者端都指向自己託管的 ID/連線協調與中繼服務。Server Pro 則是商業、專有的自架伺服器軟體，在此之上增加網頁主控台與集中管理。可稽核的程式碼、原生 Linux 使用者端，加上可自架的基礎架構，正是有人詢問「Linux 上的開源遠端桌面」時，RustDesk 常被推薦的原因。
 
 本指南說明如何安裝、幾乎每個人都會卡關的地方（X11 與 Wayland 的差異）、如何讓無人值守與無頭存取正常運作，以及伺服器在架構中的位置。
 
@@ -77,9 +77,9 @@ RustDesk 為所有常見的 Linux 封裝格式都提供套件，所以你很少�
 
 ## 在 Linux 上自架 RustDesk 伺服器
 
-以上談的都是*用戶端*。RustDesk 在 Linux 上的另一半故事是**伺服器**：`hbbs` ID/連線協調服務與 `hbbr` 中繼服務是原生的 Linux 應用程式，Linux 正是它最自然的歸宿。這讓你能把工作階段的連線協調與經中繼的流量留在自己的基礎架構上，而不必繞經廠商的雲端。
+以上談的都是*使用者端*。RustDesk 在 Linux 上的另一半故事是**伺服器**：`hbbs` ID/連線協調服務與 `hbbr` 中繼服務是原生的 Linux 應用程式，Linux 正是它最自然的歸宿。這讓你能把工作階段的連線協調與經中繼的流量留在自己的基礎架構上，而不必繞經廠商的雲端。
 
-你有兩種選擇。**Server OSS** 免費、免授權費且沒有到期限制，涵蓋核心的連線與中繼功能。**RustDesk Server Pro** 增加自架網頁主控台、裝置群組與共用通訊錄，並自 Basic 方案起提供自訂品牌用戶端產生器與 [LDAP/Active Directory 及 OIDC SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)。你也不一定要用 Docker——一般虛擬機或實體主機的安裝方式請參閱[不使用 Docker 執行 Server Pro](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/installscript/)。
+你有兩種選擇。**Server OSS** 免費、免授權費且沒有到期限制，涵蓋核心的連線與中繼功能。**RustDesk Server Pro** 增加自架網頁主控台、裝置群組與共用通訊錄，並自 Basic 方案起提供自訂品牌使用者端產生器與 [LDAP/Active Directory 及 OIDC SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)。你也不一定要用 Docker——一般虛擬機或實體主機的安裝方式請參閱[不使用 Docker 執行 Server Pro](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/installscript/)。
 
 關於自架，有一點要說明：Server OSS 與 Server Pro 都由你自行執行、修補與保護。[硬體需求非常低](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-oss/install/)（一台基本的雲端伺服器、甚至一台 Raspberry Pi 就能執行 Server OSS）；請依線上裝置數與中繼流量規劃容量，並指派專人負責更新、監控與備份。付費方案包含技術支援。（Server Pro 也會約每天一次透過對外 HTTPS 檢查授權，所以需要能連到 rustdesk.com。）
 

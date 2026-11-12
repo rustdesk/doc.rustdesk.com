@@ -33,7 +33,7 @@ metadata:
 
 AnyDesk 為用途確實屬於個人、非商業性質的使用者，提供官方的[白名單申請](https://anydesk.com/en/commercial-use)。大致流程如下：
 
-1. **記下每一台相關裝置的 AnyDesk 位址（ID）**——也就是開啟用戶端時顯示的號碼——包括你用來連線的*來源*裝置，以及你要連到的*目標*裝置。
+1. **記下每一台相關裝置的 AnyDesk 位址（ID）**——也就是開啟使用者端時顯示的號碼——包括你用來連線的*來源*裝置，以及你要連到的*目標*裝置。
 2. **開啟 AnyDesk 官方的[商業用途／白名單申請表單](https://anydesk.com/en/commercial-use)。**
 3. **誠實描述你的實際用途**——例如「我只用它來幫父母處理家裡的電腦」，或任何能真實反映你在做什麼的說明。
 4. **送出申請，等待 AnyDesk 審核。** 需要後續追蹤時，請使用表單上目前顯示的聯絡方式。
@@ -60,7 +60,7 @@ AnyDesk 沒有公布任何官方的偵測門檻，因此第三方文章提到的
 
 ## 核心差異：沒有免費方案的商業用途判定機制
 
-AnyDesk 沒有公布偵測機制的公式，而且它同時支援直接連線與經中繼的工作階段，因此收到警告並不代表你的畫面媒體經過了 AnyDesk 的中繼站。**RustDesk Server OSS（免費的社群伺服器）完全沒有商業用途判定機制**：依其授權條款，個人與商業使用都免費。RustDesk 的用戶端與 Server OSS 採用 [AGPL 授權](https://github.com/rustdesk/rustdesk)；Server Pro 則是商業、專有的自架伺服器軟體，限制只取決於你購買的方案。兩者都讓你自己營運連線協調與中繼服務。
+AnyDesk 沒有公布偵測機制的公式，而且它同時支援直接連線與經中繼的工作階段，因此收到警告並不代表你的畫面媒體經過了 AnyDesk 的中繼站。**RustDesk Server OSS（免費的社群伺服器）完全沒有商業用途判定機制**：依其授權條款，個人與商業使用都免費。RustDesk 的使用者端與 Server OSS 採用 [AGPL 授權](https://github.com/rustdesk/rustdesk)；Server Pro 則是商業、專有的自架伺服器軟體，限制只取決於你購買的方案。兩者都讓你自己營運連線協調與中繼服務。
 
 ## 兩種模式比較
 
@@ -69,15 +69,15 @@ AnyDesk 沒有公布偵測機制的公式，而且它同時支援直接連線與
 | 「商業用途」偵測                         | 有——可能依免費使用條款限制存取           | Server OSS 沒有商業用途判定機制；Pro 依購買的授權額度運作                         |
 | 工作階段路徑                             | 可行時直接連線；否則經 AnyDesk 網路中繼  | 可行時直接連線；否則經你自己的中繼伺服器                                          |
 | 裝置額度                                 | 由 AnyDesk 免費使用條款決定              | 商業方案計算受管裝置                                                              |
-| 原始碼                                   | 專有用戶端                               | 可稽核的 AGPL 用戶端                                                              |
+| 原始碼                                   | 專有使用者端                               | 可稽核的 AGPL 使用者端                                                              |
 | [同時連線](https://rustdesk.com/pricing) | 免費方案有限制                           | 標準方案無限制；[Customized V2](https://rustdesk.com/pricing#custom2) 有上限      |
 | 定價模式                                 | 個人使用免費；付費方案按席位計費         | [依登入使用者 + 受管裝置](https://rustdesk.com/pricing)                           |
 | 資料邊界                                 | 由 AnyDesk 營運的服務；媒體直接或經中繼  | 伺服器端服務在你掌控的基礎設施上；端點之間的路徑仍須留意                          |
 
 ## 自架 RustDesk 能為支援團隊帶來什麼
 
-授權在一開始就講清楚：Server Pro 方案計算登入使用者與受管裝置，標準方案包含無限同時連線；只有 [Customized V2](https://rustdesk.com/pricing#custom2) 授權固定數量。你可以[隨時升級](/zh-tw/blog/upgrade-rustdesk-license-mid-subscription-zh-tw)：升級會把授權延長為自升級日起一整年，並折抵剩餘的已付價值。針對客戶支援工作，Pro 提供自架網頁主控台與依使用者及裝置群組設定的[存取控制](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)，並自 Basic 方案起提供自訂品牌用戶端產生器與 [LDAP/OIDC SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)。
+授權在一開始就講清楚：Server Pro 方案計算登入使用者與受管裝置，標準方案包含無限同時連線；只有 [Customized V2](https://rustdesk.com/pricing#custom2) 授權固定數量。你可以[隨時升級](/zh-tw/blog/upgrade-rustdesk-license-mid-subscription-zh-tw)：升級會把授權延長為自升級日起一整年，並折抵剩餘的已付價值。針對客戶支援工作，Pro 提供自架網頁主控台與依使用者及裝置群組設定的[存取控制](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)，並自 Basic 方案起提供自訂品牌使用者端產生器與 [LDAP/OIDC SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)。
 
 ## 接下來該怎麼做
 
-如果標記是誤判，上面的白名單申請就是你的解法。如果你的用途確實是商業性質，請先用 Server OSS 試行：重現觸發標記的工作流程——相同的技術人員、端點、無人值守工作階段與支援量——並在進行年度採購前，估算兩個授權面向（登入使用者與受管裝置）的規模。不論考慮哪一種替代方案，用於工作之前都請先讀過它的授權條款——可以免費下載，不代表自動允許商業使用。Pro 評估條款請洽 [sales@rustdesk.com](mailto:sales@rustdesk.com)。
+如果標記是誤判，上面的白名單申請就是你的解法。如果你的用途確實是商業性質，請先用 Server OSS 試行：重現觸發標記的工作流程——相同的技術人員、端點、無人值守工作階段與支援量——並在進行年度採購前，估算兩個授權層面（登入使用者與受管裝置）的規模。不論考慮哪一種替代方案，用於工作之前都請先讀過它的授權條款——可以免費下載，不代表自動允許商業使用。Pro 評估條款請洽 [sales@rustdesk.com](mailto:sales@rustdesk.com)。

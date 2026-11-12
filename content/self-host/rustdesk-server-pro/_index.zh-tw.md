@@ -26,7 +26,7 @@ pre: "<b>2.2. </b>"
 - [安全性設定同步](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/strategy/)
 - [存取控制](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/permissions/)
 - [多個中繼伺服器](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/relay/)（自動選擇最近的中繼伺服器）
-- [自訂客戶端生成器](https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only)
+- [自訂客戶端產生器](https://rustdesk.com/docs/en/self-host/client-configuration/#1-custom-client-generator-pro-only)
 - WebSocket
 - 網頁客戶端自架
 

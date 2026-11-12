@@ -36,9 +36,9 @@ RustDesk Server Pro 計算的是授權的登入使用者與受管裝置。在標
 
 ## 詳細說明
 
-改變計算方式的是方案。在 **[Customized V2](https://rustdesk.com/pricing#custom2)** 方案中，受管裝置的定義比較窄：只有您**指派給裝置群組或使用者**的裝置，才會計入您的授權裝置數。只為臨時、一次性支援而連線、從未指派的電腦不會被計入，也不會被停用。如果您希望這些未指派的裝置完全不出現在主控台中，可以使用 [`register-device` 用戶端設定](https://rustdesk.com/docs/zh-tw/self-host/client-configuration/advanced-settings/#register-device)控制，這項設定在授權的同時連線數為 2 以上時生效。實務上，這種快速支援工作階段只會顯示一組 ID 與一次性密碼，供單次有人值守的連線使用，因此真正一次性的互動，永遠不需要在您的裝置群中占用固定名額。如果您的工作大多是這種型態，Customized V2 通常更合適——請將您的情境寄到 [sales@rustdesk.com](mailto:sales@rustdesk.com) 洽詢目前的條款，或查看 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
+改變計算方式的是方案。在 **[Customized V2](https://rustdesk.com/pricing#custom2)** 方案中，受管裝置的定義比較窄：只有您**指派給裝置群組或使用者**的裝置，才會計入您的授權裝置數。只為臨時、一次性支援而連線、從未指派的電腦不會被計入，也不會被停用。如果您希望這些未指派的裝置完全不出現在主控台中，可以使用 [`register-device` 使用者端設定](https://rustdesk.com/docs/zh-tw/self-host/client-configuration/advanced-settings/#register-device)控制，這項設定在授權的同時連線數為 2 以上時生效。實務上，這種快速支援工作階段只會顯示一組 ID 與一次性密碼，供單次有人值守的連線使用，因此真正一次性的互動，永遠不需要在您的裝置群中占用固定名額。如果您的工作大多是這種型態，Customized V2 通常更合適——請將您的情境寄到 [sales@rustdesk.com](mailto:sales@rustdesk.com) 洽詢目前的條款，或查看 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
 
-舉例來說，假設一家 [MSP](/zh-tw/blog/rustdesk-for-msps-zh-tw) 有 20 名技術人員，支援約 1,000 台客戶電腦：它必須**同時**滿足兩個授權面向——足夠 20 名技術人員使用的登入使用者，以及足夠涵蓋所有需保持可連線電腦的受管裝置。真正只是一次性支援的端點，則適用上述的 Customized V2 規則；目前的額度請見 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
+舉例來說，假設一家 [MSP](/zh-tw/blog/rustdesk-for-msps-zh-tw) 有 20 名技術人員，支援約 1,000 台客戶電腦：它必須**同時**滿足兩個授權層面——足夠 20 名技術人員使用的登入使用者，以及足夠涵蓋所有需保持可連線電腦的受管裝置。真正只是一次性支援的端點，則適用上述的 Customized V2 規則；目前的額度請見 [rustdesk.com/pricing](https://rustdesk.com/pricing)。
 
 ## 同時連線是另一個授權單位
 

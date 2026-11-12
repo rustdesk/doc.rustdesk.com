@@ -196,7 +196,7 @@ const copy: Record<Lang, BlogCopy> = {
     title: '部落格',
     subtitle: 'RustDesk 新聞、教學、資源與產品更新。',
     description:
-      'RustDesk 官方部落格，收錄產品新聞與新功能發布（例如網頁用戶端、Wayland 無人值守存取）、操作教學、與 TeamViewer、AnyDesk 等工具的比較、自架伺服器部署指南，以及遠端桌面資安、授權計費與疑難排解文章，帶你全面認識這套開源軟體。',
+      'RustDesk 官方部落格，收錄產品新聞與新功能發布（例如網頁使用者端、Wayland 無人值守存取）、操作教學、與 TeamViewer、AnyDesk 等工具的比較、自架伺服器部署指南，以及遠端桌面資安、授權計費與疑難排解文章，帶你全面認識這套開源軟體。',
     page: '第',
     newerPosts: '較新文章',
     olderPosts: '較早文章',

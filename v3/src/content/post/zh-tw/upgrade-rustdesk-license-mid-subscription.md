@@ -21,7 +21,7 @@ faq:
   - question: '如何在網頁主控台重新整理授權？'
     answer: '付款後，開啟 Server Pro 網頁主控台的授權設定，點選「編輯」，不變更金鑰直接按「確定」。這會取得更新後的授權內容，授權金鑰維持不變。若不重新整理，新額度會在下次定期授權檢查時，於約 24 小時內自動套用。'
   - question: '要去哪裡購買升級或續約授權？'
-    answer: '請使用 rustdesk.com/self-host/account/ 的自助授權入口網站，並以購買授權時在付款頁面使用的電子郵件地址登入；如果不記得是哪個電子郵件地址，請聯絡 support@rustdesk.com。入口網站也保存您的發票與續約紀錄。'
+    answer: '請使用 rustdesk.com/self-host/account/ 的自助授權入口網站，並以購買授權時在付款頁面使用的電子郵件地址登入；如果不記得是哪個電子郵件地址，請聯絡 support@rustdesk.com。入口網站也儲存您的發票與續約紀錄。'
   - question: '可以在訂閱期間降級或減少席位嗎？'
     answer: 'RustDesk Server Pro 授權的降級與減少席位，需透過 RustDesk 團隊處理：請將授權使用的電子郵件與所需的變更寄到 sales@rustdesk.com。rustdesk.com/self-host/account/ 的自助入口網站則負責可隨時購買的升級，以及續約與發票。'
 

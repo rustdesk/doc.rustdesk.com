@@ -19,7 +19,7 @@ faq:
   - question: '為什麼 RustDesk 公共伺服器需要登入？'
     answer: 'RustDesk 表示，由於詐騙與殭屍網路濫用持續發生，目前公共伺服器要求控制端登入。透過支援的第三方身分提供者登入是免費的。公共伺服器的用途是展示與測試，不適合正式營運或處理敏感工作；需要自行營運基礎架構與政策的組織，仍可選擇自架。'
   - question: '該如何保護接受 RustDesk 連線的裝置？'
-    answer: '請在受控裝置上設定強度足夠且獨一無二的固定密碼，啟用用戶端的 TOTP 連線雙重驗證（2FA），並在控制端位址或 CIDR 範圍可預測時使用 IP 允許清單。自 RustDesk 1.5.0 起，還可以用 ID 允許清單限制哪些 RustDesk ID 能連線。信任裝置的例外請維持在最小範圍。這些防護層能降低密碼與網路來源方面的風險，但如果有人刻意把密碼、當下的 2FA 驗證碼或手動核准交給詐騙者，就無法提供保護。'
+    answer: '請在受控裝置上設定強度足夠且獨一無二的固定密碼，啟用使用者端的 TOTP 連線雙重驗證（2FA），並在控制端位址或 CIDR 範圍可預測時使用 IP 允許清單。自 RustDesk 1.5.0 起，還可以用 ID 允許清單限制哪些 RustDesk ID 能連線。信任裝置的例外請維持在最小範圍。這些防護層能降低密碼與網路來源方面的風險，但如果有人刻意把密碼、當下的 2FA 驗證碼或手動核准交給詐騙者，就無法提供保護。'
 metadata:
   description: 'RustDesk 如何因應遠端存取詐騙：公開警告、退出 Google Play、公共伺服器登入要求、受控裝置雙重驗證（2FA），以及 IP 與 ID 允許清單。'
   keywords: 'RustDesk 詐騙, RustDesk 是詐騙嗎, RustDesk Google Play, RustDesk 需要登入, RustDesk 2FA, RustDesk IP 白名單, RustDesk ID 白名單, 遠端存取詐騙防範'
@@ -33,7 +33,7 @@ RustDesk 是合法的開放原始碼遠端存取軟體，但合法的軟體同�
 
 | 措施                    | 因應的情境                                       | 代價或限制                                          |
 | ----------------------- | ------------------------------------------------ | --------------------------------------------------- |
-| 網站與用戶端警告        | 有人被不明來電者指示安裝 RustDesk                | 警告仍可能被忽略                                    |
+| 網站與使用者端警告        | 有人被不明來電者指示安裝 RustDesk                | 警告仍可能被忽略                                    |
 | 主動從 Google Play 下架 | 透過熟悉的應用程式商店，輕易完成詐騙導向的安裝   | 合法 Android 使用者失去商店曝光與 Play 自動更新     |
 | 公共伺服器要求登入      | 匿名利用共用基礎架構進行詐騙與殭屍網路濫用       | 合法使用者必須登入，部分既有工作流程因此受到影響    |
 | 受控裝置安全控制項      | 密碼遭竊、網路暴露範圍過大，以及無人值守存取風險 | 必須正確設定才有效，也無法防範使用者自願洩露資訊    |
@@ -44,7 +44,7 @@ RustDesk 是合法的開放原始碼遠端存取軟體，但合法的軟體同�
 
 [RustDesk 支援頁面](https://rustdesk.com/support)一開頭就是直接的詐騙警告：如果您正在和不認識、不信任的人通話，而對方要求您安裝 RustDesk，請立即停止。[RustDesk GitHub 儲存庫](https://github.com/rustdesk/rustdesk)也附有濫用聲明，反對未經授權的存取、控制與侵犯隱私。
 
-透過 [GitHub Releases](https://github.com/rustdesk/rustdesk/releases) 發布的官方 Android 用戶端內，同樣有這項警告。在尚未登入、即將被控制的 Android 裝置上點按**啟動服務**時，螢幕擷取服務啟動前會先跳出警告，告訴受不明且不可信來電者指示的使用者：請停止操作並掛斷電話。官方版本會設定倒數計時，時間到了使用者才能繼續。[目前的受控端流程](https://github.com/rustdesk/rustdesk/blob/6c578292e8ebbbec708b76986ba8c4bc7c509747/flutter/lib/mobile/pages/server_page.dart#L244-L421)與[英文警告文字](https://github.com/rustdesk/rustdesk/blob/6c578292e8ebbbec708b76986ba8c4bc7c509747/src/lang/en.rs#L192-L194)都可以在開放原始碼儲存庫中查看。
+透過 [GitHub Releases](https://github.com/rustdesk/rustdesk/releases) 發布的官方 Android 使用者端內，同樣有這項警告。在尚未登入、即將被控制的 Android 裝置上點按**啟動服務**時，螢幕擷取服務啟動前會先跳出警告，告訴受不明且不可信來電者指示的使用者：請停止操作並掛斷電話。官方版本會設定倒數計時，時間到了使用者才能繼續。[目前的受控端流程](https://github.com/rustdesk/rustdesk/blob/6c578292e8ebbbec708b76986ba8c4bc7c509747/flutter/lib/mobile/pages/server_page.dart#L244-L421)與[英文警告文字](https://github.com/rustdesk/rustdesk/blob/6c578292e8ebbbec708b76986ba8c4bc7c509747/src/lang/en.rs#L192-L194)都可以在開放原始碼儲存庫中查看。
 
 警告出現的位置很重要。一般的安全頁面或許能觸及正在研究產品的人；出現在**啟動服務**這一步的警告，則是在 Android 傳入工作階段即將成立的那一刻，觸及當事人本人。但即使如此，它也無法強迫對方去懷疑一位說服力十足的來電者。
 
@@ -52,7 +52,7 @@ RustDesk 是合法的開放原始碼遠端存取軟體，但合法的軟體同�
 
 2023 年 9 月 3 日，RustDesk 官方 X 帳號發文表示：[「我們已暫時將 RustDesk 從 Google Play 下架，以防止更多針對使用者的詐騙。」](https://x.com/rustdesk/status/1698372220379349421)這則連結與內容也保留在已回覆的 [GitHub Discussion #5660](https://github.com/rustdesk/rustdesk/discussions/5660) 中，而目前的 RustDesk [常見問題也說明，專案是因為詐騙問題而自行從 Google Play 下架](https://github.com/rustdesk/rustdesk/wiki/FAQ#apple--google-store)。
 
-因此，RustDesk **目前沒有透過 Google Play 發布**。這並不是說 Android 用戶端是惡意軟體，也不是說每個安裝它的人都有風險，而是一項發布決策，目的是減少詐騙話術中常用的一條途徑。
+因此，RustDesk **目前沒有透過 Google Play 發布**。這並不是說 Android 使用者端是惡意軟體，也不是說每個安裝它的人都有風險，而是一項發布決策，目的是減少詐騙話術中常用的一條途徑。
 
 這項取捨確實有代價：退出 Google Play，合法使用者就少了商店曝光、熟悉的安裝方式與商店自動更新。目前的 Android 版本可從 [RustDesk 官方 GitHub 發布頁](https://github.com/rustdesk/rustdesk/releases)與 [F-Droid](https://f-droid.org/packages/com.carriez.flutter_hbb/) 取得。請自行確認下載來源，不要安裝不請自來的「客服」來電者傳給您的 APK 下載連結。我們的 [Android 與 iOS 指南](/zh-tw/blog/rustdesk-remote-control-android-ios-zh-tw)列出了目前的行動裝置功能與安裝來源。
 
@@ -100,7 +100,7 @@ RustDesk 介面稱這項功能為 **IP 白名單**。說得更明確一點，它
 - `2001:db8::10/128`：單一 IPv6 位址。
 - `2001:db8:1234::/64`：一個 IPv6 子網路。
 
-以上都是文件專用的範例範圍，請勿原封不動照抄，請輸入您實際的控制端位址或網路。多筆項目之間可用逗號、分號、空格或換行分隔。RustDesk 在[進階用戶端設定參考文件](https://rustdesk.com/docs/zh-tw/self-host/client-configuration/advanced-settings/#whitelist)中說明了此設定，[受控端的檢查邏輯也可以在原始碼中查看](https://github.com/rustdesk/rustdesk/blob/1.5.0/src/server/connection.rs#L1410-L1437)。
+以上都是文件專用的範例範圍，請勿原封不動照抄，請輸入您實際的控制端位址或網路。多筆項目之間可用逗號、分號、空格或換行分隔。RustDesk 在[進階使用者端設定參考文件](https://rustdesk.com/docs/zh-tw/self-host/client-configuration/advanced-settings/#whitelist)中說明了此設定，[受控端的檢查邏輯也可以在原始碼中查看](https://github.com/rustdesk/rustdesk/blob/1.5.0/src/server/connection.rs#L1410-L1437)。
 
 請使用實務上可行的最小範圍。固定的辦公室對外位址與已知的 VPN 範圍很適合；動態的住家位址與經常移動的控制端則不適合。請先確認在您的 NAT、VPN、直接連線或中繼拓撲中，RustDesk 實際看到的來源位址是什麼，並在關閉目前可用的工作階段之前，先用另一個工作階段測試新規則。位址或 CIDR 一旦設錯，可能把合法的支援人員擋在門外。
 
@@ -121,17 +121,17 @@ RustDesk 介面稱這項功能為 **IP 白名單**。說得更明確一點，它
 - `12345678?`：`?` 恰好符合一個字元，因此會允許所有以 `12345678` 開頭、長度為九個字元的 ID。
 - `support-*`：`*` 可符合任意數量的字元，適合控制端使用同一前綴自訂 ID 的情況。
 
-這些同樣只是範例值。此設定在[進階用戶端設定參考文件](https://rustdesk.com/docs/zh-tw/self-host/client-configuration/advanced-settings/#id-whitelist)中名為 `id-whitelist`，管理員可以在自訂用戶端中預先設定，[其檢查邏輯也可以在原始碼中查看](https://github.com/rustdesk/rustdesk/blob/1.5.0/src/server/connection.rs#L1439-L1467)。
+這些同樣只是範例值。此設定在[進階使用者端設定參考文件](https://rustdesk.com/docs/zh-tw/self-host/client-configuration/advanced-settings/#id-whitelist)中名為 `id-whitelist`，管理員可以在自訂使用者端中預先設定，[其檢查邏輯也可以在原始碼中查看](https://github.com/rustdesk/rustdesk/blob/1.5.0/src/server/connection.rs#L1439-L1467)。
 
 這項檢查在控制端送出登入請求時執行，早於密碼或 2FA 驗證碼的核對。工作階段雙方互換角色時（這個動作原本不需要密碼），也同樣會檢查。若同時設定了 IP 允許清單，連線必須兩者都通過。遭拒絕的控制端會看到「您的 ID 已被對方封鎖」（Your ID is blocked by the peer），而且嘗試次數有頻率限制，因此無法快速試探出哪些 ID 在清單內。
 
-也請了解它的限制。ID 是由發起連線的用戶端自行回報，並不能證明身分，經過修改的用戶端可以冒用清單內的 ID；RustDesk 也在此設定旁顯示了這項提醒。這份清單的作用，是讓 ID 不在清單上的一般用戶端，在進入密碼提示之前就被拒於門外。在管理員已預先設定清單的裝置上，即使來電者說服使用者唸出 ID 與密碼，對方用標準用戶端從清單外的 ID 仍然連不進來。請繼續保留強密碼與 2FA，並在關閉目前可用的工作階段之前，先用另一個工作階段測試清單：一個打錯的字，就可能把合法的支援人員擋在門外。
+也請了解它的限制。ID 是由發起連線的使用者端自行回報，並不能證明身分，經過修改的使用者端可以冒用清單內的 ID；RustDesk 也在此設定旁顯示了這項提醒。這份清單的作用，是讓 ID 不在清單上的一般使用者端，在進入密碼提示之前就被拒於門外。在管理員已預先設定清單的裝置上，即使來電者說服使用者唸出 ID 與密碼，對方用標準使用者端從清單外的 ID 仍然連不進來。請繼續保留強密碼與 2FA，並在關閉目前可用的工作階段之前，先用另一個工作階段測試清單：一個打錯的字，就可能把合法的支援人員擋在門外。
 
 ## 這些措施做不到的事
 
 警告、商店下架、登入要求、強密碼、2FA，以及 IP 與 ID 允許清單，每一項都能減少攻擊者的部分可乘之機，但沒有一項能消除社交工程這個核心風險：人仍然可能被說服而核准存取，或把每一道驗證因素都交出去。
 
-自架也無法讓濫用絕跡。它讓組織掌控自己的 RustDesk 伺服器與政策，但詐騙者同樣可以架設私有基礎架構，或散布經過修改的用戶端。RustDesk 公共伺服器的限制只適用於公共伺服器；自架部署依照其營運者自行設定的政策運作。
+自架也無法讓濫用絕跡。它讓組織掌控自己的 RustDesk 伺服器與政策，但詐騙者同樣可以架設私有基礎架構，或散布經過修改的使用者端。RustDesk 公共伺服器的限制只適用於公共伺服器；自架部署依照其營運者自行設定的政策運作。
 
 如果有不明來電者要您安裝 RustDesk、啟動服務、提供密碼、說出 2FA 驗證碼，或打開網路銀行網站，請立即停止。我們這篇不針對特定廠商的[遠端桌面詐騙辨識、預防與事後處理指南](/zh-tw/blog/avoid-remote-desktop-scams-zh-tw)，說明了有哪些警訊，以及萬一已經授予存取權時該怎麼做。
 

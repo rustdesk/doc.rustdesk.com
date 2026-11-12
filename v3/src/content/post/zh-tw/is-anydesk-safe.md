@@ -19,7 +19,7 @@ faq:
   - question: '為什麼詐騙集團愛用 AnyDesk？'
     answer: '因為 AnyDesk 免費、幾秒鐘就能安裝，而且被控制的一方不需要帳號，技術支援詐騙集團會打電話或寄電子郵件給受害者，說服對方安裝並交出控制權。這是使用上的風險，不是 AnyDesk 的漏洞：同樣的手法對任何遠端桌面工具都有效，包括 RustDesk。AnyDesk 也發布了濫用防範指南。'
   - question: 'AnyDesk 的加密安全嗎？'
-    answer: 'AnyDesk 的安全文件說明其採用搭配 AEAD 的 TLS 1.2、RSA-2048 非對稱金鑰交換與 256 位元 AES 傳輸加密，並具備完美前向保密。這些都是業界標準的防護。但要注意，你信任的是不開放原始碼的用戶端，而且預設由 AnyDesk 的雲端協調連線，因此你依賴的是廠商的維運安全，而不是自己能稽核的程式碼。'
+    answer: 'AnyDesk 的安全文件說明其採用搭配 AEAD 的 TLS 1.2、RSA-2048 非對稱金鑰交換與 256 位元 AES 傳輸加密，並具備完美前向保密。這些都是業界標準的防護。但要注意，你信任的是不開放原始碼的使用者端，而且預設由 AnyDesk 的雲端協調連線，因此你依賴的是廠商的維運安全，而不是自己能稽核的程式碼。'
 metadata:
   description: 'AnyDesk 安全嗎？本文附上資料來源，檢視其 TLS／AES 加密、2024 年正式環境系統的資安事件、詐騙集團的濫用情形，以及閉源軟體在信任上的取捨。'
   keywords: 'AnyDesk 安全嗎, AnyDesk 安全性, AnyDesk 2024 資安事件, AnyDesk 詐騙, AnyDesk 加密, AnyDesk 能安全使用嗎, AnyDesk 遭駭'
@@ -57,9 +57,9 @@ metadata:
 
 這正是 AnyDesk 與 RustDesk 兩種模式分道揚鑣之處——差別不在加密好不好，而在*你必須憑信任接受哪些事*。
 
-AnyDesk 是專有軟體。你無法閱讀用戶端的原始碼、無法自行建置，也無法獨立驗證它的行為；你只能相信 AnyDesk 的執行檔確實如其宣稱般運作。而且預設情況下，你的工作階段由 AnyDesk 的雲端協調，該基礎架構的可用性與安全性由廠商負責——2024 年的事件正說明了這一點。AnyDesk Ultimate 提供地端（on-premises）版本，對購買的客戶而言可以縮小這個落差。
+AnyDesk 是專有軟體。你無法閱讀使用者端的原始碼、無法自行建置，也無法獨立驗證它的行為；你只能相信 AnyDesk 的執行檔確實如其宣稱般運作。而且預設情況下，你的工作階段由 AnyDesk 的雲端協調，該基礎架構的可用性與安全性由廠商負責——2024 年的事件正說明了這一點。AnyDesk Ultimate 提供地端（on-premises）版本，對購買的客戶而言可以縮小這個落差。
 
-在這兩點上，RustDesk 都站在相反的起點。RustDesk 的用戶端與 RustDesk Server OSS（免費社群伺服器）[以 AGPL 授權開源](https://github.com/rustdesk/rustdesk)；Server Pro 則是商業、專有的自架伺服器軟體。用戶端可以稽核、可以自行建置，你不必盲目信任專有的執行檔。而且因為你可以[自架](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw) ID/連線協調與中繼伺服器，協調你工作階段的基礎架構屬於你，而不是第三方——這正是 2024 年事件所凸顯的廠商集中風險。這也有助於實現[資料主權設計](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)。
+在這兩點上，RustDesk 都站在相反的起點。RustDesk 的使用者端與 RustDesk Server OSS（免費社群伺服器）[以 AGPL 授權開源](https://github.com/rustdesk/rustdesk)；Server Pro 則是商業、專有的自架伺服器軟體。使用者端可以稽核、可以自行建置，你不必盲目信任專有的執行檔。而且因為你可以[自架](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw) ID/連線協調與中繼伺服器，協調你工作階段的基礎架構屬於你，而不是第三方——這正是 2024 年事件所凸顯的廠商集中風險。這也有助於實現[資料主權設計](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw)。
 
 同樣公平地說，這是轉移了信任，而不是消除信任。正因為程式碼公開，RustDesk 自己的缺陷也是公開的，所以請追蹤[最新版本](https://github.com/rustdesk/rustdesk/releases)與漏洞紀錄。而且可稽核、自架的基礎架構只是起點，不是保證：工作階段仍會在端點之間直接傳輸，伺服器也要由你自己修補。
 

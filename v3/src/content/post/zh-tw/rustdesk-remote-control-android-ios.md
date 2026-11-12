@@ -19,7 +19,7 @@ faq:
   - question: '可以用手機控制我的電腦嗎？'
     answer: '可以。Android 與 iOS 版 RustDesk 應用程式都是完整的控制端：以 ID 連到 Windows、macOS 或 Linux 電腦，再用螢幕上的觸控板或滑鼠模式與軟體鍵盤操作。部分剪貼簿、檔案傳輸與特殊按鍵的操作方式因行動作業系統而異。用手機控制電腦，是行動裝置最可靠的使用情境。'
   - question: 'RustDesk 的行動應用程式是開放原始碼嗎？'
-    answer: '是。行動版用戶端與桌面版用戶端共用同一套 AGPL 開放原始碼程式碼庫。Android 版本可從 RustDesk 官方 GitHub 發布頁與 F-Droid 取得，套件名稱為 com.carriez.flutter_hbb；iOS 控制端可從 Apple App Store 取得。RustDesk 目前沒有透過 Google Play 發布。'
+    answer: '是。行動版使用者端與桌面版使用者端共用同一套 AGPL 開放原始碼程式碼庫。Android 版本可從 RustDesk 官方 GitHub 發布頁與 F-Droid 取得，套件名稱為 com.carriez.flutter_hbb；iOS 控制端可從 Apple App Store 取得。RustDesk 目前沒有透過 Google Play 發布。'
   - question: '可以把 Android 裝置設定成無人值守控制嗎？'
     answer: '部分可以。RustDesk 能以前景通知讓擷取服務持續運作，並在開機時重新啟動，但螢幕擷取需要同意、鎖定畫面無法輸入，以及重新開機後必須手動解鎖，都讓真正的 Android 無人值守控制並不可靠。請把 Android 控制視為有人在場的支援，而不是設定好就能放著不管的存取方式。'
 metadata:
@@ -29,7 +29,7 @@ metadata:
 
 RustDesk 在裝置擁有者授予螢幕擷取與輸入權限後，確實能控制 Android 裝置，而兩款行動應用程式也都是操作電腦的絕佳*控制端*。iOS 應用程式僅能作為控制端：RustDesk 未實作 iOS 受控端或畫面分享，所以無法用 RustDesk 遠端連進 iPhone 或 iPad。本指南說明哪些可行、哪些不行，以及背後的原因，讓你依照實際能力來規劃。
 
-兩款行動應用程式共用 AGPL 授權的 RustDesk 用戶端程式碼庫；RustDesk Server OSS（免費的社群伺服器）同樣採用 AGPL 授權，Server Pro 則是商業、專有的自架伺服器軟體。Android 版本可從 [RustDesk 官方 GitHub 發布頁](https://github.com/rustdesk/rustdesk/releases)與 [F-Droid](https://f-droid.org/packages/com.carriez.flutter_hbb/) 取得，套件名稱為 `com.carriez.flutter_hbb`，支援的裝置範圍很廣——提供 arm64、arm32 與 x86_64 版本，以及通用 APK；iOS 控制端則在 App Store 上架。RustDesk [目前沒有透過 Google Play 發布](/zh-tw/blog/rustdesk-and-remote-access-scams-zh-tw)：為了因應詐騙濫用，RustDesk 主動下架了 Android 應用程式。程式碼庫相同，可稽核的核心也相同。
+兩款行動應用程式共用 AGPL 授權的 RustDesk 使用者端程式碼庫；RustDesk Server OSS（免費的社群伺服器）同樣採用 AGPL 授權，Server Pro 則是商業、專有的自架伺服器軟體。Android 版本可從 [RustDesk 官方 GitHub 發布頁](https://github.com/rustdesk/rustdesk/releases)與 [F-Droid](https://f-droid.org/packages/com.carriez.flutter_hbb/) 取得，套件名稱為 `com.carriez.flutter_hbb`，支援的裝置範圍很廣——提供 arm64、arm32 與 x86_64 版本，以及通用 APK；iOS 控制端則在 App Store 上架。RustDesk [目前沒有透過 Google Play 發布](/zh-tw/blog/rustdesk-and-remote-access-scams-zh-tw)：為了因應詐騙濫用，RustDesk 主動下架了 Android 應用程式。程式碼庫相同，可稽核的核心也相同。
 
 ## 重點一覽表
 
@@ -78,7 +78,7 @@ Apple 也在 [FaceTime 中提供需經同意的遠端控制](https://support.app
 
 ## 關於隱私與自架
 
-由於行動應用程式是開放原始碼，並與桌面用戶端使用相同的通訊協定，你可以讓它們連到自己的[自架 RustDesk 伺服器](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)，而不是公共網路——行動工作階段就由你掌控的基礎設施協調，連 ID 也不例外。對於會碰到個人裝置的遠端支援流程，這種資料主權的考量比平常更重要。
+由於行動應用程式是開放原始碼，並與桌面使用者端使用相同的通訊協定，你可以讓它們連到自己的[自架 RustDesk 伺服器](/zh-tw/blog/why-self-host-remote-desktop-software-zh-tw)，而不是公共網路——行動工作階段就由你掌控的基礎設施協調，連 ID 也不例外。對於會碰到個人裝置的遠端支援流程，這種資料主權的考量比平常更重要。
 
 取捨一如既往：伺服器要由你自己營運與保護——包括更新、監控、備份與容量規劃——而對許多團隊來說，把工作階段資料留在自己的地盤上非常值得。
 

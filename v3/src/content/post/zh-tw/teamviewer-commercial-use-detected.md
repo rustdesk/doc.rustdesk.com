@@ -74,7 +74,7 @@ TeamViewer 的免費方案僅授權供個人用途使用，而產品本身具備
 | 選擇其他代管 SaaS | 不想自行維運伺服器，但希望換一種商業方案 | 連線協調與管理由廠商營運；媒體可直連或經中繼       |
 | 試行自架工具      | 想自行掌控 ID、中繼、主控台與部署資料    | 團隊需自行負責主機代管、修補、憑證、監控與復原     |
 
-RustDesk 屬於自架這一列。RustDesk 的用戶端與 RustDesk Server OSS（免費社群伺服器）採用 AGPL 授權，Server OSS 沒有商業用途分類機制：依其授權，個人與商業用途都可以免費使用。Server Pro 則是商業、專有的自架伺服器軟體，依登入使用者與受管裝置授權，只受您所購買方案的限制。標準方案不限同時連線數；只有 [Customized V2](https://rustdesk.com/pricing#custom2) 授權固定數量。
+RustDesk 屬於自架這一列。RustDesk 的使用者端與 RustDesk Server OSS（免費社群伺服器）採用 AGPL 授權，Server OSS 沒有商業用途分類機制：依其授權，個人與商業用途都可以免費使用。Server Pro 則是商業、專有的自架伺服器軟體，依登入使用者與受管裝置授權，只受您所購買方案的限制。標準方案不限同時連線數；只有 [Customized V2](https://rustdesk.com/pricing#custom2) 授權固定數量。
 
 ## 安全的遷移路徑
 

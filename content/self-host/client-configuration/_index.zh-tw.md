@@ -1,7 +1,7 @@
 ---
 title: 客戶端配置
-description: "為自託管伺服器配置 RustDesk 客戶端。功能包括自定義客戶端生成器（專業版）用於帶有您的標誌的品牌應用、手動配置、匯入/匯出設定和企業部署策略。"
-keywords: ["rustdesk 客戶端配置", "自定義客戶端生成器", "rustdesk 品牌客戶端", "rustdesk 白標簽", "rustdesk 企業部署", "rustdesk 客戶端設定", "自定義rustdesk應用", "rustdesk 專業版客戶端", "rustdesk 配置管理", "rustdesk 企業品牌"]
+description: "為自託管伺服器配置 RustDesk 客戶端。功能包括自訂客戶端產生器（專業版）用於帶有您的標誌的品牌應用、手動配置、匯入/匯出設定和企業部署策略。"
+keywords: ["rustdesk 客戶端配置", "自訂客戶端產生器", "rustdesk 品牌客戶端", "rustdesk 白標簽", "rustdesk 企業部署", "rustdesk 客戶端設定", "自訂rustdesk應用", "rustdesk 專業版客戶端", "rustdesk 配置管理", "rustdesk 企業品牌"]
 weight: 300
 pre: "<b>2.3. </b>"
 ---
@@ -25,13 +25,13 @@ pre: "<b>2.3. </b>"
 
 有多種方式可以配置 RustDesk 客戶端使用您自己的自託管伺服器，我們將在下面介紹一些方法。
 
-## 1. 自定義客戶端生成器（僅限 Pro 版本，基礎計劃或自定義計劃）
+## 1. 自訂客戶端產生器（僅限 Pro 版本，基礎計劃或自訂計劃）
 
 您可以擁有自己的名稱、徽標、圖示、配置、簽名等。
 
 目前支援 Windows X64、Mac Arm64 / X64、[Linux](https://twitter.com/rustdesk/status/1788905463678951787)、Android Arm 64。
 
-[視頻](https://twitter.com/rustdesk/status/1769171628426944539)
+[影片](https://twitter.com/rustdesk/status/1769171628426944539)
 
 ![](/docs/en/self-host/client-configuration/images/custom-client-qs.png)
 ![](/docs/en/self-host/client-configuration/images/web_console_custom_client_config.jpeg)

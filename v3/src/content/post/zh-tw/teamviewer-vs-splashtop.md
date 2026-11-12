@@ -98,11 +98,11 @@ Splashtop SaaS 可能適合重視部署簡便、公開入門價格與效能導�
 
 **效能同樣遵循「自己測」的原則。** Splashtop 宣傳具體的色彩、音訊與影格率數字；RustDesk 沒有公布與之抗衡的宣傳數字，而且一旦建立直接連線，工作階段就在端點之間點對點傳輸，不經過廠商的中繼。就像上面 Splashtop 與 TeamViewer 的數字一樣，真正有決定性的只有你在自己的端點與網路上量到的數字。
 
-**開放的用戶端與免費的 Server OSS，加上商業版 Pro 管理功能。** RustDesk 用戶端與 RustDesk Server OSS（免費社群伺服器）採用 AGPL 授權，團隊可以在購買 Pro 之前檢視原始碼並測試基本的自架功能。Server Pro 是商業、專有的自架伺服器軟體，增加網頁主控台、裝置群組、共用通訊錄，以及依使用者與裝置群組設定的存取控制，並自 Basic 方案起提供 LDAP/OIDC SSO 與自訂用戶端產生器。請參閱 [RustDesk 為 MSP 打造](/zh-tw/blog/rustdesk-for-msps-zh-tw)與[自架 Splashtop 替代方案比較](/zh-tw/blog/rustdesk-vs-splashtop-zh-tw)。
+**開放的使用者端與免費的 Server OSS，加上商業版 Pro 管理功能。** RustDesk 使用者端與 RustDesk Server OSS（免費社群伺服器）採用 AGPL 授權，團隊可以在購買 Pro 之前檢視原始碼並測試基本的自架功能。Server Pro 是商業、專有的自架伺服器軟體，增加網頁主控台、裝置群組、共用通訊錄，以及依使用者與裝置群組設定的存取控制，並自 Basic 方案起提供 LDAP/OIDC SSO 與自訂使用者端產生器。請參閱 [RustDesk 為 MSP 打造](/zh-tw/blog/rustdesk-for-msps-zh-tw)與[自架 Splashtop 替代方案比較](/zh-tw/blog/rustdesk-vs-splashtop-zh-tw)。
 
 ## 光譜上自架的那一端
 
-Splashtop 自己已經把自架選項——On-Prem——擺上檯面，所以對需要由客戶營運連線協調的團隊來說，真正的選擇是要執行誰家的伺服器，而不是要不要執行伺服器。一個提供免費 Server OSS 與開放用戶端的替代方案，同樣屬於這張評估表，並應以控制權、工作負載與總成本來評斷，而不是看每月的 SaaS 標價。
+Splashtop 自己已經把自架選項——On-Prem——擺上檯面，所以對需要由客戶營運連線協調的團隊來說，真正的選擇是要執行誰家的伺服器，而不是要不要執行伺服器。一個提供免費 Server OSS 與開放使用者端的替代方案，同樣屬於這張評估表，並應以控制權、工作負載與總成本來評斷，而不是看每月的 SaaS 標價。
 
 ## 立即試用
 

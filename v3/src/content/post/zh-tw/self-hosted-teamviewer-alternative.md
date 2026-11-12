@@ -5,7 +5,7 @@ lang: 'zh-tw'
 translationKey: 'self-hosted-teamviewer-alternative'
 draft: false
 title: '自架 TeamViewer 與 AnyDesk 替代方案：RustDesk'
-excerpt: '評估以 RustDesk 取代 TeamViewer 或 AnyDesk：開放原始碼用戶端、免費的 Server OSS、商業版 Pro 集中管理，以及分階段的遷移計畫。'
+excerpt: '評估以 RustDesk 取代 TeamViewer 或 AnyDesk：開放原始碼使用者端、免費的 Server OSS、商業版 Pro 集中管理，以及分階段的遷移計畫。'
 image: ~/assets/images/blog/self-hosted-teamviewer-alternative-og.webp
 category: '替代方案'
 tags: ['RustDesk', 'TeamViewer', 'AnyDesk', '替代方案', '自架']
@@ -13,7 +13,7 @@ author: 'RustDesk Team'
 slug: 'self-hosted-teamviewer-alternative-zh-tw'
 faq:
   - question: 'RustDesk 是理想的自架 TeamViewer 與 AnyDesk 替代方案嗎？'
-    answer: '是。RustDesk 結合 AGPL 授權的用戶端、RustDesk Server OSS（免費的社群伺服器）與商業版 Server Pro 集中管理，全部都能自架，而且 Pro 標準方案包含無限同時連線。連線協調、中繼、主控台與儲存的管理資料都由您自己營運。AnyDesk 也提供 Ultimate On-Premises，因此除了部署方式，也請比較原始碼透明度、授權與工作流程。'
+    answer: '是。RustDesk 結合 AGPL 授權的使用者端、RustDesk Server OSS（免費的社群伺服器）與商業版 Server Pro 集中管理，全部都能自架，而且 Pro 標準方案包含無限同時連線。連線協調、中繼、主控台與儲存的管理資料都由您自己營運。AnyDesk 也提供 Ultimate On-Premises，因此除了部署方式，也請比較原始碼透明度、授權與工作流程。'
   - question: '我可以在自己的伺服器上自架 TeamViewer 或 AnyDesk 的替代方案嗎？'
     answer: '可以。使用 RustDesk Server OSS（免費的社群伺服器）或 Server Pro，伺服器由您自己架設在機房或 VPS 上，而且 Server OSS 沒有授權費，也沒有使用期限。您這邊需要有人負責準備主機、開放連接埠、設定 TLS，並持續套用修補程式。'
   - question: 'RustDesk 的授權方式和按席位或按方案的訂閱制相比如何？'
@@ -21,12 +21,12 @@ faq:
   - question: 'RustDesk 會像 AnyDesk 那樣標記商業用途嗎？'
     answer: '不會。RustDesk Server OSS（免費的社群伺服器）沒有 AnyDesk 免費方案那種商業用途判定機制，因此商業使用 Server OSS 不會被標記或中斷。RustDesk Server Pro 是商業產品，限制由購買的方案決定，也就是授權的登入使用者與受管裝置數量。'
   - question: 'RustDesk 適合 MSP 與較大型的 IT 維運團隊嗎？'
-    answer: '適合。RustDesk Server Pro 提供自架主控台、裝置群組、共用通訊錄，以及依使用者與裝置群組設定的存取控制；自訂用戶端產生器與 LDAP/OIDC SSO 從 Basic 方案起提供，標準方案包含無限同時連線。RustDesk 發布了大規模裝置群的規劃指引；規模非常大的環境，請依自身的工作負載驗證容量。'
+    answer: '適合。RustDesk Server Pro 提供自架主控台、裝置群組、共用通訊錄，以及依使用者與裝置群組設定的存取控制；自訂使用者端產生器與 LDAP/OIDC SSO 從 Basic 方案起提供，標準方案包含無限同時連線。RustDesk 發布了大規模裝置群的規劃指引；規模非常大的環境，請依自身的工作負載驗證容量。'
   - question: '自架有助於讓資料留在境內並支援 GDPR 嗎？'
     answer: '有，作為一項部署控制。自架 RustDesk 時，連線協調、中繼、主控台與儲存的裝置資料由誰營運、在哪裡執行，都由您決定。但這不是合規認證：直接連線仍在端點之間傳輸，因此流量能否留在境內、能否履行 GDPR 義務，也取決於您如何規劃路由與營運部署。'
 
 metadata:
-  description: '評估 RustDesk 作為自架的 TeamViewer 或 AnyDesk 替代方案：AGPL 授權的用戶端與 Server OSS、商業版 Server Pro、授權方式與遷移步驟。'
+  description: '評估 RustDesk 作為自架的 TeamViewer 或 AnyDesk 替代方案：AGPL 授權的使用者端與 Server OSS、商業版 Server Pro、授權方式與遷移步驟。'
   keywords: '自架 TeamViewer 替代方案, 自架 AnyDesk 替代方案, TeamViewer 替代軟體, AnyDesk 替代軟體, 開放原始碼遠端桌面替代方案'
 ---
 
@@ -40,7 +40,7 @@ metadata:
 
 **掌控權。** 廠商代管的服務通常由廠商營運連線協調與管理資料；工作階段媒體則可能直接連線或經中繼傳輸。TeamViewer 的標準服務採用這種模式，AnyDesk 則另外提供 Ultimate On-Premises 地端部署版本。
 
-RustDesk 的**用戶端與 Server OSS 採用 AGPL 授權**，可以獨立檢視與建置。Server OSS 提供 ID/連線協調與中繼服務，沒有授權費，也沒有使用期限。**Server Pro 則是商業、專有的自架伺服器軟體**，在您的基礎架構上加入集中管理。不論選哪一種，伺服器在哪裡執行、由誰營運，都由您掌控。
+RustDesk 的**使用者端與 Server OSS 採用 AGPL 授權**，可以獨立檢視與建置。Server OSS 提供 ID/連線協調與中繼服務，沒有授權費，也沒有使用期限。**Server Pro 則是商業、專有的自架伺服器軟體**，在您的基礎架構上加入集中管理。不論選哪一種，伺服器在哪裡執行、由誰營運，都由您掌控。
 
 需要留意一點：直接連線的工作階段在端點之間傳輸（經中繼的工作階段則走您的中繼伺服器），因此自架是一項部署控制，而不是合規認證——流量能否留在境內、能否履行 GDPR 義務，仍取決於您如何規劃路由與營運部署。
 
@@ -50,7 +50,7 @@ RustDesk 的**用戶端與 Server OSS 採用 AGPL 授權**，可以獨立檢視�
 | ---------------------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------- |
 | 連線協調                                 | 標準雲端方案由廠商營運                 | 您自己的 ID/連線協調伺服器                                                                |
 | 工作階段媒體路徑                         | 依產品與網路而定，直接連線或經廠商中繼 | 端點之間直接連線，或經您設定的中繼伺服器                                                  |
-| 原始碼                                   | 專有用戶端                             | AGPL 授權的用戶端與 Server OSS；Server Pro 管理功能為專有軟體                             |
+| 原始碼                                   | 專有使用者端                             | AGPL 授權的使用者端與 Server OSS；Server Pro 管理功能為專有軟體                             |
 | 授權模式                                 | 按席位／按方案訂閱                     | [依登入使用者 + 受管裝置](https://rustdesk.com/pricing)                                   |
 | [同時連線](https://rustdesk.com/pricing) | 依方案而定                             | 標準方案無限制；[Customized V2](https://rustdesk.com/pricing#custom2) 方案有上限          |
 | 伺服器端資料位置                         | 由廠商掌控                             | 由您選擇並營運；端點之間的路徑仍須留意                                                    |
@@ -66,7 +66,7 @@ RustDesk 依登入使用者加上受管裝置授權。**標準方案（Individua
 
 ## 專為 MSP 與 IT 團隊打造
 
-Server Pro 提供自架主控台、裝置群組、共用通訊錄、依使用者與裝置群組設定的[存取控制](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)，以及限制工作階段內操作的[控制角色](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/control-role/)權限；自 Basic 方案起另提供自訂用戶端產生器與 [LDAP/OIDC SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)。每台裝置隸屬於一個裝置群組，而使用者群組與裝置群組的存取權限會累加。
+Server Pro 提供自架主控台、裝置群組、共用通訊錄、依使用者與裝置群組設定的[存取控制](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/permissions/)，以及限制工作階段內操作的[控制角色](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/control-role/)權限；自 Basic 方案起另提供自訂使用者端產生器與 [LDAP/OIDC SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/)。每台裝置隸屬於一個裝置群組，而使用者群組與裝置群組的存取權限會累加。
 
 ## TeamViewer 遷移必須納入考量的事項
 
@@ -85,7 +85,7 @@ TeamViewer 的部署會累積一些逐項對照清單容易遺漏的功能，因
 - **沒有商業用途偵測。** AnyDesk 的免費方案可能把它判定為[商業用途](/zh-tw/blog/anydesk-commercial-use-detected-zh-tw)的帳號標記出來；RustDesk Server OSS 沒有這種商業用途判定機制，Server Pro 則依購買的授權額度運作。
 - **標準方案沒有分級的同時連線上限。** RustDesk Pro 標準方案包含無限同時連線，只有 Customized V2 授權固定數量；AnyDesk 的額度則依方案而異。請把登入使用者與裝置納入成本模型，並在增加容量前先看過[升級的計算方式](/zh-tw/blog/upgrade-rustdesk-license-mid-subscription-zh-tw)。
 - **需要重建的通訊錄、別名與無人值守存取。** 請盤點您依賴的 AnyDesk 別名、通訊錄項目與無人值守存取密碼，並對應到 RustDesk 的登入使用者、裝置群組與共用通訊錄。
-- **自訂命名空間或品牌用戶端。** 如果您的 AnyDesk 使用自訂命名空間或品牌用戶端，請規劃對應的自訂品牌 RustDesk 用戶端，讓終端使用者持續看到一致的工具。
+- **自訂命名空間或品牌使用者端。** 如果您的 AnyDesk 使用自訂命名空間或品牌使用者端，請規劃對應的自訂品牌 RustDesk 使用者端，讓終端使用者持續看到一致的工具。
 
 ## 遷移計畫
 

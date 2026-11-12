@@ -19,7 +19,7 @@ faq:
   - question: 'Windows Home 可以接受傳入的 RDP 連線嗎？'
     answer: '不行。根據 Microsoft 的說明，Windows Home 版本無法作為遠端桌面主機；只有 Professional、Enterprise、Education 與 Windows Server 版本能接受傳入的 RDP 連線。RustDesk 則可在 Windows Home、macOS、Linux 與 Android 上作為遠端工作階段的受控端；RustDesk iOS 應用程式僅能作為控制端。'
   - question: 'RustDesk 可以連線到 Mac 或 Linux 電腦嗎？'
-    answer: '可以。RustDesk 能用其支援的桌面版與行動版控制端應用程式，控制 macOS 與 Linux 主機。RDP 主要是 Windows 主機的通訊協定，因此要連到 macOS 或 Linux 主機，通常得另外加裝第三方伺服器或用戶端。RustDesk iOS 版僅能作為控制端；RustDesk 未實作 iOS 受控端或畫面分享。'
+    answer: '可以。RustDesk 能用其支援的桌面版與行動版控制端應用程式，控制 macOS 與 Linux 主機。RDP 主要是 Windows 主機的通訊協定，因此要連到 macOS 或 Linux 主機，通常得另外加裝第三方伺服器或使用者端。RustDesk iOS 版僅能作為控制端；RustDesk 未實作 iOS 受控端或畫面分享。'
 metadata:
   description: 'RustDesk 與 Microsoft RDP 逐項比較：跨平台涵蓋範圍、不需 VPN 即可透過網際網路存取、區域網路效能、AD 整合，以及安全性取捨。'
   keywords: 'RustDesk vs RDP, RustDesk 與 Microsoft 遠端桌面比較, 不用 VPN 透過網際網路使用 RDP, 跨平台 RDP 替代方案'
@@ -33,7 +33,7 @@ metadata:
 
 RDP 是**內建於 Windows 的通訊協定**。啟用遠端桌面後，Windows 會開啟一個監聽連接埠（TCP 3389），等待傳入連線。這種設計在區域網路上很俐落，跨越網際網路時卻很麻煩，因為必須有*某種機制*把外部連線導向這個連接埠——VPN、RD Gateway，或路由器上的連接埠轉發。
 
-RustDesk 把這個模式反過來。用戶端主動建立**傳出**連線到 ID/連線協調伺服器，由它協調兩台裝置之間的點對點工作階段，無法建立直接路徑時再改走中繼。根據 [RustDesk 文件](https://rustdesk.com/docs/zh-tw/)，只要使用正確的伺服器金鑰，以 ID 協調建立的工作階段就支援端對端加密（以 NaCl 為基礎）；每個用戶端都可以指向公共基礎架構、您自架的伺服器——RustDesk Server OSS（免費的社群伺服器）或商業版 Server Pro——或其他相容的連線協調／中繼實作。由於端點用戶端主動發起傳出連線，RustDesk 不需要 VPN，也不必為每個端點設定連接埠轉發，就能穿越 NAT 與防火牆。這項「不需開放傳入連接埠」的好處只適用於端點：自架的伺服器本身，仍須在文件列出的 ID、連線協調、中繼與選用的 WebSocket 服務連接埠上接受傳入連線。
+RustDesk 把這個模式反過來。使用者端主動建立**傳出**連線到 ID/連線協調伺服器，由它協調兩台裝置之間的點對點工作階段，無法建立直接路徑時再改走中繼。根據 [RustDesk 文件](https://rustdesk.com/docs/zh-tw/)，只要使用正確的伺服器金鑰，以 ID 協調建立的工作階段就支援端對端加密（以 NaCl 為基礎）；每個使用者端都可以指向公共基礎架構、您自架的伺服器——RustDesk Server OSS（免費的社群伺服器）或商業版 Server Pro——或其他相容的連線協調／中繼實作。由於端點使用者端主動發起傳出連線，RustDesk 不需要 VPN，也不必為每個端點設定連接埠轉發，就能穿越 NAT 與防火牆。這項「不需開放傳入連接埠」的好處只適用於端點：自架的伺服器本身，仍須在文件列出的 ID、連線協調、中繼與選用的 WebSocket 服務連接埠上接受傳入連線。
 
 ## 平台涵蓋範圍
 
@@ -45,18 +45,18 @@ RustDesk 可以在 **Windows（包含 Home 版）、macOS、Linux 與 Android** 
 
 這是兩種設計理念分歧最大的地方。Microsoft 自己對「從網路外部連到電腦」的建議，是「使用連接埠轉發或設定 VPN」（[Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/remotepc/remote-desktop-allow-access)）。把原始的 RDP 用連接埠轉發直接暴露在網際網路上，正是您不該選的那條路。
 
-暴露在外的 RDP，是網路犯罪中最常被濫用的入侵管道之一。美國聯邦調查局（FBI）網路犯罪投訴中心多年前就警告：「網路攻擊者……越來越常利用遠端桌面通訊協定進行惡意活動」（[IC3 PSA](https://www.ic3.gov/PSA/2018/PSA180927)），而這個趨勢至今只增不減——RDP 遭入侵，仍是勒索軟體事件最常見的初始入侵途徑之一（[RH-ISAC](https://rhisac.org/ransomware/remote-desktop-protocol-use-in-ransomware-attacks/)）。公開暴露的 RDP 應視為面向網際網路的身分驗證服務，並承擔隨之而來的掃描與憑證攻擊風險。
+暴露在外的 RDP，是網路犯罪中最常被濫用的入侵管道之一。美國聯邦調查局（FBI）網路犯罪投訴中心多年前就警告：「網路攻擊者……越來越常利用遠端桌面通訊協定進行惡意活動」（[IC3 PSA](https://www.ic3.gov/PSA/2018/PSA180927)），而這個趨勢至今只增不減——RDP 遭入侵，仍是勒索軟體事件最常見的初始入侵途徑之一（[RH-ISAC](https://rhisac.org/ransomware/remote-desktop-protocol-use-in-ransomware-attacks/)）。公開暴露的 RDP 應視為對網際網路開放的身分驗證服務，並承擔隨之而來的掃描與憑證攻擊風險。
 
-比較安全的 RDP 對外開放方式，是透過妥善設定的 VPN，或搭配網路層級驗證（Network Level Authentication）的 RD Gateway，但這些都是您得自行維護的基礎架構。RustDesk 採用主動註冊、NAT 穿透與中繼備援，不需要在每個端點上直接暴露 RDP。即便如此，仍需使用最新版的用戶端、落實嚴格的存取控管，並留意公開的漏洞紀錄。
+比較安全的 RDP 對外開放方式，是透過妥善設定的 VPN，或搭配網路層級驗證（Network Level Authentication）的 RD Gateway，但這些都是您得自行維護的基礎架構。RustDesk 採用主動註冊、NAT 穿透與中繼備援，不需要在每個端點上直接暴露 RDP。即便如此，仍需使用最新版的使用者端、落實嚴格的存取控管，並留意公開的漏洞紀錄。
 
 ## RustDesk 與 RDP 一覽表
 
 |                  | RustDesk                                                              | Microsoft RDP                                                                                                                                                                   |
 | ---------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 費用             | 用戶端與 Server OSS 沒有授權費；Pro 與維運成本另計                    | 符合資格的 Windows 桌面版本內建；Windows Server RDS 可能需要額外授權                                                                                                            |
-| 原始碼           | 用戶端與 Server OSS：AGPL；Server Pro：專有                           | 專有                                                                                                                                                                            |
+| 費用             | 使用者端與 Server OSS 沒有授權費；Pro 與維運成本另計                    | 符合資格的 Windows 桌面版本內建；Windows Server RDS 可能需要額外授權                                                                                                            |
+| 原始碼           | 使用者端與 Server OSS：AGPL；Server Pro：專有                           | 專有                                                                                                                                                                            |
 | 主機平台         | Windows、macOS、Linux、Android                                        | Windows Pro/Enterprise/Education/Server（[不含 Home 版](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/remotepc/remote-desktop-allow-access)） |
-| 控制端平台       | Windows、macOS、Linux、Android、iOS                                   | Windows、macOS、iOS、Android，以及其他 Microsoft 用戶端                                                                                                                         |
+| 控制端平台       | Windows、macOS、Linux、Android、iOS                                   | Windows、macOS、iOS、Android，以及其他 Microsoft 使用者端                                                                                                                         |
 | 網際網路存取     | 透過連線協調＋中繼穿透 NAT，不需 VPN 或連接埠轉發                     | 需要 VPN、RD Gateway 或連接埠轉發                                                                                                                                               |
 | 暴露的傳入連接埠 | 端點不需要；自架伺服器有服務連接埠                                    | TCP 3389（除非經過通道），屬於[勒索軟體入侵管道](https://www.ic3.gov/PSA/2018/PSA180927)                                                                                        |
 | 加密             | 使用正確伺服器金鑰時，以 ID 協調的工作階段為端對端加密；IP 直接連線不加密 | 設定後使用 TLS 搭配網路層級驗證                                                                                                                                                 |
@@ -64,7 +64,7 @@ RustDesk 可以在 **Windows（包含 Home 版）、macOS、Linux 與 Android** 
 | 目錄／原則整合   | Server Pro（Basic 以上方案）支援 LDAP/AD 與 OIDC SSO                  | 與 Active Directory／群組原則深度整合                                                                                                                                           |
 | 自架             | 支援——架設您自己的 ID／中繼伺服器                                     | 不適用（作業系統原生功能）                                                                                                                                                      |
 
-使用 Windows Server 時，請區分系統管理用的遠端存取，與[需要用戶端存取授權（CAL）的 RDS 部署](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-client-access-license)。RustDesk Server Pro 的條款請至 [rustdesk.com/pricing](https://rustdesk.com/pricing) 確認。
+使用 Windows Server 時，請區分系統管理用的遠端存取，與[需要使用者端存取授權（CAL）的 RDS 部署](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-client-access-license)。RustDesk Server Pro 的條款請至 [rustdesk.com/pricing](https://rustdesk.com/pricing) 確認。
 
 ## RustDesk 領先之處
 

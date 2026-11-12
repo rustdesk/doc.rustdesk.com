@@ -15,11 +15,11 @@ faq:
   - question: '使用 Chrome Remote Desktop 安全嗎？'
     answer: '安全，就個人使用而言。Google 文件記載 Chrome Remote Desktop 的工作階段全程加密，無人值守存取需要 PIN，支援工作階段則使用一次性存取代碼。主要風險是 PIN 太弱、Google 帳號遭入侵，以及誘騙受害者分享代碼的詐騙集團。請為 Google 帳號啟用雙重驗證，並選擇不易猜到的 PIN。'
   - question: 'Chrome Remote Desktop 有加密嗎？'
-    answer: '有。Google 表示所有 Chrome Remote Desktop 工作階段都全程加密。其企業網路指南說明，WebRTC/ICE 連線會盡可能在兩台電腦之間直接建立，否則經由 TURN 中繼；Chromium 也公開了 remoting 原始碼，所以主機、用戶端與通訊協定元件都可以檢視。'
+    answer: '有。Google 表示所有 Chrome Remote Desktop 工作階段都全程加密。其企業網路指南說明，WebRTC/ICE 連線會盡可能在兩台電腦之間直接建立，否則經由 TURN 中繼；Chromium 也公開了 remoting 原始碼，所以主機、使用者端與通訊協定元件都可以檢視。'
   - question: 'Chrome Remote Desktop 有哪些安全風險？'
     answer: '實務上有三項風險：PIN 太弱或容易被猜到（最少只需六位數）、主機所綁定的 Google 帳號遭入侵，以及有人誘騙受害者分享存取代碼的社交工程詐騙。為 Google 帳號啟用雙重驗證、選擇不易猜到的 PIN，並且絕不把代碼交給主動聯繫你的人，就能化解大部分現實中的危險。'
   - question: '可以自架 Chrome Remote Desktop 嗎？'
-    answer: '不行。Chromium 公開了 Chrome Remote Desktop 的 remoting 原始碼，但 Google 的連線協調服務無法自架，所以每一條連線都要透過 Google 建立。RustDesk 是可以自架的替代方案：RustDesk Server OSS（免費社群伺服器）執行你自己的 ID/連線協調與中繼，RustDesk Server Pro 則增加網頁主控台、存取控制與品牌用戶端。'
+    answer: '不行。Chromium 公開了 Chrome Remote Desktop 的 remoting 原始碼，但 Google 的連線協調服務無法自架，所以每一條連線都要透過 Google 建立。RustDesk 是可以自架的替代方案：RustDesk Server OSS（免費社群伺服器）執行你自己的 ID/連線協調與中繼，RustDesk Server Pro 則增加網頁主控台、存取控制與品牌使用者端。'
 metadata:
   description: 'Chrome Remote Desktop 安全嗎？整理 Google 官方文件對 CRD 加密與 PIN 保護的說明、實際存在的風險，以及以 Google 帳號為核心的信任模式。'
   keywords: 'Chrome Remote Desktop 安全嗎, Chrome Remote Desktop 安全性, Chrome Remote Desktop 加密, Chrome Remote Desktop PIN, Chrome Remote Desktop 風險, CRD 安全嗎'
@@ -57,9 +57,9 @@ CRD 的弱點並不罕見，就是從其設計自然衍生的三項。
 
 CRD 刻意保持精簡，對很多人來說這正是它的吸引力。但仍值得把取捨講清楚，尤其是當你考慮把它用在個人使用以外的場合時。
 
-[Chromium 公開了 CRD 的 remoting 原始碼](https://chromium.googlesource.com/chromium/src/+/main/remoting/)，包括主機、用戶端與通訊協定元件，但 Google 的連線協調服務無法自架。Google 的[企業原則](https://support.google.com/chrome/a/answer/2799701)可以控制誰能使用 CRD，但不會把它變成由客戶營運、具備裝置群組、個別使用者存取規則與品牌用戶端的支援主控台。這並不是在批評 Google，只是 CRD 本來就不是為此而生。如果你需要這些功能，下一步就是 [Chrome Remote Desktop 替代方案](/zh-tw/blog/chrome-remote-desktop-alternative-zh-tw)。
+[Chromium 公開了 CRD 的 remoting 原始碼](https://chromium.googlesource.com/chromium/src/+/main/remoting/)，包括主機、使用者端與通訊協定元件，但 Google 的連線協調服務無法自架。Google 的[企業原則](https://support.google.com/chrome/a/answer/2799701)可以控制誰能使用 CRD，但不會把它變成由客戶營運、具備裝置群組、個別使用者存取規則與品牌使用者端的支援主控台。這並不是在批評 Google，只是 CRD 本來就不是為此而生。如果你需要這些功能，下一步就是 [Chrome Remote Desktop 替代方案](/zh-tw/blog/chrome-remote-desktop-alternative-zh-tw)。
 
-RustDesk 的**用戶端與 RustDesk Server OSS（免費社群伺服器）採用 [AGPL 授權](https://github.com/rustdesk/rustdesk)**；**Server Pro 則是商業、專有的自架伺服器軟體**。Server OSS 執行你自己的 ID/連線協調與中繼，Server Pro 增加網頁主控台、依使用者與裝置群組設定的存取控制與品牌用戶端，讓連線協調與存取政策落在你掌控的基礎架構上，而不是藏在單一雲端登入之後。這也對應到[資料主權與 GDPR](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw) 的需求。
+RustDesk 的**使用者端與 RustDesk Server OSS（免費社群伺服器）採用 [AGPL 授權](https://github.com/rustdesk/rustdesk)**；**Server Pro 則是商業、專有的自架伺服器軟體**。Server OSS 執行你自己的 ID/連線協調與中繼，Server Pro 增加網頁主控台、依使用者與裝置群組設定的存取控制與品牌使用者端，讓連線協調與存取政策落在你掌控的基礎架構上，而不是藏在單一雲端登入之後。這也對應到[資料主權與 GDPR](/zh-tw/blog/remote-desktop-data-sovereignty-gdpr-zh-tw) 的需求。
 
 需要說清楚的是，這種開放性是一體兩面的。程式碼公開，代表 RustDesk 自己的漏洞也是公開的，所以請留意[最新版本](https://github.com/rustdesk/rustdesk/releases)與漏洞揭露紀錄。而且自架只是把一種維護換成另一種——CRD 需要的帳號與 PIN 管理，變成一台要你自己修補的伺服器，而流量仍然直接在端點之間傳輸。這是不同的保證模式，而不是更輕鬆的模式。
 

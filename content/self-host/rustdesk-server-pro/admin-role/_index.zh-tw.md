@@ -1,7 +1,7 @@
 ---
 title: 管理員角色
 weight: 17
-description: "RustDesk 的管理員角色文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的管理員角色文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server pro permissions", "rustdesk role management", "rustdesk web console roles"]
 ---
 
@@ -19,7 +19,7 @@ keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server p
 
 <!-- GEO-LOCALIZED-INTRO:END -->
 
-管理員角色允許管理員將部分管理權限委派給非管理員使用者。您可以為全域資源（如策略、控制角色和自訂用戶端）以及不同範圍內的使用者和裝置定義權限。
+管理員角色允許管理員將部分管理權限委派給非管理員使用者。您可以為全域資源（如策略、控制角色和自訂使用者端）以及不同範圍內的使用者和裝置定義權限。
 
 一旦為使用者分配了管理員角色，他們將根據授予的權限在 Web 控制台中看到相應的頁面和選單。
 
@@ -65,7 +65,7 @@ keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server p
 資源的檢視權限僅允許檢視資源本身，不包含檢視其中成員的權限。
 
 {{% notice note %}}
-地址簿的裝置讀取不受管理員角色影響。用戶端的可存取裝置 peer 標籤頁的內容讀取僅受控制台中 **設定 → 其他 → 停用取得可存取裝置** 的限制，也不受管理員角色限制。
+地址簿的裝置讀取不受管理員角色影響。使用者端的可存取裝置 peer 標籤頁的內容讀取僅受控制台中 **設定 → 其他 → 停用取得可存取裝置** 的限制，也不受管理員角色限制。
 {{% /notice %}}
 
 ## 控制台操作
@@ -131,8 +131,8 @@ keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server p
 | Strategies-Edit | 建立、編輯和刪除策略。 |
 | Control Roles-View | 讀取任何控制角色。 |
 | Control Roles-Edit | 建立、編輯和刪除控制角色。 |
-| Custom Clients-View | 讀取自訂用戶端清單。 |
-| Custom Clients-Edit | 建立、編輯和刪除自訂用戶端。 |
+| Custom Clients-View | 讀取自訂使用者端清單。 |
+| Custom Clients-Edit | 建立、編輯和刪除自訂使用者端。 |
 
 ### 個人權限
 
@@ -162,8 +162,8 @@ keywords: ["rustdesk admin role", "rustdesk delegated admin", "rustdesk server p
 | Users-Force Logout | 強制所選使用者群組內的非管理員使用者登出。 |
 | Users-Update Strategy | 更改所選使用者群組內非管理員使用者的策略。 |
 | Users-Update Control Role | 更改所選使用者群組內非管理員使用者的控制角色。 |
-| Devices-View | 讀取當前角色管理的裝置的清單資訊。 |
-| Devices-Enable/Disable | 啟用或停用當前角色管理的裝置。 |
-| Devices-Delete | 刪除當前角色管理的裝置。 |
-| Devices-Edit Info | 編輯當前角色管理的裝置的資訊。 |
-| Devices-Update Strategy | 更改當前角色管理的裝置的策略。 |
+| Devices-View | 讀取目前角色管理的裝置的清單資訊。 |
+| Devices-Enable/Disable | 啟用或停用目前角色管理的裝置。 |
+| Devices-Delete | 刪除目前角色管理的裝置。 |
+| Devices-Edit Info | 編輯目前角色管理的裝置的資訊。 |
+| Devices-Update Strategy | 更改目前角色管理的裝置的策略。 |

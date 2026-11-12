@@ -17,11 +17,11 @@ faq:
   - question: 'Splashtop On-Prem 需要哪些基礎架構？'
     answer: 'Splashtop On-Prem 使用由客戶自行營運的 Splashtop Gateway，安裝在 DMZ 或企業防火牆後方。組織需自行規劃伺服器容量、網路、TLS、監控、備份、升級與可用性；Splashtop 也公布了系統需求，涵蓋 Gateway 的作業系統、硬體規模與連接埠。'
   - question: '應該自架，還是使用廠商營運的服務？'
-    answer: '如果團隊想自行營運伺服器端服務，並能負責更新、監控、備份與復原，就選擇自架。RustDesk 以自架為預設，提供 AGPL 用戶端、免費的 RustDesk Server OSS 與商業版 Server Pro 管理功能；Splashtop 則把自架當成獨立的 On-Prem 產品販售。如果希望由別人營運服務，就選擇廠商營運的 SaaS。'
+    answer: '如果團隊想自行營運伺服器端服務，並能負責更新、監控、備份與復原，就選擇自架。RustDesk 以自架為預設，提供 AGPL 使用者端、免費的 RustDesk Server OSS 與商業版 Server Pro 管理功能；Splashtop 則把自架當成獨立的 On-Prem 產品販售。如果希望由別人營運服務，就選擇廠商營運的 SaaS。'
   - question: 'IT 團隊該如何測試 Splashtop 的替代方案？'
     answer: '以具代表性的使用者、端點、網路與支援流程進行雙軌試行。針對連線可靠性、遠端音訊、螢幕對應、行動裝置存取、管理功能與安全控管訂定驗收標準，並在替代方案通過這些標準之前，讓現有系統持續運作，同時備妥書面的回退方案。'
 metadata:
-  description: '想找自架的 Splashtop 替代方案？本文從授權、基礎架構、工作流程相容性、安全控管、試行設計與遷移風險等面向，說明 IT 團隊該如何評估。'
+  description: '想找自架的 Splashtop 替代方案？本文從授權、基礎架構、工作流程相容性、安全控管、試行設計與遷移風險等層面，說明 IT 團隊該如何評估。'
   keywords: '自架 Splashtop 替代方案, Splashtop 替代品, 從 Splashtop 遷移, RustDesk vs Splashtop, 適合 IT 團隊的 Splashtop 替代方案'
 ---
 
@@ -34,7 +34,7 @@ metadata:
 | 決策因素     | RustDesk                                                                                                                         | Splashtop SaaS                                          | Splashtop On-Prem                                                        |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------ |
 | 伺服器營運   | 由客戶營運的 Server OSS 或 Server Pro                                                                                            | 由廠商營運                                              | 由客戶營運的 Splashtop On-Prem Gateway                                   |
-| 原始碼模式   | 用戶端與 Server OSS：AGPL；Server Pro：專有                                                                                      | 專有                                                    | 專有                                                                     |
+| 原始碼模式   | 使用者端與 Server OSS：AGPL；Server Pro：專有                                                                                      | 專有                                                    | 專有                                                                     |
 | 授權         | Server Pro 方案依登入使用者加受管裝置授權；[Customized V2](https://rustdesk.com/pricing#custom2) 另外授權固定的同時連線數       | 依 Remote Access、Remote Support 或 Enterprise 方案而異 | 單獨授權、由業務主導；請以書面報價為準                                   |
 | 同時工作階段 | 標準方案不限；Customized V2 有明確額度                                                                                           | 依方案而異                                              | 依授權而異                                                               |
 | 治理         | Server Pro 網頁主控台、依使用者與裝置群組設定的存取控制與共用通訊錄；Basic 方案起提供 LDAP/OIDC SSO                              | 企業級控管依方案而異                                    | 使用者／群組權限、Active Directory 整合、IP 限制等功能依版本而異         |
@@ -51,10 +51,10 @@ Splashtop 的標準 Remote Access 與 Remote Support 方案由廠商營運。其
 
 ## 開源與信任模式
 
-RustDesk 的**用戶端與 Server OSS 採用 AGPL 授權**。資安或工程團隊不必先購買商業授權，就能閱讀程式碼、建置用戶端並執行 Server OSS；**Server Pro 則是商業、專有的自架伺服器軟體**，在此之上增加集中管理功能。Splashtop SaaS 與 On-Prem 都是專有軟體——On-Prem 改變的是伺服器*在哪裡*執行，而不是程式碼是否開放。決定這件事的是兩個獨立的問題：
+RustDesk 的**使用者端與 Server OSS 採用 AGPL 授權**。資安或工程團隊不必先購買商業授權，就能閱讀程式碼、建置使用者端並執行 Server OSS；**Server Pro 則是商業、專有的自架伺服器軟體**，在此之上增加集中管理功能。Splashtop SaaS 與 On-Prem 都是專有軟體——On-Prem 改變的是伺服器*在哪裡*執行，而不是程式碼是否開放。決定這件事的是兩個獨立的問題：
 
 1. 伺服器端服務是否必須在我們掌控的基礎架構上執行？_（On-Prem 與 RustDesk 的答案都是「是」。）_
-2. 我們是否需要看得到原始碼，並能自行建置用戶端？_（只有 RustDesk 的答案是「是」。）_
+2. 我們是否需要看得到原始碼，並能自行建置使用者端？_（只有 RustDesk 的答案是「是」。）_
 
 ## 授權與成本
 
@@ -64,7 +64,7 @@ RustDesk 標準 Server Pro 方案依**登入使用者加受管裝置**計算規�
 
 ## 可靠性回報：是訊號，不代表普遍程度
 
-公開討論串的說法正反都有。[Splashtop 社群](https://www.reddit.com/r/Splashtop_Official/comments/1ltgest/constant_crashing_on_local_win10_computer/)一則 2025 年的討論串記錄了 Windows 用戶端當機；2026 年的一則 [Atera 討論](https://www.reddit.com/r/atera/comments/1qucbx3/is_splashtop_just_terrible_for_you_guys/)則既有抱怨，也有管理員回報多年穩定使用——其中部分是透過 RMM 整合提供的 Splashtop，而不是獨立產品。請把這些當成要在自己的試行中重現的情境，使用您自己的端點組合、網路、RMM 封裝與作業系統版本，而不是用來證明某個問題在整體安裝基礎中有多常見。
+公開討論串的說法正反都有。[Splashtop 社群](https://www.reddit.com/r/Splashtop_Official/comments/1ltgest/constant_crashing_on_local_win10_computer/)一則 2025 年的討論串記錄了 Windows 使用者端當機；2026 年的一則 [Atera 討論](https://www.reddit.com/r/atera/comments/1qucbx3/is_splashtop_just_terrible_for_you_guys/)則既有抱怨，也有管理員回報多年穩定使用——其中部分是透過 RMM 整合提供的 Splashtop，而不是獨立產品。請把這些當成要在自己的試行中重現的情境，使用您自己的端點組合、網路、RMM 封裝與作業系統版本，而不是用來證明某個問題在整體安裝基礎中有多常見。
 
 ## 實際該測試什麼
 
@@ -72,7 +72,7 @@ RustDesk 標準 Server Pro 方案依**登入使用者加受管裝置**計算規�
 
 - **遠端音訊**與麥克風傳遞，包括重新連線後音訊裝置的行為。
 - **多螢幕**配置，以及螢幕對應是否在各工作階段之間保持一致。
-- **行動裝置與瀏覽器**存取——確認哪些平台可以*控制*、哪些只能*被控制*，並把瀏覽器／WebSocket 工作階段與原生用戶端分開驗證。
+- **行動裝置與瀏覽器**存取——確認哪些平台可以*控制*、哪些只能*被控制*，並把瀏覽器／WebSocket 工作階段與原生使用者端分開驗證。
 - **RMM 封裝**，以及在您正式環境所用作業系統版本上的無人值守部署。
 - **直接連線與中繼備援**，以及在高延遲與受限網路上的重新連線行為。
 - **治理**——SSO 或目錄整合、受控裝置的雙重驗證、稽核日誌、裝置群組，並確認光知道裝置 ID 無法繞過您的授權模型。網頁主控台、存取控制與 [LDAP/SSO](https://rustdesk.com/docs/zh-tw/self-host/rustdesk-server-pro/ldap/) 都是 Server Pro 功能，所以請在 Server Pro 評估環境中測試治理，而不是在 Server OSS 上測試。
@@ -86,7 +86,7 @@ RustDesk 標準 Server Pro 方案依**登入使用者加受管裝置**計算規�
 - **自架應該是預設。** Server OSS 與 Server Pro 都在您選擇的基礎架構上執行；Splashtop 對應的則是需單獨授權的 On-Prem 產品。
 - **同時連線不該決定帳單。** 標準 Server Pro 方案依登入使用者與受管裝置授權，且不限同時連線數。
 - **目錄登入很重要。** LDAP/Active Directory 與 OIDC SSO 從 Basic 方案起就包含在內。
-- **您想免費試行並稽核用戶端。** Server OSS 免授權費、沒有到期限制，用戶端也能閱讀原始碼並自行建置。
+- **您想免費試行並稽核使用者端。** Server OSS 免授權費、沒有到期限制，使用者端也能閱讀原始碼並自行建置。
 
 有一點同時適用於 RustDesk 與 Splashtop On-Prem：伺服器的建置、防護、監控、備份與更新都由您的團隊負責。
 

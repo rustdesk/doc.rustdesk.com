@@ -1,7 +1,7 @@
 ---
 title: 安裝
 weight: 1
-description: "RustDesk 的安裝文檔，提供安裝、設定、部署與疑難排解指南。"
+description: "RustDesk 的安裝文件，提供安裝、設定、部署與疑難排解指南。"
 keywords: ["rustdesk server install", "install rustdesk server oss", "rustdesk docker install", "rustdesk server firewall ports", "rustdesk hbbs hbbr install", "rustdesk self-host install"]
 ---
 
@@ -34,9 +34,9 @@ sudo ufw enable
 ```
 
 {{% notice warning %}}
-啟用 WebSocket（為[網頁客戶端](https://rustdesk.com/web/)開放埠口 `21118`/`21119`）後，`hbbs`/`hbbr` 會信任 WebSocket 連線中的 `X-Real-IP` / `X-Forwarded-For` 請求標頭來判斷客戶端的真實 IP，以便在 WebSocket 流量經過反向代理（[WSS](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms)）時保留客戶端真實 IP。這些標頭不會被驗證，因此任何能直接連線 `21118`/`21119` 的人都可以透過偽造標頭來偽裝任意 IP 位址，從而繞過基於 IP 的速率限制和封鎖，並偽造日誌中記錄的 IP 位址。
+啟用 WebSocket（為[網頁客戶端](https://rustdesk.com/web/)開放連接埠 `21118`/`21119`）後，`hbbs`/`hbbr` 會信任 WebSocket 連線中的 `X-Real-IP` / `X-Forwarded-For` 請求標頭來判斷客戶端的真實 IP，以便在 WebSocket 流量經過反向代理（[WSS](/docs/en/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms)）時保留客戶端真實 IP。這些標頭不會被驗證，因此任何能直接連線 `21118`/`21119` 的人都可以透過偽造標頭來偽裝任意 IP 位址，從而繞過基於 IP 的速率限制和封鎖，並偽造日誌中記錄的 IP 位址。
 
-如果您使用網頁客戶端，請只透過反向代理（由代理自行設定 `X-Real-IP`）公開 WebSocket 埠口，並透過防火牆規則限制 `21118`/`21119` 只接受來自反向代理的連線。如果您不使用網頁客戶端，請保持埠口 `21118`、`21119` 關閉。
+如果您使用網頁客戶端，請只透過反向代理（由代理自行設定 `X-Real-IP`）公開 WebSocket 連接埠，並透過防火牆規則限制 `21118`/`21119` 只接受來自反向代理的連線。如果您不使用網頁客戶端，請保持連接埠 `21118`、`21119` 關閉。
 {{% /notice %}}
 
 ## 安裝
@@ -53,7 +53,7 @@ sudo docker compose up -d
 ### 方法2：使用簡單的安裝腳本將您自己的伺服器安裝為systemd服務
 腳本託管在 [Techahold](https://github.com/techahold/rustdeskinstall)，並在我們的 [Discord](https://discord.com/invite/nDceKgxnkV) 上提供支援。
 
-目前，該腳本將下載並設定中繼和訊號伺服器（hbbr和hbbs），產生設定並將其託管在受密碼保護的網頁上，以便簡單部署到用戶端。
+目前，該腳本將下載並設定中繼和訊號伺服器（hbbr和hbbs），產生設定並將其託管在受密碼保護的網頁上，以便簡單部署到使用者端。
 
 執行以下命令：
 ```
@@ -64,11 +64,11 @@ chmod +x install.sh
 
 [Techahold](https://github.com/techahold/rustdeskinstall) 的儲存庫中還有一個更新腳本。
 
-從那裡，記下安裝結束時顯示的IP/DNS和金鑰，並將它們分別插入用戶端設定 > 網路 > ID/中繼伺服器的`ID伺服器`和`金鑰`欄位中，其他欄位留空（見下面的註解）。
+從那裡，記下安裝結束時顯示的IP/DNS和金鑰，並將它們分別插入使用者端設定 > 網路 > ID/中繼伺服器的`ID伺服器`和`金鑰`欄位中，其他欄位留空（見下面的註解）。
 
 ### 方法3：使用deb檔案為debian發行版安裝您自己的伺服器作為systemd服務
 
 請自行[下載](https://github.com/rustdesk/rustdesk-server/releases/latest) deb檔案，並使用`apt-get -f install <filename>.deb`或`dpkg -i <filename>.deb`進行安裝。
 
-## 設定用戶端
+## 設定使用者端
 請查看[這裡](/docs/en/self-host/client-configuration/#2-manual-config)。
