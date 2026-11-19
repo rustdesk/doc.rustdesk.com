@@ -1311,6 +1311,18 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
 
+### hide-account-password-login
+
+Flutter UI を使用するカスタムクライアントのアカウントログインダイアログで、ユーザー名とパスワードのフォームを非表示にします。`Y` に設定すると、利用可能な OIDC ログインプロバイダーのみが表示されます。プロバイダーの一覧が空の場合は、OIDC ログインを利用できないことを示すメッセージが表示されます。
+
+このオプションはクライアントのログイン UI のみを制御します。サーバー側のパスワード認証を無効にしたり、OIDC のみによる認証を強制したりするものではありません。
+
+https://github.com/rustdesk/rustdesk/pull/17092
+
+| 値 | デフォルト | 例 |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-account-password-login=Y` |
+
 ### hide-username-on-card
 
 デバイスリストにユーザー名を表示するかどうかを制御します。ユーザー名が長すぎる場合、他の情報が隠れてしまうためです。

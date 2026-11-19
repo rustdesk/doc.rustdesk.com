@@ -1300,6 +1300,18 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
 
+### hide-account-password-login
+
+Masque le formulaire de nom d’utilisateur et de mot de passe dans la boîte de dialogue de connexion au compte des clients personnalisés utilisant l’interface Flutter. Définissez la valeur sur `Y` pour afficher uniquement les fournisseurs de connexion OIDC disponibles. Si la liste des fournisseurs est vide, un message indique que la connexion OIDC n’est pas disponible.
+
+Cette option contrôle uniquement l’interface de connexion du client. Elle ne désactive pas l’authentification par mot de passe sur le serveur et n’impose pas une authentification exclusivement via OIDC.
+
+https://github.com/rustdesk/rustdesk/pull/17092
+
+| Valeurs | Défaut | Exemple |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-account-password-login=Y` |
+
 ### hide-username-on-card
 
 Contrôle s'il faut afficher le nom d'utilisateur dans la liste des appareils. Parce que parfois, le nom d'utilisateur est trop long, il cachera les autres infos.

@@ -1321,6 +1321,18 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
 
+### hide-account-password-login
+
+Hides the username and password form in the account login dialog of custom clients using the Flutter UI. Set to `Y` to show only the available OIDC sign-in providers. If the provider list is empty, the dialog displays a message that OIDC sign-in is unavailable.
+
+This option only controls the client login UI. It does not disable password authentication on the server or enforce OIDC-only authentication.
+
+https://github.com/rustdesk/rustdesk/pull/17092
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-account-password-login=Y` |
+
 ### hide-username-on-card
 
 Controls whether to show username in the list of devices. Because sometimes, the username is too long, will hide the other info.

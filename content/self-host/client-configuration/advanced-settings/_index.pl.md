@@ -1312,6 +1312,18 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
 
+### hide-account-password-login
+
+Ukrywa formularz nazwy użytkownika i hasła w oknie logowania do konta w niestandardowych klientach z interfejsem Flutter. Ustaw `Y`, aby wyświetlać tylko dostępnych dostawców logowania OIDC. Jeśli lista dostawców jest pusta, w oknie pojawi się komunikat o niedostępności logowania OIDC.
+
+Ta opcja kontroluje tylko interfejs logowania klienta. Nie wyłącza uwierzytelniania hasłem na serwerze ani nie wymusza uwierzytelniania wyłącznie przez OIDC.
+
+https://github.com/rustdesk/rustdesk/pull/17092
+
+| Wartości | Domyślnie | Przykład |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-account-password-login=Y` |
+
 ### hide-username-on-card
 
 Kontroluje, czy wyświetlać nazwę użytkownika na liście urządzeń. Ponieważ czasami nazwa użytkownika jest zbyt długa, może zasłaniać inne informacje.

@@ -1320,6 +1320,18 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
 
+### hide-account-password-login
+
+Flutter UI를 사용하는 사용자 지정 클라이언트의 계정 로그인 대화 상자에서 사용자 이름과 비밀번호 입력 양식을 숨깁니다. `Y`로 설정하면 사용 가능한 OIDC 로그인 제공자만 표시됩니다. 제공자 목록이 비어 있으면 OIDC 로그인을 사용할 수 없다는 메시지가 표시됩니다.
+
+이 옵션은 클라이언트의 로그인 UI만 제어합니다. 서버의 비밀번호 인증을 비활성화하거나 OIDC 인증만 사용하도록 강제하지 않습니다.
+
+https://github.com/rustdesk/rustdesk/pull/17092
+
+| 값 | 기본값 | 예시 |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-account-password-login=Y` |
+
 ### 카드에서 사용자 이름 숨기기
 
 장치 목록에 사용자 이름을 표시할지 여부를 제어합니다. 때로는 사용자 이름이 너무 길어 다른 정보를 숨깁니다.

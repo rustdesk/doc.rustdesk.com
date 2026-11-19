@@ -1300,6 +1300,18 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
 
+### hide-account-password-login
+
+Blendet das Formular für Benutzername und Passwort im Konto-Anmeldedialog von benutzerdefinierten Clients mit Flutter-Oberfläche aus. Mit `Y` werden nur die verfügbaren OIDC-Anbieter für die Anmeldung angezeigt. Ist die Anbieterliste leer, zeigt der Dialog eine Meldung an, dass keine OIDC-Anmeldung verfügbar ist.
+
+Diese Option steuert nur die Anmeldeoberfläche des Clients. Sie deaktiviert weder die Passwortauthentifizierung auf dem Server noch erzwingt sie eine ausschließliche Anmeldung über OIDC.
+
+https://github.com/rustdesk/rustdesk/pull/17092
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-account-password-login=Y` |
+
 ### hide-username-on-card
 
 Steuert, ob der Benutzername in der Geräteliste angezeigt wird. Weil manchmal der Benutzername zu lang ist, werden die anderen Informationen ausgeblendet.

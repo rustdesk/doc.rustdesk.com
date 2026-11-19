@@ -1300,6 +1300,18 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
 
+### hide-account-password-login
+
+Oculta el formulario de nombre de usuario y contraseña en el diálogo de inicio de sesión de los clientes personalizados con interfaz Flutter. Establece `Y` para mostrar solo los proveedores OIDC disponibles. Si la lista de proveedores está vacía, el diálogo muestra un mensaje indicando que el inicio de sesión mediante OIDC no está disponible.
+
+Esta opción solo controla la interfaz de inicio de sesión del cliente. No desactiva la autenticación con contraseña en el servidor ni obliga a utilizar únicamente OIDC.
+
+https://github.com/rustdesk/rustdesk/pull/17092
+
+| Valores | Predeterminado | Ejemplo |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-account-password-login=Y` |
+
 ### hide-username-on-card
 
 Controla si mostrar nombre de usuario en la lista de dispositivos. Porque a veces, el nombre de usuario es demasiado largo, ocultará la otra información.

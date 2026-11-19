@@ -1312,6 +1312,18 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
 
+### hide-account-password-login
+
+Ascunde formularul pentru nume de utilizator și parolă din dialogul de autentificare în cont al clienților personalizați cu interfață Flutter. Setează la `Y` pentru a afișa doar furnizorii OIDC disponibili. Dacă lista furnizorilor este goală, dialogul afișează un mesaj care indică faptul că autentificarea OIDC nu este disponibilă.
+
+Această opțiune controlează doar interfața de autentificare a clientului. Nu dezactivează autentificarea cu parolă pe server și nu impune autentificarea exclusiv prin OIDC.
+
+https://github.com/rustdesk/rustdesk/pull/17092
+
+| Valori | Implicit | Exemplu |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-account-password-login=Y` |
+
 ### hide-username-on-card
 
 Controlează dacă se afișează numele de utilizator în lista de dispozitive. Pentru că uneori, numele de utilizator este prea lung, va ascunde celelalte informații.

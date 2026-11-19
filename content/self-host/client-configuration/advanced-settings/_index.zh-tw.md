@@ -1312,6 +1312,18 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
 
+### hide-account-password-login
+
+隱藏使用 Flutter 介面的自訂用戶端帳號登入對話方塊中的使用者名稱和密碼表單。設為 `Y` 時，僅顯示可用的 OIDC 登入方式。如果登入方式清單為空，對話方塊會提示沒有可用的 OIDC 登入方式。
+
+此選項僅控制用戶端登入介面，不會停用伺服器端的密碼驗證，也不會強制所有登入都使用 OIDC。
+
+https://github.com/rustdesk/rustdesk/pull/17092
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-account-password-login=Y` |
+
 ### hide-username-on-card
 
 控制是否在設備清單中顯示使用者名稱。因為有時使用者名稱太長，會隱藏其他資訊。
