@@ -116,12 +116,11 @@ RustDesk クライアント設定では、アドレス帳の割り当てを事�
 - `preset-address-book-name`
 - `preset-address-book-tag`
 - `preset-address-book-alias`
-- `preset-address-book-password`
 - `preset-address-book-note`
 
-`preset-address-book-alias`、`preset-address-book-password`、`preset-address-book-note` には、RustDesk クライアント 1.4.3 以降、および RustDesk Server Pro 1.6.6 以降が必要です。
+`preset-address-book-alias`、`preset-address-book-note` には、RustDesk クライアント 1.4.3 以降、および RustDesk Server Pro 1.6.6 以降が必要です。
 
-詳細については、[高度なクライアント設定](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-password--preset-address-book-note)を参照してください。
+詳細については、[高度なクライアント設定](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-note)を参照してください。
 
 ## 関連設定
 

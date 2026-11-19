@@ -1130,9 +1130,9 @@ L'opzione "trackpad-speed" nelle impostazioni di ogni peer controllerà quindi g
 
 ## Altri
 
-### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-password & preset-address-book-note
+### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-note
 
-Nome rubrica, tag dispositivo, alias dispositivo, password dispositivo, nota dispositivo preimpostati, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
+Nome rubrica, tag dispositivo, alias dispositivo, nota dispositivo preimpostati, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
 Puoi impostare preset-address-book-name solo se non vuoi impostare il tag.
 Usa un nome e tag rubrica validi nella tua pagina rubrica della console web.
 
@@ -1141,10 +1141,9 @@ Usa un nome e tag rubrica validi nella tua pagina rubrica della console web.
 | preset-address-book-name | N | | | `preset-address-book-name=<nome rubrica>` |
 | preset-address-book-tag | N | | | `preset-address-book-tag=<nome tag rubrica>` |
 | preset-address-book-alias | N | | | `preset-address-book-alias=<alias dispositivo>` |
-| preset-address-book-password | N | | | `preset-address-book-password=<password dispositivo>` |
 | preset-address-book-note | N | | | `preset-address-book-note=<nota dispositivo>` |
 
-preset-address-book-alias, preset-address-book-password, preset-address-book-note sono disponibili nel client RustDesk >=1.4.3, pro >= 1.6.6.
+preset-address-book-alias, preset-address-book-note sono disponibili nel client RustDesk >=1.4.3, pro >= 1.6.6.
 
 ### disable-group-panel
 
@@ -1300,6 +1299,18 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 | Valori | Predefinito | Esempio |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
+
+### hide-account-password-login
+
+Nasconde il modulo con nome utente e password nella finestra di accesso all’account dei client personalizzati con interfaccia Flutter. Imposta `Y` per mostrare solo i provider OIDC disponibili. Se l’elenco dei provider è vuoto, viene visualizzato un messaggio che indica che l’accesso tramite OIDC non è disponibile.
+
+Questa opzione controlla solo l’interfaccia di accesso del client. Non disabilita l’autenticazione con password sul server e non impone l’autenticazione esclusivamente tramite OIDC.
+
+https://github.com/rustdesk/rustdesk/pull/17092
+
+| Valori | Predefinito | Esempio |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-account-password-login=Y` |
 
 ### hide-username-on-card
 
@@ -1488,7 +1499,7 @@ Non registrare il dispositivo, non lo vedrai nella pagina dispositivi sulla cons
 Se `register-device=N`, quanto segue non funzionerà per questo dispositivo.
 - Login
 - Comando `--assign`
-- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
+- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
 - Log di audit
 - Strategia
 

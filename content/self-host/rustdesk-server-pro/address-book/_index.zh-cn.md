@@ -116,12 +116,11 @@ RustDesk 客户端配置可以预设地址簿分配：
 - `preset-address-book-name`
 - `preset-address-book-tag`
 - `preset-address-book-alias`
-- `preset-address-book-password`
 - `preset-address-book-note`
 
-`preset-address-book-alias`、`preset-address-book-password` 和 `preset-address-book-note` 需要 RustDesk 客户端 1.4.3 或更高版本，以及 RustDesk Server Pro 1.6.6 或更高版本。
+`preset-address-book-alias` 和 `preset-address-book-note` 需要 RustDesk 客户端 1.4.3 或更高版本，以及 RustDesk Server Pro 1.6.6 或更高版本。
 
-有关更多详情，请参阅[高级客户端配置](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-password--preset-address-book-note)。
+有关更多详情，请参阅[高级客户端配置](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-note)。
 
 ## 相关设置
 

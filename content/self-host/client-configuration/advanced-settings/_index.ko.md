@@ -1150,9 +1150,9 @@ RustDesk 1.5.0부터 사용 가능합니다.
 
 ## 기타
 
-### 사전 설정 주소록 이름 & 사전 설정 주소록 태그 & 사전 설정 주소록 별명 & 사전 설정 주소록 비밀번호 & 사전 설정 주소록 노트
+### 사전 설정 주소록 이름 & 사전 설정 주소록 태그 & 사전 설정 주소록 별명 & 사전 설정 주소록 노트
 
-사전 설정 주소록 이름, 기기 태그, 기기 별명, 기기 비밀번호, 기기 노트, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
+사전 설정 주소록 이름, 기기 태그, 기기 별명, 기기 노트, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
 태그를 설정하고 싶지 않은 경우에만 사전 설정 주소록 이름을 설정할 수 있습니다.
 웹 콘솔의 주소록 페이지에서 유효한 주소록 이름과 태그를 사용하십시오.
 
@@ -1161,10 +1161,9 @@ RustDesk 1.5.0부터 사용 가능합니다.
 | preset-address-book-name | N | | | `preset-address-book-name=<address book name>` |
 | preset-address-book-tag | N | | | `preset-address-book-tag=<address book tag name>` |
 | preset-address-book-alias | N | | | `preset-address-book-alias=<device alias>` |
-| preset-address-book-password | N | | | `preset-address-book-password=<device password>` |
 | preset-address-book-note | N | | | `preset-address-book-note=<device note>` |
 
-preset-address-book-alias, preset-address-book-password, preset-address-book-note는 RustDesk 클라이언트 >=1.4.3, 프로 >= 1.6.6에서 사용할 수 있습니다.
+preset-address-book-alias, preset-address-book-note는 RustDesk 클라이언트 >=1.4.3, 프로 >= 1.6.6에서 사용할 수 있습니다.
 
 ### disable-group-panel
 
@@ -1320,6 +1319,18 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 | 값 | 기본값 | 예시 |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
+
+### hide-account-password-login
+
+Flutter UI를 사용하는 사용자 지정 클라이언트의 계정 로그인 대화 상자에서 사용자 이름과 비밀번호 입력 양식을 숨깁니다. `Y`로 설정하면 사용 가능한 OIDC 로그인 제공자만 표시됩니다. 제공자 목록이 비어 있으면 OIDC 로그인을 사용할 수 없다는 메시지가 표시됩니다.
+
+이 옵션은 클라이언트의 로그인 UI만 제어합니다. 서버의 비밀번호 인증을 비활성화하거나 OIDC 인증만 사용하도록 강제하지 않습니다.
+
+https://github.com/rustdesk/rustdesk/pull/17092
+
+| 값 | 기본값 | 예시 |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-account-password-login=Y` |
 
 ### 카드에서 사용자 이름 숨기기
 
@@ -1508,7 +1519,7 @@ RustDesk 클라이언트 1.4.1 이상 및 Pro 서버 1.5.9 이상에서만 사�
 `register-device=N`인 경우, 아래는 이 장치에서 작동하지 않습니다.
 - 로그인
 - `--assign` 명령
-- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note`, `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
+- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-note`, `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
 - 감사 로그
 - 전략
 

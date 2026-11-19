@@ -116,12 +116,11 @@ RustDesk 用戶端設定可以預設通訊錄分配：
 - `preset-address-book-name`
 - `preset-address-book-tag`
 - `preset-address-book-alias`
-- `preset-address-book-password`
 - `preset-address-book-note`
 
-`preset-address-book-alias`、`preset-address-book-password` 和 `preset-address-book-note` 需要 RustDesk 用戶端 1.4.3 或更高版本，以及 RustDesk Server Pro 1.6.6 或更高版本。
+`preset-address-book-alias` 和 `preset-address-book-note` 需要 RustDesk 用戶端 1.4.3 或更高版本，以及 RustDesk Server Pro 1.6.6 或更高版本。
 
-更多詳情，請參閱[進階用戶端設定](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-password--preset-address-book-note)。
+更多詳情，請參閱[進階用戶端設定](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-note)。
 
 ## 相關設定
 

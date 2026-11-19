@@ -116,12 +116,11 @@ RustDesk client configuration can preset address book assignment:
 - `preset-address-book-name`
 - `preset-address-book-tag`
 - `preset-address-book-alias`
-- `preset-address-book-password`
 - `preset-address-book-note`
 
-`preset-address-book-alias`, `preset-address-book-password`, and `preset-address-book-note` require RustDesk client 1.4.3 or later and RustDesk Server Pro 1.6.6 or later.
+`preset-address-book-alias` and `preset-address-book-note` require RustDesk client 1.4.3 or later and RustDesk Server Pro 1.6.6 or later.
 
-For more details, see [advanced client configuration](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-password--preset-address-book-note).
+For more details, see [advanced client configuration](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-note).
 
 ## Related settings
 

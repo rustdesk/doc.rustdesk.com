@@ -1130,9 +1130,9 @@ Die Option „trackpad-speed“ in den Einstellungen jedes Peers steuert dann di
 
 ## Sonstiges
 
-### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-password & preset-address-book-note
+### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-note
 
-Voreingestellter Adressbuchname, Geräte-Tag, Geräte-Alias, Geräte-Passwort, Geräte-Notiz, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
+Voreingestellter Adressbuchname, Geräte-Tag, Geräte-Alias, Geräte-Notiz, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
 Sie können nur preset-address-book-name setzen, wenn Sie keinen Tag setzen möchten.
 Bitte verwenden Sie gültige Adressbuchnamen und -tags auf Ihrer Adressbuchseite der Web-Konsole.
 
@@ -1141,10 +1141,9 @@ Bitte verwenden Sie gültige Adressbuchnamen und -tags auf Ihrer Adressbuchseite
 | preset-address-book-name | N | | | `preset-address-book-name=<Adressbuchname>` |
 | preset-address-book-tag | N | | | `preset-address-book-tag=<Adressbuch-Tag-Name>` |
 | preset-address-book-alias | N | | | `preset-address-book-alias=<Geräte-Alias>` |
-| preset-address-book-password | N | | | `preset-address-book-password=<Geräte-Passwort>` |
 | preset-address-book-note | N | | | `preset-address-book-note=<Geräte-Notiz>` |
 
-preset-address-book-alias, preset-address-book-password, preset-address-book-note sind verfügbar in RustDesk-Client >=1.4.3, Pro >= 1.6.6.
+preset-address-book-alias, preset-address-book-note sind verfügbar in RustDesk-Client >=1.4.3, Pro >= 1.6.6.
 
 ### disable-group-panel
 
@@ -1300,6 +1299,18 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 | Werte | Standard | Beispiel |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
+
+### hide-account-password-login
+
+Blendet das Formular für Benutzername und Passwort im Konto-Anmeldedialog von benutzerdefinierten Clients mit Flutter-Oberfläche aus. Mit `Y` werden nur die verfügbaren OIDC-Anbieter für die Anmeldung angezeigt. Ist die Anbieterliste leer, zeigt der Dialog eine Meldung an, dass keine OIDC-Anmeldung verfügbar ist.
+
+Diese Option steuert nur die Anmeldeoberfläche des Clients. Sie deaktiviert weder die Passwortauthentifizierung auf dem Server noch erzwingt sie eine ausschließliche Anmeldung über OIDC.
+
+https://github.com/rustdesk/rustdesk/pull/17092
+
+| Werte | Standard | Beispiel |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-account-password-login=Y` |
 
 ### hide-username-on-card
 
@@ -1488,7 +1499,7 @@ Das Gerät nicht registrieren, Sie werden es nicht auf der Geräteseite in der W
 Wenn `register-device=N`, funktioniert das Folgende nicht für dieses Gerät.
 - Anmelden
 - `--assign`-Befehl
-- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
+- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
 - Audit-Logs
 - Strategie
 

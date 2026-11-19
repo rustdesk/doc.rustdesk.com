@@ -1131,9 +1131,9 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 ## 其他
 
-### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-password & preset-address-book-note
+### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-note
 
-预设通讯录名称、设备标签、设备别名、设备密码、设备备注，https://github.com/rustdesk/rustdesk-server-pro/issues/257。
+预设通讯录名称、设备标签、设备别名、设备备注，https://github.com/rustdesk/rustdesk-server-pro/issues/257。
 如果不想设置标签，可以仅设置preset-address-book-name。
 请在Web控制台的通讯录页面上使用有效的通讯录名称和标签。
 
@@ -1142,10 +1142,9 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | preset-address-book-name | 否 | | | `preset-address-book-name=<通讯录名称>` |
 | preset-address-book-tag | 否 | | | `preset-address-book-tag=<通讯录标签名称>` |
 | preset-address-book-alias | 否 | | | `preset-address-book-alias=<设备别名>` |
-| preset-address-book-password | 否 | | | `preset-address-book-password=<设备密码>` |
 | preset-address-book-note | 否 | | | `preset-address-book-note=<设备备注>` |
 
-preset-address-book-alias、preset-address-book-password、preset-address-book-note在RustDesk客户端>=1.4.3、pro >= 1.6.6中可用。
+preset-address-book-alias、preset-address-book-note在RustDesk客户端>=1.4.3、pro >= 1.6.6中可用。
 
 ### disable-group-panel
 
@@ -1301,6 +1300,18 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 | 值 | 默认值 | 示例 |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
+
+### hide-account-password-login
+
+隐藏使用 Flutter 界面的自定义客户端账号登录对话框中的用户名和密码表单。设为 `Y` 时，仅显示可用的 OIDC 登录方式。如果登录方式列表为空，对话框会提示没有可用的 OIDC 登录方式。
+
+此选项仅控制客户端登录界面，不会禁用服务端的密码认证，也不会强制所有登录都使用 OIDC。
+
+https://github.com/rustdesk/rustdesk/pull/17092
+
+| 值 | 默认值 | 示例 |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-account-password-login=Y` |
 
 ### hide-username-on-card
 
@@ -1491,7 +1502,7 @@ D3D渲染可以获得高帧率并减少CPU使用率，但在某些设备上远�
 如果`register-device=N`，以下功能对此设备不起作用。
 - 登录
 - `--assign`命令
-- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
+- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
 - 审计日志
 - 策略
 

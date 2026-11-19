@@ -116,12 +116,11 @@ Configurația clientului RustDesk poate preseta atribuirea agendei:
 - `preset-address-book-name`
 - `preset-address-book-tag`
 - `preset-address-book-alias`
-- `preset-address-book-password`
 - `preset-address-book-note`
 
-`preset-address-book-alias`, `preset-address-book-password` și `preset-address-book-note` necesită RustDesk client 1.4.3 sau mai nou și RustDesk Server Pro 1.6.6 sau mai nou.
+`preset-address-book-alias` și `preset-address-book-note` necesită RustDesk client 1.4.3 sau mai nou și RustDesk Server Pro 1.6.6 sau mai nou.
 
-Pentru mai multe detalii, vezi [configurația avansată a clientului](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-password--preset-address-book-note).
+Pentru mai multe detalii, vezi [configurația avansată a clientului](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-note).
 
 ## Setări conexe
 

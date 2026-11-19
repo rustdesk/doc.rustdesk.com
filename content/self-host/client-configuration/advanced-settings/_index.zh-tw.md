@@ -1142,9 +1142,9 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 
 ## 其他
 
-### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-password & preset-address-book-note
+### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-note
 
-預設通訊錄名稱、設備標籤、設備別名、設備密碼、設備備註，https://github.com/rustdesk/rustdesk-server-pro/issues/257。
+預設通訊錄名稱、設備標籤、設備別名、設備備註，https://github.com/rustdesk/rustdesk-server-pro/issues/257。
 如果不想設定標籤，可以僅設定preset-address-book-name。
 請在Web控制台的通訊錄頁面上使用有效的通訊錄名稱和標籤。
 
@@ -1153,10 +1153,9 @@ ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, 
 | preset-address-book-name | 否 | | | `preset-address-book-name=<通訊錄名稱>` |
 | preset-address-book-tag | 否 | | | `preset-address-book-tag=<通訊錄標籤名稱>` |
 | preset-address-book-alias | 否 | | | `preset-address-book-alias=<設備別名>` |
-| preset-address-book-password | 否 | | | `preset-address-book-password=<設備密碼>` |
 | preset-address-book-note | 否 | | | `preset-address-book-note=<設備備註>` |
 
-preset-address-book-alias、preset-address-book-password、preset-address-book-note在RustDesk用戶端>=1.4.3、pro >= 1.6.6中可用。
+preset-address-book-alias、preset-address-book-note在RustDesk用戶端>=1.4.3、pro >= 1.6.6中可用。
 
 ### disable-group-panel
 
@@ -1312,6 +1311,18 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 | 值 | 預設值 | 範例 |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
+
+### hide-account-password-login
+
+隱藏使用 Flutter 介面的自訂用戶端帳號登入對話方塊中的使用者名稱和密碼表單。設為 `Y` 時，僅顯示可用的 OIDC 登入方式。如果登入方式清單為空，對話方塊會提示沒有可用的 OIDC 登入方式。
+
+此選項僅控制用戶端登入介面，不會停用伺服器端的密碼驗證，也不會強制所有登入都使用 OIDC。
+
+https://github.com/rustdesk/rustdesk/pull/17092
+
+| 值 | 預設值 | 範例 |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-account-password-login=Y` |
 
 ### hide-username-on-card
 
@@ -1501,7 +1512,7 @@ D3D渲染可以獲得高幀率並減少CPU使用率，但在某些設備上遠�
 如果`register-device=N`，以下功能對此設備不起作用。
 - 登入
 - `--assign`命令
-- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
+- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
 - 稽核日誌
 - 策略
 

@@ -1142,9 +1142,9 @@ Opcja "trackpad-speed" w ustawieniach każdego partnera będzie wtedy kontrolowa
 
 ## Inne
 
-### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-password & preset-address-book-note
+### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-note
 
-Nazwa książki adresowej, tag urządzenia, alias urządzenia, hasło urządzenia, notatka urządzenia wstępnie ustawione, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
+Nazwa książki adresowej, tag urządzenia, alias urządzenia, notatka urządzenia wstępnie ustawione, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
 Wartość preset-address-book-name można ustawić tylko wtedy, gdy nie chcesz ustawiać tagu.
 Użyj prawidłowej nazwy książki adresowej i tagu na stronie książki adresowej konsoli webowej.
 
@@ -1153,10 +1153,9 @@ Użyj prawidłowej nazwy książki adresowej i tagu na stronie książki adresow
 | preset-address-book-name | N | | | `preset-address-book-name=<nazwa książki adresowej>` |
 | preset-address-book-tag | N | | | `preset-address-book-tag=<nazwa tagu książki adresowej>` |
 | preset-address-book-alias | N | | | `preset-address-book-alias=<alias urządzenia>` |
-| preset-address-book-password | N | | | `preset-address-book-password=<hasło urządzenia>` |
 | preset-address-book-note | N | | | `preset-address-book-note=<notatka urządzenia>` |
 
-preset-address-book-alias, preset-address-book-password, preset-address-book-note są dostępne w kliencie RustDesk >=1.4.3, pro >= 1.6.6.
+preset-address-book-alias, preset-address-book-note są dostępne w kliencie RustDesk >=1.4.3, pro >= 1.6.6.
 
 ### disable-group-panel
 
@@ -1312,6 +1311,18 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 | Wartości | Domyślnie | Przykład |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
+
+### hide-account-password-login
+
+Ukrywa formularz nazwy użytkownika i hasła w oknie logowania do konta w niestandardowych klientach z interfejsem Flutter. Ustaw `Y`, aby wyświetlać tylko dostępnych dostawców logowania OIDC. Jeśli lista dostawców jest pusta, w oknie pojawi się komunikat o niedostępności logowania OIDC.
+
+Ta opcja kontroluje tylko interfejs logowania klienta. Nie wyłącza uwierzytelniania hasłem na serwerze ani nie wymusza uwierzytelniania wyłącznie przez OIDC.
+
+https://github.com/rustdesk/rustdesk/pull/17092
+
+| Wartości | Domyślnie | Przykład |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-account-password-login=Y` |
 
 ### hide-username-on-card
 
@@ -1500,7 +1511,7 @@ Nie rejestruj urządzenia, nie będzie ono widoczne na stronie urządzeń w kons
 Jeśli `register-device=N`, poniższe nie będzie działać dla tego urządzenia.
 - Logowanie się
 - Polecenie `--assign`
-- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
+- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
 - Dzienniki audytowe
 - Strategie
 
