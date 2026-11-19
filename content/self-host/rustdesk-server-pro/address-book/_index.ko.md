@@ -116,12 +116,11 @@ RustDesk 클라이언트 구성으로 주소록 할당을 미리 설정할 수 �
 - `preset-address-book-name`
 - `preset-address-book-tag`
 - `preset-address-book-alias`
-- `preset-address-book-password`
 - `preset-address-book-note`
 
-`preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note`는 RustDesk 클라이언트 1.4.3 이상 및 RustDesk Server Pro 1.6.6 이상이 필요합니다.
+`preset-address-book-alias`, `preset-address-book-note`는 RustDesk 클라이언트 1.4.3 이상 및 RustDesk Server Pro 1.6.6 이상이 필요합니다.
 
-자세한 내용은 [고급 클라이언트 구성](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-password--preset-address-book-note)을 참조하십시오.
+자세한 내용은 [고급 클라이언트 구성](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-note)을 참조하십시오.
 
 ## 관련 설정
 

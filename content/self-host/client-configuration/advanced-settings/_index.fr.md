@@ -1130,9 +1130,9 @@ L'option "trackpad-speed" dans les paramètres de chaque pair contrôlera alors 
 
 ## Autres
 
-### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-password & preset-address-book-note
+### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-note
 
-Nom de carnet d'adresses, tag d'appareil, alias d'appareil, mot de passe d'appareil, note d'appareil prédéfinis, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
+Nom de carnet d'adresses, tag d'appareil, alias d'appareil, note d'appareil prédéfinis, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
 Vous pouvez définir preset-address-book-name uniquement si vous ne voulez pas définir de tag.
 Veuillez utiliser un nom et un tag de carnet d'adresses valides sur votre page de carnet d'adresses de la console web.
 
@@ -1141,10 +1141,9 @@ Veuillez utiliser un nom et un tag de carnet d'adresses valides sur votre page d
 | preset-address-book-name | N | | | `preset-address-book-name=<nom du carnet d'adresses>` |
 | preset-address-book-tag | N | | | `preset-address-book-tag=<nom du tag du carnet d'adresses>` |
 | preset-address-book-alias | N | | | `preset-address-book-alias=<alias d'appareil>` |
-| preset-address-book-password | N | | | `preset-address-book-password=<mot de passe d'appareil>` |
 | preset-address-book-note | N | | | `preset-address-book-note=<note d'appareil>` |
 
-preset-address-book-alias, preset-address-book-password, preset-address-book-note sont disponibles dans le client RustDesk >=1.4.3, pro >= 1.6.6.
+preset-address-book-alias, preset-address-book-note sont disponibles dans le client RustDesk >=1.4.3, pro >= 1.6.6.
 
 ### disable-group-panel
 
@@ -1488,7 +1487,7 @@ Ne pas enregistrer l'appareil, vous ne le verrez pas dans la page des appareils 
 Si `register-device=N`, les éléments suivants ne fonctionneront pas pour cet appareil.
 - Connexion
 - Commande `--assign`
-- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
+- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
 - Journaux d'audit
 - Stratégie
 

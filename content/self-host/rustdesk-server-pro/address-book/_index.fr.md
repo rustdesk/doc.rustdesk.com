@@ -116,12 +116,11 @@ La configuration du client RustDesk peut prédéfinir l'affectation au carnet d�
 - `preset-address-book-name`
 - `preset-address-book-tag`
 - `preset-address-book-alias`
-- `preset-address-book-password`
 - `preset-address-book-note`
 
-`preset-address-book-alias`, `preset-address-book-password` et `preset-address-book-note` nécessitent le client RustDesk 1.4.3 ou ultérieur et RustDesk Server Pro 1.6.6 ou ultérieur.
+`preset-address-book-alias` et `preset-address-book-note` nécessitent le client RustDesk 1.4.3 ou ultérieur et RustDesk Server Pro 1.6.6 ou ultérieur.
 
-Pour plus de détails, consultez la [configuration avancée du client](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-password--preset-address-book-note).
+Pour plus de détails, consultez la [configuration avancée du client](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-note).
 
 ## Paramètres associés
 

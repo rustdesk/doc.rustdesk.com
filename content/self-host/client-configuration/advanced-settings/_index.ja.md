@@ -1141,9 +1141,9 @@ RustDesk 1.5.0 から利用可能
 
 ## その他
 
-### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-password & preset-address-book-note
+### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-note
 
-プリセットアドレスブック名、デバイスタグ、デバイスエイリアス、デバイスパスワード、デバイスノート、https://github.com/rustdesk/rustdesk-server-pro/issues/257。
+プリセットアドレスブック名、デバイスタグ、デバイスエイリアス、デバイスノート、https://github.com/rustdesk/rustdesk-server-pro/issues/257。
 タグを設定したくない場合は、preset-address-book-nameのみを設定できます。
 Web コンソールのアドレスブックページで有効なアドレスブック名とタグを使用してください。
 
@@ -1152,10 +1152,9 @@ Web コンソールのアドレスブックページで有効なアドレスブ�
 | preset-address-book-name | N | | | `preset-address-book-name=<アドレスブック名>` |
 | preset-address-book-tag | N | | | `preset-address-book-tag=<アドレスブックタグ名>` |
 | preset-address-book-alias | N | | | `preset-address-book-alias=<デバイスエイリアス>` |
-| preset-address-book-password | N | | | `preset-address-book-password=<デバイスパスワード>` |
 | preset-address-book-note | N | | | `preset-address-book-note=<デバイスノート>` |
 
-preset-address-book-alias、preset-address-book-password、preset-address-book-noteはRustDeskクライアント>=1.4.3、pro >= 1.6.6で利用可能。
+preset-address-book-alias、preset-address-book-noteはRustDeskクライアント>=1.4.3、pro >= 1.6.6で利用可能。
 
 ### disable-group-panel
 
@@ -1499,7 +1498,7 @@ RustDeskクライアント>=1.4.1およびProサーバー>= 1.5.9でのみ利用
 `register-device=N`の場合、このデバイスでは以下が動作しません。
 - ログイン
 - `--assign`コマンド
-- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
+- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
 - 監査ログ
 - ストラテジー
 

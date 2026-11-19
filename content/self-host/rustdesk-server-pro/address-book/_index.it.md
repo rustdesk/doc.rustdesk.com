@@ -116,12 +116,11 @@ La configurazione del client RustDesk può preimpostare l'assegnazione della rub
 - `preset-address-book-name`
 - `preset-address-book-tag`
 - `preset-address-book-alias`
-- `preset-address-book-password`
 - `preset-address-book-note`
 
-`preset-address-book-alias`, `preset-address-book-password` e `preset-address-book-note` richiedono RustDesk client 1.4.3 o successivo e RustDesk Server Pro 1.6.6 o successivo.
+`preset-address-book-alias` e `preset-address-book-note` richiedono RustDesk client 1.4.3 o successivo e RustDesk Server Pro 1.6.6 o successivo.
 
-Per maggiori dettagli, consulta la [configurazione avanzata del client](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-password--preset-address-book-note).
+Per maggiori dettagli, consulta la [configurazione avanzata del client](/docs/en/self-host/client-configuration/advanced-settings/#preset-address-book-name--preset-address-book-tag--preset-address-book-alias--preset-address-book-note).
 
 ## Impostazioni correlate
 
