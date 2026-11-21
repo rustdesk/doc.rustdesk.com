@@ -67,7 +67,7 @@ Se deve instalar uma impressora. A impressora é usada para executar os trabalho
 Desde a versão `1.3.9`.
 
 **Padrão**:
-1. Instalação. Padrão para `1`.
+1. Nova instalação. A partir da versão `1.4.8`, a impressora não é instalada quando este parâmetro é omitido. Nas versões `1.3.9` a `1.4.7`, o valor padrão era `1`.
 2. Atualização. Padrão para as últimas opções instaladas.
 
 | Nº | Valor | Descrição |

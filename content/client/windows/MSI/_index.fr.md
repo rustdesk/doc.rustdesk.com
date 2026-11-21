@@ -67,7 +67,7 @@ Indique s'il faut installer une imprimante. L'imprimante est utilisée pour exé
 Depuis la version `1.3.9`.
 
 **Par défaut** :
-1. Installation. Par défaut à `1`.
+1. Nouvelle installation. À partir de la version `1.4.8`, si ce paramètre est omis, l’imprimante n’est pas installée. Dans les versions `1.3.9` à `1.4.7`, la valeur par défaut était `1`.
 2. Mise à niveau. Par défaut aux dernières options installées.
 
 | N° | Valeur | Description |
