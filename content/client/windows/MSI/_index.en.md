@@ -67,7 +67,7 @@ Whether to install a printer. The printer is used to execute the print jobs of t
 Since version `1.3.9`.
 
 **Default**:
-1. Install. Defaults to `1`.
+1. Fresh install. Starting with `1.4.8`, the printer is not installed when this parameter is omitted. In versions `1.3.9` through `1.4.7`, the default was `1`.
 2. Upgrade. Defaults to the last installed options.
 
 | No | Value | Desc |

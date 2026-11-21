@@ -67,7 +67,7 @@ Ob ein Drucker installiert werden soll. Der Drucker wird verwendet, um die Druck
 Seit Version `1.3.9`.
 
 **Standard**:
-1. Installation. Standard ist `1`.
+1. Neuinstallation. Ab Version `1.4.8` wird der Drucker nicht installiert, wenn dieser Parameter fehlt. In den Versionen `1.3.9` bis `1.4.7` war der Standardwert `1`.
 2. Upgrade. Standard sind die zuletzt installierten Optionen.
 
 | Nr. | Wert | Beschreibung |

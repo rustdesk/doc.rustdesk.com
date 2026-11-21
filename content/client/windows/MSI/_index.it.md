@@ -67,7 +67,7 @@ Se installare una stampante. La stampante è utilizzata per eseguire i lavori di
 Dalla versione `1.3.9`.
 
 **Predefinito**:
-1. Installazione. Predefinito a `1`.
+1. Nuova installazione. A partire dalla versione `1.4.8`, se si omette questo parametro, la stampante non viene installata. Nelle versioni da `1.3.9` a `1.4.7`, il valore predefinito era `1`.
 2. Aggiornamento. Predefinito alle ultime opzioni installate.
 
 | N. | Valore | Descrizione |

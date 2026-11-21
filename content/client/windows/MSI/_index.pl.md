@@ -67,7 +67,7 @@ Zainstaluj drukarkę. Drukarka jest używana do wykonywania druków ze strony lo
 Od wersji `1.3.9`.
 
 **Domyślnie**:
-1. Podczas instalacji. Domyślnie `1`.
+1. Nowa instalacja. Od wersji `1.4.8` drukarka nie jest instalowana, jeśli pominięto ten parametr. W wersjach od `1.3.9` do `1.4.7` wartością domyślną było `1`.
 2. Podczas aktualizacji. Domyślnie przybiera wartość wybraną podczas ostatniej instalacji.
 
 | Nr | Wartość | Opis |

@@ -67,7 +67,7 @@ Dacă se instalează un driver/printer. Imprimanta este folosită pentru a execu
 Disponibil începând cu versiunea `1.3.9`.
 
 **Implicit**:
-1. La instalare. Valoarea implicită este `1`.
+1. Instalare nouă. Începând cu versiunea `1.4.8`, imprimanta nu se instalează dacă acest parametru este omis. În versiunile de la `1.3.9` la `1.4.7`, valoarea implicită era `1`.
 2. La upgrade. Se păstrează opțiunile din instalarea precedentă.
 
 | Nr. | Valoare | Descriere |

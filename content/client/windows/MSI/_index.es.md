@@ -67,7 +67,7 @@ Si instalar una impresora. La impresora se usa para ejecutar los trabajos de imp
 Desde la versión `1.3.9`.
 
 **Por defecto**:
-1. Instalación. Por defecto a `1`.
+1. Instalación nueva. Desde la versión `1.4.8`, la impresora no se instala si se omite este parámetro. En las versiones `1.3.9` a `1.4.7`, el valor predeterminado era `1`.
 2. Actualización. Por defecto a las últimas opciones instaladas.
 
 | N° | Valor | Descripción |
