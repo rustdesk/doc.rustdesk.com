@@ -44,13 +44,28 @@ RustDesk 포터블 클라이언트가 Windows에서 관리자 수준의 UI와 �
 
 ## 제어 측에서 권한 상승 요청
 
-동작 메뉴에서 `Request Elevation`를 선택하면 다음 대화상자가 표시됩니다. `Ask the remote user for authentication`를 선택하면 사용자 이름과 비밀번호를 입력할 필요가 없지만, 원격 컴퓨터의 사용자는 관리자 권한을 가져야 합니다. `Transmit the username and password of administrator`를 선택하면 원격 컴퓨터의 사용자는 UAC 창에서 수락하기만 하면 됩니다. 요청을 보낸 후, 상대방 사용자가 UAC 창을 수락하도록 기다려 주세요. 확인되면 성공 메시지가 표시됩니다. **두 방법 모두 제어 측에서 누군가 UAC 창을 수락해야 합니다**. 따라서 상대방에 사람이 없을 경우, 제어 측에서 권한 상승을 요청해서는 안 됩니다.
+동작 메뉴에서 `Request Elevation`을 선택합니다. 원격 사용자가 관리자 권한을 가지고 있으면 `Ask the remote user for authentication`를 선택합니다. 원격 사용자가 Windows 표준 계정을 사용한다면 `Transmit the username and password of administrator`를 선택하고 제어하는 컴퓨터에서 관리자 계정 이름과 암호를 입력합니다. 연결 직후 앱을 관리자 권한으로 실행하기 전에도 요청할 수 있습니다. **두 방법 모두 원격 컴퓨터에 있는 사람이 RustDesk의 UAC 창에 응답해야 합니다.**
 
 | 메뉴 | 대화 |
 | :---: | :---: |
 | ![](/docs/en/client/windows/windows-portable-elevation/images/menu.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/dialog.png) |
 | **대기** | **성공** |
 | ![](/docs/en/client/windows/windows-portable-elevation/images/wait.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/success.png) |
+
+### 앱과 RustDesk의 UAC 창
+
+앱을 관리자 권한으로 실행할 때와 RustDesk의 권한을 높일 때 각각 별도의 UAC 창이 나타납니다. RustDesk 권한 상승을 요청할 때 앱의 UAC 창이 이미 열려 있다면 원격 사용자가 그 창에 먼저 응답해야 합니다.
+
+1. **앱의 UAC 창**(예: Windows 명령 처리기)에서 **예**를 누르면 관리자 권한으로 앱을 실행하고, **아니요**를 누르면 실행을 취소합니다.
+2. **`rustdesk.exe`의 UAC 창**에서는 **예**를 눌러 RustDesk의 권한을 높입니다. Windows에서 관리자 자격 증명을 요구하면 먼저 입력합니다.
+
+권한 상승이 완료되면 제어하는 컴퓨터에서 UAC 창을 조작하고 관리자 권한이 필요한 버튼을 누를 수 있습니다. 원격 사용자가 앱 실행을 취소했다면 이제 관리자 권한으로 다시 실행할 수 있습니다.
+
+### RustDesk의 UAC 창에서 자격 증명을 다시 요구하는 경우
+
+RustDesk는 전송받은 자격 증명으로 관리자 계정에서 보조 프로세스를 시작합니다. 이 프로세스가 권한 상승을 요청하면 Windows는 **사용자 계정 컨트롤: 관리자 승인 모드에서 관리자의 권한 상승 확인 방법** 정책을 적용합니다. 그룹 정책의 **컴퓨터 구성 → 정책 → Windows 설정 → 보안 설정 → 로컬 정책 → 보안 옵션**에서 확인할 수 있습니다.
+
+**보안 데스크톱에서 자격 증명 확인**으로 설정하면 제어하는 컴퓨터에서 관리자 자격 증명을 이미 보냈더라도 원격 컴퓨터에서 `rustdesk.exe`의 UAC 창에 다시 입력해야 합니다. 다른 앱을 열기 전에 먼저 RustDesk의 권한 상승을 요청한 경우에도 마찬가지입니다. [Microsoft UAC 정책 문서](https://learn.microsoft.com/ko-kr/windows/security/application-security/application-control/user-account-control/settings-and-configuration)
 
 ## 선택 방법
 

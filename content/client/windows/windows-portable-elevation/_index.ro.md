@@ -44,13 +44,28 @@ Capătul controlat poate face direct clic pe `Accept and Elevate` la conectare, 
 
 ## Solicitarea elevării la capătul care controlează
 
-După selectarea `Request Elevation` din meniul de acțiuni, va apărea următorul dialog. Dacă alegeți `Ask the remote user for authentication`, nu va fi nevoie să introduceți un nume de utilizator și o parolă, dar utilizatorul de la distanță trebuie să aibă drepturi de administrator. Dacă selectați `Transmit the username and password of administrator`, utilizatorul de la distanță trebuie doar să apese Accept în fereastra UAC. După trimiterea cererii, așteptați ca utilizatorul de la distanță să accepte fereastra UAC. La confirmare va apărea un mesaj de succes. Rețineți că **ambele metode necesită ca cineva de la capătul controlat să accepte fereastra UAC**. Prin urmare, dacă nu este nimeni disponibil la celălalt capăt, nu solicitați elevarea de la capătul care controlează.
+Din meniul de acțiuni, selectați `Request Elevation`. Dacă utilizatorul de la distanță are drepturi de administrator, alegeți `Ask the remote user for authentication`. Dacă folosește un cont Windows standard, alegeți `Transmit the username and password of administrator` și introduceți numele de utilizator și parola unui administrator pe computerul de pe care vă conectați. Puteți face acest lucru imediat după conectare, înainte de a deschide o aplicație ca administrator. **În ambele cazuri, cineva trebuie să răspundă pe computerul de la distanță la solicitarea UAC pentru RustDesk.**
 
 | Menu | Dialog |
 | :---: | :---: |
 | ![](/docs/en/client/windows/windows-portable-elevation/images/menu.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/dialog.png) |
 | **Wait** | **Success** |
 | ![](/docs/en/client/windows/windows-portable-elevation/images/wait.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/success.png) |
+
+### Solicitările UAC pentru aplicații și pentru RustDesk
+
+Rularea unei aplicații ca administrator și elevarea privilegiilor RustDesk declanșează solicitări UAC separate. Dacă solicitarea aplicației este deja afișată atunci când cereți elevarea privilegiilor RustDesk, rugați utilizatorul de la distanță să răspundă mai întâi la solicitarea aplicației.
+
+1. În **solicitarea aplicației** (de exemplu, **Procesor de comenzi Windows**), apăsați **Da** pentru a rula aplicația ca administrator sau **Nu** pentru a anula lansarea.
+2. În **solicitarea pentru `rustdesk.exe`**, apăsați **Da** pentru a acorda privilegii de administrator programului RustDesk. Dacă Windows solicită datele de autentificare ale unui administrator, introduceți-le înainte de a confirma.
+
+După ce RustDesk a obținut privilegiile necesare, puteți răspunde la solicitările UAC și puteți folosi butoanele care necesită drepturi de administrator de pe computerul de pe care vă conectați. Dacă utilizatorul de la distanță a anulat lansarea aplicației, acum o puteți redeschide ca administrator.
+
+### Dacă solicitarea UAC pentru RustDesk cere din nou datele de autentificare
+
+RustDesk folosește datele de autentificare transmise pentru a porni un proces auxiliar sub contul de administrator. Când procesul solicită elevarea privilegiilor, Windows aplică politica **Control cont utilizator: comportamentul solicitării de elevare pentru administratori în modul de aprobare de către administrator**. În politica de grup, o găsiți în **Configurare computer → Politici → Setări Windows → Setări de securitate → Politici locale → Opțiuni de securitate**.
+
+Dacă este selectată opțiunea **Se solicită acreditări pe desktopul securizat**, cineva trebuie să introducă datele de autentificare ale unui administrator în fereastra UAC pentru `rustdesk.exe` pe computerul de la distanță, chiar dacă le-ați trimis deja de pe computerul de control. Acest lucru este valabil și dacă solicitați elevarea înainte de a deschide altă aplicație. [Documentația Microsoft privind politicile UAC](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/settings-and-configuration)
 
 ## Cum să alegeți
 

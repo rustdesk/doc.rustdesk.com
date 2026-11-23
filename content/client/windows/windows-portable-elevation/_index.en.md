@@ -44,13 +44,28 @@ The controlled end can directly click `Accept and Elevate` when connecting, or c
 
 ## Request elevation at the control end
 
-After selecting `Request Elevation` from the action menu, the following dialog box will appear. If you choose `Ask the remote user for authentication`, you won't need to input a username and password, but the user on the remote computer must have administrator privileges. If you select `Transmit the username and password of administrator`, the user on the remote computer only needs to accept in the UAC window. After sending the request, please wait for the user on the other side to accept the UAC window. Upon confirmation, a success message will appear. Note that **both methods require someone on the controlled end to accept the UAC window**. Therefore, if there is no one available on the other side, elevation should not be requested at the control end.
+Select `Request Elevation` from the action menu. Choose `Ask the remote user for authentication` if the remote user has administrator privileges. If the remote user has a standard Windows account, choose `Transmit the username and password of administrator` and enter the administrator credentials on the controlling computer. You can do this as soon as you connect, before opening an app as administrator. **Both options require someone at the remote computer to respond to the RustDesk UAC prompt.**
 
 | Menu | Dialog |
 | :---: | :---: |
 | ![](/docs/en/client/windows/windows-portable-elevation/images/menu.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/dialog.png) |
 | **Wait** | **Success** |
 | ![](/docs/en/client/windows/windows-portable-elevation/images/wait.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/success.png) |
+
+### UAC prompts for apps and RustDesk
+
+Running an app as administrator and elevating RustDesk each trigger a separate UAC prompt. If the app's prompt is already open when you request RustDesk elevation, ask the remote user to handle it first.
+
+1. In the **app's prompt** (for example, **Windows Command Processor**), click **Yes** to run the app as administrator or **No** to cancel.
+2. In the **`rustdesk.exe` prompt**, click **Yes** to elevate RustDesk. Enter administrator credentials first if Windows asks.
+
+Once RustDesk is elevated, you can respond to UAC prompts and click buttons that require administrator privileges from the controlling computer. If the remote user canceled the app's launch, you can now reopen it as administrator.
+
+### If the RustDesk UAC prompt asks for credentials again
+
+RustDesk uses the credentials you send to start a helper process under the administrator account. When that process requests elevation, Windows applies the policy **User Account Control: Behavior of the elevation prompt for administrators in Admin Approval Mode**. In Group Policy, you can find it under **Computer Configuration → Policies → Windows Settings → Security Settings → Local Policies → Security Options**.
+
+With **Prompt for credentials on the secure desktop**, someone at the remote computer must enter administrator credentials in the UAC prompt for `rustdesk.exe`, even if you already sent them from the controlling computer. This also applies when you request elevation before opening any other app. [Microsoft's UAC policy reference](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/settings-and-configuration)
 
 ## How to Choose
 

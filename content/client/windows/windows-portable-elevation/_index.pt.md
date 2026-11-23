@@ -44,13 +44,28 @@ O lado controlado pode clicar diretamente em `Aceitar e Elevar` ao conectar, ou 
 
 ## Solicitar elevação no lado de controle
 
-Após selecionar `Solicitar Elevação` no menu de ação, a seguinte caixa de diálogo aparecerá. Se você escolher `Pedir ao usuário remoto para autenticação`, você não precisará inserir um nome de usuário e senha, mas o usuário no computador remoto deve ter privilégios de administrador. Se você selecionar `Transmitir o nome de usuário e senha do administrador`, o usuário no computador remoto só precisa aceitar na janela UAC. Após enviar a solicitação, aguarde que o usuário do outro lado aceite a janela UAC. Após a confirmação, uma mensagem de sucesso aparecerá. Note que **ambos os métodos requerem que alguém no lado controlado aceite a janela UAC**. Portanto, se não houver ninguém disponível do outro lado, a elevação não deve ser solicitada no lado de controle.
+No menu de ações, selecione `Solicitar Elevação`. Se o usuário remoto tiver privilégios de administrador, escolha `Pedir ao usuário remoto para autenticação`. Se ele usar uma conta padrão do Windows, escolha `Transmitir o nome de usuário e senha do administrador` e digite as credenciais de administrador no computador de controle. Você pode fazer isso assim que se conectar, antes de abrir um aplicativo como administrador. **Nas duas opções, alguém no computador remoto precisa responder à solicitação do UAC do RustDesk.**
 
 | Menu | Diálogo |
 | :---: | :---: |
 | ![](/docs/en/client/windows/windows-portable-elevation/images/menu.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/dialog.png) |
 | **Aguardar** | **Sucesso** |
 | ![](/docs/en/client/windows/windows-portable-elevation/images/wait.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/success.png) |
+
+### Solicitações do UAC para aplicativos e para o RustDesk
+
+Executar um aplicativo como administrador e elevar os privilégios do RustDesk geram solicitações separadas do UAC. Se a solicitação do aplicativo já estiver aberta quando você pedir a elevação do RustDesk, peça ao usuário remoto que responda primeiro à do aplicativo.
+
+1. Na **solicitação do aplicativo** (por exemplo, **Processador de Comandos do Windows**), clique em **Sim** para executá-lo como administrador ou em **Não** para cancelar.
+2. Na **solicitação de `rustdesk.exe`**, clique em **Sim** para elevar os privilégios do RustDesk. Se o Windows pedir credenciais de administrador, digite-as antes de confirmar.
+
+Após a elevação do RustDesk, você pode responder às solicitações do UAC e clicar nos botões que exigem privilégios de administrador diretamente do computador de controle. Se o usuário remoto cancelou a abertura do aplicativo, você já pode abri-lo novamente como administrador.
+
+### Se o UAC do RustDesk pedir as credenciais novamente
+
+O RustDesk usa as credenciais enviadas para iniciar um processo auxiliar com a conta de administrador. Quando esse processo solicita a elevação, o Windows aplica a política **Controle de Conta de Usuário: comportamento da solicitação de elevação de administradores no Modo de Aprovação de Administrador**. Na Política de Grupo, ela fica em **Configuração do Computador → Políticas → Configurações do Windows → Configurações de Segurança → Políticas Locais → Opções de Segurança**.
+
+Com a opção **Solicitar credenciais na área de trabalho segura**, alguém no computador remoto precisa inserir as credenciais de administrador na solicitação do UAC de `rustdesk.exe`, mesmo que você já as tenha enviado pelo computador de controle. Isso também se aplica quando você solicita a elevação antes de abrir outro aplicativo. [Documentação da Microsoft sobre as políticas do UAC](https://learn.microsoft.com/pt-br/windows/security/application-security/application-control/user-account-control/settings-and-configuration)
 
 ## Como Escolher
 
