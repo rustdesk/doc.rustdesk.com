@@ -46,13 +46,28 @@ Kontrolująca strona może bezpośrednio kliknąć `Akceptuj i podnieś uprawnie
 
 ## Żądanie podwyższenia na końcu sterowania
 
-Po wybraniu opcji `Żądaj podwyższenia uprawnień` z menu akcji pojawi się następujące okno dialogowe. Jeśli wybierzesz opcję `Poproś użytkownika zdalnego o uwierzytelnienie`, nie będziesz musiał wprowadzać nazwy użytkownika i hasła, ale użytkownik komputera zdalnego musi mieć uprawnienia administratora. Jeśli wybierzesz opcję `Przekaż nazwę użytkownika i hasło administratora`, użytkownik komputera zdalnego musi jedynie zaakceptować okno UAC. Po wysłaniu żądania należy poczekać, aż użytkownik po drugiej stronie zaakceptuje okno UAC. Po potwierdzeniu pojawi się komunikat o pomyślnym zakończeniu operacji. Należy pamiętać, że **obie metody wymagają, aby ktoś po stronie kontrolowanej zaakceptował okno UAC**. Dlatego też, jeśli po drugiej stronie nie ma nikogo dostępnego, nie należy żądać podwyższenia uprawnień po stronie kontrolującej.
+W menu działań wybierz `Żądaj podwyższenia uprawnień`. Jeśli użytkownik zdalny ma uprawnienia administratora, wybierz `Poproś użytkownika zdalnego o uwierzytelnienie`. Jeśli korzysta ze standardowego konta systemu Windows, wybierz `Przekaż nazwę użytkownika i hasło administratora` i wpisz dane logowania administratora na komputerze, z którego się łączysz. Możesz to zrobić zaraz po nawiązaniu połączenia, zanim uruchomisz aplikację jako administrator. **W obu przypadkach ktoś przy komputerze zdalnym musi odpowiedzieć na monit UAC dotyczący programu RustDesk.**
 
 | Menu | Okno dialogowe |
 | :---: | :---: |
 | ![](/docs/en/client/windows/windows-portable-elevation/images/menu.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/dialog.png) |
 | **Czekanie** | **Sukces** |
 | ![](/docs/en/client/windows/windows-portable-elevation/images/wait.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/success.png) |
+
+### Monity UAC dotyczące aplikacji i programu RustDesk
+
+Uruchomienie aplikacji jako administrator i podniesienie uprawnień programu RustDesk wywołują osobne monity UAC. Jeśli w chwili żądania podniesienia uprawnień programu RustDesk monit aplikacji jest już otwarty, poproś użytkownika zdalnego, by najpierw odpowiedział na monit aplikacji.
+
+1. W **monicie aplikacji** (np. **Procesor poleceń systemu Windows**) kliknij **Tak**, aby uruchomić ją jako administrator, lub **Nie**, aby anulować uruchomienie.
+2. W **monicie dotyczącym `rustdesk.exe`** kliknij **Tak**, aby nadać programowi RustDesk wyższe uprawnienia. Jeśli system Windows poprosi o dane logowania administratora, wpisz je przed zatwierdzeniem.
+
+Po podniesieniu uprawnień programu RustDesk możesz zdalnie odpowiadać na monity UAC i używać przycisków wymagających uprawnień administratora. Jeśli użytkownik zdalny anulował uruchomienie aplikacji, możesz teraz ponownie uruchomić ją jako administrator.
+
+### Gdy monit UAC programu RustDesk ponownie wymaga podania poświadczeń
+
+RustDesk używa przesłanych poświadczeń do uruchomienia procesu pomocniczego na koncie administratora. Gdy proces żąda podniesienia uprawnień, system Windows stosuje zasadę **Kontrola konta użytkownika: zachowanie monitu o podniesienie uprawnień dla administratorów w trybie zatwierdzania przez administratora**. W zasadach grupy znajdziesz ją w obszarze **Konfiguracja komputera → Zasady → Ustawienia systemu Windows → Ustawienia zabezpieczeń → Zasady lokalne → Opcje zabezpieczeń**.
+
+Przy ustawieniu **Monituj o poświadczenia na bezpiecznym pulpicie** osoba przy komputerze zdalnym musi wpisać dane logowania administratora w monicie UAC dotyczącym `rustdesk.exe`, nawet jeśli te dane zostały już wysłane z komputera sterującego. Dotyczy to również sytuacji, gdy żądasz podniesienia uprawnień przed otwarciem innej aplikacji. [Dokumentacja firmy Microsoft dotycząca zasad UAC](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/settings-and-configuration)
 
 ## Którą metodę wybrać
 

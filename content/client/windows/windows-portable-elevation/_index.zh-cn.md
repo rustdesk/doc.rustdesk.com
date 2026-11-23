@@ -44,13 +44,28 @@ keywords: ["rustdesk portable elevation", "rustdesk uac", "rustdesk windows admi
 
 ## 控制端主动提权
 
-在点击动作菜单中的`请求提权`后，将弹出下面的对话框。如果选择`请求远程用户授权`，则无需输入用户名和密码，但需要电脑对面的用户具有管理员权限。如果选择`发送管理员用户的账号和密码`，则只需要对面用户在UAC窗口点击确认。发送请求后，请等待对面用户确认UAC窗口, 然后将提示成功。需要注意的是，这两种方式**都需要被控端有人在UAC窗口点击确认**。因此，如果对面没有人，则被控端不应该主动请求提权。
+在控制端的动作菜单中选择 `请求提权`。如果被控端用户有管理员权限，可选择 `请求远程用户授权`。如果对方使用 Windows 标准账户，请选择 `发送管理员用户的账号和密码`，并在控制端输入管理员凭据。连接后即可请求提权，无需等到以管理员身份打开应用时再操作。**两种方式都需要被控端有人处理 RustDesk 的 UAC 提示。**
 
 |                    菜单                    |                   对话框                    |
 | :--------------------------------------: | :--------------------------------------: |
 | ![](/docs/en/client/windows/windows-portable-elevation/images/menu.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/dialog.png) |
 |                  **等待**                  |                  **成功**                  |
 | ![](/docs/en/client/windows/windows-portable-elevation/images/wait.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/success.png) |
+
+### 应用与 RustDesk 的 UAC 提示
+
+以管理员身份运行应用和为 RustDesk 提权会分别触发 UAC 提示。如果请求 RustDesk 提权时，应用的提示已经弹出，请被控端用户先处理应用的提示。
+
+1. 在**应用的提示**（例如“Windows 命令处理程序”）中，点击**是**以管理员身份运行应用，或点击**否**取消。
+2. 在 **`rustdesk.exe` 的提示**中，点击**是**为 RustDesk 提权。如果 Windows 要求管理员凭据，请先输入再确认。
+
+提权成功后，您可以在控制端操作 UAC 窗口，点击需要管理员权限的按钮。如果被控端用户刚才取消了应用启动，您现在可以重新以管理员身份打开它。
+
+### RustDesk 的 UAC 提示再次要求输入凭据
+
+RustDesk 使用控制端发送的凭据，以管理员账户启动辅助进程。该进程请求提权时，Windows 会应用**用户账户控制：管理员批准模式中管理员的提升权限提示行为**策略。在组策略中，依次打开**计算机配置 → 策略 → Windows 设置 → 安全设置 → 本地策略 → 安全选项**即可找到该策略。
+
+如果设置为**在安全桌面上提示输入凭据**，即使控制端已发送管理员凭据，仍需有人在被控端的 `rustdesk.exe` UAC 窗口中再次输入。即使在打开其他应用之前主动请求提权，也会出现同样的提示。[微软 UAC 策略文档](https://learn.microsoft.com/zh-cn/windows/security/application-security/application-control/user-account-control/settings-and-configuration)
 
 ## 如何选择
 

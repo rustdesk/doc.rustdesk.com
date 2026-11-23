@@ -44,13 +44,28 @@ Die kontrollierte Seite kann direkt auf `Akzeptieren und Erhöhen` klicken, wenn
 
 ## Anfrage der Erhöhung auf der Steuerungsseite
 
-Nach der Auswahl von `Erhöhte Rechte anfordern` aus dem Aktionsmenü wird das folgende Dialogfeld angezeigt. Wenn Sie `Den entfernten Benutzer zur Authentifizierung auffordern` wählen, müssen Sie keinen Benutzernamen und kein Passwort eingeben, aber der Benutzer auf dem entfernten Computer muss über Administratorrechte verfügen. Wenn Sie `Benutzernamen und Passwort des Administrators übertragen` wählen, muss der Benutzer auf dem entfernten Computer nur im UAC-Fenster zustimmen. Nachdem Sie die Anfrage gesendet haben, warten Sie bitte, bis der Benutzer auf der anderen Seite das UAC-Fenster akzeptiert hat. Nach der Bestätigung wird eine Erfolgsmeldung angezeigt. Beachten Sie, dass es **bei beiden Methoden erforderlich ist, dass jemand auf der kontrollierten Seite das UAC-Fenster akzeptiert**. Wenn also auf der anderen Seite niemand verfügbar ist, sollte auf der Steuerungsseite keine Aufschaltung beantragt werden.
+Wählen Sie im Aktionsmenü `Erhöhte Rechte anfordern`. Hat der Benutzer am entfernten Computer Administratorrechte, wählen Sie `Den entfernten Benutzer zur Authentifizierung auffordern`. Verwendet er ein Windows-Standardkonto, wählen Sie `Benutzernamen und Passwort des Administrators übertragen` und geben Sie die Administratoranmeldedaten am steuernden Computer ein. Das ist direkt nach dem Verbindungsaufbau möglich, bevor Sie eine Anwendung als Administrator starten. **Bei beiden Optionen muss jemand am entfernten Computer auf die UAC-Abfrage für RustDesk reagieren.**
 
 | Menü | Dialog |
 | :---: | :---: |
 | ![](/docs/en/client/windows/windows-portable-elevation/images/menu.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/dialog.png) |
 | **Warten** | **Erfolg** |
 | ![](/docs/en/client/windows/windows-portable-elevation/images/wait.png) | ![](/docs/en/client/windows/windows-portable-elevation/images/success.png) |
+
+### UAC-Abfragen für Anwendungen und RustDesk
+
+Beim Start einer Anwendung als Administrator und beim Anfordern erhöhter Rechte für RustDesk erscheint jeweils eine eigene UAC-Abfrage. Ist die Abfrage der Anwendung bereits geöffnet, wenn Sie erhöhte Rechte für RustDesk anfordern, bitten Sie den Benutzer am entfernten Computer, zuerst auf diese Abfrage zu reagieren.
+
+1. Klicken Sie in der **Abfrage der Anwendung** (z. B. **Windows-Befehlsprozessor**) auf **Ja**, um die Anwendung als Administrator zu starten, oder auf **Nein**, um den Start abzubrechen.
+2. Klicken Sie in der **Abfrage für `rustdesk.exe`** auf **Ja**, um RustDesk erhöhte Rechte zu gewähren. Geben Sie zuerst die Administratoranmeldedaten ein, falls Windows danach fragt.
+
+Sobald RustDesk erhöhte Rechte hat, können Sie vom steuernden Computer aus UAC-Abfragen beantworten und Schaltflächen bedienen, die Administratorrechte erfordern. Hat der Benutzer den Start der Anwendung abgebrochen, können Sie sie jetzt erneut als Administrator starten.
+
+### Wenn die UAC-Abfrage für RustDesk erneut Anmeldedaten verlangt
+
+RustDesk startet mit den übermittelten Anmeldedaten einen Hilfsprozess unter dem Administratorkonto. Wenn dieser Prozess erhöhte Rechte anfordert, wendet Windows die Richtlinie **Benutzerkontensteuerung: Verhalten der Benutzeraufforderung mit erhöhten Rechten für Administratoren im Administratorbestätigungsmodus** an. Sie finden sie in den Gruppenrichtlinien unter **Computerkonfiguration → Richtlinien → Windows-Einstellungen → Sicherheitseinstellungen → Lokale Richtlinien → Sicherheitsoptionen**.
+
+Bei der Einstellung **Eingabeaufforderung zu Anmeldeinformationen auf dem sicheren Desktop** muss jemand am entfernten Computer die Administratoranmeldedaten in die UAC-Abfrage für `rustdesk.exe` eingeben, auch wenn Sie sie bereits vom steuernden Computer gesendet haben. Das gilt auch, wenn Sie erhöhte Rechte für RustDesk anfordern, bevor Sie eine andere Anwendung öffnen. [Microsoft-Dokumentation zu UAC-Richtlinien](https://learn.microsoft.com/de-de/windows/security/application-security/application-control/user-account-control/settings-and-configuration)
 
 ## Wie Sie wählen
 
