@@ -102,3 +102,11 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/372#discussioncommen
 `rustdesk.exe --config <config-string>`
 
 Sie können die Konfigurationszeichenkette über die Webkonsole (wie auf dem obigen Bild zu sehen) oder über den RustDesk-Client unter "Einstellungen → Netzwerk" abrufen ([hier](https://github.com/rustdesk/rustdesk/discussions/7118) gibt es eine Diskussion darüber).
+
+Wenn Sie den Open-Source-Server ohne Webkonsole betreiben, können Sie die Werte auch direkt übergeben:
+
+```nolang
+rustdesk.exe --config "host=hbbs.example.com,key=<öffentlicher Schlüssel>"
+```
+
+`relay=<Relay-Host>` und `api=<API-Host>` sind optionale Einträge in derselben, durch Kommas getrennten Zeichenkette. Der Befehl erfordert einen installierten Client mit Administratorrechten.
