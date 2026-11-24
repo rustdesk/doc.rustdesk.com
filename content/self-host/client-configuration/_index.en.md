@@ -102,3 +102,11 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/372#discussioncommen
 `rustdesk.exe --config <config-string>`
 
 You can get the config string from web console (you can see it on above picture) or from RustDesk client "Settings → Network" ([here](https://github.com/rustdesk/rustdesk/discussions/7118) is a discussion about this).
+
+If you run the open-source server without the web console, you can also pass the values directly:
+
+```nolang
+rustdesk.exe --config "host=hbbs.example.com,key=<public key>"
+```
+
+`relay=<relay host>` and `api=<api host>` are optional entries in the same comma-separated string. The command requires an installed client and administrative privileges.
